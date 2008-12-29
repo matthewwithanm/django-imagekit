@@ -25,44 +25,6 @@ class SpecAccessor(object):
         
     @property
     def spec(self):
-        return self._spec
-    
-    """
-    
-    def _get_SIZE_photosize(self, size):
-        return PhotoSizeCache().sizes.get(size)
-
-    def _get_SIZE_size(self, size):
-        photosize = PhotoSizeCache().sizes.get(size)
-        if not self.size_exists(photosize):
-            self.create_size(photosize)
-        return Image.open(self._get_SIZE_filename(size)).size
-
-    def _get_SIZE_url(self, size):
-        photosize = PhotoSizeCache().sizes.get(size)
-        if not self.size_exists(photosize):
-            self.create_size(photosize)
-        if photosize.increment_count:
-            self.increment_count()
-        return '/'.join([self.cache_url(), self._get_filename_for_size(photosize.name)])
-
-    def _get_SIZE_filename(self, size):
-        photosize = PhotoSizeCache().sizes.get(size)
-        return os.path.join(self.cache_path(),
-                            self._get_filename_for_size(photosize.name))
-
-    def add_accessor_methods(self, *args, **kwargs):
-        for size in PhotoSizeCache().sizes.keys():
-            setattr(self, 'get_%s_size' % size,
-                    curry(self._get_SIZE_size, size=size))
-            setattr(self, 'get_%s_photosize' % size,
-                    curry(self._get_SIZE_photosize, size=size))
-            setattr(self, 'get_%s_url' % size,
-                    curry(self._get_SIZE_url, size=size))
-            setattr(self, 'get_%s_filename' % size,
-                    curry(self._get_SIZE_filename, size=size))
-    
-    """
 
 
 class ImageModel(models.Model):
