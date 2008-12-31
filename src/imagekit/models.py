@@ -1,7 +1,21 @@
+import os
 from datetime import datetime
 from django.db import models
 from django.db.models.base import ModelBase
 from django.utils.translation import ugettext_lazy as _
+
+
+class IKSpec(object):
+    def __init__(self):
+        self.name = 'thumbnail'
+        self.width = 100
+        self.height = 100
+        self.quality = 70
+        self.upscale = False
+        self.crop = False
+        self.pre_cache = False
+        self.increment_count = False
+        self.effects = []
 
 
 class SpecAccessor(object):
@@ -11,7 +25,8 @@ class SpecAccessor(object):
         
     @property
     def url(self):
-        return self._instance._spec_url(spec)
+        return '/'.join([self._instance._cache_url(),
+                         self._instance._spec_filename(spec)])
     
     @property
     def path(self):
@@ -33,16 +48,34 @@ class IKOptions(object):
         self.cache_dir = 'cache'
         self.save_count_as = None # Field name on subclass where count is stored
         self.cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
-        self.config = config
-        for key, value in self.config.__dict__.iteritems():
-            setattr(self, key, value)       
+        self.spec_filename = "specs.yaml"
+        if config is not None:
+            for key, value in config.__dict__.iteritems():
+                setattr(self, key, value)       
                 
 
 class IKModelBase(ModelBase):
     def __new__(cls, name, bases, attrs):
-        options = attrs.pop('IK', None)
-        if options is not None:
-            cls._ik = IKOptions(options)
+        super_new = super(ModelBase, cls).__new__
+        parents = [b for b in bases if isinstance(b, IKModelBase)]
+        if not parents:
+            return super_new(cls, name, bases, attrs)
+            
+        options = IKOptions(attrs.pop('IK', None))
+        
+        # load specs here
+        tn = IKSpec()
+        specs = [tn]
+        
+        # use a closure to pass specs to instances
+        def set_accessors(self):
+            for s in specs:
+                setattr(self, s.name, SpecAccessor(self, s))
+
+        attrs['set_accessors'] = set_accessors
+        
+        cls._ik = options
+
         return ModelBase.__new__(cls, name, bases, attrs)
 
         
@@ -89,17 +122,7 @@ class IKModel(models.Model):
         abstract = True
         
     class IK:
-        """ Contains the default configuration for ImageModel subclasses.
-        
-        Subclasses can inherit from this class to override configuration 
-        options.
-        
-        """
-        max_image_size = (100, 100)
-        image_dir = 'image'
-        cache_dir = 'cache'
-        save_count_as = None # Field name on subclass where count is stored
-        cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
+        pass
 
     def _image_basename(self):
         """ Returns the basename of the original image file """
