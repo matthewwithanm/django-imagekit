@@ -1,10 +1,8 @@
 from datetime import datetime
 from django.db import models
+from django.db.models.base import ModelBase
+from django.utils.translation import ugettext_lazy as _
 
-
-class ImageSpec(models.Model):
-    pass
-    
 
 class SpecAccessor(object):
     def __init__(self, instance, spec):
@@ -25,15 +23,38 @@ class SpecAccessor(object):
         
     @property
     def spec(self):
+        pass
 
 
-class ImageModel(models.Model):
+class IKOptions(object):
+    def __init__(self, config=None):
+        self.max_image_size = (100, 100)
+        self.image_dir = 'images'
+        self.cache_dir = 'cache'
+        self.save_count_as = None # Field name on subclass where count is stored
+        self.cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
+        self.config = config
+        for key, value in self.config.__dict__.iteritems():
+            setattr(self, key, value)       
+                
+
+class IKModelBase(ModelBase):
+    def __new__(cls, name, bases, attrs):
+        options = attrs.pop('IK', None)
+        if options is not None:
+            cls._ik = IKOptions(options)
+        return ModelBase.__new__(cls, name, bases, attrs)
+
+        
+class IKModel(models.Model):
     """ Abstract base class implementing all core ImageKit functionality
     
-    Subclasses of ImageModel can override the inner IKConfig class to customize
+    Subclasses of IKModel can override the inner IKConfig class to customize
     storage locations and other options.
     
     """
+    __metaclass__ = IKModelBase
+    
     CROP_X_NONE   = 0
     CROP_X_LEFT   = 1
     CROP_X_CENTER = 2
@@ -58,7 +79,7 @@ class ImageModel(models.Model):
         (CROP_Y_BOTTOM, 'Bottom'),
     )
 
-    image = models.ImageField(_('image'), upload_to=get_storage_path)
+    image = models.ImageField(_('image'), upload_to='photos')
     crop_x = models.PositiveSmallIntegerField(choices=CROP_X_CHOICES,
                                               default=CROP_X_CENTER)
     crop_y = models.PositiveSmallIntegerField(choices=CROP_Y_CHOICES,
@@ -67,7 +88,7 @@ class ImageModel(models.Model):
     class Meta:
         abstract = True
         
-    class IKConfig:
+    class IK:
         """ Contains the default configuration for ImageModel subclasses.
         
         Subclasses can inherit from this class to override configuration 
@@ -79,25 +100,6 @@ class ImageModel(models.Model):
         cache_dir = 'cache'
         save_count_as = None # Field name on subclass where count is stored
         cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
-        
-    class SpecCache(object):
-        """ A pseudo-singleton object that caches ImageSpec instances
-        
-        Loads all ImageSpecs from the database and caches them to save on the
-        total number of queries made.
-        
-        """
-        __state = {"specs": {}}
-
-        def __init__(self):
-            self.__dict__ = self.__state
-            if not len(self.specs):
-                specs = ImageSpec.objects.all()
-                for spec in specs:
-                    self.specs[spec.name] = spec
-
-        def reset(self):
-            self.specs = {}            
 
     def _image_basename(self):
         """ Returns the basename of the original image file """
