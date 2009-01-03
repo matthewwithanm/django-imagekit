@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class IKSpec(object):
-    def __init__(self):
+    def __init__(self, spec=None):
         self.name = 'thumbnail'
         self.width = 100
         self.height = 100
@@ -16,6 +16,10 @@ class IKSpec(object):
         self.pre_cache = False
         self.increment_count = False
         self.effects = []
+        
+        if spec is not None:
+            for key, value in spec.items():
+                setattr(self, key, value)
 
 
 class SpecAccessor(object):
@@ -48,35 +52,38 @@ class IKOptions(object):
         self.cache_dir = 'cache'
         self.save_count_as = None # Field name on subclass where count is stored
         self.cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
-        self.spec_filename = "specs.yaml"
+        self.spec_filename = "imagekit.yaml"
         if config is not None:
             for key, value in config.__dict__.iteritems():
-                setattr(self, key, value)       
-                
+                setattr(self, key, value)
+
 
 class IKModelBase(ModelBase):
-    def __new__(cls, name, bases, attrs):
-        super_new = super(ModelBase, cls).__new__
-        parents = [b for b in bases if isinstance(b, IKModelBase)]
-        if not parents:
-            return super_new(cls, name, bases, attrs)
-            
-        options = IKOptions(attrs.pop('IK', None))
+    def __init__(cls, name, bases, attrs):
+        import os
+        import inspect
+        import yaml
+    
+        opts = IKOptions(getattr(cls, 'IK', None))
         
-        # load specs here
-        tn = IKSpec()
-        specs = [tn]
+        # load configuration file
+        try:
+            file_obj = open(opts.spec_filename)
+        except:
+            try:                
+                filename = os.path.join(os.path.dirname(inspect.getabsfile(cls)),
+                                                        opts.spec_filename)
+                file_obj = open(filename)
+            except:
+                return
+                
+        spec = yaml.load(file_obj)
         
-        # use a closure to pass specs to instances
-        def set_accessors(self):
-            for s in specs:
-                setattr(self, s.name, SpecAccessor(self, s))
-
-        attrs['set_accessors'] = set_accessors
-        
-        cls._ik = options
-
-        return ModelBase.__new__(cls, name, bases, attrs)
+        for size in spec['sizes']:
+            for name, spec = size.items():
+                spec =  IKSpec(spec)
+                accessor = SpecAccessor(spec)
+                setattr(cls, name, accessor)
 
         
 class IKModel(models.Model):
@@ -122,7 +129,7 @@ class IKModel(models.Model):
         abstract = True
         
     class IK:
-        pass
+        config_file_name = 'imagekit.yaml'
 
     def _image_basename(self):
         """ Returns the basename of the original image file """
