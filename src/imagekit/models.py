@@ -19,16 +19,17 @@ class IKModelBase(ModelBase):
         user_opts = getattr(cls, 'IK', None)
         opts = Options(user_opts)
         
-        setattr(cls, '_ik', opts)
-        
         try:
             module = __import__(opts.config_module,  {}, {}, [''])
         except ImportError:
             raise ImportError('Unable to load imagekit config module: %s' % opts.config_module)
         
         for spec in [spec for spec in module.__dict__.values() if \
-                     issubclass(spec, specs.ImageSpec)]:
-            setattr(cls, spec.name, specs.Descriptor(spec))
+                     isinstance(spec, type) and issubclass(spec, specs.ImageSpec)]:
+            setattr(cls, spec.name(), specs.Descriptor(spec))
+            opts.specs.append(spec)
+        
+        setattr(cls, '_ik', opts)
 
 
 class IKModel(models.Model):
@@ -39,117 +40,66 @@ class IKModel(models.Model):
     
     """
     __metaclass__ = IKModelBase
-    
-    CROP_X_NONE   = 0
-    CROP_X_LEFT   = 1
-    CROP_X_CENTER = 2
-    CROP_X_RIGHT  = 3
-
-    CROP_Y_NONE   = 0
-    CROP_Y_TOP    = 1
-    CROP_Y_CENTER = 2
-    CROP_Y_BOTTOM = 3 
-
-    CROP_X_CHOICES = (
-        (CROP_X_NONE, 'None'),
-        (CROP_X_LEFT, 'Left'),
-        (CROP_X_CENTER, 'Center'),
-        (CROP_X_RIGHT, 'Right'),
-    )
-
-    CROP_Y_CHOICES = (
-        (CROP_Y_NONE, 'None'),
-        (CROP_Y_TOP, 'Top'),
-        (CROP_Y_CENTER,  'Center'),
-        (CROP_Y_BOTTOM, 'Bottom'),
-    )
 
     image = models.ImageField(_('image'), upload_to='photos')
-    crop_x = models.PositiveSmallIntegerField(choices=CROP_X_CHOICES,
-                                              default=CROP_X_CENTER)
-    crop_y = models.PositiveSmallIntegerField(choices=CROP_Y_CHOICES,
-                                              default=CROP_Y_CENTER)
 
     class Meta:
         abstract = True
         
     class IK:
         pass
+        
+    def admin_thumbnail_view(self):
+        prop = getattr(self, 'admin_thumbnail', None)
+        if prop is None:
+            return 'An "admin_thumbnail" image spec has not been defined.'
+        else:
+            if hasattr(self, 'get_absolute_url'):
+                return u'<a href="%s"><img src="%s"></a>' % \
+                    (self.get_absolute_url(), prop.url)
+            else:
+                return u'<a href="%s"><img src="%s"></a>' % \
+                    (self.image.url, prop.url)
+    admin_thumbnail_view.short_description = _('Thumbnail')
+    admin_thumbnail_view.allow_tags = True
     
     @property        
     def cache_dir(self):
         """ Returns the path to the image cache directory """
-        return os.path.join(os.path.dirname(self._obj.image.path),
+        return os.path.join(os.path.dirname(self.image.path),
                             self._ik.cache_dir_name)
 
     @property
     def cache_url(self):
         """ Returns a url pointing to the image cache directory """
-        return '/'.join([os.path.dirname(self._obj.image.url),
+        return '/'.join([os.path.dirname(self.image.url),
                          self._ik.cache_dir_name])
     
-    def _cache_spec(self, spec):
-        if self._file_exists(spec):
-            return
-                        
-        # create cache directory if it does not exist
-        if not os.path.isdir(self._cache_path()):
-            os.makedirs(self._cache_path())
-            
-        img = Image.open(self.image.path)
-        
-        if img.size != spec.size and spec.size != (0, 0):
-            resized = resize_image(img, spec)
-            
-        output_filename = self._spec_filename(spec)
-        
-        try:
-            if img.format == 'JPEG':
-                resized.save(output_filename, img.format, quality=int(spec.quality))
-            else:
-                try:
-                    im.save(im_filename)
-                except KeyError:
-                    pass
-        except IOError, e:
-            if os.path.isfile(output_filename):
-                os.unlink(output_filename)
-            raise e
-            
-    def _delete_spec(self, spec, remove_dirs=True):
-        if not self._file_exists(spec):
-            return
-        accessor = getattr(self, spec.name)
-        if os.path.isfile(accessor.path):
-            os.remove(accessor.path)
-        if remove_dirs:
-            self._cleanupget_cache_dirs
-            
     def _cleanup_cache_dirs(self):
         try:
-            os.removedirs(self._cache_path())
+            os.removedirs(self.cache_path)
         except:
             pass
 
     def _clear_cache(self):
-        cache = SpecCache()
-        for photosize in cache.sizes.values():
-            self._delete_spec(spec, False)
+        for spec in self._ik.specs:
+            prop = getattr(self, spec.name())
+            prop.delete()
         self._cleanup_cache_dirs()
 
     def _pre_cache(self):
-        cache = SpecCache()
-        for spec in cache.specs.values():
-            if spec.cache_on_save:
-                self._cache_spec(spec)
+        for spec in self._ik.specs:
+            if spec.pre_cache:
+                prop = getattr(self, spec.name())
+                prop.create()
 
     def save(self, *args, **kwargs):
-        #if self._get_pk_val():
-        #    self._clear_cache()
+        if self._get_pk_val():
+            self._clear_cache()
         super(IKModel, self).save(*args, **kwargs)
-        #self._pre_cache()
+        self._pre_cache()
 
     def delete(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
-        self._clear_cache()
-        super(ImageModel, self).delete()
+        #self._clear_cache()
+        super(IKModel, self).delete()

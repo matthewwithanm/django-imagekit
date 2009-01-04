@@ -15,6 +15,7 @@ class Options(object):
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     # Configuration options coded in the models itself
     config_module = 'imagekit.config'
+    specs = []
     
     def __init__(self, opts):        
         for key, value in opts.__dict__.iteritems():

@@ -5,7 +5,7 @@ from imagekit import processors
 class ResizeThumbnail(processors.Resize):
     width = 100
     height = 75
-    crop = True
+    crop = ('center', 'center')
     
 class EnhanceSmall(processors.Adjustment):
     contrast = 1.2

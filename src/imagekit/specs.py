@@ -5,13 +5,15 @@ inheriting from IKModel will be modified with a descriptor/accessor for each
 spec found.
 
 """
+import os
+from imagekit import Image
+
 class ImageSpec(object):
-    cache_on_save = False
+    pre_cache = False
     output_quality = 70
     increment_count = False
     processors = []
     
-    @property
     @classmethod
     def name(cls):
         return getattr(cls, 'access_as', cls.__name__.lower())
@@ -34,8 +36,8 @@ class ImageSpec(object):
                                      quality=int(cls.output_quality),
                                      optimize=True)
             except IOError, e:
-                if os.path.isfile(filename):
-                    os.unlink(filename)
+                if os.path.isfile(save_as):
+                    os.remove(save_as)
                 raise e
         
         return processed_image
@@ -48,7 +50,9 @@ class Accessor(object):
         self.spec = spec
         
     def create(self):
-        self._img = self.spec.process(self.image, save_as=self.path)
+        if not os.path.isdir(self._obj.cache_dir):
+            os.makedirs(self._obj.cache_dir)
+        self._img = self.spec.process(Image.open(self._obj.image.path), save_as=self.path)
         
     def delete(self):
         if self.exists:
@@ -58,14 +62,14 @@ class Accessor(object):
     @property
     def name(self):
         filename, ext = os.path.splitext(os.path.basename(self._obj.image.path))
-        return self.spec._ik.cache_filename_format % \
+        return self._obj._ik.cache_filename_format % \
             {'filename': filename,
-             'sizename': self.spec.name,
+             'specname': self.spec.name(),
              'extension': ext.lstrip('.')}
              
     @property
     def path(self):
-        return os.abspath(os.path.join(self._obj.cache_dir, self.name)
+        return os.path.abspath(os.path.join(self._obj.cache_dir, self.name))
 
     @property
     def url(self):
@@ -85,7 +89,7 @@ class Accessor(object):
     @property
     def image(self):
         if self._img is None:
-            if not self.exists():
+            if not self.exists:
                 self.create()
             else:
                 self._img = Image.open(self.path)
