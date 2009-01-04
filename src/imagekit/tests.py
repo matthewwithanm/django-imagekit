@@ -5,7 +5,8 @@ from django.conf import settings
 from django.core.files.base import ContentFile
 from django.test import TestCase
 
-from models import *
+from models import IKModel
+from specs import ImageSpec
 
 
 # Required PIL classes may or may not be available from the root namespace

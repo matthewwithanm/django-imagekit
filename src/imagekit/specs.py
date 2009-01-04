@@ -17,24 +17,27 @@ class ImageSpec(object):
         return getattr(cls, 'access_as', cls.__name__.lower())
         
     @classmethod
-    def create(cls, image, filename):
+    def process(cls, image, save_as=None):
         processed_image = image.copy()
         for proc in cls.processors:
             processed_image = proc.process(processed_image)
-        try:
-            if image.format != 'JPEG':
-                try:
-                    processed_image.save(im_filename)
-                    return
-                except KeyError:
-                    pass
-            processed_image.save(filename, 'JPEG',
-                                 quality=int(cls.output_quality),
-                                 optimize=True)
-        except IOError, e:
-            if os.path.isfile(filename):
-                os.unlink(filename)
-            raise e
+            
+        if save_as is not None:
+            try:
+                if image.format != 'JPEG':
+                    try:
+                        processed_image.save(save_as)
+                        return
+                    except KeyError:
+                        pass
+                processed_image.save(save_as, 'JPEG',
+                                     quality=int(cls.output_quality),
+                                     optimize=True)
+            except IOError, e:
+                if os.path.isfile(filename):
+                    os.unlink(filename)
+                raise e
+        
         return processed_image
         
 
@@ -45,7 +48,7 @@ class Accessor(object):
         self.spec = spec
         
     def create(self):
-        self._img = self.spec.create(self.image, self.path)
+        self._img = self.spec.process(self.image, save_as=self.path)
         
     def delete(self):
         if self.exists:
