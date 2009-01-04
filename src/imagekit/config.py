@@ -11,5 +11,6 @@ class EnhanceSmall(processors.Adjustment):
     contrast = 1.2
     sharpness = 1.1
     
-class Thumbnail(ImageSpec):
+class DjangoAdminThumbnail(ImageSpec):
+    access_as = 'admin_thumbnail'
     processors = [ResizeThumbnail, EnhanceSmall]
