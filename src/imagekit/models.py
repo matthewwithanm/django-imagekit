@@ -14,7 +14,7 @@ class IKProperty(object):
         self.spec = spec
         
     def create(self):
-        resize_to_spec(self.image, self.spec)
+        self.spec.process(self.image, self.path)
         
     def delete(self):
         if self.exists:
@@ -62,7 +62,7 @@ class IKProperty(object):
     @property
     def file(self):
         if not self.exists:
-            return None
+            self.create()
         return open(self.path)
 
 
