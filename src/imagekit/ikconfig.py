@@ -1,14 +1,15 @@
-from imagekit import specs
+from imagekit.specs import ImageSpec
+from imagekit import processors
 
 
-class ResizeThumbnail(specs.Resize):
+class ResizeThumbnail(processors.Resize):
     width = 100
     height = 75
     crop = True
     
-class EnhanceSmall(specs.Adjustment):
+class EnhanceSmall(processors.Adjustment):
     contrast = 1.2
     sharpness = 1.1
     
-class Thumbnail(specs.Spec):
+class Thumbnail(ImageSpec):
     processors = [ResizeThumbnail, EnhanceSmall]

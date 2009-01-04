@@ -4,97 +4,10 @@ from django.conf import settings
 from django.db import models
 from django.db.models.base import ModelBase
 from django.utils.translation import ugettext_lazy as _
-import specs    
+from imagekit.options import Options
+from imagekit import specs
 
 
-class IKProperty(object):
-    def __init__(self, obj, spec):
-        self._img = None
-        self._obj = obj
-        self.spec = spec
-        
-    def create(self):
-        self.spec.process(self.image, self.path)
-        
-    def delete(self):
-        if self.exists:
-            os.remove(self.path)
-        self._img = None
-        
-    @property
-    def name(self):
-        filename, extension = os.path.splitext(self.obj._image_basename())
-        return self.spec._ik.cache_filename_format % \
-            {'filename': filename,
-             'sizename': self.spec.name,
-             'extension': extension.lstrip('.')}
-             
-    @property
-    def path(self):
-        return os.abspath(os.path.join(self._obj._cache_dir(), self.spec.name)
-
-    @property
-    def url(self):
-        if not self.exists:
-            self.create()
-        return '/'.join([self._obj._cache_url(), self.name])
-        
-    @property
-    def exists(self):
-        return os.path.isfile(self.path)
-        
-    @property
-    def image(self):
-        if self._img is None:
-            if not self.exists():
-                self.create()
-            self._img = Image.open(self.path)
-        return self._img
-        
-    @property
-    def width(self):
-        return self.image.size[0]
-        
-    @property
-    def height(self):
-        return self.image.size[1]
-        
-    @property
-    def file(self):
-        if not self.exists:
-            self.create()
-        return open(self.path)
-
-
-class IKOptions(object):
-    # Images will be resized to fit if they are larger than max_image_size
-    max_image_size = None
-    # Media subdirectories
-    image_dir_name = 'images'
-    cache_dir_name = 'cache'
-    # If given the image view count will be saved as this field name
-    save_count_on_model_as = None
-    # String pattern used to generate cache file names
-    cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
-    # Configuration options coded in the models itself
-    config_module = 'imagekit.ikconfig'
-    
-    def __init__(self, opts):        
-        for key, value in opts.__dict__.iteritems():
-            setattr(self, key, value)
-
-
-class IKDescriptor(object):
-    def __init__(self, spec):
-        self._spec = spec
-        self._prop = None
-        
-    def __get__(self, obj, type=None):
-        if self._prop is None:
-            self._prop = IKProperty(obj, self._spec)
-        return self._prop
-
-        
 class IKModelBase(ModelBase):
     def __init__(cls, name, bases, attrs):
         
@@ -103,7 +16,7 @@ class IKModelBase(ModelBase):
             return
     
         user_opts = getattr(cls, 'IK', None)
-        opts = IKOptions(user_opts)
+        opts = Options(user_opts)
         
         setattr(cls, '_ik', opts)
         
@@ -113,9 +26,8 @@ class IKModelBase(ModelBase):
             raise ImportError('Unable to load imagekit config module: %s' % opts.config_module)
         
         for spec in [spec for spec in module.__dict__.values() if \
-          isinstance(spec, type)]:
-            if issubclass(spec, specs.Size):
-                setattr(cls, spec.__name__.lower(), IKDescriptor(spec))
+                     issubclass(spec, specs.ImageSpec)]:
+            setattr(cls, spec.name, specs.Descriptor(spec))
 
 
 class IKModel(models.Model):
@@ -162,19 +74,19 @@ class IKModel(models.Model):
         
     class IK:
         pass
-
-    def _image_basename(self):
-        """ Returns the basename of the original image file """
-        return os.path.basename(self.image.path)
-
-    def _cache_dir(self):
+    
+    @property        
+    def cache_dir(self):
         """ Returns the path to the image cache directory """
-        return os.path.join(os.path.dirname(self.image.path), self.IKConfig.cache_dir)
+        return os.path.join(os.path.dirname(self._obj.image.path),
+                            self._ik.cache_dir_name)
 
-    def _cache_url(self):
+    @property
+    def cache_url(self):
         """ Returns a url pointing to the image cache directory """
-        return '/'.join([os.path.dirname(self.image.url), self.IKConfig.cache_dir])
-        
+        return '/'.join([os.path.dirname(self._obj.image.url),
+                         self._ik.cache_dir_name])
+    
     def _cache_spec(self, spec):
         if self._file_exists(spec):
             return
@@ -210,7 +122,7 @@ class IKModel(models.Model):
         if os.path.isfile(accessor.path):
             os.remove(accessor.path)
         if remove_dirs:
-            self._cleanup_cache_dirs
+            self._cleanupget_cache_dirs
             
     def _cleanup_cache_dirs(self):
         try:
