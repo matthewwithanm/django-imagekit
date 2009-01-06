@@ -16,23 +16,27 @@ from imagekit import Image
 class ResizeToWidth(processors.Resize):
     width = 100
     
-class ResizeToHeigh(processors.Resize):
+class ResizeToHeight(processors.Resize):
     height = 100
     
 class ResizeToFit(processors.Resize):
     width = 100
     height = 100
     
-class ResizeCrop(ResizeToFit):
-    crop = True
+class ResizeCropped(ResizeToFit):
+    crop = ('center', 'center')
 
 class TestResizeToWidth(ImageSpec):
     access_as = 'to_width'
     processors = [ResizeToWidth]
 
-
-IMG_PATH = os.path.join(os.path.dirname(__file__), 'test.jpg')
-
+class TestResizeToHeight(ImageSpec):
+    access_as = 'to_height'
+    processors = [ResizeToHeight]
+    
+class TestResizeCropped(ImageSpec):
+    access_as = 'cropped'
+    processors = [ResizeCropped]
 
 class TestPhoto(IKModel):
     """ Minimal ImageModel class for testing """
@@ -56,9 +60,6 @@ class IKTest(TestCase):
         # destroy temp file
         self.tmp.close()
         
-    def test_config(self):
-        self.assertEqual(self.p._ik.specs, [TestResizeToWidth])
-        
     def test_setup(self):
         self.assertEqual(self.p.image.width, 800)
         self.assertEqual(self.p.image.height, 600)
@@ -66,6 +67,14 @@ class IKTest(TestCase):
     def test_to_width(self):
         self.assertEqual(self.p.to_width.width, 100)
         self.assertEqual(self.p.to_width.height, 75)
+        
+    def test_to_height(self):
+        self.assertEqual(self.p.to_height.width, 133)
+        self.assertEqual(self.p.to_height.height, 100)
+        
+    def test_crop(self):
+        self.assertEqual(self.p.cropped.width, 100)
+        self.assertEqual(self.p.cropped.height, 100)
 
     def test_url(self):
         url = "%s/%s" % (self.p.cache_url, 'test_to_width.jpg')
