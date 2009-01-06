@@ -52,7 +52,7 @@ class Accessor(object):
     def create(self):
         if not os.path.isdir(self._obj.cache_dir):
             os.makedirs(self._obj.cache_dir)
-        self._img = self.spec.process(Image.open(self._obj.image.path), save_as=self.path)
+        self._img = self.spec.process(Image.open(self._obj.ik_image_field.path), save_as=self.path)
         
     def delete(self):
         if self.exists:
@@ -60,8 +60,12 @@ class Accessor(object):
         self._img = None
         
     @property
+    def exists(self):
+        return os.path.isfile(self.path)
+        
+    @property
     def name(self):
-        filename, ext = os.path.splitext(os.path.basename(self._obj.image.path))
+        filename, ext =  os.path.splitext(os.path.basename(self._obj.ik_image_field.path))
         return self._obj._ik.cache_filename_format % \
             {'filename': filename,
              'specname': self.spec.name(),
@@ -75,16 +79,12 @@ class Accessor(object):
     def url(self):
         if not self.exists:
             self.create()
-        if self.spec.increment_count():
+        if self.spec.increment_count:
             fieldname = self._obj._ik.save_count_as
             if fieldname is not None:
                 current_count = getattr(self._obj, fieldname)
                 setattr(self._obj, fieldname, current_count + 1)
         return '/'.join([self._obj.cache_url, self.name])
-        
-    @property
-    def exists(self):
-        return os.path.isfile(self.path)
         
     @property
     def image(self):
@@ -113,9 +113,6 @@ class Accessor(object):
 class Descriptor(object):
     def __init__(self, spec):
         self._spec = spec
-        self._prop = None
 
     def __get__(self, obj, type=None):
-        if self._prop is None:
-            self._prop = Accessor(obj, self._spec)
-        return self._prop
+        return Accessor(obj, self._spec)

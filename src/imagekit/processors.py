@@ -42,11 +42,11 @@ class Resize(ImageProcessor):
             box = (box_left, box_upper, box_right, box_lower)
             image = image.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
         else:
-            if not cls.width == 0 and not cls.height == 0:
+            if not cls.width is None and not cls.height is None:
                 ratio = min(float(cls.width)/cur_width,
                             float(cls.height)/cur_height)
             else:
-                if cls.width == 0:
+                if cls.width is None:
                     ratio = float(cls.height)/cur_height
                 else:
                     ratio = float(cls.width)/cur_width

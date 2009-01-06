@@ -16,7 +16,7 @@ class IKModelBase(ModelBase):
         if not parents:
             return
     
-        user_opts = getattr(cls, 'IK', None)
+        user_opts = getattr(cls, 'IKConfig', None)
         opts = Options(user_opts)
         
         try:
@@ -24,11 +24,13 @@ class IKModelBase(ModelBase):
         except ImportError:
             raise ImportError('Unable to load imagekit config module: %s' % opts.config_module)
         
-        for spec in [spec for spec in module.__dict__.values() if \
-                     isinstance(spec, type) and issubclass(spec, specs.ImageSpec)]:
+        for spec in [spec for spec in module.__dict__.values() \
+                     if isinstance(spec, type) \
+                     and issubclass(spec, specs.ImageSpec) \
+                     and spec != specs.ImageSpec]:
             setattr(cls, spec.name(), specs.Descriptor(spec))
             opts.specs.append(spec)
-        
+            
         setattr(cls, '_ik', opts)
 
 
@@ -41,12 +43,10 @@ class IKModel(models.Model):
     """
     __metaclass__ = IKModelBase
 
-    image = models.ImageField(_('image'), upload_to='photos')
-
     class Meta:
         abstract = True
         
-    class IK:
+    class IKConfig:
         pass
         
     def admin_thumbnail_view(self):
@@ -59,21 +59,25 @@ class IKModel(models.Model):
                     (self.get_absolute_url(), prop.url)
             else:
                 return u'<a href="%s"><img src="%s"></a>' % \
-                    (self.image.url, prop.url)
+                    (self.ik_image_field.url, prop.url)
     admin_thumbnail_view.short_description = _('Thumbnail')
     admin_thumbnail_view.allow_tags = True
     
+    @property
+    def ik_image_field(self):
+        return getattr(self, self._ik.image_field)
+        
     @property        
     def cache_dir(self):
         """ Returns the path to the image cache directory """
-        return os.path.join(os.path.dirname(self.image.path),
-                            self._ik.cache_dir_name)
+        return os.path.join(os.path.dirname(self.ik_image_field.path),
+                            self._ik.cache_dir)
 
     @property
     def cache_url(self):
         """ Returns a url pointing to the image cache directory """
-        return '/'.join([os.path.dirname(self.image.url),
-                         self._ik.cache_dir_name])
+        return '/'.join([os.path.dirname(self.ik_image_field.url),
+                         self._ik.cache_dir])
     
     def _cleanup_cache_dirs(self):
         try:
@@ -94,12 +98,12 @@ class IKModel(models.Model):
                 prop.create()
 
     def save(self, *args, **kwargs):
-        if self._get_pk_val():
-            self._clear_cache()
+        #if self._get_pk_val():
+        #    self._clear_cache()
         super(IKModel, self).save(*args, **kwargs)
-        self._pre_cache()
+        #self._pre_cache()
 
     def delete(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
-        #self._clear_cache()
+        self._clear_cache()
         super(IKModel, self).delete()
