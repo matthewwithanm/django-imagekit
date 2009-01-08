@@ -5,6 +5,8 @@ class Options(object):
 
     """
     image_field = 'image'
+    crop_horz_field = 'crop_horz'
+    crop_vert_field = 'crop_vert'
     max_image_size = None
     cache_dir = 'images'
     save_count_as = None

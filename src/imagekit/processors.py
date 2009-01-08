@@ -11,34 +11,36 @@ from imagekit import *
 class ImageProcessor(object):
     """ Base image processor class """
     @classmethod
-    def process(cls, image):
+    def process(cls, image, obj):
         return image
 
 
 class Resize(ImageProcessor):
     width = None
     height = None
-    crop = False # ('top', 'left')
+    crop = False
     upscale = False
     
     @classmethod
-    def process(cls, image):
+    def process(cls, image, obj):
         cur_width, cur_height = image.size
         if cls.crop:
+            crop_horz = getattr(obj, obj._ik.crop_horz_field, 1)
+            crop_vert = getattr(obj, obj._ik.crop_vert_field, 1)
             ratio = max(float(cls.width)/cur_width, float(cls.height)/cur_height)
             resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
             crop_x, crop_y = (abs(cls.width - resize_x), abs(cls.height - resize_y))
             x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
-            box_upper, box_lower = {
-                'top': (9, cls.height),
-                'center': (int(y_diff), int(y_diff + cls.height)),
-                'bottom': (int(crop_y), int(resize_y)),
-            }[cls.crop[0]]
             box_left, box_right = {
-                'left': (0, cls.width),
-                'center': (int(x_diff), int(x_diff  +cls.width)),
-                'right': (int(crop_x), int(resize_x)),
-            }[cls.crop[1]]
+                0: (0, cls.width),
+                1: (int(x_diff), int(x_diff + cls.width)),
+                2: (int(crop_x), int(resize_x)),
+            }[crop_horz]
+            box_upper, box_lower = {
+                0: (0, cls.height),
+                1: (int(y_diff), int(y_diff + cls.height)),
+                2: (int(crop_y), int(resize_y)),
+            }[crop_vert]
             box = (box_left, box_upper, box_right, box_lower)
             image = image.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
         else:
@@ -74,7 +76,7 @@ class Transpose(ImageProcessor):
     method = 'FLIP_LEFT_RIGHT'
     
     @classmethod
-    def process(cls, image):
+    def process(cls, image, obj):
         return image.transpose(getattr(Image, cls.method))        
 
     
@@ -85,7 +87,7 @@ class Adjustment(ImageProcessor):
     sharpness = 1.0
 
     @classmethod
-    def process(cls, image):
+    def process(cls, image, obj):
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(cls, name.lower())
             if factor != 1.0:

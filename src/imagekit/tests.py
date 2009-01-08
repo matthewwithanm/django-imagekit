@@ -40,7 +40,7 @@ class TestResizeCropped(ImageSpec):
 
 class TestPhoto(IKModel):
     """ Minimal ImageModel class for testing """
-    image = models.ImageField(upload_to='originals')
+    image = models.ImageField(upload_to='images')
     
     class IKConfig:
         config_module = 'imagekit.tests'

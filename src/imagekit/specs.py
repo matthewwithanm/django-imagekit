@@ -21,10 +21,10 @@ class ImageSpec(object):
         return getattr(cls, 'access_as', cls.__name__.lower())
         
     @classmethod
-    def process(cls, image):
+    def process(cls, image, obj):
         processed_image = image.copy()
         for proc in cls.processors:
-            processed_image = proc.process(processed_image)
+            processed_image = proc.process(processed_image, obj)
         return processed_image
         
 
@@ -38,7 +38,8 @@ class Accessor(object):
         if self._exists():
             return
             
-        self._img = self.spec.process(Image.open(self._obj._imgfield.path))
+        self._img = self.spec.process(Image.open(self._obj._imgfield.path),
+                                      self._obj)
 
         fmt = self._img.format or 'JPEG'
         tmp = tempfile.TemporaryFile()

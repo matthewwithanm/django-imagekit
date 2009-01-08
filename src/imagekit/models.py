@@ -11,14 +11,11 @@ from imagekit import specs
 
 class IKModelBase(ModelBase):
     def __init__(cls, name, bases, attrs):
-        
         parents = [b for b in bases if isinstance(b, IKModelBase)]
         if not parents:
             return
-    
         user_opts = getattr(cls, 'IKConfig', None)
         opts = Options(user_opts)
-        
         try:
             module = __import__(opts.config_module,  {}, {}, [''])
         except ImportError:
@@ -30,7 +27,6 @@ class IKModelBase(ModelBase):
                      and spec != specs.ImageSpec]:
             setattr(cls, spec.name(), specs.Descriptor(spec))
             opts.specs.append(spec)
-            
         setattr(cls, '_ik', opts)
 
 
@@ -59,25 +55,18 @@ class IKModel(models.Model):
                     (self.get_absolute_url(), prop.url)
             else:
                 return u'<a href="%s"><img src="%s"></a>' % \
-                    (self.ik_image_field.url, prop.url)
+                    (self._imgfield.url, prop.url)
     admin_thumbnail_view.short_description = _('Thumbnail')
     admin_thumbnail_view.allow_tags = True
     
     @property
     def _imgfield(self):
         return getattr(self, self._ik.image_field)
-    
-    def _cleanup_cache_dirs(self):
-        try:
-            os.removedirs(self.cache_path)
-        except:
-            pass
 
     def _clear_cache(self):
         for spec in self._ik.specs:
             prop = getattr(self, spec.name())
             prop._delete()
-        self._cleanup_cache_dirs()
 
     def _pre_cache(self):
         for spec in self._ik.specs:
