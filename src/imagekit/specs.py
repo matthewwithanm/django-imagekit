@@ -6,7 +6,7 @@ spec found.
 
 """
 import os
-from imagekit import Image
+from imagekit.lib import *
 from imagekit.utils import img_to_fobj
 from django.core.files.base import ContentFile
 

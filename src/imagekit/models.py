@@ -6,9 +6,9 @@ from django.db import models
 from django.db.models.base import ModelBase
 from django.utils.translation import ugettext_lazy as _
 
-from imagekit import *
-from imagekit.options import Options
 from imagekit import specs
+from imagekit.lib import *
+from imagekit.options import Options
 from imagekit.utils import img_to_fobj
 
 

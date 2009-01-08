@@ -6,11 +6,10 @@ from django.core.files.base import ContentFile
 from django.db import models
 from django.test import TestCase
 
-from models import IKModel
-from specs import ImageSpec
 from imagekit import processors
-
-from imagekit import Image
+from imagekit.models import IKModel
+from imagekit.specs import ImageSpec
+from imagekit.lib import Image
 
 
 class ResizeToWidth(processors.Resize):

@@ -1,3 +1,5 @@
+""" ImageKit utility functions """
+
 import tempfile
 
 def img_to_fobj(img, format, **kwargs):

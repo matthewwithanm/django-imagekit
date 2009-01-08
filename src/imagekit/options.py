@@ -1,14 +1,6 @@
 # Imagekit options
 from imagekit import processors
 from imagekit.specs import ImageSpec
-
-
-class ResizeMax(processors.Resize):
-    width = 500
-    height = 500
-    
-class PreprocessorSpec(ImageSpec):
-    processors = [ResizeMax]
     
 
 class Options(object):
@@ -18,7 +10,7 @@ class Options(object):
     image_field = 'image'
     crop_horz_field = 'crop_horz'
     crop_vert_field = 'crop_vert'
-    preprocessor_spec = PreprocessorSpec
+    preprocessor_spec = None
     cache_dir = 'images'
     save_count_as = None
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
