@@ -6,13 +6,13 @@ spec found.
 
 """
 import os
-import tempfile
 from imagekit import Image
+from imagekit.utils import img_to_fobj
 from django.core.files.base import ContentFile
 
 class ImageSpec(object):
     pre_cache = False
-    output_quality = 70
+    quality = 70
     increment_count = False
     processors = []
     
@@ -34,30 +34,22 @@ class Accessor(object):
         self._obj = obj
         self.spec = spec
         
+    def _get_imgfile(self):
+        format = self._img.format or 'JPEG'
+        if format != 'JPEG':
+            imgfile = img_to_fobj(self._img, format)
+        else:
+            imgfile = img_to_fobj(self._img, format,
+                                  quality=int(self.spec.quality),
+                                  optimize=True)
+        return imgfile
+        
     def _create(self):
         if self._exists():
             return
-            
-        self._img = self.spec.process(Image.open(self._obj._imgfield.path),
+        self._img = self.spec.process(Image.open(self._obj._imgfield.file),
                                       self._obj)
-
-        fmt = self._img.format or 'JPEG'
-        tmp = tempfile.TemporaryFile()
-        
-        try:
-            if fmt != 'JPEG':
-                try:
-                    self._img.save(tmp, fmt)
-                    return
-                except KeyError:
-                    pass
-            self._img.save(tmp, fmt,
-                           quality=int(self.spec.output_quality),
-                           optimize=True)
-        except IOError, e:
-            self._obj._image.storage.delete(self._path())
-        tmp.seek(0)
-        content = ContentFile(tmp.read())
+        content = ContentFile(self._get_imgfile().read())
         self._obj._imgfield.storage.save(self._path(), content)
         
     def _delete(self):

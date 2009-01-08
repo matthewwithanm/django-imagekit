@@ -11,7 +11,7 @@ from imagekit import *
 class ImageProcessor(object):
     """ Base image processor class """
     @classmethod
-    def process(cls, image, obj):
+    def process(cls, image, obj=None):
         return image
 
 
@@ -22,7 +22,7 @@ class Resize(ImageProcessor):
     upscale = False
     
     @classmethod
-    def process(cls, image, obj):
+    def process(cls, image, obj=None):
         cur_width, cur_height = image.size
         if cls.crop:
             crop_horz = getattr(obj, obj._ik.crop_horz_field, 1)
@@ -76,7 +76,7 @@ class Transpose(ImageProcessor):
     method = 'FLIP_LEFT_RIGHT'
     
     @classmethod
-    def process(cls, image, obj):
+    def process(cls, image, obj=None):
         return image.transpose(getattr(Image, cls.method))        
 
     
@@ -87,7 +87,7 @@ class Adjustment(ImageProcessor):
     sharpness = 1.0
 
     @classmethod
-    def process(cls, image, obj):
+    def process(cls, image, obj=None):
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(cls, name.lower())
             if factor != 1.0:
@@ -96,6 +96,39 @@ class Adjustment(ImageProcessor):
 
 
 class Reflection(ImageProcessor):
-    background_color = '#fffff'
+    background_color = '#FFFFFF'
     size = 0.0
     opacity = 0.6
+    
+    @classmethod
+    def process(cls, image, obj=None):
+        # convert bgcolor string to rgb value
+        background_color = ImageColor.getrgb(cls.background_color)
+        # copy orignial image and flip the orientation
+        reflection = image.copy().transpose(Image.FLIP_TOP_BOTTOM)
+        # create a new image filled with the bgcolor the same size
+        background = Image.new("RGB", image.size, background_color)
+        # calculate our alpha mask
+        start = int(255 - (255 * cls.opacity)) # The start of our gradient
+        steps = int(255 * cls.size) # the number of intermedite values
+        increment = (255 - start) / float(steps)
+        mask = Image.new('L', (1, 255))
+        for y in range(255):
+            if y < steps:
+                val = int(y * increment + start)
+            else:
+                val = 255
+            mask.putpixel((0, y), val)
+        alpha_mask = mask.resize(image.size)
+        # merge the reflection onto our background color using the alpha mask
+        reflection = Image.composite(background, reflection, alpha_mask)
+        # crop the reflection
+        reflection_height = int(image.size[1] * cls.size)
+        reflection = reflection.crop((0, 0, image.size[0], reflection_height))
+        # create new image sized to hold both the original image and the reflection
+        composite = Image.new("RGB", (image.size[0], image.size[1]+reflection_height), background_color)
+        # paste the orignal image and the reflection into the composite image
+        composite.paste(image, (0, 0))
+        composite.paste(reflection, (0, image.size[1]))
+        # return the image complete with reflection effect
+        return composite

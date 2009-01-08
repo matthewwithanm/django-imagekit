@@ -1,12 +1,15 @@
 import os
 from datetime import datetime
 from django.conf import settings
+from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.base import ModelBase
 from django.utils.translation import ugettext_lazy as _
 
+from imagekit import *
 from imagekit.options import Options
 from imagekit import specs
+from imagekit.utils import img_to_fobj
 
 
 class IKModelBase(ModelBase):
@@ -75,9 +78,30 @@ class IKModel(models.Model):
                 prop._create()
 
     def save(self, *args, **kwargs):
+        preprocess = False
         if self._get_pk_val():
             self._clear_cache()
+        else:
+            preprocess = True    
         super(IKModel, self).save(*args, **kwargs)
+        if preprocess:
+            spec = self._ik.preprocessor_spec
+            if spec is not None:
+                newfile = self._imgfield.storage.open(str(self._imgfield))
+                img = Image.open(newfile)
+                img = spec.process(img, None)
+                format = img.format or 'JPEG'
+                if format != 'JPEG':
+                    imgfile = img_to_fobj(img, format)
+                else:
+                    imgfile = img_to_fobj(img, format,
+                                          quality=int(spec.quality),
+                                          optimize=True)
+                content = ContentFile(imgfile.read())
+                newfile.close()
+                name = str(self._imgfield)
+                self._imgfield.storage.delete(name)
+                self._imgfield.storage.save(name, content)
         self._pre_cache()
 
     def delete(self):
