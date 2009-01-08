@@ -76,6 +76,7 @@ class Accessor(object):
             if fieldname is not None:
                 current_count = getattr(self._obj, fieldname)
                 setattr(self._obj, fieldname, current_count + 1)
+                self._obj.save(clear_cache=False)
         return self._obj._imgfield.storage.url(self._path())
         
     @property

@@ -77,14 +77,11 @@ class IKModel(models.Model):
                 prop = getattr(self, spec.name())
                 prop._create()
 
-    def save(self, *args, **kwargs):
-        preprocess = False
-        if self._get_pk_val():
-            self._clear_cache()
-        else:
-            preprocess = True    
+    def save(self, clear_cache=True, *args, **kwargs):
+        is_new = self._get_pk_val is None
         super(IKModel, self).save(*args, **kwargs)
-        if preprocess:
+        if is_new:
+            clear_cache = False
             spec = self._ik.preprocessor_spec
             if spec is not None:
                 newfile = self._imgfield.storage.open(str(self._imgfield))
@@ -102,7 +99,9 @@ class IKModel(models.Model):
                 name = str(self._imgfield)
                 self._imgfield.storage.delete(name)
                 self._imgfield.storage.save(name, content)
-        self._pre_cache()
+        if clear_cache:
+            self._clear_cache()
+            self._pre_cache()
 
     def delete(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
