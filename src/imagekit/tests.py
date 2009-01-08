@@ -40,7 +40,7 @@ class TestResizeCropped(ImageSpec):
 
 class TestPhoto(IKModel):
     """ Minimal ImageModel class for testing """
-    image = models.ImageField(upload_to='images')
+    image = models.ImageField(upload_to='originals')
     
     class IKConfig:
         config_module = 'imagekit.tests'
@@ -77,8 +77,8 @@ class IKTest(TestCase):
         self.assertEqual(self.p.cropped.height, 100)
 
     def test_url(self):
-        url = "%s/%s" % (self.p.cache_url, 'test_to_width.jpg')
-        self.assertEqual(self.p.to_width.url, url)
+        tup = (settings.MEDIA_URL, self.p._ik.cache_dir, 'test_to_width.jpg')
+        self.assertEqual(self.p.to_width.url, "%s%s/%s" % tup)
  
     def tearDown(self):
         # make sure image file is deleted

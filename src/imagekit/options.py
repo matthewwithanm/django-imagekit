@@ -6,7 +6,7 @@ class Options(object):
     """
     image_field = 'image'
     max_image_size = None
-    cache_dir = 'ik_cache'
+    cache_dir = 'images'
     save_count_as = None
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     config_module = 'imagekit.config'

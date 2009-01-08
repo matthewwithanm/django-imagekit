@@ -6,7 +6,9 @@ spec found.
 
 """
 import os
+import tempfile
 from imagekit import Image
+from django.core.files.base import ContentFile
 
 class ImageSpec(object):
     pre_cache = False
@@ -19,27 +21,10 @@ class ImageSpec(object):
         return getattr(cls, 'access_as', cls.__name__.lower())
         
     @classmethod
-    def process(cls, image, save_as=None):
+    def process(cls, image):
         processed_image = image.copy()
         for proc in cls.processors:
             processed_image = proc.process(processed_image)
-            
-        if save_as is not None:
-            try:
-                if image.format != 'JPEG':
-                    try:
-                        processed_image.save(save_as)
-                        return
-                    except KeyError:
-                        pass
-                processed_image.save(save_as, 'JPEG',
-                                     quality=int(cls.output_quality),
-                                     optimize=True)
-            except IOError, e:
-                if os.path.isfile(save_as):
-                    os.remove(save_as)
-                raise e
-        
         return processed_image
         
 
@@ -49,50 +34,67 @@ class Accessor(object):
         self._obj = obj
         self.spec = spec
         
-    def create(self):
-        if not os.path.isdir(self._obj.cache_dir):
-            os.makedirs(self._obj.cache_dir)
-        self._img = self.spec.process(Image.open(self._obj.ik_image_field.path), save_as=self.path)
+    def _create(self):
+        if self._exists():
+            return
+            
+        self._img = self.spec.process(Image.open(self._obj._imgfield.path))
+
+        fmt = self._img.format or 'JPEG'
+        tmp = tempfile.TemporaryFile()
         
-    def delete(self):
-        if self.exists:
-            os.remove(self.path)
-        self._img = None
+        try:
+            if fmt != 'JPEG':
+                try:
+                    self._img.save(tmp, fmt)
+                    return
+                except KeyError:
+                    pass
+            self._img.save(tmp, fmt,
+                           quality=int(self.spec.output_quality),
+                           optimize=True)
+        except IOError, e:
+            self._obj._image.storage.delete(self._path())
+        tmp.seek(0)
+        content = ContentFile(tmp.read())
+        self._obj._imgfield.storage.save(self._path(), content)
         
-    @property
-    def exists(self):
-        return os.path.isfile(self.path)
-        
-    @property
-    def name(self):
-        filename, ext =  os.path.splitext(os.path.basename(self._obj.ik_image_field.path))
+    def _delete(self):
+        self._obj._imgfield.storage.delete(self._path())
+
+    def _exists(self):
+        return self._obj._imgfield.storage.exists(self._path())
+
+    def _name(self):
+        filename, ext =  os.path.splitext(os.path.basename(self._obj._imgfield.path))
         return self._obj._ik.cache_filename_format % \
             {'filename': filename,
              'specname': self.spec.name(),
              'extension': ext.lstrip('.')}
-             
-    @property
-    def path(self):
-        return os.path.abspath(os.path.join(self._obj.cache_dir, self.name))
+
+    def _path(self):
+        return os.path.join(self._obj._ik.cache_dir, self._name())
 
     @property
     def url(self):
-        if not self.exists:
-            self.create()
+        self._create()
         if self.spec.increment_count:
             fieldname = self._obj._ik.save_count_as
             if fieldname is not None:
                 current_count = getattr(self._obj, fieldname)
                 setattr(self._obj, fieldname, current_count + 1)
-        return '/'.join([self._obj.cache_url, self.name])
+        return self._obj._imgfield.storage.url(self._path())
+        
+    @property
+    def file(self):
+        self._create()
+        return self._obj._imgfield.storage.open(self._path())
         
     @property
     def image(self):
         if self._img is None:
-            if not self.exists:
-                self.create()
-            else:
-                self._img = Image.open(self.path)
+            self._create()
+            self._img = Image.open(self.file)
         return self._img
         
     @property
@@ -102,12 +104,6 @@ class Accessor(object):
     @property
     def height(self):
         return self.image.size[1]
-        
-    @property
-    def file(self):
-        if not self.exists:
-            self.create()
-        return open(self.path)
 
 
 class Descriptor(object):

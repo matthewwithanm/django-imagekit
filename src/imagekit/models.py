@@ -64,19 +64,19 @@ class IKModel(models.Model):
     admin_thumbnail_view.allow_tags = True
     
     @property
-    def ik_image_field(self):
+    def _imgfield(self):
         return getattr(self, self._ik.image_field)
         
     @property        
     def cache_dir(self):
         """ Returns the path to the image cache directory """
-        return os.path.join(os.path.dirname(self.ik_image_field.path),
+        return os.path.join(os.path.dirname(self._imgfield.path),
                             self._ik.cache_dir)
 
     @property
     def cache_url(self):
         """ Returns a url pointing to the image cache directory """
-        return '/'.join([os.path.dirname(self.ik_image_field.url),
+        return '/'.join([os.path.dirname(self._imgfield.url),
                          self._ik.cache_dir])
     
     def _cleanup_cache_dirs(self):
@@ -88,14 +88,14 @@ class IKModel(models.Model):
     def _clear_cache(self):
         for spec in self._ik.specs:
             prop = getattr(self, spec.name())
-            prop.delete()
+            prop._delete()
         self._cleanup_cache_dirs()
 
     def _pre_cache(self):
         for spec in self._ik.specs:
             if spec.pre_cache:
                 prop = getattr(self, spec.name())
-                prop.create()
+                prop._create()
 
     def save(self, *args, **kwargs):
         #if self._get_pk_val():
