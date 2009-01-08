@@ -66,18 +66,6 @@ class IKModel(models.Model):
     @property
     def _imgfield(self):
         return getattr(self, self._ik.image_field)
-        
-    @property        
-    def cache_dir(self):
-        """ Returns the path to the image cache directory """
-        return os.path.join(os.path.dirname(self._imgfield.path),
-                            self._ik.cache_dir)
-
-    @property
-    def cache_url(self):
-        """ Returns a url pointing to the image cache directory """
-        return '/'.join([os.path.dirname(self._imgfield.url),
-                         self._ik.cache_dir])
     
     def _cleanup_cache_dirs(self):
         try:
@@ -98,10 +86,10 @@ class IKModel(models.Model):
                 prop._create()
 
     def save(self, *args, **kwargs):
-        #if self._get_pk_val():
-        #    self._clear_cache()
+        if self._get_pk_val():
+            self._clear_cache()
         super(IKModel, self).save(*args, **kwargs)
-        #self._pre_cache()
+        self._pre_cache()
 
     def delete(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
