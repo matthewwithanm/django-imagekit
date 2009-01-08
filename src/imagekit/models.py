@@ -78,9 +78,9 @@ class IKModel(models.Model):
                 prop._create()
 
     def save(self, clear_cache=True, *args, **kwargs):
-        is_new = self._get_pk_val is None
+        is_new_object = self._get_pk_val is None
         super(IKModel, self).save(*args, **kwargs)
-        if is_new:
+        if is_new_object:
             clear_cache = False
             spec = self._ik.preprocessor_spec
             if spec is not None:
