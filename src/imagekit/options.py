@@ -14,6 +14,7 @@ class Options(object):
     cache_dir = 'images'
     save_count_as = None
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
+    admin_thumbnail_spec = 'admin_thumbnail'
     spec_module = 'imagekit.config'
     
     def __init__(self, opts):        

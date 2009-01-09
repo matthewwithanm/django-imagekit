@@ -49,9 +49,10 @@ class IKModel(models.Model):
         pass
         
     def admin_thumbnail_view(self):
-        prop = getattr(self, 'admin_thumbnail', None)
+        prop = getattr(self, self._ik.admin_thumbnail_spec, None)
         if prop is None:
-            return 'An "admin_thumbnail" image spec has not been defined.'
+            return 'An "%s" image spec has not been defined.' % \
+              self._ik.admin_thumbnail_spec
         else:
             if hasattr(self, 'get_absolute_url'):
                 return u'<a href="%s"><img src="%s"></a>' % \
@@ -106,4 +107,4 @@ class IKModel(models.Model):
     def delete(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
         self._clear_cache()
-        super(IKModel, self).delete()
+        models.Model.delete(self)
