@@ -14,7 +14,7 @@ class Options(object):
     cache_dir = 'images'
     save_count_as = None
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
-    config_module = 'imagekit.config'
+    spec_module = 'imagekit.config'
     
     def __init__(self, opts):        
         for key, value in opts.__dict__.iteritems():

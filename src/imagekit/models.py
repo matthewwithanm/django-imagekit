@@ -20,10 +20,10 @@ class IKModelBase(ModelBase):
         user_opts = getattr(cls, 'IKConfig', None)
         opts = Options(user_opts)
         try:
-            module = __import__(opts.config_module,  {}, {}, [''])
+            module = __import__(opts.spec_module,  {}, {}, [''])
         except ImportError:
             raise ImportError('Unable to load imagekit config module: %s' % \
-                opts.config_module)    
+                opts.spec_module)    
         for spec in [spec for spec in module.__dict__.values() \
                      if isinstance(spec, type) \
                      and issubclass(spec, specs.ImageSpec) \
