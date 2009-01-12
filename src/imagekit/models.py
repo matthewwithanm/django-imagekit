@@ -11,13 +11,16 @@ from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj
 
+# Modify image file buffer size.
+ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
+
 
 class IKModelBase(ModelBase):
     def __init__(cls, name, bases, attrs):
         parents = [b for b in bases if isinstance(b, IKModelBase)]
         if not parents:
             return
-        user_opts = getattr(cls, 'IKConfig', None)
+        user_opts = getattr(cls, 'IKOptions', None)
         opts = Options(user_opts)
         try:
             module = __import__(opts.spec_module,  {}, {}, [''])
@@ -36,7 +39,7 @@ class IKModelBase(ModelBase):
 class IKModel(models.Model):
     """ Abstract base class implementing all core ImageKit functionality
     
-    Subclasses of IKModel can override the inner IKConfig class to customize
+    Subclasses of IKModel can override the inner IKOptions class to customize
     storage locations and other options.
     
     """
@@ -45,7 +48,7 @@ class IKModel(models.Model):
     class Meta:
         abstract = True
         
-    class IKConfig:
+    class IKOptions:
         pass
         
     def admin_thumbnail_view(self):
