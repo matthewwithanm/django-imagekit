@@ -1,7 +1,7 @@
 from django.db.models.loading import cache
 from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
-from imagekit.models import IKModel
+from imagekit.models import ImageModel
 from imagekit.specs import ImageSpec
 
 
@@ -26,7 +26,7 @@ def flush_cache(apps, options):
         
     for app_label in apps:
         app = cache.get_app(app_label)
-        models = [m for m in cache.get_models(app) if issubclass(m, IKModel)]
+        models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
 
     for model in models:
         for obj in model.objects.all():

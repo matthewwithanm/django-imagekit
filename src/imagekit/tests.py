@@ -7,7 +7,7 @@ from django.db import models
 from django.test import TestCase
 
 from imagekit import processors
-from imagekit.models import IKModel
+from imagekit.models import ImageModel
 from imagekit.specs import ImageSpec
 from imagekit.lib import Image
 
@@ -37,7 +37,7 @@ class TestResizeCropped(ImageSpec):
     access_as = 'cropped'
     processors = [ResizeCropped]
 
-class TestPhoto(IKModel):
+class TestPhoto(ImageModel):
     """ Minimal ImageModel class for testing """
     image = models.ImageField(upload_to='images')
     

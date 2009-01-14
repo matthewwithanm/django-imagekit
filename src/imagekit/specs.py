@@ -1,7 +1,7 @@
 """ ImageKit image specifications
 
 All imagekit specifications must inherit from the ImageSpec class. Models
-inheriting from IKModel will be modified with a descriptor/accessor for each
+inheriting from ImageModel will be modified with a descriptor/accessor for each
 spec found.
 
 """

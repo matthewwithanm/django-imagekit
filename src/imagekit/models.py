@@ -15,9 +15,9 @@ from imagekit.utils import img_to_fobj
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
 
-class IKModelBase(ModelBase):
+class ImageModelBase(ModelBase):
     def __init__(cls, name, bases, attrs):
-        parents = [b for b in bases if isinstance(b, IKModelBase)]
+        parents = [b for b in bases if isinstance(b, ImageModelBase)]
         if not parents:
             return
         user_opts = getattr(cls, 'IKOptions', None)
@@ -36,14 +36,14 @@ class IKModelBase(ModelBase):
         setattr(cls, '_ik', opts)
 
 
-class IKModel(models.Model):
+class ImageModel(models.Model):
     """ Abstract base class implementing all core ImageKit functionality
     
-    Subclasses of IKModel can override the inner IKOptions class to customize
+    Subclasses of ImageModel can override the inner IKOptions class to customize
     storage locations and other options.
     
     """
-    __metaclass__ = IKModelBase
+    __metaclass__ = ImageModelBase
 
     class Meta:
         abstract = True
@@ -83,7 +83,7 @@ class IKModel(models.Model):
 
     def save(self, clear_cache=True, *args, **kwargs):
         is_new_object = self._get_pk_val is None
-        super(IKModel, self).save(*args, **kwargs)
+        super(ImageModel, self).save(*args, **kwargs)
         if is_new_object:
             clear_cache = False
             spec = self._ik.preprocessor_spec
