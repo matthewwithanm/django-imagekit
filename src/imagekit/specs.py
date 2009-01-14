@@ -46,8 +46,6 @@ class Accessor(object):
         
     def _create(self):
         if self._exists():
-            if self._img is None:
-                self._img = Image.open(self.file)
             return
         self._img = self.spec.process(Image.open(self._obj._imgfield.file),
                                       self._obj)
@@ -90,6 +88,8 @@ class Accessor(object):
     def image(self):
         if self._img is None:
             self._create()
+            if self._img is None:
+                self._img = Image.open(self.file)
         return self._img
         
     @property
