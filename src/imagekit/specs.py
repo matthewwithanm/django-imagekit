@@ -47,8 +47,11 @@ class Accessor(object):
     def _create(self):
         if self._exists():
             return
-        self._img = self.spec.process(Image.open(self._obj._imgfield.file),
-                                      self._obj)
+        # process the original image file
+        fp = self._obj._imgfield.file.file
+        fp.seek(0)
+        self._img = self.spec.process(Image.open(fp), self._obj)
+        # save the new image to the cache
         content = ContentFile(self._get_imgfile().read())
         self._obj._imgfield.storage.save(self._path(), content)
         
