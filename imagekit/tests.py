@@ -41,8 +41,8 @@ class TestPhoto(ImageModel):
     """ Minimal ImageModel class for testing """
     image = models.ImageField(upload_to='images')
     
-    class IKConfig:
-        config_module = 'imagekit.tests'
+    class IKOptions:
+        spec_module = 'imagekit.tests'
     
 
 class IKTest(TestCase):
