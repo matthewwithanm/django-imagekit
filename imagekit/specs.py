@@ -49,17 +49,18 @@ class Accessor(object):
             return
         # process the original image file
         fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
+        fp = getattr(fp, 'file', fp)
         fp.seek(0)
         self._img = self.spec.process(Image.open(fp), self._obj)
         # save the new image to the cache
         content = ContentFile(self._get_imgfile().read())
-        self._obj._imgfield.storage.save(self.name(), content)
+        self._obj._imgfield.storage.save(self.name, content)
         
     def _delete(self):
-        self._obj._imgfield.storage.delete(self.name())
+        self._obj._imgfield.storage.delete(self.name)
 
     def _exists(self):
-        return self._obj._imgfield.storage.exists(self.name())
+        return self._obj._imgfield.storage.exists(self.name)
 
     def _basename(self):
         filename, extension =  \
@@ -69,6 +70,7 @@ class Accessor(object):
              'specname': self.spec.name(),
              'extension': extension.lstrip('.')}
 
+    @property
     def name(self):
         return os.path.join(self._obj._ik.cache_dir, self._basename())
 
@@ -81,12 +83,12 @@ class Accessor(object):
                 current_count = getattr(self._obj, fieldname)
                 setattr(self._obj, fieldname, current_count + 1)
                 self._obj.save(clear_cache=False)
-        return self._obj._imgfield.storage.url(self.name())
+        return self._obj._imgfield.storage.url(self.name)
         
     @property
     def file(self):
         self._create()
-        return self._obj._imgfield.storage.open(self.name())
+        return self._obj._imgfield.storage.open(self.name)
         
     @property
     def image(self):
