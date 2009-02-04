@@ -6,6 +6,7 @@ spec found.
 
 """
 import os
+from StringIO import StringIO
 from imagekit.lib import *
 from imagekit.utils import img_to_fobj
 from django.core.files.base import ContentFile
@@ -49,8 +50,8 @@ class Accessor(object):
             return
         # process the original image file
         fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
-        fp = getattr(fp, 'file', fp)
         fp.seek(0)
+        fp = StringIO(fp.read())
         self._img = self.spec.process(Image.open(fp), self._obj)
         # save the new image to the cache
         content = ContentFile(self._get_imgfile().read())
