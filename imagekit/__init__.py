@@ -3,10 +3,10 @@
 Django ImageKit
 
 Author: Justin Driscoll <justin.driscoll@gmail.com>
-Version: 1.0
+Version: 0.2
 
 """
-VERSION = (1, 0, 'pre')
+VERSION = "0.2"
 
 
 

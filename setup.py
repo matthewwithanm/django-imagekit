@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
  
 setup(
     name='django-imagekit',
-    version='0.1',
+    version='0.2',
     description='Automated image processing for Django models.',
     author='Justin Driscoll',
     author_email='justin.driscoll@gmail.com',
@@ -24,5 +24,5 @@ setup(
     zip_safe=False,
     # Tells setuptools to download setuptools_git before running setup.py so
     # it can find the data files under Hg version control.
-    setup_requires=['hg.setuptools'],
+    setup_requires=['setuptools_hg'],
 )
