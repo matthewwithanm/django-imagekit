@@ -48,28 +48,29 @@ class Accessor(object):
         if self._exists():
             return
         # process the original image file
-        fp = self._obj._imgfield.file.file
+        fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
         fp.seek(0)
         self._img = self.spec.process(Image.open(fp), self._obj)
         # save the new image to the cache
         content = ContentFile(self._get_imgfile().read())
-        self._obj._imgfield.storage.save(self._path(), content)
+        self._obj._imgfield.storage.save(self.name(), content)
         
     def _delete(self):
-        self._obj._imgfield.storage.delete(self._path())
+        self._obj._imgfield.storage.delete(self.name())
 
     def _exists(self):
-        return self._obj._imgfield.storage.exists(self._path())
+        return self._obj._imgfield.storage.exists(self.name())
 
-    def _name(self):
-        filename, ext =  os.path.splitext(os.path.basename(self._obj._imgfield.path))
+    def _basename(self):
+        filename, extension =  \
+            os.path.splitext(os.path.basename(self._obj._imgfield.name))
         return self._obj._ik.cache_filename_format % \
             {'filename': filename,
              'specname': self.spec.name(),
-             'extension': ext.lstrip('.')}
+             'extension': extension.lstrip('.')}
 
-    def _path(self):
-        return os.path.join(self._obj._ik.cache_dir, self._name())
+    def name(self):
+        return os.path.join(self._obj._ik.cache_dir, self._basename())
 
     @property
     def url(self):
@@ -80,12 +81,12 @@ class Accessor(object):
                 current_count = getattr(self._obj, fieldname)
                 setattr(self._obj, fieldname, current_count + 1)
                 self._obj.save(clear_cache=False)
-        return self._obj._imgfield.storage.url(self._path())
+        return self._obj._imgfield.storage.url(self.name())
         
     @property
     def file(self):
         self._create()
-        return self._obj._imgfield.storage.open(self._path())
+        return self._obj._imgfield.storage.open(self.name())
         
     @property
     def image(self):
