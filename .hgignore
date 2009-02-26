@@ -4,4 +4,5 @@ syntax: glob
 .svn
 *.pyc
 *.db
+*.orig
 .DS_Store

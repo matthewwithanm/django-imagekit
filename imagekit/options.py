@@ -11,11 +11,11 @@ class Options(object):
     crop_horz_field = 'crop_horz'
     crop_vert_field = 'crop_vert'
     preprocessor_spec = None
-    cache_dir = 'images'
+    cache_dir = 'cache'
     save_count_as = None
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     admin_thumbnail_spec = 'admin_thumbnail'
-    spec_module = 'imagekit.config'
+    spec_module = 'imagekit.defaults'
     
     def __init__(self, opts):        
         for key, value in opts.__dict__.iteritems():
