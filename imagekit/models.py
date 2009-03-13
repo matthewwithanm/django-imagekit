@@ -78,6 +78,8 @@ class ImageModel(models.Model):
             return 'An "%s" image spec has not been defined.' % \
               self._ik.admin_thumbnail_spec
         else:
+            if not prop._exists():
+                return None
             if hasattr(self, 'get_absolute_url'):
                 return u'<a href="%s"><img src="%s"></a>' % \
                     (self.get_absolute_url(), prop.url)
