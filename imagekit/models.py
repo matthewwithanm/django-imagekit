@@ -15,7 +15,7 @@ from imagekit.utils import img_to_fobj
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
 # Choice tuples for specifying the crop origin.
-# These are provided for convienience.
+# These are provided for convenience.
 CROP_HORZ_CHOICES = (
     (0, _('left')),
     (1, _('center')),
@@ -73,13 +73,13 @@ class ImageModel(models.Model):
         pass
         
     def admin_thumbnail_view(self):
+        if not getattr(self, self._ik.image_field, None):
+            return None
         prop = getattr(self, self._ik.admin_thumbnail_spec, None)
         if prop is None:
             return 'An "%s" image spec has not been defined.' % \
               self._ik.admin_thumbnail_spec
         else:
-            if not prop._exists():
-                return None
             if hasattr(self, 'get_absolute_url'):
                 return u'<a href="%s"><img src="%s"></a>' % \
                     (self.get_absolute_url(), prop.url)
