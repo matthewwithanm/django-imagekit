@@ -73,6 +73,8 @@ class ImageModel(models.Model):
         pass
         
     def admin_thumbnail_view(self):
+        if not self._imgfield:
+            return 'None'
         prop = getattr(self, self._ik.admin_thumbnail_spec, None)
         if prop is None:
             return 'An "%s" image spec has not been defined.' % \
@@ -124,7 +126,7 @@ class ImageModel(models.Model):
                 name = str(self._imgfield)
                 self._imgfield.storage.delete(name)
                 self._imgfield.storage.save(name, content)
-        if clear_cache:
+        if clear_cache and self._imgfield != '':
             self._clear_cache()
             self._pre_cache()
 
