@@ -6,7 +6,7 @@ setup(
     version='0.2',
     description='Automated image processing for Django models.',
     author='Justin Driscoll',
-    author_email='justin.driscoll@gmail.com',
+    author_email='justin@driscolldev.com',
     url='http://bitbucket.org/jdriscoll/django-imagekit/',
     packages=find_packages(),
     classifiers=[
