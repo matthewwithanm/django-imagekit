@@ -14,7 +14,7 @@ class ImageProcessor(object):
     @classmethod
     def process(cls, img, fmt, obj):
         return img, fmt
-
+        
 
 class Adjustment(ImageProcessor):
     color = 1.0
@@ -33,6 +33,15 @@ class Adjustment(ImageProcessor):
                 except ValueError:
                     pass
         return img, fmt
+
+
+class Format(ImageProcessor):
+    format = 'JPEG'
+    extension = 'jpg'
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        return img, cls.format
 
 
 class Reflection(ImageProcessor):

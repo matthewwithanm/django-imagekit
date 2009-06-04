@@ -15,7 +15,11 @@ class EnhanceSmall(processors.Adjustment):
 class SampleReflection(processors.Reflection):
     size = 0.5
     background_color = "#000000"
+
+class PNGFormat(processors.Format):
+    format = 'PNG'
+    extension = 'png'
     
 class DjangoAdminThumbnail(ImageSpec):
     access_as = 'admin_thumbnail'
-    processors = [ResizeThumbnail, EnhanceSmall, SampleReflection]
+    processors = [ResizeThumbnail, EnhanceSmall, SampleReflection, PNGFormat]

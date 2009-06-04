@@ -53,8 +53,8 @@ class IKTest(TestCase):
         Image.new('RGB', (800, 600)).save(self.tmp, 'JPEG')
         self.tmp.seek(0)
         self.p = TestPhoto()
-        self.p.image.save(os.path.basename('test.jpg'),
-                           ContentFile(self.tmp.read()))
+        self.p.image.save(os.path.basename('test.jpeg'),
+                          ContentFile(self.tmp.read()))
         self.p.save()
         # destroy temp file
         self.tmp.close()
@@ -76,7 +76,7 @@ class IKTest(TestCase):
         self.assertEqual(self.p.cropped.height, 100)
 
     def test_url(self):
-        tup = (settings.MEDIA_URL, self.p._ik.cache_dir, 'test_to_width.jpg')
+        tup = (settings.MEDIA_URL, self.p._ik.cache_dir, 'test_to_width.jpeg')
         self.assertEqual(self.p.to_width.url, "%s%s/%s" % tup)
  
     def tearDown(self):

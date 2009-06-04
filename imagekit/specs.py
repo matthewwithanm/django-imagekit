@@ -7,6 +7,7 @@ spec found.
 """
 import os
 from StringIO import StringIO
+from imagekit import processors
 from imagekit.lib import *
 from imagekit.utils import img_to_fobj
 from django.core.files.base import ContentFile
@@ -29,12 +30,13 @@ class ImageSpec(object):
         for proc in cls.processors:
             img, fmt = proc.process(img, fmt, obj)
         img.format = fmt
-        return img
+        return img, fmt
         
 
 class Accessor(object):
     def __init__(self, obj, spec):
         self._img = None
+        self._fmt = None
         self._obj = obj
         self.spec = spec
         
@@ -55,7 +57,10 @@ class Accessor(object):
         fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
         fp.seek(0)
         fp = StringIO(fp.read())
-        self._img = self.spec.process(Image.open(fp), self._obj)
+        self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
+        for key, val in Image.EXTENSION.iteritems():
+            if val == self._fmt:
+                extension = key
         # save the new image to the cache
         content = ContentFile(self._get_imgfile().read())
         self._obj._imgfield.storage.save(self.name, content)
@@ -69,6 +74,9 @@ class Accessor(object):
     def _basename(self):
         filename, extension =  \
             os.path.splitext(os.path.basename(self._obj._imgfield.name))
+        for processor in self.spec.processors:
+            if issubclass(processor, processors.Format):
+                extension = processor.extension
         return self._obj._ik.cache_filename_format % \
             {'filename': filename,
              'specname': self.spec.name(),
