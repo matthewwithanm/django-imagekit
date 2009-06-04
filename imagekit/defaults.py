@@ -4,8 +4,8 @@ from imagekit.specs import ImageSpec
 from imagekit import processors
     
 class ResizeThumbnail(processors.Resize):
-    width = 100
-    height = 50
+    width = 200
+    height = 100
     crop = True
     
 class EnhanceSmall(processors.Adjustment):

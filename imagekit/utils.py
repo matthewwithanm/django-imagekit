@@ -7,7 +7,6 @@ def img_to_fobj(img, format, **kwargs):
     if format != 'JPEG':
         try:
             img.save(tmp, format, **kwargs)
-            return
         except KeyError:
             pass
     img.save(tmp, format, **kwargs)

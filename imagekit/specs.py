@@ -11,6 +11,7 @@ from imagekit.lib import *
 from imagekit.utils import img_to_fobj
 from django.core.files.base import ContentFile
 
+
 class ImageSpec(object):
     pre_cache = False
     quality = 70
@@ -23,10 +24,12 @@ class ImageSpec(object):
         
     @classmethod
     def process(cls, image, obj):
-        processed_image = image.copy()
+        fmt = image.format
+        img = image.copy()
         for proc in cls.processors:
-            processed_image = proc.process(processed_image, obj)
-        return processed_image
+            img, fmt = proc.process(img, fmt, obj)
+        img.format = fmt
+        return img
         
 
 class Accessor(object):

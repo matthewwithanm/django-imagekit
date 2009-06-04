@@ -10,9 +10,10 @@ from imagekit.lib import *
 
 class ImageProcessor(object):
     """ Base image processor class """
+            
     @classmethod
-    def process(cls, image, obj=None):
-        return image
+    def process(cls, img, fmt, obj):
+        return img, fmt
 
 
 class Adjustment(ImageProcessor):
@@ -22,12 +23,16 @@ class Adjustment(ImageProcessor):
     sharpness = 1.0
 
     @classmethod
-    def process(cls, image, obj=None):
+    def process(cls, img, fmt, obj):
+        img = img.convert('RGB')
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(cls, name.lower())
             if factor != 1.0:
-                image = getattr(ImageEnhance, name)(image).enhance(factor)
-        return image
+                try:
+                    img = getattr(ImageEnhance, name)(img).enhance(factor)
+                except ValueError:
+                    pass
+        return img, fmt
 
 
 class Reflection(ImageProcessor):
@@ -36,13 +41,15 @@ class Reflection(ImageProcessor):
     opacity = 0.6
     
     @classmethod
-    def process(cls, image, obj=None):
+    def process(cls, img, fmt, obj):
         # convert bgcolor string to rgb value
         background_color = ImageColor.getrgb(cls.background_color)
+        # handle palleted images
+        img = img.convert('RGB')
         # copy orignial image and flip the orientation
-        reflection = image.copy().transpose(Image.FLIP_TOP_BOTTOM)
+        reflection = img.copy().transpose(Image.FLIP_TOP_BOTTOM)
         # create a new image filled with the bgcolor the same size
-        background = Image.new("RGB", image.size, background_color)
+        background = Image.new("RGB", img.size, background_color)
         # calculate our alpha mask
         start = int(255 - (255 * cls.opacity)) # The start of our gradient
         steps = int(255 * cls.size) # the number of intermedite values
@@ -54,19 +61,21 @@ class Reflection(ImageProcessor):
             else:
                 val = 255
             mask.putpixel((0, y), val)
-        alpha_mask = mask.resize(image.size)
+        alpha_mask = mask.resize(img.size)
         # merge the reflection onto our background color using the alpha mask
         reflection = Image.composite(background, reflection, alpha_mask)
         # crop the reflection
-        reflection_height = int(image.size[1] * cls.size)
-        reflection = reflection.crop((0, 0, image.size[0], reflection_height))
+        reflection_height = int(img.size[1] * cls.size)
+        reflection = reflection.crop((0, 0, img.size[0], reflection_height))
         # create new image sized to hold both the original image and the reflection
-        composite = Image.new("RGB", (image.size[0], image.size[1]+reflection_height), background_color)
+        composite = Image.new("RGB", (img.size[0], img.size[1]+reflection_height), background_color)
         # paste the orignal image and the reflection into the composite image
-        composite.paste(image, (0, 0))
-        composite.paste(reflection, (0, image.size[1]))
+        composite.paste(img, (0, 0))
+        composite.paste(reflection, (0, img.size[1]))
+        # Save the file as a JPEG
+        fmt = 'JPEG'
         # return the image complete with reflection effect
-        return composite
+        return composite, fmt
 
 
 class Resize(ImageProcessor):
@@ -76,8 +85,8 @@ class Resize(ImageProcessor):
     upscale = False
     
     @classmethod
-    def process(cls, image, obj=None):
-        cur_width, cur_height = image.size
+    def process(cls, img, fmt, obj):
+        cur_width, cur_height = img.size
         if cls.crop:
             crop_horz = getattr(obj, obj._ik.crop_horz_field, 1)
             crop_vert = getattr(obj, obj._ik.crop_vert_field, 1)
@@ -96,7 +105,7 @@ class Resize(ImageProcessor):
                 2: (int(crop_y), int(resize_y)),
             }[crop_vert]
             box = (box_left, box_upper, box_right, box_lower)
-            image = image.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
+            img = img.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
         else:
             if not cls.width is None and not cls.height is None:
                 ratio = min(float(cls.width)/cur_width,
@@ -111,9 +120,9 @@ class Resize(ImageProcessor):
             if new_dimensions[0] > cur_width or \
                new_dimensions[1] > cur_height:
                 if not cls.upscale:
-                    return image
-            image = image.resize(new_dimensions, Image.ANTIALIAS)
-        return image
+                    return img, fmt
+            img = img.resize(new_dimensions, Image.ANTIALIAS)
+        return img, fmt
 
     
 class Transpose(ImageProcessor):
@@ -130,5 +139,6 @@ class Transpose(ImageProcessor):
     method = 'FLIP_LEFT_RIGHT'
     
     @classmethod
-    def process(cls, image, obj=None):
-        return image.transpose(getattr(Image, cls.method))
+    def process(cls, img, fmt, obj):
+        img = img.transpose(getattr(Image, cls.method))
+        return img, fmt
