@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
  
 setup(
     name='django-imagekit',
-    version='0.3.1',
+    version='0.3.2',
     description='Automated image processing for Django models.',
     author='Justin Driscoll',
     author_email='justin@driscolldev.com',
