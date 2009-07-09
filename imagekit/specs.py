@@ -54,7 +54,10 @@ class Accessor(object):
         if self._exists():
             return
         # process the original image file
-        fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
+        try:
+            fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
+        except IOError:
+            return            
         fp.seek(0)
         fp = StringIO(fp.read())
         self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
