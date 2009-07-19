@@ -105,7 +105,7 @@ class ImageModel(models.Model):
                 prop._create()
 
     def save(self, clear_cache=True, *args, **kwargs):
-        is_new_object = self._get_pk_val is None
+        is_new_object = self._get_pk_val() is None
         super(ImageModel, self).save(*args, **kwargs)
         if is_new_object:
             clear_cache = False
@@ -113,8 +113,7 @@ class ImageModel(models.Model):
             if spec is not None:
                 newfile = self._imgfield.storage.open(str(self._imgfield))
                 img = Image.open(newfile)
-                img = spec.process(img, None)
-                format = img.format or 'JPEG'
+                img, format = spec.process(img, self)
                 if format != 'JPEG':
                     imgfile = img_to_fobj(img, format)
                 else:

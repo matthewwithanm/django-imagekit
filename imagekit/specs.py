@@ -61,9 +61,6 @@ class Accessor(object):
         fp.seek(0)
         fp = StringIO(fp.read())
         self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
-        for key, val in Image.EXTENSION.iteritems():
-            if val == self._fmt:
-                extension = key
         # save the new image to the cache
         content = ContentFile(self._get_imgfile().read())
         self._obj._imgfield.storage.save(self.name, content)
