@@ -143,11 +143,32 @@ class Transpose(ImageProcessor):
         - ROTATE_90
         - ROTATE_270
         - ROTATE_180
+        - auto
+        
+    If method is set to 'auto' the processor will attempt to rotate the image
+    according to the EXIF Orientation data.
         
     """
-    method = 'FLIP_LEFT_RIGHT'
+    EXIF_ORIENTATION_STEPS = {
+        1: [],
+        2: ['FLIP_LEFT_RIGHT'],
+        3: ['ROTATE_180'],
+        4: ['FLIP_TOP_BOTTOM'],
+        5: ['ROTATE_270', 'FLIP_LEFT_RIGHT'],
+        6: ['ROTATE_270'],
+        7: ['ROTATE_90', 'FLIP_LEFT_RIGHT'],
+        8: ['ROTATE_90'],
+    }
+    
+    method = 'auto'
     
     @classmethod
     def process(cls, img, fmt, obj):
-        img = img.transpose(getattr(Image, cls.method))
+        if cls.method == 'auto':
+            orientation = Image.open(obj._imgfield.file)._getexif()[0x0112]
+            ops = cls.EXIF_ORIENTATION_STEPS[orientation]
+        else:
+            ops = [cls.method]
+        for method in ops:
+            img = img.transpose(getattr(Image, method))
         return img, fmt
