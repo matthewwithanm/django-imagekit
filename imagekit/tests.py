@@ -76,7 +76,8 @@ class IKTest(TestCase):
         self.assertEqual(self.p.cropped.height, 100)
 
     def test_url(self):
-        tup = (settings.MEDIA_URL, self.p._ik.cache_dir, 'test_to_width.jpeg')
+        tup = (settings.MEDIA_URL, self.p._ik.cache_dir,
+               'images/test_to_width.jpeg')
         self.assertEqual(self.p.to_width.url, "%s%s/%s" % tup)
  
     def tearDown(self):

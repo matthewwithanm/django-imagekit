@@ -165,8 +165,11 @@ class Transpose(ImageProcessor):
     @classmethod
     def process(cls, img, fmt, obj):
         if cls.method == 'auto':
-            orientation = Image.open(obj._imgfield.file)._getexif()[0x0112]
-            ops = cls.EXIF_ORIENTATION_STEPS[orientation]
+            try:
+                orientation = Image.open(obj._imgfield.file)._getexif()[0x0112]
+                ops = cls.EXIF_ORIENTATION_STEPS[orientation]
+            except:
+                ops = []
         else:
             ops = [cls.method]
         for method in ops:

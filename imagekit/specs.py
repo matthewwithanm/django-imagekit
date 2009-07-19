@@ -71,20 +71,18 @@ class Accessor(object):
     def _exists(self):
         return self._obj._imgfield.storage.exists(self.name)
 
-    def _basename(self):
-        filename, extension =  \
-            os.path.splitext(os.path.basename(self._obj._imgfield.name))
+    @property
+    def name(self):
+        filepath, basename = os.path.split(self._obj._imgfield.name)
+        filename, extension = os.path.splitext(basename)
         for processor in self.spec.processors:
             if issubclass(processor, processors.Format):
                 extension = processor.extension
-        return self._obj._ik.cache_filename_format % \
+        cache_filename = self._obj._ik.cache_filename_format % \
             {'filename': filename,
              'specname': self.spec.name(),
              'extension': extension.lstrip('.')}
-
-    @property
-    def name(self):
-        return os.path.join(self._obj._ik.cache_dir, self._basename())
+        return os.path.join(self._obj._ik.cache_dir, filepath, cache_filename)
 
     @property
     def url(self):
