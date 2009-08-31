@@ -4,6 +4,7 @@ from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.base import ModelBase
+from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 
 from imagekit import specs
@@ -82,10 +83,10 @@ class ImageModel(models.Model):
         else:
             if hasattr(self, 'get_absolute_url'):
                 return u'<a href="%s"><img src="%s"></a>' % \
-                    (self.get_absolute_url(), prop.url)
+                    (escape(self.get_absolute_url()), escape(prop.url))
             else:
                 return u'<a href="%s"><img src="%s"></a>' % \
-                    (self._imgfield.url, prop.url)
+                    (escape(self._imgfield.url), escape(prop.url))
     admin_thumbnail_view.short_description = _('Thumbnail')
     admin_thumbnail_view.allow_tags = True
     
