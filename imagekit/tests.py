@@ -47,17 +47,29 @@ class TestPhoto(ImageModel):
 
 class IKTest(TestCase):
     """ Base TestCase class """
+    def generate_image(self):
+        tmp = tempfile.TemporaryFile()
+        Image.new('RGB', (800, 600)).save(tmp, 'JPEG')
+        tmp.seek(0)
+        return tmp
+        
     def setUp(self):
-        # create a test image using tempfile and PIL
-        self.tmp = tempfile.TemporaryFile()
-        Image.new('RGB', (800, 600)).save(self.tmp, 'JPEG')
-        self.tmp.seek(0)
         self.p = TestPhoto()
-        self.p.image.save(os.path.basename('test.jpeg'),
-                          ContentFile(self.tmp.read()))
+        img = self.generate_image()
+        self.p.save_image('test.jpeg', ContentFile(img.read()))
         self.p.save()
-        # destroy temp file
-        self.tmp.close()
+        img.close()
+        
+    def test_save_image(self):
+        img = self.generate_image()
+        path = self.p.image.path
+        self.p.save_image('test2.jpeg', ContentFile(img.read()))
+        self.failIf(os.path.isfile(path))
+        path = self.p.image.path
+        img.seek(0)
+        self.p.save_image('test.jpeg', ContentFile(img.read()))
+        self.failIf(os.path.isfile(path))
+        img.close()
         
     def test_setup(self):
         self.assertEqual(self.p.image.width, 800)
