@@ -105,8 +105,8 @@ class ImageModel(models.Model):
                 prop = getattr(self, spec.name())
                 prop._create()
                 
-    def save_image(self, name, image, save=True):
-        if self._imgfield:
+    def save_image(self, name, image, save=True, replace=True):
+        if self._imgfield and replace:
             self._imgfield.delete(save=False)
         if hasattr(image, 'read'):
             data = image.read()
