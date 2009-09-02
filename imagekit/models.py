@@ -104,6 +104,16 @@ class ImageModel(models.Model):
             if spec.pre_cache:
                 prop = getattr(self, spec.name())
                 prop._create()
+                
+    def save_image(self, name, image, save=True):
+        if self._imgfield:
+            self._imgfield.delete(save=False)
+        if hasattr(image, 'read'):
+            data = image.read()
+        else:
+            data = image
+        content = ContentFile(data)
+        self._imgfield.save(name, content, save)
 
     def save(self, clear_cache=True, *args, **kwargs):
         is_new_object = self._get_pk_val() is None
