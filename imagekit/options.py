@@ -16,6 +16,7 @@ class Options(object):
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     admin_thumbnail_spec = 'admin_thumbnail'
     spec_module = 'imagekit.defaults'
+    #storage = defaults to image_field.storage
     
     def __init__(self, opts):        
         for key, value in opts.__dict__.iteritems():

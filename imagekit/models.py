@@ -93,6 +93,10 @@ class ImageModel(models.Model):
     @property
     def _imgfield(self):
         return getattr(self, self._ik.image_field)
+    
+    @property
+    def _storage(self):
+        return getattr(self._ik, 'storage', self._imgfield.storage)
 
     def _clear_cache(self):
         for spec in self._ik.specs:
