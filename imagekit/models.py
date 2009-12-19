@@ -32,10 +32,10 @@ CROP_VERT_CHOICES = (
 
 class ImageModelBase(ModelBase):
     """ ImageModel metaclass
-    
+
     This metaclass parses IKOptions and loads the specified specification
     module.
-    
+
     """
     def __init__(cls, name, bases, attrs):
         parents = [b for b in bases if isinstance(b, ImageModelBase)]
@@ -47,7 +47,7 @@ class ImageModelBase(ModelBase):
             module = __import__(opts.spec_module,  {}, {}, [''])
         except ImportError:
             raise ImportError('Unable to load imagekit config module: %s' % \
-                opts.spec_module)    
+                opts.spec_module)
         for spec in [spec for spec in module.__dict__.values() \
                      if isinstance(spec, type) \
                      and issubclass(spec, specs.ImageSpec) \
@@ -59,20 +59,20 @@ class ImageModelBase(ModelBase):
 
 class ImageModel(models.Model):
     """ Abstract base class implementing all core ImageKit functionality
-    
+
     Subclasses of ImageModel are augmented with accessors for each defined
     image specification and can override the inner IKOptions class to customize
     storage locations and other options.
-    
+
     """
     __metaclass__ = ImageModelBase
 
     class Meta:
         abstract = True
-        
+
     class IKOptions:
         pass
-        
+
     def admin_thumbnail_view(self):
         if not self._imgfield:
             return None
@@ -89,11 +89,11 @@ class ImageModel(models.Model):
                     (escape(self._imgfield.url), escape(prop.url))
     admin_thumbnail_view.short_description = _('Thumbnail')
     admin_thumbnail_view.allow_tags = True
-    
+
     @property
     def _imgfield(self):
         return getattr(self, self._ik.image_field)
-    
+
     @property
     def _storage(self):
         return getattr(self._ik, 'storage', self._imgfield.storage)
@@ -108,7 +108,7 @@ class ImageModel(models.Model):
             if spec.pre_cache:
                 prop = getattr(self, spec.name())
                 prop._create()
-                
+
     def save_image(self, name, image, save=True, replace=True):
         if self._imgfield and replace:
             self._imgfield.delete(save=False)

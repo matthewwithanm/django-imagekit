@@ -1,6 +1,6 @@
 """ Imagekit Image "ImageProcessors"
 
-A processor defines a set of class variables (optional) and a 
+A processor defines a set of class variables (optional) and a
 class method named "process" which processes the supplied image using
 the class properties as settings. The process method can be overridden as well allowing user to define their
 own effects/processes entirely.
@@ -10,11 +10,11 @@ from imagekit.lib import *
 
 class ImageProcessor(object):
     """ Base image processor class """
-            
+
     @classmethod
     def process(cls, img, fmt, obj):
         return img, fmt
-        
+
 
 class Adjustment(ImageProcessor):
     color = 1.0
@@ -38,7 +38,7 @@ class Adjustment(ImageProcessor):
 class Format(ImageProcessor):
     format = 'JPEG'
     extension = 'jpg'
-    
+
     @classmethod
     def process(cls, img, fmt, obj):
         return img, cls.format
@@ -48,7 +48,7 @@ class Reflection(ImageProcessor):
     background_color = '#FFFFFF'
     size = 0.0
     opacity = 0.6
-    
+
     @classmethod
     def process(cls, img, fmt, obj):
         # convert bgcolor string to rgb value
@@ -92,7 +92,7 @@ class Resize(ImageProcessor):
     height = None
     crop = False
     upscale = False
-    
+
     @classmethod
     def process(cls, img, fmt, obj):
         cur_width, cur_height = img.size
@@ -133,10 +133,10 @@ class Resize(ImageProcessor):
             img = img.resize(new_dimensions, Image.ANTIALIAS)
         return img, fmt
 
-    
+
 class Transpose(ImageProcessor):
     """ Rotates or flips the image
-    
+
     Method should be one of the following strings:
         - FLIP_LEFT RIGHT
         - FLIP_TOP_BOTTOM
@@ -144,10 +144,10 @@ class Transpose(ImageProcessor):
         - ROTATE_270
         - ROTATE_180
         - auto
-        
+
     If method is set to 'auto' the processor will attempt to rotate the image
     according to the EXIF Orientation data.
-        
+
     """
     EXIF_ORIENTATION_STEPS = {
         1: [],
@@ -159,9 +159,9 @@ class Transpose(ImageProcessor):
         7: ['ROTATE_90', 'FLIP_LEFT_RIGHT'],
         8: ['ROTATE_90'],
     }
-    
+
     method = 'auto'
-    
+
     @classmethod
     def process(cls, img, fmt, obj):
         if cls.method == 'auto':

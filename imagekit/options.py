@@ -1,7 +1,7 @@
 # Imagekit options
 from imagekit import processors
 from imagekit.specs import ImageSpec
-    
+
 
 class Options(object):
     """ Class handling per-model imagekit options
@@ -17,8 +17,8 @@ class Options(object):
     admin_thumbnail_spec = 'admin_thumbnail'
     spec_module = 'imagekit.defaults'
     #storage = defaults to image_field.storage
-    
-    def __init__(self, opts):        
+
+    def __init__(self, opts):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
             self.specs = []
