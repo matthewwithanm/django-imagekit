@@ -86,7 +86,8 @@ class Accessor(object):
             return self._obj._ik.cache_dir(self._obj, filepath,
                                            cache_filename)
         else:
-            return os.path.join(self._obj._ik.cache_dir, cache_filename)
+            return os.path.join(self._obj._ik.cache_dir, filepath,
+                                cache_filename)
 
     @property
     def url(self):
