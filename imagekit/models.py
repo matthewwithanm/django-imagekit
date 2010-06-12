@@ -140,7 +140,7 @@ class ImageModel(models.Model):
                 name = str(self._imgfield)
                 self._imgfield.storage.delete(name)
                 self._imgfield.storage.save(name, content)
-        if clear_cache and not self._imgfield:
+        if clear_cache and self._imgfield:
             self._clear_cache()
         self._pre_cache()
 
