@@ -122,7 +122,7 @@ class ImageModel(models.Model):
     def save(self, clear_cache=True, *args, **kwargs):
         is_new_object = self._get_pk_val() is None
         super(ImageModel, self).save(*args, **kwargs)
-        if is_new_object:
+        if is_new_object and self._imgfield:
             clear_cache = False
             spec = self._ik.preprocessor_spec
             if spec is not None:
@@ -140,7 +140,7 @@ class ImageModel(models.Model):
                 name = str(self._imgfield)
                 self._imgfield.storage.delete(name)
                 self._imgfield.storage.save(name, content)
-        if clear_cache and self._imgfield != '':
+        if clear_cache and not self._imgfield:
             self._clear_cache()
         self._pre_cache()
 
