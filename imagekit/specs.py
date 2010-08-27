@@ -17,6 +17,7 @@ class ImageSpec(object):
     pre_cache = False
     quality = 70
     increment_count = False
+    guess_size = False
     processors = []
 
     @classmethod
@@ -91,7 +92,8 @@ class Accessor(object):
 
     @property
     def url(self):
-        self._create()
+        if not self.spec.pre_cache:
+            self._create()
         if self.spec.increment_count:
             fieldname = self._obj._ik.save_count_as
             if fieldname is not None:
@@ -107,19 +109,33 @@ class Accessor(object):
 
     @property
     def image(self):
-        if self._img is None:
+        if not self._img:
             self._create()
-            if self._img is None:
+            if not self._img:
                 self._img = Image.open(self.file)
         return self._img
 
     @property
     def width(self):
-        return self.image.size[0]
-
+        # Iterate through the processors in reverse order to find
+        # the most recent size transformation, which should be right
+        if self.spec.guess_size:
+            for processor in reversed(self.spec.processors): 
+                if processor.width: 
+                    return processor.width
+        else:
+            return self.image.size[0]
+            
     @property
     def height(self):
-        return self.image.size[1]
+        # Iterate through the processors in reverse order to find
+        # the most recent size transformation, which should be right
+        if self.spec.guess_size:
+            for processor in reversed(self.spec.processors): 
+                if processor.height: 
+                    return processor.height
+        else:
+            return self.image.size[1]
 
 
 class Descriptor(object):
