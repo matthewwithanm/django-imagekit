@@ -21,4 +21,4 @@ class Options(object):
     def __init__(self, opts):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
-            self.specs = []
+            self.specs = {}

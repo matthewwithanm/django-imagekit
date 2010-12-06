@@ -53,7 +53,7 @@ class ImageModelBase(ModelBase):
                      and issubclass(spec, specs.ImageSpec) \
                      and spec != specs.ImageSpec]:
             setattr(cls, spec.name(), specs.Descriptor(spec))
-            opts.specs.append(spec)
+            opts.specs[spec.name()] = spec
         setattr(cls, '_ik', opts)
 
 
@@ -99,12 +99,12 @@ class ImageModel(models.Model):
         return getattr(self._ik, 'storage', self._imgfield.storage)
 
     def _clear_cache(self):
-        for spec in self._ik.specs:
+        for spec in self._ik.specs.values():
             prop = getattr(self, spec.name())
             prop._delete()
 
     def _pre_cache(self):
-        for spec in self._ik.specs:
+        for spec in self._ik.specs.values():
             if spec.pre_cache:
                 prop = getattr(self, spec.name())
                 prop._create()
