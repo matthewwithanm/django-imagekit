@@ -1,7 +1,3 @@
-syntax: glob
-
-.eprj
-.svn
 *.pyc
 *.db
 *.orig
