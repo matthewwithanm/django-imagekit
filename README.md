@@ -21,8 +21,6 @@
             image_field = 'original_image'
             save_count_as = 'num_views'
 
-See `ImageModel` and `Options` for more information.
-
 ## Step 3 - Create your specifications  ##
 
     # myapp/specs.py
