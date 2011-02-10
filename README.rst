@@ -15,6 +15,8 @@ Step 2
 
 Add ImageKit to your models.
 
+::
+
     # myapp/models.py
 
     from django.db import models
@@ -36,6 +38,8 @@ Step 3
 ******
 
 Create your specifications.
+
+::
 
     # myapp/specs.py
 
@@ -80,6 +84,8 @@ Step 5
 
 Use your new model in templates.
 
+::
+
     <div class="original">
     <img src="{{ photo.original_image.url }}" alt="{{ photo.name }}">
     </div>
@@ -98,6 +104,8 @@ Step 6
 ******
 
 Play with the API.
+
+::
 
     >>> from myapp.models import Photo
     >>> p = Photo.objects.all()[0]
@@ -119,6 +127,8 @@ Step 7
 ******
 
 Enjoy a nice beverage.
+
+::
 
     from refrigerator import beer
 
