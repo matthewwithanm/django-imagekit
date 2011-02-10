@@ -77,6 +77,8 @@ Step 4
 
 Flush the cache and pre-generate thumbnails (ImageKit has to be added to ``INSTALLED_APPS`` for management command to work).
 
+::
+
     python manage.py ikflush myapp
 
 Step 5
