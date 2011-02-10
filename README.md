@@ -97,9 +97,3 @@
     from refrigerator import beer
 
     beer.enjoy()
-
-## Other Documentation (In Progress) ##
-
-* `Options| Model Options `
-* `Tips|Tips and Tricks`
-* `OldWatermark|Watermarks`
