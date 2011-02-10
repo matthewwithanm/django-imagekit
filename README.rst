@@ -8,7 +8,11 @@ ImageKit In 7 Steps
 Step 1
 ******
 
-``pip install django-imagekit`` (or clone the source and put the imagekit module on your path)
+::
+
+    $ pip install django-imagekit
+
+(or clone the source and put the imagekit module on your path)
 
 Step 2
 ******
@@ -79,7 +83,7 @@ Flush the cache and pre-generate thumbnails (ImageKit has to be added to ``INSTA
 
 ::
 
-    python manage.py ikflush myapp
+    $ python manage.py ikflush myapp
 
 Step 5
 ******
