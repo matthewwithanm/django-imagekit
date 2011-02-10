@@ -1,8 +1,19 @@
-# ImageKit In 7 Steps #
+===============
+django-imagekit
+===============
 
-## Step 1 - pip install django-imagekit (or clone the source and put the imagekit module on your path) ##
+ImageKit In 7 Steps
+===================
 
-## Step 2 - Add ImageKit to your models ##
+Step 1
+******
+
+``pip install django-imagekit`` (or clone the source and put the imagekit module on your path)
+
+Step 2
+******
+
+Add ImageKit to your models.
 
     # myapp/models.py
 
@@ -21,44 +32,53 @@
             image_field = 'original_image'
             save_count_as = 'num_views'
 
-## Step 3 - Create your specifications  ##
+Step 3
+******
+
+Create your specifications.
 
     # myapp/specs.py
 
-    from imagekit.specs import ImageSpec 
-    from imagekit import processors 
+    from imagekit.specs import ImageSpec
+    from imagekit import processors
 
-    # first we define our thumbnail resize processor 
-    class ResizeThumb(processors.Resize): 
-        width = 100 
-        height = 75 
+    # first we define our thumbnail resize processor
+    class ResizeThumb(processors.Resize):
+        width = 100
+        height = 75
         crop = True
 
     # now we define a display size resize processor
     class ResizeDisplay(processors.Resize):
-        width = 600 
+        width = 600
 
-    # now let's create an adjustment processor to enhance the image at small sizes 
-    class EnchanceThumb(processors.Adjustment): 
-        contrast = 1.2 
-        sharpness = 1.1 
+    # now let's create an adjustment processor to enhance the image at small sizes
+    class EnchanceThumb(processors.Adjustment):
+        contrast = 1.2
+        sharpness = 1.1
 
-    # now we can define our thumbnail spec 
-    class Thumbnail(ImageSpec): 
-        access_as = 'thumbnail_image' 
-        pre_cache = True 
-        processors = [ResizeThumb, EnchanceThumb] 
+    # now we can define our thumbnail spec
+    class Thumbnail(ImageSpec):
+        access_as = 'thumbnail_image'
+        pre_cache = True
+        processors = [ResizeThumb, EnchanceThumb]
 
     # and our display spec
     class Display(ImageSpec):
         increment_count = True
         processors = [ResizeDisplay]
 
-## Step 4 - Flush the cache and pre-generate thumbnails (ImageKit has to be added to INSTALLED_APPS for management command to work) ##
+Step 4
+******
+
+Flush the cache and pre-generate thumbnails (ImageKit has to be added to ``INSTALLED_APPS`` for management command to work).
 
     python manage.py ikflush myapp
 
-## Step 5 - Use your new model in templates ##
+Step 5
+******
+
+Use your new model in templates.
 
     <div class="original">
     <img src="{{ photo.original_image.url }}" alt="{{ photo.name }}">
@@ -74,7 +94,10 @@
     {% endfor %}
     </div>
 
-## Step 6 - Play with the API ##
+Step 6
+******
+
+Play with the API.
 
     >>> from myapp.models import Photo
     >>> p = Photo.objects.all()[0]
@@ -92,8 +115,13 @@
     >>> p.display.spec
     <class 'myapp.specs.Display'>
 
-## Step 7 - Enjoy a nice beverage ##
+Step 7
+******
+
+Enjoy a nice beverage.
 
     from refrigerator import beer
 
     beer.enjoy()
+
+
