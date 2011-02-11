@@ -140,9 +140,10 @@ class ImageModel(models.Model):
                 name = str(self._imgfield)
                 self._imgfield.storage.delete(name)
                 self._imgfield.storage.save(name, content)
-        if clear_cache and self._imgfield:
-            self._clear_cache()
-        self._pre_cache()
+        if self._imgfield:
+            if clear_cache:
+                self._clear_cache()
+            self._pre_cache()
 
     def delete(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
