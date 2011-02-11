@@ -9,7 +9,9 @@ setup(
     author_email='justin@driscolldev.com',
     url='http://github.com/jdriscoll/django-imagekit/',
     packages=[
-        'imagekit'
+        'imagekit',
+        'imagekit.management',
+        'imagekit.management.commands'
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
