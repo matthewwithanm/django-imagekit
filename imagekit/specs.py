@@ -52,7 +52,8 @@ class Accessor(object):
 
     def _create(self):
         if self._exists():
-            return
+            if self._exists():
+                return
         # process the original image file
         try:
             fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
@@ -73,21 +74,22 @@ class Accessor(object):
 
     @property
     def name(self):
-        filepath, basename = os.path.split(self._obj._imgfield.name)
-        filename, extension = os.path.splitext(basename)
-        for processor in self.spec.processors:
-            if issubclass(processor, processors.Format):
-                extension = processor.extension
-        cache_filename = self._obj._ik.cache_filename_format % \
-            {'filename': filename,
-             'specname': self.spec.name(),
-             'extension': extension.lstrip('.')}
-        if callable(self._obj._ik.cache_dir):
-            return self._obj._ik.cache_dir(self._obj, filepath,
-                                           cache_filename)
-        else:
-            return os.path.join(self._obj._ik.cache_dir, filepath,
-                                cache_filename)
+        if self._obj._imgfield.name:
+            filepath, basename = os.path.split(self._obj._imgfield.name)
+            filename, extension = os.path.splitext(basename)
+            for processor in self.spec.processors:
+                if issubclass(processor, processors.Format):
+                    extension = processor.extension
+            cache_filename = self._obj._ik.cache_filename_format % \
+                {'filename': filename,
+                 'specname': self.spec.name(),
+                 'extension': extension.lstrip('.')}
+            if callable(self._obj._ik.cache_dir):
+                return self._obj._ik.cache_dir(self._obj, filepath,
+                                               cache_filename)
+            else:
+                return os.path.join(self._obj._ik.cache_dir, filepath,
+                                    cache_filename)
 
     @property
     def url(self):
