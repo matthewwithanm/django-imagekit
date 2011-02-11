@@ -51,20 +51,20 @@ class Accessor(object):
         return imgfile
 
     def _create(self):
-        if self._exists():
+        if self._obj._imgfield:
             if self._exists():
                 return
-        # process the original image file
-        try:
-            fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
-        except IOError:
-            return
-        fp.seek(0)
-        fp = StringIO(fp.read())
-        self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
-        # save the new image to the cache
-        content = ContentFile(self._get_imgfile().read())
-        self._obj._storage.save(self.name, content)
+            # process the original image file
+            try:
+                fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
+            except IOError:
+                return
+            fp.seek(0)
+            fp = StringIO(fp.read())
+            self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
+            # save the new image to the cache
+            content = ContentFile(self._get_imgfile().read())
+            self._obj._storage.save(self.name, content)
 
     def _delete(self):
         self._obj._storage.delete(self.name)
