@@ -91,7 +91,8 @@ class Accessor(object):
 
     @property
     def url(self):
-        self._create()
+        if not self.spec.pre_cache:
+            self._create()
         if self.spec.increment_count:
             fieldname = self._obj._ik.save_count_as
             if fieldname is not None:
@@ -107,9 +108,9 @@ class Accessor(object):
 
     @property
     def image(self):
-        if self._img is None:
+        if not self._img:
             self._create()
-            if self._img is None:
+            if not self._img:
                 self._img = Image.open(self.file)
         return self._img
 
