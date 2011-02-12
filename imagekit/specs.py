@@ -67,10 +67,12 @@ class Accessor(object):
             self._obj._storage.save(self.name, content)
 
     def _delete(self):
-        self._obj._storage.delete(self.name)
+        if self._obj._imgfield:
+            self._obj._storage.delete(self.name)
 
     def _exists(self):
-        return self._obj._storage.exists(self.name)
+        if self._obj._imgfield:
+            return self._obj._storage.exists(self.name)
 
     @property
     def name(self):
