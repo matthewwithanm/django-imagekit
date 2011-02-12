@@ -7,6 +7,9 @@ setup(
     description='Automated image processing for Django models.',
     author='Justin Driscoll',
     author_email='justin@driscolldev.com',
+    maintainer='Bryan Veloso',
+    maintainer_email='bryan@revyver.com',
+    license='BSD',
     url='http://github.com/jdriscoll/django-imagekit/',
     packages=[
         'imagekit',
