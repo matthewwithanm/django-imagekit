@@ -4,6 +4,7 @@ from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.base import ModelBase
+from django.db.models.signals import post_delete
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 
@@ -145,7 +146,9 @@ class ImageModel(models.Model):
                 self._clear_cache()
             self._pre_cache()
 
-    def delete(self):
+    def clear_cache(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
         self._clear_cache()
-        models.Model.delete(self)
+    post_delete.connect(clear_cache, sender=self)
+
+
