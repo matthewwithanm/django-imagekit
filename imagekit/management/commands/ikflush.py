@@ -14,22 +14,26 @@ class Command(BaseCommand):
     option_list = BaseCommand.option_list + (
         make_option("-c", "--spec_class", dest="spec_class", action='append'),
     )
+    
     def handle(self, *args, **options):
         return flush_cache(args, options)
 
 def flush_cache(apps, options):
     """ Clears the image cache
-    
+
     """
     spec_class_list = options['spec_class']
     apps = [a.strip(',') for a in apps]
+    for app_label in apps:
+        app = cache.get_app(app_label)    
+        models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
     if apps:
         for app_label in apps:
-            app = cache.get_app(app_label)    
+            app = cache.get_app(app_label)
             models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
             for model in models:
-                print('Flushing cache for "%s.%s"' % (app_label, model.__name__))
-                for obj in model.objects.all().order_by('-id'):
+                print 'Flushing cache for "%s.%s"' % (app_label, model.__name__)
+                for obj in model.objects.order_by('-id'):
                     try:
                         if spec_class_list:
                             for spec_name in spec_class_list:
@@ -50,8 +54,9 @@ def flush_cache(apps, options):
                                 if prop is not None:
                                     prop._delete()
                                 if spec.pre_cache:
-                                    prop._create()
+                                    prop._create() 
                     except Exception:
-                        print("Failure with %d" % obj.id)
+                        print ("Failure with %d" % obj.id)
+                        
     else:
-        print 'Please specify on or more app names'
+        print 'Please specify one or more app names'

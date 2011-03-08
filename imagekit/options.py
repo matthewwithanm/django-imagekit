@@ -22,3 +22,4 @@ class Options(object):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
             self.specs = {}
+

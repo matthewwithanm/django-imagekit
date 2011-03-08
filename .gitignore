@@ -1,3 +1,9 @@
 django_imagekit.egg-info/
 *.egg
 *.pyc
+*.db
+*.orig
+.DS_Store
+dist
+build
+MANIFEST

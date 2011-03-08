@@ -18,6 +18,7 @@ class ImageSpec(object):
     quality = 70
     increment_count = False
     guess_size = False
+
     processors = []
 
     @classmethod
@@ -52,43 +53,47 @@ class Accessor(object):
         return imgfile
 
     def _create(self):
-        if self._exists():
-            return
-        # process the original image file
-        try:
-            fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
-        except IOError:
-            return
-        fp.seek(0)
-        fp = StringIO.StringIO(fp.read())
-        self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
-        # save the new image to the cache
-        content = ContentFile(self._get_imgfile().read())
-        self._obj._storage.save(self.name, content)
+        if self._obj._imgfield:
+            if self._exists():
+                return
+            # process the original image file
+            try:
+                fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
+            except IOError:
+                return
+            fp.seek(0)
+            fp = StringIO.StringIO(fp.read())
+            self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
+            # save the new image to the cache
+            content = ContentFile(self._get_imgfile().read())
+            self._obj._storage.save(self.name, content)
 
     def _delete(self):
-        self._obj._storage.delete(self.name)
+        if self._obj._imgfield:
+            self._obj._storage.delete(self.name)
 
     def _exists(self):
-        return self._obj._storage.exists(self.name)
+        if self._obj._imgfield:
+            return self._obj._storage.exists(self.name)
 
     @property
     def name(self):
-        filepath, basename = os.path.split(self._obj._imgfield.name)
-        filename, extension = os.path.splitext(basename)
-        for processor in self.spec.processors:
-            if issubclass(processor, processors.Format):
-                extension = processor.extension
-        cache_filename = self._obj._ik.cache_filename_format % \
-            {'filename': filename,
-             'specname': self.spec.name(),
-             'extension': extension.lstrip('.')}
-        if callable(self._obj._ik.cache_dir):
-            return self._obj._ik.cache_dir(self._obj, filepath,
-                                           cache_filename)
-        else:
-            return os.path.join(self._obj._ik.cache_dir, filepath,
-                                cache_filename)
+        if self._obj._imgfield.name:
+            filepath, basename = os.path.split(self._obj._imgfield.name)
+            filename, extension = os.path.splitext(basename)
+            for processor in self.spec.processors:
+                if issubclass(processor, processors.Format):
+                    extension = processor.extension
+            cache_filename = self._obj._ik.cache_filename_format % \
+                {'filename': filename,
+                 'specname': self.spec.name(),
+                 'extension': extension.lstrip('.')}
+            if callable(self._obj._ik.cache_dir):
+                return self._obj._ik.cache_dir(self._obj, filepath,
+                                               cache_filename)
+            else:
+                return os.path.join(self._obj._ik.cache_dir, filepath,
+                                    cache_filename)
 
     @property
     def url(self):
@@ -136,7 +141,6 @@ class Accessor(object):
                     return processor.height
         else:
             return self.image.size[1]
-
 
 class Descriptor(object):
     def __init__(self, spec):
