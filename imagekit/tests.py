@@ -17,6 +17,12 @@ class ResizeToWidth(processors.Resize):
 
 class ResizeToHeight(processors.Resize):
     height = 100
+    
+class ResizeToMaxHeight(processors.Resize):
+    max_height = 400
+
+class ResizeToMaxWidth(processors.Resize):
+    max_width = 300
 
 class ResizeToFit(processors.Resize):
     width = 100
@@ -24,6 +30,14 @@ class ResizeToFit(processors.Resize):
 
 class ResizeCropped(ResizeToFit):
     crop = ('center', 'center')
+
+class TestResizeToMaxWidth(ImageSpec):
+    access_as = 'to_max_width'
+    processors = [ResizeToMaxWidth]
+    
+class TestResizeToMaxHeight(ImageSpec):
+    access_as = 'to_max_height'
+    processors = [ResizeToMaxHeight]
 
 class TestResizeToWidth(ImageSpec):
     access_as = 'to_width'
@@ -62,38 +76,39 @@ class IKTest(TestCase):
 
     def test_save_image(self):
         img = self.generate_image()
-        path = self.p.image.path
         self.p.save_image('test2.jpeg', ContentFile(img.read()))
-        self.failIf(os.path.isfile(path))
-        path = self.p.image.path
         img.seek(0)
         self.p.save_image('test.jpeg', ContentFile(img.read()))
-        self.failIf(os.path.isfile(path))
         img.close()
-
+    
     def test_setup(self):
         self.assertEqual(self.p.image.width, 800)
         self.assertEqual(self.p.image.height, 600)
-
+    
     def test_to_width(self):
         self.assertEqual(self.p.to_width.width, 100)
         self.assertEqual(self.p.to_width.height, 75)
-
+    
+    def test_to_max_width(self):
+        self.assertEqual(self.p.to_max_width.width, 400)
+        self.assertEqual(self.p.to_max_width.height, 300)
+    
+    def test_to_max_height(self):
+        self.assertEqual(self.p.to_max_height.width, 400)
+        self.assertEqual(self.p.to_height.height, 300)
+    
     def test_to_height(self):
         self.assertEqual(self.p.to_height.width, 133)
         self.assertEqual(self.p.to_height.height, 100)
-
+    
     def test_crop(self):
         self.assertEqual(self.p.cropped.width, 100)
         self.assertEqual(self.p.cropped.height, 100)
-
+    
     def test_url(self):
         tup = (settings.MEDIA_URL, self.p._ik.cache_dir,
                'images/test_to_width.jpeg')
         self.assertEqual(self.p.to_width.url, "%s%s/%s" % tup)
-
+    
     def tearDown(self):
-        # make sure image file is deleted
-        path = self.p.image.path
         self.p.delete()
-        self.failIf(os.path.isfile(path))
