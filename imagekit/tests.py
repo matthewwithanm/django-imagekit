@@ -19,10 +19,13 @@ class ResizeToHeight(processors.Resize):
     height = 100
     
 class ResizeToMaxHeight(processors.Resize):
-    max_height = 400
+    max_height = 300
+
+class ResizeToOver(processors.Resize):
+    max_height = 1000
 
 class ResizeToMaxWidth(processors.Resize):
-    max_width = 300
+    max_width = 200
 
 class ResizeToFit(processors.Resize):
     width = 100
@@ -46,6 +49,10 @@ class TestResizeToWidth(ImageSpec):
 class TestResizeToHeight(ImageSpec):
     access_as = 'to_height'
     processors = [ResizeToHeight]
+
+class TestResizeToOver(ImageSpec):
+    access_as = 'to_over'
+    processors = [ResizeToOver]
 
 class TestResizeCropped(ImageSpec):
     access_as = 'cropped'
@@ -89,13 +96,17 @@ class IKTest(TestCase):
         self.assertEqual(self.p.to_width.width, 100)
         self.assertEqual(self.p.to_width.height, 75)
     
+    def test_to_max_over(self):
+        self.assertEqual(self.p.to_over.width, 800)
+        self.assertEqual(self.p.to_over.height, 600)
+    
     def test_to_max_width(self):
-        self.assertEqual(self.p.to_max_width.width, 400)
-        self.assertEqual(self.p.to_max_width.height, 300)
+        self.assertEqual(self.p.to_max_width.width, 200)
+        self.assertEqual(self.p.to_max_width.height, 150)
     
     def test_to_max_height(self):
         self.assertEqual(self.p.to_max_height.width, 400)
-        self.assertEqual(self.p.to_height.height, 300)
+        self.assertEqual(self.p.to_max_height.height, 300)
     
     def test_to_height(self):
         self.assertEqual(self.p.to_height.width, 133)
