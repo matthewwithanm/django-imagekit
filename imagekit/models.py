@@ -149,6 +149,6 @@ class ImageModel(models.Model):
     def clear_cache(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
         self._clear_cache()
-    post_delete.connect(clear_cache, sender=self)
+    post_delete.connect(clear_cache, sender=ImageModel)
 
 
