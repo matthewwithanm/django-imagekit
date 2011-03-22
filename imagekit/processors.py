@@ -96,10 +96,13 @@ class Resize(ImageProcessor):
     upscale = False
     crop_horz_field = 1
     crop_vert_field = 1
+    background_color = '#FFFFFF'
     
     @classmethod
     def process(cls, img, fmt, obj):
         cur_width, cur_height = img.size
+        # convert bgcolor string to rgb value
+        background_color = ImageColor.getrgb(cls.background_color)
         default_width = float(cls.width or cls.max_width or cur_width)
         default_height = float(cls.height or cls.max_height or cur_height)
         if cls.crop:
@@ -137,6 +140,14 @@ class Resize(ImageProcessor):
                 if not cls.upscale:
                     return img, fmt
             img = img.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS)
+            if cls.width and resize_x < cls.width:
+                resize_x = cls.width
+            if cls.height and resize_y < cls.height:
+                resize_y = cls.height
+            size = (resize_x, resize_y)
+            background = Image.new('RGBA', size, background_color)
+            background.paste(img, ((size[0] - img.size[0])/2, (size[1] - img.size[1])/2))
+            img = background
         return img, fmt
 
 class Transpose(ImageProcessor):
