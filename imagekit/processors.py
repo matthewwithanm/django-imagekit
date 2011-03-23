@@ -144,9 +144,9 @@ class Resize(ImageProcessor):
                 resize_x = cls.width
             if cls.height and resize_y < cls.height:
                 resize_y = cls.height
-            size = (resize_x, resize_y)
+            size = (int(resize_x), int(resize_y))
             background = Image.new('RGBA', size, background_color)
-            background.paste(img, ((size[0] - img.size[0])/2, (size[1] - img.size[1])/2))
+            background.paste(img, (int((size[0] - img.size[0])/2), int((size[1] - img.size[1])/2)))
             img = background
         return img, fmt
 
