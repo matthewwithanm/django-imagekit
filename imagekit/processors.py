@@ -108,7 +108,13 @@ class Resize(ImageProcessor):
         if cls.crop:
             ratio = max(default_width/cur_width, default_height/cur_height)
         else:
-            ratio = min(default_width/cur_width, default_height/cur_height)
+            if not cls.width is None and not cls.height is None:
+                ratio = min(default_width/cur_width, default_height/cur_height)
+            else:
+                if cls.width is None:
+                    ratio = default_height/cur_height
+                else:
+                    ratio = default_width/cur_width
         resize_x, resize_y = (cur_width * ratio, cur_height * ratio)
         if cls.max_width: 
             resize_x = min(resize_x, float(cls.max_width))
