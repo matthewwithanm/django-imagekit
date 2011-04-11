@@ -119,11 +119,12 @@ class ImageModel(models.Model):
         content = ContentFile(data)
         self._imgfield.save(name, content, save)
 
-    def save(self, recache_image=False, clear_cache=True, *args, **kwargs):
+    def save(self, cache_image=False, clear_cache=True, *args, **kwargs):
         is_new_object = self._get_pk_val() is None
         super(ImageModel, self).save(*args, **kwargs)
         if is_new_object and self._imgfield:
             clear_cache = False
+            cache_image = True
             spec = self._ik.preprocessor_spec
             if spec is not None:
                 newfile = self._imgfield.storage.open(str(self._imgfield))
@@ -140,7 +141,7 @@ class ImageModel(models.Model):
                 name = str(self._imgfield)
                 self._imgfield.storage.delete(name)
                 self._imgfield.storage.save(name, content)
-        if not recache_image:
+        if not cache_image:
             return
         if self._imgfield:
             if clear_cache:
