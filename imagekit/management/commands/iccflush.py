@@ -82,7 +82,7 @@ def flush_icc_cache(apps, options):
                                 )
                     
                     print 'Flushing image file cache for %s objects in "%s.%s"' % (objs.count(), app_parts[0], model.__name__)
-                    for obj in objs.order_by('modifydate'):
+                    for obj in objs:
                         
                         obj._clear_iccprofile()
                         whathappened = obj._save_iccprofile()

@@ -79,7 +79,7 @@ def flush_image_cache(apps, options):
                                 )
                     
                     print 'Flushing image file cache for %s objects in "%s.%s"' % (objs.count(), app_parts[0], model.__name__)
-                    for obj in objs.order_by('modifydate'):
+                    for obj in objs:
                         
                         if int(options.get('verbosity', 1)) > 1:
                             if obj._imgfield.name:
