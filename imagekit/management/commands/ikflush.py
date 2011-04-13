@@ -91,3 +91,4 @@ def flush_image_cache(apps, options):
                         obj._pre_cache()
     else:
         print 'Please specify on or more app names'
+

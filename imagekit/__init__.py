@@ -1,10 +1,11 @@
 """
-
 Django ImageKit
 
 Author: Justin Driscoll <justin.driscoll@gmail.com>
-Version: 0.3.3
+Version: 0.3.6
 
 """
-VERSION = "0.3.3 ITS THE FI$H 2000 REMIX"
-        
+__author__ = 'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett'
+__version__ = (0, 3, 6)
+
+

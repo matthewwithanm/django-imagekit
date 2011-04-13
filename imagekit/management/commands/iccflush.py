@@ -5,7 +5,7 @@ from django.db.models.loading import cache
 from django.core.management.base import BaseCommand, CommandError
 from django.core.exceptions import ImproperlyConfigured
 from optparse import make_option
-from imagekit.models import ImageModel
+from imagekit.models import ImageModel, ICCImageModel
 from imagekit.specs import ImageSpec
 from imagekit.modelfields import *
 
@@ -49,7 +49,7 @@ def flush_icc_cache(apps, options):
                     models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
                 else:
                     putativemodel = cache.get_model(app_parts[0], app_parts[1])
-                    if issubclass(putativemodel, ImageModel):
+                    if issubclass(putativemodel, ICCImageModel):
                         models.append(putativemodel)
                 
                 for model in models:

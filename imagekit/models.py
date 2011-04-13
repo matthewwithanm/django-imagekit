@@ -4,8 +4,10 @@ from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.base import ModelBase
+from django.db.models.signals import post_delete
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
+
 from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
@@ -15,6 +17,7 @@ from imagekit.utils import img_to_fobj, md5_for_file
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
 # Choice tuples for specifying the crop origin.
+# These are provided for convenience.
 CROP_HORZ_CHOICES = (
     (0, _('left')),
     (1, _('center')),
@@ -59,8 +62,9 @@ class ImageModelBase(ModelBase):
 
 
 class ImageModel(models.Model):
-    """ Abstract base class implementing all core ImageKit functionality
-
+    """
+    Abstract base class implementing all core ImageKit functionality
+    
     Subclasses of ImageModel are augmented with accessors for each defined
     image specification and can override the inner IKOptions class to customize
     storage locations and other options.
@@ -78,24 +82,26 @@ class ImageModel(models.Model):
             return None
         prop = getattr(self, self._ik.admin_thumbnail_spec, None)
         if prop is None:
-            return 'An "%s" image spec has not been defined.' % self._ik.admin_thumbnail_spec
+            return 'An "%s" image spec has not been defined.' % \
+              self._ik.admin_thumbnail_spec
         else:
             if hasattr(self, 'get_absolute_url'):
-                return u'<a href="%s"><img src="%s"></a>' % (escape(self.get_absolute_url()), escape(prop.url))
+                return u'<a href="%s"><img src="%s"></a>' % \
+                    (escape(self.get_absolute_url()), escape(prop.url))
             else:
-                return u'<a href="%s"><img src="%s"></a>' % (escape(self._imgfield.url), escape(prop.url))
+                return u'<a href="%s"><img src="%s"></a>' % \
+                    (escape(self._imgfield.url), escape(prop.url))
     admin_thumbnail_view.short_description = _('Thumbnail')
     admin_thumbnail_view.allow_tags = True
-    
+
     @property
     def _imgfield(self):
         return getattr(self, self._ik.image_field)
-    
-    # I added this. -fish
+
     @property
     def _storage(self):
         return getattr(self._ik, 'storage', self._imgfield.storage)
-    
+
     def _clear_cache(self):
         for spec in self._ik.specs:
             prop = getattr(self, spec.name())
@@ -110,15 +116,13 @@ class ImageModel(models.Model):
     def save_image(self, name, image, save=True, replace=True):
         if self._imgfield and replace:
             self._imgfield.delete(save=False)
-        
         if hasattr(image, 'read'):
             data = image.read()
         else:
             data = image
-        
         content = ContentFile(data)
         self._imgfield.save(name, content, save)
-    
+
     def save(self, clear_cache=True, *args, **kwargs):
         is_new_object = self._get_pk_val() is None
         super(ImageModel, self).save(*args, **kwargs)
@@ -140,14 +144,18 @@ class ImageModel(models.Model):
                 name = str(self._imgfield)
                 self._imgfield.storage.delete(name)
                 self._imgfield.storage.save(name, content)
-        if clear_cache and self._imgfield:
-            self._clear_cache()
-        self._pre_cache()
+        
+        if self._imgfield:
+            if clear_cache:
+                self._clear_cache()
+            self._pre_cache()
 
-    def delete(self):
+    def clear_cache(self, **kwargs):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
         self._clear_cache()
-        models.Model.delete(self)
+
+
+post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
 
 
 class ICCImageModel(ImageModel):
@@ -262,9 +270,6 @@ class ICCImageModel(ImageModel):
                 return self._get_icc().product_info.split('\r\n\r\n')[2]
             except IndexError:
                 return "n/a"
-    
-
-
 
 
 

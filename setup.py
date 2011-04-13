@@ -1,4 +1,5 @@
 #/usr/bin/env python
+<<<<<<< HEAD
 from setuptools import setup, find_packages
  
 setup(
@@ -9,6 +10,25 @@ setup(
     author_email='justin@driscolldev.com',
     url='http://bitbucket.org/jdriscoll/django-imagekit/',
     packages=find_packages(),
+=======
+from distutils.core import setup
+
+setup(
+    name='django-imagekit',
+    version='0.3.6',
+    description='Automated image processing for Django models.',
+    author='Justin Driscoll',
+    author_email='justin@driscolldev.com',
+    maintainer='Bryan Veloso',
+    maintainer_email='bryan@revyver.com',
+    license='BSD',
+    url='http://github.com/jdriscoll/django-imagekit/',
+    packages=[
+        'imagekit',
+        'imagekit.management',
+        'imagekit.management.commands'
+    ],
+>>>>>>> master
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
@@ -17,6 +37,7 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Framework :: Django',
+<<<<<<< HEAD
     ],
     # Make setuptools include all data files under version control,
     # svn and CVS by default
@@ -26,3 +47,10 @@ setup(
     # it can find the data files under Hg version control.
     setup_requires=['setuptools_hg'],
 )
+=======
+        'Topic :: Utilities'
+    ]
+)
+
+
+>>>>>>> master

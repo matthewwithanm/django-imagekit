@@ -20,9 +20,6 @@ class ICCField(files.FileField):
     attr_class = ICCFieldFile
     descriptor_class = ICCFileDescriptor
 
-
-
-
 class ICCImageFileDescriptor(files.ImageFileDescriptor):
     pass
 

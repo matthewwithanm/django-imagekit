@@ -20,7 +20,6 @@ class PNGFormat(processors.Format):
     format = 'PNG'
     extension = 'png'
 
-
 """
 class DjangoAdminThumbnail(ImageSpec):
     access_as = 'admin_thumbnail'

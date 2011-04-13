@@ -5,7 +5,13 @@
 *.orig
 .DS_Store
 
+
 *.tmproj
 *.bbprojectd
 *.bbprojectd/
 *~
+
+dist
+build
+MANIFEST
+

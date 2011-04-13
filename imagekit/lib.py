@@ -1,4 +1,3 @@
-
 # Required PIL classes may or may not be available from the root namespace
 # depending on the installation method used.
 try:
@@ -7,7 +6,6 @@ try:
     import ImageFilter
     import ImageEnhance
     import ImageColor
-    
     import ImageCms
 except ImportError:
     try:
@@ -16,7 +14,6 @@ except ImportError:
         from PIL import ImageFilter
         from PIL import ImageEnhance
         from PIL import ImageColor
-        
         from PIL import ImageCms
         
     except ImportError:
@@ -29,7 +26,3 @@ it's where you at.
 """
 import os
 IK_ROOT = os.path.dirname(os.path.realpath(__file__))
-
-
-
-
