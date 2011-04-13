@@ -203,6 +203,7 @@ class ICCImageModel(ImageModel):
         return os.path.join(self._storage.location, self._iccdir, self._iccfilename)
     
     def _get_pil(self):
+        pilout = None
         try:
             if getattr(self._imgfield, "name", None):
                 pilout = Image.open(os.path.join(
@@ -210,11 +211,10 @@ class ICCImageModel(ImageModel):
                     getattr(self._imgfield, "name")
                 ))
         except ValueError:
-            return None
+            pass
         except IOError:
-            return None
-        else:
-            return pilout
+            pass
+        return pilout
     
     def _get_iccstr(self):
         pilimg = self._get_pil()
