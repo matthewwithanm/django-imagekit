@@ -5,32 +5,32 @@ from django.db.models import signals
 
 
 class ICCFileDescriptor(files.FileDescriptor):
-	pass
+    pass
 
 class ICCFieldFile(files.FieldFile):
-	"""
-	File-descended object representing a .icc file
-	"""
-	pass
+    """
+    File-descended object representing a .icc file
+    """
+    pass
 
 class ICCField(files.FileField):
-	"""
-	Field representing an ICC color profile.
-	"""
-	attr_class = ICCFieldFile
-	descriptor_class = ICCFileDescriptor
+    """
+    Field representing an ICC color profile.
+    """
+    attr_class = ICCFieldFile
+    descriptor_class = ICCFileDescriptor
 
 
 
 
 class ICCImageFileDescriptor(files.ImageFileDescriptor):
-	pass
+    pass
 
 class ICCImageFieldFile(files.ImageFieldFile):
-	pass
+    pass
 
 class ICCImageField(files.ImageField):
-	attr_class = ICCImageFieldFile
-	descriptor_class = ICCImageFileDescriptor
+    attr_class = ICCImageFieldFile
+    descriptor_class = ICCImageFileDescriptor
 
 
