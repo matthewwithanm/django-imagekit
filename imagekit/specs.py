@@ -75,11 +75,13 @@ class Accessor(object):
 
     def _delete(self):
         if self._obj._imgfield:
-            self._obj._storage.delete(self.name)
+            if self._exists():
+                self._obj._storage.delete(self.name)
 
     def _exists(self):
         if self._obj._imgfield:
-            return self._obj._storage.exists(self.name)
+            if self.name:
+                return self._obj._storage.exists(self.name)
 
     @property
     def name(self):
@@ -115,7 +117,7 @@ class Accessor(object):
     @property
     def file(self):
         self._create()
-        if self.name:
+        if self._exists():
             return self._obj._storage.open(self.name)
 
     @property
