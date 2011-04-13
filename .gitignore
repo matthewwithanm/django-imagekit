@@ -1,0 +1,11 @@
+*.eprj
+*.svn
+*.pyc
+*.db
+*.orig
+.DS_Store
+
+*.tmproj
+*.bbprojectd
+*.bbprojectd/
+*~
