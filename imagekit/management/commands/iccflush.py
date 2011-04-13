@@ -46,7 +46,7 @@ def flush_icc_cache(apps, options):
             else:
                 
                 if not len(app_parts) == 2:
-                    models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
+                    models = [m for m in cache.get_models(app) if issubclass(m, ICCImageModel)]
                 else:
                     putativemodel = cache.get_model(app_parts[0], app_parts[1])
                     if issubclass(putativemodel, ICCImageModel):

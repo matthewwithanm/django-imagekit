@@ -191,9 +191,9 @@ class ICCImageModel(ImageModel):
         FIXME: this will blindly overwrite anything
         """
         if not self._iccdir:
-            return None
+            return ""
         if not self._imgfield:
-            return None
+            return ""
         return os.path.join(self._storage.location, self._iccdir, self._iccfilename)
     
     def _get_pil(self):
@@ -204,6 +204,8 @@ class ICCImageModel(ImageModel):
                     getattr(self._imgfield, "name")
                 ))
         except ValueError:
+            return None
+        except IOError:
             return None
         else:
             return pilout
