@@ -5,7 +5,7 @@ inheriting from ImageModel will be modified with a descriptor/accessor for each
 spec found.
 
 """
-import os
+import os, warnings
 from StringIO import StringIO
 from imagekit import processors
 from imagekit.lib import *
@@ -39,15 +39,22 @@ class Accessor(object):
         self._fmt = None
         self._obj = obj
         self.spec = spec
-
+        ImageFile.MAXBLOCK = 1024*1024
+    
     def _get_imgfile(self):
         format = self._img.format or 'JPEG'
         if format != 'JPEG':
             imgfile = img_to_fobj(self._img, format)
         else:
-            imgfile = img_to_fobj(self._img, format,
-                                  quality=int(self.spec.quality),
-                                  optimize=True)
+            try:
+                imgfile = img_to_fobj(self._img, format, quality=int(self.spec.quality), optimize=True)
+            except IOError:
+                warnings.warn('---\t saving at quality %s (non-optimized) raised IOError' % int(self.spec.quality))
+                try:
+                    imgfile = img_to_fobj(self._img, format, quality=70, optimize=True)
+                except IOError:
+                    warnings.warn('---\t saving at quality 70 (optimized) raised IOError' % int(self.spec.quality))
+                    imgfile = img_to_fobj(self._img, format, quality=70)
         return imgfile
 
     def _create(self):
