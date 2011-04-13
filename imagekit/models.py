@@ -159,6 +159,12 @@ post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
 
 
 class ICCImageModel(ImageModel):
+    """
+    This subclass is a horrible mess. Frankly all this logic should move to
+    an ImageModelBase subclass so ICCImageModel can be a stubby little nothing.
+    I have no idea why I thought all these underscored and poorly-named methods
+    would be cool. Yeah. I'll change it toot sweet.
+    """
     __metaclass__ = ImageModelBase
 
     class Meta:
