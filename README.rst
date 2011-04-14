@@ -14,9 +14,8 @@ Step 1*
 
 (or clone the source and put the imagekit module on your path)
 
-*note: this will install the `upstream version`_ of imagekit. You're reading the documentation for my fork, which isn't on PyPI -- just use the GitHub download button if you need my changes.*
+*note: this will install the `upstream version <https://github.com/jdriscoll/django-imagekit>`_ of imagekit. You're reading the documentation for my fork, which isn't on PyPI -- just use the GitHub download button if you need my changes.*
 
-.. _`upstream version`: https://github.com/jdriscoll/django-imagekit
 
 Step 2
 ******
