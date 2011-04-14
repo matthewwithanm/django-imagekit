@@ -7,6 +7,7 @@ try:
     import ImageEnhance
     import ImageColor
     import ImageCms
+    import ImageStat
 except ImportError:
     try:
         from PIL import Image
@@ -15,6 +16,7 @@ except ImportError:
         from PIL import ImageEnhance
         from PIL import ImageColor
         from PIL import ImageCms
+        from PIL import ImageStat
         
     except ImportError:
         raise ImportError('ImageKit was unable to import the Python Imaging Library. Please confirm it`s installed and available on your current Python path.')
