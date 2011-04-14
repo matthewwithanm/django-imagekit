@@ -33,7 +33,7 @@ def flush_cache(apps, options):
             models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
             for model in models:
                 print 'Flushing cache for "%s.%s"' % (app_label, model.__name__)
-                for obj in model.objects.order_by('-id'):
+                for obj in model.objects.order_by('-pk'):
                     try:
                         if spec_class_list:
                             for spec_name in spec_class_list:
@@ -50,6 +50,7 @@ def flush_cache(apps, options):
                                     prop._create()
                         else:
                             for spec in model._ik.specs:
+                                print('Flushing item %d' % obj.pk)
                                 prop = getattr(obj, spec.name(), None)
                                 if prop is not None:
                                     prop._delete()
