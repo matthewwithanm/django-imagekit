@@ -34,30 +34,28 @@ def flush_cache(apps, options):
             for model in models:
                 print 'Flushing cache for "%s.%s"' % (app_label, model.__name__)
                 for obj in model.objects.order_by('-pk'):
-                    try:
-                        if spec_class_list:
-                            for spec_name in spec_class_list:
-                                try:
-                                    spec = model._ik.specs[spec_name]
-                                except KeyError:
-                                    print('Model %s has no spec named %s' % (model.__name__, spec_name))
-                                    continue
-                                prop = getattr(obj, spec.name(), None)
-                                if prop is not None:
-                                    prop._delete()
-                                if spec.pre_cache:
-                                    print('Creating %s: %d' % (spec_name,obj.id))
-                                    prop._create()
-                        else:
-                            for spec in model._ik.specs:
-                                print('Flushing item %d' % obj.pk)
-                                prop = getattr(obj, spec.name(), None)
-                                if prop is not None:
-                                    prop._delete()
-                                if spec.pre_cache:
-                                    prop._create() 
-                    except Exception:
-                        print ("Failure with %d" % obj.id)
+                    if spec_class_list:
+                        for spec_name in spec_class_list:
+                            try:
+                                spec = model._ik.specs[spec_name]
+                            except KeyError:
+                                print('Model %s has no spec named %s' % (model.__name__, spec_name))
+                                continue
+                            prop = getattr(obj, spec.name(), None)
+                            if prop is not None:
+                                prop._delete()
+                            if spec.pre_cache:
+                                print('Creating %s: %d' % (spec_name,obj.id))
+                                prop._create()
+                    else:
+                        for spec in model._ik.specs:
+                            print('Flushing item %d' % obj.pk)
+                            prop = getattr(obj, spec.name(), None)
+                            if prop is not None:
+                                prop._delete()
+                            if spec.pre_cache:
+                                prop._create() 
+
                         
     else:
         print 'Please specify one or more app names'
