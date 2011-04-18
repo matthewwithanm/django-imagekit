@@ -6,7 +6,7 @@ ICCProfile.py
 Adapted from the excellent ICCProfile python class by Florian Höch,
 which is a part of the source of dispcalGUI:
 
-    http://dispcalgui.hoech.net/
+	http://dispcalgui.hoech.net/
 
 Copyright (c) 2011 OST, LLC. 
 """
@@ -206,13 +206,13 @@ def Property(func):
 def dateTimeNumber(binaryString):
 	"""
 	Byte
-	Offset Content                                     Encoded as...
+	Offset Content									   Encoded as...
 	0..1   number of the year (actual year, e.g. 1994) uInt16Number
-	2..3   number of the month (1-12)                  uInt16Number
-	4..5   number of the day of the month (1-31)       uInt16Number
-	6..7   number of hours (0-23)                      uInt16Number
-	8..9   number of minutes (0-59)                    uInt16Number
-	10..11 number of seconds (0-59)                    uInt16Number
+	2..3   number of the month (1-12)				   uInt16Number
+	4..5   number of the day of the month (1-31)	   uInt16Number
+	6..7   number of hours (0-23)					   uInt16Number
+	8..9   number of minutes (0-59)					   uInt16Number
+	10..11 number of seconds (0-59)					   uInt16Number
 	"""
 	Y, m, d, H, M, S = [uInt16Number(chunk) for chunk in (binaryString[:2], 
 														  binaryString[2:4], 
@@ -634,7 +634,7 @@ class TextDescriptionType(ICCProfileTag, ADict): # ICC v2
 		macOffset = unicodeOffset + 8 + unicodeDescriptionLength * charBytes
 		macOffsetBackup = macOffset
 		if tagData[macOffset:macOffset + 5] == "\0\0\0\0\0":
-			macOffset += 5  # fix for fubar'd desc
+			macOffset += 5	# fix for fubar'd desc
 		self.macScriptCode = 0
 		if len(tagData) > macOffset + 2:
 			self.macScriptCode = uInt16Number(tagData[macOffset:macOffset + 2])
@@ -664,11 +664,11 @@ class TextDescriptionType(ICCProfileTag, ADict): # ICC v2
 	
 		def fget(self):
 			tagData = ["desc", "\0" * 4,
-					   uInt32Number_tohex(len(self.ASCII) + 1),  # count of ASCII chars + 1
+					   uInt32Number_tohex(len(self.ASCII) + 1),	 # count of ASCII chars + 1
 					   self.ASCII + "\0",  # ASCII desc, \0 terminated
 					   uInt32Number_tohex(self.get("unicodeLanguageCode", 0))]
 			if "Unicode" in self:
-				tagData.extend([uInt32Number_tohex(len(self.Unicode) + 2),  # count of Unicode chars + 2 (1 char = 2 byte)
+				tagData.extend([uInt32Number_tohex(len(self.Unicode) + 2),	# count of Unicode chars + 2 (1 char = 2 byte)
 								"\xfe\xff" + self.Unicode.encode("utf-16-be", "replace") + 
 								"\0\0"])  # Unicode desc, \0\0 terminated
 			else:
@@ -676,12 +676,12 @@ class TextDescriptionType(ICCProfileTag, ADict): # ICC v2
 			tagData.append(uInt16Number_tohex(self.get("macScriptCode", 0)))
 			if "Macintosh" in self:
 				macDescription = self.Macintosh[:66]
-				tagData.extend([uInt8Number_tohex(len(macDescription) + 1),  # count of Macintosh chars + 1
+				tagData.extend([uInt8Number_tohex(len(macDescription) + 1),	 # count of Macintosh chars + 1
 								macDescription.encode("mac-" + 
 													  encodings["mac"][self.get("macScriptCode", 0)], 
 													  "replace") + "\0"])
 			else:
-				tagData.extend([uInt32Number_tohex(0),  # Mac desc length = 0
+				tagData.extend([uInt32Number_tohex(0),	# Mac desc length = 0
 								"\0" * 67])
 			return "".join(tagData)
 		
@@ -729,7 +729,7 @@ class VideoCardGammaType(ICCProfileTag, ADict):
 		Normalizes and prints all values in the vcgt (range of 0.0...1.0).
 		
 		For a 256-entry table with linear values from 0 to 65535:
-		#   REF            C1             C2             C3
+		#	REF			   C1			  C2			 C3
 		001 0.000000000000 0.000000000000 0.000000000000 0.000000000000
 		002 0.003921568627 0.003921568627 0.003921568627 0.003921568627
 		003 0.007843137255 0.007843137255 0.007843137255 0.007843137255
@@ -928,10 +928,10 @@ class VideoCardGammaTableType(VideoCardGammaType):
 		"""
 		Smooth video LUT curves (moving average).
 		
-		passses   Number of passes
-		window    Tuple or list containing weighting factors. Its length
-		          determines the size of the window to use.
-		          Defaults to (1.0, 1.0, 1.0)
+		passses	  Number of passes
+		window	  Tuple or list containing weighting factors. Its length
+				  determines the size of the window to use.
+				  Defaults to (1.0, 1.0, 1.0)
 		
 		"""
 		if not window or len(window) < 3 or len(window) % 2 != 1:
@@ -966,7 +966,7 @@ class VideoCardGammaTableType(VideoCardGammaType):
 		def fget(self):
 			tagData = ["vcgt", "\0" * 4,
 					   uInt32Number_tohex(0),  # type 0 = table
-					   uInt16Number_tohex(len(self.data)),  # channels
+					   uInt16Number_tohex(len(self.data)),	# channels
 					   uInt16Number_tohex(self.entryCount),
 					   uInt16Number_tohex(self.entrySize)]
 			int2hex = {
@@ -1043,7 +1043,7 @@ typeSignature2Type = {
 	"desc": TextDescriptionType,  # ICC v2
 	"dtim": DateTimeType,
 	"meas": MeasurementType,
-	"mluc": MultiLocalizedUnicodeType,  # ICC v4
+	"mluc": MultiLocalizedUnicodeType,	# ICC v4
 	"sf32": s15Fixed16ArrayType,
 	"sig ": SignatureType,
 	"text": TextType,
@@ -1138,10 +1138,10 @@ class ICCProfile:
 				"manufacturer": header[48:52].strip("\0\n\r "),
 				"model": header[52:56].strip("\0\n\r "),
 				"attributes": {
-					"reflective":   deviceAttributes | 1 != deviceAttributes,
-					"glossy":       deviceAttributes | 2 != deviceAttributes,
-					"positive":     deviceAttributes | 4 != deviceAttributes,
-					"color":        deviceAttributes | 8 != deviceAttributes
+					"reflective":	deviceAttributes | 1 != deviceAttributes,
+					"glossy":		deviceAttributes | 2 != deviceAttributes,
+					"positive":		deviceAttributes | 4 != deviceAttributes,
+					"color":		deviceAttributes | 8 != deviceAttributes
 				}
 			}
 			self.intent = uInt32Number(header[64:68])
@@ -1217,21 +1217,21 @@ class ICCProfile:
 					tagSignature = tag[:4]
 					if debug: print "tagSignature:", tagSignature
 					tagDataOffset = uInt32Number(tag[4:8])
-					if debug: print "    tagDataOffset:", tagDataOffset
+					if debug: print "	 tagDataOffset:", tagDataOffset
 					tagDataSize = uInt32Number(tag[8:12])
-					if debug: print "    tagDataSize:", tagDataSize
+					if debug: print "	 tagDataSize:", tagDataSize
 					if tagSignature in self._tags:
 						safe_print("Error (non-critical): Tag '%s' already "
 								   "encountered. Skipping..." % tagSignature)
 					else:
 						if (tagDataOffset, tagDataSize) in tags:
-							if debug: print "    tagDataOffset and tagDataSize indicate shared tag"
+							if debug: print "	 tagDataOffset and tagDataSize indicate shared tag"
 							self._tags[tagSignature] = tags[(tagDataOffset, tagDataSize)]
 						else:
 							start = tagDataOffset - discard_len
-							if debug: print "    tagData start:", start
+							if debug: print "	 tagData start:", start
 							end = tagDataOffset - discard_len + tagDataSize
-							if debug: print "    tagData end:", end
+							if debug: print "	 tagData end:", end
 							tagData = self._data[start:end]
 							if len(tagData) < tagDataSize:
 								raise ICCProfileInvalidError("Tag data for tag %r (offet %i, size %i) is truncated" % (tagSignature,
@@ -1239,13 +1239,13 @@ class ICCProfile:
 																													   tagDataSize))
 							##self._data = self._data[:128] + self._data[end:]
 							##discard_len += tagDataOffset - 128 - discard_len + tagDataSize
-							##if debug: print "    discard_len:", discard_len
+							##if debug: print "	   discard_len:", discard_len
 							typeSignature = tagData[:4]
 							if len(typeSignature) < 4:
 								raise ICCProfileInvalidError("Tag type signature for tag %r (offet %i, size %i) is truncated" % (tagSignature,
 																																 tagDataOffset,
 																																 tagDataSize))
-							if debug: print "    typeSignature:", typeSignature
+							if debug: print "	 typeSignature:", typeSignature
 							try:
 								if tagSignature in tagSignature2Tag:
 									tag = tagSignature2Tag[tagSignature](tagData, tagSignature)
@@ -1392,13 +1392,17 @@ class ICCProfile:
 			stream.close()
 	
 	def __repr__(self):
-		return self.data
+		if self.data:
+			return str(self.data)
+		return ''
 	
 	def __str__(self):
 		return "<ICCProfile: %s - %s>" % (self.getDescription(), self.getCopyright())
 	
 	def __unicode__(self):
-		return u"<ICCProfile: %s - %s>" % (self.getDescription(), self.getCopyright())
+		if self.data:
+			return str(self.data)
+		return ''
 	
 	def __eq__(self, other):
 		return self.isSame(other)

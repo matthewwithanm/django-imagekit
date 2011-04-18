@@ -61,7 +61,7 @@ class ICCDataField(models.TextField):
         if value:
             if isinstance(value, ICCProfile):
                 return value
-            return ICCProfile(base64.b64decode(value))
+            return ICCProfile(value)
         return None
     
     def get_prep_value(self, value):
@@ -81,8 +81,8 @@ class ICCDataField(models.TextField):
         """
         if not prepared:
             value = self.get_prep_value(value)
-        if len(value) > 0:
-            return base64.b64encode(value)
+        if value:
+            return value
         return ''
     
     def value_to_string(self, obj):

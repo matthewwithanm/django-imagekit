@@ -102,7 +102,8 @@ class ImageModel(models.Model):
     
     @property
     def _storage(self):
-        return getattr(self._ik, 'storage', self._imgfield.storage)
+        #return getattr(self._ik, 'storage', self._imgfield.storage)
+        return getattr(self._ik, 'storage')
     
     def _clear_cache(self):
         for spec in self._ik.specs:
@@ -117,13 +118,18 @@ class ImageModel(models.Model):
     
     @property
     def pilimage(self):
-        try:
-            if self.image.file.name:
-                filename = self.image.file.name
-        except ValueError:
-            return None
-        else:
-            return Image.open(filename)
+        if self._imgfield:
+            try:
+                filename = self._imgfield.path
+            except ValueError:
+                return ''
+            else:
+                try:
+                    pilim = Image.open(filename)
+                except IOError:
+                    return ''
+                return pilim
+        return ''
     
     def _get_histogram(self):
         out = []
@@ -233,7 +239,9 @@ class ICCImageModel(ImageModel):
     would be cool. Yeah. I'll change it toot sweet.
     """
     __metaclass__ = ImageModelBase
-
+    
+    _icc = None
+    
     class Meta:
         abstract = True
     
@@ -253,7 +261,7 @@ class ICCImageModel(ImageModel):
     
     @property
     def _iccfilename(self):
-        return "%s.icc" % os.path.basename(self._imgfield.name)
+        return "%s.icc" % os.path.basename(self._imgfield.path)
     
     @property
     def _iccurl(self):
@@ -271,52 +279,65 @@ class ICCImageModel(ImageModel):
         """
         if not self._iccdir:
             return ""
-        if not self._imgfield:
+        try: 
+            if not self._imgfield.path:
+                return ""
+        except ValueError:
+            #print "WTF: no imagefield path in %s" % self._imgfield
             return ""
         return os.path.join(self._storage.location, self._iccdir, self._iccfilename)
     
     @property
     def icc(self):
-        return ICCProfile(self.pilimage.info.get('icc_profile'))
+        if not self._icc:
+            self._icc = ICCProfile(self.pilimage.info.get('icc_profile'))
+        return self._icc
     
     def _save_iccprofile(self, svpth=None):
-        savepath = svpth and svpth or self._get_iccfilepath()
+        savepath = self._get_iccfilepath()
         if not savepath:
+            #print "No savepath"
             return None
         if os.path.exists(savepath): # FIXME: will need to do some FileSystemStorage nonsense and not fail quietly
+            #print "Savepath exists"
             return None
-        iccstrout = self.icc.data
-        if not iccstrout:
+        if self.pilimage:
+            iccstrout = self.pilimage.info.get('icc_profile')
+            if not iccstrout:
+                #rint "No ICC data from pilimage"
+                return None
+            iccfile = self._storage.open(savepath, mode="wb")
+            iccfile.write(iccstrout)
+            iccfile.flush()
+            iccfile.close()
+            return iccfile.name
+        else:
+            #print "No pilimage"
             return None
-        iccfile = self._storage.open(savepath, mode="wb")
-        iccfile.write(iccstrout)
-        iccfile.flush()
-        iccfile.close()
-        return iccfile.name
     
     def save(self, clear_cache=True, *args, **kwargs):
-        if self._ik.icc_field and self.pilimage:
-            self._iccfield = ICCProfile(self.pilimage.info.get('icc_profile'))
+        dest_icc = self.icc
+        if self._ik.icc_field and dest_icc._data:
+            self._iccfield = dest_icc
         super(ICCImageModel, self).save(clear_cache, *args, **kwargs)
     
-    @property
-    def _iccpath(self):
-        return os.path.exists(self._get_iccfilepath()) and self._get_iccfilepath() or ""
-    
     def _clear_iccprofile(self):
-        if self._iccpath:
-            self._storage.delete(self._iccpath)
+        clearpth = self._get_iccfilepath()
+        if clearpth:
+            if os.path.exists(clearpth):
+                self._storage.delete(clearpth)
     
     # icc profile properties
     @property
     def _icc_filehash(self):
-        if self._iccpath:
-            iccfile = self._storage.open(self._iccpath, mode="rb")
+        hashpth = self._get_iccfilepath()
+        if hashpth:
+            iccfile = self._storage.open(hashpth, mode="rb")
             out = md5_for_file(iccfile)
             iccfile.close()
             return out
         return None
-    
+        
     # legacy support.
     @property
     def _icc_productname(self):
