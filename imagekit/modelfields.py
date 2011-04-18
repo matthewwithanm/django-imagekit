@@ -11,7 +11,7 @@ class ICCDataField(models.TextField):
     Model field representing an ICC profile instance.
     
     Represented in python as an ICCProfile instance -- see ICCProfile.py for details.
-    Stored in the database as base64-encoded binary data.
+    Stored in the database as unicode data.
     
     Example usage:
     -------------------------
@@ -61,7 +61,7 @@ class ICCDataField(models.TextField):
         if value:
             if isinstance(value, ICCProfile):
                 return value
-            return ICCProfile(value)
+            return ICCProfile(base64.b64decode(value))
         return None
     
     def get_prep_value(self, value):
@@ -73,21 +73,21 @@ class ICCDataField(models.TextField):
                 return value.data
             if len(value) > 0:
                 return value
-        return ''
+        return value
     
     def get_db_prep_value(self, value, connection, prepared=False):
         """
-        Always return a valid base64-encoded string for valid data.
+        Always return a valid unicode data string.
         """
         if not prepared:
             value = self.get_prep_value(value)
         if value:
-            return value
-        return ''
+            return base64.b64encode(value)
+        return value
     
     def value_to_string(self, obj):
         """
-        Return base64-encoded data (for now) suitable for serialization (JSON, pickle, etc)
+        Return unicode data (for now) suitable for serialization (JSON, pickle, etc)
         """
         return self.get_db_prep_value(self._get_val_from_obj(obj))
     

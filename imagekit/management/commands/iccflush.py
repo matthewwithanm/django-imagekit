@@ -91,6 +91,7 @@ def flush_icc_cache(apps, options):
                         whathappened = obj._save_iccprofile()
                         
                         if whathappened:
+                            print "WHAT HAPPENED: %s" % whathappened
                             obj.save(False)
                         
                         if whathappened and int(options.get('verbosity', 1)) > 1:

@@ -27,8 +27,7 @@ class Command(BaseCommand):
 
 def flush_image_cache(apps, options):
     """
-    Clears the image cache
-    
+    Clears the image cache.
     """
     
     apps = [a.strip(',') for a in apps]
@@ -37,7 +36,7 @@ def flush_image_cache(apps, options):
         for app_label in apps:
             
             app_parts = app_label.split('.')
-            models = list()
+            modls = list()
             
             
             try:
@@ -47,20 +46,21 @@ def flush_image_cache(apps, options):
             else:
             
                 if not len(app_parts) == 2:
-                    models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
+                    modls = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
                 else:
                     putativemodel = cache.get_model(app_parts[0], app_parts[1])
                     if issubclass(putativemodel, ImageModel):
-                        models.append(putativemodel)
+                        modls.append(putativemodel)
                 
-                for model in models:
+                for modl in modls:
                     
-                    if not options.get('ids'):
-                        objs = model.objects.all()
-                    else:
+                    objs = modl.objects.all()
+                    
+                    if options.get('ids'):
+                        
                         if options.get('ids').find(':') == -1:
                         
-                            objs = model.objects.filter(
+                            objs = objs.filter(
                                 Q(id__gte=0) & Q(id__lte=int(options.get('ids')))
                             )
                         
@@ -70,15 +70,15 @@ def flush_image_cache(apps, options):
                             if not bottom:
                                 bottom = '0'
                             if not top:
-                                objs = model.objects.filter(
+                                objs = objs.filter(
                                     Q(id__gte=int(bottom))
                                 )
                             else:
-                                objs = model.objects.filter(
+                                objs = objs.filter(
                                     Q(id__gte=int(bottom)) & Q(id__lte=int(top))
                                 )
                     
-                    print 'Flushing image file cache for %s objects in "%s.%s"' % (objs.count(), app_parts[0], model.__name__)
+                    print 'Flushing image file cache for %s objects in "%s.%s"' % (objs.count(), app_parts[0], modl.__name__)
                     for obj in objs:
                         
                         if int(options.get('verbosity', 1)) > 1:
