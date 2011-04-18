@@ -13,6 +13,7 @@ from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj, md5_for_file
+from imagekit.ICCProfile import ICCProfile
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -258,6 +259,12 @@ class ICCImageModel(ImageModel):
     def _iccurl(self):
         return urlparse.urljoin(self._storage.base_url, os.path.join(self._iccdir, self._iccfilename))
     
+    def _iccfield_get(self):
+        return getattr(self, self._ik.icc_field)
+    def _iccfield_set(self, newicc):
+        setattr(self, self._ik.icc_field, newicc)
+    _iccfield = property(_iccfield_get, _iccfield_set)
+    
     def _get_iccfilepath(self):
         """
         FIXME: this will blindly overwrite anything
@@ -268,16 +275,9 @@ class ICCImageModel(ImageModel):
             return ""
         return os.path.join(self._storage.location, self._iccdir, self._iccfilename)
     
-    def _get_iccstr(self):
-        if not self.pilimage:
-            return None
-        return self.pilimage.info.get('icc_profile', None)
-    
-    def _get_icc(self):
-        iccstr = self._get_iccstr()
-        if not iccstr:
-            return None
-        return ImageCms.ImageCmsProfile(ImageCms.core.profile_fromstring(iccstr))
+    @property
+    def icc(self):
+        return ICCProfile(self.pilimage.info.get('icc_profile'))
     
     def _save_iccprofile(self, svpth=None):
         savepath = svpth and svpth or self._get_iccfilepath()
@@ -285,7 +285,7 @@ class ICCImageModel(ImageModel):
             return None
         if os.path.exists(savepath): # FIXME: will need to do some FileSystemStorage nonsense and not fail quietly
             return None
-        iccstrout = self._get_iccstr()
+        iccstrout = self.icc.data
         if not iccstrout:
             return None
         iccfile = self._storage.open(savepath, mode="wb")
@@ -293,6 +293,11 @@ class ICCImageModel(ImageModel):
         iccfile.flush()
         iccfile.close()
         return iccfile.name
+    
+    def save(self, clear_cache=True, *args, **kwargs):
+        if self._ik.icc_field and self.pilimage:
+            self._iccfield = ICCProfile(self.pilimage.info.get('icc_profile'))
+        super(ICCImageModel, self).save(clear_cache, *args, **kwargs)
     
     @property
     def _iccpath(self):
@@ -311,24 +316,24 @@ class ICCImageModel(ImageModel):
             iccfile.close()
             return out
         return None
+    
+    # legacy support.
     @property
     def _icc_productname(self):
-        return self._get_icc().product_name
+        return self.icc.getDeviceModelDescription()
     @property
     def _icc_profilename(self):
-        return self._get_icc().product_info.split('\r\n\r\n')[0]
+        return self.icc.getDescription()
     @property
     def _icc_copyright(self):
-        return self._get_icc().product_info.split('\r\n\r\n')[1]
+        return self.icc.getCopyright()
     @property
     def _icc_whitepoint(self):
         try:
-            return self._get_icc().product_info.split('\r\n\r\n')[2].split(' : ')[1]
-        except IndexError:
-            try:
-                return self._get_icc().product_info.split('\r\n\r\n')[2]
-            except IndexError:
-                return "n/a"
-
-
+            whitepoint = self.icc.tags.get('meas').get('illuminantType').get('description')
+            if whitepoint == 'D65':
+                return u"%s (daylight)" % whitepoint
+            return whitepoint
+        except AttributeError:
+            return ''
 

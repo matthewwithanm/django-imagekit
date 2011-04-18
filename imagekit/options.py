@@ -15,6 +15,7 @@ class Options(object):
     cache_dir = 'cache'
     
     icc_dir = None # setting icc_dir enables icc processing
+    icc_field = None
     
     save_count_as = None
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
