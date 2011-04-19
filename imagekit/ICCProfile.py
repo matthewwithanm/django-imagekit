@@ -198,6 +198,35 @@ observers = {
 	2: "CIE 1964"
 }
 
+technology = {
+	'AMD ': "Active Matrix Display",
+	'CRT ': "Cathode Ray Tube Display",
+	'KPCD': "Photo CD",
+	'PMD ': "Passive Matrix Display",
+	'dcam': "Digital Camera",
+	'dcpj': "Digital Cinema Projector",
+	'dmpc': "Digital Motion Picture Camera",
+	'dsub': "Dye Sublimation Printer",
+	'epho': "Electrophotographic Printer",
+	'esta': "Electrostatic Printer",
+	'flex': "Flexography",
+	'fprn': "Film Writer",
+	'fscn': "Film Scanner",
+	'grav': "Gravure",
+	'ijet': "Ink Jet Printer",
+	'imgs': "Photo Image Setter",
+	'mpfr': "Motion Picture Film Recorder",
+	'mpfs': "Motion Picture Film Scanner",
+	'offs': "Offset Lithography",
+	'pjtv': "Projection Television",
+	'rpho': "Photographic Paper Printer",
+	'rscn': "Reflective Scanner",
+	'silk': "Silkscreen",
+	'twax': "Thermal Wax Printer",
+	'vidc': "Video Camera",
+	'vidm': "Video Monitor"
+}
+
 
 def Property(func):
 	return property(**func())
@@ -1200,7 +1229,12 @@ class ICCProfile:
 	
 	@property
 	def tags(self):
-		"Profile Tag Table"
+		"""
+		Profile Tag Table.
+		
+		See also: http://www.sno.phy.queensu.ca/~phil/exiftool/TagNames/ICC_Profile.html
+		
+		"""
 		if not self._tags:
 			self.load()
 			if self._data and len(self._data) > 131:
@@ -1320,6 +1354,35 @@ class ICCProfile:
 		Return viewing conditions description.
 		"""
 		return unicode(self.tags.get("vued", ""))
+	
+	def getTechnologySummary(self):
+		"""
+		Return description of the device the profile represents.
+		N.B. make this a real tag.
+		"""
+		return unicode(technology.get(self.tags.get("tech", ""), ""))
+	
+	def getViewTargetIlluminant(self):
+		"""
+		Return target viewing illuminant.
+		"""
+		if self.tags.get("view", ""):
+			if self.tags['view'].get("illuminantType", ""):
+				if self.tags['view']['illuminantType'].get("description", ""):
+					return unicode(self.tags['view']['illuminantType'].get("description", ""))
+		return u""
+	
+	def getMeasuredIlluminant(self):
+		"""
+		Return illuminant recorded at the profiles' source.
+		"""
+		if self.tags.get("meas", ""):
+			if self.tags['meas'].get("illuminantType", ""):
+				if self.tags['meas']['illuminantType'].get("description", ""):
+					return unicode(self.tags['meas']['illuminantType'].get("description", ""))
+		return u""
+
+		
 	
 	def getIDString(self):
 		"""
