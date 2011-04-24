@@ -88,13 +88,9 @@ def flush_icc_cache(apps, options):
                     for obj in objs:
                         
                         obj._clear_iccprofile()
-                        whathappened = obj._save_iccprofile()
+                        obj.save(False)
                         
-                        if whathappened:
-                            print "WHAT HAPPENED: %s" % whathappened
-                            obj.save(False)
-                        
-                        if whathappened and int(options.get('verbosity', 1)) > 1:
+                        if obj.icc and int(options.get('verbosity', 1)) > 1:
                             
                             hsh = obj._icc_filehash
                             buckets[hsh] = buckets.get(hsh, 0) + 1
