@@ -1,4 +1,5 @@
 import os, urlparse, numpy
+import cStringIO as StringIO
 from datetime import datetime
 from django.conf import settings
 from django.core.files import File
@@ -286,9 +287,7 @@ class ICCImageModel(ImageModel):
             if theicc.data:
                 if isinstance(self.icc, ICCProfile):
                     self._iccfield = self.icc
-                    ff = self._storage.open(self._get_iccfilepath(), 'wb')
-                    self.icc.write(ff)
-                    ff.close()
+                    self._storage.save(self._get_iccfilepath(), ContentFile(self.icc.data))
         super(ICCImageModel, self).save(clear_cache, *args, **kwargs)
     
     def _clear_iccprofile(self):
