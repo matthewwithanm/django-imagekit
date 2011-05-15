@@ -1,4 +1,4 @@
-import base64, numpy
+import base64, numpy, uuid
 from django.db import models
 from django.db.models import fields
 from django.db.models.fields import files
@@ -109,24 +109,30 @@ class ICCMetaField(ICCDataField):
         if not hasattr(self, 'verbose_name'):
             self.verbose_name = name
         super(ICCMetaField, self).contribute_to_class(cls, name)
-        signals.pre_save.connect(self.refresh_icc_data, sender=cls)
+        
+        #print("About to connect (%s)" % cls.__name__)
+        signals.pre_save.connect(ICCMetaField.refresh_icc_data, sender=cls, dispatch_uid=uuid.uuid4().hex)
     
+    @classmethod
     def refresh_icc_data(cls, **kwargs): # signal, sender, instance
         """
         Stores ICC profile data in the field before saving.
         """
         instance = kwargs.get('instance')
-        pilimage = getattr(instance.image, 'pilimage', None)
+        pilimage = getattr(instance, 'pilimage', None)
         profile_string = ''
         
         if pilimage:
+            #logg.info("About to attempt to refresh ICC data (%s)" % kwargs)
             try:
                 profile_string = pilimage.info.get('icc_profile', '')
             except:
                 logg.info("Exception was raised when trying to get the icc profile string")
             
             if len(profile_string):
-                instance.data.icc = ICCProfile(profile_string)
+                #logg.info("Saving icc profile for %s %s ..." % (instance.__class__.__name__, instance.id))
+                instance.icc = ICCProfile(profile_string)
+                #logg.info("Saved icc profile '%s' for %s" % (instance.icc.getDescription(), instance.id))
 
 class HistogramColumn(models.IntegerField):
     """
@@ -144,7 +150,7 @@ class HistogramColumn(models.IntegerField):
             kwargs.setdefault('null', False)
         else:
             raise TypeError("Can't create a HistogramColumn without specifying a channel.")
-        super(HistogramColumn, self).__init__(kwargs)
+        super(HistogramColumn, self).__init__(*args, **kwargs)
     
     def south_field_triple(self):
         """
@@ -175,7 +181,7 @@ class HistogramDescriptor(object):
         histogram = instance.__dict__[self.field.name]
         
         if isinstance(histogram, (numpy.array, numpy.matrix)):
-            if not isinstance(histogram.dtype, numpy.uint8):
+            if not issubclass(histogram.dtype, numpy.uint8):
                 return histogram.astype(numpy.uint8)
             return histogram
         
@@ -208,28 +214,29 @@ VALID_CHANNELS = (
     'C', 'M', 'Y', 'K',     # CMYK
 )
 
-class HistogramField(models.TextField):
+class HistogramField(models.CharField):
     """
     Model field representing an image histogram.
     """
     
-    def __init__(self, channel="L", **kwargs):
+    def __init__(self, channel="L", *args, **kwargs):
         for arg in ('primary_key', 'unique'):
             if arg in kwargs:
                 raise TypeError("'%s' is not a valid argument for %s." % (arg, self.__class__))
         if channel not in VALID_CHANNELS:
             raise TypeError("Invalid channel type %s was specified for HistogramField" % channel)
         self.channel = self.original_channel = channel
+        kwargs['max_length'] = 1
         kwargs.setdefault('default', "L")
         kwargs.setdefault('verbose_name', "Histogram")
-        #kwargs.setdefault('max_length', 1)
+        kwargs.setdefault('max_length', 1)
         kwargs.setdefault('editable', True)
         kwargs.setdefault('blank', False)
         kwargs.setdefault('null', False)
-        super(HistogramField, self).__init__(kwargs)
+        super(HistogramField, self).__init__(*args, **kwargs)
     
     def get_internal_type(self):
-        return "HistogramField"
+        return "CharField"
     
     def get_prep_lookup(self, lookup_type, value):
         return super(HistogramField, self).get_prep_lookup(self.original_channel)
@@ -244,7 +251,8 @@ class HistogramField(models.TextField):
             self.verbose_name = name
         super(HistogramField, self).contribute_to_class(cls, name)
         
-        setattr(cls, self.channel, HistogramDescriptor(self))
+        #setattr(cls, self.channel, HistogramDescriptor(self))
+        setattr(cls, 'channel', HistogramDescriptor(self))
         signals.pre_save.connect(self.refresh_histogram, sender=cls)
         
         if hasattr(self, 'original_channel'):
@@ -261,14 +269,17 @@ class HistogramField(models.TextField):
         Stores histogram column values in their respective db fields before saving
         """
         instance = kwargs.get('instance')
-        pilimage = getattr(instance.imagemeta.image, 'pilimage', None)
+        pilimage = instance.image.pilimage
+        
+        logg.info("About to refresh '%s' histogram. KWARGS: %s" % (self.original_channel, kwargs))
         
         if pilimage:
-            if instance.original_channel in pilimage.mode:
-                channel_data = pilimage.split()[pilimage.mode.index(instance.original_channel)].histogram()[:256]
+            if self.original_channel in pilimage.mode:
+                channel_data = pilimage.split()[pilimage.mode.index(self.original_channel)].histogram()[:256]
                 for i in xrange(256):
-                    histocolname = "__%s_%02X" % (instance.original_channel, i)
-                    setattr(model_instance, histocolname, int(channel_data[i]))
+                    histocolname = "__%s_%02X" % (self.original_channel, i)
+                    setattr(instance, histocolname, int(channel_data[i]))
+                logg.info("Refreshed '%s' histogram." % self.original_channel)
     
     def save_form_data(self, instance, data):
         """
@@ -284,6 +295,6 @@ class HistogramField(models.TextField):
         """
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
-        return ('django.db.models.TextField', args, kwargs)
+        return ('django.db.models.CharField', args, kwargs)
 
 

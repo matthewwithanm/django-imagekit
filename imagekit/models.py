@@ -330,40 +330,14 @@ class ICCImageModel(ImageModel):
 
 HISTOGRAMS = ('luma','rgb')
 
-class ImageWithMetadata(ImageModel):
-    class Meta:
-        abstract = False
-        verbose_name = "Image Metadata"
-        verbose_name = "Image Metadata Objects"
-    
-    icc = ICCMetaField(verbose_name="ICC data",
-        editable=False,
-        null=True)
-    
-    def save_related_histograms(self, **kwargs): # signal, sender, instance
-        """
-        Saves a histogram when its related ImageWithMetadata object is about to be saved.
-        This should be reimplemented once I figure out how to iterate through an object's FKs
-        in a non-retarded way.
-        """
-        metadata = kwargs.get('instance')
-        
-        for histogram_type in HISTOGRAMS:
-            if hasattr(self, "histogram_%s" % histogram_type):
-                related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
-                if related_histogram:
-                    related_histogram.save()
-    
-    def __repr__(self):
-        return "<%s #%s>" % (self.__class__.__name__, self.pk)
-
-signals.pre_save.connect(ImageWithMetadata.save_related_histograms, sender=ImageWithMetadata, dispatch_uid="ImageWithMetadata__pre_save")
-
 class HistogramBase(models.Model):
     class Meta:
         abstract = True
         verbose_name = "Histogram"
         verbose_name_plural = "Histograms"
+    
+    def __init__(self, *args, **kwargs):
+        super(HistogramBase, self).__init__(*args, **kwargs)
     
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
@@ -375,12 +349,12 @@ class HistogramBase(models.Model):
             raise TypeError("Channel index must be one of: %s" % ', '.join(VALID_CHANNELS))
         if channel not in VALID_CHANNELS:
             raise IndexError("Channel index must be one of: %s" % ', '.join(VALID_CHANNELS))
-        if not hasattr(self, 'imagemeta'):
-            raise NotImplementedError("No 'imagemeta' relation found on %s." % repr(self))
-        if not self.imagemeta:
+        if not hasattr(self, 'image'):
+            raise NotImplementedError("No 'image' property found on %s." % repr(self))
+        if not self.image:
             raise ValueError("HistogramBase %s has no valid ImageWithMetadata associated with it." % repr(self))
         
-        pilimage = self.imagemeta.image.pilimage
+        pilimage = self.image.pilimage
         
         if not pilimage:
             raise ValueError("No PIL image defined!")
@@ -389,6 +363,14 @@ class HistogramBase(models.Model):
             raise KeyError("%s has no histogram for channel %s." % (repr(self), channel))
         
         return getattr(self, channel)
+    
+    @property
+    def image(self):
+        if not hasattr(self, "_parentclass"):
+            return None
+        if not hasattr(self,  "_%s_image" % self._parentclass.lower()):
+            return None
+        return getattr(self, "_%s_image" % self._parentclass.lower()).get()
     
     def keys(self):
         out = []
@@ -413,32 +395,71 @@ class LumaHistogram(HistogramBase):
         verbose_name = "Luma Histogram"
         verbose_name_plural = "Luma Histograms"
     
-    imagemeta = models.ForeignKey(ImageWithMetadata,
-        related_name="histogram_luma",
-        unique=True,
-        editable=True)
     L = HistogramField(channel='L', verbose_name="Luma")
-    
+
 class RGBHistogram(HistogramBase):
     class Meta:
         abstract = False
         verbose_name = "RGB Histogram"
         verbose_name_plural = "RGB Histograms"
     
-    imagemeta = models.ForeignKey(ImageWithMetadata,
-        related_name="histogram_rgb",
-        unique=True,
-        editable=True)
     R = HistogramField(channel='R', verbose_name="Red")
     G = HistogramField(channel='G', verbose_name="Green")
     B = HistogramField(channel='B', verbose_name="Blue")
 
+class ImageWithMetadata(ImageModel):
+    class Meta:
+        abstract = True
+        verbose_name = "Image Metadata"
+        verbose_name = "Image Metadata Objects"
+    
+    def __init__(self, *args, **kwargs):
+        super(ImageWithMetadata, self).__init__(*args, **kwargs)
+        for histogram_type in HISTOGRAMS:
+            if hasattr(self, "histogram_%s" % histogram_type):
+                related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
+                if related_histogram:
+                    getattr(self, "histogram_%s" % histogram_type)._parentclass = self.__class__.__name__
+    
+    histogram_luma = models.ForeignKey(LumaHistogram,
+        related_name="_%(class)s_image",
+        unique=True,
+        blank=True,
+        null=True,
+        editable=True)
+    histogram_rgb = models.ForeignKey(RGBHistogram,
+        related_name="_%(class)s_image",
+        unique=True,
+        blank=True,
+        null=True,
+        editable=True)
+    
+    icc = ICCMetaField(verbose_name="ICC data",
+        editable=False,
+        null=True)
+    
+    def save(self, force_insert=False, force_update=False):
+        self.save_related_histograms(instance=self)
+        super(ImageWithMetadata, self).save(force_insert, force_update)
+    
+    def save_related_histograms(self, **kwargs): # signal, sender, instance
+        """
+        Saves a histogram when its related ImageWithMetadata object is about to be saved.
+        This should be reimplemented once I figure out how to iterate through an object's FKs
+        in a non-retarded way.
+        """
+        
+        metadata = kwargs.get('instance')
+        
+        for histogram_type in HISTOGRAMS:
+            if hasattr(self, "histogram_%s" % histogram_type):
+                related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
+                if related_histogram:
+                    related_histogram.save()
 
-
-
-
-
-
+    
+    def __repr__(self):
+        return "<%s #%s>" % (self.__class__.__name__, self.pk)
 
 
 
