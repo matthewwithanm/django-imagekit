@@ -1,9 +1,10 @@
-import base64
+import base64, numpy
 from django.db import models
 from django.db.models import fields
 from django.db.models.fields import files
 from django.db.models import signals
 from ICCProfile import ICCProfile
+from jogging import logging as logg
 
 
 class ICCDataField(models.TextField):
@@ -99,4 +100,190 @@ class ICCDataField(models.TextField):
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
         return ('django.db.models.TextField', args, kwargs)
+
+class ICCMetaField(ICCDataField):
+    
+    def contribute_to_class(self, cls, name):
+        if not hasattr(self, 'db_column'):
+            self.db_column = name
+        if not hasattr(self, 'verbose_name'):
+            self.verbose_name = name
+        super(ICCMetaField, self).contribute_to_class(cls, name)
+        signals.pre_save.connect(self.refresh_icc_data, sender=cls)
+    
+    def refresh_icc_data(cls, **kwargs): # signal, sender, instance
+        """
+        Stores ICC profile data in the field before saving.
+        """
+        instance = kwargs.get('instance')
+        pilimage = getattr(instance.image, 'pilimage', None)
+        profile_string = ''
+        
+        if pilimage:
+            try:
+                profile_string = pilimage.info.get('icc_profile', '')
+            except:
+                logg.info("Exception was raised when trying to get the icc profile string")
+            
+            if len(profile_string):
+                instance.data.icc = ICCProfile(profile_string)
+
+class HistogramColumn(models.IntegerField):
+    """
+    Model field representing a column in an image histogram.
+    See the Histogram model (and subclasses) in models.py for the implementation.
+    """
+    __metaclass__ = models.SubfieldBase
+    
+    def __init__(self, *args, **kwargs):
+        self.channel = kwargs.pop('channel', None)
+        if self.channel:
+            kwargs.setdefault('default', -1)
+            kwargs.setdefault('editable', True)
+            kwargs.setdefault('blank', False)
+            kwargs.setdefault('null', False)
+        else:
+            raise TypeError("Can't create a HistogramColumn without specifying a channel.")
+        super(HistogramColumn, self).__init__(kwargs)
+    
+    def south_field_triple(self):
+        """
+        Represent the field properly to the django-south model inspector.
+        See also: http://south.aeracode.org/docs/extendingintrospection.html
+        """
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('django.db.models.IntegerField', args, kwargs)
+
+class HistogramDescriptor(object):
+    """
+    Histogram descriptor for accessing the histogram data through the 
+    field referring to the histogram.
+    Implementation is derived from django.db.models.fields.files.FileDescriptor.
+    """
+    
+    def __init__(self, field):
+        self.field = field
+    
+    def __get__(self, instance=None, owner=None):
+        if instance is None:
+            raise AttributeError(
+                "The '%s' attribute can only be accessed from %s instances."
+                % (self.field.name, owner.__name__))
+        
+        to_matrix = lambda l: numpy.matrix(l, dtype=numpy.uint9)
+        histogram = instance.__dict__[self.field.name]
+        
+        if isinstance(histogram, (numpy.array, numpy.matrix)):
+            if not isinstance(histogram.dtype, numpy.uint8):
+                return histogram.astype(numpy.uint8)
+            return histogram
+        
+        elif isinstance(histogram, (list, tuple)):
+            return to_matrix(histogram)
+        
+        elif isinstance(histogram, (basestring, type(None))):
+            # get the fucking histogram out of the database here
+            out = []
+            if histogram:
+                for i in xrange(256):
+                    histocolname = "__%s_%02X" % (histogram, i)
+                    out.append(getattr(instance, histocolname))
+            return to_matrix(out)
+        
+        else:
+            # not sure what this is, let's try to make it a list:
+            try:
+                return to_matrix(list(histogram))
+            except TypeError:
+                return to_matrix([])
+    
+    def __set__(self, instance, value):
+        instance.__dict__[self.field.name] = value
+
+VALID_CHANNELS = (
+    'L',                    # luminance
+    'R', 'G', 'B',          # RGB
+    'A', 'a',               # alpha (little-a for premultiplied)
+    'C', 'M', 'Y', 'K',     # CMYK
+)
+
+class HistogramField(models.TextField):
+    """
+    Model field representing an image histogram.
+    """
+    
+    def __init__(self, channel="L", **kwargs):
+        for arg in ('primary_key', 'unique'):
+            if arg in kwargs:
+                raise TypeError("'%s' is not a valid argument for %s." % (arg, self.__class__))
+        if channel not in VALID_CHANNELS:
+            raise TypeError("Invalid channel type %s was specified for HistogramField" % channel)
+        self.channel = self.original_channel = channel
+        kwargs.setdefault('default', "L")
+        kwargs.setdefault('verbose_name', "Histogram")
+        #kwargs.setdefault('max_length', 1)
+        kwargs.setdefault('editable', True)
+        kwargs.setdefault('blank', False)
+        kwargs.setdefault('null', False)
+        super(HistogramField, self).__init__(kwargs)
+    
+    def get_internal_type(self):
+        return "HistogramField"
+    
+    def get_prep_lookup(self, lookup_type, value):
+        return super(HistogramField, self).get_prep_lookup(self.original_channel)
+    
+    def get_prep_value(self, value):
+        return unicode(self.original_channel)
+    
+    def contribute_to_class(self, cls, name):
+        if not hasattr(self, 'db_column'):
+            self.db_column = name
+        if not hasattr(self, 'verbose_name'):
+            self.verbose_name = name
+        super(HistogramField, self).contribute_to_class(cls, name)
+        
+        setattr(cls, self.channel, HistogramDescriptor(self))
+        signals.pre_save.connect(self.refresh_histogram, sender=cls)
+        
+        if hasattr(self, 'original_channel'):
+            for i in xrange(256):
+                histocol = HistogramColumn(channel=self.original_channel)
+                histocolname = "__%s_%02X" % (self.original_channel, i)
+                histocol.db_column = histocolname
+                histocol.verbose_name = histocolname
+                self.creation_counter = histocol.creation_counter + 1
+                cls.add_to_class(histocolname, histocol)
+    
+    def refresh_histogram(self, **kwargs):
+        """
+        Stores histogram column values in their respective db fields before saving
+        """
+        instance = kwargs.get('instance')
+        pilimage = getattr(instance.imagemeta.image, 'pilimage', None)
+        
+        if pilimage:
+            if instance.original_channel in pilimage.mode:
+                channel_data = pilimage.split()[pilimage.mode.index(instance.original_channel)].histogram()[:256]
+                for i in xrange(256):
+                    histocolname = "__%s_%02X" % (instance.original_channel, i)
+                    setattr(model_instance, histocolname, int(channel_data[i]))
+    
+    def save_form_data(self, instance, data):
+        """
+        Not sure about this one.
+        """
+        if data:
+            setattr(instance, self.channel, data)
+    
+    def south_field_triple(self):
+        """
+        Represent the field properly to the django-south model inspector.
+        See also: http://south.aeracode.org/docs/extendingintrospection.html
+        """
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('django.db.models.TextField', args, kwargs)
+
 

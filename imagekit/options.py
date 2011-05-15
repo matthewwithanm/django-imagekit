@@ -14,6 +14,7 @@ class Options(object):
     preprocessor_spec = None
     cache_dir = 'cache'
     
+    enable_metadata = False
     icc_dir = None # setting icc_dir enables icc processing
     icc_field = None
     

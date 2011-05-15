@@ -1,4 +1,4 @@
-import os, urlparse, numpy
+import os, urlparse, numpy, uuid
 import cStringIO as StringIO
 from datetime import datetime
 from django.conf import settings
@@ -6,7 +6,7 @@ from django.core.files import File
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.base import ModelBase
-from django.db.models.signals import post_delete
+from django.db.models import signals
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 from jogging import logging as logg
@@ -16,6 +16,8 @@ from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj, md5_for_file
+from imagekit.modelfields import VALID_CHANNELS
+from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField
 from imagekit.ICCProfile import ICCProfile
 
 # Modify image file buffer size.
@@ -218,9 +220,7 @@ class ImageModel(models.Model):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
         self._clear_cache()
 
-
-post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
-
+signals.post_delete.connect(ImageModel.clear_cache, sender=ImageModel, dispatch_uid="ImageModel__post_delete")
 
 class ICCImageModel(ImageModel):
     """
@@ -239,10 +239,10 @@ class ICCImageModel(ImageModel):
     
     def _pre_cache(self):
         super(ICCImageModel, self)._pre_cache()
-        self._save_iccprofile()
+        #self._save_iccprofile()
     def _clear_cache(self):
         super(ICCImageModel, self)._clear_cache()
-        self._clear_iccprofile()
+        #self._clear_iccprofile()
     
     @property
     def _iccdir(self):
@@ -282,12 +282,14 @@ class ICCImageModel(ImageModel):
         pass
     
     def save(self, clear_cache=True, *args, **kwargs):
+        '''
         theicc = self.icc
         if theicc and hasattr(theicc, 'data'):
             if theicc.data:
                 if isinstance(self.icc, ICCProfile):
                     self._iccfield = self.icc
                     self._storage.save(self._get_iccfilepath(), ContentFile(self.icc.data))
+        '''
         super(ICCImageModel, self).save(clear_cache, *args, **kwargs)
     
     def _clear_iccprofile(self):
@@ -325,4 +327,120 @@ class ICCImageModel(ImageModel):
             return whitepoint
         except AttributeError:
             return ''
+
+HISTOGRAMS = ('luma','rgb')
+
+class ImageWithMetadata(ImageModel):
+    class Meta:
+        abstract = False
+        verbose_name = "Image Metadata"
+        verbose_name = "Image Metadata Objects"
+    
+    icc = ICCMetaField(verbose_name="ICC data",
+        editable=False,
+        null=True)
+    
+    def save_related_histograms(self, **kwargs): # signal, sender, instance
+        """
+        Saves a histogram when its related ImageWithMetadata object is about to be saved.
+        This should be reimplemented once I figure out how to iterate through an object's FKs
+        in a non-retarded way.
+        """
+        metadata = kwargs.get('instance')
+        
+        for histogram_type in HISTOGRAMS:
+            if hasattr(self, "histogram_%s" % histogram_type):
+                related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
+                if related_histogram:
+                    related_histogram.save()
+    
+    def __repr__(self):
+        return "<%s #%s>" % (self.__class__.__name__, self.pk)
+
+signals.pre_save.connect(ImageWithMetadata.save_related_histograms, sender=ImageWithMetadata, dispatch_uid="ImageWithMetadata__pre_save")
+
+class HistogramBase(models.Model):
+    class Meta:
+        abstract = True
+        verbose_name = "Histogram"
+        verbose_name_plural = "Histograms"
+    
+    def __repr__(self):
+        return "<%s #%s>" % (self.__class__.__name__, self.pk)
+    
+    def __getitem__(self, channel):
+        if not channel:
+            raise KeyError("No channel index specified.")
+        if not isinstance(channel, basestring):
+            raise TypeError("Channel index must be one of: %s" % ', '.join(VALID_CHANNELS))
+        if channel not in VALID_CHANNELS:
+            raise IndexError("Channel index must be one of: %s" % ', '.join(VALID_CHANNELS))
+        if not hasattr(self, 'imagemeta'):
+            raise NotImplementedError("No 'imagemeta' relation found on %s." % repr(self))
+        if not self.imagemeta:
+            raise ValueError("HistogramBase %s has no valid ImageWithMetadata associated with it." % repr(self))
+        
+        pilimage = self.imagemeta.image.pilimage
+        
+        if not pilimage:
+            raise ValueError("No PIL image defined!")
+        
+        if channel not in self.keys():
+            raise KeyError("%s has no histogram for channel %s." % (repr(self), channel))
+        
+        return getattr(self, channel)
+    
+    def keys(self):
+        out = []
+        for field in self._meta.fields:
+            if isinstance(field, HistogramField):
+                out.append(field.name)
+        return out
+    
+    def values(self):
+        out = []
+        for field in self._meta.fields:
+            if isinstance(field, HistogramField):
+                out.append(field.value_from_object(self))
+        return out
+    
+    def items(self):
+        return zip(self.keys(), self.values())
+
+class LumaHistogram(HistogramBase):
+    class Meta:
+        abstract = False
+        verbose_name = "Luma Histogram"
+        verbose_name_plural = "Luma Histograms"
+    
+    imagemeta = models.ForeignKey(ImageWithMetadata,
+        related_name="histogram_luma",
+        unique=True,
+        editable=True)
+    L = HistogramField(channel='L', verbose_name="Luma")
+    
+class RGBHistogram(HistogramBase):
+    class Meta:
+        abstract = False
+        verbose_name = "RGB Histogram"
+        verbose_name_plural = "RGB Histograms"
+    
+    imagemeta = models.ForeignKey(ImageWithMetadata,
+        related_name="histogram_rgb",
+        unique=True,
+        editable=True)
+    R = HistogramField(channel='R', verbose_name="Red")
+    G = HistogramField(channel='G', verbose_name="Green")
+    B = HistogramField(channel='B', verbose_name="Blue")
+
+
+
+
+
+
+
+
+
+
+
 
