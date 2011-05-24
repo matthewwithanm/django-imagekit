@@ -24,6 +24,9 @@ class ICCModelAdmin(admin.ModelAdmin):
     
     list_display_links = ('modifydate',)
     
+    '''
+    List view accessors to display ICC profile object parameters in the Django admin.
+    '''
     def icc_description(self, obj):
         if obj.icc:
             return obj.icc.getDescription() or u'<i style="color: lightgray;">None</i>'
@@ -92,6 +95,30 @@ class ICCModelAdmin(admin.ModelAdmin):
     icc_connectionspace.short_description = "Connection space (PCS)"
     icc_connectionspace.allow_tags = True
     
+    '''
+    ModelAdmin overrides
+    '''
     
-
+    """
+    def save_model(self, request, obj, form, change):
+        from django.db import IntegrityError
+        
+        try:
+            obj.save()
+        except IntegrityError:
+            self.message_user(request, "YO DOGG: that ICC file's signature was already in the database.")
+    """
+    
+    def save_form(self, request, form, change):
+        maybe = super(ICCModelAdmin, self).save_form(request, form, change)
+        theothers = ICCModel.objects.filter(icchash__iexact=maybe.icchash)
+        
+        if theothers.count():
+            self.message_user(request, "YO DOGG: that ICC file's signature was already in the database.")
+            return theothers.all()[0]
+        
+        return maybe
+    
+    
+    
 #admin.site.register(ICCModel, ICCModelAdmin)

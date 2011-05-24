@@ -18,7 +18,7 @@ from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj, md5_for_file
 from imagekit.modelfields import VALID_CHANNELS
-from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField, ICCField
+from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField, ICCField, ICCHashField
 from imagekit.ICCProfile import ICCProfile
 
 # Modify image file buffer size.
@@ -379,11 +379,13 @@ class ICCModel(models.Model):
         null=True,
         upload_to="icc/uploads",
         data_field='icc', # points to ICCDataField
+        hash_field='icchash', # points to ICCHashField
         max_length=255)
     icc = ICCDataField(verbose_name="ICC data",
         editable=False,
         blank=True,
         null=True)
+    icchash = ICCHashField(verbose_name="ICC file hash")
     createdate = models.DateTimeField('Created on',
         default=datetime.now,
         blank=True,

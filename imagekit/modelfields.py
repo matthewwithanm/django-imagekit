@@ -313,6 +313,28 @@ class HistogramField(models.CharField):
         args, kwargs = introspector(self)
         return ('django.db.models.CharField', args, kwargs)
 
+class ICCHashField(fields.CharField):
+    """
+    Store the sha1 of the ICC profile file we're storing.
+    """
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('db_index', True)
+        kwargs.setdefault('max_length', 40)
+        kwargs.setdefault('editable', False)
+        kwargs.setdefault('unique', True)
+        kwargs.setdefault('blank', True)
+        kwargs.setdefault('null', True)
+        super(ICCHashField, self).__init__(*args, **kwargs)
+    
+    def south_field_triple(self):
+        """
+        Represent the field properly to the django-south model inspector.
+        See also: http://south.aeracode.org/docs/extendingintrospection.html
+        """
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('django.db.models.CharField', args, kwargs)
+
 class ICCFile(File):
     def _load_icc_file(self):
         if not hasattr(self, "_profile_cache"):
@@ -343,7 +365,7 @@ class ICCFileDescriptor(files.FileDescriptor):
         previous_file = instance.__dict__.get(self.field.name)
         super(ICCFileDescriptor, self).__set__(instance, value)
         if previous_file is not None:
-            self.field.update_data_field(instance, force=True)
+            self.field.update_data_fields(instance, force=True)
 
 class ICCFieldFile(ICCFile, files.FieldFile):
     def delete(self, save=True):
@@ -356,26 +378,32 @@ class ICCField(files.FileField):
     descriptor_class = ICCFileDescriptor
     description = ugettext_lazy("ICC file path")
     
-    def __init__(self, verbose_name=None, name=None, data_field=None, **kwargs):
+    def __init__(self, verbose_name=None, name=None, data_field=None, hash_field=None, **kwargs):
         self.data_field = data_field
+        self.hash_field = hash_field
         self.__class__.__base__.__init__(self, verbose_name, name, **kwargs)
     
     def contribute_to_class(self, cls, name):
         super(ICCField, self).contribute_to_class(cls, name)
-        signals.post_init.connect(self.update_data_field, sender=cls, dispatch_uid=uuid.uuid4().hex)
+        signals.post_init.connect(self.update_data_fields, sender=cls, dispatch_uid=uuid.uuid4().hex)
     
-    def update_data_field(self, instance, force=False, *args, **kwargs):
+    def update_data_fields(self, instance, force=False, *args, **kwargs):
         #logg.info("Will attempt to update data field (force = %s)" % str(force))
         
-        if not self.data_field:
+        has_data_fields = self.data_field or self.hash_field
+        if not has_data_fields:
             return
         
         ffile = getattr(instance, self.attname)
         if not ffile and not force:
             return
         
-        data_field_filled = self.data_field or getattr(instance, self.data_field)
-        if data_field_filled and not force:
+        data_fields_filled = not(
+            (self.data_field and not getattr(instance, self.data_field))
+            or (self.hash_field and not getattr(instance, self.hash_field))
+        )
+        #data_fields_filled = self.data_field or getattr(instance, self.data_field)
+        if data_fields_filled and not force:
             return
         
         #logg.info("About to update data field (guard checks passed)")
@@ -385,12 +413,20 @@ class ICCField(files.FileField):
                     iccdata = ffile.iccdata
                 else:
                     iccdata = None
+                if ffile.hsh:
+                    hsh = ffile.hsh
+                else:
+                    hsh = None
             else:
                 iccdata = None
+                hsh = None
         except ValueError:
             iccdata = None
+            hsh = None
         
         if self.data_field:
             setattr(instance, self.data_field, iccdata)
+        if self.hash_field:
+            setattr(instance, self.hash_field, hsh)
 
         
