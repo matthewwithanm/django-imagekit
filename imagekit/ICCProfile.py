@@ -237,6 +237,14 @@ profileclass = {
     'nmcl': "Named Color"
 }
 
+renderingintent = {
+    0: "Perceptual",
+    1: "Relative Colorimetric",
+    2: "Saturation",
+    3: "Absolute Colorimetric"
+}
+
+
 
 def Property(func):
     return property(**func())
@@ -1346,6 +1354,14 @@ class ICCProfile:
         if self.profileClass:
             if self.profileClass in profileclass:
                 return profileclass.get(self.profileClass, u'')
+        return u''
+    
+    def getRenderingIntent(self):
+        """
+        Return rendering intent as a string.
+        """
+        if self.intent in renderingintent:
+            return renderingintent.get(self.intent, u'')
         return u''
     
     def getCopyright(self):

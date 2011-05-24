@@ -398,14 +398,12 @@ class ICCModel(models.Model):
         super(ICCModel, self).save(force_insert, force_update)
     
     def __unicode__(self):
-        '''
-        if self.iccfile:
-            return u'<%s:%s:"%s">' % (
-                self.__class__.__name__,
-                self.iccfile.name,
-                self.iccfile.iccdata.getDescription(),
+        
+        if self.icc:
+            return u'%s' % (
+                self.icc.getDescription(),
             )
-        '''
-        return u'<%s: -empty->' % self.__class__.__name__
+        
+        return u'-empty-'
     
 

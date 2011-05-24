@@ -365,7 +365,7 @@ class ICCField(files.FileField):
         signals.post_init.connect(self.update_data_field, sender=cls, dispatch_uid=uuid.uuid4().hex)
     
     def update_data_field(self, instance, force=False, *args, **kwargs):
-        logg.info("Will attempt to update data field (force = %s)" % str(force))
+        #logg.info("Will attempt to update data field (force = %s)" % str(force))
         
         if not self.data_field:
             return
@@ -378,7 +378,7 @@ class ICCField(files.FileField):
         if data_field_filled and not force:
             return
         
-        logg.info("About to update data field (guard checks passed)")
+        #logg.info("About to update data field (guard checks passed)")
         try:
             if ffile:
                 if ffile.iccdata:
