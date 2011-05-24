@@ -122,7 +122,7 @@ class ICCMetaField(ICCDataField):
         super(ICCMetaField, self).contribute_to_class(cls, name)
         
         #print("About to connect (%s)" % cls.__name__)
-        signals.pre_save.connect(self.refresh_icc_data, sender=cls, dispatch_uid=uuid.uuid4().hex)
+        signals.pre_save.connect(self.refresh_icc_data, sender=cls)
     
     def refresh_icc_data(self, **kwargs): # signal, sender, instance
         """
@@ -139,7 +139,7 @@ class ICCMetaField(ICCDataField):
         profile_string = ''
         
         if pilimage:
-            logg.info("About to attempt to refresh ICC data (%s)" % kwargs)
+            #logg.info("About to attempt to refresh ICC data (%s)" % kwargs)
             try:
                 profile_string = pilimage.info.get('icc_profile', '')
             except:

@@ -147,8 +147,10 @@ class ImageModel(models.Model):
     
     def dominantcolor(self):
         return self.pilimage.quantize(1).convert('RGB').getpixel((0, 0))
+    
     def meancolor(self):
         return ImageStat.Stat(self.pilimage).mean
+    
     def averagecolor(self):
         return self.pilimage.resize((1, 1), Image.ANTIALIAS).getpixel((0, 0))
     
@@ -179,58 +181,51 @@ class ImageModel(models.Model):
     
     def dominanthex(self):
         return "#%02X%02X%02X" % self.dominantcolor()
+    
     def meanhex(self):
         m = self.meancolor()
         return "#%02X%02X%02X" % (int(m[0]), int(m[1]), int(m[2]))
+    
     def averagehex(self):
         return "#%02X%02X%02X" % self.averagecolor()
+    
     def medianhex(self):
         return "#%02X%02X%02X" % self.mediancolor()[1]
+    
     def tophex(self, numcolors=3):
         return [("#%02X%02X%02X" % tc[1]) for tc in self.topcolors(numcolors)]
     
     def save_image(self, name, image, save=True, replace=True):
-        if self._imgfield and replace:
-            self._imgfield.delete(save=False)
+        logg.info("***")
+        logg.info("ABOUT TO SAVE IMAGE WITH save_image() -- ")
         if hasattr(image, 'read'):
             data = image.read()
         else:
             data = image
+        
+        if self._imgfield and replace:
+            self._imgfield.delete(save=False)
+        
         content = ContentFile(data)
         self._imgfield.save(name, content, save)
     
-    def save(self, clear_cache=True, *args, **kwargs):
+    def save(self, clear_cache=False, *args, **kwargs):
         is_new_object = self._get_pk_val() is None
         super(ImageModel, self).save(*args, **kwargs)
+        
         if is_new_object and self._imgfield:
             clear_cache = False
-            spec = self._ik.preprocessor_spec
-            if spec is not None:
-                newfile = self._imgfield.storage.open(str(self._imgfield))
-                img = Image.open(newfile)
-                img, format = spec.process(img, self)
-                if format != 'JPEG':
-                    imgfile = img_to_fobj(img, format)
-                else:
-                    imgfile = img_to_fobj(img, format,
-                                          quality=int(spec.quality),
-                                          optimize=True)
-                content = ContentFile(imgfile.read())
-                newfile.close()
-                name = str(self._imgfield)
-                self._imgfield.storage.delete(name)
-                self._imgfield.storage.save(name, content)
         
-        if self._imgfield:
-            if clear_cache:
-                self._clear_cache()
-            self._pre_cache()
+        if clear_cache:
+            self._clear_cache()
+        
+        self._pre_cache()
     
     def clear_cache(self, **kwargs):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
         self._clear_cache()
 
-signals.post_delete.connect(ImageModel.clear_cache, sender=ImageModel, dispatch_uid="ImageModel__post_delete")
+signals.post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
 
 HISTOGRAMS = ('luma','rgb')
 

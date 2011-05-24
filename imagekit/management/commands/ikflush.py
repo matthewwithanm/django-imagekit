@@ -82,13 +82,25 @@ def flush_image_cache(apps, options):
                     for obj in objs:
                         
                         if int(options.get('verbosity', 1)) > 1:
-                            if obj._imgfield.name:
-                                print ">>>\t %s" % obj._imgfield.name or "(NO NAME)"
+                            try:
+                                if obj._imgfield.name:
+                                    print ">>>\t %s" % obj._imgfield.name or "(NO NAME)"
+                                else:
+                                    print "---\t name (None)"
+                                if obj._imgfield.size:
+                                    print ">>>\t %s %s" % (obj._imgfield.size or "(NO SIZE)", obj.tophex())
+                                else:
+                                    print "---\t size (None)"
+                            except:
+                                print "xxx\t EXCEPTION"
                             else:
-                                print "---\t (None)"
+                                obj.save()
+                                obj._pre_cache()
                         
-                        obj._clear_cache()
-                        obj._pre_cache()
+                        else: # go quietly
+                            obj.save()
+                            obj._pre_cache()
+                            
     else:
         print 'Please specify on or more app names'
 
