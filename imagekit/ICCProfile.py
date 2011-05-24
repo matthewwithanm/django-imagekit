@@ -227,6 +227,16 @@ technology = {
     'vidm': "Video Monitor"
 }
 
+profileclass = {
+    'scnr': "Input Device",
+    'mntr': "Display Device",
+    'prtr': "Output Device",
+    'link': "DeviceLink",
+    'spac': "Colorspace Conversion",
+    'abst': "Abstract",
+    'nmcl': "Named Color"
+}
+
 
 def Property(func):
     return property(**func())
@@ -1328,6 +1338,15 @@ class ICCProfile:
         """
         if self._file and not self._file.closed:
             self._file.close()
+    
+    def getProfileClass(self):
+        """
+        Return profile class as a string.
+        """
+        if self.profileClass:
+            if self.profileClass in profileclass:
+                return profileclass.get(self.profileClass, u'')
+        return u''
     
     def getCopyright(self):
         """

@@ -4,6 +4,7 @@ from datetime import datetime
 from django.conf import settings
 from django.core.files import File
 from django.core.files.base import ContentFile
+from django.core.files.storage import FileSystemStorage
 from django.db import models
 from django.db.models.base import ModelBase
 from django.db.models import signals
@@ -17,11 +18,19 @@ from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj, md5_for_file
 from imagekit.modelfields import VALID_CHANNELS
-from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField
+from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField, ICCField
 from imagekit.ICCProfile import ICCProfile
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
+
+try:
+    _storage = getattr(settings, 'IK_STORAGE', None)()
+except:
+    _storage = FileSystemStorage()
+else:
+    if not _storage:
+        _storage = FileSystemStorage()
 
 # Choice tuples for specifying the crop origin.
 # These are provided for convenience.
@@ -358,5 +367,45 @@ class ImageWithMetadata(ImageModel):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
 
 
-
+class ICCModel(models.Model):
+    class Meta:
+        abstract = False
+        verbose_name = "ICC Profile"
+        verbose_name_plural = "ICC Profile Objects"
+    
+    iccfile = ICCField(verbose_name="ICC binary file",
+        storage=_storage,
+        blank=True,
+        null=True,
+        upload_to="icc/uploads",
+        data_field='icc', # points to ICCDataField
+        max_length=255)
+    icc = ICCDataField(verbose_name="ICC data",
+        editable=False,
+        blank=True,
+        null=True)
+    createdate = models.DateTimeField('Created on',
+        default=datetime.now,
+        blank=True,
+        editable=False)
+    modifydate = models.DateTimeField('Last modified on',
+        default=datetime.now,
+        blank=True,
+        editable=False)
+    
+    def save(self, force_insert=False, force_update=False):
+        self.modifydate = datetime.now()
+        super(ICCModel, self).save(force_insert, force_update)
+    
+    def __unicode__(self):
+        '''
+        if self.iccfile:
+            return u'<%s:%s:"%s">' % (
+                self.__class__.__name__,
+                self.iccfile.name,
+                self.iccfile.iccdata.getDescription(),
+            )
+        '''
+        return u'<%s: -empty->' % self.__class__.__name__
+    
 

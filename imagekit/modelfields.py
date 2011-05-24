@@ -1,4 +1,4 @@
-import base64, numpy, uuid
+import base64, hashlib, numpy, uuid
 from django.db import models
 from django.db.models import fields
 from django.db.models.fields import files
@@ -314,20 +314,35 @@ class HistogramField(models.CharField):
         return ('django.db.models.CharField', args, kwargs)
 
 class ICCFile(File):
-    def _get_icc(self):
+    def _load_icc_file(self):
         if not hasattr(self, "_profile_cache"):
             close = self.closed
             self.open()
-            self._profile_cache = ICCProfile(profile=self)
+            pos = self.tell()
+            dat = self.read()
+            hsh = hashlib.sha1(dat).hexdigest()
+            
+            self._profile_cache = (ICCProfile(profile=dat), hsh)
+            
+            if close:
+                self.close()
+            else:
+                self.seek(pos)
         return self._profile_cache
     
-    icc = property(_get_icc)
+    def _get_iccdata(self):
+        return self._load_icc_file()[0]
+    iccdata = property(_get_iccdata)
+    
+    def _get_hsh(self):
+        return self._load_icc_file()[1]
+    hsh = property(_get_hsh)
 
 class ICCFileDescriptor(files.FileDescriptor):
     def __set__(self, instance, value):
         previous_file = instance.__dict__.get(self.field.name)
         super(ICCFileDescriptor, self).__set__(instance, value)
-        if previous file is not None:
+        if previous_file is not None:
             self.field.update_data_field(instance, force=True)
 
 class ICCFieldFile(ICCFile, files.FieldFile):
@@ -335,12 +350,6 @@ class ICCFieldFile(ICCFile, files.FieldFile):
         if hasattr(self, '_profile_cache'):
             del self._profile_cache
         super(ICCFieldFile, self).delete(save)
-    
-    def save(self, name, content, save=True):
-        if isinstance(content, ICCProfile):
-            files.FieldFile.save(self, name, content.data, save=True)
-        else:
-            files.FieldFile.save(self, name, content, save=True)
 
 class ICCField(files.FileField):
     attr_class = ICCFieldFile
@@ -349,13 +358,15 @@ class ICCField(files.FileField):
     
     def __init__(self, verbose_name=None, name=None, data_field=None, **kwargs):
         self.data_field = data_field
-        files.FileField.__init__(self, verbose_name, name, **kwargs)
+        self.__class__.__base__.__init__(self, verbose_name, name, **kwargs)
     
     def contribute_to_class(self, cls, name):
         super(ICCField, self).contribute_to_class(cls, name)
-        signals.post_init.connect(self.update_data_field, sender=cls)
+        signals.post_init.connect(self.update_data_field, sender=cls, dispatch_uid=uuid.uuid4().hex)
     
     def update_data_field(self, instance, force=False, *args, **kwargs):
+        logg.info("Will attempt to update data field (force = %s)" % str(force))
+        
         if not self.data_field:
             return
         
@@ -363,22 +374,23 @@ class ICCField(files.FileField):
         if not ffile and not force:
             return
         
-        data_field_filled = not (self.data_field and not getattr(instance, self.data_field))
+        data_field_filled = self.data_field or getattr(instance, self.data_field)
         if data_field_filled and not force:
             return
         
+        logg.info("About to update data field (guard checks passed)")
         try:
             if ffile:
-                if ffile.icc:
-                    icc = ffile.icc
+                if ffile.iccdata:
+                    iccdata = ffile.iccdata
                 else:
-                    icc = None
+                    iccdata = None
             else:
-                icc = None
+                iccdata = None
         except ValueError:
-            icc = None
+            iccdata = None
         
         if self.data_field:
-            setattr(instance, self.data_field, icc)
+            setattr(instance, self.data_field, iccdata)
 
         
