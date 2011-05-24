@@ -1,15 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys, os
+import sys, os, hashlib
 from pprint import pprint
 from django.db.models import Q
 from django.db.models.loading import cache
+from django.core.files import File
+from django.core.files.base import ContentFile
+from django.core.exceptions import ImproperlyConfigured, ObjectDoesNotExist
 from django.core.management.base import BaseCommand, CommandError
-from django.core.exceptions import ImproperlyConfigured
 from optparse import make_option
-from imagekit.models import ICCImageModel
+from imagekit.models import ImageWithMetadata, ICCModel
 from imagekit.specs import ImageSpec
 from imagekit.modelfields import *
+
+
+icchash = lambda icc: hashlib.sha1(icc.data).hexdigest()
+
 
 class Command(BaseCommand):
     
@@ -49,11 +55,11 @@ def flush_icc_cache(apps, options):
                 
                 if len(app_parts) < 2:
                     for m in cache.app_models.get(app_parts[0].lower()).values():
-                        if issubclass(m, ICCImageModel):
+                        if issubclass(m, ImageWithMetadata):
                             modls.append(m)
                 else:
                     putativemodel = cache.get_model(app_parts[0], app_parts[1])
-                    if issubclass(putativemodel, ICCImageModel):
+                    if issubclass(putativemodel, ImageWithMetadata):
                         modls.append(putativemodel)
                 
                 for modl in modls:
@@ -85,38 +91,62 @@ def flush_icc_cache(apps, options):
                                 )
                     
                     print 'Recaching ICC profiles for %s objects in "%s.%s"' % (objs.count(), app_parts[0], modl.__name__)
+                    verb = int(options.get('verbosity', 1)) > 1
+                    i = 0
+                    ii = 0
+                    
                     for obj in objs:
                         
-                        obj._clear_iccprofile()
-                        obj.save(False)
-                        
-                        if obj.icc and int(options.get('verbosity', 1)) > 1:
+                        if obj.icc:
                             
-                            hsh = obj._icc_filehash
-                            buckets[hsh] = buckets.get(hsh, 0) + 1
-                            
-                            if not profiles.get(hsh):
-                                profiles[hsh] = "%s%s" % (
-                                    obj._icc_profilename,
-                                    obj._icc_productname and " (%s)" % obj._icc_productname or ''
+                            i += 1
+                            if verb:
+                                print ""
+                                print ">>> %0d >>> %30s : %s %s" % (
+                                    i,
+                                    ((" " * 50) + obj.image.name)[30:],
+                                    #obj.icc.getDeviceModelDescription(),
+                                    obj.icc.getDescription(),
+                                    '',
                                 )
+                            try:
+                                ICCModel.objects.get(icchash__iexact=icchash(obj.icc))
                             
-                            print u"""
->>>\t filename\t\t %s
-+++\t file hash\t\t %s
-+++\t color profile\t\t %s""" % (
-                                unicode(obj._iccfilename),
-                                unicode(hsh),
-                                unicode("%s%s" % (
-                                    obj._icc_profilename,
-                                    obj._icc_productname and " (%s)" % obj._icc_productname or ''
-                                )),
-                            )
+                            except ObjectDoesNotExist:
+                                new_icc = ICCModel()
+                                new_icc_file = ContentFile(obj.icc.data)
+                                new_icc.iccfile.save(
+                                    new_icc._storage.get_valid_name("%s.icc" % obj.icc.getDescription()),
+                                    File(new_icc_file),
+                                )
+                                new_icc.save() # may be technically unnecessary
+                                ii += 1
+                                
+                                if verb:
+                                    print ">>> %0d >>> %s : %s" % (
+                                        i,
+                                        new_icc.iccfile.name,
+                                        new_icc.icchash,
+                                    )
+                            
+                            else:
+                                if verb:
+                                    print "--- %0d --- %s : %s %s" % (
+                                        i,
+                                        "                       (exists)",
+                                        #obj.icc.getDeviceModelDescription(),
+                                        obj.icc.getDescription(),
+                                        '',
+                                    )
                     
-                    if int(options.get('verbosity', 1)) > 1:
-                        print "\nHASH TOTALS"
-                        for k, v in buckets.items():
-                            print "###\t\t\t %s\t %s" % (v, profiles[k])
+                    if verb:
+                        print ""
+                        print "=================================================================="
+                        
+                        print "::: Examined %s objects." % len(objs)
+                        print "::: Found %s possible profiles," % i
+                        print "::: Committed %s unique instances of which to the database." % ii
+                        print ""
                     
     else:
         print 'Please specify on or more app names'

@@ -373,6 +373,10 @@ class ICCModel(models.Model):
         verbose_name = "ICC Profile"
         verbose_name_plural = "ICC Profile Objects"
     
+    def __init__(self, *args, **kwargs):
+        super(ICCModel, self).__init__(*args, **kwargs)
+        self._storage = _storage
+    
     iccfile = ICCField(verbose_name="ICC binary file",
         storage=_storage,
         blank=True,
