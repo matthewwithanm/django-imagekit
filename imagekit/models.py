@@ -127,9 +127,10 @@ class ImageModel(models.Model):
     def _get_histogram(self):
         out = []
         if self.pilimage:
-            tensor = numpy.array(self.pilimage.convert('L').histogram())
-            histo,buckets = numpy.histogram(tensor, bins=255)
-            return zip(xrange(len(histo)), histo.flatten().astype(int).tolist())
+            #tensor = numpy.array(self.pilimage.convert('L').histogram())
+            #histo,buckets = numpy.histogram(tensor, bins=255)
+            #return zip(xrange(len(histo)), histo.flatten().astype(int).tolist())
+            return zip(xrange(256), self.pilimage.convert('L').histogram())
     histogram = property(_get_histogram)
     
     def _get_rgb_histogram(self):
@@ -221,112 +222,6 @@ class ImageModel(models.Model):
         self._clear_cache()
 
 signals.post_delete.connect(ImageModel.clear_cache, sender=ImageModel, dispatch_uid="ImageModel__post_delete")
-
-class ICCImageModel(ImageModel):
-    """
-    This subclass is a horrible mess. Frankly all this logic should move to
-    an ImageModelBase subclass so ICCImageModel can be a stubby little nothing.
-    I have no idea why I thought all these underscored and poorly-named methods
-    would be cool. Yeah. I'll change it toot sweet.
-    """
-    __metaclass__ = ImageModelBase
-    
-    class Meta:
-        abstract = True
-    
-    class IKOptions:
-        pass
-    
-    def _pre_cache(self):
-        super(ICCImageModel, self)._pre_cache()
-        #self._save_iccprofile()
-    def _clear_cache(self):
-        super(ICCImageModel, self)._clear_cache()
-        #self._clear_iccprofile()
-    
-    @property
-    def _iccdir(self):
-        return getattr(self._ik, 'icc_dir')
-    
-    @property
-    def _iccfilename(self):
-        return "%s.icc" % os.path.basename(str(self._imgfield.name))
-    
-    @property
-    def _iccurl(self):
-        return self._storage.url(self._get_iccfilepath())
-    
-    def _iccfield_get(self):
-        return getattr(self, self._ik.icc_field)
-    def _iccfield_set(self, newicc):
-        setattr(self, self._ik.icc_field, newicc)
-    _iccfield = property(_iccfield_get, _iccfield_set)
-    
-    def _get_iccfilepath(self):
-        """
-        FIXME: this will blindly overwrite anything
-        """
-        return self._iccdir + "/" + self._iccfilename
-    
-    @property
-    def icc(self):
-        try:
-            profile_string = self.pilimage.info.get('icc_profile', '')
-        except:
-            return None
-        if len(profile_string):
-            return ICCProfile(profile_string)
-        return None
-    
-    def _save_iccprofile(self, svpth=None):
-        pass
-    
-    def save(self, clear_cache=True, *args, **kwargs):
-        '''
-        theicc = self.icc
-        if theicc and hasattr(theicc, 'data'):
-            if theicc.data:
-                if isinstance(self.icc, ICCProfile):
-                    self._iccfield = self.icc
-                    self._storage.save(self._get_iccfilepath(), ContentFile(self.icc.data))
-        '''
-        super(ICCImageModel, self).save(clear_cache, *args, **kwargs)
-    
-    def _clear_iccprofile(self):
-        clearpth = self._get_iccfilepath()
-        if clearpth:
-            self._storage.delete(clearpth)
-    
-    # icc profile properties
-    @property
-    def _icc_filehash(self):
-        hashpth = self._get_iccfilepath()
-        if hashpth:
-            iccfile = self._storage.open(hashpth, mode="rb")
-            out = md5_for_file(iccfile)
-            iccfile.close()
-            return out
-        return None
-        
-    # legacy support.
-    @property
-    def _icc_productname(self):
-        return self.icc.getDeviceModelDescription()
-    @property
-    def _icc_profilename(self):
-        return self.icc.getDescription()
-    @property
-    def _icc_copyright(self):
-        return self.icc.getCopyright()
-    @property
-    def _icc_whitepoint(self):
-        try:
-            whitepoint = self.icc.tags.get('meas').get('illuminantType').get('description')
-            if whitepoint == 'D65':
-                return u"%s (daylight)" % whitepoint
-            return whitepoint
-        except AttributeError:
-            return ''
 
 HISTOGRAMS = ('luma','rgb')
 
@@ -436,6 +331,7 @@ class ImageWithMetadata(ImageModel):
     
     icc = ICCMetaField(verbose_name="ICC data",
         editable=False,
+        pil_reference=lambda: 'pilimage',
         null=True)
     
     def save(self, force_insert=False, force_update=False):
@@ -460,7 +356,6 @@ class ImageWithMetadata(ImageModel):
     
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
-
 
 
 

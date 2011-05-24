@@ -10,7 +10,7 @@ which is a part of the source of dispcalGUI:
 
 Copyright (c) 2011 OST, LLC. 
 """
-import locale, math, sys, os, re, struct, base64
+import locale, math, sys, os, re, struct, base64, numpy
 from hashlib import md5
 from time import localtime, mktime, strftime
 from UserString import UserString
@@ -1039,8 +1039,12 @@ class XYZNumber(AODict):
     def __init__(self, binaryString):
         AODict.__init__(self)
         self.X, self.Y, self.Z = [s15Fixed16Number(chunk) for chunk in 
-                                  (binaryString[:4], binaryString[4:8], 
-                                   binaryString[8:12])]
+                                  (str(binaryString[:4]), str(binaryString[4:8]), 
+                                   str(binaryString[8:12]))]
+
+    def asbinary(self):
+        encoded = map(lambda key: s15Fixed16Number_tohex(self[key]), self.keys())
+        return reduce(lambda a,b: bytearray(a) + bytearray(b), encoded)
 
 
 class XYZType(ICCProfileTag, XYZNumber):
@@ -1048,6 +1052,7 @@ class XYZType(ICCProfileTag, XYZNumber):
     def __init__(self, tagData, tagSignature):
         ICCProfileTag.__init__(self, tagData, tagSignature)
         XYZNumber.__init__(self, tagData[8:20])
+
 
 
 class chromaticAdaptionTag(s15Fixed16ArrayType):
@@ -1060,7 +1065,6 @@ class chromaticAdaptionTag(s15Fixed16ArrayType):
                 self.append([])
             self[-1].append(s15Fixed16Number(data[0:4]))
             data = data[4:]
-
 
 tagSignature2Tag = {
     "chad": chromaticAdaptionTag
@@ -1381,8 +1385,6 @@ class ICCProfile:
                 if self.tags['meas']['illuminantType'].get("description", ""):
                     return unicode(self.tags['meas']['illuminantType'].get("description", ""))
         return u""
-
-        
     
     def getIDString(self):
         """
@@ -1390,7 +1392,12 @@ class ICCProfile:
         """
         return base64.b64encode(self.calculateID())
     
-    
+    def transformer(self, colorlist):
+        """
+        Return ICCTransformer
+        """
+        return ICCTransformer(data=self.data, colorlist=colorlist)
+
     def isSame(self, profile, force_calculation=False):
         """
         Compare the ID of profiles.
@@ -1475,3 +1482,89 @@ class ICCProfile:
     def __ne__(self, other):
         return not self.isSame(other)
     
+
+class ICCTransformer(ICCProfile):
+    """
+    ICCProfile subclass with methods for returning matricies and other values
+    from the profile object suitable for running color transforms.
+    """
+    def __init__(self, colorlist=[], *args, **kwargs):
+        super(ICCTransformer, self).__init__(*args, **kwargs)
+        
+        self.colormatrix = numpy.array(colorlist)
+    
+    def getXYZTristimulusMatrix(self):
+        tristims = set(['rXYZ', 'gXYZ', 'bXYZ'])
+        if tristim.issubset(self.keys()):
+            return numpy.array([
+                self.tags['rXYZ'].values() +
+                self.tags['gXYZ'].values() +
+                self.tags['bXYZ'].values(),
+            ]).reshape(3, 3).T
+    
+    def getIlluminantMatrix(self):
+        tristims = set(['wtpt'])
+        if tristim.issubset(self.keys()):
+            return numpy.array([
+                self.tags['wtpt'].values(),
+            ])
+        else:
+            return numpy.array([
+                XYZNumber(
+                    bytearray(b'\x00\x00\xf6\xd6\x00\x01\x00\x00\x00\x00\xd3-')
+                ).values() # D50
+            ])
+    
+    def getChromaticAdaptationMatrix(self):
+        chadmatrix = set(['chad'])
+        if chadmatrix.issubset(self.keys()):
+            return numpy.asarray(
+                numpy.matrix([
+                    self.tags['chad'],
+                ])
+            )
+        else:
+            return numpy.array([
+                1,0,0,0,1,0,0,0,1
+            ]).reshape(3, 3) # 3x3 identity matrix
+    
+    def getLinearTransformer(self, channel="r", scale=1.0):
+        tagkey = "%sTRC" % channel.lower()[:1]
+        
+        if tagkey in self.tags:
+            trc = self.tags[tagkey]
+            
+            if len(trc) > 1:
+                # build a callable with numpy
+                n1 = 65535.0 / float(len(trc))
+                lineofbestfit = numpy.polyfit(numpy.array(range(len(trc)), dtype=float) * (n1/65535.0), numpy.array(trc, dtype=float) * (1.0/65535.0), 8)
+                thealgorithm = numpy.poly1d(lineofbestfit.T) # exponential function; use the non-transposed matrix for a log-style curve
+            else:
+                thealgorithm = lambda x: x ** (1.0 / trc.pop())
+            
+            # append scaling factor and return a callable
+            return lambda x: thealgorithm(x) * (1.0 / scale)
+        
+    
+    def getCompander(self, channel="r", scale=1.0):
+        tagkey = "%sTRC" % channel.lower()[:1]
+        
+        if tagkey in self.tags:
+            trc = self.tags[tagkey]
+            
+            if len(trc) > 1:
+                # build a callable with numpy
+                n1 = 65535.0 / float(len(trc))
+                lineofbestfit = numpy.polyfit(numpy.array(range(len(trc)), dtype=float) * (n1/65535.0), numpy.array(trc, dtype=float) * (1.0/65535.0), 8)
+                thealgorithm = numpy.poly1d(lineofbestfit) # logarithm-ish
+            else:
+                thealgorithm = lambda x: x ** trc.pop()
+            
+            # append scaling factor and return a callable
+            return lambda x: thealgorithm(x) * float(scale)
+        
+        
+    def getRGBtoXYZTransformer():
+        pass
+    
+

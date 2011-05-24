@@ -3,6 +3,9 @@ from django.db import models
 from django.db.models import fields
 from django.db.models.fields import files
 from django.db.models import signals
+from django.utils.translation import ugettext_lazy, ugettext as _
+from django.core.files import File
+
 from ICCProfile import ICCProfile
 from jogging import logging as logg
 
@@ -102,6 +105,14 @@ class ICCDataField(models.TextField):
         return ('django.db.models.TextField', args, kwargs)
 
 class ICCMetaField(ICCDataField):
+    """
+    This ICCDataField subclass will automatically refresh itself
+    with ICC data it finds in the image classes' PIL instance.
+    """
+    
+    def __init__(self, *args, **kwargs):
+        self.pil_reference = kwargs.pop('pil_reference', 'pilimage')
+        super(ICCMetaField, self).__init__(*args, **kwargs)
     
     def contribute_to_class(self, cls, name):
         if not hasattr(self, 'db_column'):
@@ -111,28 +122,33 @@ class ICCMetaField(ICCDataField):
         super(ICCMetaField, self).contribute_to_class(cls, name)
         
         #print("About to connect (%s)" % cls.__name__)
-        signals.pre_save.connect(ICCMetaField.refresh_icc_data, sender=cls, dispatch_uid=uuid.uuid4().hex)
+        signals.pre_save.connect(self.refresh_icc_data, sender=cls, dispatch_uid=uuid.uuid4().hex)
     
-    @classmethod
-    def refresh_icc_data(cls, **kwargs): # signal, sender, instance
+    def refresh_icc_data(self, **kwargs): # signal, sender, instance
         """
         Stores ICC profile data in the field before saving.
         """
         instance = kwargs.get('instance')
-        pilimage = getattr(instance, 'pilimage', None)
+        pil_reference = self.pil_reference
+        
+        if callable(pil_reference):
+            pilimage = getattr(instance, pil_reference(), 'pilimage')
+        else:
+            pilimage = getattr(instance, pil_reference, 'pilimage')
+        
         profile_string = ''
         
         if pilimage:
-            #logg.info("About to attempt to refresh ICC data (%s)" % kwargs)
+            logg.info("About to attempt to refresh ICC data (%s)" % kwargs)
             try:
                 profile_string = pilimage.info.get('icc_profile', '')
             except:
                 logg.info("Exception was raised when trying to get the icc profile string")
             
             if len(profile_string):
-                #logg.info("Saving icc profile for %s %s ..." % (instance.__class__.__name__, instance.id))
+                logg.info("Saving icc profile for %s %s ..." % (instance.__class__.__name__, instance.id))
                 instance.icc = ICCProfile(profile_string)
-                #logg.info("Saved icc profile '%s' for %s" % (instance.icc.getDescription(), instance.id))
+                logg.info("Saved icc profile '%s' for %s" % (instance.icc.getDescription(), instance.id))
 
 class HistogramColumn(models.IntegerField):
     """
@@ -177,10 +193,10 @@ class HistogramDescriptor(object):
                 "The '%s' attribute can only be accessed from %s instances."
                 % (self.field.name, owner.__name__))
         
-        to_matrix = lambda l: numpy.matrix(l, dtype=numpy.uint9)
+        to_matrix = lambda l: numpy.matrix(l, dtype=numpy.uint8)
         histogram = instance.__dict__[self.field.name]
         
-        if isinstance(histogram, (numpy.array, numpy.matrix)):
+        if isinstance(histogram, (numpy.matrixlib.matrix, numpy.ndarray)):
             if not issubclass(histogram.dtype, numpy.uint8):
                 return histogram.astype(numpy.uint8)
             return histogram
@@ -297,4 +313,72 @@ class HistogramField(models.CharField):
         args, kwargs = introspector(self)
         return ('django.db.models.CharField', args, kwargs)
 
+class ICCFile(File):
+    def _get_icc(self):
+        if not hasattr(self, "_profile_cache"):
+            close = self.closed
+            self.open()
+            self._profile_cache = ICCProfile(profile=self)
+        return self._profile_cache
+    
+    icc = property(_get_icc)
 
+class ICCFileDescriptor(files.FileDescriptor):
+    def __set__(self, instance, value):
+        previous_file = instance.__dict__.get(self.field.name)
+        super(ICCFileDescriptor, self).__set__(instance, value)
+        if previous file is not None:
+            self.field.update_data_field(instance, force=True)
+
+class ICCFieldFile(ICCFile, files.FieldFile):
+    def delete(self, save=True):
+        if hasattr(self, '_profile_cache'):
+            del self._profile_cache
+        super(ICCFieldFile, self).delete(save)
+    
+    def save(self, name, content, save=True):
+        if isinstance(content, ICCProfile):
+            files.FieldFile.save(self, name, content.data, save=True)
+        else:
+            files.FieldFile.save(self, name, content, save=True)
+
+class ICCField(files.FileField):
+    attr_class = ICCFieldFile
+    descriptor_class = ICCFileDescriptor
+    description = ugettext_lazy("ICC file path")
+    
+    def __init__(self, verbose_name=None, name=None, data_field=None, **kwargs):
+        self.data_field = data_field
+        files.FileField.__init__(self, verbose_name, name, **kwargs)
+    
+    def contribute_to_class(self, cls, name):
+        super(ICCField, self).contribute_to_class(cls, name)
+        signals.post_init.connect(self.update_data_field, sender=cls)
+    
+    def update_data_field(self, instance, force=False, *args, **kwargs):
+        if not self.data_field:
+            return
+        
+        ffile = getattr(instance, self.attname)
+        if not ffile and not force:
+            return
+        
+        data_field_filled = not (self.data_field and not getattr(instance, self.data_field))
+        if data_field_filled and not force:
+            return
+        
+        try:
+            if ffile:
+                if ffile.icc:
+                    icc = ffile.icc
+                else:
+                    icc = None
+            else:
+                icc = None
+        except ValueError:
+            icc = None
+        
+        if self.data_field:
+            setattr(instance, self.data_field, icc)
+
+        
