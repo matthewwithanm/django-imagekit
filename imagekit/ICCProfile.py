@@ -11,11 +11,13 @@ which is a part of the source of dispcalGUI:
 Copyright (c) 2011 OST, LLC. 
 """
 import locale, math, sys, os, re, struct, base64, numpy
+from scipy import interpolate
 from hashlib import md5
 from time import localtime, mktime, strftime
 from UserString import UserString
 from encoding import get_encodings
 from ordereddict import OrderedDict
+from memoize import memoize
 
 try:
     from jogging import logging
@@ -1110,7 +1112,7 @@ class ICCProfileInvalidError(IOError):
         return self.args[0]
 
 
-class ICCProfile:
+class ICCProfile(object):
 
     """
     Returns a new ICCProfile object. 
@@ -1427,12 +1429,15 @@ class ICCProfile:
         """
         return base64.b64encode(self.calculateID())
     
-    def transformer(self, colorlist):
+    @memoize
+    def getTransformer(self, colorlist=None):
         """
         Return ICCTransformer
         """
-        return ICCTransformer(data=self.data, colorlist=colorlist)
-
+        return ICCTransformer(profile=self.data, colorlist=colorlist)
+    
+    transformer = property(getTransformer)
+    
     def isSame(self, profile, force_calculation=False):
         """
         Compare the ID of profiles.
@@ -1523,23 +1528,25 @@ class ICCTransformer(ICCProfile):
     ICCProfile subclass with methods for returning matricies and other values
     from the profile object suitable for running color transforms.
     """
-    def __init__(self, colorlist=[], *args, **kwargs):
+    def __init__(self, colorlist=None, *args, **kwargs):
         super(ICCTransformer, self).__init__(*args, **kwargs)
         
         self.colormatrix = numpy.array(colorlist)
     
-    def getXYZTristimulusMatrix(self):
+    @memoize
+    def getRGBTristimulusXYZMatrix(self):
         tristims = set(['rXYZ', 'gXYZ', 'bXYZ'])
-        if tristim.issubset(self.keys()):
+        if tristims.issubset(set(self.tags.keys())):
             return numpy.array([
                 self.tags['rXYZ'].values() +
                 self.tags['gXYZ'].values() +
                 self.tags['bXYZ'].values(),
             ]).reshape(3, 3).T
     
-    def getIlluminantMatrix(self):
+    @memoize
+    def getIlluminantXYZMatrix(self):
         tristims = set(['wtpt'])
-        if tristim.issubset(self.keys()):
+        if tristims.issubset(set(self.tags.keys())):
             return numpy.array([
                 self.tags['wtpt'].values(),
             ])
@@ -1550,9 +1557,10 @@ class ICCTransformer(ICCProfile):
                 ).values() # D50
             ])
     
-    def getChromaticAdaptationMatrix(self):
+    @memoize
+    def getChromaticAdaptationXYZMatrix(self):
         chadmatrix = set(['chad'])
-        if chadmatrix.issubset(self.keys()):
+        if chadmatrix.issubset(set(self.tags.keys())):
             return numpy.asarray(
                 numpy.matrix([
                     self.tags['chad'],
@@ -1563,7 +1571,29 @@ class ICCTransformer(ICCProfile):
                 1,0,0,0,1,0,0,0,1
             ]).reshape(3, 3) # 3x3 identity matrix
     
-    def getLinearTransformer(self, channel="r", scale=1.0):
+    @memoize
+    def getRGBLinearizer(self, channel="r", scale=255.0):
+        tagkey = "%sTRC" % channel.lower()[:1]
+        
+        if tagkey in self.tags:
+            trc = self.tags[tagkey]
+            
+            if len(trc) > 1:
+                # build a callable with scipy
+                x = numpy.linspace(0.0, 1.0, len(trc))
+                y = numpy.array([v/float(max(trc)) for v in trc])
+                thealgorithm = interpolate.interp1d(x, y, kind="quadratic")
+            else:
+                thealgorithm = lambda x: x ** float(trc.pop())
+            
+            # append scaling factor and return a callable
+            return lambda x: thealgorithm(float(x) / scale)
+        
+        # default to 2.2
+        return lambda x: (float(x) / scale) ** 2.2
+    
+    @memoize
+    def getRGBCompander(self, channel="r", scale=255.0):
         tagkey = "%sTRC" % channel.lower()[:1]
         
         if tagkey in self.tags:
@@ -1571,35 +1601,30 @@ class ICCTransformer(ICCProfile):
             
             if len(trc) > 1:
                 # build a callable with numpy
-                n1 = 65535.0 / float(len(trc))
-                lineofbestfit = numpy.polyfit(numpy.array(range(len(trc)), dtype=float) * (n1/65535.0), numpy.array(trc, dtype=float) * (1.0/65535.0), 8)
-                thealgorithm = numpy.poly1d(lineofbestfit.T) # exponential function; use the non-transposed matrix for a log-style curve
+                x = numpy.linspace(0.0, 1.0, len(trc))
+                y = numpy.array([v/float(max(trc)) for v in trc])
+                thealgorithm = interpolate.interp1d(y, x, kind="quadratic") # YO DOGG: double-check this x/y-swap move here
             else:
                 thealgorithm = lambda x: x ** (1.0 / trc.pop())
             
             # append scaling factor and return a callable
-            return lambda x: thealgorithm(x) * (1.0 / scale)
-        
-    
-    def getCompander(self, channel="r", scale=1.0):
-        tagkey = "%sTRC" % channel.lower()[:1]
-        
-        if tagkey in self.tags:
-            trc = self.tags[tagkey]
-            
-            if len(trc) > 1:
-                # build a callable with numpy
-                n1 = 65535.0 / float(len(trc))
-                lineofbestfit = numpy.polyfit(numpy.array(range(len(trc)), dtype=float) * (n1/65535.0), numpy.array(trc, dtype=float) * (1.0/65535.0), 8)
-                thealgorithm = numpy.poly1d(lineofbestfit) # logarithm-ish
-            else:
-                thealgorithm = lambda x: x ** trc.pop()
-            
-            # append scaling factor and return a callable
             return lambda x: thealgorithm(x) * float(scale)
         
-        
-    def getRGBtoXYZTransformer():
-        pass
+        # default to 2.2
+        return lambda x: (float(x) ** (1.0 / 2.2)) * float(scale)
     
-
+    @memoize
+    def getRGBTristimulusLinearizer(self, scale=255.0):
+        other = self
+        class RGBTristimulusLinearizer(ADict):
+            def __init__(self):
+                self.fr = other.getRGBLinearizer(channel='r', scale=scale)
+                self.fg = other.getRGBLinearizer(channel='g', scale=scale)
+                self.fb = other.getRGBLinearizer(channel='b', scale=scale)
+            def __call__(self, r=0.0, g=0.0, b=0.0):
+                return (
+                    self.fr(r),
+                    self.fg(g),
+                    self.fb(b),
+                )
+        return RGBTristimulusLinearizer()
