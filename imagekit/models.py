@@ -16,10 +16,12 @@ from colorsys import rgb_to_hls, hls_to_rgb
 from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
-from imagekit.utils import img_to_fobj, md5_for_file
+from imagekit.utils import img_to_fobj
+from imagekit.delegate import DelegateManager, delegate
+from imagekit.ICCProfile import ICCProfile, ADict
 from imagekit.modelfields import VALID_CHANNELS
-from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField, ICCField, ICCHashField
-from imagekit.ICCProfile import ICCProfile
+from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField
+from imagekit.modelfields import ICCField, ICCHashField
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -362,6 +364,30 @@ class ImageWithMetadata(ImageModel):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
 
 
+class intent(ADict):
+    def __init__(self):
+        self.PERCEPTUAL = 0
+        self.RELATIVE = 1
+        self.SATURATION = 2
+        self.ABSOLUTE = 3
+
+class ICCQuerySet(models.query.QuerySet, list):
+    
+    @delegate
+    def pcs(self, pcs_label):
+        return filter(lambda icm: icm.icc.connectionColorSpace.lower().startswith(pcs_label), self.all())
+    
+    @delegate
+    def colorspace(self, colorspace_label):
+        return filter(lambda icm: icm.icc.colorSpace.lower().startswith(colorspace_label), self.all())
+    
+    @delegate
+    def intent(self, intent_constant):
+        return filter(lambda icm: icm.icc.intent == intent_constant, self.all())
+
+class ICCManager(DelegateManager):
+    __queryset__ = ICCQuerySet
+
 class ICCModel(models.Model):
     class Meta:
         abstract = False
@@ -371,6 +397,8 @@ class ICCModel(models.Model):
     def __init__(self, *args, **kwargs):
         super(ICCModel, self).__init__(*args, **kwargs)
         self._storage = _storage
+    
+    objects = ICCManager()
     
     iccfile = ICCField(verbose_name="ICC binary file",
         storage=_storage,

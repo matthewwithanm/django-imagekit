@@ -35,8 +35,6 @@ def md5_for_file(f, block_size=2**20):
         md5.update(data)
     return md5.hexdigest()
 
-
-
 def pil_for_lut(lut):
     """
     make a PIL image from an RGB LUT of format:

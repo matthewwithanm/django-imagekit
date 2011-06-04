@@ -104,7 +104,7 @@ def flush_icc_cache(apps, options):
                                 print ""
                                 print ">>> %0d >>> %30s : %s %s" % (
                                     i,
-                                    ((" " * 50) + obj.image.name)[30:],
+                                    ((" " * 50) + obj._imgfield.name)[30:],
                                     #obj.icc.getDeviceModelDescription(),
                                     obj.icc.getDescription(),
                                     '',
