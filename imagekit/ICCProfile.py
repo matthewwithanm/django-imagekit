@@ -1582,7 +1582,7 @@ class ICCTransformer(ICCProfile):
                 # build a callable with scipy
                 x = numpy.linspace(0.0, 1.0, len(trc))
                 y = numpy.array([v/float(max(trc)) for v in trc])
-                thealgorithm = interpolate.interp1d(x, y, kind="quadratic")
+                thealgorithm = interpolate.interp1d(x, y, kind="nearest")
             else:
                 thealgorithm = lambda x: x ** float(trc.pop())
             
@@ -1603,7 +1603,7 @@ class ICCTransformer(ICCProfile):
                 # build a callable with numpy
                 x = numpy.linspace(0.0, 1.0, len(trc))
                 y = numpy.array([v/float(max(trc)) for v in trc])
-                thealgorithm = interpolate.interp1d(y, x, kind="quadratic") # YO DOGG: double-check this x/y-swap move here
+                thealgorithm = interpolate.interp1d(y, x, kind="nearest") # YO DOGG: double-check this x/y-swap move here
             else:
                 thealgorithm = lambda x: x ** (1.0 / trc.pop())
             
