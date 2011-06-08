@@ -1502,17 +1502,23 @@ class ICCProfile(object):
             stream.close()
     
     def __repr__(self):
+        return "<ICCProfile: %s - %s>" % (self.getDescription(), self.getCopyright())
+        '''
         if self.data:
             return str(self.data)
         return ''
+        '''
     
     def __str__(self):
         return "<ICCProfile: %s - %s>" % (self.getDescription(), self.getCopyright())
     
     def __unicode__(self):
+        return u"<ICCProfile: %s - %s>" % (self.getDescription(), self.getCopyright())
+        '''
         if self.data:
             return str(self.data)
         return ''
+        '''
     
     def __eq__(self, other):
         if self and other:

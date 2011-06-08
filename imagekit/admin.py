@@ -258,7 +258,5 @@ class ICCModelAdmin(admin.ModelAdmin):
             return theothers.all()[0]
         
         return maybe
-    
-    
-    
-#admin.site.register(ICCModel, ICCModelAdmin)
+
+admin.site.register(ICCModel, ICCModelAdmin)
