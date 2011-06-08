@@ -18,9 +18,7 @@ class ICCModelAdmin(admin.ModelAdmin):
     class Media:
         js = (
             'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js',
-            #os.path.join(settings.ADMIN_MEDIA_PREFIX, 'flot/jquery.js'),
-            #os.path.join(settings.ADMIN_MEDIA_PREFIX, 'flot/jquery.colorhelpers.js'),
-            'js/flot/jquery.flot.min.js',
+            os.path.join(settings.STATIC_URL, 'flot/jquery.flot.js'),
         )
     
     list_display = (
