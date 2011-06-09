@@ -1,0 +1,31 @@
+
+.icc-cie1931 {
+}
+
+.cie1931 {
+    display: block;
+    width: 250;
+    height: 250;
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+.icc-rgb-trc {
+    display: block;
+    position: relative;
+    /*
+    width: 250 !important;
+    height: 250 !important;
+    min-width: 250 !important;
+    min-height: 250 !important;
+    */
+}
+
+.rgb-trc {
+    display: inline-block;
+    position: relative;
+    width: 120;
+    height: 120;
+    border: 1px solid lightgray;
+    background-color: white;
+}
