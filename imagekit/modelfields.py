@@ -273,12 +273,16 @@ class HistogramField(models.CharField):
     """
     
     def __init__(self, channel="L", *args, **kwargs):
+        # see https://bitbucket.org/carljm/django-markitup/src/tip/markitup/fields.py
+        self.add_rendered_field = not kwargs.pop('no_rendered_field', False)
+        
         for arg in ('primary_key', 'unique'):
             if arg in kwargs:
                 raise TypeError("'%s' is not a valid argument for %s." % (arg, self.__class__))
         if channel not in VALID_CHANNELS:
             raise TypeError("Invalid channel type %s was specified for HistogramField" % channel)
         self.channel = self.original_channel = channel
+        
         kwargs['max_length'] = 1
         kwargs.setdefault('default', "L")
         kwargs.setdefault('verbose_name', "8-bit Histogram Channel")
@@ -308,14 +312,15 @@ class HistogramField(models.CharField):
         setattr(cls, 'channel', HistogramDescriptor(self))
         signals.pre_save.connect(self.refresh_histogram_channel, sender=cls)
         
-        if hasattr(self, 'original_channel'):
-            for i in xrange(256):
-                histocol = HistogramColumn(channel=self.original_channel)
-                histocolname = "__%s_%02X" % (self.original_channel, i)
-                histocol.db_column = histocolname
-                histocol.verbose_name = histocolname
-                self.creation_counter = histocol.creation_counter + 1
-                cls.add_to_class(histocolname, histocol)
+        if self.add_rendered_field and not cls._meta.abstract:
+            if hasattr(self, 'original_channel'):
+                for i in xrange(256):
+                    histocol = HistogramColumn(channel=self.original_channel)
+                    histocolname = "__%s_%02X" % (self.original_channel, i)
+                    histocol.db_column = histocolname
+                    histocol.verbose_name = histocolname
+                    self.creation_counter = histocol.creation_counter + 1
+                    cls.add_to_class(histocolname, histocol)
     
     def refresh_histogram_channel(self, **kwargs):
         """
@@ -355,9 +360,6 @@ class HistogramField(models.CharField):
         args, kwargs = introspector(self)
         return ('django.db.models.CharField', args, kwargs)
 
-        histograms = generic.GenericRelation(HistogramBase,
-            content_type_field='content_type',
-            object_id_field='object_id')
 
 VALID_COLORSPACES = (
     "Luma",
@@ -627,5 +629,37 @@ class ICCField(files.FileField):
             setattr(instance, self.data_field, iccdata)
         if self.hash_field:
             setattr(instance, self.hash_field, hsh)
+        
+        def south_field_triple(self):
+            """
+            Represent the field properly to the django-south model inspector.
+            See also: http://south.aeracode.org/docs/extendingintrospection.html
+            """
+            from south.modelsinspector import introspector
+            args, kwargs = introspector(self)
+            return ('imagekit.modelfields.ICCField', args, kwargs)
+
+"""
+South has assuaged me, so I'm happy to assuage it.
+
+"""
+try:
+    from south.modelsinspector import add_introspection_rules
+except ImportError:
+    pass
+else:
+    add_introspection_rules(
+        rules = [
+            ((ICCField,), [], {
+                'no_rendered_field': ('add_rendered_field', {}),
+            }),
+        ], patterns = [
+            'imagekit\.modelfields\.',
+        ]
+    )
+
+
+
+
 
         

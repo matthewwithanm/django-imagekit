@@ -28,6 +28,10 @@ from imagekit.modelfields import ICCDataField, ICCMetaField
 from imagekit.modelfields import ICCField, ICCHashField
 from imagekit.modelfields import HistogramField, Histogram
 
+# 'models inspector' sounds like the punchline of a junior-high-era joke
+from south.modelsinspector import add_introspection_rules
+add_introspection_rules([], ["^imagekit\.modelfields\.ICCField"])
+
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
