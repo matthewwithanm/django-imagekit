@@ -5,6 +5,7 @@ from django.conf import settings
 from django.core.files import File
 from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage
+from django.core.exceptions import MultipleObjectsReturned
 from django.db import models
 from django.db.models.base import ModelBase
 from django.db.models import signals
@@ -272,7 +273,12 @@ class HistogramBase(models.Model):
         if not hasattr(self,  "_%s_image" % self._parentclass.lower()):
             logg.info("*** HistogramBase has no property _%s_image; HistogramBase.image has to be none" % self._parentclass.lower())
             return None
-        return getattr(self, "_%s_image" % self._parentclass.lower()).get() ## THIS IS SOMEHOW NOT UNIQUE.
+        logg.info("+++ HistogramBase has _%s_image property." % self._parentclass.lower())
+        try:
+            return getattr(self, "_%s_image" % self._parentclass.lower()).get() ## THIS IS SOMEHOW NOT UNIQUE.
+        except MultipleObjectsReturned:
+            logg.info("*** HistogramBase._%s_image.get() threw MultipleObjectsReturned" % self._parentclass.lower())
+            return None
     
     def keys(self):
         out = []
