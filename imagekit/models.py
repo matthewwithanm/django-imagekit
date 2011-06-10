@@ -230,8 +230,6 @@ class ImageModel(models.Model):
 
 signals.post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
 
-HISTOGRAMS = ('luma','rgb')
-
 class HistogramBase(models.Model):
     class Meta:
         abstract = True
@@ -269,10 +267,12 @@ class HistogramBase(models.Model):
     @property
     def image(self):
         if not hasattr(self, "_parentclass"):
+            logg.info("*** HistogramBase has no _parentclass; HistogramBase.image has to be none")
             return None
         if not hasattr(self,  "_%s_image" % self._parentclass.lower()):
+            logg.info("*** HistogramBase has no property _%s_image; HistogramBase.image has to be none" % self._parentclass.lower())
             return None
-        return getattr(self, "_%s_image" % self._parentclass.lower()).get()
+        return getattr(self, "_%s_image" % self._parentclass.lower()).get() ## THIS IS SOMEHOW NOT UNIQUE.
     
     def keys(self):
         out = []
@@ -324,11 +324,23 @@ class ImageWithMetadata(ImageModel):
     
     def __init__(self, *args, **kwargs):
         super(ImageWithMetadata, self).__init__(*args, **kwargs)
-        for histogram_type in HISTOGRAMS:
+        for histogram_type in HISTOGRAMS.keys():
             if hasattr(self, "histogram_%s" % histogram_type):
                 related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
                 if related_histogram:
-                    getattr(self, "histogram_%s" % histogram_type)._parentclass = self.__class__.__name__
+                    related_histogram._parentclass = self.__class__.__name__
+                    #getattr(self, "histogram_%s" % histogram_type)._parentclass = self.__class__.__name__
+                '''
+                else:
+                    RelatedHistogramClass = HISTOGRAMS.get(histogram_type, None)
+                    if RelatedHistogramClass:
+                        related_histogram = RelatedHistogramClass()
+                        related_histogram._parentclass = self.__class__.__name__
+                        setattr(self, "histogram_%s" % histogram_type, related_histogram)
+                        logg.info("--! a BRAND-NEW related_histogram of type %s just got instantiated" % histogram_type.upper())
+                    else:
+                        logg.info("--X DID NOT INSTANTIATE A HISTOGRAM OF ANY TYPE (much less '%s') -- RelatedHistogramClass came up NoneType" % histogram_type.upper())
+                '''
     
     histogram_luma = models.ForeignKey(LumaHistogram,
         related_name="_%(class)s_image",
@@ -336,6 +348,7 @@ class ImageWithMetadata(ImageModel):
         blank=True,
         null=True,
         editable=True)
+    
     histogram_rgb = models.ForeignKey(RGBHistogram,
         related_name="_%(class)s_image",
         unique=True,
@@ -343,6 +356,8 @@ class ImageWithMetadata(ImageModel):
         null=True,
         editable=True)
     
+    # pil_reference can either be the string name of the PIL image object,
+    # or a callable that returns such a string -- either way, whatever works for YOU!
     icc = ICCMetaField(verbose_name="ICC data",
         editable=False,
         pil_reference=lambda: 'pilimage',
@@ -359,31 +374,47 @@ class ImageWithMetadata(ImageModel):
     def save_related_histograms(self, **kwargs): # signal, sender, instance
         """
         Saves a histogram when its related ImageWithMetadata object is about to be saved.
-        This should be reimplemented once I figure out how to iterate through an object's FKs
-        in a non-retarded way.
         """
+        logg.info("save_related_histogram() called --")
         
-        metadata = kwargs.get('instance')
+        instance = kwargs.get('instance')
         
-        for histogram_type in HISTOGRAMS:
+        logg.info("-- About to try and wring histograms out of '%s'." % str(instance))
+        
+        for histogram_type in HISTOGRAMS.keys():
             if hasattr(self, "histogram_%s" % histogram_type):
                 related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
                 if related_histogram:
+                    related_histogram._parentclass = self.__class__.__name__
                     related_histogram.save()
-
-    
+                    logg.info("--> an EXISTANT related_histogram of type %s just got saved" % histogram_type.upper())
+                else:
+                    RelatedHistogramClass = HISTOGRAMS.get(histogram_type, None)
+                    if RelatedHistogramClass:
+                        related_histogram = RelatedHistogramClass()
+                        related_histogram._parentclass = self.__class__.__name__
+                        related_histogram.save()
+                        setattr(self, "histogram_%s" % histogram_type, related_histogram)
+                        logg.info("--! a BRAND-NEW related_histogram of type %s just got saved" % histogram_type.upper())
+                    else:
+                        logg.info("--X DID NOT SAVE A HISTOGRAM OF ANY TYPE (much less '%s') -- RelatedHistogramClass came up NoneType" % histogram_type.upper())
+            logg.info("--X an ImageWithMetadata subclass didn't have a property for histogram (type '%s') for some reason, so we did no save." % histogram_type.upper())
+        
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
 
 
-class intent(ADict):
-    def __init__(self):
-        self.PERCEPTUAL = 0
-        self.RELATIVE = 1
-        self.SATURATION = 2
-        self.ABSOLUTE = 3
-
 class ICCQuerySet(models.query.QuerySet, list):
+    """
+    This does not work.
+    """
+    
+    class intent(ADict):
+        def __init__(self):
+            self.PERCEPTUAL = 0
+            self.RELATIVE = 1
+            self.SATURATION = 2
+            self.ABSOLUTE = 3
     
     @delegate
     def pcs(self, pcs_label):
@@ -450,5 +481,9 @@ class ICCModel(models.Model):
             )
         
         return u'-empty-'
-    
+
+# Histogram type string map (at the end so we're typesafe)
+# XYZHistogram and LabHistogram implementations TBD
+HISTOGRAMS = { 'luma': LumaHistogram, 'rgb': RGBHistogram, }
+
 

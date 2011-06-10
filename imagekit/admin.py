@@ -1,7 +1,7 @@
 import os
 from django.conf import settings
 from django.contrib import admin
-from imagekit.models import ICCModel
+from imagekit.models import ICCModel, RGBHistogram, LumaHistogram
 from imagekit.ICCProfile import ADict, AODict
 from imagekit.etc.cieXYZ import cieYxy3
 from jogging import logging as logg
@@ -283,3 +283,6 @@ class ICCModelAdmin(admin.ModelAdmin):
         return maybe
 
 admin.site.register(ICCModel, ICCModelAdmin)
+
+admin.site.register(RGBHistogram)
+admin.site.register(LumaHistogram)

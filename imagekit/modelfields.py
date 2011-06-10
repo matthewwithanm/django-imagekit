@@ -139,7 +139,6 @@ class ICCMetaField(ICCDataField):
         profile_string = ''
         
         if pilimage:
-            #logg.info("About to attempt to refresh ICC data (%s)" % kwargs)
             try:
                 profile_string = pilimage.info.get('icc_profile', '')
             except:
@@ -285,17 +284,22 @@ class HistogramField(models.CharField):
         Stores histogram column values in their respective db fields before saving
         """
         instance = kwargs.get('instance')
-        pilimage = instance.image.pilimage
         
-        logg.info("About to refresh '%s' histogram. KWARGS: %s" % (self.original_channel, kwargs))
+        if instance.image:
+            pilimage = instance.image.pilimage
+            
+            logg.info("About to refresh '%s' histogram. KWARGS: %s" % (self.original_channel, kwargs))
+            
+            if pilimage:
+                if self.original_channel in pilimage.mode:
+                    channel_data = pilimage.split()[pilimage.mode.index(self.original_channel)].histogram()[:256]
+                    for i in xrange(256):
+                        histocolname = "__%s_%02X" % (self.original_channel, i)
+                        setattr(instance, histocolname, int(channel_data[i]))
+                    logg.info("Refreshed '%s' histogram." % self.original_channel)
         
-        if pilimage:
-            if self.original_channel in pilimage.mode:
-                channel_data = pilimage.split()[pilimage.mode.index(self.original_channel)].histogram()[:256]
-                for i in xrange(256):
-                    histocolname = "__%s_%02X" % (self.original_channel, i)
-                    setattr(instance, histocolname, int(channel_data[i]))
-                logg.info("Refreshed '%s' histogram." % self.original_channel)
+        else:
+            logg.info("HistogramField.refresh_histogram() was called with an instance lacking an image attribute. There will be no refreshment as a result.")
     
     def save_form_data(self, instance, data):
         """
