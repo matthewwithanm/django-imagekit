@@ -122,7 +122,7 @@ class ICCMetaField(ICCDataField):
         super(ICCMetaField, self).contribute_to_class(cls, name)
         
         #print("About to connect (%s)" % cls.__name__)
-        signals.post_save.connect(self.refresh_icc_data, sender=cls)
+        signals.pre_save.connect(self.refresh_icc_data, sender=cls)
     
     def refresh_icc_data(self, **kwargs): # signal, sender, instance
         """
