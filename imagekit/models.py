@@ -11,6 +11,8 @@ from django.db.models.base import ModelBase
 from django.db.models import signals
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes import generic
 from jogging import logging as logg
 from colorsys import rgb_to_hls, hls_to_rgb
 
@@ -22,8 +24,9 @@ from imagekit.utils import img_to_fobj
 from imagekit.delegate import DelegateManager, delegate
 from imagekit.ICCProfile import ICCProfile, ADict
 from imagekit.modelfields import VALID_CHANNELS
-from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField
+from imagekit.modelfields import ICCDataField, ICCMetaField
 from imagekit.modelfields import ICCField, ICCHashField
+from imagekit.modelfields import HistogramField, Histogram
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -232,13 +235,29 @@ class ImageModel(models.Model):
 signals.post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
 
 class HistogramBase(models.Model):
+    """
+    Model representing a 1-dimensional image histogram.
+    
+    HistogramBase implements a GenericForeignKey to connect
+    to its parent ImageWithMetadata instance. The assumption
+    is that ImageWithMetadata will use django-default PositiveIntegers
+    for their respective id fields -- I'm not a super-huge fan
+    of the willy-nilly use of generic relations but this is
+    a pretty certifiable use-case; performance is more of an
+    issue with the histogram data itself (w/r/t joins and such)
+    so I'm OK with it here. Caveat Implementor.
+    
+    """
+    
     class Meta:
         abstract = True
         verbose_name = "Histogram"
         verbose_name_plural = "Histograms"
     
-    def __init__(self, *args, **kwargs):
-        super(HistogramBase, self).__init__(*args, **kwargs)
+    content_type = models.ForeignKey(ContentType) # GFK default
+    object_id = models.PositiveIntegerField() # GFK default
+    imagewithmetadata = generic.GenericForeignKey(
+        'content_type', 'object_id')
     
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
@@ -267,18 +286,7 @@ class HistogramBase(models.Model):
     
     @property
     def image(self):
-        if not hasattr(self, "_parentclass"):
-            logg.info("*** HistogramBase has no _parentclass; HistogramBase.image has to be none")
-            return None
-        if not hasattr(self,  "_%s_image" % self._parentclass.lower()):
-            logg.info("*** HistogramBase has no property _%s_image; HistogramBase.image has to be none" % self._parentclass.lower())
-            return None
-        logg.info("+++ HistogramBase has _%s_image property." % self._parentclass.lower())
-        try:
-            return getattr(self, "_%s_image" % self._parentclass.lower()).get() ## THIS IS SOMEHOW NOT UNIQUE.
-        except MultipleObjectsReturned:
-            logg.info("*** HistogramBase._%s_image.get() threw MultipleObjectsReturned" % self._parentclass.lower())
-            return None
+        return self.imagewithmetadata
     
     def keys(self):
         out = []
@@ -328,39 +336,11 @@ class ImageWithMetadata(ImageModel):
         verbose_name = "Image Metadata"
         verbose_name = "Image Metadata Objects"
     
-    def __init__(self, *args, **kwargs):
-        super(ImageWithMetadata, self).__init__(*args, **kwargs)
-        for histogram_type in HISTOGRAMS.keys():
-            if hasattr(self, "histogram_%s" % histogram_type):
-                related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
-                if related_histogram:
-                    related_histogram._parentclass = self.__class__.__name__
-                    #getattr(self, "histogram_%s" % histogram_type)._parentclass = self.__class__.__name__
-                '''
-                else:
-                    RelatedHistogramClass = HISTOGRAMS.get(histogram_type, None)
-                    if RelatedHistogramClass:
-                        related_histogram = RelatedHistogramClass()
-                        related_histogram._parentclass = self.__class__.__name__
-                        setattr(self, "histogram_%s" % histogram_type, related_histogram)
-                        logg.info("--! a BRAND-NEW related_histogram of type %s just got instantiated" % histogram_type.upper())
-                    else:
-                        logg.info("--X DID NOT INSTANTIATE A HISTOGRAM OF ANY TYPE (much less '%s') -- RelatedHistogramClass came up NoneType" % histogram_type.upper())
-                '''
-    
-    histogram_luma = models.ForeignKey(LumaHistogram,
-        related_name="_%(class)s_image",
-        unique=True,
-        blank=True,
-        null=True,
-        editable=True)
-    
-    histogram_rgb = models.ForeignKey(RGBHistogram,
-        related_name="_%(class)s_image",
-        unique=True,
-        blank=True,
-        null=True,
-        editable=True)
+    # All we got right now is Luma and RGB. What do you mean
+    # you want more colorspaces? Come back tomorrow if you
+    # want more colorspaces.
+    histogram_luma = Histogram(colorspace="Luma")
+    histogram_rgb = Histogram(colorspace="RGB")
     
     # pil_reference can either be the string name of the PIL image object,
     # or a callable that returns such a string -- either way, whatever works for YOU!
@@ -374,38 +354,8 @@ class ImageWithMetadata(ImageModel):
         return ICCTransformerForProfileData(self.icc)
     
     def save(self, force_insert=False, force_update=False):
-        self.save_related_histograms(instance=self)
         super(ImageWithMetadata, self).save(force_insert, force_update)
     
-    def save_related_histograms(self, **kwargs): # signal, sender, instance
-        """
-        Saves a histogram when its related ImageWithMetadata object is about to be saved.
-        """
-        logg.info("save_related_histogram() called --")
-        
-        instance = kwargs.get('instance')
-        
-        logg.info("-- About to try and wring histograms out of '%s'." % str(instance))
-        
-        for histogram_type in HISTOGRAMS.keys():
-            if hasattr(self, "histogram_%s" % histogram_type):
-                related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
-                if related_histogram:
-                    related_histogram._parentclass = self.__class__.__name__
-                    related_histogram.save()
-                    logg.info("--> an EXISTANT related_histogram of type %s just got saved" % histogram_type.upper())
-                else:
-                    RelatedHistogramClass = HISTOGRAMS.get(histogram_type, None)
-                    if RelatedHistogramClass:
-                        related_histogram = RelatedHistogramClass()
-                        related_histogram._parentclass = self.__class__.__name__
-                        related_histogram.save()
-                        setattr(self, "histogram_%s" % histogram_type, related_histogram)
-                        logg.info("--! a BRAND-NEW related_histogram of type %s just got saved" % histogram_type.upper())
-                    else:
-                        logg.info("--X DID NOT SAVE A HISTOGRAM OF ANY TYPE (much less '%s') -- RelatedHistogramClass came up NoneType" % histogram_type.upper())
-            logg.info("--X an ImageWithMetadata subclass didn't have a property for histogram (type '%s') for some reason, so we did no save." % histogram_type.upper())
-        
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
 
