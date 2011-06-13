@@ -11,6 +11,8 @@ from django.db.models.base import ModelBase
 from django.db.models import signals
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes import generic
 from jogging import logging as logg
 from colorsys import rgb_to_hls, hls_to_rgb
 
@@ -22,8 +24,9 @@ from imagekit.utils import img_to_fobj
 from imagekit.delegate import DelegateManager, delegate
 from imagekit.ICCProfile import ICCProfile, ADict
 from imagekit.modelfields import VALID_CHANNELS
-from imagekit.modelfields import HistogramField, ICCDataField, ICCMetaField
+from imagekit.modelfields import ICCDataField, ICCMetaField
 from imagekit.modelfields import ICCField, ICCHashField
+from imagekit.modelfields import HistogramChannelField, Histogram
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -137,15 +140,6 @@ class ImageModel(models.Model):
     def pilimage(self):
         return Image.open(self._storage.open(self._imgfield.name))
     
-    def _get_histogram(self):
-        out = []
-        if self.pilimage:
-            #tensor = numpy.array(self.pilimage.convert('L').histogram())
-            #histo,buckets = numpy.histogram(tensor, bins=255)
-            #return zip(xrange(len(histo)), histo.flatten().astype(int).tolist())
-            return zip(xrange(256), self.pilimage.convert('L').histogram())
-    histogram = property(_get_histogram)
-    
     def _get_rgb_histogram(self):
         return ('r','g','b') # TOOOO DOOOO
     
@@ -232,13 +226,34 @@ class ImageModel(models.Model):
 signals.post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
 
 class HistogramBase(models.Model):
+    """
+    Model representing a 1-dimensional image histogram.
+    
+    HistogramBase implements a GenericForeignKey to connect
+    to its parent ImageWithMetadata instance. The assumption
+    is that ImageWithMetadata subclasses use the default PositiveIntegers
+    for their respective id fields -- I'm not a super-huge fan
+    of the willy-nilly use of generic relations but this is
+    a pretty certifiable use-case; performance is more of an
+    issue with the histogram data itself (w/r/t joins and such)
+    so I'm OK with it here. Caveat Implementor.
+    
+    """
+    
     class Meta:
         abstract = True
         verbose_name = "Histogram"
         verbose_name_plural = "Histograms"
     
-    def __init__(self, *args, **kwargs):
-        super(HistogramBase, self).__init__(*args, **kwargs)
+    content_type = models.ForeignKey(ContentType,
+        blank=True,
+        null=True) # GFK default
+    object_id = models.PositiveIntegerField(verbose_name="Object ID",
+        blank=True,
+        null=True) # GFK default
+    imagewithmetadata = generic.GenericForeignKey(
+        'content_type',
+        'object_id')
     
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
@@ -267,53 +282,93 @@ class HistogramBase(models.Model):
     
     @property
     def image(self):
-        if not hasattr(self, "_parentclass"):
-            logg.info("*** HistogramBase has no _parentclass; HistogramBase.image has to be none")
-            return None
-        if not hasattr(self,  "_%s_image" % self._parentclass.lower()):
-            logg.info("*** HistogramBase has no property _%s_image; HistogramBase.image has to be none" % self._parentclass.lower())
-            return None
-        logg.info("+++ HistogramBase has _%s_image property." % self._parentclass.lower())
-        try:
-            return getattr(self, "_%s_image" % self._parentclass.lower()).get() ## THIS IS SOMEHOW NOT UNIQUE.
-        except MultipleObjectsReturned:
-            logg.info("*** HistogramBase._%s_image.get() threw MultipleObjectsReturned" % self._parentclass.lower())
-            return None
+        return self.imagewithmetadata
     
     def keys(self):
         out = []
         for field in self._meta.fields:
-            if isinstance(field, HistogramField):
+            if isinstance(field, HistogramChannelField):
                 out.append(field.name)
         return out
     
     def values(self):
         out = []
         for field in self._meta.fields:
-            if isinstance(field, HistogramField):
-                out.append(field.value_from_object(self))
+            if isinstance(field, HistogramChannelField):
+                out.append(self[field.name])
         return out
     
     def items(self):
         return zip(self.keys(), self.values())
 
+
+
+"""
+HISTOGRAM IMPLEMENTATIONS.
+
+Histograms are subclasses of the abstract base model HistogramBase that are defined with one or more
+channels, represented with HistogramChannelFields. Histograms are computed from the PIL representation
+of the model object's image data -- the channel flag for each HistogramChannelField in the histogram
+has to be a character found in the 'mode' attribute of the PIL image object (pilimage.mode). If you
+want to compute a histogram from a dimension that isn't necessarily found in your images' mode attribute,
+you can use the pil_reference kwarg as below in LumaHistogram's implementation.
+
+When passed to a HistogramChannelField, the pil_reference kwarg needs to provide either a string
+or a callable that will yield a PIL object from which we should extract histogram data. the default
+is 'pilimage', which can be expressed with a callable like so:
+
+    class MyHistogram(HistogramBase):
+        L = HistogramChannelField(channel="L", pil_reference=lambda instance: getattr(instance, 'pilimage'))
+
+For LumaHistogram, I'm getting the image luminosity data like so:
+
+    class MyHistogram(HistogramBase):
+        L = HistogramChannelField(channel="L", pil_reference=lambda instance: instance.pilimage.convert('L'))
+
+More complex callables can be used as well:
+
+    def histogram_with_multmask(instance):
+        from PIL import Image, ImageChops
+        mask_image = "/home/me/MyShit/maskimage.jpg"
+        return ImageChops.multiply(Image.open(mask_image), instance).convert('L')
+    
+    class MyHistogram(HistogramBase):
+        M = HistogramChannelField(channel="L", pil_reference=histogram_with_multmask)
+
+"""
+
+
 class LumaHistogram(HistogramBase):
+    """
+    Luma histogram implementation.
+    
+    This histogram has only one 8-bit channel, L.
+    Images are converted to the 'L' mode with PIL
+    before their histogram data is saved.
+    
+    """
     class Meta:
         abstract = False
         verbose_name = "Luma Histogram"
         verbose_name_plural = "Luma Histograms"
     
-    L = HistogramField(channel='L', verbose_name="Luma")
+    L = HistogramChannelField(channel='L', verbose_name="Luma", pil_reference=lambda instance: instance.pilimage.convert('L'))
 
 class RGBHistogram(HistogramBase):
+    """
+    RGB histogram implementation.
+    
+    One channel for each primary in RGB. 
+    
+    """
     class Meta:
         abstract = False
         verbose_name = "RGB Histogram"
         verbose_name_plural = "RGB Histograms"
     
-    R = HistogramField(channel='R', verbose_name="Red")
-    G = HistogramField(channel='G', verbose_name="Green")
-    B = HistogramField(channel='B', verbose_name="Blue")
+    R = HistogramChannelField(channel='R', verbose_name="Red")
+    G = HistogramChannelField(channel='G', verbose_name="Green")
+    B = HistogramChannelField(channel='B', verbose_name="Blue")
 
 @memoize
 def ICCTransformerForProfileData(icc=None):
@@ -328,45 +383,27 @@ class ImageWithMetadata(ImageModel):
         verbose_name = "Image Metadata"
         verbose_name = "Image Metadata Objects"
     
-    def __init__(self, *args, **kwargs):
-        super(ImageWithMetadata, self).__init__(*args, **kwargs)
-        for histogram_type in HISTOGRAMS.keys():
-            if hasattr(self, "histogram_%s" % histogram_type):
-                related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
-                if related_histogram:
-                    related_histogram._parentclass = self.__class__.__name__
-                    #getattr(self, "histogram_%s" % histogram_type)._parentclass = self.__class__.__name__
-                '''
-                else:
-                    RelatedHistogramClass = HISTOGRAMS.get(histogram_type, None)
-                    if RelatedHistogramClass:
-                        related_histogram = RelatedHistogramClass()
-                        related_histogram._parentclass = self.__class__.__name__
-                        setattr(self, "histogram_%s" % histogram_type, related_histogram)
-                        logg.info("--! a BRAND-NEW related_histogram of type %s just got instantiated" % histogram_type.upper())
-                    else:
-                        logg.info("--X DID NOT INSTANTIATE A HISTOGRAM OF ANY TYPE (much less '%s') -- RelatedHistogramClass came up NoneType" % histogram_type.upper())
-                '''
+    # All we got right now is Luma and RGB. What do you mean
+    # you want more colorspaces? Come back tomorrow if you
+    # want more colorspaces.
+    histogram_luma = Histogram(colorspace="Luma")
+    histogram_rgb = Histogram(colorspace="RGB")
     
-    histogram_luma = models.ForeignKey(LumaHistogram,
-        related_name="_%(class)s_image",
-        unique=True,
-        blank=True,
-        null=True,
-        editable=True)
+    def _get_histogram(self):
+        """ Legacy support. """
+        if self.pilimage:
+            return zip(
+                xrange(len(self.histogram_luma.L)),
+                self.histogram_luma.L,
+            )
     
-    histogram_rgb = models.ForeignKey(RGBHistogram,
-        related_name="_%(class)s_image",
-        unique=True,
-        blank=True,
-        null=True,
-        editable=True)
+    histogram = property(_get_histogram)
     
     # pil_reference can either be the string name of the PIL image object,
     # or a callable that returns such a string -- either way, whatever works for YOU!
     icc = ICCMetaField(verbose_name="ICC data",
+        #pil_reference=lambda instance: instance.pilimage,
         editable=False,
-        pil_reference=lambda: 'pilimage',
         null=True)
     
     @property
@@ -374,46 +411,13 @@ class ImageWithMetadata(ImageModel):
         return ICCTransformerForProfileData(self.icc)
     
     def save(self, force_insert=False, force_update=False):
-        self.save_related_histograms(instance=self)
         super(ImageWithMetadata, self).save(force_insert, force_update)
     
-    def save_related_histograms(self, **kwargs): # signal, sender, instance
-        """
-        Saves a histogram when its related ImageWithMetadata object is about to be saved.
-        """
-        logg.info("save_related_histogram() called --")
-        
-        instance = kwargs.get('instance')
-        
-        logg.info("-- About to try and wring histograms out of '%s'." % str(instance))
-        
-        for histogram_type in HISTOGRAMS.keys():
-            if hasattr(self, "histogram_%s" % histogram_type):
-                related_histogram = getattr(self, "histogram_%s" % histogram_type, None)
-                if related_histogram:
-                    related_histogram._parentclass = self.__class__.__name__
-                    related_histogram.save()
-                    logg.info("--> an EXISTANT related_histogram of type %s just got saved" % histogram_type.upper())
-                else:
-                    RelatedHistogramClass = HISTOGRAMS.get(histogram_type, None)
-                    if RelatedHistogramClass:
-                        related_histogram = RelatedHistogramClass()
-                        related_histogram._parentclass = self.__class__.__name__
-                        related_histogram.save()
-                        setattr(self, "histogram_%s" % histogram_type, related_histogram)
-                        logg.info("--! a BRAND-NEW related_histogram of type %s just got saved" % histogram_type.upper())
-                    else:
-                        logg.info("--X DID NOT SAVE A HISTOGRAM OF ANY TYPE (much less '%s') -- RelatedHistogramClass came up NoneType" % histogram_type.upper())
-            logg.info("--X an ImageWithMetadata subclass didn't have a property for histogram (type '%s') for some reason, so we did no save." % histogram_type.upper())
-        
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
 
 
 class ICCQuerySet(models.query.QuerySet, list):
-    """
-    This does not work.
-    """
     
     class intent(ADict):
         def __init__(self):
@@ -421,18 +425,6 @@ class ICCQuerySet(models.query.QuerySet, list):
             self.RELATIVE = 1
             self.SATURATION = 2
             self.ABSOLUTE = 3
-    
-    @delegate
-    def pcs(self, pcs_label):
-        return filter(lambda icm: icm.icc.connectionColorSpace.lower().startswith(pcs_label), self.all())
-    
-    @delegate
-    def colorspace(self, colorspace_label):
-        return filter(lambda icm: icm.icc.colorSpace.lower().startswith(colorspace_label), self.all())
-    
-    @delegate
-    def intent(self, intent_constant):
-        return filter(lambda icm: icm.icc.intent == intent_constant, self.all())
 
 class ICCManager(DelegateManager):
     __queryset__ = ICCQuerySet
@@ -492,4 +484,30 @@ class ICCModel(models.Model):
 # XYZHistogram and LabHistogram implementations TBD
 HISTOGRAMS = { 'luma': LumaHistogram, 'rgb': RGBHistogram, }
 
+"""
+South has assuaged me, so I'm happy to assuage it.
 
+"""
+try:
+    from south.modelsinspector import add_introspection_rules
+except ImportError:
+    pass
+else:
+    # 'models inspector' sounds like the punchline of a junior-high-era joke
+    add_introspection_rules(
+        rules = [
+            ((HistogramChannelField,), [], {
+                'add_columns': ('add_columns', {}),
+            }),
+        ], patterns = [
+            '^imagekit\.modelfields\.HistogramChannelField',
+        ]
+    )
+    add_introspection_rules(
+        rules = [
+            ((ICCField,), [], {
+            }),
+        ], patterns = [
+            '^imagekit\.modelfields\.ICCField',
+        ]
+    )
