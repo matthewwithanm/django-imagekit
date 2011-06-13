@@ -26,11 +26,7 @@ from imagekit.ICCProfile import ICCProfile, ADict
 from imagekit.modelfields import VALID_CHANNELS
 from imagekit.modelfields import ICCDataField, ICCMetaField
 from imagekit.modelfields import ICCField, ICCHashField
-from imagekit.modelfields import HistogramField, Histogram
-
-# 'models inspector' sounds like the punchline of a junior-high-era joke
-from south.modelsinspector import add_introspection_rules
-add_introspection_rules([], ["^imagekit\.modelfields\.ICCField"])
+from imagekit.modelfields import HistogramChannelField, Histogram
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -144,15 +140,6 @@ class ImageModel(models.Model):
     def pilimage(self):
         return Image.open(self._storage.open(self._imgfield.name))
     
-    def _get_histogram(self):
-        out = []
-        if self.pilimage:
-            #tensor = numpy.array(self.pilimage.convert('L').histogram())
-            #histo,buckets = numpy.histogram(tensor, bins=255)
-            #return zip(xrange(len(histo)), histo.flatten().astype(int).tolist())
-            return zip(xrange(256), self.pilimage.convert('L').histogram())
-    histogram = property(_get_histogram)
-    
     def _get_rgb_histogram(self):
         return ('r','g','b') # TOOOO DOOOO
     
@@ -244,7 +231,7 @@ class HistogramBase(models.Model):
     
     HistogramBase implements a GenericForeignKey to connect
     to its parent ImageWithMetadata instance. The assumption
-    is that ImageWithMetadata will use django-default PositiveIntegers
+    is that ImageWithMetadata subclasses use the default PositiveIntegers
     for their respective id fields -- I'm not a super-huge fan
     of the willy-nilly use of generic relations but this is
     a pretty certifiable use-case; performance is more of an
@@ -258,10 +245,15 @@ class HistogramBase(models.Model):
         verbose_name = "Histogram"
         verbose_name_plural = "Histograms"
     
-    content_type = models.ForeignKey(ContentType) # GFK default
-    object_id = models.PositiveIntegerField() # GFK default
+    content_type = models.ForeignKey(ContentType,
+        blank=True,
+        null=True) # GFK default
+    object_id = models.PositiveIntegerField(verbose_name="Object ID",
+        blank=True,
+        null=True) # GFK default
     imagewithmetadata = generic.GenericForeignKey(
-        'content_type', 'object_id')
+        'content_type',
+        'object_id')
     
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
@@ -295,37 +287,88 @@ class HistogramBase(models.Model):
     def keys(self):
         out = []
         for field in self._meta.fields:
-            if isinstance(field, HistogramField):
+            if isinstance(field, HistogramChannelField):
                 out.append(field.name)
         return out
     
     def values(self):
         out = []
         for field in self._meta.fields:
-            if isinstance(field, HistogramField):
-                out.append(field.value_from_object(self))
+            if isinstance(field, HistogramChannelField):
+                out.append(self[field.name])
         return out
     
     def items(self):
         return zip(self.keys(), self.values())
 
+
+
+"""
+HISTOGRAM IMPLEMENTATIONS.
+
+Histograms are subclasses of the abstract base model HistogramBase that are defined with one or more
+channels, represented with HistogramChannelFields. Histograms are computed from the PIL representation
+of the model object's image data -- the channel flag for each HistogramChannelField in the histogram
+has to be a character found in the 'mode' attribute of the PIL image object (pilimage.mode). If you
+want to compute a histogram from a dimension that isn't necessarily found in your images' mode attribute,
+you can use the pil_reference kwarg as below in LumaHistogram's implementation.
+
+When passed to a HistogramChannelField, the pil_reference kwarg needs to provide either a string
+or a callable that will yield a PIL object from which we should extract histogram data. the default
+is 'pilimage', which can be expressed with a callable like so:
+
+    class MyHistogram(HistogramBase):
+        L = HistogramChannelField(channel="L", pil_reference=lambda instance: getattr(instance, 'pilimage'))
+
+For LumaHistogram, I'm getting the image luminosity data like so:
+
+    class MyHistogram(HistogramBase):
+        L = HistogramChannelField(channel="L", pil_reference=lambda instance: instance.pilimage.convert('L'))
+
+More complex callables can be used as well:
+
+    def histogram_with_multmask(instance):
+        from PIL import Image, ImageChops
+        mask_image = "/home/me/MyShit/maskimage.jpg"
+        return ImageChops.multiply(Image.open(mask_image), instance).convert('L')
+    
+    class MyHistogram(HistogramBase):
+        M = HistogramChannelField(channel="L", pil_reference=histogram_with_multmask)
+
+"""
+
+
 class LumaHistogram(HistogramBase):
+    """
+    Luma histogram implementation.
+    
+    This histogram has only one 8-bit channel, L.
+    Images are converted to the 'L' mode with PIL
+    before their histogram data is saved.
+    
+    """
     class Meta:
         abstract = False
         verbose_name = "Luma Histogram"
         verbose_name_plural = "Luma Histograms"
     
-    L = HistogramField(channel='L', verbose_name="Luma")
+    L = HistogramChannelField(channel='L', verbose_name="Luma", pil_reference=lambda instance: instance.pilimage.convert('L'))
 
 class RGBHistogram(HistogramBase):
+    """
+    RGB histogram implementation.
+    
+    One channel for each primary in RGB. 
+    
+    """
     class Meta:
         abstract = False
         verbose_name = "RGB Histogram"
         verbose_name_plural = "RGB Histograms"
     
-    R = HistogramField(channel='R', verbose_name="Red")
-    G = HistogramField(channel='G', verbose_name="Green")
-    B = HistogramField(channel='B', verbose_name="Blue")
+    R = HistogramChannelField(channel='R', verbose_name="Red")
+    G = HistogramChannelField(channel='G', verbose_name="Green")
+    B = HistogramChannelField(channel='B', verbose_name="Blue")
 
 @memoize
 def ICCTransformerForProfileData(icc=None):
@@ -346,11 +389,21 @@ class ImageWithMetadata(ImageModel):
     histogram_luma = Histogram(colorspace="Luma")
     histogram_rgb = Histogram(colorspace="RGB")
     
+    def _get_histogram(self):
+        """ Legacy support. """
+        if self.pilimage:
+            return zip(
+                xrange(len(self.histogram_luma.L)),
+                self.histogram_luma.L,
+            )
+    
+    histogram = property(_get_histogram)
+    
     # pil_reference can either be the string name of the PIL image object,
     # or a callable that returns such a string -- either way, whatever works for YOU!
     icc = ICCMetaField(verbose_name="ICC data",
+        #pil_reference=lambda instance: instance.pilimage,
         editable=False,
-        pil_reference=lambda: 'pilimage',
         null=True)
     
     @property
@@ -365,9 +418,6 @@ class ImageWithMetadata(ImageModel):
 
 
 class ICCQuerySet(models.query.QuerySet, list):
-    """
-    This does not work.
-    """
     
     class intent(ADict):
         def __init__(self):
@@ -375,18 +425,6 @@ class ICCQuerySet(models.query.QuerySet, list):
             self.RELATIVE = 1
             self.SATURATION = 2
             self.ABSOLUTE = 3
-    
-    @delegate
-    def pcs(self, pcs_label):
-        return filter(lambda icm: icm.icc.connectionColorSpace.lower().startswith(pcs_label), self.all())
-    
-    @delegate
-    def colorspace(self, colorspace_label):
-        return filter(lambda icm: icm.icc.colorSpace.lower().startswith(colorspace_label), self.all())
-    
-    @delegate
-    def intent(self, intent_constant):
-        return filter(lambda icm: icm.icc.intent == intent_constant, self.all())
 
 class ICCManager(DelegateManager):
     __queryset__ = ICCQuerySet
@@ -446,4 +484,30 @@ class ICCModel(models.Model):
 # XYZHistogram and LabHistogram implementations TBD
 HISTOGRAMS = { 'luma': LumaHistogram, 'rgb': RGBHistogram, }
 
+"""
+South has assuaged me, so I'm happy to assuage it.
 
+"""
+try:
+    from south.modelsinspector import add_introspection_rules
+except ImportError:
+    pass
+else:
+    # 'models inspector' sounds like the punchline of a junior-high-era joke
+    add_introspection_rules(
+        rules = [
+            ((HistogramChannelField,), [], {
+                'add_columns': ('add_columns', {}),
+            }),
+        ], patterns = [
+            '^imagekit\.modelfields\.HistogramChannelField',
+        ]
+    )
+    add_introspection_rules(
+        rules = [
+            ((ICCField,), [], {
+            }),
+        ], patterns = [
+            '^imagekit\.modelfields\.ICCField',
+        ]
+    )
