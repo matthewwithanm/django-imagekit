@@ -1,4 +1,4 @@
-import os, urlparse, numpy, uuid
+import os, urlparse, numpy, uuid, random
 import cStringIO as StringIO
 from datetime import datetime
 from django.conf import settings
@@ -24,6 +24,7 @@ from imagekit.utils import img_to_fobj
 from imagekit.delegate import DelegateManager, delegate
 from imagekit.ICCProfile import ICCProfile, ADict
 from imagekit.modelfields import VALID_CHANNELS
+from imagekit.modelfields import to_matrix
 from imagekit.modelfields import ICCDataField, ICCMetaField
 from imagekit.modelfields import ICCField, ICCHashField
 from imagekit.modelfields import HistogramChannelField, Histogram
@@ -300,7 +301,17 @@ class HistogramBase(models.Model):
     
     def items(self):
         return zip(self.keys(), self.values())
-
+    
+    # distance:
+    # math.sqrt(reduce(operator.add, map(lambda h,i: h*(i**2), abs(axim.histogram_rgb.all - pxim.histogram_rgb.all), range(256*3))) / float(axim.w) * axim.h)
+    
+    @property
+    def all(self):
+        out = []
+        for channel in self.keys():
+            for i in xrange(256):
+                out.append(getattr(self, "__%s_%02X" % (channel, i)))
+        return to_matrix(out)
 
 
 """
@@ -417,7 +428,7 @@ class ImageWithMetadata(ImageModel):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
 
 
-class ICCQuerySet(models.query.QuerySet, list):
+class ICCQuerySet(models.query.QuerySet):
     
     class intent(ADict):
         def __init__(self):
@@ -425,6 +436,10 @@ class ICCQuerySet(models.query.QuerySet, list):
             self.RELATIVE = 1
             self.SATURATION = 2
             self.ABSOLUTE = 3
+    
+    def rnd(self):
+        return random.choice(self)
+    
 
 class ICCManager(DelegateManager):
     __queryset__ = ICCQuerySet
@@ -466,6 +481,10 @@ class ICCModel(models.Model):
     @property
     def icctransformer(self):
         return ICCTransformerForProfileData(self.icc)
+    
+    @property
+    def lcmsinstance(self):
+        return ImageCms.ImageCmsProfile(self.iccfile.file)
     
     def save(self, force_insert=False, force_update=False):
         self.modifydate = datetime.now()

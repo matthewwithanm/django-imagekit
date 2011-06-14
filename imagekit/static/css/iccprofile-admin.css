@@ -1,24 +1,23 @@
 
-.icc-cie1931 {
+.icc-cie1931, .histogram-luma {
 }
 
-.cie1931 {
+.cie1931, .luma, .rgb {
     display: block;
-    width: 250;
-    height: 250;
+    width: 250px;
+    height: 250px;
     border: 1px solid lightgray;
     background-color: white;
+}
+
+.luma, .rgb {
+    width: 600px;
+    border: 1px solid transparent;
 }
 
 .icc-rgb-trc {
     display: block;
     position: relative;
-    /*
-    width: 250 !important;
-    height: 250 !important;
-    min-width: 250 !important;
-    min-height: 250 !important;
-    */
 }
 
 .rgb-trc {
@@ -29,3 +28,4 @@
     border: 1px solid lightgray;
     background-color: white;
 }
+

@@ -13,6 +13,7 @@ from ICCProfile import ICCProfile
 from jogging import logging as logg
 import imagekit.models
 
+to_matrix = lambda l: numpy.array(l, dtype=int)
 
 class ICCDataField(models.TextField):
     """
@@ -109,6 +110,7 @@ class ICCDataField(models.TextField):
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
         return ('imagekit.models.ICCDataField', args, kwargs)
+
 
 class ICCMetaField(ICCDataField):
     """
@@ -216,6 +218,7 @@ class HistogramColumn(models.IntegerField):
         args, kwargs = introspector(self)
         return ('django.db.models.IntegerField', args, kwargs)
 
+
 class HistogramChannelDescriptor(object):
     """
     Histogram channel descriptor for accessing the histogram channel data through the 
@@ -232,20 +235,22 @@ class HistogramChannelDescriptor(object):
                 "The '%s' attribute can only be accessed from %s instances."
                 % (self.field.name, owner.__name__))
         
-        to_matrix = lambda l: numpy.array(l, dtype=numpy.uint8)
         histogram_channel = instance.__dict__[self.field.original_channel]
         
         if isinstance(histogram_channel, (numpy.matrixlib.matrix, numpy.ndarray)):
-            if not issubclass(histogram_channel.dtype, numpy.uint8):
-                return histogram_channel.astype(numpy.uint8)
+            if not issubclass(histogram_channel.dtype, int):
+                return histogram_channel.astype(int)
             return histogram_channel
         
         elif isinstance(histogram_channel, (list, tuple)):
             return to_matrix(histogram_channel)
         
+        # get the fucking histogram channel data out of the database here
         elif isinstance(histogram_channel, (basestring, type(None))):
-            # get the fucking histogram channel data out of the database here
             out = []
+            if int(getattr(instance, "__%s_00" % histogram_channel)) < 0:
+                instance.save() # refresh and save
+            
             if histogram_channel:
                 for i in xrange(256):
                     histocolname = "__%s_%02X" % (histogram_channel, i)

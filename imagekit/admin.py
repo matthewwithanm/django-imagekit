@@ -5,6 +5,7 @@ from imagekit.models import ICCModel, RGBHistogram, LumaHistogram
 from imagekit.ICCProfile import ADict, AODict
 from imagekit.etc.cieXYZ import cieYxy3
 from jogging import logging as logg
+from memoize import memoize
 
 try:
     import ujson as json
@@ -19,7 +20,6 @@ except ImportError:
         except ImportError:
             logg.info("--- Loading stdlib json module in leu of simplejson")
             import json
-
 
 # The icon immediately below is copyright (C) 2011 Yusuke Kamiyamane -- All of his rights are reserved.
 # It's licensed under Creative Commons Attribution 3.0: http://creativecommons.org/licenses/by/3.0/
@@ -282,7 +282,191 @@ class ICCModelAdmin(admin.ModelAdmin):
         
         return maybe
 
-admin.site.register(ICCModel, ICCModelAdmin)
 
-admin.site.register(RGBHistogram)
-admin.site.register(LumaHistogram)
+class SeriesColors(ADict):
+    def __init__(self):
+        self.R = "#FF1919"
+        self.G = "#19FA19"
+        self.B = "#1991FF"
+        self.L = "#CCCCCC"
+
+class SeriesColorsAlpha(ADict):
+    def __init__(self):
+        self.R = "rgba(165, 5, 15, 0.65)"
+        self.G = "rgba(10, 175, 85, 0.75)"
+        self.B = "rgba(12, 13, 180, 0.15)"
+        self.L = "rgba(221, 221, 221, 0.45)"
+
+oldcolors = SeriesColors()
+seriescolors = SeriesColorsAlpha()
+
+class RGBHistogramAdmin(admin.ModelAdmin):
+    
+    class Media:
+        css = { 'all': (
+            os.path.join(settings.STATIC_URL, 'css/iccprofile-admin.css'),
+        )}
+        js = (
+            'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js',
+            os.path.join(settings.STATIC_URL, 'flot/jquery.flot.js'),
+            os.path.join(settings.STATIC_URL, 'flot/jquery.flot.stack.js'),
+        )
+    
+    list_display = (
+        'id',
+        'rgb_flot_histogram',
+        'object_id',
+        'content_type',
+        'imagewithmetadata',
+    )
+    
+    list_display_links = ('id',)
+    list_per_page = 5
+    
+    @memoize
+    def rgb_flot_histogram(self, obj):
+        series = []
+        markings = []
+        
+        for k in obj.keys():
+            mean = float(obj[k].mean())
+            #std = float(obj[k].std())
+            series.append({
+                'color': seriescolors[k],
+                'fillColor': seriescolors[k],
+                'data': [list(s) for s in zip(
+                    xrange(1, len(obj[k])+1),
+                    obj[k].astype(float).tolist(),
+                )],
+                'clickable': True,
+                'hoverable': True,
+            })
+            markings.append({
+                'color': oldcolors[k],
+                'lineWidth': 1,
+                'yaxis': { 'from': mean, 'to': mean, },
+            })
+            '''
+            markings.append({
+                'color': seriescolors[k],
+                'yaxis': { 'from': (mean - std), 'to': (mean + std), },
+            })
+            '''
+        
+        # flot config options
+        options = {
+            'series': {
+                #'stack': True,
+                'points': dict(show=False, fill=True, radius=2),
+                'lines': dict(show=False, fill=True, lineWidth=1),
+                'bars': dict(show=True, fill=True, barWidth=1, lineWidth=0),
+            },
+            'xaxis': dict(show=True, ticks=12),
+            'yaxis': dict(show=True, ticks=4, min=0.0),
+            'grid': dict(show=True, markings=markings, autoHighlight=True, borderWidth=1, color="#CCCCCC", borderColor="#BABABA"),
+        }
+        
+        return u"""
+            <span class="histogram-rgb">
+                <div class="rgb" id="rgb-%s" style="width: %spx; height: %spx;"></div>
+            </span>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $.plot(
+                        $('#rgb-%s'),
+                        %s,
+                        %s
+                    );
+                });
+            </script>
+        """ % (
+            obj.pk,
+            600, 250,
+            obj.pk,
+            json.dumps(series),
+            json.dumps(options),
+        )
+    rgb_flot_histogram.short_description = "RGB Histograms"
+    rgb_flot_histogram.allow_tags = True
+
+
+class LumaHistogramAdmin(admin.ModelAdmin):
+
+    class Media:
+        css = { 'all': (
+            os.path.join(settings.STATIC_URL, 'css/iccprofile-admin.css'),
+        )}
+        js = (
+            'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js',
+            os.path.join(settings.STATIC_URL, 'flot/jquery.flot.js'),
+        )
+    
+    list_display = (
+        'id',
+        'luma_flot_histogram',
+        'object_id',
+        'content_type',
+        'imagewithmetadata',
+    )
+    
+    list_display_links = ('id',)
+    list_per_page = 10
+    
+    '''
+    Flot graphs
+    '''
+    def luma_flot_histogram(self, obj):
+        if obj.L.any():
+            series = []
+            
+            # flot config options
+            options = {
+                'series': {
+                    'points': dict(show=False, fill=True, radius=2),
+                    'lines': dict(show=False, fill=True, lineWidth=1),
+                    'bars': dict(show=True, fill=True, barWidth=1, fillColor="#ccc"),
+                },
+                'xaxis': dict(show=True, ticks=4),
+                'yaxis': dict(show=True, ticks=4),
+                'grid': dict(show=False),
+            }
+            
+            series.append({
+                'color': "#ccc",
+                'data': [list(s) for s in zip(
+                    xrange(1, len(obj.L)+1),
+                    list(obj.L.astype(float)),
+                )], 
+                'clickable': True,
+                'hoverable': True,
+            })
+            
+            return u"""
+                <span class="histogram-luma">
+                    <div class="luma" id="luma-%s" style="width: %spx; height: %spx;"></div>
+                </span>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $.plot(
+                            $('#luma-%s'),
+                            %s,
+                            %s
+                        );
+                    });
+                </script>
+            """ % (
+                obj.pk,
+                600, 250,
+                obj.pk,
+                json.dumps(series),
+                json.dumps(options),
+            )
+        # no-icc default
+        return u'<i style="color: lightgray;">None</i>'
+    luma_flot_histogram.short_description = "Luma Histogram"
+    luma_flot_histogram.allow_tags = True
+
+
+admin.site.register(ICCModel, ICCModelAdmin)
+admin.site.register(RGBHistogram, RGBHistogramAdmin)
+admin.site.register(LumaHistogram, LumaHistogramAdmin)
