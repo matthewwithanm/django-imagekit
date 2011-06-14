@@ -75,12 +75,14 @@ class ImageModelBase(ModelBase):
             module = __import__(opts.spec_module,  {}, {}, [''])
         except ImportError:
             raise ImportError('Unable to load imagekit config module: %s' % opts.spec_module)
-        for spec in [spec for spec in module.__dict__.values()]:
+        for spec in module.__dict__.values():
             if isinstance(spec, type):
                 if issubclass(spec, specs.ImageSpec):
-                    if spec != specs.ImageSpec:
-                        setattr(cls, spec.name(), specs.Descriptor(spec))
-                        opts.specs.append(spec)
+                    setattr(cls, spec.name(), specs.FileDescriptor(spec))
+                    opts.specs.append(spec)
+                elif issubclass(spec, specs.MatrixSpec):
+                    setattr(cls, spec.name(), specs.MatrixDescriptor(spec))
+                    opts.specs.append(spec)
         
         setattr(cls, '_ik', opts)
 
@@ -140,9 +142,6 @@ class ImageModel(models.Model):
     @property
     def pilimage(self):
         return Image.open(self._storage.open(self._imgfield.name))
-    
-    def _get_rgb_histogram(self):
-        return ('r','g','b') # TOOOO DOOOO
     
     def dominantcolor(self):
         return self.pilimage.quantize(1).convert('RGB').getpixel((0, 0))

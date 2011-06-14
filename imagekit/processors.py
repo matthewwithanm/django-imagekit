@@ -6,9 +6,12 @@ the class properties as settings. The process method can be overridden as well a
 own effects/processes entirely.
 
 """
-import os
+import os, numpy
 from imagekit.lib import *
-from imagekit.utils import md5_for_file
+from imagekit.neuquant import NeuQuant
+from imagekit.ICCProfile import ICCProfile
+from memoize import memoize
+from jogging import logging as logg
 
 class ImageProcessor(object):
     """ Base image processor class """
@@ -36,91 +39,21 @@ class Adjustment(ImageProcessor):
                     pass
         return img, fmt
 
-"""
-ICCProofTransform and ICCTransform should both get refactored -- probably, they should
-inherit from a common abstract ancestor that implements process() in a non-stupid way.
-"""
-
-class ICCTransform(ImageProcessor):
-    """
-    Convert the image to a destination profile via the L*a*b colorspace.
-    
-    Source image numbers are treated as per its embedded profile by default;
-    this may be (losslessly) overridden by an applied profile at conversion time.
-    Untagged RGB images are treated as sRGB IEC61966-2.1 by default.
-    I will figure out a default for CMYK and other spaces when I find myself
-    inundated with enough files to pick something sensible.
-    
-    Relative colorimetric is the default intent.
-    """
-    _srgb = os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc")
-    _srgb_profile = ImageCms.ImageCmsProfile(_srgb)
-    source = None
-    destination = None
-    destination_profile = None
-    
-    mode = 'RGB' # for now
-    intent = ImageCms.INTENT_RELATIVE_COLORIMETRIC
-    transformers = {}
-    
-    @classmethod
-    def process(cls, img, fmt, obj):
-        if not img.mode == "L":
-            
-            iccpth = obj._iccpath
-            if not iccpth:
-                iccpth = cls.source
-            if not iccpth:
-                iccpth = cls._srgb
-            
-            if obj._icc_filehash:
-                if obj._icc_filehash not in cls.transformers:
-                    if not os.path.exists(cls.destination):
-                        raise AttributeError("WTF: destination transform ICC profile %s doesn't exist" % cls.destination)
-                    
-                    source_profile = ImageCms.ImageCmsProfile(iccpth)
-                    if not cls.destination_profile:
-                        cls.destination_profile = ImageCms.ImageCmsProfile(cls.destination)
-                    
-                    cls.transformers[obj._icc_filehash] = ImageCms.ImageCmsTransform(
-                        source_profile,
-                        cls.destination_profile,
-                        img.mode,
-                        cls.mode,
-                        cls.intent,
-                    )
-                
-                return cls.transformers[obj._icc_filehash].apply(img), img.format
-            
-        return ImageCms.profileToProfile(
-            img.convert('RGB'),
-            cls._srgb_profile,
-            cls.destination_profile and cls.destination_profile or cls._srgb_profile,
-            cls.intent,
-            cls.mode,
-        ), img.format
-    
-
 
 class ICCProofTransform(ImageProcessor):
     """
-    Convert the image to a destination profile via the L*a*b colorspace.
+    Convert the image to a destination profile with LCMS.
     
     Source image numbers are treated as per its embedded profile by default;
     this may be (losslessly) overridden by an applied profile at conversion time.
-    Untagged RGB images are treated as sRGB IEC61966-2.1 by default.
-    I will figure out a default for CMYK and other spaces when I find myself
-    inundated with enough files to pick something sensible.
-    
+    RGB images sans ICC data will be treated as sRGB IEC61966-2.1 by default.
     Relative colorimetric is the default intent.
     """
-    _srgb = os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc")
-    _srgb_profile = ImageCms.ImageCmsProfile(_srgb)
+    _srgb = ICCProfile(os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc"))
     source = None
     destination = None
-    destination_profile = None
     proof = None
-    proof_profile = None
+    lastTXID = None
     
     mode = 'RGB' # for now
     intent = ImageCms.INTENT_RELATIVE_COLORIMETRIC
@@ -128,56 +61,135 @@ class ICCProofTransform(ImageProcessor):
     transformers = {}
     
     @classmethod
-    def process(cls, img, fmt, obj):
-        if not img.mode == "L":
+    def makeTXID(cls, srcID, proof=None):
+        if not proof:
+            return "%s>%s" % (
+                srcID,
+                cls.destination.getIDString(),
+            )
             
-            iccpth = obj._iccpath
-            if not iccpth:
-                iccpth = cls.source
-            if not iccpth:
-                iccpth = cls._srgb
+        return "%s:%s>%s" % (
+            srcID,
+            proof.getIDString(),
+            cls.destination.getIDString(),
+        )
+    
+    @classmethod
+    def process(cls, img, fmt, obj, proofing=True, TXID=None):
+        if img.mode == "L":
+            img = img.convert(cls.mode)
             
-            if obj._icc_filehash:
-                if obj._icc_filehash not in cls.transformers:
-                    if not os.path.exists(cls.destination):
-                        raise AttributeError("WTF: destination transform ICC profile %s doesn't exist" % cls.destination)
-                    if not os.path.exists(cls.proof):
-                        raise AttributeError("WTF: proof transform ICC profile %s doesn't exist" % cls.proof)
-                
-                    source_profile = ImageCms.ImageCmsProfile(iccpth)
-                    if not cls.destination_profile:
-                        cls.destination_profile = ImageCms.ImageCmsProfile(cls.destination)
-                    if not cls.proof_profile:
-                        cls.proof_profile = ImageCms.ImageCmsProfile(cls.destination)
-                
-                    cls.transformers[obj._icc_filehash] = ImageCms.ImageCmsTransform(
-                        source_profile,
-                        cls.destination_profile,
-                        img.mode,
-                        cls.mode,
-                        cls.intent,
-                        proof=cls.proof_profile,
-                        proof_intent=cls.proof_intent,
-                    )
-                
-                return cls.transformers[obj._icc_filehash].apply(img), img.format
+        source = (
+            getattr(cls, 'source', None) or \
+            getattr(img, 'icc', None) or \
+            getattr(obj, 'icc', None) or \
+            cls._srgb
+        )
+        
+        if not source.getIDString():
+            raise AttributeError("WTF: no source profile found (including default sRGB!)")
+        
+        # freak out if running w/o destination profiles
+        if not cls.destination:
+            raise AttributeError("WTF: destination transform ICC profile '%s' doesn't exist" % cls.destination)
+        
+        if proofing and not cls.proof:
+            logg.warning("ICCProofTransform.process() was invoked explicitly but without a specified proofing profile.")
+            logg.warning("ICCProofTransform.process() executing as a non-proof transformation...")
+        
+        if TXID:
+            if TXID not in cls.transformers:
+                raise AttributeError("WTF: the TXID %s wasn't found in ICCProofTransform.transformers[].")
+        
+        else:
+            TXID = cls.makeTXID(source.getIDString(), cls.proof)
+        
+        if TXID not in cls.transformers:
             
-        return ImageCms.profileToProfile(
-            img.convert('RGB'),
-            cls._srgb_profile,
-            cls.destination_profile and cls.destination_profile or cls._srgb_profile,
-            cls.intent,
-            cls.mode,
-        ), img.format
+            if cls.proof:
+                cls.transformers[TXID] = ImageCms.ImageCmsTransform(
+                    cls.source.lcmsinstance,
+                    cls.destination.lcmsinstance,
+                    img.mode,
+                    cls.mode,
+                    cls.intent,
+                    proof=cls.proof.lcmsinstance,
+                    proof_intent=cls.proof_intent,
+                )
+            
+            else: # fall back to vanilla non-proof transform
+                cls.transformers[TXID] = ImageCms.ImageCmsTransform(
+                    cls.source.lcmsinstance,
+                    cls.destination.lcmsinstance,
+                    img.mode,
+                    cls.mode,
+                    cls.intent,
+                )
+        
+        cls.lastTXID = TXID
+        return cls.transformers[TXID].apply(img), img.format
+
+
+class ICCTransform(ImageProcessor):
+    """
+    Convert the image to a destination profile with LCMS.
+    
+    Source image numbers are treated as per its embedded profile by default;
+    this may be (losslessly) overridden by an applied profile at conversion time.
+    RGB images sans ICC data will be treated as sRGB IEC61966-2.1 by default.
+    Relative colorimetric is the default intent.
+    """
+    # ICCTransform.process() hands everything off to ICCProofTransform.process();
+    # all it needs to do is set the kwarg proofing=False.
+    @classmethod
+    def process(cls, img, fmt, obj, TXID=None):
+        return ICCProofTransform.process(cls, img, fmt, obj, proofing=False, TXID=TXID)
 
 
 class Format(ImageProcessor):
     format = 'JPEG'
     extension = 'jpg'
-
+    
     @classmethod
     def process(cls, img, fmt, obj):
         return img, cls.format
+
+
+class HSVArray(ImageProcessor):
+    """
+    Convert to HSV using NumPy and return as an array.
+    
+    """
+    format = 'array'
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        from scikits.image import color
+        
+        rgb_array = numpy.array(img.getdata(), numpy.uint8).reshape(img.size[0], img.size[1], 3)
+        hsv_array = color.rgb2hsv(rgb_array.astype(numpy.float32) / 255)
+        return hsv_array, 
+
+class NeuQuantize(ImageProcessor):
+    """
+    Extract and return a 256-color quantized LUT of the images' dominant colors.
+    Return as a 16 x 16 x 3 array (or a PIL image if format is set to 'JPEG'.
+    
+    """
+    format = 'array'
+    quantfactor = 10
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        quant = NeuQuant(img.convert("RGBA"), cls.quantfactor)
+        out = numpy.array(quant.colormap).reshape(16, 16, 4)
+        if cls.format == 'array':
+            return out.T[0:3].T
+        else:
+            outimg = Image.new('RGBA', (16, 16), (0,0,0))
+            outimg.putdata([tuple(t[0]) for t in out.T[0:3].T.reshape(256, 1, 3).tolist()])
+            outimg.resize((256, 256), Image.NEAREST)
+            return outimg
 
 
 class Reflection(ImageProcessor):

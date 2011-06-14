@@ -1429,6 +1429,13 @@ class ICCProfile(object):
         """
         return base64.b64encode(self.calculateID())
     
+    def getLittleCMSInstance(self):
+        from django.core.files.base import ContentFile
+        from PIL import ImageCms
+        return ImageCms.ImageCmsProfile(ContentFile(self.data))
+    
+    lcmsinstance = property(getLittleCMSInstance)
+    
     @memoize
     def getTransformer(self, colorlist=None):
         """

@@ -6,16 +6,18 @@ spec found.
 
 """
 
-import os, warnings
+import os, warnings, numpy
 from StringIO import StringIO
 from imagekit import processors
 from imagekit.lib import *
 from imagekit.utils import img_to_fobj
+from memoize import memoize
 from django.core.files.base import ContentFile
 
-class ImageSpec(object):
+matrixlike = (numpy.matrixlib.matrix, numpy.ndarray)
+
+class Spec(object):
     pre_cache = False
-    quality = 70
     increment_count = False
     processors = []
     
@@ -29,16 +31,96 @@ class ImageSpec(object):
         img = image.copy()
         for proc in cls.processors:
             img, fmt = proc.process(img, fmt, obj)
+        return img, fmt
+
+class ImageSpec(Spec):
+    quality = 70
+    
+    @classmethod
+    def process(cls, image, obj):
+        img, fmt = super(ImageSpec, cls).process(image, obj)
         img.format = fmt
         return img, fmt
 
-class Accessor(object):
-    def __init__(self, obj, spec):
+class MatrixSpec(Spec):
+    shape = None
+    dtype = None
+    cache = False # for now
+
+
+
+
+class AccessorBase(object):
+    def __init__(self, obj, spec, **kwargs):
         self._img = None
         self._fmt = None
         self._obj = obj
         self.spec = spec
         ImageFile.MAXBLOCK = 1024*1024
+
+class MatrixAccessor(AccessorBase):
+    def __init__(self, obj, spec, **kwargs):
+        super(MatrixAccessor, self).__init__(obj, spec, **kwargs)
+    
+    @memoize
+    def _get_matrixdata(self):
+        mat = self._img
+        format = getattr(mat, "format", None) or 'array'
+        if not isinstance(mat, matrixlike):
+            mat = numpy.array(mat)
+        if self.spec.dtype:
+            if not issubclass(mat.dtype, self.spec.dtype):
+                mat = mat.astype(self.spec.dtype)
+        if self.spec.shape:
+            mat = mat.reshape(self.spec.shape)
+        return mat
+    
+    def _create(self):
+        if self._obj._imgfield:
+            if self._exists():
+                return
+            # process the original image file
+            try:
+                fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
+            except IOError:
+                return
+            
+            fp.seek(0)
+            fp = StringIO(fp.read())
+            self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
+            # save the output matrix
+            self.data = self._get_matrixdata()
+        
+    def _delete(self):
+        if self._obj._imgfield:
+            if self._exists():
+                del self._data
+    
+    def _exists(self):
+        if self._obj._imgfield:
+            if self.name:
+                return hasattr(self, _data)
+    
+    @property
+    def name(self):
+        # caching goes here.
+        return self._obj._imgfield.name
+    
+    @memoize
+    def getdata(self):
+        self._create()
+        if self._exists():
+            return getattr(self, "_data", None)
+    
+    def setdata(self, d):
+        self._data = d
+    
+    data = property(getdata, setdata)
+    
+
+class FileAccessor(AccessorBase):
+    def __init__(self, obj, spec, **kwargs):
+        super(FileAccessor, self).__init__(obj, spec, **kwargs)
     
     def _get_imgfile(self):
         format = self._img.format or 'JPEG'
@@ -109,6 +191,7 @@ class Accessor(object):
     def url(self):
         if not self.spec.pre_cache:
             self._create()
+        
         '''
         if self.spec.increment_count:
             fieldname = self._obj._ik.save_count_as
@@ -141,10 +224,19 @@ class Accessor(object):
     def height(self):
         return self.image.size[1]
 
-class Descriptor(object):
+
+class FileDescriptor(object):
     def __init__(self, spec):
         self._spec = spec
     
     def __get__(self, obj, type=None):
-        return Accessor(obj, self._spec)
+        return FileAccessor(obj, self._spec)
+
+
+class MatrixDescriptor(object):
+    def __init__(self, spec):
+        self._spec = spec
+
+    def __get__(self, obj, type=None):
+        return MatrixAccessor(obj, self._spec)
 
