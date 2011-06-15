@@ -236,7 +236,7 @@ class ICCModelAdmin(admin.ModelAdmin):
             """
             
             for channel, bitstream in graphs.items():
-                if len(bitstream.series):
+                if len(bitstream['series']) > 0:
                     out += """
                         <div class="rgb-trc" id="rgb-trc-%s-%s" style="width: %spx; height: %spx;"></div>
                         <script type="text/javascript">
@@ -252,7 +252,7 @@ class ICCModelAdmin(admin.ModelAdmin):
                         obj.icchash, channel,
                         120, 120,
                         obj.icchash, channel,
-                        json.dumps(bitstream.series),
+                        json.dumps(bitstream['series']),
                         outopts,
                     )
             
@@ -262,6 +262,7 @@ class ICCModelAdmin(admin.ModelAdmin):
             
             
             return out
+        
         # no-icc default
         return u'<i style="color: lightgray;">None</i>'
     icc_flot_rgb_trc.short_description = "Tone Response Curves"

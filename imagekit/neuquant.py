@@ -8,6 +8,9 @@ Copyright (c) 2011 OST, LLC.
 """
 
 import os
+from django.core.management import setup_environ
+import settings
+setup_environ(settings)
 from jogging import logging as logg
 
 try:
@@ -452,7 +455,7 @@ if __name__ == "__main__":
     img = Image.open(StringIO.StringIO(imgstr))
     
     logg.info("NeuQuantizing with samplefac=10...")
-    quant = NeuQuant(img.convert("RGBA"), 10)
+    quant = NeuQuant(img.convert("RGBA").resize((64, 64), Image.NEAREST), 10)
     
     if np:
         out = np.array(quant.colormap).reshape(16, 16, 4)

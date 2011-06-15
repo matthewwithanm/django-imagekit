@@ -10,7 +10,8 @@ which is a part of the source of dispcalGUI:
 
 Copyright (c) 2011 OST, LLC. 
 """
-import locale, math, sys, os, re, struct, base64, numpy
+import locale, sys, os, re, struct, base64
+import math, numpy, colormath
 from scipy import interpolate
 from hashlib import md5
 from time import localtime, mktime, strftime
@@ -424,8 +425,10 @@ class ICCProfileTag(object):
         """
         t.__repr__() <==> repr(t)
         """
-        if isinstance(self, ADict):
-            return ADict.__repr__(self)
+        if isinstance(self, OrderedDict):
+            return OrderedDict.__repr__(self)
+        elif isinstance(self, dict):
+            return dict.__repr__(self)
         elif isinstance(self, UserString):
             return UserString.__repr__(self)
         elif isinstance(self, list):
@@ -1077,14 +1080,22 @@ class XYZType(ICCProfileTag, XYZNumber):
 
 class chromaticAdaptionTag(s15Fixed16ArrayType):
     
-    def __init__(self, tagData, tagSignature):
+    def __init__(self, tagData=None, tagSignature=None):
+        if not tagData:
+            tagData = ""
+        if not tagSignature:
+            tagSignature = "chad"
         ICCProfileTag.__init__(self, tagData, tagSignature)
-        data = self.tagData[8:]
-        while data:
-            if len(self) == 0 or len(self[-1]) == 3:
-                self.append([])
-            self[-1].append(s15Fixed16Number(data[0:4]))
-            data = data[4:]
+        data = tagData[8:]
+        if data:
+            matrix = []
+            while data:
+                if len(matrix) == 0 or len(matrix[-1]) == 3:
+                    matrix.append([])
+                matrix[-1].append(s15Fixed16Number(data[0:4]))
+                data = data[4:]
+            self.update(matrix)
+
 
 tagSignature2Tag = {
     "chad": chromaticAdaptionTag
@@ -1445,6 +1456,13 @@ class ICCProfile(object):
     
     transformer = property(getTransformer)
     
+    def guess_cat(self):
+        illuminant = self.illuminant.values()
+        if "chad" in self.tags:
+            return colormath.guess_cat(self.tags.chad,
+                                       self.tags.chad.inverted() * illuminant,
+                                       illuminant)
+    
     def isSame(self, profile, force_calculation=False):
         """
         Compare the ID of profiles.
@@ -1597,7 +1615,7 @@ class ICCTransformer(ICCProfile):
                 y = numpy.array([v/float(max(trc)) for v in trc])
                 thealgorithm = interpolate.interp1d(x, y, kind="nearest")
             else:
-                thealgorithm = lambda x: x ** float(trc.pop())
+                thealgorithm = lambda x: numpy.array([ x ** float(trc[0]), ])
             
             # append scaling factor and return a callable
             return lambda x: thealgorithm(float(x) / scale)
@@ -1618,7 +1636,7 @@ class ICCTransformer(ICCProfile):
                 y = numpy.array([v/float(max(trc)) for v in trc])
                 thealgorithm = interpolate.interp1d(y, x, kind="nearest") # YO DOGG: double-check this x/y-swap move here
             else:
-                thealgorithm = lambda x: x ** (1.0 / trc.pop())
+                thealgorithm = lambda x: numpy.array([ x ** (1.0 / trc[0]), ])
             
             # append scaling factor and return a callable
             return lambda x: thealgorithm(x) * float(scale)
