@@ -69,7 +69,7 @@ def profileinfo(profile):
     if "chad" in profile.tags:
         # undo chromatic adaption of profile whitepoint
         X, Y, Z = wtpt_profile_norm
-        M = colormath.Matrix3x3(profile.tags.chad).inverted()
+        M = spectralarithmetic.Matrix3x3(profile.tags.chad).inverted()
         XR = X * M[0][0] + Y * M[0][1] + Z * M[0][2]
         YR = X * M[1][0] + Y * M[1][1] + Z * M[1][2]
         ZR = X * M[2][0] + Y * M[2][1] + Z * M[2][2]

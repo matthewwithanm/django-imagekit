@@ -1078,7 +1078,7 @@ class XYZType(ICCProfileTag, XYZNumber):
 
 
 
-class chromaticAdaptionTag(s15Fixed16ArrayType):
+class chromaticAdaptionTag(spectralarithmetic.Matrix3x3, s15Fixed16ArrayType):
     
     def __init__(self, tagData=None, tagSignature=None):
         if not tagData:

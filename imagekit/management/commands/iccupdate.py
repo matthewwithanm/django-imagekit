@@ -25,18 +25,27 @@ class Command(BaseCommand):
         ),
     )
     
-    help = ('Clears all ImageKit cached ICC profiles.')
+    help = ('Updates all ImageKit cached profiles stored as ICCModels.')
     args = '[apps]'
     requires_model_validation = True
     can_import_settings = True
 
     def handle(self, *args, **options):
-        return flush_icc_cache(args, options)
+        return update_icc_cache(args, options)
 
-def flush_icc_cache(apps, options):
+def update_icc_cache(apps, options):
     """
-    Clears the ICC profile cache
+    Updates the ICCModes data store with profiles harvested from ImageModel subclasses specified on the command line.
+    
     """
+    
+    print ""
+    print "+++ django-imagekit by Justin Driscoll -- http://adevelopingstory.com/"
+    print "+++ color management components by Alexander Böhn -- http://objectsinspaceandtime.com/"
+    print "+++ profileinfo() and ICCProfile base class from DispcalGUI by Florian Höch -- http://dispcalgui.hoech.net/"
+    
+    print ""
+    print ""
     
     apps = [a.strip(',') for a in apps]
     
@@ -90,7 +99,7 @@ def flush_icc_cache(apps, options):
                                     Q(id__gte=int(bottom)) & Q(id__lte=int(top))
                                 )
                     
-                    print 'Recaching ICC profiles for %s objects in "%s.%s"' % (objs.count(), app_parts[0], modl.__name__)
+                    print 'ICC Update: scanning %s objects in "%s.%s" for new ICC profile data...' % (objs.count(), app_parts[0], modl.__name__)
                     verb = int(options.get('verbosity', 1)) > 1
                     i = 0
                     ii = 0
@@ -105,7 +114,6 @@ def flush_icc_cache(apps, options):
                                 print ">>> %0d >>> %30s : %s %s" % (
                                     i,
                                     ((" " * 50) + obj._imgfield.name)[30:],
-                                    #obj.icc.getDeviceModelDescription(),
                                     obj.icc.getDescription(),
                                     '',
                                 )
@@ -134,14 +142,13 @@ def flush_icc_cache(apps, options):
                                     print "--- %0d --- %s : %s %s" % (
                                         i,
                                         "                       (exists)",
-                                        #obj.icc.getDeviceModelDescription(),
                                         obj.icc.getDescription(),
                                         '',
                                     )
                     
                     if verb:
                         print ""
-                        print "=================================================================="
+                        print "================================================================================="
                         
                         print "::: Examined %s objects." % len(objs)
                         print "::: Found %s possible profiles," % i
