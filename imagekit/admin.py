@@ -2,6 +2,7 @@ import os
 from django.conf import settings
 from django.contrib import admin
 from imagekit.models import ICCModel, RGBHistogram, LumaHistogram
+from imagekit.etc.profileinfo import profileinfo
 from imagekit.ICCProfile import ADict, AODict
 from imagekit.etc.cieXYZ import cieYxy3
 from jogging import logging as logg
@@ -28,35 +29,59 @@ icon = u"""
 <img width="16" height="16" title="Download ICC File" alt="Download ICC File" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgdJREFUeNqEk79r20AUx786R6dKxUUNNWmyeuxQCsZkaYd0DvkHOiRbpgydDfbgpUO0GUqzpYXMxf0HMrRTPHpKPSamoDrBgtrWyVLeO/2wAgUfHLovp/e993n3zmi320iSBPkwDGOfPttYP8adTqe/kQUhiqJ8Y6fb7X5eF91qtY75WxhUKhXM53Mt4zjGdf8QVcfUP2/tfcHvox+omo7WL8/eQyllFAY8hBCQUiIIAmO5XMKWAjXX0nucnS0kaparNe8vFovCYJ9qoJk5C8uy3g4GA9yPHdxMpQ5I1ACxNcEL9Sw9rGxA7v9n3t19JC+VQvj6FbIgxk0NmIWZ+9eHcKop894WMx8Rs5kxn+Hi4h7n5/+09rynKwNOhZmkLeDWysxUA8sqmOOY8WqZDjCbzR4bqIhSpDS1QRIhorXKNDMrFVK/qMKQDIQ24FT4xHebPSBMeSkUm71eLjXzwYGgskyzZtuA7/srA3Y8ufwD06nqHz69kfj58S8cM9VNYvY87/twOPyVF5Xq5msDZmEDIW1YbsqolA8pbLglZsdxriaTybfSxdxpPGbRNVARVKj0ZCTWXBOevE+9EjQajVuKyedMZ8As3MqnTW7TaWZuonlqFrrMXK/XMRqNVo/Pdd0P1MY76x4PMY8pk6+8DsOQO1G/Yr7LJzSfs9kaj7s87XywwYMAAwASbxzfXa6dmwAAAABJRU5ErkJggg==" />
 """
 
+class SeriesColors(ADict):
+    def __init__(self):
+        self.R = "#FF1919"
+        self.G = "#19FA19"
+        self.B = "#1991FF"
+        self.L = "#CCCCCC"
+
+class SeriesColorsAlpha(ADict):
+    def __init__(self):
+        self.R = "rgba(165, 5, 15, 0.65)"
+        self.G = "rgba(10, 175, 85, 0.75)"
+        self.B = "rgba(12, 13, 180, 0.15)"
+        self.L = "rgba(221, 221, 221, 0.45)"
+
+oldcolors = SeriesColors()
+seriescolors = SeriesColorsAlpha()
+
 xy = lambda n: (n.X / (n.X + n.Y + n.Z), n.Y / (n.X + n.Y + n.Z))
+static = lambda pth: os.path.join(settings.STATIC_URL, pth)
 
 class ICCModelAdmin(admin.ModelAdmin):
     
     class Media:
-        css = { 'all': (
-            os.path.join(settings.STATIC_URL, 'css/iccprofile-admin.css'),
+        css = {'all': (
+            #'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/redmond/jquery-ui.css',
+            #'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/hot-sneaks/jquery-ui.css',
+            static('css/iccprofile-admin.css'),
         )}
         js = (
             'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js',
-            os.path.join(settings.STATIC_URL, 'flot/jquery.flot.js'),
+            'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js',
+            static('flot/jquery.flot.js'),
+            static('flot/jquery.flot.image.js'),
         )
     
     list_display = (
         'icc_download',
-        'modifydate',
-        'icc_description',
-        'icc_flot_cie1931',
-        'icc_flot_rgb_trc',
+        #'modifydate',
+        #'icc_description',
         'icc_colorspace',
-        'icc_connectionspace',
-        'icc_renderingintent',
-        'icc_profileclass',
-        'icc_technology',
-        'icc_devicemodel',
-        'icc_manufacturer',
+        'icc_flot_cie1931',
+        'icc_profileinfo_dump',
+        'icc_flot_rgb_trc',
+        #'icc_connectionspace',
+        #'icc_renderingintent',
+        #'icc_profileclass',
+        #'icc_technology',
+        #'icc_devicemodel',
+        #'icc_manufacturer',
     )
     
-    list_display_links = ('modifydate',)
+    list_display_links = ('icc_colorspace',)
+    list_per_page = 10
     
     '''
     List view accessors to display ICC profile object parameters in the Django admin.
@@ -129,66 +154,138 @@ class ICCModelAdmin(admin.ModelAdmin):
     icc_connectionspace.short_description = "Connection space (PCS)"
     icc_connectionspace.allow_tags = True
     
+    def icc_profileinfo_dump(self, obj):
+        if obj.icc:
+            out = u"""
+                <div class="profileinfo" id="profileinfo-%s">
+                    <h3 class="profileinfo">
+                        <a href="#">Details for &#8220;%s&#8221;</a>
+                    </h3>
+                    <div class="profileinfo-details">
+                        <code>
+                            %s
+                        </code>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#profileinfo-%s").accordion({
+                            active: false,
+                            autoHeight: false,
+                            animated: false,
+                            collapsible: true
+                        });
+                    });
+                </script>
+            """ % (
+                obj.icchash,
+                obj.icc.getDescription(),
+                profileinfo(obj.icc, barf=False),
+                obj.icchash,
+            )
+            
+            return out or u'<i style="color: lightgray;">No Info</i>'
+        return u'<i style="color: lightgray;">None</i>'
+    icc_profileinfo_dump.short_description = "Profile Details"
+    icc_profileinfo_dump.allow_tags = True
+    
     '''
     Flot graphs
     '''
     def icc_flot_cie1931(self, obj):
         if obj.icc:
             icc = obj.icc
-            series = []
+            graphs = AODict()
+            graphs.update({ 'bg':       ADict(series=[]), })
+            graphs.update({ 'horshu':   ADict(series=[]), })
             
             # flot config options
             options = {
                 'series': {
-                    'points': dict(show=True, fill=True, radius=2),
-                    'lines': dict(show=True, fill=False, lineWidth=1),
+                    'points':           dict(show=True, fill=True, radius=3),
+                    'lines':            dict(show=True, fill=False, lineWidth=1),
+                    'images':           dict(show=True),
                 },
-                'xaxis': dict(show=True, ticks=4, min=-0.1, max=0.85),
-                'yaxis': dict(show=True, ticks=4, min=-0.1, max=0.85),
-                'grid': dict(show=False),
+                'xaxis':                dict(show=True, ticks=4, min=-0.1, max=0.85),
+                'yaxis':                dict(show=True, ticks=4, min=-0.1, max=0.85),
+                'grid':                 dict(show=False),
             }
-
-            # gray line
-            series.append({
-                'color': '#eac',
-                'data': map(lambda iii: (1.025-(float(iii)/255.0), 0.025+(float(iii)/255.0)), xrange(0, 255, 5)),
-                'points': dict(show=False, fill=False),
-                'shadowSize': 0,
-            })
             
+            # background image
+            # (flot what the EFFFF is up, I heard you liked assinine
+            # array surpluses, yeah yeah but come ON)
+            bgimage = {
+                'data':                 map(lambda a: [a], [static('images/ciexyz.png')]),
+                'images':               dict(show=True),
+                'xaxis':                dict(min=-0.1, max=0.85),
+                'yaxis':                dict(min=-0.1, max=0.85),
+            }
+            
+            # gray line
+            grayline = {
+                'data':                 map(lambda iii: (1.025 - (float(iii) / 255.0), 0.025 + (float(iii) / 255.0)), xrange(0, 255, 5)),
+                'lines':                dict(show=True, fill=False, lineWidth=1),
+                'points':               dict(show=False),
+                'images':               dict(show=False),
+                'color':                '#eac',
+                #'shadowSize':           0,
+            }
+            
+            graphs.horshu.series.append(grayline)
+            #graphs.horshu.series.append(bgimage)
             # tristimulii
             if 'rXYZ' in icc.tags.keys():
-                series.append({ 'color': "#FC1919", 'data': [xy(icc.tags.rXYZ)], 'clickable': True, 'hoverable': True })
+                graphs.horshu.series.append({ 'color': "#FC1919", 'data': [xy(icc.tags.rXYZ)], 'images': dict(show=False), })
             if 'gXYZ' in icc.tags.keys():
-                series.append({ 'color': "#19FA19", 'data': [xy(icc.tags.gXYZ)], 'clickable': True, 'hoverable': True })
+                graphs.horshu.series.append({ 'color': "#19FA19", 'data': [xy(icc.tags.gXYZ)], 'images': dict(show=False), })
             if 'bXYZ' in icc.tags.keys():
-                series.append({ 'color': "#1991FF", 'data': [xy(icc.tags.bXYZ)], 'clickable': True, 'hoverable': True })
+                graphs.horshu.series.append({ 'color': "#1991FF", 'data': [xy(icc.tags.bXYZ)], 'images': dict(show=False), })
             if 'wtpt' in icc.tags.keys():
-                series.append({ 'color': "#000000", 'data': [xy(icc.tags.wtpt)], 'clickable': True, 'hoverable': True })
+                graphs.horshu.series.append({ 'color': "#7E7E7E", 'data': [xy(icc.tags.wtpt)], 'images': dict(show=False), })
             
             # CIE'31 horseshoe curve
-            series.append({ 'color': '#EFEFEF', 'data': cieYxy3, 'points': dict(show=False, fill=False), })
-            series.append({ 'color': '#EFEFEF', 'data': [cieYxy3[-1], cieYxy3[0]], 'points': dict(show=False, fill=False), })
+            graphs.horshu.series.append({ 'color': '#EFEFEF', 'data': cieYxy3, 'points': dict(show=False, fill=False), 'images': dict(show=False), })
+            graphs.horshu.series.append({ 'color': '#EFEFEF', 'data': [cieYxy3[-1], cieYxy3[0]], 'points': dict(show=False, fill=False), 'images': dict(show=False), })
+            
+            out = graphs.horshu.series
+            logg.info("******** DRAWING: %s" % out)
             
             return u"""
-                <span class="icc-cie1931">
+                <span class="icc-cie1931" id="icc-cie1931-%s">
                     <div class="cie1931" id="cie1931-%s" style="width: %spx; height: %spx;"></div>
                 </span>
                 <script type="text/javascript">
                     $(document).ready(function () {
-                        $.plot(
-                            $('#cie1931-%s'),
-                            %s,
-                            %s
-                        );
+                        
+                        var ciexyzbg = new Image(); ciexyzbg.src = '%s';
+                        var series = %s;
+                        var options = %s;
+                        var plt;
+                        
+                        var img_data = [ [ [ "%s", 0, 0, 0.9, 0.9 ] ] ];
+                        var img_options = {
+                            series: { images: { show: true }, alpha: 0.4 },
+                            xaxis: { min: -0.1, max: 0.85 },
+                            yaxis: { min: -0.1, max: 0.85 },
+                        };
+                        
+                        $.plot.image.loadDataImages(img_data, options, function () {
+                            plt = $.plot(
+                                $('#cie1931-%s'), img_data.concat(series), options
+                            );
+                        });
+                        
                     });
                 </script>
             """ % (
                 obj.icchash,
-                250, 250,
                 obj.icchash,
-                json.dumps(series),
+                361, 361,
+                static('images/ciexyz.png'),
+                json.dumps(out),
                 json.dumps(options),
+                static('images/ciexyz.png'),
+                obj.icchash,
             )
         
         # no-icc default
@@ -260,11 +357,11 @@ class ICCModelAdmin(admin.ModelAdmin):
                 </div>
             """
             
-            
             return out
         
         # no-icc default
         return u'<i style="color: lightgray;">None</i>'
+        
     icc_flot_rgb_trc.short_description = "Tone Response Curves"
     icc_flot_rgb_trc.allow_tags = True
     
@@ -283,23 +380,6 @@ class ICCModelAdmin(admin.ModelAdmin):
         
         return maybe
 
-
-class SeriesColors(ADict):
-    def __init__(self):
-        self.R = "#FF1919"
-        self.G = "#19FA19"
-        self.B = "#1991FF"
-        self.L = "#CCCCCC"
-
-class SeriesColorsAlpha(ADict):
-    def __init__(self):
-        self.R = "rgba(165, 5, 15, 0.65)"
-        self.G = "rgba(10, 175, 85, 0.75)"
-        self.B = "rgba(12, 13, 180, 0.15)"
-        self.L = "rgba(221, 221, 221, 0.45)"
-
-oldcolors = SeriesColors()
-seriescolors = SeriesColorsAlpha()
 
 class RGBHistogramAdmin(admin.ModelAdmin):
     

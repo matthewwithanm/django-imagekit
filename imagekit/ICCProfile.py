@@ -1665,3 +1665,19 @@ class ICCTransformer(ICCProfile):
                     self.fb(b),
                 )
         return RGBTristimulusLinearizer()
+    
+    @memoize
+    def getRGBTristimulusCompander(self, scale=255.0):
+        other = self
+        class RGBTristimulusLinearizer(ADict):
+            def __init__(self):
+                self.fr = other.getRGBCompander(channel='r', scale=scale)
+                self.fg = other.getRGBCompander(channel='g', scale=scale)
+                self.fb = other.getRGBCompander(channel='b', scale=scale)
+            def __call__(self, r=0.0, g=0.0, b=0.0):
+                return (
+                    self.fr(r),
+                    self.fg(g),
+                    self.fb(b),
+                )
+        return RGBTristimulusLinearizer()

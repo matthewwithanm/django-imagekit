@@ -1,18 +1,28 @@
 
-.icc-cie1931, .histogram-luma {
+.profileinfo-details {
+    border: 3px;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    font-variant: normal;
+    line-height: 14px;
+}
+
+.icc-cie1931, .cie1931 {
 }
 
 .cie1931, .luma, .rgb {
-    display: block;
-    width: 250px;
-    height: 250px;
+    width: 361px;
+    height: 361px;
     border: 1px solid lightgray;
-    background-color: white;
 }
 
 .luma, .rgb {
     width: 600px;
     border: 1px solid transparent;
+    background-color: white;
 }
 
 .icc-rgb-trc {
@@ -28,4 +38,22 @@
     border: 1px solid lightgray;
     background-color: white;
 }
+
+
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-state-default, h3 {
+}
+
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-state-hover,
+.ui-state-focus, h3:hover {
+}
+
+.profileinfo, .profileinfo a, .profileinfo a:hover {
+}
+
 
