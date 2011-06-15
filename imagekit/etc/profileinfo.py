@@ -12,7 +12,8 @@ Copyright (c) 2011 OST, LLC.
 """
 
 from time import strftime
-import os, sys, binascii, colormath
+import os, sys, binascii
+from imagekit.etc import spectralarithmetic
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 
                                 ".."))
@@ -76,9 +77,9 @@ def profileinfo(profile):
     if "lumi" in profile.tags and isinstance(profile.tags.lumi, XYZType):
         print "Luminance:", profile.tags.lumi.Y
     print "Actual Whitepoint XYZ:", " ".join(str(n) for n in wtpt_profile_norm)
-    print "Correlated Color Temperature:", colormath.XYZ2CCT(*wtpt_profile_norm)
+    print "Correlated Color Temperature:", spectralarithmetic.XYZ2CCT(*wtpt_profile_norm)
 
 
 if __name__ == "__main__":
-    for arg in sys.argv[1:] or [ICCP.get_display_profile()]:
+    for arg in sys.argv[1:]:
         profileinfo(arg)

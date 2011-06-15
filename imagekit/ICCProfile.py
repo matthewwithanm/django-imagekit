@@ -10,8 +10,8 @@ which is a part of the source of dispcalGUI:
 
 Copyright (c) 2011 OST, LLC. 
 """
-import locale, sys, os, re, struct, base64
-import math, numpy, colormath
+import locale, sys, os, re, struct, base64, math, numpy
+from imagekit.etc import spectralarithmetic
 from scipy import interpolate
 from hashlib import md5
 from time import localtime, mktime, strftime
@@ -1459,7 +1459,7 @@ class ICCProfile(object):
     def guess_cat(self):
         illuminant = self.illuminant.values()
         if "chad" in self.tags:
-            return colormath.guess_cat(self.tags.chad,
+            return spectralarithmetic.guess_cat(self.tags.chad,
                                        self.tags.chad.inverted() * illuminant,
                                        illuminant)
     
