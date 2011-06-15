@@ -1608,17 +1608,20 @@ class ICCTransformer(ICCProfile):
         
         if tagkey in self.tags:
             trc = self.tags[tagkey]
+            thealgorithm = None
             
             if len(trc) > 1:
                 # build a callable with scipy
                 x = numpy.linspace(0.0, 1.0, len(trc))
                 y = numpy.array([v/float(max(trc)) for v in trc])
                 thealgorithm = interpolate.interp1d(x, y, kind="nearest")
-            else:
+            
+            elif len(trc) > 0:
                 thealgorithm = lambda x: numpy.array([ x ** float(trc[0]), ])
             
-            # append scaling factor and return a callable
-            return lambda x: thealgorithm(float(x) / scale)
+            if thealgorithm:
+                # append scaling factor and return a callable
+                return lambda x: thealgorithm(float(x) / scale)
         
         # default to 2.2
         return lambda x: (float(x) / scale) ** 2.2
@@ -1629,17 +1632,20 @@ class ICCTransformer(ICCProfile):
         
         if tagkey in self.tags:
             trc = self.tags[tagkey]
+            thealgorithm = None
             
             if len(trc) > 1:
                 # build a callable with numpy
                 x = numpy.linspace(0.0, 1.0, len(trc))
                 y = numpy.array([v/float(max(trc)) for v in trc])
                 thealgorithm = interpolate.interp1d(y, x, kind="nearest") # YO DOGG: double-check this x/y-swap move here
-            else:
+            
+            elif len(trc) > 0:
                 thealgorithm = lambda x: numpy.array([ x ** (1.0 / trc[0]), ])
             
-            # append scaling factor and return a callable
-            return lambda x: thealgorithm(x) * float(scale)
+            if thealgorithm:
+                # append scaling factor and return a callable
+                return lambda x: thealgorithm(x) * float(scale)
         
         # default to 2.2
         return lambda x: (float(x) ** (1.0 / 2.2)) * float(scale)
