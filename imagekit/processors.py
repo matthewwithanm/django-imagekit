@@ -10,7 +10,7 @@ import os, numpy
 from imagekit.lib import *
 from imagekit.neuquant import NeuQuant
 from imagekit.ICCProfile import ICCProfile
-from memoize import memoize
+from imagekit.memoize import memoize
 from jogging import logging as logg
 
 class ImageProcessor(object):

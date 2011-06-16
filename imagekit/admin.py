@@ -1,26 +1,14 @@
-import os
+import os, numpy
 from django.conf import settings
 from django.contrib import admin
 from imagekit.models import ICCModel, RGBHistogram, LumaHistogram
+from imagekit.utils import json, oldcolors, seriescolors
+from imagekit.utils import ADict, AODict, xy, static
 from imagekit.etc.profileinfo import profileinfo
-from imagekit.ICCProfile import ADict, AODict
 from imagekit.etc.cieXYZ import cieYxy3
+from imagekit.memoize import memoize
 from jogging import logging as logg
-from memoize import memoize
 
-try:
-    import ujson as json
-except ImportError:
-    logg.info("--- Loading yajl in leu of ujson")
-    try:
-        import yajl as json
-    except ImportError:
-        logg.info("--- Loading simplejson in leu of yajl")
-        try:
-            import simplejson as json
-        except ImportError:
-            logg.info("--- Loading stdlib json module in leu of simplejson")
-            import json
 
 # The icon immediately below is copyright (C) 2011 Yusuke Kamiyamane -- All of his rights are reserved.
 # It's licensed under Creative Commons Attribution 3.0: http://creativecommons.org/licenses/by/3.0/
@@ -29,32 +17,11 @@ icon = u"""
 <img width="16" height="16" title="Download ICC File" alt="Download ICC File" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgdJREFUeNqEk79r20AUx786R6dKxUUNNWmyeuxQCsZkaYd0DvkHOiRbpgydDfbgpUO0GUqzpYXMxf0HMrRTPHpKPSamoDrBgtrWyVLeO/2wAgUfHLovp/e993n3zmi320iSBPkwDGOfPttYP8adTqe/kQUhiqJ8Y6fb7X5eF91qtY75WxhUKhXM53Mt4zjGdf8QVcfUP2/tfcHvox+omo7WL8/eQyllFAY8hBCQUiIIAmO5XMKWAjXX0nucnS0kaparNe8vFovCYJ9qoJk5C8uy3g4GA9yPHdxMpQ5I1ACxNcEL9Sw9rGxA7v9n3t19JC+VQvj6FbIgxk0NmIWZ+9eHcKop894WMx8Rs5kxn+Hi4h7n5/+09rynKwNOhZmkLeDWysxUA8sqmOOY8WqZDjCbzR4bqIhSpDS1QRIhorXKNDMrFVK/qMKQDIQ24FT4xHebPSBMeSkUm71eLjXzwYGgskyzZtuA7/srA3Y8ufwD06nqHz69kfj58S8cM9VNYvY87/twOPyVF5Xq5msDZmEDIW1YbsqolA8pbLglZsdxriaTybfSxdxpPGbRNVARVKj0ZCTWXBOevE+9EjQajVuKyedMZ8As3MqnTW7TaWZuonlqFrrMXK/XMRqNVo/Pdd0P1MY76x4PMY8pk6+8DsOQO1G/Yr7LJzSfs9kaj7s87XywwYMAAwASbxzfXa6dmwAAAABJRU5ErkJggg==" />
 """
 
-class SeriesColors(ADict):
-    def __init__(self):
-        self.R = "#FF1919"
-        self.G = "#19FA19"
-        self.B = "#1991FF"
-        self.L = "#CCCCCC"
-
-class SeriesColorsAlpha(ADict):
-    def __init__(self):
-        self.R = "rgba(165, 5, 15, 0.65)"
-        self.G = "rgba(10, 175, 85, 0.75)"
-        self.B = "rgba(12, 13, 180, 0.15)"
-        self.L = "rgba(221, 221, 221, 0.45)"
-
-oldcolors = SeriesColors()
-seriescolors = SeriesColorsAlpha()
-
-xy = lambda n: (n.X / (n.X + n.Y + n.Z), n.Y / (n.X + n.Y + n.Z))
-static = lambda pth: os.path.join(settings.STATIC_URL, pth)
 
 class ICCModelAdmin(admin.ModelAdmin):
     
     class Media:
         css = {'all': (
-            #'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/redmond/jquery-ui.css',
-            #'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/hot-sneaks/jquery-ui.css',
             static('css/iccprofile-admin.css'),
         )}
         js = (
@@ -195,6 +162,7 @@ class ICCModelAdmin(admin.ModelAdmin):
     def icc_flot_cie1931(self, obj):
         if obj.icc:
             icc = obj.icc
+            transformer = icc.transformer
             graphs = AODict()
             graphs.update({ 'bg':       ADict(series=[]), })
             graphs.update({ 'horshu':   ADict(series=[]), })
@@ -211,16 +179,6 @@ class ICCModelAdmin(admin.ModelAdmin):
                 'grid':                 dict(show=False),
             }
             
-            # background image
-            # (flot what the EFFFF is up, I heard you liked assinine
-            # array surpluses, yeah yeah but come ON)
-            bgimage = {
-                'data':                 map(lambda a: [a], [static('images/ciexyz.png')]),
-                'images':               dict(show=True),
-                'xaxis':                dict(min=-0.1, max=0.85),
-                'yaxis':                dict(min=-0.1, max=0.85),
-            }
-            
             # gray line
             grayline = {
                 'data':                 map(lambda iii: (1.025 - (float(iii) / 255.0), 0.025 + (float(iii) / 255.0)), xrange(0, 255, 5)),
@@ -232,7 +190,25 @@ class ICCModelAdmin(admin.ModelAdmin):
             }
             
             graphs.horshu.series.append(grayline)
-            #graphs.horshu.series.append(bgimage)
+            
+            fullreversal = transformer.getRGBTristimulusXYZMatrix().I
+            compander = transformer.getRGBTristimulusCompander()
+            
+            XYZ_wtpt = numpy.array(icc.tags.wtpt.values()).astype('float64')
+            
+            RGB_wtpt = numpy.asarray(
+                numpy.dot(fullreversal, XYZ_wtpt).squeeze()
+            )
+            
+            logg.info("XYZ_wtpt: %s" % XYZ_wtpt)
+            logg.info("RGB_wtpt: %s" % RGB_wtpt)
+            
+            rgb_wtpt = compander(arg=RGB_wtpt)
+            logg.info("rgb_wtpt: %s" % rgb_wtpt)
+            
+            rgb_wtpt_hex = compander(arg=RGB_wtpt, as_hex=True)
+            logg.info("rgb_wtpt_hex: %s" % rgb_wtpt_hex)
+            
             # tristimulii
             if 'rXYZ' in icc.tags.keys():
                 graphs.horshu.series.append({ 'color': "#FC1919", 'data': [xy(icc.tags.rXYZ)], 'images': dict(show=False), })
@@ -241,14 +217,13 @@ class ICCModelAdmin(admin.ModelAdmin):
             if 'bXYZ' in icc.tags.keys():
                 graphs.horshu.series.append({ 'color': "#1991FF", 'data': [xy(icc.tags.bXYZ)], 'images': dict(show=False), })
             if 'wtpt' in icc.tags.keys():
-                graphs.horshu.series.append({ 'color': "#7E7E7E", 'data': [xy(icc.tags.wtpt)], 'images': dict(show=False), })
+                graphs.horshu.series.append({ 'color': rgb_wtpt_hex, 'data': [xy(icc.tags.wtpt)], 'images': dict(show=False), })
             
             # CIE'31 horseshoe curve
             graphs.horshu.series.append({ 'color': '#EFEFEF', 'data': cieYxy3, 'points': dict(show=False, fill=False), 'images': dict(show=False), })
             graphs.horshu.series.append({ 'color': '#EFEFEF', 'data': [cieYxy3[-1], cieYxy3[0]], 'points': dict(show=False, fill=False), 'images': dict(show=False), })
             
             out = graphs.horshu.series
-            logg.info("******** DRAWING: %s" % out)
             
             return u"""
                 <span class="icc-cie1931" id="icc-cie1931-%s">
@@ -264,7 +239,7 @@ class ICCModelAdmin(admin.ModelAdmin):
                         
                         var img_data = [ [ [ "%s", 0, 0, 0.9, 0.9 ] ] ];
                         var img_options = {
-                            series: { images: { show: true }, alpha: 0.4 },
+                            series: { images: { show: true, alpha: 0.75 }, alpha: 0.75 },
                             xaxis: { min: -0.1, max: 0.85 },
                             yaxis: { min: -0.1, max: 0.85 },
                         };
@@ -427,12 +402,6 @@ class RGBHistogramAdmin(admin.ModelAdmin):
                 'lineWidth': 1,
                 'yaxis': { 'from': mean, 'to': mean, },
             })
-            '''
-            markings.append({
-                'color': seriescolors[k],
-                'yaxis': { 'from': (mean - std), 'to': (mean + std), },
-            })
-            '''
         
         # flot config options
         options = {

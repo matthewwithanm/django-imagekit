@@ -13,7 +13,31 @@ from ICCProfile import ICCProfile
 from jogging import logging as logg
 import imagekit.models
 
+
+"""
+When declaring HistogramChannelFields and Histograms, their respective channel
+or colorspace type has do be one from these tuples here (for the moment).
+See the fields' individual implementation notes below for details.
+
+"""
+
+VALID_CHANNELS = (
+    'L',                    # luminance
+    'R', 'G', 'B',          # RGB
+    'A', 'a',               # alpha (little-a for premultiplied)
+    'C', 'M', 'Y', 'K',     # CMYK
+)
+
+VALID_COLORSPACES = (
+    "Luma",                 # 1 8-bit channel
+    "RGB",                  # 3 8-bit channels
+)
+
+
+# Blatant misnomer, returning an array -- but so whatevs, the point is that
+# it provides consistent return types when accessing HistogramChannelField data.
 to_matrix = lambda l: numpy.array(l, dtype=int)
+
 
 class ICCDataField(models.TextField):
     """
@@ -267,13 +291,6 @@ class HistogramChannelDescriptor(object):
     def __set__(self, instance, value):
         instance.__dict__[self.field.name] = value
 
-VALID_CHANNELS = (
-    'L',                    # luminance
-    'R', 'G', 'B',          # RGB
-    'A', 'a',               # alpha (little-a for premultiplied)
-    'C', 'M', 'Y', 'K',     # CMYK
-)
-
 class HistogramChannelField(models.CharField):
     """
     Model field representing a single 8-bit channel in an image histogram.
@@ -381,7 +398,6 @@ class HistogramChannelField(models.CharField):
             return
         
         if pilimage:
-            #logg.info("About to refresh '%s' histogram channel. KWARGS: %s" % (self.original_channel, kwargs))
             if self.original_channel in pilimage.mode:
                 channel_data = pilimage.split()[pilimage.mode.index(self.original_channel)].histogram()[:256]
                 for i in xrange(256):
@@ -448,11 +464,6 @@ class HistogramDescriptor(object):
     def __set__(self, instance, value):
         instance.__dict__[self.field.name] = value
 
-VALID_COLORSPACES = (
-    "Luma",
-    "RGB",
-)
-
 class Histogram(fields.CharField):
     """
     Field to refer to a HistogramBase model and provide access to the appropriate
@@ -517,8 +528,8 @@ class Histogram(fields.CharField):
     def save_related_histogram(self, **kwargs): # signal, sender, instance
         """
         Saves a histogram when its related ImageWithMetadata object is about to be saved.
+        
         """
-        #logg.info("save_related_histogram() called --")
         instance = kwargs.get('instance')
         logg.info("-- About to try and wring histograms out of '%s'." % getattr(instance, 'pk', str(instance)))
         
@@ -652,7 +663,6 @@ class ICCField(files.FileField):
         signals.post_init.connect(self.update_data_fields, sender=cls, dispatch_uid=uuid.uuid4().hex)
     
     def update_data_fields(self, instance, force=False, *args, **kwargs):
-        
         has_data_fields = self.data_field or self.hash_field
         if not has_data_fields:
             return

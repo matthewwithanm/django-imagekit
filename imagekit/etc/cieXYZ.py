@@ -9,9 +9,6 @@ Created by FI$H 2000 on 2011-04-18.
 Copyright (c) 2011 OST, LLC. All rights reserved.
 """
 
-import sys
-import os
-
 coords = """
 360, 0.175560, 0.005294, 0.819146
 365, 0.175161, 0.005256, 0.819582
@@ -109,12 +106,8 @@ coords = """
 825, 0.734690, 0.265310, 0.000000
 830, 0.734690, 0.265310, 0.000000
 """
-import StringIO
 from colormath.color_objects import XYZColor
-import colormath
-import numpy
-import csv
-import json
+import StringIO, numpy, csv, sys, os
 
 
 cie_xyz = []
@@ -137,19 +130,21 @@ cieYxy3 = cieYxy2.tolist()
 
 
 if __name__ == '__main__':
-	print "YO DOGG:"
-	print json.dumps(cieXYZ.tolist())
-	print ""
+    from imagekit.utils import json
+    
+    print "YO DOGG:"
+    print json.dumps(cieXYZ.tolist())
+    print ""
 
-	#print "I HEARD YOU LIKE HISTORICALLY SIGNIFICIANT ABSTRACT COLORSPACE DEFINITIONS:"
-	#print cieYxy
-	print ""
-	
-	print "SO WE PUT SOME RGB IN YOUR XYZ SO YOU CAN OBSERVE WHILE YOU OBSERVE."
-	print json.dumps(cieYxy2.tolist())
-	print ""
+    #print "I HEARD YOU LIKE HISTORICALLY SIGNIFICIANT ABSTRACT COLORSPACE DEFINITIONS:"
+    #print cieYxy
+    print ""
+    
+    print "SO WE PUT SOME RGB IN YOUR XYZ SO YOU CAN OBSERVE WHILE YOU OBSERVE."
+    print json.dumps(cieYxy2.tolist())
+    print ""
 
-	sys.exit(0)
+    sys.exit(0)
 
 
 

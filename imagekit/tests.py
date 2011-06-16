@@ -1,6 +1,4 @@
-import os
-import tempfile
-import unittest
+import os, tempfile, unittest
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models

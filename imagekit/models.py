@@ -7,12 +7,12 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage
 from django.core.exceptions import MultipleObjectsReturned
 from django.db import models
-from django.db.models.base import ModelBase
 from django.db.models import signals
+from django.db.models.base import ModelBase
+from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.models import ContentType
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.contenttypes.models import ContentType
-from django.contrib.contenttypes import generic
 from jogging import logging as logg
 from colorsys import rgb_to_hls, hls_to_rgb
 
@@ -20,13 +20,13 @@ from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.memoize import memoize
-from imagekit.utils import img_to_fobj
-from imagekit.delegate import DelegateManager, delegate
-from imagekit.ICCProfile import ICCProfile, ADict
-from imagekit.modelfields import VALID_CHANNELS
 from imagekit.modelfields import to_matrix
-from imagekit.modelfields import ICCDataField, ICCMetaField
+from imagekit.modelfields import VALID_CHANNELS
+from imagekit.ICCProfile import ICCProfile
+from imagekit.utils import img_to_fobj, ADict
+from imagekit.delegate import DelegateManager, delegate
 from imagekit.modelfields import ICCField, ICCHashField
+from imagekit.modelfields import ICCDataField, ICCMetaField
 from imagekit.modelfields import HistogramChannelField, Histogram
 
 # Modify image file buffer size.
@@ -229,12 +229,11 @@ class HistogramBase(models.Model):
     """
     Model representing a 1-dimensional image histogram.
     
-    HistogramBase implements a GenericForeignKey to connect
-    to its parent ImageWithMetadata instance. The assumption
-    is that ImageWithMetadata subclasses use the default PositiveIntegers
-    for their respective id fields -- I'm not a super-huge fan
-    of the willy-nilly use of generic relations but this is
-    a pretty certifiable use-case; performance is more of an
+    HistogramBase implements a GenericForeignKey to connect to its parent
+    ImageWithMetadata instance. The assumption is that ImageWithMetadata
+    subclasses use the default PositiveIntegers for their respective
+    id fields -- I'm not a super-huge fan of the willy-nilly use of generic
+    relations but this is a pretty certifiable use-case; performance is more of an
     issue with the histogram data itself (w/r/t joins and such)
     so I'm OK with it here. Caveat Implementor.
     
@@ -350,11 +349,9 @@ More complex callables can be used as well:
 
 class LumaHistogram(HistogramBase):
     """
-    Luma histogram implementation.
-    
-    This histogram has only one 8-bit channel, L.
-    Images are converted to the 'L' mode with PIL
-    before their histogram data is saved.
+    Luma histogram implementation. It uses one 8-bit channel, L -- a copy of
+    the related image is converted to 'L' mode, as per "pil_reference" (below)
+    and used when populating LumaHistogram during save and instantiation.
     
     """
     class Meta:
@@ -366,9 +363,7 @@ class LumaHistogram(HistogramBase):
 
 class RGBHistogram(HistogramBase):
     """
-    RGB histogram implementation.
-    
-    One channel for each primary in RGB. 
+    RGB histogram implementation. One channel for each of the primaries in RGB.
     
     """
     class Meta:
@@ -380,12 +375,34 @@ class RGBHistogram(HistogramBase):
     G = HistogramChannelField(channel='G', verbose_name="Green")
     B = HistogramChannelField(channel='B', verbose_name="Blue")
 
-@memoize
-def ICCTransformerForProfileData(icc=None):
-    if icc:
-        if hasattr(icc, 'transformer'):
-            return icc.transformer
-    return icc
+
+"""
+ImageWithMetadata model
+
+
+"""
+
+
+class ImageWithMetadataQuerySet(models.query.QuerySet):
+    
+    def __init__(self, *args, **kwargs):
+        super(ImageWithMetadataQuerySet, self).__init__(*args, **kwargs)
+        random.seed()
+    
+    @delegate
+    def rnd(self):
+        return random.choice(self.all())
+    
+    @delegate
+    def withprofile(self):
+        return self.filter(icc__isnull=False)
+    
+    @delegate
+    def rndicc(self):
+        return self.withprofile().rnd()
+
+class ImageWithMetadataManager(DelegateManager):
+    __queryset__ = ImageWithMetadataQuerySet
 
 class ImageWithMetadata(ImageModel):
     class Meta:
@@ -393,32 +410,20 @@ class ImageWithMetadata(ImageModel):
         verbose_name = "Image Metadata"
         verbose_name = "Image Metadata Objects"
     
-    # All we got right now is Luma and RGB. What do you mean
-    # you want more colorspaces? Come back tomorrow if you
-    # want more colorspaces.
+    objects = ImageWithMetadataManager()
+    
+    # All we got right now is Luma and RGB. Come back tomorrow you want more colorspaces.
     histogram_luma = Histogram(colorspace="Luma")
     histogram_rgb = Histogram(colorspace="RGB")
     
-    def _get_histogram(self):
-        """ Legacy support. """
-        if self.pilimage:
-            return zip(
-                xrange(len(self.histogram_luma.L)),
-                self.histogram_luma.L,
-            )
-    
-    histogram = property(_get_histogram)
-    
-    # pil_reference can either be the string name of the PIL image object,
-    # or a callable that returns such a string -- either way, whatever works for YOU!
     icc = ICCMetaField(verbose_name="ICC data",
-        #pil_reference=lambda instance: instance.pilimage,
+        pil_reference=lambda instance: instance.pilimage,
         editable=False,
         null=True)
     
     @property
     def icctransformer(self):
-        return ICCTransformerForProfileData(self.icc)
+        self.icc.transformer
     
     def save(self, force_insert=False, force_update=False):
         super(ImageWithMetadata, self).save(force_insert, force_update)
@@ -429,16 +434,13 @@ class ImageWithMetadata(ImageModel):
 
 class ICCQuerySet(models.query.QuerySet):
     
-    class intent(ADict):
-        def __init__(self):
-            self.PERCEPTUAL = 0
-            self.RELATIVE = 1
-            self.SATURATION = 2
-            self.ABSOLUTE = 3
+    def __init__(self, *args, **kwargs):
+        super(ICCQuerySet, self).__init__(*args, **kwargs)
+        random.seed()
     
+    @delegate
     def rnd(self):
-        return random.choice(self)
-    
+        return random.choice(self.all())
 
 class ICCManager(DelegateManager):
     __queryset__ = ICCQuerySet
@@ -498,10 +500,6 @@ class ICCModel(models.Model):
         
         return u'-empty-'
 
-# Histogram type string map (at the end so we're typesafe)
-# XYZHistogram and LabHistogram implementations TBD
-HISTOGRAMS = { 'luma': LumaHistogram, 'rgb': RGBHistogram, }
-
 """
 South has assuaged me, so I'm happy to assuage it.
 
@@ -529,3 +527,12 @@ else:
             '^imagekit\.modelfields\.ICCField',
         ]
     )
+
+
+
+# Histogram type string map (at the end so we're typesafe)
+# XYZHistogram and LabHistogram implementations TBD
+HISTOGRAMS = { 'luma': LumaHistogram, 'rgb': RGBHistogram, }
+
+
+

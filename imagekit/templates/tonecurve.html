@@ -1,0 +1,12 @@
+<div class="icc-rgb-trc" style="width: {{ container_width }}px;">
+    <div class="rgb-trc" id="rgb-trc-{{ icc_profile_hash }}-{{ channel }}" style="width: {{ width }}px; height: {{ height }}px;"></div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.plot(
+                $('#rgb-trc-{{ icc_profile_hash }}-{{ channel }}'),
+                {{ flot_series }},
+                {{ flot_options }}
+            );
+        });
+    </script>
+</div>

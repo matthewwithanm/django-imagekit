@@ -1,0 +1,28 @@
+
+<span class="icc-cie1931" id="icc-cie1931-{{ icc_profile_hash }}">
+    <div class="cie1931" id="cie1931-{{ icc_profile_hash }}" style="width: {{ width }}px; height: {{ height }}px;"></div>
+</span>
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        var ciexyzbg = new Image(); ciexyzbg.src = '{{ cie1931_bg_url }}';
+        var series = {{ flot_series }};
+        var options = {{ flot_options }};
+        var plt;
+        
+        var img_data = [ [ [ "{{ cie1931_bg_url }}", 0, 0, 0.9, 0.9 ] ] ];
+        var img_options = {
+            series: { images: { show: true }, alpha: 0.4 },
+            xaxis: { min: -0.1, max: 0.85 },
+            yaxis: { min: -0.1, max: 0.85 },
+        };
+        
+        $.plot.image.loadDataImages(img_data, options, function () {
+            plt = $.plot(
+                $('#cie1931-{{ icc_profile_hash }}'), img_data.concat(series), options
+            );
+        });
+        
+    });
+</script>
+

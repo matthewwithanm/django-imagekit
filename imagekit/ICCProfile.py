@@ -10,15 +10,16 @@ which is a part of the source of dispcalGUI:
 
 Copyright (c) 2011 OST, LLC. 
 """
-import locale, sys, os, re, struct, base64, math, numpy
+import locale, sys, os, re, struct, base64, math, numpy, types
+from imagekit.utils import hasallcase, ADict, AODict
 from imagekit.etc import spectralarithmetic
+from imagekit.memoize import memoize
 from scipy import interpolate
 from hashlib import md5
 from time import localtime, mktime, strftime
 from UserString import UserString
 from encoding import get_encodings
 from ordereddict import OrderedDict
-from memoize import memoize
 
 try:
     from jogging import logging
@@ -372,40 +373,6 @@ class CRInterpolation(object):
         return 0.5 * ((2 * p[1]) + (-p[0] + p[2]) * t + 
                       ((2 * p[0]) - (5 * p[1]) + (4 * p[2]) - p[3]) * t2 +
                       (-p[0] + (3 * p[1]) - (3 * p[2]) + p[3]) * (t2 * t))
-
-
-class ADict(dict):
-
-    """
-    Convenience class for dictionary key access via attributes.
-    
-    Instead of writing aodict[key], you can also write aodict.key
-    
-    """
-
-    def __init__(self, *args, **kwargs):
-        dict.__init__(self, *args, **kwargs)
-
-    def __getattr__(self, name):
-        if name in self:
-            return self[name]
-        else:
-            raise AttributeError(name)
-
-    def __setattr__(self, name, value):
-        self[name] = value
-
-
-class AODict(ADict, OrderedDict):
-
-    def __init__(self, *args, **kwargs):
-        OrderedDict.__init__(self, *args, **kwargs)
-
-    def __setattr__(self, name, value):
-        if name == "_keys":
-            object.__setattr__(self, name, value)
-        else:
-            self[name] = value
 
 
 class ICCProfileTag(object):
@@ -1438,7 +1405,7 @@ class ICCProfile(object):
         """
         Return Base64-encoded profile ID.
         """
-        return base64.b64encode(self.calculateID())
+        return base64.b64encode(self.calculateID()).rstrip("=")
     
     def getLittleCMSInstance(self):
         from django.core.files.base import ContentFile
@@ -1552,7 +1519,7 @@ class ICCProfile(object):
     
     def __ne__(self, other):
         return not self.isSame(other)
-    
+
 
 class ICCTransformer(ICCProfile):
     """
@@ -1568,7 +1535,7 @@ class ICCTransformer(ICCProfile):
     def getRGBTristimulusXYZMatrix(self):
         tristims = set(['rXYZ', 'gXYZ', 'bXYZ'])
         if tristims.issubset(set(self.tags.keys())):
-            return numpy.array([
+            return numpy.matrix([
                 self.tags['rXYZ'].values() +
                 self.tags['gXYZ'].values() +
                 self.tags['bXYZ'].values(),
@@ -1580,7 +1547,7 @@ class ICCTransformer(ICCProfile):
         if tristims.issubset(set(self.tags.keys())):
             return numpy.array([
                 self.tags['wtpt'].values(),
-            ])
+            ]).squeeze()
         else:
             return numpy.array([
                 XYZNumber(
@@ -1592,18 +1559,16 @@ class ICCTransformer(ICCProfile):
     def getChromaticAdaptationXYZMatrix(self):
         chadmatrix = set(['chad'])
         if chadmatrix.issubset(set(self.tags.keys())):
-            return numpy.asarray(
-                numpy.matrix([
-                    self.tags['chad'],
-                ])
-            )
+            return numpy.matrix([
+                self.tags['chad'],
+            ])
         else:
-            return numpy.array([
+            return numpy.matrix([
                 1,0,0,0,1,0,0,0,1
             ]).reshape(3, 3) # 3x3 identity matrix
     
     @memoize
-    def getRGBLinearizer(self, channel="r", scale=255.0):
+    def getRGBLinearizer(self, channel="r", scale=256.0):
         tagkey = "%sTRC" % channel.lower()[:1]
         
         if tagkey in self.tags:
@@ -1613,7 +1578,7 @@ class ICCTransformer(ICCProfile):
             if len(trc) > 1:
                 # build a callable with scipy
                 x = numpy.linspace(0.0, 1.0, len(trc))
-                y = numpy.array([v/float(max(trc)) for v in trc])
+                y = numpy.array([v / float(max(trc)) for v in trc])
                 thealgorithm = interpolate.interp1d(x, y, kind="nearest")
             
             elif len(trc) > 0:
@@ -1627,7 +1592,7 @@ class ICCTransformer(ICCProfile):
         return lambda x: (float(x) / scale) ** 2.2
     
     @memoize
-    def getRGBCompander(self, channel="r", scale=255.0):
+    def getRGBCompander(self, channel="r", scale=256.0):
         tagkey = "%sTRC" % channel.lower()[:1]
         
         if tagkey in self.tags:
@@ -1637,8 +1602,8 @@ class ICCTransformer(ICCProfile):
             if len(trc) > 1:
                 # build a callable with numpy
                 x = numpy.linspace(0.0, 1.0, len(trc))
-                y = numpy.array([v/float(max(trc)) for v in trc])
-                thealgorithm = interpolate.interp1d(y, x, kind="nearest") # YO DOGG: double-check this x/y-swap move here
+                y = numpy.array([v / float(max(trc)) for v in trc])
+                thealgorithm = interpolate.interp1d(x, y, kind="nearest") # YO DOGG: double-check this x/y-swap move here
             
             elif len(trc) > 0:
                 thealgorithm = lambda x: numpy.array([ x ** (1.0 / trc[0]), ])
@@ -1651,8 +1616,9 @@ class ICCTransformer(ICCProfile):
         return lambda x: (float(x) ** (1.0 / 2.2)) * float(scale)
     
     @memoize
-    def getRGBTristimulusLinearizer(self, scale=255.0):
+    def getRGBTristimulusLinearizer(self, scale=256.0):
         other = self
+        
         class RGBTristimulusLinearizer(ADict):
             def __init__(self):
                 self.fr = other.getRGBLinearizer(channel='r', scale=scale)
@@ -1667,17 +1633,83 @@ class ICCTransformer(ICCProfile):
         return RGBTristimulusLinearizer()
     
     @memoize
-    def getRGBTristimulusCompander(self, scale=255.0):
+    def getRGBTristimulusCompander(self, scale=256.0):
         other = self
-        class RGBTristimulusLinearizer(ADict):
+        
+        class RGBTristimulusCompander(ADict):
             def __init__(self):
                 self.fr = other.getRGBCompander(channel='r', scale=scale)
                 self.fg = other.getRGBCompander(channel='g', scale=scale)
                 self.fb = other.getRGBCompander(channel='b', scale=scale)
-            def __call__(self, r=0.0, g=0.0, b=0.0):
-                return (
-                    self.fr(r),
-                    self.fg(g),
-                    self.fb(b),
-                )
-        return RGBTristimulusLinearizer()
+                self.as_hex = False
+            
+            def __call__(self, **kwargs):
+                
+                if 'as_hex' in kwargs:
+                    self.as_hex = kwargs.pop('as_hex')
+                    return self(**kwargs.copy())
+                
+                if len(kwargs) == 0:
+                    # r=0.0, g=0.0, b=0.0
+                    return ( self.fr(0.0), self.fg(0.0), self.fb(0.0), )
+                    
+                elif len(kwargs) == 1:
+                    ar = kwargs.pop(kwargs.keys().pop())
+                    
+                    # special cases
+                    if hasallcase(ar, 'xyz'):
+                        # it's an XYZNumber/XYZType/aptly-assigned AODict/ADict/dict:
+                        logg.warning('dict-ish object passed to RGBTristimulusCompander() with "x,y,z" amongst its attribute')
+                        return ( self.fr(getcase('x')), self.fg(getcase('y')), self.fb(getcase('z')), )
+                    
+                    elif hasallcase(ar, 'rgb'):
+                        return ( self.fr(getcase('r')), self.fg(getcase('g')), self.fb(getcase('b')), )
+                    
+                    # NORMALS.
+                    if isinstance(ar, (types.IntType, types.FloatType, types.LongType, types.ComplexType)):
+                        return ( self.fr(ar), self.fg(ar), self.fb(ar), )
+                    
+                    elif isinstance(ar, (types.FunctionType, types.MethodType)):
+                        #return ( self.fr(ar()), self.fg(ar()), self.fb(ar()), )
+                        back = ar()
+                        return self(**dict(args=ar))
+                        
+                        try:
+                            len(ar)
+                        except TypeError:
+                            return ar # not sure hoss
+                        
+                        if len(ar) > 2:
+                            
+                            if isinstance(ar, (numpy.ndarray, numpy.matrixlib.matrix, numpy.matrix)):
+                                if not ar.dtype.kind == 'f':
+                                    ar = ar.asype(numpy.float)
+                                return ( self.fr(ar[0]), self.fg(ar[1]), self.fb(ar[2]), )
+                            
+                            elif isinstance(ar, (types.ListType, types.TupleType)):
+                                return ( self.fr(ar[0]), self.fg(ar[1]), self.fb(ar[2]), )
+                        
+                        elif len(ar) == 1:
+                            return ( self.fr(ar), self.fg(ar), self.fb(ar), )
+                        
+                        elif len(kwargs) == 2:
+                            # confusatron
+                            kwargs.update({ '?' : 0.0 })
+                            return self(**kwargs.copy())
+                        
+                        elif len(kwargs) == 3:
+                            # COMPAND.
+                            out = self(arg=kwargs.copy())
+                            if self.as_hex:
+                                self.as_hex = False
+                                return "#%02X%02X%02X" % tuple(out)
+                            else:
+                                return out
+                        
+                        # and beyond
+                        else:
+                            
+                            return 'YO DOGG'
+                            
+                
+        return RGBTristimulusCompander()
