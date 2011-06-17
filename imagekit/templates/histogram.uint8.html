@@ -1,0 +1,12 @@
+<span class="histogram-{{ type }}">
+    <div class="rgb" id="rgb-{{ image_uuid }}" style="width: {{ width }}px; height: {{ height }}px;"></div>
+</span>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.plot(
+            $('#rgb-{{ image_uuid }}'),
+            {{ flot_series }},
+            {{ flot_options }}
+        );
+    });
+</script>

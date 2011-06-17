@@ -5,7 +5,7 @@ django-imagekit
 ImageKit In 7 Steps
 ===================
 
-Step 1
+Step 1*
 ******
 
 ::
@@ -13,6 +13,9 @@ Step 1
     $ pip install django-imagekit
 
 (or clone the source and put the imagekit module on your path)
+
+*note: this will install the upstream version of imagekit, which also lives on GitHub at https://github.com/jdriscoll/django-imagekit. You're reading a page in the repo of my fork, which isn't on PyPI -- just use the GitHub download button if you need my changes.*
+
 
 Step 2
 ******

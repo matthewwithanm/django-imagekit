@@ -6,7 +6,12 @@ the class properties as settings. The process method can be overridden as well a
 own effects/processes entirely.
 
 """
+import os, numpy
 from imagekit.lib import *
+from imagekit.neuquant import NeuQuant
+from imagekit.ICCProfile import ICCProfile
+from imagekit.memoize import memoize
+from jogging import logging as logg
 
 class ImageProcessor(object):
     """ Base image processor class """
@@ -35,13 +40,156 @@ class Adjustment(ImageProcessor):
         return img, fmt
 
 
+class ICCProofTransform(ImageProcessor):
+    """
+    Convert the image to a destination profile with LCMS.
+    
+    Source image numbers are treated as per its embedded profile by default;
+    this may be (losslessly) overridden by an applied profile at conversion time.
+    RGB images sans ICC data will be treated as sRGB IEC61966-2.1 by default.
+    Relative colorimetric is the default intent.
+    """
+    _srgb = ICCProfile(os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc"))
+    source = None
+    destination = None
+    proof = None
+    lastTXID = None
+    
+    mode = 'RGB' # for now
+    intent = ImageCms.INTENT_RELATIVE_COLORIMETRIC
+    proof_intent = ImageCms.INTENT_ABSOLUTE_COLORIMETRIC
+    transformers = {}
+    
+    @classmethod
+    def makeTXID(cls, srcID, proof=None):
+        if not proof:
+            return "%s>%s" % (
+                srcID,
+                cls.destination.getIDString(),
+            )
+            
+        return "%s:%s>%s" % (
+            srcID,
+            proof.getIDString(),
+            cls.destination.getIDString(),
+        )
+    
+    @classmethod
+    def process(cls, img, fmt, obj, proofing=True, TXID=None):
+        if img.mode == "L":
+            img = img.convert(cls.mode)
+            
+        source = (
+            getattr(cls, 'source', None) or \
+            getattr(img, 'icc', None) or \
+            getattr(obj, 'icc', None) or \
+            cls._srgb
+        )
+        
+        if not source.getIDString():
+            raise AttributeError("WTF: no source profile found (including default sRGB!)")
+        
+        # freak out if running w/o destination profiles
+        if not cls.destination:
+            raise AttributeError("WTF: destination transform ICC profile '%s' doesn't exist" % cls.destination)
+        
+        if proofing and not cls.proof:
+            logg.warning("ICCProofTransform.process() was invoked explicitly but without a specified proofing profile.")
+            logg.warning("ICCProofTransform.process() executing as a non-proof transformation...")
+        
+        if TXID:
+            if TXID not in cls.transformers:
+                raise AttributeError("WTF: the TXID %s wasn't found in ICCProofTransform.transformers[].")
+        
+        else:
+            TXID = cls.makeTXID(source.getIDString(), cls.proof)
+        
+        if TXID not in cls.transformers:
+            
+            if cls.proof:
+                cls.transformers[TXID] = ImageCms.ImageCmsTransform(
+                    cls.source.lcmsinstance,
+                    cls.destination.lcmsinstance,
+                    img.mode,
+                    cls.mode,
+                    cls.intent,
+                    proof=cls.proof.lcmsinstance,
+                    proof_intent=cls.proof_intent,
+                )
+            
+            else: # fall back to vanilla non-proof transform
+                cls.transformers[TXID] = ImageCms.ImageCmsTransform(
+                    cls.source.lcmsinstance,
+                    cls.destination.lcmsinstance,
+                    img.mode,
+                    cls.mode,
+                    cls.intent,
+                )
+        
+        cls.lastTXID = TXID
+        return cls.transformers[TXID].apply(img), img.format
+
+
+class ICCTransform(ImageProcessor):
+    """
+    Convert the image to a destination profile with LCMS.
+    
+    Source image numbers are treated as per its embedded profile by default;
+    this may be (losslessly) overridden by an applied profile at conversion time.
+    RGB images sans ICC data will be treated as sRGB IEC61966-2.1 by default.
+    Relative colorimetric is the default intent.
+    """
+    # ICCTransform.process() hands everything off to ICCProofTransform.process();
+    # all it needs to do is set the kwarg proofing=False.
+    @classmethod
+    def process(cls, img, fmt, obj, TXID=None):
+        return ICCProofTransform.process(cls, img, fmt, obj, proofing=False, TXID=TXID)
+
+
 class Format(ImageProcessor):
     format = 'JPEG'
     extension = 'jpg'
-
+    
     @classmethod
     def process(cls, img, fmt, obj):
         return img, cls.format
+
+
+class HSVArray(ImageProcessor):
+    """
+    Convert to HSV using NumPy and return as an array.
+    
+    """
+    format = 'array'
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        from scikits.image import color
+        
+        rgb_array = numpy.array(img.getdata(), numpy.uint8).reshape(img.size[0], img.size[1], 3)
+        hsv_array = color.rgb2hsv(rgb_array.astype(numpy.float32) / 255)
+        return hsv_array, 
+
+class NeuQuantize(ImageProcessor):
+    """
+    Extract and return a 256-color quantized LUT of the images' dominant colors.
+    Return as a 16 x 16 x 3 array (or a PIL image if format is set to 'JPEG'.
+    
+    """
+    format = 'array'
+    quantfactor = 10
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        quant = NeuQuant(img.convert("RGBA"), cls.quantfactor)
+        out = numpy.array(quant.colormap).reshape(16, 16, 4)
+        if cls.format == 'array':
+            return out.T[0:3].T
+        else:
+            outimg = Image.new('RGBA', (16, 16), (0,0,0))
+            outimg.putdata([tuple(t[0]) for t in out.T[0:3].T.reshape(256, 1, 3).tolist()])
+            outimg.resize((256, 256), Image.NEAREST)
+            return outimg
 
 
 class Reflection(ImageProcessor):

@@ -1,0 +1,20 @@
+<div class="profileinfo" id="profileinfo-{{ icc_profile_hash }}">
+    <h3 class="profileinfo">
+        <a href="#">Details for &#8220;{{ icc_profile_description }}&#8221;</a>
+    </h3>
+    <div class="profileinfo-details">
+        <code>
+            {{ icc_profile_info }}
+        </code>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#profileinfo-{{ icc_profile_hash }}").accordion({
+            active: false,
+            autoHeight: false,
+            animated: false,
+            collapsible: true
+        });
+    });
+</script>

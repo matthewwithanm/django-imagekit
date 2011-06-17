@@ -1,0 +1,20 @@
+
+
+At the moment, it is possible to do shit like this:
+
+
+class AXProPhotoProofer(processors.ICCProofTransform):
+	source = '/Users/fish/Dropbox/ost2/face/_ikicc/243736291_1402_original.jpg.icc' # sRGB 61966-2.1
+	destination = '/Library/Printers/Canon/BJPrinter/Resources/ICCProfiles/Pro9000.canonicc/Contents/Resources/Canon Pro9000 GL1.icc' # Canon 9000 Bubblejet Fine Art
+	proof = '/Users/fish/Dropbox/ost2/face/_ikicc/Macbeth_ColorChecker_ProPhoto.jpg.icc' # ProPhoto RGB
+
+class AXProPhotoProof(ImageSpec):
+	#quality = 80
+	access_as = "prophoto"
+	pre_cache = True
+	processors = [AXProPhotoProofer]
+
+
+
+
+

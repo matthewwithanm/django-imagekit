@@ -7,10 +7,19 @@ setup(
     description='Automated image processing for Django models.',
     author='Justin Driscoll',
     author_email='justin@driscolldev.com',
-    maintainer='Bryan Veloso',
-    maintainer_email='bryan@revyver.com',
+    maintainer='Alexander Bohn',
+    maintainer_email='fish2000@gmail.com',
     license='BSD',
     url='http://github.com/jdriscoll/django-imagekit/',
+    install_requires=[
+        'django',
+        'numpy',
+        'scipy',
+        'struct',
+        'uuid',
+        'hashlib',
+        'PIL',
+    ],
     packages=[
         'imagekit',
         'imagekit.management',
@@ -27,5 +36,4 @@ setup(
         'Topic :: Utilities'
     ]
 )
-
 
