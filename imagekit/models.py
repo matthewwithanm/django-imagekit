@@ -421,8 +421,20 @@ class ImageWithMetadata(ImageModel):
         null=True)
     
     @property
+    def iccmodel(self):
+        try:
+            return ICCModel.objects.get(icchash=self.icchash)
+        except ICCModel.DoesNotExist:
+            return None
+    
+    @property
+    def with_same_profile(self):
+        return self.iccmodel.get_profiled_images(self.__class__)
+    
+    @property
     def icctransformer(self):
-        self.icc.transformer
+        return self.icc.transformer
+    
     
     def save(self, force_insert=False, force_update=False):
         super(ImageWithMetadata, self).save(force_insert, force_update)
@@ -485,6 +497,25 @@ class ICCModel(models.Model):
     @property
     def lcmsinstance(self):
         return ImageCms.ImageCmsProfile(self.iccfile.file)
+    
+    def get_profiled_images(self, modl):
+        """
+        Retrieve ImageModel/ImageWithMetadata subclasses that have
+        embedded profile data that matches this ICCModel instances'
+        profile. Matches are detected by comparing ICCHashFields.
+        """
+        modlfield = None
+        if modl._meta:
+            for field in modl._meta.fields:
+                if isinstance(field, ICCHashField):
+                    modlfield = getattr(field, 'name', None)
+                    break
+        
+        if modlfield:
+            lookup = str('%s__exact' % modlfield)
+            return modl.objects.withprofile().filter(**{ lookup: self.icchash })
+        
+        return modl.objects.none()
     
     def save(self, force_insert=False, force_update=False):
         self.modifydate = datetime.now()

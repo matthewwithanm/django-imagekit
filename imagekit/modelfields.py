@@ -195,12 +195,13 @@ class ICCMetaField(ICCDataField):
             
             if len(profile_string):
                 logg.info("Saving icc profile for %s %s ..." % (instance.__class__.__name__, instance.id))
+                iccdata = ICCProfile(profile_string)
                 setattr(instance, self.name, ICCProfile(profile_string))
                 logg.info("Saved icc profile '%s' for %s" % (instance.icc.getDescription(), instance.id))
                 
                 # refresh profile hash
                 if self.hash_field:
-                    hsh = hashlib.sha1(profile_string).hexdigest()
+                    hsh = hashlib.sha1(iccdata.data).hexdigest()
                     setattr(instance, self.hash_field, hsh)
                     logg.info("Saved icc profile hash '%s' in ICCHashField %s" % (hsh, self.hash_field))
     

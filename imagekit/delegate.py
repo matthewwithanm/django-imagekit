@@ -157,7 +157,7 @@ class DelegateSupervisor(type):
                         deleg += 1
                         qs_delegates[f_name] = f
                 
-                print "Delegating %s funcs to %s from %s" % (deleg, name, qs.__name__)
+                #print "Delegating %s funcs to %s from %s" % (deleg, name, qs.__name__)
         
         attrs.update(qs_delegates)
         return super(DelegateSupervisor, cls).__new__(cls, name, bases, attrs)
