@@ -130,7 +130,9 @@ class ICCModelAdmin(admin.ModelAdmin):
                     </h3>
                     <div class="profileinfo-details">
                         <code>
-                            %s
+                            <pre>
+                                %s
+                            </pre>
                         </code>
                     </div>
                 </div>

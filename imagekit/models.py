@@ -1,4 +1,4 @@
-import os, urlparse, numpy, uuid, random
+import os, urlparse, numpy, uuid, random, hashlib
 import cStringIO as StringIO
 from datetime import datetime
 from django.conf import settings
@@ -7,6 +7,7 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage
 from django.core.exceptions import MultipleObjectsReturned
 from django.db import models
+from django.db.models import Q
 from django.db.models import signals
 from django.db.models.base import ModelBase
 from django.contrib.contenttypes import generic
@@ -390,8 +391,32 @@ class ImageWithMetadataQuerySet(models.query.QuerySet):
         return random.choice(self.all())
     
     @delegate
-    def withprofile(self):
+    def with_profile(self, icc=None):
         return self.filter(icc__isnull=False)
+    
+    @delegate
+    def with_matching_profile(self, icc=None, hsh=None):
+        if icc:
+            if hasattr(icc, 'data'):
+                hsh = hashlib.sha1(icc.data).hexdigest()
+        if hsh:
+            return self.filter(
+                icc__isnull=False,
+                icchash__exact=hsh,
+            )
+        return self.none()
+    
+    @delegate
+    def with_different_profile(self, icc=None, hsh=None):
+        if icc:
+            if hasattr(icc, 'data'):
+                hsh = hashlib.sha1(icc.data).hexdigest()
+        if hsh:
+            return self.filter(
+                Q(icc__isnull=False) & \
+                ~Q(icchash__exact=hsh)
+            )
+        return self.none()
     
     @delegate
     def rndicc(self):
@@ -428,8 +453,12 @@ class ImageWithMetadata(ImageModel):
             return None
     
     @property
-    def with_same_profile(self):
+    def same_profile_set(self):
         return self.iccmodel.get_profiled_images(self.__class__)
+    
+    @property
+    def different_profile_set(self):
+        return self.__class__.objects.with_different_profile(hsh=self.icchash)
     
     @property
     def icctransformer(self):
@@ -448,6 +477,16 @@ class ICCQuerySet(models.query.QuerySet):
     def __init__(self, *args, **kwargs):
         super(ICCQuerySet, self).__init__(*args, **kwargs)
         random.seed()
+    
+    @delegate
+    def get_profile_match(self, icc=None):
+        if icc:
+            if hasattr(icc, 'data'):
+                return self.get(
+                    icc__isnull=False,
+                    icchash__exact=hashlib.sha1(icc.data).hexdigest(),
+                )
+        return self.none()
     
     @delegate
     def rnd(self):
@@ -513,7 +552,9 @@ class ICCModel(models.Model):
         
         if modlfield:
             lookup = str('%s__exact' % modlfield)
-            return modl.objects.withprofile().filter(**{ lookup: self.icchash })
+            if hasattr(modl.objects, 'with_profile'):
+                return modl.objects.with_profile().filter(**{ lookup: self.icchash })
+            modl.objects.filter(**{ lookup: self.icchash })
         
         return modl.objects.none()
     
