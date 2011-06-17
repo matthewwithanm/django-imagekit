@@ -420,7 +420,7 @@ class ImageWithMetadataQuerySet(models.query.QuerySet):
     
     @delegate
     def rndicc(self):
-        return self.withprofile().rnd()
+        return self.with_profile().rnd()
 
 class ImageWithMetadataManager(DelegateManager):
     __queryset__ = ImageWithMetadataQuerySet
@@ -454,7 +454,7 @@ class ImageWithMetadata(ImageModel):
     
     @property
     def same_profile_set(self):
-        return self.iccmodel.get_profiled_images(self.__class__)
+        return self.__class__.objects.with_matching_profile(hsh=self.icchash)
     
     @property
     def different_profile_set(self):
@@ -552,9 +552,14 @@ class ICCModel(models.Model):
         
         if modlfield:
             lookup = str('%s__exact' % modlfield)
+            if hasattr(modl.objects, 'with_matching_profile'):
+                return modl.objects.with_matching_profile(hsh=self.icchash)
             if hasattr(modl.objects, 'with_profile'):
                 return modl.objects.with_profile().filter(**{ lookup: self.icchash })
             modl.objects.filter(**{ lookup: self.icchash })
+        
+        else:
+            logg.info("ICCModel.get_profiled_images() failed for model %s -- no ICCHashField defined" % modl.__class__.__name__)
         
         return modl.objects.none()
     
