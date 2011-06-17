@@ -194,8 +194,6 @@ class ImageModel(models.Model):
         return [("#%02X%02X%02X" % tc[1]) for tc in self.topcolors(numcolors)]
     
     def save_image(self, name, image, save=True, replace=True):
-        logg.info("***")
-        logg.info("ABOUT TO SAVE IMAGE WITH save_image() -- ")
         if hasattr(image, 'read'):
             data = image.read()
         else:
@@ -377,12 +375,10 @@ class RGBHistogram(HistogramBase):
 
 
 """
-ImageWithMetadata model
+ImageWithMetadata model.
 
 
 """
-
-
 class ImageWithMetadataQuerySet(models.query.QuerySet):
     
     def __init__(self, *args, **kwargs):
@@ -415,10 +411,13 @@ class ImageWithMetadata(ImageModel):
     # All we got right now is Luma and RGB. Come back tomorrow you want more colorspaces.
     histogram_luma = Histogram(colorspace="Luma")
     histogram_rgb = Histogram(colorspace="RGB")
-    
     icc = ICCMetaField(verbose_name="ICC data",
-        pil_reference=lambda instance: instance.pilimage,
+        hash_field='icchash',
         editable=False,
+        null=True)
+    icchash = ICCHashField(verbose_name="ICC embedded profile hash",
+        unique=False, # ICCHashField defaults to unique=True
+        editable=True,
         null=True)
     
     @property

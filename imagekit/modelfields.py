@@ -141,12 +141,13 @@ class ICCMetaField(ICCDataField):
     This ICCDataField subclass will automatically refresh itself
     with ICC data it finds in the image classes' PIL instance. The
     methods it impelemnts are designed to work with the ImageWithMetadata
-    abstract base class to accomplish this feat, using signals. 
+    abstract base class to accomplish this feat, using signals.
     """
     
     def __init__(self, *args, **kwargs):
         self.pil_reference = kwargs.pop('pil_reference', 'pilimage')
-        super(ICCMetaField, self).__init__(*args, **kwargs)
+        self.hash_field = kwargs.pop('hash_field', None)
+        super(ICCMetaField, self).__init__(**kwargs)
     
     def contribute_to_class(self, cls, name):
         if not hasattr(self, 'db_column'):
@@ -155,15 +156,14 @@ class ICCMetaField(ICCDataField):
             self.verbose_name = name
         super(ICCMetaField, self).contribute_to_class(cls, name)
         
-        #print("About to connect (%s)" % cls.__name__)
         signals.pre_save.connect(self.refresh_icc_data, sender=cls)
     
     def refresh_icc_data(self, **kwargs): # signal, sender, instance
         """
-        Stores ICC profile data in the field before saving.
-        """
-        logg.info("refresh_icc_data() called...")
+        Stores ICC profile data in the field before saving, and refreshes
+        the profile hash if an ICCHashField has been specified.
         
+        """
         instance = kwargs.get('instance')
         
         try:
@@ -171,9 +171,9 @@ class ICCMetaField(ICCDataField):
             pil_reference = self.pil_reference
             
             if callable(pil_reference):
-                pilimage = pil_reference(image)
+                pilimage = pil_reference(instance)
             else:
-                pilimage = getattr(image, pil_reference, 'pilimage')
+                pilimage = getattr(instance, getattr(self, 'pil_reference', 'pilimage'))
         
         except AttributeError, err:
             logg.warning("*** Couldn't refresh ICC data with custom callable (AttributeError was thrown: %s)" % err)
@@ -190,13 +190,19 @@ class ICCMetaField(ICCDataField):
         if pilimage:
             try:
                 profile_string = pilimage.info.get('icc_profile', '')
-            except:
+            except ObjectDoesNotExist:
                 logg.info("Exception was raised when trying to get the icc profile string")
             
             if len(profile_string):
                 logg.info("Saving icc profile for %s %s ..." % (instance.__class__.__name__, instance.id))
-                instance.icc = ICCProfile(profile_string)
+                setattr(instance, self.name, ICCProfile(profile_string))
                 logg.info("Saved icc profile '%s' for %s" % (instance.icc.getDescription(), instance.id))
+                
+                # refresh profile hash
+                if self.hash_field:
+                    hsh = hashlib.sha1(profile_string).hexdigest()
+                    setattr(instance, self.hash_field, hsh)
+                    logg.info("Saved icc profile hash '%s' in ICCHashField %s" % (hsh, self.hash_field))
     
     def south_field_triple(self):
         """
@@ -272,9 +278,11 @@ class HistogramChannelDescriptor(object):
         # get the fucking histogram channel data out of the database here
         elif isinstance(histogram_channel, (basestring, type(None))):
             out = []
+            '''
             if int(getattr(instance, "__%s_00" % histogram_channel)) < 0:
-                instance.save() # refresh and save
-            
+                if not instance.id:
+                    instance.save() # refresh and save
+            '''
             if histogram_channel:
                 for i in xrange(256):
                     histocolname = "__%s_%02X" % (histogram_channel, i)
@@ -385,7 +393,7 @@ class HistogramChannelField(models.CharField):
             if callable(pil_reference):
                 pilimage = pil_reference(image)
             else:
-                pilimage = getattr(image, pil_reference, 'pilimage')
+                pilimage = getattr(image, getattr(self, 'pil_reference', 'pilimage'))
         
         except AttributeError, err:
             logg.warning("*** Couldn't refresh histogram channel '%s' with custom callable (AttributeError was thrown: %s)" % (self.original_channel, err))
@@ -403,7 +411,7 @@ class HistogramChannelField(models.CharField):
                 for i in xrange(256):
                     histocolname = "__%s_%02X" % (self.original_channel, i)
                     setattr(instance, histocolname, int(channel_data[i]))
-                logg.info("Refreshed '%s' histogram." % self.original_channel)
+                logg.info("Refreshed histogram channel %s" % self.original_channel)
     
     def save_form_data(self, instance, data):
         """
@@ -531,16 +539,15 @@ class Histogram(fields.CharField):
         
         """
         instance = kwargs.get('instance')
-        logg.info("-- About to try and wring histograms out of '%s'." % getattr(instance, 'pk', str(instance)))
+        logg.info("-- About to try and wring histograms out of '%s'." % getattr(instance, 'pk', "<NONE>"))
         
-        histogram_type = self.original_colorspace.lower()
-        if hasattr(instance, "histogram_%s" % histogram_type):
-            related_histogram = getattr(instance, "histogram_%s" % histogram_type, None)
+        if hasattr(instance, self.name):
+            related_histogram = getattr(instance, self.name, None)
             
             if related_histogram:
                 related_histogram.save()
             
-            else:
+            if not related_histogram:
                 logg.info("--X DID NOT SAVE A HISTOGRAM OF ANY TYPE (much less '%s') -- RelatedHistogramClass came up NoneType" % histogram_type.upper())
         
         else:
@@ -653,7 +660,7 @@ class ICCField(files.FileField):
     descriptor_class = ICCFileDescriptor
     description = ugettext_lazy("ICC file path")
     
-    def __init__(self, verbose_name=None, name=None, data_field=None, hash_field=None, add_rendered_field=False, **kwargs):
+    def __init__(self, verbose_name=None, name=None, data_field=None, hash_field=None, **kwargs):
         self.data_field = data_field
         self.hash_field = hash_field
         self.__class__.__base__.__init__(self, verbose_name, name, **kwargs)
