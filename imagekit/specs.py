@@ -10,7 +10,7 @@ import os, warnings, numpy
 from StringIO import StringIO
 from imagekit import processors
 from imagekit.lib import *
-from imagekit.utils import img_to_fobj
+from imagekit.utils import img_to_fobj, logg
 from imagekit.memoize import memoize
 from django.core.files.base import ContentFile
 
@@ -29,6 +29,7 @@ class Spec(object):
     def _process(cls, image, obj, procs):
         fmt = image.format
         img = image.copy()
+        logg.info("About to apply processors: %s" % procs)
         for proc in list(procs):
             img, fmt = proc.process(img, fmt, obj)
         return img, fmt
@@ -38,7 +39,7 @@ class ImageSpec(Spec):
     
     @classmethod
     def process(cls, image, obj):
-        img, fmt = super(ImageSpec, cls)._process(image, obj, cls.processors)
+        img, fmt = cls._process(image, obj, cls.processors)
         img.format = fmt
         return img, fmt
 
@@ -164,7 +165,8 @@ class FileAccessor(AccessorBase):
     def _delete(self):
         if self._obj._imgfield:
             if self._exists():
-                self._obj._storage.delete(self.name)
+                if not self.name == self._obj._imgfield.name:
+                    self._obj._storage.delete(self.name)
     
     def _exists(self):
         if self._obj._imgfield:

@@ -2,6 +2,7 @@
 import tempfile, os
 from django.conf import settings
 from ordereddict import OrderedDict
+from imagekit.json import json
 
 class FakeLogger(object):
     """
@@ -31,24 +32,6 @@ except ImportError:
         print "SRSLY: You have no logging facilities available whatsoever, so we're using a fake logger class. Love, Django ImageKit."
         # set up fake logger
         logg = FakeLogger()
-
-# To consistently use the best-available JSON serializer, use:
-#   from imagekit.utils import json
-# ... so if you need to swap a library, do it here once.
-try:
-    import ujson as json
-except ImportError:
-    logg.info("--- Loading yajl in leu of ujson")
-    try:
-        import yajl as json
-    except ImportError:
-        logg.info("--- Loading simplejson in leu of yajl")
-        try:
-            import simplejson as json
-        except ImportError:
-            logg.info("--- Loading stdlib json module in leu of simplejson")
-            import json
-
 
 def img_to_fobj(img, format, **kwargs):
     """

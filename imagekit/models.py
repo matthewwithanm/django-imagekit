@@ -16,6 +16,7 @@ from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 from colorsys import rgb_to_hls, hls_to_rgb
 
+from imagekit.signals import signalqueue
 from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
@@ -85,6 +86,7 @@ class ImageModelBase(ModelBase):
             module = __import__(opts.spec_module,  {}, {}, [''])
         except ImportError:
             raise ImportError('Unable to load imagekit config module: %s' % opts.spec_module)
+        
         for spec in module.__dict__.values():
             if isinstance(spec, type):
                 if issubclass(spec, specs.ImageSpec):
@@ -95,6 +97,10 @@ class ImageModelBase(ModelBase):
                     opts.specs.append(spec)
         
         setattr(cls, '_ik', opts)
+        
+        #signalqueue.connect('pre_cache', cls._pre_cache, sender=cls)
+        signalqueue.pre_cache.connect(cls._pre_cache, sender=cls)
+        signalqueue.clear_cache.connect(cls._clear_cache, sender=cls)
 
 
 class ImageModel(models.Model):
@@ -113,6 +119,25 @@ class ImageModel(models.Model):
     class IKOptions:
         pass
     
+    @classmethod
+    def _clear_cache(cls, **kwargs):
+        logg.info('_clear_cache() called: %s' % kwargs)
+        instance = kwargs.get('instance', None)
+        if instance:
+            for spec in instance._ik.specs:
+                prop = getattr(instance, spec.name())
+                prop._delete()
+    
+    @classmethod
+    def _pre_cache(cls, **kwargs):
+        logg.info('_pre_cache() called: %s' % kwargs)
+        instance = kwargs.get('instance', None)
+        if instance:
+            for spec in instance._ik.specs:
+                if spec.pre_cache:
+                    prop = getattr(instance, spec.name())
+                    prop._create()
+    
     def admin_thumbnail_view(self):
         if not self._imgfield:
             return None
@@ -127,6 +152,7 @@ class ImageModel(models.Model):
             else:
                 return u'<a href="%s"><img src="%s"></a>' % \
                     (escape(self._imgfield.url), escape(prop.url))
+    
     admin_thumbnail_view.short_description = _('Thumbnail')
     admin_thumbnail_view.allow_tags = True
     
@@ -138,20 +164,11 @@ class ImageModel(models.Model):
     def _storage(self):
         return getattr(self._ik, 'storage')
     
-    def _clear_cache(self):
-        for spec in self._ik.specs:
-            prop = getattr(self, spec.name())
-            prop._delete()
-    
-    def _pre_cache(self):
-        for spec in self._ik.specs:
-            if spec.pre_cache:
-                prop = getattr(self, spec.name())
-                prop._create()
-    
     @property
     def pilimage(self):
-        return Image.open(self._storage.open(self._imgfield.name))
+        if self.pk:
+            return Image.open(self._storage.open(self._imgfield.name))
+        return None
     
     def dominantcolor(self):
         return self.pilimage.quantize(1).convert('RGB').getpixel((0, 0))
@@ -215,23 +232,24 @@ class ImageModel(models.Model):
         content = ContentFile(data)
         self._imgfield.save(name, content, save)
     
-    def save(self, clear_cache=False, *args, **kwargs):
+    def save(self, *args, **kwargs):
         is_new_object = self._get_pk_val() is None
+        clear_cache = kwargs.pop('clear_cache', False)
         super(ImageModel, self).save(*args, **kwargs)
         
         if is_new_object and self._imgfield:
             clear_cache = False
         
         if clear_cache:
-            self._clear_cache()
+            signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
         
-        self._pre_cache()
+        logg.info("About to send the pre_cache signal...")
+        return signalqueue.send('pre_cache', sender=self.__class__, instance=self)
     
     def clear_cache(self, **kwargs):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
-        self._clear_cache()
+        signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
 
-signals.post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
 
 class HistogramBase(models.Model):
     """
@@ -473,8 +491,8 @@ class ImageWithMetadata(ImageModel):
     def icctransformer(self):
         return self.icc.transformer
     
-    def save(self, force_insert=False, force_update=False):
-        super(ImageWithMetadata, self).save(force_insert, force_update)
+    def save(self, force_insert=False, force_update=False, **kwargs):
+        super(ImageWithMetadata, self).save(force_insert, force_update, **kwargs)
     
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
@@ -498,7 +516,7 @@ class ICCQuerySet(models.query.QuerySet):
                     icc__isnull=False,
                     icchash__exact=hashlib.sha1(icc.data).hexdigest(),
                 )
-        return self.none()
+        return None
     
     @delegate
     def profile_search(self, search_string='', sqs=False):
@@ -596,9 +614,9 @@ class ICCModel(models.Model):
         
         return modl.objects.none()
     
-    def save(self, force_insert=False, force_update=False):
+    def save(self, force_insert=False, force_update=False, **kwargs):
         self.modifydate = datetime.now()
-        super(ICCModel, self).save(force_insert, force_update)
+        super(ICCModel, self).save(force_insert, force_update, **kwargs)
     
     def __unicode__(self):
         

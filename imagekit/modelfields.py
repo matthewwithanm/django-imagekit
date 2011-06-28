@@ -194,7 +194,7 @@ class ICCMetaField(ICCDataField):
                 logg.info("Exception was raised when trying to get the icc profile string")
             
             if len(profile_string):
-                logg.info("Saving icc profile for %s %s ..." % (instance.__class__.__name__, instance.id))
+                #logg.info("Saving icc profile for %s %s ..." % (instance.__class__.__name__, instance.id))
                 iccdata = ICCProfile(profile_string)
                 setattr(instance, self.name, ICCProfile(profile_string))
                 logg.info("Saved icc profile '%s' for %s" % (instance.icc.getDescription(), instance.id))
@@ -540,7 +540,7 @@ class Histogram(fields.CharField):
         
         """
         instance = kwargs.get('instance')
-        logg.info("-- About to try and wring histograms out of '%s'." % getattr(instance, 'pk', "<NONE>"))
+        #logg.info("-- About to try and wring histograms out of '%s'." % getattr(instance, 'pk', "<NONE>"))
         
         if hasattr(instance, self.name):
             related_histogram = getattr(instance, self.name, None)

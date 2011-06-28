@@ -176,7 +176,7 @@ class NeuQuantize(ImageProcessor):
     Return as a 16 x 16 x 3 array (or a PIL image if format is set to 'JPEG'.
     
     """
-    format = 'array'
+    structure = 'array'
     quantfactor = 10
     width = 16 # for JPEG output
     height = 16 # for JPEG output
@@ -186,8 +186,8 @@ class NeuQuantize(ImageProcessor):
     def process(cls, img, fmt, obj):
         quant = NeuQuant(img.convert("RGBA"), cls.quantfactor)
         out = numpy.array(quant.colormap).reshape(16, 16, 4)
-        if cls.format == 'array':
-            return out.T[0:3].T, fmt
+        if cls.structure == 'array':
+            return out.T[0:3].T, cls.structure
         else:
             outimg = Image.new('RGBA', (16, 16), (0,0,0))
             outimg.putdata([tuple(t[0]) for t in out.T[0:3].T.reshape(256, 1, 3).tolist()])
