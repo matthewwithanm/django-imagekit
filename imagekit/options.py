@@ -13,6 +13,7 @@ class Options(object):
     preprocessor_spec = None
     cache_dir = 'cache'
     save_count_as = None
+    cache_filename_fields = ['pk', ]
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     admin_thumbnail_spec = 'admin_thumbnail'
     spec_module = 'imagekit.defaults'
