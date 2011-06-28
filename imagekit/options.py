@@ -2,6 +2,8 @@
 import os
 from imagekit import processors
 from imagekit.specs import ImageSpec
+from imagekit.signals import signalqueue
+from imagekit.utils import logg
 
 
 class Options(object):
@@ -28,3 +30,29 @@ class Options(object):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
             self.specs = []
+    
+    def _clear_cache(self, **kwargs):
+        logg.info('_clear_cache() called: %s' % kwargs)
+        instance = kwargs.get('instance', None)
+        if instance:
+            for spec in instance._ik.specs:
+                prop = getattr(instance, spec.name())
+                prop._delete()
+    
+    def _pre_cache(self, **kwargs):
+        logg.info('_pre_cache() called: %s' % kwargs)
+        instance = kwargs.get('instance', None)
+        if instance:
+            for spec in instance._ik.specs:
+                if spec.pre_cache:
+                    prop = getattr(instance, spec.name())
+                    prop._create()
+    
+    def contribute_to_class(self, cls, name):
+        #if not cls._meta.abstract:
+        signalqueue.pre_cache.connect(self._pre_cache, sender=cls)
+        signalqueue.clear_cache.connect(self._clear_cache, sender=cls)
+        
+        
+    
+    

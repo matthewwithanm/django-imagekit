@@ -6,6 +6,7 @@ ImageKit signal definitions.
 import hashlib, uuid, PIL
 import django.dispatch
 from django.conf import settings
+from django.db.models.loading import cache
 from imagekit.json import json
 import imagekit
 
@@ -57,16 +58,21 @@ class KewGardens(object):
         return None
     
     @classmethod
-    def get_modlclass(cls, app_label=None, modl_name=None):
-        from django.db.models.loading import cache
-        return cache.get_model(app_label, modl_name, seed_cache=True)
+    def get_modlclass(cls, app_label, modl_name):
+        return cache.get_model(str(app_label), str(modl_name))
     
     @classmethod
     def get_object(cls, name, id_triple):
-        app_label = id_triple[0]
-        modl_name = id_triple[1]
-        obj_id = id_triple[2]
-        modlclass = cls.get_modlclass(app_label, modl_name)
+        # this was a bad idea -- I totally forgot how JSON serialzation will nondeterministically
+        # trash the order of your reconstituted 'tuple'. this will be a dict soon enough.
+        app_label = id_triple[1]
+        modl_name = id_triple[2]
+        obj_id = id_triple[0]
+        modlclass = cls.get_modlclass(app_label=app_label, modl_name=modl_name)
+        
+        print "YO DOGG: name = %s" % name
+        print "YO DOGG: id_triple = %s" % id_triple
+        print "YO DOGG: modlclass = %s" % modlclass
         
         if hasattr(modlclass, 'objects') and name in cls.id_remap:
             return cls.id_remap[name](modlclass, obj_id)
@@ -101,7 +107,7 @@ class KewGardens(object):
         return -1
     
     def send_now(self, name, sender, **kwargs):
-        #print "send_now() called, signals[name] = %s, sender = %s, kwargs = %s" % (self.signals[name], sender, kwargs)
+        print "send_now() called, signals[name] = %s, sender = %s, kwargs = %s" % (self.signals[name], sender, kwargs)
         if name in self.signals:
             self.signals[name].send_robust(sender=sender, **kwargs)
         return -2
@@ -110,7 +116,7 @@ class KewGardens(object):
         if self.garden and (name in self.signals):
             queue_json = {
                 'name': name,
-                'sender': dict(app_label=sender._meta.app_label, modl_name=sender.__class__.__name__.lower()),
+                'sender': dict(app_label=sender._meta.app_label, modl_name=sender._meta.object_name.lower()),
             }
             
             for k, v in kwargs.items():
@@ -132,6 +138,8 @@ class KewGardens(object):
         if not queued_signal:
             queued_signal = self.retrieve()
         
+        print "dequeueing signal: %s" % queued_signal
+        
         if queued_signal is not None:
             name = queued_signal.pop('name')
             sender = KewGardens.get_modlclass(**queued_signal.pop('sender'))
@@ -146,7 +154,7 @@ class KewGardens(object):
                 self.signals[name].send(sender=sender, **kwargs)
     
     def send(self, name, sender, **kwargs):
-        #print "send() called, runmode = %s" % self.runmode
+        print "send() called, runmode = %s" % self.runmode
         
         if self.runmode:
             if self.runmode == imagekit.IK_ASYNC_REQUEST:

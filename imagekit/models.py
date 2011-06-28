@@ -72,10 +72,26 @@ class ImageModelBase(ModelBase):
     
     This metaclass parses IKOptions and loads the specified specification
     module.
+    
     """
-    def __init__(cls, name, bases, attrs):
+    '''
+    def __new__(cls, name, bases, attrs):
+        outcls = super(ImageModelBase, cls).__new__(cls, name, bases, attrs)
         
+        print "WTF NEW: cls = %s" % cls
+        print "WTF NEW: name = %s" % name
+        print "WTF NEW: bases = %s" % bases
+        print "WTF NEW: attrs = %s" % attrs
+        
+        return outcls
+    '''
+    def __init__(cls, name, bases, attrs):
         super(ImageModelBase, cls).__init__(name, bases, attrs)
+        
+        #print "OMG INIT: cls = %s" % cls
+        #print "OMG INIT: name = %s" % name
+        #print "OMG INIT: bases = %s" % bases
+        #print "OMG INIT: attrs = %s" % attrs
         
         parents = [b for b in bases if isinstance(b, ImageModelBase)]
         if not parents:
@@ -99,10 +115,7 @@ class ImageModelBase(ModelBase):
                     opts.specs.append(spec)
         
         setattr(cls, '_ik', opts)
-        
-        #signalqueue.connect('pre_cache', cls._pre_cache, sender=cls)
-        signalqueue.pre_cache.connect(ImageModel._pre_cache, sender=cls)
-        signalqueue.clear_cache.connect(ImageModel._clear_cache, sender=cls)
+        cls.add_to_class('_ik', opts)
 
 
 class ImageModel(models.Model):
@@ -121,6 +134,7 @@ class ImageModel(models.Model):
     class IKOptions:
         pass
     
+    '''
     @classmethod
     def _clear_cache(cls, **kwargs):
         logg.info('_clear_cache() called: %s' % kwargs)
@@ -139,6 +153,7 @@ class ImageModel(models.Model):
                 if spec.pre_cache:
                     prop = getattr(instance, spec.name())
                     prop._create()
+    '''
     
     def admin_thumbnail_view(self):
         if not self._imgfield:

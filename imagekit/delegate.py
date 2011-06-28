@@ -134,6 +134,7 @@ class DelegateSupervisor(type):
     # of the specified methods from a QuerySet to a Manager
     # at compile-time. You don't need to invoke it to
     # perform your delegations.
+    
     """
     def __new__(cls, name, bases, attrs):
         
