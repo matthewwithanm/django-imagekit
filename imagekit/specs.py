@@ -83,7 +83,8 @@ class Accessor(object):
                 if issubclass(processor, processors.Format):
                     extension = processor.extension
             cache_filename = self._obj._ik.cache_filename_format % \
-                {'filename': filename,
+                {'pk': self._obj.pk,
+                 'filename': filename,
                  'specname': self.spec.name(),
                  'extension': extension.lstrip('.')}
             if callable(self._obj._ik.cache_dir):
