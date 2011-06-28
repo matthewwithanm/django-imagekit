@@ -382,7 +382,7 @@ class RGBHistogramAdmin(admin.ModelAdmin):
     list_display_links = ('id',)
     list_per_page = 5
     
-    @memoize
+    #@memoize
     def rgb_flot_histogram(self, obj):
         series = []
         markings = []

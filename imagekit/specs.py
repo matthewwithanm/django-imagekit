@@ -10,6 +10,7 @@ import os, warnings, numpy
 from StringIO import StringIO
 from imagekit import processors
 from imagekit.lib import *
+from imagekit.signals import signalqueue
 from imagekit.utils import img_to_fobj, logg
 from imagekit.memoize import memoize
 from django.core.files.base import ContentFile
@@ -52,10 +53,6 @@ class MatrixSpec(Spec):
     def process(cls, image, obj):
         mtx, fmt = super(ImageSpec, cls)._process(image, obj, cls.processors)
         return mtx, fmt
-    
-
-
-
 
 class AccessorBase(object):
     def __init__(self, obj, spec, **kwargs):
@@ -69,7 +66,7 @@ class MatrixAccessor(AccessorBase):
     def __init__(self, obj, spec, **kwargs):
         super(MatrixAccessor, self).__init__(obj, spec, **kwargs)
     
-    @memoize
+    #@memoize
     def _get_matrixdata(self):
         mat = self._img
         format = getattr(mat, "format", None) or 'array'
@@ -113,7 +110,7 @@ class MatrixAccessor(AccessorBase):
         # caching goes here.
         return self._obj._imgfield.name
     
-    @memoize
+    #@memoize
     def getdata(self):
         self._create()
         if self._exists():
@@ -158,7 +155,9 @@ class FileAccessor(AccessorBase):
             fp.seek(0)
             fp = StringIO(fp.read())
             self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
+            
             # save the new image to the cache
+            logg.info("*** creating: %s" % self.name)
             content = ContentFile(self._get_imgfile().read())
             self._obj._storage.save(self.name, content)
     
@@ -166,6 +165,7 @@ class FileAccessor(AccessorBase):
         if self._obj._imgfield:
             if self._exists():
                 if not self.name == self._obj._imgfield.name:
+                    logg.info("*** deleting: %s" % self.name)
                     self._obj._storage.delete(self.name)
     
     def _exists(self):
@@ -197,8 +197,7 @@ class FileAccessor(AccessorBase):
 
     @property
     def url(self):
-        if not self.spec.pre_cache:
-            self._create()
+        self._create()
         
         '''
         if self.spec.increment_count:
@@ -233,18 +232,34 @@ class FileAccessor(AccessorBase):
         return self.image.size[1]
 
 
-class FileDescriptor(object):
+class DescriptorBase(object):
     def __init__(self, spec):
         self._spec = spec
+        self._name = spec.name()
     
-    def __get__(self, obj, type=None):
-        return FileAccessor(obj, self._spec)
+    def __get__(self, obj, otype=None):
+        if hasattr(obj, '_ik'):
+            if self._name in obj._ik.specs.keys():
+                #logg.info("About to send a prepare_spec signal to %s in %s..." % (self._name, obj))
+                signalqueue.send_now('prepare_spec', sender=obj.__class__, instance=obj)
+        return obj, self._spec
+    
 
-
-class MatrixDescriptor(object):
+class FileDescriptor(DescriptorBase):
     def __init__(self, spec):
-        self._spec = spec
+        super(FileDescriptor, self).__init__(spec)
+    
+    def __get__(self, obj, otype=None):
+        outobj, outspec = super(FileDescriptor, self).__get__(obj, otype)
+        return FileAccessor(outobj, outspec)
+    
 
-    def __get__(self, obj, type=None):
-        return MatrixAccessor(obj, self._spec)
+class MatrixDescriptor(DescriptorBase):
+    def __init__(self, spec):
+        super(MatrixDescriptor, self).__init__(spec)
+
+    def __get__(self, obj, otype=None):
+        outobj, outspec = super(MatrixDescriptor, self).__get__(obj, otype)
+        return MatrixAccessor(outobj, outspec)
+        
 

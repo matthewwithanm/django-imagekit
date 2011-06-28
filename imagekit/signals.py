@@ -70,9 +70,9 @@ class KewGardens(object):
         obj_id = id_triple[0]
         modlclass = cls.get_modlclass(app_label=app_label, modl_name=modl_name)
         
-        print "YO DOGG: name = %s" % name
-        print "YO DOGG: id_triple = %s" % id_triple
-        print "YO DOGG: modlclass = %s" % modlclass
+        #print "YO DOGG: name = %s" % name
+        #print "YO DOGG: id_triple = %s" % id_triple
+        #print "YO DOGG: modlclass = %s" % modlclass
         
         if hasattr(modlclass, 'objects') and name in cls.id_remap:
             return cls.id_remap[name](modlclass, obj_id)
@@ -87,8 +87,8 @@ class KewGardens(object):
             sig = self.signals.get(signal_name, None)
             if sig is not None:
                 sig.connect(callback, sender=sender, dispatch_uid=callback)
-                print 'Connected callback %s to signal %s from sender %s' % (callback, signal_name, sender)
                 return
+        
         raise AttributeError("Can't connect(): no signal named %s registered")
     
     def queue_add(self, queue_string):
@@ -107,7 +107,7 @@ class KewGardens(object):
         return -1
     
     def send_now(self, name, sender, **kwargs):
-        print "send_now() called, signals[name] = %s, sender = %s, kwargs = %s" % (self.signals[name], sender, kwargs)
+        #print "send_now() called, signals[name] = %s, sender = %s, kwargs = %s" % (self.signals[name], sender, 'kwargs')
         if name in self.signals:
             self.signals[name].send_robust(sender=sender, **kwargs)
         return -2
@@ -154,18 +154,22 @@ class KewGardens(object):
                 self.signals[name].send(sender=sender, **kwargs)
     
     def send(self, name, sender, **kwargs):
-        print "send() called, runmode = %s" % self.runmode
+        #print "send() called, runmode = %s" % self.runmode
         
         if self.runmode:
+            
             if self.runmode == imagekit.IK_ASYNC_REQUEST:
                 # it's a web request -- enqueue it
                 return self.enqueue(name, sender, **kwargs)
+            
             elif self.runmode == imagekit.IK_ASYNC_DAEMON:
                 # signal sent in daemon mode -- enqueue it
                 return self.enqueue(name, sender, **kwargs)
+            
             elif self.runmode == imagekit.IK_ASYNC_MGMT:
                 # signal sent in command mode -- fire away
                 return self.send_now(name, sender, **kwargs)
+            
             else:
                 # fire normally
                 return self.send_now(name, sender, **kwargs)
@@ -209,6 +213,8 @@ class KewGardens(object):
 signalqueue = KewGardens()
 signalqueue.add_signal('pre_cache')
 signalqueue.add_signal('clear_cache')
+signalqueue.add_signal('prepare_spec', providing_args=['instance', 'spec_name'])
+
 signalqueue.add_signal('refresh_histogram')
 signalqueue.add_signal('refresh_icc_data')
         

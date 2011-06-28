@@ -74,25 +74,8 @@ class ImageModelBase(ModelBase):
     module.
     
     """
-    '''
-    def __new__(cls, name, bases, attrs):
-        outcls = super(ImageModelBase, cls).__new__(cls, name, bases, attrs)
-        
-        print "WTF NEW: cls = %s" % cls
-        print "WTF NEW: name = %s" % name
-        print "WTF NEW: bases = %s" % bases
-        print "WTF NEW: attrs = %s" % attrs
-        
-        return outcls
-    '''
     def __init__(cls, name, bases, attrs):
         super(ImageModelBase, cls).__init__(name, bases, attrs)
-        
-        #print "OMG INIT: cls = %s" % cls
-        #print "OMG INIT: name = %s" % name
-        #print "OMG INIT: bases = %s" % bases
-        #print "OMG INIT: attrs = %s" % attrs
-        
         parents = [b for b in bases if isinstance(b, ImageModelBase)]
         if not parents:
             return
@@ -107,13 +90,10 @@ class ImageModelBase(ModelBase):
         
         for spec in module.__dict__.values():
             if isinstance(spec, type):
-                if issubclass(spec, specs.ImageSpec):
-                    setattr(cls, spec.name(), specs.FileDescriptor(spec))
-                    opts.specs.append(spec)
-                elif issubclass(spec, specs.MatrixSpec):
-                    setattr(cls, spec.name(), specs.MatrixDescriptor(spec))
-                    opts.specs.append(spec)
+                if issubclass(spec, specs.Spec):
+                    opts.specs.update({ spec.name(): spec })
         
+        # Options.contribute_to_class() won't work unless you do both of these. But... why?
         setattr(cls, '_ik', opts)
         cls.add_to_class('_ik', opts)
 
@@ -133,27 +113,6 @@ class ImageModel(models.Model):
     
     class IKOptions:
         pass
-    
-    '''
-    @classmethod
-    def _clear_cache(cls, **kwargs):
-        logg.info('_clear_cache() called: %s' % kwargs)
-        instance = kwargs.get('instance', None)
-        if instance:
-            for spec in instance._ik.specs:
-                prop = getattr(instance, spec.name())
-                prop._delete()
-    
-    @classmethod
-    def _pre_cache(cls, **kwargs):
-        logg.info('_pre_cache() called: %s' % kwargs)
-        instance = kwargs.get('instance', None)
-        if instance:
-            for spec in instance._ik.specs:
-                if spec.pre_cache:
-                    prop = getattr(instance, spec.name())
-                    prop._create()
-    '''
     
     def admin_thumbnail_view(self):
         if not self._imgfield:
@@ -260,13 +219,13 @@ class ImageModel(models.Model):
         if clear_cache:
             signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
         
-        logg.info("About to send the pre_cache signal...")
+        #logg.info("About to send the pre_cache signal...")
         return signalqueue.send('pre_cache', sender=self.__class__, instance=self)
     
     def clear_cache(self, **kwargs):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
         signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
-
+    
 
 class HistogramBase(models.Model):
     """

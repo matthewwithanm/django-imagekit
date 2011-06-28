@@ -1,7 +1,6 @@
 # Imagekit options
 import os
-from imagekit import processors
-from imagekit.specs import ImageSpec
+from imagekit import processors, specs
 from imagekit.signals import signalqueue
 from imagekit.utils import logg
 
@@ -29,30 +28,47 @@ class Options(object):
     def __init__(self, opts):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
-            self.specs = []
+            self.specs = {}
     
-    def _clear_cache(self, **kwargs):
-        logg.info('_clear_cache() called: %s' % kwargs)
+    def clear_cache(self, **kwargs):
+        #logg.info('clear_cache() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         if instance:
-            for spec in instance._ik.specs:
-                prop = getattr(instance, spec.name())
+            for spec_name, spec in instance._ik.specs.items():
+                #prop = getattr(instance, spec_name)
+                prop = instance.__getattribute__(spec_name)
                 prop._delete()
+                #delattr(instance, spec_name)
     
-    def _pre_cache(self, **kwargs):
-        logg.info('_pre_cache() called: %s' % kwargs)
+    def pre_cache(self, **kwargs):
+        #logg.info('pre_cache() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         if instance:
-            for spec in instance._ik.specs:
+            for spec_name, spec in instance._ik.specs.items():
                 if spec.pre_cache:
-                    prop = getattr(instance, spec.name())
-                    prop._create()
+                    self.prepare_spec(instance=instance, spec_name=spec_name)
+    
+    def prepare_spec(self, **kwargs):
+        #logg.info('prepare_spec() called: %s' % kwargs)
+        instance = kwargs.get('instance', None)
+        spec_name = kwargs.get('spec_name', None)
+        if instance and spec_name:
+            #prop = getattr(instance, spec_name)
+            prop = instance.__getattribute__(spec_name)
+            prop._create()
     
     def contribute_to_class(self, cls, name):
-        #if not cls._meta.abstract:
-        signalqueue.pre_cache.connect(self._pre_cache, sender=cls)
-        signalqueue.clear_cache.connect(self._clear_cache, sender=cls)
-        
+        signalqueue.pre_cache.connect(self.pre_cache, sender=cls)
+        signalqueue.clear_cache.connect(self.clear_cache, sender=cls)
+        signalqueue.prepare_spec.connect(self.prepare_spec, sender=cls)
+        for spec_name, spec in self.specs.items():
+            if issubclass(spec, specs.ImageSpec):
+                prop = specs.FileDescriptor(spec)
+            elif issubclass(spec, specs.MatrixSpec):
+                prop = specs.MatrixDescriptor(spec)
+            
+            setattr(cls, spec_name, prop)
+            cls.add_to_class(spec_name, prop)
         
     
     
