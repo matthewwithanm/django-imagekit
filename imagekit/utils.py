@@ -54,9 +54,11 @@ def img_to_fobj(img, format, **kwargs):
     """
     given a PIL instance and an output format type,
     return a temporary disk filehandle for use in spec accessor(s).
+    Integrates Photoshop CMYK fix from https://github.com/jdriscoll/django-imagekit/commit/25f628de9311a66780961e74fa03e1696ee3bf79
     """
     tmp = tempfile.TemporaryFile()
-    img.save(tmp, format, **kwargs)
+    #img.save(tmp, format, **kwargs)
+    img.convert('RGB').save(tmp, format, **kwargs)
     tmp.seek(0)
     return tmp
 
