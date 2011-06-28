@@ -8,7 +8,8 @@ decorator module documentation:
 
     http://pypi.python.org/pypi/decorator
 
-Copyright (c) 2011 OST, LLC. 
+Copyright (c) 2011 OST, LLC.
+
 """
 from decorator import decorator
 

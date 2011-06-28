@@ -12,7 +12,7 @@ from imagekit import processors
 from imagekit.lib import *
 from imagekit.signals import signalqueue
 from imagekit.utils import img_to_fobj, logg
-from imagekit.memoize import memoize
+from imagekit.utils.memoize import memoize
 from django.core.files.base import ContentFile
 
 matrixlike = (numpy.matrixlib.matrix, numpy.ndarray)

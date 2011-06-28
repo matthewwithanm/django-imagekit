@@ -6,8 +6,8 @@ from imagekit.etc.profileinfo import profileinfo
 from imagekit.utils import json, xy, static
 from imagekit.utils import ADict, AODict
 from imagekit.utils import logg
+from imagekit.utils.memoize import memoize
 from imagekit.etc.cieXYZ import cieYxy3
-from imagekit.memoize import memoize
 
 register = template.Library()
 

@@ -10,8 +10,8 @@ import os, numpy
 from imagekit.lib import *
 from imagekit.neuquant import NeuQuant
 from imagekit.ICCProfile import ICCProfile
-from imagekit.memoize import memoize
 from imagekit.utils import logg
+from imagekit.utils.memoize import memoize
 
 class ImageProcessor(object):
     """ Base image processor class """

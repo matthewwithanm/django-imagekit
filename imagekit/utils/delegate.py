@@ -76,7 +76,6 @@ Copyright (c) 2011 Objects in Space and Time. All rights reserved.
 import types
 from django.db import models
 
-
 comsumable_types = (
     types.FunctionType,
     types.MethodType,

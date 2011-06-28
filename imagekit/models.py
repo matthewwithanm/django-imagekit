@@ -20,13 +20,10 @@ from imagekit.signals import signalqueue
 from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
-from imagekit.memoize import memoize
-from imagekit.modelfields import to_matrix
-from imagekit.modelfields import VALID_CHANNELS
+from imagekit.modelfields import VALID_CHANNELS, to_matrix
 from imagekit.ICCProfile import ICCProfile
-from imagekit.utils import img_to_fobj, ADict
-from imagekit.utils import logg
-from imagekit.delegate import DelegateManager, delegate
+from imagekit.utils import logg, img_to_fobj, ADict
+from imagekit.utils.delegate import DelegateManager, delegate
 from imagekit.modelfields import ICCField, ICCHashField
 from imagekit.modelfields import ICCDataField, ICCMetaField
 from imagekit.modelfields import HistogramChannelField, Histogram

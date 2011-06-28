@@ -7,7 +7,7 @@ import hashlib, uuid, PIL
 import django.dispatch
 from django.conf import settings
 from django.db.models.loading import cache
-from imagekit.json import json
+from imagekit.utils.json import json
 import imagekit
 
 class KewGardens(object):

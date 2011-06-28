@@ -11,6 +11,7 @@ import os
 from django.core.management import setup_environ
 import settings
 setup_environ(settings)
+
 from imagekit.utils import logg
 
 try:
@@ -431,8 +432,9 @@ if __name__ == "__main__":
     from django.core.management import setup_environ
     import settings
     setup_environ(settings)
-    from jogging import logging as logg
+    
     import urllib2, StringIO, random
+    from imagekit.utils import logg
     
     urls = [
         'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Orange_2to3_010.jpg',

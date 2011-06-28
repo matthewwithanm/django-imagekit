@@ -1,8 +1,8 @@
 """ ImageKit utility functions """
 import tempfile, os
 from django.conf import settings
-from ordereddict import OrderedDict
-from imagekit.json import json
+from imagekit.utils.ordereddict import OrderedDict
+from imagekit.utils.json import json
 
 class FakeLogger(object):
     """

@@ -12,14 +12,14 @@ Copyright (c) 2011 OST, LLC.
 """
 import locale, sys, os, re, struct, base64, math, numpy, types
 from imagekit.utils import hasallcase, ADict, AODict
+from imagekit.utils.memoize import memoize
+from imagekit.utils.encoding import get_encodings
+from imagekit.utils.ordereddict import OrderedDict
 from imagekit.etc import spectralarithmetic
-from imagekit.memoize import memoize
 from scipy import interpolate
 from hashlib import md5
 from time import localtime, mktime, strftime
 from UserString import UserString
-from encoding import get_encodings
-from ordereddict import OrderedDict
 
 try:
     from imagekit.utils import logg
