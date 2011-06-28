@@ -75,6 +75,8 @@ class ImageModelBase(ModelBase):
     """
     def __init__(cls, name, bases, attrs):
         
+        super(ImageModelBase, cls).__init__(name, bases, attrs)
+        
         parents = [b for b in bases if isinstance(b, ImageModelBase)]
         if not parents:
             return
@@ -99,8 +101,8 @@ class ImageModelBase(ModelBase):
         setattr(cls, '_ik', opts)
         
         #signalqueue.connect('pre_cache', cls._pre_cache, sender=cls)
-        signalqueue.pre_cache.connect(cls._pre_cache, sender=cls)
-        signalqueue.clear_cache.connect(cls._clear_cache, sender=cls)
+        signalqueue.pre_cache.connect(ImageModel._pre_cache, sender=cls)
+        signalqueue.clear_cache.connect(ImageModel._clear_cache, sender=cls)
 
 
 class ImageModel(models.Model):

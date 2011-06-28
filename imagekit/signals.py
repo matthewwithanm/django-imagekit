@@ -6,18 +6,18 @@ ImageKit signal definitions.
 import hashlib, uuid, PIL
 import django.dispatch
 from django.conf import settings
-import imagekit.json as json
+from imagekit.json import json
 import imagekit
 
 class KewGardens(object):
-    forkedpath = lambda s: "imagekit_%s" % s
+    forkedpath = lambda self, s: "imagekit_%s" % s
     garden = None
     queuename = None
     queue_in = None
     queue_out = None
     
     id_map = {
-        'instance': lambda i: (i.pk, obj._meta.app_label, obj.__class__.__name__.lower()),
+        'instance': lambda obj: (obj.pk, obj._meta.app_label, obj.__class__.__name__.lower()),
         'iccdata': lambda iccdata: (hashlib.sha1(iccdata.data).hexdigest(), 'imagekit', 'iccmodel'),
     }
     
@@ -52,7 +52,7 @@ class KewGardens(object):
         Modify this stuff if you need to use something else in a Redis queue.
         
         """
-        if name in id_map:
+        if name in cls.id_map:
             return cls.id_map[name](obj)
         return None
     
@@ -68,7 +68,7 @@ class KewGardens(object):
         obj_id = id_triple[2]
         modlclass = cls.get_modlclass(app_label, modl_name)
         
-        if hasattr(modlclass, 'objects') and name in id_remap:
+        if hasattr(modlclass, 'objects') and name in cls.id_remap:
             return cls.id_remap[name](modlclass, obj_id)
     
     def add_signal(self, signal_name, providing_args=['instance']):
@@ -116,7 +116,7 @@ class KewGardens(object):
             for k, v in kwargs.items():
                 if k in KewGardens.id_map:
                     queue_json.update({
-                        k: KewGardens.get_id_triple(v),
+                        k: KewGardens.get_id_triple(k, v),
                     })
             
             return self.queue_add(json.dumps(queue_json))
@@ -134,12 +134,12 @@ class KewGardens(object):
         
         if queued_signal is not None:
             name = queued_signal.pop('name')
-            sender = KewGardens.get_modlclass(queued_signal.pop('sender'))
+            sender = KewGardens.get_modlclass(**queued_signal.pop('sender'))
             kwargs = {}
             
             for k, v in queued_signal.items():
                 kwargs.update({
-                    k: KewGardens.get_object(v),
+                    k: KewGardens.get_object(k, v),
                 })
             
             if name in self.signals:
