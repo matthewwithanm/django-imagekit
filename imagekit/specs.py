@@ -26,10 +26,10 @@ class Spec(object):
         return getattr(cls, 'access_as', cls.__name__.lower())
     
     @classmethod
-    def process(cls, image, obj):
+    def _process(cls, image, obj, procs):
         fmt = image.format
         img = image.copy()
-        for proc in cls.processors:
+        for proc in list(procs):
             img, fmt = proc.process(img, fmt, obj)
         return img, fmt
 
@@ -38,7 +38,7 @@ class ImageSpec(Spec):
     
     @classmethod
     def process(cls, image, obj):
-        img, fmt = super(ImageSpec, cls).process(image, obj)
+        img, fmt = super(ImageSpec, cls)._process(image, obj, cls.processors)
         img.format = fmt
         return img, fmt
 
@@ -46,6 +46,12 @@ class MatrixSpec(Spec):
     shape = None
     dtype = None
     cache = False # for now
+    
+    @classmethod
+    def process(cls, image, obj):
+        mtx, fmt = super(ImageSpec, cls)._process(image, obj, cls.processors)
+        return mtx, fmt
+    
 
 
 

@@ -263,14 +263,17 @@ it if you're curious). YOU HAVE BEEN WARNED. PROCEED PAST THIS POINT AT YOUR OWN
 
 At the moment, one limitation is: you have to define @micromanaged QuerySet subclasses AFTER you
 define the model, because you need to pass the model class itself into the decorator kwargs;
-in the future I may make it work by naming the class with a string instead, but maybe not as
-this is already pushing it w/r/t complexity, I think.
+in the future I may make it work by naming the class with a string instead, but maybe not,
+as the thing is already pushing it w/r/t complexity, I think.
 
 """
 
 
 def undergo_management_training(queryset=None, progenitor=None):
+    """
+    I believe this function is an example of a 'factory', as per the employ of many Java afficionatos.
     
+    """
     if not progenitor:
         progenitor = models.Manager
     
@@ -343,7 +346,7 @@ class micromanage(object):
         
         # if a target_model was specified,
         # add an instance of the new queryset class
-        # TODO: do something with the class in the absence of a target_model setting
+        # TODO: do something useful with the class in the absence of a target_model setting
         if issubclass(self.target_model, models.Model):
             qs.model = self.target_model
             self.target_model.add_to_class('objects', newmgr())

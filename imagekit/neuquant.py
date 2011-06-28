@@ -319,7 +319,7 @@ class NeuQuant:
                 if rad <= 1:
                     rad = 0
         
-        logg.info("Finished 1D learning: final alpha = %s !" % ((1.0 * alpha) / self.INITALPHA))
+        logg.info("Finished 1D learning: final alpha = %s" % ((1.0 * alpha) / self.INITALPHA))
     
     def fix(self):
         for i in range(self.NETSIZE):

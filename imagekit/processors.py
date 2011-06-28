@@ -178,25 +178,28 @@ class NeuQuantize(ImageProcessor):
     """
     format = 'array'
     quantfactor = 10
+    width = 16 # for JPEG output
+    height = 16 # for JPEG output
+    resize_mode = Image.NEAREST # for JPEG output
     
     @classmethod
     def process(cls, img, fmt, obj):
         quant = NeuQuant(img.convert("RGBA"), cls.quantfactor)
         out = numpy.array(quant.colormap).reshape(16, 16, 4)
         if cls.format == 'array':
-            return out.T[0:3].T
+            return out.T[0:3].T, fmt
         else:
             outimg = Image.new('RGBA', (16, 16), (0,0,0))
             outimg.putdata([tuple(t[0]) for t in out.T[0:3].T.reshape(256, 1, 3).tolist()])
-            outimg.resize((256, 256), Image.NEAREST)
-            return outimg
+            outimg.resize((cls.width, cls.height), cls.resize_mode)
+            return outimg, fmt
 
 
 class Reflection(ImageProcessor):
     background_color = '#FFFFFF'
     size = 0.0
     opacity = 0.6
-
+    
     @classmethod
     def process(cls, img, fmt, obj):
         # convert bgcolor string to rgb value
@@ -240,7 +243,7 @@ class Resize(ImageProcessor):
     height = None
     crop = False
     upscale = False
-
+    
     @classmethod
     def process(cls, img, fmt, obj):
         cur_width, cur_height = img.size
