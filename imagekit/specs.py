@@ -82,11 +82,17 @@ class Accessor(object):
             for processor in self.spec.processors:
                 if issubclass(processor, processors.Format):
                     extension = processor.extension
+            filename_format_dict = {'filename': filename,
+                                    'specname': self.spec.name(),
+                                    'extension': extension.lstrip('.')}
+            cache_filename_fields = self._obj._ik.cache_filename_fields
+            filename_format_dict.update(dict(zip(
+                        cache_filename_fields,
+                        [getattr(self._obj, field) for
+                         field in cache_filename_fields])))
             cache_filename = self._obj._ik.cache_filename_format % \
-                {'pk': self._obj.pk,
-                 'filename': filename,
-                 'specname': self.spec.name(),
-                 'extension': extension.lstrip('.')}
+                filename_format_dict
+
             if callable(self._obj._ik.cache_dir):
                 return self._obj._ik.cache_dir(self._obj, filepath,
                                                cache_filename)
