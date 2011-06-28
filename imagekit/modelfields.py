@@ -10,7 +10,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from ICCProfile import ICCProfile
-from jogging import logging as logg
+from imagekit.utils import logg
 import imagekit.models
 
 

@@ -11,7 +11,7 @@ import os
 from django.core.management import setup_environ
 import settings
 setup_environ(settings)
-from jogging import logging as logg
+from imagekit.utils import logg
 
 try:
     import PIL
@@ -450,16 +450,19 @@ if __name__ == "__main__":
     random.seed()
     imgurl = random.choice(urls)
     
-    logg.info("Loading image: %s" % imgurl)
+    print "Loading image: %s" % imgurl
     imgstr = urllib2.urlopen(imgurl).read()
     img = Image.open(StringIO.StringIO(imgstr))
     
-    logg.info("NeuQuantizing with samplefac=10...")
+    print "NeuQuantizing with samplefac=10..."
     quant = NeuQuant(img.convert("RGBA").resize((64, 64), Image.NEAREST), 10)
     
     if np:
         out = np.array(quant.colormap).reshape(16, 16, 4)
         #out.T[0:3].T
+        
+        print out
+        
         outimg = Image.new('RGBA', (256, 1), (0,0,0))
         outimg.putdata([tuple(t[0]) for t in out.T[0:3].T.reshape(256, 1, 3).tolist()])
         a = outimg.resize((512, 256), Image.NEAREST)

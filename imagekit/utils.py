@@ -2,8 +2,35 @@
 import tempfile, os
 from django.conf import settings
 from ordereddict import OrderedDict
-from jogging import logging as logg
 
+class FakeLogger(object):
+    """
+    Completely unacceptable fake-logger class, just in case.
+    """
+    def log(self, level, msg):
+        print msg
+    
+    def logg(self, msg):
+        self.log(0, msg)
+    
+    def __init__(self, *args, **kwargs):
+        super(FakeLogger, self).__init__(*args, **kwargs)
+        for fname in ('critical', 'debug', 'error', 'exception', 'info', 'warning'):
+            setattr(self, fname, self.logg)
+
+# Try to use the jogging app, falling back to the python standard logging module.
+# With Django 1.3, you should eschew jogging in favor of the standard, as Django 1.3
+# goes out of its way to make the standard module do what jogging does and moreso.
+# in any case, imagekit internals should import the 'logg' object from django.utils.
+try:
+    from jogging import logging as logg
+except ImportError:
+    try:
+        import logging as logg
+    except ImportError:
+        print "SRSLY: You have no logging facilities available whatsoever, so we're using a fake logger class. Love, Django ImageKit."
+        # set up fake logger
+        logg = FakeLogger()
 
 # To consistently use the best-available JSON serializer, use:
 #   from imagekit.utils import json
@@ -22,9 +49,12 @@ except ImportError:
             logg.info("--- Loading stdlib json module in leu of simplejson")
             import json
 
-# given a PIL instance and an output format type,
-# return a temporary disk filehandle for use in spec accessor(s).
+
 def img_to_fobj(img, format, **kwargs):
+    """
+    given a PIL instance and an output format type,
+    return a temporary disk filehandle for use in spec accessor(s).
+    """
     tmp = tempfile.TemporaryFile()
     img.save(tmp, format, **kwargs)
     tmp.seek(0)
@@ -32,38 +62,42 @@ def img_to_fobj(img, format, **kwargs):
 
 
 class ADict(dict):
-
     """
-    Convenience class for dictionary key access via attributes.
-
-    Instead of writing aodict[key], you can also write aodict.key
-
+    ADict -- Convenience class for dictionary key access via attributes.
+    
+    The 'A' in 'ADict' is for 'Access' -- you can also use adict.key as well as adict[key]
+    to access hash values.
+    
     """
-
     def __init__(self, *args, **kwargs):
         dict.__init__(self, *args, **kwargs)
-
+    
     def __getattr__(self, name):
         if name in self:
             return self[name]
         else:
             raise AttributeError(name)
-
+    
     def __setattr__(self, name, value):
         self[name] = value
 
 
 class AODict(ADict, OrderedDict):
-
+    """
+    AODict -- an OrderedDict subclass that works like ADict.
+    
+    The 'O' in 'AODict' is for 'Ordered' -- see the stdlib OrderedDict for deets, or refer to
+    the reimplementation in ordereddict.py, if your python install is lacking.
+    
+    """
     def __init__(self, *args, **kwargs):
         OrderedDict.__init__(self, *args, **kwargs)
-
+    
     def __setattr__(self, name, value):
         if name == "_keys":
             object.__setattr__(self, name, value)
         else:
             self[name] = value
-
 
 
 # Get the xy coordinate tuple from the Yxy representation of an XYZ value.
@@ -91,10 +125,6 @@ oldcolors = SeriesColors()
 seriescolors = SeriesColorsAlpha()
 
 
-
-
-
-
 """
 Some lambda-logic:
 
@@ -120,13 +150,10 @@ hasallcase = lambda wtf, sst: reduce(lambda l,r: l & r, hasallcaselist(wtf, sst)
 getcase = lambda wtf, p: getattr(wtf, str(p).upper(), getattr(wtf, str(p).lower(), None))
 getallcase = lambda wtf, st: map(lambda m: getcase(wtf, m), list(st))
 
-
-
 """
-
 ... in here, you see:
 
-    hasallcase(dict, 'xyz')          VS          hasallcase(dict, 'rgb')
+    hasallcase(dict, 'xyz')          VS.          hasallcase(dict, 'rgb')
 
 is pretty significant.
 

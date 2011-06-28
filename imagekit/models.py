@@ -14,7 +14,6 @@ from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
-from jogging import logging as logg
 from colorsys import rgb_to_hls, hls_to_rgb
 
 from imagekit import specs
@@ -25,6 +24,7 @@ from imagekit.modelfields import to_matrix
 from imagekit.modelfields import VALID_CHANNELS
 from imagekit.ICCProfile import ICCProfile
 from imagekit.utils import img_to_fobj, ADict
+from imagekit.utils import logg
 from imagekit.delegate import DelegateManager, delegate
 from imagekit.modelfields import ICCField, ICCHashField
 from imagekit.modelfields import ICCDataField, ICCMetaField
@@ -40,6 +40,15 @@ except:
 else:
     if not _storage:
         _storage = FileSystemStorage()
+
+# attempt to load haystack
+try:
+    from haystack.query import SearchQuerySet
+except ImportError:
+    HAYSTACK = False
+else:
+    HAYSTACK = True
+
 
 # Choice tuples for specifying the crop origin.
 # These are provided for convenience.
@@ -395,7 +404,7 @@ class ImageWithMetadataQuerySet(models.query.QuerySet):
         return self.filter(icc__isnull=False)
     
     @delegate
-    def with_matching_profile(self, icc=None, hsh=None):
+    def matching_profile(self, icc=None, hsh=None):
         if icc:
             if hasattr(icc, 'data'):
                 hsh = hashlib.sha1(icc.data).hexdigest()
@@ -407,7 +416,7 @@ class ImageWithMetadataQuerySet(models.query.QuerySet):
         return self.none()
     
     @delegate
-    def with_different_profile(self, icc=None, hsh=None):
+    def discordant_profile(self, icc=None, hsh=None):
         if icc:
             if hasattr(icc, 'data'):
                 hsh = hashlib.sha1(icc.data).hexdigest()
@@ -454,16 +463,15 @@ class ImageWithMetadata(ImageModel):
     
     @property
     def same_profile_set(self):
-        return self.__class__.objects.with_matching_profile(hsh=self.icchash)
+        return self.__class__.objects.matching_profile(hsh=self.icchash)
     
     @property
     def different_profile_set(self):
-        return self.__class__.objects.with_different_profile(hsh=self.icchash)
+        return self.__class__.objects.discordant_profile(hsh=self.icchash)
     
     @property
     def icctransformer(self):
         return self.icc.transformer
-    
     
     def save(self, force_insert=False, force_update=False):
         super(ImageWithMetadata, self).save(force_insert, force_update)
@@ -479,7 +487,11 @@ class ICCQuerySet(models.query.QuerySet):
         random.seed()
     
     @delegate
-    def get_profile_match(self, icc=None):
+    def rnd(self):
+        return random.choice(self.all())
+    
+    @delegate
+    def profile_match(self, icc=None):
         if icc:
             if hasattr(icc, 'data'):
                 return self.get(
@@ -489,8 +501,25 @@ class ICCQuerySet(models.query.QuerySet):
         return self.none()
     
     @delegate
-    def rnd(self):
-        return random.choice(self.all())
+    def profile_search(self, search_string='', sqs=False):
+        """
+        Arbitrarily searches the Haystack index of profile metadata, if it's available.
+        """
+        if HAYSTACK and search_string:
+            if not hasattr(self, 'srcher'):
+                self.srcher = SearchQuerySet().models(self.model)
+            
+            results = self.srcher.auto_query(search_string)
+            
+            if sqs:
+                # return the SearchQuerySet if we were asked for it
+                return results
+            else:
+                # default to constructing a QuerySet from the IDs we got
+                return self.filter(pk__in=(result.object.pk for result in results))
+        
+        logg.warning("ICCQuerySet.profile_search() couldn't find Haystack Search -- no query was made.")
+        return self.none()
 
 class ICCManager(DelegateManager):
     __queryset__ = ICCQuerySet
@@ -531,7 +560,7 @@ class ICCModel(models.Model):
     
     @property
     def icctransformer(self):
-        return ICCTransformerForProfileData(self.icc)
+        return self.icc.transformer
     
     @property
     def lcmsinstance(self):
@@ -543,6 +572,11 @@ class ICCModel(models.Model):
         embedded profile data that matches this ICCModel instances'
         profile. Matches are detected by comparing ICCHashFields.
         """
+        # use model's with_matching_profile shortcut call, if present
+        if hasattr(modl.objects, 'matching_profile'):
+            return modl.objects.matching_profile(hsh=self.icchash)
+        
+        # no with_matching_profile shortcut; scan fields for an ICCProfileHash
         modlfield = None
         if modl._meta:
             for field in modl._meta.fields:
@@ -552,14 +586,13 @@ class ICCModel(models.Model):
         
         if modlfield:
             lookup = str('%s__exact' % modlfield)
-            if hasattr(modl.objects, 'with_matching_profile'):
-                return modl.objects.with_matching_profile(hsh=self.icchash)
             if hasattr(modl.objects, 'with_profile'):
+                # limit query to model instances with profiles, if possible
                 return modl.objects.with_profile().filter(**{ lookup: self.icchash })
             modl.objects.filter(**{ lookup: self.icchash })
         
         else:
-            logg.info("ICCModel.get_profiled_images() failed for model %s -- no ICCHashField defined" % modl.__class__.__name__)
+            logg.info("ICCModel.get_profiled_images() failed for model %s -- no ICCHashField defined and no profile hash lookup methods found" % modl.__class__.__name__)
         
         return modl.objects.none()
     

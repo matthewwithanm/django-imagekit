@@ -5,9 +5,9 @@ from django.utils.safestring import mark_safe
 from imagekit.etc.profileinfo import profileinfo
 from imagekit.utils import json, xy, static
 from imagekit.utils import ADict, AODict
+from imagekit.utils import logg
 from imagekit.etc.cieXYZ import cieYxy3
 from imagekit.memoize import memoize
-from jogging import logging as logg
 
 register = template.Library()
 

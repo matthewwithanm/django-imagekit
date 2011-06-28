@@ -75,7 +75,6 @@ Copyright (c) 2011 Objects in Space and Time. All rights reserved.
 
 import types
 from django.db import models
-from django.db.models import signals
 
 
 comsumable_types = (

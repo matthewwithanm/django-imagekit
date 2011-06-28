@@ -11,7 +11,7 @@ from imagekit.lib import *
 from imagekit.neuquant import NeuQuant
 from imagekit.ICCProfile import ICCProfile
 from imagekit.memoize import memoize
-from jogging import logging as logg
+from imagekit.utils import logg
 
 class ImageProcessor(object):
     """ Base image processor class """

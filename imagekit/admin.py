@@ -4,10 +4,11 @@ from django.contrib import admin
 from imagekit.models import ICCModel, RGBHistogram, LumaHistogram
 from imagekit.utils import json, oldcolors, seriescolors
 from imagekit.utils import ADict, AODict, xy, static
+from imagekit.utils import logg
 from imagekit.etc.profileinfo import profileinfo
 from imagekit.etc.cieXYZ import cieYxy3
 from imagekit.memoize import memoize
-from jogging import logging as logg
+
 
 
 # The icon immediately below is copyright (C) 2011 Yusuke Kamiyamane -- All of his rights are reserved.

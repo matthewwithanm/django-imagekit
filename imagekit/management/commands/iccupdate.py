@@ -45,7 +45,6 @@ def update_icc_cache(apps, options):
     print "+++ profileinfo() and ICCProfile base class from DispcalGUI by Florian Höch -- http://dispcalgui.hoech.net/"
     
     print ""
-    print ""
     
     apps = [a.strip(',') for a in apps]
     
@@ -151,9 +150,8 @@ def update_icc_cache(apps, options):
                         print "================================================================================="
                         
                         print "::: Examined %s objects." % len(objs)
-                        print "::: Found %s possible profiles," % i
-                        print "::: Committed %s unique instances of which to the database." % ii
-                        print ""
+                    print "::: Found %s possible profiles," % i
+                    print "::: Committed %s unique instances of which to the database." % ii
                     
     else:
         print 'Please specify on or more app names'

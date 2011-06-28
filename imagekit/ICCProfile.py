@@ -22,11 +22,11 @@ from encoding import get_encodings
 from ordereddict import OrderedDict
 
 try:
-    from jogging import logging
+    from imagekit.utils import logg
 except ImportError:
     safe_print = lambda s: sys.stdout.echo(u"%s\n" % s)
 else:
-    safe_print = lambda s: logging.info(s)
+    safe_print = lambda s: logg.info(s)
 
 # Keep this off -- trust me.
 #from django.conf import settings
