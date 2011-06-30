@@ -23,9 +23,10 @@ from imagekit.options import Options
 from imagekit.modelfields import VALID_CHANNELS, to_matrix
 from imagekit.ICCProfile import ICCProfile
 from imagekit.utils import logg, img_to_fobj, ADict
+from imagekit.utils import EXIF
 from imagekit.utils.delegate import DelegateManager, delegate
 from imagekit.modelfields import ICCField, ICCHashField
-from imagekit.modelfields import ICCDataField, ICCMetaField
+from imagekit.modelfields import ICCDataField, ICCMetaField, EXIFMetaField
 from imagekit.modelfields import HistogramChannelField, Histogram
 
 # Modify image file buffer size.
@@ -259,12 +260,16 @@ class HistogramBase(models.Model):
     def __getitem__(self, channel):
         if not channel:
             raise KeyError("No channel index specified.")
+        
         if not isinstance(channel, basestring):
             raise TypeError("Channel index must be one of: %s" % ', '.join(VALID_CHANNELS))
+        
         if channel not in VALID_CHANNELS:
             raise IndexError("Channel index must be one of: %s" % ', '.join(VALID_CHANNELS))
+        
         if not hasattr(self, 'image'):
             raise NotImplementedError("No 'image' property found on %s." % repr(self))
+        
         if not self.image:
             raise ValueError("HistogramBase %s has no valid ImageWithMetadata associated with it." % repr(self))
         
@@ -436,10 +441,16 @@ class ImageWithMetadata(ImageModel):
     # All we got right now is Luma and RGB. Come back tomorrow you want more colorspaces.
     histogram_luma = Histogram(colorspace="Luma")
     histogram_rgb = Histogram(colorspace="RGB")
+    
+    exif = EXIFMetaField(verbose_name="EXIF data",
+        editable=False,
+        null=True)
+    
     icc = ICCMetaField(verbose_name="ICC data",
         hash_field='icchash',
         editable=False,
         null=True)
+    
     icchash = ICCHashField(verbose_name="ICC embedded profile hash",
         unique=False, # ICCHashField defaults to unique=True
         editable=True,

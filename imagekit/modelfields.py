@@ -142,8 +142,8 @@ class ICCMetaField(ICCDataField):
     with ICC data it finds in the image classes' PIL instance. The
     methods it impelemnts are designed to work with the ImageWithMetadata
     abstract base class to accomplish this feat, using signals.
-    """
     
+    """
     def __init__(self, *args, **kwargs):
         self.pil_reference = kwargs.pop('pil_reference', 'pilimage')
         self.hash_field = kwargs.pop('hash_field', None)
@@ -213,6 +213,68 @@ class ICCMetaField(ICCDataField):
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
         return ('imagekit.models.ICCMetaField', args, kwargs)
+
+
+class EXIFMetaField(models.TextField):
+    __metaclass__ = models.SubfieldBase
+    
+    def to_python(self, value):
+        if value == "":
+            return None
+        try:
+            if isinstance(value, basestring):
+                return json.loads(value)
+        except ValueError:
+            pass
+        return value
+    
+    def get_db_prep_save(self, value):
+        if not value or value == "":
+            return None
+        if isinstance(value, (dict, list)):
+            value = json.dumps(value)
+        return super(EXIFMetaField, self).get_db_prep_save(value)
+    
+    def contribute_to_class(self, cls, name):
+        super(EXIFMetaField, self).contribute_to_class(cls, name)
+        signals.pre_save.connect(self.refresh_exif_data, sender=cls)
+    
+    def refresh_exif_data(self, **kwargs): # signal, sender, instance
+        """
+        Stores EXIF profile data in the field before saving.
+        Unlike ICC data represented by an ICCProfile instance, the EXIF data
+        we get back from EXIF.py is a plain dict. As a result, this field's
+        refresh method is much simpler than its counterpart in ICCMetaField,
+        as we only have to go one-way, as it were.
+        
+        """
+        instance = kwargs.get('instance')
+        
+        # get the EXIF data out of the image
+        try:
+            exif_dict = EXIF.process_file(instance._storage.open(instance._imgfield.name))
+        except:
+            try:
+                exif_dict = EXIF.process_file(instance._storage.open(instance._imgfield.name), details=False)
+            except:
+                exif_dict = {}
+        
+        # delete any JPEGThumbnail data we might have
+        if 'JPEGThumbnail' in exif_dict.keys():
+            del exif_dict['JPEGThumbnail']
+        
+        # store it appropruately
+        setattr(instance, self.name, exif_dict)
+        logg.info("Saved exif data for %s" % instance.id)
+    
+    def south_field_triple(self):
+        """
+        Represent the field properly to the django-south model inspector.
+        See also: http://south.aeracode.org/docs/extendingintrospection.html
+        """
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('imagekit.models.EXIFMetaField', args, kwargs)
 
 
 class HistogramColumn(models.IntegerField):
