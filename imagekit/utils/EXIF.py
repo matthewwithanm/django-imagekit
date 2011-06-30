@@ -84,6 +84,7 @@
 
 
 # Don't throw an exception when given an out of range character.
+
 def make_string(seq):
     str = ''
     for c in seq:
@@ -1228,7 +1229,8 @@ class IFD_Tag:
         self.values = values
     
     def __str__(self):
-        return str(self.printable)
+        out = u"%s" % self.printable
+        return out.encode('UTF-8', errors='replace')
     
     def __repr__(self):
         return '(0x%04X) %s=%s @ %d' % (self.tag,

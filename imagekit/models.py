@@ -443,7 +443,9 @@ class ImageWithMetadata(ImageModel):
     histogram_rgb = Histogram(colorspace="RGB")
     
     exif = EXIFMetaField(verbose_name="EXIF data",
-        editable=False,
+        storage=_storage,
+        editable=True,
+        blank=True,
         null=True)
     
     icc = ICCMetaField(verbose_name="ICC data",
@@ -454,6 +456,7 @@ class ImageWithMetadata(ImageModel):
     icchash = ICCHashField(verbose_name="ICC embedded profile hash",
         unique=False, # ICCHashField defaults to unique=True
         editable=True,
+        blank=True,
         null=True)
     
     @property

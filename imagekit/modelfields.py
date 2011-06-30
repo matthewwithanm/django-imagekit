@@ -1,16 +1,20 @@
-import base64, hashlib, numpy, uuid
+import base64, hashlib, numpy, uuid, cStringIO
+from django.conf import settings
 from django.db import models
 from django.db.models import fields
 from django.db.models.fields import files
 from django.db.models import signals
 from django.utils.translation import ugettext_lazy, ugettext as _
 from django.core.files import File
+from django.core.files.storage import FileSystemStorage
 from django.core.exceptions import MultipleObjectsReturned
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from ICCProfile import ICCProfile
 from imagekit.utils import logg
+from imagekit.utils import EXIF
+from imagekit.utils.json import json
 import imagekit.models
 
 
@@ -218,6 +222,19 @@ class ICCMetaField(ICCDataField):
 class EXIFMetaField(models.TextField):
     __metaclass__ = models.SubfieldBase
     
+    def __init__(self, *args, **kwargs):
+        self._storage = kwargs.pop('storage', None)
+        if not self._storage:
+            try:
+                self._storage = getattr(settings, 'IK_STORAGE', None)()
+            except:
+                self._storage = FileSystemStorage()
+            else:
+                if not self._storage:
+                    self._storage = FileSystemStorage()
+        
+        super(EXIFMetaField, self).__init__(*args, **kwargs)
+    
     def to_python(self, value):
         if value == "":
             return None
@@ -231,8 +248,9 @@ class EXIFMetaField(models.TextField):
     def get_db_prep_save(self, value):
         if not value or value == "":
             return None
-        if isinstance(value, (dict, list)):
-            value = json.dumps(value)
+        #if isinstance(value, (dict, list)):
+        #value = self.json.dumps(value, default=lambda v: getattr(v, 'printable', None) or v)
+        value = json.dumps(value)
         return super(EXIFMetaField, self).get_db_prep_save(value)
     
     def contribute_to_class(self, cls, name):
@@ -252,10 +270,14 @@ class EXIFMetaField(models.TextField):
         
         # get the EXIF data out of the image
         try:
-            exif_dict = EXIF.process_file(instance._storage.open(instance._imgfield.name))
+            im = instance.image
+            im.seek(0)
+            exif_dict = EXIF.process_file(im)
         except:
             try:
-                exif_dict = EXIF.process_file(instance._storage.open(instance._imgfield.name), details=False)
+                im = instance.image
+                im.seek(0)
+                exif_dict = EXIF.process_file(im, details=False)
             except:
                 exif_dict = {}
         
@@ -263,9 +285,17 @@ class EXIFMetaField(models.TextField):
         if 'JPEGThumbnail' in exif_dict.keys():
             del exif_dict['JPEGThumbnail']
         
+        exif_out = {}
+        for k, v in exif_dict.items():
+            exif_out.update({ k: getattr(v, 'printable') or v, })
+        
         # store it appropruately
-        setattr(instance, self.name, exif_dict)
-        logg.info("Saved exif data for %s" % instance.id)
+        setattr(instance, self.name, exif_out)
+        logg.info("Saved exif data for %s: '%s' (%s tags)" % (
+            instance.id,
+            '", "'.join(exif_out.keys()),
+            len(exif_out.keys()),
+        ))
     
     def south_field_triple(self):
         """
