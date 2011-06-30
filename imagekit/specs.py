@@ -257,7 +257,7 @@ class FileDescriptor(DescriptorBase):
 class MatrixDescriptor(DescriptorBase):
     def __init__(self, spec):
         super(MatrixDescriptor, self).__init__(spec)
-
+    
     def __get__(self, obj, otype=None):
         outobj, outspec = super(MatrixDescriptor, self).__get__(obj, otype)
         return MatrixAccessor(outobj, outspec)

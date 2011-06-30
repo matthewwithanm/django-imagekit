@@ -1,7 +1,75 @@
-'''
-ImageKit signal definitions.
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+signals.py
 
-'''
+Implements KewGarden, a frontend class for the imagekit async queue that manages and intercepts
+imagekit's custom django signals, enabling them to execute asynchronously. This module contains
+an instance of KewGarden, signalqueue, which provides a signal interface similar to native django:
+
+    from imagekit.signals import signalqueue
+    
+    # add a new signal
+    signalqueue.add_signal('custom_signal')
+    
+    # add a new signal with custom providing args
+    signalqueue.add_signal('another_signal', providing_args=['instance', 'flag'])
+    
+    # connect a receiver to your signals
+    signalqueue.connect('another_signal', another_callback, sender=SomeOtherClass)
+    signalqueue.custom_signal.connect(callback_function, sender=SomeClass) # alternative syntax
+    
+    # send your signals synchronously with a blocking call
+    signalqueue.send('another_signal', sender=AnotherClass, instance=an_instance)
+    signalqueue.another_signal.send(sender=AnotherClass, instance=an_instance) # alternative syntax
+    
+    # enqueue signals and return immediately
+    signalqueue.enqueue('custom_signal', sender=SomeClass, instance=an_instance)
+    signalqueue.enqueue('another_signal', sender=SomeClass, instance=an_instance, flag='yo dogg')
+    
+    # send either asynchronously (returning immediately) or synchronously (blocking),
+    # depending on your IK_RUNMODE setting
+    signalqueue.send('custom_signal', sender=SomeClass, instance=an_instance)
+    signalqueue.send('another_signal', sender=SomeClass, instance=an_instance, flag='yo dogg')
+    
+
+You configure your queue in your settings.py file much as you would your databases
+or hackstack engines, like so:
+
+    IK_RUNMODE = imagekit.IK_ASYNC_REQUEST
+    IK_QUEUES = {
+        'default': {                                    # you need at least one dict named 'default' in IK_QUEUES
+            'NAME': 'your_queue_name',                  # optional - defaults to 'imagekit_queue'
+            'ENGINE': 'imagekit.backends.SomeQueue',    # required - full path to a QueueBase subclass
+            'OPTIONS': {                                # most likely required - these are specific to
+                'host': 'localhost',                    # the queue implementation you're using.
+                'port': 7707,
+            }
+        }
+    }
+
+The NAME setting is different than the dict label ('default' in the above) --
+NAME is used by the queue implementation internally, and may be subject to restrictions
+as per the queue's requirements (e.g., RedisQueue NAMEs should be alphanumeric ascii strings
+that don't start with numbers). Whereas aside from the mandatory 'default', your labels can
+be whatever you want.
+
+Anything in OPTIONS gets handed off to the queue implementation and putatively used as the
+queue's internals go about their business. See the QueueBase subclasses below for examples.
+
+In addition, IK_RUNMODE should be set to one of these values (defined in imagekit/__init__.py):
+
+    * IK_SYNC -- All signals will execute synchronously. Calls block until they return
+    * IK_ASYNC_REQUEST -- Signals sent with signalqueue.send() and signalqueue.enqueue()
+                          execute asynchronously. Calls using these methods return immediately.
+
+(Don't use the other two constants, IK_ASYNC_MGMT and IK_ASYNC_DAEMON. Those are used internally
+to designate calls that are sent in the management command and queue daemon contexts, respectively.)
+
+Created by FI$H 2000 on 2011-06-29.
+Copyright (c) 2011 OST, LLC. All rights reserved.
+
+"""
 
 import hashlib, uuid, PIL
 import django.dispatch
@@ -14,12 +82,10 @@ class KewGardens(object):
     forkedpath = lambda self, s: "imagekit_%s" % s
     garden = None
     queuename = None
-    queue_in = None
-    queue_out = None
     
     id_map = {
-        'instance': lambda obj: (obj.pk, obj._meta.app_label, obj.__class__.__name__.lower()),
-        'iccdata': lambda iccdata: (hashlib.sha1(iccdata.data).hexdigest(), 'imagekit', 'iccmodel'),
+        'instance': lambda obj: { 'obj_id': obj.pk, 'app_label': obj._meta.app_label, 'modl_name': obj.__class__.__name__.lower(), },
+        'iccdata': lambda iccdata: { 'obj_id': hashlib.sha1(iccdata.data).hexdigest(), 'app_label': 'imagekit', 'modl_name': 'iccmodel', },
     }
     
     id_remap = {
@@ -37,22 +103,12 @@ class KewGardens(object):
         self.runmode = runmode
         
         if not self.runmode == imagekit.IK_SYNC:
-            # not running with synchronous calls, we need a queue
-            try:
-                import redis
-            except ImportError:
-                raise IOError("Can't import redis-py to connect to queue")
-            else:
-                self.garden = redis.Redis()
-                self.queuename = self.forkedpath('queue')
+            # running with asynchronous calls -- set up a queue
+            from imagekit.queue import queue
+            self.garden = queue
     
     @classmethod
-    def get_id_triple(cls, name, obj):
-        """
-        Return an ID triple for an argument name and an object (as per providing_args).
-        Modify this stuff if you need to use something else in a Redis queue.
-        
-        """
+    def get_id_dict(cls, name, obj):
         if name in cls.id_map:
             return cls.id_map[name](obj)
         return None
@@ -62,20 +118,12 @@ class KewGardens(object):
         return cache.get_model(str(app_label), str(modl_name))
     
     @classmethod
-    def get_object(cls, name, id_triple):
-        # this was a bad idea -- I totally forgot how JSON serialzation will nondeterministically
-        # trash the order of your reconstituted 'tuple'. this will be a dict soon enough.
-        app_label = id_triple[1]
-        modl_name = id_triple[2]
-        obj_id = id_triple[0]
-        modlclass = cls.get_modlclass(app_label=app_label, modl_name=modl_name)
-        
-        #print "YO DOGG: name = %s" % name
-        #print "YO DOGG: id_triple = %s" % id_triple
-        #print "YO DOGG: modlclass = %s" % modlclass
-        
+    def get_object(cls, name, id_dict):
+        obj_id = id_dict.pop('obj_id')
+        modlclass = cls.get_modlclass(**id_dict)
         if hasattr(modlclass, 'objects') and name in cls.id_remap:
             return cls.id_remap[name](modlclass, obj_id)
+        return None
     
     def add_signal(self, signal_name, providing_args=['instance']):
         self.signals.update({
@@ -93,17 +141,17 @@ class KewGardens(object):
     
     def queue_add(self, queue_string):
         if self.garden:
-            return self.garden.rpush(self.queuename, queue_string)
+            return self.garden.push(queue_string)
         return None
     
     def queue_grab(self):
         if self.garden:
-            return self.garden.lpop(self.queuename)
+            return self.garden.pop()
         return None
     
     def queue_length(self):
         if self.garden:
-            return self.garden.llen(self.queuename)
+            return self.garden.count()
         return -1
     
     def send_now(self, name, sender, **kwargs):
@@ -122,7 +170,7 @@ class KewGardens(object):
             for k, v in kwargs.items():
                 if k in KewGardens.id_map:
                     queue_json.update({
-                        k: KewGardens.get_id_triple(k, v),
+                        k: KewGardens.get_id_dict(k, v),
                     })
             
             return self.queue_add(json.dumps(queue_json))
@@ -189,7 +237,9 @@ class KewGardens(object):
         return object.__getattr__(name)
     
     """
-    Iterator methods -- to dump the queue, do this:
+    Iterator methods
+    
+    To dump the signal queue, do this:
     
         for qd in signalqueue:
             signalqueue.dequeue(queued_signal=qd)
@@ -198,13 +248,10 @@ class KewGardens(object):
     def next(self):
         if not self.runmode:
             raise ValueError("Can't iterate through queue: no queue exists as imagekit.IK_RUNMODE isn't defined")
-        
         if self.runmode == imagekit.IK_SYNC:
             raise ValueError("Can't iterate through queue in synchronous signal mode (IK_RUNMODE == imagekit.IK_SYNC)")
-        
         if not self.queue_length() > 0:
             raise StopIteration
-        
         return self.retrieve()
     
     def __iter__(self):
