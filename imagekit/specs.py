@@ -241,23 +241,22 @@ class DescriptorBase(object):
         if hasattr(obj, '_ik'):
             if self._name in obj._ik.specs.keys():
                 #logg.info("About to send a prepare_spec signal to %s in %s..." % (self._name, obj))
-                signalqueue.send_now('prepare_spec', sender=obj.__class__, instance=obj)
+                signalqueue.send_now('prepare_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
         return obj, self._spec
     
+    def __delete__(self, obj):
+        if hasattr(obj, '_ik'):
+            if self._name in obj._ik.specs.keys():
+                #logg.info("About to send a delete_spec signal to %s in %s..." % (self._name, obj))
+                signalqueue.send_now('delete_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
 
 class FileDescriptor(DescriptorBase):
-    def __init__(self, spec):
-        super(FileDescriptor, self).__init__(spec)
-    
     def __get__(self, obj, otype=None):
         outobj, outspec = super(FileDescriptor, self).__get__(obj, otype)
         return FileAccessor(outobj, outspec)
     
 
 class MatrixDescriptor(DescriptorBase):
-    def __init__(self, spec):
-        super(MatrixDescriptor, self).__init__(spec)
-    
     def __get__(self, obj, otype=None):
         outobj, outspec = super(MatrixDescriptor, self).__get__(obj, otype)
         return MatrixAccessor(outobj, outspec)

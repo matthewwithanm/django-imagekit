@@ -11,6 +11,7 @@ Copyright (c) 2011 OST, LLC. All rights reserved.
 """
 
 from django.utils import importlib
+from django.core.exceptions import ImproperlyConfigured
 from imagekit.utils import AODict
 
 class QueueBase(object):
@@ -23,7 +24,7 @@ class QueueBase(object):
         """
         
         super(QueueBase, self).__init__()
-        self.queue_name = kwargs.pop('queue_name', 'imagekit_queue')
+        self.queue_name = kwargs.pop('queue_name', "imagekit_queue")
         self.queue_options = {}
         self.queue_options.update(kwargs.pop('queue_options', {}))
     
@@ -43,7 +44,7 @@ class QueueBase(object):
         raise NotImplementedError("WTF: Queue backend needs a Queue.flush() implementaton")
     
     def values(self):
-        raise NotImplementedError("WTF: Queue backend needs a Queue.flush() implementaton")
+        raise NotImplementedError("WTF: Queue backend needs a Queue.values() implementaton")
     
     def __unicode__(self):
         return u"<QueueBase name:%s count:%s options:%s>" % (self.queue_name, self.count(), self.queue_options)
@@ -73,7 +74,7 @@ class RedisQueue(QueueBase):
         except ImportError:
             raise IOError("WTF: Can't import redis python module.")
         else:
-            self.r = redis.Redis(**kwargs.get('queue_options', {}))
+            self.r = redis.Redis(**self.queue_options)
     
     def ping(self):
         return self.r.ping()
@@ -91,12 +92,32 @@ class RedisQueue(QueueBase):
         self.r.delete(self.queue_name)
     
     def values(self, floor=0, ceil=-1):
-        return self.r.lrange(floor, ceil)
+        return self.r.lrange(self.queue_name, floor, ceil)
+
+class DatabaseQueueProxy(QueueBase):
+    
+    def __new__(cls, *args, **kwargs):
+        
+        if 'app_label' in kwargs:
+            if 'modl_name' in kwargs:
+                from django.db.models.loading import cache
+                
+                ModlCls = cache.get_model(app_label=kwargs['app_label'], model_name=kwargs['modl_name'])
+                ModlCls.objects.queue_name = kwargs.pop('queue_name', "imagekit_queue")
+                ModlCls.objects.queue_options.update(kwargs.pop('queue_options', {}))
+                
+                return ModlCls.objects
+            
+            else:
+                raise ImproperlyConfigured("DatabaseQueueProxy's queue configuration requires the name of the model class to use to be specified in in 'modl_name'.")
+        
+        else:
+            raise ImproperlyConfigured("DatabaseQueueProxy's queue configuration requires you to specify 'app_label', an app in which your 'modl_name' is defined in models.py.")
 
 """
-Class-loading functions
+Class-loading functions.
 
-The functions import_class() and load_backend() are originally from the django-haystack app:
+ConnectionHandler, import_class() and load_backend() are originally from the django-haystack app:
 
     https://github.com/toastdriven/django-haystack/blob/master/haystack/utils/loading.py
     https://github.com/toastdriven/django-haystack/
@@ -130,7 +151,7 @@ class ConnectionHandler(object):
             raise ImproperlyConfigured("The key '%s' isn't an available connection." % alias)
         
         if not conn.get('ENGINE'):
-            conn['ENGINE'] = 'imagekit.queue.backends.RedisQueue'
+            conn['ENGINE'] = 'imagekit.queue.backends.RedisQueue' # default to the Redis backend
     
     def __getitem__(self, key):
         if key in self._connections:
@@ -140,8 +161,8 @@ class ConnectionHandler(object):
         
         ConnectionClass = load_backend(self.connections_info[key]['ENGINE'])
         self._connections[key] = ConnectionClass(
-            queue_name=self.connections_info[key].get('queue_name'),
-            queue_options=self.connections_info[key].get('queue_options', {}),
+            queue_name=self.connections_info[key].get('NAME'),
+            queue_options=self.connections_info[key].get('OPTIONS', {}),
         )
         return self._connections[key]
     

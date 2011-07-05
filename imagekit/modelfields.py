@@ -15,6 +15,8 @@ from ICCProfile import ICCProfile
 from imagekit.utils import logg
 from imagekit.utils import EXIF
 from imagekit.utils.json import json
+from imagekit.signals import signalqueue
+import imagekit
 import imagekit.models
 
 
@@ -41,6 +43,17 @@ VALID_COLORSPACES = (
 # Blatant misnomer, returning an array -- but so whatevs, the point is that
 # it provides consistent return types when accessing HistogramChannelField data.
 to_matrix = lambda l: numpy.array(l, dtype=int)
+
+def get_modified_time(instance):
+    if instance is not None:
+        storage = getattr(instance, '_storage', None)
+        instancename = getattr(instance._imgfield, 'name', None)
+        if storage and instancename:
+            try:
+                return storage.modified_time(instancename)
+            except AttributeError:
+                pass
+    return None
 
 
 class ICCDataField(models.TextField):
@@ -137,7 +150,7 @@ class ICCDataField(models.TextField):
         """
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
-        return ('imagekit.models.ICCDataField', args, kwargs)
+        return ('imagekit.modelfields.ICCDataField', args, kwargs)
 
 
 class ICCMetaField(ICCDataField):
@@ -154,13 +167,33 @@ class ICCMetaField(ICCDataField):
         super(ICCMetaField, self).__init__(**kwargs)
     
     def contribute_to_class(self, cls, name):
-        if not hasattr(self, 'db_column'):
-            self.db_column = name
-        if not hasattr(self, 'verbose_name'):
-            self.verbose_name = name
         super(ICCMetaField, self).contribute_to_class(cls, name)
-        
-        signals.pre_save.connect(self.refresh_icc_data, sender=cls)
+        signals.post_init.connect(self.store_modified_time, sender=cls)
+        signals.pre_save.connect(self.check_for_updates, sender=cls)
+        signalqueue.refresh_icc_data.connect(self.refresh_icc_data, sender=cls)
+    
+    def store_modified_time(self, **kwargs):
+        instance = kwargs.get('instance')
+        setattr(instance, "_%s_modified_time" % self.name, get_modified_time(instance))
+        #logg.info("*** stored instance._%s_modified_time = %s for instance #%s" % (self.name, getattr(instance, "_%s_modified_time" % self.name, None), instance.pk))
+    
+    def check_for_updates(self, **kwargs): # signal, sender, instance
+        instance = kwargs.get('instance')
+        if getattr(instance, "_%s_modified_time" % self.name, None) is None:
+            logg.info("*** check_for_updates() found NoneType modified_time, sending refresh_icc_data...")
+            if get_modified_time(instance) is None:
+                # instance has never been written to disk
+                #if instance._get_pk_val() is not None:
+                signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
+            else:
+                # no initial modified_time but there is a current one,
+                # this instance was created new and then saved
+                signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
+        else:
+            if getattr(instance, "_%s_modified_time" % self.name) < get_modified_time(instance):
+                logg.info("*** check_for_updates() found disparate modified_time values (%s < %s) -- sending refresh_icc_data..." % (getattr(instance, "_%s_modified_time" % self.name, None), get_modified_time(instance)))
+                # the times are different, something has changed
+                signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
     
     def refresh_icc_data(self, **kwargs): # signal, sender, instance
         """
@@ -208,6 +241,13 @@ class ICCMetaField(ICCDataField):
                     hsh = hashlib.sha1(iccdata.data).hexdigest()
                     setattr(instance, self.hash_field, hsh)
                     logg.info("Saved icc profile hash '%s' in ICCHashField %s" % (hsh, self.hash_field))
+                
+                # save if sent asynchronously
+                dequeue_runmode = kwargs.get('dequeue_runmode', None)
+                if dequeue_runmode is not None:
+                    if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
+                        instance.save()
+                
     
     def south_field_triple(self):
         """
@@ -216,7 +256,7 @@ class ICCMetaField(ICCDataField):
         """
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
-        return ('imagekit.models.ICCMetaField', args, kwargs)
+        return ('imagekit.modelfields.ICCMetaField', args, kwargs)
 
 
 class EXIFMetaField(models.TextField):
@@ -236,27 +276,51 @@ class EXIFMetaField(models.TextField):
         super(EXIFMetaField, self).__init__(*args, **kwargs)
     
     def to_python(self, value):
-        if value == "":
+        from imagekit.utils.json import json
+        if not value:
             return None
-        try:
-            if isinstance(value, basestring):
-                return json.loads(value)
-        except ValueError:
-            pass
+        if isinstance(value, basestring):
+            try:
+                return json.loads(str(value))
+            except ValueError:
+                pass
         return value
     
     def get_db_prep_save(self, value):
         if not value or value == "":
             return None
-        #if isinstance(value, (dict, list)):
-        #value = self.json.dumps(value, default=lambda v: getattr(v, 'printable', None) or v)
         value = json.dumps(value)
         return super(EXIFMetaField, self).get_db_prep_save(value)
     
     def contribute_to_class(self, cls, name):
         super(EXIFMetaField, self).contribute_to_class(cls, name)
-        signals.pre_save.connect(self.refresh_exif_data, sender=cls)
+        signals.post_init.connect(self.store_modified_time, sender=cls)
+        signals.pre_save.connect(self.check_for_updates, sender=cls)
+        signalqueue.refresh_exif_data.connect(self.refresh_exif_data, sender=cls)
     
+    def store_modified_time(self, **kwargs):
+        instance = kwargs.get('instance')
+        setattr(instance, "_%s_modified_time" % self.name, get_modified_time(instance))
+        #logg.info("*** stored instance._%s_modified_time = %s for instance #%s" % (self.name, getattr(instance, "_%s_modified_time" % self.name, None), instance.pk))
+    
+    def check_for_updates(self, **kwargs): # signal, sender, instance
+        instance = kwargs.get('instance')
+        if getattr(instance, "_%s_modified_time" % self.name, None) is None:
+            logg.info("*** check_for_updates() found NoneType modified_time, sending refresh_exif_data...")
+            if get_modified_time(instance) is None:
+                # instance has never been written to disk
+                #if instance._get_pk_val() is not None:
+                signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
+            else:
+                # no initial modified_time but there is a current one,
+                # this instance was created new and then saved
+                signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
+        else:
+            if getattr(instance, "_%s_modified_time" % self.name) < get_modified_time(instance):
+                logg.info("*** check_for_updates() found disparate modified_time values (%s < %s) -- sending refresh_exif_data..." % (getattr(instance, "_%s_modified_time" % self.name, None), get_modified_time(instance)))
+                # the times are different, something has changed
+                signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
+
     def refresh_exif_data(self, **kwargs): # signal, sender, instance
         """
         Stores EXIF profile data in the field before saving.
@@ -281,7 +345,7 @@ class EXIFMetaField(models.TextField):
             except:
                 exif_dict = {}
         
-        # delete any JPEGThumbnail data we might have
+        # delete any JPEGThumbnail data we might have found
         if 'JPEGThumbnail' in exif_dict.keys():
             del exif_dict['JPEGThumbnail']
         
@@ -291,11 +355,17 @@ class EXIFMetaField(models.TextField):
         
         # store it appropruately
         setattr(instance, self.name, exif_out)
-        logg.info("Saved exif data for %s: '%s' (%s tags)" % (
+        logg.info("Saved exif data for %s: (%s tags)" % (
             instance.id,
-            '", "'.join(exif_out.keys()),
+            #"', '".join(exif_out.keys()),
             len(exif_out.keys()),
         ))
+        
+        # save if sent asynchronously
+        dequeue_runmode = kwargs.get('dequeue_runmode', None)
+        if dequeue_runmode is not None:
+            if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
+                instance.save()
     
     def south_field_triple(self):
         """
@@ -304,7 +374,7 @@ class EXIFMetaField(models.TextField):
         """
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
-        return ('imagekit.models.EXIFMetaField', args, kwargs)
+        return ('imagekit.modelfields.EXIFMetaField', args, kwargs)
 
 
 class HistogramColumn(models.IntegerField):
@@ -354,7 +424,7 @@ class HistogramChannelDescriptor(object):
     
     def __get__(self, instance=None, owner=None):
         if instance is None:
-            raise AttributeError(
+            raise AttributeError(   
                 "The '%s' attribute can only be accessed from %s instances."
                 % (self.field.name, owner.__name__))
         
@@ -454,14 +524,11 @@ class HistogramChannelField(models.CharField):
         return unicode(self.original_channel)
     
     def contribute_to_class(self, cls, name):
-        if not hasattr(self, 'db_column'):
-            self.db_column = name
-        if not hasattr(self, 'verbose_name'):
-            self.verbose_name = name
         super(HistogramChannelField, self).contribute_to_class(cls, name)
         
         setattr(cls, self.original_channel, HistogramChannelDescriptor(self))
         signals.pre_save.connect(self.refresh_histogram_channel, sender=cls)
+        #signalqueue.refresh_histogram_channel.connect(self.refresh_histogram_channel, sender=cls)
         
         if self.add_columns and not cls._meta.abstract:
             if hasattr(self, 'original_channel'):
@@ -489,13 +556,13 @@ class HistogramChannelField(models.CharField):
                 pilimage = getattr(image, getattr(self, 'pil_reference', 'pilimage'))
         
         except AttributeError, err:
-            logg.warning("*** Couldn't refresh histogram channel '%s' with custom callable (AttributeError was thrown: %s)" % (self.original_channel, err))
+            logg.warning("*** Couldn't refresh histogram channel '%s' with callable (AttributeError was thrown: %s)" % (self.original_channel, err))
             return
         except TypeError, err:
-            logg.warning("*** Couldn't refresh histogram channel '%s' with custom callable (TypeError was thrown: %s)" % (self.original_channel, err))
+            logg.warning("*** Couldn't refresh histogram channel '%s' with callable (TypeError was thrown: %s)" % (self.original_channel, err))
             return
         except IOError, err:
-            logg.warning("*** Couldn't refresh histogram channel '%s' with custom callable (IOError was thrown: %s)" % (self.original_channel, err))
+            logg.warning("*** Couldn't refresh histogram channel '%s' with callable (IOError was thrown: %s)" % (self.original_channel, err))
             return
         
         if pilimage:
@@ -618,13 +685,39 @@ class Histogram(fields.CharField):
         super(Histogram, self).contribute_to_class(cls, name)
         if not cls._meta.abstract:
             setattr(cls, self.name, HistogramDescriptor(self))
-            signals.pre_save.connect(self.save_related_histogram, sender=cls)
+            #signals.pre_save.connect(self.save_related_histogram, sender=cls)
+            signals.post_init.connect(self.store_modified_time, sender=cls)
+            signals.pre_save.connect(self.check_for_updates, sender=cls)
+            signalqueue.save_related_histogram.connect(self.save_related_histogram, sender=cls)
             
             histogram = generic.GenericRelation(imagekit.models.HISTOGRAMS.get(self.original_colorspace.lower()))
             histogram.verbose_name = "Related %s Histogram" % self.original_colorspace
             histogram.related_name = '_%s_histogram_relation' % self.original_colorspace.lower()
             self.creation_counter = histogram.creation_counter + 1
             cls.add_to_class('_%s_histogram_relation' % self.original_colorspace.lower(), histogram)
+    
+    def store_modified_time(self, **kwargs):
+        instance = kwargs.get('instance')
+        setattr(instance, "_%s_modified_time" % self.name, get_modified_time(instance))
+        #logg.info("*** stored instance._%s_modified_time = %s for instance #%s" % (self.name, getattr(instance, "_%s_modified_time" % self.name, None), instance.pk))
+    
+    def check_for_updates(self, **kwargs): # signal, sender, instance
+        instance = kwargs.get('instance')
+        if getattr(instance, "_%s_modified_time" % self.name, None) is None:
+            logg.info("*** check_for_updates() found NoneType modified_time, sending save_related_histogram...")
+            if get_modified_time(instance) is None:
+                # instance has never been written to disk
+                #if instance._get_pk_val() is not None:
+                signalqueue.send('save_related_histogram', sender=instance.__class__, instance=instance)
+            else:
+                # no initial modified_time but there is a current one,
+                # this instance was created new and then saved
+                signalqueue.send('save_related_histogram', sender=instance.__class__, instance=instance)
+        else:
+            if getattr(instance, "_%s_modified_time" % self.name) < get_modified_time(instance):
+                logg.info("*** check_for_updates() found disparate modified_time values (%s < %s) -- sending save_related_histogram..." % (getattr(instance, "_%s_modified_time" % self.name, None), get_modified_time(instance)))
+                # the times are different, something has changed
+                signalqueue.send('save_related_histogram', sender=instance.__class__, instance=instance)
     
     def save_related_histogram(self, **kwargs): # signal, sender, instance
         """
@@ -687,7 +780,7 @@ class ICCHashField(fields.CharField):
         """
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
-        return ('imagekit.models.ICCHashField', args, kwargs)
+        return ('imagekit.modelfields.ICCHashField', args, kwargs)
 
 """
 FileField subclasses for ICC profile documents.

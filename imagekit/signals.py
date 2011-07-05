@@ -79,9 +79,8 @@ from imagekit.utils.json import json
 import imagekit
 
 class KewGardens(object):
-    forkedpath = lambda self, s: "imagekit_%s" % s
-    garden = None
-    queuename = None
+    forkingpaths = {}
+    queue_name = "default"
     
     id_map = {
         'instance': lambda obj: { 'obj_id': obj.pk, 'app_label': obj._meta.app_label, 'modl_name': obj.__class__.__name__.lower(), },
@@ -90,12 +89,13 @@ class KewGardens(object):
     
     id_remap = {
         'instance': lambda modlcls, pk: modlcls.objects.get(pk=pk),
-        'iccdata': lambda modlcls, hsh: modlcls.objects.get(icchash__exact=hsh).icc,
+        'iccdata': lambda modlcls, hsh: modlcls.objects.profile_match(hsh=hsh).icc,
     }
     
     def __init__(self, *args, **kwargs):
         runmode = kwargs.pop('runmode', None)
         self.signals = kwargs.pop('signals', {})
+        self.queue_name = kwargs.pop('queue_name', "default")
         super(KewGardens, self).__init__(*args, **kwargs)
         
         if not runmode:
@@ -103,9 +103,9 @@ class KewGardens(object):
         self.runmode = runmode
         
         if not self.runmode == imagekit.IK_SYNC:
-            # running with asynchronous calls -- set up a queue
-            from imagekit.queue import queue
-            self.garden = queue
+            # running with asynchronous calls -- set up access to queues
+            from imagekit.queue import queues
+            self.forkingpaths = queues
     
     @classmethod
     def get_id_dict(cls, name, obj):
@@ -119,11 +119,21 @@ class KewGardens(object):
     
     @classmethod
     def get_object(cls, name, id_dict):
-        obj_id = id_dict.pop('obj_id')
-        modlclass = cls.get_modlclass(**id_dict)
+        obj_id = id_dict.get('obj_id')
+        modlclass = cls.get_modlclass(
+            app_label=id_dict.get('app_label'),
+            modl_name=id_dict.get('modl_name'),
+        )
         if hasattr(modlclass, 'objects') and name in cls.id_remap:
             return cls.id_remap[name](modlclass, obj_id)
         return None
+    
+    @property
+    def garden(self):
+        try:
+            return self.forkingpaths[self.queue_name]
+        except ValueError:
+            return None
     
     def add_signal(self, signal_name, providing_args=['instance']):
         self.signals.update({
@@ -137,7 +147,7 @@ class KewGardens(object):
                 sig.connect(callback, sender=sender, dispatch_uid=callback)
                 return
         
-        raise AttributeError("Can't connect(): no signal named %s registered")
+        raise AttributeError("Can't connect(): no signal '%s' registered amongst: %s" % (signal_name, str(self.signals.keys())))
     
     def queue_add(self, queue_string):
         if self.garden:
@@ -153,6 +163,11 @@ class KewGardens(object):
         if self.garden:
             return self.garden.count()
         return -1
+    
+    def queue_values(self, floor=0, ceil=-1):
+        if self.garden:
+            return self.garden.values(floor, ceil)
+        return []
     
     def send_now(self, name, sender, **kwargs):
         #print "send_now() called, signals[name] = %s, sender = %s, kwargs = %s" % (self.signals[name], sender, 'kwargs')
@@ -191,7 +206,7 @@ class KewGardens(object):
         if queued_signal is not None:
             name = queued_signal.pop('name')
             sender = KewGardens.get_modlclass(**queued_signal.pop('sender'))
-            kwargs = {}
+            kwargs = { 'dequeue_runmode': self.runmode, }
             
             for k, v in queued_signal.items():
                 kwargs.update({
@@ -226,7 +241,8 @@ class KewGardens(object):
             return self.send_now(name, sender, **kwargs)
     
     """
-    Override for __getattr__() allows standard signal connection like:
+    Override for __getattr__() allows signal connection a la the standard Django signal syntax,
+    like so:
     
         signalqueue.pre_cache.connect()
     
@@ -234,15 +250,25 @@ class KewGardens(object):
     def __getattr__(self, name):
         if name in self.signals:
             return self.signals[name]
-        return object.__getattr__(name)
+        return object.__getattribute__(self, name)
     
     """
-    Iterator methods
+    Iterator methods.
     
-    To dump the signal queue, do this:
+    To dequeue and send all the currently-enqueued signals, you can do this:
     
         for qd in signalqueue:
             signalqueue.dequeue(queued_signal=qd)
+    
+    Currently, these methods are slightly misnamed, as calling next() will actually
+    dequeue the signal. In the example above, next() is called behind-the-scenes
+    to furnish the 'qd' variable by popping a signal out of the queue. The subsequent 
+    call to dequeue() sends the signal after the fact -- it doesn't modify the contents
+    of the queue.
+    
+    To fix this, we'll have to make next() access the queue without popping, and 
+    add a method to imagekit.queue.backends.QueueBase to allow arbitrary queue
+    members to get dequeued. This will all happen... IN THE FUTURE!!
     
     """
     def next(self):
@@ -261,7 +287,9 @@ signalqueue = KewGardens()
 signalqueue.add_signal('pre_cache')
 signalqueue.add_signal('clear_cache')
 signalqueue.add_signal('prepare_spec', providing_args=['instance', 'spec_name'])
+signalqueue.add_signal('delete_spec', providing_args=['instance', 'spec_name'])
 
-signalqueue.add_signal('refresh_histogram')
 signalqueue.add_signal('refresh_icc_data')
-        
+signalqueue.add_signal('refresh_exif_data')
+signalqueue.add_signal('save_related_histogram')
+signalqueue.add_signal('refresh_histogram_channel', providing_args=['instance', 'channel_name'])

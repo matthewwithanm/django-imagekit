@@ -347,7 +347,6 @@ class ICCModelAdmin(admin.ModelAdmin):
     '''
     ModelAdmin overrides
     '''
-    
     def save_form(self, request, form, change):
         maybe = super(ICCModelAdmin, self).save_form(request, form, change)
         theothers = ICCModel.objects.filter(icchash__iexact=maybe.icchash)
@@ -382,7 +381,6 @@ class RGBHistogramAdmin(admin.ModelAdmin):
     list_display_links = ('id',)
     list_per_page = 5
     
-    #@memoize
     def rgb_flot_histogram(self, obj):
         series = []
         markings = []

@@ -17,6 +17,7 @@ from django.utils.translation import ugettext_lazy as _
 from colorsys import rgb_to_hls, hls_to_rgb
 
 from imagekit.signals import signalqueue
+from imagekit.queue.backends import QueueBase
 from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
@@ -209,6 +210,7 @@ class ImageModel(models.Model):
     def save(self, *args, **kwargs):
         is_new_object = self._get_pk_val() is None
         clear_cache = kwargs.pop('clear_cache', False)
+        
         super(ImageModel, self).save(*args, **kwargs)
         
         if is_new_object and self._imgfield:
@@ -247,9 +249,11 @@ class HistogramBase(models.Model):
     content_type = models.ForeignKey(ContentType,
         blank=True,
         null=True) # GFK default
+    
     object_id = models.PositiveIntegerField(verbose_name="Object ID",
         blank=True,
         null=True) # GFK default
+    
     imagewithmetadata = generic.GenericForeignKey(
         'content_type',
         'object_id')
@@ -363,7 +367,8 @@ class LumaHistogram(HistogramBase):
         verbose_name = "Luma Histogram"
         verbose_name_plural = "Luma Histograms"
     
-    L = HistogramChannelField(channel='L', verbose_name="Luma", pil_reference=lambda instance: instance.pilimage.convert('L'))
+    L = HistogramChannelField(channel='L', verbose_name="Luma",
+        pil_reference=lambda instance: instance.pilimage.convert('L'))
 
 class RGBHistogram(HistogramBase):
     """
@@ -396,8 +401,12 @@ class ImageWithMetadataQuerySet(models.query.QuerySet):
         return random.choice(self.all())
     
     @delegate
-    def with_profile(self, icc=None):
+    def with_profile(self):
         return self.filter(icc__isnull=False)
+    
+    @delegate
+    def with_exif(self):
+        return self.filter(exif__isnull=False)
     
     @delegate
     def matching_profile(self, icc=None, hsh=None):
@@ -478,9 +487,6 @@ class ImageWithMetadata(ImageModel):
     def icctransformer(self):
         return self.icc.transformer
     
-    def save(self, force_insert=False, force_update=False, **kwargs):
-        super(ImageWithMetadata, self).save(force_insert, force_update, **kwargs)
-    
     def __repr__(self):
         return "<%s #%s>" % (self.__class__.__name__, self.pk)
 
@@ -496,13 +502,15 @@ class ICCQuerySet(models.query.QuerySet):
         return random.choice(self.all())
     
     @delegate
-    def profile_match(self, icc=None):
+    def profile_match(self, icc=None, hsh=None):
         if icc:
             if hasattr(icc, 'data'):
-                return self.get(
-                    icc__isnull=False,
-                    icchash__exact=hashlib.sha1(icc.data).hexdigest(),
-                )
+                hsh = hashlib.sha1(icc.data).hexdigest()
+        if hsh:
+            return self.get(
+                icc__isnull=False,
+                icchash__exact=hsh,
+            )
         return None
     
     @delegate
@@ -517,14 +525,16 @@ class ICCQuerySet(models.query.QuerySet):
             results = self.srcher.auto_query(search_string)
             
             if sqs:
-                # return the SearchQuerySet if we were asked for it
+                # return the SearchQuerySet if we were asked for it explicitly
                 return results
             else:
                 # default to constructing a QuerySet from the IDs we got
                 return self.filter(pk__in=(result.object.pk for result in results))
         
-        logg.warning("ICCQuerySet.profile_search() couldn't find Haystack Search -- no query was made.")
-        return self.none()
+        if not HAYSTACK:
+            logg.warning("ICCQuerySet.profile_search() Haystack Search isn't configured -- not filtering profiles (q='%s')." % search_string)
+        
+        return self.all()
 
 class ICCManager(DelegateManager):
     __queryset__ = ICCQuerySet
@@ -549,15 +559,19 @@ class ICCModel(models.Model):
         data_field='icc', # points to ICCDataField
         hash_field='icchash', # points to ICCHashField
         max_length=255)
+    
     icc = ICCDataField(verbose_name="ICC data",
         editable=False,
         blank=True,
         null=True)
+    
     icchash = ICCHashField(verbose_name="ICC file hash")
+    
     createdate = models.DateTimeField('Created on',
         default=datetime.now,
         blank=True,
         editable=False)
+    
     modifydate = models.DateTimeField('Last modified on',
         default=datetime.now,
         blank=True,
@@ -576,6 +590,7 @@ class ICCModel(models.Model):
         Retrieve ImageModel/ImageWithMetadata subclasses that have
         embedded profile data that matches this ICCModel instances'
         profile. Matches are detected by comparing ICCHashFields.
+        
         """
         # use model's with_matching_profile shortcut call, if present
         if hasattr(modl.objects, 'matching_profile'):
@@ -613,6 +628,102 @@ class ICCModel(models.Model):
             )
         
         return u'-empty-'
+
+
+class SignalQuerySet(models.query.QuerySet):
+    
+    @delegate
+    def queued(self, enqueued=True):
+        return self.filter(queue_name=self.queue_name, enqueued=enqueued).order_by("createdate")
+    
+    @delegate
+    def ping(self):
+        return True
+    
+    @delegate
+    def push(self, value):
+        return self.create(queue_name=self.queue_name, value=value)
+    
+    @delegate
+    def pop(self):
+        out = self.queued()[0]
+        out.enqueued = False
+        out.save()
+        return out.value
+    
+    @delegate
+    def count(self, enqueued=True):
+        return super(SignalQuerySet, self).queued(enqueued).count()
+    
+    @delegate
+    def clear(self):
+        self.queued().update(enqueued=False)
+    
+    @delegate
+    def values(self, floor=0, ceil=-1):
+        out = None
+        
+        if floor == 0 and ceil == -1:
+            out = self.queued()
+        elif floor < 1:
+            floor = 0
+        
+        if ceil < floor:
+            if floor == 0:
+                out = self.queued()
+            else:
+                ceil = self.count()
+        
+        if out is not None:
+            out = self.queued()[floor:ceil]
+        
+        return [value[0] for value in out.values_list('value')]
+
+class SignalManager(DelegateManager, QueueBase):
+    __queryset__ = SignalQuerySet
+    
+    def __init__(self, *args, **kwargs):
+        QueueBase.__init__(self, *args, **kwargs)
+        DelegateManager.__init__(self, *args, **kwargs)
+
+class EnqueuedSignal(models.Model):
+    class Meta:
+        abstract = False
+        verbose_name = "Enqueued Signal"
+        verbose_name_plural = "Enqueued Signals"
+    
+    objects = SignalManager()
+    
+    enqueued = models.BooleanField("Enqueued",
+        default=True,
+        editable=True)
+    
+    queue_name = models.CharField(verbose_name="Queue name",
+        default="default",
+        unique=False,
+        blank=True,
+        max_length=255, db_index=True)
+    
+    value = models.TextField(verbose_name='Serialized signal value',
+        editable=False,
+        blank=True,
+        null=True)
+    
+    createdate = models.DateTimeField('Created on',
+        default=datetime.now,
+        blank=True,
+        editable=False)
+    
+    def __repr__(self):
+        if self.value:
+            return str(self.value)
+        return "{'instance':null}"
+    
+    def __unicode__(self):
+        if self.value:
+            return unicode(self.value)
+        return u"{'instance':null}"
+
 
 """
 South has assuaged me, so I'm happy to assuage it.

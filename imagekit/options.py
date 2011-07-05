@@ -35,25 +35,30 @@ class Options(object):
         instance = kwargs.get('instance', None)
         if instance:
             for spec_name, spec in instance._ik.specs.items():
-                #prop = getattr(instance, spec_name)
-                prop = instance.__getattribute__(spec_name)
-                prop._delete()
-                #delattr(instance, spec_name)
+                if spec_name not in ('imagespec', 'spec'):
+                    self.delete_spec(instance=instance, spec_name=spec_name)
     
     def pre_cache(self, **kwargs):
         #logg.info('pre_cache() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         if instance:
             for spec_name, spec in instance._ik.specs.items():
-                if spec.pre_cache:
+                if spec.pre_cache and spec_name not in ('imagespec', 'spec'):
                     self.prepare_spec(instance=instance, spec_name=spec_name)
+    
+    def delete_spec(self, **kwargs):
+        #logg.info('delete_spec() called: %s' % kwargs)
+        instance = kwargs.get('instance', None)
+        spec_name = kwargs.get('spec_name', None)
+        if instance and spec_name:
+            prop = instance.__getattribute__(spec_name)
+            prop._delete()
     
     def prepare_spec(self, **kwargs):
         #logg.info('prepare_spec() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
         if instance and spec_name:
-            #prop = getattr(instance, spec_name)
             prop = instance.__getattribute__(spec_name)
             prop._create()
     
@@ -61,6 +66,8 @@ class Options(object):
         signalqueue.pre_cache.connect(self.pre_cache, sender=cls)
         signalqueue.clear_cache.connect(self.clear_cache, sender=cls)
         signalqueue.prepare_spec.connect(self.prepare_spec, sender=cls)
+        signalqueue.delete_spec.connect(self.delete_spec, sender=cls)
+        
         for spec_name, spec in self.specs.items():
             if issubclass(spec, specs.ImageSpec):
                 prop = specs.FileDescriptor(spec)
