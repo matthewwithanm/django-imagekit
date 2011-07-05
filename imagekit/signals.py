@@ -91,7 +91,7 @@ class KewGardens(object):
     id_remap = {
         'instance': lambda modlcls, pk: modlcls.objects.get(pk=pk),
         'iccdata': lambda modlcls, hsh: modlcls.objects.profile_match(hsh=hsh).icc,
-        'spec_name': lambda modlcls, spec_name: spec_name
+        'spec_name': lambda modlcls, spec_name: spec_name,
     }
     
     def __init__(self, *args, **kwargs):
@@ -126,7 +126,7 @@ class KewGardens(object):
             app_label=id_dict.get('app_label'),
             modl_name=id_dict.get('modl_name'),
         )
-        if hasattr(modlclass, 'objects') and name in cls.id_remap:
+        if name in cls.id_remap:
             return cls.id_remap[name](modlclass, obj_id)
         return None
     
