@@ -85,11 +85,13 @@ class KewGardens(object):
     id_map = {
         'instance': lambda obj: { 'obj_id': obj.pk, 'app_label': obj._meta.app_label, 'modl_name': obj.__class__.__name__.lower(), },
         'iccdata': lambda iccdata: { 'obj_id': hashlib.sha1(iccdata.data).hexdigest(), 'app_label': 'imagekit', 'modl_name': 'iccmodel', },
+        'spec_name': lambda spec_name: { 'obj_id': spec_name, 'app_label': 'python', 'modl_name': 'str', },
     }
     
     id_remap = {
         'instance': lambda modlcls, pk: modlcls.objects.get(pk=pk),
         'iccdata': lambda modlcls, hsh: modlcls.objects.profile_match(hsh=hsh).icc,
+        'spec_name': lambda modlcls, spec_name: spec_name
     }
     
     def __init__(self, *args, **kwargs):

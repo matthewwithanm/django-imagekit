@@ -1,7 +1,7 @@
 import os, numpy
 from django.conf import settings
 from django.contrib import admin
-from imagekit.models import ICCModel, RGBHistogram, LumaHistogram
+from imagekit.models import ICCModel, RGBHistogram, LumaHistogram, EnqueuedSignal
 from imagekit.utils import json, oldcolors, seriescolors
 from imagekit.utils import ADict, AODict, xy, static
 from imagekit.utils import logg
@@ -521,3 +521,4 @@ class LumaHistogramAdmin(admin.ModelAdmin):
 admin.site.register(ICCModel, ICCModelAdmin)
 admin.site.register(RGBHistogram, RGBHistogramAdmin)
 admin.site.register(LumaHistogram, LumaHistogramAdmin)
+admin.site.register(EnqueuedSignal)

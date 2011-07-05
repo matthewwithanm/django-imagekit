@@ -220,7 +220,7 @@ class ImageModel(models.Model):
             signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
         
         #logg.info("About to send the pre_cache signal...")
-        return signalqueue.send('pre_cache', sender=self.__class__, instance=self)
+        return signalqueue.send_now('pre_cache', sender=self.__class__, instance=self)
     
     def clear_cache(self, **kwargs):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
@@ -649,11 +649,10 @@ class SignalQuerySet(models.query.QuerySet):
         out = self.queued()[0]
         out.enqueued = False
         out.save()
-        return out.value
+        return str(out.value)
     
-    @delegate
     def count(self, enqueued=True):
-        return super(SignalQuerySet, self).queued(enqueued).count()
+        return super(self.__class__, self.all().queued(enqueued=enqueued)).count()
     
     @delegate
     def clear(self):
@@ -661,23 +660,13 @@ class SignalQuerySet(models.query.QuerySet):
     
     @delegate
     def values(self, floor=0, ceil=-1):
-        out = None
-        
-        if floor == 0 and ceil == -1:
-            out = self.queued()
-        elif floor < 1:
+        if floor < 1:
             floor = 0
+        if ceil < 1:
+            ceil = self.count()
         
-        if ceil < floor:
-            if floor == 0:
-                out = self.queued()
-            else:
-                ceil = self.count()
-        
-        if out is not None:
-            out = self.queued()[floor:ceil]
-        
-        return [value[0] for value in out.values_list('value')]
+        out = self.queued()[floor:ceil]
+        return [str(value[0]) for value in out.values_list('value')]
 
 class SignalManager(DelegateManager, QueueBase):
     __queryset__ = SignalQuerySet
@@ -685,6 +674,21 @@ class SignalManager(DelegateManager, QueueBase):
     def __init__(self, *args, **kwargs):
         QueueBase.__init__(self, *args, **kwargs)
         DelegateManager.__init__(self, *args, **kwargs)
+    
+    def count(self, enqueued=True):
+        return self.queued(enqueued=enqueued).count()
+    
+    def _get_queue_name(self):
+        if self._queue_name:
+            return self._queue_name
+        return None
+    
+    def _set_queue_name(self, queue_name):
+        self._queue_name = queue_name
+        self.__queryset__.queue_name = queue_name
+    
+    queue_name = property(_get_queue_name, _set_queue_name)
+    
 
 class EnqueuedSignal(models.Model):
     class Meta:

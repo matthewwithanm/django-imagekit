@@ -194,7 +194,7 @@ class FileAccessor(AccessorBase):
                 return self._obj._ik.cache_dir(self._obj, filepath, cache_filename)
             else:
                 return os.path.join(self._obj._ik.cache_dir, filepath, cache_filename)
-
+    
     @property
     def url(self):
         self._create()
@@ -249,6 +249,7 @@ class DescriptorBase(object):
             if self._name in obj._ik.specs.keys():
                 #logg.info("About to send a delete_spec signal to %s in %s..." % (self._name, obj))
                 signalqueue.send_now('delete_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
+
 
 class FileDescriptor(DescriptorBase):
     def __get__(self, obj, otype=None):

@@ -98,11 +98,11 @@ class DatabaseQueueProxy(QueueBase):
     
     def __new__(cls, *args, **kwargs):
         
-        if 'app_label' in kwargs:
-            if 'modl_name' in kwargs:
+        if 'app_label' in kwargs['queue_options']:
+            if 'modl_name' in kwargs['queue_options']:
                 from django.db.models.loading import cache
                 
-                ModlCls = cache.get_model(app_label=kwargs['app_label'], model_name=kwargs['modl_name'])
+                ModlCls = cache.get_model(app_label=kwargs['queue_options'].get('app_label'), model_name=kwargs['queue_options'].get('modl_name'))
                 ModlCls.objects.queue_name = kwargs.pop('queue_name', "imagekit_queue")
                 ModlCls.objects.queue_options.update(kwargs.pop('queue_options', {}))
                 
