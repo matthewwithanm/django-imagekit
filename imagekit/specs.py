@@ -252,14 +252,20 @@ class DescriptorBase(object):
 
 
 class FileDescriptor(DescriptorBase):
+    
+    accessor = FileAccessor
+    
     def __get__(self, obj, otype=None):
         outobj, outspec = super(FileDescriptor, self).__get__(obj, otype)
-        return FileAccessor(outobj, outspec)
+        return self.accessor(outobj, outspec)
     
 
 class MatrixDescriptor(DescriptorBase):
+    
+    accessor = MatrixAccessor
+    
     def __get__(self, obj, otype=None):
         outobj, outspec = super(MatrixDescriptor, self).__get__(obj, otype)
-        return MatrixAccessor(outobj, outspec)
+        return self.accessor(outobj, outspec)
         
 

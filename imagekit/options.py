@@ -81,17 +81,19 @@ class Options(object):
     def do_delete_spec(self, **kwargs):
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
-        logg.info('do_delete_spec() called -- instance: %s, spec_name: %s' % (instance, spec_name))
-        instance._ik._props[spec_name]._delete()
+        #logg.info('do_delete_spec() called -- instance: %s, spec_name: %s' % (instance, spec_name))
+        #instance._ik._props[spec_name]._delete()
+        prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
+        if prop is not None:
+            prop._delete()
+        
     
     def do_prepare_spec(self, **kwargs):
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
-        
-        logg.info('do_prepare_spec() called -- instance: %s, spec_name: %s' % (instance, spec_name))
-        
+        #logg.info('do_prepare_spec() called -- instance: %s, spec_name: %s' % (instance, spec_name))
         #prop = instance._ik._props.get(spec_name).__get__(instance, None)
-        prop = specs.FileAccessor(instance, self.specs[spec_name])
+        prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
         if prop is not None:
             prop._create()
     
