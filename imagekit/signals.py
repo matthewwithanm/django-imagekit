@@ -66,6 +66,14 @@ In addition, IK_RUNMODE should be set to one of these values (defined in imageki
 (Don't use the other two constants, IK_ASYNC_MGMT and IK_ASYNC_DAEMON. Those are used internally
 to designate calls that are sent in the management command and queue daemon contexts, respectively.)
 
+ImageKit will create one KewGarden instance in this package by default. This instance represents
+the default queue -- you can create other instances for any other queues you define, and use them
+where you like. For example, you could create a separate queue for histogram-refresh signals and
+run the workers for that queue on a different server with an optimized NumPy install. It's
+up to you... although the signalqueue KewGarden instance acts like a sigleton, it's not the only
+configuration that is possible (although much of ImageKit expects the signalqueue instance, so
+don't delete it without some consideration for what you're doing.)
+
 Created by FI$H 2000 on 2011-06-29.
 Copyright (c) 2011 OST, LLC. All rights reserved.
 

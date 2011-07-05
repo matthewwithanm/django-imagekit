@@ -240,14 +240,12 @@ class DescriptorBase(object):
     def __get__(self, obj, otype=None):
         if hasattr(obj, '_ik'):
             if self._name in obj._ik.specs.keys():
-                #logg.info("About to send a prepare_spec signal to %s in %s..." % (self._name, obj))
                 signalqueue.send_now('prepare_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
         return obj, self._spec
     
     def __delete__(self, obj):
         if hasattr(obj, '_ik'):
             if self._name in obj._ik.specs.keys():
-                #logg.info("About to send a delete_spec signal to %s in %s..." % (self._name, obj))
                 signalqueue.send_now('delete_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
 
 

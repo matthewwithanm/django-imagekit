@@ -631,7 +631,19 @@ class ICCModel(models.Model):
 
 
 class SignalQuerySet(models.query.QuerySet):
+    """
+    SignalQuerySet is a QuerySet that works as an ImageKit queue backend.
     
+    The actual QueueBase override methods are implemented here and delegated to
+    SignalManager, which is a DelegateManager subclass with the QueueBase
+    implementation "mixed in".
+    
+    Since you can't nakedly instantiate managers outside of a model
+    class, we use a proxy class to hand off SignalQuerySet's delegated
+    manager to the queue config stuff. See the working implementation in
+    imagekit.queue.backends.DatabaseQueueProxy for details.
+    
+    """
     @delegate
     def queued(self, enqueued=True):
         return self.filter(queue_name=self.queue_name, enqueued=enqueued).order_by("createdate")
@@ -646,12 +658,18 @@ class SignalQuerySet(models.query.QuerySet):
     
     @delegate
     def pop(self):
+        """
+        Dequeued signals are marked as such (but not deleted) by default.
+        """
         out = self.queued()[0]
         out.enqueued = False
         out.save()
         return str(out.value)
     
     def count(self, enqueued=True):
+        """
+        This override can't be delegated as the super() call isn't portable.
+        """
         return super(self.__class__, self.all().queued(enqueued=enqueued)).count()
     
     @delegate
@@ -688,7 +706,6 @@ class SignalManager(DelegateManager, QueueBase):
         self.__queryset__.queue_name = queue_name
     
     queue_name = property(_get_queue_name, _set_queue_name)
-    
 
 class EnqueuedSignal(models.Model):
     class Meta:

@@ -325,9 +325,9 @@ class EXIFMetaField(models.TextField):
         """
         Stores EXIF profile data in the field before saving.
         Unlike ICC data represented by an ICCProfile instance, the EXIF data
-        we get back from EXIF.py is a plain dict. As a result, this field's
-        refresh method is much simpler than its counterpart in ICCMetaField,
-        as we only have to go one-way, as it were.
+        we get back from EXIF.py is a plain dict [don't we all wish. -ed].
+        As a result, this field's refresh method is much simpler than its
+        counterpart in ICCMetaField, as we only have to go one-way, as it were.
         
         """
         instance = kwargs.get('instance')

@@ -61,10 +61,20 @@ class RedisQueue(QueueBase):
     
     def __init__(self, *args, **kwargs):
         """
-        Pass the queue options off wholesale to the redis constructor --
-        Simply stick any Redis options you need in the OPTIONS settings dict.
-        All the redis options can be passed into the RedisQueue constructor as a
-        queue_options dict for overrides.
+        The RedisQueue is the default queue backend. The QueueBase methods are mapped to 
+        a Redis list; the redis-py module is required:
+        
+            https://github.com/andymccurdy/redis-py
+        
+        Redis is simple and fast, out of the box. The hiredis C library and python wrappers
+        can be dropped into your install, to make it faster:
+        
+            https://github.com/pietern/hiredis-py
+        
+        To configure Redis, we pass the queue OPTIONS dict off wholesale to the python
+        redis constructor -- Simply stick any Redis kwarg options you need into the OPTIONS
+        setting. All the redis options can be furthermore specified in the RedisQueue constructor
+        as a queue_options dict to override settings.py.
         
         """
         super(RedisQueue, self).__init__(*args, **kwargs)
@@ -95,18 +105,49 @@ class RedisQueue(QueueBase):
         return self.r.lrange(self.queue_name, floor, ceil)
 
 class DatabaseQueueProxy(QueueBase):
+    """
+    The DatabaseQueueProxy doesn't directly instantiate; instead, this proxy object
+    will set up a model manager you specify in your settings as a queue backend.
+    This allows you to use a standard database-backed model to run a queue.
     
+    A working implementation of such a model manageris available in imagekit/models.py.
+    To use it, sync the EnqueuedSignal model to your database and configure the queue like so:
+    
+        IK_QUEUES = {
+            'default': {
+                'NAME': 'imagekit_database_queue',
+                'ENGINE': 'imagekit.queue.backends.DatabaseQueueProxy',
+                'OPTIONS': dict(app_label='imagekit', modl_name='EnqueuedSignal'),
+            },
+        }
+    
+    This is useful for:
+    
+        * Debugging -- the queue can be easily inspected via the admin interface;
+          dequeued objects aren't deleted by default (the 'enqueued' boolean field
+          is set to False when instances are dequeued).
+        * Less moving parts -- useful if you don't want to set up another service
+          (e.g. Redis) to start working with queued signals.
+        * Fallback functionality -- you can add logic to set up a database queue
+          if the queue backend you want to use is somehow unavailable, to keep from
+          losing signals e.g. while scaling Amazon AMIs or transitioning your
+          servers to new hosts.
+    
+    """
     def __new__(cls, *args, **kwargs):
         
         if 'app_label' in kwargs['queue_options']:
             if 'modl_name' in kwargs['queue_options']:
+                
                 from django.db.models.loading import cache
+                mgr = kwargs['queue_options'].get('manager', "objects")
                 
                 ModlCls = cache.get_model(app_label=kwargs['queue_options'].get('app_label'), model_name=kwargs['queue_options'].get('modl_name'))
-                ModlCls.objects.queue_name = kwargs.pop('queue_name', "imagekit_queue")
-                ModlCls.objects.queue_options.update(kwargs.pop('queue_options', {}))
+                mgr_instance = getattr(ModlCls, mgr)
+                mgr_instance.queue_name = kwargs.pop('queue_name', "imagekit_queue")
+                mgr_instance.queue_options.update(kwargs.pop('queue_options', {}))
                 
-                return ModlCls.objects
+                return mgr_instance
             
             else:
                 raise ImproperlyConfigured("DatabaseQueueProxy's queue configuration requires the name of the model class to use to be specified in in 'modl_name'.")
@@ -117,10 +158,13 @@ class DatabaseQueueProxy(QueueBase):
 """
 Class-loading functions.
 
-ConnectionHandler, import_class() and load_backend() are originally from the django-haystack app:
+ConnectionHandler, import_class() and load_backend() are based on original implementations
+from the django-haystack app:
 
     https://github.com/toastdriven/django-haystack/blob/master/haystack/utils/loading.py
     https://github.com/toastdriven/django-haystack/
+
+See the Haystack source for details.
 
 """
 def import_class(path):
