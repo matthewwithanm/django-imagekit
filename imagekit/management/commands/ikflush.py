@@ -1,12 +1,22 @@
 import sys, os
 from pprint import pprint
+from django.conf import settings
 from django.db.models import Q
 from django.db.models.loading import cache
 from django.core.management.base import BaseCommand, CommandError
 from django.core.exceptions import ImproperlyConfigured
 from optparse import make_option
+
+# disable async queue
+settings.IK_RUNMODE = 0
+
 from imagekit.models import ImageModel
 from imagekit.specs import ImageSpec
+from imagekit.signals import signalqueue
+import imagekit
+
+# disable async queue
+signalqueue.runmode = imagekit.IK_SYNC
 
 
 class Command(BaseCommand):
@@ -37,7 +47,6 @@ def flush_image_cache(apps, options):
             
             app_parts = app_label.split('.')
             modls = list()
-            
             
             try:
                 app = cache.get_app(app_parts[0])
@@ -94,12 +103,14 @@ def flush_image_cache(apps, options):
                             except:
                                 print "xxx\t EXCEPTION"
                             else:
+                                #obj.save(clear_cache=True)
+                                obj.clear_cache()
                                 obj.save()
-                                obj._pre_cache()
                         
                         else: # go quietly
+                            #obj.save(clear_cache=True)
+                            obj.clear_cache()
                             obj.save()
-                            obj._pre_cache()
                             
     else:
         print 'Please specify on or more app names'

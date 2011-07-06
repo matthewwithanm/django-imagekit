@@ -57,7 +57,6 @@ def flush_imagekit_queue(apps, options):
             
             obj_dict = signalblip.get('instance')
             obj = KewGardens.get_object('instance', obj_dict)
-            del obj.thumbelina
             
             print ">>> Processing signal for %s object: %s (%s)" % (obj.__class__.__name__, obj, obj.pk)
             
