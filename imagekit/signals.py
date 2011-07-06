@@ -189,6 +189,7 @@ class KewGardens(object):
         if self.garden and (name in self.signals):
             queue_json = {
                 'name': name,
+                'enqueue_runmode': self.runmode,
                 'sender': dict(app_label=sender._meta.app_label, modl_name=sender._meta.object_name.lower()),
             }
             
@@ -215,13 +216,18 @@ class KewGardens(object):
         
         if queued_signal is not None:
             name = queued_signal.pop('name')
+            enqueue_runmode = queued_signal.pop('enqueue_runmode', imagekit.IK_ASYNC_REQUEST)
             sender = KewGardens.get_modlclass(**queued_signal.pop('sender'))
-            kwargs = { 'dequeue_runmode': self.runmode, }
+            kwargs = {
+                'dequeue_runmode': self.runmode,
+                'enqueue_runmode': enqueue_runmode,
+            }
             
             for k, v in queued_signal.items():
-                kwargs.update({
-                    k: KewGardens.get_object(k, v),
-                })
+                if type(v) == dict:
+                    kwargs.update({
+                        k: KewGardens.get_object(k, v),
+                    })
             
             if name in self.signals:
                 self.signals[name].send(sender=sender, **kwargs)

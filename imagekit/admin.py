@@ -1,14 +1,14 @@
 import os, numpy
 from django.conf import settings
 from django.contrib import admin
-from imagekit.models import ICCModel, RGBHistogram, LumaHistogram, EnqueuedSignal
+#from imagekit.models import ICCModel, RGBHistogram, LumaHistogram, EnqueuedSignal
 from imagekit.utils import json, oldcolors, seriescolors
 from imagekit.utils import ADict, AODict, xy, static
 from imagekit.utils import logg
 from imagekit.etc.profileinfo import profileinfo
 from imagekit.etc.cieXYZ import cieYxy3
 from imagekit.memoize import memoize
-
+import imagekit.models
 
 
 # The icon immediately below is copyright (C) 2011 Yusuke Kamiyamane -- All of his rights are reserved.
@@ -518,7 +518,7 @@ class LumaHistogramAdmin(admin.ModelAdmin):
     luma_flot_histogram.allow_tags = True
 
 
-admin.site.register(ICCModel, ICCModelAdmin)
-admin.site.register(RGBHistogram, RGBHistogramAdmin)
-admin.site.register(LumaHistogram, LumaHistogramAdmin)
-admin.site.register(EnqueuedSignal)
+admin.site.register(imagekit.models.ICCModel, ICCModelAdmin)
+admin.site.register(imagekit.models.RGBHistogram, RGBHistogramAdmin)
+admin.site.register(imagekit.models.LumaHistogram, LumaHistogramAdmin)
+admin.site.register(imagekit.models.EnqueuedSignal)

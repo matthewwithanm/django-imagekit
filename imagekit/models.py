@@ -654,7 +654,7 @@ class SignalQuerySet(models.query.QuerySet):
     
     @delegate
     def push(self, value):
-        return self.create(queue_name=self.queue_name, value=value)
+        return self.get_or_create(queue_name=self.queue_name, value=value, enqueued=True)
     
     @delegate
     def pop(self):
@@ -727,6 +727,7 @@ class EnqueuedSignal(models.Model):
     
     value = models.TextField(verbose_name='Serialized signal value',
         editable=False,
+        unique=True, db_index=True,
         blank=True,
         null=True)
     

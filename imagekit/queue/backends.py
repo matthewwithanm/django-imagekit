@@ -104,6 +104,57 @@ class RedisQueue(QueueBase):
     def values(self, floor=0, ceil=-1):
         return self.r.lrange(self.queue_name, floor, ceil)
 
+class RedisSetQueue(RedisQueue):
+    """
+    RedisSetQueue uses a Redis set. Use this queue backend if you want to ensure signals aren't
+    dequeued and sent more than once.
+    
+    I'll be honest here -- I did not originally intend to write any of this configgy stuff or
+    provide multiple backend implementations or any of that. I just wanted to write a queue for
+    signals, man. That was it. In fact I didn't even set out to write •that• -- I was just going
+    to put the constructors for the non-standard signals I was thinking about using in
+    the 'signals.py' file, cuz they did that by convention at the last place I worked, so I was
+    like hey why not. The notion of having async signal invocation occurred to me, so I took
+    a stab at an implementation.
+    
+    Srsly I was going for casual friday for realsies, with KewGarden's API. The queue implementation
+    was like two extra lines (aside from the serialization crapola) and it worked just fine, you had
+    your redis instance, and you used it, erm.
+    
+    BUT SO. I ended up piling most everything else on because I thought: well, this is open source,
+    and I obvi want to contribute my own brick in the GPL wall in the fine tradition of Stallman
+    and/or de Raadt -- I am a de Raadt guy myself but either way -- and also maybe potential
+    employers might look at this and be like "Hmm, this man has written some interesting codes.
+    Let's give him money so he'll do an fascinatingly engaging yet flexible project for us."
+    
+    Anything is possible, right? Hence we have confguration dicts, multiple extensible backend
+    implementations, inline documentation, management commands with help/usage text, sensible
+    defaults with responsibly legible and double-entendre-free variable names... the works. 
+    But the deal is: it's actually helpful. Like to me, the implementor. For example look:
+    here's my iterative enhancement to the Redis queue in which we swap datastructures and
+    see what happens. Not for my health; I wrote the list version first and then decided I wanted
+    unque values to curtail signal throughput -- it's not like I sat around with such a fantastic
+    void of things to do with my time that I needed to write multiple backends for my queue thingy
+    in order to fill the days and nights with meaning. 
+    
+    Anyway that is the docstring for RedisSetQueue, which I hope you find informative.
+    
+    """
+    def push(self, value):
+        self.r.sadd(self.queue_name, value)
+    
+    def pop(self):
+        return self.r.spop(self.queue_name)
+    
+    def count(self):
+        return self.r.scard(self.queue_name)
+    
+    def clear(self):
+        while self.r.spop(self.queue_name): pass
+    
+    def values(self, **kwargs):
+        return list(self.r.smembers(self.queue_name))
+
 class DatabaseQueueProxy(QueueBase):
     """
     The DatabaseQueueProxy doesn't directly instantiate; instead, this proxy object

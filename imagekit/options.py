@@ -31,7 +31,7 @@ class Options(object):
             self.specs = {}
     
     def clear_cache(self, **kwargs):
-        #logg.info('clear_cache() called: %s' % kwargs)
+        logg.info('clear_cache() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         if instance:
             for spec_name, spec in instance._ik.specs.items():
@@ -39,7 +39,7 @@ class Options(object):
                     self.delete_spec(instance=instance, spec_name=spec_name)
     
     def pre_cache(self, **kwargs):
-        #logg.info('pre_cache() called: %s' % kwargs)
+        logg.info('pre_cache() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         if instance:
             for spec_name, spec in instance._ik.specs.items():
@@ -47,19 +47,23 @@ class Options(object):
                     self.prepare_spec(instance=instance, spec_name=spec_name)
     
     def delete_spec(self, **kwargs):
-        #logg.info('delete_spec() called: %s' % kwargs)
+        logg.info('delete_spec() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
         if instance and spec_name:
+            prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
+            #if instance._storage.exists(prop.name):
             signalqueue.send_now('delete_spec', sender=instance.__class__, instance=instance, spec_name=spec_name)
     
     def prepare_spec(self, **kwargs):
-        #logg.info('prepare_spec() called: %s' % kwargs)
+        logg.info('prepare_spec() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
         spec = kwargs.get('spec', None)
         if instance and spec_name:
-            signalqueue.send('prepare_spec', sender=instance.__class__, instance=instance, spec_name=spec_name)
+            prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
+            if not instance._storage.exists(prop.name):
+                signalqueue.send('prepare_spec', sender=instance.__class__, instance=instance, spec_name=spec_name)
     
     def contribute_to_class(self, cls, name):
         self._props = {}
@@ -81,16 +85,15 @@ class Options(object):
     def do_delete_spec(self, **kwargs):
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
-        #logg.info('do_delete_spec() called -- instance: %s, spec_name: %s' % (instance, spec_name))
+        logg.info('do_delete_spec() called -- instance: %s, spec_name: %s' % (instance, spec_name))
         prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
         if prop is not None:
             prop._delete()
-        
     
     def do_prepare_spec(self, **kwargs):
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
-        #logg.info('do_prepare_spec() called -- instance: %s, spec_name: %s' % (instance, spec_name))
+        logg.info('do_prepare_spec() called -- instance: %s, spec_name: %s' % (instance, spec_name))
         prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
         if prop is not None:
             prop._create()

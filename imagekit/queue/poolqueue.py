@@ -16,18 +16,19 @@ from tornado.ioloop import IOLoop, PeriodicCallback
 
 from imagekit.signals import signalqueue as ik_signal_queue
 from imagekit.signals import KewGardens
-from imagekit.utils import logg
+#from imagekit.utils import logg
 from imagekit.utils.json import json
 import imagekit
+import logging
 
-
+logg = logging.getLogger(__name__)
 
 class PoolQueue(object):
     
     def __init__(self, *args, **kwargs):
         super(PoolQueue, self).__init__()
         self.active = kwargs.pop('active', True)
-        self.interval = kwargs.pop('interval', 60)
+        self.interval = kwargs.pop('interval', 1)
         
         self.signalqueue = KewGardens(
             runmode=imagekit.IK_ASYNC_DAEMON, # running in daemon mode
@@ -36,7 +37,7 @@ class PoolQueue(object):
         )
         
         if self.interval > 0:
-            self.shark = PeriodicCallback(self.cueball, self.interval*1000)
+            self.shark = PeriodicCallback(self.cueball, self.interval*10)
         
         if self.active:
             self.shark.start()
@@ -51,18 +52,21 @@ class PoolQueue(object):
     
     def cueball(self):
         queued_signal = self.signalqueue.retrieve()
-        
-        logg.info("dequeueing signal: %s" % queued_signal)
-        
         if queued_signal is not None:
+            #logg.info("dequeueing signal: %s" % queued_signal)
             name = queued_signal.pop('name')
+            enqueue_runmode = queued_signal.pop('enqueue_runmode', imagekit.IK_ASYNC_REQUEST)
             sender = KewGardens.get_modlclass(**queued_signal.pop('sender'))
-            kwargs = { 'dequeue_runmode': self.signalqueue.runmode, }
+            kwargs = { 
+                'dequeue_runmode': self.signalqueue.runmode,
+                'enqueue_runmode': enqueue_runmode,
+            }
             
             for k, v in queued_signal.items():
-                kwargs.update({
-                    k: KewGardens.get_object(k, v),
-                })
+                if type(v) == dict:
+                    kwargs.update({
+                        k: KewGardens.get_object(k, v),
+                    })
             
-            if name in self.signals:
+            if name in self.signalqueue.signals:
                 self.signalqueue.signals[name].send(sender=sender, **kwargs)

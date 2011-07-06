@@ -168,32 +168,13 @@ class ICCMetaField(ICCDataField):
     
     def contribute_to_class(self, cls, name):
         super(ICCMetaField, self).contribute_to_class(cls, name)
-        signals.post_init.connect(self.store_modified_time, sender=cls)
-        signals.pre_save.connect(self.check_for_updates, sender=cls)
+        signals.pre_save.connect(self.check_icc_field, sender=cls)
         signalqueue.refresh_icc_data.connect(self.refresh_icc_data, sender=cls)
     
-    def store_modified_time(self, **kwargs):
+    def check_icc_field(self, **kwargs): # signal, sender, instance
         instance = kwargs.get('instance')
-        setattr(instance, "_%s_modified_time" % self.name, get_modified_time(instance))
-        #logg.info("*** stored instance._%s_modified_time = %s for instance #%s" % (self.name, getattr(instance, "_%s_modified_time" % self.name, None), instance.pk))
-    
-    def check_for_updates(self, **kwargs): # signal, sender, instance
-        instance = kwargs.get('instance')
-        if getattr(instance, "_%s_modified_time" % self.name, None) is None:
-            logg.info("*** check_for_updates() found NoneType modified_time, sending refresh_icc_data...")
-            if get_modified_time(instance) is None:
-                # instance has never been written to disk
-                #if instance._get_pk_val() is not None:
-                signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
-            else:
-                # no initial modified_time but there is a current one,
-                # this instance was created new and then saved
-                signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
-        else:
-            if getattr(instance, "_%s_modified_time" % self.name) < get_modified_time(instance):
-                logg.info("*** check_for_updates() found disparate modified_time values (%s < %s) -- sending refresh_icc_data..." % (getattr(instance, "_%s_modified_time" % self.name, None), get_modified_time(instance)))
-                # the times are different, something has changed
-                signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
+        if not getattr(instance, self.name, None):
+            signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
     
     def refresh_icc_data(self, **kwargs): # signal, sender, instance
         """
@@ -294,31 +275,15 @@ class EXIFMetaField(models.TextField):
     
     def contribute_to_class(self, cls, name):
         super(EXIFMetaField, self).contribute_to_class(cls, name)
-        signals.post_init.connect(self.store_modified_time, sender=cls)
-        signals.pre_save.connect(self.check_for_updates, sender=cls)
+        signals.post_save.connect(self.check_exif_field, sender=cls)
         signalqueue.refresh_exif_data.connect(self.refresh_exif_data, sender=cls)
     
-    def store_modified_time(self, **kwargs):
+    def check_exif_field(self, **kwargs): # signal, sender, instance
         instance = kwargs.get('instance')
-        setattr(instance, "_%s_modified_time" % self.name, get_modified_time(instance))
-        #logg.info("*** stored instance._%s_modified_time = %s for instance #%s" % (self.name, getattr(instance, "_%s_modified_time" % self.name, None), instance.pk))
-    
-    def check_for_updates(self, **kwargs): # signal, sender, instance
-        instance = kwargs.get('instance')
-        if getattr(instance, "_%s_modified_time" % self.name, None) is None:
-            logg.info("*** check_for_updates() found NoneType modified_time, sending refresh_exif_data...")
-            if get_modified_time(instance) is None:
-                # instance has never been written to disk
-                #if instance._get_pk_val() is not None:
-                signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
-            else:
-                # no initial modified_time but there is a current one,
-                # this instance was created new and then saved
-                signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
-        else:
-            if getattr(instance, "_%s_modified_time" % self.name) < get_modified_time(instance):
-                logg.info("*** check_for_updates() found disparate modified_time values (%s < %s) -- sending refresh_exif_data..." % (getattr(instance, "_%s_modified_time" % self.name, None), get_modified_time(instance)))
-                # the times are different, something has changed
+        
+        # use the PIL accessor to test whether or not we have any EXIF data
+        if hasattr(instance.pilimage, "_getexif"):
+            if not getattr(instance, self.name, None):
                 signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
 
     def refresh_exif_data(self, **kwargs): # signal, sender, instance
@@ -354,18 +319,20 @@ class EXIFMetaField(models.TextField):
             exif_out.update({ k: getattr(v, 'printable') or v, })
         
         # store it appropruately
-        setattr(instance, self.name, exif_out)
-        logg.info("Saved exif data for %s: (%s tags)" % (
-            instance.id,
-            #"', '".join(exif_out.keys()),
-            len(exif_out.keys()),
-        ))
-        
-        # save if sent asynchronously
-        dequeue_runmode = kwargs.get('dequeue_runmode', None)
-        if dequeue_runmode is not None:
-            if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
-                instance.save()
+        if len(exif_out.keys()) > 0:
+            setattr(instance, self.name, exif_out)
+            logg.info("Saved exif data for %s: (%s tags)" % (
+                instance.id,
+                #"', '".join(exif_out.keys()),
+                len(exif_out.keys()),
+            ))
+            
+            # save if sent asynchronously
+            dequeue_runmode = kwargs.get('dequeue_runmode', None)
+            enqueue_runmode = kwargs.get('enqueue_runmode', None)
+            if dequeue_runmode is not None:
+                if not dequeue_runmode == enqueue_runmode:
+                    instance.save_base()
     
     def south_field_triple(self):
         """
@@ -667,8 +634,8 @@ class Histogram(fields.CharField):
         kwargs.setdefault('default', colorspace)
         kwargs.setdefault('verbose_name', "8-bit Image Histogram")
         kwargs.setdefault('max_length', 10)
-        kwargs.setdefault('editable', True)
-        kwargs.setdefault('blank', False)
+        kwargs.setdefault('editable', False)
+        kwargs.setdefault('blank', True)
         kwargs.setdefault('null', False)
         super(Histogram, self).__init__(*args, **kwargs)
     
@@ -686,8 +653,6 @@ class Histogram(fields.CharField):
         if not cls._meta.abstract:
             setattr(cls, self.name, HistogramDescriptor(self))
             #signals.pre_save.connect(self.save_related_histogram, sender=cls)
-            signals.post_init.connect(self.store_modified_time, sender=cls)
-            signals.pre_save.connect(self.check_for_updates, sender=cls)
             signalqueue.save_related_histogram.connect(self.save_related_histogram, sender=cls)
             
             histogram = generic.GenericRelation(imagekit.models.HISTOGRAMS.get(self.original_colorspace.lower()))
@@ -695,29 +660,6 @@ class Histogram(fields.CharField):
             histogram.related_name = '_%s_histogram_relation' % self.original_colorspace.lower()
             self.creation_counter = histogram.creation_counter + 1
             cls.add_to_class('_%s_histogram_relation' % self.original_colorspace.lower(), histogram)
-    
-    def store_modified_time(self, **kwargs):
-        instance = kwargs.get('instance')
-        setattr(instance, "_%s_modified_time" % self.name, get_modified_time(instance))
-        #logg.info("*** stored instance._%s_modified_time = %s for instance #%s" % (self.name, getattr(instance, "_%s_modified_time" % self.name, None), instance.pk))
-    
-    def check_for_updates(self, **kwargs): # signal, sender, instance
-        instance = kwargs.get('instance')
-        if getattr(instance, "_%s_modified_time" % self.name, None) is None:
-            logg.info("*** check_for_updates() found NoneType modified_time, sending save_related_histogram...")
-            if get_modified_time(instance) is None:
-                # instance has never been written to disk
-                #if instance._get_pk_val() is not None:
-                signalqueue.send('save_related_histogram', sender=instance.__class__, instance=instance)
-            else:
-                # no initial modified_time but there is a current one,
-                # this instance was created new and then saved
-                signalqueue.send('save_related_histogram', sender=instance.__class__, instance=instance)
-        else:
-            if getattr(instance, "_%s_modified_time" % self.name) < get_modified_time(instance):
-                logg.info("*** check_for_updates() found disparate modified_time values (%s < %s) -- sending save_related_histogram..." % (getattr(instance, "_%s_modified_time" % self.name, None), get_modified_time(instance)))
-                # the times are different, something has changed
-                signalqueue.send('save_related_histogram', sender=instance.__class__, instance=instance)
     
     def save_related_histogram(self, **kwargs): # signal, sender, instance
         """

@@ -143,30 +143,28 @@ class FileAccessor(AccessorBase):
         return imgfile
     
     def _create(self):
-        if self._obj._imgfield:
-            if self._exists():
-                return
-            # process the original image file
-            try:
-                fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
-            except IOError:
-                return
-            
-            fp.seek(0)
-            fp = StringIO(fp.read())
-            self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
-            
-            # save the new image to the cache
-            logg.info("*** creating: %s" % self.name)
-            content = ContentFile(self._get_imgfile().read())
-            self._obj._storage.save(self.name, content)
+        if self._exists():
+            return
+        # process the original image file
+        try:
+            fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
+        except IOError:
+            return
+        
+        fp.seek(0)
+        fp = StringIO(fp.read())
+        self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
+        
+        # save the new image to the cache
+        logg.info("*** creating: %s" % self.name)
+        content = ContentFile(self._get_imgfile().read())
+        self._obj._storage.save(self.name, content)
     
     def _delete(self):
-        if self._obj._imgfield:
-            if self._exists():
-                if not self.name == self._obj._imgfield.name:
-                    logg.info("*** deleting: %s" % self.name)
-                    self._obj._storage.delete(self.name)
+        if self._exists():
+            #if not self.name == self._obj._imgfield.name:
+            logg.info("*** deleting: %s" % self.name)
+            self._obj._storage.delete(self.name)
     
     def _exists(self):
         if self._obj._imgfield:
@@ -241,6 +239,7 @@ class DescriptorBase(object):
         if hasattr(obj, '_ik'):
             if self._name in obj._ik.specs.keys():
                 signalqueue.send_now('prepare_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
+        
         return obj, self._spec
     
     def __delete__(self, obj):
