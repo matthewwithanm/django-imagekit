@@ -23,10 +23,10 @@ from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.modelfields import VALID_CHANNELS, to_matrix
 from imagekit.ICCProfile import ICCProfile
-from imagekit.utils import logg, img_to_fobj, ADict
-from imagekit.utils import EXIF
+from imagekit.utils import logg, img_to_fobj, hexstr
+from imagekit.utils import EXIF, ADict
 from imagekit.utils.delegate import DelegateManager, delegate
-from imagekit.modelfields import ICCField, ICCHashField
+from imagekit.modelfields import ICCField, ICCHashField, RGBColorField
 from imagekit.modelfields import ICCDataField, ICCMetaField, EXIFMetaField
 from imagekit.modelfields import HistogramChannelField, Histogram
 
@@ -113,24 +113,6 @@ class ImageModel(models.Model):
     class IKOptions:
         pass
     
-    def admin_thumbnail_view(self):
-        if not self._imgfield:
-            return None
-        prop = getattr(self, self._ik.admin_thumbnail_spec, None)
-        if prop is None:
-            return 'An "%s" image spec has not been defined.' % \
-              self._ik.admin_thumbnail_spec
-        else:
-            if hasattr(self, 'get_absolute_url'):
-                return u'<a href="%s"><img src="%s"></a>' % \
-                    (escape(self.get_absolute_url()), escape(prop.url))
-            else:
-                return u'<a href="%s"><img src="%s"></a>' % \
-                    (escape(self._imgfield.url), escape(prop.url))
-    
-    admin_thumbnail_view.short_description = _('Thumbnail')
-    admin_thumbnail_view.allow_tags = True
-    
     @property
     def _imgfield(self):
         return getattr(self, self._ik.image_field)
@@ -145,19 +127,19 @@ class ImageModel(models.Model):
             return Image.open(self._storage.open(self._imgfield.name))
         return None
     
-    def dominantcolor(self):
+    def _dominant(self):
         return self.pilimage.quantize(1).convert('RGB').getpixel((0, 0))
     
-    def meancolor(self):
+    def _mean(self):
         return ImageStat.Stat(self.pilimage).mean
     
-    def averagecolor(self):
+    def _average(self):
         return self.pilimage.resize((1, 1), Image.ANTIALIAS).getpixel((0, 0))
     
-    def mediancolor(self):
+    def _median(self):
         return reduce((lambda x,y: x[0] > y[0] and x or y), self.pilimage.getcolors(self.pilimage.size[0] * self.pilimage.size[1]))
     
-    def topcolors(self, numcolors=3):
+    def _topcolors(self, numcolors=3):
         if self.pilimage:
             colors = self.pilimage.getcolors(self.pilimage.size[0] * self.pilimage.size[1])
             fmax = lambda x,y: x[0] > y[0] and x or y
@@ -173,27 +155,31 @@ class ImageModel(models.Model):
             return "#" + "".join(map(lambda x: "%02X" % int(x*255),
                 map(lambda x: hls_to_rgb(x[0], x[1], x[2]), [
                     reduce(lambda x,y: x[2] > y[2] and x or y,
-                        map(lambda x: rgb_to_hls(float(x[1][0])/255, float(x[1][1])/255, float(x[1][2])/255), self.topcolors(samplesize)))
+                        map(lambda x: rgb_to_hls(float(x[1][0])/255, float(x[1][1])/255, float(x[1][2])/255), self._topcolors(samplesize)))
                 ])[0]
             ))
         except TypeError:
             return ""
     
+    #@property
     def dominanthex(self):
-        return "#%02X%02X%02X" % self.dominantcolor()
+        return hexstr(self._dominant())
     
+    #@property
     def meanhex(self):
-        m = self.meancolor()
-        return "#%02X%02X%02X" % (int(m[0]), int(m[1]), int(m[2]))
+        m = self._mean()
+        return hexstr((int(m[0]), int(m[1]), int(m[2])))
     
+    #@property
     def averagehex(self):
-        return "#%02X%02X%02X" % self.averagecolor()
+        return hexstr(self._average())
     
+    #@property
     def medianhex(self):
-        return "#%02X%02X%02X" % self.mediancolor()[1]
+        return hexstr(self._median()[1])
     
     def tophex(self, numcolors=3):
-        return [("#%02X%02X%02X" % tc[1]) for tc in self.topcolors(numcolors)]
+        return [hexstr(tc[1]) for tc in self._topcolors(numcolors)]
     
     def save_image(self, name, image, save=True, replace=True):
         if hasattr(image, 'read'):
@@ -451,17 +437,45 @@ class ImageWithMetadata(ImageModel):
     histogram_luma = Histogram(colorspace="Luma")
     histogram_rgb = Histogram(colorspace="RGB")
     
+    # We can sort by these color values.
+    dominantcolor = RGBColorField(verbose_name="Dominant Color",
+        default=lambda self: self.dominanthex(),
+        db_index=True,
+        blank=True,
+        null=True)
+    
+    meancolor = RGBColorField(verbose_name="Mean Color",
+        default=lambda self: self.meanhex(),
+        db_index=True,
+        blank=True,
+        null=True)
+    
+    averagecolor = RGBColorField(verbose_name="Average Color",
+        default=lambda self: self.averagehex(),
+        db_index=True,
+        blank=True,
+        null=True)
+    
+    mediancolor = RGBColorField(verbose_name="Median Color",
+        default=lambda self: self.medianhex(),
+        db_index=True,
+        blank=True,
+        null=True)
+    
+    # EXIF image metadata
     exif = EXIFMetaField(verbose_name="EXIF data",
         storage=_storage,
         editable=True,
         blank=True,
         null=True)
     
+    # ICC color management profile data
     icc = ICCMetaField(verbose_name="ICC data",
         hash_field='icchash',
         editable=False,
         null=True)
     
+    # Unique hash of ICC profile data (for fast DB searching)
     icchash = ICCHashField(verbose_name="ICC embedded profile hash",
         unique=False, # ICCHashField defaults to unique=True
         editable=True,

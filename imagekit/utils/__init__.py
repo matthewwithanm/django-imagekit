@@ -91,6 +91,10 @@ xy = lambda n: (n.X / (n.X + n.Y + n.Z), n.Y / (n.X + n.Y + n.Z))
 # get the URL for a static asset (e.g. ImageKit's css/js/etc)
 static = lambda pth: os.path.join(settings.STATIC_URL, pth)
 
+# convert a triple of 8-bit values (like what you get out of PIL) to #000000 format.
+hexstr = lambda triple: "#%02X%02X%02X" % tuple(triple)
+
+
 # color dicts for admin and templates.
 class SeriesColors(ADict):
     def __init__(self):

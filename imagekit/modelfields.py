@@ -12,10 +12,12 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from ICCProfile import ICCProfile
+from imagekit import colors
 from imagekit.utils import logg
 from imagekit.utils import EXIF
 from imagekit.utils.json import json
 from imagekit.signals import signalqueue
+from imagekit.widgets import RGBColorFieldWidget
 import imagekit
 import imagekit.models
 
@@ -689,8 +691,7 @@ class Histogram(fields.CharField):
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
         return ('imagekit.modelfields.Histogram', args, kwargs)
-    
-    
+
 
 class ICCHashField(fields.CharField):
     """
@@ -723,6 +724,60 @@ class ICCHashField(fields.CharField):
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
         return ('imagekit.modelfields.ICCHashField', args, kwargs)
+
+
+class RGBColorField(models.CharField):
+    """"
+    Field for storing one 24-bit companded RGB color triple, encoded as a hex string.
+    
+    (As in what is often what is meant by just 'a color'. Typically like so: '#FF192C'.)
+    
+    Works most harmoniously with imagekit.widgets.RGBColorFieldWidget as the UI, and the
+    patched version NodeBox colors.Color we're bundling as the datastructure -- one of
+    the patches sets up colors.Color.__repr__() for seamless serialization. 
+    
+    The current NodeBox color module's members are bristling with quick and simple,
+    yet lossy and slightly non-deterministic, color-conversion methods for many
+    spaces/modes/types/datastructures. For 99 percent of people, lossy color
+    conversions between companded 8-bit values are fine and dandy. But you,
+    my friend... you didn't download the fish2000 ultra-colorphilic ImageKit
+    fork for colorphiles because you're one of the typical 99 percent. Amirite?
+    Rest assured, I'll refactor it soon; in the meantime, knowing is 1/2 the battle.
+    
+    """
+    __metaclass__ = models.SubfieldBase
+    
+    def __init__(self, *args, **kwargs):
+        kwargs['max_length'] = 10
+        super(RGBColorField, self).__init__(*args, **kwargs)
+    
+    def to_python(self, value):
+        if hasattr(value, 'hex'):
+            return value
+        if value is not None:
+            return colors.Color("#%s" % value)
+        return None
+    
+    def get_db_prep_value(self, value):
+        if hasattr(value, 'hex'):
+            return getattr(value, 'hex')[1:].upper()
+        return value
+    
+    def value_to_string(self, obj):
+        return self.get_db_prep_value(self._get_val_from_obj(obj))
+    
+    def formfield(self, **kwargs):
+        kwargs['widget'] = RGBColorFieldWidget(attrs={
+            'class': "colorfield",
+            'size': 7,
+        })
+        return super(RGBColorField, self).formfield(**kwargs)
+    
+    def south_field_triple(self):
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('imagekit.models.RGBColorField', args, kwargs)
+
 
 """
 FileField subclasses for ICC profile documents.
