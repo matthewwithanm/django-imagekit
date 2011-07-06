@@ -1,0 +1,33 @@
+<colors query="wasteland">
+
+<color name="white" weight="0.798859111209">
+ <shade name="dark" weight="0.961852980324" />
+ <shade name="light" weight="0.0196882486378" />
+ <shade name="warm" weight="0.0184577330979" />
+</color>
+
+<color name="red" weight="0.0863191292438">
+ <shade name="dark" weight="0.961852980324" />
+ <shade name="light" weight="0.0196882486378" />
+ <shade name="warm" weight="0.0184577330979" />
+</color>
+
+<color name="black" weight="0.0708468324925">
+ <shade name="dark" weight="0.961852980324" />
+ <shade name="light" weight="0.0196882486378" />
+ <shade name="warm" weight="0.0184577330979" />
+</color>
+
+<color name="green" weight="0.0301302620945">
+ <shade name="dark" weight="0.970410736344" />
+ <shade name="light" weight="0.0198634180574" />
+ <shade name="cool" weight="0.00972479842392" />
+</color>
+
+<color name="purple" weight="0.0138436339353">
+ <shade name="dark" weight="0.970410736344" />
+ <shade name="light" weight="0.0198634180574" />
+ <shade name="cool" weight="0.00972479842392" />
+</color>
+
+</colors>

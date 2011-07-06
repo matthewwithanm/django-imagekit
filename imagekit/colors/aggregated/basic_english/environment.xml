@@ -1,0 +1,33 @@
+<colors query="environment">
+
+<color name="green" weight="0.719055428961">
+ <shade name="light" weight="0.432077724506" />
+ <shade name="neutral" weight="0.324058293379" />
+ <shade name="dark" weight="0.243862049058" />
+</color>
+
+<color name="black" weight="0.185465105787">
+ <shade name="warm" weight="0.36625455064" />
+ <shade name="light" weight="0.36213933097" />
+ <shade name="neutral" weight="0.271604498228" />
+</color>
+
+<color name="white" weight="0.0679495745167">
+ <shade name="warm" weight="0.36625455064" />
+ <shade name="light" weight="0.36213933097" />
+ <shade name="neutral" weight="0.271604498228" />
+</color>
+
+<color name="blue" weight="0.0230842390139">
+ <shade name="light" weight="0.432077724506" />
+ <shade name="neutral" weight="0.324058293379" />
+ <shade name="dark" weight="0.243862049058" />
+</color>
+
+<color name="orange" weight="0.00444464682626">
+ <shade name="warm" weight="0.36625455064" />
+ <shade name="light" weight="0.36213933097" />
+ <shade name="neutral" weight="0.271604498228" />
+</color>
+
+</colors>

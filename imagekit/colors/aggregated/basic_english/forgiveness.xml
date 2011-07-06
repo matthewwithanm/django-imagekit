@@ -1,0 +1,33 @@
+<colors query="forgiveness">
+
+<color name="white" weight="0.820619876823">
+ <shade name="fresh" weight="0.46797962664" />
+ <shade name="hard" weight="0.344827093314" />
+ <shade name="light" weight="0.187191850656" />
+</color>
+
+<color name="black" weight="0.107837868429">
+ <shade name="fresh" weight="0.46797962664" />
+ <shade name="hard" weight="0.344827093314" />
+ <shade name="light" weight="0.187191850656" />
+</color>
+
+<color name="orange" weight="0.0289321110418">
+ <shade name="fresh" weight="0.46797962664" />
+ <shade name="hard" weight="0.344827093314" />
+ <shade name="light" weight="0.187191850656" />
+</color>
+
+<color name="green" weight="0.0252498423638">
+ <shade name="fresh" weight="0.46797962664" />
+ <shade name="hard" weight="0.344827093314" />
+ <shade name="light" weight="0.187191850656" />
+</color>
+
+<color name="blue" weight="0.0173592666251">
+ <shade name="fresh" weight="0.46797962664" />
+ <shade name="hard" weight="0.344827093314" />
+ <shade name="light" weight="0.187191850656" />
+</color>
+
+</colors>

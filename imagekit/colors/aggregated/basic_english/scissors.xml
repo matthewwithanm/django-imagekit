@@ -1,0 +1,33 @@
+<colors query="scissors">
+
+<color name="green" weight="0.788191297181">
+ <shade name="light" weight="0.497901444711" />
+ <shade name="cool" weight="0.293705908397" />
+ <shade name="soft" weight="0.208391335005" />
+</color>
+
+<color name="white" weight="0.0682764435775">
+ <shade name="light" weight="0.497901444711" />
+ <shade name="cool" weight="0.293705908397" />
+ <shade name="soft" weight="0.208391335005" />
+</color>
+
+<color name="orange" weight="0.0632561168439">
+ <shade name="light" weight="0.497901444711" />
+ <shade name="cool" weight="0.293705908397" />
+ <shade name="soft" weight="0.208391335005" />
+</color>
+
+<color name="black" weight="0.0419197282259">
+ <shade name="light" weight="0.497901444711" />
+ <shade name="cool" weight="0.293705908397" />
+ <shade name="soft" weight="0.208391335005" />
+</color>
+
+<color name="purple" weight="0.038355296245">
+ <shade name="light" weight="0.497901444711" />
+ <shade name="cool" weight="0.293705908397" />
+ <shade name="soft" weight="0.208391335005" />
+</color>
+
+</colors>

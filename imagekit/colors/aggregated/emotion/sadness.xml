@@ -1,0 +1,33 @@
+<colors query="sadness">
+
+<color name="blue" weight="0.571291576209">
+ <shade name="intense" weight="0.921527153823" />
+ <shade name="soft" weight="0.0418171985768" />
+ <shade name="light" weight="0.0366545814686" />
+</color>
+
+<color name="white" weight="0.19016530183">
+ <shade name="soft" weight="0.435713287835" />
+ <shade name="light" weight="0.381921523905" />
+ <shade name="bright" weight="0.182354079723" />
+</color>
+
+<color name="black" weight="0.139242375817">
+ <shade name="intense" weight="0.921527153823" />
+ <shade name="soft" weight="0.0418171985768" />
+ <shade name="light" weight="0.0366545814686" />
+</color>
+
+<color name="red" weight="0.0739973768627">
+ <shade name="intense" weight="0.921527153823" />
+ <shade name="soft" weight="0.0418171985768" />
+ <shade name="light" weight="0.0366545814686" />
+</color>
+
+<color name="purple" weight="0.0253023288627">
+ <shade name="soft" weight="0.435713287835" />
+ <shade name="light" weight="0.381921523905" />
+ <shade name="bright" weight="0.182354079723" />
+</color>
+
+</colors>

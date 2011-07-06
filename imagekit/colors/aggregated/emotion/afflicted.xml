@@ -1,0 +1,33 @@
+<colors query="afflicted">
+
+<color name="orange" weight="0.569999378701">
+ <shade name="weak" weight="0.489582774903" />
+ <shade name="light" weight="0.458332810547" />
+ <shade name="hard" weight="0.0520832739258" />
+</color>
+
+<color name="blue" weight="0.1899997929">
+ <shade name="weak" weight="0.489582774903" />
+ <shade name="light" weight="0.458332810547" />
+ <shade name="hard" weight="0.0520832739258" />
+</color>
+
+<color name="green" weight="0.0999998910001">
+ <shade name="weak" weight="0.489582774903" />
+ <shade name="light" weight="0.458332810547" />
+ <shade name="hard" weight="0.0520832739258" />
+</color>
+
+<color name="black" weight="0.0999998910001">
+ <shade name="weak" weight="0.489582774903" />
+ <shade name="light" weight="0.458332810547" />
+ <shade name="hard" weight="0.0520832739258" />
+</color>
+
+<color name="white" weight="0.0399999564">
+ <shade name="weak" weight="0.489582774903" />
+ <shade name="light" weight="0.458332810547" />
+ <shade name="hard" weight="0.0520832739258" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="surprisal">
+
+<color name="yellow" weight="0.0">
+ <shade name="weak" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="light" weight="0.2499996875" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="weak" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="light" weight="0.2499996875" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="weak" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="light" weight="0.2499996875" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="weak" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="light" weight="0.2499996875" />
+</color>
+
+<color name="pink" weight="0.0">
+ <shade name="weak" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="light" weight="0.2499996875" />
+</color>
+
+</colors>

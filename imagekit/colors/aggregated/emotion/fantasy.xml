@@ -1,0 +1,33 @@
+<colors query="fantasy">
+
+<color name="green" weight="0.390256229284">
+ <shade name="dark" weight="0.934965110601" />
+ <shade name="light" weight="0.0465000347042" />
+ <shade name="cool" weight="0.0185338216615" />
+</color>
+
+<color name="blue" weight="0.295966133618">
+ <shade name="dark" weight="0.934965110601" />
+ <shade name="light" weight="0.0465000347042" />
+ <shade name="cool" weight="0.0185338216615" />
+</color>
+
+<color name="black" weight="0.137768306445">
+ <shade name="dark" weight="0.934965110601" />
+ <shade name="light" weight="0.0465000347042" />
+ <shade name="cool" weight="0.0185338216615" />
+</color>
+
+<color name="white" weight="0.0974330988549">
+ <shade name="dark" weight="0.934965110601" />
+ <shade name="light" weight="0.0465000347042" />
+ <shade name="cool" weight="0.0185338216615" />
+</color>
+
+<color name="pink" weight="0.0785750797217">
+ <shade name="dark" weight="0.934965110601" />
+ <shade name="light" weight="0.0465000347042" />
+ <shade name="cool" weight="0.0185338216615" />
+</color>
+
+</colors>

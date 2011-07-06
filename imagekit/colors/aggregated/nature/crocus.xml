@@ -1,0 +1,33 @@
+<colors query="crocus">
+
+<color name="purple" weight="0.418575154374">
+ <shade name="bright" weight="0.502487014453" />
+ <shade name="cool" weight="0.392039373653" />
+ <shade name="light" weight="0.105472521846" />
+</color>
+
+<color name="yellow" weight="0.289462420189">
+ <shade name="bright" weight="0.502487014453" />
+ <shade name="cool" weight="0.392039373653" />
+ <shade name="light" weight="0.105472521846" />
+</color>
+
+<color name="white" weight="0.218658662732">
+ <shade name="bright" weight="0.502487014453" />
+ <shade name="cool" weight="0.392039373653" />
+ <shade name="light" weight="0.105472521846" />
+</color>
+
+<color name="red" weight="0.0437317325465">
+ <shade name="bright" weight="0.502487014453" />
+ <shade name="cool" weight="0.392039373653" />
+ <shade name="light" weight="0.105472521846" />
+</color>
+
+<color name="pink" weight="0.0295709810553">
+ <shade name="bright" weight="0.502487014453" />
+ <shade name="cool" weight="0.392039373653" />
+ <shade name="light" weight="0.105472521846" />
+</color>
+
+</colors>

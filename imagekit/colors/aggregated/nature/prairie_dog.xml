@@ -1,0 +1,33 @@
+<colors query="prairie dog">
+
+<color name="white" weight="0.682831509642">
+ <shade name="fresh" weight="0.551401230152" />
+ <shade name="cool" weight="0.3925229096" />
+ <shade name="light" weight="0.0560747013714" />
+</color>
+
+<color name="black" weight="0.155188979464">
+ <shade name="fresh" weight="0.551401230152" />
+ <shade name="cool" weight="0.3925229096" />
+ <shade name="light" weight="0.0560747013714" />
+</color>
+
+<color name="red" weight="0.0785644208537">
+ <shade name="fresh" weight="0.551401230152" />
+ <shade name="cool" weight="0.3925229096" />
+ <shade name="light" weight="0.0560747013714" />
+</color>
+
+<color name="blue" weight="0.0766245586104">
+ <shade name="fresh" weight="0.551401230152" />
+ <shade name="cool" weight="0.3925229096" />
+ <shade name="light" weight="0.0560747013714" />
+</color>
+
+<color name="yellow" weight="0.00678951785156">
+ <shade name="fresh" weight="0.551401230152" />
+ <shade name="cool" weight="0.3925229096" />
+ <shade name="light" weight="0.0560747013714" />
+</color>
+
+</colors>

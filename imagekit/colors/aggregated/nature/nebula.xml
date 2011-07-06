@@ -1,0 +1,33 @@
+<colors query="nebula">
+
+<color name="red" weight="0.558075631533">
+ <shade name="dark" weight="0.766624177316" />
+ <shade name="bright" weight="0.227366315836" />
+ <shade name="light" weight="0.00600849889401" />
+</color>
+
+<color name="blue" weight="0.313066817689">
+ <shade name="dark" weight="0.766624177316" />
+ <shade name="bright" weight="0.227366315836" />
+ <shade name="light" weight="0.00600849889401" />
+</color>
+
+<color name="green" weight="0.0517240829226">
+ <shade name="dark" weight="0.766624177316" />
+ <shade name="bright" weight="0.227366315836" />
+ <shade name="light" weight="0.00600849889401" />
+</color>
+
+<color name="purple" weight="0.0412885223329">
+ <shade name="dark" weight="0.766624177316" />
+ <shade name="bright" weight="0.227366315836" />
+ <shade name="light" weight="0.00600849889401" />
+</color>
+
+<color name="pink" weight="0.0358438820253">
+ <shade name="dark" weight="0.766624177316" />
+ <shade name="bright" weight="0.227366315836" />
+ <shade name="light" weight="0.00600849889401" />
+</color>
+
+</colors>

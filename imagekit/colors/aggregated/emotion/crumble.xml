@@ -1,0 +1,33 @@
+<colors query="crumble">
+
+<color name="green" weight="0.437405260208">
+ <shade name="cool" weight="0.523681068367" />
+ <shade name="weak" weight="0.258265919382" />
+ <shade name="light" weight="0.21805150287" />
+</color>
+
+<color name="orange" weight="0.425338908202">
+ <shade name="cool" weight="0.523681068367" />
+ <shade name="weak" weight="0.258265919382" />
+ <shade name="light" weight="0.21805150287" />
+</color>
+
+<color name="blue" weight="0.0633483480301">
+ <shade name="cool" weight="0.523681068367" />
+ <shade name="weak" weight="0.258265919382" />
+ <shade name="light" weight="0.21805150287" />
+</color>
+
+<color name="pink" weight="0.0377073500179">
+ <shade name="cool" weight="0.523681068367" />
+ <shade name="weak" weight="0.258265919382" />
+ <shade name="light" weight="0.21805150287" />
+</color>
+
+<color name="black" weight="0.0361990560172">
+ <shade name="cool" weight="0.523681068367" />
+ <shade name="weak" weight="0.258265919382" />
+ <shade name="light" weight="0.21805150287" />
+</color>
+
+</colors>

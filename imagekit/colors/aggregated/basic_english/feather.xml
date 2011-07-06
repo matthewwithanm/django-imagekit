@@ -1,0 +1,33 @@
+<colors query="feather">
+
+<color name="red" weight="0.357621044394">
+ <shade name="soft" weight="0.582773962633" />
+ <shade name="light" weight="0.36788680827" />
+ <shade name="cool" weight="0.0493380906418" />
+</color>
+
+<color name="white" weight="0.312394963839">
+ <shade name="soft" weight="0.582773962633" />
+ <shade name="light" weight="0.36788680827" />
+ <shade name="cool" weight="0.0493380906418" />
+</color>
+
+<color name="black" weight="0.120602881482">
+ <shade name="soft" weight="0.582773962633" />
+ <shade name="light" weight="0.36788680827" />
+ <shade name="cool" weight="0.0493380906418" />
+</color>
+
+<color name="blue" weight="0.118090321451">
+ <shade name="soft" weight="0.582773962633" />
+ <shade name="light" weight="0.36788680827" />
+ <shade name="cool" weight="0.0493380906418" />
+</color>
+
+<color name="pink" weight="0.0912896811217">
+ <shade name="soft" weight="0.582773962633" />
+ <shade name="light" weight="0.36788680827" />
+ <shade name="cool" weight="0.0493380906418" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="drawer">
+
+<color name="white" weight="0.437418297522">
+ <shade name="cool" weight="0.523199213108" />
+ <shade name="warm" weight="0.249599624602" />
+ <shade name="light" weight="0.227199658292" />
+</color>
+
+<color name="blue" weight="0.231701771459">
+ <shade name="cool" weight="0.578248375679" />
+ <shade name="light" weight="0.251104799225" />
+ <shade name="fresh" weight="0.170645162853" />
+</color>
+
+<color name="green" weight="0.136422538336">
+ <shade name="cool" weight="0.578248375679" />
+ <shade name="light" weight="0.251104799225" />
+ <shade name="fresh" weight="0.170645162853" />
+</color>
+
+<color name="red" weight="0.122563740791">
+ <shade name="cool" weight="0.523199213108" />
+ <shade name="warm" weight="0.249599624602" />
+ <shade name="light" weight="0.227199658292" />
+</color>
+
+<color name="pink" weight="0.0718925122659">
+ <shade name="cool" weight="0.523199213108" />
+ <shade name="warm" weight="0.249599624602" />
+ <shade name="light" weight="0.227199658292" />
+</color>
+
+</colors>

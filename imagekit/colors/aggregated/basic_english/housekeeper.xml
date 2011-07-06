@@ -1,0 +1,33 @@
+<colors query="housekeeper">
+
+<color name="black" weight="0.961537498714">
+ <shade name="light" weight="0.898142571218" />
+ <shade name="cool" weight="0.0602106751655" />
+ <shade name="warm" weight="0.0416457169894" />
+</color>
+
+<color name="white" weight="0.0284809841391">
+ <shade name="light" weight="0.898142571218" />
+ <shade name="cool" weight="0.0602106751655" />
+ <shade name="warm" weight="0.0416457169894" />
+</color>
+
+<color name="green" weight="0.00541625553073">
+ <shade name="light" weight="0.917947745395" />
+ <shade name="cool" weight="0.0615383963393" />
+ <shade name="hard" weight="0.0205127987798" />
+</color>
+
+<color name="pink" weight="0.00401654904526">
+ <shade name="light" weight="0.898142571218" />
+ <shade name="cool" weight="0.0602106751655" />
+ <shade name="warm" weight="0.0416457169894" />
+</color>
+
+<color name="red" weight="0.000547711233444">
+ <shade name="light" weight="0.898142571218" />
+ <shade name="cool" weight="0.0602106751655" />
+ <shade name="warm" weight="0.0416457169894" />
+</color>
+
+</colors>

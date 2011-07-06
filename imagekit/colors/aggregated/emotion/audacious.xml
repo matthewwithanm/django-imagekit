@@ -1,0 +1,33 @@
+<colors query="audacious">
+
+<color name="black" weight="0.691357299193">
+ <shade name="light" weight="0.402654336323" />
+ <shade name="weak" weight="0.382005395999" />
+ <shade name="cool" weight="0.215338949096" />
+</color>
+
+<color name="red" weight="0.185184990855">
+ <shade name="light" weight="0.402654336323" />
+ <shade name="weak" weight="0.382005395999" />
+ <shade name="cool" weight="0.215338949096" />
+</color>
+
+<color name="green" weight="0.0555554972566">
+ <shade name="light" weight="0.402654336323" />
+ <shade name="weak" weight="0.382005395999" />
+ <shade name="cool" weight="0.215338949096" />
+</color>
+
+<color name="blue" weight="0.0432098311996">
+ <shade name="light" weight="0.402654336323" />
+ <shade name="weak" weight="0.382005395999" />
+ <shade name="cool" weight="0.215338949096" />
+</color>
+
+<color name="yellow" weight="0.024691332114">
+ <shade name="light" weight="0.402654336323" />
+ <shade name="weak" weight="0.382005395999" />
+ <shade name="cool" weight="0.215338949096" />
+</color>
+
+</colors>

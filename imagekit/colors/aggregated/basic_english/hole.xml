@@ -1,0 +1,33 @@
+<colors query="hole">
+
+<color name="black" weight="0.916968868881">
+ <shade name="dark" weight="0.598925426061" />
+ <shade name="light" weight="0.357289995547" />
+ <shade name="hard" weight="0.0437835139052" />
+</color>
+
+<color name="blue" weight="0.0507607766702">
+ <shade name="dark" weight="0.598925426061" />
+ <shade name="light" weight="0.357289995547" />
+ <shade name="hard" weight="0.0437835139052" />
+</color>
+
+<color name="white" weight="0.0175440472362">
+ <shade name="dark" weight="0.598925426061" />
+ <shade name="light" weight="0.357289995547" />
+ <shade name="hard" weight="0.0437835139052" />
+</color>
+
+<color name="pink" weight="0.0116960314908">
+ <shade name="dark" weight="0.598925426061" />
+ <shade name="light" weight="0.357289995547" />
+ <shade name="hard" weight="0.0437835139052" />
+</color>
+
+<color name="red" weight="0.00302927215613">
+ <shade name="dark" weight="0.598925426061" />
+ <shade name="light" weight="0.357289995547" />
+ <shade name="hard" weight="0.0437835139052" />
+</color>
+
+</colors>

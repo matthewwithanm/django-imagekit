@@ -1,0 +1,33 @@
+<colors query="hangover">
+
+<color name="green" weight="0.481335411583">
+ <shade name="light" weight="0.454006548951" />
+ <shade name="intense" weight="0.37346973505" />
+ <shade name="hard" weight="0.172522488601" />
+</color>
+
+<color name="pink" weight="0.22224925892">
+ <shade name="light" weight="0.659780808228" />
+ <shade name="hard" weight="0.250716707127" />
+ <shade name="dark" weight="0.0895007009422" />
+</color>
+
+<color name="black" weight="0.124263121562">
+ <shade name="light" weight="0.454006548951" />
+ <shade name="intense" weight="0.37346973505" />
+ <shade name="hard" weight="0.172522488601" />
+</color>
+
+<color name="blue" weight="0.118369218563">
+ <shade name="light" weight="0.454006548951" />
+ <shade name="intense" weight="0.37346973505" />
+ <shade name="hard" weight="0.172522488601" />
+</color>
+
+<color name="red" weight="0.0537818648656">
+ <shade name="light" weight="0.454006548951" />
+ <shade name="intense" weight="0.37346973505" />
+ <shade name="hard" weight="0.172522488601" />
+</color>
+
+</colors>

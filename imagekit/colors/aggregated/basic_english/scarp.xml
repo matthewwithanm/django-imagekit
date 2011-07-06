@@ -1,0 +1,33 @@
+<colors query="scarp">
+
+<color name="white" weight="0.416927465768">
+ <shade name="fresh" weight="0.490049225843" />
+ <shade name="dark" weight="0.296019583123" />
+ <shade name="bright" weight="0.213930118896" />
+</color>
+
+<color name="red" weight="0.250783438056">
+ <shade name="fresh" weight="0.490049225843" />
+ <shade name="dark" weight="0.296019583123" />
+ <shade name="bright" weight="0.213930118896" />
+</color>
+
+<color name="green" weight="0.184952785566">
+ <shade name="fresh" weight="0.490049225843" />
+ <shade name="dark" weight="0.296019583123" />
+ <shade name="bright" weight="0.213930118896" />
+</color>
+
+<color name="black" weight="0.0752350314168">
+ <shade name="fresh" weight="0.490049225843" />
+ <shade name="dark" weight="0.296019583123" />
+ <shade name="bright" weight="0.213930118896" />
+</color>
+
+<color name="blue" weight="0.0721002384411">
+ <shade name="fresh" weight="0.490049225843" />
+ <shade name="dark" weight="0.296019583123" />
+ <shade name="bright" weight="0.213930118896" />
+</color>
+
+</colors>

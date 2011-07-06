@@ -1,0 +1,33 @@
+<colors query="pension">
+
+<color name="orange" weight="0.507480547005">
+ <shade name="intense" weight="0.525656239324" />
+ <shade name="weak" weight="0.254484369832" />
+ <shade name="fresh" weight="0.219857808035" />
+</color>
+
+<color name="pink" weight="0.288446389939">
+ <shade name="weak" weight="0.389775412902" />
+ <shade name="fresh" weight="0.336740397704" />
+ <shade name="neutral" weight="0.273481765118" />
+</color>
+
+<color name="yellow" weight="0.0840659264795">
+ <shade name="intense" weight="0.525656239324" />
+ <shade name="weak" weight="0.254484369832" />
+ <shade name="fresh" weight="0.219857808035" />
+</color>
+
+<color name="green" weight="0.0721887221879">
+ <shade name="intense" weight="0.525656239324" />
+ <shade name="weak" weight="0.254484369832" />
+ <shade name="fresh" weight="0.219857808035" />
+</color>
+
+<color name="white" weight="0.0478173159792">
+ <shade name="weak" weight="0.389775412902" />
+ <shade name="fresh" weight="0.336740397704" />
+ <shade name="neutral" weight="0.273481765118" />
+</color>
+
+</colors>

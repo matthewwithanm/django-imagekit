@@ -1,0 +1,33 @@
+<colors query="sport">
+
+<color name="white" weight="0.314255215781">
+ <shade name="light" weight="0.647087352091" />
+ <shade name="cool" weight="0.228471611238" />
+ <shade name="soft" weight="0.124439875402" />
+</color>
+
+<color name="black" weight="0.273876053977">
+ <shade name="light" weight="0.647087352091" />
+ <shade name="cool" weight="0.228471611238" />
+ <shade name="soft" weight="0.124439875402" />
+</color>
+
+<color name="orange" weight="0.148700652384">
+ <shade name="light" weight="0.647087352091" />
+ <shade name="cool" weight="0.228471611238" />
+ <shade name="soft" weight="0.124439875402" />
+</color>
+
+<color name="blue" weight="0.145716105641">
+ <shade name="light" weight="0.647087352091" />
+ <shade name="cool" weight="0.228471611238" />
+ <shade name="soft" weight="0.124439875402" />
+</color>
+
+<color name="yellow" weight="0.117450692379">
+ <shade name="light" weight="0.647087352091" />
+ <shade name="cool" weight="0.228471611238" />
+ <shade name="soft" weight="0.124439875402" />
+</color>
+
+</colors>

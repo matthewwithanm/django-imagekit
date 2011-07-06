@@ -1,0 +1,33 @@
+<colors query="electricity">
+
+<color name="green" weight="0.929267168241">
+ <shade name="light" weight="0.963069934565" />
+ <shade name="hard" weight="0.0236151356306" />
+ <shade name="cool" weight="0.013313883051" />
+</color>
+
+<color name="black" weight="0.0276476182287">
+ <shade name="light" weight="0.963069934565" />
+ <shade name="hard" weight="0.0236151356306" />
+ <shade name="cool" weight="0.013313883051" />
+</color>
+
+<color name="blue" weight="0.0243964631221">
+ <shade name="light" weight="0.963069934565" />
+ <shade name="hard" weight="0.0236151356306" />
+ <shade name="cool" weight="0.013313883051" />
+</color>
+
+<color name="white" weight="0.00970226602654">
+ <shade name="light" weight="0.963069934565" />
+ <shade name="hard" weight="0.0236151356306" />
+ <shade name="cool" weight="0.013313883051" />
+</color>
+
+<color name="red" weight="0.00898547592432">
+ <shade name="light" weight="0.963069934565" />
+ <shade name="hard" weight="0.0236151356306" />
+ <shade name="cool" weight="0.013313883051" />
+</color>
+
+</colors>

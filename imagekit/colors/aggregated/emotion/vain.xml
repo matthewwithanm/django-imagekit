@@ -1,0 +1,33 @@
+<colors query="vain">
+
+<color name="blue" weight="0.627360750266">
+ <shade name="dark" weight="0.394138638303" />
+ <shade name="weak" weight="0.391208239505" />
+ <shade name="light" weight="0.214651711938" />
+</color>
+
+<color name="red" weight="0.205605624037">
+ <shade name="dark" weight="0.394138638303" />
+ <shade name="weak" weight="0.391208239505" />
+ <shade name="light" weight="0.214651711938" />
+</color>
+
+<color name="purple" weight="0.0703803866895">
+ <shade name="dark" weight="0.394138638303" />
+ <shade name="weak" weight="0.391208239505" />
+ <shade name="light" weight="0.214651711938" />
+</color>
+
+<color name="black" weight="0.0536859129429">
+ <shade name="dark" weight="0.394138638303" />
+ <shade name="weak" weight="0.391208239505" />
+ <shade name="light" weight="0.214651711938" />
+</color>
+
+<color name="white" weight="0.0429663034846">
+ <shade name="dark" weight="0.394138638303" />
+ <shade name="weak" weight="0.391208239505" />
+ <shade name="light" weight="0.214651711938" />
+</color>
+
+</colors>

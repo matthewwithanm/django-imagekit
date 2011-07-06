@@ -1,0 +1,33 @@
+<colors query="skunk">
+
+<color name="blue" weight="0.435031507019">
+ <shade name="light" weight="0.717216612101" />
+ <shade name="fresh" weight="0.154244777422" />
+ <shade name="weak" weight="0.128537314518" />
+</color>
+
+<color name="purple" weight="0.26790075856">
+ <shade name="light" weight="0.717216612101" />
+ <shade name="fresh" weight="0.154244777422" />
+ <shade name="weak" weight="0.128537314518" />
+</color>
+
+<color name="white" weight="0.181877579206">
+ <shade name="light" weight="0.717216612101" />
+ <shade name="fresh" weight="0.154244777422" />
+ <shade name="weak" weight="0.128537314518" />
+</color>
+
+<color name="pink" weight="0.0966736682265">
+ <shade name="light" weight="0.717216612101" />
+ <shade name="fresh" weight="0.154244777422" />
+ <shade name="weak" weight="0.128537314518" />
+</color>
+
+<color name="green" weight="0.0185154652705">
+ <shade name="light" weight="0.717216612101" />
+ <shade name="fresh" weight="0.154244777422" />
+ <shade name="weak" weight="0.128537314518" />
+</color>
+
+</colors>

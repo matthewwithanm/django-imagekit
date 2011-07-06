@@ -1,0 +1,33 @@
+<colors query="person">
+
+<color name="black" weight="0.450887443639">
+ <shade name="cool" weight="0.646168091673" />
+ <shade name="neutral" weight="0.192370653246" />
+ <shade name="weak" weight="0.161459813237" />
+</color>
+
+<color name="white" weight="0.439326227135">
+ <shade name="cool" weight="0.646168091673" />
+ <shade name="neutral" weight="0.192370653246" />
+ <shade name="weak" weight="0.161459813237" />
+</color>
+
+<color name="orange" weight="0.0920272833683">
+ <shade name="cool" weight="0.646168091673" />
+ <shade name="neutral" weight="0.192370653246" />
+ <shade name="weak" weight="0.161459813237" />
+</color>
+
+<color name="green" weight="0.00975766672901">
+ <shade name="cool" weight="0.646168091673" />
+ <shade name="neutral" weight="0.192370653246" />
+ <shade name="weak" weight="0.161459813237" />
+</color>
+
+<color name="blue" weight="0.00800036182046">
+ <shade name="cool" weight="0.646168091673" />
+ <shade name="neutral" weight="0.192370653246" />
+ <shade name="weak" weight="0.161459813237" />
+</color>
+
+</colors>

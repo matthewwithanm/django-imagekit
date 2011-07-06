@@ -1,0 +1,33 @@
+<colors query="handwriting">
+
+<color name="black" weight="0.281555964795">
+ <shade name="soft" weight="0.451408320671" />
+ <shade name="cool" weight="0.451408320671" />
+ <shade name="light" weight="0.0971821734948" />
+</color>
+
+<color name="blue" weight="0.277100965352">
+ <shade name="soft" weight="0.451408320671" />
+ <shade name="cool" weight="0.451408320671" />
+ <shade name="light" weight="0.0971821734948" />
+</color>
+
+<color name="red" weight="0.188297976456">
+ <shade name="soft" weight="0.451408320671" />
+ <shade name="cool" weight="0.451408320671" />
+ <shade name="light" weight="0.0971821734948" />
+</color>
+
+<color name="white" weight="0.142262982212">
+ <shade name="soft" weight="0.451408320671" />
+ <shade name="cool" weight="0.451408320671" />
+ <shade name="light" weight="0.0971821734948" />
+</color>
+
+<color name="green" weight="0.110780986148">
+ <shade name="soft" weight="0.451408320671" />
+ <shade name="cool" weight="0.451408320671" />
+ <shade name="light" weight="0.0971821734948" />
+</color>
+
+</colors>

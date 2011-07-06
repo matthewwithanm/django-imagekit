@@ -1,0 +1,33 @@
+<colors query="act">
+
+<color name="black" weight="0.31831577539">
+ <shade name="hard" weight="0.886018605985" />
+ <shade name="neutral" weight="0.0598841721131" />
+ <shade name="fresh" weight="0.0540961108679" />
+</color>
+
+<color name="white" weight="0.303544741729">
+ <shade name="hard" weight="0.886018605985" />
+ <shade name="neutral" weight="0.0598841721131" />
+ <shade name="fresh" weight="0.0540961108679" />
+</color>
+
+<color name="green" weight="0.205317367885">
+ <shade name="hard" weight="0.886018605985" />
+ <shade name="neutral" weight="0.0598841721131" />
+ <shade name="fresh" weight="0.0540961108679" />
+</color>
+
+<color name="red" weight="0.0886262019646">
+ <shade name="hard" weight="0.886018605985" />
+ <shade name="neutral" weight="0.0598841721131" />
+ <shade name="fresh" weight="0.0540961108679" />
+</color>
+
+<color name="orange" weight="0.0841948918664">
+ <shade name="hard" weight="0.886018605985" />
+ <shade name="neutral" weight="0.0598841721131" />
+ <shade name="fresh" weight="0.0540961108679" />
+</color>
+
+</colors>

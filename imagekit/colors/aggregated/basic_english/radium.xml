@@ -1,0 +1,33 @@
+<colors query="radium">
+
+<color name="black" weight="0.469353436497">
+ <shade name="dark" weight="0.586714858269" />
+ <shade name="light" weight="0.24354201664" />
+ <shade name="soft" weight="0.169741405537" />
+</color>
+
+<color name="orange" weight="0.213141678221">
+ <shade name="dark" weight="0.586714858269" />
+ <shade name="light" weight="0.24354201664" />
+ <shade name="soft" weight="0.169741405537" />
+</color>
+
+<color name="blue" weight="0.165378063801">
+ <shade name="dark" weight="0.586714858269" />
+ <shade name="light" weight="0.24354201664" />
+ <shade name="soft" weight="0.169741405537" />
+</color>
+
+<color name="red" weight="0.100772943719">
+ <shade name="dark" weight="0.586714858269" />
+ <shade name="light" weight="0.24354201664" />
+ <shade name="soft" weight="0.169741405537" />
+</color>
+
+<color name="green" weight="0.0513527877579">
+ <shade name="dark" weight="0.586714858269" />
+ <shade name="light" weight="0.24354201664" />
+ <shade name="soft" weight="0.169741405537" />
+</color>
+
+</colors>

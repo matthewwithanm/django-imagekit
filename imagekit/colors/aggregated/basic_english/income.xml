@@ -1,0 +1,33 @@
+<colors query="income">
+
+<color name="white" weight="0.551551431294">
+ <shade name="weak" weight="0.80096206761" />
+ <shade name="light" weight="0.106741437868" />
+ <shade name="hard" weight="0.0922952282316" />
+</color>
+
+<color name="black" weight="0.380449709907">
+ <shade name="weak" weight="0.80096206761" />
+ <shade name="light" weight="0.106741437868" />
+ <shade name="hard" weight="0.0922952282316" />
+</color>
+
+<color name="green" weight="0.0316034944208">
+ <shade name="weak" weight="0.80096206761" />
+ <shade name="light" weight="0.106741437868" />
+ <shade name="hard" weight="0.0922952282316" />
+</color>
+
+<color name="red" weight="0.0200692254379">
+ <shade name="weak" weight="0.80096206761" />
+ <shade name="light" weight="0.106741437868" />
+ <shade name="hard" weight="0.0922952282316" />
+</color>
+
+<color name="blue" weight="0.0163251171817">
+ <shade name="weak" weight="0.80096206761" />
+ <shade name="light" weight="0.106741437868" />
+ <shade name="hard" weight="0.0922952282316" />
+</color>
+
+</colors>

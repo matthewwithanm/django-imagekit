@@ -1,0 +1,33 @@
+<colors query="elk">
+
+<color name="black" weight="0.802323167415">
+ <shade name="light" weight="0.387375762417" />
+ <shade name="fresh" weight="0.326732272454" />
+ <shade name="soft" weight="0.285890738397" />
+</color>
+
+<color name="red" weight="0.117812396135">
+ <shade name="light" weight="0.387375762417" />
+ <shade name="fresh" weight="0.326732272454" />
+ <shade name="soft" weight="0.285890738397" />
+</color>
+
+<color name="white" weight="0.0495688163777">
+ <shade name="light" weight="0.387375762417" />
+ <shade name="fresh" weight="0.326732272454" />
+ <shade name="soft" weight="0.285890738397" />
+</color>
+
+<color name="blue" weight="0.0260524476776">
+ <shade name="light" weight="0.387375762417" />
+ <shade name="fresh" weight="0.326732272454" />
+ <shade name="soft" weight="0.285890738397" />
+</color>
+
+<color name="green" weight="0.00424216847139">
+ <shade name="light" weight="0.387375762417" />
+ <shade name="fresh" weight="0.326732272454" />
+ <shade name="soft" weight="0.285890738397" />
+</color>
+
+</colors>

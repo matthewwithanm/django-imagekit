@@ -1,0 +1,33 @@
+<colors query="sparrow">
+
+<color name="black" weight="0.781778535777">
+ <shade name="bright" weight="0.684900280587" />
+ <shade name="dark" weight="0.246830945277" />
+ <shade name="light" weight="0.0682676578377" />
+</color>
+
+<color name="red" weight="0.122999822962">
+ <shade name="bright" weight="0.684900280587" />
+ <shade name="dark" weight="0.246830945277" />
+ <shade name="light" weight="0.0682676578377" />
+</color>
+
+<color name="blue" weight="0.0693176968389">
+ <shade name="bright" weight="0.684900280587" />
+ <shade name="dark" weight="0.246830945277" />
+ <shade name="light" weight="0.0682676578377" />
+</color>
+
+<color name="pink" weight="0.0149580293179">
+ <shade name="bright" weight="0.684900280587" />
+ <shade name="dark" weight="0.246830945277" />
+ <shade name="light" weight="0.0682676578377" />
+</color>
+
+<color name="green" weight="0.0109448995009">
+ <shade name="bright" weight="0.684900280587" />
+ <shade name="dark" weight="0.246830945277" />
+ <shade name="light" weight="0.0682676578377" />
+</color>
+
+</colors>

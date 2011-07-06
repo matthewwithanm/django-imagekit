@@ -1,0 +1,33 @@
+<colors query="ticket">
+
+<color name="blue" weight="0.583462672416">
+ <shade name="weak" weight="0.779077465976" />
+ <shade name="hard" weight="0.165691123046" />
+ <shade name="light" weight="0.0552303743485" />
+</color>
+
+<color name="green" weight="0.146021674166">
+ <shade name="weak" weight="0.779077465976" />
+ <shade name="hard" weight="0.165691123046" />
+ <shade name="light" weight="0.0552303743485" />
+</color>
+
+<color name="red" weight="0.114820461737">
+ <shade name="weak" weight="0.779077465976" />
+ <shade name="hard" weight="0.165691123046" />
+ <shade name="light" weight="0.0552303743485" />
+</color>
+
+<color name="yellow" weight="0.0982838191503">
+ <shade name="weak" weight="0.779077465976" />
+ <shade name="hard" weight="0.165691123046" />
+ <shade name="light" weight="0.0552303743485" />
+</color>
+
+<color name="pink" weight="0.0574102308687">
+ <shade name="weak" weight="0.779077465976" />
+ <shade name="hard" weight="0.165691123046" />
+ <shade name="light" weight="0.0552303743485" />
+</color>
+
+</colors>

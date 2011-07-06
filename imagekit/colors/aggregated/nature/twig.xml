@@ -1,0 +1,33 @@
+<colors query="twig">
+
+<color name="red" weight="0.398592787743">
+ <shade name="soft" weight="0.431634659937" />
+ <shade name="fresh" weight="0.284181825797" />
+ <shade name="dark" weight="0.284181825797" />
+</color>
+
+<color name="black" weight="0.303740493334">
+ <shade name="soft" weight="0.431634659937" />
+ <shade name="fresh" weight="0.284181825797" />
+ <shade name="dark" weight="0.284181825797" />
+</color>
+
+<color name="green" weight="0.132153758503">
+ <shade name="soft" weight="0.431634659937" />
+ <shade name="fresh" weight="0.284181825797" />
+ <shade name="dark" weight="0.284181825797" />
+</color>
+
+<color name="yellow" weight="0.127890734035">
+ <shade name="soft" weight="0.431634659937" />
+ <shade name="fresh" weight="0.284181825797" />
+ <shade name="dark" weight="0.284181825797" />
+</color>
+
+<color name="pink" weight="0.0376211909287">
+ <shade name="soft" weight="0.431634659937" />
+ <shade name="fresh" weight="0.284181825797" />
+ <shade name="dark" weight="0.284181825797" />
+</color>
+
+</colors>

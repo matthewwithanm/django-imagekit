@@ -1,0 +1,33 @@
+<colors query="sulky">
+
+<color name="white" weight="0.349072110597">
+ <shade name="light" weight="0.616113052044" />
+ <shade name="dark" weight="0.293838532513" />
+ <shade name="soft" weight="0.0900472922218" />
+</color>
+
+<color name="red" weight="0.268127853067">
+ <shade name="light" weight="0.616113052044" />
+ <shade name="dark" weight="0.293838532513" />
+ <shade name="soft" weight="0.0900472922218" />
+</color>
+
+<color name="black" weight="0.224283046905">
+ <shade name="light" weight="0.616113052044" />
+ <shade name="dark" weight="0.293838532513" />
+ <shade name="soft" weight="0.0900472922218" />
+</color>
+
+<color name="green" weight="0.0944349671179">
+ <shade name="light" weight="0.616113052044" />
+ <shade name="dark" weight="0.293838532513" />
+ <shade name="soft" weight="0.0900472922218" />
+</color>
+
+<color name="yellow" weight="0.0640808705443">
+ <shade name="light" weight="0.616113052044" />
+ <shade name="dark" weight="0.293838532513" />
+ <shade name="soft" weight="0.0900472922218" />
+</color>
+
+</colors>

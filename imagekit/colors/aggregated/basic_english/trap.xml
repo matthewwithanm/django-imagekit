@@ -1,0 +1,33 @@
+<colors query="trap">
+
+<color name="black" weight="0.473009057777">
+ <shade name="light" weight="0.969414141986" />
+ <shade name="hard" weight="0.0193167393606" />
+ <shade name="dark" weight="0.0112680979604" />
+</color>
+
+<color name="green" weight="0.335439247843">
+ <shade name="light" weight="0.969414141986" />
+ <shade name="hard" weight="0.0193167393606" />
+ <shade name="dark" weight="0.0112680979604" />
+</color>
+
+<color name="purple" weight="0.14226379295">
+ <shade name="light" weight="0.969414141986" />
+ <shade name="hard" weight="0.0193167393606" />
+ <shade name="dark" weight="0.0112680979604" />
+</color>
+
+<color name="white" weight="0.0262140897669">
+ <shade name="light" weight="0.969414141986" />
+ <shade name="hard" weight="0.0193167393606" />
+ <shade name="dark" weight="0.0112680979604" />
+</color>
+
+<color name="yellow" weight="0.0230727319023">
+ <shade name="light" weight="0.969414141986" />
+ <shade name="hard" weight="0.0193167393606" />
+ <shade name="dark" weight="0.0112680979604" />
+</color>
+
+</colors>

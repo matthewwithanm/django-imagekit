@@ -1,0 +1,33 @@
+<colors query="porcelain">
+
+<color name="white" weight="0.763868330654">
+ <shade name="hard" weight="0.497026716066" />
+ <shade name="dark" weight="0.275861718008" />
+ <shade name="soft" weight="0.227110293705" />
+</color>
+
+<color name="blue" weight="0.091607300734">
+ <shade name="hard" weight="0.497026716066" />
+ <shade name="dark" weight="0.275861718008" />
+ <shade name="soft" weight="0.227110293705" />
+</color>
+
+<color name="black" weight="0.0792317802932">
+ <shade name="hard" weight="0.497026716066" />
+ <shade name="dark" weight="0.275861718008" />
+ <shade name="soft" weight="0.227110293705" />
+</color>
+
+<color name="green" weight="0.0352773456243">
+ <shade name="hard" weight="0.497026716066" />
+ <shade name="dark" weight="0.275861718008" />
+ <shade name="soft" weight="0.227110293705" />
+</color>
+
+<color name="pink" weight="0.0300141932529">
+ <shade name="hard" weight="0.497026716066" />
+ <shade name="dark" weight="0.275861718008" />
+ <shade name="soft" weight="0.227110293705" />
+</color>
+
+</colors>

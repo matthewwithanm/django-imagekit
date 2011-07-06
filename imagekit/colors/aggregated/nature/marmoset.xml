@@ -1,0 +1,33 @@
+<colors query="marmoset">
+
+<color name="white" weight="0.738326082631">
+ <shade name="fresh" weight="0.499999375001" />
+ <shade name="warm" weight="0.2499996875" />
+ <shade name="dark" weight="0.2499996875" />
+</color>
+
+<color name="green" weight="0.15272357704">
+ <shade name="fresh" weight="0.599999100001" />
+ <shade name="dark" weight="0.299999550001" />
+ <shade name="hard" weight="0.0999998500002" />
+</color>
+
+<color name="black" weight="0.0535018900457">
+ <shade name="fresh" weight="0.499999375001" />
+ <shade name="warm" weight="0.2499996875" />
+ <shade name="dark" weight="0.2499996875" />
+</color>
+
+<color name="red" weight="0.0369649422134">
+ <shade name="fresh" weight="0.499999375001" />
+ <shade name="warm" weight="0.2499996875" />
+ <shade name="dark" weight="0.2499996875" />
+</color>
+
+<color name="blue" weight="0.0184824711067">
+ <shade name="fresh" weight="0.599999100001" />
+ <shade name="dark" weight="0.299999550001" />
+ <shade name="hard" weight="0.0999998500002" />
+</color>
+
+</colors>

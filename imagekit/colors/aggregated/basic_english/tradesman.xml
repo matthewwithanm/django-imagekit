@@ -1,0 +1,33 @@
+<colors query="tradesman">
+
+<color name="white" weight="0.585737941232">
+ <shade name="light" weight="0.866665549631" />
+ <shade name="warm" weight="0.0666665807409" />
+ <shade name="neutral" weight="0.0666665807409" />
+</color>
+
+<color name="black" weight="0.176570277937">
+ <shade name="light" weight="0.866665549631" />
+ <shade name="warm" weight="0.0666665807409" />
+ <shade name="neutral" weight="0.0666665807409" />
+</color>
+
+<color name="red" weight="0.12733433505">
+ <shade name="light" weight="0.866665549631" />
+ <shade name="warm" weight="0.0666665807409" />
+ <shade name="neutral" weight="0.0666665807409" />
+</color>
+
+<color name="blue" weight="0.0764006010303">
+ <shade name="light" weight="0.866665549631" />
+ <shade name="neutral" weight="0.0666665807409" />
+ <shade name="hard" weight="0.0666665807409" />
+</color>
+
+<color name="green" weight="0.0339558226801">
+ <shade name="light" weight="0.866665549631" />
+ <shade name="neutral" weight="0.0666665807409" />
+ <shade name="hard" weight="0.0666665807409" />
+</color>
+
+</colors>

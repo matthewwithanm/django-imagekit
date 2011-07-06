@@ -1,0 +1,33 @@
+<colors query="doll">
+
+<color name="black" weight="0.64076280018">
+ <shade name="soft" weight="0.691292025819" />
+ <shade name="hard" weight="0.154353372177" />
+ <shade name="dark" weight="0.154353372177" />
+</color>
+
+<color name="white" weight="0.126107572376">
+ <shade name="soft" weight="0.691292025819" />
+ <shade name="hard" weight="0.154353372177" />
+ <shade name="dark" weight="0.154353372177" />
+</color>
+
+<color name="pink" weight="0.121563155353">
+ <shade name="soft" weight="0.691292025819" />
+ <shade name="hard" weight="0.154353372177" />
+ <shade name="dark" weight="0.154353372177" />
+</color>
+
+<color name="blue" weight="0.0574868753353">
+ <shade name="soft" weight="0.691292025819" />
+ <shade name="hard" weight="0.154353372177" />
+ <shade name="dark" weight="0.154353372177" />
+</color>
+
+<color name="red" weight="0.0540785625684">
+ <shade name="soft" weight="0.691292025819" />
+ <shade name="hard" weight="0.154353372177" />
+ <shade name="dark" weight="0.154353372177" />
+</color>
+
+</colors>

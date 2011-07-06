@@ -1,0 +1,33 @@
+<colors query="serviceberry">
+
+<color name="white" weight="0.51546335955">
+ <shade name="cool" weight="0.571428000001" />
+ <shade name="fresh" weight="0.285714" />
+ <shade name="dark" weight="0.142857" />
+</color>
+
+<color name="red" weight="0.144329740674">
+ <shade name="cool" weight="0.571428000001" />
+ <shade name="fresh" weight="0.285714" />
+ <shade name="dark" weight="0.142857" />
+</color>
+
+<color name="orange" weight="0.144329740674">
+ <shade name="cool" weight="0.571428000001" />
+ <shade name="fresh" weight="0.285714" />
+ <shade name="dark" weight="0.142857" />
+</color>
+
+<color name="pink" weight="0.123711206292">
+ <shade name="cool" weight="0.571428000001" />
+ <shade name="fresh" weight="0.285714" />
+ <shade name="dark" weight="0.142857" />
+</color>
+
+<color name="green" weight="0.072164870337">
+ <shade name="cool" weight="0.571428000001" />
+ <shade name="fresh" weight="0.285714" />
+ <shade name="dark" weight="0.142857" />
+</color>
+
+</colors>

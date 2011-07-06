@@ -1,0 +1,33 @@
+<colors query="paranoia">
+
+<color name="black" weight="0.409629862701">
+ <shade name="intense" weight="0.524857313994" />
+ <shade name="dark" weight="0.455605307286" />
+ <shade name="cool" weight="0.0195363555764" />
+</color>
+
+<color name="blue" weight="0.248744596292">
+ <shade name="intense" weight="0.524857313994" />
+ <shade name="dark" weight="0.455605307286" />
+ <shade name="cool" weight="0.0195363555764" />
+</color>
+
+<color name="white" weight="0.206526476738">
+ <shade name="dark" weight="0.944106759666" />
+ <shade name="cool" weight="0.0404832978545" />
+ <shade name="light" weight="0.0154078223178" />
+</color>
+
+<color name="orange" weight="0.0840939300308">
+ <shade name="intense" weight="0.524857313994" />
+ <shade name="dark" weight="0.455605307286" />
+ <shade name="cool" weight="0.0195363555764" />
+</color>
+
+<color name="red" weight="0.0510040525424">
+ <shade name="intense" weight="0.524857313994" />
+ <shade name="dark" weight="0.455605307286" />
+ <shade name="cool" weight="0.0195363555764" />
+</color>
+
+</colors>

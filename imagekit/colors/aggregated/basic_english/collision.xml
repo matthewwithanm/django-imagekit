@@ -1,0 +1,33 @@
+<colors query="collision">
+
+<color name="white" weight="0.400410225307">
+ <shade name="neutral" weight="0.525099765281" />
+ <shade name="hard" weight="0.301204454272" />
+ <shade name="weak" weight="0.17369456863" />
+</color>
+
+<color name="green" weight="0.210472041507">
+ <shade name="neutral" weight="0.525099765281" />
+ <shade name="hard" weight="0.301204454272" />
+ <shade name="weak" weight="0.17369456863" />
+</color>
+
+<color name="red" weight="0.202515171645">
+ <shade name="neutral" weight="0.525099765281" />
+ <shade name="hard" weight="0.301204454272" />
+ <shade name="weak" weight="0.17369456863" />
+</color>
+
+<color name="blue" weight="0.118583028264">
+ <shade name="neutral" weight="0.525099765281" />
+ <shade name="hard" weight="0.301204454272" />
+ <shade name="weak" weight="0.17369456863" />
+</color>
+
+<color name="black" weight="0.0680184036579">
+ <shade name="neutral" weight="0.525099765281" />
+ <shade name="hard" weight="0.301204454272" />
+ <shade name="weak" weight="0.17369456863" />
+</color>
+
+</colors>

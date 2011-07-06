@@ -1,0 +1,33 @@
+<colors query="cheerfulness">
+
+<color name="yellow" weight="0.955793543249">
+ <shade name="bright" weight="0.432930203921" />
+ <shade name="fresh" weight="0.291163044634" />
+ <shade name="warm" weight="0.275905592514" />
+</color>
+
+<color name="white" weight="0.0301672337088">
+ <shade name="bright" weight="0.432930203921" />
+ <shade name="fresh" weight="0.291163044634" />
+ <shade name="warm" weight="0.275905592514" />
+</color>
+
+<color name="black" weight="0.00597370964531">
+ <shade name="bright" weight="0.432930203921" />
+ <shade name="fresh" weight="0.291163044634" />
+ <shade name="warm" weight="0.275905592514" />
+</color>
+
+<color name="orange" weight="0.00507765319851">
+ <shade name="bright" weight="0.432930203921" />
+ <shade name="fresh" weight="0.291163044634" />
+ <shade name="warm" weight="0.275905592514" />
+</color>
+
+<color name="pink" weight="0.00298685482265">
+ <shade name="bright" weight="0.432930203921" />
+ <shade name="fresh" weight="0.291163044634" />
+ <shade name="warm" weight="0.275905592514" />
+</color>
+
+</colors>

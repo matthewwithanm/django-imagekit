@@ -1,0 +1,33 @@
+<colors query="beef">
+
+<color name="orange" weight="0.690177125939">
+ <shade name="fresh" weight="0.881038463478" />
+ <shade name="soft" weight="0.0759235910923" />
+ <shade name="hard" weight="0.0430369019026" />
+</color>
+
+<color name="black" weight="0.190543018298">
+ <shade name="fresh" weight="0.881038463478" />
+ <shade name="soft" weight="0.0759235910923" />
+ <shade name="hard" weight="0.0430369019026" />
+</color>
+
+<color name="red" weight="0.0687470548974">
+ <shade name="fresh" weight="0.881038463478" />
+ <shade name="soft" weight="0.0759235910923" />
+ <shade name="hard" weight="0.0430369019026" />
+</color>
+
+<color name="green" weight="0.0308549773949">
+ <shade name="fresh" weight="0.881038463478" />
+ <shade name="soft" weight="0.0759235910923" />
+ <shade name="hard" weight="0.0430369019026" />
+</color>
+
+<color name="yellow" weight="0.0196768145317">
+ <shade name="fresh" weight="0.881038463478" />
+ <shade name="soft" weight="0.0759235910923" />
+ <shade name="hard" weight="0.0430369019026" />
+</color>
+
+</colors>

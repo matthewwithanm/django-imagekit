@@ -1,0 +1,33 @@
+<colors query="ruler">
+
+<color name="blue" weight="0.306817817418">
+ <shade name="cool" weight="0.430656461783" />
+ <shade name="dark" weight="0.425442703166" />
+ <shade name="weak" weight="0.143899737836" />
+</color>
+
+<color name="black" weight="0.289335320699">
+ <shade name="cool" weight="0.430656461783" />
+ <shade name="dark" weight="0.425442703166" />
+ <shade name="weak" weight="0.143899737836" />
+</color>
+
+<color name="yellow" weight="0.206293461284">
+ <shade name="cool" weight="0.430656461783" />
+ <shade name="dark" weight="0.425442703166" />
+ <shade name="weak" weight="0.143899737836" />
+</color>
+
+<color name="green" weight="0.113636228673">
+ <shade name="cool" weight="0.430656461783" />
+ <shade name="dark" weight="0.425442703166" />
+ <shade name="weak" weight="0.143899737836" />
+</color>
+
+<color name="pink" weight="0.0839159842512">
+ <shade name="cool" weight="0.430656461783" />
+ <shade name="dark" weight="0.425442703166" />
+ <shade name="weak" weight="0.143899737836" />
+</color>
+
+</colors>

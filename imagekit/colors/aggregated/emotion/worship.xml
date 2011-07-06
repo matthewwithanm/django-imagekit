@@ -1,0 +1,33 @@
+<colors query="worship">
+
+<color name="black" weight="0.586579857106">
+ <shade name="intense" weight="0.621211375947" />
+ <shade name="cool" weight="0.263130997454" />
+ <shade name="dark" weight="0.115656426904" />
+</color>
+
+<color name="white" weight="0.285508767183">
+ <shade name="cool" weight="0.608643170828" />
+ <shade name="dark" weight="0.267522622111" />
+ <shade name="soft" weight="0.123831432069" />
+</color>
+
+<color name="green" weight="0.0572813186991">
+ <shade name="intense" weight="0.621211375947" />
+ <shade name="cool" weight="0.263130997454" />
+ <shade name="dark" weight="0.115656426904" />
+</color>
+
+<color name="red" weight="0.0398634882482">
+ <shade name="intense" weight="0.621211375947" />
+ <shade name="cool" weight="0.263130997454" />
+ <shade name="dark" weight="0.115656426904" />
+</color>
+
+<color name="blue" weight="0.0307655149544">
+ <shade name="intense" weight="0.621211375947" />
+ <shade name="cool" weight="0.263130997454" />
+ <shade name="dark" weight="0.115656426904" />
+</color>
+
+</colors>

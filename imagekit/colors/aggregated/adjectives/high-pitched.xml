@@ -1,0 +1,33 @@
+<colors query="high-pitched">
+
+<color name="black" weight="0.408586846343">
+ <shade name="soft" weight="0.639951425663" />
+ <shade name="bright" weight="0.298444636828" />
+ <shade name="cool" weight="0.0616028007881" />
+</color>
+
+<color name="red" weight="0.256924949141">
+ <shade name="soft" weight="0.639951425663" />
+ <shade name="bright" weight="0.298444636828" />
+ <shade name="cool" weight="0.0616028007881" />
+</color>
+
+<color name="white" weight="0.203254643054">
+ <shade name="soft" weight="0.639951425663" />
+ <shade name="bright" weight="0.298444636828" />
+ <shade name="cool" weight="0.0616028007881" />
+</color>
+
+<color name="blue" weight="0.101800451546">
+ <shade name="soft" weight="0.639951425663" />
+ <shade name="bright" weight="0.298444636828" />
+ <shade name="cool" weight="0.0616028007881" />
+</color>
+
+<color name="yellow" weight="0.0294321033383">
+ <shade name="soft" weight="0.639951425663" />
+ <shade name="bright" weight="0.298444636828" />
+ <shade name="cool" weight="0.0616028007881" />
+</color>
+
+</colors>

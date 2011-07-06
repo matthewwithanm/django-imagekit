@@ -1,0 +1,33 @@
+<colors query="moor">
+
+<color name="black" weight="0.534280794789">
+ <shade name="dark" weight="0.998606130245" />
+ <shade name="warm" weight="0.000998606130245" />
+ <shade name="soft" weight="0.000394262362661" />
+</color>
+
+<color name="purple" weight="0.356187196526">
+ <shade name="dark" weight="0.999287689526" />
+ <shade name="soft" weight="0.000394531450908" />
+ <shade name="light" weight="0.000316777077371" />
+</color>
+
+<color name="white" weight="0.097642050013">
+ <shade name="dark" weight="0.998606130245" />
+ <shade name="warm" weight="0.000998606130245" />
+ <shade name="soft" weight="0.000394262362661" />
+</color>
+
+<color name="green" weight="0.00662865747975">
+ <shade name="dark" weight="0.999287689526" />
+ <shade name="soft" weight="0.000394531450908" />
+ <shade name="light" weight="0.000316777077371" />
+</color>
+
+<color name="blue" weight="0.00526029353943">
+ <shade name="dark" weight="0.999287689526" />
+ <shade name="soft" weight="0.000394531450908" />
+ <shade name="light" weight="0.000316777077371" />
+</color>
+
+</colors>

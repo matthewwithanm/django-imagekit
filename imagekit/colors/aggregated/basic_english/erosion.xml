@@ -1,0 +1,33 @@
+<colors query="erosion">
+
+<color name="green" weight="0.372114072428">
+ <shade name="intense" weight="0.891559244352" />
+ <shade name="weak" weight="0.0761331489559" />
+ <shade name="light" weight="0.0323065007082" />
+</color>
+
+<color name="red" weight="0.223453115453">
+ <shade name="intense" weight="0.891559244352" />
+ <shade name="weak" weight="0.0761331489559" />
+ <shade name="light" weight="0.0323065007082" />
+</color>
+
+<color name="white" weight="0.204062555847">
+ <shade name="weak" weight="0.55494258719" />
+ <shade name="light" weight="0.235485505748" />
+ <shade name="hard" weight="0.209563845426" />
+</color>
+
+<color name="black" weight="0.118190077595">
+ <shade name="intense" weight="0.891559244352" />
+ <shade name="weak" weight="0.0761331489559" />
+ <shade name="light" weight="0.0323065007082" />
+</color>
+
+<color name="yellow" weight="0.0821790383277">
+ <shade name="intense" weight="0.891559244352" />
+ <shade name="weak" weight="0.0761331489559" />
+ <shade name="light" weight="0.0323065007082" />
+</color>
+
+</colors>

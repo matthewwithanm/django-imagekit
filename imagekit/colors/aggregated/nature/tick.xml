@@ -1,0 +1,33 @@
+<colors query="tick">
+
+<color name="blue" weight="0.463976369676">
+ <shade name="soft" weight="0.526183054243" />
+ <shade name="hard" weight="0.435764963776" />
+ <shade name="cool" weight="0.0380509464047" />
+</color>
+
+<color name="green" weight="0.282097632763">
+ <shade name="soft" weight="0.526183054243" />
+ <shade name="hard" weight="0.435764963776" />
+ <shade name="cool" weight="0.0380509464047" />
+</color>
+
+<color name="red" weight="0.20563432704">
+ <shade name="soft" weight="0.526183054243" />
+ <shade name="hard" weight="0.435764963776" />
+ <shade name="cool" weight="0.0380509464047" />
+</color>
+
+<color name="black" weight="0.0404587394357">
+ <shade name="soft" weight="0.526183054243" />
+ <shade name="hard" weight="0.435764963776" />
+ <shade name="cool" weight="0.0380509464047" />
+</color>
+
+<color name="yellow" weight="0.00783192112013">
+ <shade name="soft" weight="0.526183054243" />
+ <shade name="hard" weight="0.435764963776" />
+ <shade name="cool" weight="0.0380509464047" />
+</color>
+
+</colors>

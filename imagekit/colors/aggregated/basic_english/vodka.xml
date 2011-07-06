@@ -1,0 +1,33 @@
+<colors query="vodka">
+
+<color name="orange" weight="0.306949490134">
+ <shade name="light" weight="0.496687914621" />
+ <shade name="cool" weight="0.321191518122" />
+ <shade name="fresh" weight="0.182118902028" />
+</color>
+
+<color name="pink" weight="0.21621599305">
+ <shade name="light" weight="0.496687914621" />
+ <shade name="cool" weight="0.321191518122" />
+ <shade name="fresh" weight="0.182118902028" />
+</color>
+
+<color name="red" weight="0.193049993795">
+ <shade name="light" weight="0.496687914621" />
+ <shade name="cool" weight="0.321191518122" />
+ <shade name="fresh" weight="0.182118902028" />
+</color>
+
+<color name="black" weight="0.187258493981">
+ <shade name="light" weight="0.496687914621" />
+ <shade name="cool" weight="0.321191518122" />
+ <shade name="fresh" weight="0.182118902028" />
+</color>
+
+<color name="blue" weight="0.0965249968975">
+ <shade name="light" weight="0.496687914621" />
+ <shade name="cool" weight="0.321191518122" />
+ <shade name="fresh" weight="0.182118902028" />
+</color>
+
+</colors>

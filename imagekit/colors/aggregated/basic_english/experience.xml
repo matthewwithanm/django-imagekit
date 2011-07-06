@@ -1,0 +1,33 @@
+<colors query="experience">
+
+<color name="black" weight="0.85158716098">
+ <shade name="intense" weight="0.475608982978" />
+ <shade name="cool" weight="0.272357280851" />
+ <shade name="hard" weight="0.252032110638" />
+</color>
+
+<color name="white" weight="0.0514165833045">
+ <shade name="cool" weight="0.367122483257" />
+ <shade name="hard" weight="0.339725283014" />
+ <shade name="soft" weight="0.2931500426" />
+</color>
+
+<color name="green" weight="0.0451680401946">
+ <shade name="intense" weight="0.475608982978" />
+ <shade name="cool" weight="0.272357280851" />
+ <shade name="hard" weight="0.252032110638" />
+</color>
+
+<color name="blue" weight="0.0349918414155">
+ <shade name="intense" weight="0.475608982978" />
+ <shade name="cool" weight="0.272357280851" />
+ <shade name="hard" weight="0.252032110638" />
+</color>
+
+<color name="red" weight="0.0168353604362">
+ <shade name="intense" weight="0.475608982978" />
+ <shade name="cool" weight="0.272357280851" />
+ <shade name="hard" weight="0.252032110638" />
+</color>
+
+</colors>

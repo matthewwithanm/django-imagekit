@@ -1,0 +1,33 @@
+<colors query="melancholic">
+
+<color name="orange" weight="0.750815345068">
+ <shade name="dark" weight="0.90599165099" />
+ <shade name="soft" weight="0.0585060439197" />
+ <shade name="warm" weight="0.0355012402425" />
+</color>
+
+<color name="blue" weight="0.169749556276">
+ <shade name="dark" weight="0.910820382135" />
+ <shade name="soft" weight="0.0588178679372" />
+ <shade name="intense" weight="0.0303606794045" />
+</color>
+
+<color name="black" weight="0.0680086363286">
+ <shade name="dark" weight="0.90599165099" />
+ <shade name="soft" weight="0.0585060439197" />
+ <shade name="warm" weight="0.0355012402425" />
+</color>
+
+<color name="pink" weight="0.00707289817817">
+ <shade name="dark" weight="0.90599165099" />
+ <shade name="soft" weight="0.0585060439197" />
+ <shade name="warm" weight="0.0355012402425" />
+</color>
+
+<color name="green" weight="0.00435255272503">
+ <shade name="dark" weight="0.910820382135" />
+ <shade name="soft" weight="0.0588178679372" />
+ <shade name="intense" weight="0.0303606794045" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="fragile">
+
+<color name="white" weight="0.460675950694">
+ <shade name="fresh" weight="0.643781704305" />
+ <shade name="weak" weight="0.20466299654" />
+ <shade name="soft" weight="0.151554244273" />
+</color>
+
+<color name="black" weight="0.275990547037">
+ <shade name="fresh" weight="0.643781704305" />
+ <shade name="weak" weight="0.20466299654" />
+ <shade name="soft" weight="0.151554244273" />
+</color>
+
+<color name="red" weight="0.12097931498">
+ <shade name="fresh" weight="0.643781704305" />
+ <shade name="weak" weight="0.20466299654" />
+ <shade name="soft" weight="0.151554244273" />
+</color>
+
+<color name="blue" weight="0.0757417666682">
+ <shade name="fresh" weight="0.643781704305" />
+ <shade name="weak" weight="0.20466299654" />
+ <shade name="soft" weight="0.151554244273" />
+</color>
+
+<color name="orange" weight="0.0666112523301">
+ <shade name="fresh" weight="0.643781704305" />
+ <shade name="weak" weight="0.20466299654" />
+ <shade name="soft" weight="0.151554244273" />
+</color>
+
+</colors>

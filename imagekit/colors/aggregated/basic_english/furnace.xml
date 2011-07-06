@@ -1,0 +1,33 @@
+<colors query="furnace">
+
+<color name="black" weight="0.774110873141">
+ <shade name="warm" weight="0.57285917785" />
+ <shade name="light" weight="0.267915128804" />
+ <shade name="cool" weight="0.159224357037" />
+</color>
+
+<color name="blue" weight="0.0894669123876">
+ <shade name="light" weight="0.51745764636" />
+ <shade name="cool" weight="0.307529706902" />
+ <shade name="bright" weight="0.175010065761" />
+</color>
+
+<color name="red" weight="0.0704313991137">
+ <shade name="warm" weight="0.57285917785" />
+ <shade name="light" weight="0.267915128804" />
+ <shade name="cool" weight="0.159224357037" />
+</color>
+
+<color name="green" weight="0.0339466653386">
+ <shade name="light" weight="0.51745764636" />
+ <shade name="cool" weight="0.307529706902" />
+ <shade name="bright" weight="0.175010065761" />
+</color>
+
+<color name="white" weight="0.0320431140112">
+ <shade name="warm" weight="0.57285917785" />
+ <shade name="light" weight="0.267915128804" />
+ <shade name="cool" weight="0.159224357037" />
+</color>
+
+</colors>

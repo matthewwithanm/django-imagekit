@@ -1,0 +1,33 @@
+<colors query="awake">
+
+<color name="black" weight="0.519323092277">
+ <shade name="dark" weight="0.487651747776" />
+ <shade name="light" weight="0.321975192442" />
+ <shade name="bright" weight="0.190371739997" />
+</color>
+
+<color name="white" weight="0.152173743318">
+ <shade name="dark" weight="0.487651747776" />
+ <shade name="light" weight="0.321975192442" />
+ <shade name="bright" weight="0.190371739997" />
+</color>
+
+<color name="blue" weight="0.144323510528">
+ <shade name="dark" weight="0.487651747776" />
+ <shade name="light" weight="0.321975192442" />
+ <shade name="bright" weight="0.190371739997" />
+</color>
+
+<color name="pink" weight="0.0978259778475">
+ <shade name="dark" weight="0.487651747776" />
+ <shade name="light" weight="0.321975192442" />
+ <shade name="bright" weight="0.190371739997" />
+</color>
+
+<color name="green" weight="0.0863525606925">
+ <shade name="dark" weight="0.487651747776" />
+ <shade name="light" weight="0.321975192442" />
+ <shade name="bright" weight="0.190371739997" />
+</color>
+
+</colors>

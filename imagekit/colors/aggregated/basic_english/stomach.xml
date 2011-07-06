@@ -1,0 +1,33 @@
+<colors query="stomach">
+
+<color name="white" weight="0.516452765315">
+ <shade name="weak" weight="0.738785444996" />
+ <shade name="light" weight="0.175197691242" />
+ <shade name="hard" weight="0.0860157339531" />
+</color>
+
+<color name="black" weight="0.170932154184">
+ <shade name="weak" weight="0.738785444996" />
+ <shade name="light" weight="0.175197691242" />
+ <shade name="hard" weight="0.0860157339531" />
+</color>
+
+<color name="blue" weight="0.122029104725">
+ <shade name="weak" weight="0.738785444996" />
+ <shade name="light" weight="0.175197691242" />
+ <shade name="hard" weight="0.0860157339531" />
+</color>
+
+<color name="red" weight="0.106489817981">
+ <shade name="weak" weight="0.738785444996" />
+ <shade name="light" weight="0.175197691242" />
+ <shade name="hard" weight="0.0860157339531" />
+</color>
+
+<color name="yellow" weight="0.0840949635557">
+ <shade name="weak" weight="0.738785444996" />
+ <shade name="light" weight="0.175197691242" />
+ <shade name="hard" weight="0.0860157339531" />
+</color>
+
+</colors>

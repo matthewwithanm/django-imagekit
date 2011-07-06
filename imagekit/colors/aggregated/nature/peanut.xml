@@ -1,0 +1,33 @@
+<colors query="peanut">
+
+<color name="purple" weight="0.647909416154">
+ <shade name="soft" weight="0.359115529516" />
+ <shade name="light" weight="0.339778539465" />
+ <shade name="fresh" weight="0.301104559363" />
+</color>
+
+<color name="pink" weight="0.173136545444">
+ <shade name="soft" weight="0.359115529516" />
+ <shade name="light" weight="0.339778539465" />
+ <shade name="fresh" weight="0.301104559363" />
+</color>
+
+<color name="green" weight="0.0627619977234">
+ <shade name="soft" weight="0.359115529516" />
+ <shade name="light" weight="0.339778539465" />
+ <shade name="fresh" weight="0.301104559363" />
+</color>
+
+<color name="orange" weight="0.0588393728657">
+ <shade name="soft" weight="0.359115529516" />
+ <shade name="light" weight="0.339778539465" />
+ <shade name="fresh" weight="0.301104559363" />
+</color>
+
+<color name="blue" weight="0.0573514806783">
+ <shade name="soft" weight="0.359115529516" />
+ <shade name="light" weight="0.339778539465" />
+ <shade name="fresh" weight="0.301104559363" />
+</color>
+
+</colors>

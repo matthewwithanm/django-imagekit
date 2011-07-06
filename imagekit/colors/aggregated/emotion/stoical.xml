@@ -1,0 +1,33 @@
+<colors query="stoical">
+
+<color name="white" weight="0.4999995">
+ <shade name="hard" weight="0.649999252501" />
+ <shade name="cool" weight="0.19999977" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+<color name="green" weight="0.4999995">
+ <shade name="hard" weight="0.649999252501" />
+ <shade name="cool" weight="0.19999977" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="hard" weight="0.649999252501" />
+ <shade name="cool" weight="0.19999977" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="hard" weight="0.649999252501" />
+ <shade name="cool" weight="0.19999977" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="hard" weight="0.649999252501" />
+ <shade name="cool" weight="0.19999977" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+</colors>

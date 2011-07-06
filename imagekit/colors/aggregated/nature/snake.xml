@@ -1,0 +1,33 @@
+<colors query="snake">
+
+<color name="black" weight="0.714903124015">
+ <shade name="dark" weight="0.656598052723" />
+ <shade name="cool" weight="0.282337162671" />
+ <shade name="soft" weight="0.0610636189033" />
+</color>
+
+<color name="white" weight="0.126048708708">
+ <shade name="dark" weight="0.656598052723" />
+ <shade name="cool" weight="0.282337162671" />
+ <shade name="soft" weight="0.0610636189033" />
+</color>
+
+<color name="green" weight="0.100086437362">
+ <shade name="dark" weight="0.656598052723" />
+ <shade name="cool" weight="0.282337162671" />
+ <shade name="soft" weight="0.0610636189033" />
+</color>
+
+<color name="red" weight="0.0303269430503">
+ <shade name="dark" weight="0.656598052723" />
+ <shade name="cool" weight="0.282337162671" />
+ <shade name="soft" weight="0.0610636189033" />
+</color>
+
+<color name="blue" weight="0.0286337514408">
+ <shade name="dark" weight="0.656598052723" />
+ <shade name="cool" weight="0.282337162671" />
+ <shade name="soft" weight="0.0610636189033" />
+</color>
+
+</colors>

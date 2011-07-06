@@ -1,0 +1,33 @@
+<colors query="circumference">
+
+<color name="blue" weight="0.349546184807">
+ <shade name="soft" weight="0.49849776647" />
+ <shade name="dark" weight="0.294293862133" />
+ <shade name="light" weight="0.20720690293" />
+</color>
+
+<color name="red" weight="0.23412999171">
+ <shade name="soft" weight="0.49849776647" />
+ <shade name="dark" weight="0.294293862133" />
+ <shade name="light" weight="0.20720690293" />
+</color>
+
+<color name="black" weight="0.220115168263">
+ <shade name="soft" weight="0.49849776647" />
+ <shade name="dark" weight="0.294293862133" />
+ <shade name="light" weight="0.20720690293" />
+</color>
+
+<color name="white" weight="0.108820982062">
+ <shade name="soft" weight="0.49849776647" />
+ <shade name="dark" weight="0.294293862133" />
+ <shade name="light" weight="0.20720690293" />
+</color>
+
+<color name="pink" weight="0.0873865462016">
+ <shade name="soft" weight="0.49849776647" />
+ <shade name="dark" weight="0.294293862133" />
+ <shade name="light" weight="0.20720690293" />
+</color>
+
+</colors>

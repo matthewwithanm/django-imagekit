@@ -1,0 +1,33 @@
+<colors query="tolerant">
+
+<color name="white" weight="0.258620353003">
+ <shade name="warm" weight="0.462744536394" />
+ <shade name="light" weight="0.295293759241" />
+ <shade name="cool" weight="0.24196049064" />
+</color>
+
+<color name="red" weight="0.237068656919">
+ <shade name="warm" weight="0.462744536394" />
+ <shade name="light" weight="0.295293759241" />
+ <shade name="cool" weight="0.24196049064" />
+</color>
+
+<color name="blue" weight="0.224137639269">
+ <shade name="light" weight="0.492477747404" />
+ <shade name="cool" weight="0.403530903252" />
+ <shade name="soft" weight="0.103989325149" />
+</color>
+
+<color name="green" weight="0.168103229452">
+ <shade name="light" weight="0.492477747404" />
+ <shade name="cool" weight="0.403530903252" />
+ <shade name="soft" weight="0.103989325149" />
+</color>
+
+<color name="yellow" weight="0.112068819635">
+ <shade name="warm" weight="0.462744536394" />
+ <shade name="light" weight="0.295293759241" />
+ <shade name="cool" weight="0.24196049064" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="twinkling">
+
+<color name="white" weight="0.307017177459">
+ <shade name="bright" weight="0.463726392667" />
+ <shade name="light" weight="0.440966815112" />
+ <shade name="soft" weight="0.0953057310082" />
+</color>
+
+<color name="blue" weight="0.244151755408">
+ <shade name="bright" weight="0.463726392667" />
+ <shade name="light" weight="0.440966815112" />
+ <shade name="soft" weight="0.0953057310082" />
+</color>
+
+<color name="red" weight="0.188596266153">
+ <shade name="bright" weight="0.463726392667" />
+ <shade name="light" weight="0.440966815112" />
+ <shade name="soft" weight="0.0953057310082" />
+</color>
+
+<color name="green" weight="0.171052427441">
+ <shade name="bright" weight="0.463726392667" />
+ <shade name="light" weight="0.440966815112" />
+ <shade name="soft" weight="0.0953057310082" />
+</color>
+
+<color name="pink" weight="0.089181180119">
+ <shade name="bright" weight="0.463726392667" />
+ <shade name="light" weight="0.440966815112" />
+ <shade name="soft" weight="0.0953057310082" />
+</color>
+
+</colors>

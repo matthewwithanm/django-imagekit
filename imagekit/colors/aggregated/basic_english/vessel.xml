@@ -1,0 +1,33 @@
+<colors query="vessel">
+
+<color name="white" weight="0.347203307868">
+ <shade name="light" weight="0.725138831162" />
+ <shade name="weak" weight="0.150837815419" />
+ <shade name="neutral" weight="0.124022203789" />
+</color>
+
+<color name="red" weight="0.291116619674">
+ <shade name="light" weight="0.725138831162" />
+ <shade name="weak" weight="0.150837815419" />
+ <shade name="neutral" weight="0.124022203789" />
+</color>
+
+<color name="blue" weight="0.259601242498">
+ <shade name="light" weight="0.725138831162" />
+ <shade name="weak" weight="0.150837815419" />
+ <shade name="neutral" weight="0.124022203789" />
+</color>
+
+<color name="green" weight="0.0793226018744">
+ <shade name="light" weight="0.725138831162" />
+ <shade name="weak" weight="0.150837815419" />
+ <shade name="neutral" weight="0.124022203789" />
+</color>
+
+<color name="yellow" weight="0.0227551706387">
+ <shade name="light" weight="0.725138831162" />
+ <shade name="weak" weight="0.150837815419" />
+ <shade name="neutral" weight="0.124022203789" />
+</color>
+
+</colors>

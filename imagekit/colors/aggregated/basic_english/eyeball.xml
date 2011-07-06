@@ -1,0 +1,33 @@
+<colors query="eyeball">
+
+<color name="blue" weight="0.278799825452">
+ <shade name="bright" weight="0.341288237081" />
+ <shade name="dark" weight="0.334128343995" />
+ <shade name="light" weight="0.324581819881" />
+</color>
+
+<color name="red" weight="0.254876408087">
+ <shade name="bright" weight="0.341288237081" />
+ <shade name="dark" weight="0.334128343995" />
+ <shade name="light" weight="0.324581819881" />
+</color>
+
+<color name="green" weight="0.209789967667">
+ <shade name="bright" weight="0.341288237081" />
+ <shade name="dark" weight="0.334128343995" />
+ <shade name="light" weight="0.324581819881" />
+</color>
+
+<color name="black" weight="0.192307470361">
+ <shade name="bright" weight="0.341288237081" />
+ <shade name="dark" weight="0.334128343995" />
+ <shade name="light" weight="0.324581819881" />
+</color>
+
+<color name="white" weight="0.0642251743121">
+ <shade name="bright" weight="0.341288237081" />
+ <shade name="dark" weight="0.334128343995" />
+ <shade name="light" weight="0.324581819881" />
+</color>
+
+</colors>

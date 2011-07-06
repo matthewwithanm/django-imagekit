@@ -1,0 +1,33 @@
+<colors query="metabolism">
+
+<color name="green" weight="0.872345726471">
+ <shade name="weak" weight="0.454374143545" />
+ <shade name="intense" weight="0.317310868839" />
+ <shade name="dark" weight="0.228313619236" />
+</color>
+
+<color name="red" weight="0.0506687476125">
+ <shade name="weak" weight="0.454374143545" />
+ <shade name="intense" weight="0.317310868839" />
+ <shade name="dark" weight="0.228313619236" />
+</color>
+
+<color name="blue" weight="0.0468158873206">
+ <shade name="weak" weight="0.454374143545" />
+ <shade name="intense" weight="0.317310868839" />
+ <shade name="dark" weight="0.228313619236" />
+</color>
+
+<color name="orange" weight="0.0172288280978">
+ <shade name="weak" weight="0.454374143545" />
+ <shade name="intense" weight="0.317310868839" />
+ <shade name="dark" weight="0.228313619236" />
+</color>
+
+<color name="yellow" weight="0.0129397949426">
+ <shade name="weak" weight="0.454374143545" />
+ <shade name="intense" weight="0.317310868839" />
+ <shade name="dark" weight="0.228313619236" />
+</color>
+
+</colors>

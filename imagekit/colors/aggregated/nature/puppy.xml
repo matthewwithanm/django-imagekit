@@ -1,0 +1,33 @@
+<colors query="puppy">
+
+<color name="white" weight="0.25670467185">
+ <shade name="warm" weight="0.750222434309" />
+ <shade name="soft" weight="0.208395120641" />
+ <shade name="dark" weight="0.0413813168131" />
+</color>
+
+<color name="black" weight="0.212856278482">
+ <shade name="warm" weight="0.750222434309" />
+ <shade name="soft" weight="0.208395120641" />
+ <shade name="dark" weight="0.0413813168131" />
+</color>
+
+<color name="blue" weight="0.197530626432">
+ <shade name="soft" weight="0.735291190578" />
+ <shade name="dark" weight="0.146007822129" />
+ <shade name="weak" weight="0.118697006479" />
+</color>
+
+<color name="pink" weight="0.176244998583">
+ <shade name="warm" weight="0.750222434309" />
+ <shade name="soft" weight="0.208395120641" />
+ <shade name="dark" weight="0.0413813168131" />
+</color>
+
+<color name="red" weight="0.156662220963">
+ <shade name="warm" weight="0.750222434309" />
+ <shade name="soft" weight="0.208395120641" />
+ <shade name="dark" weight="0.0413813168131" />
+</color>
+
+</colors>

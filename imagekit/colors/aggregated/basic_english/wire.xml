@@ -1,0 +1,33 @@
+<colors query="wire">
+
+<color name="black" weight="0.342204928629">
+ <shade name="hard" weight="0.663202168987" />
+ <shade name="neutral" weight="0.194070680787" />
+ <shade name="light" weight="0.142725996736" />
+</color>
+
+<color name="red" weight="0.212293798316">
+ <shade name="hard" weight="0.663202168987" />
+ <shade name="neutral" weight="0.194070680787" />
+ <shade name="light" weight="0.142725996736" />
+</color>
+
+<color name="white" weight="0.174271028468">
+ <shade name="hard" weight="0.663202168987" />
+ <shade name="neutral" weight="0.194070680787" />
+ <shade name="light" weight="0.142725996736" />
+</color>
+
+<color name="blue" weight="0.139416822775">
+ <shade name="hard" weight="0.663202168987" />
+ <shade name="neutral" weight="0.194070680787" />
+ <shade name="light" weight="0.142725996736" />
+</color>
+
+<color name="green" weight="0.131812268805">
+ <shade name="hard" weight="0.663202168987" />
+ <shade name="neutral" weight="0.194070680787" />
+ <shade name="light" weight="0.142725996736" />
+</color>
+
+</colors>

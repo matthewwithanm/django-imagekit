@@ -1,0 +1,33 @@
+<colors query="outmaneuvered">
+
+<color name="white" weight="0.636363000001">
+ <shade name="weak" weight="0.499999250001" />
+ <shade name="light" weight="0.499999250001" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+<color name="green" weight="0.181818">
+ <shade name="weak" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="intense" weight="0.333333" />
+</color>
+
+<color name="black" weight="0.181818">
+ <shade name="weak" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="intense" weight="0.333333" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="weak" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="intense" weight="0.333333" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="weak" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="intense" weight="0.333333" />
+</color>
+
+</colors>

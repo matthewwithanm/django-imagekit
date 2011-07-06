@@ -1,0 +1,33 @@
+<colors query="Algebra">
+
+<color name="green" weight="0.396206072274">
+ <shade name="hard" weight="0.56099329684" />
+ <shade name="weak" weight="0.328689361169" />
+ <shade name="soft" weight="0.110316131526" />
+</color>
+
+<color name="black" weight="0.260273669819">
+ <shade name="hard" weight="0.56099329684" />
+ <shade name="weak" weight="0.328689361169" />
+ <shade name="soft" weight="0.110316131526" />
+</color>
+
+<color name="red" weight="0.168598328627">
+ <shade name="hard" weight="0.56099329684" />
+ <shade name="weak" weight="0.328689361169" />
+ <shade name="soft" weight="0.110316131526" />
+</color>
+
+<color name="white" weight="0.100105257623">
+ <shade name="hard" weight="0.56099329684" />
+ <shade name="weak" weight="0.328689361169" />
+ <shade name="soft" weight="0.110316131526" />
+</color>
+
+<color name="blue" weight="0.0748155083284">
+ <shade name="hard" weight="0.56099329684" />
+ <shade name="weak" weight="0.328689361169" />
+ <shade name="soft" weight="0.110316131526" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="spore">
+
+<color name="red" weight="0.356461306321">
+ <shade name="fresh" weight="0.468257648769" />
+ <shade name="dark" weight="0.282690886453" />
+ <shade name="cool" weight="0.249050128372" />
+</color>
+
+<color name="green" weight="0.195100221155">
+ <shade name="fresh" weight="0.468257648769" />
+ <shade name="dark" weight="0.282690886453" />
+ <shade name="cool" weight="0.249050128372" />
+</color>
+
+<color name="pink" weight="0.168695679946">
+ <shade name="fresh" weight="0.468257648769" />
+ <shade name="dark" weight="0.282690886453" />
+ <shade name="cool" weight="0.249050128372" />
+</color>
+
+<color name="orange" weight="0.15255957143">
+ <shade name="fresh" weight="0.468257648769" />
+ <shade name="dark" weight="0.282690886453" />
+ <shade name="cool" weight="0.249050128372" />
+</color>
+
+<color name="white" weight="0.12718187349">
+ <shade name="fresh" weight="0.468257648769" />
+ <shade name="dark" weight="0.282690886453" />
+ <shade name="cool" weight="0.249050128372" />
+</color>
+
+</colors>

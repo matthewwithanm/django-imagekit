@@ -1,0 +1,33 @@
+<colors query="wine">
+
+<color name="red" weight="0.486197729446">
+ <shade name="cool" weight="0.415069628527" />
+ <shade name="light" weight="0.354405605896" />
+ <shade name="fresh" weight="0.230523285997" />
+</color>
+
+<color name="white" weight="0.432872817184">
+ <shade name="cool" weight="0.415069628527" />
+ <shade name="light" weight="0.354405605896" />
+ <shade name="fresh" weight="0.230523285997" />
+</color>
+
+<color name="black" weight="0.0335633271295">
+ <shade name="cool" weight="0.415069628527" />
+ <shade name="light" weight="0.354405605896" />
+ <shade name="fresh" weight="0.230523285997" />
+</color>
+
+<color name="pink" weight="0.0244039892586">
+ <shade name="cool" weight="0.415069628527" />
+ <shade name="light" weight="0.354405605896" />
+ <shade name="fresh" weight="0.230523285997" />
+</color>
+
+<color name="green" weight="0.022961079868">
+ <shade name="cool" weight="0.415069628527" />
+ <shade name="light" weight="0.354405605896" />
+ <shade name="fresh" weight="0.230523285997" />
+</color>
+
+</colors>

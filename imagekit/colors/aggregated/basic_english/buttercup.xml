@@ -1,0 +1,33 @@
+<colors query="buttercup">
+
+<color name="yellow" weight="0.587201638457">
+ <shade name="soft" weight="0.492838447419" />
+ <shade name="bright" weight="0.412804853394" />
+ <shade name="light" weight="0.0943553950614" />
+</color>
+
+<color name="blue" weight="0.221709777511">
+ <shade name="soft" weight="0.492838447419" />
+ <shade name="bright" weight="0.412804853394" />
+ <shade name="light" weight="0.0943553950614" />
+</color>
+
+<color name="white" weight="0.103171876664">
+ <shade name="soft" weight="0.492838447419" />
+ <shade name="bright" weight="0.412804853394" />
+ <shade name="light" weight="0.0943553950614" />
+</color>
+
+<color name="pink" weight="0.0470858883922">
+ <shade name="soft" weight="0.492838447419" />
+ <shade name="bright" weight="0.412804853394" />
+ <shade name="light" weight="0.0943553950614" />
+</color>
+
+<color name="black" weight="0.040829721403">
+ <shade name="soft" weight="0.492838447419" />
+ <shade name="bright" weight="0.412804853394" />
+ <shade name="light" weight="0.0943553950614" />
+</color>
+
+</colors>

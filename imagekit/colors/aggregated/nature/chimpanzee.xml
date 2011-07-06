@@ -1,0 +1,33 @@
+<colors query="chimpanzee">
+
+<color name="pink" weight="0.348449660549">
+ <shade name="bright" weight="0.421244830268" />
+ <shade name="cool" weight="0.318680871594" />
+ <shade name="fresh" weight="0.260072895209" />
+</color>
+
+<color name="black" weight="0.276119088507">
+ <shade name="bright" weight="0.421244830268" />
+ <shade name="cool" weight="0.318680871594" />
+ <shade name="fresh" weight="0.260072895209" />
+</color>
+
+<color name="green" weight="0.190011264648">
+ <shade name="bright" weight="0.421244830268" />
+ <shade name="cool" weight="0.318680871594" />
+ <shade name="fresh" weight="0.260072895209" />
+</color>
+
+<color name="white" weight="0.112514223176">
+ <shade name="bright" weight="0.421244830268" />
+ <shade name="cool" weight="0.318680871594" />
+ <shade name="fresh" weight="0.260072895209" />
+</color>
+
+<color name="blue" weight="0.0729046242005">
+ <shade name="bright" weight="0.421244830268" />
+ <shade name="cool" weight="0.318680871594" />
+ <shade name="fresh" weight="0.260072895209" />
+</color>
+
+</colors>

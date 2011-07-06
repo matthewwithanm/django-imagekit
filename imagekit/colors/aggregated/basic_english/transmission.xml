@@ -1,0 +1,33 @@
+<colors query="transmission">
+
+<color name="red" weight="0.370796897743">
+ <shade name="light" weight="0.964139741615" />
+ <shade name="intense" weight="0.0211434153863" />
+ <shade name="weak" weight="0.0147158171089" />
+</color>
+
+<color name="black" weight="0.210374405714">
+ <shade name="light" weight="0.964139741615" />
+ <shade name="intense" weight="0.0211434153863" />
+ <shade name="weak" weight="0.0147158171089" />
+</color>
+
+<color name="blue" weight="0.168107401826">
+ <shade name="light" weight="0.964139741615" />
+ <shade name="intense" weight="0.0211434153863" />
+ <shade name="weak" weight="0.0147158171089" />
+</color>
+
+<color name="white" weight="0.146973899883">
+ <shade name="light" weight="0.975024647009" />
+ <shade name="weak" weight="0.0148819551386" />
+ <shade name="neutral" weight="0.0100923603813" />
+</color>
+
+<color name="green" weight="0.10374628227">
+ <shade name="light" weight="0.964139741615" />
+ <shade name="intense" weight="0.0211434153863" />
+ <shade name="weak" weight="0.0147158171089" />
+</color>
+
+</colors>

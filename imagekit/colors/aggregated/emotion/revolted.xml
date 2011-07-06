@@ -1,0 +1,33 @@
+<colors query="revolted">
+
+<color name="black" weight="0.406249555665">
+ <shade name="weak" weight="0.586665993956" />
+ <shade name="light" weight="0.333332951112" />
+ <shade name="dark" weight="0.0799999082668" />
+</color>
+
+<color name="red" weight="0.359374606934">
+ <shade name="weak" weight="0.586665993956" />
+ <shade name="light" weight="0.333332951112" />
+ <shade name="dark" weight="0.0799999082668" />
+</color>
+
+<color name="orange" weight="0.093749897461">
+ <shade name="weak" weight="0.586665993956" />
+ <shade name="light" weight="0.333332951112" />
+ <shade name="dark" weight="0.0799999082668" />
+</color>
+
+<color name="white" weight="0.0781249145509">
+ <shade name="weak" weight="0.586665993956" />
+ <shade name="light" weight="0.333332951112" />
+ <shade name="dark" weight="0.0799999082668" />
+</color>
+
+<color name="green" weight="0.0624999316407">
+ <shade name="weak" weight="0.586665993956" />
+ <shade name="light" weight="0.333332951112" />
+ <shade name="dark" weight="0.0799999082668" />
+</color>
+
+</colors>

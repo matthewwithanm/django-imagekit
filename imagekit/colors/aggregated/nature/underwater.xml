@@ -1,0 +1,33 @@
+<colors query="underwater">
+
+<color name="black" weight="0.397486505127">
+ <shade name="light" weight="0.633313902726" />
+ <shade name="cool" weight="0.33914146862" />
+ <shade name="bright" weight="0.0275435336393" />
+</color>
+
+<color name="green" weight="0.260963784521">
+ <shade name="light" weight="0.633313902726" />
+ <shade name="cool" weight="0.33914146862" />
+ <shade name="bright" weight="0.0275435336393" />
+</color>
+
+<color name="yellow" weight="0.125649229584">
+ <shade name="light" weight="0.633313902726" />
+ <shade name="cool" weight="0.33914146862" />
+ <shade name="bright" weight="0.0275435336393" />
+</color>
+
+<color name="blue" weight="0.108372460517">
+ <shade name="light" weight="0.633313902726" />
+ <shade name="cool" weight="0.33914146862" />
+ <shade name="bright" weight="0.0275435336393" />
+</color>
+
+<color name="pink" weight="0.107526744548">
+ <shade name="light" weight="0.633313902726" />
+ <shade name="cool" weight="0.33914146862" />
+ <shade name="bright" weight="0.0275435336393" />
+</color>
+
+</colors>

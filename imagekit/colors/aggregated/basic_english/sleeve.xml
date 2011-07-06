@@ -1,0 +1,33 @@
+<colors query="sleeve">
+
+<color name="blue" weight="0.272238013605">
+ <shade name="soft" weight="0.762965304914" />
+ <shade name="hard" weight="0.136090721523" />
+ <shade name="neutral" weight="0.100942881633" />
+</color>
+
+<color name="white" weight="0.264790773111">
+ <shade name="soft" weight="0.762965304914" />
+ <shade name="hard" weight="0.136090721523" />
+ <shade name="neutral" weight="0.100942881633" />
+</color>
+
+<color name="black" weight="0.257343532617">
+ <shade name="soft" weight="0.762965304914" />
+ <shade name="hard" weight="0.136090721523" />
+ <shade name="neutral" weight="0.100942881633" />
+</color>
+
+<color name="red" weight="0.115432227653">
+ <shade name="soft" weight="0.762965304914" />
+ <shade name="hard" weight="0.136090721523" />
+ <shade name="neutral" weight="0.100942881633" />
+</color>
+
+<color name="green" weight="0.0901943570909">
+ <shade name="soft" weight="0.762965304914" />
+ <shade name="hard" weight="0.136090721523" />
+ <shade name="neutral" weight="0.100942881633" />
+</color>
+
+</colors>

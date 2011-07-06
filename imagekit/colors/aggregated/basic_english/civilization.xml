@@ -1,0 +1,33 @@
+<colors query="civilization">
+
+<color name="white" weight="0.640649128735">
+ <shade name="light" weight="0.93023152457" />
+ <shade name="fresh" weight="0.0442197014578" />
+ <shade name="cool" weight="0.0255476628849" />
+</color>
+
+<color name="black" weight="0.337698100062">
+ <shade name="light" weight="0.93023152457" />
+ <shade name="fresh" weight="0.0442197014578" />
+ <shade name="cool" weight="0.0255476628849" />
+</color>
+
+<color name="green" weight="0.0123786441823">
+ <shade name="light" weight="0.93023152457" />
+ <shade name="fresh" weight="0.0442197014578" />
+ <shade name="cool" weight="0.0255476628849" />
+</color>
+
+<color name="blue" weight="0.00777465722329">
+ <shade name="light" weight="0.93023152457" />
+ <shade name="fresh" weight="0.0442197014578" />
+ <shade name="cool" weight="0.0255476628849" />
+</color>
+
+<color name="red" weight="0.00149846745365">
+ <shade name="light" weight="0.93023152457" />
+ <shade name="fresh" weight="0.0442197014578" />
+ <shade name="cool" weight="0.0255476628849" />
+</color>
+
+</colors>

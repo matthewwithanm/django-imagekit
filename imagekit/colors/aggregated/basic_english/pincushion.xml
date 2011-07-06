@@ -1,0 +1,33 @@
+<colors query="pincushion">
+
+<color name="yellow" weight="0.290051999151">
+ <shade name="cool" weight="0.715150656971" />
+ <shade name="bright" weight="0.145454370909" />
+ <shade name="soft" weight="0.139393772121" />
+</color>
+
+<color name="orange" weight="0.290051999151">
+ <shade name="cool" weight="0.715150656971" />
+ <shade name="bright" weight="0.145454370909" />
+ <shade name="soft" weight="0.139393772121" />
+</color>
+
+<color name="pink" weight="0.168586180012">
+ <shade name="cool" weight="0.715150656971" />
+ <shade name="bright" weight="0.145454370909" />
+ <shade name="soft" weight="0.139393772121" />
+</color>
+
+<color name="purple" weight="0.131937010444">
+ <shade name="cool" weight="0.715150656971" />
+ <shade name="bright" weight="0.145454370909" />
+ <shade name="soft" weight="0.139393772121" />
+</color>
+
+<color name="red" weight="0.119371580878">
+ <shade name="cool" weight="0.715150656971" />
+ <shade name="bright" weight="0.145454370909" />
+ <shade name="soft" weight="0.139393772121" />
+</color>
+
+</colors>

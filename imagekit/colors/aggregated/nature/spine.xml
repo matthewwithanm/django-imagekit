@@ -1,0 +1,33 @@
+<colors query="spine">
+
+<color name="black" weight="0.356373498508">
+ <shade name="light" weight="0.522601373657" />
+ <shade name="neutral" weight="0.363836399381" />
+ <shade name="weak" weight="0.113561057989" />
+</color>
+
+<color name="white" weight="0.18696860812">
+ <shade name="light" weight="0.522601373657" />
+ <shade name="neutral" weight="0.363836399381" />
+ <shade name="weak" weight="0.113561057989" />
+</color>
+
+<color name="red" weight="0.178470035024">
+ <shade name="light" weight="0.522601373657" />
+ <shade name="neutral" weight="0.363836399381" />
+ <shade name="weak" weight="0.113561057989" />
+</color>
+
+<color name="blue" weight="0.152974315735">
+ <shade name="light" weight="0.522601373657" />
+ <shade name="neutral" weight="0.363836399381" />
+ <shade name="weak" weight="0.113561057989" />
+</color>
+
+<color name="green" weight="0.125212310287">
+ <shade name="light" weight="0.522601373657" />
+ <shade name="neutral" weight="0.363836399381" />
+ <shade name="weak" weight="0.113561057989" />
+</color>
+
+</colors>

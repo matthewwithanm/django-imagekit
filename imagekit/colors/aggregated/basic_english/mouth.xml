@@ -1,0 +1,33 @@
+<colors query="mouth">
+
+<color name="black" weight="0.414034618688">
+ <shade name="soft" weight="0.369593201492" />
+ <shade name="warm" weight="0.347968067362" />
+ <shade name="hard" weight="0.282437357878" />
+</color>
+
+<color name="red" weight="0.277543545239">
+ <shade name="soft" weight="0.369593201492" />
+ <shade name="warm" weight="0.347968067362" />
+ <shade name="hard" weight="0.282437357878" />
+</color>
+
+<color name="pink" weight="0.123859508811">
+ <shade name="soft" weight="0.369593201492" />
+ <shade name="warm" weight="0.347968067362" />
+ <shade name="hard" weight="0.282437357878" />
+</color>
+
+<color name="white" weight="0.120350740856">
+ <shade name="soft" weight="0.369593201492" />
+ <shade name="warm" weight="0.347968067362" />
+ <shade name="hard" weight="0.282437357878" />
+</color>
+
+<color name="blue" weight="0.0642104535762">
+ <shade name="soft" weight="0.456679387027" />
+ <shade name="hard" weight="0.348987262072" />
+ <shade name="fresh" weight="0.194331654054" />
+</color>
+
+</colors>

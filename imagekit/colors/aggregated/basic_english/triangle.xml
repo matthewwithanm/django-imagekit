@@ -1,0 +1,33 @@
+<colors query="triangle">
+
+<color name="black" weight="0.385514864449">
+ <shade name="dark" weight="0.613918309802" />
+ <shade name="soft" weight="0.2831433584" />
+ <shade name="cool" weight="0.102937164876" />
+</color>
+
+<color name="blue" weight="0.202785275519">
+ <shade name="dark" weight="0.613918309802" />
+ <shade name="soft" weight="0.2831433584" />
+ <shade name="cool" weight="0.102937164876" />
+</color>
+
+<color name="red" weight="0.157659980692">
+ <shade name="dark" weight="0.613918309802" />
+ <shade name="soft" weight="0.2831433584" />
+ <shade name="cool" weight="0.102937164876" />
+</color>
+
+<color name="pink" weight="0.148189239803">
+ <shade name="dark" weight="0.613918309802" />
+ <shade name="soft" weight="0.2831433584" />
+ <shade name="cool" weight="0.102937164876" />
+</color>
+
+<color name="green" weight="0.105849457002">
+ <shade name="dark" weight="0.613918309802" />
+ <shade name="soft" weight="0.2831433584" />
+ <shade name="cool" weight="0.102937164876" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="outhouse">
+
+<color name="yellow" weight="0.631814590309">
+ <shade name="dark" weight="0.488833193777" />
+ <shade name="cool" weight="0.434242684827" />
+ <shade name="light" weight="0.0769229898837" />
+</color>
+
+<color name="green" weight="0.15234108142">
+ <shade name="dark" weight="0.488833193777" />
+ <shade name="cool" weight="0.434242684827" />
+ <shade name="light" weight="0.0769229898837" />
+</color>
+
+<color name="white" weight="0.0893199814218">
+ <shade name="dark" weight="0.488833193777" />
+ <shade name="cool" weight="0.434242684827" />
+ <shade name="light" weight="0.0769229898837" />
+</color>
+
+<color name="blue" weight="0.072321923916">
+ <shade name="dark" weight="0.488833193777" />
+ <shade name="cool" weight="0.434242684827" />
+ <shade name="light" weight="0.0769229898837" />
+</color>
+
+<color name="red" weight="0.0542013531788">
+ <shade name="dark" weight="0.488833193777" />
+ <shade name="cool" weight="0.434242684827" />
+ <shade name="light" weight="0.0769229898837" />
+</color>
+
+</colors>

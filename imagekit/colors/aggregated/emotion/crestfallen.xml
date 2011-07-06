@@ -1,0 +1,33 @@
+<colors query="crestfallen">
+
+<color name="blue" weight="0.370369958848">
+ <shade name="dark" weight="0.399999440001" />
+ <shade name="hard" weight="0.349999510001" />
+ <shade name="light" weight="0.24999965" />
+</color>
+
+<color name="black" weight="0.296295967079">
+ <shade name="dark" weight="0.399999440001" />
+ <shade name="hard" weight="0.349999510001" />
+ <shade name="light" weight="0.24999965" />
+</color>
+
+<color name="white" weight="0.185184979424">
+ <shade name="dark" weight="0.399999440001" />
+ <shade name="hard" weight="0.349999510001" />
+ <shade name="light" weight="0.24999965" />
+</color>
+
+<color name="yellow" weight="0.0740739917696">
+ <shade name="dark" weight="0.399999440001" />
+ <shade name="hard" weight="0.349999510001" />
+ <shade name="light" weight="0.24999965" />
+</color>
+
+<color name="purple" weight="0.0740739917696">
+ <shade name="dark" weight="0.399999440001" />
+ <shade name="hard" weight="0.349999510001" />
+ <shade name="light" weight="0.24999965" />
+</color>
+
+</colors>

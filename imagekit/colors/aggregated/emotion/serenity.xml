@@ -1,0 +1,33 @@
+<colors query="serenity">
+
+<color name="blue" weight="0.688112715572">
+ <shade name="dark" weight="0.602040080179" />
+ <shade name="light" weight="0.254591525432" />
+ <shade name="soft" weight="0.143367171636" />
+</color>
+
+<color name="pink" weight="0.146354937982">
+ <shade name="dark" weight="0.602040080179" />
+ <shade name="light" weight="0.254591525432" />
+ <shade name="soft" weight="0.143367171636" />
+</color>
+
+<color name="green" weight="0.103042259438">
+ <shade name="dark" weight="0.602040080179" />
+ <shade name="light" weight="0.254591525432" />
+ <shade name="soft" weight="0.143367171636" />
+</color>
+
+<color name="purple" weight="0.0394704248019">
+ <shade name="dark" weight="0.602040080179" />
+ <shade name="light" weight="0.254591525432" />
+ <shade name="soft" weight="0.143367171636" />
+</color>
+
+<color name="white" weight="0.0230185928712">
+ <shade name="dark" weight="0.602040080179" />
+ <shade name="light" weight="0.254591525432" />
+ <shade name="soft" weight="0.143367171636" />
+</color>
+
+</colors>

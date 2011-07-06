@@ -1,0 +1,33 @@
+<colors query="foam">
+
+<color name="white" weight="0.532966425767">
+ <shade name="soft" weight="0.786298501937" />
+ <shade name="hard" weight="0.127773506565" />
+ <shade name="light" weight="0.085926938564" />
+</color>
+
+<color name="yellow" weight="0.196703072603">
+ <shade name="soft" weight="0.786298501937" />
+ <shade name="hard" weight="0.127773506565" />
+ <shade name="light" weight="0.085926938564" />
+</color>
+
+<color name="black" weight="0.150549279031">
+ <shade name="soft" weight="0.786298501937" />
+ <shade name="hard" weight="0.127773506565" />
+ <shade name="light" weight="0.085926938564" />
+</color>
+
+<color name="blue" weight="0.0697801402808">
+ <shade name="soft" weight="0.786298501937" />
+ <shade name="hard" weight="0.127773506565" />
+ <shade name="light" weight="0.085926938564" />
+</color>
+
+<color name="orange" weight="0.0499999430358">
+ <shade name="soft" weight="0.786298501937" />
+ <shade name="hard" weight="0.127773506565" />
+ <shade name="light" weight="0.085926938564" />
+</color>
+
+</colors>

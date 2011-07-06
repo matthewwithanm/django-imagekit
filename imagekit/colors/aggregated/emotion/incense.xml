@@ -1,0 +1,33 @@
+<colors query="incense">
+
+<color name="green" weight="0.25161257433">
+ <shade name="light" weight="0.706346459466" />
+ <shade name="fresh" weight="0.226722395031" />
+ <shade name="soft" weight="0.0669300316487" />
+</color>
+
+<color name="red" weight="0.230107226097">
+ <shade name="light" weight="0.706346459466" />
+ <shade name="fresh" weight="0.226722395031" />
+ <shade name="soft" weight="0.0669300316487" />
+</color>
+
+<color name="orange" weight="0.207526610452">
+ <shade name="light" weight="0.706346459466" />
+ <shade name="fresh" weight="0.226722395031" />
+ <shade name="soft" weight="0.0669300316487" />
+</color>
+
+<color name="black" weight="0.166666448809">
+ <shade name="light" weight="0.706346459466" />
+ <shade name="fresh" weight="0.226722395031" />
+ <shade name="soft" weight="0.0669300316487" />
+</color>
+
+<color name="white" weight="0.144085833164">
+ <shade name="light" weight="0.706346459466" />
+ <shade name="fresh" weight="0.226722395031" />
+ <shade name="soft" weight="0.0669300316487" />
+</color>
+
+</colors>

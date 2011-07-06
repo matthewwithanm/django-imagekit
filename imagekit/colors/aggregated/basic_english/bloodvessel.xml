@@ -1,0 +1,33 @@
+<colors query="bloodvessel">
+
+<color name="black" weight="0.749999250001">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="warm" weight="0.24999975" />
+ <shade name="light" weight="0.24999975" />
+</color>
+
+<color name="red" weight="0.24999975">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="warm" weight="0.24999975" />
+ <shade name="light" weight="0.24999975" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="warm" weight="0.24999975" />
+ <shade name="light" weight="0.24999975" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="warm" weight="0.24999975" />
+ <shade name="light" weight="0.24999975" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="weak" weight="0.666665777779" />
+ <shade name="light" weight="0.333332888889" />
+ <shade name="soft" weight="0.0" />
+</color>
+
+</colors>

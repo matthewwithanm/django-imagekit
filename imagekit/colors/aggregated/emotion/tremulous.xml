@@ -1,0 +1,33 @@
+<colors query="tremulous">
+
+<color name="white" weight="0.367646680364">
+ <shade name="weak" weight="0.566784242226" />
+ <shade name="soft" weight="0.302600137664" />
+ <shade name="light" weight="0.130614512546" />
+</color>
+
+<color name="green" weight="0.308823211506">
+ <shade name="weak" weight="0.566784242226" />
+ <shade name="soft" weight="0.302600137664" />
+ <shade name="light" weight="0.130614512546" />
+</color>
+
+<color name="red" weight="0.132352804931">
+ <shade name="weak" weight="0.566784242226" />
+ <shade name="soft" weight="0.302600137664" />
+ <shade name="light" weight="0.130614512546" />
+</color>
+
+<color name="black" weight="0.132352804931">
+ <shade name="weak" weight="0.566784242226" />
+ <shade name="soft" weight="0.302600137664" />
+ <shade name="light" weight="0.130614512546" />
+</color>
+
+<color name="blue" weight="0.0588234688582">
+ <shade name="weak" weight="0.566784242226" />
+ <shade name="soft" weight="0.302600137664" />
+ <shade name="light" weight="0.130614512546" />
+</color>
+
+</colors>

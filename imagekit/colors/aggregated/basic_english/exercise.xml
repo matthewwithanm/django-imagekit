@@ -1,0 +1,33 @@
+<colors query="exercise">
+
+<color name="green" weight="0.38455808314">
+ <shade name="intense" weight="0.49920457499" />
+ <shade name="light" weight="0.333862932318" />
+ <shade name="hard" weight="0.166931466159" />
+</color>
+
+<color name="blue" weight="0.236651128086">
+ <shade name="intense" weight="0.49920457499" />
+ <shade name="light" weight="0.333862932318" />
+ <shade name="hard" weight="0.166931466159" />
+</color>
+
+<color name="black" weight="0.152344163705">
+ <shade name="intense" weight="0.49920457499" />
+ <shade name="light" weight="0.333862932318" />
+ <shade name="hard" weight="0.166931466159" />
+</color>
+
+<color name="red" weight="0.140215793391">
+ <shade name="intense" weight="0.49920457499" />
+ <shade name="light" weight="0.333862932318" />
+ <shade name="hard" weight="0.166931466159" />
+</color>
+
+<color name="purple" weight="0.0862297547964">
+ <shade name="light" weight="0.644368161822" />
+ <shade name="hard" weight="0.322184080911" />
+ <shade name="cool" weight="0.0334457760184" />
+</color>
+
+</colors>

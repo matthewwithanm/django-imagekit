@@ -1,0 +1,33 @@
+<colors query="cony">
+
+<color name="blue" weight="0.705444812917">
+ <shade name="dark" weight="0.762962092621" />
+ <shade name="cool" weight="0.162962777065" />
+ <shade name="hard" weight="0.0740739895749" />
+</color>
+
+<color name="white" weight="0.158415677287">
+ <shade name="dark" weight="0.762962092621" />
+ <shade name="cool" weight="0.162962777065" />
+ <shade name="hard" weight="0.0740739895749" />
+</color>
+
+<color name="black" weight="0.0668316138553">
+ <shade name="dark" weight="0.762962092621" />
+ <shade name="cool" weight="0.162962777065" />
+ <shade name="hard" weight="0.0740739895749" />
+</color>
+
+<color name="red" weight="0.0445544092369">
+ <shade name="dark" weight="0.762962092621" />
+ <shade name="cool" weight="0.162962777065" />
+ <shade name="hard" weight="0.0740739895749" />
+</color>
+
+<color name="orange" weight="0.024752449576">
+ <shade name="dark" weight="0.762962092621" />
+ <shade name="cool" weight="0.162962777065" />
+ <shade name="hard" weight="0.0740739895749" />
+</color>
+
+</colors>

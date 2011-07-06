@@ -1,0 +1,33 @@
+<colors query="invincibility">
+
+<color name="white" weight="0.426586863151">
+ <shade name="cool" weight="0.514083953135" />
+ <shade name="dark" weight="0.260563099534" />
+ <shade name="soft" weight="0.225351869867" />
+</color>
+
+<color name="green" weight="0.321428241072">
+ <shade name="cool" weight="0.514083953135" />
+ <shade name="dark" weight="0.260563099534" />
+ <shade name="soft" weight="0.225351869867" />
+</color>
+
+<color name="black" weight="0.144841120977">
+ <shade name="cool" weight="0.514083953135" />
+ <shade name="dark" weight="0.260563099534" />
+ <shade name="soft" weight="0.225351869867" />
+</color>
+
+<color name="yellow" weight="0.087301497575">
+ <shade name="cool" weight="0.514083953135" />
+ <shade name="dark" weight="0.260563099534" />
+ <shade name="soft" weight="0.225351869867" />
+</color>
+
+<color name="blue" weight="0.0198412494489">
+ <shade name="cool" weight="0.514083953135" />
+ <shade name="dark" weight="0.260563099534" />
+ <shade name="soft" weight="0.225351869867" />
+</color>
+
+</colors>

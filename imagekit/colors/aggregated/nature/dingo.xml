@@ -1,0 +1,33 @@
+<colors query="dingo">
+
+<color name="red" weight="0.89477361442">
+ <shade name="dark" weight="0.644241055516" />
+ <shade name="cool" weight="0.322690652586" />
+ <shade name="fresh" weight="0.0330672400176" />
+</color>
+
+<color name="purple" weight="0.0362920178009">
+ <shade name="dark" weight="0.644241055516" />
+ <shade name="cool" weight="0.322690652586" />
+ <shade name="fresh" weight="0.0330672400176" />
+</color>
+
+<color name="white" weight="0.0292054107747">
+ <shade name="dark" weight="0.644241055516" />
+ <shade name="cool" weight="0.322690652586" />
+ <shade name="fresh" weight="0.0330672400176" />
+</color>
+
+<color name="black" weight="0.0285611737723">
+ <shade name="dark" weight="0.644241055516" />
+ <shade name="cool" weight="0.322690652586" />
+ <shade name="fresh" weight="0.0330672400176" />
+</color>
+
+<color name="orange" weight="0.011166774708">
+ <shade name="dark" weight="0.644241055516" />
+ <shade name="cool" weight="0.322690652586" />
+ <shade name="fresh" weight="0.0330672400176" />
+</color>
+
+</colors>

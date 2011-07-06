@@ -1,0 +1,33 @@
+<colors query="debt">
+
+<color name="black" weight="0.47933398344">
+ <shade name="fresh" weight="0.689188254035" />
+ <shade name="cool" weight="0.160810592608" />
+ <shade name="bright" weight="0.149999796466" />
+</color>
+
+<color name="green" weight="0.417271456659">
+ <shade name="fresh" weight="0.689188254035" />
+ <shade name="cool" weight="0.160810592608" />
+ <shade name="bright" weight="0.149999796466" />
+</color>
+
+<color name="blue" weight="0.0380298036448">
+ <shade name="fresh" weight="0.689188254035" />
+ <shade name="cool" weight="0.160810592608" />
+ <shade name="bright" weight="0.149999796466" />
+</color>
+
+<color name="white" weight="0.032747886472">
+ <shade name="fresh" weight="0.689188254035" />
+ <shade name="cool" weight="0.160810592608" />
+ <shade name="bright" weight="0.149999796466" />
+</color>
+
+<color name="red" weight="0.0326158385426">
+ <shade name="fresh" weight="0.689188254035" />
+ <shade name="cool" weight="0.160810592608" />
+ <shade name="bright" weight="0.149999796466" />
+</color>
+
+</colors>

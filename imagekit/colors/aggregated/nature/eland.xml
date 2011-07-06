@@ -1,0 +1,33 @@
+<colors query="eland">
+
+<color name="red" weight="0.4794515228">
+ <shade name="fresh" weight="0.821916907488" />
+ <shade name="cool" weight="0.136986151248" />
+ <shade name="hard" weight="0.0410958453744" />
+</color>
+
+<color name="green" weight="0.136986149372">
+ <shade name="fresh" weight="0.821916907488" />
+ <shade name="cool" weight="0.136986151248" />
+ <shade name="hard" weight="0.0410958453744" />
+</color>
+
+<color name="black" weight="0.136986149372">
+ <shade name="fresh" weight="0.821916907488" />
+ <shade name="cool" weight="0.136986151248" />
+ <shade name="hard" weight="0.0410958453744" />
+</color>
+
+<color name="white" weight="0.123287534434">
+ <shade name="fresh" weight="0.821916907488" />
+ <shade name="cool" weight="0.136986151248" />
+ <shade name="hard" weight="0.0410958453744" />
+</color>
+
+<color name="blue" weight="0.123287534434">
+ <shade name="fresh" weight="0.821916907488" />
+ <shade name="cool" weight="0.136986151248" />
+ <shade name="hard" weight="0.0410958453744" />
+</color>
+
+</colors>

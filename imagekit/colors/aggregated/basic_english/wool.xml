@@ -1,0 +1,33 @@
+<colors query="wool">
+
+<color name="black" weight="0.386889027849">
+ <shade name="soft" weight="0.552676319098" />
+ <shade name="light" weight="0.249136121968" />
+ <shade name="warm" weight="0.198186273802" />
+</color>
+
+<color name="white" weight="0.176092348224">
+ <shade name="soft" weight="0.552676319098" />
+ <shade name="light" weight="0.249136121968" />
+ <shade name="warm" weight="0.198186273802" />
+</color>
+
+<color name="blue" weight="0.174807002616">
+ <shade name="soft" weight="0.584741096206" />
+ <shade name="light" weight="0.263590322274" />
+ <shade name="cool" weight="0.151667221828" />
+</color>
+
+<color name="red" weight="0.156812164112">
+ <shade name="soft" weight="0.552676319098" />
+ <shade name="light" weight="0.249136121968" />
+ <shade name="warm" weight="0.198186273802" />
+</color>
+
+<color name="green" weight="0.105398339813">
+ <shade name="soft" weight="0.584741096206" />
+ <shade name="light" weight="0.263590322274" />
+ <shade name="cool" weight="0.151667221828" />
+</color>
+
+</colors>

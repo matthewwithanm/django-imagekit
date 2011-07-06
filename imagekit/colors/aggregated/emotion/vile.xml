@@ -1,0 +1,33 @@
+<colors query="vile">
+
+<color name="green" weight="0.536971250338">
+ <shade name="dark" weight="0.599155263652" />
+ <shade name="cool" weight="0.209563695503" />
+ <shade name="light" weight="0.191279614687" />
+</color>
+
+<color name="red" weight="0.214788500135">
+ <shade name="dark" weight="0.599155263652" />
+ <shade name="cool" weight="0.209563695503" />
+ <shade name="light" weight="0.191279614687" />
+</color>
+
+<color name="black" weight="0.115668889007">
+ <shade name="dark" weight="0.599155263652" />
+ <shade name="cool" weight="0.209563695503" />
+ <shade name="light" weight="0.191279614687" />
+</color>
+
+<color name="blue" weight="0.105281576296">
+ <shade name="dark" weight="0.599155263652" />
+ <shade name="cool" weight="0.209563695503" />
+ <shade name="light" weight="0.191279614687" />
+</color>
+
+<color name="purple" weight="0.0272887028861">
+ <shade name="dark" weight="0.599155263652" />
+ <shade name="cool" weight="0.209563695503" />
+ <shade name="light" weight="0.191279614687" />
+</color>
+
+</colors>

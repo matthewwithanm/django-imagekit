@@ -1,0 +1,33 @@
+<colors query="pimp">
+
+<color name="black" weight="0.836542230711">
+ <shade name="hard" weight="0.590461069894" />
+ <shade name="intense" weight="0.330809599415" />
+ <shade name="dark" weight="0.0787281426526" />
+</color>
+
+<color name="white" weight="0.0556691772236">
+ <shade name="hard" weight="0.794700716044" />
+ <shade name="dark" weight="0.105960095472" />
+ <shade name="light" weight="0.0993375895054" />
+</color>
+
+<color name="green" weight="0.0469426575507">
+ <shade name="hard" weight="0.590461069894" />
+ <shade name="intense" weight="0.330809599415" />
+ <shade name="dark" weight="0.0787281426526" />
+</color>
+
+<color name="red" weight="0.0373735773577">
+ <shade name="hard" weight="0.590461069894" />
+ <shade name="intense" weight="0.330809599415" />
+ <shade name="dark" weight="0.0787281426526" />
+</color>
+
+<color name="blue" weight="0.0234713287754">
+ <shade name="hard" weight="0.590461069894" />
+ <shade name="intense" weight="0.330809599415" />
+ <shade name="dark" weight="0.0787281426526" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="friction">
+
+<color name="green" weight="0.448629626747">
+ <shade name="light" weight="0.353840807351" />
+ <shade name="neutral" weight="0.344277542288" />
+ <shade name="weak" weight="0.301880400506" />
+</color>
+
+<color name="blue" weight="0.190068276981">
+ <shade name="light" weight="0.353840807351" />
+ <shade name="neutral" weight="0.344277542288" />
+ <shade name="weak" weight="0.301880400506" />
+</color>
+
+<color name="red" weight="0.176369662423">
+ <shade name="light" weight="0.353840807351" />
+ <shade name="neutral" weight="0.344277542288" />
+ <shade name="weak" weight="0.301880400506" />
+</color>
+
+<color name="white" weight="0.0958903019001">
+ <shade name="light" weight="0.353840807351" />
+ <shade name="neutral" weight="0.344277542288" />
+ <shade name="weak" weight="0.301880400506" />
+</color>
+
+<color name="black" weight="0.0890409946215">
+ <shade name="light" weight="0.353840807351" />
+ <shade name="neutral" weight="0.344277542288" />
+ <shade name="weak" weight="0.301880400506" />
+</color>
+
+</colors>

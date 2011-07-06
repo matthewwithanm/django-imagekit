@@ -1,0 +1,33 @@
+<colors query="care">
+
+<color name="white" weight="0.433017130921">
+ <shade name="soft" weight="0.682396857822" />
+ <shade name="light" weight="0.161989534474" />
+ <shade name="cool" weight="0.155611993746" />
+</color>
+
+<color name="blue" weight="0.248646555646">
+ <shade name="soft" weight="0.606919151489" />
+ <shade name="intense" weight="0.249007016359" />
+ <shade name="light" weight="0.144072396709" />
+</color>
+
+<color name="green" weight="0.145635839736">
+ <shade name="soft" weight="0.606919151489" />
+ <shade name="intense" weight="0.249007016359" />
+ <shade name="light" weight="0.144072396709" />
+</color>
+
+<color name="black" weight="0.113328702233">
+ <shade name="soft" weight="0.606919151489" />
+ <shade name="intense" weight="0.249007016359" />
+ <shade name="light" weight="0.144072396709" />
+</color>
+
+<color name="orange" weight="0.0593707081849">
+ <shade name="soft" weight="0.606919151489" />
+ <shade name="intense" weight="0.249007016359" />
+ <shade name="light" weight="0.144072396709" />
+</color>
+
+</colors>

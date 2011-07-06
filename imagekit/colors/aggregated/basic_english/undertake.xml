@@ -1,0 +1,33 @@
+<colors query="undertake">
+
+<color name="black" weight="0.527777198689">
+ <shade name="light" weight="0.560974699882" />
+ <shade name="weak" weight="0.219511839084" />
+ <shade name="hard" weight="0.219511839084" />
+</color>
+
+<color name="green" weight="0.187499794271">
+ <shade name="light" weight="0.560974699882" />
+ <shade name="weak" weight="0.219511839084" />
+ <shade name="hard" weight="0.219511839084" />
+</color>
+
+<color name="white" weight="0.159722046972">
+ <shade name="light" weight="0.560974699882" />
+ <shade name="weak" weight="0.219511839084" />
+ <shade name="hard" weight="0.219511839084" />
+</color>
+
+<color name="red" weight="0.0624999314237">
+ <shade name="light" weight="0.560974699882" />
+ <shade name="weak" weight="0.219511839084" />
+ <shade name="hard" weight="0.219511839084" />
+</color>
+
+<color name="blue" weight="0.0624999314237">
+ <shade name="light" weight="0.560974699882" />
+ <shade name="weak" weight="0.219511839084" />
+ <shade name="hard" weight="0.219511839084" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="fever">
+
+<color name="yellow" weight="0.887842461042">
+ <shade name="light" weight="0.903882823968" />
+ <shade name="dark" weight="0.0811678393702" />
+ <shade name="fresh" weight="0.0149482939976" />
+</color>
+
+<color name="black" weight="0.0465168742409">
+ <shade name="light" weight="0.903882823968" />
+ <shade name="dark" weight="0.0811678393702" />
+ <shade name="fresh" weight="0.0149482939976" />
+</color>
+
+<color name="red" weight="0.0351342785865">
+ <shade name="light" weight="0.903882823968" />
+ <shade name="dark" weight="0.0811678393702" />
+ <shade name="fresh" weight="0.0149482939976" />
+</color>
+
+<color name="green" weight="0.0154044461189">
+ <shade name="light" weight="0.903882823968" />
+ <shade name="dark" weight="0.0811678393702" />
+ <shade name="fresh" weight="0.0149482939976" />
+</color>
+
+<color name="blue" weight="0.0151009102348">
+ <shade name="light" weight="0.903882823968" />
+ <shade name="dark" weight="0.0811678393702" />
+ <shade name="fresh" weight="0.0149482939976" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="valency">
+
+<color name="orange" weight="0.4999995">
+ <shade name="neutral" weight="0.952788718158" />
+ <shade name="weak" weight="0.0257510464367" />
+ <shade name="light" weight="0.0214592053639" />
+</color>
+
+<color name="white" weight="0.333333">
+ <shade name="neutral" weight="0.952788718158" />
+ <shade name="weak" weight="0.0257510464367" />
+ <shade name="light" weight="0.0214592053639" />
+</color>
+
+<color name="green" weight="0.1666665">
+ <shade name="neutral" weight="0.952788718158" />
+ <shade name="weak" weight="0.0257510464367" />
+ <shade name="light" weight="0.0214592053639" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="neutral" weight="0.952788718158" />
+ <shade name="weak" weight="0.0257510464367" />
+ <shade name="light" weight="0.0214592053639" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="neutral" weight="0.952788718158" />
+ <shade name="weak" weight="0.0257510464367" />
+ <shade name="light" weight="0.0214592053639" />
+</color>
+
+</colors>

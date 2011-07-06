@@ -1,0 +1,33 @@
+<colors query="might">
+
+<color name="white" weight="0.245839981922">
+ <shade name="light" weight="0.788678386698" />
+ <shade name="cool" weight="0.145660218787" />
+ <shade name="dark" weight="0.0656603058782" />
+</color>
+
+<color name="black" weight="0.230864957642">
+ <shade name="light" weight="0.788678386698" />
+ <shade name="cool" weight="0.145660218787" />
+ <shade name="dark" weight="0.0656603058782" />
+</color>
+
+<color name="green" weight="0.194675315634">
+ <shade name="light" weight="0.788678386698" />
+ <shade name="cool" weight="0.145660218787" />
+ <shade name="dark" weight="0.0656603058782" />
+</color>
+
+<color name="blue" weight="0.178452372664">
+ <shade name="light" weight="0.788678386698" />
+ <shade name="cool" weight="0.145660218787" />
+ <shade name="dark" weight="0.0656603058782" />
+</color>
+
+<color name="red" weight="0.150166215692">
+ <shade name="light" weight="0.788678386698" />
+ <shade name="cool" weight="0.145660218787" />
+ <shade name="dark" weight="0.0656603058782" />
+</color>
+
+</colors>

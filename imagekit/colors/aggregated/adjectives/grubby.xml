@@ -1,0 +1,33 @@
+<colors query="grubby">
+
+<color name="green" weight="0.275147587095">
+ <shade name="light" weight="0.573225746435" />
+ <shade name="dark" weight="0.217391001642" />
+ <shade name="intense" weight="0.209381859476" />
+</color>
+
+<color name="black" weight="0.252958265555">
+ <shade name="light" weight="0.573225746435" />
+ <shade name="dark" weight="0.217391001642" />
+ <shade name="intense" weight="0.209381859476" />
+</color>
+
+<color name="white" weight="0.210058910578">
+ <shade name="light" weight="0.629396022645" />
+ <shade name="dark" weight="0.2386931024" />
+ <shade name="fresh" weight="0.131909346063" />
+</color>
+
+<color name="orange" weight="0.147928810266">
+ <shade name="light" weight="0.573225746435" />
+ <shade name="dark" weight="0.217391001642" />
+ <shade name="intense" weight="0.209381859476" />
+</color>
+
+<color name="purple" weight="0.113905183905">
+ <shade name="light" weight="0.629396022645" />
+ <shade name="dark" weight="0.2386931024" />
+ <shade name="fresh" weight="0.131909346063" />
+</color>
+
+</colors>

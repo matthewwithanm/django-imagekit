@@ -1,0 +1,33 @@
+<colors query="medicine">
+
+<color name="yellow" weight="0.675181775047">
+ <shade name="light" weight="0.78117320614" />
+ <shade name="soft" weight="0.145075023997" />
+ <shade name="fresh" weight="0.0737505138716" />
+</color>
+
+<color name="red" weight="0.113594771613">
+ <shade name="light" weight="0.78117320614" />
+ <shade name="soft" weight="0.145075023997" />
+ <shade name="fresh" weight="0.0737505138716" />
+</color>
+
+<color name="green" weight="0.0971714311385">
+ <shade name="light" weight="0.78117320614" />
+ <shade name="soft" weight="0.145075023997" />
+ <shade name="fresh" weight="0.0737505138716" />
+</color>
+
+<color name="white" weight="0.0602189150718">
+ <shade name="light" weight="0.78117320614" />
+ <shade name="soft" weight="0.145075023997" />
+ <shade name="fresh" weight="0.0737505138716" />
+</color>
+
+<color name="black" weight="0.053832060443">
+ <shade name="light" weight="0.78117320614" />
+ <shade name="soft" weight="0.145075023997" />
+ <shade name="fresh" weight="0.0737505138716" />
+</color>
+
+</colors>

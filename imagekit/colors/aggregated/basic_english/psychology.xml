@@ -1,0 +1,33 @@
+<colors query="psychology">
+
+<color name="black" weight="0.909518724717">
+ <shade name="soft" weight="0.79073515817" />
+ <shade name="cool" weight="0.112489520409" />
+ <shade name="weak" weight="0.0967740727049" />
+</color>
+
+<color name="green" weight="0.0781512385683">
+ <shade name="soft" weight="0.79073515817" />
+ <shade name="cool" weight="0.112489520409" />
+ <shade name="weak" weight="0.0967740727049" />
+</color>
+
+<color name="white" weight="0.00693929101081">
+ <shade name="soft" weight="0.79073515817" />
+ <shade name="cool" weight="0.112489520409" />
+ <shade name="weak" weight="0.0967740727049" />
+</color>
+
+<color name="purple" weight="0.00300478037944">
+ <shade name="soft" weight="0.79073515817" />
+ <shade name="cool" weight="0.112489520409" />
+ <shade name="weak" weight="0.0967740727049" />
+</color>
+
+<color name="orange" weight="0.00238496021148">
+ <shade name="soft" weight="0.79073515817" />
+ <shade name="cool" weight="0.112489520409" />
+ <shade name="weak" weight="0.0967740727049" />
+</color>
+
+</colors>

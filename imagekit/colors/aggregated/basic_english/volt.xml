@@ -1,0 +1,33 @@
+<colors query="volt">
+
+<color name="black" weight="0.474231665235">
+ <shade name="dark" weight="0.405487166359" />
+ <shade name="hard" weight="0.338414101247" />
+ <shade name="cool" weight="0.256097157701" />
+</color>
+
+<color name="blue" weight="0.196251742913">
+ <shade name="dark" weight="0.405487166359" />
+ <shade name="hard" weight="0.338414101247" />
+ <shade name="cool" weight="0.256097157701" />
+</color>
+
+<color name="white" weight="0.174388153517">
+ <shade name="dark" weight="0.405487166359" />
+ <shade name="hard" weight="0.338414101247" />
+ <shade name="cool" weight="0.256097157701" />
+</color>
+
+<color name="red" weight="0.081207617757">
+ <shade name="dark" weight="0.405487166359" />
+ <shade name="hard" weight="0.338414101247" />
+ <shade name="cool" weight="0.256097157701" />
+</color>
+
+<color name="green" weight="0.0739197546249">
+ <shade name="dark" weight="0.405487166359" />
+ <shade name="hard" weight="0.338414101247" />
+ <shade name="cool" weight="0.256097157701" />
+</color>
+
+</colors>

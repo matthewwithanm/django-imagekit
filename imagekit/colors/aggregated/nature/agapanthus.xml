@@ -1,0 +1,33 @@
+<colors query="agapanthus">
+
+<color name="white" weight="0.462627121938">
+ <shade name="fresh" weight="0.833332440477" />
+ <shade name="dark" weight="0.119047491497" />
+ <shade name="light" weight="0.0476189965987" />
+</color>
+
+<color name="purple" weight="0.273295737515">
+ <shade name="fresh" weight="0.833332440477" />
+ <shade name="dark" weight="0.119047491497" />
+ <shade name="light" weight="0.0476189965987" />
+</color>
+
+<color name="black" weight="0.100921859697">
+ <shade name="fresh" weight="0.833332440477" />
+ <shade name="dark" weight="0.119047491497" />
+ <shade name="light" weight="0.0476189965987" />
+</color>
+
+<color name="blue" weight="0.100427951737">
+ <shade name="fresh" weight="0.833332440477" />
+ <shade name="dark" weight="0.119047491497" />
+ <shade name="light" weight="0.0476189965987" />
+</color>
+
+<color name="pink" weight="0.0627263108393">
+ <shade name="fresh" weight="0.833332440477" />
+ <shade name="dark" weight="0.119047491497" />
+ <shade name="light" weight="0.0476189965987" />
+</color>
+
+</colors>

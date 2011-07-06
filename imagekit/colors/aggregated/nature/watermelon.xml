@@ -1,0 +1,33 @@
+<colors query="watermelon">
+
+<color name="purple" weight="0.328472998607">
+ <shade name="fresh" weight="0.789729381933" />
+ <shade name="cool" weight="0.178745333359" />
+ <shade name="light" weight="0.0315241769743" />
+</color>
+
+<color name="yellow" weight="0.205831644036">
+ <shade name="fresh" weight="0.789729381933" />
+ <shade name="cool" weight="0.178745333359" />
+ <shade name="light" weight="0.0315241769743" />
+</color>
+
+<color name="red" weight="0.17495689743">
+ <shade name="fresh" weight="0.789729381933" />
+ <shade name="cool" weight="0.178745333359" />
+ <shade name="light" weight="0.0315241769743" />
+</color>
+
+<color name="blue" weight="0.167238210779">
+ <shade name="fresh" weight="0.789729381933" />
+ <shade name="cool" weight="0.178745333359" />
+ <shade name="light" weight="0.0315241769743" />
+</color>
+
+<color name="pink" weight="0.123498986422">
+ <shade name="fresh" weight="0.789729381933" />
+ <shade name="cool" weight="0.178745333359" />
+ <shade name="light" weight="0.0315241769743" />
+</color>
+
+</colors>

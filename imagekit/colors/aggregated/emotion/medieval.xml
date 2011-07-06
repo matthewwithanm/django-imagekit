@@ -1,0 +1,33 @@
+<colors query="medieval">
+
+<color name="red" weight="0.37914648061">
+ <shade name="dark" weight="0.841307496643" />
+ <shade name="light" weight="0.0895585399653" />
+ <shade name="cool" weight="0.0691329080434" />
+</color>
+
+<color name="blue" weight="0.295061575636">
+ <shade name="dark" weight="0.841307496643" />
+ <shade name="light" weight="0.0895585399653" />
+ <shade name="cool" weight="0.0691329080434" />
+</color>
+
+<color name="purple" weight="0.133771439731">
+ <shade name="dark" weight="0.841307496643" />
+ <shade name="light" weight="0.0895585399653" />
+ <shade name="cool" weight="0.0691329080434" />
+</color>
+
+<color name="pink" weight="0.120776499872">
+ <shade name="dark" weight="0.841307496643" />
+ <shade name="light" weight="0.0895585399653" />
+ <shade name="cool" weight="0.0691329080434" />
+</color>
+
+<color name="black" weight="0.0712428467598">
+ <shade name="dark" weight="0.841307496643" />
+ <shade name="light" weight="0.0895585399653" />
+ <shade name="cool" weight="0.0691329080434" />
+</color>
+
+</colors>

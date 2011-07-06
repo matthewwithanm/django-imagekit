@@ -1,0 +1,33 @@
+<colors query="bereaved">
+
+<color name="black" weight="0.474999489376">
+ <shade name="light" weight="0.357142295919" />
+ <shade name="dark" weight="0.357142295919" />
+ <shade name="hard" weight="0.285713836735" />
+</color>
+
+<color name="white" weight="0.199999785">
+ <shade name="light" weight="0.357142295919" />
+ <shade name="dark" weight="0.357142295919" />
+ <shade name="hard" weight="0.285713836735" />
+</color>
+
+<color name="blue" weight="0.174999811875">
+ <shade name="light" weight="0.357142295919" />
+ <shade name="dark" weight="0.357142295919" />
+ <shade name="hard" weight="0.285713836735" />
+</color>
+
+<color name="yellow" weight="0.0749999193751">
+ <shade name="light" weight="0.357142295919" />
+ <shade name="dark" weight="0.357142295919" />
+ <shade name="hard" weight="0.285713836735" />
+</color>
+
+<color name="orange" weight="0.0749999193751">
+ <shade name="light" weight="0.357142295919" />
+ <shade name="dark" weight="0.357142295919" />
+ <shade name="hard" weight="0.285713836735" />
+</color>
+
+</colors>

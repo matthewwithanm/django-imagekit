@@ -1,0 +1,33 @@
+<colors query="outcrop">
+
+<color name="orange" weight="0.249715961714">
+ <shade name="light" weight="0.599874801649" />
+ <shade name="fresh" weight="0.222152805175" />
+ <shade name="dark" weight="0.177971154846" />
+</color>
+
+<color name="black" weight="0.242905526395">
+ <shade name="light" weight="0.599874801649" />
+ <shade name="fresh" weight="0.222152805175" />
+ <shade name="dark" weight="0.177971154846" />
+</color>
+
+<color name="red" weight="0.233824945969">
+ <shade name="light" weight="0.599874801649" />
+ <shade name="fresh" weight="0.222152805175" />
+ <shade name="dark" weight="0.177971154846" />
+</color>
+
+<color name="white" weight="0.214528712564">
+ <shade name="light" weight="0.599874801649" />
+ <shade name="fresh" weight="0.222152805175" />
+ <shade name="dark" weight="0.177971154846" />
+</color>
+
+<color name="green" weight="0.0590237727689">
+ <shade name="light" weight="0.599874801649" />
+ <shade name="fresh" weight="0.222152805175" />
+ <shade name="dark" weight="0.177971154846" />
+</color>
+
+</colors>

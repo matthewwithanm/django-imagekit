@@ -1,0 +1,33 @@
+<colors query="obedient">
+
+<color name="white" weight="0.682491886554">
+ <shade name="soft" weight="0.365481656524" />
+ <shade name="cool" weight="0.327410650636" />
+ <shade name="bright" weight="0.307106114162" />
+</color>
+
+<color name="pink" weight="0.203560623555">
+ <shade name="soft" weight="0.365481656524" />
+ <shade name="cool" weight="0.327410650636" />
+ <shade name="bright" weight="0.307106114162" />
+</color>
+
+<color name="purple" weight="0.0599405917756">
+ <shade name="soft" weight="0.365481656524" />
+ <shade name="cool" weight="0.327410650636" />
+ <shade name="bright" weight="0.307106114162" />
+</color>
+
+<color name="black" weight="0.0451038116332">
+ <shade name="soft" weight="0.365481656524" />
+ <shade name="cool" weight="0.327410650636" />
+ <shade name="bright" weight="0.307106114162" />
+</color>
+
+<color name="red" weight="0.00890206808549">
+ <shade name="soft" weight="0.365481656524" />
+ <shade name="cool" weight="0.327410650636" />
+ <shade name="bright" weight="0.307106114162" />
+</color>
+
+</colors>

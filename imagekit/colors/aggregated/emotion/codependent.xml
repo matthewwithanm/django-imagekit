@@ -1,0 +1,33 @@
+<colors query="codependent">
+
+<color name="blue" weight="0.428571">
+ <shade name="weak" weight="0.633332510001" />
+ <shade name="intense" weight="0.26666632" />
+ <shade name="hard" weight="0.0999998700002" />
+</color>
+
+<color name="white" weight="0.285714">
+ <shade name="weak" weight="0.759998814402" />
+ <shade name="hard" weight="0.1199998128" />
+ <shade name="cool" weight="0.1199998128" />
+</color>
+
+<color name="green" weight="0.142857">
+ <shade name="weak" weight="0.633332510001" />
+ <shade name="intense" weight="0.26666632" />
+ <shade name="hard" weight="0.0999998700002" />
+</color>
+
+<color name="black" weight="0.142857">
+ <shade name="weak" weight="0.633332510001" />
+ <shade name="intense" weight="0.26666632" />
+ <shade name="hard" weight="0.0999998700002" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="weak" weight="0.633332510001" />
+ <shade name="intense" weight="0.26666632" />
+ <shade name="hard" weight="0.0999998700002" />
+</color>
+
+</colors>

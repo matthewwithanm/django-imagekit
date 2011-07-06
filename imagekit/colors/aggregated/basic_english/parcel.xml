@@ -1,0 +1,33 @@
+<colors query="parcel">
+
+<color name="red" weight="0.287174361875">
+ <shade name="light" weight="0.863669059116" />
+ <shade name="fresh" weight="0.0750370537383" />
+ <shade name="hard" weight="0.061292642905" />
+</color>
+
+<color name="green" weight="0.241635385396">
+ <shade name="light" weight="0.863669059116" />
+ <shade name="fresh" weight="0.0750370537383" />
+ <shade name="hard" weight="0.061292642905" />
+</color>
+
+<color name="blue" weight="0.160780467975">
+ <shade name="light" weight="0.863669059116" />
+ <shade name="fresh" weight="0.0750370537383" />
+ <shade name="hard" weight="0.061292642905" />
+</color>
+
+<color name="black" weight="0.157063000508">
+ <shade name="light" weight="0.863669059116" />
+ <shade name="fresh" weight="0.0750370537383" />
+ <shade name="hard" weight="0.061292642905" />
+</color>
+
+<color name="white" weight="0.15334553304">
+ <shade name="light" weight="0.863669059116" />
+ <shade name="fresh" weight="0.0750370537383" />
+ <shade name="hard" weight="0.061292642905" />
+</color>
+
+</colors>

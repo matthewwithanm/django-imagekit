@@ -1,0 +1,33 @@
+<colors query="overdressed">
+
+<color name="white" weight="0.527777206019">
+ <shade name="hard" weight="0.428570693879" />
+ <shade name="light" weight="0.285713795919" />
+ <shade name="cool" weight="0.285713795919" />
+</color>
+
+<color name="green" weight="0.138888738426">
+ <shade name="hard" weight="0.428570693879" />
+ <shade name="light" weight="0.285713795919" />
+ <shade name="cool" weight="0.285713795919" />
+</color>
+
+<color name="blue" weight="0.138888738426">
+ <shade name="hard" weight="0.428570693879" />
+ <shade name="light" weight="0.285713795919" />
+ <shade name="cool" weight="0.285713795919" />
+</color>
+
+<color name="black" weight="0.138888738426">
+ <shade name="hard" weight="0.428570693879" />
+ <shade name="light" weight="0.285713795919" />
+ <shade name="cool" weight="0.285713795919" />
+</color>
+
+<color name="pink" weight="0.0555554953704">
+ <shade name="hard" weight="0.428570693879" />
+ <shade name="light" weight="0.285713795919" />
+ <shade name="cool" weight="0.285713795919" />
+</color>
+
+</colors>

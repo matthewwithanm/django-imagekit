@@ -1,0 +1,33 @@
+<colors query="destructive">
+
+<color name="black" weight="0.373912617137">
+ <shade name="intense" weight="0.418588802" />
+ <shade name="cool" weight="0.295648941255" />
+ <shade name="dark" weight="0.285761016799" />
+</color>
+
+<color name="red" weight="0.193478040263">
+ <shade name="intense" weight="0.418588802" />
+ <shade name="cool" weight="0.295648941255" />
+ <shade name="dark" weight="0.285761016799" />
+</color>
+
+<color name="blue" weight="0.193478040263">
+ <shade name="intense" weight="0.418588802" />
+ <shade name="cool" weight="0.295648941255" />
+ <shade name="dark" weight="0.285761016799" />
+</color>
+
+<color name="green" weight="0.163043292356">
+ <shade name="intense" weight="0.418588802" />
+ <shade name="cool" weight="0.295648941255" />
+ <shade name="dark" weight="0.285761016799" />
+</color>
+
+<color name="orange" weight="0.0760868697662">
+ <shade name="intense" weight="0.418588802" />
+ <shade name="cool" weight="0.295648941255" />
+ <shade name="dark" weight="0.285761016799" />
+</color>
+
+</colors>

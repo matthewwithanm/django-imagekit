@@ -1,0 +1,33 @@
+<colors query="arbitration">
+
+<color name="orange" weight="0.973565869837">
+ <shade name="neutral" weight="0.990915598361" />
+ <shade name="fresh" weight="0.0049545779918" />
+ <shade name="light" weight="0.00412881499317" />
+</color>
+
+<color name="green" weight="0.0126545433361">
+ <shade name="neutral" weight="0.990915598361" />
+ <shade name="fresh" weight="0.0049545779918" />
+ <shade name="light" weight="0.00412881499317" />
+</color>
+
+<color name="blue" weight="0.0108959606661">
+ <shade name="neutral" weight="0.990915598361" />
+ <shade name="fresh" weight="0.0049545779918" />
+ <shade name="light" weight="0.00412881499317" />
+</color>
+
+<color name="white" weight="0.00170419351517">
+ <shade name="neutral" weight="0.990915598361" />
+ <shade name="fresh" weight="0.0049545779918" />
+ <shade name="light" weight="0.00412881499317" />
+</color>
+
+<color name="black" weight="0.00117843168602">
+ <shade name="neutral" weight="0.990915598361" />
+ <shade name="fresh" weight="0.0049545779918" />
+ <shade name="light" weight="0.00412881499317" />
+</color>
+
+</colors>

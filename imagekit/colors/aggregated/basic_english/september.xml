@@ -1,0 +1,33 @@
+<colors query="september">
+
+<color name="black" weight="0.748144995012">
+ <shade name="warm" weight="0.484116236004" />
+ <shade name="cool" weight="0.303684463005" />
+ <shade name="bright" weight="0.212197930217" />
+</color>
+
+<color name="red" weight="0.0719122128826">
+ <shade name="warm" weight="0.484116236004" />
+ <shade name="cool" weight="0.303684463005" />
+ <shade name="bright" weight="0.212197930217" />
+</color>
+
+<color name="white" weight="0.0651402107726">
+ <shade name="warm" weight="0.484116236004" />
+ <shade name="cool" weight="0.303684463005" />
+ <shade name="bright" weight="0.212197930217" />
+</color>
+
+<color name="blue" weight="0.0606255426993">
+ <shade name="cool" weight="0.422260679267" />
+ <shade name="bright" weight="0.295052441162" />
+ <shade name="light" weight="0.282684973568" />
+</color>
+
+<color name="green" weight="0.0541760168802">
+ <shade name="cool" weight="0.422260679267" />
+ <shade name="bright" weight="0.295052441162" />
+ <shade name="light" weight="0.282684973568" />
+</color>
+
+</colors>

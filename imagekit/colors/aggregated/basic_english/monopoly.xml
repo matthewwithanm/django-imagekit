@@ -1,0 +1,33 @@
+<colors query="monopoly">
+
+<color name="black" weight="0.450434848078">
+ <shade name="cool" weight="0.628827762654" />
+ <shade name="intense" weight="0.219819447117" />
+ <shade name="hard" weight="0.151351094736" />
+</color>
+
+<color name="white" weight="0.301406218045">
+ <shade name="cool" weight="0.6789870838" />
+ <shade name="hard" weight="0.163423825327" />
+ <shade name="weak" weight="0.157587260137" />
+</color>
+
+<color name="red" weight="0.0961150939764">
+ <shade name="cool" weight="0.628827762654" />
+ <shade name="intense" weight="0.219819447117" />
+ <shade name="hard" weight="0.151351094736" />
+</color>
+
+<color name="green" weight="0.0952778544818">
+ <shade name="cool" weight="0.628827762654" />
+ <shade name="intense" weight="0.219819447117" />
+ <shade name="hard" weight="0.151351094736" />
+</color>
+
+<color name="blue" weight="0.0567648377317">
+ <shade name="cool" weight="0.628827762654" />
+ <shade name="intense" weight="0.219819447117" />
+ <shade name="hard" weight="0.151351094736" />
+</color>
+
+</colors>

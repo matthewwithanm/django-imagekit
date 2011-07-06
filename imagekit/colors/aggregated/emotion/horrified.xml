@@ -1,0 +1,33 @@
+<colors query="horrified">
+
+<color name="black" weight="0.512314725813">
+ <shade name="dark" weight="0.732757815288" />
+ <shade name="warm" weight="0.213361834451" />
+ <shade name="light" weight="0.0538792511241" />
+</color>
+
+<color name="white" weight="0.187191919047">
+ <shade name="dark" weight="0.732757815288" />
+ <shade name="warm" weight="0.213361834451" />
+ <shade name="light" weight="0.0538792511241" />
+</color>
+
+<color name="pink" weight="0.147783093984">
+ <shade name="dark" weight="0.732757815288" />
+ <shade name="warm" weight="0.213361834451" />
+ <shade name="light" weight="0.0538792511241" />
+</color>
+
+<color name="red" weight="0.0788176501251">
+ <shade name="dark" weight="0.732757815288" />
+ <shade name="warm" weight="0.213361834451" />
+ <shade name="light" weight="0.0538792511241" />
+</color>
+
+<color name="blue" weight="0.0738915469922">
+ <shade name="dark" weight="0.890051167733" />
+ <shade name="light" weight="0.0654449388039" />
+ <shade name="hard" weight="0.0445025583866" />
+</color>
+
+</colors>

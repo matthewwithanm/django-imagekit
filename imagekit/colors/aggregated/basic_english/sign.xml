@@ -1,0 +1,33 @@
+<colors query="sign">
+
+<color name="red" weight="0.237971094704">
+ <shade name="light" weight="0.671614564347" />
+ <shade name="cool" weight="0.198656518507" />
+ <shade name="soft" weight="0.129727655324" />
+</color>
+
+<color name="orange" weight="0.217164878774">
+ <shade name="light" weight="0.671614564347" />
+ <shade name="cool" weight="0.198656518507" />
+ <shade name="soft" weight="0.129727655324" />
+</color>
+
+<color name="yellow" weight="0.205461382313">
+ <shade name="light" weight="0.671614564347" />
+ <shade name="cool" weight="0.198656518507" />
+ <shade name="soft" weight="0.129727655324" />
+</color>
+
+<color name="green" weight="0.172951669922">
+ <shade name="light" weight="0.671614564347" />
+ <shade name="cool" weight="0.198656518507" />
+ <shade name="soft" weight="0.129727655324" />
+</color>
+
+<color name="white" weight="0.166449727443">
+ <shade name="light" weight="0.671614564347" />
+ <shade name="cool" weight="0.198656518507" />
+ <shade name="soft" weight="0.129727655324" />
+</color>
+
+</colors>

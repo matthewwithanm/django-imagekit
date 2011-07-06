@@ -1,0 +1,33 @@
+<colors query="fickle">
+
+<color name="purple" weight="0.34999959">
+ <shade name="light" weight="0.748669383455" />
+ <shade name="weak" weight="0.180850863499" />
+ <shade name="soft" weight="0.0704786453342" />
+</color>
+
+<color name="black" weight="0.257142555919">
+ <shade name="light" weight="0.748669383455" />
+ <shade name="weak" weight="0.180850863499" />
+ <shade name="soft" weight="0.0704786453342" />
+</color>
+
+<color name="green" weight="0.164285521837">
+ <shade name="light" weight="0.748669383455" />
+ <shade name="weak" weight="0.180850863499" />
+ <shade name="soft" weight="0.0704786453342" />
+</color>
+
+<color name="red" weight="0.128571277959">
+ <shade name="light" weight="0.748669383455" />
+ <shade name="weak" weight="0.180850863499" />
+ <shade name="soft" weight="0.0704786453342" />
+</color>
+
+<color name="blue" weight="0.0999998828573">
+ <shade name="light" weight="0.748669383455" />
+ <shade name="weak" weight="0.180850863499" />
+ <shade name="soft" weight="0.0704786453342" />
+</color>
+
+</colors>

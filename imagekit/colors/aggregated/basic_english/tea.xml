@@ -1,0 +1,33 @@
+<colors query="tea">
+
+<color name="green" weight="0.395201371051">
+ <shade name="dark" weight="0.395228001096" />
+ <shade name="fresh" weight="0.320079014972" />
+ <shade name="weak" weight="0.284691397168" />
+</color>
+
+<color name="black" weight="0.278965673683">
+ <shade name="dark" weight="0.395228001096" />
+ <shade name="fresh" weight="0.320079014972" />
+ <shade name="weak" weight="0.284691397168" />
+</color>
+
+<color name="white" weight="0.22921679521">
+ <shade name="dark" weight="0.395228001096" />
+ <shade name="fresh" weight="0.320079014972" />
+ <shade name="weak" weight="0.284691397168" />
+</color>
+
+<color name="red" weight="0.0776454458419">
+ <shade name="dark" weight="0.395228001096" />
+ <shade name="fresh" weight="0.320079014972" />
+ <shade name="weak" weight="0.284691397168" />
+</color>
+
+<color name="blue" weight="0.0189696658105">
+ <shade name="dark" weight="0.395228001096" />
+ <shade name="fresh" weight="0.320079014972" />
+ <shade name="weak" weight="0.284691397168" />
+</color>
+
+</colors>

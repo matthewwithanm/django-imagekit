@@ -1,0 +1,33 @@
+<colors query="wing">
+
+<color name="red" weight="0.534203912889">
+ <shade name="dark" weight="0.517723317018" />
+ <shade name="light" weight="0.379663765813" />
+ <shade name="soft" weight="0.102611828598" />
+</color>
+
+<color name="green" weight="0.167178922379">
+ <shade name="dark" weight="0.517723317018" />
+ <shade name="light" weight="0.379663765813" />
+ <shade name="soft" weight="0.102611828598" />
+</color>
+
+<color name="white" weight="0.116064447261">
+ <shade name="dark" weight="0.517723317018" />
+ <shade name="light" weight="0.379663765813" />
+ <shade name="soft" weight="0.102611828598" />
+</color>
+
+<color name="blue" weight="0.0983857566183">
+ <shade name="dark" weight="0.517723317018" />
+ <shade name="light" weight="0.379663765813" />
+ <shade name="soft" weight="0.102611828598" />
+</color>
+
+<color name="black" weight="0.0841659402321">
+ <shade name="dark" weight="0.517723317018" />
+ <shade name="light" weight="0.379663765813" />
+ <shade name="soft" weight="0.102611828598" />
+</color>
+
+</colors>

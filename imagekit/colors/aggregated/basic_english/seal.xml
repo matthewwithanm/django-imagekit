@@ -1,0 +1,33 @@
+<colors query="seal">
+
+<color name="red" weight="0.525206694412">
+ <shade name="soft" weight="0.466720818967" />
+ <shade name="light" weight="0.34839723106" />
+ <shade name="dark" weight="0.184880606105" />
+</color>
+
+<color name="blue" weight="0.187525288044">
+ <shade name="soft" weight="0.466720818967" />
+ <shade name="light" weight="0.34839723106" />
+ <shade name="dark" weight="0.184880606105" />
+</color>
+
+<color name="green" weight="0.154232755021">
+ <shade name="soft" weight="0.466720818967" />
+ <shade name="light" weight="0.34839723106" />
+ <shade name="dark" weight="0.184880606105" />
+</color>
+
+<color name="black" weight="0.0910448862241">
+ <shade name="soft" weight="0.466720818967" />
+ <shade name="light" weight="0.34839723106" />
+ <shade name="dark" weight="0.184880606105" />
+</color>
+
+<color name="white" weight="0.041989357975">
+ <shade name="soft" weight="0.466720818967" />
+ <shade name="light" weight="0.34839723106" />
+ <shade name="dark" weight="0.184880606105" />
+</color>
+
+</colors>

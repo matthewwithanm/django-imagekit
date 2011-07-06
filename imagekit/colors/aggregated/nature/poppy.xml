@@ -1,0 +1,33 @@
+<colors query="poppy">
+
+<color name="red" weight="0.449806441309">
+ <shade name="dark" weight="0.556704750718" />
+ <shade name="cool" weight="0.227282765996" />
+ <shade name="soft" weight="0.21601064501" />
+</color>
+
+<color name="blue" weight="0.270269964735">
+ <shade name="dark" weight="0.556704750718" />
+ <shade name="cool" weight="0.227282765996" />
+ <shade name="soft" weight="0.21601064501" />
+</color>
+
+<color name="orange" weight="0.109459335718">
+ <shade name="dark" weight="0.556704750718" />
+ <shade name="cool" weight="0.227282765996" />
+ <shade name="soft" weight="0.21601064501" />
+</color>
+
+<color name="white" weight="0.104826136322">
+ <shade name="dark" weight="0.556704750718" />
+ <shade name="cool" weight="0.227282765996" />
+ <shade name="soft" weight="0.21601064501" />
+</color>
+
+<color name="pink" weight="0.0656369914357">
+ <shade name="dark" weight="0.556704750718" />
+ <shade name="cool" weight="0.227282765996" />
+ <shade name="soft" weight="0.21601064501" />
+</color>
+
+</colors>

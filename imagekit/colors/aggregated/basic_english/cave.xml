@@ -1,0 +1,33 @@
+<colors query="cave">
+
+<color name="blue" weight="0.298517663027">
+ <shade name="dark" weight="0.921780576406" />
+ <shade name="cool" weight="0.0682472157531" />
+ <shade name="hard" weight="0.00997118411977" />
+</color>
+
+<color name="red" weight="0.254057585555">
+ <shade name="dark" weight="0.921780576406" />
+ <shade name="cool" weight="0.0682472157531" />
+ <shade name="hard" weight="0.00997118411977" />
+</color>
+
+<color name="black" weight="0.182780318496">
+ <shade name="dark" weight="0.921780576406" />
+ <shade name="cool" weight="0.0682472157531" />
+ <shade name="hard" weight="0.00997118411977" />
+</color>
+
+<color name="green" weight="0.135497378963">
+ <shade name="dark" weight="0.921780576406" />
+ <shade name="cool" weight="0.0682472157531" />
+ <shade name="hard" weight="0.00997118411977" />
+</color>
+
+<color name="white" weight="0.129145939324">
+ <shade name="dark" weight="0.921780576406" />
+ <shade name="cool" weight="0.0682472157531" />
+ <shade name="hard" weight="0.00997118411977" />
+</color>
+
+</colors>

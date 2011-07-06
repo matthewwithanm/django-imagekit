@@ -1,0 +1,33 @@
+<colors query="quiescent">
+
+<color name="red" weight="0.67053072007">
+ <shade name="hard" weight="0.422370932555" />
+ <shade name="soft" weight="0.404644800798" />
+ <shade name="cool" weight="0.172982596112" />
+</color>
+
+<color name="blue" weight="0.213526353221">
+ <shade name="hard" weight="0.422370932555" />
+ <shade name="soft" weight="0.404644800798" />
+ <shade name="cool" weight="0.172982596112" />
+</color>
+
+<color name="green" weight="0.0560385904381">
+ <shade name="hard" weight="0.422370932555" />
+ <shade name="soft" weight="0.404644800798" />
+ <shade name="cool" weight="0.172982596112" />
+</color>
+
+<color name="black" weight="0.0502414948755">
+ <shade name="hard" weight="0.422370932555" />
+ <shade name="soft" weight="0.404644800798" />
+ <shade name="cool" weight="0.172982596112" />
+</color>
+
+<color name="yellow" weight="0.0096618259376">
+ <shade name="hard" weight="0.422370932555" />
+ <shade name="soft" weight="0.404644800798" />
+ <shade name="cool" weight="0.172982596112" />
+</color>
+
+</colors>

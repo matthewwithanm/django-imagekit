@@ -1,0 +1,33 @@
+<colors query="flour">
+
+<color name="white" weight="0.893237852152">
+ <shade name="soft" weight="0.462292134219" />
+ <shade name="warm" weight="0.328808108515" />
+ <shade name="fresh" weight="0.208898729492" />
+</color>
+
+<color name="red" weight="0.101195933883">
+ <shade name="soft" weight="0.462292134219" />
+ <shade name="warm" weight="0.328808108515" />
+ <shade name="fresh" weight="0.208898729492" />
+</color>
+
+<color name="green" weight="0.00261187270692">
+ <shade name="soft" weight="0.681269042272" />
+ <shade name="fresh" weight="0.307849143082" />
+ <shade name="dark" weight="0.0108803000389" />
+</color>
+
+<color name="blue" weight="0.00201261186941">
+ <shade name="soft" weight="0.681269042272" />
+ <shade name="fresh" weight="0.307849143082" />
+ <shade name="dark" weight="0.0108803000389" />
+</color>
+
+<color name="purple" weight="0.000940726446823">
+ <shade name="soft" weight="0.681269042272" />
+ <shade name="fresh" weight="0.307849143082" />
+ <shade name="dark" weight="0.0108803000389" />
+</color>
+
+</colors>

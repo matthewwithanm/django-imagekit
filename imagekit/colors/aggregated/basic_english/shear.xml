@@ -1,0 +1,33 @@
+<colors query="shear">
+
+<color name="black" weight="0.45676944905">
+ <shade name="weak" weight="0.70908028853" />
+ <shade name="intense" weight="0.264273788516" />
+ <shade name="soft" weight="0.0266448881426" />
+</color>
+
+<color name="white" weight="0.269167711048">
+ <shade name="weak" weight="0.930629623889" />
+ <shade name="soft" weight="0.0349699781983" />
+ <shade name="light" weight="0.0343990397787" />
+</color>
+
+<color name="blue" weight="0.107870999352">
+ <shade name="weak" weight="0.70908028853" />
+ <shade name="intense" weight="0.264273788516" />
+ <shade name="soft" weight="0.0266448881426" />
+</color>
+
+<color name="pink" weight="0.0844207821013">
+ <shade name="weak" weight="0.930629623889" />
+ <shade name="soft" weight="0.0349699781983" />
+ <shade name="light" weight="0.0343990397787" />
+</color>
+
+<color name="red" weight="0.0817698879773">
+ <shade name="weak" weight="0.70908028853" />
+ <shade name="intense" weight="0.264273788516" />
+ <shade name="soft" weight="0.0266448881426" />
+</color>
+
+</colors>

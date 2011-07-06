@@ -1,0 +1,33 @@
+<colors query="card">
+
+<color name="green" weight="0.336437559211">
+ <shade name="cool" weight="0.624186456565" />
+ <shade name="hard" weight="0.229518561633" />
+ <shade name="light" weight="0.146293700757" />
+</color>
+
+<color name="yellow" weight="0.237597146336">
+ <shade name="cool" weight="0.624186456565" />
+ <shade name="hard" weight="0.229518561633" />
+ <shade name="light" weight="0.146293700757" />
+</color>
+
+<color name="red" weight="0.233795591994">
+ <shade name="cool" weight="0.624186456565" />
+ <shade name="hard" weight="0.229518561633" />
+ <shade name="light" weight="0.146293700757" />
+</color>
+
+<color name="blue" weight="0.0986503351586">
+ <shade name="cool" weight="0.624186456565" />
+ <shade name="hard" weight="0.229518561633" />
+ <shade name="light" weight="0.146293700757" />
+</color>
+
+<color name="white" weight="0.0935182367978">
+ <shade name="cool" weight="0.624186456565" />
+ <shade name="hard" weight="0.229518561633" />
+ <shade name="light" weight="0.146293700757" />
+</color>
+
+</colors>

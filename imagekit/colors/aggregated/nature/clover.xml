@@ -1,0 +1,33 @@
+<colors query="clover">
+
+<color name="red" weight="0.619712129293">
+ <shade name="fresh" weight="0.752630657688" />
+ <shade name="dark" weight="0.159473489007" />
+ <shade name="light" weight="0.0878946292545" />
+</color>
+
+<color name="white" weight="0.312315239763">
+ <shade name="fresh" weight="0.752630657688" />
+ <shade name="dark" weight="0.159473489007" />
+ <shade name="light" weight="0.0878946292545" />
+</color>
+
+<color name="green" weight="0.0342317176181">
+ <shade name="fresh" weight="0.752630657688" />
+ <shade name="dark" weight="0.159473489007" />
+ <shade name="light" weight="0.0878946292545" />
+</color>
+
+<color name="blue" weight="0.0191815659067">
+ <shade name="fresh" weight="0.752630657688" />
+ <shade name="dark" weight="0.159473489007" />
+ <shade name="light" weight="0.0878946292545" />
+</color>
+
+<color name="pink" weight="0.0145583166882">
+ <shade name="fresh" weight="0.752630657688" />
+ <shade name="dark" weight="0.159473489007" />
+ <shade name="light" weight="0.0878946292545" />
+</color>
+
+</colors>

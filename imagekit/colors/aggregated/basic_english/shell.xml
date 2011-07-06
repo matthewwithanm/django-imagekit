@@ -1,0 +1,33 @@
+<colors query="shell">
+
+<color name="blue" weight="0.330011249007">
+ <shade name="soft" weight="0.51688850301" />
+ <shade name="hard" weight="0.452778301086" />
+ <shade name="cool" weight="0.0303321392852" />
+</color>
+
+<color name="white" weight="0.239419925751">
+ <shade name="soft" weight="0.51688850301" />
+ <shade name="hard" weight="0.452778301086" />
+ <shade name="cool" weight="0.0303321392852" />
+</color>
+
+<color name="pink" weight="0.183770970036">
+ <shade name="soft" weight="0.51688850301" />
+ <shade name="hard" weight="0.452778301086" />
+ <shade name="cool" weight="0.0303321392852" />
+</color>
+
+<color name="green" weight="0.126180771679">
+ <shade name="soft" weight="0.51688850301" />
+ <shade name="hard" weight="0.452778301086" />
+ <shade name="cool" weight="0.0303321392852" />
+</color>
+
+<color name="black" weight="0.120615876108">
+ <shade name="soft" weight="0.51688850301" />
+ <shade name="hard" weight="0.452778301086" />
+ <shade name="cool" weight="0.0303321392852" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="emerald">
+
+<color name="green" weight="0.544371364111">
+ <shade name="dark" weight="0.392483901733" />
+ <shade name="bright" weight="0.305845168106" />
+ <shade name="light" weight="0.301669807449" />
+</color>
+
+<color name="blue" weight="0.133541100258">
+ <shade name="dark" weight="0.392483901733" />
+ <shade name="bright" weight="0.305845168106" />
+ <shade name="light" weight="0.301669807449" />
+</color>
+
+<color name="black" weight="0.130705832737">
+ <shade name="dark" weight="0.392483901733" />
+ <shade name="bright" weight="0.305845168106" />
+ <shade name="light" weight="0.301669807449" />
+</color>
+
+<color name="red" weight="0.128721145472">
+ <shade name="dark" weight="0.392483901733" />
+ <shade name="bright" weight="0.305845168106" />
+ <shade name="light" weight="0.301669807449" />
+</color>
+
+<color name="white" weight="0.0626594122232">
+ <shade name="dark" weight="0.392483901733" />
+ <shade name="bright" weight="0.305845168106" />
+ <shade name="light" weight="0.301669807449" />
+</color>
+
+</colors>

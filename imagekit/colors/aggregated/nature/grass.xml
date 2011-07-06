@@ -1,0 +1,33 @@
+<colors query="grass">
+
+<color name="green" weight="0.50274967939">
+ <shade name="fresh" weight="0.527195991976" />
+ <shade name="soft" weight="0.354253391434" />
+ <shade name="cool" weight="0.118549363275" />
+</color>
+
+<color name="blue" weight="0.423106165823">
+ <shade name="fresh" weight="0.527195991976" />
+ <shade name="soft" weight="0.354253391434" />
+ <shade name="cool" weight="0.118549363275" />
+</color>
+
+<color name="yellow" weight="0.0326040633664">
+ <shade name="fresh" weight="0.527195991976" />
+ <shade name="soft" weight="0.354253391434" />
+ <shade name="cool" weight="0.118549363275" />
+</color>
+
+<color name="black" weight="0.0273774577885">
+ <shade name="fresh" weight="0.527195991976" />
+ <shade name="soft" weight="0.354253391434" />
+ <shade name="cool" weight="0.118549363275" />
+</color>
+
+<color name="white" weight="0.0141616122561">
+ <shade name="fresh" weight="0.527195991976" />
+ <shade name="soft" weight="0.354253391434" />
+ <shade name="cool" weight="0.118549363275" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="quoll">
+
+<color name="blue" weight="0.961747672132">
+ <shade name="cool" weight="0.599998680003" />
+ <shade name="soft" weight="0.199999560001" />
+ <shade name="fresh" weight="0.199999560001" />
+</color>
+
+<color name="black" weight="0.0273223770492">
+ <shade name="warm" weight="0.599999340001" />
+ <shade name="cool" weight="0.29999967" />
+ <shade name="soft" weight="0.0999998900001" />
+</color>
+
+<color name="purple" weight="0.00546447540984">
+ <shade name="cool" weight="0.599998680003" />
+ <shade name="soft" weight="0.199999560001" />
+ <shade name="fresh" weight="0.199999560001" />
+</color>
+
+<color name="pink" weight="0.00546447540984">
+ <shade name="warm" weight="0.599999340001" />
+ <shade name="cool" weight="0.29999967" />
+ <shade name="soft" weight="0.0999998900001" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="warm" weight="0.599999340001" />
+ <shade name="cool" weight="0.29999967" />
+ <shade name="soft" weight="0.0999998900001" />
+</color>
+
+</colors>

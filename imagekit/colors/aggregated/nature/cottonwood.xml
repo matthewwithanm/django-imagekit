@@ -1,0 +1,33 @@
+<colors query="cottonwood">
+
+<color name="black" weight="0.979105584972">
+ <shade name="cool" weight="0.451427976833" />
+ <shade name="light" weight="0.354285247641" />
+ <shade name="fresh" weight="0.194285458384" />
+</color>
+
+<color name="green" weight="0.0127633406612">
+ <shade name="cool" weight="0.451427976833" />
+ <shade name="light" weight="0.354285247641" />
+ <shade name="fresh" weight="0.194285458384" />
+</color>
+
+<color name="yellow" weight="0.0048343338258">
+ <shade name="cool" weight="0.451427976833" />
+ <shade name="light" weight="0.354285247641" />
+ <shade name="fresh" weight="0.194285458384" />
+</color>
+
+<color name="white" weight="0.00229914972185">
+ <shade name="cool" weight="0.451427976833" />
+ <shade name="light" weight="0.354285247641" />
+ <shade name="fresh" weight="0.194285458384" />
+</color>
+
+<color name="red" weight="0.000996589613276">
+ <shade name="cool" weight="0.451427976833" />
+ <shade name="light" weight="0.354285247641" />
+ <shade name="fresh" weight="0.194285458384" />
+</color>
+
+</colors>

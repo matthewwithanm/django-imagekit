@@ -1,0 +1,33 @@
+<colors query="manta ray">
+
+<color name="black" weight="0.55206283106">
+ <shade name="light" weight="0.454544717632" />
+ <shade name="dark" weight="0.393938755281" />
+ <shade name="cool" weight="0.151514905877" />
+</color>
+
+<color name="yellow" weight="0.149494241876">
+ <shade name="light" weight="0.454544717632" />
+ <shade name="dark" weight="0.393938755281" />
+ <shade name="cool" weight="0.151514905877" />
+</color>
+
+<color name="blue" weight="0.133096336003">
+ <shade name="light" weight="0.454544717632" />
+ <shade name="dark" weight="0.393938755281" />
+ <shade name="cool" weight="0.151514905877" />
+</color>
+
+<color name="white" weight="0.100573822688">
+ <shade name="light" weight="0.454544717632" />
+ <shade name="dark" weight="0.393938755281" />
+ <shade name="cool" weight="0.151514905877" />
+</color>
+
+<color name="green" weight="0.0647717281986">
+ <shade name="light" weight="0.454544717632" />
+ <shade name="dark" weight="0.393938755281" />
+ <shade name="cool" weight="0.151514905877" />
+</color>
+
+</colors>

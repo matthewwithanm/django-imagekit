@@ -1,0 +1,33 @@
+<colors query="woozle">
+
+<color name="purple" weight="0.689393223887">
+ <shade name="cool" weight="0.66666588889" />
+ <shade name="soft" weight="0.333332944445" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="blue" weight="0.234848241104">
+ <shade name="cool" weight="0.66666588889" />
+ <shade name="soft" weight="0.333332944445" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="white" weight="0.0303029988522">
+ <shade name="cool" weight="0.571428000001" />
+ <shade name="soft" weight="0.285714" />
+ <shade name="warm" weight="0.142857" />
+</color>
+
+<color name="yellow" weight="0.0227272491391">
+ <shade name="cool" weight="0.571428000001" />
+ <shade name="soft" weight="0.285714" />
+ <shade name="warm" weight="0.142857" />
+</color>
+
+<color name="green" weight="0.0227272491391">
+ <shade name="cool" weight="0.66666588889" />
+ <shade name="soft" weight="0.333332944445" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+</colors>

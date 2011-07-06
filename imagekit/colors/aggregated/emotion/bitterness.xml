@@ -1,0 +1,33 @@
+<colors query="bitterness">
+
+<color name="black" weight="0.300809560904">
+ <shade name="intense" weight="0.474431273152" />
+ <shade name="light" weight="0.338067793444" />
+ <shade name="soft" weight="0.187499784599" />
+</color>
+
+<color name="green" weight="0.257616393184">
+ <shade name="intense" weight="0.474431273152" />
+ <shade name="light" weight="0.338067793444" />
+ <shade name="soft" weight="0.187499784599" />
+</color>
+
+<color name="orange" weight="0.252602900503">
+ <shade name="intense" weight="0.474431273152" />
+ <shade name="light" weight="0.338067793444" />
+ <shade name="soft" weight="0.187499784599" />
+</color>
+
+<color name="blue" weight="0.114924678397">
+ <shade name="intense" weight="0.474431273152" />
+ <shade name="light" weight="0.338067793444" />
+ <shade name="soft" weight="0.187499784599" />
+</color>
+
+<color name="white" weight="0.0740454303764">
+ <shade name="light" weight="0.59262828861" />
+ <shade name="soft" weight="0.328684597044" />
+ <shade name="weak" weight="0.0786851005046" />
+</color>
+
+</colors>

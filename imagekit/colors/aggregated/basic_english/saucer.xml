@@ -1,0 +1,33 @@
+<colors query="saucer">
+
+<color name="white" weight="0.398995067329">
+ <shade name="soft" weight="0.522413939969" />
+ <shade name="bright" weight="0.29408198909" />
+ <shade name="dark" weight="0.183502379371" />
+</color>
+
+<color name="blue" weight="0.287388055489">
+ <shade name="soft" weight="0.522413939969" />
+ <shade name="bright" weight="0.29408198909" />
+ <shade name="dark" weight="0.183502379371" />
+</color>
+
+<color name="black" weight="0.112444064429">
+ <shade name="soft" weight="0.522413939969" />
+ <shade name="bright" weight="0.29408198909" />
+ <shade name="dark" weight="0.183502379371" />
+</color>
+
+<color name="pink" weight="0.103515503482">
+ <shade name="soft" weight="0.522413939969" />
+ <shade name="bright" weight="0.29408198909" />
+ <shade name="dark" weight="0.183502379371" />
+</color>
+
+<color name="yellow" weight="0.0976561353603">
+ <shade name="soft" weight="0.522413939969" />
+ <shade name="bright" weight="0.29408198909" />
+ <shade name="dark" weight="0.183502379371" />
+</color>
+
+</colors>

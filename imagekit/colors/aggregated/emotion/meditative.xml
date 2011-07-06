@@ -1,0 +1,33 @@
+<colors query="meditative">
+
+<color name="white" weight="0.478722894976">
+ <shade name="light" weight="0.518645866184" />
+ <shade name="soft" weight="0.291429581951" />
+ <shade name="dark" weight="0.189923176712" />
+</color>
+
+<color name="blue" weight="0.223404017655">
+ <shade name="light" weight="0.518645866184" />
+ <shade name="soft" weight="0.291429581951" />
+ <shade name="dark" weight="0.189923176712" />
+</color>
+
+<color name="black" weight="0.159574298325">
+ <shade name="light" weight="0.518645866184" />
+ <shade name="soft" weight="0.291429581951" />
+ <shade name="dark" weight="0.189923176712" />
+</color>
+
+<color name="green" weight="0.10638286555">
+ <shade name="light" weight="0.518645866184" />
+ <shade name="soft" weight="0.291429581951" />
+ <shade name="dark" weight="0.189923176712" />
+</color>
+
+<color name="pink" weight="0.031914859665">
+ <shade name="light" weight="0.518645866184" />
+ <shade name="soft" weight="0.291429581951" />
+ <shade name="dark" weight="0.189923176712" />
+</color>
+
+</colors>

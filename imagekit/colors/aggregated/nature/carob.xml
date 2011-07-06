@@ -1,0 +1,33 @@
+<colors query="carob">
+
+<color name="black" weight="0.343628970281">
+ <shade name="dark" weight="0.54146282915" />
+ <shade name="fresh" weight="0.354471161425" />
+ <shade name="light" weight="0.104064928125" />
+</color>
+
+<color name="white" weight="0.257914777694">
+ <shade name="dark" weight="0.54146282915" />
+ <shade name="fresh" weight="0.354471161425" />
+ <shade name="light" weight="0.104064928125" />
+</color>
+
+<color name="blue" weight="0.196138783037">
+ <shade name="dark" weight="0.54146282915" />
+ <shade name="fresh" weight="0.354471161425" />
+ <shade name="light" weight="0.104064928125" />
+</color>
+
+<color name="orange" weight="0.121235389515">
+ <shade name="dark" weight="0.54146282915" />
+ <shade name="fresh" weight="0.354471161425" />
+ <shade name="light" weight="0.104064928125" />
+</color>
+
+<color name="green" weight="0.0810809929877">
+ <shade name="dark" weight="0.54146282915" />
+ <shade name="fresh" weight="0.354471161425" />
+ <shade name="light" weight="0.104064928125" />
+</color>
+
+</colors>

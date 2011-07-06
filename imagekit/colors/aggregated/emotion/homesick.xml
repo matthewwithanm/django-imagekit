@@ -1,0 +1,33 @@
+<colors query="homesick">
+
+<color name="blue" weight="0.857487042435">
+ <shade name="cool" weight="0.379999392001" />
+ <shade name="hard" weight="0.319999488001" />
+ <shade name="intense" weight="0.299999520001" />
+</color>
+
+<color name="black" weight="0.0579709549815">
+ <shade name="cool" weight="0.379999392001" />
+ <shade name="hard" weight="0.319999488001" />
+ <shade name="intense" weight="0.299999520001" />
+</color>
+
+<color name="white" weight="0.038647303321">
+ <shade name="cool" weight="0.422221471606" />
+ <shade name="hard" weight="0.355554923458" />
+ <shade name="dark" weight="0.222221827161" />
+</color>
+
+<color name="red" weight="0.0265700210332">
+ <shade name="cool" weight="0.379999392001" />
+ <shade name="hard" weight="0.319999488001" />
+ <shade name="intense" weight="0.299999520001" />
+</color>
+
+<color name="green" weight="0.0193236516605">
+ <shade name="cool" weight="0.379999392001" />
+ <shade name="hard" weight="0.319999488001" />
+ <shade name="intense" weight="0.299999520001" />
+</color>
+
+</colors>

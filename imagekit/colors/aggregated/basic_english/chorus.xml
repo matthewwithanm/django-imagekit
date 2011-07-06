@@ -1,0 +1,33 @@
+<colors query="chorus">
+
+<color name="black" weight="0.747419900485">
+ <shade name="cool" weight="0.605899963604" />
+ <shade name="hard" weight="0.223919551767" />
+ <shade name="weak" weight="0.170178859343" />
+</color>
+
+<color name="red" weight="0.075659069681">
+ <shade name="cool" weight="0.605899963604" />
+ <shade name="hard" weight="0.223919551767" />
+ <shade name="weak" weight="0.170178859343" />
+</color>
+
+<color name="blue" weight="0.0748184133512">
+ <shade name="cool" weight="0.605899963604" />
+ <shade name="hard" weight="0.223919551767" />
+ <shade name="weak" weight="0.170178859343" />
+</color>
+
+<color name="green" weight="0.0589987896907">
+ <shade name="cool" weight="0.605899963604" />
+ <shade name="hard" weight="0.223919551767" />
+ <shade name="weak" weight="0.170178859343" />
+</color>
+
+<color name="white" weight="0.0431027427274">
+ <shade name="cool" weight="0.605899963604" />
+ <shade name="hard" weight="0.223919551767" />
+ <shade name="weak" weight="0.170178859343" />
+</color>
+
+</colors>

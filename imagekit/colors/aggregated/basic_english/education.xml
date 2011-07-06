@@ -1,0 +1,33 @@
+<colors query="education">
+
+<color name="black" weight="0.519163224017">
+ <shade name="light" weight="0.493060455046" />
+ <shade name="cool" weight="0.25469348009" />
+ <shade name="bright" weight="0.25224450432" />
+</color>
+
+<color name="green" weight="0.203135677585">
+ <shade name="light" weight="0.493060455046" />
+ <shade name="cool" weight="0.25469348009" />
+ <shade name="bright" weight="0.25224450432" />
+</color>
+
+<color name="white" weight="0.110801278683">
+ <shade name="light" weight="0.493060455046" />
+ <shade name="cool" weight="0.25469348009" />
+ <shade name="bright" weight="0.25224450432" />
+</color>
+
+<color name="blue" weight="0.105226371579">
+ <shade name="light" weight="0.493060455046" />
+ <shade name="cool" weight="0.25469348009" />
+ <shade name="bright" weight="0.25224450432" />
+</color>
+
+<color name="orange" weight="0.0616724098329">
+ <shade name="light" weight="0.493060455046" />
+ <shade name="cool" weight="0.25469348009" />
+ <shade name="bright" weight="0.25224450432" />
+</color>
+
+</colors>

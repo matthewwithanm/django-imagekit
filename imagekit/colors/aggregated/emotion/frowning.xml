@@ -1,0 +1,33 @@
+<colors query="frowning">
+
+<color name="green" weight="0.440875460334">
+ <shade name="dark" weight="0.572044239434" />
+ <shade name="hard" weight="0.250215429013" />
+ <shade name="neutral" weight="0.177739235782" />
+</color>
+
+<color name="white" weight="0.259269807137">
+ <shade name="dark" weight="0.572044239434" />
+ <shade name="hard" weight="0.250215429013" />
+ <shade name="neutral" weight="0.177739235782" />
+</color>
+
+<color name="black" weight="0.17605821363">
+ <shade name="dark" weight="0.572044239434" />
+ <shade name="hard" weight="0.250215429013" />
+ <shade name="neutral" weight="0.177739235782" />
+</color>
+
+<color name="red" weight="0.0770802129326">
+ <shade name="dark" weight="0.572044239434" />
+ <shade name="hard" weight="0.250215429013" />
+ <shade name="neutral" weight="0.177739235782" />
+</color>
+
+<color name="blue" weight="0.0467152805652">
+ <shade name="dark" weight="0.572044239434" />
+ <shade name="hard" weight="0.250215429013" />
+ <shade name="neutral" weight="0.177739235782" />
+</color>
+
+</colors>

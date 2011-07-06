@@ -1,0 +1,33 @@
+<colors query="cord">
+
+<color name="black" weight="0.429957916283">
+ <shade name="light" weight="0.460511185043" />
+ <shade name="hard" weight="0.315906223556" />
+ <shade name="soft" weight="0.223581517376" />
+</color>
+
+<color name="white" weight="0.198335425898">
+ <shade name="light" weight="0.460511185043" />
+ <shade name="hard" weight="0.315906223556" />
+ <shade name="soft" weight="0.223581517376" />
+</color>
+
+<color name="blue" weight="0.149560630019">
+ <shade name="light" weight="0.460511185043" />
+ <shade name="hard" weight="0.315906223556" />
+ <shade name="soft" weight="0.223581517376" />
+</color>
+
+<color name="red" weight="0.131761296926">
+ <shade name="light" weight="0.460511185043" />
+ <shade name="hard" weight="0.315906223556" />
+ <shade name="soft" weight="0.223581517376" />
+</color>
+
+<color name="green" weight="0.0903836264875">
+ <shade name="light" weight="0.460511185043" />
+ <shade name="hard" weight="0.315906223556" />
+ <shade name="soft" weight="0.223581517376" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="sidewalk">
+
+<color name="white" weight="0.304104319732">
+ <shade name="cool" weight="0.41946645092" />
+ <shade name="dark" weight="0.345306636393" />
+ <shade name="hard" weight="0.235225661704" />
+</color>
+
+<color name="black" weight="0.22228252967">
+ <shade name="cool" weight="0.41946645092" />
+ <shade name="dark" weight="0.345306636393" />
+ <shade name="hard" weight="0.235225661704" />
+</color>
+
+<color name="blue" weight="0.212736654162">
+ <shade name="cool" weight="0.41946645092" />
+ <shade name="dark" weight="0.345306636393" />
+ <shade name="hard" weight="0.235225661704" />
+</color>
+
+<color name="red" weight="0.13050575515">
+ <shade name="cool" weight="0.41946645092" />
+ <shade name="dark" weight="0.345306636393" />
+ <shade name="hard" weight="0.235225661704" />
+</color>
+
+<color name="green" weight="0.130369385499">
+ <shade name="cool" weight="0.41946645092" />
+ <shade name="dark" weight="0.345306636393" />
+ <shade name="hard" weight="0.235225661704" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="commitment">
+
+<color name="green" weight="0.883863433753">
+ <shade name="intense" weight="0.534789053664" />
+ <shade name="weak" weight="0.310679268694" />
+ <shade name="fresh" weight="0.154530573752" />
+</color>
+
+<color name="blue" weight="0.0355600869859">
+ <shade name="intense" weight="0.534789053664" />
+ <shade name="weak" weight="0.310679268694" />
+ <shade name="fresh" weight="0.154530573752" />
+</color>
+
+<color name="white" weight="0.033761527673">
+ <shade name="weak" weight="0.573218716069" />
+ <shade name="fresh" weight="0.285116600961" />
+ <shade name="hard" weight="0.141662646237" />
+</color>
+
+<color name="black" weight="0.0318601935423">
+ <shade name="intense" weight="0.534789053664" />
+ <shade name="weak" weight="0.310679268694" />
+ <shade name="fresh" weight="0.154530573752" />
+</color>
+
+<color name="orange" weight="0.0149537360013">
+ <shade name="intense" weight="0.534789053664" />
+ <shade name="weak" weight="0.310679268694" />
+ <shade name="fresh" weight="0.154530573752" />
+</color>
+
+</colors>

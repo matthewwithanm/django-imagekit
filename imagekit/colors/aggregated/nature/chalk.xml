@@ -1,0 +1,33 @@
+<colors query="chalk">
+
+<color name="white" weight="0.560944682988">
+ <shade name="soft" weight="0.483538504368" />
+ <shade name="hard" weight="0.267489385395" />
+ <shade name="fresh" weight="0.248970889483" />
+</color>
+
+<color name="red" weight="0.143034675263">
+ <shade name="soft" weight="0.483538504368" />
+ <shade name="hard" weight="0.267489385395" />
+ <shade name="fresh" weight="0.248970889483" />
+</color>
+
+<color name="black" weight="0.125621758274">
+ <shade name="soft" weight="0.483538504368" />
+ <shade name="hard" weight="0.267489385395" />
+ <shade name="fresh" weight="0.248970889483" />
+</color>
+
+<color name="blue" weight="0.0873133408997">
+ <shade name="soft" weight="0.483538504368" />
+ <shade name="hard" weight="0.267489385395" />
+ <shade name="fresh" weight="0.248970889483" />
+</color>
+
+<color name="pink" weight="0.083084489631">
+ <shade name="soft" weight="0.483538504368" />
+ <shade name="hard" weight="0.267489385395" />
+ <shade name="fresh" weight="0.248970889483" />
+</color>
+
+</colors>

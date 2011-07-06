@@ -1,0 +1,33 @@
+<colors query="pronghorn">
+
+<color name="black" weight="0.74452480292">
+ <shade name="cool" weight="0.526315235458" />
+ <shade name="fresh" weight="0.421052188366" />
+ <shade name="weak" weight="0.0526315235458" />
+</color>
+
+<color name="white" weight="0.218977883212">
+ <shade name="cool" weight="0.526315235458" />
+ <shade name="fresh" weight="0.421052188366" />
+ <shade name="weak" weight="0.0526315235458" />
+</color>
+
+<color name="green" weight="0.0218977883212">
+ <shade name="cool" weight="0.526315235458" />
+ <shade name="fresh" weight="0.421052188366" />
+ <shade name="weak" weight="0.0526315235458" />
+</color>
+
+<color name="yellow" weight="0.00729926277373">
+ <shade name="cool" weight="0.526315235458" />
+ <shade name="fresh" weight="0.421052188366" />
+ <shade name="weak" weight="0.0526315235458" />
+</color>
+
+<color name="orange" weight="0.00729926277373">
+ <shade name="cool" weight="0.526315235458" />
+ <shade name="fresh" weight="0.421052188366" />
+ <shade name="weak" weight="0.0526315235458" />
+</color>
+
+</colors>

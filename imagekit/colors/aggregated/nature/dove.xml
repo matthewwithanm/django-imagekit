@@ -1,0 +1,33 @@
+<colors query="dove">
+
+<color name="white" weight="0.799492914269">
+ <shade name="soft" weight="0.659558507873" />
+ <shade name="hard" weight="0.202558377957" />
+ <shade name="cool" weight="0.137881843241" />
+</color>
+
+<color name="black" weight="0.109692959214">
+ <shade name="soft" weight="0.659558507873" />
+ <shade name="hard" weight="0.202558377957" />
+ <shade name="cool" weight="0.137881843241" />
+</color>
+
+<color name="blue" weight="0.0498892016424">
+ <shade name="soft" weight="0.659558507873" />
+ <shade name="hard" weight="0.202558377957" />
+ <shade name="cool" weight="0.137881843241" />
+</color>
+
+<color name="green" weight="0.0225714358382">
+ <shade name="soft" weight="0.659558507873" />
+ <shade name="hard" weight="0.202558377957" />
+ <shade name="cool" weight="0.137881843241" />
+</color>
+
+<color name="red" weight="0.0183524758684">
+ <shade name="soft" weight="0.659558507873" />
+ <shade name="hard" weight="0.202558377957" />
+ <shade name="cool" weight="0.137881843241" />
+</color>
+
+</colors>

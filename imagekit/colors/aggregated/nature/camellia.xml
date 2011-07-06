@@ -1,0 +1,33 @@
+<colors query="camellia">
+
+<color name="white" weight="0.445327574264">
+ <shade name="cool" weight="0.383445430043" />
+ <shade name="fresh" weight="0.352195472088" />
+ <shade name="soft" weight="0.264357752431" />
+</color>
+
+<color name="pink" weight="0.337971819754">
+ <shade name="cool" weight="0.383445430043" />
+ <shade name="fresh" weight="0.352195472088" />
+ <shade name="soft" weight="0.264357752431" />
+</color>
+
+<color name="red" weight="0.170973979405">
+ <shade name="cool" weight="0.383445430043" />
+ <shade name="fresh" weight="0.352195472088" />
+ <shade name="soft" weight="0.264357752431" />
+</color>
+
+<color name="black" weight="0.0291583530768">
+ <shade name="cool" weight="0.383445430043" />
+ <shade name="fresh" weight="0.352195472088" />
+ <shade name="soft" weight="0.264357752431" />
+</color>
+
+<color name="yellow" weight="0.0165672460664">
+ <shade name="cool" weight="0.383445430043" />
+ <shade name="fresh" weight="0.352195472088" />
+ <shade name="soft" weight="0.264357752431" />
+</color>
+
+</colors>

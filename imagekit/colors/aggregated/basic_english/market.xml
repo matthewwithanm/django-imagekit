@@ -1,0 +1,33 @@
+<colors query="market">
+
+<color name="black" weight="0.77714574688">
+ <shade name="fresh" weight="0.592947969399" />
+ <shade name="soft" weight="0.209935632409" />
+ <shade name="weak" weight="0.197115135773" />
+</color>
+
+<color name="green" weight="0.135598533766">
+ <shade name="fresh" weight="0.592947969399" />
+ <shade name="soft" weight="0.209935632409" />
+ <shade name="weak" weight="0.197115135773" />
+</color>
+
+<color name="orange" weight="0.0557401087418">
+ <shade name="fresh" weight="0.592947969399" />
+ <shade name="soft" weight="0.209935632409" />
+ <shade name="weak" weight="0.197115135773" />
+</color>
+
+<color name="white" weight="0.0202057894189">
+ <shade name="fresh" weight="0.592947969399" />
+ <shade name="soft" weight="0.209935632409" />
+ <shade name="weak" weight="0.197115135773" />
+</color>
+
+<color name="red" weight="0.0113088105236">
+ <shade name="fresh" weight="0.592947969399" />
+ <shade name="soft" weight="0.209935632409" />
+ <shade name="weak" weight="0.197115135773" />
+</color>
+
+</colors>

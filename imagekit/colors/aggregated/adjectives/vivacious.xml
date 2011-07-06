@@ -1,0 +1,33 @@
+<colors query="vivacious">
+
+<color name="red" weight="0.632393710645">
+ <shade name="bright" weight="0.553178473858" />
+ <shade name="warm" weight="0.287860898622" />
+ <shade name="light" weight="0.158959331568" />
+</color>
+
+<color name="pink" weight="0.188732198723">
+ <shade name="bright" weight="0.553178473858" />
+ <shade name="warm" weight="0.287860898622" />
+ <shade name="light" weight="0.158959331568" />
+</color>
+
+<color name="black" weight="0.107042142559">
+ <shade name="bright" weight="0.553178473858" />
+ <shade name="warm" weight="0.287860898622" />
+ <shade name="light" weight="0.158959331568" />
+</color>
+
+<color name="green" weight="0.0408450280818">
+ <shade name="bright" weight="0.648372998881" />
+ <shade name="light" weight="0.186314080138" />
+ <shade name="fresh" weight="0.165311402013" />
+</color>
+
+<color name="white" weight="0.0309858833724">
+ <shade name="bright" weight="0.553178473858" />
+ <shade name="warm" weight="0.287860898622" />
+ <shade name="light" weight="0.158959331568" />
+</color>
+
+</colors>

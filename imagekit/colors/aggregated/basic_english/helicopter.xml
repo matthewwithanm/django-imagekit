@@ -1,0 +1,33 @@
+<colors query="helicopter">
+
+<color name="black" weight="0.767652303825">
+ <shade name="light" weight="0.807416815828" />
+ <shade name="intense" weight="0.161253001734" />
+ <shade name="fresh" weight="0.0313291546227" />
+</color>
+
+<color name="blue" weight="0.092001077634">
+ <shade name="light" weight="0.807416815828" />
+ <shade name="intense" weight="0.161253001734" />
+ <shade name="fresh" weight="0.0313291546227" />
+</color>
+
+<color name="yellow" weight="0.0644593537563">
+ <shade name="light" weight="0.807416815828" />
+ <shade name="intense" weight="0.161253001734" />
+ <shade name="fresh" weight="0.0313291546227" />
+</color>
+
+<color name="red" weight="0.0585408130932">
+ <shade name="light" weight="0.807416815828" />
+ <shade name="intense" weight="0.161253001734" />
+ <shade name="fresh" weight="0.0313291546227" />
+</color>
+
+<color name="orange" weight="0.0173454261017">
+ <shade name="light" weight="0.807416815828" />
+ <shade name="intense" weight="0.161253001734" />
+ <shade name="fresh" weight="0.0313291546227" />
+</color>
+
+</colors>

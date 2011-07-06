@@ -1,0 +1,33 @@
+<colors query="imperial">
+
+<color name="green" weight="0.265989542789">
+ <shade name="dark" weight="0.588866354519" />
+ <shade name="light" weight="0.298827702293" />
+ <shade name="weak" weight="0.11230452864" />
+</color>
+
+<color name="blue" weight="0.235532724912">
+ <shade name="dark" weight="0.588866354519" />
+ <shade name="light" weight="0.298827702293" />
+ <shade name="weak" weight="0.11230452864" />
+</color>
+
+<color name="black" weight="0.180710452735">
+ <shade name="dark" weight="0.588866354519" />
+ <shade name="light" weight="0.298827702293" />
+ <shade name="weak" weight="0.11230452864" />
+</color>
+
+<color name="white" weight="0.177664770947">
+ <shade name="dark" weight="0.588866354519" />
+ <shade name="light" weight="0.298827702293" />
+ <shade name="weak" weight="0.11230452864" />
+</color>
+
+<color name="red" weight="0.140101362232">
+ <shade name="dark" weight="0.588866354519" />
+ <shade name="light" weight="0.298827702293" />
+ <shade name="weak" weight="0.11230452864" />
+</color>
+
+</colors>

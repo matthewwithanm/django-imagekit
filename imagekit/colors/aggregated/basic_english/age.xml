@@ -1,0 +1,33 @@
+<colors query="age">
+
+<color name="blue" weight="0.27091366847">
+ <shade name="dark" weight="0.943149475583" />
+ <shade name="light" weight="0.039706071845" />
+ <shade name="cool" weight="0.0171434352192" />
+</color>
+
+<color name="green" weight="0.22060113004">
+ <shade name="dark" weight="0.943149475583" />
+ <shade name="light" weight="0.039706071845" />
+ <shade name="cool" weight="0.0171434352192" />
+</color>
+
+<color name="white" weight="0.216433227448">
+ <shade name="dark" weight="0.943149475583" />
+ <shade name="light" weight="0.039706071845" />
+ <shade name="cool" weight="0.0171434352192" />
+</color>
+
+<color name="pink" weight="0.15838029849">
+ <shade name="dark" weight="0.943149475583" />
+ <shade name="light" weight="0.039706071845" />
+ <shade name="cool" weight="0.0171434352192" />
+</color>
+
+<color name="black" weight="0.133670590267">
+ <shade name="dark" weight="0.943149475583" />
+ <shade name="light" weight="0.039706071845" />
+ <shade name="cool" weight="0.0171434352192" />
+</color>
+
+</colors>

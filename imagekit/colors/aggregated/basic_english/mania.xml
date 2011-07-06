@@ -1,0 +1,33 @@
+<colors query="mania">
+
+<color name="blue" weight="0.507425158935">
+ <shade name="hard" weight="0.584222392893" />
+ <shade name="dark" weight="0.30545637801" />
+ <shade name="light" weight="0.110320167592" />
+</color>
+
+<color name="black" weight="0.262375935839">
+ <shade name="hard" weight="0.584222392893" />
+ <shade name="dark" weight="0.30545637801" />
+ <shade name="light" weight="0.110320167592" />
+</color>
+
+<color name="pink" weight="0.106435521142">
+ <shade name="hard" weight="0.584222392893" />
+ <shade name="dark" weight="0.30545637801" />
+ <shade name="light" weight="0.110320167592" />
+</color>
+
+<color name="green" weight="0.069801899912">
+ <shade name="hard" weight="0.584222392893" />
+ <shade name="dark" weight="0.30545637801" />
+ <shade name="light" weight="0.110320167592" />
+</color>
+
+<color name="purple" weight="0.0539603339745">
+ <shade name="hard" weight="0.584222392893" />
+ <shade name="dark" weight="0.30545637801" />
+ <shade name="light" weight="0.110320167592" />
+</color>
+
+</colors>

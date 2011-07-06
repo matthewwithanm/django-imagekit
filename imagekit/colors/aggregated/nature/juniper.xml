@@ -1,0 +1,33 @@
+<colors query="juniper">
+
+<color name="green" weight="0.445195566394">
+ <shade name="light" weight="0.46948301219" />
+ <shade name="fresh" weight="0.441314031458" />
+ <shade name="dark" weight="0.089201772316" />
+</color>
+
+<color name="blue" weight="0.421037667443">
+ <shade name="light" weight="0.46948301219" />
+ <shade name="fresh" weight="0.441314031458" />
+ <shade name="dark" weight="0.089201772316" />
+</color>
+
+<color name="black" weight="0.0773052766452">
+ <shade name="light" weight="0.46948301219" />
+ <shade name="fresh" weight="0.441314031458" />
+ <shade name="dark" weight="0.089201772316" />
+</color>
+
+<color name="white" weight="0.0316813589108">
+ <shade name="light" weight="0.46948301219" />
+ <shade name="fresh" weight="0.441314031458" />
+ <shade name="dark" weight="0.089201772316" />
+</color>
+
+<color name="red" weight="0.0247791020675">
+ <shade name="light" weight="0.46948301219" />
+ <shade name="fresh" weight="0.441314031458" />
+ <shade name="dark" weight="0.089201772316" />
+</color>
+
+</colors>

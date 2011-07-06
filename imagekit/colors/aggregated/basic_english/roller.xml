@@ -1,0 +1,33 @@
+<colors query="roller">
+
+<color name="black" weight="0.277400271354">
+ <shade name="soft" weight="0.379069224024" />
+ <shade name="cool" weight="0.318604194425" />
+ <shade name="light" weight="0.302325147995" />
+</color>
+
+<color name="red" weight="0.213384824119">
+ <shade name="soft" weight="0.379069224024" />
+ <shade name="cool" weight="0.318604194425" />
+ <shade name="light" weight="0.302325147995" />
+</color>
+
+<color name="white" weight="0.201745651894">
+ <shade name="soft" weight="0.379069224024" />
+ <shade name="cool" weight="0.318604194425" />
+ <shade name="light" weight="0.302325147995" />
+</color>
+
+<color name="blue" weight="0.17458758337">
+ <shade name="soft" weight="0.379069224024" />
+ <shade name="cool" weight="0.318604194425" />
+ <shade name="light" weight="0.302325147995" />
+</color>
+
+<color name="pink" weight="0.132880549565">
+ <shade name="soft" weight="0.379069224024" />
+ <shade name="cool" weight="0.318604194425" />
+ <shade name="light" weight="0.302325147995" />
+</color>
+
+</colors>

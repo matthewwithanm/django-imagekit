@@ -1,0 +1,33 @@
+<colors query="insurance">
+
+<color name="green" weight="0.452591182785">
+ <shade name="hard" weight="0.551209784663" />
+ <shade name="soft" weight="0.258845135365" />
+ <shade name="cool" weight="0.189943912282" />
+</color>
+
+<color name="white" weight="0.164348753525">
+ <shade name="hard" weight="0.551209784663" />
+ <shade name="soft" weight="0.258845135365" />
+ <shade name="cool" weight="0.189943912282" />
+</color>
+
+<color name="blue" weight="0.156131315849">
+ <shade name="hard" weight="0.551209784663" />
+ <shade name="soft" weight="0.258845135365" />
+ <shade name="cool" weight="0.189943912282" />
+</color>
+
+<color name="black" weight="0.152338652306">
+ <shade name="hard" weight="0.551209784663" />
+ <shade name="soft" weight="0.258845135365" />
+ <shade name="cool" weight="0.189943912282" />
+</color>
+
+<color name="red" weight="0.0745890496768">
+ <shade name="hard" weight="0.551209784663" />
+ <shade name="soft" weight="0.258845135365" />
+ <shade name="cool" weight="0.189943912282" />
+</color>
+
+</colors>

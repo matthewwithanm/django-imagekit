@@ -1,0 +1,33 @@
+<colors query="ermine">
+
+<color name="white" weight="0.841225468541">
+ <shade name="hard" weight="0.793892271034" />
+ <shade name="dark" weight="0.118320482702" />
+ <shade name="soft" weight="0.0877861645855" />
+</color>
+
+<color name="black" weight="0.0522182920472">
+ <shade name="hard" weight="0.793892271034" />
+ <shade name="dark" weight="0.118320482702" />
+ <shade name="soft" weight="0.0877861645855" />
+</color>
+
+<color name="purple" weight="0.048292573194">
+ <shade name="hard" weight="0.793892271034" />
+ <shade name="dark" weight="0.118320482702" />
+ <shade name="soft" weight="0.0877861645855" />
+</color>
+
+<color name="red" weight="0.0462985572686">
+ <shade name="hard" weight="0.793892271034" />
+ <shade name="dark" weight="0.118320482702" />
+ <shade name="soft" weight="0.0877861645855" />
+</color>
+
+<color name="blue" weight="0.0119640955526">
+ <shade name="hard" weight="0.793892271034" />
+ <shade name="dark" weight="0.118320482702" />
+ <shade name="soft" weight="0.0877861645855" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="dismay">
+
+<color name="black" weight="0.744208705567">
+ <shade name="dark" weight="0.426896820921" />
+ <shade name="intense" weight="0.382254016118" />
+ <shade name="bright" weight="0.190847990529" />
+</color>
+
+<color name="white" weight="0.0986907349737">
+ <shade name="dark" weight="0.586880527015" />
+ <shade name="bright" weight="0.26237011796" />
+ <shade name="fresh" weight="0.150747743214" />
+</color>
+
+<color name="red" weight="0.0956695900255">
+ <shade name="dark" weight="0.426896820921" />
+ <shade name="intense" weight="0.382254016118" />
+ <shade name="bright" weight="0.190847990529" />
+</color>
+
+<color name="green" weight="0.0362537393781">
+ <shade name="dark" weight="0.426896820921" />
+ <shade name="intense" weight="0.382254016118" />
+ <shade name="bright" weight="0.190847990529" />
+</color>
+
+<color name="blue" weight="0.0251762079015">
+ <shade name="dark" weight="0.426896820921" />
+ <shade name="intense" weight="0.382254016118" />
+ <shade name="bright" weight="0.190847990529" />
+</color>
+
+</colors>

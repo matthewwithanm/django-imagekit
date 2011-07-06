@@ -1,0 +1,33 @@
+<colors query="prokaryote">
+
+<color name="green" weight="0.872726384133">
+ <shade name="dark" weight="0.666665777779" />
+ <shade name="hard" weight="0.166666444445" />
+ <shade name="bright" weight="0.166666444445" />
+</color>
+
+<color name="yellow" weight="0.0363635993389">
+ <shade name="dark" weight="0.571427918368" />
+ <shade name="warm" weight="0.285713959184" />
+ <shade name="hard" weight="0.142856979592" />
+</color>
+
+<color name="red" weight="0.0363635993389">
+ <shade name="dark" weight="0.571427918368" />
+ <shade name="warm" weight="0.285713959184" />
+ <shade name="hard" weight="0.142856979592" />
+</color>
+
+<color name="blue" weight="0.0363635993389">
+ <shade name="dark" weight="0.666665777779" />
+ <shade name="hard" weight="0.166666444445" />
+ <shade name="bright" weight="0.166666444445" />
+</color>
+
+<color name="white" weight="0.0181817996694">
+ <shade name="dark" weight="0.571427918368" />
+ <shade name="warm" weight="0.285713959184" />
+ <shade name="hard" weight="0.142856979592" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="opossum">
+
+<color name="white" weight="0.304295606834">
+ <shade name="dark" weight="0.666665810399" />
+ <shade name="soft" weight="0.180427902814" />
+ <shade name="fresh" weight="0.152905002385" />
+</color>
+
+<color name="black" weight="0.25775627873">
+ <shade name="dark" weight="0.666665810399" />
+ <shade name="soft" weight="0.180427902814" />
+ <shade name="fresh" weight="0.152905002385" />
+</color>
+
+<color name="red" weight="0.225536743888">
+ <shade name="dark" weight="0.666665810399" />
+ <shade name="soft" weight="0.180427902814" />
+ <shade name="fresh" weight="0.152905002385" />
+</color>
+
+<color name="purple" weight="0.165870938627">
+ <shade name="dark" weight="0.666665810399" />
+ <shade name="soft" weight="0.180427902814" />
+ <shade name="fresh" weight="0.152905002385" />
+</color>
+
+<color name="green" weight="0.046539328104">
+ <shade name="dark" weight="0.666665810399" />
+ <shade name="soft" weight="0.180427902814" />
+ <shade name="fresh" weight="0.152905002385" />
+</color>
+
+</colors>

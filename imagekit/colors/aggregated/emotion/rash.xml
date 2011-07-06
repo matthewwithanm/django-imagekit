@@ -1,0 +1,33 @@
+<colors query="rash">
+
+<color name="red" weight="0.83904323588">
+ <shade name="dark" weight="0.432936451405" />
+ <shade name="light" weight="0.299235488471" />
+ <shade name="fresh" weight="0.267826373369" />
+</color>
+
+<color name="purple" weight="0.0641362892348">
+ <shade name="dark" weight="0.432936451405" />
+ <shade name="light" weight="0.299235488471" />
+ <shade name="fresh" weight="0.267826373369" />
+</color>
+
+<color name="pink" weight="0.0527147582752">
+ <shade name="dark" weight="0.432936451405" />
+ <shade name="light" weight="0.299235488471" />
+ <shade name="fresh" weight="0.267826373369" />
+</color>
+
+<color name="blue" weight="0.0224477012322">
+ <shade name="dark" weight="0.432936451405" />
+ <shade name="light" weight="0.299235488471" />
+ <shade name="fresh" weight="0.267826373369" />
+</color>
+
+<color name="black" weight="0.0216569798581">
+ <shade name="dark" weight="0.432936451405" />
+ <shade name="light" weight="0.299235488471" />
+ <shade name="fresh" weight="0.267826373369" />
+</color>
+
+</colors>

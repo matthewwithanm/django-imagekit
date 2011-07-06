@@ -1,0 +1,33 @@
+<colors query="petroleum">
+
+<color name="white" weight="0.57755992957">
+ <shade name="light" weight="0.992462475921" />
+ <shade name="fresh" weight="0.00457463172495" />
+ <shade name="soft" weight="0.00296188020158" />
+</color>
+
+<color name="black" weight="0.205912670542">
+ <shade name="light" weight="0.992462475921" />
+ <shade name="fresh" weight="0.00457463172495" />
+ <shade name="soft" weight="0.00296188020158" />
+</color>
+
+<color name="green" weight="0.177453195752">
+ <shade name="light" weight="0.992462475921" />
+ <shade name="fresh" weight="0.00457463172495" />
+ <shade name="soft" weight="0.00296188020158" />
+</color>
+
+<color name="yellow" weight="0.0261157533371">
+ <shade name="light" weight="0.992462475921" />
+ <shade name="fresh" weight="0.00457463172495" />
+ <shade name="soft" weight="0.00296188020158" />
+</color>
+
+<color name="red" weight="0.0129574314634">
+ <shade name="light" weight="0.992462475921" />
+ <shade name="fresh" weight="0.00457463172495" />
+ <shade name="soft" weight="0.00296188020158" />
+</color>
+
+</colors>

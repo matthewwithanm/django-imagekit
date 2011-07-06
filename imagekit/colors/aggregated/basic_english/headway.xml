@@ -1,0 +1,33 @@
+<colors query="headway">
+
+<color name="green" weight="0.692981720607">
+ <shade name="fresh" weight="0.97021995161" />
+ <shade name="hard" weight="0.0249759591504" />
+ <shade name="dark" weight="0.00480306906738" />
+</color>
+
+<color name="red" weight="0.140350728224">
+ <shade name="fresh" weight="0.97021995161" />
+ <shade name="hard" weight="0.0249759591504" />
+ <shade name="dark" weight="0.00480306906738" />
+</color>
+
+<color name="black" weight="0.0877192051401">
+ <shade name="fresh" weight="0.97021995161" />
+ <shade name="hard" weight="0.0249759591504" />
+ <shade name="dark" weight="0.00480306906738" />
+</color>
+
+<color name="blue" weight="0.0438596025701">
+ <shade name="fresh" weight="0.97021995161" />
+ <shade name="hard" weight="0.0249759591504" />
+ <shade name="dark" weight="0.00480306906738" />
+</color>
+
+<color name="yellow" weight="0.0350876820561">
+ <shade name="fresh" weight="0.97021995161" />
+ <shade name="hard" weight="0.0249759591504" />
+ <shade name="dark" weight="0.00480306906738" />
+</color>
+
+</colors>

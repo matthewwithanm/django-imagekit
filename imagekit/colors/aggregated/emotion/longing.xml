@@ -1,0 +1,33 @@
+<colors query="longing">
+
+<color name="blue" weight="0.912074961048">
+ <shade name="intense" weight="0.933928490243" />
+ <shade name="light" weight="0.0399072280405" />
+ <shade name="dark" weight="0.0261632449394" />
+</color>
+
+<color name="black" weight="0.0307065236886">
+ <shade name="intense" weight="0.933928490243" />
+ <shade name="light" weight="0.0399072280405" />
+ <shade name="dark" weight="0.0261632449394" />
+</color>
+
+<color name="green" weight="0.0225586540366">
+ <shade name="intense" weight="0.933928490243" />
+ <shade name="light" weight="0.0399072280405" />
+ <shade name="dark" weight="0.0261632449394" />
+</color>
+
+<color name="white" weight="0.0211601390963">
+ <shade name="light" weight="0.527460489204" />
+ <shade name="dark" weight="0.345803972175" />
+ <shade name="soft" weight="0.126721835373" />
+</color>
+
+<color name="pink" weight="0.0134987094235">
+ <shade name="light" weight="0.527460489204" />
+ <shade name="dark" weight="0.345803972175" />
+ <shade name="soft" weight="0.126721835373" />
+</color>
+
+</colors>

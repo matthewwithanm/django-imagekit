@@ -1,0 +1,33 @@
+<colors query="kitten">
+
+<color name="pink" weight="0.456105453999">
+ <shade name="dark" weight="0.52972538564" />
+ <shade name="warm" weight="0.242484634284" />
+ <shade name="light" weight="0.227788595843" />
+</color>
+
+<color name="white" weight="0.220696187419">
+ <shade name="dark" weight="0.52972538564" />
+ <shade name="warm" weight="0.242484634284" />
+ <shade name="light" weight="0.227788595843" />
+</color>
+
+<color name="black" weight="0.217426614272">
+ <shade name="dark" weight="0.52972538564" />
+ <shade name="warm" weight="0.242484634284" />
+ <shade name="light" weight="0.227788595843" />
+</color>
+
+<color name="blue" weight="0.0539479569246">
+ <shade name="dark" weight="0.615682239273" />
+ <shade name="light" weight="0.26475112685" />
+ <shade name="hard" weight="0.119565025029" />
+</color>
+
+<color name="orange" weight="0.0518227343791">
+ <shade name="dark" weight="0.52972538564" />
+ <shade name="warm" weight="0.242484634284" />
+ <shade name="light" weight="0.227788595843" />
+</color>
+
+</colors>

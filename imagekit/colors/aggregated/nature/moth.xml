@@ -1,0 +1,33 @@
+<colors query="moth">
+
+<color name="black" weight="0.707640918773">
+ <shade name="dark" weight="0.618854520612" />
+ <shade name="light" weight="0.260605766569" />
+ <shade name="cool" weight="0.120538584537" />
+</color>
+
+<color name="white" weight="0.231429734441">
+ <shade name="dark" weight="0.618854520612" />
+ <shade name="light" weight="0.260605766569" />
+ <shade name="cool" weight="0.120538584537" />
+</color>
+
+<color name="blue" weight="0.0275935452603">
+ <shade name="dark" weight="0.618854520612" />
+ <shade name="light" weight="0.260605766569" />
+ <shade name="cool" weight="0.120538584537" />
+</color>
+
+<color name="green" weight="0.0229204448533">
+ <shade name="dark" weight="0.618854520612" />
+ <shade name="light" weight="0.260605766569" />
+ <shade name="cool" weight="0.120538584537" />
+</color>
+
+<color name="red" weight="0.0104143380499">
+ <shade name="dark" weight="0.618854520612" />
+ <shade name="light" weight="0.260605766569" />
+ <shade name="cool" weight="0.120538584537" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="anise">
+
+<color name="purple" weight="0.4203221439">
+ <shade name="fresh" weight="0.61604275989" />
+ <shade name="light" weight="0.337670496731" />
+ <shade name="soft" weight="0.0462855656495" />
+</color>
+
+<color name="black" weight="0.215114363208">
+ <shade name="fresh" weight="0.601672409595" />
+ <shade name="light" weight="0.329793700446" />
+ <shade name="intense" weight="0.0685327397025" />
+</color>
+
+<color name="green" weight="0.127228824029">
+ <shade name="fresh" weight="0.601672409595" />
+ <shade name="light" weight="0.329793700446" />
+ <shade name="intense" weight="0.0685327397025" />
+</color>
+
+<color name="yellow" weight="0.123266191023">
+ <shade name="fresh" weight="0.601672409595" />
+ <shade name="light" weight="0.329793700446" />
+ <shade name="intense" weight="0.0685327397025" />
+</color>
+
+<color name="white" weight="0.114067221543">
+ <shade name="fresh" weight="0.61604275989" />
+ <shade name="light" weight="0.337670496731" />
+ <shade name="soft" weight="0.0462855656495" />
+</color>
+
+</colors>

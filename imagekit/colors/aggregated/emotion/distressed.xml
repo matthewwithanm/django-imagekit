@@ -1,0 +1,33 @@
+<colors query="distressed">
+
+<color name="black" weight="0.439935900089">
+ <shade name="soft" weight="0.666166925854" />
+ <shade name="warm" weight="0.170284242283" />
+ <shade name="cool" weight="0.163547722808" />
+</color>
+
+<color name="white" weight="0.342083972944">
+ <shade name="soft" weight="0.666166925854" />
+ <shade name="warm" weight="0.170284242283" />
+ <shade name="cool" weight="0.163547722808" />
+</color>
+
+<color name="blue" weight="0.1272870597">
+ <shade name="soft" weight="0.768499146287" />
+ <shade name="cool" weight="0.188670857824" />
+ <shade name="dark" weight="0.0428287164672" />
+</color>
+
+<color name="pink" weight="0.0660301622195">
+ <shade name="soft" weight="0.666166925854" />
+ <shade name="warm" weight="0.170284242283" />
+ <shade name="cool" weight="0.163547722808" />
+</color>
+
+<color name="purple" weight="0.0246618678169">
+ <shade name="soft" weight="0.768499146287" />
+ <shade name="cool" weight="0.188670857824" />
+ <shade name="dark" weight="0.0428287164672" />
+</color>
+
+</colors>

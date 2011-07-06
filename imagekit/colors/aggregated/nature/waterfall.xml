@@ -1,0 +1,33 @@
+<colors query="waterfall">
+
+<color name="blue" weight="0.348079575403">
+ <shade name="cool" weight="0.582476007484" />
+ <shade name="fresh" weight="0.222711414626" />
+ <shade name="soft" weight="0.194811303344" />
+</color>
+
+<color name="black" weight="0.280709335002">
+ <shade name="cool" weight="0.582476007484" />
+ <shade name="fresh" weight="0.222711414626" />
+ <shade name="soft" weight="0.194811303344" />
+</color>
+
+<color name="white" weight="0.249269889482">
+ <shade name="cool" weight="0.582476007484" />
+ <shade name="fresh" weight="0.222711414626" />
+ <shade name="soft" weight="0.194811303344" />
+</color>
+
+<color name="red" weight="0.0855602053086">
+ <shade name="cool" weight="0.582476007484" />
+ <shade name="fresh" weight="0.222711414626" />
+ <shade name="soft" weight="0.194811303344" />
+</color>
+
+<color name="pink" weight="0.0363799298163">
+ <shade name="cool" weight="0.582476007484" />
+ <shade name="fresh" weight="0.222711414626" />
+ <shade name="soft" weight="0.194811303344" />
+</color>
+
+</colors>

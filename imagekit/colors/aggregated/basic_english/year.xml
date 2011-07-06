@@ -1,0 +1,33 @@
+<colors query="year">
+
+<color name="green" weight="0.334947155054">
+ <shade name="light" weight="0.723683274773" />
+ <shade name="hard" weight="0.207166585428" />
+ <shade name="weak" weight="0.0691488467578" />
+</color>
+
+<color name="black" weight="0.249394387739">
+ <shade name="light" weight="0.703496190156" />
+ <shade name="hard" weight="0.201387690799" />
+ <shade name="warm" weight="0.0951148620733" />
+</color>
+
+<color name="white" weight="0.175948144101">
+ <shade name="light" weight="0.703496190156" />
+ <shade name="hard" weight="0.201387690799" />
+ <shade name="warm" weight="0.0951148620733" />
+</color>
+
+<color name="red" weight="0.131557557286">
+ <shade name="light" weight="0.703496190156" />
+ <shade name="hard" weight="0.201387690799" />
+ <shade name="warm" weight="0.0951148620733" />
+</color>
+
+<color name="blue" weight="0.108151611511">
+ <shade name="light" weight="0.723683274773" />
+ <shade name="hard" weight="0.207166585428" />
+ <shade name="weak" weight="0.0691488467578" />
+</color>
+
+</colors>

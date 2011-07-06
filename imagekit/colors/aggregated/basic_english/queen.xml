@@ -1,0 +1,33 @@
+<colors query="queen">
+
+<color name="red" weight="0.38180401709">
+ <shade name="dark" weight="0.902621268881" />
+ <shade name="light" weight="0.0803794122653" />
+ <shade name="bright" weight="0.0169982691512" />
+</color>
+
+<color name="white" weight="0.32069017277">
+ <shade name="dark" weight="0.902621268881" />
+ <shade name="light" weight="0.0803794122653" />
+ <shade name="bright" weight="0.0169982691512" />
+</color>
+
+<color name="black" weight="0.206652999349">
+ <shade name="dark" weight="0.902621268881" />
+ <shade name="light" weight="0.0803794122653" />
+ <shade name="bright" weight="0.0169982691512" />
+</color>
+
+<color name="blue" weight="0.0493951071614">
+ <shade name="dark" weight="0.902621268881" />
+ <shade name="light" weight="0.0803794122653" />
+ <shade name="bright" weight="0.0169982691512" />
+</color>
+
+<color name="pink" weight="0.0414566077962">
+ <shade name="dark" weight="0.902621268881" />
+ <shade name="light" weight="0.0803794122653" />
+ <shade name="bright" weight="0.0169982691512" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="membrane">
+
+<color name="purple" weight="0.580604048801">
+ <shade name="light" weight="0.491986561981" />
+ <shade name="soft" weight="0.261217620856" />
+ <shade name="weak" weight="0.246794562036" />
+</color>
+
+<color name="white" weight="0.23224161952">
+ <shade name="light" weight="0.491986561981" />
+ <shade name="soft" weight="0.261217620856" />
+ <shade name="weak" weight="0.246794562036" />
+</color>
+
+<color name="black" weight="0.083690673701">
+ <shade name="light" weight="0.491986561981" />
+ <shade name="soft" weight="0.261217620856" />
+ <shade name="weak" weight="0.246794562036" />
+</color>
+
+<color name="green" weight="0.0528297377738">
+ <shade name="light" weight="0.491986561981" />
+ <shade name="soft" weight="0.261217620856" />
+ <shade name="weak" weight="0.246794562036" />
+</color>
+
+<color name="red" weight="0.0506328575891">
+ <shade name="light" weight="0.491986561981" />
+ <shade name="soft" weight="0.261217620856" />
+ <shade name="weak" weight="0.246794562036" />
+</color>
+
+</colors>

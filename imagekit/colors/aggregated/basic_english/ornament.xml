@@ -1,0 +1,33 @@
+<colors query="ornament">
+
+<color name="red" weight="0.314239204942">
+ <shade name="light" weight="0.823090364314" />
+ <shade name="bright" weight="0.0945995260343" />
+ <shade name="cool" weight="0.0823090364314" />
+</color>
+
+<color name="blue" weight="0.237026143156">
+ <shade name="light" weight="0.823090364314" />
+ <shade name="bright" weight="0.0945995260343" />
+ <shade name="cool" weight="0.0823090364314" />
+</color>
+
+<color name="white" weight="0.202908743762">
+ <shade name="light" weight="0.823090364314" />
+ <shade name="bright" weight="0.0945995260343" />
+ <shade name="cool" weight="0.0823090364314" />
+</color>
+
+<color name="green" weight="0.192134828164">
+ <shade name="light" weight="0.823090364314" />
+ <shade name="bright" weight="0.0945995260343" />
+ <shade name="cool" weight="0.0823090364314" />
+</color>
+
+<color name="purple" weight="0.05369001273">
+ <shade name="light" weight="0.823090364314" />
+ <shade name="bright" weight="0.0945995260343" />
+ <shade name="cool" weight="0.0823090364314" />
+</color>
+
+</colors>

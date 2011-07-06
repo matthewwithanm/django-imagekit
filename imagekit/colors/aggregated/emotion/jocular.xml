@@ -1,0 +1,33 @@
+<colors query="jocular">
+
+<color name="blue" weight="0.4999995">
+ <shade name="light" weight="0.874998937501" />
+ <shade name="cool" weight="0.071428484694" />
+ <shade name="dark" weight="0.0535713635205" />
+</color>
+
+<color name="black" weight="0.1999998">
+ <shade name="light" weight="0.816665741112" />
+ <shade name="warm" weight="0.116666534445" />
+ <shade name="cool" weight="0.0666665911112" />
+</color>
+
+<color name="yellow" weight="0.0999999000001">
+ <shade name="light" weight="0.816665741112" />
+ <shade name="warm" weight="0.116666534445" />
+ <shade name="cool" weight="0.0666665911112" />
+</color>
+
+<color name="red" weight="0.0999999000001">
+ <shade name="light" weight="0.816665741112" />
+ <shade name="warm" weight="0.116666534445" />
+ <shade name="cool" weight="0.0666665911112" />
+</color>
+
+<color name="pink" weight="0.0999999000001">
+ <shade name="light" weight="0.816665741112" />
+ <shade name="warm" weight="0.116666534445" />
+ <shade name="cool" weight="0.0666665911112" />
+</color>
+
+</colors>

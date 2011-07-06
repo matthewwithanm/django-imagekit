@@ -1,0 +1,33 @@
+<colors query="torture">
+
+<color name="white" weight="0.800952331793">
+ <shade name="hard" weight="0.837450988594" />
+ <shade name="soft" weight="0.0837450988594" />
+ <shade name="cool" weight="0.0788027651562" />
+</color>
+
+<color name="yellow" weight="0.0534850813296">
+ <shade name="hard" weight="0.837450988594" />
+ <shade name="soft" weight="0.0837450988594" />
+ <shade name="cool" weight="0.0788027651562" />
+</color>
+
+<color name="green" weight="0.0526907484386">
+ <shade name="hard" weight="0.837450988594" />
+ <shade name="soft" weight="0.0837450988594" />
+ <shade name="cool" weight="0.0788027651562" />
+</color>
+
+<color name="black" weight="0.0478585566848">
+ <shade name="hard" weight="0.837450988594" />
+ <shade name="soft" weight="0.0837450988594" />
+ <shade name="cool" weight="0.0788027651562" />
+</color>
+
+<color name="red" weight="0.0450121971586">
+ <shade name="hard" weight="0.837450988594" />
+ <shade name="soft" weight="0.0837450988594" />
+ <shade name="cool" weight="0.0788027651562" />
+</color>
+
+</colors>

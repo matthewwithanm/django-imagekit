@@ -1,0 +1,33 @@
+<colors query="millipede">
+
+<color name="black" weight="0.816443841385">
+ <shade name="cool" weight="0.639534095458" />
+ <shade name="dark" weight="0.255813638183" />
+ <shade name="fresh" weight="0.104651033802" />
+</color>
+
+<color name="red" weight="0.110596293407">
+ <shade name="cool" weight="0.639534095458" />
+ <shade name="dark" weight="0.255813638183" />
+ <shade name="fresh" weight="0.104651033802" />
+</color>
+
+<color name="orange" weight="0.026442743799">
+ <shade name="cool" weight="0.639534095458" />
+ <shade name="dark" weight="0.255813638183" />
+ <shade name="fresh" weight="0.104651033802" />
+</color>
+
+<color name="white" weight="0.0235475528721">
+ <shade name="cool" weight="0.639534095458" />
+ <shade name="dark" weight="0.255813638183" />
+ <shade name="fresh" weight="0.104651033802" />
+</color>
+
+<color name="green" weight="0.0229685146867">
+ <shade name="cool" weight="0.639534095458" />
+ <shade name="dark" weight="0.255813638183" />
+ <shade name="fresh" weight="0.104651033802" />
+</color>
+
+</colors>

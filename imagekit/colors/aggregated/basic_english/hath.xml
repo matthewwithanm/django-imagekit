@@ -1,0 +1,33 @@
+<colors query="hath">
+
+<color name="white" weight="0.324178752623">
+ <shade name="light" weight="0.918980788765" />
+ <shade name="dark" weight="0.0660187348251" />
+ <shade name="hard" weight="0.0149994565523" />
+</color>
+
+<color name="green" weight="0.240596753788">
+ <shade name="light" weight="0.918980788765" />
+ <shade name="dark" weight="0.0660187348251" />
+ <shade name="hard" weight="0.0149994565523" />
+</color>
+
+<color name="red" weight="0.208954997086">
+ <shade name="light" weight="0.918980788765" />
+ <shade name="dark" weight="0.0660187348251" />
+ <shade name="hard" weight="0.0149994565523" />
+</color>
+
+<color name="black" weight="0.186268454546">
+ <shade name="light" weight="0.918980788765" />
+ <shade name="dark" weight="0.0660187348251" />
+ <shade name="hard" weight="0.0149994565523" />
+</color>
+
+<color name="blue" weight="0.0399999565851">
+ <shade name="light" weight="0.918980788765" />
+ <shade name="dark" weight="0.0660187348251" />
+ <shade name="hard" weight="0.0149994565523" />
+</color>
+
+</colors>

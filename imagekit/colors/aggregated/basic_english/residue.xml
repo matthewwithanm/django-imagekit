@@ -1,0 +1,33 @@
+<colors query="residue">
+
+<color name="white" weight="0.401840061503">
+ <shade name="dark" weight="0.612977966475" />
+ <shade name="neutral" weight="0.355922690212" />
+ <shade name="hard" weight="0.0310982956599" />
+</color>
+
+<color name="yellow" weight="0.245091762703">
+ <shade name="dark" weight="0.612977966475" />
+ <shade name="neutral" weight="0.355922690212" />
+ <shade name="hard" weight="0.0310982956599" />
+</color>
+
+<color name="black" weight="0.188650105209">
+ <shade name="dark" weight="0.612977966475" />
+ <shade name="neutral" weight="0.355922690212" />
+ <shade name="hard" weight="0.0310982956599" />
+</color>
+
+<color name="red" weight="0.0837422418247">
+ <shade name="dark" weight="0.612977966475" />
+ <shade name="neutral" weight="0.355922690212" />
+ <shade name="hard" weight="0.0310982956599" />
+</color>
+
+<color name="orange" weight="0.0806747604391">
+ <shade name="dark" weight="0.612977966475" />
+ <shade name="neutral" weight="0.355922690212" />
+ <shade name="hard" weight="0.0310982956599" />
+</color>
+
+</colors>

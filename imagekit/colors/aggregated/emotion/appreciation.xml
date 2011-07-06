@@ -1,0 +1,33 @@
+<colors query="appreciation">
+
+<color name="green" weight="0.683613155749">
+ <shade name="fresh" weight="0.646367697934" />
+ <shade name="intense" weight="0.328313751332" />
+ <shade name="neutral" weight="0.0253160681691" />
+</color>
+
+<color name="purple" weight="0.143936639326">
+ <shade name="fresh" weight="0.932018262882" />
+ <shade name="neutral" weight="0.0365040486296" />
+ <shade name="light" weight="0.0314741087981" />
+</color>
+
+<color name="black" weight="0.0841634287229">
+ <shade name="warm" weight="0.592711067874" />
+ <shade name="fresh" weight="0.270096182829" />
+ <shade name="intense" weight="0.137191711913" />
+</color>
+
+<color name="white" weight="0.0460322426484">
+ <shade name="warm" weight="0.678635049962" />
+ <shade name="fresh" weight="0.309251415173" />
+ <shade name="neutral" weight="0.0121123470943" />
+</color>
+
+<color name="pink" weight="0.0422534764609">
+ <shade name="warm" weight="0.678635049962" />
+ <shade name="fresh" weight="0.309251415173" />
+ <shade name="neutral" weight="0.0121123470943" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="lynx">
+
+<color name="blue" weight="0.454499180116">
+ <shade name="dark" weight="0.459120467129" />
+ <shade name="cool" weight="0.410016673853" />
+ <shade name="light" weight="0.13086160908" />
+</color>
+
+<color name="red" weight="0.251939678556">
+ <shade name="dark" weight="0.459120467129" />
+ <shade name="cool" weight="0.410016673853" />
+ <shade name="light" weight="0.13086160908" />
+</color>
+
+<color name="green" weight="0.179381051132">
+ <shade name="dark" weight="0.459120467129" />
+ <shade name="cool" weight="0.410016673853" />
+ <shade name="light" weight="0.13086160908" />
+</color>
+
+<color name="white" weight="0.103799147565">
+ <shade name="dark" weight="0.459120467129" />
+ <shade name="cool" weight="0.410016673853" />
+ <shade name="light" weight="0.13086160908" />
+</color>
+
+<color name="pink" weight="0.0103799147565">
+ <shade name="dark" weight="0.459120467129" />
+ <shade name="cool" weight="0.410016673853" />
+ <shade name="light" weight="0.13086160908" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="irresistible">
+
+<color name="white" weight="0.486457807858">
+ <shade name="soft" weight="0.676073724503" />
+ <shade name="light" weight="0.204463072993" />
+ <shade name="hard" weight="0.119461570737" />
+</color>
+
+<color name="black" weight="0.221874760329">
+ <shade name="soft" weight="0.573017288166" />
+ <shade name="intense" weight="0.253685323693" />
+ <shade name="light" weight="0.173296005111" />
+</color>
+
+<color name="red" weight="0.142708179179">
+ <shade name="soft" weight="0.573017288166" />
+ <shade name="intense" weight="0.253685323693" />
+ <shade name="light" weight="0.173296005111" />
+</color>
+
+<color name="blue" weight="0.0812499122332">
+ <shade name="soft" weight="0.573017288166" />
+ <shade name="intense" weight="0.253685323693" />
+ <shade name="light" weight="0.173296005111" />
+</color>
+
+<color name="pink" weight="0.0677082601943">
+ <shade name="soft" weight="0.676073724503" />
+ <shade name="light" weight="0.204463072993" />
+ <shade name="hard" weight="0.119461570737" />
+</color>
+
+</colors>

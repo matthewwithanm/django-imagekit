@@ -1,0 +1,33 @@
+<colors query="lemon">
+
+<color name="orange" weight="0.350896444083">
+ <shade name="fresh" weight="0.867427121404" />
+ <shade name="light" weight="0.102645542699" />
+ <shade name="bright" weight="0.0299262356884" />
+</color>
+
+<color name="green" weight="0.241031103763">
+ <shade name="fresh" weight="0.867427121404" />
+ <shade name="light" weight="0.102645542699" />
+ <shade name="bright" weight="0.0299262356884" />
+</color>
+
+<color name="yellow" weight="0.176008759492">
+ <shade name="fresh" weight="0.867427121404" />
+ <shade name="light" weight="0.102645542699" />
+ <shade name="bright" weight="0.0299262356884" />
+</color>
+
+<color name="pink" weight="0.143497587357">
+ <shade name="fresh" weight="0.867427121404" />
+ <shade name="light" weight="0.102645542699" />
+ <shade name="bright" weight="0.0299262356884" />
+</color>
+
+<color name="blue" weight="0.0885649171967">
+ <shade name="fresh" weight="0.867427121404" />
+ <shade name="light" weight="0.102645542699" />
+ <shade name="bright" weight="0.0299262356884" />
+</color>
+
+</colors>

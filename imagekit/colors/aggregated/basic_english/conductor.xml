@@ -1,0 +1,33 @@
+<colors query="conductor">
+
+<color name="green" weight="0.351315120278">
+ <shade name="neutral" weight="0.659105664568" />
+ <shade name="light" weight="0.327614286212" />
+ <shade name="cool" weight="0.013279040595" />
+</color>
+
+<color name="black" weight="0.348712786054">
+ <shade name="neutral" weight="0.659105664568" />
+ <shade name="light" weight="0.327614286212" />
+ <shade name="cool" weight="0.013279040595" />
+</color>
+
+<color name="white" weight="0.256329921092">
+ <shade name="neutral" weight="0.659105664568" />
+ <shade name="light" weight="0.327614286212" />
+ <shade name="cool" weight="0.013279040595" />
+</color>
+
+<color name="blue" weight="0.0233949846763">
+ <shade name="neutral" weight="0.659105664568" />
+ <shade name="light" weight="0.327614286212" />
+ <shade name="cool" weight="0.013279040595" />
+</color>
+
+<color name="red" weight="0.0202461602649">
+ <shade name="neutral" weight="0.659105664568" />
+ <shade name="light" weight="0.327614286212" />
+ <shade name="cool" weight="0.013279040595" />
+</color>
+
+</colors>

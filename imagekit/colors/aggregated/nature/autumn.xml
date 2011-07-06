@@ -1,0 +1,33 @@
+<colors query="autumn">
+
+<color name="red" weight="0.369870606951">
+ <shade name="cool" weight="0.394090196077" />
+ <shade name="warm" weight="0.357053208273" />
+ <shade name="bright" weight="0.248855266372" />
+</color>
+
+<color name="yellow" weight="0.179366728569">
+ <shade name="cool" weight="0.394090196077" />
+ <shade name="warm" weight="0.357053208273" />
+ <shade name="bright" weight="0.248855266372" />
+</color>
+
+<color name="blue" weight="0.169401910315">
+ <shade name="cool" weight="0.487389831781" />
+ <shade name="bright" weight="0.30777098142" />
+ <shade name="dark" weight="0.204837542818" />
+</color>
+
+<color name="black" weight="0.150644605367">
+ <shade name="cool" weight="0.394090196077" />
+ <shade name="warm" weight="0.357053208273" />
+ <shade name="bright" weight="0.248855266372" />
+</color>
+
+<color name="orange" weight="0.130714968859">
+ <shade name="cool" weight="0.394090196077" />
+ <shade name="warm" weight="0.357053208273" />
+ <shade name="bright" weight="0.248855266372" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="glum">
+
+<color name="blue" weight="0.384614981794">
+ <shade name="dark" weight="0.579746214601" />
+ <shade name="cool" weight="0.387341357353" />
+ <shade name="light" weight="0.0329113571607" />
+</color>
+
+<color name="red" weight="0.325443446133">
+ <shade name="dark" weight="0.579746214601" />
+ <shade name="cool" weight="0.387341357353" />
+ <shade name="light" weight="0.0329113571607" />
+</color>
+
+<color name="black" weight="0.22485183551">
+ <shade name="dark" weight="0.579746214601" />
+ <shade name="cool" weight="0.387341357353" />
+ <shade name="light" weight="0.0329113571607" />
+</color>
+
+<color name="white" weight="0.0414200749624">
+ <shade name="dark" weight="0.579746214601" />
+ <shade name="cool" weight="0.387341357353" />
+ <shade name="light" weight="0.0329113571607" />
+</color>
+
+<color name="green" weight="0.0236686142642">
+ <shade name="dark" weight="0.579746214601" />
+ <shade name="cool" weight="0.387341357353" />
+ <shade name="light" weight="0.0329113571607" />
+</color>
+
+</colors>

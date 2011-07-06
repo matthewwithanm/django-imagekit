@@ -1,0 +1,33 @@
+<colors query="lace">
+
+<color name="black" weight="0.429111873767">
+ <shade name="soft" weight="0.77601643498" />
+ <shade name="cool" weight="0.169427254134" />
+ <shade name="fresh" weight="0.0545552157306" />
+</color>
+
+<color name="white" weight="0.291964353328">
+ <shade name="soft" weight="0.77601643498" />
+ <shade name="cool" weight="0.169427254134" />
+ <shade name="fresh" weight="0.0545552157306" />
+</color>
+
+<color name="pink" weight="0.109381458019">
+ <shade name="soft" weight="0.77601643498" />
+ <shade name="cool" weight="0.169427254134" />
+ <shade name="fresh" weight="0.0545552157306" />
+</color>
+
+<color name="blue" weight="0.107277968442">
+ <shade name="soft" weight="0.77601643498" />
+ <shade name="cool" weight="0.169427254134" />
+ <shade name="fresh" weight="0.0545552157306" />
+</color>
+
+<color name="red" weight="0.0622632914878">
+ <shade name="soft" weight="0.77601643498" />
+ <shade name="cool" weight="0.169427254134" />
+ <shade name="fresh" weight="0.0545552157306" />
+</color>
+
+</colors>

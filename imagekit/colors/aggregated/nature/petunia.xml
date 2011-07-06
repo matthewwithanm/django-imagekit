@@ -1,0 +1,33 @@
+<colors query="petunia">
+
+<color name="pink" weight="0.404696579468">
+ <shade name="light" weight="0.791080842607" />
+ <shade name="cool" weight="0.123038669675" />
+ <shade name="bright" weight="0.0858793399073" />
+</color>
+
+<color name="white" weight="0.280981044812">
+ <shade name="light" weight="0.791080842607" />
+ <shade name="cool" weight="0.123038669675" />
+ <shade name="bright" weight="0.0858793399073" />
+</color>
+
+<color name="purple" weight="0.230656081562">
+ <shade name="light" weight="0.791080842607" />
+ <shade name="cool" weight="0.123038669675" />
+ <shade name="bright" weight="0.0858793399073" />
+</color>
+
+<color name="red" weight="0.0612287052874">
+ <shade name="light" weight="0.791080842607" />
+ <shade name="cool" weight="0.123038669675" />
+ <shade name="bright" weight="0.0858793399073" />
+</color>
+
+<color name="black" weight="0.0224365461156">
+ <shade name="light" weight="0.791080842607" />
+ <shade name="cool" weight="0.123038669675" />
+ <shade name="bright" weight="0.0858793399073" />
+</color>
+
+</colors>

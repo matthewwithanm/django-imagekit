@@ -1,0 +1,33 @@
+<colors query="lagoon">
+
+<color name="black" weight="0.491384317785">
+ <shade name="warm" weight="0.389459668318" />
+ <shade name="light" weight="0.305912214719" />
+ <shade name="cool" weight="0.304626869279" />
+</color>
+
+<color name="blue" weight="0.476493883912">
+ <shade name="light" weight="0.431471321919" />
+ <shade name="cool" weight="0.429658417206" />
+ <shade name="dark" weight="0.138868501088" />
+</color>
+
+<color name="pink" weight="0.0156136835175">
+ <shade name="warm" weight="0.389459668318" />
+ <shade name="light" weight="0.305912214719" />
+ <shade name="cool" weight="0.304626869279" />
+</color>
+
+<color name="white" weight="0.00908316466208">
+ <shade name="warm" weight="0.389459668318" />
+ <shade name="light" weight="0.305912214719" />
+ <shade name="cool" weight="0.304626869279" />
+</color>
+
+<color name="green" weight="0.00742394488774">
+ <shade name="light" weight="0.431471321919" />
+ <shade name="cool" weight="0.429658417206" />
+ <shade name="dark" weight="0.138868501088" />
+</color>
+
+</colors>

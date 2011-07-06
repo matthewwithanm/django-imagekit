@@ -1,0 +1,33 @@
+<colors query="soil">
+
+<color name="black" weight="0.453781041753">
+ <shade name="soft" weight="0.545850697828" />
+ <shade name="light" weight="0.282386761009" />
+ <shade name="hard" weight="0.171761019583" />
+</color>
+
+<color name="red" weight="0.426170025985">
+ <shade name="soft" weight="0.545850697828" />
+ <shade name="light" weight="0.282386761009" />
+ <shade name="hard" weight="0.171761019583" />
+</color>
+
+<color name="purple" weight="0.0517406425914">
+ <shade name="soft" weight="0.545850697828" />
+ <shade name="light" weight="0.282386761009" />
+ <shade name="hard" weight="0.171761019583" />
+</color>
+
+<color name="yellow" weight="0.04885949312">
+ <shade name="soft" weight="0.545850697828" />
+ <shade name="light" weight="0.282386761009" />
+ <shade name="hard" weight="0.171761019583" />
+</color>
+
+<color name="orange" weight="0.0194477589323">
+ <shade name="soft" weight="0.545850697828" />
+ <shade name="light" weight="0.282386761009" />
+ <shade name="hard" weight="0.171761019583" />
+</color>
+
+</colors>

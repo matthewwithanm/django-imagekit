@@ -1,0 +1,33 @@
+<colors query="receipt">
+
+<color name="yellow" weight="0.267780709693">
+ <shade name="light" weight="0.47682797078" />
+ <shade name="warm" weight="0.2903402164" />
+ <shade name="fresh" weight="0.23283051969" />
+</color>
+
+<color name="blue" weight="0.267780709693">
+ <shade name="light" weight="0.600561609774" />
+ <shade name="fresh" weight="0.293248467536" />
+ <shade name="hard" weight="0.106188294" />
+</color>
+
+<color name="pink" weight="0.192733886594">
+ <shade name="light" weight="0.47682797078" />
+ <shade name="warm" weight="0.2903402164" />
+ <shade name="fresh" weight="0.23283051969" />
+</color>
+
+<color name="red" weight="0.177383400052">
+ <shade name="light" weight="0.47682797078" />
+ <shade name="warm" weight="0.2903402164" />
+ <shade name="fresh" weight="0.23283051969" />
+</color>
+
+<color name="green" weight="0.0943202117582">
+ <shade name="light" weight="0.600561609774" />
+ <shade name="fresh" weight="0.293248467536" />
+ <shade name="hard" weight="0.106188294" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="plough">
+
+<color name="red" weight="0.348770874256">
+ <shade name="light" weight="0.695453708803" />
+ <shade name="hard" weight="0.189393711548" />
+ <shade name="fresh" weight="0.115151376621" />
+</color>
+
+<color name="white" weight="0.215500702792">
+ <shade name="light" weight="0.695453708803" />
+ <shade name="hard" weight="0.189393711548" />
+ <shade name="fresh" weight="0.115151376621" />
+</color>
+
+<color name="black" weight="0.173912847867">
+ <shade name="light" weight="0.695453708803" />
+ <shade name="hard" weight="0.189393711548" />
+ <shade name="fresh" weight="0.115151376621" />
+</color>
+
+<color name="green" weight="0.144612313716">
+ <shade name="light" weight="0.695453708803" />
+ <shade name="hard" weight="0.189393711548" />
+ <shade name="fresh" weight="0.115151376621" />
+</color>
+
+<color name="yellow" weight="0.117202136606">
+ <shade name="light" weight="0.695453708803" />
+ <shade name="hard" weight="0.189393711548" />
+ <shade name="fresh" weight="0.115151376621" />
+</color>
+
+</colors>

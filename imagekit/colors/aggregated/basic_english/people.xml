@@ -1,0 +1,33 @@
+<colors query="people">
+
+<color name="black" weight="0.388614804156">
+ <shade name="cool" weight="0.730788916385" />
+ <shade name="bright" weight="0.172487678059" />
+ <shade name="weak" weight="0.0967220624628" />
+</color>
+
+<color name="white" weight="0.377667908265">
+ <shade name="cool" weight="0.730788916385" />
+ <shade name="bright" weight="0.172487678059" />
+ <shade name="weak" weight="0.0967220624628" />
+</color>
+
+<color name="purple" weight="0.0930486150797">
+ <shade name="cool" weight="0.730788916385" />
+ <shade name="bright" weight="0.172487678059" />
+ <shade name="weak" weight="0.0967220624628" />
+</color>
+
+<color name="green" weight="0.0755335816529">
+ <shade name="cool" weight="0.730788916385" />
+ <shade name="bright" weight="0.172487678059" />
+ <shade name="weak" weight="0.0967220624628" />
+</color>
+
+<color name="blue" weight="0.0651340305558">
+ <shade name="cool" weight="0.730788916385" />
+ <shade name="bright" weight="0.172487678059" />
+ <shade name="weak" weight="0.0967220624628" />
+</color>
+
+</colors>

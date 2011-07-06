@@ -1,0 +1,33 @@
+<colors query="plug">
+
+<color name="black" weight="0.231685234539">
+ <shade name="light" weight="0.379436530734" />
+ <shade name="soft" weight="0.351284788132" />
+ <shade name="cool" weight="0.269277537941" />
+</color>
+
+<color name="white" weight="0.204883600723">
+ <shade name="light" weight="0.379436530734" />
+ <shade name="soft" weight="0.351284788132" />
+ <shade name="cool" weight="0.269277537941" />
+</color>
+
+<color name="red" weight="0.198927682097">
+ <shade name="light" weight="0.379436530734" />
+ <shade name="soft" weight="0.351284788132" />
+ <shade name="cool" weight="0.269277537941" />
+</color>
+
+<color name="orange" weight="0.188802620434">
+ <shade name="light" weight="0.379436530734" />
+ <shade name="soft" weight="0.351284788132" />
+ <shade name="cool" weight="0.269277537941" />
+</color>
+
+<color name="yellow" weight="0.175699599457">
+ <shade name="light" weight="0.379436530734" />
+ <shade name="soft" weight="0.351284788132" />
+ <shade name="cool" weight="0.269277537941" />
+</color>
+
+</colors>

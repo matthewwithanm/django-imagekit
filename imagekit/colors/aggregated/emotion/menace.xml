@@ -1,0 +1,33 @@
+<colors query="menace">
+
+<color name="red" weight="0.781118418737">
+ <shade name="dark" weight="0.904925205655" />
+ <shade name="cool" weight="0.0633447643959" />
+ <shade name="light" weight="0.0317289400233" />
+</color>
+
+<color name="black" weight="0.0920603850654">
+ <shade name="dark" weight="0.904925205655" />
+ <shade name="cool" weight="0.0633447643959" />
+ <shade name="light" weight="0.0317289400233" />
+</color>
+
+<color name="green" weight="0.0683478616395">
+ <shade name="dark" weight="0.904925205655" />
+ <shade name="cool" weight="0.0633447643959" />
+ <shade name="light" weight="0.0317289400233" />
+</color>
+
+<color name="yellow" weight="0.0429615130305">
+ <shade name="dark" weight="0.904925205655" />
+ <shade name="cool" weight="0.0633447643959" />
+ <shade name="light" weight="0.0317289400233" />
+</color>
+
+<color name="pink" weight="0.0155107800292">
+ <shade name="dark" weight="0.904925205655" />
+ <shade name="cool" weight="0.0633447643959" />
+ <shade name="light" weight="0.0317289400233" />
+</color>
+
+</colors>

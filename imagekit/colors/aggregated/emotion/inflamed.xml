@@ -1,0 +1,33 @@
+<colors query="inflamed">
+
+<color name="red" weight="0.989121741756">
+ <shade name="cool" weight="0.538758914151" />
+ <shade name="hard" weight="0.265503493665" />
+ <shade name="light" weight="0.195736152264" />
+</color>
+
+<color name="purple" weight="0.00368224449034">
+ <shade name="cool" weight="0.538758914151" />
+ <shade name="hard" weight="0.265503493665" />
+ <shade name="light" weight="0.195736152264" />
+</color>
+
+<color name="black" weight="0.00338951375679">
+ <shade name="cool" weight="0.538758914151" />
+ <shade name="hard" weight="0.265503493665" />
+ <shade name="light" weight="0.195736152264" />
+</color>
+
+<color name="pink" weight="0.0021877770612">
+ <shade name="cool" weight="0.538758914151" />
+ <shade name="hard" weight="0.265503493665" />
+ <shade name="light" weight="0.195736152264" />
+</color>
+
+<color name="white" weight="0.00161772247483">
+ <shade name="cool" weight="0.538758914151" />
+ <shade name="hard" weight="0.265503493665" />
+ <shade name="light" weight="0.195736152264" />
+</color>
+
+</colors>

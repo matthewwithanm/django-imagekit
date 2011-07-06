@@ -1,0 +1,33 @@
+<colors query="porcupine">
+
+<color name="white" weight="0.631936854376">
+ <shade name="soft" weight="0.405534907932" />
+ <shade name="cool" weight="0.336942950211" />
+ <shade name="light" weight="0.257520683375" />
+</color>
+
+<color name="pink" weight="0.135179535806">
+ <shade name="soft" weight="0.405534907932" />
+ <shade name="cool" weight="0.336942950211" />
+ <shade name="light" weight="0.257520683375" />
+</color>
+
+<color name="red" weight="0.111001082247">
+ <shade name="soft" weight="0.405534907932" />
+ <shade name="cool" weight="0.336942950211" />
+ <shade name="light" weight="0.257520683375" />
+</color>
+
+<color name="blue" weight="0.0719858503681">
+ <shade name="soft" weight="0.405534907932" />
+ <shade name="cool" weight="0.336942950211" />
+ <shade name="light" weight="0.257520683375" />
+</color>
+
+<color name="orange" weight="0.0498955359803">
+ <shade name="soft" weight="0.405534907932" />
+ <shade name="cool" weight="0.336942950211" />
+ <shade name="light" weight="0.257520683375" />
+</color>
+
+</colors>

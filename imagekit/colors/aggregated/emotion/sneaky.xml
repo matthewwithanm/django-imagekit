@@ -1,0 +1,33 @@
+<colors query="sneaky">
+
+<color name="red" weight="0.319290093953">
+ <shade name="cool" weight="0.778590112793" />
+ <shade name="dark" weight="0.152790304156" />
+ <shade name="hard" weight="0.0686184000699" />
+</color>
+
+<color name="green" weight="0.293421683563">
+ <shade name="cool" weight="0.778590112793" />
+ <shade name="dark" weight="0.152790304156" />
+ <shade name="hard" weight="0.0686184000699" />
+</color>
+
+<color name="black" weight="0.195860821522">
+ <shade name="cool" weight="0.778590112793" />
+ <shade name="dark" weight="0.152790304156" />
+ <shade name="hard" weight="0.0686184000699" />
+</color>
+
+<color name="white" weight="0.10125634924">
+ <shade name="cool" weight="0.778590112793" />
+ <shade name="dark" weight="0.152790304156" />
+ <shade name="hard" weight="0.0686184000699" />
+</color>
+
+<color name="pink" weight="0.0901698876441">
+ <shade name="cool" weight="0.778590112793" />
+ <shade name="dark" weight="0.152790304156" />
+ <shade name="hard" weight="0.0686184000699" />
+</color>
+
+</colors>

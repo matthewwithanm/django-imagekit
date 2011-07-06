@@ -1,0 +1,33 @@
+<colors query="pedal">
+
+<color name="pink" weight="0.580842415404">
+ <shade name="soft" weight="0.885791578915" />
+ <shade name="hard" weight="0.0666831862779" />
+ <shade name="light" weight="0.0475242111159" />
+</color>
+
+<color name="red" weight="0.295849641491">
+ <shade name="soft" weight="0.885791578915" />
+ <shade name="hard" weight="0.0666831862779" />
+ <shade name="light" weight="0.0475242111159" />
+</color>
+
+<color name="purple" weight="0.067041157292">
+ <shade name="soft" weight="0.885791578915" />
+ <shade name="hard" weight="0.0666831862779" />
+ <shade name="light" weight="0.0475242111159" />
+</color>
+
+<color name="orange" weight="0.0355562413168">
+ <shade name="soft" weight="0.885791578915" />
+ <shade name="hard" weight="0.0666831862779" />
+ <shade name="light" weight="0.0475242111159" />
+</color>
+
+<color name="blue" weight="0.0207094749044">
+ <shade name="soft" weight="0.885791578915" />
+ <shade name="hard" weight="0.0666831862779" />
+ <shade name="light" weight="0.0475242111159" />
+</color>
+
+</colors>

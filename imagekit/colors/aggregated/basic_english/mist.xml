@@ -1,0 +1,33 @@
+<colors query="mist">
+
+<color name="blue" weight="0.393882109097">
+ <shade name="cool" weight="0.584414792725" />
+ <shade name="light" weight="0.300324268484" />
+ <shade name="dark" weight="0.115259584121" />
+</color>
+
+<color name="red" weight="0.20920478322">
+ <shade name="cool" weight="0.506447236643" />
+ <shade name="light" weight="0.26025760772" />
+ <shade name="warm" weight="0.233293981695" />
+</color>
+
+<color name="white" weight="0.155821493709">
+ <shade name="cool" weight="0.506447236643" />
+ <shade name="light" weight="0.26025760772" />
+ <shade name="warm" weight="0.233293981695" />
+</color>
+
+<color name="green" weight="0.12509003245">
+ <shade name="cool" weight="0.584414792725" />
+ <shade name="light" weight="0.300324268484" />
+ <shade name="dark" weight="0.115259584121" />
+</color>
+
+<color name="pink" weight="0.116000445317">
+ <shade name="cool" weight="0.506447236643" />
+ <shade name="light" weight="0.26025760772" />
+ <shade name="warm" weight="0.233293981695" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="monkshood">
+
+<color name="blue" weight="0.603333605043">
+ <shade name="fresh" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="dark" weight="0.2499996875" />
+</color>
+
+<color name="yellow" weight="0.179676981502">
+ <shade name="fresh" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="dark" weight="0.2499996875" />
+</color>
+
+<color name="white" weight="0.131516141099">
+ <shade name="fresh" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="dark" weight="0.2499996875" />
+</color>
+
+<color name="purple" weight="0.0709181605927">
+ <shade name="fresh" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="dark" weight="0.2499996875" />
+</color>
+
+<color name="orange" weight="0.0145541001216">
+ <shade name="fresh" weight="0.499999375001" />
+ <shade name="soft" weight="0.2499996875" />
+ <shade name="dark" weight="0.2499996875" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="prick">
+
+<color name="black" weight="0.689346276171">
+ <shade name="hard" weight="0.886622442911" />
+ <shade name="soft" weight="0.0744515709901" />
+ <shade name="cool" weight="0.0389248877376" />
+</color>
+
+<color name="red" weight="0.137869255234">
+ <shade name="hard" weight="0.886622442911" />
+ <shade name="soft" weight="0.0744515709901" />
+ <shade name="cool" weight="0.0389248877376" />
+</color>
+
+<color name="pink" weight="0.0829768665762">
+ <shade name="hard" weight="0.886622442911" />
+ <shade name="soft" weight="0.0744515709901" />
+ <shade name="cool" weight="0.0389248877376" />
+</color>
+
+<color name="yellow" weight="0.0472329855895">
+ <shade name="hard" weight="0.886622442911" />
+ <shade name="soft" weight="0.0744515709901" />
+ <shade name="cool" weight="0.0389248877376" />
+</color>
+
+<color name="white" weight="0.0425735153895">
+ <shade name="hard" weight="0.886622442911" />
+ <shade name="soft" weight="0.0744515709901" />
+ <shade name="cool" weight="0.0389248877376" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cordial">
+
+<color name="red" weight="0.483905941275">
+ <shade name="cool" weight="0.608211697683" />
+ <shade name="warm" weight="0.278480685944" />
+ <shade name="weak" weight="0.113306443172" />
+</color>
+
+<color name="orange" weight="0.344599685454">
+ <shade name="cool" weight="0.608211697683" />
+ <shade name="warm" weight="0.278480685944" />
+ <shade name="weak" weight="0.113306443172" />
+</color>
+
+<color name="green" weight="0.109245432197">
+ <shade name="cool" weight="0.761204446454" />
+ <shade name="weak" weight="0.141808137994" />
+ <shade name="light" weight="0.0969859472386" />
+</color>
+
+<color name="blue" weight="0.0422806706266">
+ <shade name="cool" weight="0.761204446454" />
+ <shade name="weak" weight="0.141808137994" />
+ <shade name="light" weight="0.0969859472386" />
+</color>
+
+<color name="white" weight="0.0199672300011">
+ <shade name="cool" weight="0.608211697683" />
+ <shade name="warm" weight="0.278480685944" />
+ <shade name="weak" weight="0.113306443172" />
+</color>
+
+</colors>

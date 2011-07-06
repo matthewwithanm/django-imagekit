@@ -1,0 +1,33 @@
+<colors query="eye">
+
+<color name="red" weight="0.39376632243">
+ <shade name="dark" weight="0.564636518784" />
+ <shade name="fresh" weight="0.307756093695" />
+ <shade name="bright" weight="0.12760618519" />
+</color>
+
+<color name="black" weight="0.239610996202">
+ <shade name="dark" weight="0.564636518784" />
+ <shade name="fresh" weight="0.307756093695" />
+ <shade name="bright" weight="0.12760618519" />
+</color>
+
+<color name="blue" weight="0.185991752297">
+ <shade name="dark" weight="0.564636518784" />
+ <shade name="fresh" weight="0.307756093695" />
+ <shade name="bright" weight="0.12760618519" />
+</color>
+
+<color name="pink" weight="0.115448934534">
+ <shade name="dark" weight="0.564636518784" />
+ <shade name="fresh" weight="0.307756093695" />
+ <shade name="bright" weight="0.12760618519" />
+</color>
+
+<color name="white" weight="0.0651808933724">
+ <shade name="dark" weight="0.564636518784" />
+ <shade name="fresh" weight="0.307756093695" />
+ <shade name="bright" weight="0.12760618519" />
+</color>
+
+</colors>

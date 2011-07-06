@@ -1,0 +1,33 @@
+<colors query="sullen">
+
+<color name="red" weight="0.59805225008">
+ <shade name="dark" weight="0.735398415357" />
+ <shade name="soft" weight="0.139451563366" />
+ <shade name="hard" weight="0.125148838918" />
+</color>
+
+<color name="black" weight="0.282336294805">
+ <shade name="dark" weight="0.735398415357" />
+ <shade name="soft" weight="0.139451563366" />
+ <shade name="hard" weight="0.125148838918" />
+</color>
+
+<color name="yellow" weight="0.0982845558271">
+ <shade name="dark" weight="0.735398415357" />
+ <shade name="soft" weight="0.139451563366" />
+ <shade name="hard" weight="0.125148838918" />
+</color>
+
+<color name="white" weight="0.0185442558164">
+ <shade name="dark" weight="0.735398415357" />
+ <shade name="soft" weight="0.139451563366" />
+ <shade name="hard" weight="0.125148838918" />
+</color>
+
+<color name="pink" weight="0.00278163837247">
+ <shade name="dark" weight="0.735398415357" />
+ <shade name="soft" weight="0.139451563366" />
+ <shade name="hard" weight="0.125148838918" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="meek">
+
+<color name="white" weight="0.334301970871">
+ <shade name="weak" weight="0.477357973578" />
+ <shade name="light" weight="0.338364413419" />
+ <shade name="soft" weight="0.184276529985" />
+</color>
+
+<color name="black" weight="0.255813682058">
+ <shade name="weak" weight="0.477357973578" />
+ <shade name="light" weight="0.338364413419" />
+ <shade name="soft" weight="0.184276529985" />
+</color>
+
+<color name="green" weight="0.215116050822">
+ <shade name="weak" weight="0.477357973578" />
+ <shade name="light" weight="0.338364413419" />
+ <shade name="soft" weight="0.184276529985" />
+</color>
+
+<color name="red" weight="0.130813814689">
+ <shade name="weak" weight="0.477357973578" />
+ <shade name="light" weight="0.338364413419" />
+ <shade name="soft" weight="0.184276529985" />
+</color>
+
+<color name="blue" weight="0.0639534205145">
+ <shade name="weak" weight="0.477357973578" />
+ <shade name="light" weight="0.338364413419" />
+ <shade name="soft" weight="0.184276529985" />
+</color>
+
+</colors>

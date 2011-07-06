@@ -1,0 +1,33 @@
+<colors query="pensive">
+
+<color name="blue" weight="0.30291229492">
+ <shade name="dark" weight="0.495430882091" />
+ <shade name="soft" weight="0.312689982959" />
+ <shade name="light" weight="0.191877944088" />
+</color>
+
+<color name="white" weight="0.283494840117">
+ <shade name="dark" weight="0.495430882091" />
+ <shade name="soft" weight="0.312689982959" />
+ <shade name="light" weight="0.191877944088" />
+</color>
+
+<color name="black" weight="0.238834694071">
+ <shade name="dark" weight="0.495430882091" />
+ <shade name="soft" weight="0.312689982959" />
+ <shade name="light" weight="0.191877944088" />
+</color>
+
+<color name="orange" weight="0.0951455285325">
+ <shade name="dark" weight="0.495430882091" />
+ <shade name="soft" weight="0.312689982959" />
+ <shade name="light" weight="0.191877944088" />
+</color>
+
+<color name="green" weight="0.0796115646904">
+ <shade name="dark" weight="0.495430882091" />
+ <shade name="soft" weight="0.312689982959" />
+ <shade name="light" weight="0.191877944088" />
+</color>
+
+</colors>

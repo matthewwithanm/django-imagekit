@@ -1,0 +1,33 @@
+<colors query="hog">
+
+<color name="black" weight="0.457710948424">
+ <shade name="soft" weight="0.387946659767" />
+ <shade name="light" weight="0.320150156118" />
+ <shade name="cool" weight="0.291901612931" />
+</color>
+
+<color name="red" weight="0.383084163355">
+ <shade name="soft" weight="0.387946659767" />
+ <shade name="light" weight="0.320150156118" />
+ <shade name="cool" weight="0.291901612931" />
+</color>
+
+<color name="blue" weight="0.0893033861327">
+ <shade name="soft" weight="0.387946659767" />
+ <shade name="light" weight="0.320150156118" />
+ <shade name="cool" weight="0.291901612931" />
+</color>
+
+<color name="green" weight="0.0425372674894">
+ <shade name="soft" weight="0.387946659767" />
+ <shade name="light" weight="0.320150156118" />
+ <shade name="cool" weight="0.291901612931" />
+</color>
+
+<color name="pink" weight="0.0273631545254">
+ <shade name="soft" weight="0.387946659767" />
+ <shade name="light" weight="0.320150156118" />
+ <shade name="cool" weight="0.291901612931" />
+</color>
+
+</colors>

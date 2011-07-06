@@ -1,0 +1,33 @@
+<colors query="tongs">
+
+<color name="pink" weight="0.413878104388">
+ <shade name="light" weight="0.554216219771" />
+ <shade name="cool" weight="0.343373092684" />
+ <shade name="fresh" weight="0.102409518871" />
+</color>
+
+<color name="red" weight="0.233209159419">
+ <shade name="light" weight="0.554216219771" />
+ <shade name="cool" weight="0.343373092684" />
+ <shade name="fresh" weight="0.102409518871" />
+</color>
+
+<color name="black" weight="0.150433538541">
+ <shade name="light" weight="0.554216219771" />
+ <shade name="cool" weight="0.343373092684" />
+ <shade name="fresh" weight="0.102409518871" />
+</color>
+
+<color name="blue" weight="0.14944221374">
+ <shade name="light" weight="0.554216219771" />
+ <shade name="cool" weight="0.343373092684" />
+ <shade name="fresh" weight="0.102409518871" />
+</color>
+
+<color name="yellow" weight="0.0530358768497">
+ <shade name="light" weight="0.554216219771" />
+ <shade name="cool" weight="0.343373092684" />
+ <shade name="fresh" weight="0.102409518871" />
+</color>
+
+</colors>

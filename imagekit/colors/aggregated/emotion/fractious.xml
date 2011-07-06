@@ -1,0 +1,33 @@
+<colors query="fractious">
+
+<color name="red" weight="0.428570959184">
+ <shade name="weak" weight="0.785713401787" />
+ <shade name="light" weight="0.107142736607" />
+ <shade name="intense" weight="0.107142736607" />
+</color>
+
+<color name="black" weight="0.238094977325">
+ <shade name="weak" weight="0.785713401787" />
+ <shade name="light" weight="0.107142736607" />
+ <shade name="intense" weight="0.107142736607" />
+</color>
+
+<color name="blue" weight="0.142856986395">
+ <shade name="weak" weight="0.785713401787" />
+ <shade name="light" weight="0.107142736607" />
+ <shade name="intense" weight="0.107142736607" />
+</color>
+
+<color name="white" weight="0.0952379909298">
+ <shade name="weak" weight="0.830187692418" />
+ <shade name="light" weight="0.113207412603" />
+ <shade name="fresh" weight="0.0566037063013" />
+</color>
+
+<color name="pink" weight="0.0952379909298">
+ <shade name="weak" weight="0.830187692418" />
+ <shade name="light" weight="0.113207412603" />
+ <shade name="fresh" weight="0.0566037063013" />
+</color>
+
+</colors>

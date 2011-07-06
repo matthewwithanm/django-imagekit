@@ -1,0 +1,33 @@
+<colors query="lustful">
+
+<color name="black" weight="0.783689184011">
+ <shade name="hard" weight="0.519306956893" />
+ <shade name="dark" weight="0.264180769865" />
+ <shade name="intense" weight="0.216511054335" />
+</color>
+
+<color name="white" weight="0.109600812081">
+ <shade name="hard" weight="0.593968102774" />
+ <shade name="dark" weight="0.302162234847" />
+ <shade name="soft" weight="0.103868268229" />
+</color>
+
+<color name="pink" weight="0.0413533407061">
+ <shade name="hard" weight="0.593968102774" />
+ <shade name="dark" weight="0.302162234847" />
+ <shade name="soft" weight="0.103868268229" />
+</color>
+
+<color name="red" weight="0.0373047618957">
+ <shade name="hard" weight="0.519306956893" />
+ <shade name="dark" weight="0.264180769865" />
+ <shade name="intense" weight="0.216511054335" />
+</color>
+
+<color name="green" weight="0.028050867472">
+ <shade name="hard" weight="0.519306956893" />
+ <shade name="dark" weight="0.264180769865" />
+ <shade name="intense" weight="0.216511054335" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="guarantee">
+
+<color name="black" weight="0.318880777612">
+ <shade name="fresh" weight="0.803407485644" />
+ <shade name="weak" weight="0.121119764881" />
+ <shade name="light" weight="0.0754716122878" />
+</color>
+
+<color name="green" weight="0.282517180165">
+ <shade name="fresh" weight="0.803407485644" />
+ <shade name="weak" weight="0.121119764881" />
+ <shade name="light" weight="0.0754716122878" />
+</color>
+
+<color name="white" weight="0.226573184093">
+ <shade name="fresh" weight="0.803407485644" />
+ <shade name="weak" weight="0.121119764881" />
+ <shade name="light" weight="0.0754716122878" />
+</color>
+
+<color name="orange" weight="0.0962236732443">
+ <shade name="fresh" weight="0.803407485644" />
+ <shade name="weak" weight="0.121119764881" />
+ <shade name="light" weight="0.0754716122878" />
+</color>
+
+<color name="blue" weight="0.0758041146779">
+ <shade name="fresh" weight="0.803407485644" />
+ <shade name="weak" weight="0.121119764881" />
+ <shade name="light" weight="0.0754716122878" />
+</color>
+
+</colors>

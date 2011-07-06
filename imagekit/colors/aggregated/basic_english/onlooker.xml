@@ -1,0 +1,33 @@
+<colors query="onlooker">
+
+<color name="white" weight="0.849710113302">
+ <shade name="neutral" weight="0.506296710807" />
+ <shade name="cool" weight="0.395465590033" />
+ <shade name="hard" weight="0.0982366752312" />
+</color>
+
+<color name="black" weight="0.0578034090682">
+ <shade name="neutral" weight="0.506296710807" />
+ <shade name="cool" weight="0.395465590033" />
+ <shade name="hard" weight="0.0982366752312" />
+</color>
+
+<color name="green" weight="0.0404623863477">
+ <shade name="neutral" weight="0.506296710807" />
+ <shade name="cool" weight="0.395465590033" />
+ <shade name="hard" weight="0.0982366752312" />
+</color>
+
+<color name="blue" weight="0.0289017045341">
+ <shade name="neutral" weight="0.506296710807" />
+ <shade name="cool" weight="0.395465590033" />
+ <shade name="hard" weight="0.0982366752312" />
+</color>
+
+<color name="orange" weight="0.0231213636273">
+ <shade name="neutral" weight="0.506296710807" />
+ <shade name="cool" weight="0.395465590033" />
+ <shade name="hard" weight="0.0982366752312" />
+</color>
+
+</colors>

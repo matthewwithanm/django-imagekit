@@ -1,0 +1,33 @@
+<colors query="angelfish">
+
+<color name="blue" weight="0.821122946606">
+ <shade name="light" weight="0.391024974278" />
+ <shade name="dark" weight="0.326922519478" />
+ <shade name="bright" weight="0.282050801119" />
+</color>
+
+<color name="yellow" weight="0.0880157929696">
+ <shade name="light" weight="0.391024974278" />
+ <shade name="dark" weight="0.326922519478" />
+ <shade name="bright" weight="0.282050801119" />
+</color>
+
+<color name="black" weight="0.0399827840014">
+ <shade name="light" weight="0.391024974278" />
+ <shade name="dark" weight="0.326922519478" />
+ <shade name="bright" weight="0.282050801119" />
+</color>
+
+<color name="pink" weight="0.0255460472277">
+ <shade name="light" weight="0.391024974278" />
+ <shade name="dark" weight="0.326922519478" />
+ <shade name="bright" weight="0.282050801119" />
+</color>
+
+<color name="white" weight="0.025331374562">
+ <shade name="light" weight="0.391024974278" />
+ <shade name="dark" weight="0.326922519478" />
+ <shade name="bright" weight="0.282050801119" />
+</color>
+
+</colors>

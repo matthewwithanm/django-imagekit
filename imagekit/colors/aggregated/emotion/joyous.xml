@@ -1,0 +1,33 @@
+<colors query="joyous">
+
+<color name="red" weight="0.253384627228">
+ <shade name="warm" weight="0.504672256923" />
+ <shade name="light" weight="0.257476308856" />
+ <shade name="bright" weight="0.237850165531" />
+</color>
+
+<color name="blue" weight="0.239844990658">
+ <shade name="light" weight="0.43660761855" />
+ <shade name="bright" weight="0.403327183016" />
+ <shade name="fresh" weight="0.160063047091" />
+</color>
+
+<color name="white" weight="0.19922608095">
+ <shade name="warm" weight="0.504672256923" />
+ <shade name="light" weight="0.257476308856" />
+ <shade name="bright" weight="0.237850165531" />
+</color>
+
+<color name="black" weight="0.189554911972">
+ <shade name="warm" weight="0.504672256923" />
+ <shade name="light" weight="0.257476308856" />
+ <shade name="bright" weight="0.237850165531" />
+</color>
+
+<color name="green" weight="0.117988261534">
+ <shade name="light" weight="0.43660761855" />
+ <shade name="bright" weight="0.403327183016" />
+ <shade name="fresh" weight="0.160063047091" />
+</color>
+
+</colors>

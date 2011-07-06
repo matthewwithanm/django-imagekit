@@ -1,0 +1,33 @@
+<colors query="vitriolic">
+
+<color name="blue" weight="0.523436964295">
+ <shade name="dark" weight="0.599999356364" />
+ <shade name="intense" weight="0.345454174876" />
+ <shade name="fresh" weight="0.0545453960331" />
+</color>
+
+<color name="yellow" weight="0.203124792114">
+ <shade name="dark" weight="0.599999356364" />
+ <shade name="intense" weight="0.345454174876" />
+ <shade name="fresh" weight="0.0545453960331" />
+</color>
+
+<color name="black" weight="0.171874824097">
+ <shade name="dark" weight="0.599999356364" />
+ <shade name="intense" weight="0.345454174876" />
+ <shade name="fresh" weight="0.0545453960331" />
+</color>
+
+<color name="green" weight="0.0546874440308">
+ <shade name="dark" weight="0.599999356364" />
+ <shade name="intense" weight="0.345454174876" />
+ <shade name="fresh" weight="0.0545453960331" />
+</color>
+
+<color name="white" weight="0.0468749520264">
+ <shade name="dark" weight="0.85344697362" />
+ <shade name="fresh" weight="0.0775860885109" />
+ <shade name="hard" weight="0.0689654120097" />
+</color>
+
+</colors>

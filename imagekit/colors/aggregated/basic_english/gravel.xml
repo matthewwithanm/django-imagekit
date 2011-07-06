@@ -1,0 +1,33 @@
+<colors query="gravel">
+
+<color name="white" weight="0.313192014243">
+ <shade name="hard" weight="0.492186964824" />
+ <shade name="light" weight="0.255989304985" />
+ <shade name="soft" weight="0.251822642849" />
+</color>
+
+<color name="red" weight="0.20946604168">
+ <shade name="hard" weight="0.492186964824" />
+ <shade name="light" weight="0.255989304985" />
+ <shade name="soft" weight="0.251822642849" />
+</color>
+
+<color name="black" weight="0.200402607184">
+ <shade name="hard" weight="0.492186964824" />
+ <shade name="light" weight="0.255989304985" />
+ <shade name="soft" weight="0.251822642849" />
+</color>
+
+<color name="blue" weight="0.158106579537">
+ <shade name="hard" weight="0.492186964824" />
+ <shade name="light" weight="0.255989304985" />
+ <shade name="soft" weight="0.251822642849" />
+</color>
+
+<color name="green" weight="0.118831696722">
+ <shade name="hard" weight="0.492186964824" />
+ <shade name="light" weight="0.255989304985" />
+ <shade name="soft" weight="0.251822642849" />
+</color>
+
+</colors>

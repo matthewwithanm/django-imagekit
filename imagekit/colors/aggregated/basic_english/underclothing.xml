@@ -1,0 +1,33 @@
+<colors query="underclothing">
+
+<color name="white" weight="0.568594453931">
+ <shade name="warm" weight="0.698605553698" />
+ <shade name="light" weight="0.198606067635" />
+ <shade name="fresh" weight="0.102787350793" />
+</color>
+
+<color name="black" weight="0.239669173895">
+ <shade name="warm" weight="0.698605553698" />
+ <shade name="light" weight="0.198606067635" />
+ <shade name="fresh" weight="0.102787350793" />
+</color>
+
+<color name="blue" weight="0.0859503244315">
+ <shade name="light" weight="0.629832201099" />
+ <shade name="fresh" weight="0.325965788288" />
+ <shade name="soft" weight="0.0441987509543" />
+</color>
+
+<color name="red" weight="0.0743800884503">
+ <shade name="warm" weight="0.698605553698" />
+ <shade name="light" weight="0.198606067635" />
+ <shade name="fresh" weight="0.102787350793" />
+</color>
+
+<color name="pink" weight="0.0314049262346">
+ <shade name="warm" weight="0.698605553698" />
+ <shade name="light" weight="0.198606067635" />
+ <shade name="fresh" weight="0.102787350793" />
+</color>
+
+</colors>

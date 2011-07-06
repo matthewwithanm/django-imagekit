@@ -1,0 +1,33 @@
+<colors query="aorta">
+
+<color name="blue" weight="0.433332860794">
+ <shade name="fresh" weight="0.510988478475" />
+ <shade name="weak" weight="0.446885981176" />
+ <shade name="soft" weight="0.0421244982256" />
+</color>
+
+<color name="black" weight="0.238094978458">
+ <shade name="fresh" weight="0.510988478475" />
+ <shade name="weak" weight="0.446885981176" />
+ <shade name="soft" weight="0.0421244982256" />
+</color>
+
+<color name="red" weight="0.176190284059">
+ <shade name="fresh" weight="0.510988478475" />
+ <shade name="weak" weight="0.446885981176" />
+ <shade name="soft" weight="0.0421244982256" />
+</color>
+
+<color name="white" weight="0.11428558966">
+ <shade name="fresh" weight="0.510988478475" />
+ <shade name="weak" weight="0.446885981176" />
+ <shade name="soft" weight="0.0421244982256" />
+</color>
+
+<color name="green" weight="0.0380951965533">
+ <shade name="fresh" weight="0.510988478475" />
+ <shade name="weak" weight="0.446885981176" />
+ <shade name="soft" weight="0.0421244982256" />
+</color>
+
+</colors>

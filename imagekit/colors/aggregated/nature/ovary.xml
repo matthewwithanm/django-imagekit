@@ -1,0 +1,33 @@
+<colors query="ovary">
+
+<color name="yellow" weight="0.274320419036">
+ <shade name="fresh" weight="0.503117882851" />
+ <shade name="dark" weight="0.407483905119" />
+ <shade name="intense" weight="0.0893969791842" />
+</color>
+
+<color name="green" weight="0.222173246728">
+ <shade name="fresh" weight="0.503117882851" />
+ <shade name="dark" weight="0.407483905119" />
+ <shade name="intense" weight="0.0893969791842" />
+</color>
+
+<color name="red" weight="0.192374862551">
+ <shade name="fresh" weight="0.503117882851" />
+ <shade name="dark" weight="0.407483905119" />
+ <shade name="intense" weight="0.0893969791842" />
+</color>
+
+<color name="white" weight="0.163014689907">
+ <shade name="fresh" weight="0.519312643879" />
+ <shade name="dark" weight="0.420600323142" />
+ <shade name="weak" weight="0.0600857604488" />
+</color>
+
+<color name="orange" weight="0.148115497818">
+ <shade name="fresh" weight="0.503117882851" />
+ <shade name="dark" weight="0.407483905119" />
+ <shade name="intense" weight="0.0893969791842" />
+</color>
+
+</colors>

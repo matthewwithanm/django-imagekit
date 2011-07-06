@@ -1,0 +1,33 @@
+<colors query="uptake">
+
+<color name="red" weight="0.57483496121">
+ <shade name="intense" weight="0.7590125062" />
+ <shade name="dark" weight="0.221006582688" />
+ <shade name="weak" weight="0.0199798880308" />
+</color>
+
+<color name="blue" weight="0.402510257303">
+ <shade name="intense" weight="0.7590125062" />
+ <shade name="dark" weight="0.221006582688" />
+ <shade name="weak" weight="0.0199798880308" />
+</color>
+
+<color name="yellow" weight="0.00876717654187">
+ <shade name="intense" weight="0.7590125062" />
+ <shade name="dark" weight="0.221006582688" />
+ <shade name="weak" weight="0.0199798880308" />
+</color>
+
+<color name="orange" weight="0.00799989136389">
+ <shade name="intense" weight="0.7590125062" />
+ <shade name="dark" weight="0.221006582688" />
+ <shade name="weak" weight="0.0199798880308" />
+</color>
+
+<color name="green" weight="0.00588671251305">
+ <shade name="intense" weight="0.7590125062" />
+ <shade name="dark" weight="0.221006582688" />
+ <shade name="weak" weight="0.0199798880308" />
+</color>
+
+</colors>

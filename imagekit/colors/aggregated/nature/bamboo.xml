@@ -1,0 +1,33 @@
+<colors query="bamboo">
+
+<color name="green" weight="0.317124368654">
+ <shade name="soft" weight="0.405062732164" />
+ <shade name="fresh" weight="0.331926405523" />
+ <shade name="light" weight="0.263009482343" />
+</color>
+
+<color name="black" weight="0.295982744077">
+ <shade name="soft" weight="0.405062732164" />
+ <shade name="fresh" weight="0.331926405523" />
+ <shade name="light" weight="0.263009482343" />
+</color>
+
+<color name="blue" weight="0.191449155891">
+ <shade name="soft" weight="0.405062732164" />
+ <shade name="fresh" weight="0.331926405523" />
+ <shade name="light" weight="0.263009482343" />
+</color>
+
+<color name="red" weight="0.130843165437">
+ <shade name="soft" weight="0.405062732164" />
+ <shade name="fresh" weight="0.331926405523" />
+ <shade name="light" weight="0.263009482343" />
+</color>
+
+<color name="white" weight="0.0645994084295">
+ <shade name="soft" weight="0.405062732164" />
+ <shade name="fresh" weight="0.331926405523" />
+ <shade name="light" weight="0.263009482343" />
+</color>
+
+</colors>

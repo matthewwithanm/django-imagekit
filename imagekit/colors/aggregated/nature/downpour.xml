@@ -1,0 +1,33 @@
+<colors query="downpour">
+
+<color name="orange" weight="0.231005912082">
+ <shade name="intense" weight="0.428570832945" />
+ <shade name="hard" weight="0.365491143248" />
+ <shade name="fresh" weight="0.205936634013" />
+</color>
+
+<color name="black" weight="0.223819061484">
+ <shade name="intense" weight="0.428570832945" />
+ <shade name="hard" weight="0.365491143248" />
+ <shade name="fresh" weight="0.205936634013" />
+</color>
+
+<color name="blue" weight="0.20225850969">
+ <shade name="intense" weight="0.428570832945" />
+ <shade name="hard" weight="0.365491143248" />
+ <shade name="fresh" weight="0.205936634013" />
+</color>
+
+<color name="white" weight="0.180697957895">
+ <shade name="hard" weight="0.532000003994" />
+ <shade name="fresh" weight="0.299756347428" />
+ <shade name="soft" weight="0.168241625628" />
+</color>
+
+<color name="red" weight="0.162217484929">
+ <shade name="intense" weight="0.428570832945" />
+ <shade name="hard" weight="0.365491143248" />
+ <shade name="fresh" weight="0.205936634013" />
+</color>
+
+</colors>

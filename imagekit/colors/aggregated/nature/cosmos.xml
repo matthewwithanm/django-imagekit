@@ -1,0 +1,33 @@
+<colors query="cosmos">
+
+<color name="blue" weight="0.452866389957">
+ <shade name="cool" weight="0.698842924523" />
+ <shade name="dark" weight="0.289089698993" />
+ <shade name="light" weight="0.0120663526536" />
+</color>
+
+<color name="green" weight="0.17978601318">
+ <shade name="cool" weight="0.698842924523" />
+ <shade name="dark" weight="0.289089698993" />
+ <shade name="light" weight="0.0120663526536" />
+</color>
+
+<color name="orange" weight="0.140913361682">
+ <shade name="cool" weight="0.698842924523" />
+ <shade name="dark" weight="0.289089698993" />
+ <shade name="light" weight="0.0120663526536" />
+</color>
+
+<color name="white" weight="0.117589770783">
+ <shade name="cool" weight="0.698842924523" />
+ <shade name="dark" weight="0.289089698993" />
+ <shade name="light" weight="0.0120663526536" />
+</color>
+
+<color name="pink" weight="0.108843424196">
+ <shade name="cool" weight="0.698842924523" />
+ <shade name="dark" weight="0.289089698993" />
+ <shade name="light" weight="0.0120663526536" />
+</color>
+
+</colors>

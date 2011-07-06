@@ -1,0 +1,33 @@
+<colors query="ginkgo">
+
+<color name="green" weight="0.516021101693">
+ <shade name="fresh" weight="0.687991183928" />
+ <shade name="light" weight="0.294490691275" />
+ <shade name="neutral" weight="0.0175171187052" />
+</color>
+
+<color name="yellow" weight="0.297544425573">
+ <shade name="fresh" weight="0.687991183928" />
+ <shade name="light" weight="0.294490691275" />
+ <shade name="neutral" weight="0.0175171187052" />
+</color>
+
+<color name="black" weight="0.115480528806">
+ <shade name="fresh" weight="0.687991183928" />
+ <shade name="light" weight="0.294490691275" />
+ <shade name="neutral" weight="0.0175171187052" />
+</color>
+
+<color name="blue" weight="0.0405742398508">
+ <shade name="fresh" weight="0.687991183928" />
+ <shade name="light" weight="0.294490691275" />
+ <shade name="neutral" weight="0.0175171187052" />
+</color>
+
+<color name="white" weight="0.0303786616319">
+ <shade name="fresh" weight="0.687991183928" />
+ <shade name="light" weight="0.294490691275" />
+ <shade name="neutral" weight="0.0175171187052" />
+</color>
+
+</colors>

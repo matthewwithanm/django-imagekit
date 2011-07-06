@@ -1,0 +1,33 @@
+<colors query="lake">
+
+<color name="green" weight="0.238318372035">
+ <shade name="cool" weight="0.401023214127" />
+ <shade name="dark" weight="0.355801447427" />
+ <shade name="light" weight="0.243173651119" />
+</color>
+
+<color name="red" weight="0.221429668505">
+ <shade name="cool" weight="0.348664176928" />
+ <shade name="warm" weight="0.341987628859" />
+ <shade name="dark" weight="0.309346727189" />
+</color>
+
+<color name="blue" weight="0.215800100662">
+ <shade name="cool" weight="0.401023214127" />
+ <shade name="dark" weight="0.355801447427" />
+ <shade name="light" weight="0.243173651119" />
+</color>
+
+<color name="white" weight="0.212047055433">
+ <shade name="cool" weight="0.348664176928" />
+ <shade name="warm" weight="0.341987628859" />
+ <shade name="dark" weight="0.309346727189" />
+</color>
+
+<color name="black" weight="0.112403704606">
+ <shade name="cool" weight="0.348664176928" />
+ <shade name="warm" weight="0.341987628859" />
+ <shade name="dark" weight="0.309346727189" />
+</color>
+
+</colors>

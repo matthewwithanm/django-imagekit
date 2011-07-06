@@ -1,0 +1,33 @@
+<colors query="rhinoceros">
+
+<color name="black" weight="0.502602102263">
+ <shade name="soft" weight="0.442210346407" />
+ <shade name="cool" weight="0.291456819222" />
+ <shade name="bright" weight="0.266331231358" />
+</color>
+
+<color name="white" weight="0.476379383884">
+ <shade name="soft" weight="0.442210346407" />
+ <shade name="cool" weight="0.291456819222" />
+ <shade name="bright" weight="0.266331231358" />
+</color>
+
+<color name="blue" weight="0.00974611033083">
+ <shade name="soft" weight="0.442210346407" />
+ <shade name="cool" weight="0.291456819222" />
+ <shade name="bright" weight="0.266331231358" />
+</color>
+
+<color name="red" weight="0.00716754302357">
+ <shade name="soft" weight="0.442210346407" />
+ <shade name="cool" weight="0.291456819222" />
+ <shade name="bright" weight="0.266331231358" />
+</color>
+
+<color name="purple" weight="0.0041038554263">
+ <shade name="soft" weight="0.442210346407" />
+ <shade name="cool" weight="0.291456819222" />
+ <shade name="bright" weight="0.266331231358" />
+</color>
+
+</colors>

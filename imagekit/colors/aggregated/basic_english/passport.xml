@@ -1,0 +1,33 @@
+<colors query="passport">
+
+<color name="green" weight="0.318929707288">
+ <shade name="fresh" weight="0.39110232063" />
+ <shade name="soft" weight="0.337348921112" />
+ <shade name="cool" weight="0.27154734584" />
+</color>
+
+<color name="red" weight="0.258916052691">
+ <shade name="fresh" weight="0.39110232063" />
+ <shade name="soft" weight="0.337348921112" />
+ <shade name="cool" weight="0.27154734584" />
+</color>
+
+<color name="blue" weight="0.217763832395">
+ <shade name="fresh" weight="0.39110232063" />
+ <shade name="soft" weight="0.337348921112" />
+ <shade name="cool" weight="0.27154734584" />
+</color>
+
+<color name="black" weight="0.166666492196">
+ <shade name="fresh" weight="0.39110232063" />
+ <shade name="soft" weight="0.337348921112" />
+ <shade name="cool" weight="0.27154734584" />
+</color>
+
+<color name="yellow" weight="0.0377228686039">
+ <shade name="fresh" weight="0.39110232063" />
+ <shade name="soft" weight="0.337348921112" />
+ <shade name="cool" weight="0.27154734584" />
+</color>
+
+</colors>

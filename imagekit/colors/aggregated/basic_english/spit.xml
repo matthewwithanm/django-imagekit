@@ -1,0 +1,33 @@
+<colors query="spit">
+
+<color name="black" weight="0.316363269106">
+ <shade name="warm" weight="0.818402971897" />
+ <shade name="cool" weight="0.108713230595" />
+ <shade name="hard" weight="0.0728826527211" />
+</color>
+
+<color name="yellow" weight="0.215999749252">
+ <shade name="warm" weight="0.818402971897" />
+ <shade name="cool" weight="0.108713230595" />
+ <shade name="hard" weight="0.0728826527211" />
+</color>
+
+<color name="white" weight="0.167999804974">
+ <shade name="warm" weight="0.818402971897" />
+ <shade name="cool" weight="0.108713230595" />
+ <shade name="hard" weight="0.0728826527211" />
+</color>
+
+<color name="red" weight="0.165090717442">
+ <shade name="warm" weight="0.818402971897" />
+ <shade name="cool" weight="0.108713230595" />
+ <shade name="hard" weight="0.0728826527211" />
+</color>
+
+<color name="green" weight="0.134545298355">
+ <shade name="cool" weight="0.442784005089" />
+ <shade name="hard" weight="0.296847703786" />
+ <shade name="fresh" weight="0.26036362846" />
+</color>
+
+</colors>

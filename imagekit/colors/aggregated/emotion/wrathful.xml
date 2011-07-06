@@ -1,0 +1,33 @@
+<colors query="wrathful">
+
+<color name="black" weight="0.353191128656">
+ <shade name="dark" weight="0.603052781424" />
+ <shade name="hard" weight="0.374045396073" />
+ <shade name="light" weight="0.0229007385351" />
+</color>
+
+<color name="white" weight="0.34468049905">
+ <shade name="dark" weight="0.603052781424" />
+ <shade name="hard" weight="0.374045396073" />
+ <shade name="light" weight="0.0229007385351" />
+</color>
+
+<color name="blue" weight="0.182978536533">
+ <shade name="dark" weight="0.603052781424" />
+ <shade name="hard" weight="0.374045396073" />
+ <shade name="light" weight="0.0229007385351" />
+</color>
+
+<color name="red" weight="0.11063818488">
+ <shade name="dark" weight="0.603052781424" />
+ <shade name="hard" weight="0.374045396073" />
+ <shade name="light" weight="0.0229007385351" />
+</color>
+
+<color name="pink" weight="0.00851062960617">
+ <shade name="dark" weight="0.603052781424" />
+ <shade name="hard" weight="0.374045396073" />
+ <shade name="light" weight="0.0229007385351" />
+</color>
+
+</colors>

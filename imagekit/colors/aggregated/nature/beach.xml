@@ -1,0 +1,33 @@
+<colors query="beach">
+
+<color name="orange" weight="0.385238066618">
+ <shade name="warm" weight="0.419788571817" />
+ <shade name="cool" weight="0.308547527681" />
+ <shade name="light" weight="0.271662339363" />
+</color>
+
+<color name="white" weight="0.287578416552">
+ <shade name="warm" weight="0.419788571817" />
+ <shade name="cool" weight="0.308547527681" />
+ <shade name="light" weight="0.271662339363" />
+</color>
+
+<color name="green" weight="0.117911651231">
+ <shade name="cool" weight="0.419919426545" />
+ <shade name="light" weight="0.369720330013" />
+ <shade name="soft" weight="0.210358118801" />
+</color>
+
+<color name="black" weight="0.114311295468">
+ <shade name="warm" weight="0.419788571817" />
+ <shade name="cool" weight="0.308547527681" />
+ <shade name="light" weight="0.271662339363" />
+</color>
+
+<color name="blue" weight="0.0949593832434">
+ <shade name="cool" weight="0.419919426545" />
+ <shade name="light" weight="0.369720330013" />
+ <shade name="soft" weight="0.210358118801" />
+</color>
+
+</colors>

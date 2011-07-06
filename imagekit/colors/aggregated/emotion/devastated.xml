@@ -1,0 +1,33 @@
+<colors query="devastated">
+
+<color name="white" weight="0.395479771299">
+ <shade name="dark" weight="0.46963506663" />
+ <shade name="light" weight="0.425100706864" />
+ <shade name="weak" weight="0.105263032176" />
+</color>
+
+<color name="black" weight="0.214689018705">
+ <shade name="dark" weight="0.46963506663" />
+ <shade name="light" weight="0.425100706864" />
+ <shade name="weak" weight="0.105263032176" />
+</color>
+
+<color name="orange" weight="0.169491330557">
+ <shade name="dark" weight="0.46963506663" />
+ <shade name="light" weight="0.425100706864" />
+ <shade name="weak" weight="0.105263032176" />
+</color>
+
+<color name="green" weight="0.11864393139">
+ <shade name="dark" weight="0.46963506663" />
+ <shade name="light" weight="0.425100706864" />
+ <shade name="weak" weight="0.105263032176" />
+</color>
+
+<color name="pink" weight="0.101694798334">
+ <shade name="dark" weight="0.46963506663" />
+ <shade name="light" weight="0.425100706864" />
+ <shade name="weak" weight="0.105263032176" />
+</color>
+
+</colors>

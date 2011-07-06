@@ -1,0 +1,33 @@
+<colors query="myself">
+
+<color name="blue" weight="0.411522179885">
+ <shade name="cool" weight="0.436892475143" />
+ <shade name="light" weight="0.330096536774" />
+ <shade name="hard" weight="0.233009320076" />
+</color>
+
+<color name="black" weight="0.244627073598">
+ <shade name="warm" weight="0.389174740756" />
+ <shade name="cool" weight="0.347937682133" />
+ <shade name="light" weight="0.262886248723" />
+</color>
+
+<color name="white" weight="0.212162546074">
+ <shade name="warm" weight="0.389174740756" />
+ <shade name="cool" weight="0.347937682133" />
+ <shade name="light" weight="0.262886248723" />
+</color>
+
+<color name="pink" weight="0.0752171095456">
+ <shade name="warm" weight="0.389174740756" />
+ <shade name="cool" weight="0.347937682133" />
+ <shade name="light" weight="0.262886248723" />
+</color>
+
+<color name="orange" weight="0.0564699880176">
+ <shade name="warm" weight="0.389174740756" />
+ <shade name="cool" weight="0.347937682133" />
+ <shade name="light" weight="0.262886248723" />
+</color>
+
+</colors>

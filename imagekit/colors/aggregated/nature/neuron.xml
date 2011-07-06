@@ -1,0 +1,33 @@
+<colors query="neuron">
+
+<color name="black" weight="0.238020766126">
+ <shade name="dark" weight="0.58204003568" />
+ <shade name="light" weight="0.295509807737" />
+ <shade name="weak" weight="0.12244881536" />
+</color>
+
+<color name="red" weight="0.231398257085">
+ <shade name="dark" weight="0.58204003568" />
+ <shade name="light" weight="0.295509807737" />
+ <shade name="weak" weight="0.12244881536" />
+</color>
+
+<color name="blue" weight="0.228671341597">
+ <shade name="dark" weight="0.58204003568" />
+ <shade name="light" weight="0.295509807737" />
+ <shade name="weak" weight="0.12244881536" />
+</color>
+
+<color name="white" weight="0.201791746077">
+ <shade name="dark" weight="0.58204003568" />
+ <shade name="light" weight="0.295509807737" />
+ <shade name="weak" weight="0.12244881536" />
+</color>
+
+<color name="green" weight="0.100116754328">
+ <shade name="dark" weight="0.58204003568" />
+ <shade name="light" weight="0.295509807737" />
+ <shade name="weak" weight="0.12244881536" />
+</color>
+
+</colors>

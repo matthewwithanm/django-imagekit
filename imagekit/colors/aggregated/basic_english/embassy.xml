@@ -1,0 +1,33 @@
+<colors query="Embassy">
+
+<color name="white" weight="0.205413697406">
+ <shade name="dark" weight="0.629722093464" />
+ <shade name="light" weight="0.269521056003" />
+ <shade name="cool" weight="0.100755534954" />
+</color>
+
+<color name="blue" weight="0.202228988919">
+ <shade name="dark" weight="0.629722093464" />
+ <shade name="light" weight="0.269521056003" />
+ <shade name="cool" weight="0.100755534954" />
+</color>
+
+<color name="black" weight="0.200636634676">
+ <shade name="dark" weight="0.629722093464" />
+ <shade name="light" weight="0.269521056003" />
+ <shade name="cool" weight="0.100755534954" />
+</color>
+
+<color name="yellow" weight="0.195859571945">
+ <shade name="dark" weight="0.629722093464" />
+ <shade name="light" weight="0.269521056003" />
+ <shade name="cool" weight="0.100755534954" />
+</color>
+
+<color name="orange" weight="0.195859571945">
+ <shade name="dark" weight="0.629722093464" />
+ <shade name="light" weight="0.269521056003" />
+ <shade name="cool" weight="0.100755534954" />
+</color>
+
+</colors>

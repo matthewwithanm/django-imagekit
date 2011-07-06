@@ -1,0 +1,33 @@
+<colors query="referendum">
+
+<color name="green" weight="0.381606822738">
+ <shade name="fresh" weight="0.727271924951" />
+ <shade name="neutral" weight="0.237100475533" />
+ <shade name="cool" weight="0.0356264963236" />
+</color>
+
+<color name="white" weight="0.224322929583">
+ <shade name="fresh" weight="0.727271924951" />
+ <shade name="neutral" weight="0.237100475533" />
+ <shade name="cool" weight="0.0356264963236" />
+</color>
+
+<color name="black" weight="0.153416256439">
+ <shade name="fresh" weight="0.727271924951" />
+ <shade name="neutral" weight="0.237100475533" />
+ <shade name="cool" weight="0.0356264963236" />
+</color>
+
+<color name="red" weight="0.140094396636">
+ <shade name="fresh" weight="0.727271924951" />
+ <shade name="neutral" weight="0.237100475533" />
+ <shade name="cool" weight="0.0356264963236" />
+</color>
+
+<color name="blue" weight="0.10055855464">
+ <shade name="fresh" weight="0.727271924951" />
+ <shade name="neutral" weight="0.237100475533" />
+ <shade name="cool" weight="0.0356264963236" />
+</color>
+
+</colors>

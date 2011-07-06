@@ -1,0 +1,33 @@
+<colors query="weekend">
+
+<color name="white" weight="0.218749764333">
+ <shade name="cool" weight="0.465423288039" />
+ <shade name="warm" weight="0.36379985693" />
+ <shade name="hard" weight="0.17077547003" />
+</color>
+
+<color name="black" weight="0.211249772413">
+ <shade name="cool" weight="0.465423288039" />
+ <shade name="warm" weight="0.36379985693" />
+ <shade name="hard" weight="0.17077547003" />
+</color>
+
+<color name="purple" weight="0.209999773759">
+ <shade name="cool" weight="0.621186652685" />
+ <shade name="hard" weight="0.227928952665" />
+ <shade name="light" weight="0.15088254613" />
+</color>
+
+<color name="green" weight="0.186249799346">
+ <shade name="cool" weight="0.597682334658" />
+ <shade name="hard" weight="0.219304629254" />
+ <shade name="intense" weight="0.183011257512" />
+</color>
+
+<color name="blue" weight="0.173749812813">
+ <shade name="cool" weight="0.597682334658" />
+ <shade name="hard" weight="0.219304629254" />
+ <shade name="intense" weight="0.183011257512" />
+</color>
+
+</colors>

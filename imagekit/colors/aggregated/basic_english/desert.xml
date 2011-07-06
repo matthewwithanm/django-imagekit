@@ -1,0 +1,33 @@
+<colors query="desert">
+
+<color name="red" weight="0.386968622646">
+ <shade name="dark" weight="0.442466058651" />
+ <shade name="warm" weight="0.301334643392" />
+ <shade name="cool" weight="0.256198019593" />
+</color>
+
+<color name="green" weight="0.235780881705">
+ <shade name="dark" weight="0.562650661748" />
+ <shade name="cool" weight="0.32578766765" />
+ <shade name="bright" weight="0.111560045002" />
+</color>
+
+<color name="white" weight="0.158027186364">
+ <shade name="dark" weight="0.442466058651" />
+ <shade name="warm" weight="0.301334643392" />
+ <shade name="cool" weight="0.256198019593" />
+</color>
+
+<color name="blue" weight="0.130849390076">
+ <shade name="dark" weight="0.562650661748" />
+ <shade name="cool" weight="0.32578766765" />
+ <shade name="bright" weight="0.111560045002" />
+</color>
+
+<color name="black" weight="0.0883728342879">
+ <shade name="dark" weight="0.442466058651" />
+ <shade name="warm" weight="0.301334643392" />
+ <shade name="cool" weight="0.256198019593" />
+</color>
+
+</colors>

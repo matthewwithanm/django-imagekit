@@ -1,0 +1,33 @@
+<colors query="evolution">
+
+<color name="red" weight="0.605468112541">
+ <shade name="neutral" weight="0.728664337573" />
+ <shade name="soft" weight="0.178701464169" />
+ <shade name="weak" weight="0.0926330038756" />
+</color>
+
+<color name="blue" weight="0.242968494194">
+ <shade name="neutral" weight="0.728664337573" />
+ <shade name="soft" weight="0.178701464169" />
+ <shade name="weak" weight="0.0926330038756" />
+</color>
+
+<color name="green" weight="0.0574218145443">
+ <shade name="neutral" weight="0.728664337573" />
+ <shade name="soft" weight="0.178701464169" />
+ <shade name="weak" weight="0.0926330038756" />
+</color>
+
+<color name="black" weight="0.0546874424231">
+ <shade name="neutral" weight="0.728664337573" />
+ <shade name="soft" weight="0.178701464169" />
+ <shade name="weak" weight="0.0926330038756" />
+</color>
+
+<color name="orange" weight="0.0394530834624">
+ <shade name="neutral" weight="0.728664337573" />
+ <shade name="soft" weight="0.178701464169" />
+ <shade name="weak" weight="0.0926330038756" />
+</color>
+
+</colors>

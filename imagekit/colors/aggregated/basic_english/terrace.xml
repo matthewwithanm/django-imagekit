@@ -1,0 +1,33 @@
+<colors query="terrace">
+
+<color name="green" weight="0.827418192318">
+ <shade name="cool" weight="0.484741221237" />
+ <shade name="bright" weight="0.325116993421" />
+ <shade name="light" weight="0.190140624311" />
+</color>
+
+<color name="white" weight="0.108263591643">
+ <shade name="cool" weight="0.484741221237" />
+ <shade name="bright" weight="0.325116993421" />
+ <shade name="light" weight="0.190140624311" />
+</color>
+
+<color name="blue" weight="0.0390401541446">
+ <shade name="cool" weight="0.484741221237" />
+ <shade name="bright" weight="0.325116993421" />
+ <shade name="light" weight="0.190140624311" />
+</color>
+
+<color name="red" weight="0.0154995238843">
+ <shade name="cool" weight="0.484741221237" />
+ <shade name="bright" weight="0.325116993421" />
+ <shade name="light" weight="0.190140624311" />
+</color>
+
+<color name="pink" weight="0.00977751920218">
+ <shade name="cool" weight="0.484741221237" />
+ <shade name="bright" weight="0.325116993421" />
+ <shade name="light" weight="0.190140624311" />
+</color>
+
+</colors>

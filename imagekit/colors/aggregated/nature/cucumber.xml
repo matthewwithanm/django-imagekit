@@ -1,0 +1,33 @@
+<colors query="cucumber">
+
+<color name="green" weight="0.714951047975">
+ <shade name="fresh" weight="0.484321569037" />
+ <shade name="cool" weight="0.445310865148" />
+ <shade name="soft" weight="0.0703664772035" />
+</color>
+
+<color name="purple" weight="0.0951195742089">
+ <shade name="fresh" weight="0.484321569037" />
+ <shade name="cool" weight="0.445310865148" />
+ <shade name="soft" weight="0.0703664772035" />
+</color>
+
+<color name="red" weight="0.0690083185437">
+ <shade name="fresh" weight="0.484321569037" />
+ <shade name="cool" weight="0.445310865148" />
+ <shade name="soft" weight="0.0703664772035" />
+</color>
+
+<color name="black" weight="0.068697470262">
+ <shade name="fresh" weight="0.484321569037" />
+ <shade name="cool" weight="0.445310865148" />
+ <shade name="soft" weight="0.0703664772035" />
+</color>
+
+<color name="pink" weight="0.0522225113304">
+ <shade name="fresh" weight="0.484321569037" />
+ <shade name="cool" weight="0.445310865148" />
+ <shade name="soft" weight="0.0703664772035" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="mollusk">
+
+<color name="white" weight="0.267080404717">
+ <shade name="soft" weight="0.336734205957" />
+ <shade name="cool" weight="0.336734205957" />
+ <shade name="fresh" weight="0.326530139109" />
+</color>
+
+<color name="purple" weight="0.260869232515">
+ <shade name="soft" weight="0.336734205957" />
+ <shade name="cool" weight="0.336734205957" />
+ <shade name="fresh" weight="0.326530139109" />
+</color>
+
+<color name="green" weight="0.207039073424">
+ <shade name="soft" weight="0.336734205957" />
+ <shade name="cool" weight="0.336734205957" />
+ <shade name="fresh" weight="0.326530139109" />
+</color>
+
+<color name="blue" weight="0.153208914334">
+ <shade name="soft" weight="0.336734205957" />
+ <shade name="cool" weight="0.336734205957" />
+ <shade name="fresh" weight="0.326530139109" />
+</color>
+
+<color name="red" weight="0.111801099649">
+ <shade name="soft" weight="0.336734205957" />
+ <shade name="cool" weight="0.336734205957" />
+ <shade name="fresh" weight="0.326530139109" />
+</color>
+
+</colors>

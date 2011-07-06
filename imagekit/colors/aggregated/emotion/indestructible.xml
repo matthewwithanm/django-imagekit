@@ -1,0 +1,33 @@
+<colors query="indestructible">
+
+<color name="yellow" weight="0.351851468107">
+ <shade name="soft" weight="0.744658319436" />
+ <shade name="hard" weight="0.16480143135" />
+ <shade name="light" weight="0.0905390579642" />
+</color>
+
+<color name="black" weight="0.34307954785">
+ <shade name="soft" weight="0.744658319436" />
+ <shade name="hard" weight="0.16480143135" />
+ <shade name="light" weight="0.0905390579642" />
+</color>
+
+<color name="red" weight="0.12962948825">
+ <shade name="soft" weight="0.744658319436" />
+ <shade name="hard" weight="0.16480143135" />
+ <shade name="light" weight="0.0905390579642" />
+</color>
+
+<color name="white" weight="0.11890825238">
+ <shade name="soft" weight="0.744658319436" />
+ <shade name="hard" weight="0.16480143135" />
+ <shade name="light" weight="0.0905390579642" />
+</color>
+
+<color name="blue" weight="0.0565301527707">
+ <shade name="soft" weight="0.744658319436" />
+ <shade name="hard" weight="0.16480143135" />
+ <shade name="light" weight="0.0905390579642" />
+</color>
+
+</colors>

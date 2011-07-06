@@ -1,0 +1,33 @@
+<colors query="vigilant">
+
+<color name="orange" weight="0.512194572279">
+ <shade name="dark" weight="0.441988349563" />
+ <shade name="cool" weight="0.408839223346" />
+ <shade name="bright" weight="0.149171067977" />
+</color>
+
+<color name="black" weight="0.229268046639">
+ <shade name="dark" weight="0.441988349563" />
+ <shade name="cool" weight="0.408839223346" />
+ <shade name="bright" weight="0.149171067977" />
+</color>
+
+<color name="red" weight="0.14146326282">
+ <shade name="dark" weight="0.441988349563" />
+ <shade name="cool" weight="0.408839223346" />
+ <shade name="bright" weight="0.149171067977" />
+</color>
+
+<color name="white" weight="0.0829267402737">
+ <shade name="dark" weight="0.441988349563" />
+ <shade name="cool" weight="0.408839223346" />
+ <shade name="bright" weight="0.149171067977" />
+</color>
+
+<color name="blue" weight="0.0341463048186">
+ <shade name="dark" weight="0.441988349563" />
+ <shade name="cool" weight="0.408839223346" />
+ <shade name="bright" weight="0.149171067977" />
+</color>
+
+</colors>

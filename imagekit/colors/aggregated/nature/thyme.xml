@@ -1,0 +1,33 @@
+<colors query="thyme">
+
+<color name="red" weight="0.34078521234">
+ <shade name="fresh" weight="0.991763138939" />
+ <shade name="dark" weight="0.00657822609397" />
+ <shade name="soft" weight="0.00165763250808" />
+</color>
+
+<color name="orange" weight="0.317282783902">
+ <shade name="fresh" weight="0.991763138939" />
+ <shade name="dark" weight="0.00657822609397" />
+ <shade name="soft" weight="0.00165763250808" />
+</color>
+
+<color name="white" weight="0.292311453688">
+ <shade name="fresh" weight="0.991763138939" />
+ <shade name="dark" weight="0.00657822609397" />
+ <shade name="soft" weight="0.00165763250808" />
+</color>
+
+<color name="green" weight="0.0274390852004">
+ <shade name="fresh" weight="0.991763138939" />
+ <shade name="dark" weight="0.00657822609397" />
+ <shade name="soft" weight="0.00165763250808" />
+</color>
+
+<color name="blue" weight="0.0221804168376">
+ <shade name="fresh" weight="0.991763138939" />
+ <shade name="dark" weight="0.00657822609397" />
+ <shade name="soft" weight="0.00165763250808" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="eyebrow">
+
+<color name="white" weight="0.581474903573">
+ <shade name="light" weight="0.494720278223" />
+ <shade name="cool" weight="0.288385723159" />
+ <shade name="dark" weight="0.216892609782" />
+</color>
+
+<color name="black" weight="0.278096693013">
+ <shade name="light" weight="0.494720278223" />
+ <shade name="cool" weight="0.288385723159" />
+ <shade name="dark" weight="0.216892609782" />
+</color>
+
+<color name="red" weight="0.0698689212198">
+ <shade name="light" weight="0.494720278223" />
+ <shade name="cool" weight="0.288385723159" />
+ <shade name="dark" weight="0.216892609782" />
+</color>
+
+<color name="blue" weight="0.0415995879631">
+ <shade name="light" weight="0.494720278223" />
+ <shade name="cool" weight="0.288385723159" />
+ <shade name="dark" weight="0.216892609782" />
+</color>
+
+<color name="green" weight="0.0289588291898">
+ <shade name="light" weight="0.494720278223" />
+ <shade name="cool" weight="0.288385723159" />
+ <shade name="dark" weight="0.216892609782" />
+</color>
+
+</colors>

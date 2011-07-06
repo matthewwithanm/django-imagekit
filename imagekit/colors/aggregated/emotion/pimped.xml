@@ -1,0 +1,33 @@
+<colors query="pimped">
+
+<color name="black" weight="0.336746823911">
+ <shade name="cool" weight="0.846559982084" />
+ <shade name="hard" weight="0.133786711454" />
+ <shade name="fresh" weight="0.0196522852984" />
+</color>
+
+<color name="green" weight="0.221630208925">
+ <shade name="cool" weight="0.846559982084" />
+ <shade name="hard" weight="0.133786711454" />
+ <shade name="fresh" weight="0.0196522852984" />
+</color>
+
+<color name="pink" weight="0.200737157806">
+ <shade name="cool" weight="0.846559982084" />
+ <shade name="hard" weight="0.133786711454" />
+ <shade name="fresh" weight="0.0196522852984" />
+</color>
+
+<color name="blue" weight="0.122900300698">
+ <shade name="cool" weight="0.846559982084" />
+ <shade name="hard" weight="0.133786711454" />
+ <shade name="fresh" weight="0.0196522852984" />
+</color>
+
+<color name="yellow" weight="0.11798428867">
+ <shade name="cool" weight="0.846559982084" />
+ <shade name="hard" weight="0.133786711454" />
+ <shade name="fresh" weight="0.0196522852984" />
+</color>
+
+</colors>

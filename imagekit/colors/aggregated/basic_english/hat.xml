@@ -1,0 +1,33 @@
+<colors query="hat">
+
+<color name="red" weight="0.963178594927">
+ <shade name="hard" weight="0.843256694809" />
+ <shade name="cool" weight="0.0872844649012" />
+ <shade name="warm" weight="0.0694577224934" />
+</color>
+
+<color name="black" weight="0.016590065018">
+ <shade name="hard" weight="0.843256694809" />
+ <shade name="cool" weight="0.0872844649012" />
+ <shade name="warm" weight="0.0694577224934" />
+</color>
+
+<color name="white" weight="0.012412710517">
+ <shade name="hard" weight="0.843256694809" />
+ <shade name="cool" weight="0.0872844649012" />
+ <shade name="warm" weight="0.0694577224934" />
+</color>
+
+<color name="blue" weight="0.00398638972374">
+ <shade name="hard" weight="0.865011528065" />
+ <shade name="cool" weight="0.0895362809752" />
+ <shade name="soft" weight="0.0454510443255" />
+</color>
+
+<color name="pink" weight="0.00383123084228">
+ <shade name="hard" weight="0.843256694809" />
+ <shade name="cool" weight="0.0872844649012" />
+ <shade name="warm" weight="0.0694577224934" />
+</color>
+
+</colors>

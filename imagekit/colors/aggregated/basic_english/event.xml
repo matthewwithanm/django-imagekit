@@ -1,0 +1,33 @@
+<colors query="event">
+
+<color name="green" weight="0.616694381467">
+ <shade name="cool" weight="0.507435721661" />
+ <shade name="light" weight="0.318022215214" />
+ <shade name="neutral" weight="0.174540390468" />
+</color>
+
+<color name="purple" weight="0.1270867427">
+ <shade name="cool" weight="0.507435721661" />
+ <shade name="light" weight="0.318022215214" />
+ <shade name="neutral" weight="0.174540390468" />
+</color>
+
+<color name="blue" weight="0.0998295324696">
+ <shade name="cool" weight="0.507435721661" />
+ <shade name="light" weight="0.318022215214" />
+ <shade name="neutral" weight="0.174540390468" />
+</color>
+
+<color name="white" weight="0.0851787819706">
+ <shade name="cool" weight="0.507435721661" />
+ <shade name="light" weight="0.318022215214" />
+ <shade name="neutral" weight="0.174540390468" />
+</color>
+
+<color name="black" weight="0.0712094617274">
+ <shade name="cool" weight="0.507435721661" />
+ <shade name="light" weight="0.318022215214" />
+ <shade name="neutral" weight="0.174540390468" />
+</color>
+
+</colors>

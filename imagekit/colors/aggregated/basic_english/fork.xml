@@ -1,0 +1,33 @@
+<colors query="fork">
+
+<color name="red" weight="0.543672093532">
+ <shade name="light" weight="0.472379265772" />
+ <shade name="fresh" weight="0.363448090823" />
+ <shade name="hard" weight="0.164171154662" />
+</color>
+
+<color name="black" weight="0.324772540083">
+ <shade name="light" weight="0.472379265772" />
+ <shade name="fresh" weight="0.363448090823" />
+ <shade name="hard" weight="0.164171154662" />
+</color>
+
+<color name="yellow" weight="0.0701766215466">
+ <shade name="light" weight="0.472379265772" />
+ <shade name="fresh" weight="0.363448090823" />
+ <shade name="hard" weight="0.164171154662" />
+</color>
+
+<color name="white" weight="0.049216631625">
+ <shade name="light" weight="0.472379265772" />
+ <shade name="fresh" weight="0.363448090823" />
+ <shade name="hard" weight="0.164171154662" />
+</color>
+
+<color name="pink" weight="0.0121610863027">
+ <shade name="light" weight="0.472379265772" />
+ <shade name="fresh" weight="0.363448090823" />
+ <shade name="hard" weight="0.164171154662" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="frivolity">
+
+<color name="green" weight="0.624999333334">
+ <shade name="fresh" weight="0.668477561148" />
+ <shade name="dark" weight="0.173912861437" />
+ <shade name="light" weight="0.157608530677" />
+</color>
+
+<color name="black" weight="0.216666435556">
+ <shade name="fresh" weight="0.668477561148" />
+ <shade name="dark" weight="0.173912861437" />
+ <shade name="light" weight="0.157608530677" />
+</color>
+
+<color name="white" weight="0.0749999200001">
+ <shade name="fresh" weight="0.668477561148" />
+ <shade name="dark" weight="0.173912861437" />
+ <shade name="light" weight="0.157608530677" />
+</color>
+
+<color name="pink" weight="0.0499999466667">
+ <shade name="fresh" weight="0.668477561148" />
+ <shade name="dark" weight="0.173912861437" />
+ <shade name="light" weight="0.157608530677" />
+</color>
+
+<color name="red" weight="0.0333332977778">
+ <shade name="fresh" weight="0.668477561148" />
+ <shade name="dark" weight="0.173912861437" />
+ <shade name="light" weight="0.157608530677" />
+</color>
+
+</colors>

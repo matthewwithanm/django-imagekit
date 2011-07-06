@@ -1,0 +1,33 @@
+<colors query="disgrace">
+
+<color name="white" weight="0.536326239299">
+ <shade name="dark" weight="0.674454880406" />
+ <shade name="hard" weight="0.178969523383" />
+ <shade name="fresh" weight="0.146574446451" />
+</color>
+
+<color name="black" weight="0.396008327854">
+ <shade name="dark" weight="0.674454880406" />
+ <shade name="hard" weight="0.178969523383" />
+ <shade name="fresh" weight="0.146574446451" />
+</color>
+
+<color name="blue" weight="0.0271281295459">
+ <shade name="dark" weight="0.674454880406" />
+ <shade name="hard" weight="0.178969523383" />
+ <shade name="fresh" weight="0.146574446451" />
+</color>
+
+<color name="orange" weight="0.0268163119649">
+ <shade name="dark" weight="0.674454880406" />
+ <shade name="hard" weight="0.178969523383" />
+ <shade name="fresh" weight="0.146574446451" />
+</color>
+
+<color name="green" weight="0.0137199735635">
+ <shade name="dark" weight="0.674454880406" />
+ <shade name="hard" weight="0.178969523383" />
+ <shade name="fresh" weight="0.146574446451" />
+</color>
+
+</colors>

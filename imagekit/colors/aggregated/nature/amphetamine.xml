@@ -1,0 +1,33 @@
+<colors query="amphetamine">
+
+<color name="black" weight="0.320413035141">
+ <shade name="bright" weight="0.560095444302" />
+ <shade name="weak" weight="0.367787995615" />
+ <shade name="hard" weight="0.0721152932578" />
+</color>
+
+<color name="white" weight="0.284237369883">
+ <shade name="bright" weight="0.560095444302" />
+ <shade name="weak" weight="0.367787995615" />
+ <shade name="hard" weight="0.0721152932578" />
+</color>
+
+<color name="blue" weight="0.17312639802">
+ <shade name="bright" weight="0.560095444302" />
+ <shade name="weak" weight="0.367787995615" />
+ <shade name="hard" weight="0.0721152932578" />
+</color>
+
+<color name="orange" weight="0.142118684942">
+ <shade name="bright" weight="0.560095444302" />
+ <shade name="weak" weight="0.367787995615" />
+ <shade name="hard" weight="0.0721152932578" />
+</color>
+
+<color name="pink" weight="0.0801032587853">
+ <shade name="bright" weight="0.560095444302" />
+ <shade name="weak" weight="0.367787995615" />
+ <shade name="hard" weight="0.0721152932578" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="patience">
+
+<color name="white" weight="0.310527950111">
+ <shade name="cool" weight="0.630154097378" />
+ <shade name="light" weight="0.238534770892" />
+ <shade name="hard" weight="0.131309597255" />
+</color>
+
+<color name="green" weight="0.242493062633">
+ <shade name="cool" weight="0.581429922609" />
+ <shade name="light" weight="0.22009101259" />
+ <shade name="intense" weight="0.198477648974" />
+</color>
+
+<color name="blue" weight="0.205624995116">
+ <shade name="cool" weight="0.581429922609" />
+ <shade name="light" weight="0.22009101259" />
+ <shade name="intense" weight="0.198477648974" />
+</color>
+
+<color name="black" weight="0.137970190808">
+ <shade name="cool" weight="0.581429922609" />
+ <shade name="light" weight="0.22009101259" />
+ <shade name="intense" weight="0.198477648974" />
+</color>
+
+<color name="red" weight="0.103382622314">
+ <shade name="cool" weight="0.581429922609" />
+ <shade name="light" weight="0.22009101259" />
+ <shade name="intense" weight="0.198477648974" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="squid">
+
+<color name="black" weight="0.591773058574">
+ <shade name="fresh" weight="0.912827998122" />
+ <shade name="dark" weight="0.045347697204" />
+ <shade name="soft" weight="0.0418232647788" />
+</color>
+
+<color name="purple" weight="0.179482817765">
+ <shade name="fresh" weight="0.912827998122" />
+ <shade name="dark" weight="0.045347697204" />
+ <shade name="soft" weight="0.0418232647788" />
+</color>
+
+<color name="green" weight="0.110551010942">
+ <shade name="fresh" weight="0.912827998122" />
+ <shade name="dark" weight="0.045347697204" />
+ <shade name="soft" weight="0.0418232647788" />
+</color>
+
+<color name="orange" weight="0.0874653586574">
+ <shade name="fresh" weight="0.912827998122" />
+ <shade name="dark" weight="0.045347697204" />
+ <shade name="soft" weight="0.0418232647788" />
+</color>
+
+<color name="yellow" weight="0.0307266780414">
+ <shade name="fresh" weight="0.912827998122" />
+ <shade name="dark" weight="0.045347697204" />
+ <shade name="soft" weight="0.0418232647788" />
+</color>
+
+</colors>

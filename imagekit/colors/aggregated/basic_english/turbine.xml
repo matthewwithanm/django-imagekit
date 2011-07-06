@@ -1,0 +1,33 @@
+<colors query="turbine">
+
+<color name="blue" weight="0.284835705531">
+ <shade name="cool" weight="0.837228546215" />
+ <shade name="dark" weight="0.0926405940486" />
+ <shade name="light" weight="0.0701297954948" />
+</color>
+
+<color name="orange" weight="0.269466872499">
+ <shade name="cool" weight="0.837228546215" />
+ <shade name="dark" weight="0.0926405940486" />
+ <shade name="light" weight="0.0701297954948" />
+</color>
+
+<color name="green" weight="0.161885041273">
+ <shade name="cool" weight="0.837228546215" />
+ <shade name="dark" weight="0.0926405940486" />
+ <shade name="light" weight="0.0701297954948" />
+</color>
+
+<color name="red" weight="0.146516208241">
+ <shade name="cool" weight="0.837228546215" />
+ <shade name="dark" weight="0.0926405940486" />
+ <shade name="light" weight="0.0701297954948" />
+</color>
+
+<color name="yellow" weight="0.137294908421">
+ <shade name="cool" weight="0.837228546215" />
+ <shade name="dark" weight="0.0926405940486" />
+ <shade name="light" weight="0.0701297954948" />
+</color>
+
+</colors>

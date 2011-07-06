@@ -1,0 +1,33 @@
+<colors query="absorption">
+
+<color name="red" weight="0.794336709479">
+ <shade name="light" weight="0.746625922768" />
+ <shade name="weak" weight="0.158920377135" />
+ <shade name="intense" weight="0.0944526769766" />
+</color>
+
+<color name="blue" weight="0.181562676452">
+ <shade name="light" weight="0.746625922768" />
+ <shade name="weak" weight="0.158920377135" />
+ <shade name="intense" weight="0.0944526769766" />
+</color>
+
+<color name="black" weight="0.0143264299388">
+ <shade name="light" weight="0.746625922768" />
+ <shade name="weak" weight="0.158920377135" />
+ <shade name="intense" weight="0.0944526769766" />
+</color>
+
+<color name="green" weight="0.00493623526605">
+ <shade name="light" weight="0.746625922768" />
+ <shade name="weak" weight="0.158920377135" />
+ <shade name="intense" weight="0.0944526769766" />
+</color>
+
+<color name="yellow" weight="0.00483694317736">
+ <shade name="light" weight="0.746625922768" />
+ <shade name="weak" weight="0.158920377135" />
+ <shade name="intense" weight="0.0944526769766" />
+</color>
+
+</colors>

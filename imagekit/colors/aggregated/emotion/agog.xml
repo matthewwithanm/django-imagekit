@@ -1,0 +1,33 @@
+<colors query="agog">
+
+<color name="blue" weight="0.718749213868">
+ <shade name="light" weight="0.5384607929" />
+ <shade name="hard" weight="0.230768911243" />
+ <shade name="fresh" weight="0.230768911243" />
+</color>
+
+<color name="red" weight="0.093749897461">
+ <shade name="light" weight="0.5384607929" />
+ <shade name="hard" weight="0.230768911243" />
+ <shade name="fresh" weight="0.230768911243" />
+</color>
+
+<color name="black" weight="0.093749897461">
+ <shade name="light" weight="0.5384607929" />
+ <shade name="hard" weight="0.230768911243" />
+ <shade name="fresh" weight="0.230768911243" />
+</color>
+
+<color name="cyan" weight="0.0624999316407">
+ <shade name="light" weight="0.5384607929" />
+ <shade name="hard" weight="0.230768911243" />
+ <shade name="fresh" weight="0.230768911243" />
+</color>
+
+<color name="yellow" weight="0.0312499658203">
+ <shade name="light" weight="0.5384607929" />
+ <shade name="hard" weight="0.230768911243" />
+ <shade name="fresh" weight="0.230768911243" />
+</color>
+
+</colors>

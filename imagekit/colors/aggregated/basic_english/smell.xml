@@ -1,0 +1,33 @@
+<colors query="smell">
+
+<color name="green" weight="0.5614351443">
+ <shade name="fresh" weight="0.785339153787" />
+ <shade name="light" weight="0.132853206849" />
+ <shade name="intense" weight="0.0818061618528" />
+</color>
+
+<color name="black" weight="0.154624761053">
+ <shade name="fresh" weight="0.606979579999" />
+ <shade name="warm" weight="0.290338565766" />
+ <shade name="light" weight="0.102680712283" />
+</color>
+
+<color name="red" weight="0.107685101448">
+ <shade name="fresh" weight="0.606979579999" />
+ <shade name="warm" weight="0.290338565766" />
+ <shade name="light" weight="0.102680712283" />
+</color>
+
+<color name="yellow" weight="0.0888171990574">
+ <shade name="fresh" weight="0.606979579999" />
+ <shade name="warm" weight="0.290338565766" />
+ <shade name="light" weight="0.102680712283" />
+</color>
+
+<color name="blue" weight="0.0874366208337">
+ <shade name="fresh" weight="0.785339153787" />
+ <shade name="light" weight="0.132853206849" />
+ <shade name="intense" weight="0.0818061618528" />
+</color>
+
+</colors>

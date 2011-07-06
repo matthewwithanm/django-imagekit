@@ -1,0 +1,33 @@
+<colors query="triumph">
+
+<color name="yellow" weight="0.400110478061">
+ <shade name="dark" weight="0.676019566459" />
+ <shade name="fresh" weight="0.163265102843" />
+ <shade name="light" weight="0.160714085611" />
+</color>
+
+<color name="green" weight="0.319672323027">
+ <shade name="dark" weight="0.676019566459" />
+ <shade name="fresh" weight="0.163265102843" />
+ <shade name="light" weight="0.160714085611" />
+</color>
+
+<color name="pink" weight="0.136606177085">
+ <shade name="dark" weight="0.676019566459" />
+ <shade name="fresh" weight="0.163265102843" />
+ <shade name="light" weight="0.160714085611" />
+</color>
+
+<color name="purple" weight="0.0943068024547">
+ <shade name="dark" weight="0.676019566459" />
+ <shade name="fresh" weight="0.163265102843" />
+ <shade name="light" weight="0.160714085611" />
+</color>
+
+<color name="black" weight="0.0493030415774">
+ <shade name="dark" weight="0.676019566459" />
+ <shade name="fresh" weight="0.163265102843" />
+ <shade name="light" weight="0.160714085611" />
+</color>
+
+</colors>

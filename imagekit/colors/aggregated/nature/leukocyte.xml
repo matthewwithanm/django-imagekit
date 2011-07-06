@@ -1,0 +1,33 @@
+<colors query="leukocyte">
+
+<color name="orange" weight="0.835379983581">
+ <shade name="intense" weight="0.548213679742" />
+ <shade name="fresh" weight="0.310713942264" />
+ <shade name="weak" weight="0.141071272637" />
+</color>
+
+<color name="white" weight="0.0884519982615">
+ <shade name="fresh" weight="0.59793687243" />
+ <shade name="weak" weight="0.271477085758" />
+ <shade name="neutral" weight="0.130583914669" />
+</color>
+
+<color name="blue" weight="0.0466829990824">
+ <shade name="intense" weight="0.548213679742" />
+ <shade name="fresh" weight="0.310713942264" />
+ <shade name="weak" weight="0.141071272637" />
+</color>
+
+<color name="red" weight="0.0196559996137">
+ <shade name="intense" weight="0.548213679742" />
+ <shade name="fresh" weight="0.310713942264" />
+ <shade name="weak" weight="0.141071272637" />
+</color>
+
+<color name="green" weight="0.00982799980683">
+ <shade name="intense" weight="0.548213679742" />
+ <shade name="fresh" weight="0.310713942264" />
+ <shade name="weak" weight="0.141071272637" />
+</color>
+
+</colors>

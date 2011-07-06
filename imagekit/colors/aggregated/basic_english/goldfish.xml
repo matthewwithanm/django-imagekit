@@ -1,0 +1,33 @@
+<colors query="goldfish">
+
+<color name="blue" weight="0.766802572009">
+ <shade name="soft" weight="0.363685935499" />
+ <shade name="cool" weight="0.338299663826" />
+ <shade name="intense" weight="0.29801275443" />
+</color>
+
+<color name="white" weight="0.111707041354">
+ <shade name="soft" weight="0.375497937259" />
+ <shade name="cool" weight="0.349287155599" />
+ <shade name="bright" weight="0.27521320743" />
+</color>
+
+<color name="yellow" weight="0.0448090391874">
+ <shade name="soft" weight="0.363685935499" />
+ <shade name="cool" weight="0.338299663826" />
+ <shade name="intense" weight="0.29801275443" />
+</color>
+
+<color name="pink" weight="0.0384979069075">
+ <shade name="soft" weight="0.375497937259" />
+ <shade name="cool" weight="0.349287155599" />
+ <shade name="bright" weight="0.27521320743" />
+</color>
+
+<color name="purple" weight="0.0381823502935">
+ <shade name="soft" weight="0.375497937259" />
+ <shade name="cool" weight="0.349287155599" />
+ <shade name="bright" weight="0.27521320743" />
+</color>
+
+</colors>

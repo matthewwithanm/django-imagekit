@@ -1,0 +1,33 @@
+<colors query="pig">
+
+<color name="pink" weight="0.418728102469">
+ <shade name="fresh" weight="0.622929760421" />
+ <shade name="soft" weight="0.314569181342" />
+ <shade name="hard" weight="0.0624999294509" />
+</color>
+
+<color name="black" weight="0.264560028378">
+ <shade name="fresh" weight="0.622929760421" />
+ <shade name="soft" weight="0.314569181342" />
+ <shade name="hard" weight="0.0624999294509" />
+</color>
+
+<color name="white" weight="0.147316159687">
+ <shade name="fresh" weight="0.622929760421" />
+ <shade name="soft" weight="0.314569181342" />
+ <shade name="hard" weight="0.0624999294509" />
+</color>
+
+<color name="red" weight="0.0949751468782">
+ <shade name="fresh" weight="0.622929760421" />
+ <shade name="soft" weight="0.314569181342" />
+ <shade name="hard" weight="0.0624999294509" />
+</color>
+
+<color name="blue" weight="0.0744194036661">
+ <shade name="fresh" weight="0.622929760421" />
+ <shade name="soft" weight="0.314569181342" />
+ <shade name="hard" weight="0.0624999294509" />
+</color>
+
+</colors>

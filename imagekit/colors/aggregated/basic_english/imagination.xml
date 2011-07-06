@@ -1,0 +1,33 @@
+<colors query="imagination">
+
+<color name="black" weight="0.359214875493">
+ <shade name="dark" weight="0.482871875856" />
+ <shade name="weak" weight="0.39826611983" />
+ <shade name="fresh" weight="0.118860769441" />
+</color>
+
+<color name="green" weight="0.301187857144">
+ <shade name="dark" weight="0.482871875856" />
+ <shade name="weak" weight="0.39826611983" />
+ <shade name="fresh" weight="0.118860769441" />
+</color>
+
+<color name="white" weight="0.25725311468">
+ <shade name="dark" weight="0.482871875856" />
+ <shade name="weak" weight="0.39826611983" />
+ <shade name="fresh" weight="0.118860769441" />
+</color>
+
+<color name="blue" weight="0.052500635649">
+ <shade name="dark" weight="0.482871875856" />
+ <shade name="weak" weight="0.39826611983" />
+ <shade name="fresh" weight="0.118860769441" />
+</color>
+
+<color name="purple" weight="0.0298424665794">
+ <shade name="dark" weight="0.482871875856" />
+ <shade name="weak" weight="0.39826611983" />
+ <shade name="fresh" weight="0.118860769441" />
+</color>
+
+</colors>

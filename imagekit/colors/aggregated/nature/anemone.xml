@@ -1,0 +1,33 @@
+<colors query="anemone">
+
+<color name="green" weight="0.229681730897">
+ <shade name="bright" weight="0.599399910779" />
+ <shade name="soft" weight="0.313685953308" />
+ <shade name="cool" weight="0.086912987063" />
+</color>
+
+<color name="red" weight="0.204946775262">
+ <shade name="bright" weight="0.599399910779" />
+ <shade name="soft" weight="0.313685953308" />
+ <shade name="cool" weight="0.086912987063" />
+</color>
+
+<color name="purple" weight="0.196112862535">
+ <shade name="bright" weight="0.599399910779" />
+ <shade name="soft" weight="0.313685953308" />
+ <shade name="cool" weight="0.086912987063" />
+</color>
+
+<color name="white" weight="0.185512167263">
+ <shade name="bright" weight="0.599399910779" />
+ <shade name="soft" weight="0.313685953308" />
+ <shade name="cool" weight="0.086912987063" />
+</color>
+
+<color name="blue" weight="0.183745384717">
+ <shade name="bright" weight="0.599399910779" />
+ <shade name="soft" weight="0.313685953308" />
+ <shade name="cool" weight="0.086912987063" />
+</color>
+
+</colors>

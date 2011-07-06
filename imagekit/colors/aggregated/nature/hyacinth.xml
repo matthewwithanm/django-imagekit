@@ -1,0 +1,33 @@
+<colors query="hyacinth">
+
+<color name="blue" weight="0.481072044578">
+ <shade name="light" weight="0.869564328054" />
+ <shade name="dark" weight="0.100449672379" />
+ <shade name="fresh" weight="0.0299849768295" />
+</color>
+
+<color name="white" weight="0.227129096457">
+ <shade name="light" weight="0.869564328054" />
+ <shade name="dark" weight="0.100449672379" />
+ <shade name="fresh" weight="0.0299849768295" />
+</color>
+
+<color name="purple" weight="0.21451081332">
+ <shade name="light" weight="0.869564328054" />
+ <shade name="dark" weight="0.100449672379" />
+ <shade name="fresh" weight="0.0299849768295" />
+</color>
+
+<color name="black" weight="0.0531545177124">
+ <shade name="light" weight="0.869564328054" />
+ <shade name="dark" weight="0.100449672379" />
+ <shade name="fresh" weight="0.0299849768295" />
+</color>
+
+<color name="yellow" weight="0.0241324664985">
+ <shade name="light" weight="0.869564328054" />
+ <shade name="dark" weight="0.100449672379" />
+ <shade name="fresh" weight="0.0299849768295" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="dressing (up)">
+
+<color name="white" weight="0.533187648767">
+ <shade name="cool" weight="0.807691422338" />
+ <shade name="hard" weight="0.163461359283" />
+ <shade name="soft" weight="0.0288461222264" />
+</color>
+
+<color name="pink" weight="0.219531853344">
+ <shade name="cool" weight="0.807691422338" />
+ <shade name="hard" weight="0.163461359283" />
+ <shade name="soft" weight="0.0288461222264" />
+</color>
+
+<color name="green" weight="0.100380735916">
+ <shade name="cool" weight="0.807691422338" />
+ <shade name="hard" weight="0.163461359283" />
+ <shade name="soft" weight="0.0288461222264" />
+</color>
+
+<color name="black" weight="0.0772578021683">
+ <shade name="cool" weight="0.807691422338" />
+ <shade name="hard" weight="0.163461359283" />
+ <shade name="soft" weight="0.0288461222264" />
+</color>
+
+<color name="blue" weight="0.0696408357574">
+ <shade name="cool" weight="0.807691422338" />
+ <shade name="hard" weight="0.163461359283" />
+ <shade name="soft" weight="0.0288461222264" />
+</color>
+
+</colors>

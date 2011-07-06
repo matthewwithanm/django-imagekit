@@ -1,0 +1,33 @@
+<colors query="pitied">
+
+<color name="black" weight="0.36842066482">
+ <shade name="light" weight="0.666665822223" />
+ <shade name="weak" weight="0.199999746667" />
+ <shade name="hard" weight="0.133333164445" />
+</color>
+
+<color name="blue" weight="0.263157617729">
+ <shade name="light" weight="0.666665822223" />
+ <shade name="weak" weight="0.199999746667" />
+ <shade name="hard" weight="0.133333164445" />
+</color>
+
+<color name="red" weight="0.157894570637">
+ <shade name="light" weight="0.666665822223" />
+ <shade name="weak" weight="0.199999746667" />
+ <shade name="hard" weight="0.133333164445" />
+</color>
+
+<color name="pink" weight="0.105263047092">
+ <shade name="light" weight="0.666665822223" />
+ <shade name="weak" weight="0.199999746667" />
+ <shade name="hard" weight="0.133333164445" />
+</color>
+
+<color name="cyan" weight="0.105263047092">
+ <shade name="light" weight="0.666665822223" />
+ <shade name="weak" weight="0.199999746667" />
+ <shade name="hard" weight="0.133333164445" />
+</color>
+
+</colors>

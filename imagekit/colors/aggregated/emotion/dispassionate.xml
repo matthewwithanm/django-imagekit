@@ -1,0 +1,33 @@
+<colors query="dispassionate">
+
+<color name="white" weight="0.333332944445">
+ <shade name="cool" weight="0.947665239771" />
+ <shade name="neutral" weight="0.0361688865499" />
+ <shade name="hard" weight="0.0161648654972" />
+</color>
+
+<color name="black" weight="0.333332944445">
+ <shade name="cool" weight="0.947665239771" />
+ <shade name="neutral" weight="0.0361688865499" />
+ <shade name="hard" weight="0.0161648654972" />
+</color>
+
+<color name="green" weight="0.166666472222">
+ <shade name="cool" weight="0.947665239771" />
+ <shade name="neutral" weight="0.0361688865499" />
+ <shade name="hard" weight="0.0161648654972" />
+</color>
+
+<color name="purple" weight="0.0833332361112">
+ <shade name="cool" weight="0.947665239771" />
+ <shade name="neutral" weight="0.0361688865499" />
+ <shade name="hard" weight="0.0161648654972" />
+</color>
+
+<color name="orange" weight="0.0833332361112">
+ <shade name="cool" weight="0.947665239771" />
+ <shade name="neutral" weight="0.0361688865499" />
+ <shade name="hard" weight="0.0161648654972" />
+</color>
+
+</colors>

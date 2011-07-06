@@ -1,0 +1,33 @@
+<colors query="radio">
+
+<color name="red" weight="0.341793169561">
+ <shade name="light" weight="0.438321031315" />
+ <shade name="cool" weight="0.312147191586" />
+ <shade name="weak" weight="0.249529901398" />
+</color>
+
+<color name="black" weight="0.301184080108">
+ <shade name="light" weight="0.438321031315" />
+ <shade name="cool" weight="0.312147191586" />
+ <shade name="weak" weight="0.249529901398" />
+</color>
+
+<color name="blue" weight="0.194585220295">
+ <shade name="light" weight="0.438321031315" />
+ <shade name="cool" weight="0.312147191586" />
+ <shade name="weak" weight="0.249529901398" />
+</color>
+
+<color name="white" weight="0.10203033725">
+ <shade name="light" weight="0.438321031315" />
+ <shade name="cool" weight="0.312147191586" />
+ <shade name="weak" weight="0.249529901398" />
+</color>
+
+<color name="yellow" weight="0.060406020561">
+ <shade name="light" weight="0.438321031315" />
+ <shade name="cool" weight="0.312147191586" />
+ <shade name="weak" weight="0.249529901398" />
+</color>
+
+</colors>

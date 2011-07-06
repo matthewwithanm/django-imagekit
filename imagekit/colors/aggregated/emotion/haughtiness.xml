@@ -1,0 +1,33 @@
+<colors query="haughtiness">
+
+<color name="purple" weight="0.296295978052">
+ <shade name="cool" weight="0.833332111113" />
+ <shade name="hard" weight="0.0999998533335" />
+ <shade name="fresh" weight="0.066666568889" />
+</color>
+
+<color name="green" weight="0.259258980796">
+ <shade name="cool" weight="0.69444359568" />
+ <shade name="intense" weight="0.222221950618" />
+ <shade name="hard" weight="0.0833332314816" />
+</color>
+
+<color name="white" weight="0.222221983539">
+ <shade name="cool" weight="0.833332111113" />
+ <shade name="hard" weight="0.0999998533335" />
+ <shade name="warm" weight="0.066666568889" />
+</color>
+
+<color name="red" weight="0.11111099177">
+ <shade name="cool" weight="0.69444359568" />
+ <shade name="intense" weight="0.222221950618" />
+ <shade name="hard" weight="0.0833332314816" />
+</color>
+
+<color name="black" weight="0.11111099177">
+ <shade name="cool" weight="0.69444359568" />
+ <shade name="intense" weight="0.222221950618" />
+ <shade name="hard" weight="0.0833332314816" />
+</color>
+
+</colors>

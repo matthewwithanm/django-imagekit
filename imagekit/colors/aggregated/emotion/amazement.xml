@@ -1,0 +1,33 @@
+<colors query="amazement">
+
+<color name="black" weight="0.447976406036">
+ <shade name="intense" weight="0.469861835039" />
+ <shade name="fresh" weight="0.429520162334" />
+ <shade name="soft" weight="0.100616877806" />
+</color>
+
+<color name="blue" weight="0.365606550733">
+ <shade name="intense" weight="0.469861835039" />
+ <shade name="fresh" weight="0.429520162334" />
+ <shade name="soft" weight="0.100616877806" />
+</color>
+
+<color name="orange" weight="0.101155962653">
+ <shade name="intense" weight="0.469861835039" />
+ <shade name="fresh" weight="0.429520162334" />
+ <shade name="soft" weight="0.100616877806" />
+</color>
+
+<color name="green" weight="0.0520230665075">
+ <shade name="intense" weight="0.469861835039" />
+ <shade name="fresh" weight="0.429520162334" />
+ <shade name="soft" weight="0.100616877806" />
+</color>
+
+<color name="white" weight="0.0332369591575">
+ <shade name="fresh" weight="0.763067615118" />
+ <shade name="soft" weight="0.178751750724" />
+ <shade name="dark" weight="0.0581786358488" />
+</color>
+
+</colors>

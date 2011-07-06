@@ -1,0 +1,33 @@
+<colors query="airman">
+
+<color name="black" weight="0.727409289294">
+ <shade name="cool" weight="0.763156830334" />
+ <shade name="light" weight="0.118420887466" />
+ <shade name="dark" weight="0.118420887466" />
+</color>
+
+<color name="green" weight="0.224263555973">
+ <shade name="cool" weight="0.763156830334" />
+ <shade name="light" weight="0.118420887466" />
+ <shade name="dark" weight="0.118420887466" />
+</color>
+
+<color name="white" weight="0.0251698716019">
+ <shade name="cool" weight="0.763156830334" />
+ <shade name="light" weight="0.118420887466" />
+ <shade name="dark" weight="0.118420887466" />
+</color>
+
+<color name="blue" weight="0.0151019229611">
+ <shade name="cool" weight="0.763156830334" />
+ <shade name="light" weight="0.118420887466" />
+ <shade name="dark" weight="0.118420887466" />
+</color>
+
+<color name="red" weight="0.0080543589126">
+ <shade name="cool" weight="0.763156830334" />
+ <shade name="light" weight="0.118420887466" />
+ <shade name="dark" weight="0.118420887466" />
+</color>
+
+</colors>

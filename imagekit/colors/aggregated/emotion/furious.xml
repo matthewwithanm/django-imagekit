@@ -1,0 +1,33 @@
+<colors query="furious">
+
+<color name="red" weight="0.357883414252">
+ <shade name="intense" weight="0.382270877054" />
+ <shade name="light" weight="0.362880325319" />
+ <shade name="dark" weight="0.254847251369" />
+</color>
+
+<color name="black" weight="0.293049462394">
+ <shade name="intense" weight="0.382270877054" />
+ <shade name="light" weight="0.362880325319" />
+ <shade name="dark" weight="0.254847251369" />
+</color>
+
+<color name="green" weight="0.142375358278">
+ <shade name="intense" weight="0.382270877054" />
+ <shade name="light" weight="0.362880325319" />
+ <shade name="dark" weight="0.254847251369" />
+</color>
+
+<color name="yellow" weight="0.109439710735">
+ <shade name="intense" weight="0.382270877054" />
+ <shade name="light" weight="0.362880325319" />
+ <shade name="dark" weight="0.254847251369" />
+</color>
+
+<color name="blue" weight="0.0972509277858">
+ <shade name="intense" weight="0.382270877054" />
+ <shade name="light" weight="0.362880325319" />
+ <shade name="dark" weight="0.254847251369" />
+</color>
+
+</colors>

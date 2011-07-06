@@ -1,0 +1,33 @@
+<colors query="ramshackle">
+
+<color name="purple" weight="0.794819900145">
+ <shade name="dark" weight="0.522123260789" />
+ <shade name="cool" weight="0.407079152479" />
+ <shade name="light" weight="0.0707963743442" />
+</color>
+
+<color name="white" weight="0.131473968445">
+ <shade name="dark" weight="0.517543237689" />
+ <shade name="cool" weight="0.403508287012" />
+ <shade name="warm" weight="0.0789472735458" />
+</color>
+
+<color name="red" weight="0.0478087157982">
+ <shade name="dark" weight="0.517543237689" />
+ <shade name="cool" weight="0.403508287012" />
+ <shade name="warm" weight="0.0789472735458" />
+</color>
+
+<color name="black" weight="0.0139442087745">
+ <shade name="dark" weight="0.517543237689" />
+ <shade name="cool" weight="0.403508287012" />
+ <shade name="warm" weight="0.0789472735458" />
+</color>
+
+<color name="pink" weight="0.0119521789496">
+ <shade name="dark" weight="0.517543237689" />
+ <shade name="cool" weight="0.403508287012" />
+ <shade name="warm" weight="0.0789472735458" />
+</color>
+
+</colors>

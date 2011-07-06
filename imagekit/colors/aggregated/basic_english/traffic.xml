@@ -1,0 +1,33 @@
+<colors query="traffic">
+
+<color name="red" weight="0.428753769951">
+ <shade name="light" weight="0.874707805275" />
+ <shade name="intense" weight="0.0638106513684" />
+ <shade name="dark" weight="0.061480487133" />
+</color>
+
+<color name="green" weight="0.210537298976">
+ <shade name="light" weight="0.874707805275" />
+ <shade name="intense" weight="0.0638106513684" />
+ <shade name="dark" weight="0.061480487133" />
+</color>
+
+<color name="orange" weight="0.130759234318">
+ <shade name="light" weight="0.874707805275" />
+ <shade name="intense" weight="0.0638106513684" />
+ <shade name="dark" weight="0.061480487133" />
+</color>
+
+<color name="yellow" weight="0.119453786653">
+ <shade name="light" weight="0.874707805275" />
+ <shade name="intense" weight="0.0638106513684" />
+ <shade name="dark" weight="0.061480487133" />
+</color>
+
+<color name="black" weight="0.110494752654">
+ <shade name="light" weight="0.874707805275" />
+ <shade name="intense" weight="0.0638106513684" />
+ <shade name="dark" weight="0.061480487133" />
+</color>
+
+</colors>

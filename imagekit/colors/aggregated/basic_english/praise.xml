@@ -1,0 +1,33 @@
+<colors query="praise">
+
+<color name="green" weight="0.319688861352">
+ <shade name="soft" weight="0.447912753262" />
+ <shade name="intense" weight="0.322913845375" />
+ <shade name="weak" weight="0.22916466446" />
+</color>
+
+<color name="black" weight="0.214221414569">
+ <shade name="warm" weight="0.901638339057" />
+ <shade name="soft" weight="0.0571554524513" />
+ <shade name="intense" weight="0.0412050936277" />
+</color>
+
+<color name="white" weight="0.19838635882">
+ <shade name="warm" weight="0.912555024118" />
+ <shade name="soft" weight="0.0578474683593" />
+ <shade name="weak" weight="0.0295963791606" />
+</color>
+
+<color name="purple" weight="0.160740754586">
+ <shade name="soft" weight="0.499028024452" />
+ <shade name="weak" weight="0.255316663673" />
+ <shade name="cool" weight="0.245645577928" />
+</color>
+
+<color name="yellow" weight="0.106961319966">
+ <shade name="warm" weight="0.901638339057" />
+ <shade name="soft" weight="0.0571554524513" />
+ <shade name="intense" weight="0.0412050936277" />
+</color>
+
+</colors>

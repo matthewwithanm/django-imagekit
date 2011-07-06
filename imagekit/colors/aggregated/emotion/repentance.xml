@@ -1,0 +1,33 @@
+<colors query="repentance">
+
+<color name="white" weight="0.424778276138">
+ <shade name="cool" weight="0.971911615437" />
+ <shade name="dark" weight="0.0171644941258" />
+ <shade name="fresh" weight="0.0109228598983" />
+</color>
+
+<color name="black" weight="0.362831444201">
+ <shade name="cool" weight="0.970505400858" />
+ <shade name="dark" weight="0.0171396596023" />
+ <shade name="intense" weight="0.0123539104926" />
+</color>
+
+<color name="red" weight="0.0884954741954">
+ <shade name="cool" weight="0.970505400858" />
+ <shade name="dark" weight="0.0171396596023" />
+ <shade name="intense" weight="0.0123539104926" />
+</color>
+
+<color name="purple" weight="0.0619468319368">
+ <shade name="cool" weight="0.971911615437" />
+ <shade name="dark" weight="0.0171644941258" />
+ <shade name="fresh" weight="0.0109228598983" />
+</color>
+
+<color name="pink" weight="0.0619468319368">
+ <shade name="cool" weight="0.971911615437" />
+ <shade name="dark" weight="0.0171644941258" />
+ <shade name="fresh" weight="0.0109228598983" />
+</color>
+
+</colors>

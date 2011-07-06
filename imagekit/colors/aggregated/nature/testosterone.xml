@@ -1,0 +1,33 @@
+<colors query="testosterone">
+
+<color name="blue" weight="0.453825332248">
+ <shade name="weak" weight="0.497229082214" />
+ <shade name="cool" weight="0.256232256851" />
+ <shade name="fresh" weight="0.246536982268" />
+</color>
+
+<color name="black" weight="0.167985733448">
+ <shade name="weak" weight="0.497229082214" />
+ <shade name="cool" weight="0.256232256851" />
+ <shade name="fresh" weight="0.246536982268" />
+</color>
+
+<color name="white" weight="0.145998072002">
+ <shade name="weak" weight="0.497229082214" />
+ <shade name="cool" weight="0.256232256851" />
+ <shade name="fresh" weight="0.246536982268" />
+</color>
+
+<color name="red" weight="0.131925968677">
+ <shade name="weak" weight="0.497229082214" />
+ <shade name="cool" weight="0.256232256851" />
+ <shade name="fresh" weight="0.246536982268" />
+</color>
+
+<color name="yellow" weight="0.100263736194">
+ <shade name="weak" weight="0.497229082214" />
+ <shade name="cool" weight="0.256232256851" />
+ <shade name="fresh" weight="0.246536982268" />
+</color>
+
+</colors>

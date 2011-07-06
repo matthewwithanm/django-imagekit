@@ -1,0 +1,33 @@
+<colors query="marigold">
+
+<color name="yellow" weight="0.513775761192">
+ <shade name="warm" weight="0.633560726908" />
+ <shade name="soft" weight="0.190068218073" />
+ <shade name="bright" weight="0.176369607761" />
+</color>
+
+<color name="white" weight="0.243651806832">
+ <shade name="warm" weight="0.633560726908" />
+ <shade name="soft" weight="0.190068218073" />
+ <shade name="bright" weight="0.176369607761" />
+</color>
+
+<color name="blue" weight="0.0950836319346">
+ <shade name="soft" weight="0.35910610315" />
+ <shade name="bright" weight="0.333224582202" />
+ <shade name="fresh" weight="0.307666580266" />
+</color>
+
+<color name="black" weight="0.0837384258515">
+ <shade name="warm" weight="0.633560726908" />
+ <shade name="soft" weight="0.190068218073" />
+ <shade name="bright" weight="0.176369607761" />
+</color>
+
+<color name="red" weight="0.0637492532289">
+ <shade name="warm" weight="0.633560726908" />
+ <shade name="soft" weight="0.190068218073" />
+ <shade name="bright" weight="0.176369607761" />
+</color>
+
+</colors>

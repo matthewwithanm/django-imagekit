@@ -1,0 +1,33 @@
+<colors query="raspberry">
+
+<color name="red" weight="0.429122457294">
+ <shade name="fresh" weight="0.864421255792" />
+ <shade name="light" weight="0.0800727057997" />
+ <shade name="dark" weight="0.055504943793" />
+</color>
+
+<color name="black" weight="0.324086207287">
+ <shade name="fresh" weight="0.864421255792" />
+ <shade name="light" weight="0.0800727057997" />
+ <shade name="dark" weight="0.055504943793" />
+</color>
+
+<color name="blue" weight="0.194810822663">
+ <shade name="fresh" weight="0.864421255792" />
+ <shade name="light" weight="0.0800727057997" />
+ <shade name="dark" weight="0.055504943793" />
+</color>
+
+<color name="orange" weight="0.0285483141045">
+ <shade name="fresh" weight="0.864421255792" />
+ <shade name="light" weight="0.0800727057997" />
+ <shade name="dark" weight="0.055504943793" />
+</color>
+
+<color name="pink" weight="0.0234311634631">
+ <shade name="fresh" weight="0.864421255792" />
+ <shade name="light" weight="0.0800727057997" />
+ <shade name="dark" weight="0.055504943793" />
+</color>
+
+</colors>

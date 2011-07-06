@@ -1,0 +1,33 @@
+<colors query="chameleon">
+
+<color name="green" weight="0.499178453218">
+ <shade name="light" weight="0.432525460342" />
+ <shade name="cool" weight="0.397923423515" />
+ <shade name="dark" weight="0.169549980454" />
+</color>
+
+<color name="blue" weight="0.362889599215">
+ <shade name="light" weight="0.432525460342" />
+ <shade name="cool" weight="0.397923423515" />
+ <shade name="dark" weight="0.169549980454" />
+</color>
+
+<color name="black" weight="0.0794744642624">
+ <shade name="light" weight="0.432525460342" />
+ <shade name="cool" weight="0.397923423515" />
+ <shade name="dark" weight="0.169549980454" />
+</color>
+
+<color name="white" weight="0.0311986533261">
+ <shade name="light" weight="0.432525460342" />
+ <shade name="cool" weight="0.397923423515" />
+ <shade name="dark" weight="0.169549980454" />
+</color>
+
+<color name="purple" weight="0.0272577708007">
+ <shade name="light" weight="0.432525460342" />
+ <shade name="cool" weight="0.397923423515" />
+ <shade name="dark" weight="0.169549980454" />
+</color>
+
+</colors>

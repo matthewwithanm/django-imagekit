@@ -1,0 +1,33 @@
+<colors query="pine">
+
+<color name="white" weight="0.528089346731">
+ <shade name="dark" weight="0.38276385456" />
+ <shade name="fresh" weight="0.360380003416" />
+ <shade name="light" weight="0.256854691876" />
+</color>
+
+<color name="red" weight="0.178370603816">
+ <shade name="dark" weight="0.38276385456" />
+ <shade name="fresh" weight="0.360380003416" />
+ <shade name="light" weight="0.256854691876" />
+</color>
+
+<color name="yellow" weight="0.158988601197">
+ <shade name="dark" weight="0.38276385456" />
+ <shade name="fresh" weight="0.360380003416" />
+ <shade name="light" weight="0.256854691876" />
+</color>
+
+<color name="black" weight="0.0966291145081">
+ <shade name="dark" weight="0.38276385456" />
+ <shade name="fresh" weight="0.360380003416" />
+ <shade name="light" weight="0.256854691876" />
+</color>
+
+<color name="green" weight="0.0379213094727">
+ <shade name="dark" weight="0.38276385456" />
+ <shade name="fresh" weight="0.360380003416" />
+ <shade name="light" weight="0.256854691876" />
+</color>
+
+</colors>

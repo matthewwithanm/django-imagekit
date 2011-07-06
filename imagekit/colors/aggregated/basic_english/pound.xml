@@ -1,0 +1,33 @@
+<colors query="pound">
+
+<color name="pink" weight="0.425180824013">
+ <shade name="light" weight="0.478145032738" />
+ <shade name="hard" weight="0.298012832039" />
+ <shade name="weak" weight="0.223840749398" />
+</color>
+
+<color name="green" weight="0.237310227356">
+ <shade name="light" weight="0.478145032738" />
+ <shade name="hard" weight="0.298012832039" />
+ <shade name="weak" weight="0.223840749398" />
+</color>
+
+<color name="orange" weight="0.207646448936">
+ <shade name="light" weight="0.478145032738" />
+ <shade name="hard" weight="0.298012832039" />
+ <shade name="weak" weight="0.223840749398" />
+</color>
+
+<color name="black" weight="0.0741594460487">
+ <shade name="light" weight="0.478145032738" />
+ <shade name="hard" weight="0.298012832039" />
+ <shade name="weak" weight="0.223840749398" />
+</color>
+
+<color name="white" weight="0.055701983921">
+ <shade name="light" weight="0.478145032738" />
+ <shade name="hard" weight="0.298012832039" />
+ <shade name="weak" weight="0.223840749398" />
+</color>
+
+</colors>

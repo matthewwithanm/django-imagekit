@@ -1,0 +1,33 @@
+<colors query="philosophical">
+
+<color name="black" weight="0.58418680335">
+ <shade name="intense" weight="0.804436111334" />
+ <shade name="dark" weight="0.105998221003" />
+ <shade name="cool" weight="0.0895643882894" />
+</color>
+
+<color name="green" weight="0.198389252767">
+ <shade name="intense" weight="0.804436111334" />
+ <shade name="dark" weight="0.105998221003" />
+ <shade name="cool" weight="0.0895643882894" />
+</color>
+
+<color name="white" weight="0.108345422175">
+ <shade name="dark" weight="0.407709750935" />
+ <shade name="cool" weight="0.344498936837" />
+ <shade name="light" weight="0.247786391266" />
+</color>
+
+<color name="blue" weight="0.0732063663345">
+ <shade name="intense" weight="0.804436111334" />
+ <shade name="dark" weight="0.105998221003" />
+ <shade name="cool" weight="0.0895643882894" />
+</color>
+
+<color name="red" weight="0.0358711195039">
+ <shade name="intense" weight="0.804436111334" />
+ <shade name="dark" weight="0.105998221003" />
+ <shade name="cool" weight="0.0895643882894" />
+</color>
+
+</colors>

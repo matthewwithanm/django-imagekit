@@ -1,0 +1,33 @@
+<colors query="prairie">
+
+<color name="purple" weight="0.231217357268">
+ <shade name="dark" weight="0.544510654542" />
+ <shade name="bright" weight="0.23710702047" />
+ <shade name="soft" weight="0.218380463568" />
+</color>
+
+<color name="white" weight="0.224740680594">
+ <shade name="dark" weight="0.544510654542" />
+ <shade name="bright" weight="0.23710702047" />
+ <shade name="soft" weight="0.218380463568" />
+</color>
+
+<color name="green" weight="0.199481641565">
+ <shade name="dark" weight="0.544510654542" />
+ <shade name="bright" weight="0.23710702047" />
+ <shade name="soft" weight="0.218380463568" />
+</color>
+
+<color name="red" weight="0.196890970895">
+ <shade name="dark" weight="0.544510654542" />
+ <shade name="bright" weight="0.23710702047" />
+ <shade name="soft" weight="0.218380463568" />
+</color>
+
+<color name="black" weight="0.147668228171">
+ <shade name="dark" weight="0.544510654542" />
+ <shade name="bright" weight="0.23710702047" />
+ <shade name="soft" weight="0.218380463568" />
+</color>
+
+</colors>

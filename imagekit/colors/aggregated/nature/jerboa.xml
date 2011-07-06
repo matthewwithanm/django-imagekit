@@ -1,0 +1,33 @@
+<colors query="jerboa">
+
+<color name="red" weight="0.399082163318">
+ <shade name="weak" weight="0.499999000002" />
+ <shade name="soft" weight="0.249999500001" />
+ <shade name="neutral" weight="0.249999500001" />
+</color>
+
+<color name="green" weight="0.337155620734">
+ <shade name="weak" weight="0.499999000002" />
+ <shade name="soft" weight="0.249999500001" />
+ <shade name="neutral" weight="0.249999500001" />
+</color>
+
+<color name="blue" weight="0.185779627751">
+ <shade name="weak" weight="0.499999000002" />
+ <shade name="soft" weight="0.249999500001" />
+ <shade name="neutral" weight="0.249999500001" />
+</color>
+
+<color name="black" weight="0.0665136938863">
+ <shade name="weak" weight="0.499999000002" />
+ <shade name="soft" weight="0.249999500001" />
+ <shade name="neutral" weight="0.249999500001" />
+</color>
+
+<color name="white" weight="0.0114678782563">
+ <shade name="weak" weight="0.499999000002" />
+ <shade name="soft" weight="0.249999500001" />
+ <shade name="neutral" weight="0.249999500001" />
+</color>
+
+</colors>

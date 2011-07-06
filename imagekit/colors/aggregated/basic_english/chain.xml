@@ -1,0 +1,33 @@
+<colors query="chain">
+
+<color name="green" weight="0.337226658991">
+ <shade name="light" weight="0.944668397661" />
+ <shade name="cool" weight="0.0425100778947" />
+ <shade name="hard" weight="0.0128204996825" />
+</color>
+
+<color name="black" weight="0.33011645835">
+ <shade name="light" weight="0.944668397661" />
+ <shade name="cool" weight="0.0425100778947" />
+ <shade name="hard" weight="0.0128204996825" />
+</color>
+
+<color name="blue" weight="0.129507225968">
+ <shade name="light" weight="0.944668397661" />
+ <shade name="cool" weight="0.0425100778947" />
+ <shade name="hard" weight="0.0128204996825" />
+</color>
+
+<color name="white" weight="0.108684495518">
+ <shade name="light" weight="0.944668397661" />
+ <shade name="cool" weight="0.0425100778947" />
+ <shade name="hard" weight="0.0128204996825" />
+</color>
+
+<color name="red" weight="0.0944640942356">
+ <shade name="light" weight="0.944668397661" />
+ <shade name="cool" weight="0.0425100778947" />
+ <shade name="hard" weight="0.0128204996825" />
+</color>
+
+</colors>

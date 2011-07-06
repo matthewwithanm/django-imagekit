@@ -1,0 +1,33 @@
+<colors query="affliction">
+
+<color name="black" weight="0.644760598409">
+ <shade name="light" weight="0.935180150474" />
+ <shade name="dark" weight="0.0498085080144" />
+ <shade name="fresh" weight="0.0150103190819" />
+</color>
+
+<color name="white" weight="0.125852309113">
+ <shade name="light" weight="0.935180150474" />
+ <shade name="dark" weight="0.0498085080144" />
+ <shade name="fresh" weight="0.0150103190819" />
+</color>
+
+<color name="red" weight="0.0880346201674">
+ <shade name="light" weight="0.935180150474" />
+ <shade name="dark" weight="0.0498085080144" />
+ <shade name="fresh" weight="0.0150103190819" />
+</color>
+
+<color name="green" weight="0.0750154157764">
+ <shade name="light" weight="0.935180150474" />
+ <shade name="dark" weight="0.0498085080144" />
+ <shade name="fresh" weight="0.0150103190819" />
+</color>
+
+<color name="blue" weight="0.0663359461825">
+ <shade name="light" weight="0.935180150474" />
+ <shade name="dark" weight="0.0498085080144" />
+ <shade name="fresh" weight="0.0150103190819" />
+</color>
+
+</colors>

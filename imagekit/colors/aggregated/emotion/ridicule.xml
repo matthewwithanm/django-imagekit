@@ -1,0 +1,33 @@
+<colors query="ridicule">
+
+<color name="black" weight="0.628361186812">
+ <shade name="intense" weight="0.749402509613" />
+ <shade name="light" weight="0.168496233053" />
+ <shade name="soft" weight="0.08210014755" />
+</color>
+
+<color name="white" weight="0.139364154274">
+ <shade name="light" weight="0.564797898952" />
+ <shade name="soft" weight="0.27519897626" />
+ <shade name="fresh" weight="0.159999404802" />
+</color>
+
+<color name="orange" weight="0.129584213623">
+ <shade name="intense" weight="0.749402509613" />
+ <shade name="light" weight="0.168496233053" />
+ <shade name="soft" weight="0.08210014755" />
+</color>
+
+<color name="red" weight="0.0537896735792">
+ <shade name="intense" weight="0.749402509613" />
+ <shade name="light" weight="0.168496233053" />
+ <shade name="soft" weight="0.08210014755" />
+</color>
+
+<color name="blue" weight="0.0488997032539">
+ <shade name="intense" weight="0.749402509613" />
+ <shade name="light" weight="0.168496233053" />
+ <shade name="soft" weight="0.08210014755" />
+</color>
+
+</colors>

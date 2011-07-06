@@ -1,0 +1,33 @@
+<colors query="while">
+
+<color name="white" weight="0.242120055608">
+ <shade name="light" weight="0.550547933946" />
+ <shade name="cool" weight="0.234546129257" />
+ <shade name="warm" weight="0.214904335182" />
+</color>
+
+<color name="black" weight="0.204154484758">
+ <shade name="light" weight="0.550547933946" />
+ <shade name="cool" weight="0.234546129257" />
+ <shade name="warm" weight="0.214904335182" />
+</color>
+
+<color name="red" weight="0.199856495605">
+ <shade name="light" weight="0.550547933946" />
+ <shade name="cool" weight="0.234546129257" />
+ <shade name="warm" weight="0.214904335182" />
+</color>
+
+<color name="green" weight="0.193409511876">
+ <shade name="light" weight="0.563904400374" />
+ <shade name="cool" weight="0.240236292289" />
+ <shade name="hard" weight="0.195857666866" />
+</color>
+
+<color name="blue" weight="0.160458261705">
+ <shade name="light" weight="0.563904400374" />
+ <shade name="cool" weight="0.240236292289" />
+ <shade name="hard" weight="0.195857666866" />
+</color>
+
+</colors>

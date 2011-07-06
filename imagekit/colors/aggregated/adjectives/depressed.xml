@@ -1,0 +1,33 @@
+<colors query="depressed">
+
+<color name="black" weight="0.248462542296">
+ <shade name="dark" weight="0.497635087062" />
+ <shade name="weak" weight="0.310874175528" />
+ <shade name="soft" weight="0.191489035877" />
+</color>
+
+<color name="blue" weight="0.239798494139">
+ <shade name="dark" weight="0.497635087062" />
+ <shade name="weak" weight="0.310874175528" />
+ <shade name="soft" weight="0.191489035877" />
+</color>
+
+<color name="white" weight="0.236444669046">
+ <shade name="dark" weight="0.497635087062" />
+ <shade name="weak" weight="0.310874175528" />
+ <shade name="soft" weight="0.191489035877" />
+</color>
+
+<color name="purple" weight="0.155673381393">
+ <shade name="dark" weight="0.497635087062" />
+ <shade name="weak" weight="0.310874175528" />
+ <shade name="soft" weight="0.191489035877" />
+</color>
+
+<color name="green" weight="0.119619761645">
+ <shade name="dark" weight="0.497635087062" />
+ <shade name="weak" weight="0.310874175528" />
+ <shade name="soft" weight="0.191489035877" />
+</color>
+
+</colors>

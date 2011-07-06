@@ -1,0 +1,33 @@
+<colors query="hazel">
+
+<color name="green" weight="0.446241344974">
+ <shade name="dark" weight="0.510562745389" />
+ <shade name="light" weight="0.334506626289" />
+ <shade name="soft" weight="0.154929384808" />
+</color>
+
+<color name="black" weight="0.209175630456">
+ <shade name="dark" weight="0.510562745389" />
+ <shade name="light" weight="0.334506626289" />
+ <shade name="soft" weight="0.154929384808" />
+</color>
+
+<color name="blue" weight="0.177799285888">
+ <shade name="dark" weight="0.510562745389" />
+ <shade name="light" weight="0.334506626289" />
+ <shade name="soft" weight="0.154929384808" />
+</color>
+
+<color name="white" weight="0.122019117766">
+ <shade name="dark" weight="0.510562745389" />
+ <shade name="light" weight="0.334506626289" />
+ <shade name="soft" weight="0.154929384808" />
+</color>
+
+<color name="purple" weight="0.0447635849177">
+ <shade name="dark" weight="0.510562745389" />
+ <shade name="light" weight="0.334506626289" />
+ <shade name="soft" weight="0.154929384808" />
+</color>
+
+</colors>

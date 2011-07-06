@@ -1,0 +1,33 @@
+<colors query="flustered">
+
+<color name="red" weight="0.62601559852">
+ <shade name="hard" weight="0.416665885418" />
+ <shade name="light" weight="0.374999296876" />
+ <shade name="weak" weight="0.208332942709" />
+</color>
+
+<color name="black" weight="0.170731526869">
+ <shade name="hard" weight="0.416665885418" />
+ <shade name="light" weight="0.374999296876" />
+ <shade name="weak" weight="0.208332942709" />
+</color>
+
+<color name="white" weight="0.0813007270805">
+ <shade name="hard" weight="0.416665885418" />
+ <shade name="light" weight="0.374999296876" />
+ <shade name="weak" weight="0.208332942709" />
+</color>
+
+<color name="pink" weight="0.0650405816644">
+ <shade name="hard" weight="0.416665885418" />
+ <shade name="light" weight="0.374999296876" />
+ <shade name="weak" weight="0.208332942709" />
+</color>
+
+<color name="green" weight="0.0569105089564">
+ <shade name="hard" weight="0.416665885418" />
+ <shade name="light" weight="0.374999296876" />
+ <shade name="weak" weight="0.208332942709" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="defiant">
+
+<color name="black" weight="0.472357807759">
+ <shade name="dark" weight="0.492736730426" />
+ <shade name="cool" weight="0.256982875279" />
+ <shade name="hard" weight="0.250278974185" />
+</color>
+
+<color name="red" weight="0.178796177604">
+ <shade name="dark" weight="0.492736730426" />
+ <shade name="cool" weight="0.256982875279" />
+ <shade name="hard" weight="0.250278974185" />
+</color>
+
+<color name="white" weight="0.17389765219">
+ <shade name="dark" weight="0.492736730426" />
+ <shade name="cool" weight="0.256982875279" />
+ <shade name="hard" weight="0.250278974185" />
+</color>
+
+<color name="blue" weight="0.116864820586">
+ <shade name="dark" weight="0.492736730426" />
+ <shade name="cool" weight="0.256982875279" />
+ <shade name="hard" weight="0.250278974185" />
+</color>
+
+<color name="green" weight="0.0580825156207">
+ <shade name="dark" weight="0.492736730426" />
+ <shade name="cool" weight="0.256982875279" />
+ <shade name="hard" weight="0.250278974185" />
+</color>
+
+</colors>

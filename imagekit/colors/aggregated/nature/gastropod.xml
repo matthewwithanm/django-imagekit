@@ -1,0 +1,33 @@
+<colors query="gastropod">
+
+<color name="green" weight="0.424241967861">
+ <shade name="soft" weight="0.333332666668" />
+ <shade name="hard" weight="0.333332666668" />
+ <shade name="dark" weight="0.333332666668" />
+</color>
+
+<color name="purple" weight="0.295454227617">
+ <shade name="soft" weight="0.333332666668" />
+ <shade name="hard" weight="0.333332666668" />
+ <shade name="dark" weight="0.333332666668" />
+</color>
+
+<color name="white" weight="0.185605860939">
+ <shade name="soft" weight="0.333332666668" />
+ <shade name="hard" weight="0.333332666668" />
+ <shade name="dark" weight="0.333332666668" />
+</color>
+
+<color name="pink" weight="0.0606059954087">
+ <shade name="soft" weight="0.333332666668" />
+ <shade name="hard" weight="0.333332666668" />
+ <shade name="dark" weight="0.333332666668" />
+</color>
+
+<color name="black" weight="0.0340908724174">
+ <shade name="soft" weight="0.333332666668" />
+ <shade name="hard" weight="0.333332666668" />
+ <shade name="dark" weight="0.333332666668" />
+</color>
+
+</colors>

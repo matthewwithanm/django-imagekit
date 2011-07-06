@@ -1,0 +1,33 @@
+<colors query="muskrat">
+
+<color name="black" weight="0.468621055602">
+ <shade name="dark" weight="0.602010816126" />
+ <shade name="fresh" weight="0.300287018067" />
+ <shade name="cool" weight="0.0977010393712" />
+</color>
+
+<color name="blue" weight="0.298711667021">
+ <shade name="dark" weight="0.602010816126" />
+ <shade name="fresh" weight="0.300287018067" />
+ <shade name="cool" weight="0.0977010393712" />
+</color>
+
+<color name="green" weight="0.158399397742">
+ <shade name="dark" weight="0.602010816126" />
+ <shade name="fresh" weight="0.300287018067" />
+ <shade name="cool" weight="0.0977010393712" />
+</color>
+
+<color name="red" weight="0.0375444939284">
+ <shade name="dark" weight="0.602010816126" />
+ <shade name="fresh" weight="0.300287018067" />
+ <shade name="cool" weight="0.0977010393712" />
+</color>
+
+<color name="orange" weight="0.0367223517256">
+ <shade name="dark" weight="0.602010816126" />
+ <shade name="fresh" weight="0.300287018067" />
+ <shade name="cool" weight="0.0977010393712" />
+</color>
+
+</colors>

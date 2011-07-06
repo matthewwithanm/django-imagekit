@@ -1,0 +1,33 @@
+<colors query="shyness">
+
+<color name="blue" weight="0.314999617275">
+ <shade name="intense" weight="0.939489469569" />
+ <shade name="soft" weight="0.0328025136832" />
+ <shade name="light" weight="0.0277069775771" />
+</color>
+
+<color name="red" weight="0.2599996841">
+ <shade name="intense" weight="0.939489469569" />
+ <shade name="soft" weight="0.0328025136832" />
+ <shade name="light" weight="0.0277069775771" />
+</color>
+
+<color name="pink" weight="0.164999799525">
+ <shade name="soft" weight="0.427380105638" />
+ <shade name="light" weight="0.360990963014" />
+ <shade name="cool" weight="0.211615392112" />
+</color>
+
+<color name="white" weight="0.154999811675">
+ <shade name="soft" weight="0.427380105638" />
+ <shade name="light" weight="0.360990963014" />
+ <shade name="cool" weight="0.211615392112" />
+</color>
+
+<color name="yellow" weight="0.104999872425">
+ <shade name="intense" weight="0.939489469569" />
+ <shade name="soft" weight="0.0328025136832" />
+ <shade name="light" weight="0.0277069775771" />
+</color>
+
+</colors>

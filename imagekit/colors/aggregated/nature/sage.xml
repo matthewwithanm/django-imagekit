@@ -1,0 +1,33 @@
+<colors query="sage">
+
+<color name="purple" weight="0.445516490107">
+ <shade name="fresh" weight="0.586825647844" />
+ <shade name="dark" weight="0.212574596923" />
+ <shade name="light" weight="0.200598563294" />
+</color>
+
+<color name="white" weight="0.197697942485">
+ <shade name="fresh" weight="0.586825647844" />
+ <shade name="dark" weight="0.212574596923" />
+ <shade name="light" weight="0.200598563294" />
+</color>
+
+<color name="blue" weight="0.172637639916">
+ <shade name="fresh" weight="0.586825647844" />
+ <shade name="dark" weight="0.212574596923" />
+ <shade name="light" weight="0.200598563294" />
+</color>
+
+<color name="red" weight="0.116948078653">
+ <shade name="fresh" weight="0.586825647844" />
+ <shade name="dark" weight="0.212574596923" />
+ <shade name="light" weight="0.200598563294" />
+</color>
+
+<color name="black" weight="0.0671987372578">
+ <shade name="fresh" weight="0.586825647844" />
+ <shade name="dark" weight="0.212574596923" />
+ <shade name="light" weight="0.200598563294" />
+</color>
+
+</colors>

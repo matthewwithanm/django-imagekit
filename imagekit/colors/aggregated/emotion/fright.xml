@@ -1,0 +1,33 @@
+<colors query="fright">
+
+<color name="white" weight="0.706387468543">
+ <shade name="light" weight="0.934129640247" />
+ <shade name="fresh" weight="0.0350516869681" />
+ <shade name="bright" weight="0.0308175479446" />
+</color>
+
+<color name="blue" weight="0.145226243533">
+ <shade name="light" weight="0.884552441035" />
+ <shade name="intense" weight="0.082255110171" />
+ <shade name="fresh" weight="0.0331913836519" />
+</color>
+
+<color name="red" weight="0.0719549967957">
+ <shade name="light" weight="0.884552441035" />
+ <shade name="intense" weight="0.082255110171" />
+ <shade name="fresh" weight="0.0331913836519" />
+</color>
+
+<color name="black" weight="0.0451912479875">
+ <shade name="light" weight="0.884552441035" />
+ <shade name="intense" weight="0.082255110171" />
+ <shade name="fresh" weight="0.0331913836519" />
+</color>
+
+<color name="orange" weight="0.0312389986089">
+ <shade name="light" weight="0.884552441035" />
+ <shade name="intense" weight="0.082255110171" />
+ <shade name="fresh" weight="0.0331913836519" />
+</color>
+
+</colors>

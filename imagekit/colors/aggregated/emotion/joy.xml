@@ -1,0 +1,33 @@
+<colors query="joy">
+
+<color name="black" weight="0.38170581998">
+ <shade name="intense" weight="0.644465414526" />
+ <shade name="light" weight="0.25269312606" />
+ <shade name="fresh" weight="0.102840225722" />
+</color>
+
+<color name="white" weight="0.261213429802">
+ <shade name="light" weight="0.561600549865" />
+ <shade name="fresh" weight="0.228558363317" />
+ <shade name="cool" weight="0.209838344988" />
+</color>
+
+<color name="blue" weight="0.124010416169">
+ <shade name="intense" weight="0.644465414526" />
+ <shade name="light" weight="0.25269312606" />
+ <shade name="fresh" weight="0.102840225722" />
+</color>
+
+<color name="orange" weight="0.116974364188">
+ <shade name="intense" weight="0.644465414526" />
+ <shade name="light" weight="0.25269312606" />
+ <shade name="fresh" weight="0.102840225722" />
+</color>
+
+<color name="red" weight="0.11609485769">
+ <shade name="intense" weight="0.644465414526" />
+ <shade name="light" weight="0.25269312606" />
+ <shade name="fresh" weight="0.102840225722" />
+</color>
+
+</colors>

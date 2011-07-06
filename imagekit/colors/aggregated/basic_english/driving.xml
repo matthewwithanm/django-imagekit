@@ -1,0 +1,33 @@
+<colors query="driving">
+
+<color name="green" weight="0.456536307443">
+ <shade name="hard" weight="0.903479638971" />
+ <shade name="light" weight="0.0493704720749" />
+ <shade name="cool" weight="0.0471488008315" />
+</color>
+
+<color name="red" weight="0.333870996555">
+ <shade name="hard" weight="0.903479638971" />
+ <shade name="light" weight="0.0493704720749" />
+ <shade name="cool" weight="0.0471488008315" />
+</color>
+
+<color name="white" weight="0.125893345386">
+ <shade name="hard" weight="0.903479638971" />
+ <shade name="light" weight="0.0493704720749" />
+ <shade name="cool" weight="0.0471488008315" />
+</color>
+
+<color name="black" weight="0.0604103598738">
+ <shade name="hard" weight="0.903479638971" />
+ <shade name="light" weight="0.0493704720749" />
+ <shade name="cool" weight="0.0471488008315" />
+</color>
+
+<color name="yellow" weight="0.0232879631575">
+ <shade name="hard" weight="0.903479638971" />
+ <shade name="light" weight="0.0493704720749" />
+ <shade name="cool" weight="0.0471488008315" />
+</color>
+
+</colors>

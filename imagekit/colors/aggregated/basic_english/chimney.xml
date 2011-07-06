@@ -1,0 +1,33 @@
+<colors query="chimney">
+
+<color name="black" weight="0.382608297731">
+ <shade name="warm" weight="0.383429163055" />
+ <shade name="dark" weight="0.379575603627" />
+ <shade name="cool" weight="0.236993904803" />
+</color>
+
+<color name="red" weight="0.289130134081">
+ <shade name="warm" weight="0.383429163055" />
+ <shade name="dark" weight="0.379575603627" />
+ <shade name="cool" weight="0.236993904803" />
+</color>
+
+<color name="white" weight="0.223912810604">
+ <shade name="warm" weight="0.383429163055" />
+ <shade name="dark" weight="0.379575603627" />
+ <shade name="cool" weight="0.236993904803" />
+</color>
+
+<color name="blue" weight="0.0823912186592">
+ <shade name="dark" weight="0.447726571119" />
+ <shade name="cool" weight="0.279545016486" />
+ <shade name="light" weight="0.272726845352" />
+</color>
+
+<color name="orange" weight="0.0219564989039">
+ <shade name="warm" weight="0.383429163055" />
+ <shade name="dark" weight="0.379575603627" />
+ <shade name="cool" weight="0.236993904803" />
+</color>
+
+</colors>

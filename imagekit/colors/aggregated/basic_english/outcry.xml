@@ -1,0 +1,33 @@
+<colors query="outcry">
+
+<color name="black" weight="0.603959768161">
+ <shade name="fresh" weight="0.695604839791" />
+ <shade name="intense" weight="0.260449886085" />
+ <shade name="weak" weight="0.0439442194629" />
+</color>
+
+<color name="white" weight="0.168316656701">
+ <shade name="fresh" weight="0.90389848268" />
+ <shade name="weak" weight="0.0571029858087" />
+ <shade name="soft" weight="0.0389971610401" />
+</color>
+
+<color name="green" weight="0.168316656701">
+ <shade name="fresh" weight="0.695604839791" />
+ <shade name="intense" weight="0.260449886085" />
+ <shade name="weak" weight="0.0439442194629" />
+</color>
+
+<color name="red" weight="0.0346534293207">
+ <shade name="fresh" weight="0.695604839791" />
+ <shade name="intense" weight="0.260449886085" />
+ <shade name="weak" weight="0.0439442194629" />
+</color>
+
+<color name="blue" weight="0.0247524495148">
+ <shade name="fresh" weight="0.695604839791" />
+ <shade name="intense" weight="0.260449886085" />
+ <shade name="weak" weight="0.0439442194629" />
+</color>
+
+</colors>

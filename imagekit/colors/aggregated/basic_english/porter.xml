@@ -1,0 +1,33 @@
+<colors query="porter">
+
+<color name="black" weight="0.645160604533">
+ <shade name="cool" weight="0.892161380189" />
+ <shade name="light" weight="0.0882433763894" />
+ <shade name="weak" weight="0.0195941985369" />
+</color>
+
+<color name="red" weight="0.104958964021">
+ <shade name="cool" weight="0.892161380189" />
+ <shade name="light" weight="0.0882433763894" />
+ <shade name="weak" weight="0.0195941985369" />
+</color>
+
+<color name="white" weight="0.0890706804765">
+ <shade name="cool" weight="0.892161380189" />
+ <shade name="light" weight="0.0882433763894" />
+ <shade name="weak" weight="0.0195941985369" />
+</color>
+
+<color name="blue" weight="0.0852189753748">
+ <shade name="cool" weight="0.892161380189" />
+ <shade name="light" weight="0.0882433763894" />
+ <shade name="weak" weight="0.0195941985369" />
+</color>
+
+<color name="green" weight="0.0755897126206">
+ <shade name="cool" weight="0.892161380189" />
+ <shade name="light" weight="0.0882433763894" />
+ <shade name="weak" weight="0.0195941985369" />
+</color>
+
+</colors>

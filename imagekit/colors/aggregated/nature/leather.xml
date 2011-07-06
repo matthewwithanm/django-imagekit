@@ -1,0 +1,33 @@
+<colors query="leather">
+
+<color name="black" weight="0.380906032845">
+ <shade name="soft" weight="0.862414962103" />
+ <shade name="hard" weight="0.0822168930538" />
+ <shade name="dark" weight="0.055367040567" />
+</color>
+
+<color name="white" weight="0.210542997058">
+ <shade name="soft" weight="0.862414962103" />
+ <shade name="hard" weight="0.0822168930538" />
+ <shade name="dark" weight="0.055367040567" />
+</color>
+
+<color name="red" weight="0.210542997058">
+ <shade name="soft" weight="0.862414962103" />
+ <shade name="hard" weight="0.0822168930538" />
+ <shade name="dark" weight="0.055367040567" />
+</color>
+
+<color name="blue" weight="0.101896381782">
+ <shade name="soft" weight="0.862414962103" />
+ <shade name="hard" weight="0.0822168930538" />
+ <shade name="dark" weight="0.055367040567" />
+</color>
+
+<color name="pink" weight="0.0961104673592">
+ <shade name="soft" weight="0.862414962103" />
+ <shade name="hard" weight="0.0822168930538" />
+ <shade name="dark" weight="0.055367040567" />
+</color>
+
+</colors>

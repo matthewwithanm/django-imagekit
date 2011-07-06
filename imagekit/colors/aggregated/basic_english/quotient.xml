@@ -1,0 +1,33 @@
+<colors query="quotient">
+
+<color name="green" weight="0.600715580277">
+ <shade name="cool" weight="0.97235364865" />
+ <shade name="light" weight="0.0218112269423" />
+ <shade name="weak" weight="0.0058341218919" />
+</color>
+
+<color name="blue" weight="0.1342881327">
+ <shade name="cool" weight="0.97235364865" />
+ <shade name="light" weight="0.0218112269423" />
+ <shade name="weak" weight="0.0058341218919" />
+</color>
+
+<color name="black" weight="0.117278302558">
+ <shade name="cool" weight="0.97235364865" />
+ <shade name="light" weight="0.0218112269423" />
+ <shade name="weak" weight="0.0058341218919" />
+</color>
+
+<color name="red" weight="0.108325760378">
+ <shade name="cool" weight="0.97235364865" />
+ <shade name="light" weight="0.0218112269423" />
+ <shade name="weak" weight="0.0058341218919" />
+</color>
+
+<color name="white" weight="0.039391185592">
+ <shade name="cool" weight="0.97235364865" />
+ <shade name="light" weight="0.0218112269423" />
+ <shade name="weak" weight="0.0058341218919" />
+</color>
+
+</colors>

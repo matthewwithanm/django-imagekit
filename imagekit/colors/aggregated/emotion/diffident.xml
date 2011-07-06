@@ -1,0 +1,33 @@
+<colors query="diffident">
+
+<color name="pink" weight="0.285713938776">
+ <shade name="weak" weight="0.508196071487" />
+ <shade name="soft" weight="0.278688168235" />
+ <shade name="cool" weight="0.213114481591" />
+</color>
+
+<color name="green" weight="0.285713938776">
+ <shade name="weak" weight="0.508196071487" />
+ <shade name="soft" weight="0.278688168235" />
+ <shade name="cool" weight="0.213114481591" />
+</color>
+
+<color name="black" weight="0.285713938776">
+ <shade name="weak" weight="0.508196071487" />
+ <shade name="soft" weight="0.278688168235" />
+ <shade name="cool" weight="0.213114481591" />
+</color>
+
+<color name="yellow" weight="0.071428484694">
+ <shade name="weak" weight="0.508196071487" />
+ <shade name="soft" weight="0.278688168235" />
+ <shade name="cool" weight="0.213114481591" />
+</color>
+
+<color name="white" weight="0.071428484694">
+ <shade name="weak" weight="0.508196071487" />
+ <shade name="soft" weight="0.278688168235" />
+ <shade name="cool" weight="0.213114481591" />
+</color>
+
+</colors>

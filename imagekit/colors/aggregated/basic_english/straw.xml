@@ -1,0 +1,33 @@
+<colors query="straw">
+
+<color name="green" weight="0.248725968755">
+ <shade name="light" weight="0.638517743576" />
+ <shade name="fresh" weight="0.249629326665" />
+ <shade name="bright" weight="0.111851716102" />
+</color>
+
+<color name="pink" weight="0.217229942916">
+ <shade name="light" weight="0.638517743576" />
+ <shade name="fresh" weight="0.249629326665" />
+ <shade name="bright" weight="0.111851716102" />
+</color>
+
+<color name="white" weight="0.182491679124">
+ <shade name="light" weight="0.638517743576" />
+ <shade name="fresh" weight="0.249629326665" />
+ <shade name="bright" weight="0.111851716102" />
+</color>
+
+<color name="yellow" weight="0.181565325423">
+ <shade name="light" weight="0.638517743576" />
+ <shade name="fresh" weight="0.249629326665" />
+ <shade name="bright" weight="0.111851716102" />
+</color>
+
+<color name="black" weight="0.169985904158">
+ <shade name="light" weight="0.638517743576" />
+ <shade name="fresh" weight="0.249629326665" />
+ <shade name="bright" weight="0.111851716102" />
+</color>
+
+</colors>

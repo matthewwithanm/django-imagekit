@@ -1,0 +1,33 @@
+<colors query="pollen">
+
+<color name="yellow" weight="0.70429414386">
+ <shade name="fresh" weight="0.967824557484" />
+ <shade name="light" weight="0.0163608437099" />
+ <shade name="dark" weight="0.015813561966" />
+</color>
+
+<color name="white" weight="0.189237912486">
+ <shade name="fresh" weight="0.967824557484" />
+ <shade name="light" weight="0.0163608437099" />
+ <shade name="dark" weight="0.015813561966" />
+</color>
+
+<color name="black" weight="0.0465689819422">
+ <shade name="fresh" weight="0.967824557484" />
+ <shade name="light" weight="0.0163608437099" />
+ <shade name="dark" weight="0.015813561966" />
+</color>
+
+<color name="pink" weight="0.035214707193">
+ <shade name="fresh" weight="0.967824557484" />
+ <shade name="light" weight="0.0163608437099" />
+ <shade name="dark" weight="0.015813561966" />
+</color>
+
+<color name="red" weight="0.0246832059764">
+ <shade name="fresh" weight="0.967824557484" />
+ <shade name="light" weight="0.0163608437099" />
+ <shade name="dark" weight="0.015813561966" />
+</color>
+
+</colors>

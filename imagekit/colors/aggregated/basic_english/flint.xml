@@ -1,0 +1,33 @@
+<colors query="flint">
+
+<color name="white" weight="0.82391309915">
+ <shade name="dark" weight="0.934543519627" />
+ <shade name="light" weight="0.035475272005" />
+ <shade name="cool" weight="0.0299801561096" />
+</color>
+
+<color name="black" weight="0.0800080902067">
+ <shade name="dark" weight="0.934543519627" />
+ <shade name="light" weight="0.035475272005" />
+ <shade name="cool" weight="0.0299801561096" />
+</color>
+
+<color name="blue" weight="0.0486857740407">
+ <shade name="dark" weight="0.934543519627" />
+ <shade name="light" weight="0.035475272005" />
+ <shade name="cool" weight="0.0299801561096" />
+</color>
+
+<color name="red" weight="0.0394933551659">
+ <shade name="dark" weight="0.934543519627" />
+ <shade name="light" weight="0.035475272005" />
+ <shade name="cool" weight="0.0299801561096" />
+</color>
+
+<color name="orange" weight="0.00789867103317">
+ <shade name="dark" weight="0.934543519627" />
+ <shade name="light" weight="0.035475272005" />
+ <shade name="cool" weight="0.0299801561096" />
+</color>
+
+</colors>

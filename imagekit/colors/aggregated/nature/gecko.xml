@@ -1,0 +1,33 @@
+<colors query="gecko">
+
+<color name="blue" weight="0.647772609538">
+ <shade name="cool" weight="0.519569475308" />
+ <shade name="dark" weight="0.306215983232" />
+ <shade name="bright" weight="0.174213103242" />
+</color>
+
+<color name="green" weight="0.206166090151">
+ <shade name="cool" weight="0.519569475308" />
+ <shade name="dark" weight="0.306215983232" />
+ <shade name="bright" weight="0.174213103242" />
+</color>
+
+<color name="black" weight="0.119588789453">
+ <shade name="cool" weight="0.519569475308" />
+ <shade name="dark" weight="0.306215983232" />
+ <shade name="bright" weight="0.174213103242" />
+</color>
+
+<color name="orange" weight="0.01326688133">
+ <shade name="cool" weight="0.519569475308" />
+ <shade name="dark" weight="0.306215983232" />
+ <shade name="bright" weight="0.174213103242" />
+</color>
+
+<color name="pink" weight="0.0132045955021">
+ <shade name="cool" weight="0.519569475308" />
+ <shade name="dark" weight="0.306215983232" />
+ <shade name="bright" weight="0.174213103242" />
+</color>
+
+</colors>

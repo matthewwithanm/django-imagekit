@@ -1,0 +1,33 @@
+<colors query="planet">
+
+<color name="black" weight="0.324899027302">
+ <shade name="dark" weight="0.529395472814" />
+ <shade name="cool" weight="0.377759583616" />
+ <shade name="bright" weight="0.0928437286493" />
+</color>
+
+<color name="blue" weight="0.286083656783">
+ <shade name="dark" weight="0.529395472814" />
+ <shade name="cool" weight="0.377759583616" />
+ <shade name="bright" weight="0.0928437286493" />
+</color>
+
+<color name="red" weight="0.257331530474">
+ <shade name="dark" weight="0.529395472814" />
+ <shade name="cool" weight="0.377759583616" />
+ <shade name="bright" weight="0.0928437286493" />
+</color>
+
+<color name="green" weight="0.103795175979">
+ <shade name="dark" weight="0.529395472814" />
+ <shade name="cool" weight="0.377759583616" />
+ <shade name="bright" weight="0.0928437286493" />
+</color>
+
+<color name="pink" weight="0.0278895625206">
+ <shade name="dark" weight="0.529395472814" />
+ <shade name="cool" weight="0.377759583616" />
+ <shade name="bright" weight="0.0928437286493" />
+</color>
+
+</colors>

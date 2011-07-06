@@ -1,0 +1,33 @@
+<colors query="sex">
+
+<color name="black" weight="0.662735043683">
+ <shade name="hard" weight="0.775315555799" />
+ <shade name="soft" weight="0.157700238901" />
+ <shade name="cool" weight="0.0669830446166" />
+</color>
+
+<color name="white" weight="0.188099799163">
+ <shade name="hard" weight="0.775315555799" />
+ <shade name="soft" weight="0.157700238901" />
+ <shade name="cool" weight="0.0669830446166" />
+</color>
+
+<color name="pink" weight="0.0614004525765">
+ <shade name="hard" weight="0.775315555799" />
+ <shade name="soft" weight="0.157700238901" />
+ <shade name="cool" weight="0.0669830446166" />
+</color>
+
+<color name="red" weight="0.0448808070023">
+ <shade name="hard" weight="0.775315555799" />
+ <shade name="soft" weight="0.157700238901" />
+ <shade name="cool" weight="0.0669830446166" />
+</color>
+
+<color name="blue" weight="0.0428828557677">
+ <shade name="hard" weight="0.775315555799" />
+ <shade name="soft" weight="0.157700238901" />
+ <shade name="cool" weight="0.0669830446166" />
+</color>
+
+</colors>

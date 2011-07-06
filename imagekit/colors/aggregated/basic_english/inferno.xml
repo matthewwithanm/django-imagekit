@@ -1,0 +1,33 @@
+<colors query="inferno">
+
+<color name="red" weight="0.476189983688">
+ <shade name="cool" weight="0.759586657003" />
+ <shade name="intense" weight="0.205644192506" />
+ <shade name="dark" weight="0.0347680721864" />
+</color>
+
+<color name="green" weight="0.293426926569">
+ <shade name="cool" weight="0.759586657003" />
+ <shade name="intense" weight="0.205644192506" />
+ <shade name="dark" weight="0.0347680721864" />
+</color>
+
+<color name="blue" weight="0.176056155941">
+ <shade name="cool" weight="0.759586657003" />
+ <shade name="intense" weight="0.205644192506" />
+ <shade name="dark" weight="0.0347680721864" />
+</color>
+
+<color name="orange" weight="0.0407444246607">
+ <shade name="cool" weight="0.759586657003" />
+ <shade name="intense" weight="0.205644192506" />
+ <shade name="dark" weight="0.0347680721864" />
+</color>
+
+<color name="white" weight="0.0135814748869">
+ <shade name="cool" weight="0.928861484757" />
+ <shade name="dark" weight="0.0425161801559" />
+ <shade name="light" weight="0.0286210164815" />
+</color>
+
+</colors>

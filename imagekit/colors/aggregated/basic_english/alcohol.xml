@@ -1,0 +1,33 @@
+<colors query="alcohol">
+
+<color name="red" weight="0.738931646401">
+ <shade name="soft" weight="0.494070544789" />
+ <shade name="hard" weight="0.325691303125" />
+ <shade name="light" weight="0.180236934739" />
+</color>
+
+<color name="yellow" weight="0.0719138834444">
+ <shade name="soft" weight="0.494070544789" />
+ <shade name="hard" weight="0.325691303125" />
+ <shade name="light" weight="0.180236934739" />
+</color>
+
+<color name="orange" weight="0.0658440877776">
+ <shade name="soft" weight="0.494070544789" />
+ <shade name="hard" weight="0.325691303125" />
+ <shade name="light" weight="0.180236934739" />
+</color>
+
+<color name="white" weight="0.0624793097448">
+ <shade name="soft" weight="0.494070544789" />
+ <shade name="hard" weight="0.325691303125" />
+ <shade name="light" weight="0.180236934739" />
+</color>
+
+<color name="green" weight="0.0608299087484">
+ <shade name="soft" weight="0.494070544789" />
+ <shade name="hard" weight="0.325691303125" />
+ <shade name="light" weight="0.180236934739" />
+</color>
+
+</colors>

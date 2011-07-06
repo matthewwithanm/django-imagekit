@@ -1,0 +1,33 @@
+<colors query="oryx">
+
+<color name="blue" weight="0.79026137862">
+ <shade name="cool" weight="0.499999380436" />
+ <shade name="fresh" weight="0.434782069944" />
+ <shade name="dark" weight="0.0652173104916" />
+</color>
+
+<color name="white" weight="0.137827576935">
+ <shade name="cool" weight="0.499999380436" />
+ <shade name="fresh" weight="0.434782069944" />
+ <shade name="dark" weight="0.0652173104916" />
+</color>
+
+<color name="black" weight="0.0468164323827">
+ <shade name="cool" weight="0.499999380436" />
+ <shade name="fresh" weight="0.434782069944" />
+ <shade name="dark" weight="0.0652173104916" />
+</color>
+
+<color name="red" weight="0.0168539156578">
+ <shade name="cool" weight="0.499999380436" />
+ <shade name="fresh" weight="0.434782069944" />
+ <shade name="dark" weight="0.0652173104916" />
+</color>
+
+<color name="orange" weight="0.00823969209935">
+ <shade name="cool" weight="0.499999380436" />
+ <shade name="fresh" weight="0.434782069944" />
+ <shade name="dark" weight="0.0652173104916" />
+</color>
+
+</colors>

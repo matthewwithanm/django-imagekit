@@ -1,0 +1,33 @@
+<colors query="asset">
+
+<color name="red" weight="0.497034525471">
+ <shade name="hard" weight="0.963005422042" />
+ <shade name="cool" weight="0.0211391434107" />
+ <shade name="intense" weight="0.015854357558" />
+</color>
+
+<color name="blue" weight="0.141778828849">
+ <shade name="hard" weight="0.963005422042" />
+ <shade name="cool" weight="0.0211391434107" />
+ <shade name="intense" weight="0.015854357558" />
+</color>
+
+<color name="white" weight="0.129919002862">
+ <shade name="hard" weight="0.963733010983" />
+ <shade name="cool" weight="0.0211551148752" />
+ <shade name="neutral" weight="0.0151107963394" />
+</color>
+
+<color name="black" weight="0.116981010876">
+ <shade name="hard" weight="0.963005422042" />
+ <shade name="cool" weight="0.0211391434107" />
+ <shade name="intense" weight="0.015854357558" />
+</color>
+
+<color name="green" weight="0.114285595878">
+ <shade name="hard" weight="0.963005422042" />
+ <shade name="cool" weight="0.0211391434107" />
+ <shade name="intense" weight="0.015854357558" />
+</color>
+
+</colors>

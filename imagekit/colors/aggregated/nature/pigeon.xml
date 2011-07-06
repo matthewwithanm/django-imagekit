@@ -1,0 +1,33 @@
+<colors query="pigeon">
+
+<color name="white" weight="0.570756147264">
+ <shade name="dark" weight="0.428778364277" />
+ <shade name="fresh" weight="0.388807499811" />
+ <shade name="cool" weight="0.182412490565" />
+</color>
+
+<color name="green" weight="0.265070270639">
+ <shade name="dark" weight="0.428778364277" />
+ <shade name="fresh" weight="0.388807499811" />
+ <shade name="cool" weight="0.182412490565" />
+</color>
+
+<color name="pink" weight="0.0795210811918">
+ <shade name="dark" weight="0.428778364277" />
+ <shade name="fresh" weight="0.388807499811" />
+ <shade name="cool" weight="0.182412490565" />
+</color>
+
+<color name="blue" weight="0.0587857455047">
+ <shade name="dark" weight="0.428778364277" />
+ <shade name="fresh" weight="0.388807499811" />
+ <shade name="cool" weight="0.182412490565" />
+</color>
+
+<color name="purple" weight="0.0258657280221">
+ <shade name="dark" weight="0.428778364277" />
+ <shade name="fresh" weight="0.388807499811" />
+ <shade name="cool" weight="0.182412490565" />
+</color>
+
+</colors>

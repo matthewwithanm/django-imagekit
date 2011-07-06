@@ -1,0 +1,33 @@
+<colors query="bayou">
+
+<color name="blue" weight="0.876631049313">
+ <shade name="dark" weight="0.780242125925" />
+ <shade name="cool" weight="0.118110046585" />
+ <shade name="fresh" weight="0.101646221909" />
+</color>
+
+<color name="black" weight="0.114375896563">
+ <shade name="dark" weight="0.62679620132" />
+ <shade name="warm" weight="0.278320515082" />
+ <shade name="cool" weight="0.0948819937779" />
+</color>
+
+<color name="red" weight="0.00391285961925">
+ <shade name="dark" weight="0.62679620132" />
+ <shade name="warm" weight="0.278320515082" />
+ <shade name="cool" weight="0.0948819937779" />
+</color>
+
+<color name="green" weight="0.00332969304138">
+ <shade name="dark" weight="0.780242125925" />
+ <shade name="cool" weight="0.118110046585" />
+ <shade name="fresh" weight="0.101646221909" />
+</color>
+
+<color name="yellow" weight="0.00174949973361">
+ <shade name="dark" weight="0.62679620132" />
+ <shade name="warm" weight="0.278320515082" />
+ <shade name="cool" weight="0.0948819937779" />
+</color>
+
+</colors>

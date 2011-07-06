@@ -1,0 +1,33 @@
+<colors query="otter">
+
+<color name="white" weight="0.362828206014">
+ <shade name="fresh" weight="0.345807863228" />
+ <shade name="cool" weight="0.339071346411" />
+ <shade name="light" weight="0.315119286621" />
+</color>
+
+<color name="blue" weight="0.302356838345">
+ <shade name="fresh" weight="0.345807863228" />
+ <shade name="cool" weight="0.339071346411" />
+ <shade name="light" weight="0.315119286621" />
+</color>
+
+<color name="black" weight="0.287547523814">
+ <shade name="fresh" weight="0.345807863228" />
+ <shade name="cool" weight="0.339071346411" />
+ <shade name="light" weight="0.315119286621" />
+</color>
+
+<color name="red" weight="0.0322102591053">
+ <shade name="fresh" weight="0.345807863228" />
+ <shade name="cool" weight="0.339071346411" />
+ <shade name="light" weight="0.315119286621" />
+</color>
+
+<color name="purple" weight="0.01505613644">
+ <shade name="fresh" weight="0.345807863228" />
+ <shade name="cool" weight="0.339071346411" />
+ <shade name="light" weight="0.315119286621" />
+</color>
+
+</colors>

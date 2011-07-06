@@ -1,0 +1,33 @@
+<colors query="owl">
+
+<color name="white" weight="0.697046181992">
+ <shade name="light" weight="0.488875677462" />
+ <shade name="cool" weight="0.388266480071" />
+ <shade name="bright" weight="0.122856583293" />
+</color>
+
+<color name="red" weight="0.121271045426">
+ <shade name="light" weight="0.488875677462" />
+ <shade name="cool" weight="0.388266480071" />
+ <shade name="bright" weight="0.122856583293" />
+</color>
+
+<color name="blue" weight="0.0957876366221">
+ <shade name="light" weight="0.488875677462" />
+ <shade name="cool" weight="0.388266480071" />
+ <shade name="bright" weight="0.122856583293" />
+</color>
+
+<color name="black" weight="0.0619096931532">
+ <shade name="light" weight="0.488875677462" />
+ <shade name="cool" weight="0.388266480071" />
+ <shade name="bright" weight="0.122856583293" />
+</color>
+
+<color name="yellow" weight="0.0239843847567">
+ <shade name="light" weight="0.488875677462" />
+ <shade name="cool" weight="0.388266480071" />
+ <shade name="bright" weight="0.122856583293" />
+</color>
+
+</colors>

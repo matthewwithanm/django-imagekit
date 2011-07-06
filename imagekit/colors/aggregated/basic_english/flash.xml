@@ -1,0 +1,33 @@
+<colors query="flash">
+
+<color name="green" weight="0.333106999802">
+ <shade name="cool" weight="0.630017749455" />
+ <shade name="light" weight="0.238418481656" />
+ <shade name="bright" weight="0.131562530033" />
+</color>
+
+<color name="red" weight="0.266291932981">
+ <shade name="cool" weight="0.630017749455" />
+ <shade name="light" weight="0.238418481656" />
+ <shade name="bright" weight="0.131562530033" />
+</color>
+
+<color name="white" weight="0.164616831298">
+ <shade name="cool" weight="0.630017749455" />
+ <shade name="light" weight="0.238418481656" />
+ <shade name="bright" weight="0.131562530033" />
+</color>
+
+<color name="blue" weight="0.148155148168">
+ <shade name="cool" weight="0.630017749455" />
+ <shade name="light" weight="0.238418481656" />
+ <shade name="bright" weight="0.131562530033" />
+</color>
+
+<color name="black" weight="0.0878279211688">
+ <shade name="cool" weight="0.630017749455" />
+ <shade name="light" weight="0.238418481656" />
+ <shade name="bright" weight="0.131562530033" />
+</color>
+
+</colors>

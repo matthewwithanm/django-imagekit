@@ -1,0 +1,33 @@
+<colors query="threat">
+
+<color name="red" weight="0.55299481894">
+ <shade name="dark" weight="0.520077281019" />
+ <shade name="fresh" weight="0.444011556244" />
+ <shade name="weak" weight="0.0359100979752" />
+</color>
+
+<color name="green" weight="0.389474845597">
+ <shade name="dark" weight="0.520077281019" />
+ <shade name="fresh" weight="0.444011556244" />
+ <shade name="weak" weight="0.0359100979752" />
+</color>
+
+<color name="yellow" weight="0.0252712686075">
+ <shade name="dark" weight="0.520077281019" />
+ <shade name="fresh" weight="0.444011556244" />
+ <shade name="weak" weight="0.0359100979752" />
+</color>
+
+<color name="blue" weight="0.0191764332374">
+ <shade name="dark" weight="0.520077281019" />
+ <shade name="fresh" weight="0.444011556244" />
+ <shade name="weak" weight="0.0359100979752" />
+</color>
+
+<color name="black" weight="0.0130815978674">
+ <shade name="dark" weight="0.520077281019" />
+ <shade name="fresh" weight="0.444011556244" />
+ <shade name="weak" weight="0.0359100979752" />
+</color>
+
+</colors>

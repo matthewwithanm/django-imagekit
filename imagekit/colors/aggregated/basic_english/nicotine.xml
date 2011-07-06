@@ -1,0 +1,33 @@
+<colors query="nicotine">
+
+<color name="yellow" weight="0.404623824948">
+ <shade name="fresh" weight="0.406899742749" />
+ <shade name="intense" weight="0.375136371176" />
+ <shade name="hard" weight="0.217962446318" />
+</color>
+
+<color name="pink" weight="0.365074127772">
+ <shade name="fresh" weight="0.512412864046" />
+ <shade name="hard" weight="0.274482260956" />
+ <shade name="light" weight="0.213103061898" />
+</color>
+
+<color name="green" weight="0.108001096133">
+ <shade name="fresh" weight="0.406899742749" />
+ <shade name="intense" weight="0.375136371176" />
+ <shade name="hard" weight="0.217962446318" />
+</color>
+
+<color name="black" weight="0.0669302567583">
+ <shade name="fresh" weight="0.406899742749" />
+ <shade name="intense" weight="0.375136371176" />
+ <shade name="hard" weight="0.217962446318" />
+</color>
+
+<color name="white" weight="0.0553695760455">
+ <shade name="fresh" weight="0.512412864046" />
+ <shade name="hard" weight="0.274482260956" />
+ <shade name="light" weight="0.213103061898" />
+</color>
+
+</colors>

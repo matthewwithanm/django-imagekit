@@ -1,0 +1,33 @@
+<colors query="tide">
+
+<color name="red" weight="0.837039558182">
+ <shade name="dark" weight="0.73834921001" />
+ <shade name="warm" weight="0.24228465095" />
+ <shade name="light" weight="0.0193650870649" />
+</color>
+
+<color name="black" weight="0.0614615814413">
+ <shade name="dark" weight="0.73834921001" />
+ <shade name="warm" weight="0.24228465095" />
+ <shade name="light" weight="0.0193650870649" />
+</color>
+
+<color name="blue" weight="0.0498410756444">
+ <shade name="dark" weight="0.950915463745" />
+ <shade name="light" weight="0.0249401780312" />
+ <shade name="fresh" weight="0.0241430033909" />
+</color>
+
+<color name="pink" weight="0.0281434124768">
+ <shade name="dark" weight="0.73834921001" />
+ <shade name="warm" weight="0.24228465095" />
+ <shade name="light" weight="0.0193650870649" />
+</color>
+
+<color name="green" weight="0.0235133671984">
+ <shade name="dark" weight="0.950915463745" />
+ <shade name="light" weight="0.0249401780312" />
+ <shade name="fresh" weight="0.0241430033909" />
+</color>
+
+</colors>

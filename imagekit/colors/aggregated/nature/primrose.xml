@@ -1,0 +1,33 @@
+<colors query="primrose">
+
+<color name="yellow" weight="0.341821153209">
+ <shade name="light" weight="0.429926175664" />
+ <shade name="soft" weight="0.404915425225" />
+ <shade name="bright" weight="0.16515719687" />
+</color>
+
+<color name="white" weight="0.293645017522">
+ <shade name="light" weight="0.429926175664" />
+ <shade name="soft" weight="0.404915425225" />
+ <shade name="bright" weight="0.16515719687" />
+</color>
+
+<color name="red" weight="0.256939390332">
+ <shade name="light" weight="0.429926175664" />
+ <shade name="soft" weight="0.404915425225" />
+ <shade name="bright" weight="0.16515719687" />
+</color>
+
+<color name="blue" weight="0.0633172069032">
+ <shade name="light" weight="0.429926175664" />
+ <shade name="soft" weight="0.404915425225" />
+ <shade name="bright" weight="0.16515719687" />
+</color>
+
+<color name="purple" weight="0.0442761627983">
+ <shade name="light" weight="0.429926175664" />
+ <shade name="soft" weight="0.404915425225" />
+ <shade name="bright" weight="0.16515719687" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="road">
+
+<color name="green" weight="0.360987583131">
+ <shade name="hard" weight="0.769704544472" />
+ <shade name="dark" weight="0.177386818866" />
+ <shade name="light" weight="0.0529075468445" />
+</color>
+
+<color name="red" weight="0.354654467638">
+ <shade name="hard" weight="0.769704544472" />
+ <shade name="dark" weight="0.177386818866" />
+ <shade name="light" weight="0.0529075468445" />
+</color>
+
+<color name="orange" weight="0.133945392688">
+ <shade name="hard" weight="0.769704544472" />
+ <shade name="dark" weight="0.177386818866" />
+ <shade name="light" weight="0.0529075468445" />
+</color>
+
+<color name="white" weight="0.103229782545">
+ <shade name="hard" weight="0.769704544472" />
+ <shade name="dark" weight="0.177386818866" />
+ <shade name="light" weight="0.0529075468445" />
+</color>
+
+<color name="black" weight="0.0471817104268">
+ <shade name="hard" weight="0.769704544472" />
+ <shade name="dark" weight="0.177386818866" />
+ <shade name="light" weight="0.0529075468445" />
+</color>
+
+</colors>

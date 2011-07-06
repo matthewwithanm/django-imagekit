@@ -1,0 +1,33 @@
+<colors query="sky">
+
+<color name="blue" weight="0.470296501869">
+ <shade name="dark" weight="0.74538667347" />
+ <shade name="bright" weight="0.177121585775" />
+ <shade name="light" weight="0.0774906937766" />
+</color>
+
+<color name="red" weight="0.222772027201">
+ <shade name="dark" weight="0.74538667347" />
+ <shade name="bright" weight="0.177121585775" />
+ <shade name="light" weight="0.0774906937766" />
+</color>
+
+<color name="white" weight="0.154226788062">
+ <shade name="dark" weight="0.74538667347" />
+ <shade name="bright" weight="0.177121585775" />
+ <shade name="light" weight="0.0774906937766" />
+</color>
+
+<color name="black" weight="0.0921552659533">
+ <shade name="dark" weight="0.74538667347" />
+ <shade name="bright" weight="0.177121585775" />
+ <shade name="light" weight="0.0774906937766" />
+</color>
+
+<color name="orange" weight="0.0605482945726">
+ <shade name="dark" weight="0.74538667347" />
+ <shade name="bright" weight="0.177121585775" />
+ <shade name="light" weight="0.0774906937766" />
+</color>
+
+</colors>

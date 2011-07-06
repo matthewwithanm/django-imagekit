@@ -1,0 +1,33 @@
+<colors query="sorrowful">
+
+<color name="black" weight="0.430938790819">
+ <shade name="dark" weight="0.570790843891" />
+ <shade name="soft" weight="0.282050944345" />
+ <shade name="intense" weight="0.147157014441" />
+</color>
+
+<color name="white" weight="0.314916808675">
+ <shade name="dark" weight="0.628991799094" />
+ <shade name="soft" weight="0.310810400724" />
+ <shade name="light" weight="0.0601964807727" />
+</color>
+
+<color name="blue" weight="0.16298326063">
+ <shade name="dark" weight="0.570790843891" />
+ <shade name="soft" weight="0.282050944345" />
+ <shade name="intense" weight="0.147157014441" />
+</color>
+
+<color name="green" weight="0.0552485629255">
+ <shade name="dark" weight="0.570790843891" />
+ <shade name="soft" weight="0.282050944345" />
+ <shade name="intense" weight="0.147157014441" />
+</color>
+
+<color name="red" weight="0.0359115659016">
+ <shade name="dark" weight="0.570790843891" />
+ <shade name="soft" weight="0.282050944345" />
+ <shade name="intense" weight="0.147157014441" />
+</color>
+
+</colors>

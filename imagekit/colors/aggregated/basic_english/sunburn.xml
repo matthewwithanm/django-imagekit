@@ -1,0 +1,33 @@
+<colors query="sunburn">
+
+<color name="red" weight="0.344870550064">
+ <shade name="light" weight="0.739630512246" />
+ <shade name="cool" weight="0.139016742177" />
+ <shade name="intense" weight="0.121351631293" />
+</color>
+
+<color name="pink" weight="0.317180213927">
+ <shade name="light" weight="0.795603805137" />
+ <shade name="cool" weight="0.14953716379" />
+ <shade name="fresh" weight="0.0548578324622" />
+</color>
+
+<color name="black" weight="0.154814152036">
+ <shade name="light" weight="0.739630512246" />
+ <shade name="cool" weight="0.139016742177" />
+ <shade name="intense" weight="0.121351631293" />
+</color>
+
+<color name="purple" weight="0.0994334797629">
+ <shade name="light" weight="0.795603805137" />
+ <shade name="cool" weight="0.14953716379" />
+ <shade name="fresh" weight="0.0548578324622" />
+</color>
+
+<color name="green" weight="0.0837003342308">
+ <shade name="light" weight="0.739630512246" />
+ <shade name="cool" weight="0.139016742177" />
+ <shade name="intense" weight="0.121351631293" />
+</color>
+
+</colors>

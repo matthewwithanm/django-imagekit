@@ -1,0 +1,33 @@
+<colors query="sticky">
+
+<color name="yellow" weight="0.542419421366">
+ <shade name="warm" weight="0.464695670073" />
+ <shade name="soft" weight="0.38095192741" />
+ <shade name="dark" weight="0.154351211968" />
+</color>
+
+<color name="white" weight="0.181919129012">
+ <shade name="warm" weight="0.464695670073" />
+ <shade name="soft" weight="0.38095192741" />
+ <shade name="dark" weight="0.154351211968" />
+</color>
+
+<color name="black" weight="0.173296051031">
+ <shade name="warm" weight="0.464695670073" />
+ <shade name="soft" weight="0.38095192741" />
+ <shade name="dark" weight="0.154351211968" />
+</color>
+
+<color name="red" weight="0.0536856145249">
+ <shade name="warm" weight="0.464695670073" />
+ <shade name="soft" weight="0.38095192741" />
+ <shade name="dark" weight="0.154351211968" />
+</color>
+
+<color name="green" weight="0.04867866602">
+ <shade name="soft" weight="0.592591495133" />
+ <shade name="dark" weight="0.240101726476" />
+ <shade name="hard" weight="0.167304926428" />
+</color>
+
+</colors>

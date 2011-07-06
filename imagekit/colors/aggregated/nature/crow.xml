@@ -1,0 +1,33 @@
+<colors query="crow">
+
+<color name="black" weight="0.498319765529">
+ <shade name="dark" weight="0.883279810149" />
+ <shade name="cool" weight="0.0713721632308" />
+ <shade name="light" weight="0.0453469545389" />
+</color>
+
+<color name="white" weight="0.282754473699">
+ <shade name="dark" weight="0.883279810149" />
+ <shade name="cool" weight="0.0713721632308" />
+ <shade name="light" weight="0.0453469545389" />
+</color>
+
+<color name="red" weight="0.173572053162">
+ <shade name="dark" weight="0.883279810149" />
+ <shade name="cool" weight="0.0713721632308" />
+ <shade name="light" weight="0.0453469545389" />
+</color>
+
+<color name="blue" weight="0.0291153121433">
+ <shade name="dark" weight="0.883279810149" />
+ <shade name="cool" weight="0.0713721632308" />
+ <shade name="light" weight="0.0453469545389" />
+</color>
+
+<color name="green" weight="0.0162373856184">
+ <shade name="dark" weight="0.883279810149" />
+ <shade name="cool" weight="0.0713721632308" />
+ <shade name="light" weight="0.0453469545389" />
+</color>
+
+</colors>

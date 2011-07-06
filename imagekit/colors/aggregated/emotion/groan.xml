@@ -1,0 +1,33 @@
+<colors query="groan">
+
+<color name="black" weight="0.493526949878">
+ <shade name="light" weight="0.387657734075" />
+ <shade name="weak" weight="0.385020606633" />
+ <shade name="soft" weight="0.22732038556" />
+</color>
+
+<color name="red" weight="0.173138962744">
+ <shade name="light" weight="0.387657734075" />
+ <shade name="weak" weight="0.385020606633" />
+ <shade name="soft" weight="0.22732038556" />
+</color>
+
+<color name="green" weight="0.14724902439">
+ <shade name="light" weight="0.387657734075" />
+ <shade name="weak" weight="0.385020606633" />
+ <shade name="soft" weight="0.22732038556" />
+</color>
+
+<color name="white" weight="0.110032238006">
+ <shade name="light" weight="0.387657734075" />
+ <shade name="weak" weight="0.385020606633" />
+ <shade name="soft" weight="0.22732038556" />
+</color>
+
+<color name="pink" weight="0.0760516939156">
+ <shade name="light" weight="0.387657734075" />
+ <shade name="weak" weight="0.385020606633" />
+ <shade name="soft" weight="0.22732038556" />
+</color>
+
+</colors>

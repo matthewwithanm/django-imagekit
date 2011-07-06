@@ -1,0 +1,33 @@
+<colors query="milk">
+
+<color name="black" weight="0.531080346787">
+ <shade name="neutral" weight="0.507828491612" />
+ <shade name="fresh" weight="0.309352189474" />
+ <shade name="warm" weight="0.18281825698" />
+</color>
+
+<color name="white" weight="0.270508700547">
+ <shade name="neutral" weight="0.507828491612" />
+ <shade name="fresh" weight="0.309352189474" />
+ <shade name="warm" weight="0.18281825698" />
+</color>
+
+<color name="green" weight="0.0885501950361">
+ <shade name="neutral" weight="0.60017930076" />
+ <shade name="fresh" weight="0.365609224046" />
+ <shade name="dark" weight="0.0342102201433" />
+</color>
+
+<color name="blue" weight="0.0662470287053">
+ <shade name="neutral" weight="0.60017930076" />
+ <shade name="fresh" weight="0.365609224046" />
+ <shade name="dark" weight="0.0342102201433" />
+</color>
+
+<color name="orange" weight="0.043612627231">
+ <shade name="neutral" weight="0.507828491612" />
+ <shade name="fresh" weight="0.309352189474" />
+ <shade name="warm" weight="0.18281825698" />
+</color>
+
+</colors>

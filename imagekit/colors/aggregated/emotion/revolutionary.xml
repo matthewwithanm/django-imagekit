@@ -1,0 +1,33 @@
+<colors query="revolutionary">
+
+<color name="black" weight="0.955738104736">
+ <shade name="fresh" weight="0.398088430313" />
+ <shade name="intense" weight="0.315922978296" />
+ <shade name="cool" weight="0.285986728337" />
+</color>
+
+<color name="white" weight="0.0129906150158">
+ <shade name="fresh" weight="0.444522546068" />
+ <shade name="cool" weight="0.319344997095" />
+ <shade name="light" weight="0.236130376471" />
+</color>
+
+<color name="orange" weight="0.0111533708922">
+ <shade name="fresh" weight="0.398088430313" />
+ <shade name="intense" weight="0.315922978296" />
+ <shade name="cool" weight="0.285986728337" />
+</color>
+
+<color name="red" weight="0.010281143884">
+ <shade name="fresh" weight="0.398088430313" />
+ <shade name="intense" weight="0.315922978296" />
+ <shade name="cool" weight="0.285986728337" />
+</color>
+
+<color name="green" weight="0.00983575136913">
+ <shade name="fresh" weight="0.398088430313" />
+ <shade name="intense" weight="0.315922978296" />
+ <shade name="cool" weight="0.285986728337" />
+</color>
+
+</colors>

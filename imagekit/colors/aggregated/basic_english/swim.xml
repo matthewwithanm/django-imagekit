@@ -1,0 +1,33 @@
+<colors query="swim">
+
+<color name="blue" weight="0.355051497516">
+ <shade name="cool" weight="0.561093640677" />
+ <shade name="soft" weight="0.222814458137" />
+ <shade name="light" weight="0.216090608724" />
+</color>
+
+<color name="white" weight="0.209631469278">
+ <shade name="cool" weight="0.561093640677" />
+ <shade name="soft" weight="0.222814458137" />
+ <shade name="light" weight="0.216090608724" />
+</color>
+
+<color name="black" weight="0.169971461577">
+ <shade name="cool" weight="0.561093640677" />
+ <shade name="soft" weight="0.222814458137" />
+ <shade name="light" weight="0.216090608724" />
+</color>
+
+<color name="pink" weight="0.142587170545">
+ <shade name="cool" weight="0.561093640677" />
+ <shade name="soft" weight="0.222814458137" />
+ <shade name="light" weight="0.216090608724" />
+</color>
+
+<color name="red" weight="0.122757166694">
+ <shade name="cool" weight="0.561093640677" />
+ <shade name="soft" weight="0.222814458137" />
+ <shade name="light" weight="0.216090608724" />
+</color>
+
+</colors>

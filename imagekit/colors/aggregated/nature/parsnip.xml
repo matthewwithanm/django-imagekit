@@ -1,0 +1,33 @@
+<colors query="parsnip">
+
+<color name="purple" weight="0.440153953691">
+ <shade name="soft" weight="0.485354847395" />
+ <shade name="fresh" weight="0.443513912275" />
+ <shade name="light" weight="0.0711295897045" />
+</color>
+
+<color name="orange" weight="0.254825973189">
+ <shade name="warm" weight="0.39918766582" />
+ <shade name="soft" weight="0.313937418543" />
+ <shade name="fresh" weight="0.286873847979" />
+</color>
+
+<color name="white" weight="0.178571231212">
+ <shade name="warm" weight="0.39918766582" />
+ <shade name="soft" weight="0.313937418543" />
+ <shade name="fresh" weight="0.286873847979" />
+</color>
+
+<color name="blue" weight="0.0637064932974">
+ <shade name="soft" weight="0.485354847395" />
+ <shade name="fresh" weight="0.443513912275" />
+ <shade name="light" weight="0.0711295897045" />
+</color>
+
+<color name="yellow" weight="0.0627412433989">
+ <shade name="warm" weight="0.39918766582" />
+ <shade name="soft" weight="0.313937418543" />
+ <shade name="fresh" weight="0.286873847979" />
+</color>
+
+</colors>

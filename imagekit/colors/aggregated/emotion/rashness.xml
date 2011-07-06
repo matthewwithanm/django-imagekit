@@ -1,0 +1,33 @@
+<colors query="rashness">
+
+<color name="red" weight="0.399999573334">
+ <shade name="weak" weight="0.333332733334" />
+ <shade name="fresh" weight="0.333332733334" />
+ <shade name="dark" weight="0.333332733334" />
+</color>
+
+<color name="black" weight="0.266666382223">
+ <shade name="weak" weight="0.333332733334" />
+ <shade name="fresh" weight="0.333332733334" />
+ <shade name="dark" weight="0.333332733334" />
+</color>
+
+<color name="yellow" weight="0.133333191111">
+ <shade name="weak" weight="0.333332733334" />
+ <shade name="fresh" weight="0.333332733334" />
+ <shade name="dark" weight="0.333332733334" />
+</color>
+
+<color name="green" weight="0.133333191111">
+ <shade name="weak" weight="0.333332733334" />
+ <shade name="fresh" weight="0.333332733334" />
+ <shade name="dark" weight="0.333332733334" />
+</color>
+
+<color name="purple" weight="0.0666665955556">
+ <shade name="weak" weight="0.333332733334" />
+ <shade name="fresh" weight="0.333332733334" />
+ <shade name="dark" weight="0.333332733334" />
+</color>
+
+</colors>

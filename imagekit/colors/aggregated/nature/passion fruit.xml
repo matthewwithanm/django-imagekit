@@ -1,0 +1,33 @@
+<colors query="passion fruit">
+
+<color name="yellow" weight="0.478028543419">
+ <shade name="fresh" weight="0.837623021052" />
+ <shade name="intense" weight="0.101436916311" />
+ <shade name="warm" weight="0.0609389959353" />
+</color>
+
+<color name="orange" weight="0.185695703405">
+ <shade name="fresh" weight="0.837623021052" />
+ <shade name="intense" weight="0.101436916311" />
+ <shade name="warm" weight="0.0609389959353" />
+</color>
+
+<color name="purple" weight="0.166942275932">
+ <shade name="fresh" weight="0.947083747809" />
+ <shade name="light" weight="0.0324962680441" />
+ <shade name="soft" weight="0.0204187780491" />
+</color>
+
+<color name="red" weight="0.107188708005">
+ <shade name="fresh" weight="0.837623021052" />
+ <shade name="intense" weight="0.101436916311" />
+ <shade name="warm" weight="0.0609389959353" />
+</color>
+
+<color name="pink" weight="0.0621437106444">
+ <shade name="fresh" weight="0.903288925288" />
+ <shade name="warm" weight="0.0657163410783" />
+ <shade name="light" weight="0.030993583308" />
+</color>
+
+</colors>

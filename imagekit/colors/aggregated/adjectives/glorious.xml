@@ -1,0 +1,33 @@
+<colors query="glorious">
+
+<color name="orange" weight="0.348513575191">
+ <shade name="dark" weight="0.757624430572" />
+ <shade name="bright" weight="0.142833523599" />
+ <shade name="light" weight="0.0995406989951" />
+</color>
+
+<color name="green" weight="0.235193210252">
+ <shade name="dark" weight="0.757624430572" />
+ <shade name="bright" weight="0.142833523599" />
+ <shade name="light" weight="0.0995406989951" />
+</color>
+
+<color name="red" weight="0.169125299372">
+ <shade name="dark" weight="0.757624430572" />
+ <shade name="bright" weight="0.142833523599" />
+ <shade name="light" weight="0.0995406989951" />
+</color>
+
+<color name="white" weight="0.145392166337">
+ <shade name="dark" weight="0.757624430572" />
+ <shade name="bright" weight="0.142833523599" />
+ <shade name="light" weight="0.0995406989951" />
+</color>
+
+<color name="black" weight="0.101774516436">
+ <shade name="dark" weight="0.757624430572" />
+ <shade name="bright" weight="0.142833523599" />
+ <shade name="light" weight="0.0995406989951" />
+</color>
+
+</colors>

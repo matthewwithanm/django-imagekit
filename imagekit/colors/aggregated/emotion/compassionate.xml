@@ -1,0 +1,33 @@
+<colors query="compassionate">
+
+<color name="white" weight="0.29599968032">
+ <shade name="warm" weight="0.960759271109" />
+ <shade name="bright" weight="0.0200767358555" />
+ <shade name="soft" weight="0.0191629702444" />
+</color>
+
+<color name="black" weight="0.26799971056">
+ <shade name="warm" weight="0.960759271109" />
+ <shade name="bright" weight="0.0200767358555" />
+ <shade name="soft" weight="0.0191629702444" />
+</color>
+
+<color name="green" weight="0.1799998056">
+ <shade name="bright" weight="0.441944072643" />
+ <shade name="soft" weight="0.421829582991" />
+ <shade name="intense" weight="0.13620382993" />
+</color>
+
+<color name="blue" weight="0.16399982288">
+ <shade name="bright" weight="0.441944072643" />
+ <shade name="soft" weight="0.421829582991" />
+ <shade name="intense" weight="0.13620382993" />
+</color>
+
+<color name="pink" weight="0.0919999006401">
+ <shade name="warm" weight="0.960759271109" />
+ <shade name="bright" weight="0.0200767358555" />
+ <shade name="soft" weight="0.0191629702444" />
+</color>
+
+</colors>

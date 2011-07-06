@@ -1,0 +1,33 @@
+<colors query="thrill">
+
+<color name="red" weight="0.744515954737">
+ <shade name="hard" weight="0.889544849903" />
+ <shade name="cool" weight="0.0671861669111" />
+ <shade name="fresh" weight="0.0432678914908" />
+</color>
+
+<color name="purple" weight="0.10932982038">
+ <shade name="hard" weight="0.889544849903" />
+ <shade name="cool" weight="0.0671861669111" />
+ <shade name="fresh" weight="0.0432678914908" />
+</color>
+
+<color name="black" weight="0.0554027187939">
+ <shade name="hard" weight="0.889544849903" />
+ <shade name="cool" weight="0.0671861669111" />
+ <shade name="fresh" weight="0.0432678914908" />
+</color>
+
+<color name="white" weight="0.0525856313976">
+ <shade name="hard" weight="0.889544849903" />
+ <shade name="cool" weight="0.0671861669111" />
+ <shade name="fresh" weight="0.0432678914908" />
+</color>
+
+<color name="blue" weight="0.0381648268689">
+ <shade name="hard" weight="0.889544849903" />
+ <shade name="cool" weight="0.0671861669111" />
+ <shade name="fresh" weight="0.0432678914908" />
+</color>
+
+</colors>

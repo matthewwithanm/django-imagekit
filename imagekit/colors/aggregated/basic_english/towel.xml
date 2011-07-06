@@ -1,0 +1,33 @@
+<colors query="towel">
+
+<color name="white" weight="0.579304173917">
+ <shade name="soft" weight="0.509489334852" />
+ <shade name="warm" weight="0.360023313452" />
+ <shade name="fresh" weight="0.130486209159" />
+</color>
+
+<color name="blue" weight="0.157011407138">
+ <shade name="soft" weight="0.679587571912" />
+ <shade name="fresh" weight="0.174050367661" />
+ <shade name="cool" weight="0.146360536442" />
+</color>
+
+<color name="pink" weight="0.0902915471071">
+ <shade name="soft" weight="0.509489334852" />
+ <shade name="warm" weight="0.360023313452" />
+ <shade name="fresh" weight="0.130486209159" />
+</color>
+
+<color name="green" weight="0.0902915471071">
+ <shade name="soft" weight="0.679587571912" />
+ <shade name="fresh" weight="0.174050367661" />
+ <shade name="cool" weight="0.146360536442" />
+</color>
+
+<color name="red" weight="0.0831001849481">
+ <shade name="soft" weight="0.509489334852" />
+ <shade name="warm" weight="0.360023313452" />
+ <shade name="fresh" weight="0.130486209159" />
+</color>
+
+</colors>

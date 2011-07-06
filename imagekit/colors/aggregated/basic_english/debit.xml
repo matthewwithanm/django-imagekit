@@ -1,0 +1,33 @@
+<colors query="debit">
+
+<color name="blue" weight="0.289712186155">
+ <shade name="cool" weight="0.402777091938" />
+ <shade name="intense" weight="0.330554992694" />
+ <shade name="neutral" weight="0.266666212593" />
+</color>
+
+<color name="green" weight="0.20272288744">
+ <shade name="cool" weight="0.402777091938" />
+ <shade name="intense" weight="0.330554992694" />
+ <shade name="neutral" weight="0.266666212593" />
+</color>
+
+<color name="yellow" weight="0.17397859743">
+ <shade name="cool" weight="0.402777091938" />
+ <shade name="intense" weight="0.330554992694" />
+ <shade name="neutral" weight="0.266666212593" />
+</color>
+
+<color name="orange" weight="0.173222168745">
+ <shade name="cool" weight="0.402777091938" />
+ <shade name="intense" weight="0.330554992694" />
+ <shade name="neutral" weight="0.266666212593" />
+</color>
+
+<color name="black" weight="0.160362881109">
+ <shade name="cool" weight="0.402777091938" />
+ <shade name="intense" weight="0.330554992694" />
+ <shade name="neutral" weight="0.266666212593" />
+</color>
+
+</colors>

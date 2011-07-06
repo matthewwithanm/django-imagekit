@@ -1,0 +1,33 @@
+<colors query="tear">
+
+<color name="black" weight="0.371169207004">
+ <shade name="fresh" weight="0.576199386272" />
+ <shade name="cool" weight="0.227557003999" />
+ <shade name="hard" weight="0.196241819962" />
+</color>
+
+<color name="blue" weight="0.212559109825">
+ <shade name="fresh" weight="0.576199386272" />
+ <shade name="cool" weight="0.227557003999" />
+ <shade name="hard" weight="0.196241819962" />
+</color>
+
+<color name="red" weight="0.183426642996">
+ <shade name="fresh" weight="0.576199386272" />
+ <shade name="cool" weight="0.227557003999" />
+ <shade name="hard" weight="0.196241819962" />
+</color>
+
+<color name="white" weight="0.131635590856">
+ <shade name="fresh" weight="0.576199386272" />
+ <shade name="cool" weight="0.227557003999" />
+ <shade name="hard" weight="0.196241819962" />
+</color>
+
+<color name="yellow" weight="0.101208347724">
+ <shade name="fresh" weight="0.576199386272" />
+ <shade name="cool" weight="0.227557003999" />
+ <shade name="hard" weight="0.196241819962" />
+</color>
+
+</colors>

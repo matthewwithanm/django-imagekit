@@ -1,0 +1,33 @@
+<colors query="muddy">
+
+<color name="black" weight="0.960217060024">
+ <shade name="soft" weight="0.666702857492" />
+ <shade name="dark" weight="0.319519419255" />
+ <shade name="warm" weight="0.0137766814536" />
+</color>
+
+<color name="white" weight="0.0123592294855">
+ <shade name="soft" weight="0.666702857492" />
+ <shade name="dark" weight="0.319519419255" />
+ <shade name="warm" weight="0.0137766814536" />
+</color>
+
+<color name="green" weight="0.0116197884051">
+ <shade name="soft" weight="0.667709555868" />
+ <shade name="dark" weight="0.320001882584" />
+ <shade name="hard" weight="0.0122875181754" />
+</color>
+
+<color name="yellow" weight="0.00976062226031">
+ <shade name="soft" weight="0.666702857492" />
+ <shade name="dark" weight="0.319519419255" />
+ <shade name="warm" weight="0.0137766814536" />
+</color>
+
+<color name="red" weight="0.00604228997067">
+ <shade name="soft" weight="0.666702857492" />
+ <shade name="dark" weight="0.319519419255" />
+ <shade name="warm" weight="0.0137766814536" />
+</color>
+
+</colors>

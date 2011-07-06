@@ -1,0 +1,33 @@
+<colors query="grieved">
+
+<color name="white" weight="0.441176009949">
+ <shade name="hard" weight="0.466666075556" />
+ <shade name="light" weight="0.333332911112" />
+ <shade name="neutral" weight="0.199999746667" />
+</color>
+
+<color name="black" weight="0.352940807959">
+ <shade name="hard" weight="0.466666075556" />
+ <shade name="light" weight="0.333332911112" />
+ <shade name="neutral" weight="0.199999746667" />
+</color>
+
+<color name="green" weight="0.117646935986">
+ <shade name="hard" weight="0.466666075556" />
+ <shade name="light" weight="0.333332911112" />
+ <shade name="neutral" weight="0.199999746667" />
+</color>
+
+<color name="pink" weight="0.0441176009949">
+ <shade name="hard" weight="0.466666075556" />
+ <shade name="light" weight="0.333332911112" />
+ <shade name="neutral" weight="0.199999746667" />
+</color>
+
+<color name="blue" weight="0.0441176009949">
+ <shade name="hard" weight="0.466666075556" />
+ <shade name="light" weight="0.333332911112" />
+ <shade name="neutral" weight="0.199999746667" />
+</color>
+
+</colors>

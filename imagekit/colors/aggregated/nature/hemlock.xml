@@ -1,0 +1,33 @@
+<colors query="hemlock">
+
+<color name="black" weight="0.569665600083">
+ <shade name="dark" weight="0.575558950367" />
+ <shade name="light" weight="0.222947470239" />
+ <shade name="cool" weight="0.201492274358" />
+</color>
+
+<color name="green" weight="0.172169635184">
+ <shade name="dark" weight="0.575558950367" />
+ <shade name="light" weight="0.222947470239" />
+ <shade name="cool" weight="0.201492274358" />
+</color>
+
+<color name="white" weight="0.144593466008">
+ <shade name="dark" weight="0.575558950367" />
+ <shade name="light" weight="0.222947470239" />
+ <shade name="cool" weight="0.201492274358" />
+</color>
+
+<color name="red" weight="0.0952466369565">
+ <shade name="dark" weight="0.575558950367" />
+ <shade name="light" weight="0.222947470239" />
+ <shade name="cool" weight="0.201492274358" />
+</color>
+
+<color name="blue" weight="0.0183236387288">
+ <shade name="dark" weight="0.575558950367" />
+ <shade name="light" weight="0.222947470239" />
+ <shade name="cool" weight="0.201492274358" />
+</color>
+
+</colors>

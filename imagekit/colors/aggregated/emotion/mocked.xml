@@ -1,0 +1,33 @@
+<colors query="mocked">
+
+<color name="black" weight="0.358406706174">
+ <shade name="light" weight="0.585365173112" />
+ <shade name="dark" weight="0.349593089497" />
+ <shade name="cool" weight="0.0650405747902" />
+</color>
+
+<color name="green" weight="0.289822706844">
+ <shade name="light" weight="0.585365173112" />
+ <shade name="dark" weight="0.349593089497" />
+ <shade name="cool" weight="0.0650405747902" />
+</color>
+
+<color name="red" weight="0.179203353087">
+ <shade name="light" weight="0.585365173112" />
+ <shade name="dark" weight="0.349593089497" />
+ <shade name="cool" weight="0.0650405747902" />
+</color>
+
+<color name="white" weight="0.126106063283">
+ <shade name="light" weight="0.585365173112" />
+ <shade name="dark" weight="0.349593089497" />
+ <shade name="cool" weight="0.0650405747902" />
+</color>
+
+<color name="blue" weight="0.0464601285781">
+ <shade name="light" weight="0.585365173112" />
+ <shade name="dark" weight="0.349593089497" />
+ <shade name="cool" weight="0.0650405747902" />
+</color>
+
+</colors>

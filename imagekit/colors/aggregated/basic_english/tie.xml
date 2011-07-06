@@ -1,0 +1,33 @@
+<colors query="tie">
+
+<color name="black" weight="0.589034242135">
+ <shade name="weak" weight="0.382674764522" />
+ <shade name="cool" weight="0.314692428132" />
+ <shade name="hard" weight="0.302631045869" />
+</color>
+
+<color name="white" weight="0.189850267273">
+ <shade name="weak" weight="0.382674764522" />
+ <shade name="cool" weight="0.314692428132" />
+ <shade name="hard" weight="0.302631045869" />
+</color>
+
+<color name="red" weight="0.101042027689">
+ <shade name="weak" weight="0.382674764522" />
+ <shade name="cool" weight="0.314692428132" />
+ <shade name="hard" weight="0.302631045869" />
+</color>
+
+<color name="blue" weight="0.0743089351616">
+ <shade name="weak" weight="0.382674764522" />
+ <shade name="cool" weight="0.314692428132" />
+ <shade name="hard" weight="0.302631045869" />
+</color>
+
+<color name="pink" weight="0.0457634295813">
+ <shade name="weak" weight="0.382674764522" />
+ <shade name="cool" weight="0.314692428132" />
+ <shade name="hard" weight="0.302631045869" />
+</color>
+
+</colors>

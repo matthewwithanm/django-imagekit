@@ -1,0 +1,33 @@
+<colors query="bear">
+
+<color name="black" weight="0.458268285526">
+ <shade name="light" weight="0.381412090277" />
+ <shade name="fresh" weight="0.374720650096" />
+ <shade name="cool" weight="0.243865819904" />
+</color>
+
+<color name="white" weight="0.418418869394">
+ <shade name="light" weight="0.381412090277" />
+ <shade name="fresh" weight="0.374720650096" />
+ <shade name="cool" weight="0.243865819904" />
+</color>
+
+<color name="blue" weight="0.0639804514575">
+ <shade name="light" weight="0.381412090277" />
+ <shade name="fresh" weight="0.374720650096" />
+ <shade name="cool" weight="0.243865819904" />
+</color>
+
+<color name="red" weight="0.0298870620995">
+ <shade name="light" weight="0.381412090277" />
+ <shade name="fresh" weight="0.374720650096" />
+ <shade name="cool" weight="0.243865819904" />
+</color>
+
+<color name="pink" weight="0.0294442908092">
+ <shade name="light" weight="0.381412090277" />
+ <shade name="fresh" weight="0.374720650096" />
+ <shade name="cool" weight="0.243865819904" />
+</color>
+
+</colors>

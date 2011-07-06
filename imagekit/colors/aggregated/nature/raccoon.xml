@@ -1,0 +1,33 @@
+<colors query="raccoon">
+
+<color name="blue" weight="0.678597321953">
+ <shade name="dark" weight="0.432798391049" />
+ <shade name="soft" weight="0.30887748421" />
+ <shade name="cool" weight="0.258322686395" />
+</color>
+
+<color name="red" weight="0.131245196334">
+ <shade name="dark" weight="0.432798391049" />
+ <shade name="soft" weight="0.30887748421" />
+ <shade name="cool" weight="0.258322686395" />
+</color>
+
+<color name="black" weight="0.076808268309">
+ <shade name="dark" weight="0.432798391049" />
+ <shade name="soft" weight="0.30887748421" />
+ <shade name="cool" weight="0.258322686395" />
+</color>
+
+<color name="green" weight="0.0693511548809">
+ <shade name="dark" weight="0.432798391049" />
+ <shade name="soft" weight="0.30887748421" />
+ <shade name="cool" weight="0.258322686395" />
+</color>
+
+<color name="white" weight="0.0439969692255">
+ <shade name="dark" weight="0.432798391049" />
+ <shade name="soft" weight="0.30887748421" />
+ <shade name="cool" weight="0.258322686395" />
+</color>
+
+</colors>

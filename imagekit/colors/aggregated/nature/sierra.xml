@@ -1,0 +1,33 @@
+<colors query="sierra">
+
+<color name="white" weight="0.896468176248">
+ <shade name="light" weight="0.420868846593" />
+ <shade name="dark" weight="0.306086433886" />
+ <shade name="cool" weight="0.273043012046" />
+</color>
+
+<color name="blue" weight="0.0482020577179">
+ <shade name="light" weight="0.420868846593" />
+ <shade name="dark" weight="0.306086433886" />
+ <shade name="cool" weight="0.273043012046" />
+</color>
+
+<color name="black" weight="0.0464001116349">
+ <shade name="light" weight="0.420868846593" />
+ <shade name="dark" weight="0.306086433886" />
+ <shade name="cool" weight="0.273043012046" />
+</color>
+
+<color name="pink" weight="0.00482020577179">
+ <shade name="light" weight="0.420868846593" />
+ <shade name="dark" weight="0.306086433886" />
+ <shade name="cool" weight="0.273043012046" />
+</color>
+
+<color name="red" weight="0.00410843706904">
+ <shade name="light" weight="0.420868846593" />
+ <shade name="dark" weight="0.306086433886" />
+ <shade name="cool" weight="0.273043012046" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="science">
+
+<color name="black" weight="0.462584560472">
+ <shade name="soft" weight="0.434216878205" />
+ <shade name="hard" weight="0.392615261132" />
+ <shade name="cool" weight="0.173166731069" />
+</color>
+
+<color name="green" weight="0.306802407019">
+ <shade name="soft" weight="0.434216878205" />
+ <shade name="hard" weight="0.392615261132" />
+ <shade name="cool" weight="0.173166731069" />
+</color>
+
+<color name="white" weight="0.111564511643">
+ <shade name="soft" weight="0.434216878205" />
+ <shade name="hard" weight="0.392615261132" />
+ <shade name="cool" weight="0.173166731069" />
+</color>
+
+<color name="blue" weight="0.0812924337888">
+ <shade name="soft" weight="0.434216878205" />
+ <shade name="hard" weight="0.392615261132" />
+ <shade name="cool" weight="0.173166731069" />
+</color>
+
+<color name="red" weight="0.0377550633914">
+ <shade name="soft" weight="0.434216878205" />
+ <shade name="hard" weight="0.392615261132" />
+ <shade name="cool" weight="0.173166731069" />
+</color>
+
+</colors>

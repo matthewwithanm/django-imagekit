@@ -1,0 +1,33 @@
+<colors query="shoal">
+
+<color name="white" weight="0.823309590732">
+ <shade name="fresh" weight="0.503354902371" />
+ <shade name="light" weight="0.305368640771" />
+ <shade name="hard" weight="0.191274862901" />
+</color>
+
+<color name="black" weight="0.0669386493334">
+ <shade name="fresh" weight="0.503354902371" />
+ <shade name="light" weight="0.305368640771" />
+ <shade name="hard" weight="0.191274862901" />
+</color>
+
+<color name="green" weight="0.0424541380264">
+ <shade name="fresh" weight="0.503354902371" />
+ <shade name="light" weight="0.305368640771" />
+ <shade name="hard" weight="0.191274862901" />
+</color>
+
+<color name="red" weight="0.0360108455772">
+ <shade name="fresh" weight="0.503354902371" />
+ <shade name="light" weight="0.305368640771" />
+ <shade name="hard" weight="0.191274862901" />
+</color>
+
+<color name="blue" weight="0.0312857644478">
+ <shade name="fresh" weight="0.503354902371" />
+ <shade name="light" weight="0.305368640771" />
+ <shade name="hard" weight="0.191274862901" />
+</color>
+
+</colors>

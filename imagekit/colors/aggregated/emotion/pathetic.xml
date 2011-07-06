@@ -1,0 +1,33 @@
+<colors query="pathetic">
+
+<color name="white" weight="0.28032311692">
+ <shade name="weak" weight="0.958891327254" />
+ <shade name="dark" weight="0.0227467942653" />
+ <shade name="soft" weight="0.0183608339344" />
+</color>
+
+<color name="blue" weight="0.247978141891">
+ <shade name="weak" weight="0.958891327254" />
+ <shade name="dark" weight="0.0227467942653" />
+ <shade name="soft" weight="0.0183608339344" />
+</color>
+
+<color name="black" weight="0.239891898134">
+ <shade name="weak" weight="0.958891327254" />
+ <shade name="dark" weight="0.0227467942653" />
+ <shade name="soft" weight="0.0183608339344" />
+</color>
+
+<color name="red" weight="0.138813851167">
+ <shade name="weak" weight="0.958891327254" />
+ <shade name="dark" weight="0.0227467942653" />
+ <shade name="soft" weight="0.0183608339344" />
+</color>
+
+<color name="pink" weight="0.0929918032092">
+ <shade name="weak" weight="0.958891327254" />
+ <shade name="dark" weight="0.0227467942653" />
+ <shade name="soft" weight="0.0183608339344" />
+</color>
+
+</colors>

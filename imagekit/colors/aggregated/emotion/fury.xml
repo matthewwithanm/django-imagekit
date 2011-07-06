@@ -1,0 +1,33 @@
+<colors query="fury">
+
+<color name="black" weight="0.52370934519">
+ <shade name="dark" weight="0.907110809304" />
+ <shade name="intense" weight="0.0732945533918" />
+ <shade name="light" weight="0.019593593481" />
+</color>
+
+<color name="red" weight="0.231519976835">
+ <shade name="dark" weight="0.907110809304" />
+ <shade name="intense" weight="0.0732945533918" />
+ <shade name="light" weight="0.019593593481" />
+</color>
+
+<color name="white" weight="0.0962342072387">
+ <shade name="dark" weight="0.968916057919" />
+ <shade name="light" weight="0.020928586851" />
+ <shade name="cool" weight="0.010154240287" />
+</color>
+
+<color name="blue" weight="0.076011076732">
+ <shade name="dark" weight="0.907110809304" />
+ <shade name="intense" weight="0.0732945533918" />
+ <shade name="light" weight="0.019593593481" />
+</color>
+
+<color name="green" weight="0.0725243300929">
+ <shade name="dark" weight="0.907110809304" />
+ <shade name="intense" weight="0.0732945533918" />
+ <shade name="light" weight="0.019593593481" />
+</color>
+
+</colors>

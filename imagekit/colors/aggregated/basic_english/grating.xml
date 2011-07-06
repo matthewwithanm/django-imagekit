@@ -1,0 +1,33 @@
+<colors query="grating">
+
+<color name="red" weight="0.279069464909">
+ <shade name="hard" weight="0.859984178647" />
+ <shade name="light" weight="0.070844102068" />
+ <shade name="weak" weight="0.069170619342" />
+</color>
+
+<color name="black" weight="0.204531680478">
+ <shade name="hard" weight="0.859984178647" />
+ <shade name="light" weight="0.070844102068" />
+ <shade name="weak" weight="0.069170619342" />
+</color>
+
+<color name="green" weight="0.185748158801">
+ <shade name="hard" weight="0.859984178647" />
+ <shade name="light" weight="0.070844102068" />
+ <shade name="weak" weight="0.069170619342" />
+</color>
+
+<color name="white" weight="0.179785136047">
+ <shade name="hard" weight="0.859984178647" />
+ <shade name="light" weight="0.070844102068" />
+ <shade name="weak" weight="0.069170619342" />
+</color>
+
+<color name="blue" weight="0.150864475688">
+ <shade name="hard" weight="0.859984178647" />
+ <shade name="light" weight="0.070844102068" />
+ <shade name="weak" weight="0.069170619342" />
+</color>
+
+</colors>

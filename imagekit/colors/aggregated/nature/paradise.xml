@@ -1,0 +1,33 @@
+<colors query="paradise">
+
+<color name="pink" weight="0.358695269789">
+ <shade name="dark" weight="0.845069505108" />
+ <shade name="light" weight="0.11250417192" />
+ <shade name="soft" weight="0.0424252373499" />
+</color>
+
+<color name="blue" weight="0.322463424355">
+ <shade name="dark" weight="0.845069505108" />
+ <shade name="light" weight="0.11250417192" />
+ <shade name="soft" weight="0.0424252373499" />
+</color>
+
+<color name="green" weight="0.199275149883">
+ <shade name="dark" weight="0.845069505108" />
+ <shade name="light" weight="0.11250417192" />
+ <shade name="soft" weight="0.0424252373499" />
+</color>
+
+<color name="black" weight="0.0744564423652">
+ <shade name="dark" weight="0.845069505108" />
+ <shade name="light" weight="0.11250417192" />
+ <shade name="soft" weight="0.0424252373499" />
+</color>
+
+<color name="white" weight="0.0451086475643">
+ <shade name="dark" weight="0.845069505108" />
+ <shade name="light" weight="0.11250417192" />
+ <shade name="soft" weight="0.0424252373499" />
+</color>
+
+</colors>

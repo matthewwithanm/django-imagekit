@@ -1,0 +1,33 @@
+<colors query="tobacco">
+
+<color name="green" weight="0.440559572522">
+ <shade name="dark" weight="0.449437636454" />
+ <shade name="fresh" weight="0.313201852904" />
+ <shade name="light" weight="0.237359251753" />
+</color>
+
+<color name="black" weight="0.412059761901">
+ <shade name="dark" weight="0.449437636454" />
+ <shade name="fresh" weight="0.313201852904" />
+ <shade name="light" weight="0.237359251753" />
+</color>
+
+<color name="blue" weight="0.123499179359">
+ <shade name="dark" weight="0.449437636454" />
+ <shade name="fresh" weight="0.313201852904" />
+ <shade name="light" weight="0.237359251753" />
+</color>
+
+<color name="orange" weight="0.0127061655687">
+ <shade name="dark" weight="0.449437636454" />
+ <shade name="fresh" weight="0.313201852904" />
+ <shade name="light" weight="0.237359251753" />
+</color>
+
+<color name="white" weight="0.0111743007478">
+ <shade name="dark" weight="0.449437636454" />
+ <shade name="fresh" weight="0.313201852904" />
+ <shade name="light" weight="0.237359251753" />
+</color>
+
+</colors>

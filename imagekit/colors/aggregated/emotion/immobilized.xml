@@ -1,0 +1,33 @@
+<colors query="immobilized">
+
+<color name="blue" weight="0.666173595793">
+ <shade name="soft" weight="0.502716855802" />
+ <shade name="fresh" weight="0.355977881676" />
+ <shade name="light" weight="0.141304197306" />
+</color>
+
+<color name="red" weight="0.194977637793">
+ <shade name="soft" weight="0.502716855802" />
+ <shade name="fresh" weight="0.355977881676" />
+ <shade name="light" weight="0.141304197306" />
+</color>
+
+<color name="orange" weight="0.0620383392978">
+ <shade name="soft" weight="0.502716855802" />
+ <shade name="fresh" weight="0.355977881676" />
+ <shade name="light" weight="0.141304197306" />
+</color>
+
+<color name="green" weight="0.0428359961818">
+ <shade name="soft" weight="0.502716855802" />
+ <shade name="fresh" weight="0.355977881676" />
+ <shade name="light" weight="0.141304197306" />
+</color>
+
+<color name="yellow" weight="0.0339733762821">
+ <shade name="soft" weight="0.502716855802" />
+ <shade name="fresh" weight="0.355977881676" />
+ <shade name="light" weight="0.141304197306" />
+</color>
+
+</colors>

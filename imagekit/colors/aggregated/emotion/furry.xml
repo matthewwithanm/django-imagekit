@@ -1,0 +1,33 @@
+<colors query="furry">
+
+<color name="white" weight="0.294415901876">
+ <shade name="soft" weight="0.743975129914" />
+ <shade name="warm" weight="0.225903379529" />
+ <shade name="cool" weight="0.0301204506038" />
+</color>
+
+<color name="black" weight="0.27048554532">
+ <shade name="soft" weight="0.743975129914" />
+ <shade name="warm" weight="0.225903379529" />
+ <shade name="cool" weight="0.0301204506038" />
+</color>
+
+<color name="pink" weight="0.189992527812">
+ <shade name="soft" weight="0.743975129914" />
+ <shade name="warm" weight="0.225903379529" />
+ <shade name="cool" weight="0.0301204506038" />
+</color>
+
+<color name="red" weight="0.123277594382">
+ <shade name="soft" weight="0.743975129914" />
+ <shade name="warm" weight="0.225903379529" />
+ <shade name="cool" weight="0.0301204506038" />
+</color>
+
+<color name="blue" weight="0.121827269742">
+ <shade name="soft" weight="0.948830948071" />
+ <shade name="cool" weight="0.0384142084239" />
+ <shade name="hard" weight="0.0127535171967" />
+</color>
+
+</colors>

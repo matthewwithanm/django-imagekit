@@ -1,0 +1,33 @@
+<colors query="bashful">
+
+<color name="white" weight="0.744416091166">
+ <shade name="hard" weight="0.966056453337" />
+ <shade name="weak" weight="0.0191470648409" />
+ <shade name="soft" weight="0.0147954591952" />
+</color>
+
+<color name="black" weight="0.109181026704">
+ <shade name="hard" weight="0.966056453337" />
+ <shade name="weak" weight="0.0191470648409" />
+ <shade name="soft" weight="0.0147954591952" />
+</color>
+
+<color name="blue" weight="0.0549006867235">
+ <shade name="hard" weight="0.966056453337" />
+ <shade name="weak" weight="0.0191470648409" />
+ <shade name="soft" weight="0.0147954591952" />
+</color>
+
+<color name="green" weight="0.0502480861537">
+ <shade name="hard" weight="0.966056453337" />
+ <shade name="weak" weight="0.0191470648409" />
+ <shade name="soft" weight="0.0147954591952" />
+</color>
+
+<color name="red" weight="0.0412530583854">
+ <shade name="hard" weight="0.966056453337" />
+ <shade name="weak" weight="0.0191470648409" />
+ <shade name="soft" weight="0.0147954591952" />
+</color>
+
+</colors>

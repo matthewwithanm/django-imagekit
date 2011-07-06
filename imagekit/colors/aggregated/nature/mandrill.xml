@@ -1,0 +1,33 @@
+<colors query="mandrill">
+
+<color name="green" weight="0.529679792082">
+ <shade name="fresh" weight="0.432431450696" />
+ <shade name="bright" weight="0.378377519359" />
+ <shade name="soft" weight="0.18918875968" />
+</color>
+
+<color name="white" weight="0.18721440927">
+ <shade name="fresh" weight="0.363635669423" />
+ <shade name="warm" weight="0.318181210745" />
+ <shade name="bright" weight="0.318181210745" />
+</color>
+
+<color name="blue" weight="0.164383383749">
+ <shade name="fresh" weight="0.432431450696" />
+ <shade name="bright" weight="0.378377519359" />
+ <shade name="soft" weight="0.18918875968" />
+</color>
+
+<color name="black" weight="0.0776254867706">
+ <shade name="fresh" weight="0.363635669423" />
+ <shade name="warm" weight="0.318181210745" />
+ <shade name="bright" weight="0.318181210745" />
+</color>
+
+<color name="red" weight="0.0410958459374">
+ <shade name="fresh" weight="0.363635669423" />
+ <shade name="warm" weight="0.318181210745" />
+ <shade name="bright" weight="0.318181210745" />
+</color>
+
+</colors>

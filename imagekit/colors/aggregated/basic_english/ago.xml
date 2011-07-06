@@ -1,0 +1,33 @@
+<colors query="ago">
+
+<color name="black" weight="0.449802435827">
+ <shade name="warm" weight="0.802828374691" />
+ <shade name="hard" weight="0.107515341809" />
+ <shade name="weak" weight="0.0896550629886" />
+</color>
+
+<color name="white" weight="0.259679756766">
+ <shade name="warm" weight="0.802828374691" />
+ <shade name="hard" weight="0.107515341809" />
+ <shade name="weak" weight="0.0896550629886" />
+</color>
+
+<color name="red" weight="0.121029315207">
+ <shade name="warm" weight="0.802828374691" />
+ <shade name="hard" weight="0.107515341809" />
+ <shade name="weak" weight="0.0896550629886" />
+</color>
+
+<color name="blue" weight="0.0878737748342">
+ <shade name="hard" weight="0.399472564284" />
+ <shade name="weak" weight="0.333112812651" />
+ <shade name="light" weight="0.267410088263" />
+</color>
+
+<color name="green" weight="0.0816136378407">
+ <shade name="hard" weight="0.399472564284" />
+ <shade name="weak" weight="0.333112812651" />
+ <shade name="light" weight="0.267410088263" />
+</color>
+
+</colors>

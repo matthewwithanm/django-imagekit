@@ -1,0 +1,33 @@
+<colors query="happiness">
+
+<color name="green" weight="0.477307731244">
+ <shade name="intense" weight="0.619468170394" />
+ <shade name="light" weight="0.295195546504" />
+ <shade name="dark" weight="0.0853349010237" />
+</color>
+
+<color name="orange" weight="0.162362875792">
+ <shade name="intense" weight="0.582985559388" />
+ <shade name="light" weight="0.277810465545" />
+ <shade name="warm" weight="0.139202674384" />
+</color>
+
+<color name="white" weight="0.140844904302">
+ <shade name="light" weight="0.558610979217" />
+ <shade name="warm" weight="0.279903574168" />
+ <shade name="dark" weight="0.161482831251" />
+</color>
+
+<color name="yellow" weight="0.109937272524">
+ <shade name="intense" weight="0.582985559388" />
+ <shade name="light" weight="0.277810465545" />
+ <shade name="warm" weight="0.139202674384" />
+</color>
+
+<color name="red" weight="0.109546036679">
+ <shade name="intense" weight="0.582985559388" />
+ <shade name="light" weight="0.277810465545" />
+ <shade name="warm" weight="0.139202674384" />
+</color>
+
+</colors>

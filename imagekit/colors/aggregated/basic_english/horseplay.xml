@@ -1,0 +1,33 @@
+<colors query="horseplay">
+
+<color name="blue" weight="0.351350990504">
+ <shade name="light" weight="0.907562079515" />
+ <shade name="cool" weight="0.0504201155286" />
+ <shade name="intense" weight="0.0420167629405" />
+</color>
+
+<color name="white" weight="0.243242993426">
+ <shade name="light" weight="0.931033487516" />
+ <shade name="cool" weight="0.0517240826398" />
+ <shade name="neutral" weight="0.0172413608799" />
+</color>
+
+<color name="pink" weight="0.243242993426">
+ <shade name="light" weight="0.931033487516" />
+ <shade name="cool" weight="0.0517240826398" />
+ <shade name="neutral" weight="0.0172413608799" />
+</color>
+
+<color name="green" weight="0.0810809978087">
+ <shade name="light" weight="0.907562079515" />
+ <shade name="cool" weight="0.0504201155286" />
+ <shade name="intense" weight="0.0420167629405" />
+</color>
+
+<color name="black" weight="0.0810809978087">
+ <shade name="light" weight="0.907562079515" />
+ <shade name="cool" weight="0.0504201155286" />
+ <shade name="intense" weight="0.0420167629405" />
+</color>
+
+</colors>

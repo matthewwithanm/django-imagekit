@@ -1,0 +1,33 @@
+<colors query="measure">
+
+<color name="black" weight="0.277447143466">
+ <shade name="neutral" weight="0.652586327348" />
+ <shade name="hard" weight="0.18268193306" />
+ <shade name="weak" weight="0.164730529234" />
+</color>
+
+<color name="red" weight="0.232527129762">
+ <shade name="neutral" weight="0.652586327348" />
+ <shade name="hard" weight="0.18268193306" />
+ <shade name="weak" weight="0.164730529234" />
+</color>
+
+<color name="white" weight="0.220636537899">
+ <shade name="neutral" weight="0.652586327348" />
+ <shade name="hard" weight="0.18268193306" />
+ <shade name="weak" weight="0.164730529234" />
+</color>
+
+<color name="blue" weight="0.16646828608">
+ <shade name="neutral" weight="0.652586327348" />
+ <shade name="hard" weight="0.18268193306" />
+ <shade name="weak" weight="0.164730529234" />
+</color>
+
+<color name="orange" weight="0.102919678457">
+ <shade name="neutral" weight="0.652586327348" />
+ <shade name="hard" weight="0.18268193306" />
+ <shade name="weak" weight="0.164730529234" />
+</color>
+
+</colors>

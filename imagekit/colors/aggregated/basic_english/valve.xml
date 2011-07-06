@@ -1,0 +1,33 @@
+<colors query="valve">
+
+<color name="red" weight="0.457467595843">
+ <shade name="light" weight="0.945066942497" />
+ <shade name="soft" weight="0.0347837138558" />
+ <shade name="fresh" weight="0.0201483021768" />
+</color>
+
+<color name="black" weight="0.192895322671">
+ <shade name="light" weight="0.945066942497" />
+ <shade name="soft" weight="0.0347837138558" />
+ <shade name="fresh" weight="0.0201483021768" />
+</color>
+
+<color name="orange" weight="0.130705027384">
+ <shade name="light" weight="0.945066942497" />
+ <shade name="soft" weight="0.0347837138558" />
+ <shade name="fresh" weight="0.0201483021768" />
+</color>
+
+<color name="white" weight="0.122272444972">
+ <shade name="light" weight="0.945066942497" />
+ <shade name="soft" weight="0.0347837138558" />
+ <shade name="fresh" weight="0.0201483021768" />
+</color>
+
+<color name="blue" weight="0.0966584758959">
+ <shade name="light" weight="0.945066942497" />
+ <shade name="soft" weight="0.0347837138558" />
+ <shade name="fresh" weight="0.0201483021768" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="relaxation">
+
+<color name="pink" weight="0.344942086063">
+ <shade name="weak" weight="0.658286680843" />
+ <shade name="cool" weight="0.201765886698" />
+ <shade name="warm" weight="0.139945362491" />
+</color>
+
+<color name="red" weight="0.282452577719">
+ <shade name="intense" weight="0.4866174036" />
+ <shade name="weak" weight="0.392943553407" />
+ <shade name="cool" weight="0.120437807391" />
+</color>
+
+<color name="blue" weight="0.205798780816">
+ <shade name="intense" weight="0.4866174036" />
+ <shade name="weak" weight="0.392943553407" />
+ <shade name="cool" weight="0.120437807391" />
+</color>
+
+<color name="orange" weight="0.084985731349">
+ <shade name="intense" weight="0.4866174036" />
+ <shade name="weak" weight="0.392943553407" />
+ <shade name="cool" weight="0.120437807391" />
+</color>
+
+<color name="black" weight="0.0818195962595">
+ <shade name="intense" weight="0.4866174036" />
+ <shade name="weak" weight="0.392943553407" />
+ <shade name="cool" weight="0.120437807391" />
+</color>
+
+</colors>

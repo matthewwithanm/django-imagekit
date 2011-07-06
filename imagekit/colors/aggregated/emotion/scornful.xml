@@ -1,0 +1,33 @@
+<colors query="scornful">
+
+<color name="white" weight="0.691056208276">
+ <shade name="dark" weight="0.691357222376" />
+ <shade name="hard" weight="0.259258958391" />
+ <shade name="soft" weight="0.0493826587411" />
+</color>
+
+<color name="black" weight="0.219511972041">
+ <shade name="dark" weight="0.691357222376" />
+ <shade name="hard" weight="0.259258958391" />
+ <shade name="soft" weight="0.0493826587411" />
+</color>
+
+<color name="green" weight="0.0325202921542">
+ <shade name="dark" weight="0.691357222376" />
+ <shade name="hard" weight="0.259258958391" />
+ <shade name="soft" weight="0.0493826587411" />
+</color>
+
+<color name="blue" weight="0.0325202921542">
+ <shade name="dark" weight="0.691357222376" />
+ <shade name="hard" weight="0.259258958391" />
+ <shade name="soft" weight="0.0493826587411" />
+</color>
+
+<color name="red" weight="0.0243902191156">
+ <shade name="dark" weight="0.691357222376" />
+ <shade name="hard" weight="0.259258958391" />
+ <shade name="soft" weight="0.0493826587411" />
+</color>
+
+</colors>

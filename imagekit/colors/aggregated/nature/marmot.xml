@@ -1,0 +1,33 @@
+<colors query="marmot">
+
+<color name="black" weight="0.537234641381">
+ <shade name="light" weight="0.379031772048" />
+ <shade name="dark" weight="0.317203894338" />
+ <shade name="cool" weight="0.303763051358" />
+</color>
+
+<color name="red" weight="0.229307468882">
+ <shade name="light" weight="0.379031772048" />
+ <shade name="dark" weight="0.317203894338" />
+ <shade name="cool" weight="0.303763051358" />
+</color>
+
+<color name="blue" weight="0.167940422448">
+ <shade name="light" weight="0.379031772048" />
+ <shade name="dark" weight="0.317203894338" />
+ <shade name="cool" weight="0.303763051358" />
+</color>
+
+<color name="white" weight="0.0349420904964">
+ <shade name="light" weight="0.379031772048" />
+ <shade name="dark" weight="0.317203894338" />
+ <shade name="cool" weight="0.303763051358" />
+</color>
+
+<color name="green" weight="0.0305743291843">
+ <shade name="light" weight="0.379031772048" />
+ <shade name="dark" weight="0.317203894338" />
+ <shade name="cool" weight="0.303763051358" />
+</color>
+
+</colors>

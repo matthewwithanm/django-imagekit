@@ -1,0 +1,33 @@
+<colors query="deck">
+
+<color name="red" weight="0.294556779476">
+ <shade name="cool" weight="0.396306185494" />
+ <shade name="hard" weight="0.319601762495" />
+ <shade name="light" weight="0.284090455551" />
+</color>
+
+<color name="black" weight="0.273567830214">
+ <shade name="cool" weight="0.396306185494" />
+ <shade name="hard" weight="0.319601762495" />
+ <shade name="light" weight="0.284090455551" />
+</color>
+
+<color name="blue" weight="0.168978828806">
+ <shade name="cool" weight="0.396306185494" />
+ <shade name="hard" weight="0.319601762495" />
+ <shade name="light" weight="0.284090455551" />
+</color>
+
+<color name="white" weight="0.16044095114">
+ <shade name="cool" weight="0.396306185494" />
+ <shade name="hard" weight="0.319601762495" />
+ <shade name="light" weight="0.284090455551" />
+</color>
+
+<color name="green" weight="0.102454531992">
+ <shade name="cool" weight="0.396306185494" />
+ <shade name="hard" weight="0.319601762495" />
+ <shade name="light" weight="0.284090455551" />
+</color>
+
+</colors>

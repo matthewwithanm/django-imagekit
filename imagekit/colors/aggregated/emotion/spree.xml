@@ -1,0 +1,33 @@
+<colors query="spree">
+
+<color name="pink" weight="0.352408127699">
+ <shade name="fresh" weight="0.53846081906" />
+ <shade name="cool" weight="0.299594741432" />
+ <shade name="hard" weight="0.161943103477" />
+</color>
+
+<color name="blue" weight="0.331401271166">
+ <shade name="fresh" weight="0.53846081906" />
+ <shade name="cool" weight="0.299594741432" />
+ <shade name="hard" weight="0.161943103477" />
+</color>
+
+<color name="green" weight="0.107931780118">
+ <shade name="fresh" weight="0.53846081906" />
+ <shade name="cool" weight="0.299594741432" />
+ <shade name="hard" weight="0.161943103477" />
+</color>
+
+<color name="white" weight="0.104672095483">
+ <shade name="fresh" weight="0.53846081906" />
+ <shade name="cool" weight="0.299594741432" />
+ <shade name="hard" weight="0.161943103477" />
+</color>
+
+<color name="red" weight="0.103585533938">
+ <shade name="fresh" weight="0.53846081906" />
+ <shade name="cool" weight="0.299594741432" />
+ <shade name="hard" weight="0.161943103477" />
+</color>
+
+</colors>

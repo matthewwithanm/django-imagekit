@@ -1,0 +1,33 @@
+<colors query="dromedary">
+
+<color name="white" weight="0.784216221177">
+ <shade name="fresh" weight="0.499999416667" />
+ <shade name="cool" weight="0.388888435186" />
+ <shade name="weak" weight="0.111110981482" />
+</color>
+
+<color name="pink" weight="0.0776817954939">
+ <shade name="fresh" weight="0.499999416667" />
+ <shade name="cool" weight="0.388888435186" />
+ <shade name="weak" weight="0.111110981482" />
+</color>
+
+<color name="red" weight="0.0591861299001">
+ <shade name="fresh" weight="0.499999416667" />
+ <shade name="cool" weight="0.388888435186" />
+ <shade name="weak" weight="0.111110981482" />
+</color>
+
+<color name="purple" weight="0.0517878636626">
+ <shade name="fresh" weight="0.499999416667" />
+ <shade name="cool" weight="0.388888435186" />
+ <shade name="weak" weight="0.111110981482" />
+</color>
+
+<color name="black" weight="0.0271269762042">
+ <shade name="fresh" weight="0.499999416667" />
+ <shade name="cool" weight="0.388888435186" />
+ <shade name="weak" weight="0.111110981482" />
+</color>
+
+</colors>

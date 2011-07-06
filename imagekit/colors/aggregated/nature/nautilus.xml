@@ -1,0 +1,33 @@
+<colors query="nautilus">
+
+<color name="white" weight="0.324293695948">
+ <shade name="cool" weight="0.580246201406" />
+ <shade name="light" weight="0.277777436843" />
+ <shade name="bright" weight="0.141975134386" />
+</color>
+
+<color name="green" weight="0.315906790019">
+ <shade name="cool" weight="0.580246201406" />
+ <shade name="light" weight="0.277777436843" />
+ <shade name="bright" weight="0.141975134386" />
+</color>
+
+<color name="blue" weight="0.162985538567">
+ <shade name="cool" weight="0.580246201406" />
+ <shade name="light" weight="0.277777436843" />
+ <shade name="bright" weight="0.141975134386" />
+</color>
+
+<color name="black" weight="0.107072832369">
+ <shade name="cool" weight="0.580246201406" />
+ <shade name="light" weight="0.277777436843" />
+ <shade name="bright" weight="0.141975134386" />
+</color>
+
+<color name="red" weight="0.0897398934478">
+ <shade name="cool" weight="0.580246201406" />
+ <shade name="light" weight="0.277777436843" />
+ <shade name="bright" weight="0.141975134386" />
+</color>
+
+</colors>

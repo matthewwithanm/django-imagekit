@@ -1,0 +1,33 @@
+<colors query="leech">
+
+<color name="white" weight="0.415573487467">
+ <shade name="dark" weight="0.469786583538" />
+ <shade name="fresh" weight="0.314042118343" />
+ <shade name="bright" weight="0.21616991344" />
+</color>
+
+<color name="pink" weight="0.343621443521">
+ <shade name="dark" weight="0.469786583538" />
+ <shade name="fresh" weight="0.314042118343" />
+ <shade name="bright" weight="0.21616991344" />
+</color>
+
+<color name="red" weight="0.127765311681">
+ <shade name="dark" weight="0.469786583538" />
+ <shade name="fresh" weight="0.314042118343" />
+ <shade name="bright" weight="0.21616991344" />
+</color>
+
+<color name="black" weight="0.0592427576794">
+ <shade name="dark" weight="0.469786583538" />
+ <shade name="fresh" weight="0.314042118343" />
+ <shade name="bright" weight="0.21616991344" />
+</color>
+
+<color name="green" weight="0.0537959207077">
+ <shade name="dark" weight="0.469786583538" />
+ <shade name="fresh" weight="0.314042118343" />
+ <shade name="bright" weight="0.21616991344" />
+</color>
+
+</colors>

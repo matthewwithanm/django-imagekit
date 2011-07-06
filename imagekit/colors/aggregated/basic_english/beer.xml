@@ -1,0 +1,33 @@
+<colors query="beer">
+
+<color name="green" weight="0.502469249767">
+ <shade name="light" weight="0.629968570696" />
+ <shade name="dark" weight="0.241589888762" />
+ <shade name="cool" weight="0.128440194025" />
+</color>
+
+<color name="black" weight="0.194174557537">
+ <shade name="light" weight="0.579736617454" />
+ <shade name="dark" weight="0.222326178538" />
+ <shade name="warm" weight="0.197935964859" />
+</color>
+
+<color name="white" weight="0.170158230684">
+ <shade name="light" weight="0.579736617454" />
+ <shade name="dark" weight="0.222326178538" />
+ <shade name="warm" weight="0.197935964859" />
+</color>
+
+<color name="red" weight="0.0979389215648">
+ <shade name="light" weight="0.579736617454" />
+ <shade name="dark" weight="0.222326178538" />
+ <shade name="warm" weight="0.197935964859" />
+</color>
+
+<color name="blue" weight="0.0352580117633">
+ <shade name="light" weight="0.629968570696" />
+ <shade name="dark" weight="0.241589888762" />
+ <shade name="cool" weight="0.128440194025" />
+</color>
+
+</colors>

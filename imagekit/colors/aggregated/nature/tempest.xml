@@ -1,0 +1,33 @@
+<colors query="tempest">
+
+<color name="white" weight="0.625650997777">
+ <shade name="soft" weight="0.443239164698" />
+ <shade name="dark" weight="0.332907689169" />
+ <shade name="cool" weight="0.223851722027" />
+</color>
+
+<color name="blue" weight="0.120214370287">
+ <shade name="soft" weight="0.443239164698" />
+ <shade name="dark" weight="0.332907689169" />
+ <shade name="cool" weight="0.223851722027" />
+</color>
+
+<color name="black" weight="0.105019988913">
+ <shade name="soft" weight="0.443239164698" />
+ <shade name="dark" weight="0.332907689169" />
+ <shade name="cool" weight="0.223851722027" />
+</color>
+
+<color name="red" weight="0.0783553392454">
+ <shade name="soft" weight="0.443239164698" />
+ <shade name="dark" weight="0.332907689169" />
+ <shade name="cool" weight="0.223851722027" />
+</color>
+
+<color name="purple" weight="0.0707581485581">
+ <shade name="soft" weight="0.443239164698" />
+ <shade name="dark" weight="0.332907689169" />
+ <shade name="cool" weight="0.223851722027" />
+</color>
+
+</colors>

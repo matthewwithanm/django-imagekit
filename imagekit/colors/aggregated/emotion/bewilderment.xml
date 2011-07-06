@@ -1,0 +1,33 @@
+<colors query="bewilderment">
+
+<color name="black" weight="0.676055623885">
+ <shade name="intense" weight="0.633866437051" />
+ <shade name="dark" weight="0.235697628218" />
+ <shade name="soft" weight="0.13043460979" />
+</color>
+
+<color name="red" weight="0.0985914451499">
+ <shade name="intense" weight="0.633866437051" />
+ <shade name="dark" weight="0.235697628218" />
+ <shade name="soft" weight="0.13043460979" />
+</color>
+
+<color name="blue" weight="0.0985914451499">
+ <shade name="intense" weight="0.633866437051" />
+ <shade name="dark" weight="0.235697628218" />
+ <shade name="soft" weight="0.13043460979" />
+</color>
+
+<color name="white" weight="0.0704224608213">
+ <shade name="dark" weight="0.509899528555" />
+ <shade name="soft" weight="0.282177409006" />
+ <shade name="fresh" weight="0.20792019611" />
+</color>
+
+<color name="yellow" weight="0.0563379686571">
+ <shade name="intense" weight="0.633866437051" />
+ <shade name="dark" weight="0.235697628218" />
+ <shade name="soft" weight="0.13043460979" />
+</color>
+
+</colors>

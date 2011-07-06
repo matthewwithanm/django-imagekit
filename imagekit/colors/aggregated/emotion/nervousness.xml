@@ -1,0 +1,33 @@
+<colors query="nervousness">
+
+<color name="white" weight="0.33734899521">
+ <shade name="light" weight="0.445155687105" />
+ <shade name="fresh" weight="0.354834243344" />
+ <shade name="soft" weight="0.199997482612" />
+</color>
+
+<color name="black" weight="0.228915389607">
+ <shade name="intense" weight="0.931262850946" />
+ <shade name="light" weight="0.0382482956638" />
+ <shade name="fresh" weight="0.030487771906" />
+</color>
+
+<color name="red" weight="0.180722676005">
+ <shade name="intense" weight="0.931262850946" />
+ <shade name="light" weight="0.0382482956638" />
+ <shade name="fresh" weight="0.030487771906" />
+</color>
+
+<color name="yellow" weight="0.168674497605">
+ <shade name="intense" weight="0.931262850946" />
+ <shade name="light" weight="0.0382482956638" />
+ <shade name="fresh" weight="0.030487771906" />
+</color>
+
+<color name="green" weight="0.0843372488026">
+ <shade name="intense" weight="0.931262850946" />
+ <shade name="light" weight="0.0382482956638" />
+ <shade name="fresh" weight="0.030487771906" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="bankrupt">
+
+<color name="black" weight="0.458553301793">
+ <shade name="weak" weight="0.373736864096" />
+ <shade name="cool" weight="0.343433875115" />
+ <shade name="light" weight="0.282827897154" />
+</color>
+
+<color name="white" weight="0.39506130616">
+ <shade name="weak" weight="0.373736864096" />
+ <shade name="cool" weight="0.343433875115" />
+ <shade name="light" weight="0.282827897154" />
+</color>
+
+<color name="red" weight="0.0564373294515">
+ <shade name="weak" weight="0.373736864096" />
+ <shade name="cool" weight="0.343433875115" />
+ <shade name="light" weight="0.282827897154" />
+</color>
+
+<color name="blue" weight="0.04938266327">
+ <shade name="weak" weight="0.373736864096" />
+ <shade name="cool" weight="0.343433875115" />
+ <shade name="light" weight="0.282827897154" />
+</color>
+
+<color name="green" weight="0.0405643305432">
+ <shade name="weak" weight="0.373736864096" />
+ <shade name="cool" weight="0.343433875115" />
+ <shade name="light" weight="0.282827897154" />
+</color>
+
+</colors>

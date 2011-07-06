@@ -1,0 +1,33 @@
+<colors query="candytuft">
+
+<color name="white" weight="0.863913505212">
+ <shade name="soft" weight="0.333333" />
+ <shade name="fresh" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+<color name="pink" weight="0.0787460982627">
+ <shade name="soft" weight="0.333333" />
+ <shade name="fresh" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+<color name="purple" weight="0.0290519585824">
+ <shade name="soft" weight="0.333333" />
+ <shade name="fresh" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+<color name="blue" weight="0.0244648072273">
+ <shade name="soft" weight="0.333333" />
+ <shade name="fresh" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+<color name="green" weight="0.00382262612926">
+ <shade name="soft" weight="0.333333" />
+ <shade name="fresh" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+</colors>

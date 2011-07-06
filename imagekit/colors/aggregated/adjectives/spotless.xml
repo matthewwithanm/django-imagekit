@@ -1,0 +1,33 @@
+<colors query="spotless">
+
+<color name="white" weight="0.592039182741">
+ <shade name="bright" weight="0.660358671504" />
+ <shade name="neutral" weight="0.210974188747" />
+ <shade name="fresh" weight="0.128665872958" />
+</color>
+
+<color name="green" weight="0.14079587287">
+ <shade name="bright" weight="0.660358671504" />
+ <shade name="neutral" weight="0.210974188747" />
+ <shade name="fresh" weight="0.128665872958" />
+</color>
+
+<color name="black" weight="0.11492525312">
+ <shade name="bright" weight="0.660358671504" />
+ <shade name="neutral" weight="0.210974188747" />
+ <shade name="fresh" weight="0.128665872958" />
+</color>
+
+<color name="blue" weight="0.0900496572069">
+ <shade name="bright" weight="0.660358671504" />
+ <shade name="neutral" weight="0.210974188747" />
+ <shade name="fresh" weight="0.128665872958" />
+</color>
+
+<color name="red" weight="0.0621889897837">
+ <shade name="bright" weight="0.660358671504" />
+ <shade name="neutral" weight="0.210974188747" />
+ <shade name="fresh" weight="0.128665872958" />
+</color>
+
+</colors>

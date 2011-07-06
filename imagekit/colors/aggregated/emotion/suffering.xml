@@ -1,0 +1,33 @@
+<colors query="suffering">
+
+<color name="black" weight="0.831024084761">
+ <shade name="intense" weight="0.970609559163" />
+ <shade name="dark" weight="0.0150742713658" />
+ <shade name="weak" weight="0.0143151353977" />
+</color>
+
+<color name="pink" weight="0.0473222048267">
+ <shade name="dark" weight="0.348362602238" />
+ <shade name="weak" weight="0.330819161837" />
+ <shade name="light" weight="0.320794338751" />
+</color>
+
+<color name="white" weight="0.0453600646265">
+ <shade name="dark" weight="0.348362602238" />
+ <shade name="weak" weight="0.330819161837" />
+ <shade name="light" weight="0.320794338751" />
+</color>
+
+<color name="green" weight="0.0433402144205">
+ <shade name="intense" weight="0.970609559163" />
+ <shade name="dark" weight="0.0150742713658" />
+ <shade name="weak" weight="0.0143151353977" />
+</color>
+
+<color name="red" weight="0.032952413361">
+ <shade name="intense" weight="0.970609559163" />
+ <shade name="dark" weight="0.0150742713658" />
+ <shade name="weak" weight="0.0143151353977" />
+</color>
+
+</colors>

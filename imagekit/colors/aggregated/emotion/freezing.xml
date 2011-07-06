@@ -1,0 +1,33 @@
+<colors query="freezing">
+
+<color name="black" weight="0.410162885301">
+ <shade name="light" weight="0.908994158388" />
+ <shade name="fresh" weight="0.0617694872109" />
+ <shade name="intense" weight="0.0292352175265" />
+</color>
+
+<color name="white" weight="0.211615010735">
+ <shade name="light" weight="0.910720155387" />
+ <shade name="fresh" weight="0.0618867750379" />
+ <shade name="soft" weight="0.0273919305423" />
+</color>
+
+<color name="blue" weight="0.202540610617">
+ <shade name="light" weight="0.908994158388" />
+ <shade name="fresh" weight="0.0617694872109" />
+ <shade name="intense" weight="0.0292352175265" />
+</color>
+
+<color name="red" weight="0.0892920971539">
+ <shade name="light" weight="0.908994158388" />
+ <shade name="fresh" weight="0.0617694872109" />
+ <shade name="intense" weight="0.0292352175265" />
+</color>
+
+<color name="green" weight="0.0863882891164">
+ <shade name="light" weight="0.908994158388" />
+ <shade name="fresh" weight="0.0617694872109" />
+ <shade name="intense" weight="0.0292352175265" />
+</color>
+
+</colors>

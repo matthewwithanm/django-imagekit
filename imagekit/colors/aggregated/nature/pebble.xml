@@ -1,0 +1,33 @@
+<colors query="pebble">
+
+<color name="white" weight="0.410958476288">
+ <shade name="soft" weight="0.886617351796" />
+ <shade name="hard" weight="0.0632827254813" />
+ <shade name="bright" weight="0.0500988243394" />
+</color>
+
+<color name="purple" weight="0.258662099781">
+ <shade name="soft" weight="0.886617351796" />
+ <shade name="hard" weight="0.0632827254813" />
+ <shade name="bright" weight="0.0500988243394" />
+</color>
+
+<color name="black" weight="0.155250979931">
+ <shade name="soft" weight="0.886617351796" />
+ <shade name="hard" weight="0.0632827254813" />
+ <shade name="bright" weight="0.0500988243394" />
+</color>
+
+<color name="blue" weight="0.139940762187">
+ <shade name="soft" weight="0.886617351796" />
+ <shade name="hard" weight="0.0632827254813" />
+ <shade name="bright" weight="0.0500988243394" />
+</color>
+
+<color name="red" weight="0.0351866407802">
+ <shade name="soft" weight="0.886617351796" />
+ <shade name="hard" weight="0.0632827254813" />
+ <shade name="bright" weight="0.0500988243394" />
+</color>
+
+</colors>

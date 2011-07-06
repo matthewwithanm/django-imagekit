@@ -1,0 +1,33 @@
+<colors query="canary">
+
+<color name="black" weight="0.536828382714">
+ <shade name="bright" weight="0.897538307746" />
+ <shade name="light" weight="0.0600039655179" />
+ <shade name="soft" weight="0.0424565873664" />
+</color>
+
+<color name="yellow" weight="0.22471885788">
+ <shade name="bright" weight="0.897538307746" />
+ <shade name="light" weight="0.0600039655179" />
+ <shade name="soft" weight="0.0424565873664" />
+</color>
+
+<color name="blue" weight="0.10570109241">
+ <shade name="bright" weight="0.897538307746" />
+ <shade name="light" weight="0.0600039655179" />
+ <shade name="soft" weight="0.0424565873664" />
+</color>
+
+<color name="orange" weight="0.0834372796388">
+ <shade name="bright" weight="0.897538307746" />
+ <shade name="light" weight="0.0600039655179" />
+ <shade name="soft" weight="0.0424565873664" />
+</color>
+
+<color name="white" weight="0.0493133049237">
+ <shade name="bright" weight="0.897538307746" />
+ <shade name="light" weight="0.0600039655179" />
+ <shade name="soft" weight="0.0424565873664" />
+</color>
+
+</colors>

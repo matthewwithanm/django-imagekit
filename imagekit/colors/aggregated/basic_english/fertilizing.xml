@@ -1,0 +1,33 @@
+<colors query="fertilizing">
+
+<color name="green" weight="0.921809762605">
+ <shade name="light" weight="0.917552228792" />
+ <shade name="weak" weight="0.0598403627473" />
+ <shade name="intense" weight="0.0226063592601" />
+</color>
+
+<color name="white" weight="0.0411522215449">
+ <shade name="light" weight="0.919999032161" />
+ <shade name="weak" weight="0.0599999368801" />
+ <shade name="fresh" weight="0.01999997896" />
+</color>
+
+<color name="blue" weight="0.0164608886179">
+ <shade name="light" weight="0.917552228792" />
+ <shade name="weak" weight="0.0598403627473" />
+ <shade name="intense" weight="0.0226063592601" />
+</color>
+
+<color name="black" weight="0.0123456664635">
+ <shade name="light" weight="0.917552228792" />
+ <shade name="weak" weight="0.0598403627473" />
+ <shade name="intense" weight="0.0226063592601" />
+</color>
+
+<color name="yellow" weight="0.00823044430897">
+ <shade name="light" weight="0.917552228792" />
+ <shade name="weak" weight="0.0598403627473" />
+ <shade name="intense" weight="0.0226063592601" />
+</color>
+
+</colors>

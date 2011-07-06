@@ -1,0 +1,33 @@
+<colors query="invention">
+
+<color name="white" weight="0.346408181657">
+ <shade name="cool" weight="0.902355886067" />
+ <shade name="dark" weight="0.055892192943" />
+ <shade name="bright" weight="0.0417507947285" />
+</color>
+
+<color name="green" weight="0.320936991829">
+ <shade name="cool" weight="0.902355886067" />
+ <shade name="dark" weight="0.055892192943" />
+ <shade name="bright" weight="0.0417507947285" />
+</color>
+
+<color name="black" weight="0.185939685742">
+ <shade name="cool" weight="0.902355886067" />
+ <shade name="dark" weight="0.055892192943" />
+ <shade name="bright" weight="0.0417507947285" />
+</color>
+
+<color name="blue" weight="0.105196013988">
+ <shade name="cool" weight="0.902355886067" />
+ <shade name="dark" weight="0.055892192943" />
+ <shade name="bright" weight="0.0417507947285" />
+</color>
+
+<color name="orange" weight="0.0415180394191">
+ <shade name="cool" weight="0.902355886067" />
+ <shade name="dark" weight="0.055892192943" />
+ <shade name="bright" weight="0.0417507947285" />
+</color>
+
+</colors>

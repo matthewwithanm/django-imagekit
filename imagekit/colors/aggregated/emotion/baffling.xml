@@ -1,0 +1,33 @@
+<colors query="baffling">
+
+<color name="black" weight="0.801723294739">
+ <shade name="light" weight="0.994249119406" />
+ <shade name="bright" weight="0.00371346056646" />
+ <shade name="intense" weight="0.00203641385903" />
+</color>
+
+<color name="white" weight="0.0775861252974">
+ <shade name="light" weight="0.994368233833" />
+ <shade name="bright" weight="0.00371390545167" />
+ <shade name="neutral" weight="0.00191685442667" />
+</color>
+
+<color name="orange" weight="0.043103402943">
+ <shade name="light" weight="0.994249119406" />
+ <shade name="bright" weight="0.00371346056646" />
+ <shade name="intense" weight="0.00203641385903" />
+</color>
+
+<color name="blue" weight="0.043103402943">
+ <shade name="light" weight="0.994249119406" />
+ <shade name="bright" weight="0.00371346056646" />
+ <shade name="intense" weight="0.00203641385903" />
+</color>
+
+<color name="red" weight="0.0344827223544">
+ <shade name="light" weight="0.994249119406" />
+ <shade name="bright" weight="0.00371346056646" />
+ <shade name="intense" weight="0.00203641385903" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="topaz">
+
+<color name="blue" weight="0.710387417442">
+ <shade name="light" weight="0.805492510603" />
+ <shade name="dark" weight="0.170448838399" />
+ <shade name="bright" weight="0.0240576360483" />
+</color>
+
+<color name="white" weight="0.13178201367">
+ <shade name="light" weight="0.805492510603" />
+ <shade name="dark" weight="0.170448838399" />
+ <shade name="bright" weight="0.0240576360483" />
+</color>
+
+<color name="pink" weight="0.0911149078892">
+ <shade name="light" weight="0.805492510603" />
+ <shade name="dark" weight="0.170448838399" />
+ <shade name="bright" weight="0.0240576360483" />
+</color>
+
+<color name="yellow" weight="0.0472047291155">
+ <shade name="light" weight="0.805492510603" />
+ <shade name="dark" weight="0.170448838399" />
+ <shade name="bright" weight="0.0240576360483" />
+</color>
+
+<color name="green" weight="0.0195099153051">
+ <shade name="light" weight="0.805492510603" />
+ <shade name="dark" weight="0.170448838399" />
+ <shade name="bright" weight="0.0240576360483" />
+</color>
+
+</colors>

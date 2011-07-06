@@ -1,0 +1,33 @@
+<colors query="cocky">
+
+<color name="black" weight="0.576976798075">
+ <shade name="cool" weight="0.854541173949" />
+ <shade name="hard" weight="0.0795094831414" />
+ <shade name="dark" weight="0.0659482862504" />
+</color>
+
+<color name="white" weight="0.327683273325">
+ <shade name="cool" weight="0.854541173949" />
+ <shade name="hard" weight="0.0795094831414" />
+ <shade name="dark" weight="0.0659482862504" />
+</color>
+
+<color name="pink" weight="0.0395479812634">
+ <shade name="cool" weight="0.854541173949" />
+ <shade name="hard" weight="0.0795094831414" />
+ <shade name="dark" weight="0.0659482862504" />
+</color>
+
+<color name="green" weight="0.0296609859476">
+ <shade name="cool" weight="0.854541173949" />
+ <shade name="hard" weight="0.0795094831414" />
+ <shade name="dark" weight="0.0659482862504" />
+</color>
+
+<color name="blue" weight="0.0261299161919">
+ <shade name="cool" weight="0.854541173949" />
+ <shade name="hard" weight="0.0795094831414" />
+ <shade name="dark" weight="0.0659482862504" />
+</color>
+
+</colors>

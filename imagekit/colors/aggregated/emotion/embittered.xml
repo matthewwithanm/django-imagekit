@@ -1,0 +1,33 @@
+<colors query="embittered">
+
+<color name="blue" weight="0.318181485538">
+ <shade name="hard" weight="0.614906160103" />
+ <shade name="dark" weight="0.347825706725" />
+ <shade name="fresh" weight="0.0372670400062" />
+</color>
+
+<color name="white" weight="0.272726987604">
+ <shade name="hard" weight="0.614906160103" />
+ <shade name="dark" weight="0.347825706725" />
+ <shade name="fresh" weight="0.0372670400062" />
+</color>
+
+<color name="black" weight="0.272726987604">
+ <shade name="hard" weight="0.614906160103" />
+ <shade name="dark" weight="0.347825706725" />
+ <shade name="fresh" weight="0.0372670400062" />
+</color>
+
+<color name="red" weight="0.0909089958679">
+ <shade name="hard" weight="0.614906160103" />
+ <shade name="dark" weight="0.347825706725" />
+ <shade name="fresh" weight="0.0372670400062" />
+</color>
+
+<color name="yellow" weight="0.0454544979339">
+ <shade name="hard" weight="0.614906160103" />
+ <shade name="dark" weight="0.347825706725" />
+ <shade name="fresh" weight="0.0372670400062" />
+</color>
+
+</colors>

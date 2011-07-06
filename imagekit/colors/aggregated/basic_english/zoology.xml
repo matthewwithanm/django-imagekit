@@ -1,0 +1,33 @@
+<colors query="zoology">
+
+<color name="green" weight="0.399999582858">
+ <shade name="light" weight="0.666665623933" />
+ <shade name="cool" weight="0.179486898751" />
+ <shade name="dark" weight="0.153845913215" />
+</color>
+
+<color name="white" weight="0.239285464745">
+ <shade name="light" weight="0.666665623933" />
+ <shade name="cool" weight="0.179486898751" />
+ <shade name="dark" weight="0.153845913215" />
+</color>
+
+<color name="yellow" weight="0.230356902628">
+ <shade name="light" weight="0.666665623933" />
+ <shade name="cool" weight="0.179486898751" />
+ <shade name="dark" weight="0.153845913215" />
+</color>
+
+<color name="blue" weight="0.091071333597">
+ <shade name="light" weight="0.666665623933" />
+ <shade name="cool" weight="0.179486898751" />
+ <shade name="dark" weight="0.153845913215" />
+</color>
+
+<color name="red" weight="0.0392856733164">
+ <shade name="light" weight="0.666665623933" />
+ <shade name="cool" weight="0.179486898751" />
+ <shade name="dark" weight="0.153845913215" />
+</color>
+
+</colors>

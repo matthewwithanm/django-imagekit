@@ -1,0 +1,33 @@
+<colors query="paranoid">
+
+<color name="black" weight="0.623419714742">
+ <shade name="intense" weight="0.426880311364" />
+ <shade name="dark" weight="0.319526252863" />
+ <shade name="cool" weight="0.253592264177" />
+</color>
+
+<color name="red" weight="0.151221403779">
+ <shade name="intense" weight="0.426880311364" />
+ <shade name="dark" weight="0.319526252863" />
+ <shade name="cool" weight="0.253592264177" />
+</color>
+
+<color name="pink" weight="0.112468286376">
+ <shade name="dark" weight="0.506701471463" />
+ <shade name="cool" weight="0.402144024971" />
+ <shade name="light" weight="0.0911526456601" />
+</color>
+
+<color name="white" weight="0.070766562214">
+ <shade name="dark" weight="0.506701471463" />
+ <shade name="cool" weight="0.402144024971" />
+ <shade name="light" weight="0.0911526456601" />
+</color>
+
+<color name="blue" weight="0.0421229536988">
+ <shade name="intense" weight="0.426880311364" />
+ <shade name="dark" weight="0.319526252863" />
+ <shade name="cool" weight="0.253592264177" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="coati">
+
+<color name="red" weight="0.366268789619">
+ <shade name="hard" weight="0.920730764129" />
+ <shade name="cool" weight="0.0487804378347" />
+ <shade name="light" weight="0.0304877736467" />
+</color>
+
+<color name="blue" weight="0.315161516649">
+ <shade name="hard" weight="0.920730764129" />
+ <shade name="cool" weight="0.0487804378347" />
+ <shade name="light" weight="0.0304877736467" />
+</color>
+
+<color name="white" weight="0.195911213052">
+ <shade name="hard" weight="0.920730764129" />
+ <shade name="cool" weight="0.0487804378347" />
+ <shade name="light" weight="0.0304877736467" />
+</color>
+
+<color name="black" weight="0.109028849003">
+ <shade name="hard" weight="0.920730764129" />
+ <shade name="cool" weight="0.0487804378347" />
+ <shade name="light" weight="0.0304877736467" />
+</color>
+
+<color name="green" weight="0.0136286061253">
+ <shade name="hard" weight="0.920730764129" />
+ <shade name="cool" weight="0.0487804378347" />
+ <shade name="light" weight="0.0304877736467" />
+</color>
+
+</colors>

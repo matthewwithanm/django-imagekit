@@ -1,0 +1,33 @@
+<colors query="footman">
+
+<color name="orange" weight="0.51479863491">
+ <shade name="light" weight="0.619046876191" />
+ <shade name="dark" weight="0.247618750477" />
+ <shade name="cool" weight="0.133333173334" />
+</color>
+
+<color name="black" weight="0.397991141773">
+ <shade name="light" weight="0.619046876191" />
+ <shade name="dark" weight="0.247618750477" />
+ <shade name="cool" weight="0.133333173334" />
+</color>
+
+<color name="green" weight="0.0480972030563">
+ <shade name="light" weight="0.619046876191" />
+ <shade name="dark" weight="0.247618750477" />
+ <shade name="cool" weight="0.133333173334" />
+</color>
+
+<color name="red" weight="0.0274841160321">
+ <shade name="light" weight="0.619046876191" />
+ <shade name="dark" weight="0.247618750477" />
+ <shade name="cool" weight="0.133333173334" />
+</color>
+
+<color name="white" weight="0.0116278952444">
+ <shade name="light" weight="0.619046876191" />
+ <shade name="dark" weight="0.247618750477" />
+ <shade name="cool" weight="0.133333173334" />
+</color>
+
+</colors>

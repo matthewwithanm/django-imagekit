@@ -1,0 +1,33 @@
+<colors query="stout hearted">
+
+<color name="green" weight="0.4999995">
+ <shade name="cool" weight="0.4999995" />
+ <shade name="bright" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="blue" weight="0.4999995">
+ <shade name="cool" weight="0.4999995" />
+ <shade name="bright" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="cool" weight="0.4999995" />
+ <shade name="bright" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="cool" weight="0.4999995" />
+ <shade name="bright" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="cool" weight="0.4999995" />
+ <shade name="bright" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+</colors>

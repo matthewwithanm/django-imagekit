@@ -1,0 +1,33 @@
+<colors query="moping">
+
+<color name="black" weight="0.690908337191">
+ <shade name="dark" weight="0.783782950573" />
+ <shade name="light" weight="0.162161989774" />
+ <shade name="weak" weight="0.0540539965912" />
+</color>
+
+<color name="blue" weight="0.145454386777">
+ <shade name="dark" weight="0.783782950573" />
+ <shade name="light" weight="0.162161989774" />
+ <shade name="weak" weight="0.0540539965912" />
+</color>
+
+<color name="yellow" weight="0.0727271933885">
+ <shade name="dark" weight="0.783782950573" />
+ <shade name="light" weight="0.162161989774" />
+ <shade name="weak" weight="0.0540539965912" />
+</color>
+
+<color name="white" weight="0.0545453950414">
+ <shade name="dark" weight="0.783782950573" />
+ <shade name="light" weight="0.162161989774" />
+ <shade name="weak" weight="0.0540539965912" />
+</color>
+
+<color name="purple" weight="0.0363635966943">
+ <shade name="dark" weight="0.783782950573" />
+ <shade name="light" weight="0.162161989774" />
+ <shade name="weak" weight="0.0540539965912" />
+</color>
+
+</colors>

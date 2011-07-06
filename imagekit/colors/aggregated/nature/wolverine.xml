@@ -1,0 +1,33 @@
+<colors query="wolverine">
+
+<color name="blue" weight="0.840699425319">
+ <shade name="cool" weight="0.495210739619" />
+ <shade name="dark" weight="0.306002862689" />
+ <shade name="hard" weight="0.198785065762" />
+</color>
+
+<color name="black" weight="0.0684693346394">
+ <shade name="cool" weight="0.495210739619" />
+ <shade name="dark" weight="0.306002862689" />
+ <shade name="hard" weight="0.198785065762" />
+</color>
+
+<color name="red" weight="0.0369792187082">
+ <shade name="cool" weight="0.495210739619" />
+ <shade name="dark" weight="0.306002862689" />
+ <shade name="hard" weight="0.198785065762" />
+</color>
+
+<color name="white" weight="0.0314901159312">
+ <shade name="cool" weight="0.495210739619" />
+ <shade name="dark" weight="0.306002862689" />
+ <shade name="hard" weight="0.198785065762" />
+</color>
+
+<color name="yellow" weight="0.0223608713126">
+ <shade name="cool" weight="0.495210739619" />
+ <shade name="dark" weight="0.306002862689" />
+ <shade name="hard" weight="0.198785065762" />
+</color>
+
+</colors>

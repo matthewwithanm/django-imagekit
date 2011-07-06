@@ -1,0 +1,33 @@
+<colors query="ore">
+
+<color name="black" weight="0.58314739588">
+ <shade name="dark" weight="0.703311304441" />
+ <shade name="light" weight="0.161381050819" />
+ <shade name="soft" weight="0.135306383219" />
+</color>
+
+<color name="green" weight="0.296515625024">
+ <shade name="dark" weight="0.703311304441" />
+ <shade name="light" weight="0.161381050819" />
+ <shade name="soft" weight="0.135306383219" />
+</color>
+
+<color name="blue" weight="0.0573263541713">
+ <shade name="dark" weight="0.703311304441" />
+ <shade name="light" weight="0.161381050819" />
+ <shade name="soft" weight="0.135306383219" />
+</color>
+
+<color name="orange" weight="0.0321225260442">
+ <shade name="dark" weight="0.703311304441" />
+ <shade name="light" weight="0.161381050819" />
+ <shade name="soft" weight="0.135306383219" />
+</color>
+
+<color name="white" weight="0.0308870442733">
+ <shade name="dark" weight="0.703311304441" />
+ <shade name="light" weight="0.161381050819" />
+ <shade name="soft" weight="0.135306383219" />
+</color>
+
+</colors>

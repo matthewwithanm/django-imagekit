@@ -1,0 +1,33 @@
+<colors query="mistletoe">
+
+<color name="red" weight="0.608378927359">
+ <shade name="fresh" weight="0.80926212363" />
+ <shade name="light" weight="0.0958664361839" />
+ <shade name="dark" weight="0.0948704212625" />
+</color>
+
+<color name="white" weight="0.193227269381">
+ <shade name="fresh" weight="0.80926212363" />
+ <shade name="light" weight="0.0958664361839" />
+ <shade name="dark" weight="0.0948704212625" />
+</color>
+
+<color name="green" weight="0.104074885687">
+ <shade name="fresh" weight="0.80926212363" />
+ <shade name="light" weight="0.0958664361839" />
+ <shade name="dark" weight="0.0948704212625" />
+</color>
+
+<color name="yellow" weight="0.0602639503516">
+ <shade name="fresh" weight="0.80926212363" />
+ <shade name="light" weight="0.0958664361839" />
+ <shade name="dark" weight="0.0948704212625" />
+</color>
+
+<color name="blue" weight="0.0340539148019">
+ <shade name="fresh" weight="0.80926212363" />
+ <shade name="light" weight="0.0958664361839" />
+ <shade name="dark" weight="0.0948704212625" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="lorikeet">
+
+<color name="blue" weight="0.477272247349">
+ <shade name="light" weight="0.987840928924" />
+ <shade name="soft" weight="0.0068388987387" />
+ <shade name="fresh" weight="0.00531914346343" />
+</color>
+
+<color name="green" weight="0.416666247686">
+ <shade name="light" weight="0.987840928924" />
+ <shade name="soft" weight="0.0068388987387" />
+ <shade name="fresh" weight="0.00531914346343" />
+</color>
+
+<color name="red" weight="0.0719696246002">
+ <shade name="light" weight="0.987840928924" />
+ <shade name="soft" weight="0.0068388987387" />
+ <shade name="fresh" weight="0.00531914346343" />
+</color>
+
+<color name="yellow" weight="0.0256312873576">
+ <shade name="light" weight="0.987840928924" />
+ <shade name="soft" weight="0.0068388987387" />
+ <shade name="fresh" weight="0.00531914346343" />
+</color>
+
+<color name="black" weight="0.00845958745301">
+ <shade name="light" weight="0.987840928924" />
+ <shade name="soft" weight="0.0068388987387" />
+ <shade name="fresh" weight="0.00531914346343" />
+</color>
+
+</colors>

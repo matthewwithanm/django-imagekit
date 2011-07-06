@@ -1,0 +1,33 @@
+<colors query="overfull">
+
+<color name="black" weight="0.454544958678">
+ <shade name="warm" weight="0.333332833334" />
+ <shade name="light" weight="0.333332833334" />
+ <shade name="hard" weight="0.333332833334" />
+</color>
+
+<color name="red" weight="0.181817983471">
+ <shade name="warm" weight="0.333332833334" />
+ <shade name="light" weight="0.333332833334" />
+ <shade name="hard" weight="0.333332833334" />
+</color>
+
+<color name="green" weight="0.181817983471">
+ <shade name="light" weight="0.399999280001" />
+ <shade name="hard" weight="0.399999280001" />
+ <shade name="neutral" weight="0.199999640001" />
+</color>
+
+<color name="white" weight="0.0909089917356">
+ <shade name="warm" weight="0.333332833334" />
+ <shade name="light" weight="0.333332833334" />
+ <shade name="hard" weight="0.333332833334" />
+</color>
+
+<color name="pink" weight="0.0909089917356">
+ <shade name="warm" weight="0.333332833334" />
+ <shade name="light" weight="0.333332833334" />
+ <shade name="hard" weight="0.333332833334" />
+</color>
+
+</colors>

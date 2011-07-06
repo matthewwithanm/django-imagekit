@@ -1,0 +1,33 @@
+<colors query="shackle">
+
+<color name="orange" weight="0.374245055294">
+ <shade name="dark" weight="0.4115640589" />
+ <shade name="soft" weight="0.377550500313" />
+ <shade name="light" weight="0.210884063238" />
+</color>
+
+<color name="black" weight="0.285713966945">
+ <shade name="dark" weight="0.4115640589" />
+ <shade name="soft" weight="0.377550500313" />
+ <shade name="light" weight="0.210884063238" />
+</color>
+
+<color name="yellow" weight="0.132796632524">
+ <shade name="dark" weight="0.4115640589" />
+ <shade name="soft" weight="0.377550500313" />
+ <shade name="light" weight="0.210884063238" />
+</color>
+
+<color name="red" weight="0.114688000816">
+ <shade name="dark" weight="0.4115640589" />
+ <shade name="soft" weight="0.377550500313" />
+ <shade name="light" weight="0.210884063238" />
+</color>
+
+<color name="blue" weight="0.0925552287286">
+ <shade name="dark" weight="0.4115640589" />
+ <shade name="soft" weight="0.377550500313" />
+ <shade name="light" weight="0.210884063238" />
+</color>
+
+</colors>

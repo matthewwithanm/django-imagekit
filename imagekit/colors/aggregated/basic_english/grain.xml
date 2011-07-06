@@ -1,0 +1,33 @@
+<colors query="grain">
+
+<color name="white" weight="0.278289187374">
+ <shade name="soft" weight="0.441557704126" />
+ <shade name="hard" weight="0.282171901834" />
+ <shade name="light" weight="0.276268723972" />
+</color>
+
+<color name="black" weight="0.229605026935">
+ <shade name="soft" weight="0.441557704126" />
+ <shade name="hard" weight="0.282171901834" />
+ <shade name="light" weight="0.276268723972" />
+</color>
+
+<color name="yellow" weight="0.186841913036">
+ <shade name="soft" weight="0.441557704126" />
+ <shade name="hard" weight="0.282171901834" />
+ <shade name="light" weight="0.276268723972" />
+</color>
+
+<color name="red" weight="0.153289315977">
+ <shade name="soft" weight="0.441557704126" />
+ <shade name="hard" weight="0.282171901834" />
+ <shade name="light" weight="0.276268723972" />
+</color>
+
+<color name="green" weight="0.151973527857">
+ <shade name="soft" weight="0.441557704126" />
+ <shade name="hard" weight="0.282171901834" />
+ <shade name="light" weight="0.276268723972" />
+</color>
+
+</colors>

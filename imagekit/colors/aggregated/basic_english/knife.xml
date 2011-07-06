@@ -1,0 +1,33 @@
+<colors query="knife">
+
+<color name="black" weight="0.297789433623">
+ <shade name="cool" weight="0.387043113421" />
+ <shade name="light" weight="0.373318180321" />
+ <shade name="hard" weight="0.239637331926" />
+</color>
+
+<color name="yellow" weight="0.286822683942">
+ <shade name="cool" weight="0.387043113421" />
+ <shade name="light" weight="0.373318180321" />
+ <shade name="hard" weight="0.239637331926" />
+</color>
+
+<color name="red" weight="0.22270937812">
+ <shade name="cool" weight="0.387043113421" />
+ <shade name="light" weight="0.373318180321" />
+ <shade name="hard" weight="0.239637331926" />
+</color>
+
+<color name="white" weight="0.113885477448">
+ <shade name="cool" weight="0.387043113421" />
+ <shade name="light" weight="0.373318180321" />
+ <shade name="hard" weight="0.239637331926" />
+</color>
+
+<color name="blue" weight="0.0787918784713">
+ <shade name="cool" weight="0.387043113421" />
+ <shade name="light" weight="0.373318180321" />
+ <shade name="hard" weight="0.239637331926" />
+</color>
+
+</colors>

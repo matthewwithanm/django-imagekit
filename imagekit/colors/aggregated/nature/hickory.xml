@@ -1,0 +1,33 @@
+<colors query="hickory">
+
+<color name="black" weight="0.393293503621">
+ <shade name="hard" weight="0.434237375835" />
+ <shade name="dark" weight="0.292275156812" />
+ <shade name="light" weight="0.273486039589" />
+</color>
+
+<color name="white" weight="0.287075550089">
+ <shade name="hard" weight="0.434237375835" />
+ <shade name="dark" weight="0.292275156812" />
+ <shade name="light" weight="0.273486039589" />
+</color>
+
+<color name="red" weight="0.278463283586">
+ <shade name="hard" weight="0.434237375835" />
+ <shade name="dark" weight="0.292275156812" />
+ <shade name="light" weight="0.273486039589" />
+</color>
+
+<color name="green" weight="0.0211000529315">
+ <shade name="hard" weight="0.434237375835" />
+ <shade name="dark" weight="0.292275156812" />
+ <shade name="light" weight="0.273486039589" />
+</color>
+
+<color name="blue" weight="0.0200665809512">
+ <shade name="hard" weight="0.434237375835" />
+ <shade name="dark" weight="0.292275156812" />
+ <shade name="light" weight="0.273486039589" />
+</color>
+
+</colors>

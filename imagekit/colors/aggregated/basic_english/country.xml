@@ -1,0 +1,33 @@
+<colors query="country">
+
+<color name="black" weight="0.530406356492">
+ <shade name="neutral" weight="0.395060934762" />
+ <shade name="fresh" weight="0.318517878651" />
+ <shade name="cool" weight="0.286419177702" />
+</color>
+
+<color name="green" weight="0.193872668235">
+ <shade name="neutral" weight="0.395060934762" />
+ <shade name="fresh" weight="0.318517878651" />
+ <shade name="cool" weight="0.286419177702" />
+</color>
+
+<color name="orange" weight="0.122999405083">
+ <shade name="neutral" weight="0.395060934762" />
+ <shade name="fresh" weight="0.318517878651" />
+ <shade name="cool" weight="0.286419177702" />
+</color>
+
+<color name="red" weight="0.08138994091">
+ <shade name="neutral" weight="0.395060934762" />
+ <shade name="fresh" weight="0.318517878651" />
+ <shade name="cool" weight="0.286419177702" />
+</color>
+
+<color name="yellow" weight="0.071330510011">
+ <shade name="neutral" weight="0.395060934762" />
+ <shade name="fresh" weight="0.318517878651" />
+ <shade name="cool" weight="0.286419177702" />
+</color>
+
+</colors>

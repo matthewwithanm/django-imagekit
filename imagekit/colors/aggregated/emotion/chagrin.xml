@@ -1,0 +1,33 @@
+<colors query="chagrin">
+
+<color name="green" weight="0.240366707853">
+ <shade name="intense" weight="0.965810973586" />
+ <shade name="dark" weight="0.0179486995091" />
+ <shade name="hard" weight="0.0162392995559" />
+</color>
+
+<color name="black" weight="0.240366707853">
+ <shade name="intense" weight="0.965810973586" />
+ <shade name="dark" weight="0.0179486995091" />
+ <shade name="hard" weight="0.0162392995559" />
+</color>
+
+<color name="orange" weight="0.21834838347">
+ <shade name="intense" weight="0.965810973586" />
+ <shade name="dark" weight="0.0179486995091" />
+ <shade name="hard" weight="0.0162392995559" />
+</color>
+
+<color name="red" weight="0.18715575726">
+ <shade name="intense" weight="0.965810973586" />
+ <shade name="dark" weight="0.0179486995091" />
+ <shade name="hard" weight="0.0162392995559" />
+</color>
+
+<color name="white" weight="0.113761342648">
+ <shade name="dark" weight="0.419989903443" />
+ <shade name="hard" weight="0.37999086502" />
+ <shade name="light" weight="0.199995192116" />
+</color>
+
+</colors>

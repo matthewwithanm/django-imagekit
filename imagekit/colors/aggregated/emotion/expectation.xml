@@ -1,0 +1,33 @@
+<colors query="expectation">
+
+<color name="green" weight="0.266540325292">
+ <shade name="neutral" weight="0.934471026905" />
+ <shade name="bright" weight="0.038680972835" />
+ <shade name="weak" weight="0.0268468930271" />
+</color>
+
+<color name="blue" weight="0.244801220747">
+ <shade name="neutral" weight="0.934471026905" />
+ <shade name="bright" weight="0.038680972835" />
+ <shade name="weak" weight="0.0268468930271" />
+</color>
+
+<color name="black" weight="0.172022479444">
+ <shade name="neutral" weight="0.934471026905" />
+ <shade name="bright" weight="0.038680972835" />
+ <shade name="weak" weight="0.0268468930271" />
+</color>
+
+<color name="white" weight="0.160680337942">
+ <shade name="neutral" weight="0.934471026905" />
+ <shade name="bright" weight="0.038680972835" />
+ <shade name="weak" weight="0.0268468930271" />
+</color>
+
+<color name="red" weight="0.15595444565">
+ <shade name="neutral" weight="0.934471026905" />
+ <shade name="bright" weight="0.038680972835" />
+ <shade name="weak" weight="0.0268468930271" />
+</color>
+
+</colors>

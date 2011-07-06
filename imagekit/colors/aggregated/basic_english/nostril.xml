@@ -1,0 +1,33 @@
+<colors query="nostril">
+
+<color name="black" weight="0.505544119713">
+ <shade name="dark" weight="0.456692053942" />
+ <shade name="fresh" weight="0.283464033481" />
+ <shade name="hard" weight="0.259842030691" />
+</color>
+
+<color name="red" weight="0.229614877599">
+ <shade name="dark" weight="0.456692053942" />
+ <shade name="fresh" weight="0.283464033481" />
+ <shade name="hard" weight="0.259842030691" />
+</color>
+
+<color name="white" weight="0.124592163697">
+ <shade name="dark" weight="0.456692053942" />
+ <shade name="fresh" weight="0.283464033481" />
+ <shade name="hard" weight="0.259842030691" />
+</color>
+
+<color name="pink" weight="0.0724069642427">
+ <shade name="dark" weight="0.456692053942" />
+ <shade name="fresh" weight="0.283464033481" />
+ <shade name="hard" weight="0.259842030691" />
+</color>
+
+<color name="green" weight="0.0678407592905">
+ <shade name="dark" weight="0.456692053942" />
+ <shade name="fresh" weight="0.283464033481" />
+ <shade name="hard" weight="0.259842030691" />
+</color>
+
+</colors>

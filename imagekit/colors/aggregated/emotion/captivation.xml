@@ -1,0 +1,33 @@
+<colors query="captivation">
+
+<color name="pink" weight="0.391303922496">
+ <shade name="dark" weight="0.538459840242" />
+ <shade name="light" weight="0.230768502961" />
+ <shade name="fresh" weight="0.230768502961" />
+</color>
+
+<color name="blue" weight="0.217391068053">
+ <shade name="intense" weight="0.666665755557" />
+ <shade name="dark" weight="0.233333014445" />
+ <shade name="light" weight="0.0999998633335" />
+</color>
+
+<color name="orange" weight="0.173912854443">
+ <shade name="intense" weight="0.666665755557" />
+ <shade name="dark" weight="0.233333014445" />
+ <shade name="light" weight="0.0999998633335" />
+</color>
+
+<color name="red" weight="0.130434640832">
+ <shade name="intense" weight="0.666665755557" />
+ <shade name="dark" weight="0.233333014445" />
+ <shade name="light" weight="0.0999998633335" />
+</color>
+
+<color name="white" weight="0.0869564272213">
+ <shade name="dark" weight="0.538459840242" />
+ <shade name="light" weight="0.230768502961" />
+ <shade name="fresh" weight="0.230768502961" />
+</color>
+
+</colors>

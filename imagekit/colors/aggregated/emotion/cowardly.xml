@@ -1,0 +1,33 @@
+<colors query="cowardly">
+
+<color name="yellow" weight="0.541004729248">
+ <shade name="weak" weight="0.919539304759" />
+ <shade name="cool" weight="0.0692938547515" />
+ <shade name="soft" weight="0.0111658344149" />
+</color>
+
+<color name="white" weight="0.165343743658">
+ <shade name="weak" weight="0.919539304759" />
+ <shade name="cool" weight="0.0692938547515" />
+ <shade name="soft" weight="0.0111658344149" />
+</color>
+
+<color name="black" weight="0.134920494825">
+ <shade name="weak" weight="0.919539304759" />
+ <shade name="cool" weight="0.0692938547515" />
+ <shade name="soft" weight="0.0111658344149" />
+</color>
+
+<color name="green" weight="0.0978834962453">
+ <shade name="weak" weight="0.919539304759" />
+ <shade name="cool" weight="0.0692938547515" />
+ <shade name="soft" weight="0.0111658344149" />
+</color>
+
+<color name="blue" weight="0.060846497666">
+ <shade name="weak" weight="0.919539304759" />
+ <shade name="cool" weight="0.0692938547515" />
+ <shade name="soft" weight="0.0111658344149" />
+</color>
+
+</colors>

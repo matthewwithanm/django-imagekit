@@ -1,0 +1,33 @@
+<colors query="handbook">
+
+<color name="black" weight="0.451746544511">
+ <shade name="light" weight="0.475434053018" />
+ <shade name="cool" weight="0.457293485017" />
+ <shade name="hard" weight="0.0672712730025" />
+</color>
+
+<color name="green" weight="0.382985123577">
+ <shade name="light" weight="0.475434053018" />
+ <shade name="cool" weight="0.457293485017" />
+ <shade name="hard" weight="0.0672712730025" />
+</color>
+
+<color name="white" weight="0.101143252886">
+ <shade name="light" weight="0.475434053018" />
+ <shade name="cool" weight="0.457293485017" />
+ <shade name="hard" weight="0.0672712730025" />
+</color>
+
+<color name="blue" weight="0.0411768974201">
+ <shade name="light" weight="0.475434053018" />
+ <shade name="cool" weight="0.457293485017" />
+ <shade name="hard" weight="0.0672712730025" />
+</color>
+
+<color name="orange" weight="0.0229471253584">
+ <shade name="light" weight="0.475434053018" />
+ <shade name="cool" weight="0.457293485017" />
+ <shade name="hard" weight="0.0672712730025" />
+</color>
+
+</colors>

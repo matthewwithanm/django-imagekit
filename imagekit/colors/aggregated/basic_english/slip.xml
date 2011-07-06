@@ -1,0 +1,33 @@
+<colors query="slip">
+
+<color name="pink" weight="0.653023655925">
+ <shade name="cool" weight="0.40624953839" />
+ <shade name="soft" weight="0.330356767482" />
+ <shade name="light" weight="0.263392557857" />
+</color>
+
+<color name="white" weight="0.112348155858">
+ <shade name="cool" weight="0.40624953839" />
+ <shade name="soft" weight="0.330356767482" />
+ <shade name="light" weight="0.263392557857" />
+</color>
+
+<color name="black" weight="0.0923862960225">
+ <shade name="cool" weight="0.40624953839" />
+ <shade name="soft" weight="0.330356767482" />
+ <shade name="light" weight="0.263392557857" />
+</color>
+
+<color name="green" weight="0.0774399788593">
+ <shade name="cool" weight="0.40624953839" />
+ <shade name="soft" weight="0.330356767482" />
+ <shade name="light" weight="0.263392557857" />
+</color>
+
+<color name="blue" weight="0.0648008113253">
+ <shade name="cool" weight="0.40624953839" />
+ <shade name="soft" weight="0.330356767482" />
+ <shade name="light" weight="0.263392557857" />
+</color>
+
+</colors>

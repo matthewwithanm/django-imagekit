@@ -1,0 +1,33 @@
+<colors query="walk">
+
+<color name="orange" weight="0.604050893602">
+ <shade name="soft" weight="0.388315560663" />
+ <shade name="light" weight="0.360824193536" />
+ <shade name="cool" weight="0.25085872503" />
+</color>
+
+<color name="green" weight="0.174217117484">
+ <shade name="soft" weight="0.388315560663" />
+ <shade name="light" weight="0.360824193536" />
+ <shade name="cool" weight="0.25085872503" />
+</color>
+
+<color name="black" weight="0.0821361885812">
+ <shade name="soft" weight="0.388315560663" />
+ <shade name="light" weight="0.360824193536" />
+ <shade name="cool" weight="0.25085872503" />
+</color>
+
+<color name="white" weight="0.0806628937188">
+ <shade name="soft" weight="0.388315560663" />
+ <shade name="light" weight="0.360824193536" />
+ <shade name="cool" weight="0.25085872503" />
+</color>
+
+<color name="red" weight="0.0589317944977">
+ <shade name="soft" weight="0.388315560663" />
+ <shade name="light" weight="0.360824193536" />
+ <shade name="cool" weight="0.25085872503" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="ion">
+
+<color name="black" weight="0.505836026384">
+ <shade name="light" weight="0.522478147543" />
+ <shade name="intense" weight="0.352368983226" />
+ <shade name="neutral" weight="0.125151742318" />
+</color>
+
+<color name="blue" weight="0.219844119159">
+ <shade name="light" weight="0.522478147543" />
+ <shade name="intense" weight="0.352368983226" />
+ <shade name="neutral" weight="0.125151742318" />
+</color>
+
+<color name="green" weight="0.149805284737">
+ <shade name="light" weight="0.522478147543" />
+ <shade name="intense" weight="0.352368983226" />
+ <shade name="neutral" weight="0.125151742318" />
+</color>
+
+<color name="yellow" weight="0.0774318225003">
+ <shade name="light" weight="0.522478147543" />
+ <shade name="intense" weight="0.352368983226" />
+ <shade name="neutral" weight="0.125151742318" />
+</color>
+
+<color name="white" weight="0.0470816609173">
+ <shade name="light" weight="0.719965395175" />
+ <shade name="neutral" weight="0.172456827216" />
+ <shade name="weak" weight="0.107576224744" />
+</color>
+
+</colors>

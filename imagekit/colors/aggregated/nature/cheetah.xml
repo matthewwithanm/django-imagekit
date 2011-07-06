@@ -1,0 +1,33 @@
+<colors query="cheetah">
+
+<color name="pink" weight="0.40493593298">
+ <shade name="dark" weight="0.721600603042" />
+ <shade name="cool" weight="0.179934601984" />
+ <shade name="light" weight="0.0984635661571" />
+</color>
+
+<color name="red" weight="0.304666082909">
+ <shade name="dark" weight="0.721600603042" />
+ <shade name="cool" weight="0.179934601984" />
+ <shade name="light" weight="0.0984635661571" />
+</color>
+
+<color name="black" weight="0.206324499185">
+ <shade name="dark" weight="0.721600603042" />
+ <shade name="cool" weight="0.179934601984" />
+ <shade name="light" weight="0.0984635661571" />
+</color>
+
+<color name="purple" weight="0.042807512915">
+ <shade name="dark" weight="0.721600603042" />
+ <shade name="cool" weight="0.179934601984" />
+ <shade name="light" weight="0.0984635661571" />
+</color>
+
+<color name="yellow" weight="0.041264899837">
+ <shade name="dark" weight="0.721600603042" />
+ <shade name="cool" weight="0.179934601984" />
+ <shade name="light" weight="0.0984635661571" />
+</color>
+
+</colors>

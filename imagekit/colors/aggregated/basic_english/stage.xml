@@ -1,0 +1,33 @@
+<colors query="stage">
+
+<color name="green" weight="0.321969317993">
+ <shade name="light" weight="0.43697397876" />
+ <shade name="dark" weight="0.359815986007" />
+ <shade name="hard" weight="0.203208178934" />
+</color>
+
+<color name="red" weight="0.208333088113">
+ <shade name="light" weight="0.43697397876" />
+ <shade name="dark" weight="0.359815986007" />
+ <shade name="hard" weight="0.203208178934" />
+</color>
+
+<color name="white" weight="0.177083124896">
+ <shade name="light" weight="0.43697397876" />
+ <shade name="dark" weight="0.359815986007" />
+ <shade name="hard" weight="0.203208178934" />
+</color>
+
+<color name="black" weight="0.158459409444">
+ <shade name="light" weight="0.43697397876" />
+ <shade name="dark" weight="0.359815986007" />
+ <shade name="hard" weight="0.203208178934" />
+</color>
+
+<color name="blue" weight="0.134153882497">
+ <shade name="light" weight="0.43697397876" />
+ <shade name="dark" weight="0.359815986007" />
+ <shade name="hard" weight="0.203208178934" />
+</color>
+
+</colors>

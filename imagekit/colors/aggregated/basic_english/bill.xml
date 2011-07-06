@@ -1,0 +1,33 @@
+<colors query="bill">
+
+<color name="black" weight="0.33045108947">
+ <shade name="light" weight="0.870260645415" />
+ <shade name="dark" weight="0.084089602241" />
+ <shade name="cool" weight="0.0456486412165" />
+</color>
+
+<color name="white" weight="0.251680771631">
+ <shade name="light" weight="0.870260645415" />
+ <shade name="dark" weight="0.084089602241" />
+ <shade name="cool" weight="0.0456486412165" />
+</color>
+
+<color name="green" weight="0.151392708431">
+ <shade name="light" weight="0.870260645415" />
+ <shade name="dark" weight="0.084089602241" />
+ <shade name="cool" weight="0.0456486412165" />
+</color>
+
+<color name="yellow" weight="0.139865344845">
+ <shade name="light" weight="0.870260645415" />
+ <shade name="dark" weight="0.084089602241" />
+ <shade name="cool" weight="0.0456486412165" />
+</color>
+
+<color name="red" weight="0.126608876721">
+ <shade name="light" weight="0.870260645415" />
+ <shade name="dark" weight="0.084089602241" />
+ <shade name="cool" weight="0.0456486412165" />
+</color>
+
+</colors>

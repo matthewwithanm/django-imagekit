@@ -1,0 +1,33 @@
+<colors query="carter">
+
+<color name="red" weight="0.72329720295">
+ <shade name="cool" weight="0.459614631554" />
+ <shade name="hard" weight="0.306249498222" />
+ <shade name="fresh" weight="0.234134231765" />
+</color>
+
+<color name="green" weight="0.209868618472">
+ <shade name="cool" weight="0.459614631554" />
+ <shade name="hard" weight="0.306249498222" />
+ <shade name="fresh" weight="0.234134231765" />
+</color>
+
+<color name="black" weight="0.0259837337156">
+ <shade name="cool" weight="0.459614631554" />
+ <shade name="hard" weight="0.306249498222" />
+ <shade name="fresh" weight="0.234134231765" />
+</color>
+
+<color name="blue" weight="0.0243597503584">
+ <shade name="cool" weight="0.459614631554" />
+ <shade name="hard" weight="0.306249498222" />
+ <shade name="fresh" weight="0.234134231765" />
+</color>
+
+<color name="pink" weight="0.0164896771657">
+ <shade name="cool" weight="0.459614631554" />
+ <shade name="hard" weight="0.306249498222" />
+ <shade name="fresh" weight="0.234134231765" />
+</color>
+
+</colors>

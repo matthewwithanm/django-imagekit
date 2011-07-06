@@ -1,0 +1,33 @@
+<colors query="wound">
+
+<color name="red" weight="0.682932530317">
+ <shade name="fresh" weight="0.817995038831" />
+ <shade name="light" weight="0.164791917198" />
+ <shade name="intense" weight="0.0172119789421" />
+</color>
+
+<color name="white" weight="0.137912588647">
+ <shade name="fresh" weight="0.819097776653" />
+ <shade name="light" weight="0.165014072922" />
+ <shade name="dark" weight="0.0158870839597" />
+</color>
+
+<color name="blue" weight="0.0762497485306">
+ <shade name="fresh" weight="0.817995038831" />
+ <shade name="light" weight="0.164791917198" />
+ <shade name="intense" weight="0.0172119789421" />
+</color>
+
+<color name="green" weight="0.0579498088832">
+ <shade name="fresh" weight="0.817995038831" />
+ <shade name="light" weight="0.164791917198" />
+ <shade name="intense" weight="0.0172119789421" />
+</color>
+
+<color name="black" weight="0.0449541995685">
+ <shade name="fresh" weight="0.817995038831" />
+ <shade name="light" weight="0.164791917198" />
+ <shade name="intense" weight="0.0172119789421" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="mandarin">
+
+<color name="orange" weight="0.4448393627">
+ <shade name="fresh" weight="0.85066685671" />
+ <shade name="cool" weight="0.0857312691528" />
+ <shade name="bright" weight="0.0636006392087" />
+</color>
+
+<color name="green" weight="0.242882292034">
+ <shade name="fresh" weight="0.85066685671" />
+ <shade name="cool" weight="0.0857312691528" />
+ <shade name="bright" weight="0.0636006392087" />
+</color>
+
+<color name="red" weight="0.111209840675">
+ <shade name="fresh" weight="0.85066685671" />
+ <shade name="cool" weight="0.0857312691528" />
+ <shade name="bright" weight="0.0636006392087" />
+</color>
+
+<color name="black" weight="0.105871768323">
+ <shade name="fresh" weight="0.85066685671" />
+ <shade name="cool" weight="0.0857312691528" />
+ <shade name="bright" weight="0.0636006392087" />
+</color>
+
+<color name="white" weight="0.0951956236178">
+ <shade name="fresh" weight="0.85066685671" />
+ <shade name="cool" weight="0.0857312691528" />
+ <shade name="bright" weight="0.0636006392087" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="repair">
+
+<color name="green" weight="0.369741806485">
+ <shade name="light" weight="0.557751072878" />
+ <shade name="intense" weight="0.292772988421" />
+ <shade name="dark" weight="0.149474816873" />
+</color>
+
+<color name="red" weight="0.242876269214">
+ <shade name="light" weight="0.557751072878" />
+ <shade name="intense" weight="0.292772988421" />
+ <shade name="dark" weight="0.149474816873" />
+</color>
+
+<color name="black" weight="0.204206025233">
+ <shade name="light" weight="0.557751072878" />
+ <shade name="intense" weight="0.292772988421" />
+ <shade name="dark" weight="0.149474816873" />
+</color>
+
+<color name="white" weight="0.117028369943">
+ <shade name="light" weight="0.7138329672" />
+ <shade name="dark" weight="0.191304073159" />
+ <shade name="fresh" weight="0.0948615238804" />
+</color>
+
+<color name="blue" weight="0.0661464699675">
+ <shade name="light" weight="0.557751072878" />
+ <shade name="intense" weight="0.292772988421" />
+ <shade name="dark" weight="0.149474816873" />
+</color>
+
+</colors>

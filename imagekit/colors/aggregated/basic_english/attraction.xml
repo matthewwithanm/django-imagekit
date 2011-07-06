@@ -1,0 +1,33 @@
+<colors query="attraction">
+
+<color name="red" weight="0.415899421288">
+ <shade name="weak" weight="0.422253460615" />
+ <shade name="intense" weight="0.390869757461" />
+ <shade name="light" weight="0.186875686961" />
+</color>
+
+<color name="orange" weight="0.295178173339">
+ <shade name="weak" weight="0.422253460615" />
+ <shade name="intense" weight="0.390869757461" />
+ <shade name="light" weight="0.186875686961" />
+</color>
+
+<color name="pink" weight="0.119617090193">
+ <shade name="weak" weight="0.645864072123" />
+ <shade name="light" weight="0.285838491379" />
+ <shade name="cool" weight="0.0682957616806" />
+</color>
+
+<color name="white" weight="0.0864923575244">
+ <shade name="weak" weight="0.645864072123" />
+ <shade name="light" weight="0.285838491379" />
+ <shade name="cool" weight="0.0682957616806" />
+</color>
+
+<color name="black" weight="0.0828118316723">
+ <shade name="weak" weight="0.422253460615" />
+ <shade name="intense" weight="0.390869757461" />
+ <shade name="light" weight="0.186875686961" />
+</color>
+
+</colors>

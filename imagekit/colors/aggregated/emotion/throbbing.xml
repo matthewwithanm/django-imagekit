@@ -1,0 +1,33 @@
+<colors query="throbbing">
+
+<color name="black" weight="0.450917330391">
+ <shade name="hard" weight="0.813455489072" />
+ <shade name="intense" weight="0.167641587651" />
+ <shade name="light" weight="0.0189018702855" />
+</color>
+
+<color name="red" weight="0.186751602321">
+ <shade name="hard" weight="0.813455489072" />
+ <shade name="intense" weight="0.167641587651" />
+ <shade name="light" weight="0.0189018702855" />
+</color>
+
+<color name="purple" weight="0.130885738379">
+ <shade name="hard" weight="0.956980945548" />
+ <shade name="light" weight="0.0222369016393" />
+ <shade name="dark" weight="0.020780914032" />
+</color>
+
+<color name="white" weight="0.124501068214">
+ <shade name="hard" weight="0.956980945548" />
+ <shade name="light" weight="0.0222369016393" />
+ <shade name="dark" weight="0.020780914032" />
+</color>
+
+<color name="pink" weight="0.106943225261">
+ <shade name="hard" weight="0.956980945548" />
+ <shade name="light" weight="0.0222369016393" />
+ <shade name="dark" weight="0.020780914032" />
+</color>
+
+</colors>

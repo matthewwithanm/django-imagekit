@@ -1,0 +1,33 @@
+<colors query="hill">
+
+<color name="red" weight="0.292183764441">
+ <shade name="dark" weight="0.594568520917" />
+ <shade name="bright" weight="0.277153200302" />
+ <shade name="hard" weight="0.128276987977" />
+</color>
+
+<color name="green" weight="0.28487917033">
+ <shade name="dark" weight="0.594568520917" />
+ <shade name="bright" weight="0.277153200302" />
+ <shade name="hard" weight="0.128276987977" />
+</color>
+
+<color name="blue" weight="0.265400252701">
+ <shade name="dark" weight="0.594568520917" />
+ <shade name="bright" weight="0.277153200302" />
+ <shade name="hard" weight="0.128276987977" />
+</color>
+
+<color name="black" weight="0.106403587551">
+ <shade name="dark" weight="0.594568520917" />
+ <shade name="bright" weight="0.277153200302" />
+ <shade name="hard" weight="0.128276987977" />
+</color>
+
+<color name="white" weight="0.0511321587772">
+ <shade name="dark" weight="0.594568520917" />
+ <shade name="bright" weight="0.277153200302" />
+ <shade name="hard" weight="0.128276987977" />
+</color>
+
+</colors>

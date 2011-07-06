@@ -1,0 +1,33 @@
+<colors query="receiver">
+
+<color name="red" weight="0.573912188878">
+ <shade name="light" weight="0.974012011003" />
+ <shade name="warm" weight="0.0190810549696" />
+ <shade name="neutral" weight="0.00690590483211" />
+</color>
+
+<color name="black" weight="0.217367286796">
+ <shade name="light" weight="0.974012011003" />
+ <shade name="warm" weight="0.0190810549696" />
+ <shade name="neutral" weight="0.00690590483211" />
+</color>
+
+<color name="white" weight="0.178272451041">
+ <shade name="light" weight="0.974012011003" />
+ <shade name="warm" weight="0.0190810549696" />
+ <shade name="neutral" weight="0.00690590483211" />
+</color>
+
+<color name="green" weight="0.0217367286796">
+ <shade name="light" weight="0.986216182571" />
+ <shade name="neutral" weight="0.00699243440921" />
+ <shade name="soft" weight="0.00679034092917" />
+</color>
+
+<color name="blue" weight="0.00871032940614">
+ <shade name="light" weight="0.986216182571" />
+ <shade name="neutral" weight="0.00699243440921" />
+ <shade name="soft" weight="0.00679034092917" />
+</color>
+
+</colors>

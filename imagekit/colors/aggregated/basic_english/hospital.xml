@@ -1,0 +1,33 @@
+<colors query="hospital">
+
+<color name="green" weight="0.396940586304">
+ <shade name="hard" weight="0.655843172984" />
+ <shade name="intense" weight="0.172889351294" />
+ <shade name="bright" weight="0.171265977104" />
+</color>
+
+<color name="white" weight="0.389657272794">
+ <shade name="hard" weight="0.669427310718" />
+ <shade name="bright" weight="0.174813320002" />
+ <shade name="cool" weight="0.155757839622" />
+</color>
+
+<color name="black" weight="0.0957755726587">
+ <shade name="hard" weight="0.655843172984" />
+ <shade name="intense" weight="0.172889351294" />
+ <shade name="bright" weight="0.171265977104" />
+</color>
+
+<color name="blue" weight="0.0670064842936">
+ <shade name="hard" weight="0.655843172984" />
+ <shade name="intense" weight="0.172889351294" />
+ <shade name="bright" weight="0.171265977104" />
+</color>
+
+<color name="orange" weight="0.0506190288957">
+ <shade name="hard" weight="0.655843172984" />
+ <shade name="intense" weight="0.172889351294" />
+ <shade name="bright" weight="0.171265977104" />
+</color>
+
+</colors>

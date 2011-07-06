@@ -1,0 +1,33 @@
+<colors query="alligator">
+
+<color name="black" weight="0.454178153233">
+ <shade name="hard" weight="0.450402880208" />
+ <shade name="dark" weight="0.304607728233" />
+ <shade name="cool" weight="0.244987925015" />
+</color>
+
+<color name="white" weight="0.173486832643">
+ <shade name="hard" weight="0.450402880208" />
+ <shade name="dark" weight="0.304607728233" />
+ <shade name="cool" weight="0.244987925015" />
+</color>
+
+<color name="blue" weight="0.129682848321">
+ <shade name="hard" weight="0.450402880208" />
+ <shade name="dark" weight="0.304607728233" />
+ <shade name="cool" weight="0.244987925015" />
+</color>
+
+<color name="green" weight="0.122766429744">
+ <shade name="hard" weight="0.450402880208" />
+ <shade name="dark" weight="0.304607728233" />
+ <shade name="cool" weight="0.244987925015" />
+</color>
+
+<color name="red" weight="0.119884588671">
+ <shade name="hard" weight="0.450402880208" />
+ <shade name="dark" weight="0.304607728233" />
+ <shade name="cool" weight="0.244987925015" />
+</color>
+
+</colors>

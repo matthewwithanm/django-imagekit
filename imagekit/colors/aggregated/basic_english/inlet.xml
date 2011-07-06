@@ -1,0 +1,33 @@
+<colors query="inlet">
+
+<color name="blue" weight="0.360699164132">
+ <shade name="light" weight="0.909506286739" />
+ <shade name="fresh" weight="0.0473728454388" />
+ <shade name="cool" weight="0.0431197584864" />
+</color>
+
+<color name="black" weight="0.291474072026">
+ <shade name="light" weight="0.909506286739" />
+ <shade name="fresh" weight="0.0473728454388" />
+ <shade name="cool" weight="0.0431197584864" />
+</color>
+
+<color name="white" weight="0.145737036013">
+ <shade name="light" weight="0.909506286739" />
+ <shade name="fresh" weight="0.0473728454388" />
+ <shade name="cool" weight="0.0431197584864" />
+</color>
+
+<color name="green" weight="0.126305431211">
+ <shade name="light" weight="0.909506286739" />
+ <shade name="fresh" weight="0.0473728454388" />
+ <shade name="cool" weight="0.0431197584864" />
+</color>
+
+<color name="red" weight="0.0757832587268">
+ <shade name="light" weight="0.909506286739" />
+ <shade name="fresh" weight="0.0473728454388" />
+ <shade name="cool" weight="0.0431197584864" />
+</color>
+
+</colors>

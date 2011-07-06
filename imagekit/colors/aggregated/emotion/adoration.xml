@@ -1,0 +1,33 @@
+<colors query="adoration">
+
+<color name="pink" weight="0.79020068121">
+ <shade name="warm" weight="0.581043931507" />
+ <shade name="soft" weight="0.22443757011" />
+ <shade name="hard" weight="0.194512560762" />
+</color>
+
+<color name="white" weight="0.0707229609683">
+ <shade name="warm" weight="0.581043931507" />
+ <shade name="soft" weight="0.22443757011" />
+ <shade name="hard" weight="0.194512560762" />
+</color>
+
+<color name="green" weight="0.0636111548374">
+ <shade name="intense" weight="0.91375658334" />
+ <shade name="soft" weight="0.0462011755621" />
+ <shade name="hard" weight="0.0400410188205" />
+</color>
+
+<color name="black" weight="0.0501777432568">
+ <shade name="intense" weight="0.846408932335" />
+ <shade name="warm" weight="0.110793978221" />
+ <shade name="soft" weight="0.0427959572529" />
+</color>
+
+<color name="blue" weight="0.0252864217987">
+ <shade name="intense" weight="0.91375658334" />
+ <shade name="soft" weight="0.0462011755621" />
+ <shade name="hard" weight="0.0400410188205" />
+</color>
+
+</colors>

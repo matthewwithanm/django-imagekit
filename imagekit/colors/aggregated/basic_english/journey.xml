@@ -1,0 +1,33 @@
+<colors query="journey">
+
+<color name="blue" weight="0.466966858252">
+ <shade name="dark" weight="0.485312377148" />
+ <shade name="hard" weight="0.424009761087" />
+ <shade name="intense" weight="0.0906767862567" />
+</color>
+
+<color name="green" weight="0.294507507193">
+ <shade name="dark" weight="0.485312377148" />
+ <shade name="hard" weight="0.424009761087" />
+ <shade name="intense" weight="0.0906767862567" />
+</color>
+
+<color name="black" weight="0.0992304573785">
+ <shade name="dark" weight="0.485312377148" />
+ <shade name="hard" weight="0.424009761087" />
+ <shade name="intense" weight="0.0906767862567" />
+</color>
+
+<color name="red" weight="0.0846377430582">
+ <shade name="dark" weight="0.485312377148" />
+ <shade name="hard" weight="0.424009761087" />
+ <shade name="intense" weight="0.0906767862567" />
+</color>
+
+<color name="purple" weight="0.0546563481818">
+ <shade name="dark" weight="0.507342553745" />
+ <shade name="hard" weight="0.443257178535" />
+ <shade name="light" weight="0.049399143391" />
+</color>
+
+</colors>

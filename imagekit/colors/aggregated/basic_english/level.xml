@@ -1,0 +1,33 @@
+<colors query="level">
+
+<color name="black" weight="0.54832018819">
+ <shade name="light" weight="0.792856199328" />
+ <shade name="intense" weight="0.104761780091" />
+ <shade name="hard" weight="0.102380830544" />
+</color>
+
+<color name="red" weight="0.161754455516">
+ <shade name="light" weight="0.792856199328" />
+ <shade name="intense" weight="0.104761780091" />
+ <shade name="hard" weight="0.102380830544" />
+</color>
+
+<color name="white" weight="0.122686642108">
+ <shade name="light" weight="0.838015890813" />
+ <shade name="hard" weight="0.108212262177" />
+ <shade name="neutral" weight="0.0537705891903" />
+</color>
+
+<color name="green" weight="0.0877312301105">
+ <shade name="light" weight="0.792856199328" />
+ <shade name="intense" weight="0.104761780091" />
+ <shade name="hard" weight="0.102380830544" />
+</color>
+
+<color name="blue" weight="0.0795064272876">
+ <shade name="light" weight="0.792856199328" />
+ <shade name="intense" weight="0.104761780091" />
+ <shade name="hard" weight="0.102380830544" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="luck">
+
+<color name="green" weight="0.648227485448">
+ <shade name="hard" weight="0.997163029436" />
+ <shade name="cool" weight="0.00174732237268" />
+ <shade name="dark" weight="0.00108864587617" />
+</color>
+
+<color name="blue" weight="0.206952626836">
+ <shade name="hard" weight="0.997163029436" />
+ <shade name="cool" weight="0.00174732237268" />
+ <shade name="dark" weight="0.00108864587617" />
+</color>
+
+<color name="white" weight="0.068183928099">
+ <shade name="hard" weight="0.997163029436" />
+ <shade name="cool" weight="0.00174732237268" />
+ <shade name="dark" weight="0.00108864587617" />
+</color>
+
+<color name="red" weight="0.0444155869659">
+ <shade name="hard" weight="0.997163029436" />
+ <shade name="cool" weight="0.00174732237268" />
+ <shade name="dark" weight="0.00108864587617" />
+</color>
+
+<color name="pink" weight="0.0322193068693">
+ <shade name="hard" weight="0.997163029436" />
+ <shade name="cool" weight="0.00174732237268" />
+ <shade name="dark" weight="0.00108864587617" />
+</color>
+
+</colors>

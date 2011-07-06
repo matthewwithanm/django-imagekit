@@ -1,0 +1,33 @@
+<colors query="clip">
+
+<color name="black" weight="0.681853685324">
+ <shade name="cool" weight="0.886481675783" />
+ <shade name="hard" weight="0.0568776162449" />
+ <shade name="light" weight="0.0566396345869" />
+</color>
+
+<color name="white" weight="0.162497840895">
+ <shade name="cool" weight="0.886481675783" />
+ <shade name="hard" weight="0.0568776162449" />
+ <shade name="light" weight="0.0566396345869" />
+</color>
+
+<color name="blue" weight="0.0642025783144">
+ <shade name="cool" weight="0.886481675783" />
+ <shade name="hard" weight="0.0568776162449" />
+ <shade name="light" weight="0.0566396345869" />
+</color>
+
+<color name="red" weight="0.0597418532702">
+ <shade name="cool" weight="0.886481675783" />
+ <shade name="hard" weight="0.0568776162449" />
+ <shade name="light" weight="0.0566396345869" />
+</color>
+
+<color name="pink" weight="0.0317030101354">
+ <shade name="cool" weight="0.886481675783" />
+ <shade name="hard" weight="0.0568776162449" />
+ <shade name="light" weight="0.0566396345869" />
+</color>
+
+</colors>

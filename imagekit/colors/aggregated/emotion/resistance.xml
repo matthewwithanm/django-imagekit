@@ -1,0 +1,33 @@
+<colors query="resistance">
+
+<color name="black" weight="0.501474413894">
+ <shade name="light" weight="0.730542376432" />
+ <shade name="weak" weight="0.13472816691" />
+ <shade name="intense" weight="0.13472816691" />
+</color>
+
+<color name="white" weight="0.328800297202">
+ <shade name="light" weight="0.746155747486" />
+ <shade name="weak" weight="0.137607617752" />
+ <shade name="soft" weight="0.116235317448" />
+</color>
+
+<color name="green" weight="0.105762896474">
+ <shade name="light" weight="0.730542376432" />
+ <shade name="weak" weight="0.13472816691" />
+ <shade name="intense" weight="0.13472816691" />
+</color>
+
+<color name="orange" weight="0.0482048575766">
+ <shade name="light" weight="0.730542376432" />
+ <shade name="weak" weight="0.13472816691" />
+ <shade name="intense" weight="0.13472816691" />
+</color>
+
+<color name="blue" weight="0.0157565131482">
+ <shade name="light" weight="0.730542376432" />
+ <shade name="weak" weight="0.13472816691" />
+ <shade name="intense" weight="0.13472816691" />
+</color>
+
+</colors>

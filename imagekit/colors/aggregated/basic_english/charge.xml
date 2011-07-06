@@ -1,0 +1,33 @@
+<colors query="charge">
+
+<color name="red" weight="0.817682230392">
+ <shade name="neutral" weight="0.430135204723" />
+ <shade name="fresh" weight="0.294787161689" />
+ <shade name="weak" weight="0.275076281636" />
+</color>
+
+<color name="green" weight="0.155246580148">
+ <shade name="neutral" weight="0.430135204723" />
+ <shade name="fresh" weight="0.294787161689" />
+ <shade name="weak" weight="0.275076281636" />
+</color>
+
+<color name="orange" weight="0.0178608929588">
+ <shade name="neutral" weight="0.430135204723" />
+ <shade name="fresh" weight="0.294787161689" />
+ <shade name="weak" weight="0.275076281636" />
+</color>
+
+<color name="yellow" weight="0.00572754373362">
+ <shade name="neutral" weight="0.430135204723" />
+ <shade name="fresh" weight="0.294787161689" />
+ <shade name="weak" weight="0.275076281636" />
+</color>
+
+<color name="white" weight="0.0034817436907">
+ <shade name="neutral" weight="0.430135204723" />
+ <shade name="fresh" weight="0.294787161689" />
+ <shade name="weak" weight="0.275076281636" />
+</color>
+
+</colors>

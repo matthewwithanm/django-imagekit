@@ -1,0 +1,33 @@
+<colors query="stair">
+
+<color name="blue" weight="0.320067382441">
+ <shade name="light" weight="0.437805148144" />
+ <shade name="intense" weight="0.342518145313" />
+ <shade name="dark" weight="0.219675171392" />
+</color>
+
+<color name="black" weight="0.265029340487">
+ <shade name="light" weight="0.437805148144" />
+ <shade name="intense" weight="0.342518145313" />
+ <shade name="dark" weight="0.219675171392" />
+</color>
+
+<color name="red" weight="0.159186952114">
+ <shade name="light" weight="0.437805148144" />
+ <shade name="intense" weight="0.342518145313" />
+ <shade name="dark" weight="0.219675171392" />
+</color>
+
+<color name="white" weight="0.149872821937">
+ <shade name="light" weight="0.544347343947" />
+ <shade name="dark" weight="0.273134284933" />
+ <shade name="cool" weight="0.182516462382" />
+</color>
+
+<color name="green" weight="0.105842388373">
+ <shade name="light" weight="0.437805148144" />
+ <shade name="intense" weight="0.342518145313" />
+ <shade name="dark" weight="0.219675171392" />
+</color>
+
+</colors>

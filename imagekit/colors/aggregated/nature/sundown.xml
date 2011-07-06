@@ -1,0 +1,33 @@
+<colors query="sundown">
+
+<color name="blue" weight="0.481805393407">
+ <shade name="light" weight="0.373528878937" />
+ <shade name="cool" weight="0.358823017561" />
+ <shade name="soft" weight="0.267646677033" />
+</color>
+
+<color name="orange" weight="0.157513301691">
+ <shade name="light" weight="0.373528878937" />
+ <shade name="cool" weight="0.358823017561" />
+ <shade name="soft" weight="0.267646677033" />
+</color>
+
+<color name="purple" weight="0.151617081841">
+ <shade name="light" weight="0.373528878937" />
+ <shade name="cool" weight="0.358823017561" />
+ <shade name="soft" weight="0.267646677033" />
+</color>
+
+<color name="red" weight="0.112365103987">
+ <shade name="light" weight="0.373528878937" />
+ <shade name="cool" weight="0.358823017561" />
+ <shade name="soft" weight="0.267646677033" />
+</color>
+
+<color name="pink" weight="0.09669800553">
+ <shade name="light" weight="0.373528878937" />
+ <shade name="cool" weight="0.358823017561" />
+ <shade name="soft" weight="0.267646677033" />
+</color>
+
+</colors>

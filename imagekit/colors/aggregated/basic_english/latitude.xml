@@ -1,0 +1,33 @@
+<colors query="latitude">
+
+<color name="orange" weight="0.59710679514">
+ <shade name="light" weight="0.866452258346" />
+ <shade name="hard" weight="0.0887171768872" />
+ <shade name="fresh" weight="0.0448294864101" />
+</color>
+
+<color name="black" weight="0.116115577463">
+ <shade name="light" weight="0.866452258346" />
+ <shade name="hard" weight="0.0887171768872" />
+ <shade name="fresh" weight="0.0448294864101" />
+</color>
+
+<color name="blue" weight="0.115702354768">
+ <shade name="light" weight="0.866452258346" />
+ <shade name="hard" weight="0.0887171768872" />
+ <shade name="fresh" weight="0.0448294864101" />
+</color>
+
+<color name="green" weight="0.0882230455103">
+ <shade name="light" weight="0.866452258346" />
+ <shade name="hard" weight="0.0887171768872" />
+ <shade name="fresh" weight="0.0448294864101" />
+</color>
+
+<color name="red" weight="0.0828511504675">
+ <shade name="light" weight="0.866452258346" />
+ <shade name="hard" weight="0.0887171768872" />
+ <shade name="fresh" weight="0.0448294864101" />
+</color>
+
+</colors>

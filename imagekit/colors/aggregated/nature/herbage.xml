@@ -1,0 +1,33 @@
+<colors query="herbage">
+
+<color name="green" weight="0.992697866982">
+ <shade name="fresh" weight="0.98484302442" />
+ <shade name="soft" weight="0.0102612386976" />
+ <shade name="dark" weight="0.004894728804" />
+</color>
+
+<color name="red" weight="0.00329831871933">
+ <shade name="fresh" weight="0.98484302442" />
+ <shade name="soft" weight="0.0102612386976" />
+ <shade name="dark" weight="0.004894728804" />
+</color>
+
+<color name="yellow" weight="0.00224157582867">
+ <shade name="fresh" weight="0.98484302442" />
+ <shade name="soft" weight="0.0102612386976" />
+ <shade name="dark" weight="0.004894728804" />
+</color>
+
+<color name="purple" weight="0.00160112559191">
+ <shade name="fresh" weight="0.98484302442" />
+ <shade name="soft" weight="0.0102612386976" />
+ <shade name="dark" weight="0.004894728804" />
+</color>
+
+<color name="white" weight="0.000160112559191">
+ <shade name="fresh" weight="0.98484302442" />
+ <shade name="soft" weight="0.0102612386976" />
+ <shade name="dark" weight="0.004894728804" />
+</color>
+
+</colors>

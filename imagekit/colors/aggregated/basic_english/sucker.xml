@@ -1,0 +1,33 @@
+<colors query="sucker">
+
+<color name="white" weight="0.759181204335">
+ <shade name="dark" weight="0.541370517163" />
+ <shade name="hard" weight="0.305555193639" />
+ <shade name="soft" weight="0.153073104744" />
+</color>
+
+<color name="red" weight="0.140428854895">
+ <shade name="dark" weight="0.541370517163" />
+ <shade name="hard" weight="0.305555193639" />
+ <shade name="soft" weight="0.153073104744" />
+</color>
+
+<color name="blue" weight="0.092045804049">
+ <shade name="dark" weight="0.541370517163" />
+ <shade name="hard" weight="0.305555193639" />
+ <shade name="soft" weight="0.153073104744" />
+</color>
+
+<color name="green" weight="0.00448428276136">
+ <shade name="dark" weight="0.541370517163" />
+ <shade name="hard" weight="0.305555193639" />
+ <shade name="soft" weight="0.153073104744" />
+</color>
+
+<color name="pink" weight="0.00385884332359">
+ <shade name="dark" weight="0.541370517163" />
+ <shade name="hard" weight="0.305555193639" />
+ <shade name="soft" weight="0.153073104744" />
+</color>
+
+</colors>

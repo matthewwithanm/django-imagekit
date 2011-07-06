@@ -1,0 +1,33 @@
+<colors query="rowan">
+
+<color name="green" weight="0.329618910982">
+ <shade name="dark" weight="0.48822718822" />
+ <shade name="cool" weight="0.25650514711" />
+ <shade name="fresh" weight="0.25526599181" />
+</color>
+
+<color name="white" weight="0.220751819961">
+ <shade name="dark" weight="0.48822718822" />
+ <shade name="cool" weight="0.25650514711" />
+ <shade name="fresh" weight="0.25526599181" />
+</color>
+
+<color name="black" weight="0.185932920913">
+ <shade name="dark" weight="0.48822718822" />
+ <shade name="cool" weight="0.25650514711" />
+ <shade name="fresh" weight="0.25526599181" />
+</color>
+
+<color name="blue" weight="0.13672221026">
+ <shade name="dark" weight="0.48822718822" />
+ <shade name="cool" weight="0.25650514711" />
+ <shade name="fresh" weight="0.25526599181" />
+</color>
+
+<color name="red" weight="0.126972918526">
+ <shade name="dark" weight="0.48822718822" />
+ <shade name="cool" weight="0.25650514711" />
+ <shade name="fresh" weight="0.25526599181" />
+</color>
+
+</colors>

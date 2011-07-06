@@ -1,0 +1,33 @@
+<colors query="cup">
+
+<color name="red" weight="0.246182362543">
+ <shade name="soft" weight="0.630403743764" />
+ <shade name="fresh" weight="0.2259411648" />
+ <shade name="warm" weight="0.143653950459" />
+</color>
+
+<color name="white" weight="0.203321450674">
+ <shade name="soft" weight="0.630403743764" />
+ <shade name="fresh" weight="0.2259411648" />
+ <shade name="warm" weight="0.143653950459" />
+</color>
+
+<color name="blue" weight="0.200106882284">
+ <shade name="soft" weight="0.678168709982" />
+ <shade name="fresh" weight="0.243060466852" />
+ <shade name="light" weight="0.0787695957391" />
+</color>
+
+<color name="green" weight="0.199303240187">
+ <shade name="soft" weight="0.678168709982" />
+ <shade name="fresh" weight="0.243060466852" />
+ <shade name="light" weight="0.0787695957391" />
+</color>
+
+<color name="black" weight="0.151084714335">
+ <shade name="soft" weight="0.630403743764" />
+ <shade name="fresh" weight="0.2259411648" />
+ <shade name="warm" weight="0.143653950459" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="specimen">
+
+<color name="red" weight="0.377774227435">
+ <shade name="fresh" weight="0.92565034521" />
+ <shade name="bright" weight="0.0487184392216" />
+ <shade name="light" weight="0.0256301354166" />
+</color>
+
+<color name="blue" weight="0.245415374027">
+ <shade name="fresh" weight="0.92565034521" />
+ <shade name="bright" weight="0.0487184392216" />
+ <shade name="light" weight="0.0256301354166" />
+</color>
+
+<color name="pink" weight="0.157176138422">
+ <shade name="fresh" weight="0.92565034521" />
+ <shade name="bright" weight="0.0487184392216" />
+ <shade name="light" weight="0.0256301354166" />
+</color>
+
+<color name="yellow" weight="0.1174684824">
+ <shade name="fresh" weight="0.92565034521" />
+ <shade name="bright" weight="0.0487184392216" />
+ <shade name="light" weight="0.0256301354166" />
+</color>
+
+<color name="orange" weight="0.102164489974">
+ <shade name="fresh" weight="0.92565034521" />
+ <shade name="bright" weight="0.0487184392216" />
+ <shade name="light" weight="0.0256301354166" />
+</color>
+
+</colors>

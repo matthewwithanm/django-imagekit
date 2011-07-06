@@ -1,0 +1,33 @@
+<colors query="pony">
+
+<color name="pink" weight="0.317971522162">
+ <shade name="dark" weight="0.600101443712" />
+ <shade name="soft" weight="0.314095649262" />
+ <shade name="cool" weight="0.085801738335" />
+</color>
+
+<color name="white" weight="0.27392816943">
+ <shade name="dark" weight="0.600101443712" />
+ <shade name="soft" weight="0.314095649262" />
+ <shade name="cool" weight="0.085801738335" />
+</color>
+
+<color name="red" weight="0.258888975814">
+ <shade name="dark" weight="0.600101443712" />
+ <shade name="soft" weight="0.314095649262" />
+ <shade name="cool" weight="0.085801738335" />
+</color>
+
+<color name="black" weight="0.0996883691101">
+ <shade name="dark" weight="0.600101443712" />
+ <shade name="soft" weight="0.314095649262" />
+ <shade name="cool" weight="0.085801738335" />
+</color>
+
+<color name="blue" weight="0.0495219161205">
+ <shade name="dark" weight="0.600101443712" />
+ <shade name="soft" weight="0.314095649262" />
+ <shade name="cool" weight="0.085801738335" />
+</color>
+
+</colors>

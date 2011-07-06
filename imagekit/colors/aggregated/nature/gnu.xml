@@ -1,0 +1,33 @@
+<colors query="gnu">
+
+<color name="blue" weight="0.951597593612">
+ <shade name="cool" weight="0.4754532895" />
+ <shade name="soft" weight="0.417618801668" />
+ <shade name="light" weight="0.106926553084" />
+</color>
+
+<color name="red" weight="0.0301225137546">
+ <shade name="cool" weight="0.4754532895" />
+ <shade name="soft" weight="0.417618801668" />
+ <shade name="light" weight="0.106926553084" />
+</color>
+
+<color name="black" weight="0.00723396731835">
+ <shade name="cool" weight="0.4754532895" />
+ <shade name="soft" weight="0.417618801668" />
+ <shade name="light" weight="0.106926553084" />
+</color>
+
+<color name="green" weight="0.0066634651639">
+ <shade name="cool" weight="0.4754532895" />
+ <shade name="soft" weight="0.417618801668" />
+ <shade name="light" weight="0.106926553084" />
+</color>
+
+<color name="white" weight="0.00438145654613">
+ <shade name="cool" weight="0.4754532895" />
+ <shade name="soft" weight="0.417618801668" />
+ <shade name="light" weight="0.106926553084" />
+</color>
+
+</colors>

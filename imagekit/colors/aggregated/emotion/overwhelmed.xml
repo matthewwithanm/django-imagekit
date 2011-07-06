@@ -1,0 +1,33 @@
+<colors query="overwhelmed">
+
+<color name="black" weight="0.308243379214">
+ <shade name="light" weight="0.703539006156" />
+ <shade name="dark" weight="0.171681216597" />
+ <shade name="hard" weight="0.124778616186" />
+</color>
+
+<color name="green" weight="0.261648449798">
+ <shade name="light" weight="0.703539006156" />
+ <shade name="dark" weight="0.171681216597" />
+ <shade name="hard" weight="0.124778616186" />
+</color>
+
+<color name="white" weight="0.217443003941">
+ <shade name="light" weight="0.703539006156" />
+ <shade name="dark" weight="0.171681216597" />
+ <shade name="hard" weight="0.124778616186" />
+</color>
+
+<color name="orange" weight="0.126642628669">
+ <shade name="light" weight="0.703539006156" />
+ <shade name="dark" weight="0.171681216597" />
+ <shade name="hard" weight="0.124778616186" />
+</color>
+
+<color name="red" weight="0.0860214081526">
+ <shade name="light" weight="0.703539006156" />
+ <shade name="dark" weight="0.171681216597" />
+ <shade name="hard" weight="0.124778616186" />
+</color>
+
+</colors>

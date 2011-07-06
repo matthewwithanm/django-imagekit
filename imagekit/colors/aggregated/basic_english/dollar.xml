@@ -1,0 +1,33 @@
+<colors query="dollar">
+
+<color name="green" weight="0.459159239719">
+ <shade name="weak" weight="0.476624363102" />
+ <shade name="soft" weight="0.37058114356" />
+ <shade name="hard" weight="0.152793456114" />
+</color>
+
+<color name="black" weight="0.33262683963">
+ <shade name="weak" weight="0.476624363102" />
+ <shade name="soft" weight="0.37058114356" />
+ <shade name="hard" weight="0.152793456114" />
+</color>
+
+<color name="pink" weight="0.18596428498">
+ <shade name="weak" weight="0.476624363102" />
+ <shade name="soft" weight="0.37058114356" />
+ <shade name="hard" weight="0.152793456114" />
+</color>
+
+<color name="yellow" weight="0.0141869660707">
+ <shade name="weak" weight="0.476624363102" />
+ <shade name="soft" weight="0.37058114356" />
+ <shade name="hard" weight="0.152793456114" />
+</color>
+
+<color name="red" weight="0.00806164761177">
+ <shade name="weak" weight="0.476624363102" />
+ <shade name="soft" weight="0.37058114356" />
+ <shade name="hard" weight="0.152793456114" />
+</color>
+
+</colors>

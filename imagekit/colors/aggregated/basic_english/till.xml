@@ -1,0 +1,33 @@
+<colors query="till">
+
+<color name="red" weight="0.240052754248">
+ <shade name="hard" weight="0.507367712439" />
+ <shade name="light" weight="0.254210171274" />
+ <shade name="dark" weight="0.238420719642" />
+</color>
+
+<color name="green" weight="0.202917521547">
+ <shade name="hard" weight="0.507367712439" />
+ <shade name="light" weight="0.254210171274" />
+ <shade name="dark" weight="0.238420719642" />
+</color>
+
+<color name="blue" weight="0.200265004925">
+ <shade name="hard" weight="0.507367712439" />
+ <shade name="light" weight="0.254210171274" />
+ <shade name="dark" weight="0.238420719642" />
+</color>
+
+<color name="white" weight="0.19098119675">
+ <shade name="hard" weight="0.507367712439" />
+ <shade name="light" weight="0.254210171274" />
+ <shade name="dark" weight="0.238420719642" />
+</color>
+
+<color name="black" weight="0.165782288845">
+ <shade name="hard" weight="0.507367712439" />
+ <shade name="light" weight="0.254210171274" />
+ <shade name="dark" weight="0.238420719642" />
+</color>
+
+</colors>

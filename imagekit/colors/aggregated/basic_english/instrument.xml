@@ -1,0 +1,33 @@
+<colors query="instrument">
+
+<color name="black" weight="0.328590430736">
+ <shade name="light" weight="0.47512367433" />
+ <shade name="weak" weight="0.333332839582" />
+ <shade name="cool" weight="0.191542004834" />
+</color>
+
+<color name="white" weight="0.250677235819">
+ <shade name="light" weight="0.47512367433" />
+ <shade name="weak" weight="0.333332839582" />
+ <shade name="cool" weight="0.191542004834" />
+</color>
+
+<color name="blue" weight="0.199864282613">
+ <shade name="light" weight="0.47512367433" />
+ <shade name="weak" weight="0.333332839582" />
+ <shade name="cool" weight="0.191542004834" />
+</color>
+
+<color name="red" weight="0.174457806009">
+ <shade name="light" weight="0.47512367433" />
+ <shade name="weak" weight="0.333332839582" />
+ <shade name="cool" weight="0.191542004834" />
+</color>
+
+<color name="green" weight="0.0464091639287">
+ <shade name="light" weight="0.47512367433" />
+ <shade name="weak" weight="0.333332839582" />
+ <shade name="cool" weight="0.191542004834" />
+</color>
+
+</colors>

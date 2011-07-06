@@ -1,0 +1,33 @@
+<colors query="donkey">
+
+<color name="white" weight="0.485615974105">
+ <shade name="dark" weight="0.645066899474" />
+ <shade name="cool" weight="0.184719307046" />
+ <shade name="hard" weight="0.170212555184" />
+</color>
+
+<color name="blue" weight="0.21644597703">
+ <shade name="dark" weight="0.645066899474" />
+ <shade name="cool" weight="0.184719307046" />
+ <shade name="hard" weight="0.170212555184" />
+</color>
+
+<color name="black" weight="0.148922232059">
+ <shade name="dark" weight="0.645066899474" />
+ <shade name="cool" weight="0.184719307046" />
+ <shade name="hard" weight="0.170212555184" />
+</color>
+
+<color name="red" weight="0.0943482463976">
+ <shade name="dark" weight="0.645066899474" />
+ <shade name="cool" weight="0.184719307046" />
+ <shade name="hard" weight="0.170212555184" />
+</color>
+
+<color name="pink" weight="0.0546664839421">
+ <shade name="dark" weight="0.645066899474" />
+ <shade name="cool" weight="0.184719307046" />
+ <shade name="hard" weight="0.170212555184" />
+</color>
+
+</colors>

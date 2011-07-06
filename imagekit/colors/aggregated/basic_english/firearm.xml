@@ -1,0 +1,33 @@
+<colors query="firearm">
+
+<color name="blue" weight="0.454659474921">
+ <shade name="light" weight="0.561734473474" />
+ <shade name="cool" weight="0.285872791451" />
+ <shade name="hard" weight="0.152391332408" />
+</color>
+
+<color name="black" weight="0.381611692247">
+ <shade name="light" weight="0.561734473474" />
+ <shade name="cool" weight="0.285872791451" />
+ <shade name="hard" weight="0.152391332408" />
+</color>
+
+<color name="green" weight="0.0850125056985">
+ <shade name="light" weight="0.561734473474" />
+ <shade name="cool" weight="0.285872791451" />
+ <shade name="hard" weight="0.152391332408" />
+</color>
+
+<color name="red" weight="0.0409319471882">
+ <shade name="light" weight="0.561734473474" />
+ <shade name="cool" weight="0.285872791451" />
+ <shade name="hard" weight="0.152391332408" />
+</color>
+
+<color name="white" weight="0.037783335866">
+ <shade name="light" weight="0.561734473474" />
+ <shade name="cool" weight="0.285872791451" />
+ <shade name="hard" weight="0.152391332408" />
+</color>
+
+</colors>

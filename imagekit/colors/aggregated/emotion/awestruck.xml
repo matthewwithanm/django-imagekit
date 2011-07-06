@@ -1,0 +1,33 @@
+<colors query="awestruck">
+
+<color name="black" weight="0.575999359489">
+ <shade name="soft" weight="0.384614822486" />
+ <shade name="light" weight="0.384614822486" />
+ <shade name="bright" weight="0.230768893492" />
+</color>
+
+<color name="green" weight="0.263999706432">
+ <shade name="soft" weight="0.384614822486" />
+ <shade name="light" weight="0.384614822486" />
+ <shade name="bright" weight="0.230768893492" />
+</color>
+
+<color name="purple" weight="0.0639999288321">
+ <shade name="soft" weight="0.384614822486" />
+ <shade name="light" weight="0.384614822486" />
+ <shade name="bright" weight="0.230768893492" />
+</color>
+
+<color name="pink" weight="0.0479999466241">
+ <shade name="soft" weight="0.384614822486" />
+ <shade name="light" weight="0.384614822486" />
+ <shade name="bright" weight="0.230768893492" />
+</color>
+
+<color name="orange" weight="0.0479999466241">
+ <shade name="soft" weight="0.384614822486" />
+ <shade name="light" weight="0.384614822486" />
+ <shade name="bright" weight="0.230768893492" />
+</color>
+
+</colors>

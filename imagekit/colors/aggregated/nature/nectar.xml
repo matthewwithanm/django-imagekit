@@ -1,0 +1,33 @@
+<colors query="nectar">
+
+<color name="red" weight="0.553793024384">
+ <shade name="light" weight="0.450062588491" />
+ <shade name="warm" weight="0.290770773463" />
+ <shade name="dark" weight="0.259165254609" />
+</color>
+
+<color name="orange" weight="0.275676703768">
+ <shade name="light" weight="0.450062588491" />
+ <shade name="warm" weight="0.290770773463" />
+ <shade name="dark" weight="0.259165254609" />
+</color>
+
+<color name="black" weight="0.0692851184692">
+ <shade name="light" weight="0.450062588491" />
+ <shade name="warm" weight="0.290770773463" />
+ <shade name="dark" weight="0.259165254609" />
+</color>
+
+<color name="blue" weight="0.0644058847742">
+ <shade name="light" weight="0.481080369667" />
+ <shade name="dark" weight="0.277026617365" />
+ <shade name="cool" weight="0.241891534187" />
+</color>
+
+<color name="green" weight="0.0368382143973">
+ <shade name="light" weight="0.481080369667" />
+ <shade name="dark" weight="0.277026617365" />
+ <shade name="cool" weight="0.241891534187" />
+</color>
+
+</colors>

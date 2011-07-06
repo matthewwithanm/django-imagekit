@@ -1,0 +1,33 @@
+<colors query="woman">
+
+<color name="black" weight="0.50328331725">
+ <shade name="cool" weight="0.546158404369" />
+ <shade name="hard" weight="0.253347027575" />
+ <shade name="dark" weight="0.200492988443" />
+</color>
+
+<color name="white" weight="0.421187456989">
+ <shade name="cool" weight="0.546158404369" />
+ <shade name="hard" weight="0.253347027575" />
+ <shade name="dark" weight="0.200492988443" />
+</color>
+
+<color name="green" weight="0.0273771847043">
+ <shade name="cool" weight="0.546158404369" />
+ <shade name="hard" weight="0.253347027575" />
+ <shade name="dark" weight="0.200492988443" />
+</color>
+
+<color name="red" weight="0.0250570843056">
+ <shade name="cool" weight="0.546158404369" />
+ <shade name="hard" weight="0.253347027575" />
+ <shade name="dark" weight="0.200492988443" />
+</color>
+
+<color name="blue" weight="0.0230939224298">
+ <shade name="cool" weight="0.546158404369" />
+ <shade name="hard" weight="0.253347027575" />
+ <shade name="dark" weight="0.200492988443" />
+</color>
+
+</colors>

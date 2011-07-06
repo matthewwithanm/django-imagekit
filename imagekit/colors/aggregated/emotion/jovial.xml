@@ -1,0 +1,33 @@
+<colors query="jovial">
+
+<color name="black" weight="0.49567671204">
+ <shade name="warm" weight="0.38214234762" />
+ <shade name="cool" weight="0.361904279366" />
+ <shade name="bright" weight="0.255952039683" />
+</color>
+
+<color name="yellow" weight="0.302593341653">
+ <shade name="warm" weight="0.38214234762" />
+ <shade name="cool" weight="0.361904279366" />
+ <shade name="bright" weight="0.255952039683" />
+</color>
+
+<color name="green" weight="0.100864447218">
+ <shade name="cool" weight="0.422221565433" />
+ <shade name="bright" weight="0.298610646606" />
+ <shade name="light" weight="0.279166232408" />
+</color>
+
+<color name="blue" weight="0.0720460337268">
+ <shade name="cool" weight="0.422221565433" />
+ <shade name="bright" weight="0.298610646606" />
+ <shade name="light" weight="0.279166232408" />
+</color>
+
+<color name="red" weight="0.0288184134907">
+ <shade name="warm" weight="0.38214234762" />
+ <shade name="cool" weight="0.361904279366" />
+ <shade name="bright" weight="0.255952039683" />
+</color>
+
+</colors>

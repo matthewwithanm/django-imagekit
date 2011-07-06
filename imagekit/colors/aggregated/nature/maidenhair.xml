@@ -1,0 +1,33 @@
+<colors query="maidenhair">
+
+<color name="black" weight="0.535770519191">
+ <shade name="dark" weight="0.777776827162" />
+ <shade name="light" weight="0.129629471194" />
+ <shade name="fresh" weight="0.092592479424" />
+</color>
+
+<color name="green" weight="0.19077881989">
+ <shade name="dark" weight="0.777776827162" />
+ <shade name="light" weight="0.129629471194" />
+ <shade name="fresh" weight="0.092592479424" />
+</color>
+
+<color name="white" weight="0.143084114917">
+ <shade name="dark" weight="0.777776827162" />
+ <shade name="light" weight="0.129629471194" />
+ <shade name="fresh" weight="0.092592479424" />
+</color>
+
+<color name="yellow" weight="0.119236762431">
+ <shade name="dark" weight="0.777776827162" />
+ <shade name="light" weight="0.129629471194" />
+ <shade name="fresh" weight="0.092592479424" />
+</color>
+
+<color name="pink" weight="0.0111287644936">
+ <shade name="dark" weight="0.777776827162" />
+ <shade name="light" weight="0.129629471194" />
+ <shade name="fresh" weight="0.092592479424" />
+</color>
+
+</colors>

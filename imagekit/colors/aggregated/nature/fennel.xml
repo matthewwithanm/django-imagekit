@@ -1,0 +1,33 @@
+<colors query="fennel">
+
+<color name="orange" weight="0.783490230566">
+ <shade name="fresh" weight="0.961132747043" />
+ <shade name="warm" weight="0.0257237474878" />
+ <shade name="light" weight="0.0131424964437" />
+</color>
+
+<color name="green" weight="0.0890524415069">
+ <shade name="fresh" weight="0.984359387993" />
+ <shade name="light" weight="0.0134600967409" />
+ <shade name="weak" weight="0.00217948185663" />
+</color>
+
+<color name="yellow" weight="0.0869117578169">
+ <shade name="fresh" weight="0.961132747043" />
+ <shade name="warm" weight="0.0257237474878" />
+ <shade name="light" weight="0.0131424964437" />
+</color>
+
+<color name="red" weight="0.0276576332757">
+ <shade name="fresh" weight="0.961132747043" />
+ <shade name="warm" weight="0.0257237474878" />
+ <shade name="light" weight="0.0131424964437" />
+</color>
+
+<color name="white" weight="0.0128869158142">
+ <shade name="fresh" weight="0.961132747043" />
+ <shade name="warm" weight="0.0257237474878" />
+ <shade name="light" weight="0.0131424964437" />
+</color>
+
+</colors>

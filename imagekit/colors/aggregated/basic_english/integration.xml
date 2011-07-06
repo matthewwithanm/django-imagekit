@@ -1,0 +1,33 @@
+<colors query="integration">
+
+<color name="black" weight="0.251222651729">
+ <shade name="weak" weight="0.416815929214" />
+ <shade name="light" weight="0.406036206907" />
+ <shade name="cool" weight="0.177146769916" />
+</color>
+
+<color name="red" weight="0.205450513514">
+ <shade name="weak" weight="0.416815929214" />
+ <shade name="light" weight="0.406036206907" />
+ <shade name="cool" weight="0.177146769916" />
+</color>
+
+<color name="white" weight="0.19916121208">
+ <shade name="weak" weight="0.416815929214" />
+ <shade name="light" weight="0.406036206907" />
+ <shade name="cool" weight="0.177146769916" />
+</color>
+
+<color name="blue" weight="0.184136769765">
+ <shade name="weak" weight="0.416815929214" />
+ <shade name="light" weight="0.406036206907" />
+ <shade name="cool" weight="0.177146769916" />
+</color>
+
+<color name="green" weight="0.160027780935">
+ <shade name="weak" weight="0.416815929214" />
+ <shade name="light" weight="0.406036206907" />
+ <shade name="cool" weight="0.177146769916" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="handkerchief">
+
+<color name="white" weight="0.446315305422">
+ <shade name="soft" weight="0.512416817519" />
+ <shade name="fresh" weight="0.330084453003" />
+ <shade name="dark" weight="0.157497439004" />
+</color>
+
+<color name="yellow" weight="0.221473444011">
+ <shade name="soft" weight="0.512416817519" />
+ <shade name="fresh" weight="0.330084453003" />
+ <shade name="dark" weight="0.157497439004" />
+</color>
+
+<color name="red" weight="0.217262922262">
+ <shade name="soft" weight="0.512416817519" />
+ <shade name="fresh" weight="0.330084453003" />
+ <shade name="dark" weight="0.157497439004" />
+</color>
+
+<color name="blue" weight="0.0669472958133">
+ <shade name="soft" weight="0.512416817519" />
+ <shade name="fresh" weight="0.330084453003" />
+ <shade name="dark" weight="0.157497439004" />
+</color>
+
+<color name="pink" weight="0.0479999479416">
+ <shade name="soft" weight="0.512416817519" />
+ <shade name="fresh" weight="0.330084453003" />
+ <shade name="dark" weight="0.157497439004" />
+</color>
+
+</colors>

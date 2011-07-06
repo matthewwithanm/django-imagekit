@@ -1,0 +1,33 @@
+<colors query="dream">
+
+<color name="blue" weight="0.493938791184">
+ <shade name="dark" weight="0.612881377193" />
+ <shade name="cool" weight="0.231619713674" />
+ <shade name="light" weight="0.155497504405" />
+</color>
+
+<color name="green" weight="0.145454367956">
+ <shade name="dark" weight="0.612881377193" />
+ <shade name="cool" weight="0.231619713674" />
+ <shade name="light" weight="0.155497504405" />
+</color>
+
+<color name="black" weight="0.137373569736">
+ <shade name="dark" weight="0.612881377193" />
+ <shade name="cool" weight="0.231619713674" />
+ <shade name="light" weight="0.155497504405" />
+</color>
+
+<color name="white" weight="0.118181673964">
+ <shade name="dark" weight="0.612881377193" />
+ <shade name="cool" weight="0.231619713674" />
+ <shade name="light" weight="0.155497504405" />
+</color>
+
+<color name="pink" weight="0.105050376857">
+ <shade name="dark" weight="0.612881377193" />
+ <shade name="cool" weight="0.231619713674" />
+ <shade name="light" weight="0.155497504405" />
+</color>
+
+</colors>

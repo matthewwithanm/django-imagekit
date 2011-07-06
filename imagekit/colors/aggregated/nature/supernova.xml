@@ -1,0 +1,33 @@
+<colors query="supernova">
+
+<color name="green" weight="0.430807942693">
+ <shade name="bright" weight="0.899859653732" />
+ <shade name="fresh" weight="0.0633087101519" />
+ <shade name="light" weight="0.0368305389249" />
+</color>
+
+<color name="blue" weight="0.209035506106">
+ <shade name="bright" weight="0.899859653732" />
+ <shade name="fresh" weight="0.0633087101519" />
+ <shade name="light" weight="0.0368305389249" />
+</color>
+
+<color name="pink" weight="0.197797038036">
+ <shade name="bright" weight="0.899859653732" />
+ <shade name="fresh" weight="0.0633087101519" />
+ <shade name="light" weight="0.0368305389249" />
+</color>
+
+<color name="red" weight="0.113883143112">
+ <shade name="bright" weight="0.899859653732" />
+ <shade name="fresh" weight="0.0633087101519" />
+ <shade name="light" weight="0.0368305389249" />
+</color>
+
+<color name="orange" weight="0.048475258943">
+ <shade name="bright" weight="0.899859653732" />
+ <shade name="fresh" weight="0.0633087101519" />
+ <shade name="light" weight="0.0368305389249" />
+</color>
+
+</colors>

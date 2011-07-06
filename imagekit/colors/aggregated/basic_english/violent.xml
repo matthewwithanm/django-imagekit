@@ -1,0 +1,33 @@
+<colors query="violent">
+
+<color name="white" weight="0.40502746684">
+ <shade name="dark" weight="0.987856506355" />
+ <shade name="cool" weight="0.0065445493546" />
+ <shade name="light" weight="0.00559785353601" />
+</color>
+
+<color name="blue" weight="0.185753976171">
+ <shade name="dark" weight="0.917465334579" />
+ <shade name="intense" weight="0.0764554445483" />
+ <shade name="cool" weight="0.00607820784159" />
+</color>
+
+<color name="red" weight="0.185354934332">
+ <shade name="dark" weight="0.917465334579" />
+ <shade name="intense" weight="0.0764554445483" />
+ <shade name="cool" weight="0.00607820784159" />
+</color>
+
+<color name="black" weight="0.162809070414">
+ <shade name="dark" weight="0.917465334579" />
+ <shade name="intense" weight="0.0764554445483" />
+ <shade name="cool" weight="0.00607820784159" />
+</color>
+
+<color name="yellow" weight="0.0610534014054">
+ <shade name="dark" weight="0.917465334579" />
+ <shade name="intense" weight="0.0764554445483" />
+ <shade name="cool" weight="0.00607820784159" />
+</color>
+
+</colors>

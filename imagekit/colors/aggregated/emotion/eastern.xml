@@ -1,0 +1,33 @@
+<colors query="eastern">
+
+<color name="white" weight="0.489578040062">
+ <shade name="dark" weight="0.54334623267" />
+ <shade name="warm" weight="0.230137315437" />
+ <shade name="weak" weight="0.22651500722" />
+</color>
+
+<color name="red" weight="0.377919890574">
+ <shade name="dark" weight="0.54334623267" />
+ <shade name="warm" weight="0.230137315437" />
+ <shade name="weak" weight="0.22651500722" />
+</color>
+
+<color name="orange" weight="0.0730072515882">
+ <shade name="dark" weight="0.54334623267" />
+ <shade name="warm" weight="0.230137315437" />
+ <shade name="weak" weight="0.22651500722" />
+</color>
+
+<color name="yellow" weight="0.0323522330567">
+ <shade name="dark" weight="0.54334623267" />
+ <shade name="warm" weight="0.230137315437" />
+ <shade name="weak" weight="0.22651500722" />
+</color>
+
+<color name="black" weight="0.027141519414">
+ <shade name="dark" weight="0.54334623267" />
+ <shade name="warm" weight="0.230137315437" />
+ <shade name="weak" weight="0.22651500722" />
+</color>
+
+</colors>

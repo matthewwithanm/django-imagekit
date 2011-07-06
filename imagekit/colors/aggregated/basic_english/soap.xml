@@ -1,0 +1,33 @@
+<colors query="soap">
+
+<color name="black" weight="0.498245016188">
+ <shade name="soft" weight="0.751380291867" />
+ <shade name="light" weight="0.153959295098" />
+ <shade name="hard" weight="0.0946591838283" />
+</color>
+
+<color name="green" weight="0.177543646614">
+ <shade name="soft" weight="0.751380291867" />
+ <shade name="light" weight="0.153959295098" />
+ <shade name="hard" weight="0.0946591838283" />
+</color>
+
+<color name="white" weight="0.166315589911">
+ <shade name="soft" weight="0.751380291867" />
+ <shade name="light" weight="0.153959295098" />
+ <shade name="hard" weight="0.0946591838283" />
+</color>
+
+<color name="blue" weight="0.0807016575516">
+ <shade name="soft" weight="0.751380291867" />
+ <shade name="light" weight="0.153959295098" />
+ <shade name="hard" weight="0.0946591838283" />
+</color>
+
+<color name="orange" weight="0.077192889832">
+ <shade name="soft" weight="0.751380291867" />
+ <shade name="light" weight="0.153959295098" />
+ <shade name="hard" weight="0.0946591838283" />
+</color>
+
+</colors>

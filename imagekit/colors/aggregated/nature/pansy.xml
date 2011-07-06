@@ -1,0 +1,33 @@
+<colors query="pansy">
+
+<color name="purple" weight="0.374381518606">
+ <shade name="weak" weight="0.403454660305" />
+ <shade name="soft" weight="0.312499516483" />
+ <shade name="dark" weight="0.284044275958" />
+</color>
+
+<color name="pink" weight="0.209559466389">
+ <shade name="weak" weight="0.403454660305" />
+ <shade name="soft" weight="0.312499516483" />
+ <shade name="dark" weight="0.284044275958" />
+</color>
+
+<color name="blue" weight="0.20602756527">
+ <shade name="weak" weight="0.403454660305" />
+ <shade name="soft" weight="0.312499516483" />
+ <shade name="dark" weight="0.284044275958" />
+</color>
+
+<color name="yellow" weight="0.163644751843">
+ <shade name="weak" weight="0.403454660305" />
+ <shade name="soft" weight="0.312499516483" />
+ <shade name="dark" weight="0.284044275958" />
+</color>
+
+<color name="black" weight="0.0463856346952">
+ <shade name="weak" weight="0.403454660305" />
+ <shade name="soft" weight="0.312499516483" />
+ <shade name="dark" weight="0.284044275958" />
+</color>
+
+</colors>

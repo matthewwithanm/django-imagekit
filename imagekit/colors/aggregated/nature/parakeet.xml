@@ -1,0 +1,33 @@
+<colors query="parakeet">
+
+<color name="green" weight="0.489181050923">
+ <shade name="cool" weight="0.476453735346" />
+ <shade name="fresh" weight="0.39889149936" />
+ <shade name="light" weight="0.12465359355" />
+</color>
+
+<color name="blue" weight="0.27751617312">
+ <shade name="cool" weight="0.476453735346" />
+ <shade name="fresh" weight="0.39889149936" />
+ <shade name="light" weight="0.12465359355" />
+</color>
+
+<color name="pink" weight="0.121119346743">
+ <shade name="cool" weight="0.476453735346" />
+ <shade name="fresh" weight="0.39889149936" />
+ <shade name="light" weight="0.12465359355" />
+</color>
+
+<color name="white" weight="0.0754938064165">
+ <shade name="cool" weight="0.476453735346" />
+ <shade name="fresh" weight="0.39889149936" />
+ <shade name="light" weight="0.12465359355" />
+</color>
+
+<color name="black" weight="0.0366885788192">
+ <shade name="cool" weight="0.476453735346" />
+ <shade name="fresh" weight="0.39889149936" />
+ <shade name="light" weight="0.12465359355" />
+</color>
+
+</colors>

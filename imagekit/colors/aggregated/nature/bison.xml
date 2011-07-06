@@ -1,0 +1,33 @@
+<colors query="bison">
+
+<color name="white" weight="0.463358526143">
+ <shade name="fresh" weight="0.77214599346" />
+ <shade name="dark" weight="0.179169793831" />
+ <shade name="cool" weight="0.0486831065644" />
+</color>
+
+<color name="black" weight="0.283717989854">
+ <shade name="fresh" weight="0.77214599346" />
+ <shade name="dark" weight="0.179169793831" />
+ <shade name="cool" weight="0.0486831065644" />
+</color>
+
+<color name="blue" weight="0.199600595877">
+ <shade name="fresh" weight="0.77214599346" />
+ <shade name="dark" weight="0.179169793831" />
+ <shade name="cool" weight="0.0486831065644" />
+</color>
+
+<color name="red" weight="0.0317935234861">
+ <shade name="fresh" weight="0.77214599346" />
+ <shade name="dark" weight="0.179169793831" />
+ <shade name="cool" weight="0.0486831065644" />
+</color>
+
+<color name="green" weight="0.0215283499839">
+ <shade name="fresh" weight="0.77214599346" />
+ <shade name="dark" weight="0.179169793831" />
+ <shade name="cool" weight="0.0486831065644" />
+</color>
+
+</colors>

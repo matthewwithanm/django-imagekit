@@ -1,0 +1,33 @@
+<colors query="buffalo">
+
+<color name="white" weight="0.68276486664">
+ <shade name="fresh" weight="0.920300434887" />
+ <shade name="warm" weight="0.050239725974" />
+ <shade name="light" weight="0.029458748412" />
+</color>
+
+<color name="black" weight="0.134971833637">
+ <shade name="fresh" weight="0.920300434887" />
+ <shade name="warm" weight="0.050239725974" />
+ <shade name="light" weight="0.029458748412" />
+</color>
+
+<color name="blue" weight="0.105217659449">
+ <shade name="fresh" weight="0.943792855307" />
+ <shade name="light" weight="0.0302107390409" />
+ <shade name="dark" weight="0.0259952870817" />
+</color>
+
+<color name="red" weight="0.053183789612">
+ <shade name="fresh" weight="0.920300434887" />
+ <shade name="warm" weight="0.050239725974" />
+ <shade name="light" weight="0.029458748412" />
+</color>
+
+<color name="green" weight="0.0238608353394">
+ <shade name="fresh" weight="0.943792855307" />
+ <shade name="light" weight="0.0302107390409" />
+ <shade name="dark" weight="0.0259952870817" />
+</color>
+
+</colors>

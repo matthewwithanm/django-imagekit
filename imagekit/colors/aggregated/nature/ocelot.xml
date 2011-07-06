@@ -1,0 +1,33 @@
+<colors query="ocelot">
+
+<color name="black" weight="0.476493874042">
+ <shade name="dark" weight="0.738034377727" />
+ <shade name="cool" weight="0.198992204234" />
+ <shade name="fresh" weight="0.0629722165296" />
+</color>
+
+<color name="red" weight="0.170601824545">
+ <shade name="dark" weight="0.738034377727" />
+ <shade name="cool" weight="0.198992204234" />
+ <shade name="fresh" weight="0.0629722165296" />
+</color>
+
+<color name="green" weight="0.168261899271">
+ <shade name="dark" weight="0.738034377727" />
+ <shade name="cool" weight="0.198992204234" />
+ <shade name="fresh" weight="0.0629722165296" />
+</color>
+
+<color name="white" weight="0.0963623772058">
+ <shade name="dark" weight="0.738034377727" />
+ <shade name="cool" weight="0.198992204234" />
+ <shade name="fresh" weight="0.0629722165296" />
+</color>
+
+<color name="blue" weight="0.0882789989854">
+ <shade name="dark" weight="0.738034377727" />
+ <shade name="cool" weight="0.198992204234" />
+ <shade name="fresh" weight="0.0629722165296" />
+</color>
+
+</colors>

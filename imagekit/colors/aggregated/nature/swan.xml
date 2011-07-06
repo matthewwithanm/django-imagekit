@@ -1,0 +1,33 @@
+<colors query="swan">
+
+<color name="black" weight="0.595558049637">
+ <shade name="dark" weight="0.418100876846" />
+ <shade name="light" weight="0.304193774179" />
+ <shade name="cool" weight="0.277703750302" />
+</color>
+
+<color name="white" weight="0.326289782514">
+ <shade name="dark" weight="0.418100876846" />
+ <shade name="light" weight="0.304193774179" />
+ <shade name="cool" weight="0.277703750302" />
+</color>
+
+<color name="green" weight="0.0459339985092">
+ <shade name="dark" weight="0.418100876846" />
+ <shade name="light" weight="0.304193774179" />
+ <shade name="cool" weight="0.277703750302" />
+</color>
+
+<color name="orange" weight="0.0161244174077">
+ <shade name="dark" weight="0.418100876846" />
+ <shade name="light" weight="0.304193774179" />
+ <shade name="cool" weight="0.277703750302" />
+</color>
+
+<color name="blue" weight="0.0160927387881">
+ <shade name="dark" weight="0.418100876846" />
+ <shade name="light" weight="0.304193774179" />
+ <shade name="cool" weight="0.277703750302" />
+</color>
+
+</colors>

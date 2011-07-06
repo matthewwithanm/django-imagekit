@@ -1,0 +1,33 @@
+<colors query="nail">
+
+<color name="black" weight="0.399999534765">
+ <shade name="dark" weight="0.506797775497" />
+ <shade name="hard" weight="0.257107164155" />
+ <shade name="cool" weight="0.236093597854" />
+</color>
+
+<color name="red" weight="0.257142558063">
+ <shade name="dark" weight="0.506797775497" />
+ <shade name="hard" weight="0.257107164155" />
+ <shade name="cool" weight="0.236093597854" />
+</color>
+
+<color name="pink" weight="0.150908915389">
+ <shade name="dark" weight="0.506797775497" />
+ <shade name="hard" weight="0.257107164155" />
+ <shade name="cool" weight="0.236093597854" />
+</color>
+
+<color name="yellow" weight="0.104155723014">
+ <shade name="dark" weight="0.506797775497" />
+ <shade name="hard" weight="0.257107164155" />
+ <shade name="cool" weight="0.236093597854" />
+</color>
+
+<color name="white" weight="0.0877921056822">
+ <shade name="dark" weight="0.506797775497" />
+ <shade name="hard" weight="0.257107164155" />
+ <shade name="cool" weight="0.236093597854" />
+</color>
+
+</colors>

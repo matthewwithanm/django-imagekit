@@ -1,0 +1,33 @@
+<colors query="stress">
+
+<color name="blue" weight="0.378610499638">
+ <shade name="light" weight="0.638297196331" />
+ <shade name="intense" weight="0.285879774599" />
+ <shade name="weak" weight="0.0758219699884" />
+</color>
+
+<color name="black" weight="0.225568268453">
+ <shade name="light" weight="0.638297196331" />
+ <shade name="intense" weight="0.285879774599" />
+ <shade name="weak" weight="0.0758219699884" />
+</color>
+
+<color name="green" weight="0.165949407309">
+ <shade name="light" weight="0.638297196331" />
+ <shade name="intense" weight="0.285879774599" />
+ <shade name="weak" weight="0.0758219699884" />
+</color>
+
+<color name="orange" weight="0.143208192233">
+ <shade name="light" weight="0.638297196331" />
+ <shade name="intense" weight="0.285879774599" />
+ <shade name="weak" weight="0.0758219699884" />
+</color>
+
+<color name="pink" weight="0.0866624682614">
+ <shade name="light" weight="0.845285699711" />
+ <shade name="weak" weight="0.100409695238" />
+ <shade name="neutral" weight="0.0543032025269" />
+</color>
+
+</colors>

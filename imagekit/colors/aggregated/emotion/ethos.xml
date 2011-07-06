@@ -1,0 +1,33 @@
+<colors query="ethos">
+
+<color name="green" weight="0.451847137533">
+ <shade name="hard" weight="0.771332200507" />
+ <shade name="neutral" weight="0.147889284113" />
+ <shade name="dark" weight="0.0807773091869" />
+</color>
+
+<color name="white" weight="0.285276370731">
+ <shade name="hard" weight="0.771332200507" />
+ <shade name="neutral" weight="0.147889284113" />
+ <shade name="dark" weight="0.0807773091869" />
+</color>
+
+<color name="black" weight="0.208692110132">
+ <shade name="hard" weight="0.771332200507" />
+ <shade name="neutral" weight="0.147889284113" />
+ <shade name="dark" weight="0.0807773091869" />
+</color>
+
+<color name="pink" weight="0.0356116811785">
+ <shade name="hard" weight="0.771332200507" />
+ <shade name="neutral" weight="0.147889284113" />
+ <shade name="dark" weight="0.0807773091869" />
+</color>
+
+<color name="blue" weight="0.0185716831952">
+ <shade name="hard" weight="0.771332200507" />
+ <shade name="neutral" weight="0.147889284113" />
+ <shade name="dark" weight="0.0807773091869" />
+</color>
+
+</colors>

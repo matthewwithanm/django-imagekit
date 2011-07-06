@@ -1,0 +1,33 @@
+<colors query="july">
+
+<color name="green" weight="0.256712932575">
+ <shade name="light" weight="0.526743323851" />
+ <shade name="cool" weight="0.412706109409" />
+ <shade name="weak" weight="0.0605483305251" />
+</color>
+
+<color name="black" weight="0.256712932575">
+ <shade name="warm" weight="0.538050142673" />
+ <shade name="light" weight="0.259011731212" />
+ <shade name="cool" weight="0.202937026517" />
+</color>
+
+<color name="white" weight="0.238453016869">
+ <shade name="warm" weight="0.538050142673" />
+ <shade name="light" weight="0.259011731212" />
+ <shade name="cool" weight="0.202937026517" />
+</color>
+
+<color name="blue" weight="0.131041748009">
+ <shade name="light" weight="0.526743323851" />
+ <shade name="cool" weight="0.412706109409" />
+ <shade name="weak" weight="0.0605483305251" />
+</color>
+
+<color name="red" weight="0.117078283057">
+ <shade name="warm" weight="0.538050142673" />
+ <shade name="light" weight="0.259011731212" />
+ <shade name="cool" weight="0.202937026517" />
+</color>
+
+</colors>

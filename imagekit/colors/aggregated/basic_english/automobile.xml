@@ -1,0 +1,33 @@
+<colors query="automobile">
+
+<color name="green" weight="0.654554764412">
+ <shade name="light" weight="0.784289654146" />
+ <shade name="cool" weight="0.160985771114" />
+ <shade name="hard" weight="0.0547233683494" />
+</color>
+
+<color name="yellow" weight="0.100540721229">
+ <shade name="light" weight="0.784289654146" />
+ <shade name="cool" weight="0.160985771114" />
+ <shade name="hard" weight="0.0547233683494" />
+</color>
+
+<color name="orange" weight="0.0984605683755">
+ <shade name="light" weight="0.784289654146" />
+ <shade name="cool" weight="0.160985771114" />
+ <shade name="hard" weight="0.0547233683494" />
+</color>
+
+<color name="pink" weight="0.0859796512575">
+ <shade name="light" weight="0.784289654146" />
+ <shade name="cool" weight="0.160985771114" />
+ <shade name="hard" weight="0.0547233683494" />
+</color>
+
+<color name="blue" weight="0.060463109594">
+ <shade name="light" weight="0.784289654146" />
+ <shade name="cool" weight="0.160985771114" />
+ <shade name="hard" weight="0.0547233683494" />
+</color>
+
+</colors>

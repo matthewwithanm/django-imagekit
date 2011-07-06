@@ -1,0 +1,33 @@
+<colors query="bomb">
+
+<color name="black" weight="0.83142286033">
+ <shade name="soft" weight="0.455283953707" />
+ <shade name="neutral" weight="0.344714993521" />
+ <shade name="dark" weight="0.199999736807" />
+</color>
+
+<color name="blue" weight="0.0611081112892">
+ <shade name="soft" weight="0.455283953707" />
+ <shade name="neutral" weight="0.344714993521" />
+ <shade name="dark" weight="0.199999736807" />
+</color>
+
+<color name="red" weight="0.0505317074123">
+ <shade name="soft" weight="0.455283953707" />
+ <shade name="neutral" weight="0.344714993521" />
+ <shade name="dark" weight="0.199999736807" />
+</color>
+
+<color name="pink" weight="0.0364298355763">
+ <shade name="soft" weight="0.455283953707" />
+ <shade name="neutral" weight="0.344714993521" />
+ <shade name="dark" weight="0.199999736807" />
+</color>
+
+<color name="purple" weight="0.0205064719615">
+ <shade name="soft" weight="0.455283953707" />
+ <shade name="neutral" weight="0.344714993521" />
+ <shade name="dark" weight="0.199999736807" />
+</color>
+
+</colors>

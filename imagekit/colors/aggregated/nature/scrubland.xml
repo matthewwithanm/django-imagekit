@@ -1,0 +1,33 @@
+<colors query="scrubland">
+
+<color name="green" weight="0.599999384001">
+ <shade name="light" weight="0.674999223751" />
+ <shade name="soft" weight="0.17499979875" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+<color name="yellow" weight="0.199999794667">
+ <shade name="light" weight="0.674999223751" />
+ <shade name="soft" weight="0.17499979875" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+<color name="red" weight="0.139999856267">
+ <shade name="light" weight="0.674999223751" />
+ <shade name="soft" weight="0.17499979875" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+<color name="pink" weight="0.0466666187556">
+ <shade name="light" weight="0.674999223751" />
+ <shade name="soft" weight="0.17499979875" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+<color name="orange" weight="0.0133333196445">
+ <shade name="light" weight="0.674999223751" />
+ <shade name="soft" weight="0.17499979875" />
+ <shade name="dark" weight="0.1499998275" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cynical">
+
+<color name="black" weight="0.507787597258">
+ <shade name="dark" weight="0.935225915218" />
+ <shade name="hard" weight="0.0325597170483" />
+ <shade name="cool" weight="0.0322133370797" />
+</color>
+
+<color name="white" weight="0.218068293301">
+ <shade name="dark" weight="0.935225915218" />
+ <shade name="hard" weight="0.0325597170483" />
+ <shade name="cool" weight="0.0322133370797" />
+</color>
+
+<color name="green" weight="0.102803623985">
+ <shade name="dark" weight="0.935225915218" />
+ <shade name="hard" weight="0.0325597170483" />
+ <shade name="cool" weight="0.0322133370797" />
+</color>
+
+<color name="blue" weight="0.0872273173204">
+ <shade name="dark" weight="0.935225915218" />
+ <shade name="hard" weight="0.0325597170483" />
+ <shade name="cool" weight="0.0322133370797" />
+</color>
+
+<color name="orange" weight="0.0841120559875">
+ <shade name="dark" weight="0.935225915218" />
+ <shade name="hard" weight="0.0325597170483" />
+ <shade name="cool" weight="0.0322133370797" />
+</color>
+
+</colors>

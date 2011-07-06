@@ -1,0 +1,33 @@
+<colors query="medusa">
+
+<color name="red" weight="0.359216332816">
+ <shade name="bright" weight="0.407832396847" />
+ <shade name="light" weight="0.399999508303" />
+ <shade name="dark" weight="0.192166865608" />
+</color>
+
+<color name="white" weight="0.244429158796">
+ <shade name="bright" weight="0.407832396847" />
+ <shade name="light" weight="0.399999508303" />
+ <shade name="dark" weight="0.192166865608" />
+</color>
+
+<color name="green" weight="0.179608166408">
+ <shade name="bright" weight="0.407832396847" />
+ <shade name="light" weight="0.399999508303" />
+ <shade name="dark" weight="0.192166865608" />
+</color>
+
+<color name="blue" weight="0.125590672752">
+ <shade name="bright" weight="0.407832396847" />
+ <shade name="light" weight="0.399999508303" />
+ <shade name="dark" weight="0.192166865608" />
+</color>
+
+<color name="pink" weight="0.0911545205455">
+ <shade name="bright" weight="0.407832396847" />
+ <shade name="light" weight="0.399999508303" />
+ <shade name="dark" weight="0.192166865608" />
+</color>
+
+</colors>

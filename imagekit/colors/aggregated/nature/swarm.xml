@@ -1,0 +1,33 @@
+<colors query="swarm">
+
+<color name="yellow" weight="0.784987308055">
+ <shade name="dark" weight="0.664515363253" />
+ <shade name="light" weight="0.248386810536" />
+ <shade name="warm" weight="0.0870966738245" />
+</color>
+
+<color name="black" weight="0.119396480453">
+ <shade name="dark" weight="0.664515363253" />
+ <shade name="light" weight="0.248386810536" />
+ <shade name="warm" weight="0.0870966738245" />
+</color>
+
+<color name="red" weight="0.0825974159554">
+ <shade name="dark" weight="0.664515363253" />
+ <shade name="light" weight="0.248386810536" />
+ <shade name="warm" weight="0.0870966738245" />
+</color>
+
+<color name="white" weight="0.00742218419534">
+ <shade name="dark" weight="0.664515363253" />
+ <shade name="light" weight="0.248386810536" />
+ <shade name="warm" weight="0.0870966738245" />
+</color>
+
+<color name="blue" weight="0.00559559624811">
+ <shade name="dark" weight="0.671884409576" />
+ <shade name="light" weight="0.25114125989" />
+ <shade name="intense" weight="0.0769731653689" />
+</color>
+
+</colors>

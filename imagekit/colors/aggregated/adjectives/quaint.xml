@@ -1,0 +1,33 @@
+<colors query="quaint">
+
+<color name="purple" weight="0.479591282513">
+ <shade name="cool" weight="0.591917985363" />
+ <shade name="bright" weight="0.260605529392" />
+ <shade name="soft" weight="0.147474446865" />
+</color>
+
+<color name="green" weight="0.211734449195">
+ <shade name="cool" weight="0.591917985363" />
+ <shade name="bright" weight="0.260605529392" />
+ <shade name="soft" weight="0.147474446865" />
+</color>
+
+<color name="white" weight="0.127550873009">
+ <shade name="warm" weight="0.478367759366" />
+ <shade name="cool" weight="0.362175073628" />
+ <shade name="bright" weight="0.159455919789" />
+</color>
+
+<color name="pink" weight="0.0994896809469">
+ <shade name="warm" weight="0.478367759366" />
+ <shade name="cool" weight="0.362175073628" />
+ <shade name="bright" weight="0.159455919789" />
+</color>
+
+<color name="black" weight="0.0816325587256">
+ <shade name="warm" weight="0.478367759366" />
+ <shade name="cool" weight="0.362175073628" />
+ <shade name="bright" weight="0.159455919789" />
+</color>
+
+</colors>

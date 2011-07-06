@@ -1,0 +1,33 @@
+<colors query="calcium">
+
+<color name="white" weight="0.51976321051">
+ <shade name="neutral" weight="0.402158739287" />
+ <shade name="light" weight="0.380566323754" />
+ <shade name="hard" weight="0.217273681292" />
+</color>
+
+<color name="black" weight="0.236256004777">
+ <shade name="neutral" weight="0.402158739287" />
+ <shade name="light" weight="0.380566323754" />
+ <shade name="hard" weight="0.217273681292" />
+</color>
+
+<color name="red" weight="0.208995696534">
+ <shade name="neutral" weight="0.402158739287" />
+ <shade name="light" weight="0.380566323754" />
+ <shade name="hard" weight="0.217273681292" />
+</color>
+
+<color name="orange" weight="0.022535188148">
+ <shade name="neutral" weight="0.402158739287" />
+ <shade name="light" weight="0.380566323754" />
+ <shade name="hard" weight="0.217273681292" />
+</color>
+
+<color name="green" weight="0.0124488740979">
+ <shade name="neutral" weight="0.402158739287" />
+ <shade name="light" weight="0.380566323754" />
+ <shade name="hard" weight="0.217273681292" />
+</color>
+
+</colors>

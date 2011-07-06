@@ -1,0 +1,33 @@
+<colors query="projectile">
+
+<color name="green" weight="0.356082610668">
+ <shade name="light" weight="0.808530847129" />
+ <shade name="hard" weight="0.114913893406" />
+ <shade name="soft" weight="0.0765541476934" />
+</color>
+
+<color name="white" weight="0.171567076049">
+ <shade name="light" weight="0.808530847129" />
+ <shade name="hard" weight="0.114913893406" />
+ <shade name="soft" weight="0.0765541476934" />
+</color>
+
+<color name="red" weight="0.166171884979">
+ <shade name="light" weight="0.808530847129" />
+ <shade name="hard" weight="0.114913893406" />
+ <shade name="soft" weight="0.0765541476934" />
+</color>
+
+<color name="black" weight="0.154302464623">
+ <shade name="light" weight="0.808530847129" />
+ <shade name="hard" weight="0.114913893406" />
+ <shade name="soft" weight="0.0765541476934" />
+</color>
+
+<color name="blue" weight="0.151874628641">
+ <shade name="light" weight="0.808530847129" />
+ <shade name="hard" weight="0.114913893406" />
+ <shade name="soft" weight="0.0765541476934" />
+</color>
+
+</colors>

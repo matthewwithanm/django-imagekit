@@ -1,0 +1,33 @@
+<colors query="virulent">
+
+<color name="black" weight="0.521276007923">
+ <shade name="fresh" weight="0.56382917392" />
+ <shade name="weak" weight="0.396276164689" />
+ <shade name="dark" weight="0.0398935736264" />
+</color>
+
+<color name="orange" weight="0.265957146899">
+ <shade name="fresh" weight="0.56382917392" />
+ <shade name="weak" weight="0.396276164689" />
+ <shade name="dark" weight="0.0398935736264" />
+</color>
+
+<color name="green" weight="0.0957445728838">
+ <shade name="fresh" weight="0.56382917392" />
+ <shade name="weak" weight="0.396276164689" />
+ <shade name="dark" weight="0.0398935736264" />
+</color>
+
+<color name="white" weight="0.0638297152559">
+ <shade name="fresh" weight="0.56382917392" />
+ <shade name="weak" weight="0.396276164689" />
+ <shade name="dark" weight="0.0398935736264" />
+</color>
+
+<color name="yellow" weight="0.0531914293799">
+ <shade name="fresh" weight="0.56382917392" />
+ <shade name="weak" weight="0.396276164689" />
+ <shade name="dark" weight="0.0398935736264" />
+</color>
+
+</colors>

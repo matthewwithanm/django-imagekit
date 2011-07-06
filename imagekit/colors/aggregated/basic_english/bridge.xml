@@ -1,0 +1,33 @@
+<colors query="bridge">
+
+<color name="red" weight="0.339363623796">
+ <shade name="light" weight="0.458915548204" />
+ <shade name="hard" weight="0.39685268359" />
+ <shade name="cool" weight="0.144230600864" />
+</color>
+
+<color name="white" weight="0.211259474416">
+ <shade name="light" weight="0.458915548204" />
+ <shade name="hard" weight="0.39685268359" />
+ <shade name="cool" weight="0.144230600864" />
+</color>
+
+<color name="blue" weight="0.201145988938">
+ <shade name="light" weight="0.458915548204" />
+ <shade name="hard" weight="0.39685268359" />
+ <shade name="cool" weight="0.144230600864" />
+</color>
+
+<color name="green" weight="0.144959958509">
+ <shade name="light" weight="0.458915548204" />
+ <shade name="hard" weight="0.39685268359" />
+ <shade name="cool" weight="0.144230600864" />
+</color>
+
+<color name="black" weight="0.10326992393">
+ <shade name="light" weight="0.458915548204" />
+ <shade name="hard" weight="0.39685268359" />
+ <shade name="cool" weight="0.144230600864" />
+</color>
+
+</colors>

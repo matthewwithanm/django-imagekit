@@ -1,0 +1,33 @@
+<colors query="repugnance">
+
+<color name="white" weight="0.3571425">
+ <shade name="fresh" weight="0.538422564951" />
+ <shade name="hard" weight="0.384587546394" />
+ <shade name="weak" weight="0.0769175092788" />
+</color>
+
+<color name="blue" weight="0.285714">
+ <shade name="intense" weight="0.987178494728" />
+ <shade name="fresh" weight="0.00747862496006" />
+ <shade name="hard" weight="0.00534187497147" />
+</color>
+
+<color name="black" weight="0.17857125">
+ <shade name="intense" weight="0.987178494728" />
+ <shade name="fresh" weight="0.00747862496006" />
+ <shade name="hard" weight="0.00534187497147" />
+</color>
+
+<color name="red" weight="0.10714275">
+ <shade name="intense" weight="0.987178494728" />
+ <shade name="fresh" weight="0.00747862496006" />
+ <shade name="hard" weight="0.00534187497147" />
+</color>
+
+<color name="yellow" weight="0.0714285000001">
+ <shade name="intense" weight="0.987178494728" />
+ <shade name="fresh" weight="0.00747862496006" />
+ <shade name="hard" weight="0.00534187497147" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="orangutan">
+
+<color name="orange" weight="0.767626804873">
+ <shade name="soft" weight="0.507691734912" />
+ <shade name="cool" weight="0.389743150033" />
+ <shade name="fresh" weight="0.102563986851" />
+</color>
+
+<color name="black" weight="0.0753733107047">
+ <shade name="soft" weight="0.507691734912" />
+ <shade name="cool" weight="0.389743150033" />
+ <shade name="fresh" weight="0.102563986851" />
+</color>
+
+<color name="red" weight="0.0698158315744">
+ <shade name="soft" weight="0.507691734912" />
+ <shade name="cool" weight="0.389743150033" />
+ <shade name="fresh" weight="0.102563986851" />
+</color>
+
+<color name="purple" weight="0.0538380790748">
+ <shade name="soft" weight="0.507691734912" />
+ <shade name="cool" weight="0.389743150033" />
+ <shade name="fresh" weight="0.102563986851" />
+</color>
+
+<color name="white" weight="0.0333448747818">
+ <shade name="soft" weight="0.507691734912" />
+ <shade name="cool" weight="0.389743150033" />
+ <shade name="fresh" weight="0.102563986851" />
+</color>
+
+</colors>

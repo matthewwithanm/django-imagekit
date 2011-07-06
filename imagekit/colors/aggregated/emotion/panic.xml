@@ -1,0 +1,33 @@
+<colors query="panic">
+
+<color name="pink" weight="0.603880109571">
+ <shade name="light" weight="0.4612010217" />
+ <shade name="fresh" weight="0.378723466725" />
+ <shade name="dark" weight="0.160073785269" />
+</color>
+
+<color name="green" weight="0.177945863008">
+ <shade name="light" weight="0.4612010217" />
+ <shade name="fresh" weight="0.378723466725" />
+ <shade name="dark" weight="0.160073785269" />
+</color>
+
+<color name="blue" weight="0.0965450958876">
+ <shade name="light" weight="0.4612010217" />
+ <shade name="fresh" weight="0.378723466725" />
+ <shade name="dark" weight="0.160073785269" />
+</color>
+
+<color name="red" weight="0.0885943232851">
+ <shade name="light" weight="0.4612010217" />
+ <shade name="fresh" weight="0.378723466725" />
+ <shade name="dark" weight="0.160073785269" />
+</color>
+
+<color name="black" weight="0.0330335671223">
+ <shade name="light" weight="0.4612010217" />
+ <shade name="fresh" weight="0.378723466725" />
+ <shade name="dark" weight="0.160073785269" />
+</color>
+
+</colors>

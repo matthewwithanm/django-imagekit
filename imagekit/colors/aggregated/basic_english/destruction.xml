@@ -1,0 +1,33 @@
+<colors query="destruction">
+
+<color name="black" weight="0.394073837331">
+ <shade name="dark" weight="0.636098755522" />
+ <shade name="light" weight="0.190506733887" />
+ <shade name="cool" weight="0.173393417114" />
+</color>
+
+<color name="white" weight="0.237174068764">
+ <shade name="dark" weight="0.636098755522" />
+ <shade name="light" weight="0.190506733887" />
+ <shade name="cool" weight="0.173393417114" />
+</color>
+
+<color name="blue" weight="0.18827972228">
+ <shade name="dark" weight="0.636098755522" />
+ <shade name="light" weight="0.190506733887" />
+ <shade name="cool" weight="0.173393417114" />
+</color>
+
+<color name="red" weight="0.116032852103">
+ <shade name="dark" weight="0.636098755522" />
+ <shade name="light" weight="0.190506733887" />
+ <shade name="cool" weight="0.173393417114" />
+</color>
+
+<color name="green" weight="0.0644383700672">
+ <shade name="dark" weight="0.636098755522" />
+ <shade name="light" weight="0.190506733887" />
+ <shade name="cool" weight="0.173393417114" />
+</color>
+
+</colors>

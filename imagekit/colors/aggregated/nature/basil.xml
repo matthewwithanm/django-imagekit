@@ -1,0 +1,33 @@
+<colors query="basil">
+
+<color name="purple" weight="0.345366215277">
+ <shade name="fresh" weight="0.99882503641" />
+ <shade name="dark" weight="0.000646499766717" />
+ <shade name="light" weight="0.000527461714433" />
+</color>
+
+<color name="green" weight="0.248963179576">
+ <shade name="fresh" weight="0.99882503641" />
+ <shade name="dark" weight="0.000646499766717" />
+ <shade name="light" weight="0.000527461714433" />
+</color>
+
+<color name="red" weight="0.229308191715">
+ <shade name="fresh" weight="0.998231581611" />
+ <shade name="warm" weight="0.00112130122866" />
+ <shade name="dark" weight="0.000646115647002" />
+</color>
+
+<color name="orange" weight="0.167535372722">
+ <shade name="fresh" weight="0.998231581611" />
+ <shade name="warm" weight="0.00112130122866" />
+ <shade name="dark" weight="0.000646115647002" />
+</color>
+
+<color name="blue" weight="0.00882602550152">
+ <shade name="fresh" weight="0.99882503641" />
+ <shade name="dark" weight="0.000646499766717" />
+ <shade name="light" weight="0.000527461714433" />
+</color>
+
+</colors>

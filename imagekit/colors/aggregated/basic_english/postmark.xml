@@ -1,0 +1,33 @@
+<colors query="postmark">
+
+<color name="red" weight="0.48310561625">
+ <shade name="light" weight="0.608642791018" />
+ <shade name="intense" weight="0.208883324728" />
+ <shade name="fresh" weight="0.182472789418" />
+</color>
+
+<color name="blue" weight="0.223473395492">
+ <shade name="light" weight="0.608642791018" />
+ <shade name="intense" weight="0.208883324728" />
+ <shade name="fresh" weight="0.182472789418" />
+</color>
+
+<color name="black" weight="0.146413603943">
+ <shade name="light" weight="0.608642791018" />
+ <shade name="intense" weight="0.208883324728" />
+ <shade name="fresh" weight="0.182472789418" />
+</color>
+
+<color name="green" weight="0.079727245872">
+ <shade name="light" weight="0.608642791018" />
+ <shade name="intense" weight="0.208883324728" />
+ <shade name="fresh" weight="0.182472789418" />
+</color>
+
+<color name="purple" weight="0.0672791256986">
+ <shade name="light" weight="0.729495445612" />
+ <shade name="fresh" weight="0.21870474898" />
+ <shade name="cool" weight="0.0517984931795" />
+</color>
+
+</colors>

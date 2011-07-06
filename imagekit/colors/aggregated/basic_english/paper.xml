@@ -1,0 +1,33 @@
+<colors query="paper">
+
+<color name="white" weight="0.978024839389">
+ <shade name="neutral" weight="0.450866228049" />
+ <shade name="hard" weight="0.286704678349" />
+ <shade name="soft" weight="0.26242726607" />
+</color>
+
+<color name="green" weight="0.0111261541362">
+ <shade name="neutral" weight="0.450866228049" />
+ <shade name="hard" weight="0.286704678349" />
+ <shade name="soft" weight="0.26242726607" />
+</color>
+
+<color name="black" weight="0.00386723583281">
+ <shade name="neutral" weight="0.450866228049" />
+ <shade name="hard" weight="0.286704678349" />
+ <shade name="soft" weight="0.26242726607" />
+</color>
+
+<color name="blue" weight="0.00375956337343">
+ <shade name="neutral" weight="0.450866228049" />
+ <shade name="hard" weight="0.286704678349" />
+ <shade name="soft" weight="0.26242726607" />
+</color>
+
+<color name="yellow" weight="0.00322120107652">
+ <shade name="neutral" weight="0.450866228049" />
+ <shade name="hard" weight="0.286704678349" />
+ <shade name="soft" weight="0.26242726607" />
+</color>
+
+</colors>

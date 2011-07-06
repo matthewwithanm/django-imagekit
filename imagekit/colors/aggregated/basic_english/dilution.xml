@@ -1,0 +1,33 @@
+<colors query="dilution">
+
+<color name="blue" weight="0.368823532722">
+ <shade name="light" weight="0.425563374994" />
+ <shade name="fresh" weight="0.302756511774" />
+ <shade name="weak" weight="0.271678856592" />
+</color>
+
+<color name="green" weight="0.329157605618">
+ <shade name="light" weight="0.425563374994" />
+ <shade name="fresh" weight="0.302756511774" />
+ <shade name="weak" weight="0.271678856592" />
+</color>
+
+<color name="red" weight="0.189978914025">
+ <shade name="light" weight="0.425563374994" />
+ <shade name="fresh" weight="0.302756511774" />
+ <shade name="weak" weight="0.271678856592" />
+</color>
+
+<color name="black" weight="0.0647180915908">
+ <shade name="light" weight="0.425563374994" />
+ <shade name="fresh" weight="0.302756511774" />
+ <shade name="weak" weight="0.271678856592" />
+</color>
+
+<color name="white" weight="0.0473207551417">
+ <shade name="light" weight="0.425563374994" />
+ <shade name="fresh" weight="0.302756511774" />
+ <shade name="weak" weight="0.271678856592" />
+</color>
+
+</colors>

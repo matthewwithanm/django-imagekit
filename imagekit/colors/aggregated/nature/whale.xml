@@ -1,0 +1,33 @@
+<colors query="whale">
+
+<color name="blue" weight="0.587045352206">
+ <shade name="cool" weight="0.456139667011" />
+ <shade name="fresh" weight="0.363407976465" />
+ <shade name="dark" weight="0.180450857279" />
+</color>
+
+<color name="white" weight="0.372306672302">
+ <shade name="cool" weight="0.456139667011" />
+ <shade name="fresh" weight="0.363407976465" />
+ <shade name="dark" weight="0.180450857279" />
+</color>
+
+<color name="black" weight="0.0215435883411">
+ <shade name="cool" weight="0.456139667011" />
+ <shade name="fresh" weight="0.363407976465" />
+ <shade name="dark" weight="0.180450857279" />
+</color>
+
+<color name="red" weight="0.0106672136446">
+ <shade name="cool" weight="0.456139667011" />
+ <shade name="fresh" weight="0.363407976465" />
+ <shade name="dark" weight="0.180450857279" />
+</color>
+
+<color name="pink" weight="0.00843616242482">
+ <shade name="cool" weight="0.456139667011" />
+ <shade name="fresh" weight="0.363407976465" />
+ <shade name="dark" weight="0.180450857279" />
+</color>
+
+</colors>

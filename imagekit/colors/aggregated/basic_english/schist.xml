@@ -1,0 +1,33 @@
+<colors query="schist">
+
+<color name="green" weight="0.589909205247">
+ <shade name="dark" weight="0.564314733941" />
+ <shade name="hard" weight="0.256223785448" />
+ <shade name="soft" weight="0.179460384139" />
+</color>
+
+<color name="black" weight="0.37040810562">
+ <shade name="dark" weight="0.564314733941" />
+ <shade name="hard" weight="0.256223785448" />
+ <shade name="soft" weight="0.179460384139" />
+</color>
+
+<color name="blue" weight="0.0213670601668">
+ <shade name="dark" weight="0.564314733941" />
+ <shade name="hard" weight="0.256223785448" />
+ <shade name="soft" weight="0.179460384139" />
+</color>
+
+<color name="red" weight="0.011043649075">
+ <shade name="dark" weight="0.564314733941" />
+ <shade name="hard" weight="0.256223785448" />
+ <shade name="soft" weight="0.179460384139" />
+</color>
+
+<color name="white" weight="0.00727097392513">
+ <shade name="dark" weight="0.564314733941" />
+ <shade name="hard" weight="0.256223785448" />
+ <shade name="soft" weight="0.179460384139" />
+</color>
+
+</colors>

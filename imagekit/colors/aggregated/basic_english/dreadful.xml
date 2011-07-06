@@ -1,0 +1,33 @@
+<colors query="dreadful">
+
+<color name="black" weight="0.285424802501">
+ <shade name="dark" weight="0.783120605759" />
+ <shade name="hard" weight="0.117059742923" />
+ <shade name="light" weight="0.0998183854386" />
+</color>
+
+<color name="red" weight="0.21457467422">
+ <shade name="dark" weight="0.783120605759" />
+ <shade name="hard" weight="0.117059742923" />
+ <shade name="light" weight="0.0998183854386" />
+</color>
+
+<color name="green" weight="0.184210333529">
+ <shade name="dark" weight="0.783120605759" />
+ <shade name="hard" weight="0.117059742923" />
+ <shade name="light" weight="0.0998183854386" />
+</color>
+
+<color name="blue" weight="0.182186044149">
+ <shade name="dark" weight="0.783120605759" />
+ <shade name="hard" weight="0.117059742923" />
+ <shade name="light" weight="0.0998183854386" />
+</color>
+
+<color name="white" weight="0.133603099043">
+ <shade name="dark" weight="0.783120605759" />
+ <shade name="hard" weight="0.117059742923" />
+ <shade name="light" weight="0.0998183854386" />
+</color>
+
+</colors>

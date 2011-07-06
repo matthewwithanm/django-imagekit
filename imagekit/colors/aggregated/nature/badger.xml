@@ -1,0 +1,33 @@
+<colors query="badger">
+
+<color name="red" weight="0.549612099666">
+ <shade name="cool" weight="0.376432446797" />
+ <shade name="soft" weight="0.350954785424" />
+ <shade name="dark" weight="0.272610976699" />
+</color>
+
+<color name="blue" weight="0.180191617911">
+ <shade name="cool" weight="0.376432446797" />
+ <shade name="soft" weight="0.350954785424" />
+ <shade name="dark" weight="0.272610976699" />
+</color>
+
+<color name="black" weight="0.178347282006">
+ <shade name="cool" weight="0.376432446797" />
+ <shade name="soft" weight="0.350954785424" />
+ <shade name="dark" weight="0.272610976699" />
+</color>
+
+<color name="white" weight="0.047214999166">
+ <shade name="cool" weight="0.376432446797" />
+ <shade name="soft" weight="0.350954785424" />
+ <shade name="dark" weight="0.272610976699" />
+</color>
+
+<color name="green" weight="0.0446329288991">
+ <shade name="cool" weight="0.376432446797" />
+ <shade name="soft" weight="0.350954785424" />
+ <shade name="dark" weight="0.272610976699" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="mother">
+
+<color name="white" weight="0.400240931269">
+ <shade name="dark" weight="0.561597399663" />
+ <shade name="fresh" weight="0.22641476192" />
+ <shade name="cool" weight="0.211986370229" />
+</color>
+
+<color name="black" weight="0.2795652736">
+ <shade name="dark" weight="0.561597399663" />
+ <shade name="fresh" weight="0.22641476192" />
+ <shade name="cool" weight="0.211986370229" />
+</color>
+
+<color name="pink" weight="0.151850202567">
+ <shade name="dark" weight="0.561597399663" />
+ <shade name="fresh" weight="0.22641476192" />
+ <shade name="cool" weight="0.211986370229" />
+</color>
+
+<color name="blue" weight="0.099657980625">
+ <shade name="dark" weight="0.561597399663" />
+ <shade name="fresh" weight="0.22641476192" />
+ <shade name="cool" weight="0.211986370229" />
+</color>
+
+<color name="green" weight="0.0686845618233">
+ <shade name="dark" weight="0.561597399663" />
+ <shade name="fresh" weight="0.22641476192" />
+ <shade name="cool" weight="0.211986370229" />
+</color>
+
+</colors>

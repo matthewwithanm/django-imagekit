@@ -1,0 +1,33 @@
+<colors query="resilient">
+
+<color name="black" weight="0.530777602707">
+ <shade name="soft" weight="0.857538967319" />
+ <shade name="hard" weight="0.133515560734" />
+ <shade name="cool" weight="0.00894445707684" />
+</color>
+
+<color name="white" weight="0.256678009187">
+ <shade name="soft" weight="0.857538967319" />
+ <shade name="hard" weight="0.133515560734" />
+ <shade name="cool" weight="0.00894445707684" />
+</color>
+
+<color name="green" weight="0.0778164100249">
+ <shade name="soft" weight="0.857538967319" />
+ <shade name="hard" weight="0.133515560734" />
+ <shade name="cool" weight="0.00894445707684" />
+</color>
+
+<color name="orange" weight="0.0720092152469">
+ <shade name="soft" weight="0.857538967319" />
+ <shade name="hard" weight="0.133515560734" />
+ <shade name="cool" weight="0.00894445707684" />
+</color>
+
+<color name="red" weight="0.0627177036022">
+ <shade name="soft" weight="0.857538967319" />
+ <shade name="hard" weight="0.133515560734" />
+ <shade name="cool" weight="0.00894445707684" />
+</color>
+
+</colors>

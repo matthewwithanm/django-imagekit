@@ -1,0 +1,33 @@
+<colors query="debonair">
+
+<color name="black" weight="0.894213014475">
+ <shade name="cool" weight="0.614941821906" />
+ <shade name="dark" weight="0.304597351038" />
+ <shade name="light" weight="0.0804596776326" />
+</color>
+
+<color name="blue" weight="0.0540618979339">
+ <shade name="cool" weight="0.614941821906" />
+ <shade name="dark" weight="0.304597351038" />
+ <shade name="light" weight="0.0804596776326" />
+</color>
+
+<color name="white" weight="0.0274692886799">
+ <shade name="cool" weight="0.614941821906" />
+ <shade name="dark" weight="0.304597351038" />
+ <shade name="light" weight="0.0804596776326" />
+</color>
+
+<color name="pink" weight="0.0125657384387">
+ <shade name="cool" weight="0.614941821906" />
+ <shade name="dark" weight="0.304597351038" />
+ <shade name="light" weight="0.0804596776326" />
+</color>
+
+<color name="red" weight="0.0116890590127">
+ <shade name="cool" weight="0.614941821906" />
+ <shade name="dark" weight="0.304597351038" />
+ <shade name="light" weight="0.0804596776326" />
+</color>
+
+</colors>

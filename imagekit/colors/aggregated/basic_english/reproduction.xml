@@ -1,0 +1,33 @@
+<colors query="reproduction">
+
+<color name="white" weight="0.790326828187">
+ <shade name="neutral" weight="0.523924729369" />
+ <shade name="cool" weight="0.244498207039" />
+ <shade name="hard" weight="0.231574730381" />
+</color>
+
+<color name="black" weight="0.129802022113">
+ <shade name="neutral" weight="0.523924729369" />
+ <shade name="cool" weight="0.244498207039" />
+ <shade name="hard" weight="0.231574730381" />
+</color>
+
+<color name="red" weight="0.0330785798288">
+ <shade name="neutral" weight="0.523924729369" />
+ <shade name="cool" weight="0.244498207039" />
+ <shade name="hard" weight="0.231574730381" />
+</color>
+
+<color name="blue" weight="0.0315083940774">
+ <shade name="neutral" weight="0.523924729369" />
+ <shade name="cool" weight="0.244498207039" />
+ <shade name="hard" weight="0.231574730381" />
+</color>
+
+<color name="green" weight="0.0152831413133">
+ <shade name="neutral" weight="0.523924729369" />
+ <shade name="cool" weight="0.244498207039" />
+ <shade name="hard" weight="0.231574730381" />
+</color>
+
+</colors>

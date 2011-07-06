@@ -1,0 +1,33 @@
+<colors query="evening">
+
+<color name="black" weight="0.395718792699">
+ <shade name="cool" weight="0.452409814209" />
+ <shade name="warm" weight="0.40049393389" />
+ <shade name="light" weight="0.147094994237" />
+</color>
+
+<color name="red" weight="0.176206858636">
+ <shade name="cool" weight="0.452409814209" />
+ <shade name="warm" weight="0.40049393389" />
+ <shade name="light" weight="0.147094994237" />
+</color>
+
+<color name="blue" weight="0.169487105552">
+ <shade name="cool" weight="0.607367046188" />
+ <shade name="light" weight="0.197477263651" />
+ <shade name="dark" weight="0.195154001726" />
+</color>
+
+<color name="white" weight="0.168491586577">
+ <shade name="cool" weight="0.452409814209" />
+ <shade name="warm" weight="0.40049393389" />
+ <shade name="light" weight="0.147094994237" />
+</color>
+
+<color name="pink" weight="0.0900944672686">
+ <shade name="cool" weight="0.452409814209" />
+ <shade name="warm" weight="0.40049393389" />
+ <shade name="light" weight="0.147094994237" />
+</color>
+
+</colors>

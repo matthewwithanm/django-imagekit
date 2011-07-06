@@ -1,0 +1,33 @@
+<colors query="backwoods">
+
+<color name="green" weight="0.780091809792">
+ <shade name="dark" weight="0.873402075334" />
+ <shade name="cool" weight="0.0905922365373" />
+ <shade name="hard" weight="0.0360046068289" />
+</color>
+
+<color name="black" weight="0.0914350934326">
+ <shade name="dark" weight="0.873402075334" />
+ <shade name="cool" weight="0.0905922365373" />
+ <shade name="hard" weight="0.0360046068289" />
+</color>
+
+<color name="white" weight="0.067129562267">
+ <shade name="dark" weight="0.873402075334" />
+ <shade name="cool" weight="0.0905922365373" />
+ <shade name="hard" weight="0.0360046068289" />
+</color>
+
+<color name="red" weight="0.0374999623698">
+ <shade name="dark" weight="0.873402075334" />
+ <shade name="cool" weight="0.0905922365373" />
+ <shade name="hard" weight="0.0360046068289" />
+</color>
+
+<color name="blue" weight="0.0238425686672">
+ <shade name="dark" weight="0.873402075334" />
+ <shade name="cool" weight="0.0905922365373" />
+ <shade name="hard" weight="0.0360046068289" />
+</color>
+
+</colors>

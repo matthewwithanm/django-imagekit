@@ -1,0 +1,33 @@
+<colors query="future">
+
+<color name="green" weight="0.72717949499">
+ <shade name="bright" weight="0.721449198238" />
+ <shade name="dark" weight="0.262771740497" />
+ <shade name="cool" weight="0.0157780353111" />
+</color>
+
+<color name="white" weight="0.0938214103675">
+ <shade name="bright" weight="0.721449198238" />
+ <shade name="dark" weight="0.262771740497" />
+ <shade name="cool" weight="0.0157780353111" />
+</color>
+
+<color name="black" weight="0.089499014768">
+ <shade name="bright" weight="0.721449198238" />
+ <shade name="dark" weight="0.262771740497" />
+ <shade name="cool" weight="0.0157780353111" />
+</color>
+
+<color name="blue" weight="0.0554283671006">
+ <shade name="bright" weight="0.721449198238" />
+ <shade name="dark" weight="0.262771740497" />
+ <shade name="cool" weight="0.0157780353111" />
+</color>
+
+<color name="red" weight="0.0340706476673">
+ <shade name="bright" weight="0.721449198238" />
+ <shade name="dark" weight="0.262771740497" />
+ <shade name="cool" weight="0.0157780353111" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="party">
+
+<color name="green" weight="0.539115749624">
+ <shade name="neutral" weight="0.450434083571" />
+ <shade name="cool" weight="0.304347353764" />
+ <shade name="hard" weight="0.245217010747" />
+</color>
+
+<color name="white" weight="0.214430249287">
+ <shade name="neutral" weight="0.450434083571" />
+ <shade name="cool" weight="0.304347353764" />
+ <shade name="hard" weight="0.245217010747" />
+</color>
+
+<color name="pink" weight="0.0956626442942">
+ <shade name="neutral" weight="0.450434083571" />
+ <shade name="cool" weight="0.304347353764" />
+ <shade name="hard" weight="0.245217010747" />
+</color>
+
+<color name="black" weight="0.0940412435435">
+ <shade name="neutral" weight="0.450434083571" />
+ <shade name="cool" weight="0.304347353764" />
+ <shade name="hard" weight="0.245217010747" />
+</color>
+
+<color name="red" weight="0.0567490262762">
+ <shade name="neutral" weight="0.450434083571" />
+ <shade name="cool" weight="0.304347353764" />
+ <shade name="hard" weight="0.245217010747" />
+</color>
+
+</colors>

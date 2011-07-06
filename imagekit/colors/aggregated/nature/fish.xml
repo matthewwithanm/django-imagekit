@@ -1,0 +1,33 @@
+<colors query="fish">
+
+<color name="blue" weight="0.340805223079">
+ <shade name="fresh" weight="0.927778690809" />
+ <shade name="cool" weight="0.0431172938939" />
+ <shade name="light" weight="0.0291029526169" />
+</color>
+
+<color name="red" weight="0.275656434289">
+ <shade name="fresh" weight="0.927778690809" />
+ <shade name="cool" weight="0.0431172938939" />
+ <shade name="light" weight="0.0291029526169" />
+</color>
+
+<color name="white" weight="0.263747515908">
+ <shade name="fresh" weight="0.927778690809" />
+ <shade name="cool" weight="0.0431172938939" />
+ <shade name="light" weight="0.0291029526169" />
+</color>
+
+<color name="green" weight="0.0700524610646">
+ <shade name="fresh" weight="0.927778690809" />
+ <shade name="cool" weight="0.0431172938939" />
+ <shade name="light" weight="0.0291029526169" />
+</color>
+
+<color name="black" weight="0.0497372473559">
+ <shade name="fresh" weight="0.927778690809" />
+ <shade name="cool" weight="0.0431172938939" />
+ <shade name="light" weight="0.0291029526169" />
+</color>
+
+</colors>

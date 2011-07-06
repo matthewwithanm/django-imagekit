@@ -1,0 +1,33 @@
+<colors query="sailor">
+
+<color name="white" weight="0.38016489762">
+ <shade name="hard" weight="0.679546194566" />
+ <shade name="cool" weight="0.229846506986" />
+ <shade name="light" weight="0.0906061592755" />
+</color>
+
+<color name="black" weight="0.292355070724">
+ <shade name="hard" weight="0.679546194566" />
+ <shade name="cool" weight="0.229846506986" />
+ <shade name="light" weight="0.0906061592755" />
+</color>
+
+<color name="blue" weight="0.274793105345">
+ <shade name="hard" weight="0.679546194566" />
+ <shade name="cool" weight="0.229846506986" />
+ <shade name="light" weight="0.0906061592755" />
+</color>
+
+<color name="green" weight="0.0278925332493">
+ <shade name="hard" weight="0.679546194566" />
+ <shade name="cool" weight="0.229846506986" />
+ <shade name="light" weight="0.0906061592755" />
+</color>
+
+<color name="yellow" weight="0.0247933628882">
+ <shade name="hard" weight="0.679546194566" />
+ <shade name="cool" weight="0.229846506986" />
+ <shade name="light" weight="0.0906061592755" />
+</color>
+
+</colors>

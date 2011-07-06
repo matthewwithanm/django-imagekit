@@ -1,0 +1,33 @@
+<colors query="wow">
+
+<color name="red" weight="0.237611411346">
+ <shade name="cool" weight="0.681947669833" />
+ <shade name="light" weight="0.159025612083" />
+ <shade name="fresh" weight="0.159025612083" />
+</color>
+
+<color name="black" weight="0.231518811055">
+ <shade name="cool" weight="0.681947669833" />
+ <shade name="light" weight="0.159025612083" />
+ <shade name="fresh" weight="0.159025612083" />
+</color>
+
+<color name="white" weight="0.225426210764">
+ <shade name="cool" weight="0.681947669833" />
+ <shade name="light" weight="0.159025612083" />
+ <shade name="fresh" weight="0.159025612083" />
+</color>
+
+<color name="blue" weight="0.202477416335">
+ <shade name="cool" weight="0.681947669833" />
+ <shade name="light" weight="0.159025612083" />
+ <shade name="fresh" weight="0.159025612083" />
+</color>
+
+<color name="yellow" weight="0.102964944917">
+ <shade name="cool" weight="0.681947669833" />
+ <shade name="light" weight="0.159025612083" />
+ <shade name="fresh" weight="0.159025612083" />
+</color>
+
+</colors>

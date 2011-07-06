@@ -1,0 +1,33 @@
+<colors query="canvas">
+
+<color name="white" weight="0.374348539782">
+ <shade name="fresh" weight="0.522292313276" />
+ <shade name="soft" weight="0.319886349052" />
+ <shade name="light" weight="0.157820035041" />
+</color>
+
+<color name="black" weight="0.31141458237">
+ <shade name="fresh" weight="0.522292313276" />
+ <shade name="soft" weight="0.319886349052" />
+ <shade name="light" weight="0.157820035041" />
+</color>
+
+<color name="blue" weight="0.122612710132">
+ <shade name="fresh" weight="0.522292313276" />
+ <shade name="soft" weight="0.319886349052" />
+ <shade name="light" weight="0.157820035041" />
+</color>
+
+<color name="green" weight="0.11284709605">
+ <shade name="fresh" weight="0.522292313276" />
+ <shade name="soft" weight="0.319886349052" />
+ <shade name="light" weight="0.157820035041" />
+</color>
+
+<color name="red" weight="0.078775953589">
+ <shade name="fresh" weight="0.522292313276" />
+ <shade name="soft" weight="0.319886349052" />
+ <shade name="light" weight="0.157820035041" />
+</color>
+
+</colors>

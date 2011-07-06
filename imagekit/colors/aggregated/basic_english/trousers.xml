@@ -1,0 +1,33 @@
+<colors query="trousers">
+
+<color name="black" weight="0.433498897294">
+ <shade name="dark" weight="0.775407289903" />
+ <shade name="light" weight="0.169826044817" />
+ <shade name="soft" weight="0.0547656082512" />
+</color>
+
+<color name="white" weight="0.239807900631">
+ <shade name="dark" weight="0.775407289903" />
+ <shade name="light" weight="0.169826044817" />
+ <shade name="soft" weight="0.0547656082512" />
+</color>
+
+<color name="blue" weight="0.15901108488">
+ <shade name="dark" weight="0.775407289903" />
+ <shade name="light" weight="0.169826044817" />
+ <shade name="soft" weight="0.0547656082512" />
+</color>
+
+<color name="red" weight="0.117505871309">
+ <shade name="dark" weight="0.775407289903" />
+ <shade name="light" weight="0.169826044817" />
+ <shade name="soft" weight="0.0547656082512" />
+</color>
+
+<color name="green" weight="0.0501751915166">
+ <shade name="dark" weight="0.775407289903" />
+ <shade name="light" weight="0.169826044817" />
+ <shade name="soft" weight="0.0547656082512" />
+</color>
+
+</colors>

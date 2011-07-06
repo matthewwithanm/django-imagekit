@@ -1,0 +1,33 @@
+<colors query="highway">
+
+<color name="blue" weight="0.605514479608">
+ <shade name="dark" weight="0.8577622707" />
+ <shade name="cool" weight="0.0886716271399" />
+ <shade name="bright" weight="0.0535649012927" />
+</color>
+
+<color name="purple" weight="0.254752488268">
+ <shade name="dark" weight="0.8577622707" />
+ <shade name="cool" weight="0.0886716271399" />
+ <shade name="bright" weight="0.0535649012927" />
+</color>
+
+<color name="green" weight="0.0709161102244">
+ <shade name="dark" weight="0.8577622707" />
+ <shade name="cool" weight="0.0886716271399" />
+ <shade name="bright" weight="0.0535649012927" />
+</color>
+
+<color name="black" weight="0.0422769118645">
+ <shade name="dark" weight="0.8577622707" />
+ <shade name="cool" weight="0.0886716271399" />
+ <shade name="bright" weight="0.0535649012927" />
+</color>
+
+<color name="white" weight="0.0265389904801">
+ <shade name="dark" weight="0.8577622707" />
+ <shade name="cool" weight="0.0886716271399" />
+ <shade name="bright" weight="0.0535649012927" />
+</color>
+
+</colors>

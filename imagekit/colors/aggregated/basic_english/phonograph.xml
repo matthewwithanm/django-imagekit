@@ -1,0 +1,33 @@
+<colors query="phonograph">
+
+<color name="black" weight="0.463882101748">
+ <shade name="light" weight="0.579786586409" />
+ <shade name="cool" weight="0.335106008658" />
+ <shade name="soft" weight="0.0851062879132" />
+</color>
+
+<color name="white" weight="0.193002042333">
+ <shade name="light" weight="0.579786586409" />
+ <shade name="cool" weight="0.335106008658" />
+ <shade name="soft" weight="0.0851062879132" />
+</color>
+
+<color name="red" weight="0.190744708504">
+ <shade name="light" weight="0.579786586409" />
+ <shade name="cool" weight="0.335106008658" />
+ <shade name="soft" weight="0.0851062879132" />
+</color>
+
+<color name="green" weight="0.0936793538809">
+ <shade name="light" weight="0.579786586409" />
+ <shade name="cool" weight="0.335106008658" />
+ <shade name="soft" weight="0.0851062879132" />
+</color>
+
+<color name="blue" weight="0.0586906795398">
+ <shade name="light" weight="0.579786586409" />
+ <shade name="cool" weight="0.335106008658" />
+ <shade name="soft" weight="0.0851062879132" />
+</color>
+
+</colors>

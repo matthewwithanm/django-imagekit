@@ -1,0 +1,33 @@
+<colors query="sick">
+
+<color name="white" weight="0.6800934365">
+ <shade name="weak" weight="0.644988638436" />
+ <shade name="dark" weight="0.327824803833" />
+ <shade name="light" weight="0.0271854715374" />
+</color>
+
+<color name="green" weight="0.146743237645">
+ <shade name="weak" weight="0.644988638436" />
+ <shade name="dark" weight="0.327824803833" />
+ <shade name="light" weight="0.0271854715374" />
+</color>
+
+<color name="blue" weight="0.0797801915895">
+ <shade name="weak" weight="0.644988638436" />
+ <shade name="dark" weight="0.327824803833" />
+ <shade name="light" weight="0.0271854715374" />
+</color>
+
+<color name="yellow" weight="0.0496991357442">
+ <shade name="weak" weight="0.644988638436" />
+ <shade name="dark" weight="0.327824803833" />
+ <shade name="light" weight="0.0271854715374" />
+</color>
+
+<color name="red" weight="0.0436829245752">
+ <shade name="weak" weight="0.644988638436" />
+ <shade name="dark" weight="0.327824803833" />
+ <shade name="light" weight="0.0271854715374" />
+</color>
+
+</colors>

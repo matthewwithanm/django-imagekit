@@ -1,0 +1,33 @@
+<colors query="pool">
+
+<color name="white" weight="0.408386052482">
+ <shade name="cool" weight="0.382894281571" />
+ <shade name="warm" weight="0.309210158657" />
+ <shade name="light" weight="0.307894370748" />
+</color>
+
+<color name="blue" weight="0.261622314871">
+ <shade name="cool" weight="0.481150074743" />
+ <shade name="light" weight="0.386904183814" />
+ <shade name="dark" weight="0.131944247301" />
+</color>
+
+<color name="black" weight="0.12579748938">
+ <shade name="cool" weight="0.382894281571" />
+ <shade name="warm" weight="0.309210158657" />
+ <shade name="light" weight="0.307894370748" />
+</color>
+
+<color name="green" weight="0.11212384923">
+ <shade name="cool" weight="0.481150074743" />
+ <shade name="light" weight="0.386904183814" />
+ <shade name="dark" weight="0.131944247301" />
+</color>
+
+<color name="red" weight="0.0920691770104">
+ <shade name="cool" weight="0.382894281571" />
+ <shade name="warm" weight="0.309210158657" />
+ <shade name="light" weight="0.307894370748" />
+</color>
+
+</colors>

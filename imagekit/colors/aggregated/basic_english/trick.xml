@@ -1,0 +1,33 @@
+<colors query="trick">
+
+<color name="red" weight="0.639605733417">
+ <shade name="cool" weight="0.926218190005" />
+ <shade name="hard" weight="0.0496094073279" />
+ <shade name="dark" weight="0.024171392081" />
+</color>
+
+<color name="white" weight="0.250614746507">
+ <shade name="cool" weight="0.926218190005" />
+ <shade name="hard" weight="0.0496094073279" />
+ <shade name="dark" weight="0.024171392081" />
+</color>
+
+<color name="orange" weight="0.0422816290119">
+ <shade name="cool" weight="0.926218190005" />
+ <shade name="hard" weight="0.0496094073279" />
+ <shade name="dark" weight="0.024171392081" />
+</color>
+
+<color name="blue" weight="0.0393603528257">
+ <shade name="cool" weight="0.926218190005" />
+ <shade name="hard" weight="0.0496094073279" />
+ <shade name="dark" weight="0.024171392081" />
+</color>
+
+<color name="green" weight="0.0281365022152">
+ <shade name="cool" weight="0.926218190005" />
+ <shade name="hard" weight="0.0496094073279" />
+ <shade name="dark" weight="0.024171392081" />
+</color>
+
+</colors>

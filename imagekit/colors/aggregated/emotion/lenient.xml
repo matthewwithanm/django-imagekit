@@ -1,0 +1,33 @@
+<colors query="lenient">
+
+<color name="blue" weight="0.238094965987">
+ <shade name="soft" weight="0.753245755441" />
+ <shade name="cool" weight="0.129869957835" />
+ <shade name="light" weight="0.116882962051" />
+</color>
+
+<color name="white" weight="0.190475972789">
+ <shade name="soft" weight="0.753245755441" />
+ <shade name="cool" weight="0.129869957835" />
+ <shade name="light" weight="0.116882962051" />
+</color>
+
+<color name="pink" weight="0.190475972789">
+ <shade name="soft" weight="0.753245755441" />
+ <shade name="cool" weight="0.129869957835" />
+ <shade name="light" weight="0.116882962051" />
+</color>
+
+<color name="green" weight="0.190475972789">
+ <shade name="soft" weight="0.753245755441" />
+ <shade name="cool" weight="0.129869957835" />
+ <shade name="light" weight="0.116882962051" />
+</color>
+
+<color name="black" weight="0.190475972789">
+ <shade name="soft" weight="0.753245755441" />
+ <shade name="cool" weight="0.129869957835" />
+ <shade name="light" weight="0.116882962051" />
+</color>
+
+</colors>

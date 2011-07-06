@@ -1,0 +1,33 @@
+<colors query="profitable">
+
+<color name="green" weight="0.507648988619">
+ <shade name="fresh" weight="0.612701554278" />
+ <shade name="cool" weight="0.264009612819" />
+ <shade name="light" weight="0.123287507873" />
+</color>
+
+<color name="black" weight="0.304589393171">
+ <shade name="fresh" weight="0.612701554278" />
+ <shade name="cool" weight="0.264009612819" />
+ <shade name="light" weight="0.123287507873" />
+</color>
+
+<color name="blue" weight="0.0820583296671">
+ <shade name="fresh" weight="0.612701554278" />
+ <shade name="cool" weight="0.264009612819" />
+ <shade name="light" weight="0.123287507873" />
+</color>
+
+<color name="red" weight="0.055632765876">
+ <shade name="fresh" weight="0.612701554278" />
+ <shade name="cool" weight="0.264009612819" />
+ <shade name="light" weight="0.123287507873" />
+</color>
+
+<color name="white" weight="0.0500694892884">
+ <shade name="fresh" weight="0.612701554278" />
+ <shade name="cool" weight="0.264009612819" />
+ <shade name="light" weight="0.123287507873" />
+</color>
+
+</colors>

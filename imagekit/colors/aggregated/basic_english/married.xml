@@ -1,0 +1,33 @@
+<colors query="married">
+
+<color name="white" weight="0.678348218202">
+ <shade name="fresh" weight="0.445892314155" />
+ <shade name="cool" weight="0.315514444519" />
+ <shade name="dark" weight="0.238591501434" />
+</color>
+
+<color name="black" weight="0.211058974894">
+ <shade name="fresh" weight="0.445892314155" />
+ <shade name="cool" weight="0.315514444519" />
+ <shade name="dark" weight="0.238591501434" />
+</color>
+
+<color name="green" weight="0.0903425870395">
+ <shade name="fresh" weight="0.445892314155" />
+ <shade name="cool" weight="0.315514444519" />
+ <shade name="dark" weight="0.238591501434" />
+</color>
+
+<color name="orange" weight="0.0105140079744">
+ <shade name="fresh" weight="0.445892314155" />
+ <shade name="cool" weight="0.315514444519" />
+ <shade name="dark" weight="0.238591501434" />
+</color>
+
+<color name="pink" weight="0.00973519256891">
+ <shade name="fresh" weight="0.445892314155" />
+ <shade name="cool" weight="0.315514444519" />
+ <shade name="dark" weight="0.238591501434" />
+</color>
+
+</colors>

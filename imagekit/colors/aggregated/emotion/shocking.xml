@@ -1,0 +1,33 @@
+<colors query="shocking">
+
+<color name="blue" weight="0.646701129682">
+ <shade name="cool" weight="0.426539561795" />
+ <shade name="bright" weight="0.393956678602" />
+ <shade name="intense" weight="0.179502065589" />
+</color>
+
+<color name="black" weight="0.153218421494">
+ <shade name="cool" weight="0.426539561795" />
+ <shade name="bright" weight="0.393956678602" />
+ <shade name="intense" weight="0.179502065589" />
+</color>
+
+<color name="white" weight="0.105959492786">
+ <shade name="cool" weight="0.434650623071" />
+ <shade name="bright" weight="0.401448144919" />
+ <shade name="dark" weight="0.163899505783" />
+</color>
+
+<color name="red" weight="0.0691472746352">
+ <shade name="cool" weight="0.426539561795" />
+ <shade name="bright" weight="0.393956678602" />
+ <shade name="intense" weight="0.179502065589" />
+</color>
+
+<color name="pink" weight="0.0249726128539">
+ <shade name="cool" weight="0.434650623071" />
+ <shade name="bright" weight="0.401448144919" />
+ <shade name="dark" weight="0.163899505783" />
+</color>
+
+</colors>

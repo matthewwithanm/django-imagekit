@@ -1,0 +1,33 @@
+<colors query="alder">
+
+<color name="red" weight="0.550737669066">
+ <shade name="dark" weight="0.819882914716" />
+ <shade name="light" weight="0.105874644105" />
+ <shade name="warm" weight="0.0742413662932" />
+</color>
+
+<color name="black" weight="0.19475021404">
+ <shade name="dark" weight="0.819882914716" />
+ <shade name="light" weight="0.105874644105" />
+ <shade name="warm" weight="0.0742413662932" />
+</color>
+
+<color name="white" weight="0.138270308404">
+ <shade name="dark" weight="0.819882914716" />
+ <shade name="light" weight="0.105874644105" />
+ <shade name="warm" weight="0.0742413662932" />
+</color>
+
+<color name="green" weight="0.0672603025625">
+ <shade name="dark" weight="0.853895366277" />
+ <shade name="light" weight="0.110266803204" />
+ <shade name="cool" weight="0.0358367110414" />
+</color>
+
+<color name="yellow" weight="0.0489804990786">
+ <shade name="dark" weight="0.819882914716" />
+ <shade name="light" weight="0.105874644105" />
+ <shade name="warm" weight="0.0742413662932" />
+</color>
+
+</colors>

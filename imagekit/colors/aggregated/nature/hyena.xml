@@ -1,0 +1,33 @@
+<colors query="hyena">
+
+<color name="red" weight="0.493780763619">
+ <shade name="dark" weight="0.865649985781" />
+ <shade name="cool" weight="0.0865649985781" />
+ <shade name="fresh" weight="0.0477838792151" />
+</color>
+
+<color name="blue" weight="0.196769777984">
+ <shade name="dark" weight="0.865649985781" />
+ <shade name="cool" weight="0.0865649985781" />
+ <shade name="fresh" weight="0.0477838792151" />
+</color>
+
+<color name="black" weight="0.112864174542">
+ <shade name="dark" weight="0.865649985781" />
+ <shade name="cool" weight="0.0865649985781" />
+ <shade name="fresh" weight="0.0477838792151" />
+</color>
+
+<color name="white" weight="0.103953844973">
+ <shade name="dark" weight="0.865649985781" />
+ <shade name="cool" weight="0.0865649985781" />
+ <shade name="fresh" weight="0.0477838792151" />
+</color>
+
+<color name="yellow" weight="0.0926303011451">
+ <shade name="dark" weight="0.865649985781" />
+ <shade name="cool" weight="0.0865649985781" />
+ <shade name="fresh" weight="0.0477838792151" />
+</color>
+
+</colors>

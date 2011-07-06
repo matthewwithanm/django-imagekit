@@ -1,0 +1,33 @@
+<colors query="aurora">
+
+<color name="red" weight="0.273431679725">
+ <shade name="bright" weight="0.697471989072" />
+ <shade name="cool" weight="0.217328228479" />
+ <shade name="intense" weight="0.0851984417293" />
+</color>
+
+<color name="blue" weight="0.219168176274">
+ <shade name="bright" weight="0.697471989072" />
+ <shade name="cool" weight="0.217328228479" />
+ <shade name="intense" weight="0.0851984417293" />
+</color>
+
+<color name="white" weight="0.181113251777">
+ <shade name="bright" weight="0.708729775466" />
+ <shade name="cool" weight="0.220836089457" />
+ <shade name="light" weight="0.0704327727171" />
+</color>
+
+<color name="black" weight="0.172656601888">
+ <shade name="bright" weight="0.697471989072" />
+ <shade name="cool" weight="0.217328228479" />
+ <shade name="intense" weight="0.0851984417293" />
+</color>
+
+<color name="green" weight="0.153629139639">
+ <shade name="bright" weight="0.697471989072" />
+ <shade name="cool" weight="0.217328228479" />
+ <shade name="intense" weight="0.0851984417293" />
+</color>
+
+</colors>

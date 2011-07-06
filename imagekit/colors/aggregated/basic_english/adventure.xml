@@ -1,0 +1,33 @@
+<colors query="adventure">
+
+<color name="black" weight="0.592129196622">
+ <shade name="soft" weight="0.883636793863" />
+ <shade name="cool" weight="0.0621524306695" />
+ <shade name="dark" weight="0.054209628028" />
+</color>
+
+<color name="blue" weight="0.178571245911">
+ <shade name="soft" weight="0.883636793863" />
+ <shade name="cool" weight="0.0621524306695" />
+ <shade name="dark" weight="0.054209628028" />
+</color>
+
+<color name="green" weight="0.118425839324">
+ <shade name="soft" weight="0.883636793863" />
+ <shade name="cool" weight="0.0621524306695" />
+ <shade name="dark" weight="0.054209628028" />
+</color>
+
+<color name="red" weight="0.101641074696">
+ <shade name="soft" weight="0.883636793863" />
+ <shade name="cool" weight="0.0621524306695" />
+ <shade name="dark" weight="0.054209628028" />
+</color>
+
+<color name="pink" weight="0.00923162054577">
+ <shade name="soft" weight="0.883636793863" />
+ <shade name="cool" weight="0.0621524306695" />
+ <shade name="dark" weight="0.054209628028" />
+</color>
+
+</colors>

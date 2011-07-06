@@ -1,0 +1,33 @@
+<colors query="gun">
+
+<color name="black" weight="0.433368943873">
+ <shade name="soft" weight="0.4347821475" />
+ <shade name="light" weight="0.348455837054" />
+ <shade name="warm" weight="0.216760954696" />
+</color>
+
+<color name="pink" weight="0.15962422766">
+ <shade name="soft" weight="0.4347821475" />
+ <shade name="light" weight="0.348455837054" />
+ <shade name="warm" weight="0.216760954696" />
+</color>
+
+<color name="blue" weight="0.15745738294">
+ <shade name="soft" weight="0.541855730982" />
+ <shade name="light" weight="0.434269882947" />
+ <shade name="cool" weight="0.0238730640897" />
+</color>
+
+<color name="red" weight="0.150956848782">
+ <shade name="soft" weight="0.4347821475" />
+ <shade name="light" weight="0.348455837054" />
+ <shade name="warm" weight="0.216760954696" />
+</color>
+
+<color name="green" weight="0.098591434731">
+ <shade name="soft" weight="0.541855730982" />
+ <shade name="light" weight="0.434269882947" />
+ <shade name="cool" weight="0.0238730640897" />
+</color>
+
+</colors>

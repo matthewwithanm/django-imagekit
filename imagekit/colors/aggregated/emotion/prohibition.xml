@@ -1,0 +1,33 @@
+<colors query="prohibition">
+
+<color name="red" weight="0.532933567689">
+ <shade name="neutral" weight="0.38567426284" />
+ <shade name="light" weight="0.38567426284" />
+ <shade name="dark" weight="0.228649741541" />
+</color>
+
+<color name="white" weight="0.163173479995">
+ <shade name="neutral" weight="0.38567426284" />
+ <shade name="light" weight="0.38567426284" />
+ <shade name="dark" weight="0.228649741541" />
+</color>
+
+<color name="black" weight="0.149700440362">
+ <shade name="neutral" weight="0.38567426284" />
+ <shade name="light" weight="0.38567426284" />
+ <shade name="dark" weight="0.228649741541" />
+</color>
+
+<color name="green" weight="0.109281321464">
+ <shade name="neutral" weight="0.38567426284" />
+ <shade name="light" weight="0.38567426284" />
+ <shade name="dark" weight="0.228649741541" />
+</color>
+
+<color name="blue" weight="0.0449101321086">
+ <shade name="neutral" weight="0.38567426284" />
+ <shade name="light" weight="0.38567426284" />
+ <shade name="dark" weight="0.228649741541" />
+</color>
+
+</colors>

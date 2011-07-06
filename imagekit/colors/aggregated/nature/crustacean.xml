@@ -1,0 +1,33 @@
+<colors query="crustacean">
+
+<color name="pink" weight="0.943451964913">
+ <shade name="fresh" weight="0.455007972928" />
+ <shade name="cool" weight="0.404074244615" />
+ <shade name="hard" weight="0.140916648332" />
+</color>
+
+<color name="red" weight="0.0290246687295">
+ <shade name="fresh" weight="0.455007972928" />
+ <shade name="cool" weight="0.404074244615" />
+ <shade name="hard" weight="0.140916648332" />
+</color>
+
+<color name="white" weight="0.012138681332">
+ <shade name="fresh" weight="0.455007972928" />
+ <shade name="cool" weight="0.404074244615" />
+ <shade name="hard" weight="0.140916648332" />
+</color>
+
+<color name="blue" weight="0.00853313242151">
+ <shade name="fresh" weight="0.455007972928" />
+ <shade name="cool" weight="0.404074244615" />
+ <shade name="hard" weight="0.140916648332" />
+</color>
+
+<color name="green" weight="0.00685054292994">
+ <shade name="fresh" weight="0.455007972928" />
+ <shade name="cool" weight="0.404074244615" />
+ <shade name="hard" weight="0.140916648332" />
+</color>
+
+</colors>

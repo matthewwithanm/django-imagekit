@@ -1,0 +1,33 @@
+<colors query="boa">
+
+<color name="pink" weight="0.331020465505">
+ <shade name="soft" weight="0.912107753828" />
+ <shade name="cool" weight="0.0682529611708" />
+ <shade name="dark" weight="0.0196382383732" />
+</color>
+
+<color name="blue" weight="0.213082036178">
+ <shade name="soft" weight="0.912107753828" />
+ <shade name="cool" weight="0.0682529611708" />
+ <shade name="dark" weight="0.0196382383732" />
+</color>
+
+<color name="black" weight="0.181367500561">
+ <shade name="soft" weight="0.912107753828" />
+ <shade name="cool" weight="0.0682529611708" />
+ <shade name="dark" weight="0.0196382383732" />
+</color>
+
+<color name="red" weight="0.140733251801">
+ <shade name="soft" weight="0.912107753828" />
+ <shade name="cool" weight="0.0682529611708" />
+ <shade name="dark" weight="0.0196382383732" />
+</color>
+
+<color name="white" weight="0.133795697135">
+ <shade name="soft" weight="0.912107753828" />
+ <shade name="cool" weight="0.0682529611708" />
+ <shade name="dark" weight="0.0196382383732" />
+</color>
+
+</colors>

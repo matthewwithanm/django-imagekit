@@ -1,0 +1,33 @@
+<colors query="jonquil">
+
+<color name="yellow" weight="0.519442279213">
+ <shade name="light" weight="0.959743746162" />
+ <shade name="soft" weight="0.027000463447" />
+ <shade name="bright" weight="0.0132547729649" />
+</color>
+
+<color name="white" weight="0.26610534639">
+ <shade name="light" weight="0.959743746162" />
+ <shade name="soft" weight="0.027000463447" />
+ <shade name="bright" weight="0.0132547729649" />
+</color>
+
+<color name="blue" weight="0.109692280191">
+ <shade name="light" weight="0.959743746162" />
+ <shade name="soft" weight="0.027000463447" />
+ <shade name="bright" weight="0.0132547729649" />
+</color>
+
+<color name="green" weight="0.0615205380967">
+ <shade name="light" weight="0.959743746162" />
+ <shade name="soft" weight="0.027000463447" />
+ <shade name="bright" weight="0.0132547729649" />
+</color>
+
+<color name="pink" weight="0.0432384913981">
+ <shade name="light" weight="0.959743746162" />
+ <shade name="soft" weight="0.027000463447" />
+ <shade name="bright" weight="0.0132547729649" />
+</color>
+
+</colors>

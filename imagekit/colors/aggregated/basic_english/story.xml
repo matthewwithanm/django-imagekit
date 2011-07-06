@@ -1,0 +1,33 @@
+<colors query="story">
+
+<color name="white" weight="0.323039050509">
+ <shade name="cool" weight="0.523864201119" />
+ <shade name="dark" weight="0.342590556922" />
+ <shade name="weak" weight="0.133543794761" />
+</color>
+
+<color name="black" weight="0.222673458715">
+ <shade name="cool" weight="0.523864201119" />
+ <shade name="dark" weight="0.342590556922" />
+ <shade name="weak" weight="0.133543794761" />
+</color>
+
+<color name="green" weight="0.207638936868">
+ <shade name="cool" weight="0.523864201119" />
+ <shade name="dark" weight="0.342590556922" />
+ <shade name="weak" weight="0.133543794761" />
+</color>
+
+<color name="blue" weight="0.175131862603">
+ <shade name="cool" weight="0.523864201119" />
+ <shade name="dark" weight="0.342590556922" />
+ <shade name="weak" weight="0.133543794761" />
+</color>
+
+<color name="orange" weight="0.071515563383">
+ <shade name="cool" weight="0.523864201119" />
+ <shade name="dark" weight="0.342590556922" />
+ <shade name="weak" weight="0.133543794761" />
+</color>
+
+</colors>

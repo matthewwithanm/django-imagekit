@@ -1,0 +1,33 @@
+<colors query="fucked up">
+
+<color name="black" weight="0.708795172049">
+ <shade name="hard" weight="0.912115423551" />
+ <shade name="cool" weight="0.0539873723669" />
+ <shade name="dark" weight="0.0338961812806" />
+</color>
+
+<color name="white" weight="0.130657423281">
+ <shade name="hard" weight="0.912115423551" />
+ <shade name="cool" weight="0.0539873723669" />
+ <shade name="dark" weight="0.0338961812806" />
+</color>
+
+<color name="blue" weight="0.0838598625243">
+ <shade name="hard" weight="0.912115423551" />
+ <shade name="cool" weight="0.0539873723669" />
+ <shade name="dark" weight="0.0338961812806" />
+</color>
+
+<color name="red" weight="0.0561912317118">
+ <shade name="hard" weight="0.912115423551" />
+ <shade name="cool" weight="0.0539873723669" />
+ <shade name="dark" weight="0.0338961812806" />
+</color>
+
+<color name="green" weight="0.0204952820833">
+ <shade name="hard" weight="0.912115423551" />
+ <shade name="cool" weight="0.0539873723669" />
+ <shade name="dark" weight="0.0338961812806" />
+</color>
+
+</colors>

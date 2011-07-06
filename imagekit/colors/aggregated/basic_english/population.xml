@@ -1,0 +1,33 @@
+<colors query="population">
+
+<color name="black" weight="0.496241553853">
+ <shade name="weak" weight="0.463464945284" />
+ <shade name="neutral" weight="0.269310711449" />
+ <shade name="intense" weight="0.267223031515" />
+</color>
+
+<color name="white" weight="0.486605795525">
+ <shade name="weak" weight="0.490065545424" />
+ <shade name="neutral" weight="0.284767816936" />
+ <shade name="bright" weight="0.2251652506" />
+</color>
+
+<color name="red" weight="0.00847946732797">
+ <shade name="weak" weight="0.463464945284" />
+ <shade name="neutral" weight="0.269310711449" />
+ <shade name="intense" weight="0.267223031515" />
+</color>
+
+<color name="blue" weight="0.00809403699488">
+ <shade name="weak" weight="0.463464945284" />
+ <shade name="neutral" weight="0.269310711449" />
+ <shade name="intense" weight="0.267223031515" />
+</color>
+
+<color name="orange" weight="0.000578145499634">
+ <shade name="weak" weight="0.463464945284" />
+ <shade name="neutral" weight="0.269310711449" />
+ <shade name="intense" weight="0.267223031515" />
+</color>
+
+</colors>

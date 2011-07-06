@@ -1,0 +1,33 @@
+<colors query="airmen">
+
+<color name="white" weight="0.625384463186">
+ <shade name="fresh" weight="0.827159544125" />
+ <shade name="cool" weight="0.111110983539" />
+ <shade name="light" weight="0.0617283241885" />
+</color>
+
+<color name="black" weight="0.224275807487">
+ <shade name="fresh" weight="0.827159544125" />
+ <shade name="cool" weight="0.111110983539" />
+ <shade name="light" weight="0.0617283241885" />
+</color>
+
+<color name="blue" weight="0.125693034965">
+ <shade name="fresh" weight="0.827159544125" />
+ <shade name="cool" weight="0.111110983539" />
+ <shade name="light" weight="0.0617283241885" />
+</color>
+
+<color name="red" weight="0.0126309177294">
+ <shade name="fresh" weight="0.827159544125" />
+ <shade name="cool" weight="0.111110983539" />
+ <shade name="light" weight="0.0617283241885" />
+</color>
+
+<color name="green" weight="0.0120147754011">
+ <shade name="fresh" weight="0.827159544125" />
+ <shade name="cool" weight="0.111110983539" />
+ <shade name="light" weight="0.0617283241885" />
+</color>
+
+</colors>

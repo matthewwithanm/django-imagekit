@@ -1,0 +1,33 @@
+<colors query="impulsive">
+
+<color name="white" weight="0.376743790027">
+ <shade name="warm" weight="0.930188711404" />
+ <shade name="weak" weight="0.0559955184687" />
+ <shade name="neutral" weight="0.0138146838327" />
+</color>
+
+<color name="red" weight="0.367441474224">
+ <shade name="warm" weight="0.900578633765" />
+ <shade name="weak" weight="0.0542130504286" />
+ <shade name="intense" weight="0.045207264091" />
+</color>
+
+<color name="black" weight="0.190697473965">
+ <shade name="warm" weight="0.900578633765" />
+ <shade name="weak" weight="0.0542130504286" />
+ <shade name="intense" weight="0.045207264091" />
+</color>
+
+<color name="blue" weight="0.0372092632126">
+ <shade name="weak" weight="0.480627929639" />
+ <shade name="intense" weight="0.400786776854" />
+ <shade name="neutral" weight="0.118575969483" />
+</color>
+
+<color name="green" weight="0.0279069474094">
+ <shade name="weak" weight="0.480627929639" />
+ <shade name="intense" weight="0.400786776854" />
+ <shade name="neutral" weight="0.118575969483" />
+</color>
+
+</colors>

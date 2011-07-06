@@ -1,0 +1,33 @@
+<colors query="pyramid">
+
+<color name="blue" weight="0.283091485377">
+ <shade name="dark" weight="0.758668570902" />
+ <shade name="cool" weight="0.18986328248" />
+ <shade name="light" weight="0.0514670716145" />
+</color>
+
+<color name="red" weight="0.262801651954">
+ <shade name="dark" weight="0.758668570902" />
+ <shade name="cool" weight="0.18986328248" />
+ <shade name="light" weight="0.0514670716145" />
+</color>
+
+<color name="black" weight="0.237197814539">
+ <shade name="dark" weight="0.758668570902" />
+ <shade name="cool" weight="0.18986328248" />
+ <shade name="light" weight="0.0514670716145" />
+</color>
+
+<color name="purple" weight="0.129951552161">
+ <shade name="dark" weight="0.758668570902" />
+ <shade name="cool" weight="0.18986328248" />
+ <shade name="light" weight="0.0514670716145" />
+</color>
+
+<color name="white" weight="0.0869564289554">
+ <shade name="dark" weight="0.758668570902" />
+ <shade name="cool" weight="0.18986328248" />
+ <shade name="light" weight="0.0514670716145" />
+</color>
+
+</colors>

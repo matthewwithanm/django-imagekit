@@ -1,0 +1,33 @@
+<colors query="powder">
+
+<color name="black" weight="0.394656518069">
+ <shade name="fresh" weight="0.637487358293" />
+ <shade name="light" weight="0.20995852298" />
+ <shade name="soft" weight="0.152552944945" />
+</color>
+
+<color name="white" weight="0.37340578248">
+ <shade name="fresh" weight="0.637487358293" />
+ <shade name="light" weight="0.20995852298" />
+ <shade name="soft" weight="0.152552944945" />
+</color>
+
+<color name="yellow" weight="0.124772176097">
+ <shade name="fresh" weight="0.637487358293" />
+ <shade name="light" weight="0.20995852298" />
+ <shade name="soft" weight="0.152552944945" />
+</color>
+
+<color name="red" weight="0.0564662402775">
+ <shade name="fresh" weight="0.637487358293" />
+ <shade name="light" weight="0.20995852298" />
+ <shade name="soft" weight="0.152552944945" />
+</color>
+
+<color name="green" weight="0.050698183475">
+ <shade name="fresh" weight="0.637487358293" />
+ <shade name="light" weight="0.20995852298" />
+ <shade name="soft" weight="0.152552944945" />
+</color>
+
+</colors>

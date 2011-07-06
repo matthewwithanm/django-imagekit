@@ -1,0 +1,33 @@
+<colors query="leek">
+
+<color name="white" weight="0.316559565761">
+ <shade name="fresh" weight="0.562157939763" />
+ <shade name="warm" weight="0.297461858412" />
+ <shade name="light" weight="0.140378868387" />
+</color>
+
+<color name="black" weight="0.289112204568">
+ <shade name="fresh" weight="0.562157939763" />
+ <shade name="warm" weight="0.297461858412" />
+ <shade name="light" weight="0.140378868387" />
+</color>
+
+<color name="green" weight="0.16724592087">
+ <shade name="fresh" weight="0.667428386539" />
+ <shade name="light" weight="0.16666640281" />
+ <shade name="cool" weight="0.165903627511" />
+</color>
+
+<color name="blue" weight="0.130649439279">
+ <shade name="fresh" weight="0.667428386539" />
+ <shade name="light" weight="0.16666640281" />
+ <shade name="cool" weight="0.165903627511" />
+</color>
+
+<color name="pink" weight="0.096431728992">
+ <shade name="fresh" weight="0.562157939763" />
+ <shade name="warm" weight="0.297461858412" />
+ <shade name="light" weight="0.140378868387" />
+</color>
+
+</colors>

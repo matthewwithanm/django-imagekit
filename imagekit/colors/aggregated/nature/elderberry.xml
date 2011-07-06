@@ -1,0 +1,33 @@
+<colors query="elderberry">
+
+<color name="black" weight="0.355827428983">
+ <shade name="fresh" weight="0.831648965465" />
+ <shade name="warm" weight="0.124578994827" />
+ <shade name="dark" weight="0.0437709981824" />
+</color>
+
+<color name="red" weight="0.330158286096">
+ <shade name="fresh" weight="0.831648965465" />
+ <shade name="warm" weight="0.124578994827" />
+ <shade name="dark" weight="0.0437709981824" />
+</color>
+
+<color name="blue" weight="0.303604000351">
+ <shade name="fresh" weight="0.937973581722" />
+ <shade name="dark" weight="0.049367030617" />
+ <shade name="light" weight="0.0126582129787" />
+</color>
+
+<color name="white" weight="0.0083026400096">
+ <shade name="fresh" weight="0.831648965465" />
+ <shade name="warm" weight="0.124578994827" />
+ <shade name="dark" weight="0.0437709981824" />
+</color>
+
+<color name="green" weight="0.00210664000244">
+ <shade name="fresh" weight="0.937973581722" />
+ <shade name="dark" weight="0.049367030617" />
+ <shade name="light" weight="0.0126582129787" />
+</color>
+
+</colors>

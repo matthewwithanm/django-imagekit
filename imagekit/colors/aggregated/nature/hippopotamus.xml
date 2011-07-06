@@ -1,0 +1,33 @@
+<colors query="hippopotamus">
+
+<color name="purple" weight="0.323392118916">
+ <shade name="soft" weight="0.780990021877" />
+ <shade name="cool" weight="0.111570003125" />
+ <shade name="hard" weight="0.107437780787" />
+</color>
+
+<color name="pink" weight="0.286900401217">
+ <shade name="warm" weight="0.474451941766" />
+ <shade name="soft" weight="0.459853420481" />
+ <shade name="cool" weight="0.065693345783" />
+</color>
+
+<color name="blue" weight="0.231533657123">
+ <shade name="soft" weight="0.780990021877" />
+ <shade name="cool" weight="0.111570003125" />
+ <shade name="hard" weight="0.107437780787" />
+</color>
+
+<color name="white" weight="0.12142933648">
+ <shade name="warm" weight="0.474451941766" />
+ <shade name="soft" weight="0.459853420481" />
+ <shade name="cool" weight="0.065693345783" />
+</color>
+
+<color name="red" weight="0.0367433847173">
+ <shade name="warm" weight="0.474451941766" />
+ <shade name="soft" weight="0.459853420481" />
+ <shade name="cool" weight="0.065693345783" />
+</color>
+
+</colors>

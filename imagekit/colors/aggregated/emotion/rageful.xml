@@ -1,0 +1,33 @@
+<colors query="rageful">
+
+<color name="white" weight="0.4999995">
+ <shade name="dark" weight="0.624998750003" />
+ <shade name="hard" weight="0.249999500001" />
+ <shade name="weak" weight="0.124999750001" />
+</color>
+
+<color name="red" weight="0.4999995">
+ <shade name="intense" weight="0.533332764445" />
+ <shade name="dark" weight="0.333332977778" />
+ <shade name="hard" weight="0.133333191111" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="intense" weight="0.533332764445" />
+ <shade name="dark" weight="0.333332977778" />
+ <shade name="hard" weight="0.133333191111" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="dark" weight="0.624998750003" />
+ <shade name="hard" weight="0.249999500001" />
+ <shade name="weak" weight="0.124999750001" />
+</color>
+
+<color name="pink" weight="0.0">
+ <shade name="dark" weight="0.624998750003" />
+ <shade name="hard" weight="0.249999500001" />
+ <shade name="weak" weight="0.124999750001" />
+</color>
+
+</colors>

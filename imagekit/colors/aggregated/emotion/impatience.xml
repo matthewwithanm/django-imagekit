@@ -1,0 +1,33 @@
+<colors query="impatience">
+
+<color name="pink" weight="0.349148008604">
+ <shade name="soft" weight="0.512435804542" />
+ <shade name="hard" weight="0.278605874314" />
+ <shade name="warm" weight="0.208954405736" />
+</color>
+
+<color name="black" weight="0.205595865693">
+ <shade name="intense" weight="0.739343308421" />
+ <shade name="soft" weight="0.168852241169" />
+ <shade name="hard" weight="0.0918031602474" />
+</color>
+
+<color name="white" weight="0.194646973438">
+ <shade name="soft" weight="0.512435804542" />
+ <shade name="hard" weight="0.278605874314" />
+ <shade name="warm" weight="0.208954405736" />
+</color>
+
+<color name="purple" weight="0.175182276094">
+ <shade name="soft" weight="0.514997973483" />
+ <shade name="hard" weight="0.279998898204" />
+ <shade name="cool" weight="0.204999193328" />
+</color>
+
+<color name="red" weight="0.0754257022071">
+ <shade name="intense" weight="0.739343308421" />
+ <shade name="soft" weight="0.168852241169" />
+ <shade name="hard" weight="0.0918031602474" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="punished">
+
+<color name="white" weight="0.352233302955">
+ <shade name="hard" weight="0.957445814057" />
+ <shade name="fresh" weight="0.0216311832065" />
+ <shade name="light" weight="0.020921964085" />
+</color>
+
+<color name="black" weight="0.298968754703">
+ <shade name="hard" weight="0.957445814057" />
+ <shade name="fresh" weight="0.0216311832065" />
+ <shade name="light" weight="0.020921964085" />
+</color>
+
+<color name="red" weight="0.151202588586">
+ <shade name="hard" weight="0.957445814057" />
+ <shade name="fresh" weight="0.0216311832065" />
+ <shade name="light" weight="0.020921964085" />
+</color>
+
+<color name="green" weight="0.14432974365">
+ <shade name="hard" weight="0.957445814057" />
+ <shade name="fresh" weight="0.0216311832065" />
+ <shade name="light" weight="0.020921964085" />
+</color>
+
+<color name="pink" weight="0.0532645482517">
+ <shade name="hard" weight="0.957445814057" />
+ <shade name="fresh" weight="0.0216311832065" />
+ <shade name="light" weight="0.020921964085" />
+</color>
+
+</colors>

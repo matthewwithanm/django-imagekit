@@ -1,0 +1,33 @@
+<colors query="finger">
+
+<color name="black" weight="0.432579427355">
+ <shade name="light" weight="0.459291415046" />
+ <shade name="soft" weight="0.297344731128" />
+ <shade name="hard" weight="0.243362503155" />
+</color>
+
+<color name="white" weight="0.29618050882">
+ <shade name="light" weight="0.459291415046" />
+ <shade name="soft" weight="0.297344731128" />
+ <shade name="hard" weight="0.243362503155" />
+</color>
+
+<color name="green" weight="0.119641337115">
+ <shade name="light" weight="0.459291415046" />
+ <shade name="soft" weight="0.297344731128" />
+ <shade name="hard" weight="0.243362503155" />
+</color>
+
+<color name="purple" weight="0.0925564090061">
+ <shade name="light" weight="0.459291415046" />
+ <shade name="soft" weight="0.297344731128" />
+ <shade name="hard" weight="0.243362503155" />
+</color>
+
+<color name="blue" weight="0.059041246166">
+ <shade name="light" weight="0.459291415046" />
+ <shade name="soft" weight="0.297344731128" />
+ <shade name="hard" weight="0.243362503155" />
+</color>
+
+</colors>

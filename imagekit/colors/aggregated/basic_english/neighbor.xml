@@ -1,0 +1,33 @@
+<colors query="neighbor">
+
+<color name="white" weight="0.495795561585">
+ <shade name="cool" weight="0.678081250084" />
+ <shade name="weak" weight="0.226027083361" />
+ <shade name="bright" weight="0.0958902777896" />
+</color>
+
+<color name="black" weight="0.448281820266">
+ <shade name="cool" weight="0.678081250084" />
+ <shade name="weak" weight="0.226027083361" />
+ <shade name="bright" weight="0.0958902777896" />
+</color>
+
+<color name="red" weight="0.0349122707949">
+ <shade name="cool" weight="0.678081250084" />
+ <shade name="weak" weight="0.226027083361" />
+ <shade name="bright" weight="0.0958902777896" />
+</color>
+
+<color name="green" weight="0.0111347419873">
+ <shade name="cool" weight="0.678081250084" />
+ <shade name="weak" weight="0.226027083361" />
+ <shade name="bright" weight="0.0958902777896" />
+</color>
+
+<color name="blue" weight="0.0098745949349">
+ <shade name="cool" weight="0.678081250084" />
+ <shade name="weak" weight="0.226027083361" />
+ <shade name="bright" weight="0.0958902777896" />
+</color>
+
+</colors>

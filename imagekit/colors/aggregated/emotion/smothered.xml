@@ -1,0 +1,33 @@
+<colors query="smothered">
+
+<color name="red" weight="0.34992419571">
+ <shade name="light" weight="0.664651636259" />
+ <shade name="dark" weight="0.172205196667" />
+ <shade name="soft" weight="0.163141765264" />
+</color>
+
+<color name="green" weight="0.29411731967">
+ <shade name="light" weight="0.664651636259" />
+ <shade name="dark" weight="0.172205196667" />
+ <shade name="soft" weight="0.163141765264" />
+</color>
+
+<color name="white" weight="0.156862570491">
+ <shade name="light" weight="0.664651636259" />
+ <shade name="dark" weight="0.172205196667" />
+ <shade name="soft" weight="0.163141765264" />
+</color>
+
+<color name="black" weight="0.11161375208">
+ <shade name="light" weight="0.664651636259" />
+ <shade name="dark" weight="0.172205196667" />
+ <shade name="soft" weight="0.163141765264" />
+</color>
+
+<color name="orange" weight="0.0874810489276">
+ <shade name="light" weight="0.664651636259" />
+ <shade name="dark" weight="0.172205196667" />
+ <shade name="soft" weight="0.163141765264" />
+</color>
+
+</colors>

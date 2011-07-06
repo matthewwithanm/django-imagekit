@@ -1,0 +1,33 @@
+<colors query="opinion">
+
+<color name="black" weight="0.439451103884">
+ <shade name="neutral" weight="0.668471075967" />
+ <shade name="fresh" weight="0.168725484238" />
+ <shade name="light" weight="0.162802322805" />
+</color>
+
+<color name="white" weight="0.437296931806">
+ <shade name="neutral" weight="0.668471075967" />
+ <shade name="fresh" weight="0.168725484238" />
+ <shade name="light" weight="0.162802322805" />
+</color>
+
+<color name="green" weight="0.107170060874">
+ <shade name="neutral" weight="0.668471075967" />
+ <shade name="fresh" weight="0.168725484238" />
+ <shade name="light" weight="0.162802322805" />
+</color>
+
+<color name="orange" weight="0.00843358368484">
+ <shade name="neutral" weight="0.668471075967" />
+ <shade name="fresh" weight="0.168725484238" />
+ <shade name="light" weight="0.162802322805" />
+</color>
+
+<color name="red" weight="0.00764731087642">
+ <shade name="neutral" weight="0.668471075967" />
+ <shade name="fresh" weight="0.168725484238" />
+ <shade name="light" weight="0.162802322805" />
+</color>
+
+</colors>

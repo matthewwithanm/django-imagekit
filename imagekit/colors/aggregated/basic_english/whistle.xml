@@ -1,0 +1,33 @@
+<colors query="whistle">
+
+<color name="black" weight="0.318906262695">
+ <shade name="soft" weight="0.478199145988" />
+ <shade name="cool" weight="0.272385984136" />
+ <shade name="dark" weight="0.249413672221" />
+</color>
+
+<color name="orange" weight="0.287015636426">
+ <shade name="soft" weight="0.478199145988" />
+ <shade name="cool" weight="0.272385984136" />
+ <shade name="dark" weight="0.249413672221" />
+</color>
+
+<color name="purple" weight="0.206226049876">
+ <shade name="soft" weight="0.478199145988" />
+ <shade name="cool" weight="0.272385984136" />
+ <shade name="dark" weight="0.249413672221" />
+</color>
+
+<color name="yellow" weight="0.158238250347">
+ <shade name="soft" weight="0.478199145988" />
+ <shade name="cool" weight="0.272385984136" />
+ <shade name="dark" weight="0.249413672221" />
+</color>
+
+<color name="red" weight="0.0296127243931">
+ <shade name="soft" weight="0.478199145988" />
+ <shade name="cool" weight="0.272385984136" />
+ <shade name="dark" weight="0.249413672221" />
+</color>
+
+</colors>

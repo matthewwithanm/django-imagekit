@@ -1,0 +1,33 @@
+<colors query="sickness">
+
+<color name="green" weight="0.798567859642">
+ <shade name="dark" weight="0.601986413904" />
+ <shade name="intense" weight="0.230274414639" />
+ <shade name="hard" weight="0.167737961932" />
+</color>
+
+<color name="blue" weight="0.096875445268">
+ <shade name="dark" weight="0.601986413904" />
+ <shade name="intense" weight="0.230274414639" />
+ <shade name="hard" weight="0.167737961932" />
+</color>
+
+<color name="white" weight="0.0396229298664">
+ <shade name="dark" weight="0.678300030463" />
+ <shade name="hard" weight="0.189002047323" />
+ <shade name="light" weight="0.132696559358" />
+</color>
+
+<color name="yellow" weight="0.034779157603">
+ <shade name="dark" weight="0.601986413904" />
+ <shade name="intense" weight="0.230274414639" />
+ <shade name="hard" weight="0.167737961932" />
+</color>
+
+<color name="black" weight="0.0301535732794">
+ <shade name="dark" weight="0.601986413904" />
+ <shade name="intense" weight="0.230274414639" />
+ <shade name="hard" weight="0.167737961932" />
+</color>
+
+</colors>

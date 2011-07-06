@@ -1,0 +1,33 @@
+<colors query="office">
+
+<color name="green" weight="0.411902025931">
+ <shade name="light" weight="0.545251470326" />
+ <shade name="soft" weight="0.27299665453" />
+ <shade name="cool" weight="0.181750490109" />
+</color>
+
+<color name="white" weight="0.176332639863">
+ <shade name="light" weight="0.545251470326" />
+ <shade name="soft" weight="0.27299665453" />
+ <shade name="cool" weight="0.181750490109" />
+</color>
+
+<color name="black" weight="0.162556652374">
+ <shade name="light" weight="0.545251470326" />
+ <shade name="soft" weight="0.27299665453" />
+ <shade name="cool" weight="0.181750490109" />
+</color>
+
+<color name="blue" weight="0.132111720023">
+ <shade name="light" weight="0.545251470326" />
+ <shade name="soft" weight="0.27299665453" />
+ <shade name="cool" weight="0.181750490109" />
+</color>
+
+<color name="red" weight="0.117095893659">
+ <shade name="light" weight="0.545251470326" />
+ <shade name="soft" weight="0.27299665453" />
+ <shade name="cool" weight="0.181750490109" />
+</color>
+
+</colors>

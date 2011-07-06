@@ -1,0 +1,33 @@
+<colors query="hand">
+
+<color name="black" weight="0.361629469597">
+ <shade name="cool" weight="0.577312619945" />
+ <shade name="soft" weight="0.290745859269" />
+ <shade name="light" weight="0.131940112728" />
+</color>
+
+<color name="red" weight="0.246179685876">
+ <shade name="cool" weight="0.577312619945" />
+ <shade name="soft" weight="0.290745859269" />
+ <shade name="light" weight="0.131940112728" />
+</color>
+
+<color name="white" weight="0.201471191199">
+ <shade name="cool" weight="0.577312619945" />
+ <shade name="soft" weight="0.290745859269" />
+ <shade name="light" weight="0.131940112728" />
+</color>
+
+<color name="green" weight="0.097905944038">
+ <shade name="cool" weight="0.577312619945" />
+ <shade name="soft" weight="0.290745859269" />
+ <shade name="light" weight="0.131940112728" />
+</color>
+
+<color name="blue" weight="0.0928125712267">
+ <shade name="cool" weight="0.577312619945" />
+ <shade name="soft" weight="0.290745859269" />
+ <shade name="light" weight="0.131940112728" />
+</color>
+
+</colors>

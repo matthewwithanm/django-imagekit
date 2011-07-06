@@ -1,0 +1,33 @@
+<colors query="saturday">
+
+<color name="black" weight="0.440062642526">
+ <shade name="warm" weight="0.473968968775" />
+ <shade name="cool" weight="0.315617780122" />
+ <shade name="bright" weight="0.210411853415" />
+</color>
+
+<color name="pink" weight="0.28128257318">
+ <shade name="warm" weight="0.473968968775" />
+ <shade name="cool" weight="0.315617780122" />
+ <shade name="bright" weight="0.210411853415" />
+</color>
+
+<color name="green" weight="0.114090314729">
+ <shade name="cool" weight="0.444953251685" />
+ <shade name="bright" weight="0.296635501123" />
+ <shade name="dark" weight="0.258409276752" />
+</color>
+
+<color name="blue" weight="0.10252355471">
+ <shade name="cool" weight="0.444953251685" />
+ <shade name="bright" weight="0.296635501123" />
+ <shade name="dark" weight="0.258409276752" />
+</color>
+
+<color name="white" weight="0.0620398946453">
+ <shade name="warm" weight="0.473968968775" />
+ <shade name="cool" weight="0.315617780122" />
+ <shade name="bright" weight="0.210411853415" />
+</color>
+
+</colors>

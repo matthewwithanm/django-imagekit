@@ -1,0 +1,33 @@
+<colors query="cognac">
+
+<color name="black" weight="0.568971141156">
+ <shade name="dark" weight="0.620163840793" />
+ <shade name="soft" weight="0.31438008563" />
+ <shade name="warm" weight="0.0654549162659" />
+</color>
+
+<color name="white" weight="0.319241726259">
+ <shade name="dark" weight="0.620163840793" />
+ <shade name="soft" weight="0.31438008563" />
+ <shade name="warm" weight="0.0654549162659" />
+</color>
+
+<color name="green" weight="0.0540651310601">
+ <shade name="dark" weight="0.622150318696" />
+ <shade name="soft" weight="0.31538709225" />
+ <shade name="light" weight="0.0624614280354" />
+</color>
+
+<color name="blue" weight="0.0360434207067">
+ <shade name="dark" weight="0.622150318696" />
+ <shade name="soft" weight="0.31538709225" />
+ <shade name="light" weight="0.0624614280354" />
+</color>
+
+<color name="orange" weight="0.021677543025">
+ <shade name="dark" weight="0.620163840793" />
+ <shade name="soft" weight="0.31438008563" />
+ <shade name="warm" weight="0.0654549162659" />
+</color>
+
+</colors>

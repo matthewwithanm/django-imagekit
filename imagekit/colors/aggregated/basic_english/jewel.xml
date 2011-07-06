@@ -1,0 +1,33 @@
+<colors query="jewel">
+
+<color name="black" weight="0.315023884333">
+ <shade name="bright" weight="0.503611829787" />
+ <shade name="dark" weight="0.305991997845" />
+ <shade name="soft" weight="0.190395020882" />
+</color>
+
+<color name="red" weight="0.285406254182">
+ <shade name="bright" weight="0.503611829787" />
+ <shade name="dark" weight="0.305991997845" />
+ <shade name="soft" weight="0.190395020882" />
+</color>
+
+<color name="blue" weight="0.218093458384">
+ <shade name="bright" weight="0.503611829787" />
+ <shade name="dark" weight="0.305991997845" />
+ <shade name="soft" weight="0.190395020882" />
+</color>
+
+<color name="green" weight="0.10043069133">
+ <shade name="bright" weight="0.503611829787" />
+ <shade name="dark" weight="0.305991997845" />
+ <shade name="soft" weight="0.190395020882" />
+</color>
+
+<color name="pink" weight="0.0810446061403">
+ <shade name="bright" weight="0.503611829787" />
+ <shade name="dark" weight="0.305991997845" />
+ <shade name="soft" weight="0.190395020882" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="chicken">
+
+<color name="orange" weight="0.377649430759">
+ <shade name="fresh" weight="0.695588080866" />
+ <shade name="warm" weight="0.156567909491" />
+ <shade name="light" weight="0.147842762832" />
+</color>
+
+<color name="white" weight="0.261125628703">
+ <shade name="fresh" weight="0.695588080866" />
+ <shade name="warm" weight="0.156567909491" />
+ <shade name="light" weight="0.147842762832" />
+</color>
+
+<color name="green" weight="0.135476468655">
+ <shade name="fresh" weight="0.719477638194" />
+ <shade name="light" weight="0.15292033425" />
+ <shade name="cool" weight="0.127600737924" />
+</color>
+
+<color name="black" weight="0.126912671155">
+ <shade name="fresh" weight="0.695588080866" />
+ <shade name="warm" weight="0.156567909491" />
+ <shade name="light" weight="0.147842762832" />
+</color>
+
+<color name="red" weight="0.0988346465629">
+ <shade name="fresh" weight="0.695588080866" />
+ <shade name="warm" weight="0.156567909491" />
+ <shade name="light" weight="0.147842762832" />
+</color>
+
+</colors>

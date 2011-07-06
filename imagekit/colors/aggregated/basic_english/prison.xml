@@ -1,0 +1,33 @@
+<colors query="prison">
+
+<color name="pink" weight="0.378173551108">
+ <shade name="dark" weight="0.754889544983" />
+ <shade name="hard" weight="0.164106422822" />
+ <shade name="soft" weight="0.0810029303051" />
+</color>
+
+<color name="orange" weight="0.205834461389">
+ <shade name="dark" weight="0.754889544983" />
+ <shade name="hard" weight="0.164106422822" />
+ <shade name="soft" weight="0.0810029303051" />
+</color>
+
+<color name="black" weight="0.166396362487">
+ <shade name="dark" weight="0.754889544983" />
+ <shade name="hard" weight="0.164106422822" />
+ <shade name="soft" weight="0.0810029303051" />
+</color>
+
+<color name="white" weight="0.133981486678">
+ <shade name="dark" weight="0.754889544983" />
+ <shade name="hard" weight="0.164106422822" />
+ <shade name="soft" weight="0.0810029303051" />
+</color>
+
+<color name="green" weight="0.115613057053">
+ <shade name="dark" weight="0.754889544983" />
+ <shade name="hard" weight="0.164106422822" />
+ <shade name="soft" weight="0.0810029303051" />
+</color>
+
+</colors>

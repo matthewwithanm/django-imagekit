@@ -1,0 +1,33 @@
+<colors query="avid">
+
+<color name="black" weight="0.364554854661">
+ <shade name="soft" weight="0.416203499689" />
+ <shade name="hard" weight="0.298556643777" />
+ <shade name="cool" weight="0.285238131787" />
+</color>
+
+<color name="red" weight="0.242587333971">
+ <shade name="soft" weight="0.416203499689" />
+ <shade name="hard" weight="0.298556643777" />
+ <shade name="cool" weight="0.285238131787" />
+</color>
+
+<color name="blue" weight="0.150269376321">
+ <shade name="soft" weight="0.416203499689" />
+ <shade name="hard" weight="0.298556643777" />
+ <shade name="cool" weight="0.285238131787" />
+</color>
+
+<color name="green" weight="0.139487717033">
+ <shade name="soft" weight="0.416203499689" />
+ <shade name="hard" weight="0.298556643777" />
+ <shade name="cool" weight="0.285238131787" />
+</color>
+
+<color name="white" weight="0.103099616937">
+ <shade name="soft" weight="0.416203499689" />
+ <shade name="hard" weight="0.298556643777" />
+ <shade name="cool" weight="0.285238131787" />
+</color>
+
+</colors>

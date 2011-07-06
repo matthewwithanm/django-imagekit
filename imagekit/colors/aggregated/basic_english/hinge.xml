@@ -1,0 +1,33 @@
+<colors query="hinge">
+
+<color name="red" weight="0.345670471756">
+ <shade name="light" weight="0.700807874887" />
+ <shade name="weak" weight="0.22156310506" />
+ <shade name="hard" weight="0.0776279492182" />
+</color>
+
+<color name="black" weight="0.33443452908">
+ <shade name="light" weight="0.700807874887" />
+ <shade name="weak" weight="0.22156310506" />
+ <shade name="hard" weight="0.0776279492182" />
+</color>
+
+<color name="white" weight="0.175148518194">
+ <shade name="light" weight="0.700807874887" />
+ <shade name="weak" weight="0.22156310506" />
+ <shade name="hard" weight="0.0776279492182" />
+</color>
+
+<color name="blue" weight="0.0779906609316">
+ <shade name="light" weight="0.700807874887" />
+ <shade name="weak" weight="0.22156310506" />
+ <shade name="hard" weight="0.0776279492182" />
+</color>
+
+<color name="pink" weight="0.066754718255">
+ <shade name="light" weight="0.700807874887" />
+ <shade name="weak" weight="0.22156310506" />
+ <shade name="hard" weight="0.0776279492182" />
+</color>
+
+</colors>

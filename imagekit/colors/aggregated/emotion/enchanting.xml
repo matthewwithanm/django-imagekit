@@ -1,0 +1,33 @@
+<colors query="enchanting">
+
+<color name="white" weight="0.584049869034">
+ <shade name="warm" weight="0.799053047133" />
+ <shade name="soft" weight="0.140214382478" />
+ <shade name="fresh" weight="0.0607314102419" />
+</color>
+
+<color name="red" weight="0.144578160115">
+ <shade name="warm" weight="0.799053047133" />
+ <shade name="soft" weight="0.140214382478" />
+ <shade name="fresh" weight="0.0607314102419" />
+</color>
+
+<color name="pink" weight="0.115892017235">
+ <shade name="warm" weight="0.799053047133" />
+ <shade name="soft" weight="0.140214382478" />
+ <shade name="fresh" weight="0.0607314102419" />
+</color>
+
+<color name="black" weight="0.111416978945">
+ <shade name="warm" weight="0.799053047133" />
+ <shade name="soft" weight="0.140214382478" />
+ <shade name="fresh" weight="0.0607314102419" />
+</color>
+
+<color name="blue" weight="0.0440619154635">
+ <shade name="soft" weight="0.551309341669" />
+ <shade name="fresh" weight="0.238790010036" />
+ <shade name="bright" weight="0.209896086708" />
+</color>
+
+</colors>

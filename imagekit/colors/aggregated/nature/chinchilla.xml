@@ -1,0 +1,33 @@
+<colors query="chinchilla">
+
+<color name="black" weight="0.38722922494">
+ <shade name="soft" weight="0.743375012084" />
+ <shade name="dark" weight="0.171246124896" />
+ <shade name="light" weight="0.0853777241601" />
+</color>
+
+<color name="red" weight="0.183315962871">
+ <shade name="soft" weight="0.743375012084" />
+ <shade name="dark" weight="0.171246124896" />
+ <shade name="light" weight="0.0853777241601" />
+</color>
+
+<color name="blue" weight="0.175077043191">
+ <shade name="soft" weight="0.743375012084" />
+ <shade name="dark" weight="0.171246124896" />
+ <shade name="light" weight="0.0853777241601" />
+</color>
+
+<color name="green" weight="0.128733119993">
+ <shade name="soft" weight="0.743375012084" />
+ <shade name="dark" weight="0.171246124896" />
+ <shade name="light" weight="0.0853777241601" />
+</color>
+
+<color name="pink" weight="0.125643525114">
+ <shade name="soft" weight="0.743375012084" />
+ <shade name="dark" weight="0.171246124896" />
+ <shade name="light" weight="0.0853777241601" />
+</color>
+
+</colors>

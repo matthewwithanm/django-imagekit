@@ -1,0 +1,33 @@
+<colors query="hissing">
+
+<color name="green" weight="0.362539305959">
+ <shade name="soft" weight="0.462176013132" />
+ <shade name="light" weight="0.38799359075" />
+ <shade name="intense" weight="0.149828971522" />
+</color>
+
+<color name="white" weight="0.267301309648">
+ <shade name="soft" weight="0.471143594394" />
+ <shade name="light" weight="0.395521813668" />
+ <shade name="cool" weight="0.133333139702" />
+</color>
+
+<color name="black" weight="0.20063471223">
+ <shade name="soft" weight="0.462176013132" />
+ <shade name="light" weight="0.38799359075" />
+ <shade name="intense" weight="0.149828971522" />
+</color>
+
+<color name="red" weight="0.107301475844">
+ <shade name="soft" weight="0.462176013132" />
+ <shade name="light" weight="0.38799359075" />
+ <shade name="intense" weight="0.149828971522" />
+</color>
+
+<color name="blue" weight="0.0622221575902">
+ <shade name="soft" weight="0.462176013132" />
+ <shade name="light" weight="0.38799359075" />
+ <shade name="intense" weight="0.149828971522" />
+</color>
+
+</colors>

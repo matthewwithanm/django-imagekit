@@ -1,0 +1,33 @@
+<colors query="melon">
+
+<color name="red" weight="0.328275421815">
+ <shade name="fresh" weight="0.843179447385" />
+ <shade name="cool" weight="0.146517273692" />
+ <shade name="warm" weight="0.010302227755" />
+</color>
+
+<color name="green" weight="0.221379013451">
+ <shade name="fresh" weight="0.843267073762" />
+ <shade name="cool" weight="0.146532500318" />
+ <shade name="intense" weight="0.0101993746422" />
+</color>
+
+<color name="pink" weight="0.17448252462">
+ <shade name="fresh" weight="0.843179447385" />
+ <shade name="cool" weight="0.146517273692" />
+ <shade name="warm" weight="0.010302227755" />
+</color>
+
+<color name="black" weight="0.139310157997">
+ <shade name="fresh" weight="0.843179447385" />
+ <shade name="cool" weight="0.146517273692" />
+ <shade name="warm" weight="0.010302227755" />
+</color>
+
+<color name="blue" weight="0.136551541007">
+ <shade name="fresh" weight="0.843267073762" />
+ <shade name="cool" weight="0.146532500318" />
+ <shade name="intense" weight="0.0101993746422" />
+</color>
+
+</colors>

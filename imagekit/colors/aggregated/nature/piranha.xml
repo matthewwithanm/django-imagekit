@@ -1,0 +1,33 @@
+<colors query="piranha">
+
+<color name="red" weight="0.371959558045">
+ <shade name="bright" weight="0.406589049219" />
+ <shade name="cool" weight="0.382053503146" />
+ <shade name="dark" weight="0.211356204034" />
+</color>
+
+<color name="black" weight="0.284439662034">
+ <shade name="bright" weight="0.406589049219" />
+ <shade name="cool" weight="0.382053503146" />
+ <shade name="dark" weight="0.211356204034" />
+</color>
+
+<color name="pink" weight="0.277707362341">
+ <shade name="bright" weight="0.406589049219" />
+ <shade name="cool" weight="0.382053503146" />
+ <shade name="dark" weight="0.211356204034" />
+</color>
+
+<color name="blue" weight="0.0516704001447">
+ <shade name="bright" weight="0.406589049219" />
+ <shade name="cool" weight="0.382053503146" />
+ <shade name="dark" weight="0.211356204034" />
+</color>
+
+<color name="purple" weight="0.0142219831017">
+ <shade name="bright" weight="0.406589049219" />
+ <shade name="cool" weight="0.382053503146" />
+ <shade name="dark" weight="0.211356204034" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="bacteria">
+
+<color name="purple" weight="0.678973985487">
+ <shade name="dark" weight="0.398799223458" />
+ <shade name="light" weight="0.320799375339" />
+ <shade name="fresh" weight="0.280399454006" />
+</color>
+
+<color name="green" weight="0.185382784801">
+ <shade name="dark" weight="0.398799223458" />
+ <shade name="light" weight="0.320799375339" />
+ <shade name="fresh" weight="0.280399454006" />
+</color>
+
+<color name="red" weight="0.0827737948599">
+ <shade name="dark" weight="0.398799223458" />
+ <shade name="light" weight="0.320799375339" />
+ <shade name="fresh" weight="0.280399454006" />
+</color>
+
+<color name="blue" weight="0.0488250955856">
+ <shade name="dark" weight="0.398799223458" />
+ <shade name="light" weight="0.320799375339" />
+ <shade name="fresh" weight="0.280399454006" />
+</color>
+
+<color name="white" weight="0.00404332822818">
+ <shade name="dark" weight="0.398799223458" />
+ <shade name="light" weight="0.320799375339" />
+ <shade name="fresh" weight="0.280399454006" />
+</color>
+
+</colors>

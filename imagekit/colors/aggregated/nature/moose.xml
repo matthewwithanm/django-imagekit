@@ -1,0 +1,33 @@
+<colors query="moose">
+
+<color name="blue" weight="0.633436526865">
+ <shade name="cool" weight="0.764911358997" />
+ <shade name="fresh" weight="0.143157722234" />
+ <shade name="light" weight="0.0919297137877" />
+</color>
+
+<color name="red" weight="0.108514945996">
+ <shade name="cool" weight="0.764911358997" />
+ <shade name="fresh" weight="0.143157722234" />
+ <shade name="light" weight="0.0919297137877" />
+</color>
+
+<color name="white" weight="0.105399684388">
+ <shade name="cool" weight="0.764911358997" />
+ <shade name="fresh" weight="0.143157722234" />
+ <shade name="light" weight="0.0919297137877" />
+</color>
+
+<color name="purple" weight="0.0846312736714">
+ <shade name="cool" weight="0.764911358997" />
+ <shade name="fresh" weight="0.143157722234" />
+ <shade name="light" weight="0.0919297137877" />
+</color>
+
+<color name="black" weight="0.0680165450978">
+ <shade name="cool" weight="0.764911358997" />
+ <shade name="fresh" weight="0.143157722234" />
+ <shade name="light" weight="0.0919297137877" />
+</color>
+
+</colors>

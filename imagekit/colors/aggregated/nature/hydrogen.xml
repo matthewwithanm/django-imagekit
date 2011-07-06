@@ -1,0 +1,33 @@
+<colors query="hydrogen">
+
+<color name="green" weight="0.416688571746">
+ <shade name="neutral" weight="0.700562600244" />
+ <shade name="weak" weight="0.254224778645" />
+ <shade name="light" weight="0.0452115657477" />
+</color>
+
+<color name="red" weight="0.243849903723">
+ <shade name="neutral" weight="0.700562600244" />
+ <shade name="weak" weight="0.254224778645" />
+ <shade name="light" weight="0.0452115657477" />
+</color>
+
+<color name="blue" weight="0.171498833387">
+ <shade name="neutral" weight="0.700562600244" />
+ <shade name="weak" weight="0.254224778645" />
+ <shade name="light" weight="0.0452115657477" />
+</color>
+
+<color name="white" weight="0.158100487029">
+ <shade name="neutral" weight="0.700562600244" />
+ <shade name="weak" weight="0.254224778645" />
+ <shade name="light" weight="0.0452115657477" />
+</color>
+
+<color name="black" weight="0.00986118291978">
+ <shade name="neutral" weight="0.700562600244" />
+ <shade name="weak" weight="0.254224778645" />
+ <shade name="light" weight="0.0452115657477" />
+</color>
+
+</colors>

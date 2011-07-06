@@ -1,0 +1,33 @@
+<colors query="locust">
+
+<color name="black" weight="0.917877628742">
+ <shade name="light" weight="0.450598195302" />
+ <shade name="fresh" weight="0.278442738625" />
+ <shade name="dark" weight="0.27095771877" />
+</color>
+
+<color name="red" weight="0.0433123506063">
+ <shade name="light" weight="0.450598195302" />
+ <shade name="fresh" weight="0.278442738625" />
+ <shade name="dark" weight="0.27095771877" />
+</color>
+
+<color name="white" weight="0.031552043488">
+ <shade name="light" weight="0.450598195302" />
+ <shade name="fresh" weight="0.278442738625" />
+ <shade name="dark" weight="0.27095771877" />
+</color>
+
+<color name="pink" weight="0.00367151051497">
+ <shade name="light" weight="0.450598195302" />
+ <shade name="fresh" weight="0.278442738625" />
+ <shade name="dark" weight="0.27095771877" />
+</color>
+
+<color name="purple" weight="0.00358545948727">
+ <shade name="light" weight="0.450598195302" />
+ <shade name="fresh" weight="0.278442738625" />
+ <shade name="dark" weight="0.27095771877" />
+</color>
+
+</colors>

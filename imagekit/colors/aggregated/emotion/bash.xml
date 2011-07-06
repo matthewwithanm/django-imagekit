@@ -1,0 +1,33 @@
+<colors query="bash">
+
+<color name="blue" weight="0.731469359933">
+ <shade name="hard" weight="0.586773461722" />
+ <shade name="dark" weight="0.243091862713" />
+ <shade name="fresh" weight="0.170133257684" />
+</color>
+
+<color name="black" weight="0.126421583017">
+ <shade name="hard" weight="0.586773461722" />
+ <shade name="dark" weight="0.243091862713" />
+ <shade name="fresh" weight="0.170133257684" />
+</color>
+
+<color name="green" weight="0.0545430910007">
+ <shade name="hard" weight="0.586773461722" />
+ <shade name="dark" weight="0.243091862713" />
+ <shade name="fresh" weight="0.170133257684" />
+</color>
+
+<color name="orange" weight="0.0494693150937">
+ <shade name="hard" weight="0.586773461722" />
+ <shade name="dark" weight="0.243091862713" />
+ <shade name="fresh" weight="0.170133257684" />
+</color>
+
+<color name="red" weight="0.0380956007687">
+ <shade name="hard" weight="0.586773461722" />
+ <shade name="dark" weight="0.243091862713" />
+ <shade name="fresh" weight="0.170133257684" />
+</color>
+
+</colors>

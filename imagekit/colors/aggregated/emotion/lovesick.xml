@@ -1,0 +1,33 @@
+<colors query="lovesick">
+
+<color name="blue" weight="0.324999577501">
+ <shade name="weak" weight="0.585364954195" />
+ <shade name="light" weight="0.243902064248" />
+ <shade name="hard" weight="0.170731444974" />
+</color>
+
+<color name="green" weight="0.249999675">
+ <shade name="weak" weight="0.585364954195" />
+ <shade name="light" weight="0.243902064248" />
+ <shade name="hard" weight="0.170731444974" />
+</color>
+
+<color name="black" weight="0.1749997725">
+ <shade name="weak" weight="0.585364954195" />
+ <shade name="light" weight="0.243902064248" />
+ <shade name="hard" weight="0.170731444974" />
+</color>
+
+<color name="white" weight="0.149999805">
+ <shade name="weak" weight="0.585364954195" />
+ <shade name="light" weight="0.243902064248" />
+ <shade name="hard" weight="0.170731444974" />
+</color>
+
+<color name="purple" weight="0.0999998700002">
+ <shade name="weak" weight="0.585364954195" />
+ <shade name="light" weight="0.243902064248" />
+ <shade name="hard" weight="0.170731444974" />
+</color>
+
+</colors>

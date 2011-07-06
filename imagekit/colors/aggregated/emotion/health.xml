@@ -1,0 +1,33 @@
+<colors query="health">
+
+<color name="red" weight="0.313894930629">
+ <shade name="light" weight="0.547481576089" />
+ <shade name="weak" weight="0.301790770029" />
+ <shade name="cool" weight="0.15072640922" />
+</color>
+
+<color name="green" weight="0.276011059691">
+ <shade name="light" weight="0.547481576089" />
+ <shade name="weak" weight="0.301790770029" />
+ <shade name="cool" weight="0.15072640922" />
+</color>
+
+<color name="black" weight="0.188066359299">
+ <shade name="light" weight="0.547481576089" />
+ <shade name="weak" weight="0.301790770029" />
+ <shade name="cool" weight="0.15072640922" />
+</color>
+
+<color name="orange" weight="0.124204976861">
+ <shade name="light" weight="0.547481576089" />
+ <shade name="weak" weight="0.301790770029" />
+ <shade name="cool" weight="0.15072640922" />
+</color>
+
+<color name="blue" weight="0.0978215667433">
+ <shade name="light" weight="0.547481576089" />
+ <shade name="weak" weight="0.301790770029" />
+ <shade name="cool" weight="0.15072640922" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="museum">
+
+<color name="black" weight="0.537844928423">
+ <shade name="light" weight="0.576418589504" />
+ <shade name="cool" weight="0.368995233432" />
+ <shade name="soft" weight="0.054585093703" />
+</color>
+
+<color name="green" weight="0.24222651156">
+ <shade name="light" weight="0.576418589504" />
+ <shade name="cool" weight="0.368995233432" />
+ <shade name="soft" weight="0.054585093703" />
+</color>
+
+<color name="red" weight="0.123272487244">
+ <shade name="light" weight="0.576418589504" />
+ <shade name="cool" weight="0.368995233432" />
+ <shade name="soft" weight="0.054585093703" />
+</color>
+
+<color name="white" weight="0.0895099588908">
+ <shade name="light" weight="0.576418589504" />
+ <shade name="cool" weight="0.368995233432" />
+ <shade name="soft" weight="0.054585093703" />
+</color>
+
+<color name="orange" weight="0.0071450932097">
+ <shade name="light" weight="0.576418589504" />
+ <shade name="cool" weight="0.368995233432" />
+ <shade name="soft" weight="0.054585093703" />
+</color>
+
+</colors>

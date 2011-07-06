@@ -1,0 +1,33 @@
+<colors query="television">
+
+<color name="white" weight="0.803155119485">
+ <shade name="light" weight="0.701485103021" />
+ <shade name="cool" weight="0.213723498677" />
+ <shade name="hard" weight="0.0847900996798" />
+</color>
+
+<color name="black" weight="0.144489180809">
+ <shade name="light" weight="0.701485103021" />
+ <shade name="cool" weight="0.213723498677" />
+ <shade name="hard" weight="0.0847900996798" />
+</color>
+
+<color name="red" weight="0.0452759013435">
+ <shade name="light" weight="0.701485103021" />
+ <shade name="cool" weight="0.213723498677" />
+ <shade name="hard" weight="0.0847900996798" />
+</color>
+
+<color name="green" weight="0.00360632396788">
+ <shade name="light" weight="0.701485103021" />
+ <shade name="cool" weight="0.213723498677" />
+ <shade name="hard" weight="0.0847900996798" />
+</color>
+
+<color name="blue" weight="0.0034724647813">
+ <shade name="light" weight="0.701485103021" />
+ <shade name="cool" weight="0.213723498677" />
+ <shade name="hard" weight="0.0847900996798" />
+</color>
+
+</colors>

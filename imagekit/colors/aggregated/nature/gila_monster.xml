@@ -1,0 +1,33 @@
+<colors query="gila monster">
+
+<color name="black" weight="0.697142088295">
+ <shade name="cool" weight="0.899999100001" />
+ <shade name="fresh" weight="0.04999995" />
+ <shade name="dark" weight="0.04999995" />
+</color>
+
+<color name="green" weight="0.148571264719">
+ <shade name="cool" weight="0.899999100001" />
+ <shade name="fresh" weight="0.04999995" />
+ <shade name="dark" weight="0.04999995" />
+</color>
+
+<color name="white" weight="0.0571427941225">
+ <shade name="cool" weight="0.899999100001" />
+ <shade name="fresh" weight="0.04999995" />
+ <shade name="dark" weight="0.04999995" />
+</color>
+
+<color name="purple" weight="0.0514285147103">
+ <shade name="cool" weight="0.899999100001" />
+ <shade name="fresh" weight="0.04999995" />
+ <shade name="dark" weight="0.04999995" />
+</color>
+
+<color name="blue" weight="0.045714235298">
+ <shade name="cool" weight="0.899999100001" />
+ <shade name="fresh" weight="0.04999995" />
+ <shade name="dark" weight="0.04999995" />
+</color>
+
+</colors>

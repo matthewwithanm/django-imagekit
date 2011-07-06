@@ -1,0 +1,33 @@
+<colors query="adored">
+
+<color name="red" weight="0.396116081818">
+ <shade name="light" weight="0.646550927097" />
+ <shade name="hard" weight="0.181034259587" />
+ <shade name="dark" weight="0.172413580559" />
+</color>
+
+<color name="white" weight="0.271844369875">
+ <shade name="light" weight="0.646550927097" />
+ <shade name="hard" weight="0.181034259587" />
+ <shade name="dark" weight="0.172413580559" />
+</color>
+
+<color name="black" weight="0.137863930437">
+ <shade name="light" weight="0.646550927097" />
+ <shade name="hard" weight="0.181034259587" />
+ <shade name="dark" weight="0.172413580559" />
+</color>
+
+<color name="pink" weight="0.133980439438">
+ <shade name="light" weight="0.646550927097" />
+ <shade name="hard" weight="0.181034259587" />
+ <shade name="dark" weight="0.172413580559" />
+</color>
+
+<color name="green" weight="0.0601941104723">
+ <shade name="light" weight="0.646550927097" />
+ <shade name="hard" weight="0.181034259587" />
+ <shade name="dark" weight="0.172413580559" />
+</color>
+
+</colors>

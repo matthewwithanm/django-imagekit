@@ -1,0 +1,33 @@
+<colors query="communications">
+
+<color name="orange" weight="0.401891991846">
+ <shade name="light" weight="0.575977919722" />
+ <shade name="soft" weight="0.276826597076" />
+ <shade name="warm" weight="0.147194357262" />
+</color>
+
+<color name="green" weight="0.271912053963">
+ <shade name="light" weight="0.653273980056" />
+ <shade name="soft" weight="0.313976641577" />
+ <shade name="fresh" weight="0.0327481013258" />
+</color>
+
+<color name="white" weight="0.174800606119">
+ <shade name="light" weight="0.575977919722" />
+ <shade name="soft" weight="0.276826597076" />
+ <shade name="warm" weight="0.147194357262" />
+</color>
+
+<color name="red" weight="0.0791831805497">
+ <shade name="light" weight="0.575977919722" />
+ <shade name="soft" weight="0.276826597076" />
+ <shade name="warm" weight="0.147194357262" />
+</color>
+
+<color name="cyan" weight="0.0722110766019">
+ <shade name="light" weight="0.653273980056" />
+ <shade name="soft" weight="0.313976641577" />
+ <shade name="fresh" weight="0.0327481013258" />
+</color>
+
+</colors>

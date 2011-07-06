@@ -1,0 +1,33 @@
+<colors query="shallot">
+
+<color name="orange" weight="0.450056197619">
+ <shade name="fresh" weight="0.80206071275" />
+ <shade name="warm" weight="0.170719750103" />
+ <shade name="light" weight="0.0272185261957" />
+</color>
+
+<color name="red" weight="0.236360449109">
+ <shade name="fresh" weight="0.80206071275" />
+ <shade name="warm" weight="0.170719750103" />
+ <shade name="light" weight="0.0272185261957" />
+</color>
+
+<color name="green" weight="0.212076841324">
+ <shade name="fresh" weight="0.957875358226" />
+ <shade name="light" weight="0.0325062119559" />
+ <shade name="soft" weight="0.00961722247215" />
+</color>
+
+<color name="white" weight="0.084668845811">
+ <shade name="fresh" weight="0.80206071275" />
+ <shade name="warm" weight="0.170719750103" />
+ <shade name="light" weight="0.0272185261957" />
+</color>
+
+<color name="yellow" weight="0.0168366347311">
+ <shade name="fresh" weight="0.80206071275" />
+ <shade name="warm" weight="0.170719750103" />
+ <shade name="light" weight="0.0272185261957" />
+</color>
+
+</colors>

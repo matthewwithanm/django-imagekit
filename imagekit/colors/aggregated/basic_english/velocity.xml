@@ -1,0 +1,33 @@
+<colors query="velocity">
+
+<color name="blue" weight="0.639075870948">
+ <shade name="light" weight="0.891950158441" />
+ <shade name="weak" weight="0.0560806985846" />
+ <shade name="neutral" weight="0.0519681140217" />
+</color>
+
+<color name="white" weight="0.105011145314">
+ <shade name="light" weight="0.891950158441" />
+ <shade name="weak" weight="0.0560806985846" />
+ <shade name="neutral" weight="0.0519681140217" />
+</color>
+
+<color name="black" weight="0.0990989896801">
+ <shade name="light" weight="0.891950158441" />
+ <shade name="weak" weight="0.0560806985846" />
+ <shade name="neutral" weight="0.0519681140217" />
+</color>
+
+<color name="orange" weight="0.0844593662046">
+ <shade name="light" weight="0.891950158441" />
+ <shade name="weak" weight="0.0560806985846" />
+ <shade name="neutral" weight="0.0519681140217" />
+</color>
+
+<color name="green" weight="0.0723535237153">
+ <shade name="light" weight="0.891950158441" />
+ <shade name="weak" weight="0.0560806985846" />
+ <shade name="neutral" weight="0.0519681140217" />
+</color>
+
+</colors>

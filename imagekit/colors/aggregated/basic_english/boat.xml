@@ -1,0 +1,33 @@
+<colors query="boat">
+
+<color name="red" weight="0.399724832448">
+ <shade name="light" weight="0.594068785414" />
+ <shade name="cool" weight="0.220858619018" />
+ <shade name="hard" weight="0.185071342788" />
+</color>
+
+<color name="blue" weight="0.215659102042">
+ <shade name="light" weight="0.594068785414" />
+ <shade name="cool" weight="0.220858619018" />
+ <shade name="hard" weight="0.185071342788" />
+</color>
+
+<color name="green" weight="0.144230609646">
+ <shade name="light" weight="0.594068785414" />
+ <shade name="cool" weight="0.220858619018" />
+ <shade name="hard" weight="0.185071342788" />
+</color>
+
+<color name="black" weight="0.13104381105">
+ <shade name="light" weight="0.594068785414" />
+ <shade name="cool" weight="0.220858619018" />
+ <shade name="hard" weight="0.185071342788" />
+</color>
+
+<color name="white" weight="0.10934053836">
+ <shade name="light" weight="0.594068785414" />
+ <shade name="cool" weight="0.220858619018" />
+ <shade name="hard" weight="0.185071342788" />
+</color>
+
+</colors>

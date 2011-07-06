@@ -1,0 +1,33 @@
+<colors query="desire">
+
+<color name="blue" weight="0.470396387356">
+ <shade name="intense" weight="0.700744752877" />
+ <shade name="dark" weight="0.201421800948" />
+ <shade name="hard" weight="0.0978334461747" />
+</color>
+
+<color name="black" weight="0.225790265931">
+ <shade name="intense" weight="0.700744752877" />
+ <shade name="dark" weight="0.201421800948" />
+ <shade name="hard" weight="0.0978334461747" />
+</color>
+
+<color name="white" weight="0.170597089814">
+ <shade name="dark" weight="0.613275613276" />
+ <shade name="hard" weight="0.297876726448" />
+ <shade name="warm" weight="0.0888476602762" />
+</color>
+
+<color name="green" weight="0.0733818364275">
+ <shade name="intense" weight="0.700744752877" />
+ <shade name="dark" weight="0.201421800948" />
+ <shade name="hard" weight="0.0978334461747" />
+</color>
+
+<color name="red" weight="0.0598344204717">
+ <shade name="intense" weight="0.700744752877" />
+ <shade name="dark" weight="0.201421800948" />
+ <shade name="hard" weight="0.0978334461747" />
+</color>
+
+</colors>

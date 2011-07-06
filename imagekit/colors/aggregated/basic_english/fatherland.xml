@@ -1,0 +1,33 @@
+<colors query="fatherland">
+
+<color name="red" weight="0.958903147402">
+ <shade name="bright" weight="0.737703998926" />
+ <shade name="weak" weight="0.147540799785" />
+ <shade name="light" weight="0.114753955389" />
+</color>
+
+<color name="white" weight="0.025684905734">
+ <shade name="bright" weight="0.737703998926" />
+ <shade name="weak" weight="0.147540799785" />
+ <shade name="light" weight="0.114753955389" />
+</color>
+
+<color name="blue" weight="0.00770547172019">
+ <shade name="bright" weight="0.737703998926" />
+ <shade name="weak" weight="0.147540799785" />
+ <shade name="light" weight="0.114753955389" />
+</color>
+
+<color name="green" weight="0.00428081762233">
+ <shade name="bright" weight="0.737703998926" />
+ <shade name="weak" weight="0.147540799785" />
+ <shade name="light" weight="0.114753955389" />
+</color>
+
+<color name="black" weight="0.00342465409786">
+ <shade name="bright" weight="0.737703998926" />
+ <shade name="weak" weight="0.147540799785" />
+ <shade name="light" weight="0.114753955389" />
+</color>
+
+</colors>

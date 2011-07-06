@@ -1,0 +1,33 @@
+<colors query="acquiescent">
+
+<color name="pink" weight="0.4999995">
+ <shade name="weak" weight="0.470587515572" />
+ <shade name="soft" weight="0.352940636679" />
+ <shade name="dark" weight="0.17647031834" />
+</color>
+
+<color name="black" weight="0.333333">
+ <shade name="weak" weight="0.470587515572" />
+ <shade name="soft" weight="0.352940636679" />
+ <shade name="dark" weight="0.17647031834" />
+</color>
+
+<color name="yellow" weight="0.1666665">
+ <shade name="weak" weight="0.470587515572" />
+ <shade name="soft" weight="0.352940636679" />
+ <shade name="dark" weight="0.17647031834" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="weak" weight="0.470587515572" />
+ <shade name="soft" weight="0.352940636679" />
+ <shade name="dark" weight="0.17647031834" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="weak" weight="0.470587515572" />
+ <shade name="soft" weight="0.352940636679" />
+ <shade name="dark" weight="0.17647031834" />
+</color>
+
+</colors>

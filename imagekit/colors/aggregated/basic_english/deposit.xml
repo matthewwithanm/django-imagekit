@@ -1,0 +1,33 @@
+<colors query="deposit">
+
+<color name="white" weight="0.561967585232">
+ <shade name="light" weight="0.497208978014" />
+ <shade name="hard" weight="0.470149986013" />
+ <shade name="soft" weight="0.0326399091009" />
+</color>
+
+<color name="black" weight="0.391142211312">
+ <shade name="light" weight="0.497208978014" />
+ <shade name="hard" weight="0.470149986013" />
+ <shade name="soft" weight="0.0326399091009" />
+</color>
+
+<color name="blue" weight="0.0178807868028">
+ <shade name="light" weight="0.497208978014" />
+ <shade name="hard" weight="0.470149986013" />
+ <shade name="soft" weight="0.0326399091009" />
+</color>
+
+<color name="pink" weight="0.0174018371563">
+ <shade name="light" weight="0.497208978014" />
+ <shade name="hard" weight="0.470149986013" />
+ <shade name="soft" weight="0.0326399091009" />
+</color>
+
+<color name="red" weight="0.0116065464336">
+ <shade name="light" weight="0.497208978014" />
+ <shade name="hard" weight="0.470149986013" />
+ <shade name="soft" weight="0.0326399091009" />
+</color>
+
+</colors>

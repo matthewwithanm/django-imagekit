@@ -1,0 +1,33 @@
+<colors query="primate">
+
+<color name="purple" weight="0.624675275453">
+ <shade name="dark" weight="0.573528734013" />
+ <shade name="cool" weight="0.346638245832" />
+ <shade name="fresh" weight="0.079831838434" />
+</color>
+
+<color name="green" weight="0.146707969256">
+ <shade name="dark" weight="0.573528734013" />
+ <shade name="cool" weight="0.346638245832" />
+ <shade name="fresh" weight="0.079831838434" />
+</color>
+
+<color name="orange" weight="0.0816484281194">
+ <shade name="dark" weight="0.573528734013" />
+ <shade name="cool" weight="0.346638245832" />
+ <shade name="fresh" weight="0.079831838434" />
+</color>
+
+<color name="black" weight="0.078278810451">
+ <shade name="dark" weight="0.573528734013" />
+ <shade name="cool" weight="0.346638245832" />
+ <shade name="fresh" weight="0.079831838434" />
+</color>
+
+<color name="pink" weight="0.068688360164">
+ <shade name="dark" weight="0.573528734013" />
+ <shade name="cool" weight="0.346638245832" />
+ <shade name="fresh" weight="0.079831838434" />
+</color>
+
+</colors>

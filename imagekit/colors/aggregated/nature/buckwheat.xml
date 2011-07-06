@@ -1,0 +1,33 @@
+<colors query="buckwheat">
+
+<color name="white" weight="0.270880069692">
+ <shade name="light" weight="0.461464645054" />
+ <shade name="dark" weight="0.298762677416" />
+ <shade name="warm" weight="0.239771320729" />
+</color>
+
+<color name="green" weight="0.25351596266">
+ <shade name="light" weight="0.490393630636" />
+ <shade name="dark" weight="0.317491958803" />
+ <shade name="fresh" weight="0.192112968703" />
+</color>
+
+<color name="black" weight="0.248306730551">
+ <shade name="light" weight="0.461464645054" />
+ <shade name="dark" weight="0.298762677416" />
+ <shade name="warm" weight="0.239771320729" />
+</color>
+
+<color name="red" weight="0.136308240198">
+ <shade name="light" weight="0.461464645054" />
+ <shade name="dark" weight="0.298762677416" />
+ <shade name="warm" weight="0.239771320729" />
+</color>
+
+<color name="yellow" weight="0.0909879208453">
+ <shade name="light" weight="0.461464645054" />
+ <shade name="dark" weight="0.298762677416" />
+ <shade name="warm" weight="0.239771320729" />
+</color>
+
+</colors>

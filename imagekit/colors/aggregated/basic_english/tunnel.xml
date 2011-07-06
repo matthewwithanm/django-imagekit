@@ -1,0 +1,33 @@
+<colors query="tunnel">
+
+<color name="black" weight="0.38903701558">
+ <shade name="dark" weight="0.797100621278" />
+ <shade name="light" weight="0.165721314938" />
+ <shade name="soft" weight="0.037177025024" />
+</color>
+
+<color name="green" weight="0.356951488522">
+ <shade name="dark" weight="0.797100621278" />
+ <shade name="light" weight="0.165721314938" />
+ <shade name="soft" weight="0.037177025024" />
+</color>
+
+<color name="blue" weight="0.157753841369">
+ <shade name="dark" weight="0.797100621278" />
+ <shade name="light" weight="0.165721314938" />
+ <shade name="soft" weight="0.037177025024" />
+</color>
+
+<color name="pink" weight="0.0556149135675">
+ <shade name="dark" weight="0.797100621278" />
+ <shade name="light" weight="0.165721314938" />
+ <shade name="soft" weight="0.037177025024" />
+</color>
+
+<color name="yellow" weight="0.040641667607">
+ <shade name="dark" weight="0.797100621278" />
+ <shade name="light" weight="0.165721314938" />
+ <shade name="soft" weight="0.037177025024" />
+</color>
+
+</colors>

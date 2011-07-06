@@ -1,0 +1,33 @@
+<colors query="hawthorn">
+
+<color name="black" weight="0.566808284328">
+ <shade name="fresh" weight="0.639784251073" />
+ <shade name="light" weight="0.318279224063" />
+ <shade name="dark" weight="0.0419354383056" />
+</color>
+
+<color name="white" weight="0.319202560122">
+ <shade name="fresh" weight="0.639784251073" />
+ <shade name="light" weight="0.318279224063" />
+ <shade name="dark" weight="0.0419354383056" />
+</color>
+
+<color name="pink" weight="0.0695085948676">
+ <shade name="fresh" weight="0.639784251073" />
+ <shade name="light" weight="0.318279224063" />
+ <shade name="dark" weight="0.0419354383056" />
+</color>
+
+<color name="green" weight="0.0277736059321">
+ <shade name="fresh" weight="0.639784251073" />
+ <shade name="light" weight="0.318279224063" />
+ <shade name="dark" weight="0.0419354383056" />
+</color>
+
+<color name="red" weight="0.0167059283802">
+ <shade name="fresh" weight="0.639784251073" />
+ <shade name="light" weight="0.318279224063" />
+ <shade name="dark" weight="0.0419354383056" />
+</color>
+
+</colors>

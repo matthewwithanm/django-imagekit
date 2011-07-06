@@ -1,0 +1,33 @@
+<colors query="june">
+
+<color name="green" weight="0.453545959075">
+ <shade name="light" weight="0.634907025658" />
+ <shade name="cool" weight="0.21056815605" />
+ <shade name="bright" weight="0.154523399687" />
+</color>
+
+<color name="white" weight="0.222776979898">
+ <shade name="light" weight="0.553383823791" />
+ <shade name="warm" weight="0.26308411295" />
+ <shade name="cool" weight="0.183530826806" />
+</color>
+
+<color name="black" weight="0.122377488957">
+ <shade name="light" weight="0.553383823791" />
+ <shade name="warm" weight="0.26308411295" />
+ <shade name="cool" weight="0.183530826806" />
+</color>
+
+<color name="red" weight="0.108890990174">
+ <shade name="light" weight="0.553383823791" />
+ <shade name="warm" weight="0.26308411295" />
+ <shade name="cool" weight="0.183530826806" />
+</color>
+
+<color name="blue" weight="0.0924074916617">
+ <shade name="light" weight="0.634907025658" />
+ <shade name="cool" weight="0.21056815605" />
+ <shade name="bright" weight="0.154523399687" />
+</color>
+
+</colors>

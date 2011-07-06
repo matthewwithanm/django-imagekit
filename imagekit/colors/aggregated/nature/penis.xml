@@ -1,0 +1,33 @@
+<colors query="penis">
+
+<color name="black" weight="0.816525494819">
+ <shade name="hard" weight="0.821482973481" />
+ <shade name="soft" weight="0.156929034396" />
+ <shade name="weak" weight="0.0215869516798" />
+</color>
+
+<color name="white" weight="0.0975131166474">
+ <shade name="hard" weight="0.821482973481" />
+ <shade name="soft" weight="0.156929034396" />
+ <shade name="weak" weight="0.0215869516798" />
+</color>
+
+<color name="red" weight="0.0358331332259">
+ <shade name="hard" weight="0.821482973481" />
+ <shade name="soft" weight="0.156929034396" />
+ <shade name="weak" weight="0.0215869516798" />
+</color>
+
+<color name="pink" weight="0.0281965638498">
+ <shade name="hard" weight="0.821482973481" />
+ <shade name="soft" weight="0.156929034396" />
+ <shade name="weak" weight="0.0215869516798" />
+</color>
+
+<color name="purple" weight="0.0219306607721">
+ <shade name="hard" weight="0.821482973481" />
+ <shade name="soft" weight="0.156929034396" />
+ <shade name="weak" weight="0.0215869516798" />
+</color>
+
+</colors>

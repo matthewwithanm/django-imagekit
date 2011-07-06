@@ -1,0 +1,33 @@
+<colors query="mouse">
+
+<color name="blue" weight="0.437800598855">
+ <shade name="cool" weight="0.477351246492" />
+ <shade name="light" weight="0.279616332343" />
+ <shade name="fresh" weight="0.243031017831" />
+</color>
+
+<color name="white" weight="0.277698761733">
+ <shade name="cool" weight="0.477351246492" />
+ <shade name="light" weight="0.279616332343" />
+ <shade name="fresh" weight="0.243031017831" />
+</color>
+
+<color name="black" weight="0.143099872118">
+ <shade name="cool" weight="0.477351246492" />
+ <shade name="light" weight="0.279616332343" />
+ <shade name="fresh" weight="0.243031017831" />
+</color>
+
+<color name="red" weight="0.0874184367292">
+ <shade name="cool" weight="0.477351246492" />
+ <shade name="light" weight="0.279616332343" />
+ <shade name="fresh" weight="0.243031017831" />
+</color>
+
+<color name="green" weight="0.0539812388879">
+ <shade name="cool" weight="0.477351246492" />
+ <shade name="light" weight="0.279616332343" />
+ <shade name="fresh" weight="0.243031017831" />
+</color>
+
+</colors>

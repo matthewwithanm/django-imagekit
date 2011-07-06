@@ -1,0 +1,33 @@
+<colors query="uproot">
+
+<color name="green" weight="0.363635933885">
+ <shade name="cool" weight="0.499999250001" />
+ <shade name="hard" weight="0.249999625001" />
+ <shade name="fresh" weight="0.249999625001" />
+</color>
+
+<color name="pink" weight="0.181817966942">
+ <shade name="cool" weight="0.499999250001" />
+ <shade name="warm" weight="0.249999625001" />
+ <shade name="hard" weight="0.249999625001" />
+</color>
+
+<color name="blue" weight="0.181817966942">
+ <shade name="cool" weight="0.499999250001" />
+ <shade name="hard" weight="0.249999625001" />
+ <shade name="fresh" weight="0.249999625001" />
+</color>
+
+<color name="black" weight="0.181817966942">
+ <shade name="cool" weight="0.499999250001" />
+ <shade name="warm" weight="0.249999625001" />
+ <shade name="hard" weight="0.249999625001" />
+</color>
+
+<color name="white" weight="0.0909089834712">
+ <shade name="cool" weight="0.499999250001" />
+ <shade name="warm" weight="0.249999625001" />
+ <shade name="hard" weight="0.249999625001" />
+</color>
+
+</colors>

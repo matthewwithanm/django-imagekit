@@ -1,0 +1,33 @@
+<colors query="tissue">
+
+<color name="white" weight="0.354828334073">
+ <shade name="soft" weight="0.716281593112" />
+ <shade name="hard" weight="0.153738488278" />
+ <shade name="fresh" weight="0.129978903726" />
+</color>
+
+<color name="green" weight="0.342486478975">
+ <shade name="soft" weight="0.716281593112" />
+ <shade name="hard" weight="0.153738488278" />
+ <shade name="fresh" weight="0.129978903726" />
+</color>
+
+<color name="red" weight="0.109225417619">
+ <shade name="soft" weight="0.716281593112" />
+ <shade name="hard" weight="0.153738488278" />
+ <shade name="fresh" weight="0.129978903726" />
+</color>
+
+<color name="pink" weight="0.109225417619">
+ <shade name="soft" weight="0.716281593112" />
+ <shade name="hard" weight="0.153738488278" />
+ <shade name="fresh" weight="0.129978903726" />
+</color>
+
+<color name="blue" weight="0.0842331610452">
+ <shade name="soft" weight="0.716281593112" />
+ <shade name="hard" weight="0.153738488278" />
+ <shade name="fresh" weight="0.129978903726" />
+</color>
+
+</colors>

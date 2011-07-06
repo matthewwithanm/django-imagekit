@@ -1,0 +1,33 @@
+<colors query="gas">
+
+<color name="green" weight="0.417078345417">
+ <shade name="neutral" weight="0.509053659864" />
+ <shade name="light" weight="0.314888923987" />
+ <shade name="fresh" weight="0.17605610766" />
+</color>
+
+<color name="red" weight="0.217606093261">
+ <shade name="neutral" weight="0.509053659864" />
+ <shade name="light" weight="0.314888923987" />
+ <shade name="fresh" weight="0.17605610766" />
+</color>
+
+<color name="white" weight="0.202769314175">
+ <shade name="neutral" weight="0.509053659864" />
+ <shade name="light" weight="0.314888923987" />
+ <shade name="fresh" weight="0.17605610766" />
+</color>
+
+<color name="black" weight="0.0867127311025">
+ <shade name="neutral" weight="0.509053659864" />
+ <shade name="light" weight="0.314888923987" />
+ <shade name="fresh" weight="0.17605610766" />
+</color>
+
+<color name="yellow" weight="0.0758324264395">
+ <shade name="neutral" weight="0.509053659864" />
+ <shade name="light" weight="0.314888923987" />
+ <shade name="fresh" weight="0.17605610766" />
+</color>
+
+</colors>

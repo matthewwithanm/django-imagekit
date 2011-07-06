@@ -1,0 +1,33 @@
+<colors query="pump">
+
+<color name="black" weight="0.322079919125">
+ <shade name="light" weight="0.401129403527" />
+ <shade name="intense" weight="0.363464670801" />
+ <shade name="weak" weight="0.235404579534" />
+</color>
+
+<color name="red" weight="0.249087302893">
+ <shade name="light" weight="0.401129403527" />
+ <shade name="intense" weight="0.363464670801" />
+ <shade name="weak" weight="0.235404579534" />
+</color>
+
+<color name="green" weight="0.152372086385">
+ <shade name="light" weight="0.401129403527" />
+ <shade name="intense" weight="0.363464670801" />
+ <shade name="weak" weight="0.235404579534" />
+</color>
+
+<color name="blue" weight="0.151459678682">
+ <shade name="light" weight="0.401129403527" />
+ <shade name="intense" weight="0.363464670801" />
+ <shade name="weak" weight="0.235404579534" />
+</color>
+
+<color name="white" weight="0.124999855298">
+ <shade name="light" weight="0.468131132703" />
+ <shade name="weak" weight="0.274724843136" />
+ <shade name="fresh" weight="0.257142453175" />
+</color>
+
+</colors>

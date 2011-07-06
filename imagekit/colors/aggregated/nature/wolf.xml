@@ -1,0 +1,33 @@
+<colors query="wolf">
+
+<color name="white" weight="0.569704518236">
+ <shade name="dark" weight="0.903164039949" />
+ <shade name="light" weight="0.0760228513627" />
+ <shade name="weak" weight="0.0208120409206" />
+</color>
+
+<color name="black" weight="0.221788710843">
+ <shade name="dark" weight="0.903164039949" />
+ <shade name="light" weight="0.0760228513627" />
+ <shade name="weak" weight="0.0208120409206" />
+</color>
+
+<color name="red" weight="0.135571396051">
+ <shade name="dark" weight="0.903164039949" />
+ <shade name="light" weight="0.0760228513627" />
+ <shade name="weak" weight="0.0208120409206" />
+</color>
+
+<color name="blue" weight="0.0600170000495">
+ <shade name="dark" weight="0.903164039949" />
+ <shade name="light" weight="0.0760228513627" />
+ <shade name="weak" weight="0.0208120409206" />
+</color>
+
+<color name="yellow" weight="0.0129173644777">
+ <shade name="dark" weight="0.903164039949" />
+ <shade name="light" weight="0.0760228513627" />
+ <shade name="weak" weight="0.0208120409206" />
+</color>
+
+</colors>

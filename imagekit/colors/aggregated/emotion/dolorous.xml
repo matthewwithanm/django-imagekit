@@ -1,0 +1,33 @@
+<colors query="dolorous">
+
+<color name="white" weight="0.222221950618">
+ <shade name="dark" weight="0.977776767408" />
+ <shade name="soft" weight="0.0111110996296" />
+ <shade name="light" weight="0.0111110996296" />
+</color>
+
+<color name="orange" weight="0.222221950618">
+ <shade name="dark" weight="0.977776767408" />
+ <shade name="soft" weight="0.0111110996296" />
+ <shade name="light" weight="0.0111110996296" />
+</color>
+
+<color name="green" weight="0.222221950618">
+ <shade name="dark" weight="0.977776767408" />
+ <shade name="soft" weight="0.0111110996296" />
+ <shade name="light" weight="0.0111110996296" />
+</color>
+
+<color name="black" weight="0.222221950618">
+ <shade name="dark" weight="0.977776767408" />
+ <shade name="soft" weight="0.0111110996296" />
+ <shade name="light" weight="0.0111110996296" />
+</color>
+
+<color name="yellow" weight="0.111110975309">
+ <shade name="dark" weight="0.977776767408" />
+ <shade name="soft" weight="0.0111110996296" />
+ <shade name="light" weight="0.0111110996296" />
+</color>
+
+</colors>

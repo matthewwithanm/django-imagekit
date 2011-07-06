@@ -1,0 +1,33 @@
+<colors query="horsepower">
+
+<color name="green" weight="0.517887020853">
+ <shade name="intense" weight="0.438243503728" />
+ <shade name="light" weight="0.360862647382" />
+ <shade name="hard" weight="0.200892607821" />
+</color>
+
+<color name="red" weight="0.197614784273">
+ <shade name="intense" weight="0.438243503728" />
+ <shade name="light" weight="0.360862647382" />
+ <shade name="hard" weight="0.200892607821" />
+</color>
+
+<color name="black" weight="0.190800481367">
+ <shade name="intense" weight="0.438243503728" />
+ <shade name="light" weight="0.360862647382" />
+ <shade name="hard" weight="0.200892607821" />
+</color>
+
+<color name="yellow" weight="0.0519590596579">
+ <shade name="intense" weight="0.438243503728" />
+ <shade name="light" weight="0.360862647382" />
+ <shade name="hard" weight="0.200892607821" />
+</color>
+
+<color name="blue" weight="0.041737605299">
+ <shade name="intense" weight="0.438243503728" />
+ <shade name="light" weight="0.360862647382" />
+ <shade name="hard" weight="0.200892607821" />
+</color>
+
+</colors>

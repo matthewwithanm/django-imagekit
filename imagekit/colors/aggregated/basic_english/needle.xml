@@ -1,0 +1,33 @@
+<colors query="needle">
+
+<color name="white" weight="0.256025732935">
+ <shade name="fresh" weight="0.805859685804" />
+ <shade name="warm" weight="0.107692158012" />
+ <shade name="weak" weight="0.0864467662954" />
+</color>
+
+<color name="green" weight="0.216937834777">
+ <shade name="fresh" weight="0.823352124204" />
+ <shade name="weak" weight="0.0883232278691" />
+ <shade name="dark" weight="0.0883232278691" />
+</color>
+
+<color name="yellow" weight="0.193485095883">
+ <shade name="fresh" weight="0.805859685804" />
+ <shade name="warm" weight="0.107692158012" />
+ <shade name="weak" weight="0.0864467662954" />
+</color>
+
+<color name="red" weight="0.179804331527">
+ <shade name="fresh" weight="0.805859685804" />
+ <shade name="warm" weight="0.107692158012" />
+ <shade name="weak" weight="0.0864467662954" />
+</color>
+
+<color name="black" weight="0.153745732755">
+ <shade name="fresh" weight="0.805859685804" />
+ <shade name="warm" weight="0.107692158012" />
+ <shade name="weak" weight="0.0864467662954" />
+</color>
+
+</colors>

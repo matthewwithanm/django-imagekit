@@ -1,0 +1,33 @@
+<colors query="cheerless">
+
+<color name="blue" weight="0.675372453916">
+ <shade name="dark" weight="0.974183139498" />
+ <shade name="hard" weight="0.023380395348" />
+ <shade name="intense" weight="0.00243545784874" />
+</color>
+
+<color name="black" weight="0.302238501476">
+ <shade name="dark" weight="0.974183139498" />
+ <shade name="hard" weight="0.023380395348" />
+ <shade name="intense" weight="0.00243545784874" />
+</color>
+
+<color name="white" weight="0.0111940185732">
+ <shade name="dark" weight="0.974657887138" />
+ <shade name="hard" weight="0.0233917892913" />
+ <shade name="fresh" weight="0.00194931577428" />
+</color>
+
+<color name="purple" weight="0.00746267904879">
+ <shade name="dark" weight="0.974657887138" />
+ <shade name="hard" weight="0.0233917892913" />
+ <shade name="fresh" weight="0.00194931577428" />
+</color>
+
+<color name="red" weight="0.0037313395244">
+ <shade name="dark" weight="0.974183139498" />
+ <shade name="hard" weight="0.023380395348" />
+ <shade name="intense" weight="0.00243545784874" />
+</color>
+
+</colors>

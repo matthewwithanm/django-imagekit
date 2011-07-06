@@ -1,0 +1,33 @@
+<colors query="antelope">
+
+<color name="white" weight="0.673453524121">
+ <shade name="warm" weight="0.492096048556" />
+ <shade name="light" weight="0.41157124061" />
+ <shade name="fresh" weight="0.0963315295052" />
+</color>
+
+<color name="red" weight="0.116130962033">
+ <shade name="warm" weight="0.492096048556" />
+ <shade name="light" weight="0.41157124061" />
+ <shade name="fresh" weight="0.0963315295052" />
+</color>
+
+<color name="purple" weight="0.0986317759736">
+ <shade name="light" weight="0.725932206514" />
+ <shade name="fresh" weight="0.169910219351" />
+ <shade name="weak" weight="0.1041554905" />
+</color>
+
+<color name="green" weight="0.0678756307775">
+ <shade name="light" weight="0.725932206514" />
+ <shade name="fresh" weight="0.169910219351" />
+ <shade name="weak" weight="0.1041554905" />
+</color>
+
+<color name="black" weight="0.0439070486592">
+ <shade name="warm" weight="0.492096048556" />
+ <shade name="light" weight="0.41157124061" />
+ <shade name="fresh" weight="0.0963315295052" />
+</color>
+
+</colors>

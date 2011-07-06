@@ -1,0 +1,33 @@
+<colors query="budgerigar">
+
+<color name="blue" weight="0.485245410507">
+ <shade name="hard" weight="0.363635801654" />
+ <shade name="bright" weight="0.363635801654" />
+ <shade name="cool" weight="0.27272685124" />
+</color>
+
+<color name="green" weight="0.217704697687">
+ <shade name="hard" weight="0.363635801654" />
+ <shade name="bright" weight="0.363635801654" />
+ <shade name="cool" weight="0.27272685124" />
+</color>
+
+<color name="yellow" weight="0.197376849409">
+ <shade name="hard" weight="0.363635801654" />
+ <shade name="bright" weight="0.363635801654" />
+ <shade name="cool" weight="0.27272685124" />
+</color>
+
+<color name="white" weight="0.0786884449471">
+ <shade name="hard" weight="0.363635801654" />
+ <shade name="bright" weight="0.363635801654" />
+ <shade name="cool" weight="0.27272685124" />
+</color>
+
+<color name="red" weight="0.0209835853192">
+ <shade name="hard" weight="0.363635801654" />
+ <shade name="bright" weight="0.363635801654" />
+ <shade name="cool" weight="0.27272685124" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="watch">
+
+<color name="black" weight="0.654882142521">
+ <shade name="cool" weight="0.461136190714" />
+ <shade name="dark" weight="0.364268588388" />
+ <shade name="light" weight="0.174593702396" />
+</color>
+
+<color name="blue" weight="0.159149228017">
+ <shade name="cool" weight="0.461136190714" />
+ <shade name="dark" weight="0.364268588388" />
+ <shade name="light" weight="0.174593702396" />
+</color>
+
+<color name="pink" weight="0.0880399984775">
+ <shade name="cool" weight="0.461136190714" />
+ <shade name="dark" weight="0.364268588388" />
+ <shade name="light" weight="0.174593702396" />
+</color>
+
+<color name="green" weight="0.051875876026">
+ <shade name="cool" weight="0.461136190714" />
+ <shade name="dark" weight="0.364268588388" />
+ <shade name="light" weight="0.174593702396" />
+</color>
+
+<color name="white" weight="0.0460516915113">
+ <shade name="cool" weight="0.461136190714" />
+ <shade name="dark" weight="0.364268588388" />
+ <shade name="light" weight="0.174593702396" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="wingnut">
+
+<color name="black" weight="0.342541073106">
+ <shade name="cool" weight="0.649571894515" />
+ <shade name="hard" weight="0.290597952809" />
+ <shade name="warm" weight="0.0598289902843" />
+</color>
+
+<color name="yellow" weight="0.207182100669">
+ <shade name="cool" weight="0.649571894515" />
+ <shade name="hard" weight="0.290597952809" />
+ <shade name="warm" weight="0.0598289902843" />
+</color>
+
+<color name="white" weight="0.17955782058">
+ <shade name="cool" weight="0.649571894515" />
+ <shade name="hard" weight="0.290597952809" />
+ <shade name="warm" weight="0.0598289902843" />
+</color>
+
+<color name="red" weight="0.157458396508">
+ <shade name="cool" weight="0.649571894515" />
+ <shade name="hard" weight="0.290597952809" />
+ <shade name="warm" weight="0.0598289902843" />
+</color>
+
+<color name="blue" weight="0.113259548366">
+ <shade name="cool" weight="0.660868783668" />
+ <shade name="hard" weight="0.295651824273" />
+ <shade name="dark" weight="0.0434782094519" />
+</color>
+
+</colors>

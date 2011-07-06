@@ -1,0 +1,33 @@
+<colors query="osprey">
+
+<color name="red" weight="0.518804012219">
+ <shade name="cool" weight="0.900899945216" />
+ <shade name="light" weight="0.0506756219184" />
+ <shade name="dark" weight="0.0484233720554" />
+</color>
+
+<color name="black" weight="0.171255693354">
+ <shade name="cool" weight="0.900899945216" />
+ <shade name="light" weight="0.0506756219184" />
+ <shade name="dark" weight="0.0484233720554" />
+</color>
+
+<color name="white" weight="0.142545180056">
+ <shade name="cool" weight="0.900899945216" />
+ <shade name="light" weight="0.0506756219184" />
+ <shade name="dark" weight="0.0484233720554" />
+</color>
+
+<color name="blue" weight="0.102417620535">
+ <shade name="cool" weight="0.900899945216" />
+ <shade name="light" weight="0.0506756219184" />
+ <shade name="dark" weight="0.0484233720554" />
+</color>
+
+<color name="green" weight="0.0649764248313">
+ <shade name="cool" weight="0.900899945216" />
+ <shade name="light" weight="0.0506756219184" />
+ <shade name="dark" weight="0.0484233720554" />
+</color>
+
+</colors>

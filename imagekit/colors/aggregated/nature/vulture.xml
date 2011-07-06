@@ -1,0 +1,33 @@
+<colors query="vulture">
+
+<color name="black" weight="0.970949660335">
+ <shade name="dark" weight="0.606710674828" />
+ <shade name="cool" weight="0.287247974366" />
+ <shade name="light" weight="0.10604014007" />
+</color>
+
+<color name="blue" weight="0.0147753209181">
+ <shade name="dark" weight="0.606710674828" />
+ <shade name="cool" weight="0.287247974366" />
+ <shade name="light" weight="0.10604014007" />
+</color>
+
+<color name="white" weight="0.00839027152137">
+ <shade name="dark" weight="0.606710674828" />
+ <shade name="cool" weight="0.287247974366" />
+ <shade name="light" weight="0.10604014007" />
+</color>
+
+<color name="yellow" weight="0.00297617178494">
+ <shade name="dark" weight="0.606710674828" />
+ <shade name="cool" weight="0.287247974366" />
+ <shade name="light" weight="0.10604014007" />
+</color>
+
+<color name="red" weight="0.00290757208068">
+ <shade name="dark" weight="0.606710674828" />
+ <shade name="cool" weight="0.287247974366" />
+ <shade name="light" weight="0.10604014007" />
+</color>
+
+</colors>

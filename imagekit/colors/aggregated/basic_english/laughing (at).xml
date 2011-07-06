@@ -1,0 +1,33 @@
+<colors query="laughing (at)">
+
+<color name="red" weight="0.43488699101">
+ <shade name="cool" weight="0.872092101342" />
+ <shade name="hard" weight="0.0877147707727" />
+ <shade name="light" weight="0.0401920707575" />
+</color>
+
+<color name="black" weight="0.225080143221">
+ <shade name="cool" weight="0.872092101342" />
+ <shade name="hard" weight="0.0877147707727" />
+ <shade name="light" weight="0.0401920707575" />
+</color>
+
+<color name="blue" weight="0.139871231859">
+ <shade name="cool" weight="0.872092101342" />
+ <shade name="hard" weight="0.0877147707727" />
+ <shade name="light" weight="0.0401920707575" />
+</color>
+
+<color name="white" weight="0.110932356302">
+ <shade name="cool" weight="0.872092101342" />
+ <shade name="hard" weight="0.0877147707727" />
+ <shade name="light" weight="0.0401920707575" />
+</color>
+
+<color name="pink" weight="0.0892281996342">
+ <shade name="cool" weight="0.872092101342" />
+ <shade name="hard" weight="0.0877147707727" />
+ <shade name="light" weight="0.0401920707575" />
+</color>
+
+</colors>

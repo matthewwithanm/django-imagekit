@@ -1,0 +1,33 @@
+<colors query="jug">
+
+<color name="blue" weight="0.292609025017">
+ <shade name="fresh" weight="0.500951579144" />
+ <shade name="light" weight="0.272380516416" />
+ <shade name="cool" weight="0.226666303871" />
+</color>
+
+<color name="white" weight="0.251885088546">
+ <shade name="fresh" weight="0.500951579144" />
+ <shade name="light" weight="0.272380516416" />
+ <shade name="cool" weight="0.226666303871" />
+</color>
+
+<color name="green" weight="0.199094800527">
+ <shade name="fresh" weight="0.500951579144" />
+ <shade name="light" weight="0.272380516416" />
+ <shade name="cool" weight="0.226666303871" />
+</color>
+
+<color name="black" weight="0.165912333773">
+ <shade name="fresh" weight="0.500951579144" />
+ <shade name="light" weight="0.272380516416" />
+ <shade name="cool" weight="0.226666303871" />
+</color>
+
+<color name="yellow" weight="0.0904976366032">
+ <shade name="fresh" weight="0.500951579144" />
+ <shade name="light" weight="0.272380516416" />
+ <shade name="cool" weight="0.226666303871" />
+</color>
+
+</colors>

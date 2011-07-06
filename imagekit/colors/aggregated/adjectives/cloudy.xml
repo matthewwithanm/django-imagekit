@@ -1,0 +1,33 @@
+<colors query="cloudy">
+
+<color name="white" weight="0.419126724211">
+ <shade name="cool" weight="0.485323685631" />
+ <shade name="dark" weight="0.37474360536" />
+ <shade name="warm" weight="0.139931583058" />
+</color>
+
+<color name="blue" weight="0.347111823144">
+ <shade name="cool" weight="0.504254729235" />
+ <shade name="dark" weight="0.389361246625" />
+ <shade name="light" weight="0.106382854269" />
+</color>
+
+<color name="yellow" weight="0.135099954402">
+ <shade name="cool" weight="0.485323685631" />
+ <shade name="dark" weight="0.37474360536" />
+ <shade name="warm" weight="0.139931583058" />
+</color>
+
+<color name="orange" weight="0.0652455003669">
+ <shade name="cool" weight="0.485323685631" />
+ <shade name="dark" weight="0.37474360536" />
+ <shade name="warm" weight="0.139931583058" />
+</color>
+
+<color name="pink" weight="0.0334149140952">
+ <shade name="cool" weight="0.485323685631" />
+ <shade name="dark" weight="0.37474360536" />
+ <shade name="warm" weight="0.139931583058" />
+</color>
+
+</colors>

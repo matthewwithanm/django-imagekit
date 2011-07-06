@@ -1,0 +1,33 @@
+<colors query="daffodil">
+
+<color name="yellow" weight="0.826593882279">
+ <shade name="bright" weight="0.796361120893" />
+ <shade name="fresh" weight="0.10425897683" />
+ <shade name="light" weight="0.0993787694039" />
+</color>
+
+<color name="red" weight="0.0539082966704">
+ <shade name="bright" weight="0.796361120893" />
+ <shade name="fresh" weight="0.10425897683" />
+ <shade name="light" weight="0.0993787694039" />
+</color>
+
+<color name="orange" weight="0.0470200143181">
+ <shade name="bright" weight="0.796361120893" />
+ <shade name="fresh" weight="0.10425897683" />
+ <shade name="light" weight="0.0993787694039" />
+</color>
+
+<color name="black" weight="0.0371368265952">
+ <shade name="bright" weight="0.796361120893" />
+ <shade name="fresh" weight="0.10425897683" />
+ <shade name="light" weight="0.0993787694039" />
+</color>
+
+<color name="green" weight="0.0353398833728">
+ <shade name="bright" weight="0.796361120893" />
+ <shade name="fresh" weight="0.10425897683" />
+ <shade name="light" weight="0.0993787694039" />
+</color>
+
+</colors>

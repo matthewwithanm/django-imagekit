@@ -1,0 +1,33 @@
+<colors query="sympathy">
+
+<color name="white" weight="0.795565664826">
+ <shade name="warm" weight="0.900329092907" />
+ <shade name="fresh" weight="0.058645289538" />
+ <shade name="soft" weight="0.0410241696768" />
+</color>
+
+<color name="pink" weight="0.0967979276399">
+ <shade name="warm" weight="0.900329092907" />
+ <shade name="fresh" weight="0.058645289538" />
+ <shade name="soft" weight="0.0410241696768" />
+</color>
+
+<color name="green" weight="0.0445812338494">
+ <shade name="intense" weight="0.789776914518" />
+ <shade name="fresh" weight="0.123693002053" />
+ <shade name="soft" weight="0.0865270296053" />
+</color>
+
+<color name="purple" weight="0.0325122810393">
+ <shade name="fresh" weight="0.43736694049" />
+ <shade name="soft" weight="0.305951521751" />
+ <shade name="dark" weight="0.256670739724" />
+</color>
+
+<color name="red" weight="0.0305418397642">
+ <shade name="warm" weight="0.675200588338" />
+ <shade name="intense" weight="0.280817370073" />
+ <shade name="fresh" weight="0.0439809557541" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="jury">
+
+<color name="white" weight="0.815072954153">
+ <shade name="neutral" weight="0.559632157783" />
+ <shade name="fresh" weight="0.298623389112" />
+ <shade name="dark" weight="0.141742898979" />
+</color>
+
+<color name="black" weight="0.178933984466">
+ <shade name="neutral" weight="0.559375563886" />
+ <shade name="fresh" weight="0.298486468926" />
+ <shade name="intense" weight="0.142136413774" />
+</color>
+
+<color name="green" weight="0.00245795437737">
+ <shade name="neutral" weight="0.559375563886" />
+ <shade name="fresh" weight="0.298486468926" />
+ <shade name="intense" weight="0.142136413774" />
+</color>
+
+<color name="red" weight="0.00234333474319">
+ <shade name="neutral" weight="0.559375563886" />
+ <shade name="fresh" weight="0.298486468926" />
+ <shade name="intense" weight="0.142136413774" />
+</color>
+
+<color name="blue" weight="0.00119077064396">
+ <shade name="neutral" weight="0.559375563886" />
+ <shade name="fresh" weight="0.298486468926" />
+ <shade name="intense" weight="0.142136413774" />
+</color>
+
+</colors>

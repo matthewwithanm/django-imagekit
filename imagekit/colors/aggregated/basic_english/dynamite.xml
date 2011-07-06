@@ -1,0 +1,33 @@
+<colors query="dynamite">
+
+<color name="white" weight="0.480724063407">
+ <shade name="dark" weight="0.827966020606" />
+ <shade name="light" weight="0.119135110743" />
+ <shade name="cool" weight="0.0528978290943" />
+</color>
+
+<color name="purple" weight="0.343706093644">
+ <shade name="dark" weight="0.827966020606" />
+ <shade name="light" weight="0.119135110743" />
+ <shade name="cool" weight="0.0528978290943" />
+</color>
+
+<color name="blue" weight="0.0745470649052">
+ <shade name="dark" weight="0.827966020606" />
+ <shade name="light" weight="0.119135110743" />
+ <shade name="cool" weight="0.0528978290943" />
+</color>
+
+<color name="red" weight="0.0510914463525">
+ <shade name="dark" weight="0.827966020606" />
+ <shade name="light" weight="0.119135110743" />
+ <shade name="cool" weight="0.0528978290943" />
+</color>
+
+<color name="pink" weight="0.0499302771172">
+ <shade name="dark" weight="0.827966020606" />
+ <shade name="light" weight="0.119135110743" />
+ <shade name="cool" weight="0.0528978290943" />
+</color>
+
+</colors>

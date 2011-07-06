@@ -1,0 +1,33 @@
+<colors query="pear">
+
+<color name="orange" weight="0.253227800097">
+ <shade name="fresh" weight="0.829893136554" />
+ <shade name="warm" weight="0.141661866052" />
+ <shade name="bright" weight="0.0284439179867" />
+</color>
+
+<color name="yellow" weight="0.23529381992">
+ <shade name="fresh" weight="0.829893136554" />
+ <shade name="warm" weight="0.141661866052" />
+ <shade name="bright" weight="0.0284439179867" />
+</color>
+
+<color name="red" weight="0.182209238597">
+ <shade name="fresh" weight="0.829893136554" />
+ <shade name="warm" weight="0.141661866052" />
+ <shade name="bright" weight="0.0284439179867" />
+</color>
+
+<color name="green" weight="0.166427336041">
+ <shade name="fresh" weight="0.941890224765" />
+ <shade name="bright" weight="0.0322825278649" />
+ <shade name="intense" weight="0.025826022292" />
+</color>
+
+<color name="black" weight="0.162840540006">
+ <shade name="fresh" weight="0.829893136554" />
+ <shade name="warm" weight="0.141661866052" />
+ <shade name="bright" weight="0.0284439179867" />
+</color>
+
+</colors>

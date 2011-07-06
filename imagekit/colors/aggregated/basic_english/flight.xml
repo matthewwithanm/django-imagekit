@@ -1,0 +1,33 @@
+<colors query="flight">
+
+<color name="white" weight="0.652045550137">
+ <shade name="light" weight="0.560326529349" />
+ <shade name="bright" weight="0.24744346734" />
+ <shade name="dark" weight="0.192228809339" />
+</color>
+
+<color name="blue" weight="0.169766814405">
+ <shade name="light" weight="0.560326529349" />
+ <shade name="bright" weight="0.24744346734" />
+ <shade name="dark" weight="0.192228809339" />
+</color>
+
+<color name="black" weight="0.101429307799">
+ <shade name="light" weight="0.560326529349" />
+ <shade name="bright" weight="0.24744346734" />
+ <shade name="dark" weight="0.192228809339" />
+</color>
+
+<color name="green" weight="0.0456236075621">
+ <shade name="light" weight="0.560326529349" />
+ <shade name="bright" weight="0.24744346734" />
+ <shade name="dark" weight="0.192228809339" />
+</color>
+
+<color name="red" weight="0.031133706448">
+ <shade name="light" weight="0.560326529349" />
+ <shade name="bright" weight="0.24744346734" />
+ <shade name="dark" weight="0.192228809339" />
+</color>
+
+</colors>

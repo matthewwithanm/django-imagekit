@@ -1,0 +1,33 @@
+<colors query="acrid">
+
+<color name="black" weight="0.408735917444">
+ <shade name="warm" weight="0.384496431007" />
+ <shade name="intense" weight="0.362422537104" />
+ <shade name="dark" weight="0.253079760329" />
+</color>
+
+<color name="white" weight="0.269890510373">
+ <shade name="warm" weight="0.496025676387" />
+ <shade name="dark" weight="0.326489530653" />
+ <shade name="fresh" weight="0.177483152566" />
+</color>
+
+<color name="yellow" weight="0.146645710839">
+ <shade name="warm" weight="0.384496431007" />
+ <shade name="intense" weight="0.362422537104" />
+ <shade name="dark" weight="0.253079760329" />
+</color>
+
+<color name="green" weight="0.100623918607">
+ <shade name="intense" weight="0.481253447809" />
+ <shade name="dark" weight="0.336059418937" />
+ <shade name="fresh" weight="0.182685444777" />
+</color>
+
+<color name="blue" weight="0.0741028857961">
+ <shade name="intense" weight="0.481253447809" />
+ <shade name="dark" weight="0.336059418937" />
+ <shade name="fresh" weight="0.182685444777" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="birch">
+
+<color name="white" weight="0.601489919812">
+ <shade name="light" weight="0.799219327863" />
+ <shade name="hard" weight="0.103313717992" />
+ <shade name="warm" weight="0.0974657716906" />
+</color>
+
+<color name="yellow" weight="0.258200550944">
+ <shade name="light" weight="0.799219327863" />
+ <shade name="hard" weight="0.103313717992" />
+ <shade name="warm" weight="0.0974657716906" />
+</color>
+
+<color name="black" weight="0.0860668503145">
+ <shade name="light" weight="0.799219327863" />
+ <shade name="hard" weight="0.103313717992" />
+ <shade name="warm" weight="0.0974657716906" />
+</color>
+
+<color name="red" weight="0.0496840454089">
+ <shade name="light" weight="0.799219327863" />
+ <shade name="hard" weight="0.103313717992" />
+ <shade name="warm" weight="0.0974657716906" />
+</color>
+
+<color name="orange" weight="0.00455763093711">
+ <shade name="light" weight="0.799219327863" />
+ <shade name="hard" weight="0.103313717992" />
+ <shade name="warm" weight="0.0974657716906" />
+</color>
+
+</colors>

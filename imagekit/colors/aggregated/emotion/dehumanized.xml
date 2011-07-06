@@ -1,0 +1,33 @@
+<colors query="dehumanized">
+
+<color name="black" weight="0.65217326087">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+ <shade name="cool" weight="0.333332888889" />
+</color>
+
+<color name="purple" weight="0.130434652174">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+ <shade name="cool" weight="0.333332888889" />
+</color>
+
+<color name="blue" weight="0.130434652174">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+ <shade name="cool" weight="0.333332888889" />
+</color>
+
+<color name="white" weight="0.0869564347827">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+ <shade name="cool" weight="0.333332888889" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+ <shade name="cool" weight="0.333332888889" />
+</color>
+
+</colors>

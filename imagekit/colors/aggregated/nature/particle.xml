@@ -1,0 +1,33 @@
+<colors query="particle">
+
+<color name="black" weight="0.490590524403">
+ <shade name="neutral" weight="0.641493329014" />
+ <shade name="light" weight="0.247665146012" />
+ <shade name="hard" weight="0.110840303051" />
+</color>
+
+<color name="red" weight="0.243504785835">
+ <shade name="neutral" weight="0.641493329014" />
+ <shade name="light" weight="0.247665146012" />
+ <shade name="hard" weight="0.110840303051" />
+</color>
+
+<color name="white" weight="0.23097145127">
+ <shade name="neutral" weight="0.641493329014" />
+ <shade name="light" weight="0.247665146012" />
+ <shade name="hard" weight="0.110840303051" />
+</color>
+
+<color name="yellow" weight="0.0207695258507">
+ <shade name="neutral" weight="0.641493329014" />
+ <shade name="light" weight="0.247665146012" />
+ <shade name="hard" weight="0.110840303051" />
+</color>
+
+<color name="orange" weight="0.0141626680585">
+ <shade name="neutral" weight="0.641493329014" />
+ <shade name="light" weight="0.247665146012" />
+ <shade name="hard" weight="0.110840303051" />
+</color>
+
+</colors>

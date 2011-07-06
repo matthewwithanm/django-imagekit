@@ -1,0 +1,33 @@
+<colors query="rat">
+
+<color name="black" weight="0.488737281467">
+ <shade name="fresh" weight="0.87805828283" />
+ <shade name="light" weight="0.0777156719767" />
+ <shade name="dark" weight="0.0442249404066" />
+</color>
+
+<color name="red" weight="0.222056721362">
+ <shade name="fresh" weight="0.87805828283" />
+ <shade name="light" weight="0.0777156719767" />
+ <shade name="dark" weight="0.0442249404066" />
+</color>
+
+<color name="white" weight="0.195494912587">
+ <shade name="fresh" weight="0.87805828283" />
+ <shade name="light" weight="0.0777156719767" />
+ <shade name="dark" weight="0.0442249404066" />
+</color>
+
+<color name="yellow" weight="0.0698044334617">
+ <shade name="fresh" weight="0.87805828283" />
+ <shade name="light" weight="0.0777156719767" />
+ <shade name="dark" weight="0.0442249404066" />
+</color>
+
+<color name="blue" weight="0.0239056278978">
+ <shade name="fresh" weight="0.87805828283" />
+ <shade name="light" weight="0.0777156719767" />
+ <shade name="dark" weight="0.0442249404066" />
+</color>
+
+</colors>

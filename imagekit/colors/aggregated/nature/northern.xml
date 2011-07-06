@@ -1,0 +1,33 @@
+<colors query="northern">
+
+<color name="white" weight="0.446861465028">
+ <shade name="dark" weight="0.384446312234" />
+ <shade name="light" weight="0.355968807624" />
+ <shade name="cool" weight="0.259583407406" />
+</color>
+
+<color name="blue" weight="0.184100229038">
+ <shade name="dark" weight="0.384446312234" />
+ <shade name="light" weight="0.355968807624" />
+ <shade name="cool" weight="0.259583407406" />
+</color>
+
+<color name="green" weight="0.151464279345">
+ <shade name="dark" weight="0.384446312234" />
+ <shade name="light" weight="0.355968807624" />
+ <shade name="cool" weight="0.259583407406" />
+</color>
+
+<color name="black" weight="0.117154691206">
+ <shade name="dark" weight="0.384446312234" />
+ <shade name="light" weight="0.355968807624" />
+ <shade name="cool" weight="0.259583407406" />
+</color>
+
+<color name="red" weight="0.100418306748">
+ <shade name="dark" weight="0.384446312234" />
+ <shade name="light" weight="0.355968807624" />
+ <shade name="cool" weight="0.259583407406" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="potato">
+
+<color name="red" weight="0.435264272329">
+ <shade name="fresh" weight="0.476820692532" />
+ <shade name="warm" weight="0.435613966016" />
+ <shade name="light" weight="0.0875642938445" />
+</color>
+
+<color name="white" weight="0.280010773918">
+ <shade name="fresh" weight="0.476820692532" />
+ <shade name="warm" weight="0.435613966016" />
+ <shade name="light" weight="0.0875642938445" />
+</color>
+
+<color name="blue" weight="0.101746489137">
+ <shade name="fresh" weight="0.819111153876" />
+ <shade name="light" weight="0.150423190295" />
+ <shade name="cool" weight="0.0304638561858" />
+</color>
+
+<color name="purple" weight="0.0970334365064">
+ <shade name="fresh" weight="0.819111153876" />
+ <shade name="light" weight="0.150423190295" />
+ <shade name="cool" weight="0.0304638561858" />
+</color>
+
+<color name="green" weight="0.0859439009057">
+ <shade name="fresh" weight="0.819111153876" />
+ <shade name="light" weight="0.150423190295" />
+ <shade name="cool" weight="0.0304638561858" />
+</color>
+
+</colors>

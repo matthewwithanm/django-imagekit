@@ -1,0 +1,33 @@
+<colors query="terror">
+
+<color name="white" weight="0.356562791859">
+ <shade name="soft" weight="0.409560166211" />
+ <shade name="light" weight="0.315245049071" />
+ <shade name="dark" weight="0.275193423984" />
+</color>
+
+<color name="red" weight="0.34591912643">
+ <shade name="soft" weight="0.409560166211" />
+ <shade name="light" weight="0.315245049071" />
+ <shade name="dark" weight="0.275193423984" />
+</color>
+
+<color name="green" weight="0.151140049087">
+ <shade name="soft" weight="0.409560166211" />
+ <shade name="light" weight="0.315245049071" />
+ <shade name="dark" weight="0.275193423984" />
+</color>
+
+<color name="black" weight="0.121337785886">
+ <shade name="soft" weight="0.409560166211" />
+ <shade name="light" weight="0.315245049071" />
+ <shade name="dark" weight="0.275193423984" />
+</color>
+
+<color name="orange" weight="0.0250392229208">
+ <shade name="soft" weight="0.409560166211" />
+ <shade name="light" weight="0.315245049071" />
+ <shade name="dark" weight="0.275193423984" />
+</color>
+
+</colors>

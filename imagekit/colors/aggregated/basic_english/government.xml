@@ -1,0 +1,33 @@
+<colors query="government">
+
+<color name="green" weight="0.51883823631">
+ <shade name="weak" weight="0.671703697632" />
+ <shade name="fresh" weight="0.191855368636" />
+ <shade name="neutral" weight="0.136439813582" />
+</color>
+
+<color name="white" weight="0.229771218937">
+ <shade name="weak" weight="0.671703697632" />
+ <shade name="fresh" weight="0.191855368636" />
+ <shade name="neutral" weight="0.136439813582" />
+</color>
+
+<color name="black" weight="0.131253720495">
+ <shade name="weak" weight="0.671703697632" />
+ <shade name="fresh" weight="0.191855368636" />
+ <shade name="neutral" weight="0.136439813582" />
+</color>
+
+<color name="orange" weight="0.0818405551323">
+ <shade name="weak" weight="0.671703697632" />
+ <shade name="fresh" weight="0.191855368636" />
+ <shade name="neutral" weight="0.136439813582" />
+</color>
+
+<color name="blue" weight="0.0382952031562">
+ <shade name="weak" weight="0.671703697632" />
+ <shade name="fresh" weight="0.191855368636" />
+ <shade name="neutral" weight="0.136439813582" />
+</color>
+
+</colors>

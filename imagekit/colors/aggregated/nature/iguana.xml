@@ -1,0 +1,33 @@
+<colors query="iguana">
+
+<color name="blue" weight="0.468535398324">
+ <shade name="cool" weight="0.46714611886" />
+ <shade name="dark" weight="0.411340609478" />
+ <shade name="fresh" weight="0.121511996235" />
+</color>
+
+<color name="green" weight="0.45557196833">
+ <shade name="cool" weight="0.46714611886" />
+ <shade name="dark" weight="0.411340609478" />
+ <shade name="fresh" weight="0.121511996235" />
+</color>
+
+<color name="red" weight="0.0492610339739">
+ <shade name="cool" weight="0.46714611886" />
+ <shade name="dark" weight="0.411340609478" />
+ <shade name="fresh" weight="0.121511996235" />
+</color>
+
+<color name="black" weight="0.0218526391313">
+ <shade name="cool" weight="0.46714611886" />
+ <shade name="dark" weight="0.411340609478" />
+ <shade name="fresh" weight="0.121511996235" />
+</color>
+
+<color name="purple" weight="0.00477794991176">
+ <shade name="cool" weight="0.46714611886" />
+ <shade name="dark" weight="0.411340609478" />
+ <shade name="fresh" weight="0.121511996235" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="postman">
+
+<color name="yellow" weight="0.361251335048">
+ <shade name="cool" weight="0.580179397199" />
+ <shade name="soft" weight="0.29729689608" />
+ <shade name="dark" weight="0.122522357173" />
+</color>
+
+<color name="red" weight="0.269212778348">
+ <shade name="cool" weight="0.580179397199" />
+ <shade name="soft" weight="0.29729689608" />
+ <shade name="dark" weight="0.122522357173" />
+</color>
+
+<color name="black" weight="0.192360583503">
+ <shade name="cool" weight="0.580179397199" />
+ <shade name="soft" weight="0.29729689608" />
+ <shade name="dark" weight="0.122522357173" />
+</color>
+
+<color name="green" weight="0.0895074963909">
+ <shade name="cool" weight="0.580179397199" />
+ <shade name="soft" weight="0.29729689608" />
+ <shade name="dark" weight="0.122522357173" />
+</color>
+
+<color name="blue" weight="0.0876667252569">
+ <shade name="cool" weight="0.580179397199" />
+ <shade name="soft" weight="0.29729689608" />
+ <shade name="dark" weight="0.122522357173" />
+</color>
+
+</colors>

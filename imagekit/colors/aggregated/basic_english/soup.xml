@@ -1,0 +1,33 @@
+<colors query="soup">
+
+<color name="green" weight="0.255234577333">
+ <shade name="fresh" weight="0.624680931515" />
+ <shade name="light" weight="0.340966374025" />
+ <shade name="dark" weight="0.0343510899204" />
+</color>
+
+<color name="blue" weight="0.217317245445">
+ <shade name="fresh" weight="0.624680931515" />
+ <shade name="light" weight="0.340966374025" />
+ <shade name="dark" weight="0.0343510899204" />
+</color>
+
+<color name="white" weight="0.215053524139">
+ <shade name="fresh" weight="0.410191714853" />
+ <shade name="warm" weight="0.365914401437" />
+ <shade name="light" weight="0.223892830103" />
+</color>
+
+<color name="orange" weight="0.208828290545">
+ <shade name="fresh" weight="0.410191714853" />
+ <shade name="warm" weight="0.365914401437" />
+ <shade name="light" weight="0.223892830103" />
+</color>
+
+<color name="red" weight="0.103565249783">
+ <shade name="fresh" weight="0.410191714853" />
+ <shade name="warm" weight="0.365914401437" />
+ <shade name="light" weight="0.223892830103" />
+</color>
+
+</colors>

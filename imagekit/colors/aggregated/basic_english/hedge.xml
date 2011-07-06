@@ -1,0 +1,33 @@
+<colors query="hedge">
+
+<color name="green" weight="0.549318096978">
+ <shade name="neutral" weight="0.908584700433" />
+ <shade name="fresh" weight="0.05918304012" />
+ <shade name="light" weight="0.0322311392203" />
+</color>
+
+<color name="white" weight="0.367989793121">
+ <shade name="neutral" weight="0.908584700433" />
+ <shade name="fresh" weight="0.05918304012" />
+ <shade name="light" weight="0.0322311392203" />
+</color>
+
+<color name="red" weight="0.0298658382823">
+ <shade name="neutral" weight="0.908584700433" />
+ <shade name="fresh" weight="0.05918304012" />
+ <shade name="light" weight="0.0322311392203" />
+</color>
+
+<color name="black" weight="0.0290658604712">
+ <shade name="neutral" weight="0.908584700433" />
+ <shade name="fresh" weight="0.05918304012" />
+ <shade name="light" weight="0.0322311392203" />
+</color>
+
+<color name="yellow" weight="0.0237593409906">
+ <shade name="neutral" weight="0.908584700433" />
+ <shade name="fresh" weight="0.05918304012" />
+ <shade name="light" weight="0.0322311392203" />
+</color>
+
+</colors>

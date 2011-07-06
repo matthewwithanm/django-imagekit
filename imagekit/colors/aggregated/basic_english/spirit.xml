@@ -1,0 +1,33 @@
+<colors query="spirit">
+
+<color name="white" weight="0.620091155194">
+ <shade name="warm" weight="0.478468194664" />
+ <shade name="dark" weight="0.296052195448" />
+ <shade name="fresh" weight="0.225478136735" />
+</color>
+
+<color name="blue" weight="0.174400637398">
+ <shade name="dark" weight="0.457485095343" />
+ <shade name="fresh" weight="0.348428042312" />
+ <shade name="light" weight="0.194084585903" />
+</color>
+
+<color name="green" weight="0.0928096959254">
+ <shade name="dark" weight="0.457485095343" />
+ <shade name="fresh" weight="0.348428042312" />
+ <shade name="light" weight="0.194084585903" />
+</color>
+
+<color name="black" weight="0.0657826965625">
+ <shade name="warm" weight="0.478468194664" />
+ <shade name="dark" weight="0.296052195448" />
+ <shade name="fresh" weight="0.225478136735" />
+</color>
+
+<color name="red" weight="0.0469147913469">
+ <shade name="warm" weight="0.478468194664" />
+ <shade name="dark" weight="0.296052195448" />
+ <shade name="fresh" weight="0.225478136735" />
+</color>
+
+</colors>

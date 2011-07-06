@@ -1,0 +1,33 @@
+<colors query="aster">
+
+<color name="purple" weight="0.3305126151">
+ <shade name="cool" weight="0.577572241595" />
+ <shade name="soft" weight="0.265744674989" />
+ <shade name="fresh" weight="0.156681831497" />
+</color>
+
+<color name="blue" weight="0.291512126518">
+ <shade name="cool" weight="0.577572241595" />
+ <shade name="soft" weight="0.265744674989" />
+ <shade name="fresh" weight="0.156681831497" />
+</color>
+
+<color name="white" weight="0.239291133332">
+ <shade name="cool" weight="0.577572241595" />
+ <shade name="soft" weight="0.265744674989" />
+ <shade name="fresh" weight="0.156681831497" />
+</color>
+
+<color name="yellow" weight="0.118984541436">
+ <shade name="cool" weight="0.577572241595" />
+ <shade name="soft" weight="0.265744674989" />
+ <shade name="fresh" weight="0.156681831497" />
+</color>
+
+<color name="pink" weight="0.0196985518599">
+ <shade name="cool" weight="0.577572241595" />
+ <shade name="soft" weight="0.265744674989" />
+ <shade name="fresh" weight="0.156681831497" />
+</color>
+
+</colors>

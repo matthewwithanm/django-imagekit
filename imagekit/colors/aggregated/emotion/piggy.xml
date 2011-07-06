@@ -1,0 +1,33 @@
+<colors query="piggy">
+
+<color name="pink" weight="0.344206358455">
+ <shade name="cool" weight="0.431706563482" />
+ <shade name="bright" weight="0.299999476318" />
+ <shade name="fresh" weight="0.268292214593" />
+</color>
+
+<color name="blue" weight="0.336792683042">
+ <shade name="cool" weight="0.431706563482" />
+ <shade name="bright" weight="0.299999476318" />
+ <shade name="fresh" weight="0.268292214593" />
+</color>
+
+<color name="green" weight="0.145096218795">
+ <shade name="cool" weight="0.431706563482" />
+ <shade name="bright" weight="0.299999476318" />
+ <shade name="fresh" weight="0.268292214593" />
+</color>
+
+<color name="white" weight="0.110146034706">
+ <shade name="cool" weight="0.431706563482" />
+ <shade name="bright" weight="0.299999476318" />
+ <shade name="fresh" weight="0.268292214593" />
+</color>
+
+<color name="red" weight="0.0637576085508">
+ <shade name="cool" weight="0.431706563482" />
+ <shade name="bright" weight="0.299999476318" />
+ <shade name="fresh" weight="0.268292214593" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="rivulet">
+
+<color name="red" weight="0.372143241995">
+ <shade name="cool" weight="0.458660723012" />
+ <shade name="warm" weight="0.277558634956" />
+ <shade name="bright" weight="0.263779128256" />
+</color>
+
+<color name="green" weight="0.275298948025">
+ <shade name="cool" weight="0.49574386973" />
+ <shade name="bright" weight="0.285105916497" />
+ <shade name="fresh" weight="0.219148577606" />
+</color>
+
+<color name="black" weight="0.151251200694">
+ <shade name="cool" weight="0.458660723012" />
+ <shade name="warm" weight="0.277558634956" />
+ <shade name="bright" weight="0.263779128256" />
+</color>
+
+<color name="white" weight="0.101196846507">
+ <shade name="cool" weight="0.458660723012" />
+ <shade name="warm" weight="0.277558634956" />
+ <shade name="bright" weight="0.263779128256" />
+</color>
+
+<color name="blue" weight="0.100108708373">
+ <shade name="cool" weight="0.49574386973" />
+ <shade name="bright" weight="0.285105916497" />
+ <shade name="fresh" weight="0.219148577606" />
+</color>
+
+</colors>

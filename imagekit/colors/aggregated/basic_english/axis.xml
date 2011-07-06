@@ -1,0 +1,33 @@
+<colors query="axis">
+
+<color name="red" weight="0.453697647906">
+ <shade name="neutral" weight="0.622417400091" />
+ <shade name="hard" weight="0.240153970301" />
+ <shade name="light" weight="0.137427558693" />
+</color>
+
+<color name="green" weight="0.279620302637">
+ <shade name="neutral" weight="0.622417400091" />
+ <shade name="hard" weight="0.240153970301" />
+ <shade name="light" weight="0.137427558693" />
+</color>
+
+<color name="blue" weight="0.24261173317">
+ <shade name="neutral" weight="0.622417400091" />
+ <shade name="hard" weight="0.240153970301" />
+ <shade name="light" weight="0.137427558693" />
+</color>
+
+<color name="yellow" weight="0.013487567539">
+ <shade name="neutral" weight="0.622417400091" />
+ <shade name="hard" weight="0.240153970301" />
+ <shade name="light" weight="0.137427558693" />
+</color>
+
+<color name="purple" weight="0.010581709492">
+ <shade name="neutral" weight="0.622417400091" />
+ <shade name="hard" weight="0.240153970301" />
+ <shade name="light" weight="0.137427558693" />
+</color>
+
+</colors>

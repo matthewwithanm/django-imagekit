@@ -1,0 +1,33 @@
+<colors query="tiger">
+
+<color name="white" weight="0.45663692883">
+ <shade name="dark" weight="0.42458052906" />
+ <shade name="cool" weight="0.337057349824" />
+ <shade name="bright" weight="0.238360998771" />
+</color>
+
+<color name="black" weight="0.373938902349">
+ <shade name="dark" weight="0.42458052906" />
+ <shade name="cool" weight="0.337057349824" />
+ <shade name="bright" weight="0.238360998771" />
+</color>
+
+<color name="blue" weight="0.076945120291">
+ <shade name="dark" weight="0.42458052906" />
+ <shade name="cool" weight="0.337057349824" />
+ <shade name="bright" weight="0.238360998771" />
+</color>
+
+<color name="red" weight="0.0600459583579">
+ <shade name="dark" weight="0.42458052906" />
+ <shade name="cool" weight="0.337057349824" />
+ <shade name="bright" weight="0.238360998771" />
+</color>
+
+<color name="pink" weight="0.032432008646">
+ <shade name="dark" weight="0.42458052906" />
+ <shade name="cool" weight="0.337057349824" />
+ <shade name="bright" weight="0.238360998771" />
+</color>
+
+</colors>

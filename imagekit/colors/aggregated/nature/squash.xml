@@ -1,0 +1,33 @@
+<colors query="squash">
+
+<color name="yellow" weight="0.800610290307">
+ <shade name="fresh" weight="0.761812007863" />
+ <shade name="warm" weight="0.166345027033" />
+ <shade name="light" weight="0.0718417652984" />
+</color>
+
+<color name="orange" weight="0.144264559558">
+ <shade name="fresh" weight="0.761812007863" />
+ <shade name="warm" weight="0.166345027033" />
+ <shade name="light" weight="0.0718417652984" />
+</color>
+
+<color name="green" weight="0.0479592637672">
+ <shade name="fresh" weight="0.842665548326" />
+ <shade name="light" weight="0.0794665612029" />
+ <shade name="cool" weight="0.0778665633263" />
+</color>
+
+<color name="blue" weight="0.00527938669695">
+ <shade name="fresh" weight="0.842665548326" />
+ <shade name="light" weight="0.0794665612029" />
+ <shade name="cool" weight="0.0778665633263" />
+</color>
+
+<color name="white" weight="0.00188549524891">
+ <shade name="fresh" weight="0.761812007863" />
+ <shade name="warm" weight="0.166345027033" />
+ <shade name="light" weight="0.0718417652984" />
+</color>
+
+</colors>

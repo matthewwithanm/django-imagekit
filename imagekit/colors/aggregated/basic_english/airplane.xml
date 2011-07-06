@@ -1,0 +1,33 @@
+<colors query="airplane">
+
+<color name="yellow" weight="0.332907986111">
+ <shade name="light" weight="0.976356096124" />
+ <shade name="cool" weight="0.0124251699999" />
+ <shade name="dark" weight="0.0112177083384" />
+</color>
+
+<color name="blue" weight="0.208244570036">
+ <shade name="light" weight="0.976356096124" />
+ <shade name="cool" weight="0.0124251699999" />
+ <shade name="dark" weight="0.0112177083384" />
+</color>
+
+<color name="red" weight="0.201161421395">
+ <shade name="light" weight="0.976356096124" />
+ <shade name="cool" weight="0.0124251699999" />
+ <shade name="dark" weight="0.0112177083384" />
+</color>
+
+<color name="white" weight="0.136563105792">
+ <shade name="light" weight="0.976356096124" />
+ <shade name="cool" weight="0.0124251699999" />
+ <shade name="dark" weight="0.0112177083384" />
+</color>
+
+<color name="orange" weight="0.121121841755">
+ <shade name="light" weight="0.976356096124" />
+ <shade name="cool" weight="0.0124251699999" />
+ <shade name="dark" weight="0.0112177083384" />
+</color>
+
+</colors>

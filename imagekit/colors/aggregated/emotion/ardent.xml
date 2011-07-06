@@ -1,0 +1,33 @@
+<colors query="ardent">
+
+<color name="red" weight="0.768677360214">
+ <shade name="dark" weight="0.376298671424" />
+ <shade name="intense" weight="0.345113698654" />
+ <shade name="warm" weight="0.278585756745" />
+</color>
+
+<color name="orange" weight="0.0926723172594">
+ <shade name="dark" weight="0.376298671424" />
+ <shade name="intense" weight="0.345113698654" />
+ <shade name="warm" weight="0.278585756745" />
+</color>
+
+<color name="black" weight="0.0869251968092">
+ <shade name="dark" weight="0.376298671424" />
+ <shade name="intense" weight="0.345113698654" />
+ <shade name="warm" weight="0.278585756745" />
+</color>
+
+<color name="white" weight="0.0272988221384">
+ <shade name="dark" weight="0.4040170446" />
+ <shade name="warm" weight="0.299106541306" />
+ <shade name="cool" weight="0.296874402938" />
+</color>
+
+<color name="pink" weight="0.0244252619133">
+ <shade name="dark" weight="0.4040170446" />
+ <shade name="warm" weight="0.299106541306" />
+ <shade name="cool" weight="0.296874402938" />
+</color>
+
+</colors>

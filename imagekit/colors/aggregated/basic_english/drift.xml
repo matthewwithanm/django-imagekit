@@ -1,0 +1,33 @@
+<colors query="drift">
+
+<color name="black" weight="0.365921771819">
+ <shade name="neutral" weight="0.885432152456" />
+ <shade name="dark" weight="0.0618850429136" />
+ <shade name="soft" weight="0.0526816262752" />
+</color>
+
+<color name="pink" weight="0.208293931651">
+ <shade name="neutral" weight="0.885432152456" />
+ <shade name="dark" weight="0.0618850429136" />
+ <shade name="soft" weight="0.0526816262752" />
+</color>
+
+<color name="orange" weight="0.149183491588">
+ <shade name="neutral" weight="0.885432152456" />
+ <shade name="dark" weight="0.0618850429136" />
+ <shade name="soft" weight="0.0526816262752" />
+</color>
+
+<color name="blue" weight="0.140363838626">
+ <shade name="neutral" weight="0.885432152456" />
+ <shade name="dark" weight="0.0618850429136" />
+ <shade name="soft" weight="0.0526816262752" />
+</color>
+
+<color name="white" weight="0.136235490431">
+ <shade name="neutral" weight="0.885432152456" />
+ <shade name="dark" weight="0.0618850429136" />
+ <shade name="soft" weight="0.0526816262752" />
+</color>
+
+</colors>

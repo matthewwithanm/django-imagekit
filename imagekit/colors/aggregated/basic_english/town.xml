@@ -1,0 +1,33 @@
+<colors query="town">
+
+<color name="white" weight="0.392198698588">
+ <shade name="cool" weight="0.438052484869" />
+ <shade name="dark" weight="0.319847846095" />
+ <shade name="bright" weight="0.242098270858" />
+</color>
+
+<color name="green" weight="0.260747486424">
+ <shade name="cool" weight="0.438052484869" />
+ <shade name="dark" weight="0.319847846095" />
+ <shade name="bright" weight="0.242098270858" />
+</color>
+
+<color name="black" weight="0.177782377107">
+ <shade name="cool" weight="0.438052484869" />
+ <shade name="dark" weight="0.319847846095" />
+ <shade name="bright" weight="0.242098270858" />
+</color>
+
+<color name="orange" weight="0.122831460547">
+ <shade name="cool" weight="0.438052484869" />
+ <shade name="dark" weight="0.319847846095" />
+ <shade name="bright" weight="0.242098270858" />
+</color>
+
+<color name="blue" weight="0.0464389118383">
+ <shade name="cool" weight="0.438052484869" />
+ <shade name="dark" weight="0.319847846095" />
+ <shade name="bright" weight="0.242098270858" />
+</color>
+
+</colors>

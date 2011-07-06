@@ -1,0 +1,33 @@
+<colors query="citron">
+
+<color name="orange" weight="0.835944800209">
+ <shade name="bright" weight="0.454980200361" />
+ <shade name="soft" weight="0.322796478993" />
+ <shade name="dark" weight="0.222221908387" />
+</color>
+
+<color name="white" weight="0.0517987224415">
+ <shade name="bright" weight="0.454980200361" />
+ <shade name="soft" weight="0.322796478993" />
+ <shade name="dark" weight="0.222221908387" />
+</color>
+
+<color name="black" weight="0.0479175501548">
+ <shade name="bright" weight="0.454980200361" />
+ <shade name="soft" weight="0.322796478993" />
+ <shade name="dark" weight="0.222221908387" />
+</color>
+
+<color name="yellow" weight="0.036423309152">
+ <shade name="bright" weight="0.454980200361" />
+ <shade name="soft" weight="0.322796478993" />
+ <shade name="dark" weight="0.222221908387" />
+</color>
+
+<color name="blue" weight="0.0279145852927">
+ <shade name="bright" weight="0.454980200361" />
+ <shade name="soft" weight="0.322796478993" />
+ <shade name="dark" weight="0.222221908387" />
+</color>
+
+</colors>

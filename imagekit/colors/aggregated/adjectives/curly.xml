@@ -1,0 +1,33 @@
+<colors query="curly">
+
+<color name="black" weight="0.517586587278">
+ <shade name="dark" weight="0.751753564193" />
+ <shade name="soft" weight="0.198245397325" />
+ <shade name="hard" weight="0.049999945343" />
+</color>
+
+<color name="red" weight="0.222751923949">
+ <shade name="dark" weight="0.751753564193" />
+ <shade name="soft" weight="0.198245397325" />
+ <shade name="hard" weight="0.049999945343" />
+</color>
+
+<color name="white" weight="0.127906214238">
+ <shade name="dark" weight="0.751753564193" />
+ <shade name="soft" weight="0.198245397325" />
+ <shade name="hard" weight="0.049999945343" />
+</color>
+
+<color name="green" weight="0.113272876169">
+ <shade name="dark" weight="0.751753564193" />
+ <shade name="soft" weight="0.198245397325" />
+ <shade name="hard" weight="0.049999945343" />
+</color>
+
+<color name="purple" weight="0.0184813640065">
+ <shade name="dark" weight="0.751753564193" />
+ <shade name="soft" weight="0.198245397325" />
+ <shade name="hard" weight="0.049999945343" />
+</color>
+
+</colors>

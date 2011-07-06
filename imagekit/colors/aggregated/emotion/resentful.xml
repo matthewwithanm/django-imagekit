@@ -1,0 +1,33 @@
+<colors query="resentful">
+
+<color name="red" weight="0.71232798649">
+ <shade name="dark" weight="0.456988721529" />
+ <shade name="hard" weight="0.413978018326" />
+ <shade name="weak" weight="0.129032109608" />
+</color>
+
+<color name="black" weight="0.109588920998">
+ <shade name="dark" weight="0.456988721529" />
+ <shade name="hard" weight="0.413978018326" />
+ <shade name="weak" weight="0.129032109608" />
+</color>
+
+<color name="white" weight="0.0821916907488">
+ <shade name="dark" weight="0.456988721529" />
+ <shade name="hard" weight="0.413978018326" />
+ <shade name="weak" weight="0.129032109608" />
+</color>
+
+<color name="green" weight="0.0547944604992">
+ <shade name="dark" weight="0.456988721529" />
+ <shade name="hard" weight="0.413978018326" />
+ <shade name="weak" weight="0.129032109608" />
+</color>
+
+<color name="yellow" weight="0.0410958453744">
+ <shade name="dark" weight="0.456988721529" />
+ <shade name="hard" weight="0.413978018326" />
+ <shade name="weak" weight="0.129032109608" />
+</color>
+
+</colors>

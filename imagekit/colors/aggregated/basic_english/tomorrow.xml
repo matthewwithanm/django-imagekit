@@ -1,0 +1,33 @@
+<colors query="tomorrow">
+
+<color name="blue" weight="0.507929158454">
+ <shade name="dark" weight="0.515594458919" />
+ <shade name="bright" weight="0.31699511178" />
+ <shade name="light" weight="0.167409065057" />
+</color>
+
+<color name="green" weight="0.317187828908">
+ <shade name="dark" weight="0.515594458919" />
+ <shade name="bright" weight="0.31699511178" />
+ <shade name="light" weight="0.167409065057" />
+</color>
+
+<color name="orange" weight="0.0732961064098">
+ <shade name="dark" weight="0.515594458919" />
+ <shade name="bright" weight="0.31699511178" />
+ <shade name="light" weight="0.167409065057" />
+</color>
+
+<color name="pink" weight="0.067080939492">
+ <shade name="dark" weight="0.515594458919" />
+ <shade name="bright" weight="0.31699511178" />
+ <shade name="light" weight="0.167409065057" />
+</color>
+
+<color name="yellow" weight="0.0345048921988">
+ <shade name="dark" weight="0.515594458919" />
+ <shade name="bright" weight="0.31699511178" />
+ <shade name="light" weight="0.167409065057" />
+</color>
+
+</colors>

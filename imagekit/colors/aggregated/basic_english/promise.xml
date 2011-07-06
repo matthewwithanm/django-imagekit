@@ -1,0 +1,33 @@
+<colors query="promise">
+
+<color name="green" weight="0.465823467184">
+ <shade name="bright" weight="0.748378673303" />
+ <shade name="fresh" weight="0.172362804678" />
+ <shade name="cool" weight="0.0792574264246" />
+</color>
+
+<color name="pink" weight="0.257490358745">
+ <shade name="bright" weight="0.748378673303" />
+ <shade name="fresh" weight="0.172362804678" />
+ <shade name="cool" weight="0.0792574264246" />
+</color>
+
+<color name="black" weight="0.126638440074">
+ <shade name="bright" weight="0.748378673303" />
+ <shade name="fresh" weight="0.172362804678" />
+ <shade name="cool" weight="0.0792574264246" />
+</color>
+
+<color name="purple" weight="0.0779493540564">
+ <shade name="bright" weight="0.748378673303" />
+ <shade name="fresh" weight="0.172362804678" />
+ <shade name="cool" weight="0.0792574264246" />
+</color>
+
+<color name="blue" weight="0.0720973004485">
+ <shade name="bright" weight="0.748378673303" />
+ <shade name="fresh" weight="0.172362804678" />
+ <shade name="cool" weight="0.0792574264246" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="month">
+
+<color name="orange" weight="0.452573508762">
+ <shade name="warm" weight="0.467570904053" />
+ <shade name="hard" weight="0.33634939227" />
+ <shade name="light" weight="0.196078121055" />
+</color>
+
+<color name="black" weight="0.2376010921">
+ <shade name="warm" weight="0.467570904053" />
+ <shade name="hard" weight="0.33634939227" />
+ <shade name="light" weight="0.196078121055" />
+</color>
+
+<color name="red" weight="0.12804058852">
+ <shade name="warm" weight="0.467570904053" />
+ <shade name="hard" weight="0.33634939227" />
+ <shade name="light" weight="0.196078121055" />
+</color>
+
+<color name="blue" weight="0.11597196162">
+ <shade name="hard" weight="0.487963868685" />
+ <shade name="light" weight="0.284463241835" />
+ <shade name="intense" weight="0.227570593468" />
+</color>
+
+<color name="pink" weight="0.0658117310658">
+ <shade name="warm" weight="0.467570904053" />
+ <shade name="hard" weight="0.33634939227" />
+ <shade name="light" weight="0.196078121055" />
+</color>
+
+</colors>

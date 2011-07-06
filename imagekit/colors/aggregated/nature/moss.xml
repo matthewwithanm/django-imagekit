@@ -1,0 +1,33 @@
+<colors query="moss">
+
+<color name="green" weight="0.464062901257">
+ <shade name="dark" weight="0.455330897193" />
+ <shade name="soft" weight="0.363111981306" />
+ <shade name="light" weight="0.181555990653" />
+</color>
+
+<color name="black" weight="0.205715688545">
+ <shade name="dark" weight="0.455330897193" />
+ <shade name="soft" weight="0.363111981306" />
+ <shade name="light" weight="0.181555990653" />
+</color>
+
+<color name="white" weight="0.186757021238">
+ <shade name="dark" weight="0.455330897193" />
+ <shade name="soft" weight="0.363111981306" />
+ <shade name="light" weight="0.181555990653" />
+</color>
+
+<color name="red" weight="0.0981889187416">
+ <shade name="dark" weight="0.455330897193" />
+ <shade name="soft" weight="0.363111981306" />
+ <shade name="light" weight="0.181555990653" />
+</color>
+
+<color name="blue" weight="0.0452744293909">
+ <shade name="dark" weight="0.455330897193" />
+ <shade name="soft" weight="0.363111981306" />
+ <shade name="light" weight="0.181555990653" />
+</color>
+
+</colors>

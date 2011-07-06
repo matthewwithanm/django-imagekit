@@ -1,0 +1,33 @@
+<colors query="mammoth">
+
+<color name="red" weight="0.893740472504">
+ <shade name="fresh" weight="0.51313792429" />
+ <shade name="dark" weight="0.256933925107" />
+ <shade name="hard" weight="0.229926665934" />
+</color>
+
+<color name="white" weight="0.052416670955">
+ <shade name="fresh" weight="0.51313792429" />
+ <shade name="dark" weight="0.256933925107" />
+ <shade name="hard" weight="0.229926665934" />
+</color>
+
+<color name="blue" weight="0.0212565301569">
+ <shade name="fresh" weight="0.51313792429" />
+ <shade name="dark" weight="0.256933925107" />
+ <shade name="hard" weight="0.229926665934" />
+</color>
+
+<color name="pink" weight="0.0177057234147">
+ <shade name="fresh" weight="0.51313792429" />
+ <shade name="dark" weight="0.256933925107" />
+ <shade name="hard" weight="0.229926665934" />
+</color>
+
+<color name="black" weight="0.0148795711098">
+ <shade name="fresh" weight="0.51313792429" />
+ <shade name="dark" weight="0.256933925107" />
+ <shade name="hard" weight="0.229926665934" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="bittersweet">
+
+<color name="orange" weight="0.295887301514">
+ <shade name="dark" weight="0.890554444641" />
+ <shade name="light" weight="0.0621044546921" />
+ <shade name="intense" weight="0.0473399994257" />
+</color>
+
+<color name="black" weight="0.220661716383">
+ <shade name="dark" weight="0.890554444641" />
+ <shade name="light" weight="0.0621044546921" />
+ <shade name="intense" weight="0.0473399994257" />
+</color>
+
+<color name="red" weight="0.188565466727">
+ <shade name="dark" weight="0.890554444641" />
+ <shade name="light" weight="0.0621044546921" />
+ <shade name="intense" weight="0.0473399994257" />
+</color>
+
+<color name="white" weight="0.157472224873">
+ <shade name="dark" weight="0.902343902615" />
+ <shade name="light" weight="0.0629266142613" />
+ <shade name="warm" weight="0.0347283673046" />
+</color>
+
+<color name="green" weight="0.137412068839">
+ <shade name="dark" weight="0.890554444641" />
+ <shade name="light" weight="0.0621044546921" />
+ <shade name="intense" weight="0.0473399994257" />
+</color>
+
+</colors>

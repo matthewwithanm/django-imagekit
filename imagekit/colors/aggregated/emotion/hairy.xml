@@ -1,0 +1,33 @@
+<colors query="hairy">
+
+<color name="black" weight="0.704136613614">
+ <shade name="hard" weight="0.372880935389" />
+ <shade name="dark" weight="0.318401577946" />
+ <shade name="soft" weight="0.308716358845" />
+</color>
+
+<color name="red" weight="0.151243544818">
+ <shade name="hard" weight="0.372880935389" />
+ <shade name="dark" weight="0.318401577946" />
+ <shade name="soft" weight="0.308716358845" />
+</color>
+
+<color name="white" weight="0.079371612363">
+ <shade name="hard" weight="0.372880935389" />
+ <shade name="dark" weight="0.318401577946" />
+ <shade name="soft" weight="0.308716358845" />
+</color>
+
+<color name="green" weight="0.0445814305661">
+ <shade name="hard" weight="0.372880935389" />
+ <shade name="dark" weight="0.318401577946" />
+ <shade name="soft" weight="0.308716358845" />
+</color>
+
+<color name="pink" weight="0.0206657846363">
+ <shade name="hard" weight="0.372880935389" />
+ <shade name="dark" weight="0.318401577946" />
+ <shade name="soft" weight="0.308716358845" />
+</color>
+
+</colors>

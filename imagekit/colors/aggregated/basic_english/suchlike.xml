@@ -1,0 +1,33 @@
+<colors query="suchlike">
+
+<color name="green" weight="0.428571">
+ <shade name="soft" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+<color name="yellow" weight="0.285714">
+ <shade name="soft" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+<color name="pink" weight="0.142857">
+ <shade name="soft" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+<color name="black" weight="0.142857">
+ <shade name="soft" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="soft" weight="0.333333" />
+ <shade name="light" weight="0.333333" />
+ <shade name="dark" weight="0.333333" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="viewpoint">
+
+<color name="white" weight="0.497980644744">
+ <shade name="fresh" weight="0.708125339817" />
+ <shade name="neutral" weight="0.278036943241" />
+ <shade name="cool" weight="0.0138366822535" />
+</color>
+
+<color name="black" weight="0.28488081929">
+ <shade name="fresh" weight="0.706422084387" />
+ <shade name="neutral" weight="0.277368180373" />
+ <shade name="intense" weight="0.0162087030405" />
+</color>
+
+<color name="green" weight="0.135037994656">
+ <shade name="fresh" weight="0.706422084387" />
+ <shade name="neutral" weight="0.277368180373" />
+ <shade name="intense" weight="0.0162087030405" />
+</color>
+
+<color name="red" weight="0.0473305928113">
+ <shade name="fresh" weight="0.706422084387" />
+ <shade name="neutral" weight="0.277368180373" />
+ <shade name="intense" weight="0.0162087030405" />
+</color>
+
+<color name="blue" weight="0.0347689188898">
+ <shade name="fresh" weight="0.706422084387" />
+ <shade name="neutral" weight="0.277368180373" />
+ <shade name="intense" weight="0.0162087030405" />
+</color>
+
+</colors>

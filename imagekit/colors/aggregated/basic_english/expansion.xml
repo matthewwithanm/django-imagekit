@@ -1,0 +1,33 @@
+<colors query="expansion">
+
+<color name="yellow" weight="0.906340657301">
+ <shade name="weak" weight="0.72179296716" />
+ <shade name="dark" weight="0.155570911368" />
+ <shade name="intense" weight="0.12263472743" />
+</color>
+
+<color name="white" weight="0.0709105902862">
+ <shade name="weak" weight="0.735713240318" />
+ <shade name="dark" weight="0.158571203253" />
+ <shade name="soft" weight="0.105714135502" />
+</color>
+
+<color name="red" weight="0.0105191869034">
+ <shade name="weak" weight="0.72179296716" />
+ <shade name="dark" weight="0.155570911368" />
+ <shade name="intense" weight="0.12263472743" />
+</color>
+
+<color name="blue" weight="0.00774850821009">
+ <shade name="weak" weight="0.72179296716" />
+ <shade name="dark" weight="0.155570911368" />
+ <shade name="intense" weight="0.12263472743" />
+</color>
+
+<color name="purple" weight="0.0044800465651">
+ <shade name="weak" weight="0.735713240318" />
+ <shade name="dark" weight="0.158571203253" />
+ <shade name="soft" weight="0.105714135502" />
+</color>
+
+</colors>

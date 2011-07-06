@@ -1,0 +1,33 @@
+<colors query="helium">
+
+<color name="red" weight="0.436283256335">
+ <shade name="neutral" weight="0.969202302801" />
+ <shade name="weak" weight="0.016732157019" />
+ <shade name="bright" weight="0.0140644829283" />
+</color>
+
+<color name="green" weight="0.335843945524">
+ <shade name="neutral" weight="0.969202302801" />
+ <shade name="weak" weight="0.016732157019" />
+ <shade name="bright" weight="0.0140644829283" />
+</color>
+
+<color name="white" weight="0.102322547889">
+ <shade name="neutral" weight="0.969202302801" />
+ <shade name="weak" weight="0.016732157019" />
+ <shade name="bright" weight="0.0140644829283" />
+</color>
+
+<color name="yellow" weight="0.0747017374157">
+ <shade name="neutral" weight="0.969202302801" />
+ <shade name="weak" weight="0.016732157019" />
+ <shade name="bright" weight="0.0140644829283" />
+</color>
+
+<color name="pink" weight="0.0508474010981">
+ <shade name="neutral" weight="0.969202302801" />
+ <shade name="weak" weight="0.016732157019" />
+ <shade name="bright" weight="0.0140644829283" />
+</color>
+
+</colors>

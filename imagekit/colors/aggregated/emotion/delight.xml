@@ -1,0 +1,33 @@
+<colors query="delight">
+
+<color name="pink" weight="0.404659236333">
+ <shade name="fresh" weight="0.409251827218" />
+ <shade name="dark" weight="0.38078213489" />
+ <shade name="light" weight="0.209963980921" />
+</color>
+
+<color name="orange" weight="0.247087382185">
+ <shade name="intense" weight="0.551967065505" />
+ <shade name="fresh" weight="0.232088528457" />
+ <shade name="dark" weight="0.215943239521" />
+</color>
+
+<color name="white" weight="0.194972177506">
+ <shade name="fresh" weight="0.409251827218" />
+ <shade name="dark" weight="0.38078213489" />
+ <shade name="light" weight="0.209963980921" />
+</color>
+
+<color name="blue" weight="0.0797056071565">
+ <shade name="intense" weight="0.551967065505" />
+ <shade name="fresh" weight="0.232088528457" />
+ <shade name="dark" weight="0.215943239521" />
+</color>
+
+<color name="red" weight="0.073574406606">
+ <shade name="intense" weight="0.551967065505" />
+ <shade name="fresh" weight="0.232088528457" />
+ <shade name="dark" weight="0.215943239521" />
+</color>
+
+</colors>

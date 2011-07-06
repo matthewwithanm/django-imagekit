@@ -1,0 +1,33 @@
+<colors query="deafening">
+
+<color name="white" weight="0.426229047031">
+ <shade name="bright" weight="0.75223785613" />
+ <shade name="light" weight="0.164178897171" />
+ <shade name="hard" weight="0.0835819840144" />
+</color>
+
+<color name="black" weight="0.278688223059">
+ <shade name="bright" weight="0.75223785613" />
+ <shade name="light" weight="0.164178897171" />
+ <shade name="hard" weight="0.0835819840144" />
+</color>
+
+<color name="red" weight="0.147540823972">
+ <shade name="bright" weight="0.75223785613" />
+ <shade name="light" weight="0.164178897171" />
+ <shade name="hard" weight="0.0835819840144" />
+</color>
+
+<color name="blue" weight="0.0983605493148">
+ <shade name="bright" weight="0.75223785613" />
+ <shade name="light" weight="0.164178897171" />
+ <shade name="hard" weight="0.0835819840144" />
+</color>
+
+<color name="green" weight="0.0491802746574">
+ <shade name="bright" weight="0.75223785613" />
+ <shade name="light" weight="0.164178897171" />
+ <shade name="hard" weight="0.0835819840144" />
+</color>
+
+</colors>

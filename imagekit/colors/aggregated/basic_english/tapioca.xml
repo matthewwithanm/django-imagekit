@@ -1,0 +1,33 @@
+<colors query="tapioca">
+
+<color name="orange" weight="0.431061871722">
+ <shade name="light" weight="0.65303645344" />
+ <shade name="soft" weight="0.216121187632" />
+ <shade name="warm" weight="0.130840935215" />
+</color>
+
+<color name="white" weight="0.33419403538">
+ <shade name="light" weight="0.65303645344" />
+ <shade name="soft" weight="0.216121187632" />
+ <shade name="warm" weight="0.130840935215" />
+</color>
+
+<color name="black" weight="0.134161953334">
+ <shade name="light" weight="0.65303645344" />
+ <shade name="soft" weight="0.216121187632" />
+ <shade name="warm" weight="0.130840935215" />
+</color>
+
+<color name="green" weight="0.0813689825273">
+ <shade name="light" weight="0.657646115914" />
+ <shade name="soft" weight="0.217646746769" />
+ <shade name="weak" weight="0.124705703554" />
+</color>
+
+<color name="pink" weight="0.0192121208745">
+ <shade name="light" weight="0.65303645344" />
+ <shade name="soft" weight="0.216121187632" />
+ <shade name="warm" weight="0.130840935215" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cypress">
+
+<color name="blue" weight="0.420956539296">
+ <shade name="light" weight="0.773413699003" />
+ <shade name="dark" weight="0.118996927617" />
+ <shade name="hard" weight="0.107588080599" />
+</color>
+
+<color name="white" weight="0.202907108869">
+ <shade name="light" weight="0.773413699003" />
+ <shade name="dark" weight="0.118996927617" />
+ <shade name="hard" weight="0.107588080599" />
+</color>
+
+<color name="black" weight="0.170199694305">
+ <shade name="light" weight="0.773413699003" />
+ <shade name="dark" weight="0.118996927617" />
+ <shade name="hard" weight="0.107588080599" />
+</color>
+
+<color name="red" weight="0.131435351118">
+ <shade name="light" weight="0.773413699003" />
+ <shade name="dark" weight="0.118996927617" />
+ <shade name="hard" weight="0.107588080599" />
+</color>
+
+<color name="yellow" weight="0.0745002220625">
+ <shade name="light" weight="0.773413699003" />
+ <shade name="dark" weight="0.118996927617" />
+ <shade name="hard" weight="0.107588080599" />
+</color>
+
+</colors>

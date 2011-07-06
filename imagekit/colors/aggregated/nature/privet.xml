@@ -1,0 +1,33 @@
+<colors query="privet">
+
+<color name="white" weight="0.713416363751">
+ <shade name="light" weight="0.648701891726" />
+ <shade name="fresh" weight="0.175648512221" />
+ <shade name="cool" weight="0.175648512221" />
+</color>
+
+<color name="green" weight="0.179164791351">
+ <shade name="light" weight="0.648701891726" />
+ <shade name="fresh" weight="0.175648512221" />
+ <shade name="cool" weight="0.175648512221" />
+</color>
+
+<color name="yellow" weight="0.0510741260413">
+ <shade name="light" weight="0.648701891726" />
+ <shade name="fresh" weight="0.175648512221" />
+ <shade name="cool" weight="0.175648512221" />
+</color>
+
+<color name="black" weight="0.0299959152941">
+ <shade name="light" weight="0.648701891726" />
+ <shade name="fresh" weight="0.175648512221" />
+ <shade name="cool" weight="0.175648512221" />
+</color>
+
+<color name="blue" weight="0.026347763434">
+ <shade name="light" weight="0.648701891726" />
+ <shade name="fresh" weight="0.175648512221" />
+ <shade name="cool" weight="0.175648512221" />
+</color>
+
+</colors>

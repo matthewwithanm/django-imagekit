@@ -1,0 +1,33 @@
+<colors query="landmark">
+
+<color name="green" weight="0.264453915009">
+ <shade name="light" weight="0.79380356611" />
+ <shade name="cool" weight="0.172313457034" />
+ <shade name="bright" weight="0.0338818595291" />
+</color>
+
+<color name="white" weight="0.259009275583">
+ <shade name="light" weight="0.79380356611" />
+ <shade name="cool" weight="0.172313457034" />
+ <shade name="bright" weight="0.0338818595291" />
+</color>
+
+<color name="black" weight="0.171895044756">
+ <shade name="light" weight="0.79380356611" />
+ <shade name="cool" weight="0.172313457034" />
+ <shade name="bright" weight="0.0338818595291" />
+</color>
+
+<color name="blue" weight="0.154783320844">
+ <shade name="light" weight="0.79380356611" />
+ <shade name="cool" weight="0.172313457034" />
+ <shade name="bright" weight="0.0338818595291" />
+</color>
+
+<color name="red" weight="0.149857218505">
+ <shade name="light" weight="0.79380356611" />
+ <shade name="cool" weight="0.172313457034" />
+ <shade name="bright" weight="0.0338818595291" />
+</color>
+
+</colors>

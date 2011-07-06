@@ -1,0 +1,33 @@
+<colors query="cockatoo">
+
+<color name="black" weight="0.595799428514">
+ <shade name="bright" weight="0.35472329224" />
+ <shade name="light" weight="0.334224207513" />
+ <shade name="cool" weight="0.311051329125" />
+</color>
+
+<color name="white" weight="0.230347807221">
+ <shade name="bright" weight="0.35472329224" />
+ <shade name="light" weight="0.334224207513" />
+ <shade name="cool" weight="0.311051329125" />
+</color>
+
+<color name="pink" weight="0.116222846266">
+ <shade name="bright" weight="0.35472329224" />
+ <shade name="light" weight="0.334224207513" />
+ <shade name="cool" weight="0.311051329125" />
+</color>
+
+<color name="red" weight="0.0537058639787">
+ <shade name="bright" weight="0.35472329224" />
+ <shade name="light" weight="0.334224207513" />
+ <shade name="cool" weight="0.311051329125" />
+</color>
+
+<color name="green" weight="0.00392304553282">
+ <shade name="bright" weight="0.35472329224" />
+ <shade name="light" weight="0.334224207513" />
+ <shade name="cool" weight="0.311051329125" />
+</color>
+
+</colors>

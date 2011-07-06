@@ -1,0 +1,33 @@
+<colors query="travel">
+
+<color name="green" weight="0.606580172579">
+ <shade name="light" weight="0.753832787384" />
+ <shade name="cool" weight="0.141565600543" />
+ <shade name="hard" weight="0.104600352511" />
+</color>
+
+<color name="blue" weight="0.160228724832">
+ <shade name="light" weight="0.753832787384" />
+ <shade name="cool" weight="0.141565600543" />
+ <shade name="hard" weight="0.104600352511" />
+</color>
+
+<color name="black" weight="0.112541604346">
+ <shade name="light" weight="0.753832787384" />
+ <shade name="cool" weight="0.141565600543" />
+ <shade name="hard" weight="0.104600352511" />
+</color>
+
+<color name="orange" weight="0.0688602019815">
+ <shade name="light" weight="0.753832787384" />
+ <shade name="cool" weight="0.141565600543" />
+ <shade name="hard" weight="0.104600352511" />
+</color>
+
+<color name="red" weight="0.0517882128476">
+ <shade name="light" weight="0.753832787384" />
+ <shade name="cool" weight="0.141565600543" />
+ <shade name="hard" weight="0.104600352511" />
+</color>
+
+</colors>

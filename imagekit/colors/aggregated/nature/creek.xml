@@ -1,0 +1,33 @@
+<colors query="creek">
+
+<color name="black" weight="0.495907021081">
+ <shade name="fresh" weight="0.869312901996" />
+ <shade name="cool" weight="0.101387713182" />
+ <shade name="warm" weight="0.0292983505772" />
+</color>
+
+<color name="red" weight="0.184400377742">
+ <shade name="fresh" weight="0.869312901996" />
+ <shade name="cool" weight="0.101387713182" />
+ <shade name="warm" weight="0.0292983505772" />
+</color>
+
+<color name="blue" weight="0.150216495706">
+ <shade name="fresh" weight="0.872170821934" />
+ <shade name="cool" weight="0.10172103156" />
+ <shade name="hard" weight="0.0261071088605" />
+</color>
+
+<color name="yellow" weight="0.0885892154164">
+ <shade name="fresh" weight="0.869312901996" />
+ <shade name="cool" weight="0.101387713182" />
+ <shade name="warm" weight="0.0292983505772" />
+</color>
+
+<color name="green" weight="0.0808858053802">
+ <shade name="fresh" weight="0.872170821934" />
+ <shade name="cool" weight="0.10172103156" />
+ <shade name="hard" weight="0.0261071088605" />
+</color>
+
+</colors>

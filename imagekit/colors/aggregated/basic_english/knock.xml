@@ -1,0 +1,33 @@
+<colors query="knock">
+
+<color name="black" weight="0.398761564187">
+ <shade name="hard" weight="0.939374803175" />
+ <shade name="soft" weight="0.0388655070323" />
+ <shade name="light" weight="0.0217586815432" />
+</color>
+
+<color name="blue" weight="0.23568593943">
+ <shade name="hard" weight="0.939374803175" />
+ <shade name="soft" weight="0.0388655070323" />
+ <shade name="light" weight="0.0217586815432" />
+</color>
+
+<color name="red" weight="0.160694958702">
+ <shade name="hard" weight="0.939374803175" />
+ <shade name="soft" weight="0.0388655070323" />
+ <shade name="light" weight="0.0217586815432" />
+</color>
+
+<color name="pink" weight="0.116890703293">
+ <shade name="hard" weight="0.939374803175" />
+ <shade name="soft" weight="0.0388655070323" />
+ <shade name="light" weight="0.0217586815432" />
+</color>
+
+<color name="green" weight="0.0879656107265">
+ <shade name="hard" weight="0.939374803175" />
+ <shade name="soft" weight="0.0388655070323" />
+ <shade name="light" weight="0.0217586815432" />
+</color>
+
+</colors>

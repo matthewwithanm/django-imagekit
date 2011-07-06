@@ -1,0 +1,33 @@
+<colors query="pineapple">
+
+<color name="orange" weight="0.664111666814">
+ <shade name="fresh" weight="0.91238835117" />
+ <shade name="hard" weight="0.0717638790833" />
+ <shade name="bright" weight="0.0158467450466" />
+</color>
+
+<color name="pink" weight="0.188164972264">
+ <shade name="fresh" weight="0.91238835117" />
+ <shade name="hard" weight="0.0717638790833" />
+ <shade name="bright" weight="0.0158467450466" />
+</color>
+
+<color name="green" weight="0.056619776722">
+ <shade name="fresh" weight="0.91238835117" />
+ <shade name="hard" weight="0.0717638790833" />
+ <shade name="bright" weight="0.0158467450466" />
+</color>
+
+<color name="white" weight="0.0455512489417">
+ <shade name="fresh" weight="0.91238835117" />
+ <shade name="hard" weight="0.0717638790833" />
+ <shade name="bright" weight="0.0158467450466" />
+</color>
+
+<color name="blue" weight="0.0455512489417">
+ <shade name="fresh" weight="0.91238835117" />
+ <shade name="hard" weight="0.0717638790833" />
+ <shade name="bright" weight="0.0158467450466" />
+</color>
+
+</colors>

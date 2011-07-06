@@ -1,0 +1,33 @@
+<colors query="prose">
+
+<color name="purple" weight="0.988830358892">
+ <shade name="dark" weight="0.476013754605" />
+ <shade name="light" weight="0.292742309034" />
+ <shade name="cool" weight="0.231241823943" />
+</color>
+
+<color name="black" weight="0.00442401559412">
+ <shade name="dark" weight="0.457445879885" />
+ <shade name="light" weight="0.281323305976" />
+ <shade name="intense" weight="0.26122878412" />
+</color>
+
+<color name="white" weight="0.00404105817189">
+ <shade name="dark" weight="0.476013754605" />
+ <shade name="light" weight="0.292742309034" />
+ <shade name="cool" weight="0.231241823943" />
+</color>
+
+<color name="blue" weight="0.00161756642524">
+ <shade name="dark" weight="0.457445879885" />
+ <shade name="light" weight="0.281323305976" />
+ <shade name="intense" weight="0.26122878412" />
+</color>
+
+<color name="pink" weight="0.00108599866005">
+ <shade name="dark" weight="0.476013754605" />
+ <shade name="light" weight="0.292742309034" />
+ <shade name="cool" weight="0.231241823943" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="march">
+
+<color name="green" weight="0.293577655674">
+ <shade name="light" weight="0.505108666498" />
+ <shade name="cool" weight="0.258393739798" />
+ <shade name="hard" weight="0.236495965239" />
+</color>
+
+<color name="blue" weight="0.210435546157">
+ <shade name="light" weight="0.505108666498" />
+ <shade name="cool" weight="0.258393739798" />
+ <shade name="hard" weight="0.236495965239" />
+</color>
+
+<color name="white" weight="0.18635300409">
+ <shade name="light" weight="0.472032023804" />
+ <shade name="warm" weight="0.286493424852" />
+ <shade name="cool" weight="0.241473029518" />
+</color>
+
+<color name="black" weight="0.170871369904">
+ <shade name="light" weight="0.472032023804" />
+ <shade name="warm" weight="0.286493424852" />
+ <shade name="cool" weight="0.241473029518" />
+</color>
+
+<color name="orange" weight="0.138761313815">
+ <shade name="light" weight="0.472032023804" />
+ <shade name="warm" weight="0.286493424852" />
+ <shade name="cool" weight="0.241473029518" />
+</color>
+
+</colors>

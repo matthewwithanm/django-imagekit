@@ -1,0 +1,33 @@
+<colors query="hostility">
+
+<color name="white" weight="0.910718705038">
+ <shade name="fresh" weight="0.482634271108" />
+ <shade name="cool" weight="0.289857938683" />
+ <shade name="dark" weight="0.22744833466" />
+</color>
+
+<color name="black" weight="0.0746490741835">
+ <shade name="intense" weight="0.986848872531" />
+ <shade name="fresh" weight="0.00821587099619" />
+ <shade name="cool" weight="0.00493424436265" />
+</color>
+
+<color name="green" weight="0.00962973056967">
+ <shade name="intense" weight="0.986848872531" />
+ <shade name="fresh" weight="0.00821587099619" />
+ <shade name="cool" weight="0.00493424436265" />
+</color>
+
+<color name="red" weight="0.00291131389315">
+ <shade name="intense" weight="0.986848872531" />
+ <shade name="fresh" weight="0.00821587099619" />
+ <shade name="cool" weight="0.00493424436265" />
+</color>
+
+<color name="orange" weight="0.00209017407714">
+ <shade name="intense" weight="0.986848872531" />
+ <shade name="fresh" weight="0.00821587099619" />
+ <shade name="cool" weight="0.00493424436265" />
+</color>
+
+</colors>

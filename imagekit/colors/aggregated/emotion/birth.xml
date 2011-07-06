@@ -1,0 +1,33 @@
+<colors query="birth">
+
+<color name="white" weight="0.634747206623">
+ <shade name="fresh" weight="0.415591935933" />
+ <shade name="weak" weight="0.351159077649" />
+ <shade name="cool" weight="0.233246946989" />
+</color>
+
+<color name="pink" weight="0.160319008759">
+ <shade name="fresh" weight="0.415591935933" />
+ <shade name="weak" weight="0.351159077649" />
+ <shade name="cool" weight="0.233246946989" />
+</color>
+
+<color name="green" weight="0.103010403818">
+ <shade name="intense" weight="0.461537800516" />
+ <shade name="fresh" weight="0.29185478562" />
+ <shade name="weak" weight="0.246605981648" />
+</color>
+
+<color name="orange" weight="0.0598475937673">
+ <shade name="intense" weight="0.461537800516" />
+ <shade name="fresh" weight="0.29185478562" />
+ <shade name="weak" weight="0.246605981648" />
+</color>
+
+<color name="purple" weight="0.0420746719819">
+ <shade name="fresh" weight="0.415591935933" />
+ <shade name="weak" weight="0.351159077649" />
+ <shade name="cool" weight="0.233246946989" />
+</color>
+
+</colors>

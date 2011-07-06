@@ -1,0 +1,33 @@
+<colors query="highlands">
+
+<color name="white" weight="0.700371363651">
+ <shade name="cool" weight="0.453726544963" />
+ <shade name="bright" weight="0.410514493062" />
+ <shade name="light" weight="0.135757863056" />
+</color>
+
+<color name="green" weight="0.253337454196">
+ <shade name="cool" weight="0.453726544963" />
+ <shade name="bright" weight="0.410514493062" />
+ <shade name="light" weight="0.135757863056" />
+</color>
+
+<color name="blue" weight="0.0309148297236">
+ <shade name="cool" weight="0.453726544963" />
+ <shade name="bright" weight="0.410514493062" />
+ <shade name="light" weight="0.135757863056" />
+</color>
+
+<color name="red" weight="0.00861785076367">
+ <shade name="cool" weight="0.453726544963" />
+ <shade name="bright" weight="0.410514493062" />
+ <shade name="light" weight="0.135757863056" />
+</color>
+
+<color name="black" weight="0.00675748932897">
+ <shade name="cool" weight="0.453726544963" />
+ <shade name="bright" weight="0.410514493062" />
+ <shade name="light" weight="0.135757863056" />
+</color>
+
+</colors>

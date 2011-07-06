@@ -1,0 +1,33 @@
+<colors query="jaw">
+
+<color name="black" weight="0.761767551304">
+ <shade name="soft" weight="0.910830633002" />
+ <shade name="intense" weight="0.0492676569669" />
+ <shade name="hard" weight="0.0399005919344" />
+</color>
+
+<color name="blue" weight="0.116869466204">
+ <shade name="soft" weight="0.910830633002" />
+ <shade name="intense" weight="0.0492676569669" />
+ <shade name="hard" weight="0.0399005919344" />
+</color>
+
+<color name="red" weight="0.0543654619948">
+ <shade name="soft" weight="0.910830633002" />
+ <shade name="intense" weight="0.0492676569669" />
+ <shade name="hard" weight="0.0399005919344" />
+</color>
+
+<color name="white" weight="0.04622691978">
+ <shade name="soft" weight="0.928366913315" />
+ <shade name="hard" weight="0.0406688005776" />
+ <shade name="dark" weight="0.0309631464839" />
+</color>
+
+<color name="yellow" weight="0.0207695597321">
+ <shade name="soft" weight="0.910830633002" />
+ <shade name="intense" weight="0.0492676569669" />
+ <shade name="hard" weight="0.0399005919344" />
+</color>
+
+</colors>

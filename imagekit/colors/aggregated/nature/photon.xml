@@ -1,0 +1,33 @@
+<colors query="photon">
+
+<color name="blue" weight="0.458108671025">
+ <shade name="hard" weight="0.377041893667" />
+ <shade name="soft" weight="0.345621735861" />
+ <shade name="light" weight="0.277335259564" />
+</color>
+
+<color name="red" weight="0.436586787151">
+ <shade name="hard" weight="0.377041893667" />
+ <shade name="soft" weight="0.345621735861" />
+ <shade name="light" weight="0.277335259564" />
+</color>
+
+<color name="white" weight="0.0627209187175">
+ <shade name="hard" weight="0.377041893667" />
+ <shade name="soft" weight="0.345621735861" />
+ <shade name="light" weight="0.277335259564" />
+</color>
+
+<color name="green" weight="0.0218293393576">
+ <shade name="hard" weight="0.377041893667" />
+ <shade name="soft" weight="0.345621735861" />
+ <shade name="light" weight="0.277335259564" />
+</color>
+
+<color name="yellow" weight="0.0207532451639">
+ <shade name="hard" weight="0.377041893667" />
+ <shade name="soft" weight="0.345621735861" />
+ <shade name="light" weight="0.277335259564" />
+</color>
+
+</colors>

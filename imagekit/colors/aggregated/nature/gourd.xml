@@ -1,0 +1,33 @@
+<colors query="gourd">
+
+<color name="white" weight="0.51532356767">
+ <shade name="hard" weight="0.673274691719" />
+ <shade name="fresh" weight="0.229656888709" />
+ <shade name="dark" weight="0.0970672101558" />
+</color>
+
+<color name="green" weight="0.341740892244">
+ <shade name="hard" weight="0.673274691719" />
+ <shade name="fresh" weight="0.229656888709" />
+ <shade name="dark" weight="0.0970672101558" />
+</color>
+
+<color name="orange" weight="0.060753936399">
+ <shade name="hard" weight="0.673274691719" />
+ <shade name="fresh" weight="0.229656888709" />
+ <shade name="dark" weight="0.0970672101558" />
+</color>
+
+<color name="red" weight="0.051532356767">
+ <shade name="hard" weight="0.673274691719" />
+ <shade name="fresh" weight="0.229656888709" />
+ <shade name="dark" weight="0.0970672101558" />
+</color>
+
+<color name="blue" weight="0.0306481911299">
+ <shade name="hard" weight="0.673274691719" />
+ <shade name="fresh" weight="0.229656888709" />
+ <shade name="dark" weight="0.0970672101558" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="hire">
+
+<color name="black" weight="0.427667793883">
+ <shade name="light" weight="0.896348458737" />
+ <shade name="cool" weight="0.0551661733241" />
+ <shade name="fresh" weight="0.0484843029953" />
+</color>
+
+<color name="green" weight="0.247303550376">
+ <shade name="light" weight="0.896348458737" />
+ <shade name="cool" weight="0.0551661733241" />
+ <shade name="fresh" weight="0.0484843029953" />
+</color>
+
+<color name="white" weight="0.130717590913">
+ <shade name="light" weight="0.896348458737" />
+ <shade name="cool" weight="0.0551661733241" />
+ <shade name="fresh" weight="0.0484843029953" />
+</color>
+
+<color name="red" weight="0.0992933051885">
+ <shade name="light" weight="0.896348458737" />
+ <shade name="cool" weight="0.0551661733241" />
+ <shade name="fresh" weight="0.0484843029953" />
+</color>
+
+<color name="pink" weight="0.0950166272497">
+ <shade name="light" weight="0.896348458737" />
+ <shade name="cool" weight="0.0551661733241" />
+ <shade name="fresh" weight="0.0484843029953" />
+</color>
+
+</colors>

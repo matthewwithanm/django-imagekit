@@ -1,0 +1,33 @@
+<colors query="accident">
+
+<color name="orange" weight="0.463322490211">
+ <shade name="hard" weight="0.628063458396" />
+ <shade name="cool" weight="0.251056321862" />
+ <shade name="fresh" weight="0.120878969786" />
+</color>
+
+<color name="white" weight="0.265681427953">
+ <shade name="hard" weight="0.628063458396" />
+ <shade name="cool" weight="0.251056321862" />
+ <shade name="fresh" weight="0.120878969786" />
+</color>
+
+<color name="green" weight="0.196993058775">
+ <shade name="hard" weight="0.628063458396" />
+ <shade name="cool" weight="0.251056321862" />
+ <shade name="fresh" weight="0.120878969786" />
+</color>
+
+<color name="black" weight="0.0445178392693">
+ <shade name="hard" weight="0.628063458396" />
+ <shade name="cool" weight="0.251056321862" />
+ <shade name="fresh" weight="0.120878969786" />
+</color>
+
+<color name="blue" weight="0.029484158468">
+ <shade name="hard" weight="0.628063458396" />
+ <shade name="cool" weight="0.251056321862" />
+ <shade name="fresh" weight="0.120878969786" />
+</color>
+
+</colors>

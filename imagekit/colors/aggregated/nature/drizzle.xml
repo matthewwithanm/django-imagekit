@@ -1,0 +1,33 @@
+<colors query="drizzle">
+
+<color name="black" weight="0.413233617496">
+ <shade name="light" weight="0.955644929514" />
+ <shade name="cool" weight="0.0409562112649" />
+ <shade name="dark" weight="0.00339784863827" />
+</color>
+
+<color name="orange" weight="0.188679015063">
+ <shade name="light" weight="0.955644929514" />
+ <shade name="cool" weight="0.0409562112649" />
+ <shade name="dark" weight="0.00339784863827" />
+</color>
+
+<color name="purple" weight="0.174063035022">
+ <shade name="light" weight="0.955644929514" />
+ <shade name="cool" weight="0.0409562112649" />
+ <shade name="dark" weight="0.00339784863827" />
+</color>
+
+<color name="white" weight="0.136858722193">
+ <shade name="light" weight="0.955644929514" />
+ <shade name="cool" weight="0.0409562112649" />
+ <shade name="dark" weight="0.00339784863827" />
+</color>
+
+<color name="pink" weight="0.0871643900571">
+ <shade name="light" weight="0.955644929514" />
+ <shade name="cool" weight="0.0409562112649" />
+ <shade name="dark" weight="0.00339784863827" />
+</color>
+
+</colors>

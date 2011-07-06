@@ -1,0 +1,33 @@
+<colors query="heart">
+
+<color name="purple" weight="0.277146426892">
+ <shade name="dark" weight="0.472954873054" />
+ <shade name="weak" weight="0.27798677379" />
+ <shade name="hard" weight="0.249056023576" />
+</color>
+
+<color name="black" weight="0.277146426892">
+ <shade name="warm" weight="0.504152048422" />
+ <shade name="dark" weight="0.31229187843" />
+ <shade name="weak" weight="0.183554534928" />
+</color>
+
+<color name="red" weight="0.24534273856">
+ <shade name="warm" weight="0.504152048422" />
+ <shade name="dark" weight="0.31229187843" />
+ <shade name="weak" weight="0.183554534928" />
+</color>
+
+<color name="pink" weight="0.112221585971">
+ <shade name="warm" weight="0.504152048422" />
+ <shade name="dark" weight="0.31229187843" />
+ <shade name="weak" weight="0.183554534928" />
+</color>
+
+<color name="green" weight="0.0881416505198">
+ <shade name="dark" weight="0.472954873054" />
+ <shade name="weak" weight="0.27798677379" />
+ <shade name="hard" weight="0.249056023576" />
+</color>
+
+</colors>

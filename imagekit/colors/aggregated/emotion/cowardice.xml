@@ -1,0 +1,33 @@
+<colors query="cowardice">
+
+<color name="white" weight="0.509657718067">
+ <shade name="weak" weight="0.589040098019" />
+ <shade name="soft" weight="0.232876317821" />
+ <shade name="dark" weight="0.178081890099" />
+</color>
+
+<color name="yellow" weight="0.291232981752">
+ <shade name="weak" weight="0.432885367113" />
+ <shade name="intense" weight="0.39597266139" />
+ <shade name="soft" weight="0.171140726533" />
+</color>
+
+<color name="black" weight="0.136701195516">
+ <shade name="weak" weight="0.432885367113" />
+ <shade name="intense" weight="0.39597266139" />
+ <shade name="soft" weight="0.171140726533" />
+</color>
+
+<color name="green" weight="0.0326894163191">
+ <shade name="weak" weight="0.432885367113" />
+ <shade name="intense" weight="0.39597266139" />
+ <shade name="soft" weight="0.171140726533" />
+</color>
+
+<color name="blue" weight="0.0297176511992">
+ <shade name="weak" weight="0.432885367113" />
+ <shade name="intense" weight="0.39597266139" />
+ <shade name="soft" weight="0.171140726533" />
+</color>
+
+</colors>

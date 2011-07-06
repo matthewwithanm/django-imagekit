@@ -1,0 +1,33 @@
+<colors query="gorilla">
+
+<color name="green" weight="0.314724531774">
+ <shade name="cool" weight="0.855038716181" />
+ <shade name="intense" weight="0.0855038716181" />
+ <shade name="dark" weight="0.0594563345689" />
+</color>
+
+<color name="white" weight="0.224918817052">
+ <shade name="cool" weight="0.910515115291" />
+ <shade name="dark" weight="0.0633139649706" />
+ <shade name="soft" weight="0.0261697721878" />
+</color>
+
+<color name="blue" weight="0.158575856626">
+ <shade name="cool" weight="0.855038716181" />
+ <shade name="intense" weight="0.0855038716181" />
+ <shade name="dark" weight="0.0594563345689" />
+</color>
+
+<color name="black" weight="0.156148675147">
+ <shade name="cool" weight="0.855038716181" />
+ <shade name="intense" weight="0.0855038716181" />
+ <shade name="dark" weight="0.0594563345689" />
+</color>
+
+<color name="pink" weight="0.145630888739">
+ <shade name="cool" weight="0.910515115291" />
+ <shade name="dark" weight="0.0633139649706" />
+ <shade name="soft" weight="0.0261697721878" />
+</color>
+
+</colors>

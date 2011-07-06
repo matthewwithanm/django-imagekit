@@ -1,0 +1,33 @@
+<colors query="terrapin">
+
+<color name="blue" weight="0.450750797573">
+ <shade name="fresh" weight="0.45544487717" />
+ <shade name="cool" weight="0.336633170082" />
+ <shade name="hard" weight="0.207920487404" />
+</color>
+
+<color name="red" weight="0.414022954808">
+ <shade name="fresh" weight="0.45544487717" />
+ <shade name="cool" weight="0.336633170082" />
+ <shade name="hard" weight="0.207920487404" />
+</color>
+
+<color name="black" weight="0.0918196069131">
+ <shade name="fresh" weight="0.45544487717" />
+ <shade name="cool" weight="0.336633170082" />
+ <shade name="hard" weight="0.207920487404" />
+</color>
+
+<color name="green" weight="0.0290483847325">
+ <shade name="fresh" weight="0.45544487717" />
+ <shade name="cool" weight="0.336633170082" />
+ <shade name="hard" weight="0.207920487404" />
+</color>
+
+<color name="pink" weight="0.0143572476264">
+ <shade name="fresh" weight="0.45544487717" />
+ <shade name="cool" weight="0.336633170082" />
+ <shade name="hard" weight="0.207920487404" />
+</color>
+
+</colors>

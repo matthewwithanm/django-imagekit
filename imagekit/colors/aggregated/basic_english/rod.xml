@@ -1,0 +1,33 @@
+<colors query="rod">
+
+<color name="black" weight="0.446611459722">
+ <shade name="hard" weight="0.589642680029" />
+ <shade name="light" weight="0.396403346277" />
+ <shade name="warm" weight="0.0139529307452" />
+</color>
+
+<color name="blue" weight="0.325975030946">
+ <shade name="hard" weight="0.591265041402" />
+ <shade name="light" weight="0.397494022883" />
+ <shade name="fresh" weight="0.011239889896" />
+</color>
+
+<color name="white" weight="0.078028668825">
+ <shade name="hard" weight="0.589642680029" />
+ <shade name="light" weight="0.396403346277" />
+ <shade name="warm" weight="0.0139529307452" />
+</color>
+
+<color name="red" weight="0.0749485897924">
+ <shade name="hard" weight="0.589642680029" />
+ <shade name="light" weight="0.396403346277" />
+ <shade name="warm" weight="0.0139529307452" />
+</color>
+
+<color name="green" weight="0.074435243287">
+ <shade name="hard" weight="0.591265041402" />
+ <shade name="light" weight="0.397494022883" />
+ <shade name="fresh" weight="0.011239889896" />
+</color>
+
+</colors>

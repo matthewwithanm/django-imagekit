@@ -1,0 +1,33 @@
+<colors query="magnetic">
+
+<color name="black" weight="0.407638458242">
+ <shade name="soft" weight="0.47372374506" />
+ <shade name="weak" weight="0.360243298092" />
+ <shade name="hard" weight="0.166031794892" />
+</color>
+
+<color name="white" weight="0.190972020471">
+ <shade name="soft" weight="0.47372374506" />
+ <shade name="weak" weight="0.360243298092" />
+ <shade name="hard" weight="0.166031794892" />
+</color>
+
+<color name="blue" weight="0.187499801917">
+ <shade name="soft" weight="0.47372374506" />
+ <shade name="weak" weight="0.360243298092" />
+ <shade name="hard" weight="0.166031794892" />
+</color>
+
+<color name="red" weight="0.126388755366">
+ <shade name="soft" weight="0.47372374506" />
+ <shade name="weak" weight="0.360243298092" />
+ <shade name="hard" weight="0.166031794892" />
+</color>
+
+<color name="yellow" weight="0.0874999075612">
+ <shade name="soft" weight="0.47372374506" />
+ <shade name="weak" weight="0.360243298092" />
+ <shade name="hard" weight="0.166031794892" />
+</color>
+
+</colors>

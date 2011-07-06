@@ -1,0 +1,33 @@
+<colors query="raspy">
+
+<color name="green" weight="0.674656836485">
+ <shade name="soft" weight="0.587210912996" />
+ <shade name="cool" weight="0.214005754958" />
+ <shade name="dark" weight="0.198781768325" />
+</color>
+
+<color name="black" weight="0.205479239539">
+ <shade name="soft" weight="0.587210912996" />
+ <shade name="cool" weight="0.214005754958" />
+ <shade name="dark" weight="0.198781768325" />
+</color>
+
+<color name="pink" weight="0.054794463877">
+ <shade name="soft" weight="0.587210912996" />
+ <shade name="cool" weight="0.214005754958" />
+ <shade name="dark" weight="0.198781768325" />
+</color>
+
+<color name="blue" weight="0.0342465399231">
+ <shade name="soft" weight="0.587210912996" />
+ <shade name="cool" weight="0.214005754958" />
+ <shade name="dark" weight="0.198781768325" />
+</color>
+
+<color name="red" weight="0.0308218859308">
+ <shade name="soft" weight="0.587210912996" />
+ <shade name="cool" weight="0.214005754958" />
+ <shade name="dark" weight="0.198781768325" />
+</color>
+
+</colors>

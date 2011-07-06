@@ -1,0 +1,33 @@
+<colors query="obsession">
+
+<color name="pink" weight="0.340317900267">
+ <shade name="dark" weight="0.97130364776" />
+ <shade name="hard" weight="0.016567386634" />
+ <shade name="light" weight="0.0121277601504" />
+</color>
+
+<color name="blue" weight="0.230029691847">
+ <shade name="dark" weight="0.825737899987" />
+ <shade name="intense" weight="0.160176582606" />
+ <shade name="hard" weight="0.0140844926085" />
+</color>
+
+<color name="black" weight="0.230029691847">
+ <shade name="dark" weight="0.825737899987" />
+ <shade name="intense" weight="0.160176582606" />
+ <shade name="hard" weight="0.0140844926085" />
+</color>
+
+<color name="green" weight="0.123837902597">
+ <shade name="dark" weight="0.825737899987" />
+ <shade name="intense" weight="0.160176582606" />
+ <shade name="hard" weight="0.0140844926085" />
+</color>
+
+<color name="red" weight="0.0757837546428">
+ <shade name="dark" weight="0.825737899987" />
+ <shade name="intense" weight="0.160176582606" />
+ <shade name="hard" weight="0.0140844926085" />
+</color>
+
+</colors>

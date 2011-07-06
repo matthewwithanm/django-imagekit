@@ -1,0 +1,33 @@
+<colors query="opium">
+
+<color name="white" weight="0.40241398642">
+ <shade name="fresh" weight="0.434682800058" />
+ <shade name="dark" weight="0.34512217065" />
+ <shade name="cool" weight="0.220193649373" />
+</color>
+
+<color name="red" weight="0.185397872315">
+ <shade name="fresh" weight="0.434682800058" />
+ <shade name="dark" weight="0.34512217065" />
+ <shade name="cool" weight="0.220193649373" />
+</color>
+
+<color name="blue" weight="0.158091208951">
+ <shade name="fresh" weight="0.434682800058" />
+ <shade name="dark" weight="0.34512217065" />
+ <shade name="cool" weight="0.220193649373" />
+</color>
+
+<color name="black" weight="0.143288123022">
+ <shade name="fresh" weight="0.434682800058" />
+ <shade name="dark" weight="0.34512217065" />
+ <shade name="cool" weight="0.220193649373" />
+</color>
+
+<color name="pink" weight="0.110807565546">
+ <shade name="fresh" weight="0.434682800058" />
+ <shade name="dark" weight="0.34512217065" />
+ <shade name="cool" weight="0.220193649373" />
+</color>
+
+</colors>

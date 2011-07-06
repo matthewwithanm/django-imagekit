@@ -1,0 +1,33 @@
+<colors query="lighthearted">
+
+<color name="orange" weight="0.272726900827">
+ <shade name="warm" weight="0.483065346163" />
+ <shade name="light" weight="0.41354671701" />
+ <shade name="bright" weight="0.103386679253" />
+</color>
+
+<color name="yellow" weight="0.181817933885">
+ <shade name="warm" weight="0.483065346163" />
+ <shade name="light" weight="0.41354671701" />
+ <shade name="bright" weight="0.103386679253" />
+</color>
+
+<color name="white" weight="0.181817933885">
+ <shade name="warm" weight="0.483065346163" />
+ <shade name="light" weight="0.41354671701" />
+ <shade name="bright" weight="0.103386679253" />
+</color>
+
+<color name="red" weight="0.181817933885">
+ <shade name="warm" weight="0.483065346163" />
+ <shade name="light" weight="0.41354671701" />
+ <shade name="bright" weight="0.103386679253" />
+</color>
+
+<color name="pink" weight="0.181817933885">
+ <shade name="warm" weight="0.483065346163" />
+ <shade name="light" weight="0.41354671701" />
+ <shade name="bright" weight="0.103386679253" />
+</color>
+
+</colors>

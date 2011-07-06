@@ -1,0 +1,33 @@
+<colors query="icycle">
+
+<color name="white" weight="0.565216789226">
+ <shade name="cool" weight="0.666666000001" />
+ <shade name="light" weight="0.1666665" />
+ <shade name="dark" weight="0.1666665" />
+</color>
+
+<color name="green" weight="0.141304197306">
+ <shade name="cool" weight="0.666666000001" />
+ <shade name="light" weight="0.1666665" />
+ <shade name="dark" weight="0.1666665" />
+</color>
+
+<color name="pink" weight="0.130434643667">
+ <shade name="cool" weight="0.666666000001" />
+ <shade name="light" weight="0.1666665" />
+ <shade name="dark" weight="0.1666665" />
+</color>
+
+<color name="blue" weight="0.0978259827506">
+ <shade name="cool" weight="0.666666000001" />
+ <shade name="light" weight="0.1666665" />
+ <shade name="dark" weight="0.1666665" />
+</color>
+
+<color name="yellow" weight="0.0652173218337">
+ <shade name="cool" weight="0.666666000001" />
+ <shade name="light" weight="0.1666665" />
+ <shade name="dark" weight="0.1666665" />
+</color>
+
+</colors>

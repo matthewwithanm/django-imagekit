@@ -1,0 +1,33 @@
+<colors query="disinclined">
+
+<color name="black" weight="0.39999956">
+ <shade name="cool" weight="0.499999125002" />
+ <shade name="weak" weight="0.249999562501" />
+ <shade name="warm" weight="0.249999562501" />
+</color>
+
+<color name="red" weight="0.19999978">
+ <shade name="cool" weight="0.499999125002" />
+ <shade name="weak" weight="0.249999562501" />
+ <shade name="warm" weight="0.249999562501" />
+</color>
+
+<color name="green" weight="0.19999978">
+ <shade name="cool" weight="0.499999125002" />
+ <shade name="weak" weight="0.249999562501" />
+ <shade name="neutral" weight="0.249999562501" />
+</color>
+
+<color name="yellow" weight="0.0999998900001">
+ <shade name="cool" weight="0.499999125002" />
+ <shade name="weak" weight="0.249999562501" />
+ <shade name="warm" weight="0.249999562501" />
+</color>
+
+<color name="white" weight="0.0999998900001">
+ <shade name="cool" weight="0.499999125002" />
+ <shade name="weak" weight="0.249999562501" />
+ <shade name="warm" weight="0.249999562501" />
+</color>
+
+</colors>

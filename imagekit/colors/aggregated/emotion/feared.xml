@@ -1,0 +1,33 @@
+<colors query="feared">
+
+<color name="black" weight="0.358325696244">
+ <shade name="weak" weight="0.417390745407" />
+ <shade name="light" weight="0.373912542761" />
+ <shade name="dark" weight="0.208695372704" />
+</color>
+
+<color name="white" weight="0.346991793444">
+ <shade name="weak" weight="0.417390745407" />
+ <shade name="light" weight="0.373912542761" />
+ <shade name="dark" weight="0.208695372704" />
+</color>
+
+<color name="green" weight="0.193548186293">
+ <shade name="weak" weight="0.417390745407" />
+ <shade name="light" weight="0.373912542761" />
+ <shade name="dark" weight="0.208695372704" />
+</color>
+
+<color name="red" weight="0.0575413526816">
+ <shade name="weak" weight="0.417390745407" />
+ <shade name="light" weight="0.373912542761" />
+ <shade name="dark" weight="0.208695372704" />
+</color>
+
+<color name="blue" weight="0.0435919338497">
+ <shade name="weak" weight="0.417390745407" />
+ <shade name="light" weight="0.373912542761" />
+ <shade name="dark" weight="0.208695372704" />
+</color>
+
+</colors>

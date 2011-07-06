@@ -1,0 +1,33 @@
+<colors query="agitated">
+
+<color name="black" weight="0.507751394809">
+ <shade name="dark" weight="0.391607763119" />
+ <shade name="light" weight="0.332167299074" />
+ <shade name="intense" weight="0.276223332914" />
+</color>
+
+<color name="red" weight="0.166666488372">
+ <shade name="dark" weight="0.391607763119" />
+ <shade name="light" weight="0.332167299074" />
+ <shade name="intense" weight="0.276223332914" />
+</color>
+
+<color name="green" weight="0.120154910222">
+ <shade name="dark" weight="0.391607763119" />
+ <shade name="light" weight="0.332167299074" />
+ <shade name="intense" weight="0.276223332914" />
+</color>
+
+<color name="blue" weight="0.11240298053">
+ <shade name="dark" weight="0.391607763119" />
+ <shade name="light" weight="0.332167299074" />
+ <shade name="intense" weight="0.276223332914" />
+</color>
+
+<color name="white" weight="0.0930231563008">
+ <shade name="dark" weight="0.4426869439" />
+ <shade name="light" weight="0.375493389915" />
+ <shade name="warm" weight="0.181817851959" />
+</color>
+
+</colors>

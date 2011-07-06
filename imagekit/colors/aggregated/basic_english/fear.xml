@@ -1,0 +1,33 @@
+<colors query="fear">
+
+<color name="blue" weight="0.397239611444">
+ <shade name="intense" weight="0.693496334852" />
+ <shade name="dark" weight="0.215552303423" />
+ <shade name="hard" weight="0.090950338997" />
+</color>
+
+<color name="white" weight="0.38442543043">
+ <shade name="dark" weight="0.67966514403" />
+ <shade name="hard" weight="0.286778541785" />
+ <shade name="cool" weight="0.0335530893888" />
+</color>
+
+<color name="black" weight="0.161655822027">
+ <shade name="intense" weight="0.693496334852" />
+ <shade name="dark" weight="0.215552303423" />
+ <shade name="hard" weight="0.090950338997" />
+</color>
+
+<color name="yellow" weight="0.040019673014">
+ <shade name="intense" weight="0.693496334852" />
+ <shade name="dark" weight="0.215552303423" />
+ <shade name="hard" weight="0.090950338997" />
+</color>
+
+<color name="purple" weight="0.0166584353186">
+ <shade name="dark" weight="0.67966514403" />
+ <shade name="hard" weight="0.286778541785" />
+ <shade name="cool" weight="0.0335530893888" />
+</color>
+
+</colors>

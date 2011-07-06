@@ -1,0 +1,33 @@
+<colors query="splash">
+
+<color name="blue" weight="0.341446903768">
+ <shade name="cool" weight="0.369519199356" />
+ <shade name="light" weight="0.334028654785" />
+ <shade name="dark" weight="0.296450431122" />
+</color>
+
+<color name="orange" weight="0.233552313753">
+ <shade name="cool" weight="0.369519199356" />
+ <shade name="light" weight="0.334028654785" />
+ <shade name="dark" weight="0.296450431122" />
+</color>
+
+<color name="white" weight="0.165131354231">
+ <shade name="cool" weight="0.369519199356" />
+ <shade name="light" weight="0.334028654785" />
+ <shade name="dark" weight="0.296450431122" />
+</color>
+
+<color name="pink" weight="0.134210343678">
+ <shade name="cool" weight="0.369519199356" />
+ <shade name="light" weight="0.334028654785" />
+ <shade name="dark" weight="0.296450431122" />
+</color>
+
+<color name="red" weight="0.125657723737">
+ <shade name="cool" weight="0.369519199356" />
+ <shade name="light" weight="0.334028654785" />
+ <shade name="dark" weight="0.296450431122" />
+</color>
+
+</colors>

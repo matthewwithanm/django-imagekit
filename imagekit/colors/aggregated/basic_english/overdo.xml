@@ -1,0 +1,33 @@
+<colors query="overdo">
+
+<color name="black" weight="0.388888391976">
+ <shade name="hard" weight="0.411764003461" />
+ <shade name="light" weight="0.352940574395" />
+ <shade name="fresh" weight="0.235293716264" />
+</color>
+
+<color name="white" weight="0.222221938272">
+ <shade name="hard" weight="0.411764003461" />
+ <shade name="light" weight="0.352940574395" />
+ <shade name="fresh" weight="0.235293716264" />
+</color>
+
+<color name="blue" weight="0.166666453704">
+ <shade name="hard" weight="0.411764003461" />
+ <shade name="light" weight="0.352940574395" />
+ <shade name="fresh" weight="0.235293716264" />
+</color>
+
+<color name="red" weight="0.111110969136">
+ <shade name="hard" weight="0.411764003461" />
+ <shade name="light" weight="0.352940574395" />
+ <shade name="fresh" weight="0.235293716264" />
+</color>
+
+<color name="purple" weight="0.111110969136">
+ <shade name="hard" weight="0.411764003461" />
+ <shade name="light" weight="0.352940574395" />
+ <shade name="fresh" weight="0.235293716264" />
+</color>
+
+</colors>

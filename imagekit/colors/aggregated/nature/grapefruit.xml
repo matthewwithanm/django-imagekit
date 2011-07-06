@@ -1,0 +1,33 @@
+<colors query="grapefruit">
+
+<color name="pink" weight="0.564601545082">
+ <shade name="fresh" weight="0.830053671128" />
+ <shade name="light" weight="0.125650326363" />
+ <shade name="dark" weight="0.0442949130312" />
+</color>
+
+<color name="red" weight="0.21202847723">
+ <shade name="fresh" weight="0.830053671128" />
+ <shade name="light" weight="0.125650326363" />
+ <shade name="dark" weight="0.0442949130312" />
+</color>
+
+<color name="orange" weight="0.163564825292">
+ <shade name="fresh" weight="0.830053671128" />
+ <shade name="light" weight="0.125650326363" />
+ <shade name="dark" weight="0.0442949130312" />
+</color>
+
+<color name="white" weight="0.0562178362485">
+ <shade name="fresh" weight="0.830053671128" />
+ <shade name="light" weight="0.125650326363" />
+ <shade name="dark" weight="0.0442949130312" />
+</color>
+
+<color name="green" weight="0.00358631024344">
+ <shade name="fresh" weight="0.830053671128" />
+ <shade name="light" weight="0.125650326363" />
+ <shade name="dark" weight="0.0442949130312" />
+</color>
+
+</colors>

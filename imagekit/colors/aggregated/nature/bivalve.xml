@@ -1,0 +1,33 @@
+<colors query="bivalve">
+
+<color name="white" weight="0.56343221983">
+ <shade name="fresh" weight="0.523604563688" />
+ <shade name="hard" weight="0.433475909282" />
+ <shade name="soft" weight="0.0429184068596" />
+</color>
+
+<color name="black" weight="0.257462405088">
+ <shade name="fresh" weight="0.523604563688" />
+ <shade name="hard" weight="0.433475909282" />
+ <shade name="soft" weight="0.0429184068596" />
+</color>
+
+<color name="blue" weight="0.100746158513">
+ <shade name="fresh" weight="0.523604563688" />
+ <shade name="hard" weight="0.433475909282" />
+ <shade name="soft" weight="0.0429184068596" />
+</color>
+
+<color name="red" weight="0.0485074096542">
+ <shade name="fresh" weight="0.523604563688" />
+ <shade name="hard" weight="0.433475909282" />
+ <shade name="soft" weight="0.0429184068596" />
+</color>
+
+<color name="purple" weight="0.0298507136334">
+ <shade name="fresh" weight="0.523604563688" />
+ <shade name="hard" weight="0.433475909282" />
+ <shade name="soft" weight="0.0429184068596" />
+</color>
+
+</colors>

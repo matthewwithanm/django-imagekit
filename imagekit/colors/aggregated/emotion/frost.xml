@@ -1,0 +1,33 @@
+<colors query="frost">
+
+<color name="white" weight="0.383794896695">
+ <shade name="hard" weight="0.581478177378" />
+ <shade name="light" weight="0.278894162853" />
+ <shade name="cool" weight="0.13962655" />
+</color>
+
+<color name="black" weight="0.216062312214">
+ <shade name="hard" weight="0.581478177378" />
+ <shade name="light" weight="0.278894162853" />
+ <shade name="cool" weight="0.13962655" />
+</color>
+
+<color name="blue" weight="0.212508655763">
+ <shade name="hard" weight="0.581478177378" />
+ <shade name="light" weight="0.278894162853" />
+ <shade name="cool" weight="0.13962655" />
+</color>
+
+<color name="pink" weight="0.150319667872">
+ <shade name="hard" weight="0.581478177378" />
+ <shade name="light" weight="0.278894162853" />
+ <shade name="cool" weight="0.13962655" />
+</color>
+
+<color name="red" weight="0.0373133927343">
+ <shade name="hard" weight="0.581478177378" />
+ <shade name="light" weight="0.278894162853" />
+ <shade name="cool" weight="0.13962655" />
+</color>
+
+</colors>

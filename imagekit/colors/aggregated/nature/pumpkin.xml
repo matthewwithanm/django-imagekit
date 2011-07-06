@@ -1,0 +1,33 @@
+<colors query="pumpkin">
+
+<color name="blue" weight="0.27745632015">
+ <shade name="fresh" weight="0.802927670429" />
+ <shade name="light" weight="0.185081632506" />
+ <shade name="cool" weight="0.0119894792822" />
+</color>
+
+<color name="green" weight="0.260436430141">
+ <shade name="fresh" weight="0.802927670429" />
+ <shade name="light" weight="0.185081632506" />
+ <shade name="cool" weight="0.0119894792822" />
+</color>
+
+<color name="orange" weight="0.226717780123">
+ <shade name="fresh" weight="0.690865786634" />
+ <shade name="light" weight="0.159250418614" />
+ <shade name="warm" weight="0.149882746931" />
+</color>
+
+<color name="white" weight="0.157032570085">
+ <shade name="fresh" weight="0.690865786634" />
+ <shade name="light" weight="0.159250418614" />
+ <shade name="warm" weight="0.149882746931" />
+</color>
+
+<color name="yellow" weight="0.0783557200424">
+ <shade name="fresh" weight="0.690865786634" />
+ <shade name="light" weight="0.159250418614" />
+ <shade name="warm" weight="0.149882746931" />
+</color>
+
+</colors>

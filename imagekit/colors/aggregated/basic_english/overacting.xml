@@ -1,0 +1,33 @@
+<colors query="overacting">
+
+<color name="black" weight="0.608694990549">
+ <shade name="intense" weight="0.943999040897" />
+ <shade name="hard" weight="0.03999995936" />
+ <shade name="light" weight="0.015999983744" />
+</color>
+
+<color name="green" weight="0.173912854443">
+ <shade name="intense" weight="0.943999040897" />
+ <shade name="hard" weight="0.03999995936" />
+ <shade name="light" weight="0.015999983744" />
+</color>
+
+<color name="white" weight="0.0869564272213">
+ <shade name="hard" weight="0.55554771616" />
+ <shade name="light" weight="0.222219086464" />
+ <shade name="bright" weight="0.222219086464" />
+</color>
+
+<color name="red" weight="0.0869564272213">
+ <shade name="intense" weight="0.943999040897" />
+ <shade name="hard" weight="0.03999995936" />
+ <shade name="light" weight="0.015999983744" />
+</color>
+
+<color name="purple" weight="0.0434782136106">
+ <shade name="hard" weight="0.55554771616" />
+ <shade name="light" weight="0.222219086464" />
+ <shade name="bright" weight="0.222219086464" />
+</color>
+
+</colors>

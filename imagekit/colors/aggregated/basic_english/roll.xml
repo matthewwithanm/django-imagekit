@@ -1,0 +1,33 @@
+<colors query="roll">
+
+<color name="white" weight="0.44349746415">
+ <shade name="hard" weight="0.615635353492" />
+ <shade name="soft" weight="0.224461739503" />
+ <shade name="fresh" weight="0.159901748894" />
+</color>
+
+<color name="black" weight="0.166950389834">
+ <shade name="hard" weight="0.615635353492" />
+ <shade name="soft" weight="0.224461739503" />
+ <shade name="fresh" weight="0.159901748894" />
+</color>
+
+<color name="red" weight="0.14480390955">
+ <shade name="hard" weight="0.615635353492" />
+ <shade name="soft" weight="0.224461739503" />
+ <shade name="fresh" weight="0.159901748894" />
+</color>
+
+<color name="blue" weight="0.140261041799">
+ <shade name="hard" weight="0.615635353492" />
+ <shade name="soft" weight="0.224461739503" />
+ <shade name="fresh" weight="0.159901748894" />
+</color>
+
+<color name="green" weight="0.104485958263">
+ <shade name="hard" weight="0.615635353492" />
+ <shade name="soft" weight="0.224461739503" />
+ <shade name="fresh" weight="0.159901748894" />
+</color>
+
+</colors>

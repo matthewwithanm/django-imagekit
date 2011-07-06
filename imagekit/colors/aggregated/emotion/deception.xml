@@ -1,0 +1,33 @@
+<colors query="deception">
+
+<color name="white" weight="0.447992449924">
+ <shade name="dark" weight="0.823338191002" />
+ <shade name="cool" weight="0.162288048053" />
+ <shade name="light" weight="0.0143727244903" />
+</color>
+
+<color name="black" weight="0.25504520664">
+ <shade name="dark" weight="0.823338191002" />
+ <shade name="cool" weight="0.162288048053" />
+ <shade name="light" weight="0.0143727244903" />
+</color>
+
+<color name="green" weight="0.161898261606">
+ <shade name="dark" weight="0.823338191002" />
+ <shade name="cool" weight="0.162288048053" />
+ <shade name="light" weight="0.0143727244903" />
+</color>
+
+<color name="red" weight="0.070969100978">
+ <shade name="dark" weight="0.823338191002" />
+ <shade name="cool" weight="0.162288048053" />
+ <shade name="light" weight="0.0143727244903" />
+</color>
+
+<color name="blue" weight="0.0640939693208">
+ <shade name="dark" weight="0.823338191002" />
+ <shade name="cool" weight="0.162288048053" />
+ <shade name="light" weight="0.0143727244903" />
+</color>
+
+</colors>

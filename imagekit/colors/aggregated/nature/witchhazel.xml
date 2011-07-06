@@ -1,0 +1,33 @@
+<colors query="witchhazel">
+
+<color name="yellow" weight="0.511110565927">
+ <shade name="light" weight="0.799999200001" />
+ <shade name="fresh" weight="0.1999998" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="red" weight="0.333332977778">
+ <shade name="light" weight="0.799999200001" />
+ <shade name="fresh" weight="0.1999998" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="pink" weight="0.0555554962964">
+ <shade name="light" weight="0.799999200001" />
+ <shade name="fresh" weight="0.1999998" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="orange" weight="0.0555554962964">
+ <shade name="light" weight="0.799999200001" />
+ <shade name="fresh" weight="0.1999998" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="purple" weight="0.0444443970371">
+ <shade name="light" weight="0.799999200001" />
+ <shade name="fresh" weight="0.1999998" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="undergo">
+
+<color name="red" weight="0.266846054061">
+ <shade name="light" weight="0.887639491984" />
+ <shade name="dark" weight="0.0738361964399" />
+ <shade name="hard" weight="0.0385232329252" />
+</color>
+
+<color name="white" weight="0.231805663124">
+ <shade name="light" weight="0.887639491984" />
+ <shade name="dark" weight="0.0738361964399" />
+ <shade name="hard" weight="0.0385232329252" />
+</color>
+
+<color name="green" weight="0.226414833749">
+ <shade name="light" weight="0.887639491984" />
+ <shade name="dark" weight="0.0738361964399" />
+ <shade name="hard" weight="0.0385232329252" />
+</color>
+
+<color name="black" weight="0.153638637187">
+ <shade name="light" weight="0.887639491984" />
+ <shade name="dark" weight="0.0738361964399" />
+ <shade name="hard" weight="0.0385232329252" />
+</color>
+
+<color name="blue" weight="0.121293660937">
+ <shade name="light" weight="0.887639491984" />
+ <shade name="dark" weight="0.0738361964399" />
+ <shade name="hard" weight="0.0385232329252" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="spicebush">
+
+<color name="black" weight="0.482268973392">
+ <shade name="fresh" weight="0.636362826447" />
+ <shade name="hard" weight="0.27272692562" />
+ <shade name="soft" weight="0.0909089752068" />
+</color>
+
+<color name="yellow" weight="0.340425157689">
+ <shade name="fresh" weight="0.636362826447" />
+ <shade name="hard" weight="0.27272692562" />
+ <shade name="soft" weight="0.0909089752068" />
+</color>
+
+<color name="purple" weight="0.0709219078518">
+ <shade name="fresh" weight="0.636362826447" />
+ <shade name="hard" weight="0.27272692562" />
+ <shade name="soft" weight="0.0909089752068" />
+</color>
+
+<color name="blue" weight="0.0567375262814">
+ <shade name="fresh" weight="0.636362826447" />
+ <shade name="hard" weight="0.27272692562" />
+ <shade name="soft" weight="0.0909089752068" />
+</color>
+
+<color name="green" weight="0.0496453354963">
+ <shade name="fresh" weight="0.636362826447" />
+ <shade name="hard" weight="0.27272692562" />
+ <shade name="soft" weight="0.0909089752068" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="evaporation">
+
+<color name="black" weight="0.556692862248">
+ <shade name="intense" weight="0.937923228929" />
+ <shade name="weak" weight="0.0364062305966" />
+ <shade name="cool" weight="0.0256694778444" />
+</color>
+
+<color name="red" weight="0.13679574933">
+ <shade name="intense" weight="0.937923228929" />
+ <shade name="weak" weight="0.0364062305966" />
+ <shade name="cool" weight="0.0256694778444" />
+</color>
+
+<color name="white" weight="0.121433659833">
+ <shade name="weak" weight="0.445950355472" />
+ <shade name="cool" weight="0.31443279301" />
+ <shade name="light" weight="0.239603835058" />
+</color>
+
+<color name="blue" weight="0.0958301773384">
+ <shade name="intense" weight="0.937923228929" />
+ <shade name="weak" weight="0.0364062305966" />
+ <shade name="cool" weight="0.0256694778444" />
+</color>
+
+<color name="yellow" weight="0.0892464246968">
+ <shade name="intense" weight="0.937923228929" />
+ <shade name="weak" weight="0.0364062305966" />
+ <shade name="cool" weight="0.0256694778444" />
+</color>
+
+</colors>

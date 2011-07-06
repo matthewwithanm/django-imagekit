@@ -1,0 +1,33 @@
+<colors query="crystal">
+
+<color name="blue" weight="0.250990445348">
+ <shade name="dark" weight="0.732216744315" />
+ <shade name="bright" weight="0.197349846325" />
+ <shade name="light" weight="0.0704322773103" />
+</color>
+
+<color name="pink" weight="0.225010732584">
+ <shade name="dark" weight="0.732216744315" />
+ <shade name="bright" weight="0.197349846325" />
+ <shade name="light" weight="0.0704322773103" />
+</color>
+
+<color name="black" weight="0.177014314088">
+ <shade name="dark" weight="0.732216744315" />
+ <shade name="bright" weight="0.197349846325" />
+ <shade name="light" weight="0.0704322773103" />
+</color>
+
+<color name="white" weight="0.176133645858">
+ <shade name="dark" weight="0.732216744315" />
+ <shade name="bright" weight="0.197349846325" />
+ <shade name="light" weight="0.0704322773103" />
+</color>
+
+<color name="red" weight="0.170849636483">
+ <shade name="dark" weight="0.732216744315" />
+ <shade name="bright" weight="0.197349846325" />
+ <shade name="light" weight="0.0704322773103" />
+</color>
+
+</colors>

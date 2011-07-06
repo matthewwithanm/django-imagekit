@@ -1,0 +1,33 @@
+<colors query="greed">
+
+<color name="white" weight="0.415242673008">
+ <shade name="dark" weight="0.484515287582" />
+ <shade name="cool" weight="0.274133649553" />
+ <shade name="light" weight="0.241346900769" />
+</color>
+
+<color name="green" weight="0.262811818359">
+ <shade name="intense" weight="0.772589808699" />
+ <shade name="dark" weight="0.145235964038" />
+ <shade name="cool" weight="0.0821729796531" />
+</color>
+
+<color name="red" weight="0.187910450127">
+ <shade name="intense" weight="0.772589808699" />
+ <shade name="dark" weight="0.145235964038" />
+ <shade name="cool" weight="0.0821729796531" />
+</color>
+
+<color name="black" weight="0.11208924053">
+ <shade name="intense" weight="0.772589808699" />
+ <shade name="dark" weight="0.145235964038" />
+ <shade name="cool" weight="0.0821729796531" />
+</color>
+
+<color name="blue" weight="0.021944786833">
+ <shade name="intense" weight="0.772589808699" />
+ <shade name="dark" weight="0.145235964038" />
+ <shade name="cool" weight="0.0821729796531" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="infatuated">
+
+<color name="black" weight="0.349999615">
+ <shade name="weak" weight="0.374999343751" />
+ <shade name="hard" weight="0.333332750001" />
+ <shade name="light" weight="0.291666156251" />
+</color>
+
+<color name="pink" weight="0.249999725">
+ <shade name="weak" weight="0.374999343751" />
+ <shade name="hard" weight="0.333332750001" />
+ <shade name="light" weight="0.291666156251" />
+</color>
+
+<color name="white" weight="0.19999978">
+ <shade name="weak" weight="0.374999343751" />
+ <shade name="hard" weight="0.333332750001" />
+ <shade name="light" weight="0.291666156251" />
+</color>
+
+<color name="red" weight="0.0999998900001">
+ <shade name="weak" weight="0.374999343751" />
+ <shade name="hard" weight="0.333332750001" />
+ <shade name="light" weight="0.291666156251" />
+</color>
+
+<color name="blue" weight="0.0999998900001">
+ <shade name="weak" weight="0.374999343751" />
+ <shade name="hard" weight="0.333332750001" />
+ <shade name="light" weight="0.291666156251" />
+</color>
+
+</colors>

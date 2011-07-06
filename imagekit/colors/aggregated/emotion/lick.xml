@@ -1,0 +1,33 @@
+<colors query="lick">
+
+<color name="black" weight="0.441608975103">
+ <shade name="fresh" weight="0.471357777452" />
+ <shade name="hard" weight="0.353518333089" />
+ <shade name="cool" weight="0.175122507595" />
+</color>
+
+<color name="blue" weight="0.190609002074">
+ <shade name="fresh" weight="0.471357777452" />
+ <shade name="hard" weight="0.353518333089" />
+ <shade name="cool" weight="0.175122507595" />
+</color>
+
+<color name="white" weight="0.181550356431">
+ <shade name="fresh" weight="0.471357777452" />
+ <shade name="hard" weight="0.353518333089" />
+ <shade name="cool" weight="0.175122507595" />
+</color>
+
+<color name="red" weight="0.179285695021">
+ <shade name="fresh" weight="0.471357777452" />
+ <shade name="hard" weight="0.353518333089" />
+ <shade name="cool" weight="0.175122507595" />
+</color>
+
+<color name="pink" weight="0.00694496165974">
+ <shade name="fresh" weight="0.471357777452" />
+ <shade name="hard" weight="0.353518333089" />
+ <shade name="cool" weight="0.175122507595" />
+</color>
+
+</colors>

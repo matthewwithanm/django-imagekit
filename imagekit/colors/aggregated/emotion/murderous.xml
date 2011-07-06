@@ -1,0 +1,33 @@
+<colors query="murderous">
+
+<color name="black" weight="0.375697932058">
+ <shade name="dark" weight="0.765083606406" />
+ <shade name="intense" weight="0.164118880869" />
+ <shade name="bright" weight="0.0707963799829" />
+</color>
+
+<color name="red" weight="0.314245482205">
+ <shade name="dark" weight="0.765083606406" />
+ <shade name="intense" weight="0.164118880869" />
+ <shade name="bright" weight="0.0707963799829" />
+</color>
+
+<color name="white" weight="0.17318417686">
+ <shade name="dark" weight="0.852913721164" />
+ <shade name="bright" weight="0.0789236671529" />
+ <shade name="cool" weight="0.0681613489048" />
+</color>
+
+<color name="blue" weight="0.0949719679552">
+ <shade name="dark" weight="0.765083606406" />
+ <shade name="intense" weight="0.164118880869" />
+ <shade name="bright" weight="0.0707963799829" />
+</color>
+
+<color name="yellow" weight="0.0418993976273">
+ <shade name="dark" weight="0.765083606406" />
+ <shade name="intense" weight="0.164118880869" />
+ <shade name="bright" weight="0.0707963799829" />
+</color>
+
+</colors>

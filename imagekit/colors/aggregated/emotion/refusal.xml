@@ -1,0 +1,33 @@
+<colors query="refusal">
+
+<color name="white" weight="0.412459285677">
+ <shade name="soft" weight="0.557875204468" />
+ <shade name="hard" weight="0.360978073479" />
+ <shade name="cool" weight="0.0811454842862" />
+</color>
+
+<color name="black" weight="0.245971813594">
+ <shade name="soft" weight="0.557875204468" />
+ <shade name="hard" weight="0.360978073479" />
+ <shade name="cool" weight="0.0811454842862" />
+</color>
+
+<color name="green" weight="0.232008348193">
+ <shade name="soft" weight="0.557875204468" />
+ <shade name="hard" weight="0.360978073479" />
+ <shade name="cool" weight="0.0811454842862" />
+</color>
+
+<color name="red" weight="0.0590761997714">
+ <shade name="soft" weight="0.557875204468" />
+ <shade name="hard" weight="0.360978073479" />
+ <shade name="cool" weight="0.0811454842862" />
+</color>
+
+<color name="blue" weight="0.0504832979865">
+ <shade name="soft" weight="0.557875204468" />
+ <shade name="hard" weight="0.360978073479" />
+ <shade name="cool" weight="0.0811454842862" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="nastiness">
+
+<color name="black" weight="0.332106307244">
+ <shade name="intense" weight="0.533957272086" />
+ <shade name="dark" weight="0.393442200484" />
+ <shade name="hard" weight="0.0725994536608" />
+</color>
+
+<color name="green" weight="0.277828545118">
+ <shade name="intense" weight="0.533957272086" />
+ <shade name="dark" weight="0.393442200484" />
+ <shade name="hard" weight="0.0725994536608" />
+</color>
+
+<color name="orange" weight="0.165593172587">
+ <shade name="intense" weight="0.533957272086" />
+ <shade name="dark" weight="0.393442200484" />
+ <shade name="hard" weight="0.0725994536608" />
+</color>
+
+<color name="pink" weight="0.132474538069">
+ <shade name="dark" weight="0.803825987779" />
+ <shade name="hard" weight="0.148325033459" />
+ <shade name="cool" weight="0.0478467849868" />
+</color>
+
+<color name="red" weight="0.0919962069927">
+ <shade name="intense" weight="0.533957272086" />
+ <shade name="dark" weight="0.393442200484" />
+ <shade name="hard" weight="0.0725994536608" />
+</color>
+
+</colors>

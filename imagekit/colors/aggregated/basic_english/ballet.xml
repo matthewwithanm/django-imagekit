@@ -1,0 +1,33 @@
+<colors query="ballet">
+
+<color name="pink" weight="0.396162656566">
+ <shade name="soft" weight="0.930345463567" />
+ <shade name="light" weight="0.0452931344105" />
+ <shade name="cool" weight="0.0243603614802" />
+</color>
+
+<color name="black" weight="0.294963721293">
+ <shade name="soft" weight="0.930345463567" />
+ <shade name="light" weight="0.0452931344105" />
+ <shade name="cool" weight="0.0243603614802" />
+</color>
+
+<color name="white" weight="0.176498616969">
+ <shade name="soft" weight="0.930345463567" />
+ <shade name="light" weight="0.0452931344105" />
+ <shade name="cool" weight="0.0243603614802" />
+</color>
+
+<color name="blue" weight="0.0719423710471">
+ <shade name="soft" weight="0.930345463567" />
+ <shade name="light" weight="0.0452931344105" />
+ <shade name="cool" weight="0.0243603614802" />
+</color>
+
+<color name="red" weight="0.0604315916796">
+ <shade name="soft" weight="0.930345463567" />
+ <shade name="light" weight="0.0452931344105" />
+ <shade name="cool" weight="0.0243603614802" />
+</color>
+
+</colors>

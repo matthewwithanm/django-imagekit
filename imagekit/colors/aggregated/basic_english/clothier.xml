@@ -1,0 +1,33 @@
+<colors query="clothier">
+
+<color name="green" weight="0.570945367285">
+ <shade name="cool" weight="0.571427591838" />
+ <shade name="fresh" weight="0.285713795919" />
+ <shade name="light" weight="0.14285689796" />
+</color>
+
+<color name="white" weight="0.378377994887">
+ <shade name="warm" weight="0.399999520001" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="fresh" weight="0.19999976" />
+</color>
+
+<color name="black" weight="0.0270269996348">
+ <shade name="warm" weight="0.399999520001" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="fresh" weight="0.19999976" />
+</color>
+
+<color name="pink" weight="0.0135134998174">
+ <shade name="warm" weight="0.399999520001" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="fresh" weight="0.19999976" />
+</color>
+
+<color name="blue" weight="0.010135124863">
+ <shade name="cool" weight="0.571427591838" />
+ <shade name="fresh" weight="0.285713795919" />
+ <shade name="light" weight="0.14285689796" />
+</color>
+
+</colors>

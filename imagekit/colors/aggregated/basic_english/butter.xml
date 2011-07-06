@@ -1,0 +1,33 @@
+<colors query="butter">
+
+<color name="orange" weight="0.260150064317">
+ <shade name="soft" weight="0.456930585967" />
+ <shade name="fresh" weight="0.37665899654" />
+ <shade name="light" weight="0.166409179619" />
+</color>
+
+<color name="white" weight="0.252130023798">
+ <shade name="soft" weight="0.456930585967" />
+ <shade name="fresh" weight="0.37665899654" />
+ <shade name="light" weight="0.166409179619" />
+</color>
+
+<color name="black" weight="0.232079922502">
+ <shade name="soft" weight="0.456930585967" />
+ <shade name="fresh" weight="0.37665899654" />
+ <shade name="light" weight="0.166409179619" />
+</color>
+
+<color name="yellow" weight="0.16691709329">
+ <shade name="soft" weight="0.456930585967" />
+ <shade name="fresh" weight="0.37665899654" />
+ <shade name="light" weight="0.166409179619" />
+</color>
+
+<color name="green" weight="0.0887216982351">
+ <shade name="soft" weight="0.456930585967" />
+ <shade name="fresh" weight="0.37665899654" />
+ <shade name="light" weight="0.166409179619" />
+</color>
+
+</colors>

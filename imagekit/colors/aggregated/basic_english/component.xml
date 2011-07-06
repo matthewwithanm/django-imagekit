@@ -1,0 +1,33 @@
+<colors query="component">
+
+<color name="red" weight="0.35045366043">
+ <shade name="light" weight="0.484038995145" />
+ <shade name="soft" weight="0.287806970086" />
+ <shade name="hard" weight="0.228152434468" />
+</color>
+
+<color name="blue" weight="0.3490348197">
+ <shade name="light" weight="0.484038995145" />
+ <shade name="soft" weight="0.287806970086" />
+ <shade name="hard" weight="0.228152434468" />
+</color>
+
+<color name="green" weight="0.197218861538">
+ <shade name="light" weight="0.484038995145" />
+ <shade name="soft" weight="0.287806970086" />
+ <shade name="hard" weight="0.228152434468" />
+</color>
+
+<color name="black" weight="0.0566117451464">
+ <shade name="light" weight="0.484038995145" />
+ <shade name="soft" weight="0.287806970086" />
+ <shade name="hard" weight="0.228152434468" />
+</color>
+
+<color name="yellow" weight="0.046679860033">
+ <shade name="light" weight="0.484038995145" />
+ <shade name="soft" weight="0.287806970086" />
+ <shade name="hard" weight="0.228152434468" />
+</color>
+
+</colors>

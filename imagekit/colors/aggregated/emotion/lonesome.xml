@@ -1,0 +1,33 @@
+<colors query="lonesome">
+
+<color name="green" weight="0.486576686957">
+ <shade name="dark" weight="0.767945718658" />
+ <shade name="hard" weight="0.164162309423" />
+ <shade name="light" weight="0.0678908533886" />
+</color>
+
+<color name="blue" weight="0.276509786243">
+ <shade name="dark" weight="0.767945718658" />
+ <shade name="hard" weight="0.164162309423" />
+ <shade name="light" weight="0.0678908533886" />
+</color>
+
+<color name="black" weight="0.154697829439">
+ <shade name="dark" weight="0.767945718658" />
+ <shade name="hard" weight="0.164162309423" />
+ <shade name="light" weight="0.0678908533886" />
+</color>
+
+<color name="red" weight="0.0516777998561">
+ <shade name="dark" weight="0.767945718658" />
+ <shade name="hard" weight="0.164162309423" />
+ <shade name="light" weight="0.0678908533886" />
+</color>
+
+<color name="white" weight="0.0305368817332">
+ <shade name="dark" weight="0.767945718658" />
+ <shade name="hard" weight="0.164162309423" />
+ <shade name="light" weight="0.0678908533886" />
+</color>
+
+</colors>

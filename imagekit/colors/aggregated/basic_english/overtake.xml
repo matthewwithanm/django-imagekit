@@ -1,0 +1,33 @@
+<colors query="overtake">
+
+<color name="orange" weight="0.701012750925">
+ <shade name="light" weight="0.824450519011" />
+ <shade name="cool" weight="0.0909089925906" />
+ <shade name="hard" weight="0.0846394068947" />
+</color>
+
+<color name="green" weight="0.104729615801">
+ <shade name="light" weight="0.824450519011" />
+ <shade name="cool" weight="0.0909089925906" />
+ <shade name="hard" weight="0.0846394068947" />
+</color>
+
+<color name="white" weight="0.086148554933">
+ <shade name="light" weight="0.824450519011" />
+ <shade name="cool" weight="0.0909089925906" />
+ <shade name="hard" weight="0.0846394068947" />
+</color>
+
+<color name="blue" weight="0.0574323699553">
+ <shade name="light" weight="0.824450519011" />
+ <shade name="cool" weight="0.0909089925906" />
+ <shade name="hard" weight="0.0846394068947" />
+</color>
+
+<color name="red" weight="0.0506756205488">
+ <shade name="light" weight="0.824450519011" />
+ <shade name="cool" weight="0.0909089925906" />
+ <shade name="hard" weight="0.0846394068947" />
+</color>
+
+</colors>

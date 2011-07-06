@@ -1,0 +1,33 @@
+<colors query="arctic">
+
+<color name="white" weight="0.426308930354">
+ <shade name="warm" weight="0.492408080851" />
+ <shade name="cool" weight="0.422650269397" />
+ <shade name="fresh" weight="0.0849403939468" />
+</color>
+
+<color name="blue" weight="0.257138719896">
+ <shade name="cool" weight="0.760707290939" />
+ <shade name="fresh" weight="0.152880008956" />
+ <shade name="soft" weight="0.0864104398445" />
+</color>
+
+<color name="red" weight="0.147516423519">
+ <shade name="warm" weight="0.492408080851" />
+ <shade name="cool" weight="0.422650269397" />
+ <shade name="fresh" weight="0.0849403939468" />
+</color>
+
+<color name="black" weight="0.143456338468">
+ <shade name="warm" weight="0.492408080851" />
+ <shade name="cool" weight="0.422650269397" />
+ <shade name="fresh" weight="0.0849403939468" />
+</color>
+
+<color name="yellow" weight="0.0255785358212">
+ <shade name="warm" weight="0.492408080851" />
+ <shade name="cool" weight="0.422650269397" />
+ <shade name="fresh" weight="0.0849403939468" />
+</color>
+
+</colors>

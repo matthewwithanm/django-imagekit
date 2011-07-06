@@ -1,0 +1,33 @@
+<colors query="nosey">
+
+<color name="blue" weight="0.516666097881">
+ <shade name="soft" weight="0.847999063809" />
+ <shade name="hard" weight="0.0959998940161" />
+ <shade name="cool" weight="0.0559999381761" />
+</color>
+
+<color name="red" weight="0.175438403355">
+ <shade name="soft" weight="0.847999063809" />
+ <shade name="hard" weight="0.0959998940161" />
+ <shade name="cool" weight="0.0559999381761" />
+</color>
+
+<color name="pink" weight="0.109649002097">
+ <shade name="soft" weight="0.847999063809" />
+ <shade name="hard" weight="0.0959998940161" />
+ <shade name="cool" weight="0.0559999381761" />
+</color>
+
+<color name="green" weight="0.104385849996">
+ <shade name="soft" weight="0.847999063809" />
+ <shade name="hard" weight="0.0959998940161" />
+ <shade name="cool" weight="0.0559999381761" />
+</color>
+
+<color name="white" weight="0.093859545795">
+ <shade name="soft" weight="0.847999063809" />
+ <shade name="hard" weight="0.0959998940161" />
+ <shade name="cool" weight="0.0559999381761" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="blossom">
+
+<color name="orange" weight="0.82422501062">
+ <shade name="fresh" weight="0.992565588779" />
+ <shade name="light" weight="0.00470276709094" />
+ <shade name="soft" weight="0.00273063895603" />
+</color>
+
+<color name="pink" weight="0.0578323626236">
+ <shade name="fresh" weight="0.992565588779" />
+ <shade name="light" weight="0.00470276709094" />
+ <shade name="soft" weight="0.00273063895603" />
+</color>
+
+<color name="blue" weight="0.0532786332831">
+ <shade name="fresh" weight="0.992565588779" />
+ <shade name="light" weight="0.00470276709094" />
+ <shade name="soft" weight="0.00273063895603" />
+</color>
+
+<color name="white" weight="0.0325136274907">
+ <shade name="fresh" weight="0.992565588779" />
+ <shade name="light" weight="0.00470276709094" />
+ <shade name="soft" weight="0.00273063895603" />
+</color>
+
+<color name="red" weight="0.0321493291435">
+ <shade name="fresh" weight="0.992565588779" />
+ <shade name="light" weight="0.00470276709094" />
+ <shade name="soft" weight="0.00273063895603" />
+</color>
+
+</colors>

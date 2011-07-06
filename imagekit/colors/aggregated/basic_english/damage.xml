@@ -1,0 +1,33 @@
+<colors query="damage">
+
+<color name="white" weight="0.527228925043">
+ <shade name="light" weight="0.971951191908" />
+ <shade name="soft" weight="0.0171132834861" />
+ <shade name="neutral" weight="0.010934450909" />
+</color>
+
+<color name="blue" weight="0.308621809781">
+ <shade name="light" weight="0.932306834573" />
+ <shade name="intense" weight="0.0512768759015" />
+ <shade name="soft" weight="0.016415259623" />
+</color>
+
+<color name="green" weight="0.0771554524453">
+ <shade name="light" weight="0.932306834573" />
+ <shade name="intense" weight="0.0512768759015" />
+ <shade name="soft" weight="0.016415259623" />
+</color>
+
+<color name="black" weight="0.0681539829934">
+ <shade name="light" weight="0.932306834573" />
+ <shade name="intense" weight="0.0512768759015" />
+ <shade name="soft" weight="0.016415259623" />
+</color>
+
+<color name="orange" weight="0.0188387896387">
+ <shade name="light" weight="0.932306834573" />
+ <shade name="intense" weight="0.0512768759015" />
+ <shade name="soft" weight="0.016415259623" />
+</color>
+
+</colors>

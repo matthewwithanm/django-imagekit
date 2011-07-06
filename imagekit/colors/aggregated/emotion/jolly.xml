@@ -1,0 +1,33 @@
+<colors query="jolly">
+
+<color name="white" weight="0.411052050968">
+ <shade name="soft" weight="0.507074776025" />
+ <shade name="weak" weight="0.281839235977" />
+ <shade name="neutral" weight="0.211084616066" />
+</color>
+
+<color name="blue" weight="0.265572821528">
+ <shade name="soft" weight="0.507074776025" />
+ <shade name="weak" weight="0.281839235977" />
+ <shade name="neutral" weight="0.211084616066" />
+</color>
+
+<color name="pink" weight="0.162077530785">
+ <shade name="soft" weight="0.507074776025" />
+ <shade name="weak" weight="0.281839235977" />
+ <shade name="neutral" weight="0.211084616066" />
+</color>
+
+<color name="orange" weight="0.0810387653927">
+ <shade name="soft" weight="0.507074776025" />
+ <shade name="weak" weight="0.281839235977" />
+ <shade name="neutral" weight="0.211084616066" />
+</color>
+
+<color name="green" weight="0.0802576688588">
+ <shade name="soft" weight="0.507074776025" />
+ <shade name="weak" weight="0.281839235977" />
+ <shade name="neutral" weight="0.211084616066" />
+</color>
+
+</colors>

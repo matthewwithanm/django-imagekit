@@ -1,0 +1,33 @@
+<colors query="redbud">
+
+<color name="white" weight="0.589836065429">
+ <shade name="fresh" weight="0.454544462812" />
+ <shade name="warm" weight="0.272726677687" />
+ <shade name="soft" weight="0.272726677687" />
+</color>
+
+<color name="pink" weight="0.16560781837">
+ <shade name="fresh" weight="0.454544462812" />
+ <shade name="warm" weight="0.272726677687" />
+ <shade name="soft" weight="0.272726677687" />
+</color>
+
+<color name="red" weight="0.158802017615">
+ <shade name="fresh" weight="0.454544462812" />
+ <shade name="warm" weight="0.272726677687" />
+ <shade name="soft" weight="0.272726677687" />
+</color>
+
+<color name="purple" weight="0.0689654476501">
+ <shade name="fresh" weight="0.454544462812" />
+ <shade name="soft" weight="0.272726677687" />
+ <shade name="light" weight="0.272726677687" />
+</color>
+
+<color name="green" weight="0.0167876418622">
+ <shade name="fresh" weight="0.454544462812" />
+ <shade name="soft" weight="0.272726677687" />
+ <shade name="light" weight="0.272726677687" />
+</color>
+
+</colors>

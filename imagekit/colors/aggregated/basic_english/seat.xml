@@ -1,0 +1,33 @@
+<colors query="seat">
+
+<color name="black" weight="0.299449323531">
+ <shade name="soft" weight="0.596446004028" />
+ <shade name="hard" weight="0.28172555935" />
+ <shade name="light" weight="0.121827268908" />
+</color>
+
+<color name="red" weight="0.28326287361">
+ <shade name="soft" weight="0.596446004028" />
+ <shade name="hard" weight="0.28172555935" />
+ <shade name="light" weight="0.121827268908" />
+</color>
+
+<color name="green" weight="0.164454331193">
+ <shade name="soft" weight="0.596446004028" />
+ <shade name="hard" weight="0.28172555935" />
+ <shade name="light" weight="0.121827268908" />
+</color>
+
+<color name="blue" weight="0.15280008725">
+ <shade name="soft" weight="0.596446004028" />
+ <shade name="hard" weight="0.28172555935" />
+ <shade name="light" weight="0.121827268908" />
+</color>
+
+<color name="white" weight="0.100032260509">
+ <shade name="soft" weight="0.596446004028" />
+ <shade name="hard" weight="0.28172555935" />
+ <shade name="light" weight="0.121827268908" />
+</color>
+
+</colors>

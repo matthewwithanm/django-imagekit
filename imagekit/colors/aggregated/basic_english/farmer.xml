@@ -1,0 +1,33 @@
+<colors query="farmer">
+
+<color name="white" weight="0.392177884551">
+ <shade name="fresh" weight="0.772832678731" />
+ <shade name="dark" weight="0.125682890177" />
+ <shade name="weak" weight="0.101483079025" />
+</color>
+
+<color name="black" weight="0.358859150626">
+ <shade name="fresh" weight="0.772832678731" />
+ <shade name="dark" weight="0.125682890177" />
+ <shade name="weak" weight="0.101483079025" />
+</color>
+
+<color name="red" weight="0.222853171165">
+ <shade name="fresh" weight="0.772832678731" />
+ <shade name="dark" weight="0.125682890177" />
+ <shade name="weak" weight="0.101483079025" />
+</color>
+
+<color name="orange" weight="0.0169324713385">
+ <shade name="fresh" weight="0.772832678731" />
+ <shade name="dark" weight="0.125682890177" />
+ <shade name="weak" weight="0.101483079025" />
+</color>
+
+<color name="blue" weight="0.00917630704798">
+ <shade name="fresh" weight="0.772832678731" />
+ <shade name="dark" weight="0.125682890177" />
+ <shade name="weak" weight="0.101483079025" />
+</color>
+
+</colors>

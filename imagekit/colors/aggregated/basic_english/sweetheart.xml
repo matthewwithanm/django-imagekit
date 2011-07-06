@@ -1,0 +1,33 @@
+<colors query="sweetheart">
+
+<color name="red" weight="0.389939197329">
+ <shade name="cool" weight="0.414458703236" />
+ <shade name="soft" weight="0.349017855357" />
+ <shade name="hard" weight="0.236521921621" />
+</color>
+
+<color name="white" weight="0.232192896655">
+ <shade name="cool" weight="0.414458703236" />
+ <shade name="soft" weight="0.349017855357" />
+ <shade name="hard" weight="0.236521921621" />
+</color>
+
+<color name="yellow" weight="0.142856981478">
+ <shade name="cool" weight="0.414458703236" />
+ <shade name="soft" weight="0.349017855357" />
+ <shade name="hard" weight="0.236521921621" />
+</color>
+
+<color name="black" weight="0.124748350023">
+ <shade name="cool" weight="0.414458703236" />
+ <shade name="soft" weight="0.349017855357" />
+ <shade name="hard" weight="0.236521921621" />
+</color>
+
+<color name="blue" weight="0.110261444859">
+ <shade name="cool" weight="0.414458703236" />
+ <shade name="soft" weight="0.349017855357" />
+ <shade name="hard" weight="0.236521921621" />
+</color>
+
+</colors>

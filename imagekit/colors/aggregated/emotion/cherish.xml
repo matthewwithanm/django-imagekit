@@ -1,0 +1,33 @@
+<colors query="cherish">
+
+<color name="white" weight="0.34212876569">
+ <shade name="fresh" weight="0.541011452568" />
+ <shade name="cool" weight="0.240837356305" />
+ <shade name="warm" weight="0.218149779261" />
+</color>
+
+<color name="pink" weight="0.182893302935">
+ <shade name="fresh" weight="0.541011452568" />
+ <shade name="cool" weight="0.240837356305" />
+ <shade name="warm" weight="0.218149779261" />
+</color>
+
+<color name="black" weight="0.169244548985">
+ <shade name="fresh" weight="0.541011452568" />
+ <shade name="cool" weight="0.240837356305" />
+ <shade name="warm" weight="0.218149779261" />
+</color>
+
+<color name="purple" weight="0.163785047405">
+ <shade name="fresh" weight="0.55357062886" />
+ <shade name="cool" weight="0.246428215428" />
+ <shade name="light" weight="0.199999711072" />
+</color>
+
+<color name="blue" weight="0.141947041084">
+ <shade name="fresh" weight="0.55357062886" />
+ <shade name="cool" weight="0.246428215428" />
+ <shade name="light" weight="0.199999711072" />
+</color>
+
+</colors>

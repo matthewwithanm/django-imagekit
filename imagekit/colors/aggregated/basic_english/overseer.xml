@@ -1,0 +1,33 @@
+<colors query="overseer">
+
+<color name="white" weight="0.474413168355">
+ <shade name="dark" weight="0.541283820176" />
+ <shade name="neutral" weight="0.435779346752" />
+ <shade name="hard" weight="0.0229357550922" />
+</color>
+
+<color name="black" weight="0.426438803016">
+ <shade name="dark" weight="0.541283820176" />
+ <shade name="neutral" weight="0.435779346752" />
+ <shade name="hard" weight="0.0229357550922" />
+</color>
+
+<color name="blue" weight="0.0714284995051">
+ <shade name="dark" weight="0.541283820176" />
+ <shade name="neutral" weight="0.435779346752" />
+ <shade name="hard" weight="0.0229357550922" />
+</color>
+
+<color name="green" weight="0.0234541341659">
+ <shade name="dark" weight="0.541283820176" />
+ <shade name="neutral" weight="0.435779346752" />
+ <shade name="hard" weight="0.0229357550922" />
+</color>
+
+<color name="red" weight="0.00426438803016">
+ <shade name="dark" weight="0.541283820176" />
+ <shade name="neutral" weight="0.435779346752" />
+ <shade name="hard" weight="0.0229357550922" />
+</color>
+
+</colors>

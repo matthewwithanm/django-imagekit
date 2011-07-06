@@ -1,0 +1,33 @@
+<colors query="obedience">
+
+<color name="white" weight="0.277591651089">
+ <shade name="hard" weight="0.441859704311" />
+ <shade name="light" weight="0.280858192619" />
+ <shade name="fresh" weight="0.277280381248" />
+</color>
+
+<color name="black" weight="0.245819112712">
+ <shade name="hard" weight="0.430312867289" />
+ <shade name="intense" weight="0.296166750766" />
+ <shade name="light" weight="0.273518705119" />
+</color>
+
+<color name="green" weight="0.214046574334">
+ <shade name="hard" weight="0.430312867289" />
+ <shade name="intense" weight="0.296166750766" />
+ <shade name="light" weight="0.273518705119" />
+</color>
+
+<color name="red" weight="0.143812542131">
+ <shade name="hard" weight="0.430312867289" />
+ <shade name="intense" weight="0.296166750766" />
+ <shade name="light" weight="0.273518705119" />
+</color>
+
+<color name="blue" weight="0.118728959201">
+ <shade name="hard" weight="0.430312867289" />
+ <shade name="intense" weight="0.296166750766" />
+ <shade name="light" weight="0.273518705119" />
+</color>
+
+</colors>

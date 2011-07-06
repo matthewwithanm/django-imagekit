@@ -1,0 +1,33 @@
+<colors query="sloth">
+
+<color name="blue" weight="0.841075488686">
+ <shade name="dark" weight="0.387336451839" />
+ <shade name="cool" weight="0.327746228479" />
+ <shade name="soft" weight="0.284915755439" />
+</color>
+
+<color name="pink" weight="0.0764355765056">
+ <shade name="dark" weight="0.387336451839" />
+ <shade name="cool" weight="0.327746228479" />
+ <shade name="soft" weight="0.284915755439" />
+</color>
+
+<color name="green" weight="0.0468842755518">
+ <shade name="dark" weight="0.387336451839" />
+ <shade name="cool" weight="0.327746228479" />
+ <shade name="soft" weight="0.284915755439" />
+</color>
+
+<color name="yellow" weight="0.0196061515944">
+ <shade name="dark" weight="0.387336451839" />
+ <shade name="cool" weight="0.327746228479" />
+ <shade name="soft" weight="0.284915755439" />
+</color>
+
+<color name="purple" weight="0.0159974831125">
+ <shade name="dark" weight="0.387336451839" />
+ <shade name="cool" weight="0.327746228479" />
+ <shade name="soft" weight="0.284915755439" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="allowance">
+
+<color name="green" weight="0.368826773453">
+ <shade name="light" weight="0.717692897414" />
+ <shade name="fresh" weight="0.147117103625" />
+ <shade name="cool" weight="0.135188689818" />
+</color>
+
+<color name="black" weight="0.209876322969">
+ <shade name="light" weight="0.717692897414" />
+ <shade name="fresh" weight="0.147117103625" />
+ <shade name="cool" weight="0.135188689818" />
+</color>
+
+<color name="blue" weight="0.200617073427">
+ <shade name="light" weight="0.717692897414" />
+ <shade name="fresh" weight="0.147117103625" />
+ <shade name="cool" weight="0.135188689818" />
+</color>
+
+<color name="red" weight="0.126543077084">
+ <shade name="light" weight="0.717692897414" />
+ <shade name="fresh" weight="0.147117103625" />
+ <shade name="cool" weight="0.135188689818" />
+</color>
+
+<color name="white" weight="0.0941357036848">
+ <shade name="light" weight="0.717692897414" />
+ <shade name="fresh" weight="0.147117103625" />
+ <shade name="cool" weight="0.135188689818" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="sneeze">
+
+<color name="white" weight="0.458822951835">
+ <shade name="light" weight="0.919915894625" />
+ <shade name="hard" weight="0.0615587554143" />
+ <shade name="soft" weight="0.0185243337685" />
+</color>
+
+<color name="black" weight="0.174509584245">
+ <shade name="light" weight="0.919915894625" />
+ <shade name="hard" weight="0.0615587554143" />
+ <shade name="soft" weight="0.0185243337685" />
+</color>
+
+<color name="red" weight="0.137254729181">
+ <shade name="light" weight="0.919915894625" />
+ <shade name="hard" weight="0.0615587554143" />
+ <shade name="soft" weight="0.0185243337685" />
+</color>
+
+<color name="green" weight="0.121568474418">
+ <shade name="light" weight="0.919915894625" />
+ <shade name="hard" weight="0.0615587554143" />
+ <shade name="soft" weight="0.0185243337685" />
+</color>
+
+<color name="orange" weight="0.1078430015">
+ <shade name="light" weight="0.919915894625" />
+ <shade name="hard" weight="0.0615587554143" />
+ <shade name="soft" weight="0.0185243337685" />
+</color>
+
+</colors>

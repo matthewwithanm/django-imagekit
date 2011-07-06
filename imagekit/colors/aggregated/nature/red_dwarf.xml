@@ -1,0 +1,33 @@
+<colors query="red dwarf">
+
+<color name="red" weight="0.490826986604">
+ <shade name="dark" weight="0.77511395432" />
+ <shade name="bright" weight="0.161142111556" />
+ <shade name="cool" weight="0.063742923875" />
+</color>
+
+<color name="white" weight="0.159055266037">
+ <shade name="dark" weight="0.77511395432" />
+ <shade name="bright" weight="0.161142111556" />
+ <shade name="cool" weight="0.063742923875" />
+</color>
+
+<color name="blue" weight="0.151248872612">
+ <shade name="dark" weight="0.77511395432" />
+ <shade name="bright" weight="0.161142111556" />
+ <shade name="cool" weight="0.063742923875" />
+</color>
+
+<color name="orange" weight="0.106362110417">
+ <shade name="dark" weight="0.77511395432" />
+ <shade name="bright" weight="0.161142111556" />
+ <shade name="cool" weight="0.063742923875" />
+</color>
+
+<color name="green" weight="0.0925057620876">
+ <shade name="dark" weight="0.77511395432" />
+ <shade name="bright" weight="0.161142111556" />
+ <shade name="cool" weight="0.063742923875" />
+</color>
+
+</colors>

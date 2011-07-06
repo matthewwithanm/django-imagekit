@@ -1,0 +1,33 @@
+<colors query="mosquito">
+
+<color name="red" weight="0.709111319864">
+ <shade name="light" weight="0.528960988664" />
+ <shade name="fresh" weight="0.334425749032" />
+ <shade name="cool" weight="0.136611825585" />
+</color>
+
+<color name="black" weight="0.122507251981">
+ <shade name="light" weight="0.528960988664" />
+ <shade name="fresh" weight="0.334425749032" />
+ <shade name="cool" weight="0.136611825585" />
+</color>
+
+<color name="white" weight="0.114459330318">
+ <shade name="light" weight="0.528960988664" />
+ <shade name="fresh" weight="0.334425749032" />
+ <shade name="cool" weight="0.136611825585" />
+</color>
+
+<color name="blue" weight="0.0329070574666">
+ <shade name="light" weight="0.528960988664" />
+ <shade name="fresh" weight="0.334425749032" />
+ <shade name="cool" weight="0.136611825585" />
+</color>
+
+<color name="pink" weight="0.0210140176757">
+ <shade name="light" weight="0.528960988664" />
+ <shade name="fresh" weight="0.334425749032" />
+ <shade name="cool" weight="0.136611825585" />
+</color>
+
+</colors>

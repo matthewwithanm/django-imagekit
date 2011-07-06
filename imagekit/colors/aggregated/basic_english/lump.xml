@@ -1,0 +1,33 @@
+<colors query="lump">
+
+<color name="red" weight="0.344308191293">
+ <shade name="hard" weight="0.702841654442" />
+ <shade name="fresh" weight="0.180878366952" />
+ <shade name="soft" weight="0.116278950183" />
+</color>
+
+<color name="white" weight="0.285982759981">
+ <shade name="hard" weight="0.702841654442" />
+ <shade name="fresh" weight="0.180878366952" />
+ <shade name="soft" weight="0.116278950183" />
+</color>
+
+<color name="black" weight="0.267168104719">
+ <shade name="hard" weight="0.702841654442" />
+ <shade name="fresh" weight="0.180878366952" />
+ <shade name="soft" weight="0.116278950183" />
+</color>
+
+<color name="purple" weight="0.0607713364959">
+ <shade name="hard" weight="0.702841654442" />
+ <shade name="fresh" weight="0.180878366952" />
+ <shade name="soft" weight="0.116278950183" />
+</color>
+
+<color name="pink" weight="0.0417685346814">
+ <shade name="hard" weight="0.702841654442" />
+ <shade name="fresh" weight="0.180878366952" />
+ <shade name="soft" weight="0.116278950183" />
+</color>
+
+</colors>

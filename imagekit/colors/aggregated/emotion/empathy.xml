@@ -1,0 +1,33 @@
+<colors query="empathy">
+
+<color name="green" weight="0.859005209606">
+ <shade name="dark" weight="0.537195455921" />
+ <shade name="intense" weight="0.421004303938" />
+ <shade name="light" weight="0.0417986351939" />
+</color>
+
+<color name="red" weight="0.0499212451656">
+ <shade name="dark" weight="0.364753700869" />
+ <shade name="warm" weight="0.349384865158" />
+ <shade name="intense" weight="0.28586034422" />
+</color>
+
+<color name="black" weight="0.0310321253732">
+ <shade name="dark" weight="0.364753700869" />
+ <shade name="warm" weight="0.349384865158" />
+ <shade name="intense" weight="0.28586034422" />
+</color>
+
+<color name="blue" weight="0.0301326434783">
+ <shade name="dark" weight="0.537195455921" />
+ <shade name="intense" weight="0.421004303938" />
+ <shade name="light" weight="0.0417986351939" />
+</color>
+
+<color name="white" weight="0.0299077730046">
+ <shade name="dark" weight="0.491237032593" />
+ <shade name="warm" weight="0.470538843018" />
+ <shade name="light" weight="0.0382226567495" />
+</color>
+
+</colors>

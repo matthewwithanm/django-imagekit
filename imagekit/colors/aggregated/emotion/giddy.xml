@@ -1,0 +1,33 @@
+<colors query="giddy">
+
+<color name="black" weight="0.365615638116">
+ <shade name="bright" weight="0.402358527655" />
+ <shade name="light" weight="0.322411067763" />
+ <shade name="warm" weight="0.275228960285" />
+</color>
+
+<color name="orange" weight="0.234956758037">
+ <shade name="bright" weight="0.402358527655" />
+ <shade name="light" weight="0.322411067763" />
+ <shade name="warm" weight="0.275228960285" />
+</color>
+
+<color name="pink" weight="0.159885208518">
+ <shade name="bright" weight="0.402358527655" />
+ <shade name="light" weight="0.322411067763" />
+ <shade name="warm" weight="0.275228960285" />
+</color>
+
+<color name="red" weight="0.148423903248">
+ <shade name="bright" weight="0.402358527655" />
+ <shade name="light" weight="0.322411067763" />
+ <shade name="warm" weight="0.275228960285" />
+</color>
+
+<color name="white" weight="0.0911173768972">
+ <shade name="bright" weight="0.402358527655" />
+ <shade name="light" weight="0.322411067763" />
+ <shade name="warm" weight="0.275228960285" />
+</color>
+
+</colors>

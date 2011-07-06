@@ -1,0 +1,33 @@
+<colors query="lawyer">
+
+<color name="black" weight="0.666789094852">
+ <shade name="cool" weight="0.412270711574" />
+ <shade name="dark" weight="0.310010352306" />
+ <shade name="hard" weight="0.277717607274" />
+</color>
+
+<color name="white" weight="0.160029382764">
+ <shade name="cool" weight="0.412270711574" />
+ <shade name="dark" weight="0.310010352306" />
+ <shade name="hard" weight="0.277717607274" />
+</color>
+
+<color name="orange" weight="0.102070022981">
+ <shade name="cool" weight="0.412270711574" />
+ <shade name="dark" weight="0.310010352306" />
+ <shade name="hard" weight="0.277717607274" />
+</color>
+
+<color name="green" weight="0.0666789094852">
+ <shade name="cool" weight="0.412270711574" />
+ <shade name="dark" weight="0.310010352306" />
+ <shade name="hard" weight="0.277717607274" />
+</color>
+
+<color name="blue" weight="0.00443158290732">
+ <shade name="cool" weight="0.412270711574" />
+ <shade name="dark" weight="0.310010352306" />
+ <shade name="hard" weight="0.277717607274" />
+</color>
+
+</colors>

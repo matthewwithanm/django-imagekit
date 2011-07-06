@@ -1,0 +1,33 @@
+<colors query="mattress">
+
+<color name="black" weight="0.667689754148">
+ <shade name="soft" weight="0.682540818848" />
+ <shade name="hard" weight="0.284097301109" />
+ <shade name="cool" weight="0.0333608034083" />
+</color>
+
+<color name="red" weight="0.105309227379">
+ <shade name="soft" weight="0.682540818848" />
+ <shade name="hard" weight="0.284097301109" />
+ <shade name="cool" weight="0.0333608034083" />
+</color>
+
+<color name="pink" weight="0.101652656984">
+ <shade name="soft" weight="0.682540818848" />
+ <shade name="hard" weight="0.284097301109" />
+ <shade name="cool" weight="0.0333608034083" />
+</color>
+
+<color name="white" weight="0.0634049306513">
+ <shade name="soft" weight="0.682540818848" />
+ <shade name="hard" weight="0.284097301109" />
+ <shade name="cool" weight="0.0333608034083" />
+</color>
+
+<color name="green" weight="0.0619423024932">
+ <shade name="soft" weight="0.682540818848" />
+ <shade name="hard" weight="0.284097301109" />
+ <shade name="cool" weight="0.0333608034083" />
+</color>
+
+</colors>

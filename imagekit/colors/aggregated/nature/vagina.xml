@@ -1,0 +1,33 @@
+<colors query="vagina">
+
+<color name="black" weight="0.552007232297">
+ <shade name="soft" weight="0.487929592113" />
+ <shade name="dark" weight="0.328710462055" />
+ <shade name="warm" weight="0.183358804615" />
+</color>
+
+<color name="pink" weight="0.347981029771">
+ <shade name="soft" weight="0.487929592113" />
+ <shade name="dark" weight="0.328710462055" />
+ <shade name="warm" weight="0.183358804615" />
+</color>
+
+<color name="white" weight="0.0725185971841">
+ <shade name="soft" weight="0.487929592113" />
+ <shade name="dark" weight="0.328710462055" />
+ <shade name="warm" weight="0.183358804615" />
+</color>
+
+<color name="green" weight="0.0193202531304">
+ <shade name="soft" weight="0.543633071287" />
+ <shade name="dark" weight="0.366237016446" />
+ <shade name="fresh" weight="0.090128640766" />
+</color>
+
+<color name="purple" weight="0.00817187177224">
+ <shade name="soft" weight="0.543633071287" />
+ <shade name="dark" weight="0.366237016446" />
+ <shade name="fresh" weight="0.090128640766" />
+</color>
+
+</colors>

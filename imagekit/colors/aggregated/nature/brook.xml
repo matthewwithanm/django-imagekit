@@ -1,0 +1,33 @@
+<colors query="brook">
+
+<color name="green" weight="0.577378240785">
+ <shade name="soft" weight="0.638592450489" />
+ <shade name="fresh" weight="0.240166291162" />
+ <shade name="cool" weight="0.121240015962" />
+</color>
+
+<color name="black" weight="0.30578917282">
+ <shade name="soft" weight="0.638592450489" />
+ <shade name="fresh" weight="0.240166291162" />
+ <shade name="cool" weight="0.121240015962" />
+</color>
+
+<color name="red" weight="0.0760449390303">
+ <shade name="soft" weight="0.638592450489" />
+ <shade name="fresh" weight="0.240166291162" />
+ <shade name="cool" weight="0.121240015962" />
+</color>
+
+<color name="white" weight="0.039028354952">
+ <shade name="soft" weight="0.638592450489" />
+ <shade name="fresh" weight="0.240166291162" />
+ <shade name="cool" weight="0.121240015962" />
+</color>
+
+<color name="purple" weight="0.00175828774372">
+ <shade name="soft" weight="0.638592450489" />
+ <shade name="fresh" weight="0.240166291162" />
+ <shade name="cool" weight="0.121240015962" />
+</color>
+
+</colors>

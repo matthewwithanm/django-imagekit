@@ -1,0 +1,33 @@
+<colors query="windpipe">
+
+<color name="white" weight="0.259258942387">
+ <shade name="soft" weight="0.741934622269" />
+ <shade name="weak" weight="0.182795486646" />
+ <shade name="hard" weight="0.0752687297955" />
+</color>
+
+<color name="yellow" weight="0.222221950618">
+ <shade name="soft" weight="0.741934622269" />
+ <shade name="weak" weight="0.182795486646" />
+ <shade name="hard" weight="0.0752687297955" />
+</color>
+
+<color name="pink" weight="0.185184958848">
+ <shade name="soft" weight="0.741934622269" />
+ <shade name="weak" weight="0.182795486646" />
+ <shade name="hard" weight="0.0752687297955" />
+</color>
+
+<color name="black" weight="0.185184958848">
+ <shade name="soft" weight="0.741934622269" />
+ <shade name="weak" weight="0.182795486646" />
+ <shade name="hard" weight="0.0752687297955" />
+</color>
+
+<color name="red" weight="0.148147967078">
+ <shade name="soft" weight="0.741934622269" />
+ <shade name="weak" weight="0.182795486646" />
+ <shade name="hard" weight="0.0752687297955" />
+</color>
+
+</colors>

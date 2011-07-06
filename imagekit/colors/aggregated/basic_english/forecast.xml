@@ -1,0 +1,33 @@
+<colors query="forecast">
+
+<color name="black" weight="0.88602406528">
+ <shade name="bright" weight="0.440278425843" />
+ <shade name="weak" weight="0.429816364239" />
+ <shade name="light" weight="0.129903931585" />
+</color>
+
+<color name="green" weight="0.0388093185618">
+ <shade name="bright" weight="0.440278425843" />
+ <shade name="weak" weight="0.429816364239" />
+ <shade name="light" weight="0.129903931585" />
+</color>
+
+<color name="red" weight="0.0341595228474">
+ <shade name="bright" weight="0.440278425843" />
+ <shade name="weak" weight="0.429816364239" />
+ <shade name="light" weight="0.129903931585" />
+</color>
+
+<color name="orange" weight="0.0253725073239">
+ <shade name="bright" weight="0.440278425843" />
+ <shade name="weak" weight="0.429816364239" />
+ <shade name="light" weight="0.129903931585" />
+</color>
+
+<color name="blue" weight="0.0156335651188">
+ <shade name="bright" weight="0.440278425843" />
+ <shade name="weak" weight="0.429816364239" />
+ <shade name="light" weight="0.129903931585" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="probability">
+
+<color name="black" weight="0.304453091729">
+ <shade name="neutral" weight="0.982307170692" />
+ <shade name="weak" weight="0.00960020969612" />
+ <shade name="hard" weight="0.0080916053153" />
+</color>
+
+<color name="red" weight="0.283400484322">
+ <shade name="neutral" weight="0.982307170692" />
+ <shade name="weak" weight="0.00960020969612" />
+ <shade name="hard" weight="0.0080916053153" />
+</color>
+
+<color name="white" weight="0.183805456975">
+ <shade name="neutral" weight="0.982307170692" />
+ <shade name="weak" weight="0.00960020969612" />
+ <shade name="hard" weight="0.0080916053153" />
+</color>
+
+<color name="green" weight="0.148987683187">
+ <shade name="neutral" weight="0.982307170692" />
+ <shade name="weak" weight="0.00960020969612" />
+ <shade name="hard" weight="0.0080916053153" />
+</color>
+
+<color name="pink" weight="0.0793521356103">
+ <shade name="neutral" weight="0.982307170692" />
+ <shade name="weak" weight="0.00960020969612" />
+ <shade name="hard" weight="0.0080916053153" />
+</color>
+
+</colors>

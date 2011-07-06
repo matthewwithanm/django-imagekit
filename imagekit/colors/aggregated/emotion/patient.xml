@@ -1,0 +1,33 @@
+<colors query="patient">
+
+<color name="black" weight="0.543296555027">
+ <shade name="intense" weight="0.373233767279" />
+ <shade name="light" weight="0.353058969048" />
+ <shade name="fresh" weight="0.273704762671" />
+</color>
+
+<color name="white" weight="0.383307385448">
+ <shade name="light" weight="0.394884190617" />
+ <shade name="fresh" weight="0.306129267774" />
+ <shade name="warm" weight="0.298983744325" />
+</color>
+
+<color name="blue" weight="0.0313312123758">
+ <shade name="intense" weight="0.373233767279" />
+ <shade name="light" weight="0.353058969048" />
+ <shade name="fresh" weight="0.273704762671" />
+</color>
+
+<color name="red" weight="0.0258315846715">
+ <shade name="intense" weight="0.373233767279" />
+ <shade name="light" weight="0.353058969048" />
+ <shade name="fresh" weight="0.273704762671" />
+</color>
+
+<color name="green" weight="0.0162322344968">
+ <shade name="intense" weight="0.373233767279" />
+ <shade name="light" weight="0.353058969048" />
+ <shade name="fresh" weight="0.273704762671" />
+</color>
+
+</colors>

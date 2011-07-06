@@ -1,0 +1,33 @@
+<colors query="cobweb">
+
+<color name="black" weight="0.381151369651">
+ <shade name="dark" weight="0.72981979571" />
+ <shade name="light" weight="0.137892219466" />
+ <shade name="soft" weight="0.132286844691" />
+</color>
+
+<color name="white" weight="0.24921435708">
+ <shade name="dark" weight="0.72981979571" />
+ <shade name="light" weight="0.137892219466" />
+ <shade name="soft" weight="0.132286844691" />
+</color>
+
+<color name="red" weight="0.185758936748">
+ <shade name="dark" weight="0.72981979571" />
+ <shade name="light" weight="0.137892219466" />
+ <shade name="soft" weight="0.132286844691" />
+</color>
+
+<color name="green" weight="0.109738086647">
+ <shade name="dark" weight="0.72981979571" />
+ <shade name="light" weight="0.137892219466" />
+ <shade name="soft" weight="0.132286844691" />
+</color>
+
+<color name="yellow" weight="0.0741360356354">
+ <shade name="dark" weight="0.72981979571" />
+ <shade name="light" weight="0.137892219466" />
+ <shade name="soft" weight="0.132286844691" />
+</color>
+
+</colors>

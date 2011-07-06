@@ -1,0 +1,33 @@
+<colors query="lavender">
+
+<color name="pink" weight="0.310753795301">
+ <shade name="light" weight="0.456030931092" />
+ <shade name="fresh" weight="0.295940962699" />
+ <shade name="dark" weight="0.248026711595" />
+</color>
+
+<color name="purple" weight="0.249650520944">
+ <shade name="light" weight="0.456030931092" />
+ <shade name="fresh" weight="0.295940962699" />
+ <shade name="dark" weight="0.248026711595" />
+</color>
+
+<color name="blue" weight="0.211242748491">
+ <shade name="light" weight="0.456030931092" />
+ <shade name="fresh" weight="0.295940962699" />
+ <shade name="dark" weight="0.248026711595" />
+</color>
+
+<color name="white" weight="0.13599843064">
+ <shade name="light" weight="0.456030931092" />
+ <shade name="fresh" weight="0.295940962699" />
+ <shade name="dark" weight="0.248026711595" />
+</color>
+
+<color name="green" weight="0.0923532346711">
+ <shade name="light" weight="0.456030931092" />
+ <shade name="fresh" weight="0.295940962699" />
+ <shade name="dark" weight="0.248026711595" />
+</color>
+
+</colors>

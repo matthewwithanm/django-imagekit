@@ -1,0 +1,33 @@
+<colors query="mulberry">
+
+<color name="white" weight="0.495497281158">
+ <shade name="light" weight="0.523541707563" />
+ <shade name="dark" weight="0.360359876634" />
+ <shade name="bright" weight="0.116097073463" />
+</color>
+
+<color name="red" weight="0.313374050506">
+ <shade name="light" weight="0.523541707563" />
+ <shade name="dark" weight="0.360359876634" />
+ <shade name="bright" weight="0.116097073463" />
+</color>
+
+<color name="black" weight="0.164317886873">
+ <shade name="light" weight="0.523541707563" />
+ <shade name="dark" weight="0.360359876634" />
+ <shade name="bright" weight="0.116097073463" />
+</color>
+
+<color name="yellow" weight="0.0134303164503">
+ <shade name="light" weight="0.523541707563" />
+ <shade name="dark" weight="0.360359876634" />
+ <shade name="bright" weight="0.116097073463" />
+</color>
+
+<color name="purple" weight="0.0133794440395">
+ <shade name="light" weight="0.523541707563" />
+ <shade name="dark" weight="0.360359876634" />
+ <shade name="bright" weight="0.116097073463" />
+</color>
+
+</colors>

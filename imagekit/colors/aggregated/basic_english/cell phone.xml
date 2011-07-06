@@ -1,0 +1,33 @@
+<colors query="cell phone">
+
+<color name="pink" weight="0.338469946653">
+ <shade name="cool" weight="0.590963826889" />
+ <shade name="soft" weight="0.218558935978" />
+ <shade name="fresh" weight="0.190475944204" />
+</color>
+
+<color name="black" weight="0.292807896514">
+ <shade name="cool" weight="0.590963826889" />
+ <shade name="soft" weight="0.218558935978" />
+ <shade name="fresh" weight="0.190475944204" />
+</color>
+
+<color name="blue" weight="0.196917591223">
+ <shade name="cool" weight="0.590963826889" />
+ <shade name="soft" weight="0.218558935978" />
+ <shade name="fresh" weight="0.190475944204" />
+</color>
+
+<color name="red" weight="0.108447369079">
+ <shade name="cool" weight="0.590963826889" />
+ <shade name="soft" weight="0.218558935978" />
+ <shade name="fresh" weight="0.190475944204" />
+</color>
+
+<color name="orange" weight="0.0633560945675">
+ <shade name="cool" weight="0.590963826889" />
+ <shade name="soft" weight="0.218558935978" />
+ <shade name="fresh" weight="0.190475944204" />
+</color>
+
+</colors>

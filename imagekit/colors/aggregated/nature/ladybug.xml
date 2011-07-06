@@ -1,0 +1,33 @@
+<colors query="ladybug">
+
+<color name="red" weight="0.495923391468">
+ <shade name="cool" weight="0.418604117386" />
+ <shade name="bright" weight="0.343827826332" />
+ <shade name="soft" weight="0.237566781149" />
+</color>
+
+<color name="pink" weight="0.258151902408">
+ <shade name="cool" weight="0.418604117386" />
+ <shade name="bright" weight="0.343827826332" />
+ <shade name="soft" weight="0.237566781149" />
+</color>
+
+<color name="black" weight="0.150815058775">
+ <shade name="cool" weight="0.418604117386" />
+ <shade name="bright" weight="0.343827826332" />
+ <shade name="soft" weight="0.237566781149" />
+</color>
+
+<color name="white" weight="0.0584238515976">
+ <shade name="cool" weight="0.418604117386" />
+ <shade name="bright" weight="0.343827826332" />
+ <shade name="soft" weight="0.237566781149" />
+</color>
+
+<color name="purple" weight="0.0366847440264">
+ <shade name="cool" weight="0.418604117386" />
+ <shade name="bright" weight="0.343827826332" />
+ <shade name="soft" weight="0.237566781149" />
+</color>
+
+</colors>

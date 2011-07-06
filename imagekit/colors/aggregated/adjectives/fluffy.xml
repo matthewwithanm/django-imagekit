@@ -1,0 +1,33 @@
+<colors query="fluffy">
+
+<color name="white" weight="0.612908788051">
+ <shade name="light" weight="0.483411799704" />
+ <shade name="soft" weight="0.439178040254" />
+ <shade name="warm" weight="0.0774090790376" />
+</color>
+
+<color name="pink" weight="0.3026237141">
+ <shade name="light" weight="0.483411799704" />
+ <shade name="soft" weight="0.439178040254" />
+ <shade name="warm" weight="0.0774090790376" />
+</color>
+
+<color name="black" weight="0.0369660612793">
+ <shade name="light" weight="0.483411799704" />
+ <shade name="soft" weight="0.439178040254" />
+ <shade name="warm" weight="0.0774090790376" />
+</color>
+
+<color name="yellow" weight="0.0271978274698">
+ <shade name="light" weight="0.483411799704" />
+ <shade name="soft" weight="0.439178040254" />
+ <shade name="warm" weight="0.0774090790376" />
+</color>
+
+<color name="blue" weight="0.0203026036042">
+ <shade name="light" weight="0.49022695378" />
+ <shade name="soft" weight="0.44536958546" />
+ <shade name="fresh" weight="0.0644023645162" />
+</color>
+
+</colors>

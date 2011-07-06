@@ -1,0 +1,33 @@
+<colors query="frighten">
+
+<color name="green" weight="0.514999425776">
+ <shade name="dark" weight="0.508196060379" />
+ <shade name="light" weight="0.409835532564" />
+ <shade name="bright" weight="0.0819671065127" />
+</color>
+
+<color name="white" weight="0.244999726825">
+ <shade name="dark" weight="0.508196060379" />
+ <shade name="light" weight="0.409835532564" />
+ <shade name="bright" weight="0.0819671065127" />
+</color>
+
+<color name="pink" weight="0.0999998885001">
+ <shade name="dark" weight="0.508196060379" />
+ <shade name="light" weight="0.409835532564" />
+ <shade name="bright" weight="0.0819671065127" />
+</color>
+
+<color name="black" weight="0.0899998996501">
+ <shade name="dark" weight="0.508196060379" />
+ <shade name="light" weight="0.409835532564" />
+ <shade name="bright" weight="0.0819671065127" />
+</color>
+
+<color name="red" weight="0.0499999442501">
+ <shade name="dark" weight="0.508196060379" />
+ <shade name="light" weight="0.409835532564" />
+ <shade name="bright" weight="0.0819671065127" />
+</color>
+
+</colors>

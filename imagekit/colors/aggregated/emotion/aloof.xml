@@ -1,0 +1,33 @@
+<colors query="aloof">
+
+<color name="black" weight="0.362068534781">
+ <shade name="cool" weight="0.988256300049" />
+ <shade name="dark" weight="0.00789773699303" />
+ <shade name="neutral" weight="0.0038449509045" />
+</color>
+
+<color name="white" weight="0.310344458383">
+ <shade name="cool" weight="0.988256300049" />
+ <shade name="dark" weight="0.00789773699303" />
+ <shade name="neutral" weight="0.0038449509045" />
+</color>
+
+<color name="blue" weight="0.155172229192">
+ <shade name="cool" weight="0.988256300049" />
+ <shade name="dark" weight="0.00789773699303" />
+ <shade name="neutral" weight="0.0038449509045" />
+</color>
+
+<color name="red" weight="0.0862067939954">
+ <shade name="cool" weight="0.988256300049" />
+ <shade name="dark" weight="0.00789773699303" />
+ <shade name="neutral" weight="0.0038449509045" />
+</color>
+
+<color name="green" weight="0.0862067939954">
+ <shade name="cool" weight="0.988256300049" />
+ <shade name="dark" weight="0.00789773699303" />
+ <shade name="neutral" weight="0.0038449509045" />
+</color>
+
+</colors>

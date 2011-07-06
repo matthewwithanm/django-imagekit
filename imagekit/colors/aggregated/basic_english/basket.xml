@@ -1,0 +1,33 @@
+<colors query="basket">
+
+<color name="white" weight="0.254236937957">
+ <shade name="hard" weight="0.817191694904" />
+ <shade name="soft" weight="0.137105397547" />
+ <shade name="cool" weight="0.0457017991824" />
+</color>
+
+<color name="yellow" weight="0.210847167213">
+ <shade name="hard" weight="0.817191694904" />
+ <shade name="soft" weight="0.137105397547" />
+ <shade name="cool" weight="0.0457017991824" />
+</color>
+
+<color name="blue" weight="0.199999724526">
+ <shade name="hard" weight="0.817191694904" />
+ <shade name="soft" weight="0.137105397547" />
+ <shade name="cool" weight="0.0457017991824" />
+</color>
+
+<color name="pink" weight="0.167457396468">
+ <shade name="hard" weight="0.817191694904" />
+ <shade name="soft" weight="0.137105397547" />
+ <shade name="cool" weight="0.0457017991824" />
+</color>
+
+<color name="green" weight="0.167457396468">
+ <shade name="hard" weight="0.817191694904" />
+ <shade name="soft" weight="0.137105397547" />
+ <shade name="cool" weight="0.0457017991824" />
+</color>
+
+</colors>

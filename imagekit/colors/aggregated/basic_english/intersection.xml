@@ -1,0 +1,33 @@
+<colors query="intersection">
+
+<color name="purple" weight="0.582804529192">
+ <shade name="light" weight="0.964875575041" />
+ <shade name="dark" weight="0.0277730934751" />
+ <shade name="cool" weight="0.00735029284212" />
+</color>
+
+<color name="blue" weight="0.124276521355">
+ <shade name="light" weight="0.949619652306" />
+ <shade name="dark" weight="0.027333965178" />
+ <shade name="intense" weight="0.0230453602966" />
+</color>
+
+<color name="green" weight="0.12193428093">
+ <shade name="light" weight="0.949619652306" />
+ <shade name="dark" weight="0.027333965178" />
+ <shade name="intense" weight="0.0230453602966" />
+</color>
+
+<color name="red" weight="0.109671963413">
+ <shade name="light" weight="0.949619652306" />
+ <shade name="dark" weight="0.027333965178" />
+ <shade name="intense" weight="0.0230453602966" />
+</color>
+
+<color name="white" weight="0.0613115875863">
+ <shade name="light" weight="0.964875575041" />
+ <shade name="dark" weight="0.0277730934751" />
+ <shade name="cool" weight="0.00735029284212" />
+</color>
+
+</colors>

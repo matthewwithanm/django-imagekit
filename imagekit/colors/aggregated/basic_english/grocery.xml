@@ -1,0 +1,33 @@
+<colors query="grocery">
+
+<color name="green" weight="0.521400234138">
+ <shade name="fresh" weight="0.781165551648" />
+ <shade name="light" weight="0.10968420417" />
+ <shade name="cool" weight="0.109149159271" />
+</color>
+
+<color name="orange" weight="0.186770233124">
+ <shade name="fresh" weight="0.781165551648" />
+ <shade name="light" weight="0.10968420417" />
+ <shade name="cool" weight="0.109149159271" />
+</color>
+
+<color name="white" weight="0.178209930773">
+ <shade name="fresh" weight="0.781165551648" />
+ <shade name="light" weight="0.10968420417" />
+ <shade name="cool" weight="0.109149159271" />
+</color>
+
+<color name="blue" weight="0.0704279420739">
+ <shade name="fresh" weight="0.781165551648" />
+ <shade name="light" weight="0.10968420417" />
+ <shade name="cool" weight="0.109149159271" />
+</color>
+
+<color name="black" weight="0.0431906164099">
+ <shade name="fresh" weight="0.781165551648" />
+ <shade name="light" weight="0.10968420417" />
+ <shade name="cool" weight="0.109149159271" />
+</color>
+
+</colors>

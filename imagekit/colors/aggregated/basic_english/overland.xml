@@ -1,0 +1,33 @@
+<colors query="overland">
+
+<color name="white" weight="0.555174208752">
+ <shade name="light" weight="0.436325030841" />
+ <shade name="hard" weight="0.311064256437" />
+ <shade name="cool" weight="0.252609228382" />
+</color>
+
+<color name="red" weight="0.26456449948">
+ <shade name="light" weight="0.436325030841" />
+ <shade name="hard" weight="0.311064256437" />
+ <shade name="cool" weight="0.252609228382" />
+</color>
+
+<color name="blue" weight="0.115969723606">
+ <shade name="light" weight="0.436325030841" />
+ <shade name="hard" weight="0.311064256437" />
+ <shade name="cool" weight="0.252609228382" />
+</color>
+
+<color name="black" weight="0.0378340942261">
+ <shade name="light" weight="0.436325030841" />
+ <shade name="hard" weight="0.311064256437" />
+ <shade name="cool" weight="0.252609228382" />
+</color>
+
+<color name="green" weight="0.026456449948">
+ <shade name="light" weight="0.436325030841" />
+ <shade name="hard" weight="0.311064256437" />
+ <shade name="cool" weight="0.252609228382" />
+</color>
+
+</colors>

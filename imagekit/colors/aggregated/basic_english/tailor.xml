@@ -1,0 +1,33 @@
+<colors query="tailor">
+
+<color name="black" weight="0.465443755718">
+ <shade name="light" weight="0.349746979714" />
+ <shade name="fresh" weight="0.348063480414" />
+ <shade name="dark" weight="0.30218812447" />
+</color>
+
+<color name="white" weight="0.171226884679">
+ <shade name="light" weight="0.349746979714" />
+ <shade name="fresh" weight="0.348063480414" />
+ <shade name="dark" weight="0.30218812447" />
+</color>
+
+<color name="red" weight="0.1531733087">
+ <shade name="light" weight="0.349746979714" />
+ <shade name="fresh" weight="0.348063480414" />
+ <shade name="dark" weight="0.30218812447" />
+</color>
+
+<color name="blue" weight="0.135965994095">
+ <shade name="light" weight="0.349746979714" />
+ <shade name="fresh" weight="0.348063480414" />
+ <shade name="dark" weight="0.30218812447" />
+</color>
+
+<color name="pink" weight="0.0741889137903">
+ <shade name="light" weight="0.349746979714" />
+ <shade name="fresh" weight="0.348063480414" />
+ <shade name="dark" weight="0.30218812447" />
+</color>
+
+</colors>

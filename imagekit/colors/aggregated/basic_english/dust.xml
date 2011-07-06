@@ -1,0 +1,33 @@
+<colors query="dust">
+
+<color name="red" weight="0.511198115908">
+ <shade name="warm" weight="0.426241055293" />
+ <shade name="light" weight="0.289473273204" />
+ <shade name="dark" weight="0.284284251661" />
+</color>
+
+<color name="white" weight="0.201161124718">
+ <shade name="warm" weight="0.426241055293" />
+ <shade name="light" weight="0.289473273204" />
+ <shade name="dark" weight="0.284284251661" />
+</color>
+
+<color name="black" weight="0.149315474018">
+ <shade name="warm" weight="0.426241055293" />
+ <shade name="light" weight="0.289473273204" />
+ <shade name="dark" weight="0.284284251661" />
+</color>
+
+<color name="yellow" weight="0.0914557278358">
+ <shade name="warm" weight="0.426241055293" />
+ <shade name="light" weight="0.289473273204" />
+ <shade name="dark" weight="0.284284251661" />
+</color>
+
+<color name="blue" weight="0.0468684682333">
+ <shade name="light" weight="0.39285638585" />
+ <shade name="dark" weight="0.385814145899" />
+ <shade name="cool" weight="0.221327541324" />
+</color>
+
+</colors>

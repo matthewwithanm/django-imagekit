@@ -1,0 +1,33 @@
+<colors query="cell">
+
+<color name="red" weight="0.564272191982">
+ <shade name="soft" weight="0.861631001536" />
+ <shade name="dark" weight="0.0818187421626" />
+ <shade name="hard" weight="0.0565490598487" />
+</color>
+
+<color name="white" weight="0.293904339567">
+ <shade name="soft" weight="0.861631001536" />
+ <shade name="dark" weight="0.0818187421626" />
+ <shade name="hard" weight="0.0565490598487" />
+</color>
+
+<color name="black" weight="0.0609534667274">
+ <shade name="soft" weight="0.861631001536" />
+ <shade name="dark" weight="0.0818187421626" />
+ <shade name="hard" weight="0.0565490598487" />
+</color>
+
+<color name="blue" weight="0.0500904726572">
+ <shade name="soft" weight="0.861631001536" />
+ <shade name="dark" weight="0.0818187421626" />
+ <shade name="hard" weight="0.0565490598487" />
+</color>
+
+<color name="pink" weight="0.030778483199">
+ <shade name="soft" weight="0.861631001536" />
+ <shade name="dark" weight="0.0818187421626" />
+ <shade name="hard" weight="0.0565490598487" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="university">
+
+<color name="green" weight="0.360694304215">
+ <shade name="light" weight="0.517744614287" />
+ <shade name="fresh" weight="0.252609267454" />
+ <shade name="bright" weight="0.229644788595" />
+</color>
+
+<color name="white" weight="0.350303933312">
+ <shade name="light" weight="0.517744614287" />
+ <shade name="fresh" weight="0.252609267454" />
+ <shade name="bright" weight="0.229644788595" />
+</color>
+
+<color name="black" weight="0.24936890168">
+ <shade name="light" weight="0.517744614287" />
+ <shade name="fresh" weight="0.252609267454" />
+ <shade name="bright" weight="0.229644788595" />
+</color>
+
+<color name="blue" weight="0.0237494192076">
+ <shade name="light" weight="0.517744614287" />
+ <shade name="fresh" weight="0.252609267454" />
+ <shade name="bright" weight="0.229644788595" />
+</color>
+
+<color name="red" weight="0.0158824240951">
+ <shade name="light" weight="0.517744614287" />
+ <shade name="fresh" weight="0.252609267454" />
+ <shade name="bright" weight="0.229644788595" />
+</color>
+
+</colors>

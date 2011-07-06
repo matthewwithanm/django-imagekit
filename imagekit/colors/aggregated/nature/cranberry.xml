@@ -1,0 +1,33 @@
+<colors query="cranberry">
+
+<color name="orange" weight="0.570325299611">
+ <shade name="fresh" weight="0.646356794858" />
+ <shade name="light" weight="0.215893765496" />
+ <shade name="dark" weight="0.137748169396" />
+</color>
+
+<color name="white" weight="0.217838535491">
+ <shade name="fresh" weight="0.646356794858" />
+ <shade name="light" weight="0.215893765496" />
+ <shade name="dark" weight="0.137748169396" />
+</color>
+
+<color name="red" weight="0.104202291583">
+ <shade name="fresh" weight="0.646356794858" />
+ <shade name="light" weight="0.215893765496" />
+ <shade name="dark" weight="0.137748169396" />
+</color>
+
+<color name="blue" weight="0.0561748979316">
+ <shade name="fresh" weight="0.646356794858" />
+ <shade name="light" weight="0.215893765496" />
+ <shade name="dark" weight="0.137748169396" />
+</color>
+
+<color name="black" weight="0.0514579217694">
+ <shade name="fresh" weight="0.646356794858" />
+ <shade name="light" weight="0.215893765496" />
+ <shade name="dark" weight="0.137748169396" />
+</color>
+
+</colors>

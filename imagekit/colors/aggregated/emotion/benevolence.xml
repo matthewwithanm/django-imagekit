@@ -1,0 +1,33 @@
+<colors query="benevolence">
+
+<color name="black" weight="0.556572356351">
+ <shade name="warm" weight="0.878259892024" />
+ <shade name="dark" weight="0.0778260003328" />
+ <shade name="weak" weight="0.0439129946012" />
+</color>
+
+<color name="white" weight="0.328972849876">
+ <shade name="warm" weight="0.878259892024" />
+ <shade name="dark" weight="0.0778260003328" />
+ <shade name="weak" weight="0.0439129946012" />
+</color>
+
+<color name="orange" weight="0.0732504158769">
+ <shade name="warm" weight="0.878259892024" />
+ <shade name="dark" weight="0.0778260003328" />
+ <shade name="weak" weight="0.0439129946012" />
+</color>
+
+<color name="green" weight="0.0255068412429">
+ <shade name="dark" weight="0.504221716035" />
+ <shade name="weak" weight="0.284504990612" />
+ <shade name="soft" weight="0.211266082138" />
+</color>
+
+<color name="blue" weight="0.0156965176879">
+ <shade name="dark" weight="0.504221716035" />
+ <shade name="weak" weight="0.284504990612" />
+ <shade name="soft" weight="0.211266082138" />
+</color>
+
+</colors>

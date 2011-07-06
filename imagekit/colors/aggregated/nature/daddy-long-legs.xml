@@ -1,0 +1,33 @@
+<colors query="daddy-long-legs">
+
+<color name="black" weight="0.433070398971">
+ <shade name="dark" weight="0.562499332032" />
+ <shade name="cool" weight="0.249999703125" />
+ <shade name="weak" weight="0.187499777344" />
+</color>
+
+<color name="white" weight="0.165354152334">
+ <shade name="dark" weight="0.562499332032" />
+ <shade name="cool" weight="0.249999703125" />
+ <shade name="weak" weight="0.187499777344" />
+</color>
+
+<color name="red" weight="0.165354152334">
+ <shade name="dark" weight="0.562499332032" />
+ <shade name="cool" weight="0.249999703125" />
+ <shade name="weak" weight="0.187499777344" />
+</color>
+
+<color name="green" weight="0.122047112437">
+ <shade name="dark" weight="0.562499332032" />
+ <shade name="cool" weight="0.249999703125" />
+ <shade name="weak" weight="0.187499777344" />
+</color>
+
+<color name="orange" weight="0.114173105183">
+ <shade name="dark" weight="0.562499332032" />
+ <shade name="cool" weight="0.249999703125" />
+ <shade name="weak" weight="0.187499777344" />
+</color>
+
+</colors>

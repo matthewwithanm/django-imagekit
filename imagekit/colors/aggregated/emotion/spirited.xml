@@ -1,0 +1,33 @@
+<colors query="spirited">
+
+<color name="orange" weight="0.341994543814">
+ <shade name="warm" weight="0.413460992077" />
+ <shade name="light" weight="0.329326487875" />
+ <shade name="weak" weight="0.257211198559" />
+</color>
+
+<color name="black" weight="0.177703047276">
+ <shade name="warm" weight="0.413460992077" />
+ <shade name="light" weight="0.329326487875" />
+ <shade name="weak" weight="0.257211198559" />
+</color>
+
+<color name="green" weight="0.161776830775">
+ <shade name="light" weight="0.393677539022" />
+ <shade name="weak" weight="0.307470778652" />
+ <shade name="bright" weight="0.298850102615" />
+</color>
+
+<color name="white" weight="0.160938608854">
+ <shade name="warm" weight="0.413460992077" />
+ <shade name="light" weight="0.329326487875" />
+ <shade name="weak" weight="0.257211198559" />
+</color>
+
+<color name="blue" weight="0.157585721169">
+ <shade name="light" weight="0.393677539022" />
+ <shade name="weak" weight="0.307470778652" />
+ <shade name="bright" weight="0.298850102615" />
+</color>
+
+</colors>

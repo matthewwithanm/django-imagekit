@@ -1,0 +1,33 @@
+<colors query="stupid">
+
+<color name="pink" weight="0.978138486866">
+ <shade name="bright" weight="0.416475499359" />
+ <shade name="weak" weight="0.304347480301" />
+ <shade name="cool" weight="0.279175884186" />
+</color>
+
+<color name="green" weight="0.00935456080166">
+ <shade name="bright" weight="0.416475499359" />
+ <shade name="weak" weight="0.304347480301" />
+ <shade name="cool" weight="0.279175884186" />
+</color>
+
+<color name="blue" weight="0.0048729080982">
+ <shade name="bright" weight="0.416475499359" />
+ <shade name="weak" weight="0.304347480301" />
+ <shade name="cool" weight="0.279175884186" />
+</color>
+
+<color name="red" weight="0.00455279004796">
+ <shade name="bright" weight="0.416475499359" />
+ <shade name="weak" weight="0.304347480301" />
+ <shade name="cool" weight="0.279175884186" />
+</color>
+
+<color name="black" weight="0.00308024701682">
+ <shade name="bright" weight="0.416475499359" />
+ <shade name="weak" weight="0.304347480301" />
+ <shade name="cool" weight="0.279175884186" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="tornado">
+
+<color name="red" weight="0.2688492177">
+ <shade name="weak" weight="0.630882027197" />
+ <shade name="dark" weight="0.295089980463" />
+ <shade name="light" weight="0.07402688303" />
+</color>
+
+<color name="blue" weight="0.261639853203">
+ <shade name="weak" weight="0.630882027197" />
+ <shade name="dark" weight="0.295089980463" />
+ <shade name="light" weight="0.07402688303" />
+</color>
+
+<color name="black" weight="0.183538404486">
+ <shade name="weak" weight="0.630882027197" />
+ <shade name="dark" weight="0.295089980463" />
+ <shade name="light" weight="0.07402688303" />
+</color>
+
+<color name="white" weight="0.176629430176">
+ <shade name="weak" weight="0.630882027197" />
+ <shade name="dark" weight="0.295089980463" />
+ <shade name="light" weight="0.07402688303" />
+</color>
+
+<color name="green" weight="0.109342028204">
+ <shade name="weak" weight="0.630882027197" />
+ <shade name="dark" weight="0.295089980463" />
+ <shade name="light" weight="0.07402688303" />
+</color>
+
+</colors>

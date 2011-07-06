@@ -1,0 +1,33 @@
+<colors query="autonomy">
+
+<color name="black" weight="0.635853699649">
+ <shade name="weak" weight="0.74863297774" />
+ <shade name="soft" weight="0.153005280122" />
+ <shade name="light" weight="0.0983605372213" />
+</color>
+
+<color name="white" weight="0.315125732205">
+ <shade name="weak" weight="0.74863297774" />
+ <shade name="soft" weight="0.153005280122" />
+ <shade name="light" weight="0.0983605372213" />
+</color>
+
+<color name="purple" weight="0.0238094997666">
+ <shade name="weak" weight="0.74863297774" />
+ <shade name="soft" weight="0.153005280122" />
+ <shade name="light" weight="0.0983605372213" />
+</color>
+
+<color name="red" weight="0.0161064263127">
+ <shade name="weak" weight="0.74863297774" />
+ <shade name="soft" weight="0.153005280122" />
+ <shade name="light" weight="0.0983605372213" />
+</color>
+
+<color name="blue" weight="0.0091036322637">
+ <shade name="weak" weight="0.74863297774" />
+ <shade name="soft" weight="0.153005280122" />
+ <shade name="light" weight="0.0983605372213" />
+</color>
+
+</colors>

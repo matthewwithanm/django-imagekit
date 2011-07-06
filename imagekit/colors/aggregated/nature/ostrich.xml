@@ -1,0 +1,33 @@
+<colors query="ostrich">
+
+<color name="black" weight="0.408645490989">
+ <shade name="soft" weight="0.53599925882" />
+ <shade name="fresh" weight="0.296399590139" />
+ <shade name="bright" weight="0.167599768243" />
+</color>
+
+<color name="white" weight="0.207993213977">
+ <shade name="soft" weight="0.53599925882" />
+ <shade name="fresh" weight="0.296399590139" />
+ <shade name="bright" weight="0.167599768243" />
+</color>
+
+<color name="pink" weight="0.170472869494">
+ <shade name="soft" weight="0.53599925882" />
+ <shade name="fresh" weight="0.296399590139" />
+ <shade name="bright" weight="0.167599768243" />
+</color>
+
+<color name="red" weight="0.10766707547">
+ <shade name="soft" weight="0.53599925882" />
+ <shade name="fresh" weight="0.296399590139" />
+ <shade name="bright" weight="0.167599768243" />
+</color>
+
+<color name="blue" weight="0.105220096482">
+ <shade name="soft" weight="0.53599925882" />
+ <shade name="fresh" weight="0.296399590139" />
+ <shade name="bright" weight="0.167599768243" />
+</color>
+
+</colors>

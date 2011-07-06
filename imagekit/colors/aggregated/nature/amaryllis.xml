@@ -1,0 +1,33 @@
+<colors query="amaryllis">
+
+<color name="red" weight="0.816449877922">
+ <shade name="fresh" weight="0.783999106241" />
+ <shade name="bright" weight="0.11199987232" />
+ <shade name="light" weight="0.10399988144" />
+</color>
+
+<color name="pink" weight="0.116128585121">
+ <shade name="fresh" weight="0.783999106241" />
+ <shade name="bright" weight="0.11199987232" />
+ <shade name="light" weight="0.10399988144" />
+</color>
+
+<color name="orange" weight="0.0256091421336">
+ <shade name="fresh" weight="0.783999106241" />
+ <shade name="bright" weight="0.11199987232" />
+ <shade name="light" weight="0.10399988144" />
+</color>
+
+<color name="white" weight="0.0236060508182">
+ <shade name="fresh" weight="0.783999106241" />
+ <shade name="bright" weight="0.11199987232" />
+ <shade name="light" weight="0.10399988144" />
+</color>
+
+<color name="blue" weight="0.0182053109425">
+ <shade name="fresh" weight="0.783999106241" />
+ <shade name="bright" weight="0.11199987232" />
+ <shade name="light" weight="0.10399988144" />
+</color>
+
+</colors>

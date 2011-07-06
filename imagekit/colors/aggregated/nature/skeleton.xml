@@ -1,0 +1,33 @@
+<colors query="skeleton">
+
+<color name="red" weight="0.435330774678">
+ <shade name="soft" weight="0.792078396578" />
+ <shade name="dark" weight="0.156930532322" />
+ <shade name="hard" weight="0.0509900467797" />
+</color>
+
+<color name="white" weight="0.275078576463">
+ <shade name="soft" weight="0.792078396578" />
+ <shade name="dark" weight="0.156930532322" />
+ <shade name="hard" weight="0.0509900467797" />
+</color>
+
+<color name="black" weight="0.246056524818">
+ <shade name="soft" weight="0.792078396578" />
+ <shade name="dark" weight="0.156930532322" />
+ <shade name="hard" weight="0.0509900467797" />
+</color>
+
+<color name="purple" weight="0.0233438241494">
+ <shade name="soft" weight="0.792078396578" />
+ <shade name="dark" weight="0.156930532322" />
+ <shade name="hard" weight="0.0509900467797" />
+</color>
+
+<color name="orange" weight="0.0201892533184">
+ <shade name="soft" weight="0.792078396578" />
+ <shade name="dark" weight="0.156930532322" />
+ <shade name="hard" weight="0.0509900467797" />
+</color>
+
+</colors>

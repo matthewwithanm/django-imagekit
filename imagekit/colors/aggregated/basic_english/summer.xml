@@ -1,0 +1,33 @@
+<colors query="summer">
+
+<color name="black" weight="0.275460387176">
+ <shade name="warm" weight="0.441536634217" />
+ <shade name="cool" weight="0.425183425542" />
+ <shade name="fresh" weight="0.133278650699" />
+</color>
+
+<color name="white" weight="0.217264530731">
+ <shade name="warm" weight="0.441536634217" />
+ <shade name="cool" weight="0.425183425542" />
+ <shade name="fresh" weight="0.133278650699" />
+</color>
+
+<color name="red" weight="0.217264530731">
+ <shade name="warm" weight="0.441536634217" />
+ <shade name="cool" weight="0.425183425542" />
+ <shade name="fresh" weight="0.133278650699" />
+</color>
+
+<color name="green" weight="0.15324908864">
+ <shade name="cool" weight="0.651219753229" />
+ <shade name="fresh" weight="0.204132345724" />
+ <shade name="light" weight="0.144645925958" />
+</color>
+
+<color name="blue" weight="0.136760262647">
+ <shade name="cool" weight="0.651219753229" />
+ <shade name="fresh" weight="0.204132345724" />
+ <shade name="light" weight="0.144645925958" />
+</color>
+
+</colors>

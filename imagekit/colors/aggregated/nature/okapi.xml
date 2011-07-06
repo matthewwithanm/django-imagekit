@@ -1,0 +1,33 @@
+<colors query="okapi">
+
+<color name="black" weight="0.612358925589">
+ <shade name="cool" weight="0.915491977783" />
+ <shade name="light" weight="0.0422534758977" />
+ <shade name="fresh" weight="0.0422534758977" />
+</color>
+
+<color name="blue" weight="0.220973557246">
+ <shade name="cool" weight="0.915491977783" />
+ <shade name="light" weight="0.0422534758977" />
+ <shade name="fresh" weight="0.0422534758977" />
+</color>
+
+<color name="white" weight="0.119850064947">
+ <shade name="cool" weight="0.915491977783" />
+ <shade name="light" weight="0.0422534758977" />
+ <shade name="fresh" weight="0.0422534758977" />
+</color>
+
+<color name="purple" weight="0.0299625162368">
+ <shade name="cool" weight="0.915491977783" />
+ <shade name="light" weight="0.0422534758977" />
+ <shade name="fresh" weight="0.0422534758977" />
+</color>
+
+<color name="green" weight="0.0168539153832">
+ <shade name="cool" weight="0.915491977783" />
+ <shade name="light" weight="0.0422534758977" />
+ <shade name="fresh" weight="0.0422534758977" />
+</color>
+
+</colors>

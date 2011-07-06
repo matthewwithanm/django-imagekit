@@ -1,0 +1,33 @@
+<colors query="kiss">
+
+<color name="black" weight="0.401210735149">
+ <shade name="soft" weight="0.460191269487" />
+ <shade name="dark" weight="0.27837336915" />
+ <shade name="light" weight="0.261433813218" />
+</color>
+
+<color name="pink" weight="0.18508683914">
+ <shade name="soft" weight="0.460191269487" />
+ <shade name="dark" weight="0.27837336915" />
+ <shade name="light" weight="0.261433813218" />
+</color>
+
+<color name="blue" weight="0.17865232735">
+ <shade name="soft" weight="0.460191269487" />
+ <shade name="dark" weight="0.27837336915" />
+ <shade name="light" weight="0.261433813218" />
+</color>
+
+<color name="red" weight="0.146479768399">
+ <shade name="soft" weight="0.460191269487" />
+ <shade name="dark" weight="0.27837336915" />
+ <shade name="light" weight="0.261433813218" />
+</color>
+
+<color name="white" weight="0.0885691622877">
+ <shade name="soft" weight="0.460191269487" />
+ <shade name="dark" weight="0.27837336915" />
+ <shade name="light" weight="0.261433813218" />
+</color>
+
+</colors>

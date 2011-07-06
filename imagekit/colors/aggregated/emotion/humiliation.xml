@@ -1,0 +1,33 @@
+<colors query="humiliation">
+
+<color name="black" weight="0.675471006839">
+ <shade name="hard" weight="0.480500813798" />
+ <shade name="fresh" weight="0.379526005101" />
+ <shade name="light" weight="0.139971976193" />
+</color>
+
+<color name="white" weight="0.174716802328">
+ <shade name="hard" weight="0.480500813798" />
+ <shade name="fresh" weight="0.379526005101" />
+ <shade name="light" weight="0.139971976193" />
+</color>
+
+<color name="yellow" weight="0.104150836809">
+ <shade name="hard" weight="0.480500813798" />
+ <shade name="fresh" weight="0.379526005101" />
+ <shade name="light" weight="0.139971976193" />
+</color>
+
+<color name="red" weight="0.0279244997241">
+ <shade name="hard" weight="0.480500813798" />
+ <shade name="fresh" weight="0.379526005101" />
+ <shade name="light" weight="0.139971976193" />
+</color>
+
+<color name="pink" weight="0.0177358309058">
+ <shade name="hard" weight="0.480500813798" />
+ <shade name="fresh" weight="0.379526005101" />
+ <shade name="light" weight="0.139971976193" />
+</color>
+
+</colors>

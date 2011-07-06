@@ -1,0 +1,33 @@
+<colors query="chocolate">
+
+<color name="white" weight="0.635444129332">
+ <shade name="dark" weight="0.767480671829" />
+ <shade name="warm" weight="0.168277243601" />
+ <shade name="light" weight="0.0642409747531" />
+</color>
+
+<color name="black" weight="0.182127293761">
+ <shade name="dark" weight="0.767480671829" />
+ <shade name="warm" weight="0.168277243601" />
+ <shade name="light" weight="0.0642409747531" />
+</color>
+
+<color name="pink" weight="0.0805563030098">
+ <shade name="dark" weight="0.767480671829" />
+ <shade name="warm" weight="0.168277243601" />
+ <shade name="light" weight="0.0642409747531" />
+</color>
+
+<color name="orange" weight="0.0615430141006">
+ <shade name="dark" weight="0.767480671829" />
+ <shade name="warm" weight="0.168277243601" />
+ <shade name="light" weight="0.0642409747531" />
+</color>
+
+<color name="blue" weight="0.0403281864757">
+ <shade name="dark" weight="0.875826060879" />
+ <shade name="light" weight="0.0733098850958" />
+ <shade name="soft" weight="0.0508627875355" />
+</color>
+
+</colors>

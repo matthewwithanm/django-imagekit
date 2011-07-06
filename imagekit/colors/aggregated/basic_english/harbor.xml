@@ -1,0 +1,33 @@
+<colors query="harbor">
+
+<color name="green" weight="0.502641000033">
+ <shade name="dark" weight="0.881207391133" />
+ <shade name="light" weight="0.104707082227" />
+ <shade name="cool" weight="0.0140844924766" />
+</color>
+
+<color name="blue" weight="0.354213477501">
+ <shade name="dark" weight="0.881207391133" />
+ <shade name="light" weight="0.104707082227" />
+ <shade name="cool" weight="0.0140844924766" />
+</color>
+
+<color name="white" weight="0.0563521441478">
+ <shade name="dark" weight="0.881207391133" />
+ <shade name="light" weight="0.104707082227" />
+ <shade name="cool" weight="0.0140844924766" />
+</color>
+
+<color name="red" weight="0.0468427198229">
+ <shade name="dark" weight="0.881207391133" />
+ <shade name="light" weight="0.104707082227" />
+ <shade name="cool" weight="0.0140844924766" />
+</color>
+
+<color name="black" weight="0.0399496450477">
+ <shade name="dark" weight="0.881207391133" />
+ <shade name="light" weight="0.104707082227" />
+ <shade name="cool" weight="0.0140844924766" />
+</color>
+
+</colors>

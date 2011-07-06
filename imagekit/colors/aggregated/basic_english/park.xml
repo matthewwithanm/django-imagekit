@@ -1,0 +1,33 @@
+<colors query="park">
+
+<color name="green" weight="0.512069708704">
+ <shade name="dark" weight="0.524724613933" />
+ <shade name="light" weight="0.329669914513" />
+ <shade name="cool" weight="0.145604212243" />
+</color>
+
+<color name="orange" weight="0.41331340774">
+ <shade name="dark" weight="0.524724613933" />
+ <shade name="light" weight="0.329669914513" />
+ <shade name="cool" weight="0.145604212243" />
+</color>
+
+<color name="white" weight="0.0479150941716">
+ <shade name="dark" weight="0.524724613933" />
+ <shade name="light" weight="0.329669914513" />
+ <shade name="cool" weight="0.145604212243" />
+</color>
+
+<color name="black" weight="0.0153255148534">
+ <shade name="dark" weight="0.524724613933" />
+ <shade name="light" weight="0.329669914513" />
+ <shade name="cool" weight="0.145604212243" />
+</color>
+
+<color name="red" weight="0.0113752628148">
+ <shade name="dark" weight="0.524724613933" />
+ <shade name="light" weight="0.329669914513" />
+ <shade name="cool" weight="0.145604212243" />
+</color>
+
+</colors>

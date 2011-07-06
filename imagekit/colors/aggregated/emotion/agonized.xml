@@ -1,0 +1,33 @@
+<colors query="agonized">
+
+<color name="white" weight="0.531914350385">
+ <shade name="dark" weight="0.370369849109" />
+ <shade name="soft" weight="0.314814371743" />
+ <shade name="hard" weight="0.314814371743" />
+</color>
+
+<color name="black" weight="0.265957175193">
+ <shade name="dark" weight="0.370369849109" />
+ <shade name="soft" weight="0.314814371743" />
+ <shade name="hard" weight="0.314814371743" />
+</color>
+
+<color name="red" weight="0.0957445830694">
+ <shade name="dark" weight="0.370369849109" />
+ <shade name="soft" weight="0.314814371743" />
+ <shade name="hard" weight="0.314814371743" />
+</color>
+
+<color name="green" weight="0.0531914350385">
+ <shade name="dark" weight="0.370369849109" />
+ <shade name="soft" weight="0.314814371743" />
+ <shade name="hard" weight="0.314814371743" />
+</color>
+
+<color name="blue" weight="0.0531914350385">
+ <shade name="dark" weight="0.370369849109" />
+ <shade name="soft" weight="0.314814371743" />
+ <shade name="hard" weight="0.314814371743" />
+</color>
+
+</colors>

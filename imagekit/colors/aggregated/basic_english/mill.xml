@@ -1,0 +1,33 @@
+<colors query="mill">
+
+<color name="red" weight="0.545364450205">
+ <shade name="dark" weight="0.444999083858" />
+ <shade name="fresh" weight="0.297499387523" />
+ <shade name="warm" weight="0.257499469873" />
+</color>
+
+<color name="green" weight="0.28683954153">
+ <shade name="dark" weight="0.458880180748" />
+ <shade name="fresh" weight="0.30677944668" />
+ <shade name="light" weight="0.234338249607" />
+</color>
+
+<color name="orange" weight="0.0939307168185">
+ <shade name="dark" weight="0.444999083858" />
+ <shade name="fresh" weight="0.297499387523" />
+ <shade name="warm" weight="0.257499469873" />
+</color>
+
+<color name="white" weight="0.045057198369">
+ <shade name="dark" weight="0.444999083858" />
+ <shade name="fresh" weight="0.297499387523" />
+ <shade name="warm" weight="0.257499469873" />
+</color>
+
+<color name="black" weight="0.0288070612523">
+ <shade name="dark" weight="0.444999083858" />
+ <shade name="fresh" weight="0.297499387523" />
+ <shade name="warm" weight="0.257499469873" />
+</color>
+
+</colors>

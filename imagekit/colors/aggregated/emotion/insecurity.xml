@@ -1,0 +1,33 @@
+<colors query="insecurity">
+
+<color name="white" weight="0.806272234145">
+ <shade name="dark" weight="0.482757326401" />
+ <shade name="weak" weight="0.264367107315" />
+ <shade name="fresh" weight="0.252872885257" />
+</color>
+
+<color name="black" weight="0.125461125679">
+ <shade name="intense" weight="0.663211633709" />
+ <shade name="dark" weight="0.217616317311" />
+ <shade name="weak" weight="0.119170840432" />
+</color>
+
+<color name="blue" weight="0.0387453476362">
+ <shade name="intense" weight="0.663211633709" />
+ <shade name="dark" weight="0.217616317311" />
+ <shade name="weak" weight="0.119170840432" />
+</color>
+
+<color name="red" weight="0.016605148987">
+ <shade name="intense" weight="0.663211633709" />
+ <shade name="dark" weight="0.217616317311" />
+ <shade name="weak" weight="0.119170840432" />
+</color>
+
+<color name="yellow" weight="0.0129151158787">
+ <shade name="intense" weight="0.663211633709" />
+ <shade name="dark" weight="0.217616317311" />
+ <shade name="weak" weight="0.119170840432" />
+</color>
+
+</colors>

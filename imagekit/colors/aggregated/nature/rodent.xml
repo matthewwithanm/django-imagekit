@@ -1,0 +1,33 @@
+<colors query="rodent">
+
+<color name="blue" weight="0.291191361894">
+ <shade name="fresh" weight="0.611727521273" />
+ <shade name="dark" weight="0.231481150835" />
+ <shade name="cool" weight="0.156789899499" />
+</color>
+
+<color name="red" weight="0.251813170605">
+ <shade name="fresh" weight="0.611727521273" />
+ <shade name="dark" weight="0.231481150835" />
+ <shade name="cool" weight="0.156789899499" />
+</color>
+
+<color name="yellow" weight="0.223833929427">
+ <shade name="fresh" weight="0.611727521273" />
+ <shade name="dark" weight="0.231481150835" />
+ <shade name="cool" weight="0.156789899499" />
+</color>
+
+<color name="black" weight="0.136787401317">
+ <shade name="fresh" weight="0.611727521273" />
+ <shade name="dark" weight="0.231481150835" />
+ <shade name="cool" weight="0.156789899499" />
+</color>
+
+<color name="pink" weight="0.0963729418366">
+ <shade name="fresh" weight="0.611727521273" />
+ <shade name="dark" weight="0.231481150835" />
+ <shade name="cool" weight="0.156789899499" />
+</color>
+
+</colors>

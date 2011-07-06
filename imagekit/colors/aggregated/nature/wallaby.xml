@@ -1,0 +1,33 @@
+<colors query="wallaby">
+
+<color name="blue" weight="0.304211834455">
+ <shade name="fresh" weight="0.83780989822" />
+ <shade name="dark" weight="0.0835819850955" />
+ <shade name="light" weight="0.0786068669351" />
+</color>
+
+<color name="white" weight="0.20930814251">
+ <shade name="fresh" weight="0.83780989822" />
+ <shade name="dark" weight="0.0835819850955" />
+ <shade name="light" weight="0.0786068669351" />
+</color>
+
+<color name="red" weight="0.185127201822">
+ <shade name="fresh" weight="0.83780989822" />
+ <shade name="dark" weight="0.0835819850955" />
+ <shade name="light" weight="0.0786068669351" />
+</color>
+
+<color name="black" weight="0.164066382514">
+ <shade name="fresh" weight="0.83780989822" />
+ <shade name="dark" weight="0.0835819850955" />
+ <shade name="light" weight="0.0786068669351" />
+</color>
+
+<color name="orange" weight="0.137285340677">
+ <shade name="fresh" weight="0.83780989822" />
+ <shade name="dark" weight="0.0835819850955" />
+ <shade name="light" weight="0.0786068669351" />
+</color>
+
+</colors>

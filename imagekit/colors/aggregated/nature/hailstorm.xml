@@ -1,0 +1,33 @@
+<colors query="hailstorm">
+
+<color name="yellow" weight="0.449073589657">
+ <shade name="intense" weight="0.92455945237" />
+ <shade name="soft" weight="0.0380033639931" />
+ <shade name="light" weight="0.0374361496052" />
+</color>
+
+<color name="blue" weight="0.245370105689">
+ <shade name="intense" weight="0.92455945237" />
+ <shade name="soft" weight="0.0380033639931" />
+ <shade name="light" weight="0.0374361496052" />
+</color>
+
+<color name="green" weight="0.143518363705">
+ <shade name="intense" weight="0.92455945237" />
+ <shade name="soft" weight="0.0380033639931" />
+ <shade name="light" weight="0.0374361496052" />
+</color>
+
+<color name="white" weight="0.129629489798">
+ <shade name="soft" weight="0.403610025415" />
+ <shade name="light" weight="0.397585995185" />
+ <shade name="hard" weight="0.198792997593" />
+</color>
+
+<color name="pink" weight="0.0324073724495">
+ <shade name="soft" weight="0.403610025415" />
+ <shade name="light" weight="0.397585995185" />
+ <shade name="hard" weight="0.198792997593" />
+</color>
+
+</colors>

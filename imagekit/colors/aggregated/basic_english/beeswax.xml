@@ -1,0 +1,33 @@
+<colors query="beeswax">
+
+<color name="yellow" weight="0.518050293513">
+ <shade name="dark" weight="0.55652485526" />
+ <shade name="light" weight="0.362286768522" />
+ <shade name="soft" weight="0.0811871553555" />
+</color>
+
+<color name="white" weight="0.380443184299">
+ <shade name="dark" weight="0.55652485526" />
+ <shade name="light" weight="0.362286768522" />
+ <shade name="soft" weight="0.0811871553555" />
+</color>
+
+<color name="black" weight="0.0586044394537">
+ <shade name="dark" weight="0.55652485526" />
+ <shade name="light" weight="0.362286768522" />
+ <shade name="soft" weight="0.0811871553555" />
+</color>
+
+<color name="blue" weight="0.0229884817746">
+ <shade name="dark" weight="0.55652485526" />
+ <shade name="light" weight="0.362286768522" />
+ <shade name="soft" weight="0.0811871553555" />
+</color>
+
+<color name="red" weight="0.0199125581569">
+ <shade name="dark" weight="0.55652485526" />
+ <shade name="light" weight="0.362286768522" />
+ <shade name="soft" weight="0.0811871553555" />
+</color>
+
+</colors>

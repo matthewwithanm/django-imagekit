@@ -1,0 +1,33 @@
+<colors query="whisky">
+
+<color name="white" weight="0.433924600102">
+ <shade name="light" weight="0.438393450394" />
+ <shade name="dark" weight="0.339178090568" />
+ <shade name="warm" weight="0.222426992726" />
+</color>
+
+<color name="black" weight="0.360664602682">
+ <shade name="light" weight="0.438393450394" />
+ <shade name="dark" weight="0.339178090568" />
+ <shade name="warm" weight="0.222426992726" />
+</color>
+
+<color name="red" weight="0.148492379385">
+ <shade name="light" weight="0.438393450394" />
+ <shade name="dark" weight="0.339178090568" />
+ <shade name="warm" weight="0.222426992726" />
+</color>
+
+<color name="green" weight="0.0295857681888">
+ <shade name="light" weight="0.487929352647" />
+ <shade name="dark" weight="0.377503235996" />
+ <shade name="hard" weight="0.134565779362" />
+</color>
+
+<color name="blue" weight="0.027331614422">
+ <shade name="light" weight="0.487929352647" />
+ <shade name="dark" weight="0.377503235996" />
+ <shade name="hard" weight="0.134565779362" />
+</color>
+
+</colors>

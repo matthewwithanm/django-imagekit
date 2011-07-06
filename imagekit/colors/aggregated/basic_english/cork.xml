@@ -1,0 +1,33 @@
+<colors query="cork">
+
+<color name="orange" weight="0.313111183441">
+ <shade name="light" weight="0.483666404233" />
+ <shade name="cool" weight="0.275025994564" />
+ <shade name="hard" weight="0.241306332395" />
+</color>
+
+<color name="black" weight="0.275929230407">
+ <shade name="light" weight="0.483666404233" />
+ <shade name="cool" weight="0.275025994564" />
+ <shade name="hard" weight="0.241306332395" />
+</color>
+
+<color name="white" weight="0.199608379444">
+ <shade name="light" weight="0.483666404233" />
+ <shade name="cool" weight="0.275025994564" />
+ <shade name="hard" weight="0.241306332395" />
+</color>
+
+<color name="red" weight="0.119765027666">
+ <shade name="light" weight="0.483666404233" />
+ <shade name="cool" weight="0.275025994564" />
+ <shade name="hard" weight="0.241306332395" />
+</color>
+
+<color name="blue" weight="0.0915850211565">
+ <shade name="light" weight="0.483666404233" />
+ <shade name="cool" weight="0.275025994564" />
+ <shade name="hard" weight="0.241306332395" />
+</color>
+
+</colors>

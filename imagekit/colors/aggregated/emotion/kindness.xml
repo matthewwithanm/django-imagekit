@@ -1,0 +1,33 @@
+<colors query="kindness">
+
+<color name="red" weight="0.598531255006">
+ <shade name="warm" weight="0.601092050462" />
+ <shade name="soft" weight="0.296231967453" />
+ <shade name="intense" weight="0.102674575127" />
+</color>
+
+<color name="black" weight="0.121400207383">
+ <shade name="warm" weight="0.601092050462" />
+ <shade name="soft" weight="0.296231967453" />
+ <shade name="intense" weight="0.102674575127" />
+</color>
+
+<color name="blue" weight="0.10502529569">
+ <shade name="soft" weight="0.614556678752" />
+ <shade name="intense" weight="0.213006538169" />
+ <shade name="light" weight="0.172433864232" />
+</color>
+
+<color name="green" weight="0.0886503839962">
+ <shade name="soft" weight="0.614556678752" />
+ <shade name="intense" weight="0.213006538169" />
+ <shade name="light" weight="0.172433864232" />
+</color>
+
+<color name="white" weight="0.0863917754867">
+ <shade name="warm" weight="0.613082135759" />
+ <shade name="soft" weight="0.302140956857" />
+ <shade name="light" weight="0.0847754723609" />
+</color>
+
+</colors>

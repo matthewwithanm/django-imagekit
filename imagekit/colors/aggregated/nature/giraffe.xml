@@ -1,0 +1,33 @@
+<colors query="giraffe">
+
+<color name="green" weight="0.272177100048">
+ <shade name="cool" weight="0.643732115153" />
+ <shade name="bright" weight="0.181539268453" />
+ <shade name="dark" weight="0.174727288399" />
+</color>
+
+<color name="white" weight="0.192876117812">
+ <shade name="cool" weight="0.643732115153" />
+ <shade name="bright" weight="0.181539268453" />
+ <shade name="dark" weight="0.174727288399" />
+</color>
+
+<color name="yellow" weight="0.191532033367">
+ <shade name="cool" weight="0.643732115153" />
+ <shade name="bright" weight="0.181539268453" />
+ <shade name="dark" weight="0.174727288399" />
+</color>
+
+<color name="blue" weight="0.186155695588">
+ <shade name="cool" weight="0.643732115153" />
+ <shade name="bright" weight="0.181539268453" />
+ <shade name="dark" weight="0.174727288399" />
+</color>
+
+<color name="pink" weight="0.157257880028">
+ <shade name="cool" weight="0.643732115153" />
+ <shade name="bright" weight="0.181539268453" />
+ <shade name="dark" weight="0.174727288399" />
+</color>
+
+</colors>

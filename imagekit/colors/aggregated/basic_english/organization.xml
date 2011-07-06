@@ -1,0 +1,33 @@
+<colors query="organization">
+
+<color name="black" weight="0.53836095497">
+ <shade name="neutral" weight="0.53517181711" />
+ <shade name="weak" weight="0.311723790378" />
+ <shade name="cool" weight="0.153103277575" />
+</color>
+
+<color name="white" weight="0.21846531506">
+ <shade name="neutral" weight="0.53517181711" />
+ <shade name="weak" weight="0.311723790378" />
+ <shade name="cool" weight="0.153103277575" />
+</color>
+
+<color name="green" weight="0.208062204819">
+ <shade name="neutral" weight="0.53517181711" />
+ <shade name="weak" weight="0.311723790378" />
+ <shade name="cool" weight="0.153103277575" />
+</color>
+
+<color name="blue" weight="0.0179453651657">
+ <shade name="neutral" weight="0.53517181711" />
+ <shade name="weak" weight="0.311723790378" />
+ <shade name="cool" weight="0.153103277575" />
+</color>
+
+<color name="red" weight="0.0171651318976">
+ <shade name="neutral" weight="0.53517181711" />
+ <shade name="weak" weight="0.311723790378" />
+ <shade name="cool" weight="0.153103277575" />
+</color>
+
+</colors>

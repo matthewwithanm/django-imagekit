@@ -1,0 +1,33 @@
+<colors query="raptor">
+
+<color name="red" weight="0.419623109612">
+ <shade name="cool" weight="0.399999468775" />
+ <shade name="light" weight="0.345160831927" />
+ <shade name="dark" weight="0.254838371236" />
+</color>
+
+<color name="black" weight="0.333230116457">
+ <shade name="cool" weight="0.399999468775" />
+ <shade name="light" weight="0.345160831927" />
+ <shade name="dark" weight="0.254838371236" />
+</color>
+
+<color name="white" weight="0.0956493852792">
+ <shade name="cool" weight="0.399999468775" />
+ <shade name="light" weight="0.345160831927" />
+ <shade name="dark" weight="0.254838371236" />
+</color>
+
+<color name="orange" weight="0.0762109618193">
+ <shade name="cool" weight="0.399999468775" />
+ <shade name="light" weight="0.345160831927" />
+ <shade name="dark" weight="0.254838371236" />
+</color>
+
+<color name="green" weight="0.0752853226069">
+ <shade name="cool" weight="0.399999468775" />
+ <shade name="light" weight="0.345160831927" />
+ <shade name="dark" weight="0.254838371236" />
+</color>
+
+</colors>

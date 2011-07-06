@@ -1,0 +1,33 @@
+<colors query="cupboard">
+
+<color name="red" weight="0.485429545284">
+ <shade name="dark" weight="0.864800977968" />
+ <shade name="cool" weight="0.0783215980046" />
+ <shade name="warm" weight="0.056876398551" />
+</color>
+
+<color name="blue" weight="0.168114128237">
+ <shade name="dark" weight="0.905716521528" />
+ <shade name="cool" weight="0.0820271566666" />
+ <shade name="light" weight="0.0122552478115" />
+</color>
+
+<color name="black" weight="0.168114128237">
+ <shade name="dark" weight="0.864800977968" />
+ <shade name="cool" weight="0.0783215980046" />
+ <shade name="warm" weight="0.056876398551" />
+</color>
+
+<color name="green" weight="0.122583218506">
+ <shade name="dark" weight="0.905716521528" />
+ <shade name="cool" weight="0.0820271566666" />
+ <shade name="light" weight="0.0122552478115" />
+</color>
+
+<color name="pink" weight="0.0557578525318">
+ <shade name="dark" weight="0.864800977968" />
+ <shade name="cool" weight="0.0783215980046" />
+ <shade name="warm" weight="0.056876398551" />
+</color>
+
+</colors>

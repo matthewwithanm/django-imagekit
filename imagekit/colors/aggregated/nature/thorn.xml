@@ -1,0 +1,33 @@
+<colors query="thorn">
+
+<color name="black" weight="0.83631934664">
+ <shade name="dark" weight="0.499332496785" />
+ <shade name="hard" weight="0.268666216561" />
+ <shade name="soft" weight="0.231999611323" />
+</color>
+
+<color name="white" weight="0.142174288929">
+ <shade name="dark" weight="0.499332496785" />
+ <shade name="hard" weight="0.268666216561" />
+ <shade name="soft" weight="0.231999611323" />
+</color>
+
+<color name="purple" weight="0.010354430006">
+ <shade name="dark" weight="0.499332496785" />
+ <shade name="hard" weight="0.268666216561" />
+ <shade name="soft" weight="0.231999611323" />
+</color>
+
+<color name="blue" weight="0.00657108058074">
+ <shade name="dark" weight="0.499332496785" />
+ <shade name="hard" weight="0.268666216561" />
+ <shade name="soft" weight="0.231999611323" />
+</color>
+
+<color name="orange" weight="0.00457984404112">
+ <shade name="dark" weight="0.499332496785" />
+ <shade name="hard" weight="0.268666216561" />
+ <shade name="soft" weight="0.231999611323" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="snoopy">
+
+<color name="blue" weight="0.29069733706">
+ <shade name="dark" weight="0.496960421844" />
+ <shade name="soft" weight="0.309617068573" />
+ <shade name="cool" weight="0.193421286488" />
+</color>
+
+<color name="red" weight="0.26946379244">
+ <shade name="dark" weight="0.496960421844" />
+ <shade name="soft" weight="0.309617068573" />
+ <shade name="cool" weight="0.193421286488" />
+</color>
+
+<color name="pink" weight="0.230535627303">
+ <shade name="dark" weight="0.496960421844" />
+ <shade name="soft" weight="0.309617068573" />
+ <shade name="cool" weight="0.193421286488" />
+</color>
+
+<color name="black" weight="0.11021220779">
+ <shade name="dark" weight="0.496960421844" />
+ <shade name="soft" weight="0.309617068573" />
+ <shade name="cool" weight="0.193421286488" />
+</color>
+
+<color name="white" weight="0.0990898748934">
+ <shade name="dark" weight="0.496960421844" />
+ <shade name="soft" weight="0.309617068573" />
+ <shade name="cool" weight="0.193421286488" />
+</color>
+
+</colors>

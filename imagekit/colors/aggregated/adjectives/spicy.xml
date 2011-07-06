@@ -1,0 +1,33 @@
+<colors query="spicy">
+
+<color name="red" weight="0.551929423712">
+ <shade name="warm" weight="0.40964667706" />
+ <shade name="fresh" weight="0.359250776543" />
+ <shade name="light" weight="0.231101200942" />
+</color>
+
+<color name="green" weight="0.316578386431">
+ <shade name="fresh" weight="0.50251667762" />
+ <shade name="light" weight="0.323262231495" />
+ <shade name="soft" weight="0.174219208874" />
+</color>
+
+<color name="orange" weight="0.060399823727">
+ <shade name="warm" weight="0.40964667706" />
+ <shade name="fresh" weight="0.359250776543" />
+ <shade name="light" weight="0.231101200942" />
+</color>
+
+<color name="pink" weight="0.0374895457616">
+ <shade name="warm" weight="0.40964667706" />
+ <shade name="fresh" weight="0.359250776543" />
+ <shade name="light" weight="0.231101200942" />
+</color>
+
+<color name="white" weight="0.0336017410159">
+ <shade name="warm" weight="0.40964667706" />
+ <shade name="fresh" weight="0.359250776543" />
+ <shade name="light" weight="0.231101200942" />
+</color>
+
+</colors>

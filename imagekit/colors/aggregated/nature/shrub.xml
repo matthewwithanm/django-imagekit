@@ -1,0 +1,33 @@
+<colors query="shrub">
+
+<color name="green" weight="0.669067729494">
+ <shade name="light" weight="0.515910384553" />
+ <shade name="cool" weight="0.281580994934" />
+ <shade name="soft" weight="0.202506879918" />
+</color>
+
+<color name="white" weight="0.146482283972">
+ <shade name="light" weight="0.515910384553" />
+ <shade name="cool" weight="0.281580994934" />
+ <shade name="soft" weight="0.202506879918" />
+</color>
+
+<color name="orange" weight="0.0898688607071">
+ <shade name="light" weight="0.515910384553" />
+ <shade name="cool" weight="0.281580994934" />
+ <shade name="soft" weight="0.202506879918" />
+</color>
+
+<color name="purple" weight="0.0574052193944">
+ <shade name="light" weight="0.515910384553" />
+ <shade name="cool" weight="0.281580994934" />
+ <shade name="soft" weight="0.202506879918" />
+</color>
+
+<color name="blue" weight="0.0371748282837">
+ <shade name="light" weight="0.515910384553" />
+ <shade name="cool" weight="0.281580994934" />
+ <shade name="soft" weight="0.202506879918" />
+</color>
+
+</colors>

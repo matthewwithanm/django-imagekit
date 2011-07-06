@@ -1,0 +1,33 @@
+<colors query="kumquat">
+
+<color name="red" weight="0.76168267309">
+ <shade name="fresh" weight="0.816645696222" />
+ <shade name="warm" weight="0.135102389922" />
+ <shade name="cool" weight="0.0482508535434" />
+</color>
+
+<color name="orange" weight="0.138652066254">
+ <shade name="fresh" weight="0.816645696222" />
+ <shade name="warm" weight="0.135102389922" />
+ <shade name="cool" weight="0.0482508535434" />
+</color>
+
+<color name="pink" weight="0.048799330581">
+ <shade name="fresh" weight="0.816645696222" />
+ <shade name="warm" weight="0.135102389922" />
+ <shade name="cool" weight="0.0482508535434" />
+</color>
+
+<color name="green" weight="0.029950911891">
+ <shade name="fresh" weight="0.896687697764" />
+ <shade name="cool" weight="0.0529800707689" />
+ <shade name="light" weight="0.0503310672305" />
+</color>
+
+<color name="purple" weight="0.0209139988204">
+ <shade name="fresh" weight="0.896687697764" />
+ <shade name="cool" weight="0.0529800707689" />
+ <shade name="light" weight="0.0503310672305" />
+</color>
+
+</colors>

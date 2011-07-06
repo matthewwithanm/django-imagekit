@@ -1,0 +1,33 @@
+<colors query="male">
+
+<color name="white" weight="0.465063470544">
+ <shade name="hard" weight="0.527051168661" />
+ <shade name="dark" weight="0.27705167627" />
+ <shade name="weak" weight="0.195895124635" />
+</color>
+
+<color name="black" weight="0.450061423107">
+ <shade name="hard" weight="0.491303417925" />
+ <shade name="dark" weight="0.25826038075" />
+ <shade name="intense" weight="0.250434308606" />
+</color>
+
+<color name="red" weight="0.0405055280797">
+ <shade name="hard" weight="0.491303417925" />
+ <shade name="dark" weight="0.25826038075" />
+ <shade name="intense" weight="0.250434308606" />
+</color>
+
+<color name="blue" weight="0.0281663440628">
+ <shade name="hard" weight="0.491303417925" />
+ <shade name="dark" weight="0.25826038075" />
+ <shade name="intense" weight="0.250434308606" />
+</color>
+
+<color name="yellow" weight="0.0162022112319">
+ <shade name="hard" weight="0.491303417925" />
+ <shade name="dark" weight="0.25826038075" />
+ <shade name="intense" weight="0.250434308606" />
+</color>
+
+</colors>

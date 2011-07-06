@@ -1,0 +1,33 @@
+<colors query="polar bear">
+
+<color name="white" weight="0.696982783998">
+ <shade name="cool" weight="0.592525981891" />
+ <shade name="warm" weight="0.204626089842" />
+ <shade name="soft" weight="0.202846732539" />
+</color>
+
+<color name="blue" weight="0.138482481017">
+ <shade name="cool" weight="0.661763822128" />
+ <shade name="soft" weight="0.226549776945" />
+ <shade name="light" weight="0.111685065476" />
+</color>
+
+<color name="green" weight="0.0621571531959">
+ <shade name="cool" weight="0.661763822128" />
+ <shade name="soft" weight="0.226549776945" />
+ <shade name="light" weight="0.111685065476" />
+</color>
+
+<color name="purple" weight="0.0553015848287">
+ <shade name="cool" weight="0.661763822128" />
+ <shade name="soft" weight="0.226549776945" />
+ <shade name="light" weight="0.111685065476" />
+</color>
+
+<color name="pink" weight="0.0470749027881">
+ <shade name="cool" weight="0.592525981891" />
+ <shade name="warm" weight="0.204626089842" />
+ <shade name="soft" weight="0.202846732539" />
+</color>
+
+</colors>

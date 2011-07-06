@@ -1,0 +1,33 @@
+<colors query="peony">
+
+<color name="white" weight="0.398813026405">
+ <shade name="dark" weight="0.431372021646" />
+ <shade name="light" weight="0.351306760053" />
+ <shade name="fresh" weight="0.217319995754" />
+</color>
+
+<color name="pink" weight="0.288397849673">
+ <shade name="dark" weight="0.431372021646" />
+ <shade name="light" weight="0.351306760053" />
+ <shade name="fresh" weight="0.217319995754" />
+</color>
+
+<color name="red" weight="0.175345892601">
+ <shade name="dark" weight="0.431372021646" />
+ <shade name="light" weight="0.351306760053" />
+ <shade name="fresh" weight="0.217319995754" />
+</color>
+
+<color name="green" weight="0.0850361659606">
+ <shade name="dark" weight="0.431372021646" />
+ <shade name="light" weight="0.351306760053" />
+ <shade name="fresh" weight="0.217319995754" />
+</color>
+
+<color name="blue" weight="0.0524060092548">
+ <shade name="dark" weight="0.431372021646" />
+ <shade name="light" weight="0.351306760053" />
+ <shade name="fresh" weight="0.217319995754" />
+</color>
+
+</colors>

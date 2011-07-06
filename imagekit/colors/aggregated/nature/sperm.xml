@@ -1,0 +1,33 @@
+<colors query="sperm">
+
+<color name="white" weight="0.474954524429">
+ <shade name="fresh" weight="0.76818936306" />
+ <shade name="warm" weight="0.22031091167" />
+ <shade name="cool" weight="0.0114986835477" />
+</color>
+
+<color name="black" weight="0.443569864225">
+ <shade name="fresh" weight="0.76818936306" />
+ <shade name="warm" weight="0.22031091167" />
+ <shade name="cool" weight="0.0114986835477" />
+</color>
+
+<color name="yellow" weight="0.041218520402">
+ <shade name="fresh" weight="0.76818936306" />
+ <shade name="warm" weight="0.22031091167" />
+ <shade name="cool" weight="0.0114986835477" />
+</color>
+
+<color name="red" weight="0.0280369631161">
+ <shade name="fresh" weight="0.76818936306" />
+ <shade name="warm" weight="0.22031091167" />
+ <shade name="cool" weight="0.0114986835477" />
+</color>
+
+<color name="blue" weight="0.012219094373">
+ <shade name="fresh" weight="0.971287663866" />
+ <shade name="cool" weight="0.0145387713208" />
+ <shade name="dark" weight="0.014172247674" />
+</color>
+
+</colors>

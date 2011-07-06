@@ -1,0 +1,33 @@
+<colors query="gunmetal">
+
+<color name="black" weight="0.724612278216">
+ <shade name="dark" weight="0.920639817702" />
+ <shade name="light" weight="0.0419197996994" />
+ <shade name="cool" weight="0.0374393525866" />
+</color>
+
+<color name="red" weight="0.16125174642">
+ <shade name="dark" weight="0.920639817702" />
+ <shade name="light" weight="0.0419197996994" />
+ <shade name="cool" weight="0.0374393525866" />
+</color>
+
+<color name="green" weight="0.0670181308961">
+ <shade name="dark" weight="0.920639817702" />
+ <shade name="light" weight="0.0419197996994" />
+ <shade name="cool" weight="0.0374393525866" />
+</color>
+
+<color name="yellow" weight="0.0236434522704">
+ <shade name="dark" weight="0.920639817702" />
+ <shade name="light" weight="0.0419197996994" />
+ <shade name="cool" weight="0.0374393525866" />
+</color>
+
+<color name="orange" weight="0.0234733554915">
+ <shade name="dark" weight="0.920639817702" />
+ <shade name="light" weight="0.0419197996994" />
+ <shade name="cool" weight="0.0374393525866" />
+</color>
+
+</colors>

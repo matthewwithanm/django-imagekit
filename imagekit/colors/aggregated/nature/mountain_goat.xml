@@ -1,0 +1,33 @@
+<colors query="mountain goat">
+
+<color name="white" weight="0.448332671487">
+ <shade name="soft" weight="0.851484221156" />
+ <shade name="fresh" weight="0.0891088138419" />
+ <shade name="cool" weight="0.0594058758946" />
+</color>
+
+<color name="blue" weight="0.321879866709">
+ <shade name="soft" weight="0.851484221156" />
+ <shade name="fresh" weight="0.0891088138419" />
+ <shade name="cool" weight="0.0594058758946" />
+</color>
+
+<color name="black" weight="0.228636889448">
+ <shade name="soft" weight="0.851484221156" />
+ <shade name="fresh" weight="0.0891088138419" />
+ <shade name="cool" weight="0.0594058758946" />
+</color>
+
+<color name="pink" weight="0.000638650529184">
+ <shade name="soft" weight="0.851484221156" />
+ <shade name="fresh" weight="0.0891088138419" />
+ <shade name="cool" weight="0.0594058758946" />
+</color>
+
+<color name="red" weight="0.000510920423347">
+ <shade name="soft" weight="0.851484221156" />
+ <shade name="fresh" weight="0.0891088138419" />
+ <shade name="cool" weight="0.0594058758946" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="extinction">
+
+<color name="white" weight="0.464090783508">
+ <shade name="light" weight="0.989529619316" />
+ <shade name="weak" weight="0.00734971236332" />
+ <shade name="dark" weight="0.00311966208227" />
+</color>
+
+<color name="green" weight="0.210526098441">
+ <shade name="light" weight="0.989529619316" />
+ <shade name="weak" weight="0.00734971236332" />
+ <shade name="dark" weight="0.00311966208227" />
+</color>
+
+<color name="blue" weight="0.124448925187">
+ <shade name="light" weight="0.989529619316" />
+ <shade name="weak" weight="0.00734971236332" />
+ <shade name="dark" weight="0.00311966208227" />
+</color>
+
+<color name="red" weight="0.119263553304">
+ <shade name="light" weight="0.989529619316" />
+ <shade name="weak" weight="0.00734971236332" />
+ <shade name="dark" weight="0.00311966208227" />
+</color>
+
+<color name="black" weight="0.0816696071536">
+ <shade name="light" weight="0.989529619316" />
+ <shade name="weak" weight="0.00734971236332" />
+ <shade name="dark" weight="0.00311966208227" />
+</color>
+
+</colors>

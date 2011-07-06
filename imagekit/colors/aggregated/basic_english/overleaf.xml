@@ -1,0 +1,33 @@
+<colors query="overleaf">
+
+<color name="red" weight="0.333332950618">
+ <shade name="neutral" weight="0.4999995" />
+ <shade name="light" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="green" weight="0.222221967078">
+ <shade name="neutral" weight="0.4999995" />
+ <shade name="light" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="white" weight="0.185184972565">
+ <shade name="neutral" weight="0.4999995" />
+ <shade name="light" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="blue" weight="0.148147978052">
+ <shade name="neutral" weight="0.4999995" />
+ <shade name="light" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="orange" weight="0.111110983539">
+ <shade name="neutral" weight="0.4999995" />
+ <shade name="light" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+</colors>

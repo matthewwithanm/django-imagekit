@@ -1,0 +1,33 @@
+<colors query="throat">
+
+<color name="white" weight="0.335605278605">
+ <shade name="hard" weight="0.57724416001" />
+ <shade name="dark" weight="0.323479819136" />
+ <shade name="warm" weight="0.0992748410452" />
+</color>
+
+<color name="yellow" weight="0.221814113828">
+ <shade name="hard" weight="0.57724416001" />
+ <shade name="dark" weight="0.323479819136" />
+ <shade name="warm" weight="0.0992748410452" />
+</color>
+
+<color name="red" weight="0.174095238276">
+ <shade name="hard" weight="0.57724416001" />
+ <shade name="dark" weight="0.323479819136" />
+ <shade name="warm" weight="0.0992748410452" />
+</color>
+
+<color name="black" weight="0.151284566996">
+ <shade name="hard" weight="0.57724416001" />
+ <shade name="dark" weight="0.323479819136" />
+ <shade name="warm" weight="0.0992748410452" />
+</color>
+
+<color name="green" weight="0.117199655888">
+ <shade name="hard" weight="0.609181113207" />
+ <shade name="dark" weight="0.34137685571" />
+ <shade name="weak" weight="0.0494407859994" />
+</color>
+
+</colors>

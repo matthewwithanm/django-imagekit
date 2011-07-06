@@ -1,0 +1,33 @@
+<colors query="gay">
+
+<color name="black" weight="0.767493572931">
+ <shade name="hard" weight="0.894316452685" />
+ <shade name="soft" weight="0.057978546112" />
+ <shade name="fresh" weight="0.0477038670541" />
+</color>
+
+<color name="white" weight="0.167042718814">
+ <shade name="hard" weight="0.894316452685" />
+ <shade name="soft" weight="0.057978546112" />
+ <shade name="fresh" weight="0.0477038670541" />
+</color>
+
+<color name="blue" weight="0.028724575634">
+ <shade name="hard" weight="0.894316452685" />
+ <shade name="soft" weight="0.057978546112" />
+ <shade name="fresh" weight="0.0477038670541" />
+</color>
+
+<color name="pink" weight="0.0186230058138">
+ <shade name="hard" weight="0.894316452685" />
+ <shade name="soft" weight="0.057978546112" />
+ <shade name="fresh" weight="0.0477038670541" />
+</color>
+
+<color name="green" weight="0.0181151056552">
+ <shade name="hard" weight="0.894316452685" />
+ <shade name="soft" weight="0.057978546112" />
+ <shade name="fresh" weight="0.0477038670541" />
+</color>
+
+</colors>

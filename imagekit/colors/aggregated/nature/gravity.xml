@@ -1,0 +1,33 @@
+<colors query="gravity">
+
+<color name="blue" weight="0.657298932137">
+ <shade name="weak" weight="0.388150764818" />
+ <shade name="light" weight="0.384064967294" />
+ <shade name="intense" weight="0.227783211985" />
+</color>
+
+<color name="green" weight="0.132665839514">
+ <shade name="weak" weight="0.388150764818" />
+ <shade name="light" weight="0.384064967294" />
+ <shade name="intense" weight="0.227783211985" />
+</color>
+
+<color name="white" weight="0.088644901857">
+ <shade name="weak" weight="0.488117527833" />
+ <shade name="light" weight="0.482979448593" />
+ <shade name="cool" weight="0.028901695727" />
+</color>
+
+<color name="purple" weight="0.0783934506218">
+ <shade name="weak" weight="0.488117527833" />
+ <shade name="light" weight="0.482979448593" />
+ <shade name="cool" weight="0.028901695727" />
+</color>
+
+<color name="red" weight="0.0429957925334">
+ <shade name="weak" weight="0.388150764818" />
+ <shade name="light" weight="0.384064967294" />
+ <shade name="intense" weight="0.227783211985" />
+</color>
+
+</colors>

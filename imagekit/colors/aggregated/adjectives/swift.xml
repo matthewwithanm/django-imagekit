@@ -1,0 +1,33 @@
+<colors query="swift">
+
+<color name="black" weight="0.940393920618">
+ <shade name="light" weight="0.825173833754" />
+ <shade name="soft" weight="0.0993005799942" />
+ <shade name="hard" weight="0.0755243847843" />
+</color>
+
+<color name="white" weight="0.0168428761902">
+ <shade name="light" weight="0.825173833754" />
+ <shade name="soft" weight="0.0993005799942" />
+ <shade name="hard" weight="0.0755243847843" />
+</color>
+
+<color name="blue" weight="0.0165153758198">
+ <shade name="light" weight="0.825173833754" />
+ <shade name="soft" weight="0.0993005799942" />
+ <shade name="hard" weight="0.0755243847843" />
+</color>
+
+<color name="yellow" weight="0.0131468005818">
+ <shade name="light" weight="0.825173833754" />
+ <shade name="soft" weight="0.0993005799942" />
+ <shade name="hard" weight="0.0755243847843" />
+</color>
+
+<color name="orange" weight="0.0131000148146">
+ <shade name="light" weight="0.825173833754" />
+ <shade name="soft" weight="0.0993005799942" />
+ <shade name="hard" weight="0.0755243847843" />
+</color>
+
+</colors>

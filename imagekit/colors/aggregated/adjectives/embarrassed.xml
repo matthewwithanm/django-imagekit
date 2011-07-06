@@ -1,0 +1,33 @@
+<colors query="embarrassed">
+
+<color name="red" weight="0.55966067947">
+ <shade name="cool" weight="0.847834869012" />
+ <shade name="hard" weight="0.0950467511051" />
+ <shade name="soft" weight="0.0571172964387" />
+</color>
+
+<color name="pink" weight="0.163202288924">
+ <shade name="cool" weight="0.847834869012" />
+ <shade name="hard" weight="0.0950467511051" />
+ <shade name="soft" weight="0.0571172964387" />
+</color>
+
+<color name="blue" weight="0.141647269632">
+ <shade name="cool" weight="0.847834869012" />
+ <shade name="hard" weight="0.0950467511051" />
+ <shade name="soft" weight="0.0571172964387" />
+</color>
+
+<color name="black" weight="0.0777520338741">
+ <shade name="cool" weight="0.847834869012" />
+ <shade name="hard" weight="0.0950467511051" />
+ <shade name="soft" weight="0.0571172964387" />
+</color>
+
+<color name="green" weight="0.0577366588174">
+ <shade name="cool" weight="0.847834869012" />
+ <shade name="hard" weight="0.0950467511051" />
+ <shade name="soft" weight="0.0571172964387" />
+</color>
+
+</colors>

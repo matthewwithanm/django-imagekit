@@ -1,0 +1,33 @@
+<colors query="pelican">
+
+<color name="white" weight="0.827575614971">
+ <shade name="hard" weight="0.402860877743" />
+ <shade name="light" weight="0.391565712947" />
+ <shade name="bright" weight="0.205571999297" />
+</color>
+
+<color name="blue" weight="0.120010252997">
+ <shade name="hard" weight="0.402860877743" />
+ <shade name="light" weight="0.391565712947" />
+ <shade name="bright" weight="0.205571999297" />
+</color>
+
+<color name="black" weight="0.0405535628988">
+ <shade name="hard" weight="0.402860877743" />
+ <shade name="light" weight="0.391565712947" />
+ <shade name="bright" weight="0.205571999297" />
+</color>
+
+<color name="yellow" weight="0.00655458749179">
+ <shade name="hard" weight="0.402860877743" />
+ <shade name="light" weight="0.391565712947" />
+ <shade name="bright" weight="0.205571999297" />
+</color>
+
+<color name="red" weight="0.00530497189084">
+ <shade name="hard" weight="0.402860877743" />
+ <shade name="light" weight="0.391565712947" />
+ <shade name="bright" weight="0.205571999297" />
+</color>
+
+</colors>

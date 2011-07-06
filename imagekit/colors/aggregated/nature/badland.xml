@@ -1,0 +1,33 @@
+<colors query="badland">
+
+<color name="black" weight="0.444443975309">
+ <shade name="fresh" weight="0.428570877552" />
+ <shade name="soft" weight="0.285713918368" />
+ <shade name="cool" weight="0.285713918368" />
+</color>
+
+<color name="red" weight="0.277777484568">
+ <shade name="fresh" weight="0.428570877552" />
+ <shade name="soft" weight="0.285713918368" />
+ <shade name="cool" weight="0.285713918368" />
+</color>
+
+<color name="white" weight="0.111110993827">
+ <shade name="fresh" weight="0.428570877552" />
+ <shade name="soft" weight="0.285713918368" />
+ <shade name="cool" weight="0.285713918368" />
+</color>
+
+<color name="orange" weight="0.0833332453705">
+ <shade name="fresh" weight="0.428570877552" />
+ <shade name="soft" weight="0.285713918368" />
+ <shade name="cool" weight="0.285713918368" />
+</color>
+
+<color name="green" weight="0.0833332453705">
+ <shade name="fresh" weight="0.428570877552" />
+ <shade name="soft" weight="0.285713918368" />
+ <shade name="cool" weight="0.285713918368" />
+</color>
+
+</colors>

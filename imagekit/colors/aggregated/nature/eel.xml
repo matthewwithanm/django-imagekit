@@ -1,0 +1,33 @@
+<colors query="eel">
+
+<color name="yellow" weight="0.478212378286">
+ <shade name="fresh" weight="0.38986207012" />
+ <shade name="dark" weight="0.361439561971" />
+ <shade name="cool" weight="0.24869694631" />
+</color>
+
+<color name="black" weight="0.411329528176">
+ <shade name="fresh" weight="0.38986207012" />
+ <shade name="dark" weight="0.361439561971" />
+ <shade name="cool" weight="0.24869694631" />
+</color>
+
+<color name="blue" weight="0.0598601508484">
+ <shade name="fresh" weight="0.38986207012" />
+ <shade name="dark" weight="0.361439561971" />
+ <shade name="cool" weight="0.24869694631" />
+</color>
+
+<color name="purple" weight="0.0256495730172">
+ <shade name="fresh" weight="0.38986207012" />
+ <shade name="dark" weight="0.361439561971" />
+ <shade name="cool" weight="0.24869694631" />
+</color>
+
+<color name="pink" weight="0.024947303091">
+ <shade name="fresh" weight="0.38986207012" />
+ <shade name="dark" weight="0.361439561971" />
+ <shade name="cool" weight="0.24869694631" />
+</color>
+
+</colors>

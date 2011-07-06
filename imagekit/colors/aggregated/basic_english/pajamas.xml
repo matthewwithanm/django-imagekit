@@ -1,0 +1,33 @@
+<colors query="pajamas">
+
+<color name="green" weight="0.30972421971">
+ <shade name="soft" weight="0.425608404635" />
+ <shade name="cool" weight="0.287803964166" />
+ <shade name="dark" weight="0.286584455843" />
+</color>
+
+<color name="pink" weight="0.240022217452">
+ <shade name="warm" weight="0.72076282734" />
+ <shade name="soft" weight="0.166586905127" />
+ <shade name="cool" weight="0.11264902467" />
+</color>
+
+<color name="red" weight="0.208543893852">
+ <shade name="warm" weight="0.72076282734" />
+ <shade name="soft" weight="0.166586905127" />
+ <shade name="cool" weight="0.11264902467" />
+</color>
+
+<color name="black" weight="0.124789068558">
+ <shade name="warm" weight="0.72076282734" />
+ <shade name="soft" weight="0.166586905127" />
+ <shade name="cool" weight="0.11264902467" />
+</color>
+
+<color name="blue" weight="0.116919487658">
+ <shade name="soft" weight="0.425608404635" />
+ <shade name="cool" weight="0.287803964166" />
+ <shade name="dark" weight="0.286584455843" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="taiga">
+
+<color name="green" weight="0.401736837774">
+ <shade name="dark" weight="0.711592107246" />
+ <shade name="light" weight="0.158341025188" />
+ <shade name="cool" weight="0.130065842119" />
+</color>
+
+<color name="black" weight="0.398479512062">
+ <shade name="dark" weight="0.711592107246" />
+ <shade name="light" weight="0.158341025188" />
+ <shade name="cool" weight="0.130065842119" />
+</color>
+
+<color name="red" weight="0.0776329294618">
+ <shade name="dark" weight="0.711592107246" />
+ <shade name="light" weight="0.158341025188" />
+ <shade name="cool" weight="0.130065842119" />
+</color>
+
+<color name="blue" weight="0.0629749637592">
+ <shade name="dark" weight="0.711592107246" />
+ <shade name="light" weight="0.158341025188" />
+ <shade name="cool" weight="0.130065842119" />
+</color>
+
+<color name="white" weight="0.0591747504289">
+ <shade name="dark" weight="0.711592107246" />
+ <shade name="light" weight="0.158341025188" />
+ <shade name="cool" weight="0.130065842119" />
+</color>
+
+</colors>

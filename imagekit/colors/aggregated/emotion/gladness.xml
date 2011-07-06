@@ -1,0 +1,33 @@
+<colors query="gladness">
+
+<color name="green" weight="0.681714876978">
+ <shade name="bright" weight="0.382875063358" />
+ <shade name="fresh" weight="0.352180438025" />
+ <shade name="intense" weight="0.264943081817" />
+</color>
+
+<color name="white" weight="0.189616058497">
+ <shade name="bright" weight="0.400337244771" />
+ <shade name="fresh" weight="0.368242697722" />
+ <shade name="light" weight="0.231418576091" />
+</color>
+
+<color name="yellow" weight="0.0993226973081">
+ <shade name="bright" weight="0.382875063358" />
+ <shade name="fresh" weight="0.352180438025" />
+ <shade name="intense" weight="0.264943081817" />
+</color>
+
+<color name="blue" weight="0.0158013382081">
+ <shade name="bright" weight="0.382875063358" />
+ <shade name="fresh" weight="0.352180438025" />
+ <shade name="intense" weight="0.264943081817" />
+</color>
+
+<color name="pink" weight="0.0135440041784">
+ <shade name="bright" weight="0.400337244771" />
+ <shade name="fresh" weight="0.368242697722" />
+ <shade name="light" weight="0.231418576091" />
+</color>
+
+</colors>

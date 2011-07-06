@@ -1,0 +1,33 @@
+<colors query="glee">
+
+<color name="black" weight="0.291419757086">
+ <shade name="dark" weight="0.647342227115" />
+ <shade name="intense" weight="0.241545607132" />
+ <shade name="soft" weight="0.111110979281" />
+</color>
+
+<color name="purple" weight="0.21449677552">
+ <shade name="dark" weight="0.796196104897" />
+ <shade name="soft" weight="0.136660525467" />
+ <shade name="light" weight="0.0671419103384" />
+</color>
+
+<color name="red" weight="0.204141758771">
+ <shade name="dark" weight="0.647342227115" />
+ <shade name="intense" weight="0.241545607132" />
+ <shade name="soft" weight="0.111110979281" />
+</color>
+
+<color name="orange" weight="0.146449522597">
+ <shade name="dark" weight="0.647342227115" />
+ <shade name="intense" weight="0.241545607132" />
+ <shade name="soft" weight="0.111110979281" />
+</color>
+
+<color name="green" weight="0.143490946383">
+ <shade name="dark" weight="0.647342227115" />
+ <shade name="intense" weight="0.241545607132" />
+ <shade name="soft" weight="0.111110979281" />
+</color>
+
+</colors>

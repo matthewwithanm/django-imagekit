@@ -1,0 +1,33 @@
+<colors query="tragic">
+
+<color name="black" weight="0.53500462872">
+ <shade name="weak" weight="0.48339428188" />
+ <shade name="light" weight="0.28413251683" />
+ <shade name="dark" weight="0.232472059225" />
+</color>
+
+<color name="white" weight="0.202716597601">
+ <shade name="weak" weight="0.48339428188" />
+ <shade name="light" weight="0.28413251683" />
+ <shade name="dark" weight="0.232472059225" />
+</color>
+
+<color name="green" weight="0.0971785751386">
+ <shade name="weak" weight="0.48339428188" />
+ <shade name="light" weight="0.28413251683" />
+ <shade name="dark" weight="0.232472059225" />
+</color>
+
+<color name="blue" weight="0.0909089896458">
+ <shade name="weak" weight="0.48339428188" />
+ <shade name="light" weight="0.28413251683" />
+ <shade name="dark" weight="0.232472059225" />
+</color>
+
+<color name="red" weight="0.0741900949983">
+ <shade name="weak" weight="0.48339428188" />
+ <shade name="light" weight="0.28413251683" />
+ <shade name="dark" weight="0.232472059225" />
+</color>
+
+</colors>

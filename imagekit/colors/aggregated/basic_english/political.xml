@@ -1,0 +1,33 @@
+<colors query="political">
+
+<color name="black" weight="0.706465907961">
+ <shade name="intense" weight="0.61899362297" />
+ <shade name="weak" weight="0.25027901001" />
+ <shade name="hard" weight="0.13072609005" />
+</color>
+
+<color name="green" weight="0.146014612165">
+ <shade name="intense" weight="0.61899362297" />
+ <shade name="weak" weight="0.25027901001" />
+ <shade name="hard" weight="0.13072609005" />
+</color>
+
+<color name="white" weight="0.122232591501">
+ <shade name="weak" weight="0.525820185553" />
+ <shade name="hard" weight="0.274647150489" />
+ <shade name="fresh" weight="0.199529981125" />
+</color>
+
+<color name="blue" weight="0.023082549468">
+ <shade name="intense" weight="0.61899362297" />
+ <shade name="weak" weight="0.25027901001" />
+ <shade name="hard" weight="0.13072609005" />
+</color>
+
+<color name="pink" weight="0.0022033342674">
+ <shade name="weak" weight="0.525820185553" />
+ <shade name="hard" weight="0.274647150489" />
+ <shade name="fresh" weight="0.199529981125" />
+</color>
+
+</colors>

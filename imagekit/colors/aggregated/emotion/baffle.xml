@@ -1,0 +1,33 @@
+<colors query="baffle">
+
+<color name="black" weight="0.495364947033">
+ <shade name="light" weight="0.980298753527" />
+ <shade name="warm" weight="0.00992866686264" />
+ <shade name="soft" weight="0.00977156770342" />
+</color>
+
+<color name="white" weight="0.452818264466">
+ <shade name="light" weight="0.980298753527" />
+ <shade name="warm" weight="0.00992866686264" />
+ <shade name="soft" weight="0.00977156770342" />
+</color>
+
+<color name="orange" weight="0.0220938844474">
+ <shade name="light" weight="0.980298753527" />
+ <shade name="warm" weight="0.00992866686264" />
+ <shade name="soft" weight="0.00977156770342" />
+</color>
+
+<color name="red" weight="0.0200273312942">
+ <shade name="light" weight="0.980298753527" />
+ <shade name="warm" weight="0.00992866686264" />
+ <shade name="soft" weight="0.00977156770342" />
+</color>
+
+<color name="blue" weight="0.00969456552782">
+ <shade name="light" weight="0.986154884629" />
+ <shade name="soft" weight="0.00982994131794" />
+ <shade name="hard" weight="0.00401415610089" />
+</color>
+
+</colors>

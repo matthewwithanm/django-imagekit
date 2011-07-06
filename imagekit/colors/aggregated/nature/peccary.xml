@@ -1,0 +1,33 @@
+<colors query="peccary">
+
+<color name="black" weight="0.839920098737">
+ <shade name="soft" weight="0.938222985511" />
+ <shade name="fresh" weight="0.0540539991652" />
+ <shade name="warm" weight="0.00772199988075" />
+</color>
+
+<color name="white" weight="0.120553237701">
+ <shade name="soft" weight="0.938222985511" />
+ <shade name="fresh" weight="0.0540539991652" />
+ <shade name="warm" weight="0.00772199988075" />
+</color>
+
+<color name="blue" weight="0.0158102606821">
+ <shade name="soft" weight="0.938222985511" />
+ <shade name="fresh" weight="0.0540539991652" />
+ <shade name="hard" weight="0.00772199988075" />
+</color>
+
+<color name="yellow" weight="0.0138339780968">
+ <shade name="soft" weight="0.938222985511" />
+ <shade name="fresh" weight="0.0540539991652" />
+ <shade name="warm" weight="0.00772199988075" />
+</color>
+
+<color name="green" weight="0.00988141292632">
+ <shade name="soft" weight="0.938222985511" />
+ <shade name="fresh" weight="0.0540539991652" />
+ <shade name="hard" weight="0.00772199988075" />
+</color>
+
+</colors>

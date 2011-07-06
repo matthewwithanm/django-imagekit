@@ -1,0 +1,33 @@
+<colors query="zounds">
+
+<color name="white" weight="0.2499996875">
+ <shade name="dark" weight="0.614582693143" />
+ <shade name="cool" weight="0.322916330295" />
+ <shade name="light" weight="0.0624999348959" />
+</color>
+
+<color name="green" weight="0.2499996875">
+ <shade name="dark" weight="0.614582693143" />
+ <shade name="cool" weight="0.322916330295" />
+ <shade name="light" weight="0.0624999348959" />
+</color>
+
+<color name="black" weight="0.2499996875">
+ <shade name="dark" weight="0.614582693143" />
+ <shade name="cool" weight="0.322916330295" />
+ <shade name="light" weight="0.0624999348959" />
+</color>
+
+<color name="yellow" weight="0.12499984375">
+ <shade name="dark" weight="0.614582693143" />
+ <shade name="cool" weight="0.322916330295" />
+ <shade name="light" weight="0.0624999348959" />
+</color>
+
+<color name="red" weight="0.12499984375">
+ <shade name="dark" weight="0.614582693143" />
+ <shade name="cool" weight="0.322916330295" />
+ <shade name="light" weight="0.0624999348959" />
+</color>
+
+</colors>

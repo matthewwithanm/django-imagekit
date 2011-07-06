@@ -1,0 +1,33 @@
+<colors query="Bang">
+
+<color name="black" weight="0.526315248674">
+ <shade name="hard" weight="0.757688501534" />
+ <shade name="cool" weight="0.154913540165" />
+ <shade name="light" weight="0.0873967429987" />
+</color>
+
+<color name="white" weight="0.300646559647">
+ <shade name="hard" weight="0.757688501534" />
+ <shade name="cool" weight="0.154913540165" />
+ <shade name="light" weight="0.0873967429987" />
+</color>
+
+<color name="orange" weight="0.0889443367172">
+ <shade name="hard" weight="0.757688501534" />
+ <shade name="cool" weight="0.154913540165" />
+ <shade name="light" weight="0.0873967429987" />
+</color>
+
+<color name="yellow" weight="0.0710819616574">
+ <shade name="hard" weight="0.757688501534" />
+ <shade name="cool" weight="0.154913540165" />
+ <shade name="light" weight="0.0873967429987" />
+</color>
+
+<color name="green" weight="0.0130108657842">
+ <shade name="hard" weight="0.757688501534" />
+ <shade name="cool" weight="0.154913540165" />
+ <shade name="light" weight="0.0873967429987" />
+</color>
+
+</colors>

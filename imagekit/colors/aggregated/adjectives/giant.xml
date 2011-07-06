@@ -1,0 +1,33 @@
+<colors query="giant">
+
+<color name="red" weight="0.572081782251">
+ <shade name="cool" weight="0.585851648041" />
+ <shade name="bright" weight="0.263321618401" />
+ <shade name="dark" weight="0.150825637049" />
+</color>
+
+<color name="green" weight="0.28708103982">
+ <shade name="cool" weight="0.585851648041" />
+ <shade name="bright" weight="0.263321618401" />
+ <shade name="dark" weight="0.150825637049" />
+</color>
+
+<color name="blue" weight="0.0582483269201">
+ <shade name="cool" weight="0.585851648041" />
+ <shade name="bright" weight="0.263321618401" />
+ <shade name="dark" weight="0.150825637049" />
+</color>
+
+<color name="black" weight="0.0546078064876">
+ <shade name="cool" weight="0.585851648041" />
+ <shade name="bright" weight="0.263321618401" />
+ <shade name="dark" weight="0.150825637049" />
+</color>
+
+<color name="white" weight="0.0279799998955">
+ <shade name="cool" weight="0.585851648041" />
+ <shade name="bright" weight="0.263321618401" />
+ <shade name="dark" weight="0.150825637049" />
+</color>
+
+</colors>

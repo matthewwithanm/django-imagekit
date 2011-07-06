@@ -1,0 +1,33 @@
+<colors query="goose">
+
+<color name="blue" weight="0.431487341854">
+ <shade name="light" weight="0.565552064996" />
+ <shade name="dark" weight="0.339331238998" />
+ <shade name="soft" weight="0.0951155745676" />
+</color>
+
+<color name="white" weight="0.420661494568">
+ <shade name="light" weight="0.565552064996" />
+ <shade name="dark" weight="0.339331238998" />
+ <shade name="soft" weight="0.0951155745676" />
+</color>
+
+<color name="green" weight="0.0607793997666">
+ <shade name="light" weight="0.565552064996" />
+ <shade name="dark" weight="0.339331238998" />
+ <shade name="soft" weight="0.0951155745676" />
+</color>
+
+<color name="red" weight="0.0595421600767">
+ <shade name="light" weight="0.565552064996" />
+ <shade name="dark" weight="0.339331238998" />
+ <shade name="soft" weight="0.0951155745676" />
+</color>
+
+<color name="black" weight="0.0275285831004">
+ <shade name="light" weight="0.565552064996" />
+ <shade name="dark" weight="0.339331238998" />
+ <shade name="soft" weight="0.0951155745676" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="grotesque">
+
+<color name="green" weight="0.370153625056">
+ <shade name="dark" weight="0.768211007325" />
+ <shade name="cool" weight="0.134105800848" />
+ <shade name="intense" weight="0.0976820030866" />
+</color>
+
+<color name="black" weight="0.29474212612">
+ <shade name="dark" weight="0.768211007325" />
+ <shade name="cool" weight="0.134105800848" />
+ <shade name="intense" weight="0.0976820030866" />
+</color>
+
+<color name="red" weight="0.195963683853">
+ <shade name="dark" weight="0.768211007325" />
+ <shade name="cool" weight="0.134105800848" />
+ <shade name="intense" weight="0.0976820030866" />
+</color>
+
+<color name="white" weight="0.115772582872">
+ <shade name="dark" weight="0.783782833182" />
+ <shade name="cool" weight="0.136824158379" />
+ <shade name="light" weight="0.0793917956025" />
+</color>
+
+<color name="pink" weight="0.0233669433321">
+ <shade name="dark" weight="0.783782833182" />
+ <shade name="cool" weight="0.136824158379" />
+ <shade name="light" weight="0.0793917956025" />
+</color>
+
+</colors>

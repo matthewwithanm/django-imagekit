@@ -1,0 +1,33 @@
+<colors query="oven">
+
+<color name="white" weight="0.329044139398">
+ <shade name="warm" weight="0.727759880247" />
+ <shade name="cool" weight="0.137269777201" />
+ <shade name="light" weight="0.13496916641" />
+</color>
+
+<color name="red" weight="0.244673847244">
+ <shade name="warm" weight="0.727759880247" />
+ <shade name="cool" weight="0.137269777201" />
+ <shade name="light" weight="0.13496916641" />
+</color>
+
+<color name="black" weight="0.242564589941">
+ <shade name="warm" weight="0.727759880247" />
+ <shade name="cool" weight="0.137269777201" />
+ <shade name="light" weight="0.13496916641" />
+</color>
+
+<color name="blue" weight="0.115165448789">
+ <shade name="cool" weight="0.353056131206" />
+ <shade name="light" weight="0.347138989342" />
+ <shade name="fresh" weight="0.299801854432" />
+</color>
+
+<color name="orange" weight="0.0685508623745">
+ <shade name="warm" weight="0.727759880247" />
+ <shade name="cool" weight="0.137269777201" />
+ <shade name="light" weight="0.13496916641" />
+</color>
+
+</colors>

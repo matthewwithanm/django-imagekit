@@ -1,0 +1,33 @@
+<colors query="walnut">
+
+<color name="black" weight="0.927656728037">
+ <shade name="dark" weight="0.805547979932" />
+ <shade name="light" weight="0.138476374798" />
+ <shade name="warm" weight="0.0559746330466" />
+</color>
+
+<color name="white" weight="0.0302236546876">
+ <shade name="dark" weight="0.805547979932" />
+ <shade name="light" weight="0.138476374798" />
+ <shade name="warm" weight="0.0559746330466" />
+</color>
+
+<color name="orange" weight="0.018927189693">
+ <shade name="dark" weight="0.805547979932" />
+ <shade name="light" weight="0.138476374798" />
+ <shade name="warm" weight="0.0559746330466" />
+</color>
+
+<color name="red" weight="0.0127926855237">
+ <shade name="dark" weight="0.805547979932" />
+ <shade name="light" weight="0.138476374798" />
+ <shade name="warm" weight="0.0559746330466" />
+</color>
+
+<color name="green" weight="0.0103987326772">
+ <shade name="dark" weight="0.84971927551" />
+ <shade name="light" weight="0.146069567301" />
+ <shade name="soft" weight="0.00421008946174" />
+</color>
+
+</colors>

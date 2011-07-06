@@ -1,0 +1,33 @@
+<colors query="ring">
+
+<color name="red" weight="0.279696371823">
+ <shade name="soft" weight="0.512819803507" />
+ <shade name="light" weight="0.26850470844" />
+ <shade name="dark" weight="0.218674104892" />
+</color>
+
+<color name="black" weight="0.206402443062">
+ <shade name="soft" weight="0.512819803507" />
+ <shade name="light" weight="0.26850470844" />
+ <shade name="dark" weight="0.218674104892" />
+</color>
+
+<color name="blue" weight="0.198820312501">
+ <shade name="soft" weight="0.512819803507" />
+ <shade name="light" weight="0.26850470844" />
+ <shade name="dark" weight="0.218674104892" />
+</color>
+
+<color name="white" weight="0.169334249206">
+ <shade name="soft" weight="0.512819803507" />
+ <shade name="light" weight="0.26850470844" />
+ <shade name="dark" weight="0.218674104892" />
+</color>
+
+<color name="pink" weight="0.145745398571">
+ <shade name="soft" weight="0.512819803507" />
+ <shade name="light" weight="0.26850470844" />
+ <shade name="dark" weight="0.218674104892" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="development">
+
+<color name="green" weight="0.665406159268">
+ <shade name="intense" weight="0.546826966175" />
+ <shade name="soft" weight="0.295467830342" />
+ <shade name="cool" weight="0.157703688588" />
+</color>
+
+<color name="red" weight="0.126870774367">
+ <shade name="intense" weight="0.546826966175" />
+ <shade name="soft" weight="0.295467830342" />
+ <shade name="cool" weight="0.157703688588" />
+</color>
+
+<color name="white" weight="0.105873513341">
+ <shade name="soft" weight="0.49594194381" />
+ <shade name="cool" weight="0.264705209273" />
+ <shade name="light" weight="0.23935030417" />
+</color>
+
+<color name="black" weight="0.0990715837133">
+ <shade name="intense" weight="0.546826966175" />
+ <shade name="soft" weight="0.295467830342" />
+ <shade name="cool" weight="0.157703688588" />
+</color>
+
+<color name="blue" weight="0.00277696170468">
+ <shade name="intense" weight="0.546826966175" />
+ <shade name="soft" weight="0.295467830342" />
+ <shade name="cool" weight="0.157703688588" />
+</color>
+
+</colors>

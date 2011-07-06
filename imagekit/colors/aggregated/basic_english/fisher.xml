@@ -1,0 +1,33 @@
+<colors query="fisher">
+
+<color name="red" weight="0.627300868264">
+ <shade name="light" weight="0.653943748864" />
+ <shade name="dark" weight="0.202466569933" />
+ <shade name="cool" weight="0.143588360516" />
+</color>
+
+<color name="black" weight="0.280465575913">
+ <shade name="light" weight="0.653943748864" />
+ <shade name="dark" weight="0.202466569933" />
+ <shade name="cool" weight="0.143588360516" />
+</color>
+
+<color name="pink" weight="0.0513830062742">
+ <shade name="light" weight="0.653943748864" />
+ <shade name="dark" weight="0.202466569933" />
+ <shade name="cool" weight="0.143588360516" />
+</color>
+
+<color name="blue" weight="0.020810117541">
+ <shade name="light" weight="0.653943748864" />
+ <shade name="dark" weight="0.202466569933" />
+ <shade name="cool" weight="0.143588360516" />
+</color>
+
+<color name="yellow" weight="0.0200393724469">
+ <shade name="light" weight="0.653943748864" />
+ <shade name="dark" weight="0.202466569933" />
+ <shade name="cool" weight="0.143588360516" />
+</color>
+
+</colors>

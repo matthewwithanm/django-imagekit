@@ -1,0 +1,33 @@
+<colors query="sunshade">
+
+<color name="white" weight="0.328647401015">
+ <shade name="hard" weight="0.682252170568" />
+ <shade name="cool" weight="0.238044371039" />
+ <shade name="light" weight="0.0797023563748" />
+</color>
+
+<color name="green" weight="0.293010935845">
+ <shade name="hard" weight="0.682252170568" />
+ <shade name="cool" weight="0.238044371039" />
+ <shade name="light" weight="0.0797023563748" />
+</color>
+
+<color name="red" weight="0.160166112904">
+ <shade name="hard" weight="0.682252170568" />
+ <shade name="cool" weight="0.238044371039" />
+ <shade name="light" weight="0.0797023563748" />
+</color>
+
+<color name="black" weight="0.126113490631">
+ <shade name="hard" weight="0.682252170568" />
+ <shade name="cool" weight="0.238044371039" />
+ <shade name="light" weight="0.0797023563748" />
+</color>
+
+<color name="blue" weight="0.0920608683567">
+ <shade name="hard" weight="0.682252170568" />
+ <shade name="cool" weight="0.238044371039" />
+ <shade name="light" weight="0.0797023563748" />
+</color>
+
+</colors>

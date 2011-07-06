@@ -1,0 +1,33 @@
+<colors query="calabash">
+
+<color name="green" weight="0.55002866372">
+ <shade name="fresh" weight="0.703124066163" />
+ <shade name="cool" weight="0.156249792481" />
+ <shade name="hard" weight="0.140624813233" />
+</color>
+
+<color name="black" weight="0.167154100996">
+ <shade name="fresh" weight="0.703124066163" />
+ <shade name="cool" weight="0.156249792481" />
+ <shade name="hard" weight="0.140624813233" />
+</color>
+
+<color name="purple" weight="0.139067530933">
+ <shade name="fresh" weight="0.703124066163" />
+ <shade name="cool" weight="0.156249792481" />
+ <shade name="hard" weight="0.140624813233" />
+</color>
+
+<color name="red" weight="0.0862101664412">
+ <shade name="fresh" weight="0.703124066163" />
+ <shade name="cool" weight="0.156249792481" />
+ <shade name="hard" weight="0.140624813233" />
+</color>
+
+<color name="white" weight="0.0575384595026">
+ <shade name="fresh" weight="0.703124066163" />
+ <shade name="cool" weight="0.156249792481" />
+ <shade name="hard" weight="0.140624813233" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="drool">
+
+<color name="green" weight="0.562465547059">
+ <shade name="cool" weight="0.91182692254" />
+ <shade name="dark" weight="0.0475985123087" />
+ <shade name="fresh" weight="0.0405734306728" />
+</color>
+
+<color name="black" weight="0.174508541523">
+ <shade name="cool" weight="0.868851519778" />
+ <shade name="warm" weight="0.0857922569844" />
+ <shade name="dark" weight="0.0453551422274" />
+</color>
+
+<color name="white" weight="0.124211141642">
+ <shade name="cool" weight="0.868851519778" />
+ <shade name="warm" weight="0.0857922569844" />
+ <shade name="dark" weight="0.0453551422274" />
+</color>
+
+<color name="yellow" weight="0.073553186923">
+ <shade name="cool" weight="0.868851519778" />
+ <shade name="warm" weight="0.0857922569844" />
+ <shade name="dark" weight="0.0453551422274" />
+</color>
+
+<color name="red" weight="0.0652604256523">
+ <shade name="cool" weight="0.868851519778" />
+ <shade name="warm" weight="0.0857922569844" />
+ <shade name="dark" weight="0.0453551422274" />
+</color>
+
+</colors>

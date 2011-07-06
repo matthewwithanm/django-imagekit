@@ -1,0 +1,33 @@
+<colors query="sepal">
+
+<color name="purple" weight="0.388433312811">
+ <shade name="weak" weight="0.555554783952" />
+ <shade name="fresh" weight="0.222221913581" />
+ <shade name="dark" weight="0.222221913581" />
+</color>
+
+<color name="pink" weight="0.289638239453">
+ <shade name="weak" weight="0.555554783952" />
+ <shade name="fresh" weight="0.222221913581" />
+ <shade name="dark" weight="0.222221913581" />
+</color>
+
+<color name="green" weight="0.155662481437">
+ <shade name="weak" weight="0.555554783952" />
+ <shade name="fresh" weight="0.222221913581" />
+ <shade name="dark" weight="0.222221913581" />
+</color>
+
+<color name="red" weight="0.124819141462">
+ <shade name="weak" weight="0.555554783952" />
+ <shade name="fresh" weight="0.222221913581" />
+ <shade name="dark" weight="0.222221913581" />
+</color>
+
+<color name="white" weight="0.0414457380915">
+ <shade name="weak" weight="0.555554783952" />
+ <shade name="fresh" weight="0.222221913581" />
+ <shade name="dark" weight="0.222221913581" />
+</color>
+
+</colors>

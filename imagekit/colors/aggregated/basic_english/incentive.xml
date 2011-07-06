@@ -1,0 +1,33 @@
+<colors query="incentive">
+
+<color name="green" weight="0.688865585371">
+ <shade name="weak" weight="0.881909128031" />
+ <shade name="cool" weight="0.0725961782221" />
+ <shade name="neutral" weight="0.0454936050192" />
+</color>
+
+<color name="white" weight="0.165480256855">
+ <shade name="weak" weight="0.881909128031" />
+ <shade name="cool" weight="0.0725961782221" />
+ <shade name="neutral" weight="0.0454936050192" />
+</color>
+
+<color name="black" weight="0.0729536616242">
+ <shade name="weak" weight="0.881909128031" />
+ <shade name="cool" weight="0.0725961782221" />
+ <shade name="neutral" weight="0.0454936050192" />
+</color>
+
+<color name="orange" weight="0.0444839400147">
+ <shade name="weak" weight="0.881909128031" />
+ <shade name="cool" weight="0.0725961782221" />
+ <shade name="neutral" weight="0.0454936050192" />
+</color>
+
+<color name="blue" weight="0.0282155276665">
+ <shade name="weak" weight="0.881909128031" />
+ <shade name="cool" weight="0.0725961782221" />
+ <shade name="neutral" weight="0.0454936050192" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="pique">
+
+<color name="white" weight="0.747064308213">
+ <shade name="soft" weight="0.924578084364" />
+ <shade name="light" weight="0.0489189482136" />
+ <shade name="cool" weight="0.0265019149182" />
+</color>
+
+<color name="black" weight="0.162219678355">
+ <shade name="soft" weight="0.924578084364" />
+ <shade name="light" weight="0.0489189482136" />
+ <shade name="cool" weight="0.0265019149182" />
+</color>
+
+<color name="yellow" weight="0.0325506591436">
+ <shade name="soft" weight="0.924578084364" />
+ <shade name="light" weight="0.0489189482136" />
+ <shade name="cool" weight="0.0265019149182" />
+</color>
+
+<color name="orange" weight="0.0293489549655">
+ <shade name="soft" weight="0.924578084364" />
+ <shade name="light" weight="0.0489189482136" />
+ <shade name="cool" weight="0.0265019149182" />
+</color>
+
+<color name="red" weight="0.0288153376025">
+ <shade name="soft" weight="0.924578084364" />
+ <shade name="light" weight="0.0489189482136" />
+ <shade name="cool" weight="0.0265019149182" />
+</color>
+
+</colors>

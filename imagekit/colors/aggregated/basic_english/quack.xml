@@ -1,0 +1,33 @@
+<colors query="quack">
+
+<color name="blue" weight="0.334645263501">
+ <shade name="cool" weight="0.530791172454" />
+ <shade name="soft" weight="0.412022981932" />
+ <shade name="weak" weight="0.0571846843251" />
+</color>
+
+<color name="purple" weight="0.236220186001">
+ <shade name="cool" weight="0.530791172454" />
+ <shade name="soft" weight="0.412022981932" />
+ <shade name="weak" weight="0.0571846843251" />
+</color>
+
+<color name="black" weight="0.191600817534">
+ <shade name="cool" weight="0.530791172454" />
+ <shade name="soft" weight="0.412022981932" />
+ <shade name="weak" weight="0.0571846843251" />
+</color>
+
+<color name="yellow" weight="0.1338581054">
+ <shade name="cool" weight="0.530791172454" />
+ <shade name="soft" weight="0.412022981932" />
+ <shade name="weak" weight="0.0571846843251" />
+</color>
+
+<color name="green" weight="0.103674414967">
+ <shade name="cool" weight="0.530791172454" />
+ <shade name="soft" weight="0.412022981932" />
+ <shade name="weak" weight="0.0571846843251" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="hygiene">
+
+<color name="orange" weight="0.490227514578">
+ <shade name="light" weight="0.352043451529" />
+ <shade name="fresh" weight="0.341671287445" />
+ <shade name="soft" weight="0.306283904103" />
+</color>
+
+<color name="white" weight="0.306188613756">
+ <shade name="light" weight="0.352043451529" />
+ <shade name="fresh" weight="0.341671287445" />
+ <shade name="soft" weight="0.306283904103" />
+</color>
+
+<color name="blue" weight="0.0960911075087">
+ <shade name="light" weight="0.352043451529" />
+ <shade name="fresh" weight="0.341671287445" />
+ <shade name="soft" weight="0.306283904103" />
+</color>
+
+<color name="green" weight="0.0726383626252">
+ <shade name="light" weight="0.352043451529" />
+ <shade name="fresh" weight="0.341671287445" />
+ <shade name="soft" weight="0.306283904103" />
+</color>
+
+<color name="red" weight="0.0348533847574">
+ <shade name="light" weight="0.352043451529" />
+ <shade name="fresh" weight="0.341671287445" />
+ <shade name="soft" weight="0.306283904103" />
+</color>
+
+</colors>

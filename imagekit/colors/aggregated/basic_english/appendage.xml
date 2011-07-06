@@ -1,0 +1,33 @@
+<colors query="appendage">
+
+<color name="pink" weight="0.336575468027">
+ <shade name="hard" weight="0.462014834134" />
+ <shade name="soft" weight="0.314728225937" />
+ <shade name="weak" weight="0.22325549032" />
+</color>
+
+<color name="black" weight="0.206225431277">
+ <shade name="hard" weight="0.462014834134" />
+ <shade name="soft" weight="0.314728225937" />
+ <shade name="weak" weight="0.22325549032" />
+</color>
+
+<color name="red" weight="0.205739050543">
+ <shade name="hard" weight="0.462014834134" />
+ <shade name="soft" weight="0.314728225937" />
+ <shade name="weak" weight="0.22325549032" />
+</color>
+
+<color name="white" weight="0.163910307406">
+ <shade name="hard" weight="0.462014834134" />
+ <shade name="soft" weight="0.314728225937" />
+ <shade name="weak" weight="0.22325549032" />
+</color>
+
+<color name="green" weight="0.0875485321458">
+ <shade name="hard" weight="0.462014834134" />
+ <shade name="soft" weight="0.314728225937" />
+ <shade name="weak" weight="0.22325549032" />
+</color>
+
+</colors>

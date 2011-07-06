@@ -1,0 +1,33 @@
+<colors query="in a stew">
+
+<color name="yellow" weight="0.0">
+ <shade name="warm" weight="0.66666588889" />
+ <shade name="soft" weight="0.166666472222" />
+ <shade name="fresh" weight="0.166666472222" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="warm" weight="0.66666588889" />
+ <shade name="soft" weight="0.166666472222" />
+ <shade name="fresh" weight="0.166666472222" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="warm" weight="0.66666588889" />
+ <shade name="soft" weight="0.166666472222" />
+ <shade name="fresh" weight="0.166666472222" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="soft" weight="0.333332555557" />
+ <shade name="fresh" weight="0.333332555557" />
+ <shade name="dark" weight="0.333332555557" />
+</color>
+
+<color name="pink" weight="0.0">
+ <shade name="warm" weight="0.66666588889" />
+ <shade name="soft" weight="0.166666472222" />
+ <shade name="fresh" weight="0.166666472222" />
+</color>
+
+</colors>

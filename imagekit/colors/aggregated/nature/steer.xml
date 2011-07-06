@@ -1,0 +1,33 @@
+<colors query="steer">
+
+<color name="black" weight="0.661473987627">
+ <shade name="hard" weight="0.763039177033" />
+ <shade name="light" weight="0.224895757441" />
+ <shade name="neutral" weight="0.0120640509885" />
+</color>
+
+<color name="red" weight="0.305451290923">
+ <shade name="hard" weight="0.763039177033" />
+ <shade name="light" weight="0.224895757441" />
+ <shade name="neutral" weight="0.0120640509885" />
+</color>
+
+<color name="purple" weight="0.0130271941294">
+ <shade name="hard" weight="0.763039177033" />
+ <shade name="light" weight="0.224895757441" />
+ <shade name="neutral" weight="0.0120640509885" />
+</color>
+
+<color name="white" weight="0.0102761096549">
+ <shade name="hard" weight="0.763039177033" />
+ <shade name="light" weight="0.224895757441" />
+ <shade name="neutral" weight="0.0120640509885" />
+</color>
+
+<color name="yellow" weight="0.00977039559707">
+ <shade name="hard" weight="0.763039177033" />
+ <shade name="light" weight="0.224895757441" />
+ <shade name="neutral" weight="0.0120640509885" />
+</color>
+
+</colors>

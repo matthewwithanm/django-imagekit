@@ -1,0 +1,33 @@
+<colors query="wreck">
+
+<color name="red" weight="0.395749832404">
+ <shade name="light" weight="0.541879705612" />
+ <shade name="hard" weight="0.230768959803" />
+ <shade name="cool" weight="0.227350160399" />
+</color>
+
+<color name="white" weight="0.199468539688">
+ <shade name="light" weight="0.541879705612" />
+ <shade name="hard" weight="0.230768959803" />
+ <shade name="cool" weight="0.227350160399" />
+</color>
+
+<color name="blue" weight="0.151659835102">
+ <shade name="light" weight="0.541879705612" />
+ <shade name="hard" weight="0.230768959803" />
+ <shade name="cool" weight="0.227350160399" />
+</color>
+
+<color name="green" weight="0.148206984216">
+ <shade name="light" weight="0.541879705612" />
+ <shade name="hard" weight="0.230768959803" />
+ <shade name="cool" weight="0.227350160399" />
+</color>
+
+<color name="black" weight="0.104913546174">
+ <shade name="light" weight="0.541879705612" />
+ <shade name="hard" weight="0.230768959803" />
+ <shade name="cool" weight="0.227350160399" />
+</color>
+
+</colors>

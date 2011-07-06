@@ -1,0 +1,33 @@
+<colors query="cricket">
+
+<color name="green" weight="0.339290759316">
+ <shade name="hard" weight="0.614333674513" />
+ <shade name="cool" weight="0.293514977823" />
+ <shade name="soft" weight="0.0921500511769" />
+</color>
+
+<color name="white" weight="0.239321160589">
+ <shade name="hard" weight="0.614333674513" />
+ <shade name="cool" weight="0.293514977823" />
+ <shade name="soft" weight="0.0921500511769" />
+</color>
+
+<color name="blue" weight="0.192365743005">
+ <shade name="hard" weight="0.614333674513" />
+ <shade name="cool" weight="0.293514977823" />
+ <shade name="soft" weight="0.0921500511769" />
+</color>
+
+<color name="black" weight="0.169645379658">
+ <shade name="hard" weight="0.614333674513" />
+ <shade name="cool" weight="0.293514977823" />
+ <shade name="soft" weight="0.0921500511769" />
+</color>
+
+<color name="pink" weight="0.0593758828803">
+ <shade name="hard" weight="0.614333674513" />
+ <shade name="cool" weight="0.293514977823" />
+ <shade name="soft" weight="0.0921500511769" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="puzzled">
+
+<color name="black" weight="0.522176841381">
+ <shade name="dark" weight="0.409523113985" />
+ <shade name="light" weight="0.384126331722" />
+ <shade name="neutral" weight="0.206348855884" />
+</color>
+
+<color name="white" weight="0.189515919266">
+ <shade name="dark" weight="0.409523113985" />
+ <shade name="light" weight="0.384126331722" />
+ <shade name="neutral" weight="0.206348855884" />
+</color>
+
+<color name="red" weight="0.14314500285">
+ <shade name="dark" weight="0.409523113985" />
+ <shade name="light" weight="0.384126331722" />
+ <shade name="neutral" weight="0.206348855884" />
+</color>
+
+<color name="blue" weight="0.0766128184265">
+ <shade name="dark" weight="0.409523113985" />
+ <shade name="light" weight="0.384126331722" />
+ <shade name="neutral" weight="0.206348855884" />
+</color>
+
+<color name="green" weight="0.0685483112237">
+ <shade name="dark" weight="0.409523113985" />
+ <shade name="light" weight="0.384126331722" />
+ <shade name="neutral" weight="0.206348855884" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="livid">
+
+<color name="white" weight="0.325734915211">
+ <shade name="dark" weight="0.588120097497" />
+ <shade name="light" weight="0.361245953926" />
+ <shade name="bright" weight="0.0506328560759" />
+</color>
+
+<color name="yellow" weight="0.250735002454">
+ <shade name="dark" weight="0.588120097497" />
+ <shade name="light" weight="0.361245953926" />
+ <shade name="bright" weight="0.0506328560759" />
+</color>
+
+<color name="blue" weight="0.186764488631">
+ <shade name="dark" weight="0.588120097497" />
+ <shade name="light" weight="0.361245953926" />
+ <shade name="bright" weight="0.0506328560759" />
+</color>
+
+<color name="black" weight="0.122058681546">
+ <shade name="dark" weight="0.588120097497" />
+ <shade name="light" weight="0.361245953926" />
+ <shade name="bright" weight="0.0506328560759" />
+</color>
+
+<color name="red" weight="0.114705748923">
+ <shade name="dark" weight="0.588120097497" />
+ <shade name="light" weight="0.361245953926" />
+ <shade name="bright" weight="0.0506328560759" />
+</color>
+
+</colors>

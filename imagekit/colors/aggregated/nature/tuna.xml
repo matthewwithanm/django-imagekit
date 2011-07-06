@@ -1,0 +1,33 @@
+<colors query="tuna">
+
+<color name="white" weight="0.637714106063">
+ <shade name="fresh" weight="0.678466382849" />
+ <shade name="light" weight="0.316057854585" />
+ <shade name="cool" weight="0.00547475348537" />
+</color>
+
+<color name="red" weight="0.178138320537">
+ <shade name="fresh" weight="0.678466382849" />
+ <shade name="light" weight="0.316057854585" />
+ <shade name="cool" weight="0.00547475348537" />
+</color>
+
+<color name="black" weight="0.101718035099">
+ <shade name="fresh" weight="0.678466382849" />
+ <shade name="light" weight="0.316057854585" />
+ <shade name="cool" weight="0.00547475348537" />
+</color>
+
+<color name="blue" weight="0.055865863837">
+ <shade name="fresh" weight="0.678466382849" />
+ <shade name="light" weight="0.316057854585" />
+ <shade name="cool" weight="0.00547475348537" />
+</color>
+
+<color name="orange" weight="0.0265626371451">
+ <shade name="fresh" weight="0.678466382849" />
+ <shade name="light" weight="0.316057854585" />
+ <shade name="cool" weight="0.00547475348537" />
+</color>
+
+</colors>

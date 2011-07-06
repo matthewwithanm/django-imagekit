@@ -1,0 +1,33 @@
+<colors query="thief">
+
+<color name="green" weight="0.320681064328">
+ <shade name="dark" weight="0.466575120222" />
+ <shade name="light" weight="0.326739009629" />
+ <shade name="hard" weight="0.20668459273" />
+</color>
+
+<color name="white" weight="0.261806025174">
+ <shade name="dark" weight="0.466575120222" />
+ <shade name="light" weight="0.326739009629" />
+ <shade name="hard" weight="0.20668459273" />
+</color>
+
+<color name="red" weight="0.157835211349">
+ <shade name="dark" weight="0.466575120222" />
+ <shade name="light" weight="0.326739009629" />
+ <shade name="hard" weight="0.20668459273" />
+</color>
+
+<color name="blue" weight="0.141550626051">
+ <shade name="dark" weight="0.466575120222" />
+ <shade name="light" weight="0.326739009629" />
+ <shade name="hard" weight="0.20668459273" />
+</color>
+
+<color name="black" weight="0.11812587643">
+ <shade name="dark" weight="0.466575120222" />
+ <shade name="light" weight="0.326739009629" />
+ <shade name="hard" weight="0.20668459273" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="melodic">
+
+<color name="black" weight="0.964380273001">
+ <shade name="dark" weight="0.420939535866" />
+ <shade name="soft" weight="0.320512336954" />
+ <shade name="hard" weight="0.258546618476" />
+</color>
+
+<color name="blue" weight="0.0114740134671">
+ <shade name="dark" weight="0.420939535866" />
+ <shade name="soft" weight="0.320512336954" />
+ <shade name="hard" weight="0.258546618476" />
+</color>
+
+<color name="white" weight="0.00999576633329">
+ <shade name="dark" weight="0.420939535866" />
+ <shade name="soft" weight="0.320512336954" />
+ <shade name="hard" weight="0.258546618476" />
+</color>
+
+<color name="pink" weight="0.00788398471358">
+ <shade name="dark" weight="0.420939535866" />
+ <shade name="soft" weight="0.320512336954" />
+ <shade name="hard" weight="0.258546618476" />
+</color>
+
+<color name="red" weight="0.00626495213847">
+ <shade name="dark" weight="0.420939535866" />
+ <shade name="soft" weight="0.320512336954" />
+ <shade name="hard" weight="0.258546618476" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="acacia">
+
+<color name="blue" weight="0.843178696867">
+ <shade name="dark" weight="0.593074358207" />
+ <shade name="hard" weight="0.276996578862" />
+ <shade name="light" weight="0.129927850729" />
+</color>
+
+<color name="black" weight="0.103043006981">
+ <shade name="dark" weight="0.593074358207" />
+ <shade name="hard" weight="0.276996578862" />
+ <shade name="light" weight="0.129927850729" />
+</color>
+
+<color name="red" weight="0.0277044428971">
+ <shade name="dark" weight="0.593074358207" />
+ <shade name="hard" weight="0.276996578862" />
+ <shade name="light" weight="0.129927850729" />
+</color>
+
+<color name="yellow" weight="0.0174110925717">
+ <shade name="dark" weight="0.593074358207" />
+ <shade name="hard" weight="0.276996578862" />
+ <shade name="light" weight="0.129927850729" />
+</color>
+
+<color name="green" weight="0.00866174479509">
+ <shade name="dark" weight="0.593074358207" />
+ <shade name="hard" weight="0.276996578862" />
+ <shade name="light" weight="0.129927850729" />
+</color>
+
+</colors>

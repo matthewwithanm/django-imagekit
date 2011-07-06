@@ -1,0 +1,33 @@
+<colors query="stamp">
+
+<color name="red" weight="0.334518278513">
+ <shade name="light" weight="0.438250778002" />
+ <shade name="soft" weight="0.374862884924" />
+ <shade name="hard" weight="0.186884995108" />
+</color>
+
+<color name="green" weight="0.304885753841">
+ <shade name="light" weight="0.438250778002" />
+ <shade name="soft" weight="0.374862884924" />
+ <shade name="hard" weight="0.186884995108" />
+</color>
+
+<color name="black" weight="0.1883311568">
+ <shade name="light" weight="0.438250778002" />
+ <shade name="soft" weight="0.374862884924" />
+ <shade name="hard" weight="0.186884995108" />
+</color>
+
+<color name="blue" weight="0.144211620067">
+ <shade name="light" weight="0.438250778002" />
+ <shade name="soft" weight="0.374862884924" />
+ <shade name="hard" weight="0.186884995108" />
+</color>
+
+<color name="purple" weight="0.0280521233556">
+ <shade name="light" weight="0.438250778002" />
+ <shade name="soft" weight="0.374862884924" />
+ <shade name="hard" weight="0.186884995108" />
+</color>
+
+</colors>

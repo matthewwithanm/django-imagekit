@@ -1,0 +1,33 @@
+<colors query="immortality">
+
+<color name="white" weight="0.519279673027">
+ <shade name="dark" weight="0.640862228479" />
+ <shade name="light" weight="0.312816909545" />
+ <shade name="hard" weight="0.0463197452267" />
+</color>
+
+<color name="black" weight="0.267351910865">
+ <shade name="dark" weight="0.640862228479" />
+ <shade name="light" weight="0.312816909545" />
+ <shade name="hard" weight="0.0463197452267" />
+</color>
+
+<color name="green" weight="0.106683695201">
+ <shade name="dark" weight="0.640862228479" />
+ <shade name="light" weight="0.312816909545" />
+ <shade name="hard" weight="0.0463197452267" />
+</color>
+
+<color name="blue" weight="0.0552698661885">
+ <shade name="dark" weight="0.640862228479" />
+ <shade name="light" weight="0.312816909545" />
+ <shade name="hard" weight="0.0463197452267" />
+</color>
+
+<color name="red" weight="0.0514138290126">
+ <shade name="dark" weight="0.640862228479" />
+ <shade name="light" weight="0.312816909545" />
+ <shade name="hard" weight="0.0463197452267" />
+</color>
+
+</colors>

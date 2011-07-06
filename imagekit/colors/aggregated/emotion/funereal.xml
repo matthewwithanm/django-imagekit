@@ -1,0 +1,33 @@
+<colors query="funereal">
+
+<color name="black" weight="0.747147531883">
+ <shade name="dark" weight="0.899999082932" />
+ <shade name="soft" weight="0.0879309448842" />
+ <shade name="fresh" weight="0.0120689532194" />
+</color>
+
+<color name="white" weight="0.169201349459">
+ <shade name="dark" weight="0.899999082932" />
+ <shade name="soft" weight="0.0879309448842" />
+ <shade name="fresh" weight="0.0120689532194" />
+</color>
+
+<color name="red" weight="0.0570341627391">
+ <shade name="dark" weight="0.899999082932" />
+ <shade name="soft" weight="0.0879309448842" />
+ <shade name="fresh" weight="0.0120689532194" />
+</color>
+
+<color name="green" weight="0.0133079713058">
+ <shade name="dark" weight="0.899999082932" />
+ <shade name="soft" weight="0.0879309448842" />
+ <shade name="fresh" weight="0.0120689532194" />
+</color>
+
+<color name="blue" weight="0.0133079713058">
+ <shade name="dark" weight="0.899999082932" />
+ <shade name="soft" weight="0.0879309448842" />
+ <shade name="fresh" weight="0.0120689532194" />
+</color>
+
+</colors>

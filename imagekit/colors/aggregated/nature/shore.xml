@@ -1,0 +1,33 @@
+<colors query="shore">
+
+<color name="green" weight="0.342905252829">
+ <shade name="dark" weight="0.556839366345" />
+ <shade name="soft" weight="0.23506713735" />
+ <shade name="bright" weight="0.208092219949" />
+</color>
+
+<color name="red" weight="0.26293441648">
+ <shade name="dark" weight="0.556839366345" />
+ <shade name="soft" weight="0.23506713735" />
+ <shade name="bright" weight="0.208092219949" />
+</color>
+
+<color name="blue" weight="0.144189841296">
+ <shade name="dark" weight="0.556839366345" />
+ <shade name="soft" weight="0.23506713735" />
+ <shade name="bright" weight="0.208092219949" />
+</color>
+
+<color name="black" weight="0.129649689232">
+ <shade name="dark" weight="0.556839366345" />
+ <shade name="soft" weight="0.23506713735" />
+ <shade name="bright" weight="0.208092219949" />
+</color>
+
+<color name="white" weight="0.120319758325">
+ <shade name="dark" weight="0.556839366345" />
+ <shade name="soft" weight="0.23506713735" />
+ <shade name="bright" weight="0.208092219949" />
+</color>
+
+</colors>

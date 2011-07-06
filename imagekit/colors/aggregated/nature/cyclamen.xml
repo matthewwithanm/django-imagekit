@@ -1,0 +1,33 @@
+<colors query="cyclamen">
+
+<color name="pink" weight="0.478914729738">
+ <shade name="light" weight="0.399435625093" />
+ <shade name="fresh" weight="0.369360472145" />
+ <shade name="dark" weight="0.231202738289" />
+</color>
+
+<color name="red" weight="0.438524330845">
+ <shade name="light" weight="0.399435625093" />
+ <shade name="fresh" weight="0.369360472145" />
+ <shade name="dark" weight="0.231202738289" />
+</color>
+
+<color name="white" weight="0.0336105819365">
+ <shade name="light" weight="0.399435625093" />
+ <shade name="fresh" weight="0.369360472145" />
+ <shade name="dark" weight="0.231202738289" />
+</color>
+
+<color name="black" weight="0.0271673516368">
+ <shade name="light" weight="0.399435625093" />
+ <shade name="fresh" weight="0.369360472145" />
+ <shade name="dark" weight="0.231202738289" />
+</color>
+
+<color name="orange" weight="0.0217819651176">
+ <shade name="light" weight="0.399435625093" />
+ <shade name="fresh" weight="0.369360472145" />
+ <shade name="dark" weight="0.231202738289" />
+</color>
+
+</colors>

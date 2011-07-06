@@ -1,0 +1,33 @@
+<colors query="composure">
+
+<color name="green" weight="0.251461708902">
+ <shade name="cool" weight="0.947349753259" />
+ <shade name="dark" weight="0.0304325628702" />
+ <shade name="hard" weight="0.0222166092578" />
+</color>
+
+<color name="black" weight="0.239765815465">
+ <shade name="cool" weight="0.947349753259" />
+ <shade name="dark" weight="0.0304325628702" />
+ <shade name="hard" weight="0.0222166092578" />
+</color>
+
+<color name="white" weight="0.233917868746">
+ <shade name="cool" weight="0.947349753259" />
+ <shade name="dark" weight="0.0304325628702" />
+ <shade name="hard" weight="0.0222166092578" />
+</color>
+
+<color name="blue" weight="0.222221975309">
+ <shade name="cool" weight="0.947349753259" />
+ <shade name="dark" weight="0.0304325628702" />
+ <shade name="hard" weight="0.0222166092578" />
+</color>
+
+<color name="red" weight="0.0526315204679">
+ <shade name="cool" weight="0.947349753259" />
+ <shade name="dark" weight="0.0304325628702" />
+ <shade name="hard" weight="0.0222166092578" />
+</color>
+
+</colors>

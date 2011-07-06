@@ -1,0 +1,33 @@
+<colors query="locus">
+
+<color name="white" weight="0.674316889904">
+ <shade name="neutral" weight="0.923473387141" />
+ <shade name="light" weight="0.0594768524166" />
+ <shade name="dark" weight="0.0170487394549" />
+</color>
+
+<color name="yellow" weight="0.263675194129">
+ <shade name="neutral" weight="0.923473387141" />
+ <shade name="light" weight="0.0594768524166" />
+ <shade name="dark" weight="0.0170487394549" />
+</color>
+
+<color name="black" weight="0.032851335662">
+ <shade name="neutral" weight="0.923473387141" />
+ <shade name="light" weight="0.0594768524166" />
+ <shade name="dark" weight="0.0170487394549" />
+</color>
+
+<color name="blue" weight="0.0177440438017">
+ <shade name="neutral" weight="0.923473387141" />
+ <shade name="light" weight="0.0594768524166" />
+ <shade name="dark" weight="0.0170487394549" />
+</color>
+
+<color name="green" weight="0.0114115165984">
+ <shade name="neutral" weight="0.923473387141" />
+ <shade name="light" weight="0.0594768524166" />
+ <shade name="dark" weight="0.0170487394549" />
+</color>
+
+</colors>

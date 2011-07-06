@@ -1,0 +1,33 @@
+<colors query="electron">
+
+<color name="white" weight="0.39359821636">
+ <shade name="light" weight="0.466634809267" />
+ <shade name="weak" weight="0.401772570779" />
+ <shade name="soft" weight="0.131591016213" />
+</color>
+
+<color name="blue" weight="0.371971940736">
+ <shade name="light" weight="0.37721565582" />
+ <shade name="weak" weight="0.324782679661" />
+ <shade name="intense" weight="0.298000368097" />
+</color>
+
+<color name="green" weight="0.198096684718">
+ <shade name="light" weight="0.37721565582" />
+ <shade name="weak" weight="0.324782679661" />
+ <shade name="intense" weight="0.298000368097" />
+</color>
+
+<color name="red" weight="0.0204368304649">
+ <shade name="light" weight="0.37721565582" />
+ <shade name="weak" weight="0.324782679661" />
+ <shade name="intense" weight="0.298000368097" />
+</color>
+
+<color name="black" weight="0.0158953125838">
+ <shade name="light" weight="0.37721565582" />
+ <shade name="weak" weight="0.324782679661" />
+ <shade name="intense" weight="0.298000368097" />
+</color>
+
+</colors>

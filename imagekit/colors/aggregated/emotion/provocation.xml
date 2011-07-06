@@ -1,0 +1,33 @@
+<colors query="provocation">
+
+<color name="red" weight="0.724769857589">
+ <shade name="intense" weight="0.421913885288" />
+ <shade name="fresh" weight="0.327455552761" />
+ <shade name="dark" weight="0.250629442305" />
+</color>
+
+<color name="white" weight="0.125382127262">
+ <shade name="fresh" weight="0.523401177043" />
+ <shade name="dark" weight="0.400603208583" />
+ <shade name="light" weight="0.0759938247438" />
+</color>
+
+<color name="black" weight="0.0795106172882">
+ <shade name="intense" weight="0.421913885288" />
+ <shade name="fresh" weight="0.327455552761" />
+ <shade name="dark" weight="0.250629442305" />
+</color>
+
+<color name="blue" weight="0.0397553086441">
+ <shade name="intense" weight="0.421913885288" />
+ <shade name="fresh" weight="0.327455552761" />
+ <shade name="dark" weight="0.250629442305" />
+</color>
+
+<color name="green" weight="0.0305810066493">
+ <shade name="intense" weight="0.421913885288" />
+ <shade name="fresh" weight="0.327455552761" />
+ <shade name="dark" weight="0.250629442305" />
+</color>
+
+</colors>

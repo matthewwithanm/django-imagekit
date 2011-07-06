@@ -1,0 +1,33 @@
+<colors query="gopher">
+
+<color name="green" weight="0.487454591745">
+ <shade name="fresh" weight="0.408103708096" />
+ <shade name="dark" weight="0.387119652183" />
+ <shade name="cool" weight="0.204775442183" />
+</color>
+
+<color name="pink" weight="0.141218462609">
+ <shade name="fresh" weight="0.408103708096" />
+ <shade name="dark" weight="0.387119652183" />
+ <shade name="cool" weight="0.204775442183" />
+</color>
+
+<color name="red" weight="0.139784772633">
+ <shade name="fresh" weight="0.408103708096" />
+ <shade name="dark" weight="0.387119652183" />
+ <shade name="cool" weight="0.204775442183" />
+</color>
+
+<color name="blue" weight="0.139067927645">
+ <shade name="fresh" weight="0.408103708096" />
+ <shade name="dark" weight="0.387119652183" />
+ <shade name="cool" weight="0.204775442183" />
+</color>
+
+<color name="yellow" weight="0.0924730034341">
+ <shade name="fresh" weight="0.408103708096" />
+ <shade name="dark" weight="0.387119652183" />
+ <shade name="cool" weight="0.204775442183" />
+</color>
+
+</colors>

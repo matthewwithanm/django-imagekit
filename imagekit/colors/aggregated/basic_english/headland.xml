@@ -1,0 +1,33 @@
+<colors query="headland">
+
+<color name="red" weight="0.507725743283">
+ <shade name="dark" weight="0.767917208122" />
+ <shade name="bright" weight="0.191126060688" />
+ <shade name="hard" weight="0.0409555844332" />
+</color>
+
+<color name="green" weight="0.206033634956">
+ <shade name="dark" weight="0.767917208122" />
+ <shade name="bright" weight="0.191126060688" />
+ <shade name="hard" weight="0.0409555844332" />
+</color>
+
+<color name="white" weight="0.123988098179">
+ <shade name="dark" weight="0.767917208122" />
+ <shade name="bright" weight="0.191126060688" />
+ <shade name="hard" weight="0.0409555844332" />
+</color>
+
+<color name="black" weight="0.0813097023664">
+ <shade name="dark" weight="0.767917208122" />
+ <shade name="bright" weight="0.191126060688" />
+ <shade name="hard" weight="0.0409555844332" />
+</color>
+
+<color name="blue" weight="0.0809417851611">
+ <shade name="dark" weight="0.767917208122" />
+ <shade name="bright" weight="0.191126060688" />
+ <shade name="hard" weight="0.0409555844332" />
+</color>
+
+</colors>

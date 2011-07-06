@@ -1,0 +1,33 @@
+<colors query="limestone">
+
+<color name="white" weight="0.565440314255">
+ <shade name="hard" weight="0.58946645337" />
+ <shade name="soft" weight="0.393675642038" />
+ <shade name="cool" weight="0.016856855949" />
+</color>
+
+<color name="blue" weight="0.158165122869">
+ <shade name="hard" weight="0.58946645337" />
+ <shade name="soft" weight="0.393675642038" />
+ <shade name="cool" weight="0.016856855949" />
+</color>
+
+<color name="black" weight="0.150256866725">
+ <shade name="hard" weight="0.58946645337" />
+ <shade name="soft" weight="0.393675642038" />
+ <shade name="cool" weight="0.016856855949" />
+</color>
+
+<color name="yellow" weight="0.0727559565196">
+ <shade name="hard" weight="0.58946645337" />
+ <shade name="soft" weight="0.393675642038" />
+ <shade name="cool" weight="0.016856855949" />
+</color>
+
+<color name="red" weight="0.0533807289682">
+ <shade name="hard" weight="0.58946645337" />
+ <shade name="soft" weight="0.393675642038" />
+ <shade name="cool" weight="0.016856855949" />
+</color>
+
+</colors>

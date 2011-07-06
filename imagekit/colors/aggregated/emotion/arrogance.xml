@@ -1,0 +1,33 @@
+<colors query="arrogance">
+
+<color name="black" weight="0.672896497959">
+ <shade name="cool" weight="0.734054511994" />
+ <shade name="intense" weight="0.19334113376" />
+ <shade name="hard" weight="0.0726032058311" />
+</color>
+
+<color name="white" weight="0.202990443551">
+ <shade name="cool" weight="0.866476098143" />
+ <shade name="hard" weight="0.0857006414011" />
+ <shade name="dark" weight="0.0478219048702" />
+</color>
+
+<color name="green" weight="0.080747579755">
+ <shade name="cool" weight="0.734054511994" />
+ <shade name="intense" weight="0.19334113376" />
+ <shade name="hard" weight="0.0726032058311" />
+</color>
+
+<color name="blue" weight="0.0224298832653">
+ <shade name="cool" weight="0.734054511994" />
+ <shade name="intense" weight="0.19334113376" />
+ <shade name="hard" weight="0.0726032058311" />
+</color>
+
+<color name="red" weight="0.0209345577143">
+ <shade name="cool" weight="0.734054511994" />
+ <shade name="intense" weight="0.19334113376" />
+ <shade name="hard" weight="0.0726032058311" />
+</color>
+
+</colors>

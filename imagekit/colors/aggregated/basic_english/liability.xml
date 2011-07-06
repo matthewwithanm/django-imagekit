@@ -1,0 +1,33 @@
+<colors query="liability">
+
+<color name="green" weight="0.445219282311">
+ <shade name="fresh" weight="0.455981125072" />
+ <shade name="hard" weight="0.273137208583" />
+ <shade name="light" weight="0.27087987628" />
+</color>
+
+<color name="white" weight="0.187717847871">
+ <shade name="fresh" weight="0.455981125072" />
+ <shade name="hard" weight="0.273137208583" />
+ <shade name="light" weight="0.27087987628" />
+</color>
+
+<color name="orange" weight="0.133286650347">
+ <shade name="fresh" weight="0.455981125072" />
+ <shade name="hard" weight="0.273137208583" />
+ <shade name="light" weight="0.27087987628" />
+</color>
+
+<color name="black" weight="0.132588814481">
+ <shade name="fresh" weight="0.455981125072" />
+ <shade name="hard" weight="0.273137208583" />
+ <shade name="light" weight="0.27087987628" />
+</color>
+
+<color name="yellow" weight="0.101186200525">
+ <shade name="fresh" weight="0.455981125072" />
+ <shade name="hard" weight="0.273137208583" />
+ <shade name="light" weight="0.27087987628" />
+</color>
+
+</colors>

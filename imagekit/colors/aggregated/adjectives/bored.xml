@@ -1,0 +1,33 @@
+<colors query="bored">
+
+<color name="white" weight="0.428477240613">
+ <shade name="warm" weight="0.333860148957" />
+ <shade name="bright" weight="0.333860148957" />
+ <shade name="hard" weight="0.33227787337" />
+</color>
+
+<color name="black" weight="0.276246429246">
+ <shade name="warm" weight="0.333860148957" />
+ <shade name="bright" weight="0.333860148957" />
+ <shade name="hard" weight="0.33227787337" />
+</color>
+
+<color name="blue" weight="0.179789837562">
+ <shade name="bright" weight="0.365367234159" />
+ <shade name="hard" weight="0.363635635893" />
+ <shade name="cool" weight="0.270995128653" />
+</color>
+
+<color name="red" weight="0.0872702496194">
+ <shade name="warm" weight="0.333860148957" />
+ <shade name="bright" weight="0.333860148957" />
+ <shade name="hard" weight="0.33227787337" />
+</color>
+
+<color name="green" weight="0.028215193486">
+ <shade name="bright" weight="0.365367234159" />
+ <shade name="hard" weight="0.363635635893" />
+ <shade name="cool" weight="0.270995128653" />
+</color>
+
+</colors>

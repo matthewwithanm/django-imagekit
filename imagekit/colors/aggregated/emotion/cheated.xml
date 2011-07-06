@@ -1,0 +1,33 @@
+<colors query="cheated">
+
+<color name="black" weight="0.405204003041">
+ <shade name="bright" weight="0.571894675393" />
+ <shade name="hard" weight="0.310457109499" />
+ <shade name="dark" weight="0.117646904652" />
+</color>
+
+<color name="red" weight="0.24287457063">
+ <shade name="bright" weight="0.571894675393" />
+ <shade name="hard" weight="0.310457109499" />
+ <shade name="dark" weight="0.117646904652" />
+</color>
+
+<color name="blue" weight="0.175960148109">
+ <shade name="bright" weight="0.571894675393" />
+ <shade name="hard" weight="0.310457109499" />
+ <shade name="dark" weight="0.117646904652" />
+</color>
+
+<color name="white" weight="0.0929366979451">
+ <shade name="bright" weight="0.571894675393" />
+ <shade name="hard" weight="0.310457109499" />
+ <shade name="dark" weight="0.117646904652" />
+</color>
+
+<color name="green" weight="0.0830234501643">
+ <shade name="bright" weight="0.571894675393" />
+ <shade name="hard" weight="0.310457109499" />
+ <shade name="dark" weight="0.117646904652" />
+</color>
+
+</colors>

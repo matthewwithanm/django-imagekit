@@ -1,0 +1,33 @@
+<colors query="savannah">
+
+<color name="blue" weight="0.822382148654">
+ <shade name="dark" weight="0.536124899272" />
+ <shade name="light" weight="0.289004828514" />
+ <shade name="cool" weight="0.17486886363" />
+</color>
+
+<color name="black" weight="0.0583197394467">
+ <shade name="dark" weight="0.536124899272" />
+ <shade name="light" weight="0.289004828514" />
+ <shade name="cool" weight="0.17486886363" />
+</color>
+
+<color name="white" weight="0.0494610448472">
+ <shade name="dark" weight="0.536124899272" />
+ <shade name="light" weight="0.289004828514" />
+ <shade name="cool" weight="0.17486886363" />
+</color>
+
+<color name="green" weight="0.0394211909678">
+ <shade name="dark" weight="0.536124899272" />
+ <shade name="light" weight="0.289004828514" />
+ <shade name="cool" weight="0.17486886363" />
+</color>
+
+<color name="red" weight="0.0304148514583">
+ <shade name="dark" weight="0.536124899272" />
+ <shade name="light" weight="0.289004828514" />
+ <shade name="cool" weight="0.17486886363" />
+</color>
+
+</colors>

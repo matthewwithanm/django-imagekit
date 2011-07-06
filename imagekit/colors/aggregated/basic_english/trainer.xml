@@ -1,0 +1,33 @@
+<colors query="trainer">
+
+<color name="white" weight="0.300344327499">
+ <shade name="dark" weight="0.619198375798" />
+ <shade name="weak" weight="0.250726859104" />
+ <shade name="cool" weight="0.130073215856" />
+</color>
+
+<color name="black" weight="0.297882488749">
+ <shade name="dark" weight="0.619198375798" />
+ <shade name="weak" weight="0.250726859104" />
+ <shade name="cool" weight="0.130073215856" />
+</color>
+
+<color name="orange" weight="0.207040638874">
+ <shade name="dark" weight="0.619198375798" />
+ <shade name="weak" weight="0.250726859104" />
+ <shade name="cool" weight="0.130073215856" />
+</color>
+
+<color name="pink" weight="0.110290376">
+ <shade name="dark" weight="0.619198375798" />
+ <shade name="weak" weight="0.250726859104" />
+ <shade name="cool" weight="0.130073215856" />
+</color>
+
+<color name="green" weight="0.0844410691248">
+ <shade name="dark" weight="0.619198375798" />
+ <shade name="weak" weight="0.250726859104" />
+ <shade name="cool" weight="0.130073215856" />
+</color>
+
+</colors>

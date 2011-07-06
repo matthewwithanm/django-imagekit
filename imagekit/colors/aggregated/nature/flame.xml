@@ -1,0 +1,33 @@
+<colors query="flame">
+
+<color name="blue" weight="0.469750355136">
+ <shade name="bright" weight="0.380227571987" />
+ <shade name="dark" weight="0.336229810086" />
+ <shade name="cool" weight="0.283541132253" />
+</color>
+
+<color name="red" weight="0.19572931464">
+ <shade name="bright" weight="0.380227571987" />
+ <shade name="dark" weight="0.336229810086" />
+ <shade name="cool" weight="0.283541132253" />
+</color>
+
+<color name="black" weight="0.187086721526">
+ <shade name="bright" weight="0.380227571987" />
+ <shade name="dark" weight="0.336229810086" />
+ <shade name="cool" weight="0.283541132253" />
+</color>
+
+<color name="white" weight="0.0925265851025">
+ <shade name="bright" weight="0.380227571987" />
+ <shade name="dark" weight="0.336229810086" />
+ <shade name="cool" weight="0.283541132253" />
+</color>
+
+<color name="yellow" weight="0.0549058856652">
+ <shade name="bright" weight="0.380227571987" />
+ <shade name="dark" weight="0.336229810086" />
+ <shade name="cool" weight="0.283541132253" />
+</color>
+
+</colors>

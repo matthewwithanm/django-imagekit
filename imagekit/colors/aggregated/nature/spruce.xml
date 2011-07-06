@@ -1,0 +1,33 @@
+<colors query="spruce">
+
+<color name="blue" weight="0.335392426681">
+ <shade name="dark" weight="0.799248676915" />
+ <shade name="cool" weight="0.108442660858" />
+ <shade name="fresh" weight="0.0923075936719" />
+</color>
+
+<color name="white" weight="0.273609611239">
+ <shade name="dark" weight="0.799248676915" />
+ <shade name="cool" weight="0.108442660858" />
+ <shade name="fresh" weight="0.0923075936719" />
+</color>
+
+<color name="black" weight="0.260370436502">
+ <shade name="dark" weight="0.799248676915" />
+ <shade name="cool" weight="0.108442660858" />
+ <shade name="fresh" weight="0.0923075936719" />
+</color>
+
+<color name="red" weight="0.115842778952">
+ <shade name="dark" weight="0.799248676915" />
+ <shade name="cool" weight="0.108442660858" />
+ <shade name="fresh" weight="0.0923075936719" />
+</color>
+
+<color name="green" weight="0.0147837451234">
+ <shade name="dark" weight="0.799248676915" />
+ <shade name="cool" weight="0.108442660858" />
+ <shade name="fresh" weight="0.0923075936719" />
+</color>
+
+</colors>

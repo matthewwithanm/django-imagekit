@@ -1,0 +1,33 @@
+<colors query="foliation">
+
+<color name="red" weight="0.490908546447">
+ <shade name="weak" weight="0.95032518993" />
+ <shade name="intense" weight="0.0423481763623" />
+ <shade name="neutral" weight="0.0073256324039" />
+</color>
+
+<color name="green" weight="0.245454273223">
+ <shade name="weak" weight="0.95032518993" />
+ <shade name="intense" weight="0.0423481763623" />
+ <shade name="neutral" weight="0.0073256324039" />
+</color>
+
+<color name="blue" weight="0.0909089900828">
+ <shade name="weak" weight="0.95032518993" />
+ <shade name="intense" weight="0.0423481763623" />
+ <shade name="neutral" weight="0.0073256324039" />
+</color>
+
+<color name="black" weight="0.0909089900828">
+ <shade name="weak" weight="0.95032518993" />
+ <shade name="intense" weight="0.0423481763623" />
+ <shade name="neutral" weight="0.0073256324039" />
+</color>
+
+<color name="white" weight="0.0818180910745">
+ <shade name="weak" weight="0.991933602439" />
+ <shade name="neutral" weight="0.00764637307054" />
+ <shade name="fresh" weight="0.000418979346331" />
+</color>
+
+</colors>

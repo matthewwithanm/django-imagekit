@@ -1,0 +1,33 @@
+<colors query="mound">
+
+<color name="blue" weight="0.744320154025">
+ <shade name="dark" weight="0.572974390206" />
+ <shade name="hard" weight="0.250394320129" />
+ <shade name="soft" weight="0.176629506902" />
+</color>
+
+<color name="red" weight="0.0915094907978">
+ <shade name="dark" weight="0.444833009542" />
+ <shade name="warm" weight="0.360770078605" />
+ <shade name="hard" weight="0.194395527792" />
+</color>
+
+<color name="green" weight="0.068148793323">
+ <shade name="dark" weight="0.572974390206" />
+ <shade name="hard" weight="0.250394320129" />
+ <shade name="soft" weight="0.176629506902" />
+</color>
+
+<color name="orange" weight="0.0650877364125">
+ <shade name="dark" weight="0.444833009542" />
+ <shade name="warm" weight="0.360770078605" />
+ <shade name="hard" weight="0.194395527792" />
+</color>
+
+<color name="black" weight="0.0309327856218">
+ <shade name="dark" weight="0.444833009542" />
+ <shade name="warm" weight="0.360770078605" />
+ <shade name="hard" weight="0.194395527792" />
+</color>
+
+</colors>

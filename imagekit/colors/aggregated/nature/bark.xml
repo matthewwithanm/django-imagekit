@@ -1,0 +1,33 @@
+<colors query="bark">
+
+<color name="white" weight="0.412007859826">
+ <shade name="hard" weight="0.431495416721" />
+ <shade name="soft" weight="0.291338146326" />
+ <shade name="dark" weight="0.277164939207" />
+</color>
+
+<color name="red" weight="0.197204767078">
+ <shade name="hard" weight="0.431495416721" />
+ <shade name="soft" weight="0.291338146326" />
+ <shade name="dark" weight="0.277164939207" />
+</color>
+
+<color name="green" weight="0.187370408614">
+ <shade name="hard" weight="0.431495416721" />
+ <shade name="soft" weight="0.291338146326" />
+ <shade name="dark" weight="0.277164939207" />
+</color>
+
+<color name="black" weight="0.143374594437">
+ <shade name="hard" weight="0.431495416721" />
+ <shade name="soft" weight="0.291338146326" />
+ <shade name="dark" weight="0.277164939207" />
+</color>
+
+<color name="yellow" weight="0.0600413464068">
+ <shade name="hard" weight="0.431495416721" />
+ <shade name="soft" weight="0.291338146326" />
+ <shade name="dark" weight="0.277164939207" />
+</color>
+
+</colors>

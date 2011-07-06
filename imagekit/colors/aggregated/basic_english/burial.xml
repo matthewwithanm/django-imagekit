@@ -1,0 +1,33 @@
+<colors query="burial">
+
+<color name="green" weight="0.944109173507">
+ <shade name="fresh" weight="0.680423025107" />
+ <shade name="dark" weight="0.197434222039" />
+ <shade name="light" weight="0.122141510245" />
+</color>
+
+<color name="red" weight="0.0297286285551">
+ <shade name="fresh" weight="0.680423025107" />
+ <shade name="dark" weight="0.197434222039" />
+ <shade name="light" weight="0.122141510245" />
+</color>
+
+<color name="white" weight="0.0122517984348">
+ <shade name="fresh" weight="0.680423025107" />
+ <shade name="dark" weight="0.197434222039" />
+ <shade name="light" weight="0.122141510245" />
+</color>
+
+<color name="black" weight="0.0105401501241">
+ <shade name="fresh" weight="0.680423025107" />
+ <shade name="dark" weight="0.197434222039" />
+ <shade name="light" weight="0.122141510245" />
+</color>
+
+<color name="blue" weight="0.00336924456958">
+ <shade name="fresh" weight="0.680423025107" />
+ <shade name="dark" weight="0.197434222039" />
+ <shade name="light" weight="0.122141510245" />
+</color>
+
+</colors>

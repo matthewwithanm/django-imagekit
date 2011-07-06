@@ -1,0 +1,33 @@
+<colors query="disturbance">
+
+<color name="white" weight="0.377830345593">
+ <shade name="weak" weight="0.642350769697" />
+ <shade name="light" weight="0.326619035439" />
+ <shade name="fresh" weight="0.0310288083667" />
+</color>
+
+<color name="blue" weight="0.325387016867">
+ <shade name="weak" weight="0.490643971031" />
+ <shade name="intense" weight="0.259874984656" />
+ <shade name="light" weight="0.24947998527" />
+</color>
+
+<color name="black" weight="0.125148852641">
+ <shade name="weak" weight="0.490643971031" />
+ <shade name="intense" weight="0.259874984656" />
+ <shade name="light" weight="0.24947998527" />
+</color>
+
+<color name="red" weight="0.0905839314356">
+ <shade name="weak" weight="0.490643971031" />
+ <shade name="intense" weight="0.259874984656" />
+ <shade name="light" weight="0.24947998527" />
+</color>
+
+<color name="green" weight="0.0810487807582">
+ <shade name="weak" weight="0.490643971031" />
+ <shade name="intense" weight="0.259874984656" />
+ <shade name="light" weight="0.24947998527" />
+</color>
+
+</colors>

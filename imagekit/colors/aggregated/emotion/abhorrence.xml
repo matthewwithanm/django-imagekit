@@ -1,0 +1,33 @@
+<colors query="abhorrence">
+
+<color name="black" weight="0.739582562935">
+ <shade name="intense" weight="0.972269366406" />
+ <shade name="dark" weight="0.0155979042739" />
+ <shade name="light" weight="0.0121317033241" />
+</color>
+
+<color name="white" weight="0.0937499023439">
+ <shade name="dark" weight="0.449986680394" />
+ <shade name="light" weight="0.349989640307" />
+ <shade name="hard" weight="0.199994080175" />
+</color>
+
+<color name="red" weight="0.0624999348959">
+ <shade name="intense" weight="0.972269366406" />
+ <shade name="dark" weight="0.0155979042739" />
+ <shade name="light" weight="0.0121317033241" />
+</color>
+
+<color name="blue" weight="0.0624999348959">
+ <shade name="intense" weight="0.972269366406" />
+ <shade name="dark" weight="0.0155979042739" />
+ <shade name="light" weight="0.0121317033241" />
+</color>
+
+<color name="green" weight="0.0416666232639">
+ <shade name="intense" weight="0.972269366406" />
+ <shade name="dark" weight="0.0155979042739" />
+ <shade name="light" weight="0.0121317033241" />
+</color>
+
+</colors>

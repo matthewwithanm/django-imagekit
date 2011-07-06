@@ -1,0 +1,33 @@
+<colors query="igneous">
+
+<color name="green" weight="0.331023894744">
+ <shade name="hard" weight="0.912260927699" />
+ <shade name="fresh" weight="0.0490340248638" />
+ <shade name="dark" weight="0.0387040114178" />
+</color>
+
+<color name="black" weight="0.32211742224">
+ <shade name="hard" weight="0.912260927699" />
+ <shade name="fresh" weight="0.0490340248638" />
+ <shade name="dark" weight="0.0387040114178" />
+</color>
+
+<color name="purple" weight="0.165759349386">
+ <shade name="hard" weight="0.912260927699" />
+ <shade name="fresh" weight="0.0490340248638" />
+ <shade name="dark" weight="0.0387040114178" />
+</color>
+
+<color name="pink" weight="0.0930231572674">
+ <shade name="hard" weight="0.912260927699" />
+ <shade name="fresh" weight="0.0490340248638" />
+ <shade name="dark" weight="0.0387040114178" />
+</color>
+
+<color name="red" weight="0.0880751169872">
+ <shade name="hard" weight="0.912260927699" />
+ <shade name="fresh" weight="0.0490340248638" />
+ <shade name="dark" weight="0.0387040114178" />
+</color>
+
+</colors>

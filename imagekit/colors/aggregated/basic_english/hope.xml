@@ -1,0 +1,33 @@
+<colors query="hope">
+
+<color name="white" weight="0.4913855615">
+ <shade name="fresh" weight="0.429889799351" />
+ <shade name="cool" weight="0.291401810299" />
+ <shade name="bright" weight="0.278707077969" />
+</color>
+
+<color name="green" weight="0.272121884655">
+ <shade name="fresh" weight="0.429889799351" />
+ <shade name="cool" weight="0.291401810299" />
+ <shade name="bright" weight="0.278707077969" />
+</color>
+
+<color name="black" weight="0.130775121547">
+ <shade name="fresh" weight="0.429889799351" />
+ <shade name="cool" weight="0.291401810299" />
+ <shade name="bright" weight="0.278707077969" />
+</color>
+
+<color name="blue" weight="0.0671495010336">
+ <shade name="fresh" weight="0.429889799351" />
+ <shade name="cool" weight="0.291401810299" />
+ <shade name="bright" weight="0.278707077969" />
+</color>
+
+<color name="red" weight="0.0385669145878">
+ <shade name="fresh" weight="0.429889799351" />
+ <shade name="cool" weight="0.291401810299" />
+ <shade name="bright" weight="0.278707077969" />
+</color>
+
+</colors>

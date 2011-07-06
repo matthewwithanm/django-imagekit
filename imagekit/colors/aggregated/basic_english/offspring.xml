@@ -1,0 +1,33 @@
+<colors query="offspring">
+
+<color name="blue" weight="0.495127424869">
+ <shade name="dark" weight="0.481321161358" />
+ <shade name="weak" weight="0.260057105092" />
+ <shade name="cool" weight="0.258620325506" />
+</color>
+
+<color name="red" weight="0.273310338528">
+ <shade name="dark" weight="0.481321161358" />
+ <shade name="weak" weight="0.260057105092" />
+ <shade name="cool" weight="0.258620325506" />
+</color>
+
+<color name="white" weight="0.202011989347">
+ <shade name="dark" weight="0.481321161358" />
+ <shade name="weak" weight="0.260057105092" />
+ <shade name="cool" weight="0.258620325506" />
+</color>
+
+<color name="yellow" weight="0.0153885603649">
+ <shade name="dark" weight="0.481321161358" />
+ <shade name="weak" weight="0.260057105092" />
+ <shade name="cool" weight="0.258620325506" />
+</color>
+
+<color name="green" weight="0.0141606443513">
+ <shade name="dark" weight="0.481321161358" />
+ <shade name="weak" weight="0.260057105092" />
+ <shade name="cool" weight="0.258620325506" />
+</color>
+
+</colors>

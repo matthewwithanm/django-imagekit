@@ -1,0 +1,33 @@
+<colors query="microbe">
+
+<color name="purple" weight="0.34086919945">
+ <shade name="cool" weight="0.589040143743" />
+ <shade name="fresh" weight="0.287670767875" />
+ <shade name="dark" weight="0.123287471946" />
+</color>
+
+<color name="green" weight="0.236521485333">
+ <shade name="cool" weight="0.589040143743" />
+ <shade name="fresh" weight="0.287670767875" />
+ <shade name="intense" weight="0.123287471946" />
+</color>
+
+<color name="blue" weight="0.212173685372">
+ <shade name="cool" weight="0.589040143743" />
+ <shade name="fresh" weight="0.287670767875" />
+ <shade name="intense" weight="0.123287471946" />
+</color>
+
+<color name="red" weight="0.153043314039">
+ <shade name="cool" weight="0.589040143743" />
+ <shade name="fresh" weight="0.287670767875" />
+ <shade name="intense" weight="0.123287471946" />
+</color>
+
+<color name="black" weight="0.0573912427645">
+ <shade name="cool" weight="0.589040143743" />
+ <shade name="fresh" weight="0.287670767875" />
+ <shade name="intense" weight="0.123287471946" />
+</color>
+
+</colors>

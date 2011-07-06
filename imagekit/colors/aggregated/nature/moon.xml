@@ -1,0 +1,33 @@
+<colors query="moon">
+
+<color name="blue" weight="0.458258814788">
+ <shade name="dark" weight="0.58600173438" />
+ <shade name="bright" weight="0.258599955657" />
+ <shade name="light" weight="0.15539722106" />
+</color>
+
+<color name="black" weight="0.204262650002">
+ <shade name="dark" weight="0.58600173438" />
+ <shade name="bright" weight="0.258599955657" />
+ <shade name="light" weight="0.15539722106" />
+</color>
+
+<color name="red" weight="0.18472448348">
+ <shade name="dark" weight="0.58600173438" />
+ <shade name="bright" weight="0.258599955657" />
+ <shade name="light" weight="0.15539722106" />
+</color>
+
+<color name="pink" weight="0.089342706914">
+ <shade name="dark" weight="0.58600173438" />
+ <shade name="bright" weight="0.258599955657" />
+ <shade name="light" weight="0.15539722106" />
+</color>
+
+<color name="yellow" weight="0.0634102313485">
+ <shade name="dark" weight="0.58600173438" />
+ <shade name="bright" weight="0.258599955657" />
+ <shade name="light" weight="0.15539722106" />
+</color>
+
+</colors>

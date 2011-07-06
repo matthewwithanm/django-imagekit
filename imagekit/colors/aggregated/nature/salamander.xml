@@ -1,0 +1,33 @@
+<colors query="salamander">
+
+<color name="red" weight="0.711411018676">
+ <shade name="cool" weight="0.513956658496" />
+ <shade name="light" weight="0.338259014857" />
+ <shade name="dark" weight="0.147783064743" />
+</color>
+
+<color name="black" weight="0.149279689165">
+ <shade name="cool" weight="0.513956658496" />
+ <shade name="light" weight="0.338259014857" />
+ <shade name="dark" weight="0.147783064743" />
+</color>
+
+<color name="green" weight="0.107294776587">
+ <shade name="cool" weight="0.513956658496" />
+ <shade name="light" weight="0.338259014857" />
+ <shade name="dark" weight="0.147783064743" />
+</color>
+
+<color name="blue" weight="0.0183100868741">
+ <shade name="cool" weight="0.513956658496" />
+ <shade name="light" weight="0.338259014857" />
+ <shade name="dark" weight="0.147783064743" />
+</color>
+
+<color name="orange" weight="0.0137034089663">
+ <shade name="cool" weight="0.513956658496" />
+ <shade name="light" weight="0.338259014857" />
+ <shade name="dark" weight="0.147783064743" />
+</color>
+
+</colors>

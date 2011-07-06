@@ -1,0 +1,33 @@
+<colors query="bone">
+
+<color name="red" weight="0.323819632172">
+ <shade name="hard" weight="0.399617025348" />
+ <shade name="fresh" weight="0.377947202601" />
+ <shade name="light" weight="0.222434357012" />
+</color>
+
+<color name="white" weight="0.301865758804">
+ <shade name="hard" weight="0.399617025348" />
+ <shade name="fresh" weight="0.377947202601" />
+ <shade name="light" weight="0.222434357012" />
+</color>
+
+<color name="black" weight="0.226856691465">
+ <shade name="hard" weight="0.399617025348" />
+ <shade name="fresh" weight="0.377947202601" />
+ <shade name="light" weight="0.222434357012" />
+</color>
+
+<color name="blue" weight="0.104280898496">
+ <shade name="hard" weight="0.399617025348" />
+ <shade name="fresh" weight="0.377947202601" />
+ <shade name="light" weight="0.222434357012" />
+</color>
+
+<color name="green" weight="0.0431759509562">
+ <shade name="hard" weight="0.399617025348" />
+ <shade name="fresh" weight="0.377947202601" />
+ <shade name="light" weight="0.222434357012" />
+</color>
+
+</colors>

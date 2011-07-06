@@ -1,0 +1,33 @@
+<colors query="coercion">
+
+<color name="black" weight="0.753245980436">
+ <shade name="soft" weight="0.556015942288" />
+ <shade name="intense" weight="0.286306716551" />
+ <shade name="light" weight="0.157676162738" />
+</color>
+
+<color name="white" weight="0.175324495446">
+ <shade name="soft" weight="0.718112519057" />
+ <shade name="light" weight="0.203643848688" />
+ <shade name="hard" weight="0.0782421102853" />
+</color>
+
+<color name="pink" weight="0.029220749241">
+ <shade name="soft" weight="0.718112519057" />
+ <shade name="light" weight="0.203643848688" />
+ <shade name="hard" weight="0.0782421102853" />
+</color>
+
+<color name="red" weight="0.0227272494097">
+ <shade name="soft" weight="0.556015942288" />
+ <shade name="intense" weight="0.286306716551" />
+ <shade name="light" weight="0.157676162738" />
+</color>
+
+<color name="green" weight="0.019480499494">
+ <shade name="soft" weight="0.556015942288" />
+ <shade name="intense" weight="0.286306716551" />
+ <shade name="light" weight="0.157676162738" />
+</color>
+
+</colors>

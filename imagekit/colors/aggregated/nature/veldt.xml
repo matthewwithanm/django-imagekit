@@ -1,0 +1,33 @@
+<colors query="veldt">
+
+<color name="green" weight="0.625304694368">
+ <shade name="dark" weight="0.522198182807" />
+ <shade name="hard" weight="0.465115790354" />
+ <shade name="soft" weight="0.0126849761006" />
+</color>
+
+<color name="black" weight="0.289203421145">
+ <shade name="dark" weight="0.509277828637" />
+ <shade name="hard" weight="0.453607782592" />
+ <shade name="warm" weight="0.0371133640302" />
+</color>
+
+<color name="yellow" weight="0.0703467781164">
+ <shade name="dark" weight="0.509277828637" />
+ <shade name="hard" weight="0.453607782592" />
+ <shade name="warm" weight="0.0371133640302" />
+</color>
+
+<color name="white" weight="0.0117244630194">
+ <shade name="dark" weight="0.509277828637" />
+ <shade name="hard" weight="0.453607782592" />
+ <shade name="warm" weight="0.0371133640302" />
+</color>
+
+<color name="pink" weight="0.00341963504732">
+ <shade name="dark" weight="0.509277828637" />
+ <shade name="hard" weight="0.453607782592" />
+ <shade name="warm" weight="0.0371133640302" />
+</color>
+
+</colors>

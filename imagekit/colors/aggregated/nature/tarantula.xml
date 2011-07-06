@@ -1,0 +1,33 @@
+<colors query="tarantula">
+
+<color name="black" weight="0.648998778929">
+ <shade name="dark" weight="0.414633670756" />
+ <shade name="fresh" weight="0.334871072725" />
+ <shade name="cool" weight="0.250494109519" />
+</color>
+
+<color name="blue" weight="0.203713505608">
+ <shade name="dark" weight="0.414633670756" />
+ <shade name="fresh" weight="0.334871072725" />
+ <shade name="cool" weight="0.250494109519" />
+</color>
+
+<color name="orange" weight="0.0667026522788">
+ <shade name="dark" weight="0.414633670756" />
+ <shade name="fresh" weight="0.334871072725" />
+ <shade name="cool" weight="0.250494109519" />
+</color>
+
+<color name="red" weight="0.0425454755076">
+ <shade name="dark" weight="0.414633670756" />
+ <shade name="fresh" weight="0.334871072725" />
+ <shade name="cool" weight="0.250494109519" />
+</color>
+
+<color name="pink" weight="0.0380385395428">
+ <shade name="dark" weight="0.414633670756" />
+ <shade name="fresh" weight="0.334871072725" />
+ <shade name="cool" weight="0.250494109519" />
+</color>
+
+</colors>

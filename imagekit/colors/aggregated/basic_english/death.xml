@@ -1,0 +1,33 @@
+<colors query="death">
+
+<color name="black" weight="0.638563038991">
+ <shade name="dark" weight="0.711649145429" />
+ <shade name="hard" weight="0.152345631873" />
+ <shade name="cool" weight="0.136004058904" />
+</color>
+
+<color name="red" weight="0.192957092217">
+ <shade name="dark" weight="0.711649145429" />
+ <shade name="hard" weight="0.152345631873" />
+ <shade name="cool" weight="0.136004058904" />
+</color>
+
+<color name="white" weight="0.110591714724">
+ <shade name="dark" weight="0.711649145429" />
+ <shade name="hard" weight="0.152345631873" />
+ <shade name="cool" weight="0.136004058904" />
+</color>
+
+<color name="green" weight="0.0375734193957">
+ <shade name="dark" weight="0.711649145429" />
+ <shade name="hard" weight="0.152345631873" />
+ <shade name="cool" weight="0.136004058904" />
+</color>
+
+<color name="purple" weight="0.0203137082693">
+ <shade name="dark" weight="0.711649145429" />
+ <shade name="hard" weight="0.152345631873" />
+ <shade name="cool" weight="0.136004058904" />
+</color>
+
+</colors>

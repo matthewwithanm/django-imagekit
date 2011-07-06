@@ -1,0 +1,33 @@
+<colors query="chamois">
+
+<color name="blue" weight="0.36223986073">
+ <shade name="soft" weight="0.940422918358" />
+ <shade name="light" weight="0.0515561802958" />
+ <shade name="intense" weight="0.00801985026823" />
+</color>
+
+<color name="pink" weight="0.31165274801">
+ <shade name="soft" weight="0.916533908056" />
+ <shade name="light" weight="0.0502465289696" />
+ <shade name="warm" weight="0.0332185385965" />
+</color>
+
+<color name="green" weight="0.13369451219">
+ <shade name="soft" weight="0.940422918358" />
+ <shade name="light" weight="0.0515561802958" />
+ <shade name="intense" weight="0.00801985026823" />
+</color>
+
+<color name="white" weight="0.112917662322">
+ <shade name="soft" weight="0.916533908056" />
+ <shade name="light" weight="0.0502465289696" />
+ <shade name="warm" weight="0.0332185385965" />
+</color>
+
+<color name="red" weight="0.0794940342749">
+ <shade name="soft" weight="0.916533908056" />
+ <shade name="light" weight="0.0502465289696" />
+ <shade name="warm" weight="0.0332185385965" />
+</color>
+
+</colors>

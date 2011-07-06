@@ -1,0 +1,33 @@
+<colors query="burro">
+
+<color name="green" weight="0.634764942349">
+ <shade name="soft" weight="0.588651755848" />
+ <shade name="light" weight="0.273049308436" />
+ <shade name="fresh" weight="0.138297701675" />
+</color>
+
+<color name="white" weight="0.128173690282">
+ <shade name="soft" weight="0.588651755848" />
+ <shade name="light" weight="0.273049308436" />
+ <shade name="fresh" weight="0.138297701675" />
+</color>
+
+<color name="red" weight="0.1059569173">
+ <shade name="soft" weight="0.588651755848" />
+ <shade name="light" weight="0.273049308436" />
+ <shade name="fresh" weight="0.138297701675" />
+</color>
+
+<color name="black" weight="0.0683593014837">
+ <shade name="soft" weight="0.588651755848" />
+ <shade name="light" weight="0.273049308436" />
+ <shade name="fresh" weight="0.138297701675" />
+</color>
+
+<color name="blue" weight="0.0627440731475">
+ <shade name="soft" weight="0.588651755848" />
+ <shade name="light" weight="0.273049308436" />
+ <shade name="fresh" weight="0.138297701675" />
+</color>
+
+</colors>

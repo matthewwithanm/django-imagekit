@@ -1,0 +1,33 @@
+<colors query="engineer">
+
+<color name="black" weight="0.686096931958">
+ <shade name="light" weight="0.768434685714" />
+ <shade name="bright" weight="0.124052236259" />
+ <shade name="fresh" weight="0.107511938091" />
+</color>
+
+<color name="green" weight="0.162630383871">
+ <shade name="light" weight="0.768434685714" />
+ <shade name="bright" weight="0.124052236259" />
+ <shade name="fresh" weight="0.107511938091" />
+</color>
+
+<color name="blue" weight="0.0810610819609">
+ <shade name="light" weight="0.768434685714" />
+ <shade name="bright" weight="0.124052236259" />
+ <shade name="fresh" weight="0.107511938091" />
+</color>
+
+<color name="red" weight="0.0592076241282">
+ <shade name="light" weight="0.768434685714" />
+ <shade name="bright" weight="0.124052236259" />
+ <shade name="fresh" weight="0.107511938091" />
+</color>
+
+<color name="white" weight="0.0110029619088">
+ <shade name="light" weight="0.768434685714" />
+ <shade name="bright" weight="0.124052236259" />
+ <shade name="fresh" weight="0.107511938091" />
+</color>
+
+</colors>

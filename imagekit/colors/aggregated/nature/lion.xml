@@ -1,0 +1,33 @@
+<colors query="lion">
+
+<color name="red" weight="0.513971649737">
+ <shade name="cool" weight="0.361694361448" />
+ <shade name="dark" weight="0.321046804638" />
+ <shade name="light" weight="0.317257625613" />
+</color>
+
+<color name="white" weight="0.312550327543">
+ <shade name="cool" weight="0.361694361448" />
+ <shade name="dark" weight="0.321046804638" />
+ <shade name="light" weight="0.317257625613" />
+</color>
+
+<color name="black" weight="0.122936462167">
+ <shade name="cool" weight="0.361694361448" />
+ <shade name="dark" weight="0.321046804638" />
+ <shade name="light" weight="0.317257625613" />
+</color>
+
+<color name="blue" weight="0.0344962954103">
+ <shade name="cool" weight="0.361694361448" />
+ <shade name="dark" weight="0.321046804638" />
+ <shade name="light" weight="0.317257625613" />
+</color>
+
+<color name="green" weight="0.0160442501472">
+ <shade name="cool" weight="0.361694361448" />
+ <shade name="dark" weight="0.321046804638" />
+ <shade name="light" weight="0.317257625613" />
+</color>
+
+</colors>

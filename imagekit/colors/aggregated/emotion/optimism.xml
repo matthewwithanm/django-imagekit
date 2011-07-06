@@ -1,0 +1,33 @@
+<colors query="optimism">
+
+<color name="orange" weight="0.486315237634">
+ <shade name="fresh" weight="0.887513258936" />
+ <shade name="dark" weight="0.0642774754199" />
+ <shade name="intense" weight="0.0482081065649" />
+</color>
+
+<color name="black" weight="0.252104977085">
+ <shade name="fresh" weight="0.887513258936" />
+ <shade name="dark" weight="0.0642774754199" />
+ <shade name="intense" weight="0.0482081065649" />
+</color>
+
+<color name="green" weight="0.122105124601">
+ <shade name="fresh" weight="0.887513258936" />
+ <shade name="dark" weight="0.0642774754199" />
+ <shade name="intense" weight="0.0482081065649" />
+</color>
+
+<color name="blue" weight="0.0794735940289">
+ <shade name="fresh" weight="0.887513258936" />
+ <shade name="dark" weight="0.0642774754199" />
+ <shade name="intense" weight="0.0482081065649" />
+</color>
+
+<color name="white" weight="0.0599999319159">
+ <shade name="fresh" weight="0.893037318512" />
+ <shade name="dark" weight="0.0646775512498" />
+ <shade name="bright" weight="0.0422839639447" />
+</color>
+
+</colors>

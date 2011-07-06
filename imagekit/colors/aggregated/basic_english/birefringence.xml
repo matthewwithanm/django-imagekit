@@ -1,0 +1,33 @@
+<colors query="birefringence">
+
+<color name="green" weight="0.968569892529">
+ <shade name="weak" weight="0.932595521048" />
+ <shade name="light" weight="0.0454948714501" />
+ <shade name="intense" weight="0.0219085931929" />
+</color>
+
+<color name="red" weight="0.0163781497862">
+ <shade name="weak" weight="0.932595521048" />
+ <shade name="light" weight="0.0454948714501" />
+ <shade name="intense" weight="0.0219085931929" />
+</color>
+
+<color name="yellow" weight="0.00821731308239">
+ <shade name="weak" weight="0.932595521048" />
+ <shade name="light" weight="0.0454948714501" />
+ <shade name="intense" weight="0.0219085931929" />
+</color>
+
+<color name="blue" weight="0.00432044296085">
+ <shade name="weak" weight="0.932595521048" />
+ <shade name="light" weight="0.0454948714501" />
+ <shade name="intense" weight="0.0219085931929" />
+</color>
+
+<color name="white" weight="0.00251319884651">
+ <shade name="weak" weight="0.941796922485" />
+ <shade name="light" weight="0.0459437440493" />
+ <shade name="bright" weight="0.0122583091498" />
+</color>
+
+</colors>

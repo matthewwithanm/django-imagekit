@@ -1,0 +1,33 @@
+<colors query="cake">
+
+<color name="yellow" weight="0.487418246525">
+ <shade name="cool" weight="0.50550135172" />
+ <shade name="warm" weight="0.302613054091" />
+ <shade name="fresh" weight="0.191884186571" />
+</color>
+
+<color name="white" weight="0.273287495487">
+ <shade name="cool" weight="0.50550135172" />
+ <shade name="warm" weight="0.302613054091" />
+ <shade name="fresh" weight="0.191884186571" />
+</color>
+
+<color name="orange" weight="0.15330761942">
+ <shade name="cool" weight="0.50550135172" />
+ <shade name="warm" weight="0.302613054091" />
+ <shade name="fresh" weight="0.191884186571" />
+</color>
+
+<color name="pink" weight="0.0480752697854">
+ <shade name="cool" weight="0.50550135172" />
+ <shade name="warm" weight="0.302613054091" />
+ <shade name="fresh" weight="0.191884186571" />
+</color>
+
+<color name="black" weight="0.037910308063">
+ <shade name="cool" weight="0.50550135172" />
+ <shade name="warm" weight="0.302613054091" />
+ <shade name="fresh" weight="0.191884186571" />
+</color>
+
+</colors>

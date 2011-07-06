@@ -1,0 +1,33 @@
+<colors query="bed bug">
+
+<color name="red" weight="0.873302262506">
+ <shade name="fresh" weight="0.437499425782" />
+ <shade name="light" weight="0.374999507813" />
+ <shade name="cool" weight="0.187499753907" />
+</color>
+
+<color name="blue" weight="0.0407239397023">
+ <shade name="fresh" weight="0.437499425782" />
+ <shade name="light" weight="0.374999507813" />
+ <shade name="cool" weight="0.187499753907" />
+</color>
+
+<color name="green" weight="0.031674175324">
+ <shade name="fresh" weight="0.437499425782" />
+ <shade name="light" weight="0.374999507813" />
+ <shade name="cool" weight="0.187499753907" />
+</color>
+
+<color name="black" weight="0.031674175324">
+ <shade name="fresh" weight="0.437499425782" />
+ <shade name="light" weight="0.374999507813" />
+ <shade name="cool" weight="0.187499753907" />
+</color>
+
+<color name="yellow" weight="0.0226244109457">
+ <shade name="fresh" weight="0.437499425782" />
+ <shade name="light" weight="0.374999507813" />
+ <shade name="cool" weight="0.187499753907" />
+</color>
+
+</colors>

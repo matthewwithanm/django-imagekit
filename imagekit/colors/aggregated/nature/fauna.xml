@@ -1,0 +1,33 @@
+<colors query="fauna">
+
+<color name="green" weight="0.451806704789">
+ <shade name="fresh" weight="0.504031194112" />
+ <shade name="cool" weight="0.322579964231" />
+ <shade name="dark" weight="0.173386730774" />
+</color>
+
+<color name="red" weight="0.206109915804">
+ <shade name="fresh" weight="0.413906567284" />
+ <shade name="warm" weight="0.321191496213" />
+ <shade name="cool" weight="0.264900203062" />
+</color>
+
+<color name="black" weight="0.153614279628">
+ <shade name="fresh" weight="0.413906567284" />
+ <shade name="warm" weight="0.321191496213" />
+ <shade name="cool" weight="0.264900203062" />
+</color>
+
+<color name="white" weight="0.116609159045">
+ <shade name="fresh" weight="0.413906567284" />
+ <shade name="warm" weight="0.321191496213" />
+ <shade name="cool" weight="0.264900203062" />
+</color>
+
+<color name="blue" weight="0.0718587806664">
+ <shade name="fresh" weight="0.504031194112" />
+ <shade name="cool" weight="0.322579964231" />
+ <shade name="dark" weight="0.173386730774" />
+</color>
+
+</colors>

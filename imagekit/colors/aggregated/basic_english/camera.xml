@@ -1,0 +1,33 @@
+<colors query="camera">
+
+<color name="green" weight="0.455228634252">
+ <shade name="light" weight="0.763564485145" />
+ <shade name="soft" weight="0.124605306729" />
+ <shade name="cool" weight="0.11182912932" />
+</color>
+
+<color name="red" weight="0.176476298741">
+ <shade name="light" weight="0.763564485145" />
+ <shade name="soft" weight="0.124605306729" />
+ <shade name="cool" weight="0.11182912932" />
+</color>
+
+<color name="black" weight="0.169457355041">
+ <shade name="light" weight="0.763564485145" />
+ <shade name="soft" weight="0.124605306729" />
+ <shade name="cool" weight="0.11182912932" />
+</color>
+
+<color name="white" weight="0.143386992727">
+ <shade name="light" weight="0.763564485145" />
+ <shade name="soft" weight="0.124605306729" />
+ <shade name="cool" weight="0.11182912932" />
+</color>
+
+<color name="blue" weight="0.0554496552293">
+ <shade name="light" weight="0.763564485145" />
+ <shade name="soft" weight="0.124605306729" />
+ <shade name="cool" weight="0.11182912932" />
+</color>
+
+</colors>

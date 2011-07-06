@@ -1,0 +1,33 @@
+<colors query="civet">
+
+<color name="orange" weight="0.437499491407">
+ <shade name="fresh" weight="0.942147740319" />
+ <shade name="cool" weight="0.0413222693123" />
+ <shade name="warm" weight="0.0165289077249" />
+</color>
+
+<color name="black" weight="0.1999997675">
+ <shade name="fresh" weight="0.942147740319" />
+ <shade name="cool" weight="0.0413222693123" />
+ <shade name="warm" weight="0.0165289077249" />
+</color>
+
+<color name="green" weight="0.149999825625">
+ <shade name="fresh" weight="0.942147740319" />
+ <shade name="cool" weight="0.0413222693123" />
+ <shade name="light" weight="0.0165289077249" />
+</color>
+
+<color name="white" weight="0.124999854688">
+ <shade name="fresh" weight="0.942147740319" />
+ <shade name="cool" weight="0.0413222693123" />
+ <shade name="warm" weight="0.0165289077249" />
+</color>
+
+<color name="red" weight="0.0874998982814">
+ <shade name="fresh" weight="0.942147740319" />
+ <shade name="cool" weight="0.0413222693123" />
+ <shade name="warm" weight="0.0165289077249" />
+</color>
+
+</colors>

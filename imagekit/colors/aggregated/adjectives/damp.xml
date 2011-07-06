@@ -1,0 +1,33 @@
+<colors query="damp">
+
+<color name="black" weight="0.86831361005">
+ <shade name="cool" weight="0.36986253545" />
+ <shade name="dark" weight="0.323287253208" />
+ <shade name="soft" weight="0.306848918299" />
+</color>
+
+<color name="white" weight="0.0381418739138">
+ <shade name="cool" weight="0.36986253545" />
+ <shade name="dark" weight="0.323287253208" />
+ <shade name="soft" weight="0.306848918299" />
+</color>
+
+<color name="red" weight="0.0349988982701">
+ <shade name="cool" weight="0.36986253545" />
+ <shade name="dark" weight="0.323287253208" />
+ <shade name="soft" weight="0.306848918299" />
+</color>
+
+<color name="blue" weight="0.0298849040023">
+ <shade name="cool" weight="0.36986253545" />
+ <shade name="dark" weight="0.323287253208" />
+ <shade name="soft" weight="0.306848918299" />
+</color>
+
+<color name="green" weight="0.028659676209">
+ <shade name="cool" weight="0.36986253545" />
+ <shade name="dark" weight="0.323287253208" />
+ <shade name="soft" weight="0.306848918299" />
+</color>
+
+</colors>

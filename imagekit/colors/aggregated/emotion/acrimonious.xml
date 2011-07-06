@@ -1,0 +1,33 @@
+<colors query="acrimonious">
+
+<color name="black" weight="0.965634769879">
+ <shade name="intense" weight="0.666665955556" />
+ <shade name="hard" weight="0.266666382223" />
+ <shade name="fresh" weight="0.0666665955556" />
+</color>
+
+<color name="white" weight="0.0103092680058">
+ <shade name="hard" weight="0.727270611576" />
+ <shade name="fresh" weight="0.181817652894" />
+ <shade name="light" weight="0.0909088264471" />
+</color>
+
+<color name="red" weight="0.0103092680058">
+ <shade name="intense" weight="0.666665955556" />
+ <shade name="hard" weight="0.266666382223" />
+ <shade name="fresh" weight="0.0666665955556" />
+</color>
+
+<color name="pink" weight="0.00687284533721">
+ <shade name="hard" weight="0.727270611576" />
+ <shade name="fresh" weight="0.181817652894" />
+ <shade name="light" weight="0.0909088264471" />
+</color>
+
+<color name="green" weight="0.00687284533721">
+ <shade name="intense" weight="0.666665955556" />
+ <shade name="hard" weight="0.266666382223" />
+ <shade name="fresh" weight="0.0666665955556" />
+</color>
+
+</colors>

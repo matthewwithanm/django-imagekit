@@ -1,0 +1,33 @@
+<colors query="sideboard">
+
+<color name="black" weight="0.45228259348">
+ <shade name="light" weight="0.499999447369" />
+ <shade name="dark" weight="0.3256575348" />
+ <shade name="cool" weight="0.174341912569" />
+</color>
+
+<color name="white" weight="0.333982202203">
+ <shade name="light" weight="0.499999447369" />
+ <shade name="dark" weight="0.3256575348" />
+ <shade name="cool" weight="0.174341912569" />
+</color>
+
+<color name="green" weight="0.12479248592">
+ <shade name="light" weight="0.499999447369" />
+ <shade name="dark" weight="0.3256575348" />
+ <shade name="cool" weight="0.174341912569" />
+</color>
+
+<color name="red" weight="0.0627569148848">
+ <shade name="light" weight="0.499999447369" />
+ <shade name="dark" weight="0.3256575348" />
+ <shade name="cool" weight="0.174341912569" />
+</color>
+
+<color name="blue" weight="0.0261847817278">
+ <shade name="light" weight="0.499999447369" />
+ <shade name="dark" weight="0.3256575348" />
+ <shade name="cool" weight="0.174341912569" />
+</color>
+
+</colors>

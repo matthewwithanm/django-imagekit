@@ -1,0 +1,33 @@
+<colors query="voice">
+
+<color name="black" weight="0.408874386855">
+ <shade name="soft" weight="0.668881959835" />
+ <shade name="weak" weight="0.166223151052" />
+ <shade name="fresh" weight="0.164893365844" />
+</color>
+
+<color name="blue" weight="0.238034623665">
+ <shade name="soft" weight="0.668881959835" />
+ <shade name="weak" weight="0.166223151052" />
+ <shade name="fresh" weight="0.164893365844" />
+</color>
+
+<color name="white" weight="0.147067996512">
+ <shade name="soft" weight="0.668881959835" />
+ <shade name="weak" weight="0.166223151052" />
+ <shade name="fresh" weight="0.164893365844" />
+</color>
+
+<color name="green" weight="0.103961859603">
+ <shade name="soft" weight="0.668881959835" />
+ <shade name="weak" weight="0.166223151052" />
+ <shade name="fresh" weight="0.164893365844" />
+</color>
+
+<color name="red" weight="0.102060118269">
+ <shade name="soft" weight="0.668881959835" />
+ <shade name="weak" weight="0.166223151052" />
+ <shade name="fresh" weight="0.164893365844" />
+</color>
+
+</colors>

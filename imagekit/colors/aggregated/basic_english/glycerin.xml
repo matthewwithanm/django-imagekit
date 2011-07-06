@@ -1,0 +1,33 @@
+<colors query="glycerin">
+
+<color name="white" weight="0.680149891758">
+ <shade name="neutral" weight="0.351246945466" />
+ <shade name="soft" weight="0.330133741094" />
+ <shade name="dark" weight="0.3186174478" />
+</color>
+
+<color name="pink" weight="0.0856631933643">
+ <shade name="neutral" weight="0.351246945466" />
+ <shade name="soft" weight="0.330133741094" />
+ <shade name="dark" weight="0.3186174478" />
+</color>
+
+<color name="blue" weight="0.08011094935">
+ <shade name="neutral" weight="0.351246945466" />
+ <shade name="soft" weight="0.330133741094" />
+ <shade name="dark" weight="0.3186174478" />
+</color>
+
+<color name="green" weight="0.0771365329137">
+ <shade name="neutral" weight="0.351246945466" />
+ <shade name="soft" weight="0.330133741094" />
+ <shade name="dark" weight="0.3186174478" />
+</color>
+
+<color name="black" weight="0.0769382384846">
+ <shade name="neutral" weight="0.351246945466" />
+ <shade name="soft" weight="0.330133741094" />
+ <shade name="dark" weight="0.3186174478" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="mile">
+
+<color name="green" weight="0.835231257236">
+ <shade name="light" weight="0.841991122758" />
+ <shade name="dark" weight="0.0849157004654" />
+ <shade name="hard" weight="0.0730919953373" />
+</color>
+
+<color name="red" weight="0.140318851216">
+ <shade name="light" weight="0.837490106365" />
+ <shade name="dark" weight="0.0844617681738" />
+ <shade name="warm" weight="0.0780469503378" />
+</color>
+
+<color name="white" weight="0.0128959706117">
+ <shade name="light" weight="0.837490106365" />
+ <shade name="dark" weight="0.0844617681738" />
+ <shade name="warm" weight="0.0780469503378" />
+</color>
+
+<color name="blue" weight="0.00982231958509">
+ <shade name="light" weight="0.841991122758" />
+ <shade name="dark" weight="0.0849157004654" />
+ <shade name="hard" weight="0.0730919953373" />
+</color>
+
+<color name="black" weight="0.00173059916499">
+ <shade name="light" weight="0.837490106365" />
+ <shade name="dark" weight="0.0844617681738" />
+ <shade name="warm" weight="0.0780469503378" />
+</color>
+
+</colors>

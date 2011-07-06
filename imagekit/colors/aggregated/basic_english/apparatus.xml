@@ -1,0 +1,33 @@
+<colors query="apparatus">
+
+<color name="red" weight="0.441969819662">
+ <shade name="light" weight="0.97509771791" />
+ <shade name="weak" weight="0.0162784908279" />
+ <shade name="intense" weight="0.0086227649435" />
+</color>
+
+<color name="white" weight="0.161268376945">
+ <shade name="light" weight="0.976813772256" />
+ <shade name="weak" weight="0.0163071390079" />
+ <shade name="cool" weight="0.00687806061126" />
+</color>
+
+<color name="green" weight="0.155195509194">
+ <shade name="light" weight="0.97509771791" />
+ <shade name="weak" weight="0.0162784908279" />
+ <shade name="intense" weight="0.0086227649435" />
+</color>
+
+<color name="black" weight="0.155195509194">
+ <shade name="light" weight="0.97509771791" />
+ <shade name="weak" weight="0.0162784908279" />
+ <shade name="intense" weight="0.0086227649435" />
+</color>
+
+<color name="blue" weight="0.086369674682">
+ <shade name="light" weight="0.97509771791" />
+ <shade name="weak" weight="0.0162784908279" />
+ <shade name="intense" weight="0.0086227649435" />
+</color>
+
+</colors>

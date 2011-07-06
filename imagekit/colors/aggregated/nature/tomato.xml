@@ -1,0 +1,33 @@
+<colors query="tomato">
+
+<color name="green" weight="0.470023460009">
+ <shade name="fresh" weight="0.917758168034" />
+ <shade name="light" weight="0.0800864759264" />
+ <shade name="soft" weight="0.00215431654181" />
+</color>
+
+<color name="red" weight="0.250599242709">
+ <shade name="fresh" weight="0.888763255381" />
+ <shade name="light" weight="0.0775562882853" />
+ <shade name="warm" weight="0.0336794496776" />
+</color>
+
+<color name="blue" weight="0.140287614339">
+ <shade name="fresh" weight="0.917758168034" />
+ <shade name="light" weight="0.0800864759264" />
+ <shade name="soft" weight="0.00215431654181" />
+</color>
+
+<color name="yellow" weight="0.0907672855171">
+ <shade name="fresh" weight="0.888763255381" />
+ <shade name="light" weight="0.0775562882853" />
+ <shade name="warm" weight="0.0336794496776" />
+</color>
+
+<color name="orange" weight="0.0483212893836">
+ <shade name="fresh" weight="0.888763255381" />
+ <shade name="light" weight="0.0775562882853" />
+ <shade name="warm" weight="0.0336794496776" />
+</color>
+
+</colors>

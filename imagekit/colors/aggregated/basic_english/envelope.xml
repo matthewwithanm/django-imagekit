@@ -1,0 +1,33 @@
+<colors query="envelope">
+
+<color name="red" weight="0.524375856503">
+ <shade name="light" weight="0.386362825363" />
+ <shade name="cool" weight="0.320854941478" />
+ <shade name="dark" weight="0.292780134099" />
+</color>
+
+<color name="white" weight="0.293367033233">
+ <shade name="light" weight="0.386362825363" />
+ <shade name="cool" weight="0.320854941478" />
+ <shade name="dark" weight="0.292780134099" />
+</color>
+
+<color name="yellow" weight="0.0776643160442">
+ <shade name="light" weight="0.386362825363" />
+ <shade name="cool" weight="0.320854941478" />
+ <shade name="dark" weight="0.292780134099" />
+</color>
+
+<color name="blue" weight="0.071145048639">
+ <shade name="light" weight="0.386362825363" />
+ <shade name="cool" weight="0.320854941478" />
+ <shade name="dark" weight="0.292780134099" />
+</color>
+
+<color name="green" weight="0.0334466762526">
+ <shade name="light" weight="0.386362825363" />
+ <shade name="cool" weight="0.320854941478" />
+ <shade name="dark" weight="0.292780134099" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="vestigial">
+
+<color name="black" weight="0.694999278938">
+ <shade name="weak" weight="0.681817314051" />
+ <shade name="soft" weight="0.204545194215" />
+ <shade name="light" weight="0.113636219008" />
+</color>
+
+<color name="purple" weight="0.129999865125">
+ <shade name="weak" weight="0.681817314051" />
+ <shade name="soft" weight="0.204545194215" />
+ <shade name="light" weight="0.113636219008" />
+</color>
+
+<color name="white" weight="0.0999998962501">
+ <shade name="weak" weight="0.681817314051" />
+ <shade name="soft" weight="0.204545194215" />
+ <shade name="light" weight="0.113636219008" />
+</color>
+
+<color name="red" weight="0.0549999429376">
+ <shade name="weak" weight="0.681817314051" />
+ <shade name="soft" weight="0.204545194215" />
+ <shade name="light" weight="0.113636219008" />
+</color>
+
+<color name="blue" weight="0.01999997925">
+ <shade name="weak" weight="0.681817314051" />
+ <shade name="soft" weight="0.204545194215" />
+ <shade name="light" weight="0.113636219008" />
+</color>
+
+</colors>

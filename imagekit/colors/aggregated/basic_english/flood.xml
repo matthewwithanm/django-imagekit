@@ -1,0 +1,33 @@
+<colors query="flood">
+
+<color name="white" weight="0.35632867643">
+ <shade name="dark" weight="0.604349567818" />
+ <shade name="light" weight="0.370318983469" />
+ <shade name="soft" weight="0.0253303691295" />
+</color>
+
+<color name="black" weight="0.287509833343">
+ <shade name="dark" weight="0.604349567818" />
+ <shade name="light" weight="0.370318983469" />
+ <shade name="soft" weight="0.0253303691295" />
+</color>
+
+<color name="red" weight="0.25692368086">
+ <shade name="dark" weight="0.604349567818" />
+ <shade name="light" weight="0.370318983469" />
+ <shade name="soft" weight="0.0253303691295" />
+</color>
+
+<color name="orange" weight="0.0874763961022">
+ <shade name="dark" weight="0.604349567818" />
+ <shade name="light" weight="0.370318983469" />
+ <shade name="soft" weight="0.0253303691295" />
+</color>
+
+<color name="yellow" weight="0.0117603756298">
+ <shade name="dark" weight="0.604349567818" />
+ <shade name="light" weight="0.370318983469" />
+ <shade name="soft" weight="0.0253303691295" />
+</color>
+
+</colors>

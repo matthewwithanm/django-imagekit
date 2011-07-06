@@ -1,0 +1,33 @@
+<colors query="retina">
+
+<color name="red" weight="0.668554490421">
+ <shade name="dark" weight="0.491388462544" />
+ <shade name="light" weight="0.277841140037" />
+ <shade name="fresh" weight="0.230768880774" />
+</color>
+
+<color name="white" weight="0.102549459971">
+ <shade name="dark" weight="0.491388462544" />
+ <shade name="light" weight="0.277841140037" />
+ <shade name="fresh" weight="0.230768880774" />
+</color>
+
+<color name="green" weight="0.0804531674914">
+ <shade name="dark" weight="0.491388462544" />
+ <shade name="light" weight="0.277841140037" />
+ <shade name="fresh" weight="0.230768880774" />
+</color>
+
+<color name="black" weight="0.0804531674914">
+ <shade name="dark" weight="0.491388462544" />
+ <shade name="light" weight="0.277841140037" />
+ <shade name="fresh" weight="0.230768880774" />
+</color>
+
+<color name="blue" weight="0.0679885922462">
+ <shade name="dark" weight="0.491388462544" />
+ <shade name="light" weight="0.277841140037" />
+ <shade name="fresh" weight="0.230768880774" />
+</color>
+
+</colors>

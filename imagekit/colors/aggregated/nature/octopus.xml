@@ -1,0 +1,33 @@
+<colors query="octopus">
+
+<color name="red" weight="0.467382993726">
+ <shade name="fresh" weight="0.745271672566" />
+ <shade name="cool" weight="0.142380259834" />
+ <shade name="dark" weight="0.112346923775" />
+</color>
+
+<color name="blue" weight="0.16129014354">
+ <shade name="fresh" weight="0.745271672566" />
+ <shade name="cool" weight="0.142380259834" />
+ <shade name="dark" weight="0.112346923775" />
+</color>
+
+<color name="purple" weight="0.136917410739">
+ <shade name="fresh" weight="0.745271672566" />
+ <shade name="cool" weight="0.142380259834" />
+ <shade name="dark" weight="0.112346923775" />
+</color>
+
+<color name="pink" weight="0.126164734503">
+ <shade name="fresh" weight="0.745271672566" />
+ <shade name="cool" weight="0.142380259834" />
+ <shade name="dark" weight="0.112346923775" />
+</color>
+
+<color name="black" weight="0.108243607443">
+ <shade name="fresh" weight="0.745271672566" />
+ <shade name="cool" weight="0.142380259834" />
+ <shade name="dark" weight="0.112346923775" />
+</color>
+
+</colors>

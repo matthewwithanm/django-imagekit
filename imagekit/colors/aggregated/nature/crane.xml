@@ -1,0 +1,33 @@
+<colors query="crane">
+
+<color name="white" weight="0.49095557355">
+ <shade name="light" weight="0.818782974093" />
+ <shade name="bright" weight="0.0921130845854" />
+ <shade name="cool" weight="0.089102853063" />
+</color>
+
+<color name="blue" weight="0.329953948216">
+ <shade name="light" weight="0.818782974093" />
+ <shade name="bright" weight="0.0921130845854" />
+ <shade name="cool" weight="0.089102853063" />
+</color>
+
+<color name="yellow" weight="0.0816934172992">
+ <shade name="light" weight="0.818782974093" />
+ <shade name="bright" weight="0.0921130845854" />
+ <shade name="cool" weight="0.089102853063" />
+</color>
+
+<color name="red" weight="0.06797846403">
+ <shade name="light" weight="0.818782974093" />
+ <shade name="bright" weight="0.0921130845854" />
+ <shade name="cool" weight="0.089102853063" />
+</color>
+
+<color name="black" weight="0.0294175809253">
+ <shade name="light" weight="0.818782974093" />
+ <shade name="bright" weight="0.0921130845854" />
+ <shade name="cool" weight="0.089102853063" />
+</color>
+
+</colors>

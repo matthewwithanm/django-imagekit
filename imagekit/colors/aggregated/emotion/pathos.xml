@@ -1,0 +1,33 @@
+<colors query="pathos">
+
+<color name="black" weight="0.596490601493">
+ <shade name="dark" weight="0.698541737724" />
+ <shade name="intense" weight="0.275506283326" />
+ <shade name="cool" weight="0.0259509144294" />
+</color>
+
+<color name="blue" weight="0.179824372509">
+ <shade name="dark" weight="0.698541737724" />
+ <shade name="intense" weight="0.275506283326" />
+ <shade name="cool" weight="0.0259509144294" />
+</color>
+
+<color name="green" weight="0.087719206102">
+ <shade name="dark" weight="0.698541737724" />
+ <shade name="intense" weight="0.275506283326" />
+ <shade name="cool" weight="0.0259509144294" />
+</color>
+
+<color name="white" weight="0.0855262259494">
+ <shade name="dark" weight="0.93749866062" />
+ <shade name="cool" weight="0.0348281945167" />
+ <shade name="warm" weight="0.0276717161913" />
+</color>
+
+<color name="red" weight="0.0504385435086">
+ <shade name="dark" weight="0.698541737724" />
+ <shade name="intense" weight="0.275506283326" />
+ <shade name="cool" weight="0.0259509144294" />
+</color>
+
+</colors>

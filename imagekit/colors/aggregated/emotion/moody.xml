@@ -1,0 +1,33 @@
+<colors query="moody">
+
+<color name="blue" weight="0.733891854401">
+ <shade name="dark" weight="0.954236652304" />
+ <shade name="soft" weight="0.030679221402" />
+ <shade name="light" weight="0.0150830954719" />
+</color>
+
+<color name="black" weight="0.0985581735655">
+ <shade name="dark" weight="0.954236652304" />
+ <shade name="soft" weight="0.030679221402" />
+ <shade name="light" weight="0.0150830954719" />
+</color>
+
+<color name="pink" weight="0.071597218648">
+ <shade name="dark" weight="0.954236652304" />
+ <shade name="soft" weight="0.030679221402" />
+ <shade name="light" weight="0.0150830954719" />
+</color>
+
+<color name="red" weight="0.0489532746387">
+ <shade name="dark" weight="0.954236652304" />
+ <shade name="soft" weight="0.030679221402" />
+ <shade name="light" weight="0.0150830954719" />
+</color>
+
+<color name="white" weight="0.0469984017746">
+ <shade name="dark" weight="0.954236652304" />
+ <shade name="soft" weight="0.030679221402" />
+ <shade name="light" weight="0.0150830954719" />
+</color>
+
+</colors>

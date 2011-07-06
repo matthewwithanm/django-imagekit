@@ -1,0 +1,33 @@
+<colors query="meerkat">
+
+<color name="red" weight="0.425769786347">
+ <shade name="cool" weight="0.889801712507" />
+ <shade name="dark" weight="0.0953946383095" />
+ <shade name="light" weight="0.0148026162894" />
+</color>
+
+<color name="blue" weight="0.211484334666">
+ <shade name="cool" weight="0.889801712507" />
+ <shade name="dark" weight="0.0953946383095" />
+ <shade name="light" weight="0.0148026162894" />
+</color>
+
+<color name="black" weight="0.135854175249">
+ <shade name="cool" weight="0.889801712507" />
+ <shade name="dark" weight="0.0953946383095" />
+ <shade name="light" weight="0.0148026162894" />
+</color>
+
+<color name="white" weight="0.12885138271">
+ <shade name="cool" weight="0.889801712507" />
+ <shade name="dark" weight="0.0953946383095" />
+ <shade name="light" weight="0.0148026162894" />
+</color>
+
+<color name="orange" weight="0.0980390955403">
+ <shade name="cool" weight="0.889801712507" />
+ <shade name="dark" weight="0.0953946383095" />
+ <shade name="light" weight="0.0148026162894" />
+</color>
+
+</colors>

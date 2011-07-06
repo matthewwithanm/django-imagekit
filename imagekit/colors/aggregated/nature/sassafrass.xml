@@ -1,0 +1,33 @@
+<colors query="sassafrass">
+
+<color name="red" weight="0.3770486982">
+ <shade name="fresh" weight="0.647058081316" />
+ <shade name="cool" weight="0.294117309689" />
+ <shade name="warm" weight="0.0588234619378" />
+</color>
+
+<color name="black" weight="0.295081589896">
+ <shade name="fresh" weight="0.647058081316" />
+ <shade name="cool" weight="0.294117309689" />
+ <shade name="warm" weight="0.0588234619378" />
+</color>
+
+<color name="green" weight="0.131147373287">
+ <shade name="fresh" weight="0.666665878789" />
+ <shade name="cool" weight="0.303029944904" />
+ <shade name="weak" weight="0.0303029944904" />
+</color>
+
+<color name="yellow" weight="0.0983605299652">
+ <shade name="fresh" weight="0.647058081316" />
+ <shade name="cool" weight="0.294117309689" />
+ <shade name="warm" weight="0.0588234619378" />
+</color>
+
+<color name="white" weight="0.0983605299652">
+ <shade name="fresh" weight="0.647058081316" />
+ <shade name="cool" weight="0.294117309689" />
+ <shade name="warm" weight="0.0588234619378" />
+</color>
+
+</colors>

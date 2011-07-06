@@ -1,0 +1,33 @@
+<colors query="cushion">
+
+<color name="black" weight="0.230355647613">
+ <shade name="soft" weight="0.911599491777" />
+ <shade name="light" weight="0.0632983872459" />
+ <shade name="cool" weight="0.0251010845975" />
+</color>
+
+<color name="white" weight="0.226326102756">
+ <shade name="soft" weight="0.911599491777" />
+ <shade name="light" weight="0.0632983872459" />
+ <shade name="cool" weight="0.0251010845975" />
+</color>
+
+<color name="red" weight="0.187373835813">
+ <shade name="soft" weight="0.911599491777" />
+ <shade name="light" weight="0.0632983872459" />
+ <shade name="cool" weight="0.0251010845975" />
+</color>
+
+<color name="blue" weight="0.186030654194">
+ <shade name="soft" weight="0.911599491777" />
+ <shade name="light" weight="0.0632983872459" />
+ <shade name="cool" weight="0.0251010845975" />
+</color>
+
+<color name="pink" weight="0.16991247477">
+ <shade name="soft" weight="0.911599491777" />
+ <shade name="light" weight="0.0632983872459" />
+ <shade name="cool" weight="0.0251010845975" />
+</color>
+
+</colors>

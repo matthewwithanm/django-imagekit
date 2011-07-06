@@ -1,0 +1,33 @@
+<colors query="rum">
+
+<color name="red" weight="0.474500264683">
+ <shade name="dark" weight="0.67359376502" />
+ <shade name="light" weight="0.324807349476" />
+ <shade name="intense" weight="0.00159787776621" />
+</color>
+
+<color name="white" weight="0.398167613408">
+ <shade name="dark" weight="0.673623133845" />
+ <shade name="light" weight="0.324821511142" />
+ <shade name="cool" weight="0.00155434723117" />
+</color>
+
+<color name="black" weight="0.0790146092929">
+ <shade name="dark" weight="0.67359376502" />
+ <shade name="light" weight="0.324807349476" />
+ <shade name="intense" weight="0.00159787776621" />
+</color>
+
+<color name="orange" weight="0.0418798059699">
+ <shade name="dark" weight="0.67359376502" />
+ <shade name="light" weight="0.324807349476" />
+ <shade name="intense" weight="0.00159787776621" />
+</color>
+
+<color name="blue" weight="0.00643669924266">
+ <shade name="dark" weight="0.67359376502" />
+ <shade name="light" weight="0.324807349476" />
+ <shade name="intense" weight="0.00159787776621" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="merry">
+
+<color name="white" weight="0.487061876604">
+ <shade name="cool" weight="0.377677047616" />
+ <shade name="light" weight="0.340473039941" />
+ <shade name="bright" weight="0.281848542997" />
+</color>
+
+<color name="red" weight="0.218490458759">
+ <shade name="cool" weight="0.377677047616" />
+ <shade name="light" weight="0.340473039941" />
+ <shade name="bright" weight="0.281848542997" />
+</color>
+
+<color name="green" weight="0.13453120382">
+ <shade name="cool" weight="0.377677047616" />
+ <shade name="light" weight="0.340473039941" />
+ <shade name="bright" weight="0.281848542997" />
+</color>
+
+<color name="black" weight="0.124220418126">
+ <shade name="cool" weight="0.377677047616" />
+ <shade name="light" weight="0.340473039941" />
+ <shade name="bright" weight="0.281848542997" />
+</color>
+
+<color name="blue" weight="0.0356949580939">
+ <shade name="cool" weight="0.377677047616" />
+ <shade name="light" weight="0.340473039941" />
+ <shade name="bright" weight="0.281848542997" />
+</color>
+
+</colors>

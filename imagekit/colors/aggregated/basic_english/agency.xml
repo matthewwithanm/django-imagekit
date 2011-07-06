@@ -1,0 +1,33 @@
+<colors query="agency">
+
+<color name="black" weight="0.411153921598">
+ <shade name="soft" weight="0.548211735797" />
+ <shade name="neutral" weight="0.407366823438" />
+ <shade name="dark" weight="0.0444203185132" />
+</color>
+
+<color name="white" weight="0.259403105109">
+ <shade name="soft" weight="0.548211735797" />
+ <shade name="neutral" weight="0.407366823438" />
+ <shade name="dark" weight="0.0444203185132" />
+</color>
+
+<color name="green" weight="0.145265738861">
+ <shade name="soft" weight="0.548211735797" />
+ <shade name="neutral" weight="0.407366823438" />
+ <shade name="dark" weight="0.0444203185132" />
+</color>
+
+<color name="red" weight="0.118158114377">
+ <shade name="soft" weight="0.548211735797" />
+ <shade name="neutral" weight="0.407366823438" />
+ <shade name="dark" weight="0.0444203185132" />
+</color>
+
+<color name="blue" weight="0.0660180902503">
+ <shade name="soft" weight="0.548211735797" />
+ <shade name="neutral" weight="0.407366823438" />
+ <shade name="dark" weight="0.0444203185132" />
+</color>
+
+</colors>

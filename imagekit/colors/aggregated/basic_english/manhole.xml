@@ -1,0 +1,33 @@
+<colors query="manhole">
+
+<color name="black" weight="0.84386049394">
+ <shade name="cool" weight="0.401179435683" />
+ <shade name="dark" weight="0.306784274345" />
+ <shade name="warm" weight="0.292035030387" />
+</color>
+
+<color name="pink" weight="0.0976675389339">
+ <shade name="cool" weight="0.401179435683" />
+ <shade name="dark" weight="0.306784274345" />
+ <shade name="warm" weight="0.292035030387" />
+</color>
+
+<color name="yellow" weight="0.0353093258501">
+ <shade name="cool" weight="0.401179435683" />
+ <shade name="dark" weight="0.306784274345" />
+ <shade name="warm" weight="0.292035030387" />
+</color>
+
+<color name="green" weight="0.0119857344629">
+ <shade name="cool" weight="0.430379165279" />
+ <shade name="dark" weight="0.329113479331" />
+ <shade name="light" weight="0.240506004126" />
+</color>
+
+<color name="red" weight="0.0111758875397">
+ <shade name="cool" weight="0.401179435683" />
+ <shade name="dark" weight="0.306784274345" />
+ <shade name="warm" weight="0.292035030387" />
+</color>
+
+</colors>

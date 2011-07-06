@@ -1,0 +1,33 @@
+<colors query="muscle">
+
+<color name="white" weight="0.404587700121">
+ <shade name="hard" weight="0.563182623252" />
+ <shade name="weak" weight="0.221141828332" />
+ <shade name="fresh" weight="0.215674035873" />
+</color>
+
+<color name="black" weight="0.27737197998">
+ <shade name="hard" weight="0.563182623252" />
+ <shade name="weak" weight="0.221141828332" />
+ <shade name="fresh" weight="0.215674035873" />
+</color>
+
+<color name="red" weight="0.241918418629">
+ <shade name="hard" weight="0.563182623252" />
+ <shade name="weak" weight="0.221141828332" />
+ <shade name="fresh" weight="0.215674035873" />
+</color>
+
+<color name="green" weight="0.0513033887782">
+ <shade name="hard" weight="0.563182623252" />
+ <shade name="weak" weight="0.221141828332" />
+ <shade name="fresh" weight="0.215674035873" />
+</color>
+
+<color name="blue" weight="0.0248174929456">
+ <shade name="hard" weight="0.563182623252" />
+ <shade name="weak" weight="0.221141828332" />
+ <shade name="fresh" weight="0.215674035873" />
+</color>
+
+</colors>

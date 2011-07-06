@@ -1,0 +1,33 @@
+<colors query="bath">
+
+<color name="white" weight="0.328788690645">
+ <shade name="warm" weight="0.745957887489" />
+ <shade name="light" weight="0.164614961255" />
+ <shade name="cool" weight="0.0894259654385" />
+</color>
+
+<color name="pink" weight="0.225340541637">
+ <shade name="warm" weight="0.745957887489" />
+ <shade name="light" weight="0.164614961255" />
+ <shade name="cool" weight="0.0894259654385" />
+</color>
+
+<color name="blue" weight="0.184442436216">
+ <shade name="light" weight="0.494210172888" />
+ <shade name="cool" weight="0.268476337163" />
+ <shade name="soft" weight="0.237309929864" />
+</color>
+
+<color name="green" weight="0.139534712615">
+ <shade name="light" weight="0.494210172888" />
+ <shade name="cool" weight="0.268476337163" />
+ <shade name="soft" weight="0.237309929864" />
+</color>
+
+<color name="black" weight="0.121892392629">
+ <shade name="warm" weight="0.745957887489" />
+ <shade name="light" weight="0.164614961255" />
+ <shade name="cool" weight="0.0894259654385" />
+</color>
+
+</colors>

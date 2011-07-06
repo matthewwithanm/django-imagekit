@@ -1,0 +1,33 @@
+<colors query="cacao">
+
+<color name="orange" weight="0.906017291307">
+ <shade name="dark" weight="0.668041504681" />
+ <shade name="soft" weight="0.188289690509" />
+ <shade name="fresh" weight="0.143667613169" />
+</color>
+
+<color name="blue" weight="0.0291991064867">
+ <shade name="dark" weight="0.668041504681" />
+ <shade name="soft" weight="0.188289690509" />
+ <shade name="fresh" weight="0.143667613169" />
+</color>
+
+<color name="white" weight="0.0260538651127">
+ <shade name="dark" weight="0.668041504681" />
+ <shade name="soft" weight="0.188289690509" />
+ <shade name="fresh" weight="0.143667613169" />
+</color>
+
+<color name="black" weight="0.02168808231">
+ <shade name="dark" weight="0.668041504681" />
+ <shade name="soft" weight="0.188289690509" />
+ <shade name="fresh" weight="0.143667613169" />
+</color>
+
+<color name="green" weight="0.0170406361008">
+ <shade name="dark" weight="0.668041504681" />
+ <shade name="soft" weight="0.188289690509" />
+ <shade name="fresh" weight="0.143667613169" />
+</color>
+
+</colors>

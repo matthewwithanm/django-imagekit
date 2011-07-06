@@ -1,0 +1,33 @@
+<colors query="defect">
+
+<color name="black" weight="0.324683799811">
+ <shade name="neutral" weight="0.823446326055" />
+ <shade name="dark" weight="0.0990926934744" />
+ <shade name="light" weight="0.0774597815187" />
+</color>
+
+<color name="green" weight="0.24035477925">
+ <shade name="neutral" weight="0.823446326055" />
+ <shade name="dark" weight="0.0990926934744" />
+ <shade name="light" weight="0.0774597815187" />
+</color>
+
+<color name="white" weight="0.17173075847">
+ <shade name="neutral" weight="0.823446326055" />
+ <shade name="dark" weight="0.0990926934744" />
+ <shade name="light" weight="0.0774597815187" />
+</color>
+
+<color name="yellow" weight="0.157391410844">
+ <shade name="neutral" weight="0.823446326055" />
+ <shade name="dark" weight="0.0990926934744" />
+ <shade name="light" weight="0.0774597815187" />
+</color>
+
+<color name="red" weight="0.105838041999">
+ <shade name="neutral" weight="0.823446326055" />
+ <shade name="dark" weight="0.0990926934744" />
+ <shade name="light" weight="0.0774597815187" />
+</color>
+
+</colors>

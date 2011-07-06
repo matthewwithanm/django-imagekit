@@ -1,0 +1,33 @@
+<colors query="bat">
+
+<color name="red" weight="0.526315210007">
+ <shade name="dark" weight="0.407608196033" />
+ <shade name="intense" weight="0.309782228985" />
+ <shade name="light" weight="0.28260834925" />
+</color>
+
+<color name="black" weight="0.266899182326">
+ <shade name="dark" weight="0.407608196033" />
+ <shade name="intense" weight="0.309782228985" />
+ <shade name="light" weight="0.28260834925" />
+</color>
+
+<color name="white" weight="0.0785731237688">
+ <shade name="dark" weight="0.507441715522" />
+ <shade name="light" weight="0.351826256095" />
+ <shade name="soft" weight="0.140730502438" />
+</color>
+
+<color name="pink" weight="0.0663506378492">
+ <shade name="dark" weight="0.507441715522" />
+ <shade name="light" weight="0.351826256095" />
+ <shade name="soft" weight="0.140730502438" />
+</color>
+
+<color name="yellow" weight="0.0618607450624">
+ <shade name="dark" weight="0.407608196033" />
+ <shade name="intense" weight="0.309782228985" />
+ <shade name="light" weight="0.28260834925" />
+</color>
+
+</colors>

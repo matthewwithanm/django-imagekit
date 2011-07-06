@@ -1,0 +1,33 @@
+<colors query="toad">
+
+<color name="green" weight="0.441155287413">
+ <shade name="cool" weight="0.911997914074" />
+ <shade name="dark" weight="0.0728237140343" />
+ <shade name="light" weight="0.0151772787193" />
+</color>
+
+<color name="yellow" weight="0.272726990781">
+ <shade name="cool" weight="0.883263187201" />
+ <shade name="dark" weight="0.0705292246496" />
+ <shade name="warm" weight="0.04620652942" />
+</color>
+
+<color name="red" weight="0.112050624119">
+ <shade name="cool" weight="0.883263187201" />
+ <shade name="dark" weight="0.0705292246496" />
+ <shade name="warm" weight="0.04620652942" />
+</color>
+
+<color name="black" weight="0.100775089617">
+ <shade name="cool" weight="0.883263187201" />
+ <shade name="dark" weight="0.0705292246496" />
+ <shade name="warm" weight="0.04620652942" />
+</color>
+
+<color name="blue" weight="0.0732909742666">
+ <shade name="cool" weight="0.911997914074" />
+ <shade name="dark" weight="0.0728237140343" />
+ <shade name="light" weight="0.0151772787193" />
+</color>
+
+</colors>

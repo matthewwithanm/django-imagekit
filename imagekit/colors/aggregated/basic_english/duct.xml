@@ -1,0 +1,33 @@
+<colors query="duct">
+
+<color name="black" weight="0.361779064009">
+ <shade name="cool" weight="0.381109622101" />
+ <shade name="hard" weight="0.359016310675" />
+ <shade name="fresh" weight="0.25987257565" />
+</color>
+
+<color name="green" weight="0.332352058802">
+ <shade name="cool" weight="0.381109622101" />
+ <shade name="hard" weight="0.359016310675" />
+ <shade name="fresh" weight="0.25987257565" />
+</color>
+
+<color name="red" weight="0.174831030932">
+ <shade name="cool" weight="0.381109622101" />
+ <shade name="hard" weight="0.359016310675" />
+ <shade name="fresh" weight="0.25987257565" />
+</color>
+
+<color name="pink" weight="0.0775488137205">
+ <shade name="cool" weight="0.381109622101" />
+ <shade name="hard" weight="0.359016310675" />
+ <shade name="fresh" weight="0.25987257565" />
+</color>
+
+<color name="yellow" weight="0.0534879094635">
+ <shade name="cool" weight="0.381109622101" />
+ <shade name="hard" weight="0.359016310675" />
+ <shade name="fresh" weight="0.25987257565" />
+</color>
+
+</colors>

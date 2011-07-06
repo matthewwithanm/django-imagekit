@@ -1,0 +1,33 @@
+<colors query="horsechestnut">
+
+<color name="red" weight="0.908247469039">
+ <shade name="fresh" weight="0.902438121952" />
+ <shade name="dark" weight="0.0731706585367" />
+ <shade name="hard" weight="0.0243902195122" />
+</color>
+
+<color name="white" weight="0.0463391565836">
+ <shade name="fresh" weight="0.902438121952" />
+ <shade name="dark" weight="0.0731706585367" />
+ <shade name="hard" weight="0.0243902195122" />
+</color>
+
+<color name="pink" weight="0.0370713252669">
+ <shade name="fresh" weight="0.902438121952" />
+ <shade name="dark" weight="0.0731706585367" />
+ <shade name="hard" weight="0.0243902195122" />
+</color>
+
+<color name="yellow" weight="0.0064874819217">
+ <shade name="fresh" weight="0.902438121952" />
+ <shade name="dark" weight="0.0731706585367" />
+ <shade name="hard" weight="0.0243902195122" />
+</color>
+
+<color name="blue" weight="0.00185356626334">
+ <shade name="fresh" weight="0.902438121952" />
+ <shade name="dark" weight="0.0731706585367" />
+ <shade name="hard" weight="0.0243902195122" />
+</color>
+
+</colors>

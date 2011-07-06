@@ -1,0 +1,33 @@
+<colors query="jubilant">
+
+<color name="red" weight="0.517240844234">
+ <shade name="bright" weight="0.699345605324" />
+ <shade name="warm" weight="0.248365728993" />
+ <shade name="light" weight="0.0522875218934" />
+</color>
+
+<color name="white" weight="0.172413614745">
+ <shade name="bright" weight="0.699345605324" />
+ <shade name="warm" weight="0.248365728993" />
+ <shade name="light" weight="0.0522875218934" />
+</color>
+
+<color name="blue" weight="0.137930891796">
+ <shade name="bright" weight="0.891665366321" />
+ <shade name="light" weight="0.0666665694446" />
+ <shade name="soft" weight="0.0416666059029" />
+</color>
+
+<color name="purple" weight="0.0862068073723">
+ <shade name="bright" weight="0.891665366321" />
+ <shade name="light" weight="0.0666665694446" />
+ <shade name="soft" weight="0.0416666059029" />
+</color>
+
+<color name="black" weight="0.0862068073723">
+ <shade name="bright" weight="0.699345605324" />
+ <shade name="warm" weight="0.248365728993" />
+ <shade name="light" weight="0.0522875218934" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="arthropod">
+
+<color name="yellow" weight="0.322033547161">
+ <shade name="cool" weight="0.46774130177" />
+ <shade name="fresh" weight="0.403225260146" />
+ <shade name="hard" weight="0.129032083247" />
+</color>
+
+<color name="black" weight="0.209039320087">
+ <shade name="cool" weight="0.46774130177" />
+ <shade name="fresh" weight="0.403225260146" />
+ <shade name="hard" weight="0.129032083247" />
+</color>
+
+<color name="green" weight="0.192090186026">
+ <shade name="cool" weight="0.46774130177" />
+ <shade name="fresh" weight="0.403225260146" />
+ <shade name="hard" weight="0.129032083247" />
+</color>
+
+<color name="white" weight="0.146892495196">
+ <shade name="cool" weight="0.46774130177" />
+ <shade name="fresh" weight="0.403225260146" />
+ <shade name="hard" weight="0.129032083247" />
+</color>
+
+<color name="red" weight="0.129943361135">
+ <shade name="cool" weight="0.46774130177" />
+ <shade name="fresh" weight="0.403225260146" />
+ <shade name="hard" weight="0.129032083247" />
+</color>
+
+</colors>

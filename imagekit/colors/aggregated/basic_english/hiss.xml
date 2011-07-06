@@ -1,0 +1,33 @@
+<colors query="hiss">
+
+<color name="white" weight="0.343321545681">
+ <shade name="soft" weight="0.831437418964" />
+ <shade name="light" weight="0.147811096705" />
+ <shade name="cool" weight="0.0207504039605" />
+</color>
+
+<color name="red" weight="0.196061431324">
+ <shade name="soft" weight="0.831437418964" />
+ <shade name="light" weight="0.147811096705" />
+ <shade name="cool" weight="0.0207504039605" />
+</color>
+
+<color name="black" weight="0.184931306402">
+ <shade name="soft" weight="0.831437418964" />
+ <shade name="light" weight="0.147811096705" />
+ <shade name="cool" weight="0.0207504039605" />
+</color>
+
+<color name="blue" weight="0.157534075824">
+ <shade name="soft" weight="0.831437418964" />
+ <shade name="light" weight="0.147811096705" />
+ <shade name="cool" weight="0.0207504039605" />
+</color>
+
+<color name="yellow" weight="0.118150556868">
+ <shade name="soft" weight="0.831437418964" />
+ <shade name="light" weight="0.147811096705" />
+ <shade name="cool" weight="0.0207504039605" />
+</color>
+
+</colors>

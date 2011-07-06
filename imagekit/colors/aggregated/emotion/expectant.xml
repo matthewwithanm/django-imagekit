@@ -1,0 +1,33 @@
+<colors query="expectant">
+
+<color name="white" weight="0.401928848182">
+ <shade name="bright" weight="0.613121241167" />
+ <shade name="soft" weight="0.251130840478" />
+ <shade name="warm" weight="0.135746400258" />
+</color>
+
+<color name="black" weight="0.38906712504">
+ <shade name="bright" weight="0.613121241167" />
+ <shade name="soft" weight="0.251130840478" />
+ <shade name="warm" weight="0.135746400258" />
+</color>
+
+<color name="orange" weight="0.118970939062">
+ <shade name="bright" weight="0.613121241167" />
+ <shade name="soft" weight="0.251130840478" />
+ <shade name="warm" weight="0.135746400258" />
+</color>
+
+<color name="blue" weight="0.0546623233528">
+ <shade name="bright" weight="0.636149232732" />
+ <shade name="soft" weight="0.260562969864" />
+ <shade name="intense" weight="0.103286222289" />
+</color>
+
+<color name="green" weight="0.03536973864">
+ <shade name="bright" weight="0.636149232732" />
+ <shade name="soft" weight="0.260562969864" />
+ <shade name="intense" weight="0.103286222289" />
+</color>
+
+</colors>

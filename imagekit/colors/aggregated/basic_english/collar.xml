@@ -1,0 +1,33 @@
+<colors query="collar">
+
+<color name="blue" weight="0.41315746167">
+ <shade name="soft" weight="0.647623363077" />
+ <shade name="hard" weight="0.227721223196" />
+ <shade name="cool" weight="0.124654334316" />
+</color>
+
+<color name="white" weight="0.384210123591">
+ <shade name="soft" weight="0.647623363077" />
+ <shade name="hard" weight="0.227721223196" />
+ <shade name="cool" weight="0.124654334316" />
+</color>
+
+<color name="green" weight="0.119736716599">
+ <shade name="soft" weight="0.647623363077" />
+ <shade name="hard" weight="0.227721223196" />
+ <shade name="cool" weight="0.124654334316" />
+</color>
+
+<color name="pink" weight="0.0523683661607">
+ <shade name="soft" weight="0.647623363077" />
+ <shade name="hard" weight="0.227721223196" />
+ <shade name="cool" weight="0.124654334316" />
+</color>
+
+<color name="red" weight="0.0305262837922">
+ <shade name="soft" weight="0.647623363077" />
+ <shade name="hard" weight="0.227721223196" />
+ <shade name="cool" weight="0.124654334316" />
+</color>
+
+</colors>

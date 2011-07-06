@@ -1,0 +1,33 @@
+<colors query="damping">
+
+<color name="red" weight="0.641459584021">
+ <shade name="weak" weight="0.597155781977" />
+ <shade name="light" weight="0.235386802949" />
+ <shade name="soft" weight="0.167456383306" />
+</color>
+
+<color name="blue" weight="0.121251506736">
+ <shade name="weak" weight="0.597155781977" />
+ <shade name="light" weight="0.235386802949" />
+ <shade name="soft" weight="0.167456383306" />
+</color>
+
+<color name="black" weight="0.0912645749624">
+ <shade name="weak" weight="0.597155781977" />
+ <shade name="light" weight="0.235386802949" />
+ <shade name="soft" weight="0.167456383306" />
+</color>
+
+<color name="green" weight="0.0886570156778">
+ <shade name="weak" weight="0.597155781977" />
+ <shade name="light" weight="0.235386802949" />
+ <shade name="soft" weight="0.167456383306" />
+</color>
+
+<color name="white" weight="0.0573663042621">
+ <shade name="weak" weight="0.597155781977" />
+ <shade name="light" weight="0.235386802949" />
+ <shade name="soft" weight="0.167456383306" />
+</color>
+
+</colors>

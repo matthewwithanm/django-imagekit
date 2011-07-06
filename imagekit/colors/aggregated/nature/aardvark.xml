@@ -1,0 +1,33 @@
+<colors query="aardvark">
+
+<color name="blue" weight="0.848309685292">
+ <shade name="dark" weight="0.483760107383" />
+ <shade name="cool" weight="0.466666110656" />
+ <shade name="fresh" weight="0.0495725905092" />
+</color>
+
+<color name="red" weight="0.0639826796534">
+ <shade name="dark" weight="0.483760107383" />
+ <shade name="cool" weight="0.466666110656" />
+ <shade name="fresh" weight="0.0495725905092" />
+</color>
+
+<color name="purple" weight="0.0335010435039">
+ <shade name="dark" weight="0.483760107383" />
+ <shade name="cool" weight="0.466666110656" />
+ <shade name="fresh" weight="0.0495725905092" />
+</color>
+
+<color name="green" weight="0.0332134808987">
+ <shade name="dark" weight="0.483760107383" />
+ <shade name="cool" weight="0.466666110656" />
+ <shade name="fresh" weight="0.0495725905092" />
+</color>
+
+<color name="pink" weight="0.0209920701784">
+ <shade name="dark" weight="0.483760107383" />
+ <shade name="cool" weight="0.466666110656" />
+ <shade name="fresh" weight="0.0495725905092" />
+</color>
+
+</colors>

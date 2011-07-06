@@ -1,0 +1,33 @@
+<colors query="spoon">
+
+<color name="blue" weight="0.330748994074">
+ <shade name="cool" weight="0.717371647397" />
+ <shade name="dark" weight="0.194468217668" />
+ <shade name="light" weight="0.0881589253428" />
+</color>
+
+<color name="orange" weight="0.196382215232">
+ <shade name="cool" weight="0.717371647397" />
+ <shade name="dark" weight="0.194468217668" />
+ <shade name="light" weight="0.0881589253428" />
+</color>
+
+<color name="pink" weight="0.182170344392">
+ <shade name="cool" weight="0.717371647397" />
+ <shade name="dark" weight="0.194468217668" />
+ <shade name="light" weight="0.0881589253428" />
+</color>
+
+<color name="red" weight="0.152454614456">
+ <shade name="cool" weight="0.717371647397" />
+ <shade name="dark" weight="0.194468217668" />
+ <shade name="light" weight="0.0881589253428" />
+</color>
+
+<color name="white" weight="0.138242743617">
+ <shade name="cool" weight="0.717371647397" />
+ <shade name="dark" weight="0.194468217668" />
+ <shade name="light" weight="0.0881589253428" />
+</color>
+
+</colors>

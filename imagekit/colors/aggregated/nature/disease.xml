@@ -1,0 +1,33 @@
+<colors query="disease">
+
+<color name="green" weight="0.288705266891">
+ <shade name="bright" weight="0.863539688367" />
+ <shade name="hard" weight="0.104755456419" />
+ <shade name="dark" weight="0.0317037677629" />
+</color>
+
+<color name="black" weight="0.272207823069">
+ <shade name="bright" weight="0.863539688367" />
+ <shade name="hard" weight="0.104755456419" />
+ <shade name="dark" weight="0.0317037677629" />
+</color>
+
+<color name="pink" weight="0.235405833004">
+ <shade name="bright" weight="0.863539688367" />
+ <shade name="hard" weight="0.104755456419" />
+ <shade name="dark" weight="0.0317037677629" />
+</color>
+
+<color name="white" weight="0.13769020421">
+ <shade name="bright" weight="0.863539688367" />
+ <shade name="hard" weight="0.104755456419" />
+ <shade name="dark" weight="0.0317037677629" />
+</color>
+
+<color name="yellow" weight="0.0659897752894">
+ <shade name="bright" weight="0.863539688367" />
+ <shade name="hard" weight="0.104755456419" />
+ <shade name="dark" weight="0.0317037677629" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="insect">
+
+<color name="green" weight="0.385500171264">
+ <shade name="light" weight="0.669144160685" />
+ <shade name="cool" weight="0.17286224151" />
+ <shade name="fresh" weight="0.157992371273" />
+</color>
+
+<color name="red" weight="0.289604606273">
+ <shade name="light" weight="0.669144160685" />
+ <shade name="cool" weight="0.17286224151" />
+ <shade name="fresh" weight="0.157992371273" />
+</color>
+
+<color name="black" weight="0.274261315875">
+ <shade name="light" weight="0.669144160685" />
+ <shade name="cool" weight="0.17286224151" />
+ <shade name="fresh" weight="0.157992371273" />
+</color>
+
+<color name="purple" weight="0.0253164291577">
+ <shade name="light" weight="0.669144160685" />
+ <shade name="cool" weight="0.17286224151" />
+ <shade name="fresh" weight="0.157992371273" />
+</color>
+
+<color name="orange" weight="0.0253164291577">
+ <shade name="light" weight="0.669144160685" />
+ <shade name="cool" weight="0.17286224151" />
+ <shade name="fresh" weight="0.157992371273" />
+</color>
+
+</colors>

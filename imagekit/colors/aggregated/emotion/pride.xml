@@ -1,0 +1,33 @@
+<colors query="pride">
+
+<color name="black" weight="0.644770305081">
+ <shade name="intense" weight="0.616843895793" />
+ <shade name="bright" weight="0.32265680703" />
+ <shade name="hard" weight="0.0604981513182" />
+</color>
+
+<color name="white" weight="0.255833793973">
+ <shade name="bright" weight="0.741546574961" />
+ <shade name="hard" weight="0.139039982805" />
+ <shade name="cool" weight="0.119410808762" />
+</color>
+
+<color name="purple" weight="0.0411408398416">
+ <shade name="bright" weight="0.741546574961" />
+ <shade name="hard" weight="0.139039982805" />
+ <shade name="cool" weight="0.119410808762" />
+</color>
+
+<color name="blue" weight="0.0369057533873">
+ <shade name="intense" weight="0.616843895793" />
+ <shade name="bright" weight="0.32265680703" />
+ <shade name="hard" weight="0.0604981513182" />
+</color>
+
+<color name="red" weight="0.021348292943">
+ <shade name="intense" weight="0.616843895793" />
+ <shade name="bright" weight="0.32265680703" />
+ <shade name="hard" weight="0.0604981513182" />
+</color>
+
+</colors>

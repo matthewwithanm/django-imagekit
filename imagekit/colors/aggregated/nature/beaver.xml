@@ -1,0 +1,33 @@
+<colors query="beaver">
+
+<color name="white" weight="0.463896633672">
+ <shade name="hard" weight="0.738082089891" />
+ <shade name="light" weight="0.150179203013" />
+ <shade name="fresh" weight="0.111737427497" />
+</color>
+
+<color name="black" weight="0.268545705846">
+ <shade name="hard" weight="0.738082089891" />
+ <shade name="light" weight="0.150179203013" />
+ <shade name="fresh" weight="0.111737427497" />
+</color>
+
+<color name="green" weight="0.126112624292">
+ <shade name="hard" weight="0.738082089891" />
+ <shade name="light" weight="0.150179203013" />
+ <shade name="fresh" weight="0.111737427497" />
+</color>
+
+<color name="red" weight="0.0736893373316">
+ <shade name="hard" weight="0.738082089891" />
+ <shade name="light" weight="0.150179203013" />
+ <shade name="fresh" weight="0.111737427497" />
+</color>
+
+<color name="blue" weight="0.0677546256002">
+ <shade name="hard" weight="0.738082089891" />
+ <shade name="light" weight="0.150179203013" />
+ <shade name="fresh" weight="0.111737427497" />
+</color>
+
+</colors>

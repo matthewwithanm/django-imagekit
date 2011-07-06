@@ -1,0 +1,33 @@
+<colors query="gallant">
+
+<color name="black" weight="0.432932483749">
+ <shade name="dark" weight="0.539681885425" />
+ <shade name="fresh" weight="0.361110673336" />
+ <shade name="light" weight="0.0992062289385" />
+</color>
+
+<color name="green" weight="0.382882485628">
+ <shade name="dark" weight="0.539681885425" />
+ <shade name="fresh" weight="0.361110673336" />
+ <shade name="light" weight="0.0992062289385" />
+</color>
+
+<color name="red" weight="0.0780779970692">
+ <shade name="dark" weight="0.539681885425" />
+ <shade name="fresh" weight="0.361110673336" />
+ <shade name="light" weight="0.0992062289385" />
+</color>
+
+<color name="white" weight="0.061060997708">
+ <shade name="dark" weight="0.539681885425" />
+ <shade name="fresh" weight="0.361110673336" />
+ <shade name="light" weight="0.0992062289385" />
+</color>
+
+<color name="blue" weight="0.0450449983092">
+ <shade name="dark" weight="0.539681885425" />
+ <shade name="fresh" weight="0.361110673336" />
+ <shade name="light" weight="0.0992062289385" />
+</color>
+
+</colors>

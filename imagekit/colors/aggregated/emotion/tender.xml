@@ -1,0 +1,33 @@
+<colors query="tender">
+
+<color name="red" weight="0.58033347677">
+ <shade name="soft" weight="0.511245622319" />
+ <shade name="fresh" weight="0.273555921574" />
+ <shade name="warm" weight="0.215197324971" />
+</color>
+
+<color name="green" weight="0.163423284705">
+ <shade name="soft" weight="0.576816822157" />
+ <shade name="fresh" weight="0.308641581416" />
+ <shade name="light" weight="0.114540320214" />
+</color>
+
+<color name="white" weight="0.163251078925">
+ <shade name="soft" weight="0.511245622319" />
+ <shade name="fresh" weight="0.273555921574" />
+ <shade name="warm" weight="0.215197324971" />
+</color>
+
+<color name="black" weight="0.0611330517072">
+ <shade name="soft" weight="0.511245622319" />
+ <shade name="fresh" weight="0.273555921574" />
+ <shade name="warm" weight="0.215197324971" />
+</color>
+
+<color name="blue" weight="0.0318580691995">
+ <shade name="soft" weight="0.576816822157" />
+ <shade name="fresh" weight="0.308641581416" />
+ <shade name="light" weight="0.114540320214" />
+</color>
+
+</colors>

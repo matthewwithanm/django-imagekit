@@ -1,0 +1,33 @@
+<colors query="balcony">
+
+<color name="red" weight="0.918647501498">
+ <shade name="cool" weight="0.417856637848" />
+ <shade name="bright" weight="0.324999607215" />
+ <shade name="dark" weight="0.257142546368" />
+</color>
+
+<color name="green" weight="0.0312112699959">
+ <shade name="cool" weight="0.417856637848" />
+ <shade name="bright" weight="0.324999607215" />
+ <shade name="dark" weight="0.257142546368" />
+</color>
+
+<color name="blue" weight="0.0262831747334">
+ <shade name="cool" weight="0.417856637848" />
+ <shade name="bright" weight="0.324999607215" />
+ <shade name="dark" weight="0.257142546368" />
+</color>
+
+<color name="black" weight="0.0133943102007">
+ <shade name="cool" weight="0.417856637848" />
+ <shade name="bright" weight="0.324999607215" />
+ <shade name="dark" weight="0.257142546368" />
+</color>
+
+<color name="white" weight="0.0104627253266">
+ <shade name="cool" weight="0.417856637848" />
+ <shade name="bright" weight="0.324999607215" />
+ <shade name="dark" weight="0.257142546368" />
+</color>
+
+</colors>

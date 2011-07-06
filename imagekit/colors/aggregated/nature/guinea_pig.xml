@@ -1,0 +1,33 @@
+<colors query="guinea pig">
+
+<color name="white" weight="0.752899716797">
+ <shade name="fresh" weight="0.95139886405" />
+ <shade name="cool" weight="0.0430856428242" />
+ <shade name="soft" weight="0.00551447749227" />
+</color>
+
+<color name="black" weight="0.153048467021">
+ <shade name="fresh" weight="0.95139886405" />
+ <shade name="cool" weight="0.0430856428242" />
+ <shade name="soft" weight="0.00551447749227" />
+</color>
+
+<color name="blue" weight="0.047025375754">
+ <shade name="fresh" weight="0.95139886405" />
+ <shade name="cool" weight="0.0430856428242" />
+ <shade name="soft" weight="0.00551447749227" />
+</color>
+
+<color name="orange" weight="0.024993802074">
+ <shade name="fresh" weight="0.95139886405" />
+ <shade name="cool" weight="0.0430856428242" />
+ <shade name="soft" weight="0.00551447749227" />
+</color>
+
+<color name="red" weight="0.02203157368">
+ <shade name="fresh" weight="0.95139886405" />
+ <shade name="cool" weight="0.0430856428242" />
+ <shade name="soft" weight="0.00551447749227" />
+</color>
+
+</colors>

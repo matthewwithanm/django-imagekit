@@ -1,0 +1,33 @@
+<colors query="hunt">
+
+<color name="red" weight="0.40506437565">
+ <shade name="cool" weight="0.566371009478" />
+ <shade name="fresh" weight="0.241887618631" />
+ <shade name="hard" weight="0.1917401855" />
+</color>
+
+<color name="orange" weight="0.375059607083">
+ <shade name="cool" weight="0.566371009478" />
+ <shade name="fresh" weight="0.241887618631" />
+ <shade name="hard" weight="0.1917401855" />
+</color>
+
+<color name="blue" weight="0.123619646495">
+ <shade name="cool" weight="0.566371009478" />
+ <shade name="fresh" weight="0.241887618631" />
+ <shade name="hard" weight="0.1917401855" />
+</color>
+
+<color name="yellow" weight="0.0669106339036">
+ <shade name="cool" weight="0.566371009478" />
+ <shade name="fresh" weight="0.241887618631" />
+ <shade name="hard" weight="0.1917401855" />
+</color>
+
+<color name="black" weight="0.0293446636582">
+ <shade name="cool" weight="0.566371009478" />
+ <shade name="fresh" weight="0.241887618631" />
+ <shade name="hard" weight="0.1917401855" />
+</color>
+
+</colors>

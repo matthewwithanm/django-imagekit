@@ -1,0 +1,33 @@
+<colors query="ineffective">
+
+<color name="white" weight="0.496153315651">
+ <shade name="weak" weight="0.984651376523" />
+ <shade name="light" weight="0.00993896929354" />
+ <shade name="soft" weight="0.00540864840625" />
+</color>
+
+<color name="black" weight="0.238461283491">
+ <shade name="weak" weight="0.984651376523" />
+ <shade name="light" weight="0.00993896929354" />
+ <shade name="soft" weight="0.00540864840625" />
+</color>
+
+<color name="green" weight="0.126922941213">
+ <shade name="weak" weight="0.984651376523" />
+ <shade name="light" weight="0.00993896929354" />
+ <shade name="soft" weight="0.00540864840625" />
+</color>
+
+<color name="red" weight="0.0923075936096">
+ <shade name="weak" weight="0.984651376523" />
+ <shade name="light" weight="0.00993896929354" />
+ <shade name="soft" weight="0.00540864840625" />
+</color>
+
+<color name="blue" weight="0.0461537968048">
+ <shade name="weak" weight="0.984651376523" />
+ <shade name="light" weight="0.00993896929354" />
+ <shade name="soft" weight="0.00540864840625" />
+</color>
+
+</colors>

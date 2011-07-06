@@ -1,0 +1,33 @@
+<colors query="mammal">
+
+<color name="white" weight="0.463194296754">
+ <shade name="light" weight="0.406592628408" />
+ <shade name="dark" weight="0.309523217121" />
+ <shade name="warm" weight="0.283882240555" />
+</color>
+
+<color name="green" weight="0.190285224612">
+ <shade name="light" weight="0.428570563984" />
+ <shade name="dark" weight="0.326254168078" />
+ <shade name="cool" weight="0.245173250567" />
+</color>
+
+<color name="blue" weight="0.130195153682">
+ <shade name="light" weight="0.428570563984" />
+ <shade name="dark" weight="0.326254168078" />
+ <shade name="cool" weight="0.245173250567" />
+</color>
+
+<color name="red" weight="0.111917757107">
+ <shade name="light" weight="0.406592628408" />
+ <shade name="dark" weight="0.309523217121" />
+ <shade name="warm" weight="0.283882240555" />
+</color>
+
+<color name="black" weight="0.104406498241">
+ <shade name="light" weight="0.406592628408" />
+ <shade name="dark" weight="0.309523217121" />
+ <shade name="warm" weight="0.283882240555" />
+</color>
+
+</colors>

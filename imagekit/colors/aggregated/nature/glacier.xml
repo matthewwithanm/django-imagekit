@@ -1,0 +1,33 @@
+<colors query="glacier">
+
+<color name="blue" weight="0.435902993602">
+ <shade name="dark" weight="0.566892728918" />
+ <shade name="cool" weight="0.336734280977" />
+ <shade name="light" weight="0.096371763916" />
+</color>
+
+<color name="white" weight="0.235528230414">
+ <shade name="dark" weight="0.566892728918" />
+ <shade name="cool" weight="0.336734280977" />
+ <shade name="light" weight="0.096371763916" />
+</color>
+
+<color name="black" weight="0.157018820276">
+ <shade name="dark" weight="0.566892728918" />
+ <shade name="cool" weight="0.336734280977" />
+ <shade name="light" weight="0.096371763916" />
+</color>
+
+<color name="green" weight="0.126552482014">
+ <shade name="dark" weight="0.566892728918" />
+ <shade name="cool" weight="0.336734280977" />
+ <shade name="light" weight="0.096371763916" />
+</color>
+
+<color name="red" weight="0.0449964380493">
+ <shade name="dark" weight="0.566892728918" />
+ <shade name="cool" weight="0.336734280977" />
+ <shade name="light" weight="0.096371763916" />
+</color>
+
+</colors>

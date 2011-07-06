@@ -1,0 +1,33 @@
+<colors query="mule">
+
+<color name="white" weight="0.366901960026">
+ <shade name="cool" weight="0.549233401594" />
+ <shade name="light" weight="0.288839876535" />
+ <shade name="soft" weight="0.16192538533" />
+</color>
+
+<color name="blue" weight="0.258933414497">
+ <shade name="cool" weight="0.549233401594" />
+ <shade name="light" weight="0.288839876535" />
+ <shade name="soft" weight="0.16192538533" />
+</color>
+
+<color name="black" weight="0.222625408036">
+ <shade name="cool" weight="0.549233401594" />
+ <shade name="light" weight="0.288839876535" />
+ <shade name="soft" weight="0.16192538533" />
+</color>
+
+<color name="red" weight="0.123256127196">
+ <shade name="cool" weight="0.549233401594" />
+ <shade name="light" weight="0.288839876535" />
+ <shade name="soft" weight="0.16192538533" />
+</color>
+
+<color name="pink" weight="0.0282820260853">
+ <shade name="cool" weight="0.549233401594" />
+ <shade name="light" weight="0.288839876535" />
+ <shade name="soft" weight="0.16192538533" />
+</color>
+
+</colors>

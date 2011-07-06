@@ -1,0 +1,33 @@
+<colors query="alien">
+
+<color name="green" weight="0.40208226819">
+ <shade name="cool" weight="0.633850754074" />
+ <shade name="dark" weight="0.326424502779" />
+ <shade name="bright" weight="0.0397236167403" />
+</color>
+
+<color name="black" weight="0.260630304776">
+ <shade name="cool" weight="0.633850754074" />
+ <shade name="dark" weight="0.326424502779" />
+ <shade name="bright" weight="0.0397236167403" />
+</color>
+
+<color name="blue" weight="0.146948051972">
+ <shade name="cool" weight="0.633850754074" />
+ <shade name="dark" weight="0.326424502779" />
+ <shade name="bright" weight="0.0397236167403" />
+</color>
+
+<color name="yellow" weight="0.125831501196">
+ <shade name="cool" weight="0.633850754074" />
+ <shade name="dark" weight="0.326424502779" />
+ <shade name="bright" weight="0.0397236167403" />
+</color>
+
+<color name="red" weight="0.0645067236017">
+ <shade name="cool" weight="0.633850754074" />
+ <shade name="dark" weight="0.326424502779" />
+ <shade name="bright" weight="0.0397236167403" />
+</color>
+
+</colors>

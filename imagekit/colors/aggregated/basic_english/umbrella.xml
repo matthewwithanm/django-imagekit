@@ -1,0 +1,33 @@
+<colors query="umbrella">
+
+<color name="yellow" weight="0.552623447572">
+ <shade name="light" weight="0.470495956178" />
+ <shade name="cool" weight="0.460098255489" />
+ <shade name="bright" weight="0.0694046520991" />
+</color>
+
+<color name="green" weight="0.142612502599">
+ <shade name="light" weight="0.470495956178" />
+ <shade name="cool" weight="0.460098255489" />
+ <shade name="bright" weight="0.0694046520991" />
+</color>
+
+<color name="red" weight="0.139760252547">
+ <shade name="light" weight="0.470495956178" />
+ <shade name="cool" weight="0.460098255489" />
+ <shade name="bright" weight="0.0694046520991" />
+</color>
+
+<color name="blue" weight="0.101967939358">
+ <shade name="light" weight="0.470495956178" />
+ <shade name="cool" weight="0.460098255489" />
+ <shade name="bright" weight="0.0694046520991" />
+</color>
+
+<color name="black" weight="0.0630347261488">
+ <shade name="light" weight="0.470495956178" />
+ <shade name="cool" weight="0.460098255489" />
+ <shade name="bright" weight="0.0694046520991" />
+</color>
+
+</colors>

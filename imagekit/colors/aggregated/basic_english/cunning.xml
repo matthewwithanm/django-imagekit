@@ -1,0 +1,33 @@
+<colors query="cunning">
+
+<color name="black" weight="0.505009481633">
+ <shade name="dark" weight="0.405659823642" />
+ <shade name="cool" weight="0.347876883647" />
+ <shade name="hard" weight="0.246461927736" />
+</color>
+
+<color name="white" weight="0.282564829009">
+ <shade name="dark" weight="0.405659823642" />
+ <shade name="cool" weight="0.347876883647" />
+ <shade name="hard" weight="0.246461927736" />
+</color>
+
+<color name="red" weight="0.0761522234209">
+ <shade name="dark" weight="0.405659823642" />
+ <shade name="cool" weight="0.347876883647" />
+ <shade name="hard" weight="0.246461927736" />
+</color>
+
+<color name="yellow" weight="0.0681361999029">
+ <shade name="dark" weight="0.405659823642" />
+ <shade name="cool" weight="0.347876883647" />
+ <shade name="hard" weight="0.246461927736" />
+</color>
+
+<color name="blue" weight="0.0681361999029">
+ <shade name="dark" weight="0.405659823642" />
+ <shade name="cool" weight="0.347876883647" />
+ <shade name="hard" weight="0.246461927736" />
+</color>
+
+</colors>

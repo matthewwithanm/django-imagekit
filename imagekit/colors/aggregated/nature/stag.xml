@@ -1,0 +1,33 @@
+<colors query="stag">
+
+<color name="white" weight="0.70521790915">
+ <shade name="dark" weight="0.575937579793" />
+ <shade name="light" weight="0.218429659892" />
+ <shade name="fresh" weight="0.205631047008" />
+</color>
+
+<color name="red" weight="0.283793336021">
+ <shade name="dark" weight="0.575937579793" />
+ <shade name="light" weight="0.218429659892" />
+ <shade name="fresh" weight="0.205631047008" />
+</color>
+
+<color name="green" weight="0.00628440152912">
+ <shade name="dark" weight="0.575937579793" />
+ <shade name="light" weight="0.218429659892" />
+ <shade name="fresh" weight="0.205631047008" />
+</color>
+
+<color name="black" weight="0.00251376061165">
+ <shade name="dark" weight="0.575937579793" />
+ <shade name="light" weight="0.218429659892" />
+ <shade name="fresh" weight="0.205631047008" />
+</color>
+
+<color name="yellow" weight="0.00218958786309">
+ <shade name="dark" weight="0.575937579793" />
+ <shade name="light" weight="0.218429659892" />
+ <shade name="fresh" weight="0.205631047008" />
+</color>
+
+</colors>

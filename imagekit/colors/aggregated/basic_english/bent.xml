@@ -1,0 +1,33 @@
+<colors query="bent">
+
+<color name="black" weight="0.350194178807">
+ <shade name="light" weight="0.716265285504" />
+ <shade name="neutral" weight="0.203789026392" />
+ <shade name="dark" weight="0.079944447995" />
+</color>
+
+<color name="green" weight="0.290531466862">
+ <shade name="light" weight="0.716265285504" />
+ <shade name="neutral" weight="0.203789026392" />
+ <shade name="dark" weight="0.079944447995" />
+</color>
+
+<color name="blue" weight="0.178209926548">
+ <shade name="light" weight="0.716265285504" />
+ <shade name="neutral" weight="0.203789026392" />
+ <shade name="dark" weight="0.079944447995" />
+</color>
+
+<color name="red" weight="0.150194392244">
+ <shade name="light" weight="0.716265285504" />
+ <shade name="neutral" weight="0.203789026392" />
+ <shade name="dark" weight="0.079944447995" />
+</color>
+
+<color name="purple" weight="0.0308689683541">
+ <shade name="light" weight="0.716265285504" />
+ <shade name="neutral" weight="0.203789026392" />
+ <shade name="dark" weight="0.079944447995" />
+</color>
+
+</colors>

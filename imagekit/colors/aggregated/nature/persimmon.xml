@@ -1,0 +1,33 @@
+<colors query="persimmon">
+
+<color name="black" weight="0.504699090203">
+ <shade name="fresh" weight="0.471203540533" />
+ <shade name="soft" weight="0.363125903061" />
+ <shade name="hard" weight="0.165669181314" />
+</color>
+
+<color name="white" weight="0.208418247776">
+ <shade name="fresh" weight="0.471203540533" />
+ <shade name="soft" weight="0.363125903061" />
+ <shade name="hard" weight="0.165669181314" />
+</color>
+
+<color name="red" weight="0.192684713385">
+ <shade name="fresh" weight="0.471203540533" />
+ <shade name="soft" weight="0.363125903061" />
+ <shade name="hard" weight="0.165669181314" />
+</color>
+
+<color name="blue" weight="0.0482222612502">
+ <shade name="fresh" weight="0.471203540533" />
+ <shade name="soft" weight="0.363125903061" />
+ <shade name="hard" weight="0.165669181314" />
+</color>
+
+<color name="pink" weight="0.04597461348">
+ <shade name="fresh" weight="0.471203540533" />
+ <shade name="soft" weight="0.363125903061" />
+ <shade name="hard" weight="0.165669181314" />
+</color>
+
+</colors>

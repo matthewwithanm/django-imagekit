@@ -1,0 +1,33 @@
+<colors query="quaking">
+
+<color name="yellow" weight="0.305935730802">
+ <shade name="intense" weight="0.367186911927" />
+ <shade name="dark" weight="0.328124474488" />
+ <shade name="soft" weight="0.304687012025" />
+</color>
+
+<color name="green" weight="0.301369525865">
+ <shade name="intense" weight="0.367186911927" />
+ <shade name="dark" weight="0.328124474488" />
+ <shade name="soft" weight="0.304687012025" />
+</color>
+
+<color name="white" weight="0.15525096787">
+ <shade name="dark" weight="0.378377679573" />
+ <shade name="soft" weight="0.35135070246" />
+ <shade name="hard" weight="0.270269771123" />
+</color>
+
+<color name="red" weight="0.141552353058">
+ <shade name="intense" weight="0.367186911927" />
+ <shade name="dark" weight="0.328124474488" />
+ <shade name="soft" weight="0.304687012025" />
+</color>
+
+<color name="black" weight="0.0958903036844">
+ <shade name="intense" weight="0.367186911927" />
+ <shade name="dark" weight="0.328124474488" />
+ <shade name="soft" weight="0.304687012025" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="litchi">
+
+<color name="orange" weight="0.654995065641">
+ <shade name="fresh" weight="0.910155331312" />
+ <shade name="light" weight="0.0671874321827" />
+ <shade name="soft" weight="0.0226562271314" />
+</color>
+
+<color name="red" weight="0.16054637854">
+ <shade name="fresh" weight="0.910155331312" />
+ <shade name="light" weight="0.0671874321827" />
+ <shade name="soft" weight="0.0226562271314" />
+</color>
+
+<color name="black" weight="0.113578023116">
+ <shade name="fresh" weight="0.910155331312" />
+ <shade name="light" weight="0.0671874321827" />
+ <shade name="soft" weight="0.0226562271314" />
+</color>
+
+<color name="green" weight="0.0461143853255">
+ <shade name="fresh" weight="0.910155331312" />
+ <shade name="light" weight="0.0671874321827" />
+ <shade name="soft" weight="0.0226562271314" />
+</color>
+
+<color name="white" weight="0.02476513286">
+ <shade name="fresh" weight="0.910155331312" />
+ <shade name="light" weight="0.0671874321827" />
+ <shade name="soft" weight="0.0226562271314" />
+</color>
+
+</colors>

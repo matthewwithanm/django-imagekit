@@ -1,0 +1,33 @@
+<colors query="alpaca">
+
+<color name="black" weight="0.456666853807">
+ <shade name="soft" weight="0.938851179003" />
+ <shade name="light" weight="0.0393909299017" />
+ <shade name="dark" weight="0.021756855583" />
+</color>
+
+<color name="white" weight="0.318651982434">
+ <shade name="soft" weight="0.938851179003" />
+ <shade name="light" weight="0.0393909299017" />
+ <shade name="dark" weight="0.021756855583" />
+</color>
+
+<color name="green" weight="0.109194118821">
+ <shade name="soft" weight="0.938851179003" />
+ <shade name="light" weight="0.0393909299017" />
+ <shade name="dark" weight="0.021756855583" />
+</color>
+
+<color name="red" weight="0.0765170683935">
+ <shade name="soft" weight="0.938851179003" />
+ <shade name="light" weight="0.0393909299017" />
+ <shade name="dark" weight="0.021756855583" />
+</color>
+
+<color name="pink" weight="0.0389689048582">
+ <shade name="soft" weight="0.938851179003" />
+ <shade name="light" weight="0.0393909299017" />
+ <shade name="dark" weight="0.021756855583" />
+</color>
+
+</colors>

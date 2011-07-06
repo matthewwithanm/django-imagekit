@@ -1,0 +1,33 @@
+<colors query="laurel">
+
+<color name="green" weight="0.672467639688">
+ <shade name="fresh" weight="0.70792332404" />
+ <shade name="dark" weight="0.194108008205" />
+ <shade name="cool" weight="0.0979674535526" />
+</color>
+
+<color name="blue" weight="0.125973575942">
+ <shade name="fresh" weight="0.70792332404" />
+ <shade name="dark" weight="0.194108008205" />
+ <shade name="cool" weight="0.0979674535526" />
+</color>
+
+<color name="red" weight="0.113802215947">
+ <shade name="fresh" weight="0.70792332404" />
+ <shade name="dark" weight="0.194108008205" />
+ <shade name="cool" weight="0.0979674535526" />
+</color>
+
+<color name="yellow" weight="0.0629867879708">
+ <shade name="fresh" weight="0.70792332404" />
+ <shade name="dark" weight="0.194108008205" />
+ <shade name="cool" weight="0.0979674535526" />
+</color>
+
+<color name="white" weight="0.0247687175885">
+ <shade name="fresh" weight="0.70792332404" />
+ <shade name="dark" weight="0.194108008205" />
+ <shade name="cool" weight="0.0979674535526" />
+</color>
+
+</colors>

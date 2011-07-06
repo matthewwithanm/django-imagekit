@@ -1,0 +1,33 @@
+<colors query="brisk">
+
+<color name="white" weight="0.703271172251">
+ <shade name="light" weight="0.336009125208" />
+ <shade name="bright" weight="0.334403346832" />
+ <shade name="cool" weight="0.329586011704" />
+</color>
+
+<color name="red" weight="0.132004375112">
+ <shade name="light" weight="0.336009125208" />
+ <shade name="bright" weight="0.334403346832" />
+ <shade name="cool" weight="0.329586011704" />
+</color>
+
+<color name="blue" weight="0.0857464316969">
+ <shade name="light" weight="0.336009125208" />
+ <shade name="bright" weight="0.334403346832" />
+ <shade name="cool" weight="0.329586011704" />
+</color>
+
+<color name="black" weight="0.053779560231">
+ <shade name="light" weight="0.336009125208" />
+ <shade name="bright" weight="0.334403346832" />
+ <shade name="cool" weight="0.329586011704" />
+</color>
+
+<color name="yellow" weight="0.025197416332">
+ <shade name="light" weight="0.336009125208" />
+ <shade name="bright" weight="0.334403346832" />
+ <shade name="cool" weight="0.329586011704" />
+</color>
+
+</colors>

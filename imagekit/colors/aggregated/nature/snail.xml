@@ -1,0 +1,33 @@
+<colors query="snail">
+
+<color name="green" weight="0.341582071278">
+ <shade name="cool" weight="0.803236126311" />
+ <shade name="fresh" weight="0.12803463066" />
+ <shade name="light" weight="0.0687280234392" />
+</color>
+
+<color name="blue" weight="0.270128678817">
+ <shade name="cool" weight="0.803236126311" />
+ <shade name="fresh" weight="0.12803463066" />
+ <shade name="light" weight="0.0687280234392" />
+</color>
+
+<color name="yellow" weight="0.181247629658">
+ <shade name="cool" weight="0.803236126311" />
+ <shade name="fresh" weight="0.12803463066" />
+ <shade name="light" weight="0.0687280234392" />
+</color>
+
+<color name="red" weight="0.176019332648">
+ <shade name="cool" weight="0.803236126311" />
+ <shade name="fresh" weight="0.12803463066" />
+ <shade name="light" weight="0.0687280234392" />
+</color>
+
+<color name="orange" weight="0.0310212289222">
+ <shade name="cool" weight="0.803236126311" />
+ <shade name="fresh" weight="0.12803463066" />
+ <shade name="light" weight="0.0687280234392" />
+</color>
+
+</colors>

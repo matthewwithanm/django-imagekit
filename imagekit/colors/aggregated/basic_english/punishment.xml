@@ -1,0 +1,33 @@
+<colors query="punishment">
+
+<color name="red" weight="0.427128700428">
+ <shade name="light" weight="0.478337368374" />
+ <shade name="hard" weight="0.454178915425" />
+ <shade name="intense" weight="0.0674826119019" />
+</color>
+
+<color name="black" weight="0.352057595504">
+ <shade name="light" weight="0.478337368374" />
+ <shade name="hard" weight="0.454178915425" />
+ <shade name="intense" weight="0.0674826119019" />
+</color>
+
+<color name="white" weight="0.124255621943">
+ <shade name="light" weight="0.494587278737" />
+ <shade name="hard" weight="0.469608123245" />
+ <shade name="soft" weight="0.0358034562048" />
+</color>
+
+<color name="pink" weight="0.0489256511399">
+ <shade name="light" weight="0.494587278737" />
+ <shade name="hard" weight="0.469608123245" />
+ <shade name="soft" weight="0.0358034562048" />
+</color>
+
+<color name="orange" weight="0.0476313217447">
+ <shade name="light" weight="0.478337368374" />
+ <shade name="hard" weight="0.454178915425" />
+ <shade name="intense" weight="0.0674826119019" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="dancer">
+
+<color name="green" weight="0.334474048115">
+ <shade name="fresh" weight="0.612124132805" />
+ <shade name="dark" weight="0.329605302279" />
+ <shade name="hard" weight="0.0582695087958" />
+</color>
+
+<color name="black" weight="0.243189020058">
+ <shade name="fresh" weight="0.612124132805" />
+ <shade name="dark" weight="0.329605302279" />
+ <shade name="hard" weight="0.0582695087958" />
+</color>
+
+<color name="blue" weight="0.190414863212">
+ <shade name="fresh" weight="0.612124132805" />
+ <shade name="dark" weight="0.329605302279" />
+ <shade name="hard" weight="0.0582695087958" />
+</color>
+
+<color name="red" weight="0.161175127663">
+ <shade name="fresh" weight="0.612124132805" />
+ <shade name="dark" weight="0.329605302279" />
+ <shade name="hard" weight="0.0582695087958" />
+</color>
+
+<color name="white" weight="0.0707458967441">
+ <shade name="fresh" weight="0.612124132805" />
+ <shade name="dark" weight="0.329605302279" />
+ <shade name="hard" weight="0.0582695087958" />
+</color>
+
+</colors>

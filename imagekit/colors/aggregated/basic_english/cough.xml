@@ -1,0 +1,33 @@
+<colors query="cough">
+
+<color name="red" weight="0.276729219145">
+ <shade name="weak" weight="0.53525415201" />
+ <shade name="light" weight="0.277405757628" />
+ <shade name="cool" weight="0.187338953204" />
+</color>
+
+<color name="blue" weight="0.22389909549">
+ <shade name="weak" weight="0.53525415201" />
+ <shade name="light" weight="0.277405757628" />
+ <shade name="cool" weight="0.187338953204" />
+</color>
+
+<color name="black" weight="0.221383375316">
+ <shade name="weak" weight="0.53525415201" />
+ <shade name="light" weight="0.277405757628" />
+ <shade name="cool" weight="0.187338953204" />
+</color>
+
+<color name="green" weight="0.13962246966">
+ <shade name="weak" weight="0.53525415201" />
+ <shade name="light" weight="0.277405757628" />
+ <shade name="cool" weight="0.187338953204" />
+</color>
+
+<color name="white" weight="0.138364609573">
+ <shade name="weak" weight="0.53525415201" />
+ <shade name="light" weight="0.277405757628" />
+ <shade name="cool" weight="0.187338953204" />
+</color>
+
+</colors>

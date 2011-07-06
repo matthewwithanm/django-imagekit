@@ -1,0 +1,33 @@
+<colors query="sheet">
+
+<color name="white" weight="0.338526538912">
+ <shade name="light" weight="0.515309329997" />
+ <shade name="fresh" weight="0.254293951977" />
+ <shade name="neutral" weight="0.230395548267" />
+</color>
+
+<color name="green" weight="0.267705087257">
+ <shade name="light" weight="0.515309329997" />
+ <shade name="fresh" weight="0.254293951977" />
+ <shade name="neutral" weight="0.230395548267" />
+</color>
+
+<color name="pink" weight="0.199008279151">
+ <shade name="light" weight="0.515309329997" />
+ <shade name="fresh" weight="0.254293951977" />
+ <shade name="neutral" weight="0.230395548267" />
+</color>
+
+<color name="blue" weight="0.116147180715">
+ <shade name="light" weight="0.515309329997" />
+ <shade name="fresh" weight="0.254293951977" />
+ <shade name="neutral" weight="0.230395548267" />
+</color>
+
+<color name="yellow" weight="0.0786118113373">
+ <shade name="light" weight="0.515309329997" />
+ <shade name="fresh" weight="0.254293951977" />
+ <shade name="neutral" weight="0.230395548267" />
+</color>
+
+</colors>

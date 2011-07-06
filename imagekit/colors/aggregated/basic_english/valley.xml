@@ -1,0 +1,33 @@
+<colors query="valley">
+
+<color name="green" weight="0.659448136349">
+ <shade name="cool" weight="0.515758689105" />
+ <shade name="dark" weight="0.473256352688" />
+ <shade name="fresh" weight="0.0109837498606" />
+</color>
+
+<color name="blue" weight="0.226869843923">
+ <shade name="cool" weight="0.515758689105" />
+ <shade name="dark" weight="0.473256352688" />
+ <shade name="fresh" weight="0.0109837498606" />
+</color>
+
+<color name="red" weight="0.0615156843609">
+ <shade name="cool" weight="0.438667298964" />
+ <shade name="dark" weight="0.402517864142" />
+ <shade name="warm" weight="0.158813809162" />
+</color>
+
+<color name="black" weight="0.0261318627165">
+ <shade name="cool" weight="0.438667298964" />
+ <shade name="dark" weight="0.402517864142" />
+ <shade name="warm" weight="0.158813809162" />
+</color>
+
+<color name="white" weight="0.0260334376215">
+ <shade name="cool" weight="0.438667298964" />
+ <shade name="dark" weight="0.402517864142" />
+ <shade name="warm" weight="0.158813809162" />
+</color>
+
+</colors>

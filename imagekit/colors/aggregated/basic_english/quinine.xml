@@ -1,0 +1,33 @@
+<colors query="quinine">
+
+<color name="red" weight="0.478907646695">
+ <shade name="neutral" weight="0.668638099753" />
+ <shade name="weak" weight="0.165680237107" />
+ <shade name="cool" weight="0.165680237107" />
+</color>
+
+<color name="yellow" weight="0.186104007783">
+ <shade name="neutral" weight="0.668638099753" />
+ <shade name="weak" weight="0.165680237107" />
+ <shade name="cool" weight="0.165680237107" />
+</color>
+
+<color name="orange" weight="0.133994885604">
+ <shade name="neutral" weight="0.668638099753" />
+ <shade name="weak" weight="0.165680237107" />
+ <shade name="cool" weight="0.165680237107" />
+</color>
+
+<color name="blue" weight="0.11166240467">
+ <shade name="neutral" weight="0.668638099753" />
+ <shade name="weak" weight="0.165680237107" />
+ <shade name="cool" weight="0.165680237107" />
+</color>
+
+<color name="black" weight="0.0893299237359">
+ <shade name="neutral" weight="0.668638099753" />
+ <shade name="weak" weight="0.165680237107" />
+ <shade name="cool" weight="0.165680237107" />
+</color>
+
+</colors>

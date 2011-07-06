@@ -1,0 +1,33 @@
+<colors query="shredded">
+
+<color name="white" weight="0.362149056417">
+ <shade name="fresh" weight="0.822828255122" />
+ <shade name="light" weight="0.104341625543" />
+ <shade name="hard" weight="0.0728290540703" />
+</color>
+
+<color name="green" weight="0.188083864784">
+ <shade name="fresh" weight="0.822828255122" />
+ <shade name="light" weight="0.104341625543" />
+ <shade name="hard" weight="0.0728290540703" />
+</color>
+
+<color name="black" weight="0.182242750971">
+ <shade name="fresh" weight="0.822828255122" />
+ <shade name="light" weight="0.104341625543" />
+ <shade name="hard" weight="0.0728290540703" />
+</color>
+
+<color name="red" weight="0.142523177041">
+ <shade name="fresh" weight="0.822828255122" />
+ <shade name="light" weight="0.104341625543" />
+ <shade name="hard" weight="0.0728290540703" />
+</color>
+
+<color name="orange" weight="0.124999835602">
+ <shade name="fresh" weight="0.822828255122" />
+ <shade name="light" weight="0.104341625543" />
+ <shade name="hard" weight="0.0728290540703" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="buoyancy">
+
+<color name="red" weight="0.357726689762">
+ <shade name="neutral" weight="0.995848198822" />
+ <shade name="weak" weight="0.00243811110746" />
+ <shade name="light" weight="0.00171268720401" />
+</color>
+
+<color name="black" weight="0.232457776741">
+ <shade name="neutral" weight="0.995848198822" />
+ <shade name="weak" weight="0.00243811110746" />
+ <shade name="light" weight="0.00171268720401" />
+</color>
+
+<color name="blue" weight="0.221265365268">
+ <shade name="neutral" weight="0.995848198822" />
+ <shade name="weak" weight="0.00243811110746" />
+ <shade name="light" weight="0.00171268720401" />
+</color>
+
+<color name="white" weight="0.148514690695">
+ <shade name="neutral" weight="0.995848198822" />
+ <shade name="weak" weight="0.00243811110746" />
+ <shade name="light" weight="0.00171268720401" />
+</color>
+
+<color name="pink" weight="0.0400343948831">
+ <shade name="neutral" weight="0.995848198822" />
+ <shade name="weak" weight="0.00243811110746" />
+ <shade name="light" weight="0.00171268720401" />
+</color>
+
+</colors>

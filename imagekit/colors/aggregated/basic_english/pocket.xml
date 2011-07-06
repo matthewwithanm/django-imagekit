@@ -1,0 +1,33 @@
+<colors query="pocket">
+
+<color name="white" weight="0.235585118444">
+ <shade name="soft" weight="0.409448365271" />
+ <shade name="light" weight="0.330708295027" />
+ <shade name="cool" weight="0.259842231807" />
+</color>
+
+<color name="black" weight="0.227095564626">
+ <shade name="soft" weight="0.409448365271" />
+ <shade name="light" weight="0.330708295027" />
+ <shade name="cool" weight="0.259842231807" />
+</color>
+
+<color name="red" weight="0.211177651218">
+ <shade name="soft" weight="0.409448365271" />
+ <shade name="light" weight="0.330708295027" />
+ <shade name="cool" weight="0.259842231807" />
+</color>
+
+<color name="blue" weight="0.169791076356">
+ <shade name="soft" weight="0.409448365271" />
+ <shade name="light" weight="0.330708295027" />
+ <shade name="cool" weight="0.259842231807" />
+</color>
+
+<color name="green" weight="0.156349282811">
+ <shade name="soft" weight="0.409448365271" />
+ <shade name="light" weight="0.330708295027" />
+ <shade name="cool" weight="0.259842231807" />
+</color>
+
+</colors>

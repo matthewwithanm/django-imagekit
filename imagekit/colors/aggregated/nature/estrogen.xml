@@ -1,0 +1,33 @@
+<colors query="estrogen">
+
+<color name="blue" weight="0.296089043622">
+ <shade name="weak" weight="0.994662921179" />
+ <shade name="intense" weight="0.00280846001274" />
+ <shade name="fresh" weight="0.00252761401147" />
+</color>
+
+<color name="white" weight="0.188081719533">
+ <shade name="weak" weight="0.995338468515" />
+ <shade name="fresh" weight="0.00252933069646" />
+ <shade name="light" weight="0.00213119530906" />
+</color>
+
+<color name="red" weight="0.184357329047">
+ <shade name="weak" weight="0.994662921179" />
+ <shade name="intense" weight="0.00280846001274" />
+ <shade name="fresh" weight="0.00252761401147" />
+</color>
+
+<color name="black" weight="0.178770743319">
+ <shade name="weak" weight="0.994662921179" />
+ <shade name="intense" weight="0.00280846001274" />
+ <shade name="fresh" weight="0.00252761401147" />
+</color>
+
+<color name="pink" weight="0.152700009918">
+ <shade name="weak" weight="0.995338468515" />
+ <shade name="fresh" weight="0.00252933069646" />
+ <shade name="light" weight="0.00213119530906" />
+</color>
+
+</colors>

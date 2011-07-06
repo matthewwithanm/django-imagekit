@@ -1,0 +1,33 @@
+<colors query="artery">
+
+<color name="black" weight="0.337661958341">
+ <shade name="weak" weight="0.472035099859" />
+ <shade name="hard" weight="0.327740010092" />
+ <shade name="dark" weight="0.200223419134" />
+</color>
+
+<color name="green" weight="0.249188031756">
+ <shade name="weak" weight="0.472035099859" />
+ <shade name="hard" weight="0.327740010092" />
+ <shade name="dark" weight="0.200223419134" />
+</color>
+
+<color name="red" weight="0.210227036563">
+ <shade name="weak" weight="0.472035099859" />
+ <shade name="hard" weight="0.327740010092" />
+ <shade name="dark" weight="0.200223419134" />
+</color>
+
+<color name="blue" weight="0.145292044575">
+ <shade name="weak" weight="0.472035099859" />
+ <shade name="hard" weight="0.327740010092" />
+ <shade name="dark" weight="0.200223419134" />
+</color>
+
+<color name="white" weight="0.0576298053899">
+ <shade name="weak" weight="0.472035099859" />
+ <shade name="hard" weight="0.327740010092" />
+ <shade name="dark" weight="0.200223419134" />
+</color>
+
+</colors>

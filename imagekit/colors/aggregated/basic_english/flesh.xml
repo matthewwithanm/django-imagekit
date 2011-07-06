@@ -1,0 +1,33 @@
+<colors query="flesh">
+
+<color name="white" weight="0.386814220724">
+ <shade name="soft" weight="0.569104878939" />
+ <shade name="fresh" weight="0.240478903732" />
+ <shade name="warm" weight="0.190414790322" />
+</color>
+
+<color name="yellow" weight="0.178270901725">
+ <shade name="soft" weight="0.569104878939" />
+ <shade name="fresh" weight="0.240478903732" />
+ <shade name="warm" weight="0.190414790322" />
+</color>
+
+<color name="red" weight="0.16599375472">
+ <shade name="soft" weight="0.569104878939" />
+ <shade name="fresh" weight="0.240478903732" />
+ <shade name="warm" weight="0.190414790322" />
+</color>
+
+<color name="pink" weight="0.137907678693">
+ <shade name="soft" weight="0.569104878939" />
+ <shade name="fresh" weight="0.240478903732" />
+ <shade name="warm" weight="0.190414790322" />
+</color>
+
+<color name="orange" weight="0.131012294758">
+ <shade name="soft" weight="0.569104878939" />
+ <shade name="fresh" weight="0.240478903732" />
+ <shade name="warm" weight="0.190414790322" />
+</color>
+
+</colors>

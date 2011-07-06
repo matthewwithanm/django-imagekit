@@ -1,0 +1,33 @@
+<colors query="firework">
+
+<color name="black" weight="0.395598544032">
+ <shade name="bright" weight="0.35015733779" />
+ <shade name="light" weight="0.328075343515" />
+ <shade name="cool" weight="0.321766202293" />
+</color>
+
+<color name="red" weight="0.226232917368">
+ <shade name="bright" weight="0.35015733779" />
+ <shade name="light" weight="0.328075343515" />
+ <shade name="cool" weight="0.321766202293" />
+</color>
+
+<color name="blue" weight="0.18729118569">
+ <shade name="bright" weight="0.35015733779" />
+ <shade name="light" weight="0.328075343515" />
+ <shade name="cool" weight="0.321766202293" />
+</color>
+
+<color name="green" weight="0.165965951676">
+ <shade name="bright" weight="0.35015733779" />
+ <shade name="light" weight="0.328075343515" />
+ <shade name="cool" weight="0.321766202293" />
+</color>
+
+<color name="white" weight="0.0249103458195">
+ <shade name="bright" weight="0.35015733779" />
+ <shade name="light" weight="0.328075343515" />
+ <shade name="cool" weight="0.321766202293" />
+</color>
+
+</colors>

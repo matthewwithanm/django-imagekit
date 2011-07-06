@@ -1,0 +1,33 @@
+<colors query="blissful">
+
+<color name="green" weight="0.252899945086">
+ <shade name="fresh" weight="0.390402652637" />
+ <shade name="soft" weight="0.387131122029" />
+ <shade name="bright" weight="0.222464081391" />
+</color>
+
+<color name="black" weight="0.238978847191">
+ <shade name="warm" weight="0.50520402968" />
+ <shade name="fresh" weight="0.248438245365" />
+ <shade name="soft" weight="0.246356360627" />
+</color>
+
+<color name="blue" weight="0.218097200349">
+ <shade name="fresh" weight="0.390402652637" />
+ <shade name="soft" weight="0.387131122029" />
+ <shade name="bright" weight="0.222464081391" />
+</color>
+
+<color name="white" weight="0.185614638595">
+ <shade name="warm" weight="0.50520402968" />
+ <shade name="fresh" weight="0.248438245365" />
+ <shade name="soft" weight="0.246356360627" />
+</color>
+
+<color name="pink" weight="0.10440823421">
+ <shade name="warm" weight="0.50520402968" />
+ <shade name="fresh" weight="0.248438245365" />
+ <shade name="soft" weight="0.246356360627" />
+</color>
+
+</colors>

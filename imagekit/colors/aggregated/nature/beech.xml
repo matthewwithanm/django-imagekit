@@ -1,0 +1,33 @@
+<colors query="beech">
+
+<color name="red" weight="0.261586514851">
+ <shade name="light" weight="0.624603673025" />
+ <shade name="hard" weight="0.209748665874" />
+ <shade name="warm" weight="0.165646582204" />
+</color>
+
+<color name="white" weight="0.206598358576">
+ <shade name="light" weight="0.624603673025" />
+ <shade name="hard" weight="0.209748665874" />
+ <shade name="warm" weight="0.165646582204" />
+</color>
+
+<color name="blue" weight="0.202670633127">
+ <shade name="light" weight="0.723361755016" />
+ <shade name="hard" weight="0.242912697461" />
+ <shade name="fresh" weight="0.0337242980379" />
+</color>
+
+<color name="black" weight="0.194029637141">
+ <shade name="light" weight="0.624603673025" />
+ <shade name="hard" weight="0.209748665874" />
+ <shade name="warm" weight="0.165646582204" />
+</color>
+
+<color name="purple" weight="0.135113755418">
+ <shade name="light" weight="0.723361755016" />
+ <shade name="hard" weight="0.242912697461" />
+ <shade name="fresh" weight="0.0337242980379" />
+</color>
+
+</colors>

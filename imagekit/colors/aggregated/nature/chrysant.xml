@@ -1,0 +1,33 @@
+<colors query="chrysant">
+
+<color name="white" weight="0.409876116129">
+ <shade name="bright" weight="0.666666000001" />
+ <shade name="dark" weight="0.333333" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="yellow" weight="0.296295987563">
+ <shade name="bright" weight="0.666666000001" />
+ <shade name="dark" weight="0.333333" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="pink" weight="0.202468924835">
+ <shade name="bright" weight="0.666666000001" />
+ <shade name="dark" weight="0.333333" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="orange" weight="0.0716048636611">
+ <shade name="bright" weight="0.666666000001" />
+ <shade name="dark" weight="0.333333" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="blue" weight="0.0197530658375">
+ <shade name="bright" weight="0.666666000001" />
+ <shade name="dark" weight="0.333333" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+</colors>

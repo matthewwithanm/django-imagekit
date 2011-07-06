@@ -1,0 +1,33 @@
+<colors query="lighthouse">
+
+<color name="red" weight="0.603447641632">
+ <shade name="light" weight="0.874146651881" />
+ <shade name="cool" weight="0.0650960272678" />
+ <shade name="dark" weight="0.0607562921166" />
+</color>
+
+<color name="white" weight="0.220794982579">
+ <shade name="light" weight="0.874146651881" />
+ <shade name="cool" weight="0.0650960272678" />
+ <shade name="dark" weight="0.0607562921166" />
+</color>
+
+<color name="blue" weight="0.110837321932">
+ <shade name="light" weight="0.874146651881" />
+ <shade name="cool" weight="0.0650960272678" />
+ <shade name="dark" weight="0.0607562921166" />
+</color>
+
+<color name="black" weight="0.037033740106">
+ <shade name="light" weight="0.874146651881" />
+ <shade name="cool" weight="0.0650960272678" />
+ <shade name="dark" weight="0.0607562921166" />
+</color>
+
+<color name="green" weight="0.0278852627401">
+ <shade name="light" weight="0.874146651881" />
+ <shade name="cool" weight="0.0650960272678" />
+ <shade name="dark" weight="0.0607562921166" />
+</color>
+
+</colors>

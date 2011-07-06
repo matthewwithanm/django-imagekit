@@ -1,0 +1,33 @@
+<colors query="evil">
+
+<color name="black" weight="0.399999576362">
+ <shade name="dark" weight="0.713708907365" />
+ <shade name="neutral" weight="0.188709473812" />
+ <shade name="cool" weight="0.097580539877" />
+</color>
+
+<color name="red" weight="0.231304102853">
+ <shade name="dark" weight="0.713708907365" />
+ <shade name="neutral" weight="0.188709473812" />
+ <shade name="cool" weight="0.097580539877" />
+</color>
+
+<color name="white" weight="0.199999788181">
+ <shade name="dark" weight="0.713708907365" />
+ <shade name="neutral" weight="0.188709473812" />
+ <shade name="cool" weight="0.097580539877" />
+</color>
+
+<color name="blue" weight="0.108405682289">
+ <shade name="dark" weight="0.713708907365" />
+ <shade name="neutral" weight="0.188709473812" />
+ <shade name="cool" weight="0.097580539877" />
+</color>
+
+<color name="pink" weight="0.0602897912198">
+ <shade name="dark" weight="0.713708907365" />
+ <shade name="neutral" weight="0.188709473812" />
+ <shade name="cool" weight="0.097580539877" />
+</color>
+
+</colors>

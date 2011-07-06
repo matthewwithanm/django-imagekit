@@ -1,0 +1,33 @@
+<colors query="childish">
+
+<color name="black" weight="0.324030642527">
+ <shade name="weak" weight="0.564314568042" />
+ <shade name="soft" weight="0.251036995342" />
+ <shade name="bright" weight="0.184647046161" />
+</color>
+
+<color name="white" weight="0.252712893454">
+ <shade name="weak" weight="0.564314568042" />
+ <shade name="soft" weight="0.251036995342" />
+ <shade name="bright" weight="0.184647046161" />
+</color>
+
+<color name="blue" weight="0.218604404767">
+ <shade name="weak" weight="0.564314568042" />
+ <shade name="soft" weight="0.251036995342" />
+ <shade name="bright" weight="0.184647046161" />
+</color>
+
+<color name="green" weight="0.111627781158">
+ <shade name="weak" weight="0.564314568042" />
+ <shade name="soft" weight="0.251036995342" />
+ <shade name="bright" weight="0.184647046161" />
+</color>
+
+<color name="red" weight="0.0930231509646">
+ <shade name="weak" weight="0.564314568042" />
+ <shade name="soft" weight="0.251036995342" />
+ <shade name="bright" weight="0.184647046161" />
+</color>
+
+</colors>

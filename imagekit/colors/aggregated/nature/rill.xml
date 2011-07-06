@@ -1,0 +1,33 @@
+<colors query="rill">
+
+<color name="blue" weight="0.854394737091">
+ <shade name="fresh" weight="0.51543142425" />
+ <shade name="cool" weight="0.376542717117" />
+ <shade name="intense" weight="0.108024549993" />
+</color>
+
+<color name="green" weight="0.0568680741408">
+ <shade name="fresh" weight="0.51543142425" />
+ <shade name="cool" weight="0.376542717117" />
+ <shade name="intense" weight="0.108024549993" />
+</color>
+
+<color name="red" weight="0.0406592993857">
+ <shade name="fresh" weight="0.51543142425" />
+ <shade name="cool" weight="0.376542717117" />
+ <shade name="intense" weight="0.108024549993" />
+</color>
+
+<color name="purple" weight="0.0332417244978">
+ <shade name="fresh" weight="0.523510275961" />
+ <shade name="cool" weight="0.382444632738" />
+ <shade name="light" weight="0.0940437621487" />
+</color>
+
+<color name="white" weight="0.0148351497759">
+ <shade name="fresh" weight="0.523510275961" />
+ <shade name="cool" weight="0.382444632738" />
+ <shade name="light" weight="0.0940437621487" />
+</color>
+
+</colors>

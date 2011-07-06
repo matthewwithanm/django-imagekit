@@ -1,0 +1,33 @@
+<colors query="propaganda">
+
+<color name="black" weight="0.844406956478">
+ <shade name="light" weight="0.627686335786" />
+ <shade name="intense" weight="0.335339275283" />
+ <shade name="dark" weight="0.0369733047107" />
+</color>
+
+<color name="white" weight="0.138723999993">
+ <shade name="light" weight="0.913926569746" />
+ <shade name="dark" weight="0.0538340308206" />
+ <shade name="weak" weight="0.0322378207821" />
+</color>
+
+<color name="green" weight="0.00568299284994">
+ <shade name="light" weight="0.627686335786" />
+ <shade name="intense" weight="0.335339275283" />
+ <shade name="dark" weight="0.0369733047107" />
+</color>
+
+<color name="orange" weight="0.00560927478232">
+ <shade name="light" weight="0.627686335786" />
+ <shade name="intense" weight="0.335339275283" />
+ <shade name="dark" weight="0.0369733047107" />
+</color>
+
+<color name="red" weight="0.00557576656976">
+ <shade name="light" weight="0.627686335786" />
+ <shade name="intense" weight="0.335339275283" />
+ <shade name="dark" weight="0.0369733047107" />
+</color>
+
+</colors>

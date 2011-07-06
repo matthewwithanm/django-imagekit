@@ -1,0 +1,33 @@
+<colors query="crabapple">
+
+<color name="blue" weight="0.349056234219">
+ <shade name="fresh" weight="0.526315083103" />
+ <shade name="hard" weight="0.236841787397" />
+ <shade name="cool" weight="0.236841787397" />
+</color>
+
+<color name="white" weight="0.273584616009">
+ <shade name="fresh" weight="0.526315083103" />
+ <shade name="hard" weight="0.236841787397" />
+ <shade name="cool" weight="0.236841787397" />
+</color>
+
+<color name="pink" weight="0.257075199526">
+ <shade name="fresh" weight="0.526315083103" />
+ <shade name="hard" weight="0.236841787397" />
+ <shade name="cool" weight="0.236841787397" />
+</color>
+
+<color name="red" weight="0.074056525368">
+ <shade name="fresh" weight="0.526315083103" />
+ <shade name="hard" weight="0.236841787397" />
+ <shade name="cool" weight="0.236841787397" />
+</color>
+
+<color name="purple" weight="0.0462263661533">
+ <shade name="fresh" weight="0.526315083103" />
+ <shade name="hard" weight="0.236841787397" />
+ <shade name="cool" weight="0.236841787397" />
+</color>
+
+</colors>

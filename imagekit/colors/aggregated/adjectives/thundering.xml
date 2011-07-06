@@ -1,0 +1,33 @@
+<colors query="thundering">
+
+<color name="black" weight="0.467913953073">
+ <shade name="dark" weight="0.768698617165" />
+ <shade name="light" weight="0.116225389721" />
+ <shade name="hard" weight="0.115074643288" />
+</color>
+
+<color name="blue" weight="0.157753847036">
+ <shade name="dark" weight="0.768698617165" />
+ <shade name="light" weight="0.116225389721" />
+ <shade name="hard" weight="0.115074643288" />
+</color>
+
+<color name="white" weight="0.147058670966">
+ <shade name="dark" weight="0.768698617165" />
+ <shade name="light" weight="0.116225389721" />
+ <shade name="hard" weight="0.115074643288" />
+</color>
+
+<color name="red" weight="0.117646936773">
+ <shade name="dark" weight="0.768698617165" />
+ <shade name="light" weight="0.116225389721" />
+ <shade name="hard" weight="0.115074643288" />
+</color>
+
+<color name="green" weight="0.10962555472">
+ <shade name="dark" weight="0.768698617165" />
+ <shade name="light" weight="0.116225389721" />
+ <shade name="hard" weight="0.115074643288" />
+</color>
+
+</colors>

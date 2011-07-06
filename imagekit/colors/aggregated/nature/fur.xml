@@ -1,0 +1,33 @@
+<colors query="fur">
+
+<color name="white" weight="0.4007628761">
+ <shade name="soft" weight="0.758927753952" />
+ <shade name="dark" weight="0.147321269885" />
+ <shade name="warm" weight="0.0937498990176" />
+</color>
+
+<color name="black" weight="0.218963175413">
+ <shade name="soft" weight="0.758927753952" />
+ <shade name="dark" weight="0.147321269885" />
+ <shade name="warm" weight="0.0937498990176" />
+</color>
+
+<color name="cyan" weight="0.182804118923">
+ <shade name="soft" weight="0.796874098732" />
+ <shade name="dark" weight="0.154687325048" />
+ <shade name="light" weight="0.0484374452171" />
+</color>
+
+<color name="orange" weight="0.119525770065">
+ <shade name="soft" weight="0.758927753952" />
+ <shade name="dark" weight="0.147321269885" />
+ <shade name="warm" weight="0.0937498990176" />
+</color>
+
+<color name="pink" weight="0.0779428551012">
+ <shade name="soft" weight="0.758927753952" />
+ <shade name="dark" weight="0.147321269885" />
+ <shade name="warm" weight="0.0937498990176" />
+</color>
+
+</colors>

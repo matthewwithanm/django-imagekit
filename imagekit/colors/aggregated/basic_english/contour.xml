@@ -1,0 +1,33 @@
+<colors query="contour">
+
+<color name="black" weight="0.357204117347">
+ <shade name="soft" weight="0.503965808063" />
+ <shade name="light" weight="0.446103067138" />
+ <shade name="intense" weight="0.0499299457989" />
+</color>
+
+<color name="white" weight="0.239861701987">
+ <shade name="soft" weight="0.506542244815" />
+ <shade name="light" weight="0.448383690781" />
+ <shade name="neutral" weight="0.0450728793766" />
+</color>
+
+<color name="blue" weight="0.155306137977">
+ <shade name="soft" weight="0.503965808063" />
+ <shade name="light" weight="0.446103067138" />
+ <shade name="intense" weight="0.0499299457989" />
+</color>
+
+<color name="red" weight="0.150992078589">
+ <shade name="soft" weight="0.503965808063" />
+ <shade name="light" weight="0.446103067138" />
+ <shade name="intense" weight="0.0499299457989" />
+</color>
+
+<color name="green" weight="0.0966349302968">
+ <shade name="soft" weight="0.503965808063" />
+ <shade name="light" weight="0.446103067138" />
+ <shade name="intense" weight="0.0499299457989" />
+</color>
+
+</colors>

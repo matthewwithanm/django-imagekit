@@ -1,0 +1,33 @@
+<colors query="solemn">
+
+<color name="black" weight="0.442494665235">
+ <shade name="soft" weight="0.505798392227" />
+ <shade name="dark" weight="0.422035601158" />
+ <shade name="intense" weight="0.0721648661522" />
+</color>
+
+<color name="white" weight="0.278752145941">
+ <shade name="soft" weight="0.515429473204" />
+ <shade name="dark" weight="0.430071726049" />
+ <shade name="light" weight="0.0544976385681" />
+</color>
+
+<color name="blue" weight="0.187134307764">
+ <shade name="soft" weight="0.505798392227" />
+ <shade name="dark" weight="0.422035601158" />
+ <shade name="intense" weight="0.0721648661522" />
+</color>
+
+<color name="green" weight="0.0584794711764">
+ <shade name="soft" weight="0.505798392227" />
+ <shade name="dark" weight="0.422035601158" />
+ <shade name="intense" weight="0.0721648661522" />
+</color>
+
+<color name="red" weight="0.0331383669999">
+ <shade name="soft" weight="0.505798392227" />
+ <shade name="dark" weight="0.422035601158" />
+ <shade name="intense" weight="0.0721648661522" />
+</color>
+
+</colors>

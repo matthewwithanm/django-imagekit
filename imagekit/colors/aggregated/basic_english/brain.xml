@@ -1,0 +1,33 @@
+<colors query="brain">
+
+<color name="blue" weight="0.392791254684">
+ <shade name="fresh" weight="0.511048980741" />
+ <shade name="hard" weight="0.278084310241" />
+ <shade name="cool" weight="0.210865255116" />
+</color>
+
+<color name="green" weight="0.250457876237">
+ <shade name="fresh" weight="0.511048980741" />
+ <shade name="hard" weight="0.278084310241" />
+ <shade name="cool" weight="0.210865255116" />
+</color>
+
+<color name="white" weight="0.134392031152">
+ <shade name="fresh" weight="0.511048980741" />
+ <shade name="hard" weight="0.278084310241" />
+ <shade name="cool" weight="0.210865255116" />
+</color>
+
+<color name="black" weight="0.122785446643">
+ <shade name="fresh" weight="0.511048980741" />
+ <shade name="hard" weight="0.278084310241" />
+ <shade name="cool" weight="0.210865255116" />
+</color>
+
+<color name="red" weight="0.099572277626">
+ <shade name="fresh" weight="0.511048980741" />
+ <shade name="hard" weight="0.278084310241" />
+ <shade name="cool" weight="0.210865255116" />
+</color>
+
+</colors>

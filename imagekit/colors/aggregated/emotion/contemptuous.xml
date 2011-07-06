@@ -1,0 +1,33 @@
+<colors query="contemptuous">
+
+<color name="black" weight="0.40909046281">
+ <shade name="cool" weight="0.60436826606" />
+ <shade name="hard" weight="0.211164815852" />
+ <shade name="dark" weight="0.184465816147" />
+</color>
+
+<color name="white" weight="0.272726975207">
+ <shade name="cool" weight="0.60436826606" />
+ <shade name="hard" weight="0.211164815852" />
+ <shade name="dark" weight="0.184465816147" />
+</color>
+
+<color name="green" weight="0.181817983471">
+ <shade name="cool" weight="0.60436826606" />
+ <shade name="hard" weight="0.211164815852" />
+ <shade name="dark" weight="0.184465816147" />
+</color>
+
+<color name="pink" weight="0.0909089917356">
+ <shade name="cool" weight="0.60436826606" />
+ <shade name="hard" weight="0.211164815852" />
+ <shade name="dark" weight="0.184465816147" />
+</color>
+
+<color name="yellow" weight="0.0454544958678">
+ <shade name="cool" weight="0.60436826606" />
+ <shade name="hard" weight="0.211164815852" />
+ <shade name="dark" weight="0.184465816147" />
+</color>
+
+</colors>

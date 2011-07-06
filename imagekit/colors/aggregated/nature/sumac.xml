@@ -1,0 +1,33 @@
+<colors query="sumac">
+
+<color name="black" weight="0.371493849269">
+ <shade name="bright" weight="0.816325652408" />
+ <shade name="fresh" weight="0.160349681723" />
+ <shade name="cool" weight="0.0233235900688" />
+</color>
+
+<color name="red" weight="0.307126103109">
+ <shade name="bright" weight="0.816325652408" />
+ <shade name="fresh" weight="0.160349681723" />
+ <shade name="cool" weight="0.0233235900688" />
+</color>
+
+<color name="white" weight="0.187126233481">
+ <shade name="bright" weight="0.816325652408" />
+ <shade name="fresh" weight="0.160349681723" />
+ <shade name="cool" weight="0.0233235900688" />
+</color>
+
+<color name="green" weight="0.0960918496253">
+ <shade name="bright" weight="0.816325652408" />
+ <shade name="fresh" weight="0.160349681723" />
+ <shade name="cool" weight="0.0233235900688" />
+</color>
+
+<color name="orange" weight="0.0381608780808">
+ <shade name="bright" weight="0.816325652408" />
+ <shade name="fresh" weight="0.160349681723" />
+ <shade name="cool" weight="0.0233235900688" />
+</color>
+
+</colors>

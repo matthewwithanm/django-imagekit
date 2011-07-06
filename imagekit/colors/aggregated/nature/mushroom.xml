@@ -1,0 +1,33 @@
+<colors query="mushroom">
+
+<color name="purple" weight="0.266523528041">
+ <shade name="fresh" weight="0.635437463769" />
+ <shade name="soft" weight="0.335612778111" />
+ <shade name="cool" weight="0.0289485903394" />
+</color>
+
+<color name="black" weight="0.222153939561">
+ <shade name="fresh" weight="0.580246294832" />
+ <shade name="soft" weight="0.306462999273" />
+ <shade name="warm" weight="0.113289639542" />
+</color>
+
+<color name="red" weight="0.198592158093">
+ <shade name="fresh" weight="0.580246294832" />
+ <shade name="soft" weight="0.306462999273" />
+ <shade name="warm" weight="0.113289639542" />
+</color>
+
+<color name="green" weight="0.157588538394">
+ <shade name="fresh" weight="0.635437463769" />
+ <shade name="soft" weight="0.335612778111" />
+ <shade name="cool" weight="0.0289485903394" />
+</color>
+
+<color name="white" weight="0.155140561099">
+ <shade name="fresh" weight="0.580246294832" />
+ <shade name="soft" weight="0.306462999273" />
+ <shade name="warm" weight="0.113289639542" />
+</color>
+
+</colors>

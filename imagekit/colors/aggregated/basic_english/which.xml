@@ -1,0 +1,33 @@
+<colors query="which">
+
+<color name="green" weight="0.219249081778">
+ <shade name="light" weight="0.740966499602" />
+ <shade name="hard" weight="0.13655828877" />
+ <shade name="dark" weight="0.122473801587" />
+</color>
+
+<color name="white" weight="0.21590460426">
+ <shade name="light" weight="0.740966499602" />
+ <shade name="hard" weight="0.13655828877" />
+ <shade name="dark" weight="0.122473801587" />
+</color>
+
+<color name="blue" weight="0.19843899944">
+ <shade name="light" weight="0.740966499602" />
+ <shade name="hard" weight="0.13655828877" />
+ <shade name="dark" weight="0.122473801587" />
+</color>
+
+<color name="black" weight="0.192864870242">
+ <shade name="light" weight="0.740966499602" />
+ <shade name="hard" weight="0.13655828877" />
+ <shade name="dark" weight="0.122473801587" />
+</color>
+
+<color name="red" weight="0.173541222357">
+ <shade name="light" weight="0.740966499602" />
+ <shade name="hard" weight="0.13655828877" />
+ <shade name="dark" weight="0.122473801587" />
+</color>
+
+</colors>

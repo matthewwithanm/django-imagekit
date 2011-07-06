@@ -1,0 +1,33 @@
+<colors query="gland">
+
+<color name="green" weight="0.883391316683">
+ <shade name="neutral" weight="0.435598358869" />
+ <shade name="hard" weight="0.357491066934" />
+ <shade name="soft" weight="0.206909220463" />
+</color>
+
+<color name="black" weight="0.0350238674967">
+ <shade name="neutral" weight="0.435598358869" />
+ <shade name="hard" weight="0.357491066934" />
+ <shade name="soft" weight="0.206909220463" />
+</color>
+
+<color name="red" weight="0.0339326193997">
+ <shade name="neutral" weight="0.435598358869" />
+ <shade name="hard" weight="0.357491066934" />
+ <shade name="soft" weight="0.206909220463" />
+</color>
+
+<color name="purple" weight="0.0307628034986">
+ <shade name="neutral" weight="0.435598358869" />
+ <shade name="hard" weight="0.357491066934" />
+ <shade name="soft" weight="0.206909220463" />
+</color>
+
+<color name="white" weight="0.0168883634072">
+ <shade name="neutral" weight="0.435598358869" />
+ <shade name="hard" weight="0.357491066934" />
+ <shade name="soft" weight="0.206909220463" />
+</color>
+
+</colors>

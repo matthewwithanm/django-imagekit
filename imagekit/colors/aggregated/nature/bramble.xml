@@ -1,0 +1,33 @@
+<colors query="bramble">
+
+<color name="black" weight="0.696644139249">
+ <shade name="warm" weight="0.807074842391" />
+ <shade name="dark" weight="0.14483123884" />
+ <shade name="soft" weight="0.0480928159507" />
+</color>
+
+<color name="blue" weight="0.0924975663151">
+ <shade name="dark" weight="0.606478680729" />
+ <shade name="soft" weight="0.201387958868" />
+ <shade name="intense" weight="0.192128742368" />
+</color>
+
+<color name="red" weight="0.0831779122783">
+ <shade name="warm" weight="0.807074842391" />
+ <shade name="dark" weight="0.14483123884" />
+ <shade name="soft" weight="0.0480928159507" />
+</color>
+
+<color name="white" weight="0.0661695436611">
+ <shade name="warm" weight="0.807074842391" />
+ <shade name="dark" weight="0.14483123884" />
+ <shade name="soft" weight="0.0480928159507" />
+</color>
+
+<color name="pink" weight="0.0615097166428">
+ <shade name="warm" weight="0.807074842391" />
+ <shade name="dark" weight="0.14483123884" />
+ <shade name="soft" weight="0.0480928159507" />
+</color>
+
+</colors>

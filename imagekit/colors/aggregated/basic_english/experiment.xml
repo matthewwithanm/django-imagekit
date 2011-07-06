@@ -1,0 +1,33 @@
+<colors query="experiment">
+
+<color name="white" weight="0.278105114755">
+ <shade name="dark" weight="0.422091737717" />
+ <shade name="cool" weight="0.351133507979" />
+ <shade name="light" weight="0.226773723903" />
+</color>
+
+<color name="black" weight="0.22922603398">
+ <shade name="dark" weight="0.422091737717" />
+ <shade name="cool" weight="0.351133507979" />
+ <shade name="light" weight="0.226773723903" />
+</color>
+
+<color name="orange" weight="0.190459866468">
+ <shade name="dark" weight="0.422091737717" />
+ <shade name="cool" weight="0.351133507979" />
+ <shade name="light" weight="0.226773723903" />
+</color>
+
+<color name="pink" weight="0.178661467661">
+ <shade name="dark" weight="0.422091737717" />
+ <shade name="cool" weight="0.351133507979" />
+ <shade name="light" weight="0.226773723903" />
+</color>
+
+<color name="purple" weight="0.123546090373">
+ <shade name="dark" weight="0.422091737717" />
+ <shade name="cool" weight="0.351133507979" />
+ <shade name="light" weight="0.226773723903" />
+</color>
+
+</colors>

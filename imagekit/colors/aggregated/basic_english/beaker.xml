@@ -1,0 +1,33 @@
+<colors query="beaker">
+
+<color name="white" weight="0.288036824657">
+ <shade name="light" weight="0.412675494867" />
+ <shade name="fresh" weight="0.384506519108" />
+ <shade name="cool" weight="0.202816625464" />
+</color>
+
+<color name="green" weight="0.226248280013">
+ <shade name="light" weight="0.412675494867" />
+ <shade name="fresh" weight="0.384506519108" />
+ <shade name="cool" weight="0.202816625464" />
+</color>
+
+<color name="blue" weight="0.223693114633">
+ <shade name="light" weight="0.412675494867" />
+ <shade name="fresh" weight="0.384506519108" />
+ <shade name="cool" weight="0.202816625464" />
+</color>
+
+<color name="red" weight="0.157491102514">
+ <shade name="light" weight="0.412675494867" />
+ <shade name="fresh" weight="0.384506519108" />
+ <shade name="cool" weight="0.202816625464" />
+</color>
+
+<color name="yellow" weight="0.104529492819">
+ <shade name="light" weight="0.412675494867" />
+ <shade name="fresh" weight="0.384506519108" />
+ <shade name="cool" weight="0.202816625464" />
+</color>
+
+</colors>

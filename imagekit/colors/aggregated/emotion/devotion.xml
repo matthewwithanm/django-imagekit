@@ -1,0 +1,33 @@
+<colors query="devotion">
+
+<color name="black" weight="0.811897429163">
+ <shade name="intense" weight="0.799454087244" />
+ <shade name="dark" weight="0.1726094052" />
+ <shade name="warm" weight="0.0279354695259" />
+</color>
+
+<color name="pink" weight="0.0740048099149">
+ <shade name="dark" weight="0.809798933249" />
+ <shade name="warm" weight="0.131059564197" />
+ <shade name="cool" weight="0.0591366326254" />
+</color>
+
+<color name="purple" weight="0.0487856950798">
+ <shade name="dark" weight="0.881614721448" />
+ <shade name="cool" weight="0.0643810750531" />
+ <shade name="hard" weight="0.0539989016887" />
+</color>
+
+<color name="blue" weight="0.0400919261481">
+ <shade name="intense" weight="0.811900885537" />
+ <shade name="dark" weight="0.175296782105" />
+ <shade name="cool" weight="0.0128012781669" />
+</color>
+
+<color name="white" weight="0.0252191148351">
+ <shade name="dark" weight="0.809798933249" />
+ <shade name="warm" weight="0.131059564197" />
+ <shade name="cool" weight="0.0591366326254" />
+</color>
+
+</colors>

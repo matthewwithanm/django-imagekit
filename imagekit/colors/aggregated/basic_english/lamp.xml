@@ -1,0 +1,33 @@
+<colors query="lamp">
+
+<color name="blue" weight="0.313447581743">
+ <shade name="light" weight="0.837662832596" />
+ <shade name="bright" weight="0.125545496498" />
+ <shade name="cool" weight="0.0367906504639" />
+</color>
+
+<color name="red" weight="0.308391975586">
+ <shade name="light" weight="0.837662832596" />
+ <shade name="bright" weight="0.125545496498" />
+ <shade name="cool" weight="0.0367906504639" />
+</color>
+
+<color name="white" weight="0.132288361112">
+ <shade name="light" weight="0.837662832596" />
+ <shade name="bright" weight="0.125545496498" />
+ <shade name="cool" weight="0.0367906504639" />
+</color>
+
+<color name="black" weight="0.125041992287">
+ <shade name="light" weight="0.837662832596" />
+ <shade name="bright" weight="0.125545496498" />
+ <shade name="cool" weight="0.0367906504639" />
+</color>
+
+<color name="green" weight="0.120828987156">
+ <shade name="light" weight="0.837662832596" />
+ <shade name="bright" weight="0.125545496498" />
+ <shade name="cool" weight="0.0367906504639" />
+</color>
+
+</colors>

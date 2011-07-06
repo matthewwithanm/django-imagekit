@@ -1,0 +1,33 @@
+<colors query="convivial">
+
+<color name="green" weight="0.374999609375">
+ <shade name="light" weight="0.549904370594" />
+ <shade name="soft" weight="0.290018058464" />
+ <shade name="cool" weight="0.160074902399" />
+</color>
+
+<color name="white" weight="0.166666493056">
+ <shade name="warm" weight="0.644620786113" />
+ <shade name="light" weight="0.232669060006" />
+ <shade name="soft" weight="0.122709024798" />
+</color>
+
+<color name="red" weight="0.166666493056">
+ <shade name="warm" weight="0.644620786113" />
+ <shade name="light" weight="0.232669060006" />
+ <shade name="soft" weight="0.122709024798" />
+</color>
+
+<color name="orange" weight="0.166666493056">
+ <shade name="warm" weight="0.644620786113" />
+ <shade name="light" weight="0.232669060006" />
+ <shade name="soft" weight="0.122709024798" />
+</color>
+
+<color name="black" weight="0.124999869792">
+ <shade name="warm" weight="0.644620786113" />
+ <shade name="light" weight="0.232669060006" />
+ <shade name="soft" weight="0.122709024798" />
+</color>
+
+</colors>

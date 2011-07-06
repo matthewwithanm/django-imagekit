@@ -1,0 +1,33 @@
+<colors query="demon">
+
+<color name="blue" weight="0.606281342967">
+ <shade name="dark" weight="0.875084873811" />
+ <shade name="light" weight="0.0846773304364" />
+ <shade name="cool" weight="0.0402367456683" />
+</color>
+
+<color name="red" weight="0.167092599041">
+ <shade name="dark" weight="0.875084873811" />
+ <shade name="light" weight="0.0846773304364" />
+ <shade name="cool" weight="0.0402367456683" />
+</color>
+
+<color name="black" weight="0.137326376479">
+ <shade name="dark" weight="0.875084873811" />
+ <shade name="light" weight="0.0846773304364" />
+ <shade name="cool" weight="0.0402367456683" />
+</color>
+
+<color name="green" weight="0.0556975330136">
+ <shade name="dark" weight="0.875084873811" />
+ <shade name="light" weight="0.0846773304364" />
+ <shade name="cool" weight="0.0402367456683" />
+</color>
+
+<color name="white" weight="0.0336011346705">
+ <shade name="dark" weight="0.875084873811" />
+ <shade name="light" weight="0.0846773304364" />
+ <shade name="cool" weight="0.0402367456683" />
+</color>
+
+</colors>

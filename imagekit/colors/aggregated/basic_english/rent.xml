@@ -1,0 +1,33 @@
+<colors query="rent">
+
+<color name="blue" weight="0.577188225656">
+ <shade name="hard" weight="0.47845725875" />
+ <shade name="soft" weight="0.276643533496" />
+ <shade name="intense" weight="0.244897554242" />
+</color>
+
+<color name="orange" weight="0.23859823131">
+ <shade name="hard" weight="0.47845725875" />
+ <shade name="soft" weight="0.276643533496" />
+ <shade name="intense" weight="0.244897554242" />
+</color>
+
+<color name="yellow" weight="0.11787646862">
+ <shade name="hard" weight="0.47845725875" />
+ <shade name="soft" weight="0.276643533496" />
+ <shade name="intense" weight="0.244897554242" />
+</color>
+
+<color name="black" weight="0.0339402935509">
+ <shade name="hard" weight="0.47845725875" />
+ <shade name="soft" weight="0.276643533496" />
+ <shade name="intense" weight="0.244897554242" />
+</color>
+
+<color name="green" weight="0.0323957053414">
+ <shade name="hard" weight="0.47845725875" />
+ <shade name="soft" weight="0.276643533496" />
+ <shade name="intense" weight="0.244897554242" />
+</color>
+
+</colors>

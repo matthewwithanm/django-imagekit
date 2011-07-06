@@ -1,0 +1,33 @@
+<colors query="fireplace">
+
+<color name="black" weight="0.699067173785">
+ <shade name="warm" weight="0.944538114227" />
+ <shade name="cool" weight="0.032935797971" />
+ <shade name="dark" weight="0.0225250572331" />
+</color>
+
+<color name="green" weight="0.10652452172">
+ <shade name="cool" weight="0.500135892527" />
+ <shade name="dark" weight="0.342046960981" />
+ <shade name="light" weight="0.157801497125" />
+</color>
+
+<color name="red" weight="0.100342295013">
+ <shade name="warm" weight="0.944538114227" />
+ <shade name="cool" weight="0.032935797971" />
+ <shade name="dark" weight="0.0225250572331" />
+</color>
+
+<color name="blue" weight="0.0532622608598">
+ <shade name="cool" weight="0.500135892527" />
+ <shade name="dark" weight="0.342046960981" />
+ <shade name="light" weight="0.157801497125" />
+</color>
+
+<color name="white" weight="0.0408026962658">
+ <shade name="warm" weight="0.944538114227" />
+ <shade name="cool" weight="0.032935797971" />
+ <shade name="dark" weight="0.0225250572331" />
+</color>
+
+</colors>

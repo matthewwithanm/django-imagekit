@@ -1,0 +1,33 @@
+<colors query="mink">
+
+<color name="blue" weight="0.329645305092">
+ <shade name="light" weight="0.766735688105" />
+ <shade name="fresh" weight="0.128869951806" />
+ <shade name="dark" weight="0.104392765991" />
+</color>
+
+<color name="pink" weight="0.246532008408">
+ <shade name="light" weight="0.614684074749" />
+ <shade name="warm" weight="0.282000939156" />
+ <shade name="fresh" weight="0.103313708124" />
+</color>
+
+<color name="white" weight="0.216768462974">
+ <shade name="light" weight="0.614684074749" />
+ <shade name="warm" weight="0.282000939156" />
+ <shade name="fresh" weight="0.103313708124" />
+</color>
+
+<color name="black" weight="0.192620680829">
+ <shade name="light" weight="0.614684074749" />
+ <shade name="warm" weight="0.282000939156" />
+ <shade name="fresh" weight="0.103313708124" />
+</color>
+
+<color name="red" weight="0.014432511654">
+ <shade name="light" weight="0.614684074749" />
+ <shade name="warm" weight="0.282000939156" />
+ <shade name="fresh" weight="0.103313708124" />
+</color>
+
+</colors>

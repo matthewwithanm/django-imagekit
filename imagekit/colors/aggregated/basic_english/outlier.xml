@@ -1,0 +1,33 @@
+<colors query="outlier">
+
+<color name="red" weight="0.568084518959">
+ <shade name="warm" weight="0.439285083598" />
+ <shade name="weak" weight="0.289285298955" />
+ <shade name="neutral" weight="0.271428181735" />
+</color>
+
+<color name="blue" weight="0.306382661911">
+ <shade name="weak" weight="0.404999185952" />
+ <shade name="neutral" weight="0.379999236202" />
+ <shade name="bright" weight="0.214999567851" />
+</color>
+
+<color name="green" weight="0.0553190917339">
+ <shade name="weak" weight="0.404999185952" />
+ <shade name="neutral" weight="0.379999236202" />
+ <shade name="bright" weight="0.214999567851" />
+</color>
+
+<color name="black" weight="0.0531914343595">
+ <shade name="warm" weight="0.439285083598" />
+ <shade name="weak" weight="0.289285298955" />
+ <shade name="neutral" weight="0.271428181735" />
+</color>
+
+<color name="white" weight="0.017021258995">
+ <shade name="warm" weight="0.439285083598" />
+ <shade name="weak" weight="0.289285298955" />
+ <shade name="neutral" weight="0.271428181735" />
+</color>
+
+</colors>

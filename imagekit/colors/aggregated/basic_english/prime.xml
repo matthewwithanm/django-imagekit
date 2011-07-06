@@ -1,0 +1,33 @@
+<colors query="prime">
+
+<color name="black" weight="0.434380314952">
+ <shade name="weak" weight="0.514508237833" />
+ <shade name="dark" weight="0.344865608439" />
+ <shade name="light" weight="0.140624811208" />
+</color>
+
+<color name="red" weight="0.249537627738">
+ <shade name="weak" weight="0.514508237833" />
+ <shade name="dark" weight="0.344865608439" />
+ <shade name="light" weight="0.140624811208" />
+</color>
+
+<color name="white" weight="0.237984959787">
+ <shade name="weak" weight="0.514508237833" />
+ <shade name="dark" weight="0.344865608439" />
+ <shade name="light" weight="0.140624811208" />
+</color>
+
+<color name="pink" weight="0.0399722311099">
+ <shade name="weak" weight="0.514508237833" />
+ <shade name="dark" weight="0.344865608439" />
+ <shade name="light" weight="0.140624811208" />
+</color>
+
+<color name="orange" weight="0.0381238042378">
+ <shade name="weak" weight="0.514508237833" />
+ <shade name="dark" weight="0.344865608439" />
+ <shade name="light" weight="0.140624811208" />
+</color>
+
+</colors>

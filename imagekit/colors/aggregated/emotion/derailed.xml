@@ -1,0 +1,33 @@
+<colors query="derailed">
+
+<color name="black" weight="0.382715609968">
+ <shade name="dark" weight="0.835896539988" />
+ <shade name="cool" weight="0.123076791164" />
+ <shade name="hard" weight="0.0410255970546" />
+</color>
+
+<color name="green" weight="0.222221967078">
+ <shade name="dark" weight="0.835896539988" />
+ <shade name="cool" weight="0.123076791164" />
+ <shade name="hard" weight="0.0410255970546" />
+</color>
+
+<color name="blue" weight="0.209876302241">
+ <shade name="dark" weight="0.835896539988" />
+ <shade name="cool" weight="0.123076791164" />
+ <shade name="hard" weight="0.0410255970546" />
+</color>
+
+<color name="orange" weight="0.123456648377">
+ <shade name="dark" weight="0.835896539988" />
+ <shade name="cool" weight="0.123076791164" />
+ <shade name="hard" weight="0.0410255970546" />
+</color>
+
+<color name="white" weight="0.0617283241885">
+ <shade name="dark" weight="0.835896539988" />
+ <shade name="cool" weight="0.123076791164" />
+ <shade name="hard" weight="0.0410255970546" />
+</color>
+
+</colors>

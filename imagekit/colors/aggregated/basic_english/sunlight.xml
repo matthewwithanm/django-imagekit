@@ -1,0 +1,33 @@
+<colors query="sunlight">
+
+<color name="white" weight="0.353933240496">
+ <shade name="bright" weight="0.870879612862" />
+ <shade name="warm" weight="0.0775795982673" />
+ <shade name="light" weight="0.0515396495453" />
+</color>
+
+<color name="yellow" weight="0.333760879639">
+ <shade name="bright" weight="0.826242059222" />
+ <shade name="intense" weight="0.10015365904" />
+ <shade name="warm" weight="0.0736032008091" />
+</color>
+
+<color name="red" weight="0.220062118443">
+ <shade name="bright" weight="0.826242059222" />
+ <shade name="intense" weight="0.10015365904" />
+ <shade name="warm" weight="0.0736032008091" />
+</color>
+
+<color name="purple" weight="0.0623509335589">
+ <shade name="bright" weight="0.92942691417" />
+ <shade name="light" weight="0.0550045456649" />
+ <shade name="soft" weight="0.0155673242448" />
+</color>
+
+<color name="pink" weight="0.0298917710885">
+ <shade name="bright" weight="0.870879612862" />
+ <shade name="warm" weight="0.0775795982673" />
+ <shade name="light" weight="0.0515396495453" />
+</color>
+
+</colors>

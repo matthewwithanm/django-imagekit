@@ -1,0 +1,33 @@
+<colors query="torpedo">
+
+<color name="red" weight="0.48443216857">
+ <shade name="light" weight="0.761505326977" />
+ <shade name="dark" weight="0.155648341558" />
+ <shade name="cool" weight="0.0828450850228" />
+</color>
+
+<color name="blue" weight="0.159366573974">
+ <shade name="light" weight="0.761505326977" />
+ <shade name="dark" weight="0.155648341558" />
+ <shade name="cool" weight="0.0828450850228" />
+</color>
+
+<color name="green" weight="0.149867904002">
+ <shade name="light" weight="0.761505326977" />
+ <shade name="dark" weight="0.155648341558" />
+ <shade name="cool" weight="0.0828450850228" />
+</color>
+
+<color name="yellow" weight="0.122955005748">
+ <shade name="light" weight="0.761505326977" />
+ <shade name="dark" weight="0.155648341558" />
+ <shade name="cool" weight="0.0828450850228" />
+</color>
+
+<color name="white" weight="0.0833772141983">
+ <shade name="light" weight="0.761505326977" />
+ <shade name="dark" weight="0.155648341558" />
+ <shade name="cool" weight="0.0828450850228" />
+</color>
+
+</colors>

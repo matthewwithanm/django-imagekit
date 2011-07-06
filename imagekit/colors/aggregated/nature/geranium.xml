@@ -1,0 +1,33 @@
+<colors query="geranium">
+
+<color name="red" weight="0.542203983295">
+ <shade name="bright" weight="0.678382276562" />
+ <shade name="fresh" weight="0.225307274236" />
+ <shade name="intense" weight="0.0963091936673" />
+</color>
+
+<color name="pink" weight="0.274902486857">
+ <shade name="bright" weight="0.680055521791" />
+ <shade name="fresh" weight="0.225862999724" />
+ <shade name="dark" weight="0.0940802198539" />
+</color>
+
+<color name="blue" weight="0.153286640137">
+ <shade name="bright" weight="0.678382276562" />
+ <shade name="fresh" weight="0.225307274236" />
+ <shade name="intense" weight="0.0963091936673" />
+</color>
+
+<color name="black" weight="0.0193825255711">
+ <shade name="bright" weight="0.678382276562" />
+ <shade name="fresh" weight="0.225307274236" />
+ <shade name="intense" weight="0.0963091936673" />
+</color>
+
+<color name="white" weight="0.0102233321149">
+ <shade name="bright" weight="0.680055521791" />
+ <shade name="fresh" weight="0.225862999724" />
+ <shade name="dark" weight="0.0940802198539" />
+</color>
+
+</colors>

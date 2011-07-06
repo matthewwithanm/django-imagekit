@@ -1,0 +1,33 @@
+<colors query="canyon">
+
+<color name="black" weight="0.560957767429">
+ <shade name="dark" weight="0.842579292484" />
+ <shade name="light" weight="0.136568568391" />
+ <shade name="bright" weight="0.020851093924" />
+</color>
+
+<color name="red" weight="0.161653730912">
+ <shade name="dark" weight="0.842579292484" />
+ <shade name="light" weight="0.136568568391" />
+ <shade name="bright" weight="0.020851093924" />
+</color>
+
+<color name="blue" weight="0.143620645392">
+ <shade name="dark" weight="0.842579292484" />
+ <shade name="light" weight="0.136568568391" />
+ <shade name="bright" weight="0.020851093924" />
+</color>
+
+<color name="green" weight="0.103046202972">
+ <shade name="dark" weight="0.842579292484" />
+ <shade name="light" weight="0.136568568391" />
+ <shade name="bright" weight="0.020851093924" />
+</color>
+
+<color name="white" weight="0.0307206492611">
+ <shade name="dark" weight="0.842579292484" />
+ <shade name="light" weight="0.136568568391" />
+ <shade name="bright" weight="0.020851093924" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="ecosystem">
+
+<color name="green" weight="0.678570706019">
+ <shade name="weak" weight="0.416184060545" />
+ <shade name="cool" weight="0.315028212496" />
+ <shade name="dark" weight="0.268785539102" />
+</color>
+
+<color name="yellow" weight="0.134920491255">
+ <shade name="warm" weight="0.367499304508" />
+ <shade name="weak" weight="0.359999318701" />
+ <shade name="cool" weight="0.272499484295" />
+</color>
+
+<color name="blue" weight="0.074073995199">
+ <shade name="weak" weight="0.416184060545" />
+ <shade name="cool" weight="0.315028212496" />
+ <shade name="dark" weight="0.268785539102" />
+</color>
+
+<color name="black" weight="0.0568782463135">
+ <shade name="warm" weight="0.367499304508" />
+ <shade name="weak" weight="0.359999318701" />
+ <shade name="cool" weight="0.272499484295" />
+</color>
+
+<color name="red" weight="0.0555554963992">
+ <shade name="warm" weight="0.367499304508" />
+ <shade name="weak" weight="0.359999318701" />
+ <shade name="cool" weight="0.272499484295" />
+</color>
+
+</colors>

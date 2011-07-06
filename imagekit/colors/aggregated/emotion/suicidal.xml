@@ -1,0 +1,33 @@
+<colors query="suicidal">
+
+<color name="black" weight="0.391031859281">
+ <shade name="dark" weight="0.670948580565" />
+ <shade name="intense" weight="0.283725596569" />
+ <shade name="weak" weight="0.0453247179424" />
+</color>
+
+<color name="green" weight="0.207507573325">
+ <shade name="dark" weight="0.670948580565" />
+ <shade name="intense" weight="0.283725596569" />
+ <shade name="weak" weight="0.0453247179424" />
+</color>
+
+<color name="pink" weight="0.168925763209">
+ <shade name="dark" weight="0.895236775403" />
+ <shade name="weak" weight="0.0604761013171" />
+ <shade name="cool" weight="0.044285648996" />
+</color>
+
+<color name="white" weight="0.131386704718">
+ <shade name="dark" weight="0.895236775403" />
+ <shade name="weak" weight="0.0604761013171" />
+ <shade name="cool" weight="0.044285648996" />
+</color>
+
+<color name="blue" weight="0.101146907601">
+ <shade name="dark" weight="0.670948580565" />
+ <shade name="intense" weight="0.283725596569" />
+ <shade name="weak" weight="0.0453247179424" />
+</color>
+
+</colors>

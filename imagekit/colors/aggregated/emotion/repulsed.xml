@@ -1,0 +1,33 @@
+<colors query="repulsed">
+
+<color name="white" weight="0.416666215278">
+ <shade name="light" weight="0.842856239797" />
+ <shade name="hard" weight="0.0999998928573" />
+ <shade name="dark" weight="0.0571427959184" />
+</color>
+
+<color name="black" weight="0.354166282987">
+ <shade name="light" weight="0.842856239797" />
+ <shade name="hard" weight="0.0999998928573" />
+ <shade name="dark" weight="0.0571427959184" />
+</color>
+
+<color name="green" weight="0.10416655382">
+ <shade name="light" weight="0.842856239797" />
+ <shade name="hard" weight="0.0999998928573" />
+ <shade name="dark" weight="0.0571427959184" />
+</color>
+
+<color name="red" weight="0.0624999322917">
+ <shade name="light" weight="0.842856239797" />
+ <shade name="hard" weight="0.0999998928573" />
+ <shade name="dark" weight="0.0571427959184" />
+</color>
+
+<color name="orange" weight="0.0624999322917">
+ <shade name="light" weight="0.842856239797" />
+ <shade name="hard" weight="0.0999998928573" />
+ <shade name="dark" weight="0.0571427959184" />
+</color>
+
+</colors>

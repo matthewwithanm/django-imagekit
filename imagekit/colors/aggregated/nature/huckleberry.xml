@@ -1,0 +1,33 @@
+<colors query="huckleberry">
+
+<color name="red" weight="0.529664315469">
+ <shade name="fresh" weight="0.747214261839" />
+ <shade name="warm" weight="0.145672505175" />
+ <shade name="cool" weight="0.107112136158" />
+</color>
+
+<color name="black" weight="0.451932009786">
+ <shade name="fresh" weight="0.747214261839" />
+ <shade name="warm" weight="0.145672505175" />
+ <shade name="cool" weight="0.107112136158" />
+</color>
+
+<color name="blue" weight="0.0143895151916">
+ <shade name="fresh" weight="0.830475178087" />
+ <shade name="cool" weight="0.119047473923" />
+ <shade name="dark" weight="0.0504761289434" />
+</color>
+
+<color name="green" weight="0.00206080996462">
+ <shade name="fresh" weight="0.830475178087" />
+ <shade name="cool" weight="0.119047473923" />
+ <shade name="dark" weight="0.0504761289434" />
+</color>
+
+<color name="white" weight="0.00195234628227">
+ <shade name="fresh" weight="0.747214261839" />
+ <shade name="warm" weight="0.145672505175" />
+ <shade name="cool" weight="0.107112136158" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cockroach">
+
+<color name="blue" weight="0.527054292213">
+ <shade name="cool" weight="0.490017554752" />
+ <shade name="dark" weight="0.395643803466" />
+ <shade name="fresh" weight="0.114337429442" />
+</color>
+
+<color name="black" weight="0.217187559136">
+ <shade name="cool" weight="0.490017554752" />
+ <shade name="dark" weight="0.395643803466" />
+ <shade name="fresh" weight="0.114337429442" />
+</color>
+
+<color name="red" weight="0.14042299082">
+ <shade name="cool" weight="0.490017554752" />
+ <shade name="dark" weight="0.395643803466" />
+ <shade name="fresh" weight="0.114337429442" />
+</color>
+
+<color name="white" weight="0.0742369544804">
+ <shade name="cool" weight="0.490017554752" />
+ <shade name="dark" weight="0.395643803466" />
+ <shade name="fresh" weight="0.114337429442" />
+</color>
+
+<color name="green" weight="0.0410971286468">
+ <shade name="cool" weight="0.490017554752" />
+ <shade name="dark" weight="0.395643803466" />
+ <shade name="fresh" weight="0.114337429442" />
+</color>
+
+</colors>

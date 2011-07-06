@@ -1,0 +1,33 @@
+<colors query="petal">
+
+<color name="white" weight="0.273431687645">
+ <shade name="soft" weight="0.420236176893" />
+ <shade name="cool" weight="0.365564674268" />
+ <shade name="fresh" weight="0.214198051329" />
+</color>
+
+<color name="pink" weight="0.270612804267">
+ <shade name="soft" weight="0.420236176893" />
+ <shade name="cool" weight="0.365564674268" />
+ <shade name="fresh" weight="0.214198051329" />
+</color>
+
+<color name="red" weight="0.186046302934">
+ <shade name="soft" weight="0.420236176893" />
+ <shade name="cool" weight="0.365564674268" />
+ <shade name="fresh" weight="0.214198051329" />
+</color>
+
+<color name="yellow" weight="0.1395347272">
+ <shade name="soft" weight="0.420236176893" />
+ <shade name="cool" weight="0.365564674268" />
+ <shade name="fresh" weight="0.214198051329" />
+</color>
+
+<color name="green" weight="0.130373356222">
+ <shade name="soft" weight="0.420236176893" />
+ <shade name="cool" weight="0.365564674268" />
+ <shade name="fresh" weight="0.214198051329" />
+</color>
+
+</colors>

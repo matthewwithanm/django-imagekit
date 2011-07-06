@@ -1,0 +1,33 @@
+<colors query="gasworks">
+
+<color name="green" weight="0.9316537312">
+ <shade name="light" weight="0.466666106667" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="dark" weight="0.133333173334" />
+</color>
+
+<color name="red" weight="0.0215827119197">
+ <shade name="light" weight="0.466666106667" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="dark" weight="0.133333173334" />
+</color>
+
+<color name="black" weight="0.0179855932664">
+ <shade name="light" weight="0.466666106667" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="dark" weight="0.133333173334" />
+</color>
+
+<color name="yellow" weight="0.0143884746131">
+ <shade name="light" weight="0.466666106667" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="dark" weight="0.133333173334" />
+</color>
+
+<color name="white" weight="0.0143884746131">
+ <shade name="light" weight="0.466666106667" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="dark" weight="0.133333173334" />
+</color>
+
+</colors>

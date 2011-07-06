@@ -1,0 +1,33 @@
+<colors query="illusion">
+
+<color name="black" weight="0.375429136371">
+ <shade name="dark" weight="0.761631964294" />
+ <shade name="cool" weight="0.22908461426" />
+ <shade name="soft" weight="0.00928238956484" />
+</color>
+
+<color name="blue" weight="0.344501335663">
+ <shade name="dark" weight="0.761631964294" />
+ <shade name="cool" weight="0.22908461426" />
+ <shade name="soft" weight="0.00928238956484" />
+</color>
+
+<color name="white" weight="0.158934531415">
+ <shade name="dark" weight="0.761631964294" />
+ <shade name="cool" weight="0.22908461426" />
+ <shade name="soft" weight="0.00928238956484" />
+</color>
+
+<color name="red" weight="0.0825600457785">
+ <shade name="dark" weight="0.761631964294" />
+ <shade name="cool" weight="0.22908461426" />
+ <shade name="soft" weight="0.00928238956484" />
+</color>
+
+<color name="pink" weight="0.0385738403273">
+ <shade name="dark" weight="0.761631964294" />
+ <shade name="cool" weight="0.22908461426" />
+ <shade name="soft" weight="0.00928238956484" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="touch">
+
+<color name="blue" weight="0.413630058731">
+ <shade name="soft" weight="0.481892012967" />
+ <shade name="light" weight="0.321261341978" />
+ <shade name="cool" weight="0.196845585903" />
+</color>
+
+<color name="green" weight="0.209601138569">
+ <shade name="soft" weight="0.481892012967" />
+ <shade name="light" weight="0.321261341978" />
+ <shade name="cool" weight="0.196845585903" />
+</color>
+
+<color name="black" weight="0.17188150627">
+ <shade name="soft" weight="0.481892012967" />
+ <shade name="light" weight="0.321261341978" />
+ <shade name="cool" weight="0.196845585903" />
+</color>
+
+<color name="red" weight="0.1101584716">
+ <shade name="soft" weight="0.481892012967" />
+ <shade name="light" weight="0.321261341978" />
+ <shade name="cool" weight="0.196845585903" />
+</color>
+
+<color name="white" weight="0.0947277129321">
+ <shade name="soft" weight="0.481892012967" />
+ <shade name="light" weight="0.321261341978" />
+ <shade name="cool" weight="0.196845585903" />
+</color>
+
+</colors>

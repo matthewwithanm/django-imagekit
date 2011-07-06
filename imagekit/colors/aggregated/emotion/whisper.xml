@@ -1,0 +1,33 @@
+<colors query="whisper">
+
+<color name="white" weight="0.39323666695">
+ <shade name="soft" weight="0.792052775822" />
+ <shade name="dark" weight="0.153508599874" />
+ <shade name="warm" weight="0.0544375034848" />
+</color>
+
+<color name="black" weight="0.267856860096">
+ <shade name="soft" weight="0.792052775822" />
+ <shade name="dark" weight="0.153508599874" />
+ <shade name="warm" weight="0.0544375034848" />
+</color>
+
+<color name="blue" weight="0.237461755404">
+ <shade name="soft" weight="0.806832193135" />
+ <shade name="dark" weight="0.15637301463" />
+ <shade name="cool" weight="0.0367936505013" />
+</color>
+
+<color name="green" weight="0.0530014638063">
+ <shade name="soft" weight="0.806832193135" />
+ <shade name="dark" weight="0.15637301463" />
+ <shade name="cool" weight="0.0367936505013" />
+</color>
+
+<color name="red" weight="0.0484421981025">
+ <shade name="soft" weight="0.792052775822" />
+ <shade name="dark" weight="0.153508599874" />
+ <shade name="warm" weight="0.0544375034848" />
+</color>
+
+</colors>

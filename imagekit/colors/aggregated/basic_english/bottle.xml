@@ -1,0 +1,33 @@
+<colors query="bottle">
+
+<color name="blue" weight="0.463693453781">
+ <shade name="dark" weight="0.387491383071" />
+ <shade name="fresh" weight="0.332043364861" />
+ <shade name="cool" weight="0.280463813038" />
+</color>
+
+<color name="green" weight="0.252418259013">
+ <shade name="dark" weight="0.387491383071" />
+ <shade name="fresh" weight="0.332043364861" />
+ <shade name="cool" weight="0.280463813038" />
+</color>
+
+<color name="black" weight="0.141220788082">
+ <shade name="dark" weight="0.387491383071" />
+ <shade name="fresh" weight="0.332043364861" />
+ <shade name="cool" weight="0.280463813038" />
+</color>
+
+<color name="purple" weight="0.0763926625294">
+ <shade name="dark" weight="0.387491383071" />
+ <shade name="fresh" weight="0.332043364861" />
+ <shade name="cool" weight="0.280463813038" />
+</color>
+
+<color name="red" weight="0.0662736926747">
+ <shade name="dark" weight="0.387491383071" />
+ <shade name="fresh" weight="0.332043364861" />
+ <shade name="cool" weight="0.280463813038" />
+</color>
+
+</colors>

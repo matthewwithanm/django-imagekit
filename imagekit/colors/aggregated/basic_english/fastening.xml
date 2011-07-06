@@ -1,0 +1,33 @@
+<colors query="fastening">
+
+<color name="white" weight="0.846378775284">
+ <shade name="light" weight="0.756692996263" />
+ <shade name="weak" weight="0.157159314609" />
+ <shade name="soft" weight="0.0861465872669" />
+</color>
+
+<color name="black" weight="0.0836594049558">
+ <shade name="light" weight="0.756692996263" />
+ <shade name="weak" weight="0.157159314609" />
+ <shade name="soft" weight="0.0861465872669" />
+</color>
+
+<color name="red" weight="0.0308218860363">
+ <shade name="light" weight="0.756692996263" />
+ <shade name="weak" weight="0.157159314609" />
+ <shade name="soft" weight="0.0861465872669" />
+</color>
+
+<color name="blue" weight="0.0205479240242">
+ <shade name="light" weight="0.756692996263" />
+ <shade name="weak" weight="0.157159314609" />
+ <shade name="soft" weight="0.0861465872669" />
+</color>
+
+<color name="yellow" weight="0.0185909788791">
+ <shade name="light" weight="0.756692996263" />
+ <shade name="weak" weight="0.157159314609" />
+ <shade name="soft" weight="0.0861465872669" />
+</color>
+
+</colors>

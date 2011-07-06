@@ -1,0 +1,33 @@
+<colors query="avalanche">
+
+<color name="black" weight="0.3320231883">
+ <shade name="dark" weight="0.673757901758" />
+ <shade name="weak" weight="0.182032836615" />
+ <shade name="fresh" weight="0.144207831604" />
+</color>
+
+<color name="orange" weight="0.190569522279">
+ <shade name="dark" weight="0.673757901758" />
+ <shade name="weak" weight="0.182032836615" />
+ <shade name="fresh" weight="0.144207831604" />
+</color>
+
+<color name="red" weight="0.177799399652">
+ <shade name="dark" weight="0.673757901758" />
+ <shade name="weak" weight="0.182032836615" />
+ <shade name="fresh" weight="0.144207831604" />
+</color>
+
+<color name="yellow" weight="0.176817082527">
+ <shade name="dark" weight="0.673757901758" />
+ <shade name="weak" weight="0.182032836615" />
+ <shade name="fresh" weight="0.144207831604" />
+</color>
+
+<color name="green" weight="0.122789640643">
+ <shade name="dark" weight="0.673757901758" />
+ <shade name="weak" weight="0.182032836615" />
+ <shade name="fresh" weight="0.144207831604" />
+</color>
+
+</colors>

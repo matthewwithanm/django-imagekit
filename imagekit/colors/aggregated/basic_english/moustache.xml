@@ -1,0 +1,33 @@
+<colors query="moustache">
+
+<color name="black" weight="0.652820643989">
+ <shade name="dark" weight="0.809650629412" />
+ <shade name="cool" weight="0.0986594144449" />
+ <shade name="light" weight="0.0916889123374" />
+</color>
+
+<color name="white" weight="0.219435510585">
+ <shade name="dark" weight="0.809650629412" />
+ <shade name="cool" weight="0.0986594144449" />
+ <shade name="light" weight="0.0916889123374" />
+</color>
+
+<color name="red" weight="0.0932600919985">
+ <shade name="dark" weight="0.809650629412" />
+ <shade name="cool" weight="0.0986594144449" />
+ <shade name="light" weight="0.0916889123374" />
+</color>
+
+<color name="purple" weight="0.0220219208837">
+ <shade name="dark" weight="0.809650629412" />
+ <shade name="cool" weight="0.0986594144449" />
+ <shade name="light" weight="0.0916889123374" />
+</color>
+
+<color name="yellow" weight="0.0124608022082">
+ <shade name="dark" weight="0.809650629412" />
+ <shade name="cool" weight="0.0986594144449" />
+ <shade name="light" weight="0.0916889123374" />
+</color>
+
+</colors>

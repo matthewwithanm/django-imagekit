@@ -1,0 +1,33 @@
+<colors query="shivering">
+
+<color name="blue" weight="0.308860417792">
+ <shade name="intense" weight="0.451288595918" />
+ <shade name="soft" weight="0.314469354933" />
+ <shade name="light" weight="0.234240271215" />
+</color>
+
+<color name="white" weight="0.237974420266">
+ <shade name="soft" weight="0.405354565014" />
+ <shade name="light" weight="0.301938366195" />
+ <shade name="dark" weight="0.292704777015" />
+</color>
+
+<color name="pink" weight="0.189873207659">
+ <shade name="soft" weight="0.405354565014" />
+ <shade name="light" weight="0.301938366195" />
+ <shade name="dark" weight="0.292704777015" />
+</color>
+
+<color name="red" weight="0.145569459205">
+ <shade name="intense" weight="0.451288595918" />
+ <shade name="soft" weight="0.314469354933" />
+ <shade name="light" weight="0.234240271215" />
+</color>
+
+<color name="black" weight="0.117721388749">
+ <shade name="intense" weight="0.451288595918" />
+ <shade name="soft" weight="0.314469354933" />
+ <shade name="light" weight="0.234240271215" />
+</color>
+
+</colors>

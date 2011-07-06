@@ -1,0 +1,33 @@
+<colors query="vanity">
+
+<color name="white" weight="0.59501839735">
+ <shade name="light" weight="0.941055571842" />
+ <shade name="dark" weight="0.0348224534707" />
+ <shade name="cool" weight="0.0241209189895" />
+</color>
+
+<color name="black" weight="0.264997884181">
+ <shade name="light" weight="0.941055571842" />
+ <shade name="dark" weight="0.0348224534707" />
+ <shade name="cool" weight="0.0241209189895" />
+</color>
+
+<color name="red" weight="0.113605574422">
+ <shade name="light" weight="0.941055571842" />
+ <shade name="dark" weight="0.0348224534707" />
+ <shade name="cool" weight="0.0241209189895" />
+</color>
+
+<color name="yellow" weight="0.0133725784147">
+ <shade name="light" weight="0.941055571842" />
+ <shade name="dark" weight="0.0348224534707" />
+ <shade name="cool" weight="0.0241209189895" />
+</color>
+
+<color name="purple" weight="0.0130045257978">
+ <shade name="light" weight="0.941055571842" />
+ <shade name="dark" weight="0.0348224534707" />
+ <shade name="cool" weight="0.0241209189895" />
+</color>
+
+</colors>

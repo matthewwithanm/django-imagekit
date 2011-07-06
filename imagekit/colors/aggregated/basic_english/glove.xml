@@ -1,0 +1,33 @@
+<colors query="glove">
+
+<color name="white" weight="0.766142520143">
+ <shade name="soft" weight="0.448560632288" />
+ <shade name="dark" weight="0.438074799326" />
+ <shade name="light" weight="0.113363505251" />
+</color>
+
+<color name="black" weight="0.0825167367612">
+ <shade name="soft" weight="0.448560632288" />
+ <shade name="dark" weight="0.438074799326" />
+ <shade name="light" weight="0.113363505251" />
+</color>
+
+<color name="red" weight="0.0777947489637">
+ <shade name="soft" weight="0.448560632288" />
+ <shade name="dark" weight="0.438074799326" />
+ <shade name="light" weight="0.113363505251" />
+</color>
+
+<color name="pink" weight="0.0423798404825">
+ <shade name="soft" weight="0.448560632288" />
+ <shade name="dark" weight="0.438074799326" />
+ <shade name="light" weight="0.113363505251" />
+</color>
+
+<color name="blue" weight="0.0311651194634">
+ <shade name="soft" weight="0.448560632288" />
+ <shade name="dark" weight="0.438074799326" />
+ <shade name="light" weight="0.113363505251" />
+</color>
+
+</colors>

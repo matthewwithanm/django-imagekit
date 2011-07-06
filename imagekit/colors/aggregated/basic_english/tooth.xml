@@ -1,0 +1,33 @@
+<colors query="tooth">
+
+<color name="blue" weight="0.853349330868">
+ <shade name="hard" weight="0.402383991594" />
+ <shade name="light" weight="0.366616525675" />
+ <shade name="dark" weight="0.230998217397" />
+</color>
+
+<color name="white" weight="0.0739569420085">
+ <shade name="hard" weight="0.402383991594" />
+ <shade name="light" weight="0.366616525675" />
+ <shade name="dark" weight="0.230998217397" />
+</color>
+
+<color name="black" weight="0.0510113266674">
+ <shade name="hard" weight="0.402383991594" />
+ <shade name="light" weight="0.366616525675" />
+ <shade name="dark" weight="0.230998217397" />
+</color>
+
+<color name="pink" weight="0.0115676242629">
+ <shade name="hard" weight="0.402383991594" />
+ <shade name="light" weight="0.366616525675" />
+ <shade name="dark" weight="0.230998217397" />
+</color>
+
+<color name="red" weight="0.0101137698473">
+ <shade name="hard" weight="0.402383991594" />
+ <shade name="light" weight="0.366616525675" />
+ <shade name="dark" weight="0.230998217397" />
+</color>
+
+</colors>

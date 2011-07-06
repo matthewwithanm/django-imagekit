@@ -1,0 +1,33 @@
+<colors query="kidney">
+
+<color name="red" weight="0.680967628494">
+ <shade name="fresh" weight="0.751380318158" />
+ <shade name="weak" weight="0.139963000441" />
+ <shade name="light" weight="0.108655487185" />
+</color>
+
+<color name="white" weight="0.265695461985">
+ <shade name="fresh" weight="0.751380318158" />
+ <shade name="weak" weight="0.139963000441" />
+ <shade name="light" weight="0.108655487185" />
+</color>
+
+<color name="black" weight="0.0470379373439">
+ <shade name="fresh" weight="0.751380318158" />
+ <shade name="weak" weight="0.139963000441" />
+ <shade name="light" weight="0.108655487185" />
+</color>
+
+<color name="blue" weight="0.00401495364777">
+ <shade name="fresh" weight="0.751380318158" />
+ <shade name="weak" weight="0.139963000441" />
+ <shade name="light" weight="0.108655487185" />
+</color>
+
+<color name="pink" weight="0.00228301285853">
+ <shade name="fresh" weight="0.751380318158" />
+ <shade name="weak" weight="0.139963000441" />
+ <shade name="light" weight="0.108655487185" />
+</color>
+
+</colors>

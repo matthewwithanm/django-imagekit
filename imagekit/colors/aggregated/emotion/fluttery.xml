@@ -1,0 +1,33 @@
+<colors query="fluttery">
+
+<color name="white" weight="0.821274097118">
+ <shade name="soft" weight="0.514850857225" />
+ <shade name="light" weight="0.344734053002" />
+ <shade name="weak" weight="0.140413870152" />
+</color>
+
+<color name="pink" weight="0.0989439745575">
+ <shade name="soft" weight="0.514850857225" />
+ <shade name="light" weight="0.344734053002" />
+ <shade name="weak" weight="0.140413870152" />
+</color>
+
+<color name="black" weight="0.0394993732423">
+ <shade name="soft" weight="0.514850857225" />
+ <shade name="light" weight="0.344734053002" />
+ <shade name="weak" weight="0.140413870152" />
+</color>
+
+<color name="blue" weight="0.0273758032373">
+ <shade name="soft" weight="0.514850857225" />
+ <shade name="light" weight="0.344734053002" />
+ <shade name="weak" weight="0.140413870152" />
+</color>
+
+<color name="green" weight="0.0129057358118">
+ <shade name="soft" weight="0.514850857225" />
+ <shade name="light" weight="0.344734053002" />
+ <shade name="weak" weight="0.140413870152" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="knowledge">
+
+<color name="green" weight="0.793499968492">
+ <shade name="fresh" weight="0.390691810071" />
+ <shade name="weak" weight="0.348484107598" />
+ <shade name="hard" weight="0.260821956308" />
+</color>
+
+<color name="red" weight="0.0604571404565">
+ <shade name="fresh" weight="0.390691810071" />
+ <shade name="weak" weight="0.348484107598" />
+ <shade name="hard" weight="0.260821956308" />
+</color>
+
+<color name="purple" weight="0.0562062477682">
+ <shade name="fresh" weight="0.390691810071" />
+ <shade name="weak" weight="0.348484107598" />
+ <shade name="hard" weight="0.260821956308" />
+</color>
+
+<color name="blue" weight="0.0510107122602">
+ <shade name="fresh" weight="0.390691810071" />
+ <shade name="weak" weight="0.348484107598" />
+ <shade name="hard" weight="0.260821956308" />
+</color>
+
+<color name="black" weight="0.0388248198869">
+ <shade name="fresh" weight="0.390691810071" />
+ <shade name="weak" weight="0.348484107598" />
+ <shade name="hard" weight="0.260821956308" />
+</color>
+
+</colors>

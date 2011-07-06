@@ -1,0 +1,33 @@
+<colors query="earthworm">
+
+<color name="red" weight="0.345849368351">
+ <shade name="fresh" weight="0.802776776537" />
+ <shade name="cool" weight="0.102777649591" />
+ <shade name="dark" weight="0.0944443266514" />
+</color>
+
+<color name="white" weight="0.221343595745">
+ <shade name="fresh" weight="0.802776776537" />
+ <shade name="cool" weight="0.102777649591" />
+ <shade name="dark" weight="0.0944443266514" />
+</color>
+
+<color name="pink" weight="0.212450326273">
+ <shade name="fresh" weight="0.802776776537" />
+ <shade name="cool" weight="0.102777649591" />
+ <shade name="dark" weight="0.0944443266514" />
+</color>
+
+<color name="black" weight="0.131422759973">
+ <shade name="fresh" weight="0.802776776537" />
+ <shade name="cool" weight="0.102777649591" />
+ <shade name="dark" weight="0.0944443266514" />
+</color>
+
+<color name="blue" weight="0.0889326947189">
+ <shade name="fresh" weight="0.802776776537" />
+ <shade name="cool" weight="0.102777649591" />
+ <shade name="dark" weight="0.0944443266514" />
+</color>
+
+</colors>

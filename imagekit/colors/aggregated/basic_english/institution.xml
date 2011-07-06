@@ -1,0 +1,33 @@
+<colors query="institution">
+
+<color name="black" weight="0.591182764324">
+ <shade name="neutral" weight="0.535223902763" />
+ <shade name="weak" weight="0.451595167956" />
+ <shade name="dark" weight="0.0131798886055" />
+</color>
+
+<color name="white" weight="0.250203802191">
+ <shade name="neutral" weight="0.535223902763" />
+ <shade name="weak" weight="0.451595167956" />
+ <shade name="dark" weight="0.0131798886055" />
+</color>
+
+<color name="orange" weight="0.149512028139">
+ <shade name="neutral" weight="0.535223902763" />
+ <shade name="weak" weight="0.451595167956" />
+ <shade name="dark" weight="0.0131798886055" />
+</color>
+
+<color name="pink" weight="0.00607201910196">
+ <shade name="neutral" weight="0.535223902763" />
+ <shade name="weak" weight="0.451595167956" />
+ <shade name="dark" weight="0.0131798886055" />
+</color>
+
+<color name="green" weight="0.00302838138628">
+ <shade name="neutral" weight="0.535223902763" />
+ <shade name="weak" weight="0.451595167956" />
+ <shade name="dark" weight="0.0131798886055" />
+</color>
+
+</colors>

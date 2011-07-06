@@ -1,0 +1,33 @@
+<colors query="awe">
+
+<color name="black" weight="0.40282643142">
+ <shade name="intense" weight="0.431413639604" />
+ <shade name="cool" weight="0.292110388595" />
+ <shade name="dark" weight="0.276474309401" />
+</color>
+
+<color name="blue" weight="0.400470721295">
+ <shade name="intense" weight="0.431413639604" />
+ <shade name="cool" weight="0.292110388595" />
+ <shade name="dark" weight="0.276474309401" />
+</color>
+
+<color name="white" weight="0.0877502021662">
+ <shade name="cool" weight="0.376717799136" />
+ <shade name="dark" weight="0.356552856116" />
+ <shade name="fresh" weight="0.266727200848" />
+</color>
+
+<color name="green" weight="0.0559481154751">
+ <shade name="intense" weight="0.431413639604" />
+ <shade name="cool" weight="0.292110388595" />
+ <shade name="dark" weight="0.276474309401" />
+</color>
+
+<color name="red" weight="0.0530034778185">
+ <shade name="intense" weight="0.431413639604" />
+ <shade name="cool" weight="0.292110388595" />
+ <shade name="dark" weight="0.276474309401" />
+</color>
+
+</colors>

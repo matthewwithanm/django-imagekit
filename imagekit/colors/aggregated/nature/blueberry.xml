@@ -1,0 +1,33 @@
+<colors query="blueberry">
+
+<color name="orange" weight="0.426885412761">
+ <shade name="fresh" weight="0.6599355284" />
+ <shade name="light" weight="0.183846773612" />
+ <shade name="warm" weight="0.156216622665" />
+</color>
+
+<color name="blue" weight="0.352644471411">
+ <shade name="fresh" weight="0.759539177394" />
+ <shade name="light" weight="0.211594650063" />
+ <shade name="intense" weight="0.0288649349219" />
+</color>
+
+<color name="black" weight="0.16306492475">
+ <shade name="fresh" weight="0.6599355284" />
+ <shade name="light" weight="0.183846773612" />
+ <shade name="warm" weight="0.156216622665" />
+</color>
+
+<color name="purple" weight="0.0330107042787">
+ <shade name="fresh" weight="0.767234029715" />
+ <shade name="light" weight="0.213738304574" />
+ <shade name="soft" weight="0.0190264155517" />
+</color>
+
+<color name="red" weight="0.0243934521578">
+ <shade name="fresh" weight="0.6599355284" />
+ <shade name="light" weight="0.183846773612" />
+ <shade name="warm" weight="0.156216622665" />
+</color>
+
+</colors>

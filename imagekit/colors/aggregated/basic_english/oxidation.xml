@@ -1,0 +1,33 @@
+<colors query="oxidation">
+
+<color name="green" weight="0.817301479392">
+ <shade name="light" weight="0.927737520632" />
+ <shade name="hard" weight="0.0499332732817" />
+ <shade name="neutral" weight="0.0223281170868" />
+</color>
+
+<color name="white" weight="0.0667184881136">
+ <shade name="light" weight="0.927737520632" />
+ <shade name="hard" weight="0.0499332732817" />
+ <shade name="neutral" weight="0.0223281170868" />
+</color>
+
+<color name="black" weight="0.0416434563309">
+ <shade name="light" weight="0.927737520632" />
+ <shade name="hard" weight="0.0499332732817" />
+ <shade name="neutral" weight="0.0223281170868" />
+</color>
+
+<color name="blue" weight="0.0405870802691">
+ <shade name="light" weight="0.927737520632" />
+ <shade name="hard" weight="0.0499332732817" />
+ <shade name="neutral" weight="0.0223281170868" />
+</color>
+
+<color name="red" weight="0.0337484352375">
+ <shade name="light" weight="0.927737520632" />
+ <shade name="hard" weight="0.0499332732817" />
+ <shade name="neutral" weight="0.0223281170868" />
+</color>
+
+</colors>

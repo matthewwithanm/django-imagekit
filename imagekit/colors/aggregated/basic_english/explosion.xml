@@ -1,0 +1,33 @@
+<colors query="explosion">
+
+<color name="blue" weight="0.42563721729">
+ <shade name="hard" weight="0.351562083838" />
+ <shade name="cool" weight="0.34635375667" />
+ <shade name="light" weight="0.302082975743" />
+</color>
+
+<color name="red" weight="0.335538828229">
+ <shade name="hard" weight="0.351562083838" />
+ <shade name="cool" weight="0.34635375667" />
+ <shade name="light" weight="0.302082975743" />
+</color>
+
+<color name="yellow" weight="0.11774927398">
+ <shade name="hard" weight="0.351562083838" />
+ <shade name="cool" weight="0.34635375667" />
+ <shade name="light" weight="0.302082975743" />
+</color>
+
+<color name="purple" weight="0.0944479664643">
+ <shade name="hard" weight="0.351562083838" />
+ <shade name="cool" weight="0.34635375667" />
+ <shade name="light" weight="0.302082975743" />
+</color>
+
+<color name="green" weight="0.0266256273881">
+ <shade name="hard" weight="0.351562083838" />
+ <shade name="cool" weight="0.34635375667" />
+ <shade name="light" weight="0.302082975743" />
+</color>
+
+</colors>

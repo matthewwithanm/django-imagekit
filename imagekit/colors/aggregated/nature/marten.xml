@@ -1,0 +1,33 @@
+<colors query="marten">
+
+<color name="black" weight="0.326502841707">
+ <shade name="dark" weight="0.360655140555" />
+ <shade name="soft" weight="0.352458432815" />
+ <shade name="fresh" weight="0.286884770896" />
+</color>
+
+<color name="white" weight="0.28384249099">
+ <shade name="dark" weight="0.360655140555" />
+ <shade name="soft" weight="0.352458432815" />
+ <shade name="fresh" weight="0.286884770896" />
+</color>
+
+<color name="red" weight="0.169969586321">
+ <shade name="dark" weight="0.360655140555" />
+ <shade name="soft" weight="0.352458432815" />
+ <shade name="fresh" weight="0.286884770896" />
+</color>
+
+<color name="blue" weight="0.117567895676">
+ <shade name="dark" weight="0.360655140555" />
+ <shade name="soft" weight="0.352458432815" />
+ <shade name="fresh" weight="0.286884770896" />
+</color>
+
+<color name="purple" weight="0.102116115102">
+ <shade name="dark" weight="0.360655140555" />
+ <shade name="soft" weight="0.352458432815" />
+ <shade name="fresh" weight="0.286884770896" />
+</color>
+
+</colors>

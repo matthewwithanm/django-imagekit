@@ -1,0 +1,33 @@
+<colors query="gave">
+
+<color name="white" weight="0.37909796389">
+ <shade name="light" weight="0.968158900144" />
+ <shade name="soft" weight="0.0164013152109" />
+ <shade name="fresh" weight="0.0154387098034" />
+</color>
+
+<color name="green" weight="0.253415035321">
+ <shade name="light" weight="0.968158900144" />
+ <shade name="soft" weight="0.0164013152109" />
+ <shade name="fresh" weight="0.0154387098034" />
+</color>
+
+<color name="black" weight="0.174863204965">
+ <shade name="light" weight="0.968158900144" />
+ <shade name="soft" weight="0.0164013152109" />
+ <shade name="fresh" weight="0.0154387098034" />
+</color>
+
+<color name="blue" weight="0.10724032492">
+ <shade name="light" weight="0.968158900144" />
+ <shade name="soft" weight="0.0164013152109" />
+ <shade name="fresh" weight="0.0154387098034" />
+</color>
+
+<color name="red" weight="0.0853824242995">
+ <shade name="light" weight="0.968158900144" />
+ <shade name="soft" weight="0.0164013152109" />
+ <shade name="fresh" weight="0.0154387098034" />
+</color>
+
+</colors>

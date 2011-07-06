@@ -1,0 +1,33 @@
+<colors query="coil">
+
+<color name="red" weight="0.578167093876">
+ <shade name="dark" weight="0.43103361326" />
+ <shade name="hard" weight="0.384614608755" />
+ <shade name="light" weight="0.184349760748" />
+</color>
+
+<color name="black" weight="0.208542857244">
+ <shade name="dark" weight="0.43103361326" />
+ <shade name="hard" weight="0.384614608755" />
+ <shade name="light" weight="0.184349760748" />
+</color>
+
+<color name="blue" weight="0.14526088677">
+ <shade name="dark" weight="0.43103361326" />
+ <shade name="hard" weight="0.384614608755" />
+ <shade name="light" weight="0.184349760748" />
+</color>
+
+<color name="yellow" weight="0.0415647487886">
+ <shade name="dark" weight="0.43103361326" />
+ <shade name="hard" weight="0.384614608755" />
+ <shade name="light" weight="0.184349760748" />
+</color>
+
+<color name="orange" weight="0.0264633694709">
+ <shade name="dark" weight="0.43103361326" />
+ <shade name="hard" weight="0.384614608755" />
+ <shade name="light" weight="0.184349760748" />
+</color>
+
+</colors>

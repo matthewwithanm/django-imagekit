@@ -1,0 +1,33 @@
+<colors query="hail">
+
+<color name="black" weight="0.3183474318">
+ <shade name="soft" weight="0.470902965956" />
+ <shade name="light" weight="0.46324600716" />
+ <shade name="intense" weight="0.0658498456458" />
+</color>
+
+<color name="red" weight="0.24303943718">
+ <shade name="soft" weight="0.470902965956" />
+ <shade name="light" weight="0.46324600716" />
+ <shade name="intense" weight="0.0658498456458" />
+</color>
+
+<color name="blue" weight="0.183705865662">
+ <shade name="soft" weight="0.470902965956" />
+ <shade name="light" weight="0.46324600716" />
+ <shade name="intense" weight="0.0658498456458" />
+</color>
+
+<color name="green" weight="0.178000714555">
+ <shade name="soft" weight="0.470902965956" />
+ <shade name="light" weight="0.46324600716" />
+ <shade name="intense" weight="0.0658498456458" />
+</color>
+
+<color name="white" weight="0.0769054369294">
+ <shade name="soft" weight="0.471806115953" />
+ <shade name="light" weight="0.464134471791" />
+ <shade name="cool" weight="0.0640582287513" />
+</color>
+
+</colors>

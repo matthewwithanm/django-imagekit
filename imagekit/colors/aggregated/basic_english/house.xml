@@ -1,0 +1,33 @@
+<colors query="house">
+
+<color name="white" weight="0.945659222056">
+ <shade name="hard" weight="0.416418252044" />
+ <shade name="light" weight="0.371802010753" />
+ <shade name="dark" weight="0.211778425325" />
+</color>
+
+<color name="green" weight="0.0167509987826">
+ <shade name="hard" weight="0.416418252044" />
+ <shade name="light" weight="0.371802010753" />
+ <shade name="dark" weight="0.211778425325" />
+</color>
+
+<color name="red" weight="0.0161569917336">
+ <shade name="hard" weight="0.416418252044" />
+ <shade name="light" weight="0.371802010753" />
+ <shade name="dark" weight="0.211778425325" />
+</color>
+
+<color name="blue" weight="0.0135433607179">
+ <shade name="hard" weight="0.416418252044" />
+ <shade name="light" weight="0.371802010753" />
+ <shade name="dark" weight="0.211778425325" />
+</color>
+
+<color name="yellow" weight="0.00788841361112">
+ <shade name="hard" weight="0.416418252044" />
+ <shade name="light" weight="0.371802010753" />
+ <shade name="dark" weight="0.211778425325" />
+</color>
+
+</colors>

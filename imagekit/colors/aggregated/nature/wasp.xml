@@ -1,0 +1,33 @@
+<colors query="wasp">
+
+<color name="black" weight="0.459244919153">
+ <shade name="dark" weight="0.386092089302" />
+ <shade name="cool" weight="0.329800789833" />
+ <shade name="soft" weight="0.284105499675" />
+</color>
+
+<color name="red" weight="0.409745466789">
+ <shade name="dark" weight="0.386092089302" />
+ <shade name="cool" weight="0.329800789833" />
+ <shade name="soft" weight="0.284105499675" />
+</color>
+
+<color name="blue" weight="0.0698492272245">
+ <shade name="dark" weight="0.386092089302" />
+ <shade name="cool" weight="0.329800789833" />
+ <shade name="soft" weight="0.284105499675" />
+</color>
+
+<color name="green" weight="0.039599561891">
+ <shade name="dark" weight="0.386092089302" />
+ <shade name="cool" weight="0.329800789833" />
+ <shade name="soft" weight="0.284105499675" />
+</color>
+
+<color name="orange" weight="0.021559761474">
+ <shade name="dark" weight="0.386092089302" />
+ <shade name="cool" weight="0.329800789833" />
+ <shade name="soft" weight="0.284105499675" />
+</color>
+
+</colors>

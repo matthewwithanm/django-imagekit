@@ -1,0 +1,33 @@
+<colors query="frantic">
+
+<color name="black" weight="0.399791860673">
+ <shade name="hard" weight="0.946608240164" />
+ <shade name="dark" weight="0.0328558203994" />
+ <shade name="cool" weight="0.0205348877496" />
+</color>
+
+<color name="white" weight="0.212876185553">
+ <shade name="hard" weight="0.946608240164" />
+ <shade name="dark" weight="0.0328558203994" />
+ <shade name="cool" weight="0.0205348877496" />
+</color>
+
+<color name="red" weight="0.201453560963">
+ <shade name="hard" weight="0.946608240164" />
+ <shade name="dark" weight="0.0328558203994" />
+ <shade name="cool" weight="0.0205348877496" />
+</color>
+
+<color name="blue" weight="0.0976115192293">
+ <shade name="hard" weight="0.946608240164" />
+ <shade name="dark" weight="0.0328558203994" />
+ <shade name="cool" weight="0.0205348877496" />
+</color>
+
+<color name="green" weight="0.0882657354733">
+ <shade name="hard" weight="0.946608240164" />
+ <shade name="dark" weight="0.0328558203994" />
+ <shade name="cool" weight="0.0205348877496" />
+</color>
+
+</colors>

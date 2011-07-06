@@ -1,0 +1,33 @@
+<colors query="myrtle">
+
+<color name="black" weight="0.395065322076">
+ <shade name="soft" weight="0.362854622524" />
+ <shade name="light" weight="0.343687438456" />
+ <shade name="fresh" weight="0.293456197451" />
+</color>
+
+<color name="red" weight="0.231704977926">
+ <shade name="soft" weight="0.362854622524" />
+ <shade name="light" weight="0.343687438456" />
+ <shade name="fresh" weight="0.293456197451" />
+</color>
+
+<color name="green" weight="0.136022490639">
+ <shade name="soft" weight="0.362854622524" />
+ <shade name="light" weight="0.343687438456" />
+ <shade name="fresh" weight="0.293456197451" />
+</color>
+
+<color name="pink" weight="0.12152009274">
+ <shade name="soft" weight="0.362854622524" />
+ <shade name="light" weight="0.343687438456" />
+ <shade name="fresh" weight="0.293456197451" />
+</color>
+
+<color name="white" weight="0.115685794734">
+ <shade name="soft" weight="0.362854622524" />
+ <shade name="light" weight="0.343687438456" />
+ <shade name="fresh" weight="0.293456197451" />
+</color>
+
+</colors>

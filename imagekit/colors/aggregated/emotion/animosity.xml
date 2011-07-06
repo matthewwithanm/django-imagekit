@@ -1,0 +1,33 @@
+<colors query="animosity">
+
+<color name="red" weight="0.430428692153">
+ <shade name="intense" weight="0.981326375015" />
+ <shade name="fresh" weight="0.00964074515268" />
+ <shade name="light" weight="0.00903185598514" />
+</color>
+
+<color name="black" weight="0.349154392275">
+ <shade name="intense" weight="0.981326375015" />
+ <shade name="fresh" weight="0.00964074515268" />
+ <shade name="light" weight="0.00903185598514" />
+</color>
+
+<color name="white" weight="0.185305403721">
+ <shade name="fresh" weight="0.357129311738" />
+ <shade name="light" weight="0.33457377626" />
+ <shade name="dark" weight="0.308258984869" />
+</color>
+
+<color name="green" weight="0.0182054431726">
+ <shade name="intense" weight="0.981326375015" />
+ <shade name="fresh" weight="0.00964074515268" />
+ <shade name="light" weight="0.00903185598514" />
+</color>
+
+<color name="blue" weight="0.0169050543746">
+ <shade name="intense" weight="0.981326375015" />
+ <shade name="fresh" weight="0.00964074515268" />
+ <shade name="light" weight="0.00903185598514" />
+</color>
+
+</colors>

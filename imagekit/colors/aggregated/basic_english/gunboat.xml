@@ -1,0 +1,33 @@
+<colors query="gunboat">
+
+<color name="green" weight="0.387096324662">
+ <shade name="light" weight="0.986558137315" />
+ <shade name="cool" weight="0.00806450793445" />
+ <shade name="fresh" weight="0.00537633862297" />
+</color>
+
+<color name="blue" weight="0.215053513701">
+ <shade name="light" weight="0.986558137315" />
+ <shade name="cool" weight="0.00806450793445" />
+ <shade name="fresh" weight="0.00537633862297" />
+</color>
+
+<color name="red" weight="0.172042810961">
+ <shade name="light" weight="0.986558137315" />
+ <shade name="cool" weight="0.00806450793445" />
+ <shade name="fresh" weight="0.00537633862297" />
+</color>
+
+<color name="orange" weight="0.134408446063">
+ <shade name="light" weight="0.986558137315" />
+ <shade name="cool" weight="0.00806450793445" />
+ <shade name="fresh" weight="0.00537633862297" />
+</color>
+
+<color name="black" weight="0.0913977433231">
+ <shade name="light" weight="0.986558137315" />
+ <shade name="cool" weight="0.00806450793445" />
+ <shade name="fresh" weight="0.00537633862297" />
+</color>
+
+</colors>

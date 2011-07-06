@@ -1,0 +1,33 @@
+<colors query="agony">
+
+<color name="red" weight="0.492662980225">
+ <shade name="intense" weight="0.828086292186" />
+ <shade name="dark" weight="0.101694807812" />
+ <shade name="fresh" weight="0.0702178434895" />
+</color>
+
+<color name="black" weight="0.363423973578">
+ <shade name="intense" weight="0.828086292186" />
+ <shade name="dark" weight="0.101694807812" />
+ <shade name="fresh" weight="0.0702178434895" />
+</color>
+
+<color name="white" weight="0.0614128212035">
+ <shade name="dark" weight="0.513695888624" />
+ <shade name="fresh" weight="0.354694780241" />
+ <shade name="hard" weight="0.131603994324" />
+</color>
+
+<color name="green" weight="0.0563598675602">
+ <shade name="intense" weight="0.828086292186" />
+ <shade name="dark" weight="0.101694807812" />
+ <shade name="fresh" weight="0.0702178434895" />
+</color>
+
+<color name="blue" weight="0.0261393178857">
+ <shade name="intense" weight="0.828086292186" />
+ <shade name="dark" weight="0.101694807812" />
+ <shade name="fresh" weight="0.0702178434895" />
+</color>
+
+</colors>

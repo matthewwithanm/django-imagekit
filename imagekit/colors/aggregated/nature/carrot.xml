@@ -1,0 +1,33 @@
+<colors query="carrot">
+
+<color name="orange" weight="0.481535696043">
+ <shade name="fresh" weight="0.935820661817" />
+ <shade name="warm" weight="0.0353114539538" />
+ <shade name="light" weight="0.028866777947" />
+</color>
+
+<color name="black" weight="0.163219921512">
+ <shade name="fresh" weight="0.935820661817" />
+ <shade name="warm" weight="0.0353114539538" />
+ <shade name="light" weight="0.028866777947" />
+</color>
+
+<color name="red" weight="0.129246544183">
+ <shade name="fresh" weight="0.935820661817" />
+ <shade name="warm" weight="0.0353114539538" />
+ <shade name="light" weight="0.028866777947" />
+</color>
+
+<color name="white" weight="0.118906820649">
+ <shade name="fresh" weight="0.935820661817" />
+ <shade name="warm" weight="0.0353114539538" />
+ <shade name="light" weight="0.028866777947" />
+</color>
+
+<color name="purple" weight="0.107089993752">
+ <shade name="fresh" weight="0.94278266358" />
+ <shade name="light" weight="0.0290815312295" />
+ <shade name="dark" weight="0.0281346906779" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="ambivalent">
+
+<color name="black" weight="0.449999516251">
+ <shade name="neutral" weight="0.475563289397" />
+ <shade name="intense" weight="0.377819056003" />
+ <shade name="dark" weight="0.146616350091" />
+</color>
+
+<color name="white" weight="0.224999758125">
+ <shade name="neutral" weight="0.642130848632" />
+ <shade name="dark" weight="0.19796919444" />
+ <shade name="weak" weight="0.159898195509" />
+</color>
+
+<color name="red" weight="0.162499825313">
+ <shade name="neutral" weight="0.475563289397" />
+ <shade name="intense" weight="0.377819056003" />
+ <shade name="dark" weight="0.146616350091" />
+</color>
+
+<color name="green" weight="0.112499879063">
+ <shade name="neutral" weight="0.475563289397" />
+ <shade name="intense" weight="0.377819056003" />
+ <shade name="dark" weight="0.146616350091" />
+</color>
+
+<color name="yellow" weight="0.0499999462501">
+ <shade name="neutral" weight="0.475563289397" />
+ <shade name="intense" weight="0.377819056003" />
+ <shade name="dark" weight="0.146616350091" />
+</color>
+
+</colors>

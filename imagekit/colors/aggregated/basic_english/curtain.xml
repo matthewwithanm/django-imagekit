@@ -1,0 +1,33 @@
+<colors query="curtain">
+
+<color name="blue" weight="0.465368903942">
+ <shade name="light" weight="0.754630946077" />
+ <shade name="dark" weight="0.17035680639" />
+ <shade name="cool" weight="0.0750112197896" />
+</color>
+
+<color name="red" weight="0.193223346081">
+ <shade name="light" weight="0.754630946077" />
+ <shade name="dark" weight="0.17035680639" />
+ <shade name="cool" weight="0.0750112197896" />
+</color>
+
+<color name="black" weight="0.166008790295">
+ <shade name="light" weight="0.754630946077" />
+ <shade name="dark" weight="0.17035680639" />
+ <shade name="cool" weight="0.0750112197896" />
+</color>
+
+<color name="orange" weight="0.097700255272">
+ <shade name="light" weight="0.754630946077" />
+ <shade name="dark" weight="0.17035680639" />
+ <shade name="cool" weight="0.0750112197896" />
+</color>
+
+<color name="white" weight="0.0776975567693">
+ <shade name="light" weight="0.754630946077" />
+ <shade name="dark" weight="0.17035680639" />
+ <shade name="cool" weight="0.0750112197896" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="crocodile">
+
+<color name="black" weight="0.477004174257">
+ <shade name="cool" weight="0.568468173689" />
+ <shade name="soft" weight="0.282970824236" />
+ <shade name="dark" weight="0.148559682724" />
+</color>
+
+<color name="green" weight="0.195754494256">
+ <shade name="cool" weight="0.568468173689" />
+ <shade name="soft" weight="0.282970824236" />
+ <shade name="dark" weight="0.148559682724" />
+</color>
+
+<color name="white" weight="0.140919650986">
+ <shade name="cool" weight="0.568468173689" />
+ <shade name="soft" weight="0.282970824236" />
+ <shade name="dark" weight="0.148559682724" />
+</color>
+
+<color name="red" weight="0.0966980031868">
+ <shade name="cool" weight="0.568468173689" />
+ <shade name="soft" weight="0.282970824236" />
+ <shade name="dark" weight="0.148559682724" />
+</color>
+
+<color name="pink" weight="0.089622539539">
+ <shade name="cool" weight="0.568468173689" />
+ <shade name="soft" weight="0.282970824236" />
+ <shade name="dark" weight="0.148559682724" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="to be pleased">
+
+<color name="orange" weight="0.4999995">
+ <shade name="hard" weight="0.999997977508" />
+ <shade name="weak" weight="1.02249281954e-06" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+<color name="black" weight="0.4999995">
+ <shade name="hard" weight="0.999997977508" />
+ <shade name="weak" weight="1.02249281954e-06" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="hard" weight="0.999997977508" />
+ <shade name="weak" weight="1.02249281954e-06" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="hard" weight="0.999997977508" />
+ <shade name="weak" weight="1.02249281954e-06" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="hard" weight="0.999997977508" />
+ <shade name="weak" weight="1.02249281954e-06" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+</colors>

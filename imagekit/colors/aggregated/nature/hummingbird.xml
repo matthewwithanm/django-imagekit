@@ -1,0 +1,33 @@
+<colors query="hummingbird">
+
+<color name="red" weight="0.494233391094">
+ <shade name="dark" weight="0.339622112692" />
+ <shade name="light" weight="0.333961744147" />
+ <shade name="fresh" weight="0.326414586087" />
+</color>
+
+<color name="green" weight="0.30203151678">
+ <shade name="dark" weight="0.339622112692" />
+ <shade name="light" weight="0.333961744147" />
+ <shade name="fresh" weight="0.326414586087" />
+</color>
+
+<color name="pink" weight="0.0886874362908">
+ <shade name="dark" weight="0.339622112692" />
+ <shade name="light" weight="0.333961744147" />
+ <shade name="fresh" weight="0.326414586087" />
+</color>
+
+<color name="orange" weight="0.0653486372669">
+ <shade name="dark" weight="0.339622112692" />
+ <shade name="light" weight="0.333961744147" />
+ <shade name="fresh" weight="0.326414586087" />
+</color>
+
+<color name="yellow" weight="0.0496979132156">
+ <shade name="dark" weight="0.339622112692" />
+ <shade name="light" weight="0.333961744147" />
+ <shade name="fresh" weight="0.326414586087" />
+</color>
+
+</colors>

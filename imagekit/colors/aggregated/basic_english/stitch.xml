@@ -1,0 +1,33 @@
+<colors query="stitch">
+
+<color name="white" weight="0.340998285993">
+ <shade name="cool" weight="0.397652646778" />
+ <shade name="dark" weight="0.314210779913" />
+ <shade name="soft" weight="0.288135196518" />
+</color>
+
+<color name="red" weight="0.310910201935">
+ <shade name="cool" weight="0.397652646778" />
+ <shade name="dark" weight="0.314210779913" />
+ <shade name="soft" weight="0.288135196518" />
+</color>
+
+<color name="black" weight="0.169782760043">
+ <shade name="cool" weight="0.397652646778" />
+ <shade name="dark" weight="0.314210779913" />
+ <shade name="soft" weight="0.288135196518" />
+</color>
+
+<color name="blue" weight="0.109606591926">
+ <shade name="cool" weight="0.397652646778" />
+ <shade name="dark" weight="0.314210779913" />
+ <shade name="soft" weight="0.288135196518" />
+</color>
+
+<color name="pink" weight="0.0687011252663">
+ <shade name="cool" weight="0.397652646778" />
+ <shade name="dark" weight="0.314210779913" />
+ <shade name="soft" weight="0.288135196518" />
+</color>
+
+</colors>

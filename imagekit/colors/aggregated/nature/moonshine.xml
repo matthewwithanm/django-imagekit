@@ -1,0 +1,33 @@
+<colors query="moonshine">
+
+<color name="blue" weight="0.687948904032">
+ <shade name="bright" weight="0.681162401826" />
+ <shade name="light" weight="0.242074638187" />
+ <shade name="dark" weight="0.076761762975" />
+</color>
+
+<color name="white" weight="0.137889540677">
+ <shade name="bright" weight="0.681162401826" />
+ <shade name="light" weight="0.242074638187" />
+ <shade name="dark" weight="0.076761762975" />
+</color>
+
+<color name="yellow" weight="0.0685700704999">
+ <shade name="bright" weight="0.681162401826" />
+ <shade name="light" weight="0.242074638187" />
+ <shade name="dark" weight="0.076761762975" />
+</color>
+
+<color name="red" weight="0.0617505334338">
+ <shade name="bright" weight="0.681162401826" />
+ <shade name="light" weight="0.242074638187" />
+ <shade name="dark" weight="0.076761762975" />
+</color>
+
+<color name="black" weight="0.0438398811393">
+ <shade name="bright" weight="0.681162401826" />
+ <shade name="light" weight="0.242074638187" />
+ <shade name="dark" weight="0.076761762975" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="lychee">
+
+<color name="red" weight="0.672385750823">
+ <shade name="fresh" weight="0.959823495589" />
+ <shade name="cool" weight="0.0210475580819" />
+ <shade name="light" weight="0.0191279110907" />
+</color>
+
+<color name="black" weight="0.12030202754">
+ <shade name="fresh" weight="0.959823495589" />
+ <shade name="cool" weight="0.0210475580819" />
+ <shade name="light" weight="0.0191279110907" />
+</color>
+
+<color name="orange" weight="0.101650550402">
+ <shade name="fresh" weight="0.959823495589" />
+ <shade name="cool" weight="0.0210475580819" />
+ <shade name="light" weight="0.0191279110907" />
+</color>
+
+<color name="pink" weight="0.0632285074976">
+ <shade name="fresh" weight="0.959823495589" />
+ <shade name="cool" weight="0.0210475580819" />
+ <shade name="light" weight="0.0191279110907" />
+</color>
+
+<color name="white" weight="0.0424321104888">
+ <shade name="fresh" weight="0.959823495589" />
+ <shade name="cool" weight="0.0210475580819" />
+ <shade name="light" weight="0.0191279110907" />
+</color>
+
+</colors>

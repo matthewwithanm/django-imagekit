@@ -1,0 +1,33 @@
+<colors query="ember">
+
+<color name="blue" weight="0.473622359034">
+ <shade name="dark" weight="0.755356345681" />
+ <shade name="bright" weight="0.161043670329" />
+ <shade name="soft" weight="0.083598427022" />
+</color>
+
+<color name="red" weight="0.371611389396">
+ <shade name="dark" weight="0.602470059075" />
+ <shade name="warm" weight="0.269080728632" />
+ <shade name="bright" weight="0.12844797046" />
+</color>
+
+<color name="black" weight="0.0626638813491">
+ <shade name="dark" weight="0.602470059075" />
+ <shade name="warm" weight="0.269080728632" />
+ <shade name="bright" weight="0.12844797046" />
+</color>
+
+<color name="white" weight="0.0590206324335">
+ <shade name="dark" weight="0.602470059075" />
+ <shade name="warm" weight="0.269080728632" />
+ <shade name="bright" weight="0.12844797046" />
+</color>
+
+<color name="orange" weight="0.0330807001541">
+ <shade name="dark" weight="0.602470059075" />
+ <shade name="warm" weight="0.269080728632" />
+ <shade name="bright" weight="0.12844797046" />
+</color>
+
+</colors>

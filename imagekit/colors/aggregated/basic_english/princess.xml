@@ -1,0 +1,33 @@
+<colors query="princess">
+
+<color name="pink" weight="0.466852881561">
+ <shade name="dark" weight="0.722598667617" />
+ <shade name="light" weight="0.224539049065" />
+ <shade name="fresh" weight="0.0528612448123" />
+</color>
+
+<color name="black" weight="0.166733171986">
+ <shade name="dark" weight="0.722598667617" />
+ <shade name="light" weight="0.224539049065" />
+ <shade name="fresh" weight="0.0528612448123" />
+</color>
+
+<color name="white" weight="0.140055864468">
+ <shade name="dark" weight="0.722598667617" />
+ <shade name="light" weight="0.224539049065" />
+ <shade name="fresh" weight="0.0528612448123" />
+</color>
+
+<color name="red" weight="0.11564612809">
+ <shade name="dark" weight="0.722598667617" />
+ <shade name="light" weight="0.224539049065" />
+ <shade name="fresh" weight="0.0528612448123" />
+</color>
+
+<color name="blue" weight="0.110710826199">
+ <shade name="dark" weight="0.722598667617" />
+ <shade name="light" weight="0.224539049065" />
+ <shade name="fresh" weight="0.0528612448123" />
+</color>
+
+</colors>

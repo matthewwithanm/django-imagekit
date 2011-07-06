@@ -1,0 +1,33 @@
+<colors query="bunny">
+
+<color name="pink" weight="0.396166445402">
+ <shade name="cool" weight="0.491445735482" />
+ <shade name="soft" weight="0.388802005919" />
+ <shade name="hard" weight="0.119751017823" />
+</color>
+
+<color name="blue" weight="0.299169941071">
+ <shade name="cool" weight="0.491445735482" />
+ <shade name="soft" weight="0.388802005919" />
+ <shade name="hard" weight="0.119751017823" />
+</color>
+
+<color name="white" weight="0.155428133447">
+ <shade name="cool" weight="0.491445735482" />
+ <shade name="soft" weight="0.388802005919" />
+ <shade name="hard" weight="0.119751017823" />
+</color>
+
+<color name="black" weight="0.081570554245">
+ <shade name="cool" weight="0.491445735482" />
+ <shade name="soft" weight="0.388802005919" />
+ <shade name="hard" weight="0.119751017823" />
+</color>
+
+<color name="green" weight="0.0676638265156">
+ <shade name="cool" weight="0.491445735482" />
+ <shade name="soft" weight="0.388802005919" />
+ <shade name="hard" weight="0.119751017823" />
+</color>
+
+</colors>

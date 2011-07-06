@@ -1,0 +1,33 @@
+<colors query="sparkling">
+
+<color name="white" weight="0.375782484265">
+ <shade name="bright" weight="0.464406202034" />
+ <shade name="light" weight="0.30056459791" />
+ <shade name="fresh" weight="0.235027956261" />
+</color>
+
+<color name="red" weight="0.287404011114">
+ <shade name="bright" weight="0.464406202034" />
+ <shade name="light" weight="0.30056459791" />
+ <shade name="fresh" weight="0.235027956261" />
+</color>
+
+<color name="blue" weight="0.144745845791">
+ <shade name="bright" weight="0.464406202034" />
+ <shade name="light" weight="0.30056459791" />
+ <shade name="fresh" weight="0.235027956261" />
+</color>
+
+<color name="pink" weight="0.119693680173">
+ <shade name="bright" weight="0.464406202034" />
+ <shade name="light" weight="0.30056459791" />
+ <shade name="fresh" weight="0.235027956261" />
+</color>
+
+<color name="black" weight="0.0723729228955">
+ <shade name="bright" weight="0.464406202034" />
+ <shade name="light" weight="0.30056459791" />
+ <shade name="fresh" weight="0.235027956261" />
+</color>
+
+</colors>

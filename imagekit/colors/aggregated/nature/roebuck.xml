@@ -1,0 +1,33 @@
+<colors query="roebuck">
+
+<color name="red" weight="0.384298269496">
+ <shade name="bright" weight="0.473683612189" />
+ <shade name="light" weight="0.368420587258" />
+ <shade name="cool" weight="0.157894537396" />
+</color>
+
+<color name="green" weight="0.293713677401">
+ <shade name="bright" weight="0.473683612189" />
+ <shade name="light" weight="0.368420587258" />
+ <shade name="cool" weight="0.157894537396" />
+</color>
+
+<color name="blue" weight="0.164973757119">
+ <shade name="bright" weight="0.473683612189" />
+ <shade name="light" weight="0.368420587258" />
+ <shade name="cool" weight="0.157894537396" />
+</color>
+
+<color name="white" weight="0.143837352297">
+ <shade name="bright" weight="0.473683612189" />
+ <shade name="light" weight="0.368420587258" />
+ <shade name="cool" weight="0.157894537396" />
+</color>
+
+<color name="black" weight="0.0131759406684">
+ <shade name="bright" weight="0.473683612189" />
+ <shade name="light" weight="0.368420587258" />
+ <shade name="cool" weight="0.157894537396" />
+</color>
+
+</colors>

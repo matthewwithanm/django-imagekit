@@ -1,0 +1,33 @@
+<colors query="amused">
+
+<color name="black" weight="0.503424088596">
+ <shade name="soft" weight="0.476944495178" />
+ <shade name="cool" weight="0.279538465452" />
+ <shade name="dark" weight="0.243515467327" />
+</color>
+
+<color name="yellow" weight="0.200342239339">
+ <shade name="soft" weight="0.476944495178" />
+ <shade name="cool" weight="0.279538465452" />
+ <shade name="dark" weight="0.243515467327" />
+</color>
+
+<color name="red" weight="0.111301244077">
+ <shade name="soft" weight="0.476944495178" />
+ <shade name="cool" weight="0.279538465452" />
+ <shade name="dark" weight="0.243515467327" />
+</color>
+
+<color name="blue" weight="0.109588917245">
+ <shade name="soft" weight="0.476944495178" />
+ <shade name="cool" weight="0.279538465452" />
+ <shade name="dark" weight="0.243515467327" />
+</color>
+
+<color name="white" weight="0.0753423806062">
+ <shade name="soft" weight="0.476944495178" />
+ <shade name="cool" weight="0.279538465452" />
+ <shade name="dark" weight="0.243515467327" />
+</color>
+
+</colors>

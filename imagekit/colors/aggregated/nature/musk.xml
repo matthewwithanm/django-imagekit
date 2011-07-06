@@ -1,0 +1,33 @@
+<colors query="musk">
+
+<color name="white" weight="0.872804517051">
+ <shade name="soft" weight="0.643355966753" />
+ <shade name="light" weight="0.211188589086" />
+ <shade name="warm" weight="0.145454392483" />
+</color>
+
+<color name="blue" weight="0.0496827186629">
+ <shade name="soft" weight="0.73108622101" />
+ <shade name="light" weight="0.239986998636" />
+ <shade name="cool" weight="0.0289255852661" />
+</color>
+
+<color name="pink" weight="0.0409546734924">
+ <shade name="soft" weight="0.643355966753" />
+ <shade name="light" weight="0.211188589086" />
+ <shade name="warm" weight="0.145454392483" />
+</color>
+
+<color name="black" weight="0.0317230872544">
+ <shade name="soft" weight="0.643355966753" />
+ <shade name="light" weight="0.211188589086" />
+ <shade name="warm" weight="0.145454392483" />
+</color>
+
+<color name="yellow" weight="0.00483399424828">
+ <shade name="soft" weight="0.643355966753" />
+ <shade name="light" weight="0.211188589086" />
+ <shade name="warm" weight="0.145454392483" />
+</color>
+
+</colors>

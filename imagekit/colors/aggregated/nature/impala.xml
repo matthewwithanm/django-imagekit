@@ -1,0 +1,33 @@
+<colors query="impala">
+
+<color name="black" weight="0.643619763847">
+ <shade name="fresh" weight="0.648647851571" />
+ <shade name="cool" weight="0.222822549012" />
+ <shade name="light" weight="0.128528370589" />
+</color>
+
+<color name="red" weight="0.147749191072">
+ <shade name="fresh" weight="0.648647851571" />
+ <shade name="cool" weight="0.222822549012" />
+ <shade name="light" weight="0.128528370589" />
+</color>
+
+<color name="green" weight="0.124271237422">
+ <shade name="fresh" weight="0.648647851571" />
+ <shade name="cool" weight="0.222822549012" />
+ <shade name="light" weight="0.128528370589" />
+</color>
+
+<color name="pink" weight="0.0477654919082">
+ <shade name="fresh" weight="0.648647851571" />
+ <shade name="cool" weight="0.222822549012" />
+ <shade name="light" weight="0.128528370589" />
+</color>
+
+<color name="purple" weight="0.0365932243093">
+ <shade name="fresh" weight="0.648647851571" />
+ <shade name="cool" weight="0.222822549012" />
+ <shade name="light" weight="0.128528370589" />
+</color>
+
+</colors>

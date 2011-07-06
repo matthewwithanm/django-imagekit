@@ -1,0 +1,33 @@
+<colors query="intimidation">
+
+<color name="white" weight="0.562848563002">
+ <shade name="weak" weight="0.508239334331" />
+ <shade name="cool" weight="0.249998807698" />
+ <shade name="fresh" weight="0.241757088763" />
+</color>
+
+<color name="black" weight="0.162011000765">
+ <shade name="intense" weight="0.814265535959" />
+ <shade name="weak" weight="0.124495143928" />
+ <shade name="cool" weight="0.0612381518779" />
+</color>
+
+<color name="orange" weight="0.134078069598">
+ <shade name="intense" weight="0.814265535959" />
+ <shade name="weak" weight="0.124495143928" />
+ <shade name="cool" weight="0.0612381518779" />
+</color>
+
+<color name="green" weight="0.0782122072658">
+ <shade name="intense" weight="0.814265535959" />
+ <shade name="weak" weight="0.124495143928" />
+ <shade name="cool" weight="0.0612381518779" />
+</color>
+
+<color name="blue" weight="0.0628490951243">
+ <shade name="intense" weight="0.814265535959" />
+ <shade name="weak" weight="0.124495143928" />
+ <shade name="cool" weight="0.0612381518779" />
+</color>
+
+</colors>

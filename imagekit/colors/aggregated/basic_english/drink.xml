@@ -1,0 +1,33 @@
+<colors query="drink">
+
+<color name="black" weight="0.469033348762">
+ <shade name="soft" weight="0.719864439261" />
+ <shade name="cool" weight="0.240465355243" />
+ <shade name="warm" weight="0.0396691254827" />
+</color>
+
+<color name="orange" weight="0.249380407264">
+ <shade name="soft" weight="0.719864439261" />
+ <shade name="cool" weight="0.240465355243" />
+ <shade name="warm" weight="0.0396691254827" />
+</color>
+
+<color name="green" weight="0.1783647946">
+ <shade name="soft" weight="0.720195360344" />
+ <shade name="cool" weight="0.240575896966" />
+ <shade name="light" weight="0.0392276621804" />
+</color>
+
+<color name="pink" weight="0.0617670677595">
+ <shade name="soft" weight="0.719864439261" />
+ <shade name="cool" weight="0.240465355243" />
+ <shade name="warm" weight="0.0396691254827" />
+</color>
+
+<color name="red" weight="0.0414532994856">
+ <shade name="soft" weight="0.719864439261" />
+ <shade name="cool" weight="0.240465355243" />
+ <shade name="warm" weight="0.0396691254827" />
+</color>
+
+</colors>

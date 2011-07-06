@@ -1,0 +1,33 @@
+<colors query="habit">
+
+<color name="black" weight="0.461063227325">
+ <shade name="hard" weight="0.981538265913" />
+ <shade name="dark" weight="0.011310440945" />
+ <shade name="cool" weight="0.0071502787583" />
+</color>
+
+<color name="white" weight="0.315846462813">
+ <shade name="hard" weight="0.981538265913" />
+ <shade name="dark" weight="0.011310440945" />
+ <shade name="cool" weight="0.0071502787583" />
+</color>
+
+<color name="green" weight="0.139226572976">
+ <shade name="hard" weight="0.981538265913" />
+ <shade name="dark" weight="0.011310440945" />
+ <shade name="cool" weight="0.0071502787583" />
+</color>
+
+<color name="blue" weight="0.0439280712648">
+ <shade name="hard" weight="0.981538265913" />
+ <shade name="dark" weight="0.011310440945" />
+ <shade name="cool" weight="0.0071502787583" />
+</color>
+
+<color name="purple" weight="0.0399346102407">
+ <shade name="hard" weight="0.981538265913" />
+ <shade name="dark" weight="0.011310440945" />
+ <shade name="cool" weight="0.0071502787583" />
+</color>
+
+</colors>

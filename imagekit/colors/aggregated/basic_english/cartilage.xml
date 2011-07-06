@@ -1,0 +1,33 @@
+<colors query="cartilage">
+
+<color name="yellow" weight="0.438720170715">
+ <shade name="soft" weight="0.787420753864" />
+ <shade name="hard" weight="0.138158862088" />
+ <shade name="fresh" weight="0.0744193134438" />
+</color>
+
+<color name="white" weight="0.325502062143">
+ <shade name="soft" weight="0.787420753864" />
+ <shade name="hard" weight="0.138158862088" />
+ <shade name="fresh" weight="0.0744193134438" />
+</color>
+
+<color name="blue" weight="0.154825763472">
+ <shade name="soft" weight="0.787420753864" />
+ <shade name="hard" weight="0.138158862088" />
+ <shade name="fresh" weight="0.0744193134438" />
+</color>
+
+<color name="black" weight="0.0467024697858">
+ <shade name="soft" weight="0.787420753864" />
+ <shade name="hard" weight="0.138158862088" />
+ <shade name="fresh" weight="0.0744193134438" />
+</color>
+
+<color name="green" weight="0.0342484778429">
+ <shade name="soft" weight="0.787420753864" />
+ <shade name="hard" weight="0.138158862088" />
+ <shade name="fresh" weight="0.0744193134438" />
+</color>
+
+</colors>

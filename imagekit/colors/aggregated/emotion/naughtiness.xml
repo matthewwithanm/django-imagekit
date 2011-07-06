@@ -1,0 +1,33 @@
+<colors query="naughtiness">
+
+<color name="black" weight="0.421052144045">
+ <shade name="dark" weight="0.484535488044" />
+ <shade name="intense" weight="0.319587236795" />
+ <shade name="light" weight="0.195876048358" />
+</color>
+
+<color name="white" weight="0.157894554017">
+ <shade name="dark" weight="0.626665672357" />
+ <shade name="light" weight="0.253332931378" />
+ <shade name="fresh" weight="0.1199998096" />
+</color>
+
+<color name="purple" weight="0.157894554017">
+ <shade name="dark" weight="0.626665672357" />
+ <shade name="light" weight="0.253332931378" />
+ <shade name="fresh" weight="0.1199998096" />
+</color>
+
+<color name="orange" weight="0.157894554017">
+ <shade name="dark" weight="0.484535488044" />
+ <shade name="intense" weight="0.319587236795" />
+ <shade name="light" weight="0.195876048358" />
+</color>
+
+<color name="yellow" weight="0.105263036011">
+ <shade name="dark" weight="0.484535488044" />
+ <shade name="intense" weight="0.319587236795" />
+ <shade name="light" weight="0.195876048358" />
+</color>
+
+</colors>

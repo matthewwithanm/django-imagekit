@@ -1,0 +1,33 @@
+<colors query="fume">
+
+<color name="blue" weight="0.945186264854">
+ <shade name="light" weight="0.597683746251" />
+ <shade name="dark" weight="0.283646523644" />
+ <shade name="cool" weight="0.118668443565" />
+</color>
+
+<color name="white" weight="0.0236969775804">
+ <shade name="light" weight="0.597683746251" />
+ <shade name="dark" weight="0.283646523644" />
+ <shade name="cool" weight="0.118668443565" />
+</color>
+
+<color name="black" weight="0.019119152366">
+ <shade name="light" weight="0.597683746251" />
+ <shade name="dark" weight="0.283646523644" />
+ <shade name="cool" weight="0.118668443565" />
+</color>
+
+<color name="red" weight="0.00692059458882">
+ <shade name="light" weight="0.597683746251" />
+ <shade name="dark" weight="0.283646523644" />
+ <shade name="cool" weight="0.118668443565" />
+</color>
+
+<color name="green" weight="0.00507600031126">
+ <shade name="light" weight="0.597683746251" />
+ <shade name="dark" weight="0.283646523644" />
+ <shade name="cool" weight="0.118668443565" />
+</color>
+
+</colors>

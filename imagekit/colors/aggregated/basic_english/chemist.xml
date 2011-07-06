@@ -1,0 +1,33 @@
+<colors query="chemist">
+
+<color name="black" weight="0.529300037227">
+ <shade name="bright" weight="0.446025583522" />
+ <shade name="dark" weight="0.395017338598" />
+ <shade name="cool" weight="0.158955926042" />
+</color>
+
+<color name="white" weight="0.376559169342">
+ <shade name="bright" weight="0.446025583522" />
+ <shade name="dark" weight="0.395017338598" />
+ <shade name="cool" weight="0.158955926042" />
+</color>
+
+<color name="green" weight="0.0476370033505">
+ <shade name="bright" weight="0.446025583522" />
+ <shade name="dark" weight="0.395017338598" />
+ <shade name="cool" weight="0.158955926042" />
+</color>
+
+<color name="red" weight="0.0262003518428">
+ <shade name="bright" weight="0.446025583522" />
+ <shade name="dark" weight="0.395017338598" />
+ <shade name="cool" weight="0.158955926042" />
+</color>
+
+<color name="blue" weight="0.0203024371422">
+ <shade name="bright" weight="0.446025583522" />
+ <shade name="dark" weight="0.395017338598" />
+ <shade name="cool" weight="0.158955926042" />
+</color>
+
+</colors>

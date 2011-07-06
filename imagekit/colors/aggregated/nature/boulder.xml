@@ -1,0 +1,33 @@
+<colors query="boulder">
+
+<color name="blue" weight="0.44803407421">
+ <shade name="cool" weight="0.441233068089" />
+ <shade name="dark" weight="0.311596449854" />
+ <shade name="light" weight="0.247168612478" />
+</color>
+
+<color name="black" weight="0.235463163089">
+ <shade name="cool" weight="0.441233068089" />
+ <shade name="dark" weight="0.311596449854" />
+ <shade name="light" weight="0.247168612478" />
+</color>
+
+<color name="green" weight="0.156321377717">
+ <shade name="cool" weight="0.441233068089" />
+ <shade name="dark" weight="0.311596449854" />
+ <shade name="light" weight="0.247168612478" />
+</color>
+
+<color name="white" weight="0.150761830811">
+ <shade name="cool" weight="0.441233068089" />
+ <shade name="dark" weight="0.311596449854" />
+ <shade name="light" weight="0.247168612478" />
+</color>
+
+<color name="red" weight="0.00941852652354">
+ <shade name="cool" weight="0.441233068089" />
+ <shade name="dark" weight="0.311596449854" />
+ <shade name="light" weight="0.247168612478" />
+</color>
+
+</colors>

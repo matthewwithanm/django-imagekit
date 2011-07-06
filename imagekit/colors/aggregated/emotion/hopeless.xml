@@ -1,0 +1,33 @@
+<colors query="hopeless">
+
+<color name="white" weight="0.466582119086">
+ <shade name="dark" weight="0.733762146741" />
+ <shade name="hard" weight="0.169062764891" />
+ <shade name="weak" weight="0.0971739059198" />
+</color>
+
+<color name="black" weight="0.289407017109">
+ <shade name="dark" weight="0.733762146741" />
+ <shade name="hard" weight="0.169062764891" />
+ <shade name="weak" weight="0.0971739059198" />
+</color>
+
+<color name="blue" weight="0.131777922823">
+ <shade name="dark" weight="0.733762146741" />
+ <shade name="hard" weight="0.169062764891" />
+ <shade name="weak" weight="0.0971739059198" />
+</color>
+
+<color name="yellow" weight="0.0933164238173">
+ <shade name="dark" weight="0.733762146741" />
+ <shade name="hard" weight="0.169062764891" />
+ <shade name="weak" weight="0.0971739059198" />
+</color>
+
+<color name="green" weight="0.0189154913143">
+ <shade name="dark" weight="0.733762146741" />
+ <shade name="hard" weight="0.169062764891" />
+ <shade name="weak" weight="0.0971739059198" />
+</color>
+
+</colors>

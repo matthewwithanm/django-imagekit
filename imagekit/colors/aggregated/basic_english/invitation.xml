@@ -1,0 +1,33 @@
+<colors query="invitation">
+
+<color name="white" weight="0.708268126007">
+ <shade name="warm" weight="0.948316901191" />
+ <shade name="fresh" weight="0.0258410260993" />
+ <shade name="cool" weight="0.0258410260993" />
+</color>
+
+<color name="red" weight="0.127728936316">
+ <shade name="warm" weight="0.948316901191" />
+ <shade name="fresh" weight="0.0258410260993" />
+ <shade name="cool" weight="0.0258410260993" />
+</color>
+
+<color name="black" weight="0.116382893521">
+ <shade name="warm" weight="0.948316901191" />
+ <shade name="fresh" weight="0.0258410260993" />
+ <shade name="cool" weight="0.0258410260993" />
+</color>
+
+<color name="yellow" weight="0.0278493777702">
+ <shade name="warm" weight="0.948316901191" />
+ <shade name="fresh" weight="0.0258410260993" />
+ <shade name="cool" weight="0.0258410260993" />
+</color>
+
+<color name="purple" weight="0.019769620022">
+ <shade name="fresh" weight="0.390417399116" />
+ <shade name="cool" weight="0.390417399116" />
+ <shade name="bright" weight="0.219149389126" />
+</color>
+
+</colors>

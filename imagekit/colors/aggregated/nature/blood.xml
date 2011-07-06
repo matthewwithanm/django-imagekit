@@ -1,0 +1,33 @@
+<colors query="blood">
+
+<color name="red" weight="0.285256974993">
+ <shade name="fresh" weight="0.653548107479" />
+ <shade name="warm" weight="0.196064432244" />
+ <shade name="dark" weight="0.15038633871" />
+</color>
+
+<color name="blue" weight="0.279925068918">
+ <shade name="fresh" weight="0.783024964468" />
+ <shade name="dark" weight="0.18017993806" />
+ <shade name="cool" weight="0.0367937537067" />
+</color>
+
+<color name="white" weight="0.26792828025">
+ <shade name="fresh" weight="0.653548107479" />
+ <shade name="warm" weight="0.196064432244" />
+ <shade name="dark" weight="0.15038633871" />
+</color>
+
+<color name="black" weight="0.150626346608">
+ <shade name="fresh" weight="0.653548107479" />
+ <shade name="warm" weight="0.196064432244" />
+ <shade name="dark" weight="0.15038633871" />
+</color>
+
+<color name="green" weight="0.0162623135276">
+ <shade name="fresh" weight="0.783024964468" />
+ <shade name="dark" weight="0.18017993806" />
+ <shade name="cool" weight="0.0367937537067" />
+</color>
+
+</colors>

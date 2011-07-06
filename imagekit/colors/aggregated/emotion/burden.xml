@@ -1,0 +1,33 @@
+<colors query="burden">
+
+<color name="white" weight="0.50164172706">
+ <shade name="light" weight="0.938829518555" />
+ <shade name="dark" weight="0.0354375085877" />
+ <shade name="fresh" weight="0.025731862579" />
+</color>
+
+<color name="black" weight="0.291728551987">
+ <shade name="light" weight="0.919926441532" />
+ <shade name="intense" weight="0.0453484865544" />
+ <shade name="dark" weight="0.0347239839902" />
+</color>
+
+<color name="green" weight="0.0848013395745">
+ <shade name="light" weight="0.919926441532" />
+ <shade name="intense" weight="0.0453484865544" />
+ <shade name="dark" weight="0.0347239839902" />
+</color>
+
+<color name="red" weight="0.0794266067846">
+ <shade name="light" weight="0.919926441532" />
+ <shade name="intense" weight="0.0453484865544" />
+ <shade name="dark" weight="0.0347239839902" />
+</color>
+
+<color name="yellow" weight="0.0424006697873">
+ <shade name="light" weight="0.919926441532" />
+ <shade name="intense" weight="0.0453484865544" />
+ <shade name="dark" weight="0.0347239839902" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="wonder">
+
+<color name="blue" weight="0.763777337799">
+ <shade name="cool" weight="0.373570764721" />
+ <shade name="fresh" weight="0.348480190971" />
+ <shade name="bright" weight="0.277947800318" />
+</color>
+
+<color name="white" weight="0.144426573157">
+ <shade name="cool" weight="0.373570764721" />
+ <shade name="fresh" weight="0.348480190971" />
+ <shade name="bright" weight="0.277947800318" />
+</color>
+
+<color name="green" weight="0.0388091037072">
+ <shade name="cool" weight="0.373570764721" />
+ <shade name="fresh" weight="0.348480190971" />
+ <shade name="bright" weight="0.277947800318" />
+</color>
+
+<color name="black" weight="0.0288853146314">
+ <shade name="cool" weight="0.373570764721" />
+ <shade name="fresh" weight="0.348480190971" />
+ <shade name="bright" weight="0.277947800318" />
+</color>
+
+<color name="red" weight="0.0241006306127">
+ <shade name="cool" weight="0.373570764721" />
+ <shade name="fresh" weight="0.348480190971" />
+ <shade name="bright" weight="0.277947800318" />
+</color>
+
+</colors>

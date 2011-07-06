@@ -1,0 +1,33 @@
+<colors query="fireman">
+
+<color name="white" weight="0.417071712406">
+ <shade name="cool" weight="0.470296466278" />
+ <shade name="light" weight="0.453794835883" />
+ <shade name="dark" weight="0.0759074998204" />
+</color>
+
+<color name="yellow" weight="0.300291632932">
+ <shade name="cool" weight="0.470296466278" />
+ <shade name="light" weight="0.453794835883" />
+ <shade name="dark" weight="0.0759074998204" />
+</color>
+
+<color name="blue" weight="0.12373127468">
+ <shade name="cool" weight="0.470296466278" />
+ <shade name="light" weight="0.453794835883" />
+ <shade name="dark" weight="0.0759074998204" />
+</color>
+
+<color name="black" weight="0.0813289839191">
+ <shade name="cool" weight="0.470296466278" />
+ <shade name="light" weight="0.453794835883" />
+ <shade name="dark" weight="0.0759074998204" />
+</color>
+
+<color name="red" weight="0.0775753385075">
+ <shade name="cool" weight="0.470296466278" />
+ <shade name="light" weight="0.453794835883" />
+ <shade name="dark" weight="0.0759074998204" />
+</color>
+
+</colors>

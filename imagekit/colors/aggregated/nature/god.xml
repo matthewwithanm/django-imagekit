@@ -1,0 +1,33 @@
+<colors query="god">
+
+<color name="black" weight="0.688838321426">
+ <shade name="light" weight="0.450835028524" />
+ <shade name="dark" weight="0.396423904392" />
+ <shade name="hard" weight="0.152739798457" />
+</color>
+
+<color name="red" weight="0.104010849619">
+ <shade name="light" weight="0.450835028524" />
+ <shade name="dark" weight="0.396423904392" />
+ <shade name="hard" weight="0.152739798457" />
+</color>
+
+<color name="white" weight="0.0842051908289">
+ <shade name="light" weight="0.450835028524" />
+ <shade name="dark" weight="0.396423904392" />
+ <shade name="hard" weight="0.152739798457" />
+</color>
+
+<color name="blue" weight="0.063527584797">
+ <shade name="light" weight="0.450835028524" />
+ <shade name="dark" weight="0.396423904392" />
+ <shade name="hard" weight="0.152739798457" />
+</color>
+
+<color name="pink" weight="0.0594169763689">
+ <shade name="light" weight="0.450835028524" />
+ <shade name="dark" weight="0.396423904392" />
+ <shade name="hard" weight="0.152739798457" />
+</color>
+
+</colors>

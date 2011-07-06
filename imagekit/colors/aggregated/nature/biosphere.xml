@@ -1,0 +1,33 @@
+<colors query="biosphere">
+
+<color name="blue" weight="0.803677723304">
+ <shade name="dark" weight="0.834709831829" />
+ <shade name="neutral" weight="0.13966926889" />
+ <shade name="light" weight="0.0256198067195" />
+</color>
+
+<color name="green" weight="0.173930253551">
+ <shade name="dark" weight="0.834709831829" />
+ <shade name="neutral" weight="0.13966926889" />
+ <shade name="light" weight="0.0256198067195" />
+</color>
+
+<color name="white" weight="0.0151939072067">
+ <shade name="dark" weight="0.812549417385" />
+ <shade name="neutral" weight="0.135961239147" />
+ <shade name="warm" weight="0.0514882799135" />
+</color>
+
+<color name="black" weight="0.00399839663335">
+ <shade name="dark" weight="0.812549417385" />
+ <shade name="neutral" weight="0.135961239147" />
+ <shade name="warm" weight="0.0514882799135" />
+</color>
+
+<color name="red" weight="0.00319871730668">
+ <shade name="dark" weight="0.812549417385" />
+ <shade name="neutral" weight="0.135961239147" />
+ <shade name="warm" weight="0.0514882799135" />
+</color>
+
+</colors>

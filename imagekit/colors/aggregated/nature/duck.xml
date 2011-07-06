@@ -1,0 +1,33 @@
+<colors query="duck">
+
+<color name="black" weight="0.543070578728">
+ <shade name="fresh" weight="0.371470568081" />
+ <shade name="dark" weight="0.365527038991" />
+ <shade name="warm" weight="0.263001162201" />
+</color>
+
+<color name="yellow" weight="0.162580690497">
+ <shade name="fresh" weight="0.371470568081" />
+ <shade name="dark" weight="0.365527038991" />
+ <shade name="warm" weight="0.263001162201" />
+</color>
+
+<color name="white" weight="0.129383586155">
+ <shade name="fresh" weight="0.371470568081" />
+ <shade name="dark" weight="0.365527038991" />
+ <shade name="warm" weight="0.263001162201" />
+</color>
+
+<color name="blue" weight="0.111508222278">
+ <shade name="fresh" weight="0.418759888023" />
+ <shade name="dark" weight="0.412059729814" />
+ <shade name="cool" weight="0.169178994761" />
+</color>
+
+<color name="green" weight="0.0534558500691">
+ <shade name="fresh" weight="0.418759888023" />
+ <shade name="dark" weight="0.412059729814" />
+ <shade name="cool" weight="0.169178994761" />
+</color>
+
+</colors>

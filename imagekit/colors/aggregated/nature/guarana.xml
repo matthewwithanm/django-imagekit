@@ -1,0 +1,33 @@
+<colors query="guarana">
+
+<color name="green" weight="0.370313311289">
+ <shade name="light" weight="0.746441658603" />
+ <shade name="fresh" weight="0.218628492728" />
+ <shade name="cool" weight="0.0349288124476" />
+</color>
+
+<color name="red" weight="0.274674542878">
+ <shade name="light" weight="0.746441658603" />
+ <shade name="fresh" weight="0.218628492728" />
+ <shade name="cool" weight="0.0349288124476" />
+</color>
+
+<color name="orange" weight="0.218821502126">
+ <shade name="light" weight="0.746441658603" />
+ <shade name="fresh" weight="0.218628492728" />
+ <shade name="cool" weight="0.0349288124476" />
+</color>
+
+<color name="black" weight="0.115531632241">
+ <shade name="light" weight="0.746441658603" />
+ <shade name="fresh" weight="0.218628492728" />
+ <shade name="cool" weight="0.0349288124476" />
+</color>
+
+<color name="white" weight="0.0206579739769">
+ <shade name="light" weight="0.746441658603" />
+ <shade name="fresh" weight="0.218628492728" />
+ <shade name="cool" weight="0.0349288124476" />
+</color>
+
+</colors>

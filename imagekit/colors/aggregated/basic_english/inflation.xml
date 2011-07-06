@@ -1,0 +1,33 @@
+<colors query="inflation">
+
+<color name="white" weight="0.261282364295">
+ <shade name="weak" weight="0.438734599638" />
+ <shade name="warm" weight="0.286560887151" />
+ <shade name="cool" weight="0.274703195269" />
+</color>
+
+<color name="red" weight="0.256531775854">
+ <shade name="weak" weight="0.438734599638" />
+ <shade name="warm" weight="0.286560887151" />
+ <shade name="cool" weight="0.274703195269" />
+</color>
+
+<color name="black" weight="0.200712361663">
+ <shade name="weak" weight="0.438734599638" />
+ <shade name="warm" weight="0.286560887151" />
+ <shade name="cool" weight="0.274703195269" />
+</color>
+
+<color name="green" weight="0.149643535915">
+ <shade name="weak" weight="0.47948095085" />
+ <shade name="cool" weight="0.300215550307" />
+ <shade name="soft" weight="0.220302058499" />
+</color>
+
+<color name="yellow" weight="0.131828829258">
+ <shade name="weak" weight="0.438734599638" />
+ <shade name="warm" weight="0.286560887151" />
+ <shade name="cool" weight="0.274703195269" />
+</color>
+
+</colors>

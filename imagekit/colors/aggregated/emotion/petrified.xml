@@ -1,0 +1,33 @@
+<colors query="petrified">
+
+<color name="green" weight="0.327303690108">
+ <shade name="hard" weight="0.393356191547" />
+ <shade name="dark" weight="0.307691954277" />
+ <shade name="light" weight="0.298950705576" />
+</color>
+
+<color name="white" weight="0.260981626586">
+ <shade name="hard" weight="0.393356191547" />
+ <shade name="dark" weight="0.307691954277" />
+ <shade name="light" weight="0.298950705576" />
+</color>
+
+<color name="red" weight="0.159632326053">
+ <shade name="hard" weight="0.393356191547" />
+ <shade name="dark" weight="0.307691954277" />
+ <shade name="light" weight="0.298950705576" />
+</color>
+
+<color name="black" weight="0.139821839546">
+ <shade name="hard" weight="0.393356191547" />
+ <shade name="dark" weight="0.307691954277" />
+ <shade name="light" weight="0.298950705576" />
+</color>
+
+<color name="pink" weight="0.112259423537">
+ <shade name="hard" weight="0.393356191547" />
+ <shade name="dark" weight="0.307691954277" />
+ <shade name="light" weight="0.298950705576" />
+</color>
+
+</colors>

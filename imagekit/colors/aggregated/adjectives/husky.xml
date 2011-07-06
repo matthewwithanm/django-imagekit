@@ -1,0 +1,33 @@
+<colors query="husky">
+
+<color name="white" weight="0.524132057061">
+ <shade name="warm" weight="0.701218600306" />
+ <shade name="soft" weight="0.182055512377" />
+ <shade name="dark" weight="0.116724586883" />
+</color>
+
+<color name="black" weight="0.304189525141">
+ <shade name="warm" weight="0.701218600306" />
+ <shade name="soft" weight="0.182055512377" />
+ <shade name="dark" weight="0.116724586883" />
+</color>
+
+<color name="blue" weight="0.123476509148">
+ <shade name="soft" weight="0.46651630254" />
+ <shade name="dark" weight="0.299106146126" />
+ <shade name="cool" weight="0.234374218979" />
+</color>
+
+<color name="green" weight="0.0277822145583">
+ <shade name="soft" weight="0.46651630254" />
+ <shade name="dark" weight="0.299106146126" />
+ <shade name="cool" weight="0.234374218979" />
+</color>
+
+<color name="yellow" weight="0.0204186414867">
+ <shade name="warm" weight="0.701218600306" />
+ <shade name="soft" weight="0.182055512377" />
+ <shade name="dark" weight="0.116724586883" />
+</color>
+
+</colors>

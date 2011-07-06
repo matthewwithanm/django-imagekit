@@ -1,0 +1,33 @@
+<colors query="almond">
+
+<color name="white" weight="0.416589009484">
+ <shade name="light" weight="0.679088087847" />
+ <shade name="dark" weight="0.179088779265" />
+ <shade name="warm" weight="0.141821750053" />
+</color>
+
+<color name="orange" weight="0.288229548275">
+ <shade name="light" weight="0.679088087847" />
+ <shade name="dark" weight="0.179088779265" />
+ <shade name="warm" weight="0.141821750053" />
+</color>
+
+<color name="green" weight="0.145968340364">
+ <shade name="light" weight="0.681203624127" />
+ <shade name="dark" weight="0.17964668746" />
+ <shade name="fresh" weight="0.13914830127" />
+</color>
+
+<color name="black" weight="0.0926783113424">
+ <shade name="light" weight="0.679088087847" />
+ <shade name="dark" weight="0.179088779265" />
+ <shade name="warm" weight="0.141821750053" />
+</color>
+
+<color name="yellow" weight="0.0565337699189">
+ <shade name="light" weight="0.679088087847" />
+ <shade name="dark" weight="0.179088779265" />
+ <shade name="warm" weight="0.141821750053" />
+</color>
+
+</colors>

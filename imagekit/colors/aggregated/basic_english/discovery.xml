@@ -1,0 +1,33 @@
+<colors query="discovery">
+
+<color name="green" weight="0.754186801853">
+ <shade name="fresh" weight="0.385036070597" />
+ <shade name="dark" weight="0.372262362094" />
+ <shade name="cool" weight="0.242700461561" />
+</color>
+
+<color name="blue" weight="0.0786367639132">
+ <shade name="fresh" weight="0.385036070597" />
+ <shade name="dark" weight="0.372262362094" />
+ <shade name="cool" weight="0.242700461561" />
+</color>
+
+<color name="black" weight="0.0561101778184">
+ <shade name="fresh" weight="0.385036070597" />
+ <shade name="dark" weight="0.372262362094" />
+ <shade name="cool" weight="0.242700461561" />
+</color>
+
+<color name="red" weight="0.0558626329163">
+ <shade name="fresh" weight="0.385036070597" />
+ <shade name="dark" weight="0.372262362094" />
+ <shade name="cool" weight="0.242700461561" />
+</color>
+
+<color name="white" weight="0.0552025131772">
+ <shade name="fresh" weight="0.385036070597" />
+ <shade name="dark" weight="0.372262362094" />
+ <shade name="cool" weight="0.242700461561" />
+</color>
+
+</colors>

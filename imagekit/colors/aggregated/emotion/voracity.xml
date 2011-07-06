@@ -1,0 +1,33 @@
+<colors query="voracity">
+
+<color name="white" weight="0.980294586208">
+ <shade name="dark" weight="0.499999000002" />
+ <shade name="weak" weight="0.249999500001" />
+ <shade name="bright" weight="0.249999500001" />
+</color>
+
+<color name="green" weight="0.00985220689656">
+ <shade name="intense" weight="0.53846087574" />
+ <shade name="dark" weight="0.307691928995" />
+ <shade name="weak" weight="0.153845964497" />
+</color>
+
+<color name="red" weight="0.00492610344828">
+ <shade name="intense" weight="0.53846087574" />
+ <shade name="dark" weight="0.307691928995" />
+ <shade name="weak" weight="0.153845964497" />
+</color>
+
+<color name="blue" weight="0.00492610344828">
+ <shade name="intense" weight="0.53846087574" />
+ <shade name="dark" weight="0.307691928995" />
+ <shade name="weak" weight="0.153845964497" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="intense" weight="0.53846087574" />
+ <shade name="dark" weight="0.307691928995" />
+ <shade name="weak" weight="0.153845964497" />
+</color>
+
+</colors>

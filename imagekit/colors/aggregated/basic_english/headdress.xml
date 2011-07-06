@@ -1,0 +1,33 @@
+<colors query="headdress">
+
+<color name="black" weight="0.333731656339">
+ <shade name="cool" weight="0.563875991229" />
+ <shade name="light" weight="0.226871980846" />
+ <shade name="bright" weight="0.20925085612" />
+</color>
+
+<color name="red" weight="0.264353749287">
+ <shade name="cool" weight="0.563875991229" />
+ <shade name="light" weight="0.226871980846" />
+ <shade name="bright" weight="0.20925085612" />
+</color>
+
+<color name="blue" weight="0.169856255198">
+ <shade name="cool" weight="0.563875991229" />
+ <shade name="light" weight="0.226871980846" />
+ <shade name="bright" weight="0.20925085612" />
+</color>
+
+<color name="pink" weight="0.131578789238">
+ <shade name="cool" weight="0.563875991229" />
+ <shade name="light" weight="0.226871980846" />
+ <shade name="bright" weight="0.20925085612" />
+</color>
+
+<color name="white" weight="0.100478348145">
+ <shade name="cool" weight="0.563875991229" />
+ <shade name="light" weight="0.226871980846" />
+ <shade name="bright" weight="0.20925085612" />
+</color>
+
+</colors>

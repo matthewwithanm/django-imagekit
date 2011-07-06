@@ -1,0 +1,33 @@
+<colors query="fuming">
+
+<color name="red" weight="0.952427989869">
+ <shade name="cool" weight="0.567483915796" />
+ <shade name="light" weight="0.226993566318" />
+ <shade name="dark" weight="0.205521201937" />
+</color>
+
+<color name="white" weight="0.022576070871">
+ <shade name="cool" weight="0.567483915796" />
+ <shade name="light" weight="0.226993566318" />
+ <shade name="dark" weight="0.205521201937" />
+</color>
+
+<color name="yellow" weight="0.0171084287069">
+ <shade name="cool" weight="0.567483915796" />
+ <shade name="light" weight="0.226993566318" />
+ <shade name="dark" weight="0.205521201937" />
+</color>
+
+<color name="pink" weight="0.00508969454904">
+ <shade name="cool" weight="0.567483915796" />
+ <shade name="light" weight="0.226993566318" />
+ <shade name="dark" weight="0.205521201937" />
+</color>
+
+<color name="black" weight="0.0027968123512">
+ <shade name="cool" weight="0.567483915796" />
+ <shade name="light" weight="0.226993566318" />
+ <shade name="dark" weight="0.205521201937" />
+</color>
+
+</colors>

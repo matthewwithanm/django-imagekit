@@ -1,0 +1,33 @@
+<colors query="pepper">
+
+<color name="black" weight="0.303112739192">
+ <shade name="fresh" weight="0.772328425548" />
+ <shade name="soft" weight="0.129597060069" />
+ <shade name="light" weight="0.0980734508633" />
+</color>
+
+<color name="red" weight="0.301747366493">
+ <shade name="fresh" weight="0.772328425548" />
+ <shade name="soft" weight="0.129597060069" />
+ <shade name="light" weight="0.0980734508633" />
+</color>
+
+<color name="green" weight="0.228017240744">
+ <shade name="fresh" weight="0.772328425548" />
+ <shade name="soft" weight="0.129597060069" />
+ <shade name="light" weight="0.0980734508633" />
+</color>
+
+<color name="white" weight="0.133806524508">
+ <shade name="fresh" weight="0.772328425548" />
+ <shade name="soft" weight="0.129597060069" />
+ <shade name="light" weight="0.0980734508633" />
+</color>
+
+<color name="yellow" weight="0.0333150938572">
+ <shade name="fresh" weight="0.772328425548" />
+ <shade name="soft" weight="0.129597060069" />
+ <shade name="light" weight="0.0980734508633" />
+</color>
+
+</colors>

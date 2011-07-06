@@ -1,0 +1,33 @@
+<colors query="zinc">
+
+<color name="black" weight="0.431106900394">
+ <shade name="bright" weight="0.464926105798" />
+ <shade name="neutral" weight="0.399673319019" />
+ <shade name="hard" weight="0.135399532566" />
+</color>
+
+<color name="yellow" weight="0.235418179921">
+ <shade name="bright" weight="0.464926105798" />
+ <shade name="neutral" weight="0.399673319019" />
+ <shade name="hard" weight="0.135399532566" />
+</color>
+
+<color name="white" weight="0.175401336925">
+ <shade name="bright" weight="0.464926105798" />
+ <shade name="neutral" weight="0.399673319019" />
+ <shade name="hard" weight="0.135399532566" />
+</color>
+
+<color name="blue" weight="0.0896026106702">
+ <shade name="bright" weight="0.464926105798" />
+ <shade name="neutral" weight="0.399673319019" />
+ <shade name="hard" weight="0.135399532566" />
+</color>
+
+<color name="green" weight="0.0684699194744">
+ <shade name="bright" weight="0.464926105798" />
+ <shade name="neutral" weight="0.399673319019" />
+ <shade name="hard" weight="0.135399532566" />
+</color>
+
+</colors>

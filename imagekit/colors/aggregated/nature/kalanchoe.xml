@@ -1,0 +1,33 @@
+<colors query="kalanchoe">
+
+<color name="pink" weight="0.857415006451">
+ <shade name="light" weight="0.529411110727" />
+ <shade name="cool" weight="0.294117283737" />
+ <shade name="fresh" weight="0.176470370242" />
+</color>
+
+<color name="orange" weight="0.0813511226">
+ <shade name="light" weight="0.529411110727" />
+ <shade name="cool" weight="0.294117283737" />
+ <shade name="fresh" weight="0.176470370242" />
+</color>
+
+<color name="white" weight="0.0296996161873">
+ <shade name="light" weight="0.529411110727" />
+ <shade name="cool" weight="0.294117283737" />
+ <shade name="fresh" weight="0.176470370242" />
+</color>
+
+<color name="yellow" weight="0.0184395877893">
+ <shade name="light" weight="0.529411110727" />
+ <shade name="cool" weight="0.294117283737" />
+ <shade name="fresh" weight="0.176470370242" />
+</color>
+
+<color name="red" weight="0.0130936568756">
+ <shade name="light" weight="0.529411110727" />
+ <shade name="cool" weight="0.294117283737" />
+ <shade name="fresh" weight="0.176470370242" />
+</color>
+
+</colors>

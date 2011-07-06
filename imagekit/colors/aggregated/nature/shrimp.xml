@@ -1,0 +1,33 @@
+<colors query="shrimp">
+
+<color name="white" weight="0.429792526636">
+ <shade name="fresh" weight="0.956309704162" />
+ <shade name="cool" weight="0.0259708472958" />
+ <shade name="dark" weight="0.0177184285289" />
+</color>
+
+<color name="pink" weight="0.301529835441">
+ <shade name="fresh" weight="0.956309704162" />
+ <shade name="cool" weight="0.0259708472958" />
+ <shade name="dark" weight="0.0177184285289" />
+</color>
+
+<color name="red" weight="0.172367055185">
+ <shade name="fresh" weight="0.956309704162" />
+ <shade name="cool" weight="0.0259708472958" />
+ <shade name="dark" weight="0.0177184285289" />
+</color>
+
+<color name="blue" weight="0.0612060561492">
+ <shade name="fresh" weight="0.956309704162" />
+ <shade name="cool" weight="0.0259708472958" />
+ <shade name="dark" weight="0.0177184285289" />
+</color>
+
+<color name="orange" weight="0.0351034733797">
+ <shade name="fresh" weight="0.956309704162" />
+ <shade name="cool" weight="0.0259708472958" />
+ <shade name="dark" weight="0.0177184285289" />
+</color>
+
+</colors>

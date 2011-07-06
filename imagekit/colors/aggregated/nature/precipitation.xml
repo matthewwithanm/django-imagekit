@@ -1,0 +1,33 @@
+<colors query="precipitation">
+
+<color name="white" weight="0.848397471638">
+ <shade name="light" weight="0.977619422488" />
+ <shade name="weak" weight="0.0138547002531" />
+ <shade name="cool" weight="0.00852361933982" />
+</color>
+
+<color name="blue" weight="0.0527275064149">
+ <shade name="intense" weight="0.55300308014" />
+ <shade name="light" weight="0.440749652913" />
+ <shade name="weak" weight="0.00624624898738" />
+</color>
+
+<color name="yellow" weight="0.0409133733986">
+ <shade name="intense" weight="0.55300308014" />
+ <shade name="light" weight="0.440749652913" />
+ <shade name="weak" weight="0.00624624898738" />
+</color>
+
+<color name="black" weight="0.0359181359488">
+ <shade name="intense" weight="0.55300308014" />
+ <shade name="light" weight="0.440749652913" />
+ <shade name="weak" weight="0.00624624898738" />
+</color>
+
+<color name="red" weight="0.0220424763659">
+ <shade name="intense" weight="0.55300308014" />
+ <shade name="light" weight="0.440749652913" />
+ <shade name="weak" weight="0.00624624898738" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="compatriot">
+
+<color name="white" weight="0.518609887784">
+ <shade name="dark" weight="0.421051789475" />
+ <shade name="cool" weight="0.315788842107" />
+ <shade name="hard" weight="0.263157368422" />
+</color>
+
+<color name="black" weight="0.282878120609">
+ <shade name="dark" weight="0.421051789475" />
+ <shade name="cool" weight="0.315788842107" />
+ <shade name="hard" weight="0.263157368422" />
+</color>
+
+<color name="green" weight="0.116625190076">
+ <shade name="dark" weight="0.421051789475" />
+ <shade name="cool" weight="0.315788842107" />
+ <shade name="hard" weight="0.263157368422" />
+</color>
+
+<color name="blue" weight="0.0620346755722">
+ <shade name="dark" weight="0.421051789475" />
+ <shade name="cool" weight="0.315788842107" />
+ <shade name="hard" weight="0.263157368422" />
+</color>
+
+<color name="red" weight="0.0198510961831">
+ <shade name="dark" weight="0.421051789475" />
+ <shade name="cool" weight="0.315788842107" />
+ <shade name="hard" weight="0.263157368422" />
+</color>
+
+</colors>

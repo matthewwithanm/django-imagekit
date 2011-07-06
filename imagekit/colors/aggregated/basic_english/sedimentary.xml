@@ -1,0 +1,33 @@
+<colors query="sedimentary">
+
+<color name="white" weight="0.82426557422">
+ <shade name="soft" weight="0.94493502758" />
+ <shade name="weak" weight="0.0309251463572" />
+ <shade name="hard" weight="0.0241387947954" />
+</color>
+
+<color name="black" weight="0.101384665629">
+ <shade name="soft" weight="0.94493502758" />
+ <shade name="weak" weight="0.0309251463572" />
+ <shade name="hard" weight="0.0241387947954" />
+</color>
+
+<color name="red" weight="0.0506923328145">
+ <shade name="soft" weight="0.94493502758" />
+ <shade name="weak" weight="0.0309251463572" />
+ <shade name="hard" weight="0.0241387947954" />
+</color>
+
+<color name="green" weight="0.0156610459102">
+ <shade name="soft" weight="0.94493502758" />
+ <shade name="weak" weight="0.0309251463572" />
+ <shade name="hard" weight="0.0241387947954" />
+</color>
+
+<color name="yellow" weight="0.00799537606993">
+ <shade name="soft" weight="0.94493502758" />
+ <shade name="weak" weight="0.0309251463572" />
+ <shade name="hard" weight="0.0241387947954" />
+</color>
+
+</colors>

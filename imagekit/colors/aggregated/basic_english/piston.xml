@@ -1,0 +1,33 @@
+<colors query="piston">
+
+<color name="blue" weight="0.294909783852">
+ <shade name="light" weight="0.612156779847" />
+ <shade name="hard" weight="0.199914137195" />
+ <shade name="fresh" weight="0.187927850596" />
+</color>
+
+<color name="red" weight="0.230538612758">
+ <shade name="light" weight="0.612156779847" />
+ <shade name="hard" weight="0.199914137195" />
+ <shade name="fresh" weight="0.187927850596" />
+</color>
+
+<color name="green" weight="0.197604525221">
+ <shade name="light" weight="0.612156779847" />
+ <shade name="hard" weight="0.199914137195" />
+ <shade name="fresh" weight="0.187927850596" />
+</color>
+
+<color name="pink" weight="0.140418973225">
+ <shade name="light" weight="0.612156779847" />
+ <shade name="hard" weight="0.199914137195" />
+ <shade name="fresh" weight="0.187927850596" />
+</color>
+
+<color name="yellow" weight="0.13652676288">
+ <shade name="light" weight="0.612156779847" />
+ <shade name="hard" weight="0.199914137195" />
+ <shade name="fresh" weight="0.187927850596" />
+</color>
+
+</colors>

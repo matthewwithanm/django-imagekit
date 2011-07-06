@@ -1,0 +1,33 @@
+<colors query="cooing">
+
+<color name="white" weight="0.63392786958">
+ <shade name="soft" weight="0.980728538823" />
+ <shade name="cool" weight="0.014567546717" />
+ <shade name="light" weight="0.00470290878266" />
+</color>
+
+<color name="black" weight="0.178571230868">
+ <shade name="soft" weight="0.980728538823" />
+ <shade name="cool" weight="0.014567546717" />
+ <shade name="light" weight="0.00470290878266" />
+</color>
+
+<color name="pink" weight="0.0892856154338">
+ <shade name="soft" weight="0.980728538823" />
+ <shade name="cool" weight="0.014567546717" />
+ <shade name="light" weight="0.00470290878266" />
+</color>
+
+<color name="green" weight="0.0535713692603">
+ <shade name="soft" weight="0.980728538823" />
+ <shade name="cool" weight="0.014567546717" />
+ <shade name="light" weight="0.00470290878266" />
+</color>
+
+<color name="yellow" weight="0.0446428077169">
+ <shade name="soft" weight="0.980728538823" />
+ <shade name="cool" weight="0.014567546717" />
+ <shade name="light" weight="0.00470290878266" />
+</color>
+
+</colors>

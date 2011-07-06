@@ -1,0 +1,33 @@
+<colors query="betrayed">
+
+<color name="black" weight="0.736721541296">
+ <shade name="light" weight="0.844239958096" />
+ <shade name="dark" weight="0.0857328949694" />
+ <shade name="weak" weight="0.0700261050513" />
+</color>
+
+<color name="white" weight="0.0842184254211">
+ <shade name="light" weight="0.844239958096" />
+ <shade name="dark" weight="0.0857328949694" />
+ <shade name="weak" weight="0.0700261050513" />
+</color>
+
+<color name="blue" weight="0.0804248026544">
+ <shade name="light" weight="0.844239958096" />
+ <shade name="dark" weight="0.0857328949694" />
+ <shade name="weak" weight="0.0700261050513" />
+</color>
+
+<color name="green" weight="0.0637328624808">
+ <shade name="light" weight="0.844239958096" />
+ <shade name="dark" weight="0.0857328949694" />
+ <shade name="weak" weight="0.0700261050513" />
+</color>
+
+<color name="red" weight="0.0349013294538">
+ <shade name="light" weight="0.844239958096" />
+ <shade name="dark" weight="0.0857328949694" />
+ <shade name="weak" weight="0.0700261050513" />
+</color>
+
+</colors>

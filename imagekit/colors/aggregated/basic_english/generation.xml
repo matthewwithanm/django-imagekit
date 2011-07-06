@@ -1,0 +1,33 @@
+<colors query="generation">
+
+<color name="yellow" weight="0.400278036379">
+ <shade name="light" weight="0.866532457173" />
+ <shade name="fresh" weight="0.125621569235" />
+ <shade name="neutral" weight="0.00784493881346" />
+</color>
+
+<color name="black" weight="0.200835153905">
+ <shade name="light" weight="0.866532457173" />
+ <shade name="fresh" weight="0.125621569235" />
+ <shade name="neutral" weight="0.00784493881346" />
+</color>
+
+<color name="blue" weight="0.187608575312">
+ <shade name="light" weight="0.866532457173" />
+ <shade name="fresh" weight="0.125621569235" />
+ <shade name="neutral" weight="0.00784493881346" />
+</color>
+
+<color name="green" weight="0.132265785934">
+ <shade name="light" weight="0.866532457173" />
+ <shade name="fresh" weight="0.125621569235" />
+ <shade name="neutral" weight="0.00784493881346" />
+</color>
+
+<color name="red" weight="0.0790114037027">
+ <shade name="light" weight="0.866532457173" />
+ <shade name="fresh" weight="0.125621569235" />
+ <shade name="neutral" weight="0.00784493881346" />
+</color>
+
+</colors>

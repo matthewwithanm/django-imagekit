@@ -1,0 +1,33 @@
+<colors query="droopy">
+
+<color name="black" weight="0.522582470715">
+ <shade name="cool" weight="0.64143082173" />
+ <shade name="soft" weight="0.2553335138" />
+ <shade name="dark" weight="0.103234574313" />
+</color>
+
+<color name="white" weight="0.165360024662">
+ <shade name="cool" weight="0.64143082173" />
+ <shade name="soft" weight="0.2553335138" />
+ <shade name="dark" weight="0.103234574313" />
+</color>
+
+<color name="red" weight="0.113475050784">
+ <shade name="cool" weight="0.64143082173" />
+ <shade name="soft" weight="0.2553335138" />
+ <shade name="dark" weight="0.103234574313" />
+</color>
+
+<color name="blue" weight="0.103769947756">
+ <shade name="cool" weight="0.64143082173" />
+ <shade name="soft" weight="0.2553335138" />
+ <shade name="dark" weight="0.103234574313" />
+</color>
+
+<color name="pink" weight="0.0948113911155">
+ <shade name="cool" weight="0.64143082173" />
+ <shade name="soft" weight="0.2553335138" />
+ <shade name="dark" weight="0.103234574313" />
+</color>
+
+</colors>

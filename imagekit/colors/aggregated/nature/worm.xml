@@ -1,0 +1,33 @@
+<colors query="worm">
+
+<color name="red" weight="0.423357198041">
+ <shade name="cool" weight="0.431427732671" />
+ <shade name="dark" weight="0.30142798541" />
+ <shade name="hard" weight="0.26714233778" />
+</color>
+
+<color name="white" weight="0.362530014414">
+ <shade name="cool" weight="0.431427732671" />
+ <shade name="dark" weight="0.30142798541" />
+ <shade name="hard" weight="0.26714233778" />
+</color>
+
+<color name="black" weight="0.0875911444223">
+ <shade name="cool" weight="0.431427732671" />
+ <shade name="dark" weight="0.30142798541" />
+ <shade name="hard" weight="0.26714233778" />
+</color>
+
+<color name="green" weight="0.0729926203519">
+ <shade name="cool" weight="0.431427732671" />
+ <shade name="dark" weight="0.30142798541" />
+ <shade name="hard" weight="0.26714233778" />
+</color>
+
+<color name="yellow" weight="0.0535279215914">
+ <shade name="cool" weight="0.431427732671" />
+ <shade name="dark" weight="0.30142798541" />
+ <shade name="hard" weight="0.26714233778" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="avocado">
+
+<color name="green" weight="0.369761304156">
+ <shade name="fresh" weight="0.898425750912" />
+ <shade name="light" weight="0.0724536895897" />
+ <shade name="dark" weight="0.0291194828637" />
+</color>
+
+<color name="orange" weight="0.328676714805">
+ <shade name="fresh" weight="0.898425750912" />
+ <shade name="light" weight="0.0724536895897" />
+ <shade name="dark" weight="0.0291194828637" />
+</color>
+
+<color name="purple" weight="0.129827302348">
+ <shade name="fresh" weight="0.898425750912" />
+ <shade name="light" weight="0.0724536895897" />
+ <shade name="dark" weight="0.0291194828637" />
+</color>
+
+<color name="blue" weight="0.0955901445558">
+ <shade name="fresh" weight="0.898425750912" />
+ <shade name="light" weight="0.0724536895897" />
+ <shade name="dark" weight="0.0291194828637" />
+</color>
+
+<color name="black" weight="0.0761434389298">
+ <shade name="fresh" weight="0.898425750912" />
+ <shade name="light" weight="0.0724536895897" />
+ <shade name="dark" weight="0.0291194828637" />
+</color>
+
+</colors>

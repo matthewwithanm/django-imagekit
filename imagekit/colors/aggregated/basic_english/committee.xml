@@ -1,0 +1,33 @@
+<colors query="committee">
+
+<color name="green" weight="0.658800083952">
+ <shade name="light" weight="0.945383277626" />
+ <shade name="cool" weight="0.0295615204459" />
+ <shade name="fresh" weight="0.0250541202987" />
+</color>
+
+<color name="white" weight="0.168732224892">
+ <shade name="light" weight="0.945383277626" />
+ <shade name="cool" weight="0.0295615204459" />
+ <shade name="fresh" weight="0.0250541202987" />
+</color>
+
+<color name="purple" weight="0.140196628035">
+ <shade name="light" weight="0.945383277626" />
+ <shade name="cool" weight="0.0295615204459" />
+ <shade name="fresh" weight="0.0250541202987" />
+</color>
+
+<color name="blue" weight="0.0200989856121">
+ <shade name="light" weight="0.945383277626" />
+ <shade name="cool" weight="0.0295615204459" />
+ <shade name="fresh" weight="0.0250541202987" />
+</color>
+
+<color name="red" weight="0.0121710523984">
+ <shade name="light" weight="0.945383277626" />
+ <shade name="cool" weight="0.0295615204459" />
+ <shade name="fresh" weight="0.0250541202987" />
+</color>
+
+</colors>

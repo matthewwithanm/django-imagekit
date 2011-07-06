@@ -1,0 +1,33 @@
+<colors query="fiction">
+
+<color name="black" weight="0.743394954211">
+ <shade name="dark" weight="0.495703378243" />
+ <shade name="light" weight="0.28222045668" />
+ <shade name="fresh" weight="0.222075113453" />
+</color>
+
+<color name="orange" weight="0.143369026884">
+ <shade name="dark" weight="0.495703378243" />
+ <shade name="light" weight="0.28222045668" />
+ <shade name="fresh" weight="0.222075113453" />
+</color>
+
+<color name="blue" weight="0.0736757499263">
+ <shade name="dark" weight="0.495703378243" />
+ <shade name="light" weight="0.28222045668" />
+ <shade name="fresh" weight="0.222075113453" />
+</color>
+
+<color name="red" weight="0.0207088594387">
+ <shade name="dark" weight="0.495703378243" />
+ <shade name="light" weight="0.28222045668" />
+ <shade name="fresh" weight="0.222075113453" />
+</color>
+
+<color name="pink" weight="0.0188503720532">
+ <shade name="dark" weight="0.495703378243" />
+ <shade name="light" weight="0.28222045668" />
+ <shade name="fresh" weight="0.222075113453" />
+</color>
+
+</colors>

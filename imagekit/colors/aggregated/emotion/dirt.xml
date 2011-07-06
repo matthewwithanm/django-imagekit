@@ -1,0 +1,33 @@
+<colors query="dirt">
+
+<color name="red" weight="0.787634811295">
+ <shade name="fresh" weight="0.484884485249" />
+ <shade name="soft" weight="0.305924625357" />
+ <shade name="hard" weight="0.209189565955" />
+</color>
+
+<color name="black" weight="0.159013065676">
+ <shade name="fresh" weight="0.484884485249" />
+ <shade name="soft" weight="0.305924625357" />
+ <shade name="hard" weight="0.209189565955" />
+</color>
+
+<color name="white" weight="0.0221429409213">
+ <shade name="fresh" weight="0.484884485249" />
+ <shade name="soft" weight="0.305924625357" />
+ <shade name="hard" weight="0.209189565955" />
+</color>
+
+<color name="yellow" weight="0.0169415789599">
+ <shade name="fresh" weight="0.484884485249" />
+ <shade name="soft" weight="0.305924625357" />
+ <shade name="hard" weight="0.209189565955" />
+</color>
+
+<color name="blue" weight="0.0142665928084">
+ <shade name="fresh" weight="0.484884485249" />
+ <shade name="soft" weight="0.305924625357" />
+ <shade name="hard" weight="0.209189565955" />
+</color>
+
+</colors>

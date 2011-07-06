@@ -1,0 +1,33 @@
+<colors query="indignant">
+
+<color name="black" weight="0.425925460563">
+ <shade name="dark" weight="0.965017082509" />
+ <shade name="bright" weight="0.0241254270627" />
+ <shade name="warm" weight="0.0108564421782" />
+</color>
+
+<color name="white" weight="0.166666484568">
+ <shade name="dark" weight="0.965017082509" />
+ <shade name="bright" weight="0.0241254270627" />
+ <shade name="warm" weight="0.0108564421782" />
+</color>
+
+<color name="red" weight="0.166666484568">
+ <shade name="dark" weight="0.965017082509" />
+ <shade name="bright" weight="0.0241254270627" />
+ <shade name="warm" weight="0.0108564421782" />
+</color>
+
+<color name="blue" weight="0.129629487997">
+ <shade name="dark" weight="0.965017082509" />
+ <shade name="bright" weight="0.0241254270627" />
+ <shade name="intense" weight="0.0108564421782" />
+</color>
+
+<color name="green" weight="0.111110989712">
+ <shade name="dark" weight="0.965017082509" />
+ <shade name="bright" weight="0.0241254270627" />
+ <shade name="intense" weight="0.0108564421782" />
+</color>
+
+</colors>

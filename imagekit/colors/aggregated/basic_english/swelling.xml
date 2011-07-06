@@ -1,0 +1,33 @@
+<colors query="swelling">
+
+<color name="white" weight="0.523079011989">
+ <shade name="hard" weight="0.531212654875" />
+ <shade name="soft" weight="0.445648200398" />
+ <shade name="warm" weight="0.0231380545647" />
+</color>
+
+<color name="red" weight="0.41419317684">
+ <shade name="hard" weight="0.530682899625" />
+ <shade name="soft" weight="0.445203774853" />
+ <shade name="intense" weight="0.0241122364461" />
+</color>
+
+<color name="green" weight="0.025406694868">
+ <shade name="hard" weight="0.530682899625" />
+ <shade name="soft" weight="0.445203774853" />
+ <shade name="intense" weight="0.0241122364461" />
+</color>
+
+<color name="purple" weight="0.0191083965604">
+ <shade name="hard" weight="0.531553770688" />
+ <shade name="soft" weight="0.445934371382" />
+ <shade name="dark" weight="0.0225107670674" />
+</color>
+
+<color name="black" weight="0.0182116896827">
+ <shade name="hard" weight="0.530682899625" />
+ <shade name="soft" weight="0.445203774853" />
+ <shade name="intense" weight="0.0241122364461" />
+</color>
+
+</colors>

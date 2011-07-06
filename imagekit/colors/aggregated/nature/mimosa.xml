@@ -1,0 +1,33 @@
+<colors query="mimosa">
+
+<color name="white" weight="0.372325215582">
+ <shade name="warm" weight="0.522354398863" />
+ <shade name="fresh" weight="0.328906201996" />
+ <shade name="dark" weight="0.14873820171" />
+</color>
+
+<color name="pink" weight="0.265814270826">
+ <shade name="warm" weight="0.522354398863" />
+ <shade name="fresh" weight="0.328906201996" />
+ <shade name="dark" weight="0.14873820171" />
+</color>
+
+<color name="orange" weight="0.229693167822">
+ <shade name="warm" weight="0.522354398863" />
+ <shade name="fresh" weight="0.328906201996" />
+ <shade name="dark" weight="0.14873820171" />
+</color>
+
+<color name="black" weight="0.073538860988">
+ <shade name="warm" weight="0.522354398863" />
+ <shade name="fresh" weight="0.328906201996" />
+ <shade name="dark" weight="0.14873820171" />
+</color>
+
+<color name="yellow" weight="0.0586273287222">
+ <shade name="warm" weight="0.522354398863" />
+ <shade name="fresh" weight="0.328906201996" />
+ <shade name="dark" weight="0.14873820171" />
+</color>
+
+</colors>

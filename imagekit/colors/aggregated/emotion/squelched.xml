@@ -1,0 +1,33 @@
+<colors query="squelched">
+
+<color name="green" weight="0.29411733564">
+ <shade name="light" weight="0.499999333334" />
+ <shade name="hard" weight="0.333332888889" />
+ <shade name="neutral" weight="0.166666444445" />
+</color>
+
+<color name="black" weight="0.29411733564">
+ <shade name="light" weight="0.499999333334" />
+ <shade name="hard" weight="0.333332888889" />
+ <shade name="neutral" weight="0.166666444445" />
+</color>
+
+<color name="white" weight="0.235293868512">
+ <shade name="light" weight="0.499999333334" />
+ <shade name="hard" weight="0.333332888889" />
+ <shade name="neutral" weight="0.166666444445" />
+</color>
+
+<color name="red" weight="0.117646934256">
+ <shade name="light" weight="0.499999333334" />
+ <shade name="hard" weight="0.333332888889" />
+ <shade name="neutral" weight="0.166666444445" />
+</color>
+
+<color name="pink" weight="0.0588234671281">
+ <shade name="light" weight="0.499999333334" />
+ <shade name="hard" weight="0.333332888889" />
+ <shade name="neutral" weight="0.166666444445" />
+</color>
+
+</colors>

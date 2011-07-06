@@ -1,0 +1,33 @@
+<colors query="clementine">
+
+<color name="purple" weight="0.814990222576">
+ <shade name="fresh" weight="0.816665320303" />
+ <shade name="dark" weight="0.102777608337" />
+ <shade name="cool" weight="0.080555422751" />
+</color>
+
+<color name="red" weight="0.0630576376592">
+ <shade name="fresh" weight="0.574218084378" />
+ <shade name="warm" weight="0.353515215212" />
+ <shade name="dark" weight="0.0722655412313" />
+</color>
+
+<color name="white" weight="0.043366997975">
+ <shade name="fresh" weight="0.574218084378" />
+ <shade name="warm" weight="0.353515215212" />
+ <shade name="dark" weight="0.0722655412313" />
+</color>
+
+<color name="green" weight="0.0407495111288">
+ <shade name="fresh" weight="0.816665320303" />
+ <shade name="dark" weight="0.102777608337" />
+ <shade name="cool" weight="0.080555422751" />
+</color>
+
+<color name="orange" weight="0.0378345825955">
+ <shade name="fresh" weight="0.574218084378" />
+ <shade name="warm" weight="0.353515215212" />
+ <shade name="dark" weight="0.0722655412313" />
+</color>
+
+</colors>

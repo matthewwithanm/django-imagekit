@@ -1,0 +1,33 @@
+<colors query="horny">
+
+<color name="black" weight="0.673248088366">
+ <shade name="hard" weight="0.8249240774" />
+ <shade name="fresh" weight="0.141805130661" />
+ <shade name="intense" weight="0.0332696652704" />
+</color>
+
+<color name="white" weight="0.155757775185">
+ <shade name="hard" weight="0.825036572034" />
+ <shade name="fresh" weight="0.141824468581" />
+ <shade name="light" weight="0.0331378325627" />
+</color>
+
+<color name="pink" weight="0.0821345645099">
+ <shade name="hard" weight="0.825036572034" />
+ <shade name="fresh" weight="0.141824468581" />
+ <shade name="light" weight="0.0331378325627" />
+</color>
+
+<color name="red" weight="0.0610264069985">
+ <shade name="hard" weight="0.8249240774" />
+ <shade name="fresh" weight="0.141805130661" />
+ <shade name="intense" weight="0.0332696652704" />
+</color>
+
+<color name="green" weight="0.0278321270412">
+ <shade name="hard" weight="0.8249240774" />
+ <shade name="fresh" weight="0.141805130661" />
+ <shade name="intense" weight="0.0332696652704" />
+</color>
+
+</colors>

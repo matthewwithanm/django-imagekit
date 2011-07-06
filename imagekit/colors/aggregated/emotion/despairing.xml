@@ -1,0 +1,33 @@
+<colors query="despairing">
+
+<color name="black" weight="0.755356380757">
+ <shade name="dark" weight="0.837159820903" />
+ <shade name="soft" weight="0.0876825747579" />
+ <shade name="weak" weight="0.0751564926496" />
+</color>
+
+<color name="white" weight="0.214285498087">
+ <shade name="dark" weight="0.837159820903" />
+ <shade name="soft" weight="0.0876825747579" />
+ <shade name="weak" weight="0.0751564926496" />
+</color>
+
+<color name="red" weight="0.0124999873884">
+ <shade name="dark" weight="0.837159820903" />
+ <shade name="soft" weight="0.0876825747579" />
+ <shade name="weak" weight="0.0751564926496" />
+</color>
+
+<color name="green" weight="0.0107142749043">
+ <shade name="dark" weight="0.837159820903" />
+ <shade name="soft" weight="0.0876825747579" />
+ <shade name="weak" weight="0.0751564926496" />
+</color>
+
+<color name="blue" weight="0.00714284993623">
+ <shade name="dark" weight="0.837159820903" />
+ <shade name="soft" weight="0.0876825747579" />
+ <shade name="weak" weight="0.0751564926496" />
+</color>
+
+</colors>

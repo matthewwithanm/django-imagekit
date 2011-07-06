@@ -1,0 +1,33 @@
+<colors query="hartebeest">
+
+<color name="red" weight="0.998828823973">
+ <shade name="intense" weight="0.499999375001" />
+ <shade name="weak" weight="0.2499996875" />
+ <shade name="light" weight="0.2499996875" />
+</color>
+
+<color name="blue" weight="0.000940320022569">
+ <shade name="intense" weight="0.499999375001" />
+ <shade name="weak" weight="0.2499996875" />
+ <shade name="light" weight="0.2499996875" />
+</color>
+
+<color name="black" weight="0.000167168004012">
+ <shade name="intense" weight="0.499999375001" />
+ <shade name="weak" weight="0.2499996875" />
+ <shade name="light" weight="0.2499996875" />
+</color>
+
+<color name="white" weight="4.17920010031e-05">
+ <shade name="weak" weight="0.333332777779" />
+ <shade name="light" weight="0.333332777779" />
+ <shade name="hard" weight="0.333332777779" />
+</color>
+
+<color name="purple" weight="2.08960005015e-05">
+ <shade name="weak" weight="0.333332777779" />
+ <shade name="light" weight="0.333332777779" />
+ <shade name="hard" weight="0.333332777779" />
+</color>
+
+</colors>

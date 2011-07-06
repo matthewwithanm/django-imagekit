@@ -1,0 +1,33 @@
+<colors query="falcon">
+
+<color name="black" weight="0.578739688761">
+ <shade name="dark" weight="0.796991539854" />
+ <shade name="cool" weight="0.103759275943" />
+ <shade name="bright" weight="0.0992480030762" />
+</color>
+
+<color name="blue" weight="0.205359244399">
+ <shade name="dark" weight="0.796991539854" />
+ <shade name="cool" weight="0.103759275943" />
+ <shade name="bright" weight="0.0992480030762" />
+</color>
+
+<color name="white" weight="0.135709430739">
+ <shade name="dark" weight="0.796991539854" />
+ <shade name="cool" weight="0.103759275943" />
+ <shade name="bright" weight="0.0992480030762" />
+</color>
+
+<color name="red" weight="0.0670648721219">
+ <shade name="dark" weight="0.796991539854" />
+ <shade name="cool" weight="0.103759275943" />
+ <shade name="bright" weight="0.0992480030762" />
+</color>
+
+<color name="green" weight="0.013125758698">
+ <shade name="dark" weight="0.796991539854" />
+ <shade name="cool" weight="0.103759275943" />
+ <shade name="bright" weight="0.0992480030762" />
+</color>
+
+</colors>

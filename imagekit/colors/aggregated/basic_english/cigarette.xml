@@ -1,0 +1,33 @@
+<colors query="cigarette">
+
+<color name="pink" weight="0.411300489371">
+ <shade name="light" weight="0.746284402414" />
+ <shade name="fresh" weight="0.205145043754" />
+ <shade name="cool" weight="0.0485694752239" />
+</color>
+
+<color name="black" weight="0.274638345938">
+ <shade name="light" weight="0.746284402414" />
+ <shade name="fresh" weight="0.205145043754" />
+ <shade name="cool" weight="0.0485694752239" />
+</color>
+
+<color name="blue" weight="0.126281076769">
+ <shade name="light" weight="0.746284402414" />
+ <shade name="fresh" weight="0.205145043754" />
+ <shade name="cool" weight="0.0485694752239" />
+</color>
+
+<color name="white" weight="0.125229829511">
+ <shade name="light" weight="0.746284402414" />
+ <shade name="fresh" weight="0.205145043754" />
+ <shade name="cool" weight="0.0485694752239" />
+</color>
+
+<color name="green" weight="0.0625492118021">
+ <shade name="light" weight="0.746284402414" />
+ <shade name="fresh" weight="0.205145043754" />
+ <shade name="cool" weight="0.0485694752239" />
+</color>
+
+</colors>

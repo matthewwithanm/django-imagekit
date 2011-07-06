@@ -1,0 +1,33 @@
+<colors query="hydra">
+
+<color name="green" weight="0.808848927837">
+ <shade name="dark" weight="0.654345819022" />
+ <shade name="light" weight="0.214972401638" />
+ <shade name="cool" weight="0.130680591522" />
+</color>
+
+<color name="red" weight="0.0737479904792">
+ <shade name="dark" weight="0.654345819022" />
+ <shade name="light" weight="0.214972401638" />
+ <shade name="cool" weight="0.130680591522" />
+</color>
+
+<color name="white" weight="0.0521588610083">
+ <shade name="dark" weight="0.654345819022" />
+ <shade name="light" weight="0.214972401638" />
+ <shade name="cool" weight="0.130680591522" />
+</color>
+
+<color name="blue" weight="0.0338408117602">
+ <shade name="dark" weight="0.654345819022" />
+ <shade name="light" weight="0.214972401638" />
+ <shade name="cool" weight="0.130680591522" />
+</color>
+
+<color name="black" weight="0.0314023701395">
+ <shade name="dark" weight="0.654345819022" />
+ <shade name="light" weight="0.214972401638" />
+ <shade name="cool" weight="0.130680591522" />
+</color>
+
+</colors>

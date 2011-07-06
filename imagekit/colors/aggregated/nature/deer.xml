@@ -1,0 +1,33 @@
+<colors query="deer">
+
+<color name="red" weight="0.935125556199">
+ <shade name="fresh" weight="0.790052937873" />
+ <shade name="cool" weight="0.164135028953" />
+ <shade name="hard" weight="0.0458108215139" />
+</color>
+
+<color name="white" weight="0.0562503006324">
+ <shade name="fresh" weight="0.790052937873" />
+ <shade name="cool" weight="0.164135028953" />
+ <shade name="hard" weight="0.0458108215139" />
+</color>
+
+<color name="black" weight="0.00425446436256">
+ <shade name="fresh" weight="0.790052937873" />
+ <shade name="cool" weight="0.164135028953" />
+ <shade name="hard" weight="0.0458108215139" />
+</color>
+
+<color name="blue" weight="0.00272685467533">
+ <shade name="fresh" weight="0.790052937873" />
+ <shade name="cool" weight="0.164135028953" />
+ <shade name="hard" weight="0.0458108215139" />
+</color>
+
+<color name="green" weight="0.00164182349562">
+ <shade name="fresh" weight="0.790052937873" />
+ <shade name="cool" weight="0.164135028953" />
+ <shade name="hard" weight="0.0458108215139" />
+</color>
+
+</colors>

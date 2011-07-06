@@ -1,0 +1,33 @@
+<colors query="asteroid">
+
+<color name="black" weight="0.360655349853">
+ <shade name="dark" weight="0.477748777785" />
+ <shade name="bright" weight="0.397441970384" />
+ <shade name="cool" weight="0.124808031884" />
+</color>
+
+<color name="blue" weight="0.336975958196">
+ <shade name="dark" weight="0.477748777785" />
+ <shade name="bright" weight="0.397441970384" />
+ <shade name="cool" weight="0.124808031884" />
+</color>
+
+<color name="green" weight="0.178141884927">
+ <shade name="dark" weight="0.477748777785" />
+ <shade name="bright" weight="0.397441970384" />
+ <shade name="cool" weight="0.124808031884" />
+</color>
+
+<color name="red" weight="0.074134710803">
+ <shade name="dark" weight="0.477748777785" />
+ <shade name="bright" weight="0.397441970384" />
+ <shade name="cool" weight="0.124808031884" />
+</color>
+
+<color name="white" weight="0.0500910208129">
+ <shade name="dark" weight="0.477748777785" />
+ <shade name="bright" weight="0.397441970384" />
+ <shade name="cool" weight="0.124808031884" />
+</color>
+
+</colors>

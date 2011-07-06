@@ -1,0 +1,33 @@
+<colors query="capsicum">
+
+<color name="red" weight="0.675478117656">
+ <shade name="fresh" weight="0.903299552455" />
+ <shade name="cool" weight="0.0590618938143" />
+ <shade name="warm" weight="0.0376374813523" />
+</color>
+
+<color name="green" weight="0.227808306347">
+ <shade name="fresh" weight="0.908031617186" />
+ <shade name="cool" weight="0.0593712980468" />
+ <shade name="bright" weight="0.0325960067708" />
+</color>
+
+<color name="yellow" weight="0.0860903483287">
+ <shade name="fresh" weight="0.903299552455" />
+ <shade name="cool" weight="0.0590618938143" />
+ <shade name="warm" weight="0.0376374813523" />
+</color>
+
+<color name="orange" weight="0.00721834459064">
+ <shade name="fresh" weight="0.903299552455" />
+ <shade name="cool" weight="0.0590618938143" />
+ <shade name="warm" weight="0.0376374813523" />
+</color>
+
+<color name="purple" weight="0.00340387992623">
+ <shade name="fresh" weight="0.908031617186" />
+ <shade name="cool" weight="0.0593712980468" />
+ <shade name="bright" weight="0.0325960067708" />
+</color>
+
+</colors>

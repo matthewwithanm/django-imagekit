@@ -1,0 +1,33 @@
+<colors query="truck">
+
+<color name="red" weight="0.371266711794">
+ <shade name="light" weight="0.613496312895" />
+ <shade name="hard" weight="0.372857672923" />
+ <shade name="cool" weight="0.0136450042006" />
+</color>
+
+<color name="white" weight="0.258272495161">
+ <shade name="light" weight="0.613496312895" />
+ <shade name="hard" weight="0.372857672923" />
+ <shade name="cool" weight="0.0136450042006" />
+</color>
+
+<color name="black" weight="0.135754480269">
+ <shade name="light" weight="0.613496312895" />
+ <shade name="hard" weight="0.372857672923" />
+ <shade name="cool" weight="0.0136450042006" />
+</color>
+
+<color name="yellow" weight="0.121710913345">
+ <shade name="light" weight="0.613496312895" />
+ <shade name="hard" weight="0.372857672923" />
+ <shade name="cool" weight="0.0136450042006" />
+</color>
+
+<color name="blue" weight="0.112994216633">
+ <shade name="light" weight="0.613496312895" />
+ <shade name="hard" weight="0.372857672923" />
+ <shade name="cool" weight="0.0136450042006" />
+</color>
+
+</colors>

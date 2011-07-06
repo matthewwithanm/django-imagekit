@@ -1,0 +1,33 @@
+<colors query="duckbill">
+
+<color name="black" weight="0.555768599117">
+ <shade name="light" weight="0.72727186777" />
+ <shade name="fresh" weight="0.181817966942" />
+ <shade name="warm" weight="0.0909089834712" />
+</color>
+
+<color name="blue" weight="0.119230633721">
+ <shade name="light" weight="0.72727186777" />
+ <shade name="fresh" weight="0.181817966942" />
+ <shade name="soft" weight="0.0909089834712" />
+</color>
+
+<color name="green" weight="0.115384484246">
+ <shade name="light" weight="0.72727186777" />
+ <shade name="fresh" weight="0.181817966942" />
+ <shade name="soft" weight="0.0909089834712" />
+</color>
+
+<color name="red" weight="0.105769110559">
+ <shade name="light" weight="0.72727186777" />
+ <shade name="fresh" weight="0.181817966942" />
+ <shade name="warm" weight="0.0909089834712" />
+</color>
+
+<color name="yellow" weight="0.103846035821">
+ <shade name="light" weight="0.72727186777" />
+ <shade name="fresh" weight="0.181817966942" />
+ <shade name="warm" weight="0.0909089834712" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="barrel">
+
+<color name="black" weight="0.275499516133">
+ <shade name="cool" weight="0.417084517043" />
+ <shade name="soft" weight="0.317838502445" />
+ <shade name="dark" weight="0.265074798482" />
+</color>
+
+<color name="blue" weight="0.231107835182">
+ <shade name="cool" weight="0.417084517043" />
+ <shade name="soft" weight="0.317838502445" />
+ <shade name="dark" weight="0.265074798482" />
+</color>
+
+<color name="red" weight="0.194171245688">
+ <shade name="cool" weight="0.417084517043" />
+ <shade name="soft" weight="0.317838502445" />
+ <shade name="dark" weight="0.265074798482" />
+</color>
+
+<color name="orange" weight="0.161301069716">
+ <shade name="cool" weight="0.417084517043" />
+ <shade name="soft" weight="0.317838502445" />
+ <shade name="dark" weight="0.265074798482" />
+</color>
+
+<color name="white" weight="0.137919191963">
+ <shade name="cool" weight="0.417084517043" />
+ <shade name="soft" weight="0.317838502445" />
+ <shade name="dark" weight="0.265074798482" />
+</color>
+
+</colors>

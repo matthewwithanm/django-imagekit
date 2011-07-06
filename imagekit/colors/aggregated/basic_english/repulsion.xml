@@ -1,0 +1,33 @@
+<colors query="repulsion">
+
+<color name="blue" weight="0.271428265102">
+ <shade name="weak" weight="0.887997592588" />
+ <shade name="soft" weight="0.06177779684" />
+ <shade name="intense" weight="0.0502235784265" />
+</color>
+
+<color name="black" weight="0.242856868776">
+ <shade name="weak" weight="0.887997592588" />
+ <shade name="soft" weight="0.06177779684" />
+ <shade name="intense" weight="0.0502235784265" />
+</color>
+
+<color name="red" weight="0.228571170613">
+ <shade name="weak" weight="0.887997592588" />
+ <shade name="soft" weight="0.06177779684" />
+ <shade name="intense" weight="0.0502235784265" />
+</color>
+
+<color name="white" weight="0.12857128347">
+ <shade name="weak" weight="0.917668737119" />
+ <shade name="soft" weight="0.0638420118269" />
+ <shade name="hard" weight="0.0184881844205" />
+</color>
+
+<color name="orange" weight="0.12857128347">
+ <shade name="weak" weight="0.887997592588" />
+ <shade name="soft" weight="0.06177779684" />
+ <shade name="intense" weight="0.0502235784265" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="geology">
+
+<color name="white" weight="0.389496283057">
+ <shade name="cool" weight="0.655071602112" />
+ <shade name="fresh" weight="0.212173633958" />
+ <shade name="hard" weight="0.13275344857" />
+</color>
+
+<color name="green" weight="0.240699950204">
+ <shade name="cool" weight="0.655071602112" />
+ <shade name="fresh" weight="0.212173633958" />
+ <shade name="hard" weight="0.13275344857" />
+</color>
+
+<color name="red" weight="0.136761335343">
+ <shade name="cool" weight="0.655071602112" />
+ <shade name="fresh" weight="0.212173633958" />
+ <shade name="hard" weight="0.13275344857" />
+</color>
+
+<color name="black" weight="0.134573153977">
+ <shade name="cool" weight="0.655071602112" />
+ <shade name="fresh" weight="0.212173633958" />
+ <shade name="hard" weight="0.13275344857" />
+</color>
+
+<color name="blue" weight="0.0984681614469">
+ <shade name="cool" weight="0.655071602112" />
+ <shade name="fresh" weight="0.212173633958" />
+ <shade name="hard" weight="0.13275344857" />
+</color>
+
+</colors>

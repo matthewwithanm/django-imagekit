@@ -1,0 +1,33 @@
+<colors query="sorrow">
+
+<color name="red" weight="0.352537178481">
+ <shade name="intense" weight="0.858887967612" />
+ <shade name="fresh" weight="0.0869899351813" />
+ <shade name="bright" weight="0.0541209533438" />
+</color>
+
+<color name="blue" weight="0.327693954494">
+ <shade name="intense" weight="0.858887967612" />
+ <shade name="fresh" weight="0.0869899351813" />
+ <shade name="bright" weight="0.0541209533438" />
+</color>
+
+<color name="white" weight="0.205843855892">
+ <shade name="fresh" weight="0.466900206762" />
+ <shade name="bright" weight="0.290482850156" />
+ <shade name="dark" weight="0.24261080364" />
+</color>
+
+<color name="black" weight="0.084348660489">
+ <shade name="intense" weight="0.858887967612" />
+ <shade name="fresh" weight="0.0869899351813" />
+ <shade name="bright" weight="0.0541209533438" />
+</color>
+
+<color name="yellow" weight="0.0295752666511">
+ <shade name="intense" weight="0.858887967612" />
+ <shade name="fresh" weight="0.0869899351813" />
+ <shade name="bright" weight="0.0541209533438" />
+</color>
+
+</colors>

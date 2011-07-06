@@ -1,0 +1,33 @@
+<colors query="zinnia">
+
+<color name="yellow" weight="0.423338975155">
+ <shade name="bright" weight="0.583999349035" />
+ <shade name="light" weight="0.343999616555" />
+ <shade name="fresh" weight="0.0719999197441" />
+</color>
+
+<color name="green" weight="0.177529247646">
+ <shade name="bright" weight="0.583999349035" />
+ <shade name="light" weight="0.343999616555" />
+ <shade name="fresh" weight="0.0719999197441" />
+</color>
+
+<color name="purple" weight="0.156424372051">
+ <shade name="bright" weight="0.583999349035" />
+ <shade name="light" weight="0.343999616555" />
+ <shade name="fresh" weight="0.0719999197441" />
+</color>
+
+<color name="blue" weight="0.135319496457">
+ <shade name="bright" weight="0.583999349035" />
+ <shade name="light" weight="0.343999616555" />
+ <shade name="fresh" weight="0.0719999197441" />
+</color>
+
+<color name="pink" weight="0.107386572877">
+ <shade name="bright" weight="0.583999349035" />
+ <shade name="light" weight="0.343999616555" />
+ <shade name="fresh" weight="0.0719999197441" />
+</color>
+
+</colors>

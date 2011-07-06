@@ -1,0 +1,33 @@
+<colors query="stretcher">
+
+<color name="black" weight="0.888685427778">
+ <shade name="soft" weight="0.75138597341" />
+ <shade name="hard" weight="0.13968719103" />
+ <shade name="light" weight="0.10892575185" />
+</color>
+
+<color name="white" weight="0.0440924693013">
+ <shade name="soft" weight="0.75138597341" />
+ <shade name="hard" weight="0.13968719103" />
+ <shade name="light" weight="0.10892575185" />
+</color>
+
+<color name="green" weight="0.0241540141909">
+ <shade name="soft" weight="0.75138597341" />
+ <shade name="hard" weight="0.13968719103" />
+ <shade name="light" weight="0.10892575185" />
+</color>
+
+<color name="red" weight="0.0235273770303">
+ <shade name="soft" weight="0.75138597341" />
+ <shade name="hard" weight="0.13968719103" />
+ <shade name="light" weight="0.10892575185" />
+</color>
+
+<color name="blue" weight="0.0195396860082">
+ <shade name="soft" weight="0.75138597341" />
+ <shade name="hard" weight="0.13968719103" />
+ <shade name="light" weight="0.10892575185" />
+</color>
+
+</colors>

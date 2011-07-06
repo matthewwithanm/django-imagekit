@@ -1,0 +1,33 @@
+<colors query="gene">
+
+<color name="blue" weight="0.753738010194">
+ <shade name="light" weight="0.597977982343" />
+ <shade name="neutral" weight="0.348118637608" />
+ <shade name="dark" weight="0.0539022406619" />
+</color>
+
+<color name="green" weight="0.0839480693893">
+ <shade name="light" weight="0.597977982343" />
+ <shade name="neutral" weight="0.348118637608" />
+ <shade name="dark" weight="0.0539022406619" />
+</color>
+
+<color name="white" weight="0.0817546518993">
+ <shade name="light" weight="0.597977982343" />
+ <shade name="neutral" weight="0.348118637608" />
+ <shade name="dark" weight="0.0539022406619" />
+</color>
+
+<color name="red" weight="0.0546360356595">
+ <shade name="light" weight="0.597977982343" />
+ <shade name="neutral" weight="0.348118637608" />
+ <shade name="dark" weight="0.0539022406619" />
+</color>
+
+<color name="black" weight="0.0259222066998">
+ <shade name="light" weight="0.597977982343" />
+ <shade name="neutral" weight="0.348118637608" />
+ <shade name="dark" weight="0.0539022406619" />
+</color>
+
+</colors>

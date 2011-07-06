@@ -1,0 +1,33 @@
+<colors query="beard">
+
+<color name="red" weight="0.470201818919">
+ <shade name="dark" weight="0.532074894768" />
+ <shade name="soft" weight="0.264150656977" />
+ <shade name="light" weight="0.203773363954" />
+</color>
+
+<color name="white" weight="0.295926435453">
+ <shade name="dark" weight="0.532074894768" />
+ <shade name="soft" weight="0.264150656977" />
+ <shade name="light" weight="0.203773363954" />
+</color>
+
+<color name="black" weight="0.161290158815">
+ <shade name="dark" weight="0.532074894768" />
+ <shade name="soft" weight="0.264150656977" />
+ <shade name="light" weight="0.203773363954" />
+</color>
+
+<color name="blue" weight="0.0535811375047">
+ <shade name="dark" weight="0.532074894768" />
+ <shade name="soft" weight="0.264150656977" />
+ <shade name="light" weight="0.203773363954" />
+</color>
+
+<color name="yellow" weight="0.0189994339621">
+ <shade name="dark" weight="0.532074894768" />
+ <shade name="soft" weight="0.264150656977" />
+ <shade name="light" weight="0.203773363954" />
+</color>
+
+</colors>

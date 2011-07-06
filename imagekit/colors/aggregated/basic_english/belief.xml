@@ -1,0 +1,33 @@
+<colors query="belief">
+
+<color name="white" weight="0.431582022455">
+ <shade name="fresh" weight="0.417621067619" />
+ <shade name="dark" weight="0.292717885927" />
+ <shade name="weak" weight="0.289652777174" />
+</color>
+
+<color name="black" weight="0.391434857575">
+ <shade name="intense" weight="0.898432157836" />
+ <shade name="fresh" weight="0.0597128690269" />
+ <shade name="dark" weight="0.0418537907675" />
+</color>
+
+<color name="green" weight="0.0786215312223">
+ <shade name="intense" weight="0.898432157836" />
+ <shade name="fresh" weight="0.0597128690269" />
+ <shade name="dark" weight="0.0418537907675" />
+</color>
+
+<color name="blue" weight="0.0649045832219">
+ <shade name="intense" weight="0.898432157836" />
+ <shade name="fresh" weight="0.0597128690269" />
+ <shade name="dark" weight="0.0418537907675" />
+</color>
+
+<color name="red" weight="0.0334559707329">
+ <shade name="intense" weight="0.898432157836" />
+ <shade name="fresh" weight="0.0597128690269" />
+ <shade name="dark" weight="0.0418537907675" />
+</color>
+
+</colors>

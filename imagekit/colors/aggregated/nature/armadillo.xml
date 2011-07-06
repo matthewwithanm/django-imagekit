@@ -1,0 +1,33 @@
+<colors query="armadillo">
+
+<color name="purple" weight="0.335354868279">
+ <shade name="cool" weight="0.705111956333" />
+ <shade name="hard" weight="0.148632368536" />
+ <shade name="dark" weight="0.146254250639" />
+</color>
+
+<color name="pink" weight="0.211438211525">
+ <shade name="cool" weight="0.705111956333" />
+ <shade name="hard" weight="0.148632368536" />
+ <shade name="dark" weight="0.146254250639" />
+</color>
+
+<color name="green" weight="0.190641010391">
+ <shade name="cool" weight="0.705111956333" />
+ <shade name="hard" weight="0.148632368536" />
+ <shade name="dark" weight="0.146254250639" />
+</color>
+
+<color name="red" weight="0.15337935836">
+ <shade name="cool" weight="0.705111956333" />
+ <shade name="hard" weight="0.148632368536" />
+ <shade name="dark" weight="0.146254250639" />
+</color>
+
+<color name="yellow" weight="0.109185305951">
+ <shade name="cool" weight="0.705111956333" />
+ <shade name="hard" weight="0.148632368536" />
+ <shade name="dark" weight="0.146254250639" />
+</color>
+
+</colors>

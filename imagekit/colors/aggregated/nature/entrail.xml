@@ -1,0 +1,33 @@
+<colors query="entrail">
+
+<color name="red" weight="0.315789091413">
+ <shade name="soft" weight="0.374999578125" />
+ <shade name="dark" weight="0.374999578125" />
+ <shade name="fresh" weight="0.24999971875" />
+</color>
+
+<color name="green" weight="0.263157576178">
+ <shade name="soft" weight="0.374999578125" />
+ <shade name="dark" weight="0.374999578125" />
+ <shade name="fresh" weight="0.24999971875" />
+</color>
+
+<color name="white" weight="0.157894545707">
+ <shade name="soft" weight="0.374999578125" />
+ <shade name="dark" weight="0.374999578125" />
+ <shade name="fresh" weight="0.24999971875" />
+</color>
+
+<color name="orange" weight="0.157894545707">
+ <shade name="soft" weight="0.374999578125" />
+ <shade name="dark" weight="0.374999578125" />
+ <shade name="fresh" weight="0.24999971875" />
+</color>
+
+<color name="pink" weight="0.105263030471">
+ <shade name="soft" weight="0.374999578125" />
+ <shade name="dark" weight="0.374999578125" />
+ <shade name="fresh" weight="0.24999971875" />
+</color>
+
+</colors>

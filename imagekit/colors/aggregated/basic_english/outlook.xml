@@ -1,0 +1,33 @@
+<colors query="outlook">
+
+<color name="green" weight="0.624385070569">
+ <shade name="fresh" weight="0.479144559171" />
+ <shade name="bright" weight="0.434332478098" />
+ <shade name="weak" weight="0.0865217873036" />
+</color>
+
+<color name="blue" weight="0.141064775203">
+ <shade name="fresh" weight="0.479144559171" />
+ <shade name="bright" weight="0.434332478098" />
+ <shade name="weak" weight="0.0865217873036" />
+</color>
+
+<color name="white" weight="0.126611417088">
+ <shade name="fresh" weight="0.479144559171" />
+ <shade name="bright" weight="0.434332478098" />
+ <shade name="weak" weight="0.0865217873036" />
+</color>
+
+<color name="orange" weight="0.0670635816537">
+ <shade name="fresh" weight="0.479144559171" />
+ <shade name="bright" weight="0.434332478098" />
+ <shade name="weak" weight="0.0865217873036" />
+</color>
+
+<color name="black" weight="0.0408740967493">
+ <shade name="fresh" weight="0.479144559171" />
+ <shade name="bright" weight="0.434332478098" />
+ <shade name="weak" weight="0.0865217873036" />
+</color>
+
+</colors>

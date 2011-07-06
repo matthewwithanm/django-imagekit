@@ -1,0 +1,33 @@
+<colors query="fog">
+
+<color name="blue" weight="0.271141510996">
+ <shade name="light" weight="0.754916708898" />
+ <shade name="dark" weight="0.135034397225" />
+ <shade name="cool" weight="0.110047717424" />
+</color>
+
+<color name="white" weight="0.253701583711">
+ <shade name="light" weight="0.754916708898" />
+ <shade name="dark" weight="0.135034397225" />
+ <shade name="cool" weight="0.110047717424" />
+</color>
+
+<color name="yellow" weight="0.196116918147">
+ <shade name="light" weight="0.754916708898" />
+ <shade name="dark" weight="0.135034397225" />
+ <shade name="cool" weight="0.110047717424" />
+</color>
+
+<color name="black" weight="0.175715493776">
+ <shade name="light" weight="0.754916708898" />
+ <shade name="dark" weight="0.135034397225" />
+ <shade name="cool" weight="0.110047717424" />
+</color>
+
+<color name="red" weight="0.103323342782">
+ <shade name="light" weight="0.754916708898" />
+ <shade name="dark" weight="0.135034397225" />
+ <shade name="cool" weight="0.110047717424" />
+</color>
+
+</colors>

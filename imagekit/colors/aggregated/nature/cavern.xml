@@ -1,0 +1,33 @@
+<colors query="cavern">
+
+<color name="black" weight="0.680903001478">
+ <shade name="dark" weight="0.941106454634" />
+ <shade name="warm" weight="0.0429465419526" />
+ <shade name="cool" weight="0.0159459825473" />
+</color>
+
+<color name="red" weight="0.164035723083">
+ <shade name="dark" weight="0.941106454634" />
+ <shade name="warm" weight="0.0429465419526" />
+ <shade name="cool" weight="0.0159459825473" />
+</color>
+
+<color name="pink" weight="0.0600432646758">
+ <shade name="dark" weight="0.941106454634" />
+ <shade name="warm" weight="0.0429465419526" />
+ <shade name="cool" weight="0.0159459825473" />
+</color>
+
+<color name="purple" weight="0.0493345174707">
+ <shade name="dark" weight="0.977820108979" />
+ <shade name="cool" weight="0.0165680538216" />
+ <shade name="light" weight="0.0056107765089" />
+</color>
+
+<color name="green" weight="0.0456824013719">
+ <shade name="dark" weight="0.977820108979" />
+ <shade name="cool" weight="0.0165680538216" />
+ <shade name="light" weight="0.0056107765089" />
+</color>
+
+</colors>

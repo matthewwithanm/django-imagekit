@@ -1,0 +1,33 @@
+<colors query="goat">
+
+<color name="black" weight="0.431315233635">
+ <shade name="fresh" weight="0.508849034031" />
+ <shade name="warm" weight="0.292035097792" />
+ <shade name="soft" weight="0.199114839404" />
+</color>
+
+<color name="white" weight="0.232692756297">
+ <shade name="fresh" weight="0.508849034031" />
+ <shade name="warm" weight="0.292035097792" />
+ <shade name="soft" weight="0.199114839404" />
+</color>
+
+<color name="green" weight="0.127944770986">
+ <shade name="fresh" weight="0.709831707685" />
+ <shade name="soft" weight="0.277760233442" />
+ <shade name="cool" weight="0.0124066237604" />
+</color>
+
+<color name="red" weight="0.111996980835">
+ <shade name="fresh" weight="0.508849034031" />
+ <shade name="warm" weight="0.292035097792" />
+ <shade name="soft" weight="0.199114839404" />
+</color>
+
+<color name="blue" weight="0.0960491906835">
+ <shade name="fresh" weight="0.709831707685" />
+ <shade name="soft" weight="0.277760233442" />
+ <shade name="cool" weight="0.0124066237604" />
+</color>
+
+</colors>

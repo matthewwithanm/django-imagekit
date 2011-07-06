@@ -1,0 +1,33 @@
+<colors query="squirrel">
+
+<color name="red" weight="0.734025728891">
+ <shade name="dark" weight="0.499034083768" />
+ <shade name="hard" weight="0.259652163508" />
+ <shade name="cool" weight="0.241312419617" />
+</color>
+
+<color name="black" weight="0.105749469416">
+ <shade name="dark" weight="0.499034083768" />
+ <shade name="hard" weight="0.259652163508" />
+ <shade name="cool" weight="0.241312419617" />
+</color>
+
+<color name="blue" weight="0.100417563395">
+ <shade name="dark" weight="0.499034083768" />
+ <shade name="hard" weight="0.259652163508" />
+ <shade name="cool" weight="0.241312419617" />
+</color>
+
+<color name="white" weight="0.0387451837526">
+ <shade name="dark" weight="0.499034083768" />
+ <shade name="hard" weight="0.259652163508" />
+ <shade name="cool" weight="0.241312419617" />
+</color>
+
+<color name="pink" weight="0.0210610287829">
+ <shade name="dark" weight="0.499034083768" />
+ <shade name="hard" weight="0.259652163508" />
+ <shade name="cool" weight="0.241312419617" />
+</color>
+
+</colors>

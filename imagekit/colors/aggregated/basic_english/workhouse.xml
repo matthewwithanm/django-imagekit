@@ -1,0 +1,33 @@
+<colors query="workhouse">
+
+<color name="green" weight="0.938192404219">
+ <shade name="dark" weight="0.939129381324" />
+ <shade name="light" weight="0.0347825696787" />
+ <shade name="hard" weight="0.026086927259" />
+</color>
+
+<color name="white" weight="0.0380348271981">
+ <shade name="dark" weight="0.931033447385" />
+ <shade name="warm" weight="0.0344827202735" />
+ <shade name="light" weight="0.0344827202735" />
+</color>
+
+<color name="blue" weight="0.0110934912661">
+ <shade name="dark" weight="0.939129381324" />
+ <shade name="light" weight="0.0347825696787" />
+ <shade name="hard" weight="0.026086927259" />
+</color>
+
+<color name="black" weight="0.00792392233293">
+ <shade name="dark" weight="0.931033447385" />
+ <shade name="warm" weight="0.0344827202735" />
+ <shade name="light" weight="0.0344827202735" />
+</color>
+
+<color name="pink" weight="0.00475435339976">
+ <shade name="dark" weight="0.931033447385" />
+ <shade name="warm" weight="0.0344827202735" />
+ <shade name="light" weight="0.0344827202735" />
+</color>
+
+</colors>

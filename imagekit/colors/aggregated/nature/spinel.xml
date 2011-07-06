@@ -1,0 +1,33 @@
+<colors query="spinel">
+
+<color name="red" weight="0.311182820261">
+ <shade name="dark" weight="0.405062658763" />
+ <shade name="fresh" weight="0.392404450677" />
+ <shade name="soft" weight="0.202531329381" />
+</color>
+
+<color name="black" weight="0.257698273028">
+ <shade name="dark" weight="0.405062658763" />
+ <shade name="fresh" weight="0.392404450677" />
+ <shade name="soft" weight="0.202531329381" />
+</color>
+
+<color name="blue" weight="0.213127817001">
+ <shade name="dark" weight="0.405062658763" />
+ <shade name="fresh" weight="0.392404450677" />
+ <shade name="soft" weight="0.202531329381" />
+</color>
+
+<color name="pink" weight="0.132090624225">
+ <shade name="dark" weight="0.405062658763" />
+ <shade name="fresh" weight="0.392404450677" />
+ <shade name="soft" weight="0.202531329381" />
+</color>
+
+<color name="green" weight="0.0858994243428">
+ <shade name="dark" weight="0.405062658763" />
+ <shade name="fresh" weight="0.392404450677" />
+ <shade name="soft" weight="0.202531329381" />
+</color>
+
+</colors>

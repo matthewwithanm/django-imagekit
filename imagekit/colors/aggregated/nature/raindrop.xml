@@ -1,0 +1,33 @@
+<colors query="raindrop">
+
+<color name="green" weight="0.340789525738">
+ <shade name="dark" weight="0.416978546898" />
+ <shade name="light" weight="0.32005920897" />
+ <shade name="fresh" weight="0.26295944399" />
+</color>
+
+<color name="white" weight="0.249912318875">
+ <shade name="warm" weight="0.64340152746" />
+ <shade name="dark" weight="0.201744546746" />
+ <shade name="light" weight="0.154852571016" />
+</color>
+
+<color name="black" weight="0.222823920675">
+ <shade name="warm" weight="0.64340152746" />
+ <shade name="dark" weight="0.201744546746" />
+ <shade name="light" weight="0.154852571016" />
+</color>
+
+<color name="purple" weight="0.117091785766">
+ <shade name="dark" weight="0.416978546898" />
+ <shade name="light" weight="0.32005920897" />
+ <shade name="fresh" weight="0.26295944399" />
+</color>
+
+<color name="red" weight="0.0693812521631">
+ <shade name="warm" weight="0.64340152746" />
+ <shade name="dark" weight="0.201744546746" />
+ <shade name="light" weight="0.154852571016" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="barnacle">
+
+<color name="purple" weight="0.364804061875">
+ <shade name="dark" weight="0.680768316969" />
+ <shade name="cool" weight="0.173076690755" />
+ <shade name="fresh" weight="0.146153649971" />
+</color>
+
+<color name="black" weight="0.30391027513">
+ <shade name="dark" weight="0.680768316969" />
+ <shade name="cool" weight="0.173076690755" />
+ <shade name="fresh" weight="0.146153649971" />
+</color>
+
+<color name="red" weight="0.143575258655">
+ <shade name="dark" weight="0.680768316969" />
+ <shade name="cool" weight="0.173076690755" />
+ <shade name="fresh" weight="0.146153649971" />
+</color>
+
+<color name="white" weight="0.127932818024">
+ <shade name="dark" weight="0.680768316969" />
+ <shade name="cool" weight="0.173076690755" />
+ <shade name="fresh" weight="0.146153649971" />
+</color>
+
+<color name="green" weight="0.0597764695569">
+ <shade name="dark" weight="0.680768316969" />
+ <shade name="cool" weight="0.173076690755" />
+ <shade name="fresh" weight="0.146153649971" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="dauntless">
+
+<color name="white" weight="0.472221710649">
+ <shade name="dark" weight="0.784430332157" />
+ <shade name="cool" weight="0.152694453969" />
+ <shade name="light" weight="0.0628741869286" />
+</color>
+
+<color name="green" weight="0.166666486111">
+ <shade name="dark" weight="0.784430332157" />
+ <shade name="cool" weight="0.152694453969" />
+ <shade name="light" weight="0.0628741869286" />
+</color>
+
+<color name="black" weight="0.166666486111">
+ <shade name="dark" weight="0.784430332157" />
+ <shade name="cool" weight="0.152694453969" />
+ <shade name="light" weight="0.0628741869286" />
+</color>
+
+<color name="red" weight="0.138888738426">
+ <shade name="dark" weight="0.784430332157" />
+ <shade name="cool" weight="0.152694453969" />
+ <shade name="light" weight="0.0628741869286" />
+</color>
+
+<color name="pink" weight="0.0555554953704">
+ <shade name="dark" weight="0.784430332157" />
+ <shade name="cool" weight="0.152694453969" />
+ <shade name="light" weight="0.0628741869286" />
+</color>
+
+</colors>

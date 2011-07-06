@@ -1,0 +1,33 @@
+<colors query="togetherness">
+
+<color name="orange" weight="0.708190413618">
+ <shade name="intense" weight="0.482114532942" />
+ <shade name="warm" weight="0.421461414281" />
+ <shade name="light" weight="0.0964229065884" />
+</color>
+
+<color name="blue" weight="0.20648443385">
+ <shade name="intense" weight="0.754256555019" />
+ <shade name="light" weight="0.150851311004" />
+ <shade name="cool" weight="0.0948903407927" />
+</color>
+
+<color name="black" weight="0.0520477291936">
+ <shade name="intense" weight="0.482114532942" />
+ <shade name="warm" weight="0.421461414281" />
+ <shade name="light" weight="0.0964229065884" />
+</color>
+
+<color name="red" weight="0.0177474224136">
+ <shade name="intense" weight="0.482114532942" />
+ <shade name="warm" weight="0.421461414281" />
+ <shade name="light" weight="0.0964229065884" />
+</color>
+
+<color name="white" weight="0.0155289946119">
+ <shade name="warm" weight="0.728493180378" />
+ <shade name="light" weight="0.16666633647" />
+ <shade name="cool" weight="0.104838501973" />
+</color>
+
+</colors>

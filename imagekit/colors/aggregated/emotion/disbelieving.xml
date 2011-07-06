@@ -1,0 +1,33 @@
+<colors query="disbelieving">
+
+<color name="black" weight="0.624999355469">
+ <shade name="soft" weight="0.666665808082" />
+ <shade name="hard" weight="0.212120938935" />
+ <shade name="dark" weight="0.121211965106" />
+</color>
+
+<color name="white" weight="0.156249838867">
+ <shade name="soft" weight="0.666665808082" />
+ <shade name="hard" weight="0.212120938935" />
+ <shade name="dark" weight="0.121211965106" />
+</color>
+
+<color name="blue" weight="0.124999871094">
+ <shade name="soft" weight="0.666665808082" />
+ <shade name="hard" weight="0.212120938935" />
+ <shade name="dark" weight="0.121211965106" />
+</color>
+
+<color name="orange" weight="0.0624999355469">
+ <shade name="soft" weight="0.666665808082" />
+ <shade name="hard" weight="0.212120938935" />
+ <shade name="dark" weight="0.121211965106" />
+</color>
+
+<color name="pink" weight="0.0312499677735">
+ <shade name="soft" weight="0.666665808082" />
+ <shade name="hard" weight="0.212120938935" />
+ <shade name="dark" weight="0.121211965106" />
+</color>
+
+</colors>

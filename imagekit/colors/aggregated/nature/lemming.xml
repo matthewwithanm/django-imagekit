@@ -1,0 +1,33 @@
+<colors query="lemming">
+
+<color name="black" weight="0.501827970451">
+ <shade name="dark" weight="0.960823706163" />
+ <shade name="cool" weight="0.0230927586031" />
+ <shade name="fresh" weight="0.0160824568843" />
+</color>
+
+<color name="white" weight="0.239739678191">
+ <shade name="dark" weight="0.960823706163" />
+ <shade name="cool" weight="0.0230927586031" />
+ <shade name="fresh" weight="0.0160824568843" />
+</color>
+
+<color name="yellow" weight="0.131247315349">
+ <shade name="dark" weight="0.960823706163" />
+ <shade name="cool" weight="0.0230927586031" />
+ <shade name="fresh" weight="0.0160824568843" />
+</color>
+
+<color name="blue" weight="0.0662331653307">
+ <shade name="dark" weight="0.960823706163" />
+ <shade name="cool" weight="0.0230927586031" />
+ <shade name="fresh" weight="0.0160824568843" />
+</color>
+
+<color name="red" weight="0.0609507656418">
+ <shade name="dark" weight="0.960823706163" />
+ <shade name="cool" weight="0.0230927586031" />
+ <shade name="fresh" weight="0.0160824568843" />
+</color>
+
+</colors>

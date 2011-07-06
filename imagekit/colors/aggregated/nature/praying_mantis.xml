@@ -1,0 +1,33 @@
+<colors query="praying mantis">
+
+<color name="green" weight="0.724454822924">
+ <shade name="cool" weight="0.78017155964" />
+ <shade name="dark" weight="0.189654964774" />
+ <shade name="soft" weight="0.0301723807595" />
+</color>
+
+<color name="white" weight="0.104271243299">
+ <shade name="cool" weight="0.78017155964" />
+ <shade name="dark" weight="0.189654964774" />
+ <shade name="soft" weight="0.0301723807595" />
+</color>
+
+<color name="black" weight="0.0745392823586">
+ <shade name="cool" weight="0.78017155964" />
+ <shade name="dark" weight="0.189654964774" />
+ <shade name="soft" weight="0.0301723807595" />
+</color>
+
+<color name="pink" weight="0.0565326017888">
+ <shade name="cool" weight="0.78017155964" />
+ <shade name="dark" weight="0.189654964774" />
+ <shade name="soft" weight="0.0301723807595" />
+</color>
+
+<color name="purple" weight="0.0402009612721">
+ <shade name="cool" weight="0.78017155964" />
+ <shade name="dark" weight="0.189654964774" />
+ <shade name="soft" weight="0.0301723807595" />
+</color>
+
+</colors>

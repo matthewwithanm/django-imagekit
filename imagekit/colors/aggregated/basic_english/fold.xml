@@ -1,0 +1,33 @@
+<colors query="fold">
+
+<color name="white" weight="0.433037705455">
+ <shade name="soft" weight="0.441064024715" />
+ <shade name="light" weight="0.28897298171" />
+ <shade name="cool" weight="0.269961601334" />
+</color>
+
+<color name="black" weight="0.325220154301">
+ <shade name="soft" weight="0.441064024715" />
+ <shade name="light" weight="0.28897298171" />
+ <shade name="cool" weight="0.269961601334" />
+</color>
+
+<color name="green" weight="0.2014950956">
+ <shade name="soft" weight="0.441064024715" />
+ <shade name="light" weight="0.28897298171" />
+ <shade name="cool" weight="0.269961601334" />
+</color>
+
+<color name="yellow" weight="0.0259822623273">
+ <shade name="soft" weight="0.441064024715" />
+ <shade name="light" weight="0.28897298171" />
+ <shade name="cool" weight="0.269961601334" />
+</color>
+
+<color name="purple" weight="0.0142637317674">
+ <shade name="soft" weight="0.441064024715" />
+ <shade name="light" weight="0.28897298171" />
+ <shade name="cool" weight="0.269961601334" />
+</color>
+
+</colors>

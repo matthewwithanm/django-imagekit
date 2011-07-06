@@ -1,0 +1,33 @@
+<colors query="bandicoot">
+
+<color name="blue" weight="0.796526183966">
+ <shade name="cool" weight="0.608694646504" />
+ <shade name="fresh" weight="0.21739094518" />
+ <shade name="light" weight="0.173912756144" />
+</color>
+
+<color name="orange" weight="0.128916441623">
+ <shade name="cool" weight="0.608694646504" />
+ <shade name="fresh" weight="0.21739094518" />
+ <shade name="light" weight="0.173912756144" />
+</color>
+
+<color name="black" weight="0.032653798537">
+ <shade name="cool" weight="0.608694646504" />
+ <shade name="fresh" weight="0.21739094518" />
+ <shade name="light" weight="0.173912756144" />
+</color>
+
+<color name="red" weight="0.0311437962925">
+ <shade name="cool" weight="0.608694646504" />
+ <shade name="fresh" weight="0.21739094518" />
+ <shade name="light" weight="0.173912756144" />
+</color>
+
+<color name="green" weight="0.010758765992">
+ <shade name="cool" weight="0.608694646504" />
+ <shade name="fresh" weight="0.21739094518" />
+ <shade name="light" weight="0.173912756144" />
+</color>
+
+</colors>

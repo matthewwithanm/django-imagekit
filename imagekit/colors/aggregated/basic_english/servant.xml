@@ -1,0 +1,33 @@
+<colors query="servant">
+
+<color name="black" weight="0.871118710812">
+ <shade name="dark" weight="0.771566570048" />
+ <shade name="weak" weight="0.117253817338" />
+ <shade name="fresh" weight="0.111178490015" />
+</color>
+
+<color name="white" weight="0.117738069259">
+ <shade name="dark" weight="0.771566570048" />
+ <shade name="weak" weight="0.117253817338" />
+ <shade name="fresh" weight="0.111178490015" />
+</color>
+
+<color name="green" weight="0.00467138898274">
+ <shade name="dark" weight="0.771566570048" />
+ <shade name="weak" weight="0.117253817338" />
+ <shade name="fresh" weight="0.111178490015" />
+</color>
+
+<color name="red" weight="0.00414704940305">
+ <shade name="dark" weight="0.771566570048" />
+ <shade name="weak" weight="0.117253817338" />
+ <shade name="fresh" weight="0.111178490015" />
+</color>
+
+<color name="blue" weight="0.00232377768274">
+ <shade name="dark" weight="0.771566570048" />
+ <shade name="weak" weight="0.117253817338" />
+ <shade name="fresh" weight="0.111178490015" />
+</color>
+
+</colors>

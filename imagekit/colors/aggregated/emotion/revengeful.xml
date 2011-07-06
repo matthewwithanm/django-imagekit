@@ -1,0 +1,33 @@
+<colors query="revengeful">
+
+<color name="black" weight="0.39999956">
+ <shade name="dark" weight="0.897958239901" />
+ <shade name="hard" weight="0.0714284963558" />
+ <shade name="cool" weight="0.0306122127239" />
+</color>
+
+<color name="red" weight="0.19999978">
+ <shade name="dark" weight="0.897958239901" />
+ <shade name="hard" weight="0.0714284963558" />
+ <shade name="cool" weight="0.0306122127239" />
+</color>
+
+<color name="green" weight="0.19999978">
+ <shade name="dark" weight="0.897958239901" />
+ <shade name="hard" weight="0.0714284963558" />
+ <shade name="cool" weight="0.0306122127239" />
+</color>
+
+<color name="white" weight="0.0999998900001">
+ <shade name="dark" weight="0.897958239901" />
+ <shade name="hard" weight="0.0714284963558" />
+ <shade name="cool" weight="0.0306122127239" />
+</color>
+
+<color name="orange" weight="0.0999998900001">
+ <shade name="dark" weight="0.897958239901" />
+ <shade name="hard" weight="0.0714284963558" />
+ <shade name="cool" weight="0.0306122127239" />
+</color>
+
+</colors>

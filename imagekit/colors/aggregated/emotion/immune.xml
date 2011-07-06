@@ -1,0 +1,33 @@
+<colors query="immune">
+
+<color name="orange" weight="0.4047358094">
+ <shade name="weak" weight="0.912112665202" />
+ <shade name="intense" weight="0.0772824524211" />
+ <shade name="warm" weight="0.0106038713787" />
+</color>
+
+<color name="white" weight="0.224972830225">
+ <shade name="weak" weight="0.979965143616" />
+ <shade name="warm" weight="0.0113926982213" />
+ <shade name="light" weight="0.00864107195602" />
+</color>
+
+<color name="red" weight="0.156081628625">
+ <shade name="weak" weight="0.912112665202" />
+ <shade name="intense" weight="0.0772824524211" />
+ <shade name="warm" weight="0.0106038713787" />
+</color>
+
+<color name="green" weight="0.1420881033">
+ <shade name="weak" weight="0.914454679222" />
+ <shade name="intense" weight="0.0774808890769" />
+ <shade name="light" weight="0.00806341810742" />
+</color>
+
+<color name="yellow" weight="0.072120476675">
+ <shade name="weak" weight="0.912112665202" />
+ <shade name="intense" weight="0.0772824524211" />
+ <shade name="warm" weight="0.0106038713787" />
+</color>
+
+</colors>

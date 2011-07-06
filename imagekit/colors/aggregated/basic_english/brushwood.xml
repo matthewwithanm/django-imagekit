@@ -1,0 +1,33 @@
+<colors query="brushwood">
+
+<color name="green" weight="0.827956123454">
+ <shade name="light" weight="0.568719745739" />
+ <shade name="dark" weight="0.284359872869" />
+ <shade name="fresh" weight="0.146919267649" />
+</color>
+
+<color name="red" weight="0.0645160615679">
+ <shade name="light" weight="0.568719745739" />
+ <shade name="dark" weight="0.284359872869" />
+ <shade name="fresh" weight="0.146919267649" />
+</color>
+
+<color name="black" weight="0.0645160615679">
+ <shade name="light" weight="0.568719745739" />
+ <shade name="dark" weight="0.284359872869" />
+ <shade name="fresh" weight="0.146919267649" />
+</color>
+
+<color name="white" weight="0.024193523088">
+ <shade name="light" weight="0.568719745739" />
+ <shade name="dark" weight="0.284359872869" />
+ <shade name="fresh" weight="0.146919267649" />
+</color>
+
+<color name="yellow" weight="0.018817184624">
+ <shade name="light" weight="0.568719745739" />
+ <shade name="dark" weight="0.284359872869" />
+ <shade name="fresh" weight="0.146919267649" />
+</color>
+
+</colors>

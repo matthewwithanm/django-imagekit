@@ -1,0 +1,33 @@
+<colors query="porpoise">
+
+<color name="white" weight="0.314723864964">
+ <shade name="fresh" weight="0.383647200349" />
+ <shade name="light" weight="0.345911410151" />
+ <shade name="dark" weight="0.270439829754" />
+</color>
+
+<color name="blue" weight="0.265791532602">
+ <shade name="fresh" weight="0.383647200349" />
+ <shade name="light" weight="0.345911410151" />
+ <shade name="dark" weight="0.270439829754" />
+</color>
+
+<color name="black" weight="0.227980184868">
+ <shade name="fresh" weight="0.383647200349" />
+ <shade name="light" weight="0.345911410151" />
+ <shade name="dark" weight="0.270439829754" />
+</color>
+
+<color name="purple" weight="0.0990879730329">
+ <shade name="fresh" weight="0.383647200349" />
+ <shade name="light" weight="0.345911410151" />
+ <shade name="dark" weight="0.270439829754" />
+</color>
+
+<color name="pink" weight="0.0924153822563">
+ <shade name="fresh" weight="0.383647200349" />
+ <shade name="light" weight="0.345911410151" />
+ <shade name="dark" weight="0.270439829754" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="pond">
+
+<color name="green" weight="0.530438097892">
+ <shade name="fresh" weight="0.888407298671" />
+ <shade name="dark" weight="0.0760940164514" />
+ <shade name="cool" weight="0.0354976655425" />
+</color>
+
+<color name="white" weight="0.160250497085">
+ <shade name="fresh" weight="0.888407298671" />
+ <shade name="dark" weight="0.0760940164514" />
+ <shade name="cool" weight="0.0354976655425" />
+</color>
+
+<color name="black" weight="0.140107278177">
+ <shade name="fresh" weight="0.888407298671" />
+ <shade name="dark" weight="0.0760940164514" />
+ <shade name="cool" weight="0.0354976655425" />
+</color>
+
+<color name="blue" weight="0.0935540611472">
+ <shade name="fresh" weight="0.888407298671" />
+ <shade name="dark" weight="0.0760940164514" />
+ <shade name="cool" weight="0.0354976655425" />
+</color>
+
+<color name="yellow" weight="0.075648977674">
+ <shade name="fresh" weight="0.888407298671" />
+ <shade name="dark" weight="0.0760940164514" />
+ <shade name="cool" weight="0.0354976655425" />
+</color>
+
+</colors>

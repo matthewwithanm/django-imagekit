@@ -1,0 +1,33 @@
+<colors query="herewith">
+
+<color name="white" weight="0.416666145834">
+ <shade name="light" weight="0.783782745801" />
+ <shade name="hard" weight="0.162161947407" />
+ <shade name="weak" weight="0.0540539824691" />
+</color>
+
+<color name="red" weight="0.166666458334">
+ <shade name="light" weight="0.763156910666" />
+ <shade name="hard" weight="0.157894533241" />
+ <shade name="intense" weight="0.0789472666206" />
+</color>
+
+<color name="green" weight="0.166666458334">
+ <shade name="light" weight="0.763156910666" />
+ <shade name="hard" weight="0.157894533241" />
+ <shade name="intense" weight="0.0789472666206" />
+</color>
+
+<color name="blue" weight="0.12499984375">
+ <shade name="light" weight="0.763156910666" />
+ <shade name="hard" weight="0.157894533241" />
+ <shade name="intense" weight="0.0789472666206" />
+</color>
+
+<color name="black" weight="0.12499984375">
+ <shade name="light" weight="0.763156910666" />
+ <shade name="hard" weight="0.157894533241" />
+ <shade name="intense" weight="0.0789472666206" />
+</color>
+
+</colors>

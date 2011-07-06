@@ -1,0 +1,33 @@
+<colors query="garlic">
+
+<color name="green" weight="0.436995278227">
+ <shade name="fresh" weight="0.933615274622" />
+ <shade name="light" weight="0.0478932511007" />
+ <shade name="soft" weight="0.018490432387" />
+</color>
+
+<color name="white" weight="0.362808967053">
+ <shade name="fresh" weight="0.917484911058" />
+ <shade name="light" weight="0.0470657843984" />
+ <shade name="warm" weight="0.0354482806545" />
+</color>
+
+<color name="red" weight="0.145665092742">
+ <shade name="fresh" weight="0.917484911058" />
+ <shade name="light" weight="0.0470657843984" />
+ <shade name="warm" weight="0.0354482806545" />
+</color>
+
+<color name="orange" weight="0.0495477917692">
+ <shade name="fresh" weight="0.917484911058" />
+ <shade name="light" weight="0.0470657843984" />
+ <shade name="warm" weight="0.0354482806545" />
+</color>
+
+<color name="purple" weight="0.00498185447297">
+ <shade name="fresh" weight="0.933615274622" />
+ <shade name="light" weight="0.0478932511007" />
+ <shade name="soft" weight="0.018490432387" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="egg">
+
+<color name="green" weight="0.416244875025">
+ <shade name="fresh" weight="0.79565911753" />
+ <shade name="soft" weight="0.134418169098" />
+ <shade name="cool" weight="0.0699215588133" />
+</color>
+
+<color name="white" weight="0.205594634628">
+ <shade name="fresh" weight="0.79565911753" />
+ <shade name="soft" weight="0.134418169098" />
+ <shade name="cool" weight="0.0699215588133" />
+</color>
+
+<color name="blue" weight="0.14105140097">
+ <shade name="fresh" weight="0.79565911753" />
+ <shade name="soft" weight="0.134418169098" />
+ <shade name="cool" weight="0.0699215588133" />
+</color>
+
+<color name="red" weight="0.123862341354">
+ <shade name="fresh" weight="0.79565911753" />
+ <shade name="soft" weight="0.134418169098" />
+ <shade name="cool" weight="0.0699215588133" />
+</color>
+
+<color name="black" weight="0.113245569238">
+ <shade name="fresh" weight="0.79565911753" />
+ <shade name="soft" weight="0.134418169098" />
+ <shade name="cool" weight="0.0699215588133" />
+</color>
+
+</colors>

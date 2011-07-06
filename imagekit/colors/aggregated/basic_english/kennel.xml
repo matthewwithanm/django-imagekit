@@ -1,0 +1,33 @@
+<colors query="kennel">
+
+<color name="black" weight="0.29063790752">
+ <shade name="soft" weight="0.741370377723" />
+ <shade name="light" weight="0.136975529078" />
+ <shade name="dark" weight="0.121652842775" />
+</color>
+
+<color name="green" weight="0.280414463537">
+ <shade name="soft" weight="0.741370377723" />
+ <shade name="light" weight="0.136975529078" />
+ <shade name="dark" weight="0.121652842775" />
+</color>
+
+<color name="pink" weight="0.227836751624">
+ <shade name="soft" weight="0.741370377723" />
+ <shade name="light" weight="0.136975529078" />
+ <shade name="dark" weight="0.121652842775" />
+</color>
+
+<color name="white" weight="0.112457883814">
+ <shade name="soft" weight="0.741370377723" />
+ <shade name="light" weight="0.136975529078" />
+ <shade name="dark" weight="0.121652842775" />
+</color>
+
+<color name="red" weight="0.0886518642535">
+ <shade name="soft" weight="0.741370377723" />
+ <shade name="light" weight="0.136975529078" />
+ <shade name="dark" weight="0.121652842775" />
+</color>
+
+</colors>

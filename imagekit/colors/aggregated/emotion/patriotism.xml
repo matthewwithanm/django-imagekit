@@ -1,0 +1,33 @@
+<colors query="patriotism">
+
+<color name="blue" weight="0.496721630557">
+ <shade name="intense" weight="0.969051811641" />
+ <shade name="weak" weight="0.0182869454777" />
+ <shade name="hard" weight="0.0126601930231" />
+</color>
+
+<color name="black" weight="0.184316503521">
+ <shade name="intense" weight="0.960792429313" />
+ <shade name="warm" weight="0.0210754468365" />
+ <shade name="weak" weight="0.0181310829403" />
+</color>
+
+<color name="green" weight="0.174987214013">
+ <shade name="intense" weight="0.969051811641" />
+ <shade name="weak" weight="0.0182869454777" />
+ <shade name="hard" weight="0.0126601930231" />
+</color>
+
+<color name="red" weight="0.0736257442246">
+ <shade name="intense" weight="0.960792429313" />
+ <shade name="warm" weight="0.0210754468365" />
+ <shade name="weak" weight="0.0181310829403" />
+</color>
+
+<color name="white" weight="0.0703478857489">
+ <shade name="warm" weight="0.407177440087" />
+ <shade name="weak" weight="0.350292356546" />
+ <shade name="hard" weight="0.242510092993" />
+</color>
+
+</colors>

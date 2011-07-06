@@ -1,0 +1,33 @@
+<colors query="weariness">
+
+<color name="black" weight="0.583332722994">
+ <shade name="intense" weight="0.906248984895" />
+ <shade name="dark" weight="0.049804631713" />
+ <shade name="soft" weight="0.0439452632762" />
+</color>
+
+<color name="white" weight="0.231481239284">
+ <shade name="dark" weight="0.377774568093" />
+ <shade name="soft" weight="0.333330501259" />
+ <shade name="light" weight="0.288886434424" />
+</color>
+
+<color name="red" weight="0.0833332461421">
+ <shade name="intense" weight="0.906248984895" />
+ <shade name="dark" weight="0.049804631713" />
+ <shade name="soft" weight="0.0439452632762" />
+</color>
+
+<color name="blue" weight="0.0740739965707">
+ <shade name="intense" weight="0.906248984895" />
+ <shade name="dark" weight="0.049804631713" />
+ <shade name="soft" weight="0.0439452632762" />
+</color>
+
+<color name="purple" weight="0.027777748714">
+ <shade name="dark" weight="0.377774568093" />
+ <shade name="soft" weight="0.333330501259" />
+ <shade name="light" weight="0.288886434424" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="catarrh">
+
+<color name="green" weight="0.542372332855">
+ <shade name="fresh" weight="0.461537715978" />
+ <shade name="light" weight="0.307691810652" />
+ <shade name="intense" weight="0.230768857989" />
+</color>
+
+<color name="yellow" weight="0.288135301829">
+ <shade name="fresh" weight="0.461537715978" />
+ <shade name="light" weight="0.307691810652" />
+ <shade name="intense" weight="0.230768857989" />
+</color>
+
+<color name="white" weight="0.0847456770086">
+ <shade name="fresh" weight="0.461537715978" />
+ <shade name="light" weight="0.307691810652" />
+ <shade name="dark" weight="0.230768857989" />
+</color>
+
+<color name="blue" weight="0.0508474062052">
+ <shade name="fresh" weight="0.461537715978" />
+ <shade name="light" weight="0.307691810652" />
+ <shade name="intense" weight="0.230768857989" />
+</color>
+
+<color name="red" weight="0.0338982708034">
+ <shade name="fresh" weight="0.461537715978" />
+ <shade name="light" weight="0.307691810652" />
+ <shade name="intense" weight="0.230768857989" />
+</color>
+
+</colors>

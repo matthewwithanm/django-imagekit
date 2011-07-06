@@ -1,0 +1,33 @@
+<colors query="sympathetic">
+
+<color name="black" weight="0.303837642128">
+ <shade name="warm" weight="0.89596717291" />
+ <shade name="intense" weight="0.0605844469301" />
+ <shade name="soft" weight="0.0434472970355" />
+</color>
+
+<color name="blue" weight="0.282515702329">
+ <shade name="intense" weight="0.500583064112" />
+ <shade name="soft" weight="0.35898621147" />
+ <shade name="weak" weight="0.140421775027" />
+</color>
+
+<color name="white" weight="0.250532792632">
+ <shade name="warm" weight="0.936801913058" />
+ <shade name="soft" weight="0.0454274578475" />
+ <shade name="weak" weight="0.0177694966048" />
+</color>
+
+<color name="green" weight="0.106609698992">
+ <shade name="intense" weight="0.500583064112" />
+ <shade name="soft" weight="0.35898621147" />
+ <shade name="weak" weight="0.140421775027" />
+</color>
+
+<color name="red" weight="0.0565031404659">
+ <shade name="warm" weight="0.89596717291" />
+ <shade name="intense" weight="0.0605844469301" />
+ <shade name="soft" weight="0.0434472970355" />
+</color>
+
+</colors>

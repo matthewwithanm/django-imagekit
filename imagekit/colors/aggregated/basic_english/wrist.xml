@@ -1,0 +1,33 @@
+<colors query="wrist">
+
+<color name="black" weight="0.325456138318">
+ <shade name="neutral" weight="0.517623228257" />
+ <shade name="soft" weight="0.359871387265" />
+ <shade name="cool" weight="0.122504164021" />
+</color>
+
+<color name="white" weight="0.236304786897">
+ <shade name="neutral" weight="0.517623228257" />
+ <shade name="soft" weight="0.359871387265" />
+ <shade name="cool" weight="0.122504164021" />
+</color>
+
+<color name="blue" weight="0.16433923816">
+ <shade name="neutral" weight="0.517623228257" />
+ <shade name="soft" weight="0.359871387265" />
+ <shade name="cool" weight="0.122504164021" />
+</color>
+
+<color name="pink" weight="0.149301660812">
+ <shade name="neutral" weight="0.517623228257" />
+ <shade name="soft" weight="0.359871387265" />
+ <shade name="cool" weight="0.122504164021" />
+</color>
+
+<color name="red" weight="0.124597069455">
+ <shade name="neutral" weight="0.517623228257" />
+ <shade name="soft" weight="0.359871387265" />
+ <shade name="cool" weight="0.122504164021" />
+</color>
+
+</colors>

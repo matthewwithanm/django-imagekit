@@ -1,0 +1,33 @@
+<colors query="orgasmic">
+
+<color name="black" weight="0.398600939606">
+ <shade name="hard" weight="0.575815035165" />
+ <shade name="intense" weight="0.216506453222" />
+ <shade name="warm" weight="0.20767728935" />
+</color>
+
+<color name="blue" weight="0.228437965388">
+ <shade name="hard" weight="0.666369559431" />
+ <shade name="intense" weight="0.250554954346" />
+ <shade name="soft" weight="0.0830740717424" />
+</color>
+
+<color name="white" weight="0.165500974924">
+ <shade name="hard" weight="0.673248589038" />
+ <shade name="warm" weight="0.242818324446" />
+ <shade name="soft" weight="0.0839316574334" />
+</color>
+
+<color name="orange" weight="0.123542981282">
+ <shade name="hard" weight="0.575815035165" />
+ <shade name="intense" weight="0.216506453222" />
+ <shade name="warm" weight="0.20767728935" />
+</color>
+
+<color name="red" weight="0.0839159872856">
+ <shade name="hard" weight="0.575815035165" />
+ <shade name="intense" weight="0.216506453222" />
+ <shade name="warm" weight="0.20767728935" />
+</color>
+
+</colors>

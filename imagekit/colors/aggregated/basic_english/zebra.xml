@@ -1,0 +1,33 @@
+<colors query="zebra">
+
+<color name="red" weight="0.286210543351">
+ <shade name="dark" weight="0.76070589063" />
+ <shade name="soft" weight="0.124288560871" />
+ <shade name="cool" weight="0.115004355119" />
+</color>
+
+<color name="green" weight="0.211761039666">
+ <shade name="dark" weight="0.76070589063" />
+ <shade name="soft" weight="0.124288560871" />
+ <shade name="cool" weight="0.115004355119" />
+</color>
+
+<color name="black" weight="0.17555019157">
+ <shade name="dark" weight="0.76070589063" />
+ <shade name="soft" weight="0.124288560871" />
+ <shade name="cool" weight="0.115004355119" />
+</color>
+
+<color name="white" weight="0.169177082305">
+ <shade name="dark" weight="0.76070589063" />
+ <shade name="soft" weight="0.124288560871" />
+ <shade name="cool" weight="0.115004355119" />
+</color>
+
+<color name="pink" weight="0.157299924129">
+ <shade name="dark" weight="0.76070589063" />
+ <shade name="soft" weight="0.124288560871" />
+ <shade name="cool" weight="0.115004355119" />
+</color>
+
+</colors>

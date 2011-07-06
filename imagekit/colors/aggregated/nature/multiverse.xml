@@ -1,0 +1,33 @@
+<colors query="multiverse">
+
+<color name="white" weight="0.384614970415">
+ <shade name="cool" weight="0.434782003782" />
+ <shade name="dark" weight="0.391303803403" />
+ <shade name="weak" weight="0.173912801513" />
+</color>
+
+<color name="blue" weight="0.230768982249">
+ <shade name="cool" weight="0.434782003782" />
+ <shade name="dark" weight="0.391303803403" />
+ <shade name="weak" weight="0.173912801513" />
+</color>
+
+<color name="purple" weight="0.153845988166">
+ <shade name="cool" weight="0.434782003782" />
+ <shade name="dark" weight="0.391303803403" />
+ <shade name="weak" weight="0.173912801513" />
+</color>
+
+<color name="black" weight="0.153845988166">
+ <shade name="cool" weight="0.434782003782" />
+ <shade name="dark" weight="0.391303803403" />
+ <shade name="weak" weight="0.173912801513" />
+</color>
+
+<color name="red" weight="0.0769229940829">
+ <shade name="cool" weight="0.434782003782" />
+ <shade name="dark" weight="0.391303803403" />
+ <shade name="weak" weight="0.173912801513" />
+</color>
+
+</colors>

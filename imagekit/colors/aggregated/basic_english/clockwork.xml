@@ -1,0 +1,33 @@
+<colors query="clockwork">
+
+<color name="orange" weight="0.855924751755">
+ <shade name="cool" weight="0.615383867672" />
+ <shade name="dark" weight="0.274475190979" />
+ <shade name="light" weight="0.110139726316" />
+</color>
+
+<color name="blue" weight="0.0495739222736">
+ <shade name="cool" weight="0.615383867672" />
+ <shade name="dark" weight="0.274475190979" />
+ <shade name="light" weight="0.110139726316" />
+</color>
+
+<color name="black" weight="0.0422152931861">
+ <shade name="cool" weight="0.615383867672" />
+ <shade name="dark" weight="0.274475190979" />
+ <shade name="light" weight="0.110139726316" />
+</color>
+
+<color name="red" weight="0.0326490753724">
+ <shade name="cool" weight="0.615383867672" />
+ <shade name="dark" weight="0.274475190979" />
+ <shade name="light" weight="0.110139726316" />
+</color>
+
+<color name="green" weight="0.0196359207756">
+ <shade name="cool" weight="0.615383867672" />
+ <shade name="dark" weight="0.274475190979" />
+ <shade name="light" weight="0.110139726316" />
+</color>
+
+</colors>

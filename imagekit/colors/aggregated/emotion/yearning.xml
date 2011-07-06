@@ -1,0 +1,33 @@
+<colors query="yearning">
+
+<color name="red" weight="0.517941210688">
+ <shade name="intense" weight="0.868678117137" />
+ <shade name="dark" weight="0.101426662839" />
+ <shade name="soft" weight="0.0298941743104" />
+</color>
+
+<color name="black" weight="0.147596318863">
+ <shade name="intense" weight="0.868678117137" />
+ <shade name="dark" weight="0.101426662839" />
+ <shade name="soft" weight="0.0298941743104" />
+</color>
+
+<color name="yellow" weight="0.14082584552">
+ <shade name="intense" weight="0.868678117137" />
+ <shade name="dark" weight="0.101426662839" />
+ <shade name="soft" weight="0.0298941743104" />
+</color>
+
+<color name="blue" weight="0.122545567496">
+ <shade name="intense" weight="0.868678117137" />
+ <shade name="dark" weight="0.101426662839" />
+ <shade name="soft" weight="0.0298941743104" />
+</color>
+
+<color name="white" weight="0.0710899700945">
+ <shade name="dark" weight="0.704410118426" />
+ <shade name="soft" weight="0.207615613852" />
+ <shade name="light" weight="0.0879670052197" />
+</color>
+
+</colors>

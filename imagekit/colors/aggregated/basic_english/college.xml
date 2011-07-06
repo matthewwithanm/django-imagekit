@@ -1,0 +1,33 @@
+<colors query="College">
+
+<color name="black" weight="0.73365522319">
+ <shade name="fresh" weight="0.447089290061" />
+ <shade name="bright" weight="0.291004863353" />
+ <shade name="cool" weight="0.261904377018" />
+</color>
+
+<color name="white" weight="0.146731044638">
+ <shade name="fresh" weight="0.447089290061" />
+ <shade name="bright" weight="0.291004863353" />
+ <shade name="cool" weight="0.261904377018" />
+</color>
+
+<color name="green" weight="0.101634806148">
+ <shade name="fresh" weight="0.447089290061" />
+ <shade name="bright" weight="0.291004863353" />
+ <shade name="cool" weight="0.261904377018" />
+</color>
+
+<color name="blue" weight="0.0117115604436">
+ <shade name="fresh" weight="0.447089290061" />
+ <shade name="bright" weight="0.291004863353" />
+ <shade name="cool" weight="0.261904377018" />
+</color>
+
+<color name="red" weight="0.0062663579155">
+ <shade name="fresh" weight="0.447089290061" />
+ <shade name="bright" weight="0.291004863353" />
+ <shade name="cool" weight="0.261904377018" />
+</color>
+
+</colors>

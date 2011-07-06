@@ -1,0 +1,33 @@
+<colors query="carnation">
+
+<color name="green" weight="0.462087860099">
+ <shade name="fresh" weight="0.655516628453" />
+ <shade name="light" weight="0.273256362202" />
+ <shade name="soft" weight="0.0712258386725" />
+</color>
+
+<color name="red" weight="0.257850131878">
+ <shade name="fresh" weight="0.655516628453" />
+ <shade name="light" weight="0.273256362202" />
+ <shade name="soft" weight="0.0712258386725" />
+</color>
+
+<color name="pink" weight="0.171049097385">
+ <shade name="fresh" weight="0.655516628453" />
+ <shade name="light" weight="0.273256362202" />
+ <shade name="soft" weight="0.0712258386725" />
+</color>
+
+<color name="white" weight="0.0878222231348">
+ <shade name="fresh" weight="0.655516628453" />
+ <shade name="light" weight="0.273256362202" />
+ <shade name="soft" weight="0.0712258386725" />
+</color>
+
+<color name="black" weight="0.0211896643029">
+ <shade name="fresh" weight="0.655516628453" />
+ <shade name="light" weight="0.273256362202" />
+ <shade name="soft" weight="0.0712258386725" />
+</color>
+
+</colors>

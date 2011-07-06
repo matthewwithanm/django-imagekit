@@ -1,0 +1,33 @@
+<colors query="fight">
+
+<color name="black" weight="0.34278077678">
+ <shade name="hard" weight="0.71237201098" />
+ <shade name="cool" weight="0.179432047878" />
+ <shade name="intense" weight="0.10819484678" />
+</color>
+
+<color name="white" weight="0.335618193384">
+ <shade name="hard" weight="0.762613785462" />
+ <shade name="cool" weight="0.192086930925" />
+ <shade name="dark" weight="0.0452981120688" />
+</color>
+
+<color name="orange" weight="0.114601334326">
+ <shade name="hard" weight="0.71237201098" />
+ <shade name="cool" weight="0.179432047878" />
+ <shade name="intense" weight="0.10819484678" />
+</color>
+
+<color name="green" weight="0.112554881928">
+ <shade name="hard" weight="0.71237201098" />
+ <shade name="cool" weight="0.179432047878" />
+ <shade name="intense" weight="0.10819484678" />
+</color>
+
+<color name="blue" weight="0.0944437781994">
+ <shade name="hard" weight="0.71237201098" />
+ <shade name="cool" weight="0.179432047878" />
+ <shade name="intense" weight="0.10819484678" />
+</color>
+
+</colors>

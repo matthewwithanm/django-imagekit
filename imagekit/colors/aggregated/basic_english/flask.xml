@@ -1,0 +1,33 @@
+<colors query="flask">
+
+<color name="pink" weight="0.44953643086">
+ <shade name="cool" weight="0.550876448623" />
+ <shade name="warm" weight="0.240350552425" />
+ <shade name="dark" weight="0.208771647726" />
+</color>
+
+<color name="blue" weight="0.232542153708">
+ <shade name="cool" weight="0.584511447895" />
+ <shade name="dark" weight="0.221518669744" />
+ <shade name="fresh" weight="0.193968448633" />
+</color>
+
+<color name="red" weight="0.175758604547">
+ <shade name="cool" weight="0.550876448623" />
+ <shade name="warm" weight="0.240350552425" />
+ <shade name="dark" weight="0.208771647726" />
+</color>
+
+<color name="white" weight="0.0757113988817">
+ <shade name="cool" weight="0.550876448623" />
+ <shade name="warm" weight="0.240350552425" />
+ <shade name="dark" weight="0.208771647726" />
+</color>
+
+<color name="purple" weight="0.0664502724114">
+ <shade name="cool" weight="0.584511447895" />
+ <shade name="dark" weight="0.221518669744" />
+ <shade name="fresh" weight="0.193968448633" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="rubber">
+
+<color name="black" weight="0.523705133514">
+ <shade name="soft" weight="0.517813571721" />
+ <shade name="hard" weight="0.459844505201" />
+ <shade name="light" weight="0.022340887434" />
+</color>
+
+<color name="red" weight="0.225612825468">
+ <shade name="soft" weight="0.517813571721" />
+ <shade name="hard" weight="0.459844505201" />
+ <shade name="light" weight="0.022340887434" />
+</color>
+
+<color name="blue" weight="0.0871933624998">
+ <shade name="soft" weight="0.517813571721" />
+ <shade name="hard" weight="0.459844505201" />
+ <shade name="light" weight="0.022340887434" />
+</color>
+
+<color name="white" weight="0.0833786528904">
+ <shade name="soft" weight="0.517813571721" />
+ <shade name="hard" weight="0.459844505201" />
+ <shade name="light" weight="0.022340887434" />
+</color>
+
+<color name="yellow" weight="0.0801089017967">
+ <shade name="soft" weight="0.517813571721" />
+ <shade name="hard" weight="0.459844505201" />
+ <shade name="light" weight="0.022340887434" />
+</color>
+
+</colors>

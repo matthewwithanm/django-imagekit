@@ -1,0 +1,33 @@
+<colors query="broker">
+
+<color name="black" weight="0.393219877872">
+ <shade name="neutral" weight="0.925808245994" />
+ <shade name="bright" weight="0.0383549130483" />
+ <shade name="light" weight="0.0358357069368" />
+</color>
+
+<color name="blue" weight="0.171299234153">
+ <shade name="neutral" weight="0.925808245994" />
+ <shade name="bright" weight="0.0383549130483" />
+ <shade name="light" weight="0.0358357069368" />
+</color>
+
+<color name="orange" weight="0.165649523264">
+ <shade name="neutral" weight="0.925808245994" />
+ <shade name="bright" weight="0.0383549130483" />
+ <shade name="light" weight="0.0358357069368" />
+</color>
+
+<color name="green" weight="0.144632598757">
+ <shade name="neutral" weight="0.925808245994" />
+ <shade name="bright" weight="0.0383549130483" />
+ <shade name="light" weight="0.0358357069368" />
+</color>
+
+<color name="white" weight="0.125197593299">
+ <shade name="neutral" weight="0.925808245994" />
+ <shade name="bright" weight="0.0383549130483" />
+ <shade name="light" weight="0.0358357069368" />
+</color>
+
+</colors>

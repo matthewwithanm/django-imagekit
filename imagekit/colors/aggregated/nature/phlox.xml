@@ -1,0 +1,33 @@
+<colors query="phlox">
+
+<color name="blue" weight="0.843095314412">
+ <shade name="soft" weight="0.552816216228" />
+ <shade name="light" weight="0.225351833367" />
+ <shade name="bright" weight="0.22183071097" />
+</color>
+
+<color name="red" weight="0.0892232771387">
+ <shade name="soft" weight="0.552816216228" />
+ <shade name="light" weight="0.225351833367" />
+ <shade name="bright" weight="0.22183071097" />
+</color>
+
+<color name="pink" weight="0.0257066485437">
+ <shade name="soft" weight="0.552816216228" />
+ <shade name="light" weight="0.225351833367" />
+ <shade name="bright" weight="0.22183071097" />
+</color>
+
+<color name="white" weight="0.0241290775566">
+ <shade name="soft" weight="0.552816216228" />
+ <shade name="light" weight="0.225351833367" />
+ <shade name="bright" weight="0.22183071097" />
+</color>
+
+<color name="purple" weight="0.0178446554277">
+ <shade name="soft" weight="0.552816216228" />
+ <shade name="light" weight="0.225351833367" />
+ <shade name="bright" weight="0.22183071097" />
+</color>
+
+</colors>

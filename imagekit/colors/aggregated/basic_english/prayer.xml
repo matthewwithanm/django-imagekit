@@ -1,0 +1,33 @@
+<colors query="prayer">
+
+<color name="white" weight="0.810322805581">
+ <shade name="light" weight="0.678805868458" />
+ <shade name="dark" weight="0.205297384607" />
+ <shade name="cool" weight="0.115893684859" />
+</color>
+
+<color name="black" weight="0.114706969445">
+ <shade name="intense" weight="0.669144214633" />
+ <shade name="light" weight="0.25402697037" />
+ <shade name="dark" weight="0.0768276690875" />
+</color>
+
+<color name="pink" weight="0.0271200049188">
+ <shade name="light" weight="0.678805868458" />
+ <shade name="dark" weight="0.205297384607" />
+ <shade name="cool" weight="0.115893684859" />
+</color>
+
+<color name="red" weight="0.0265464700716">
+ <shade name="intense" weight="0.669144214633" />
+ <shade name="light" weight="0.25402697037" />
+ <shade name="dark" weight="0.0768276690875" />
+</color>
+
+<color name="green" weight="0.021302722897">
+ <shade name="intense" weight="0.669144214633" />
+ <shade name="light" weight="0.25402697037" />
+ <shade name="dark" weight="0.0768276690875" />
+</color>
+
+</colors>

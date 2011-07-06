@@ -1,0 +1,33 @@
+<colors query="beatific">
+
+<color name="white" weight="0.333332944445">
+ <shade name="warm" weight="0.333332694446" />
+ <shade name="light" weight="0.333332694446" />
+ <shade name="dark" weight="0.333332694446" />
+</color>
+
+<color name="blue" weight="0.277777453704">
+ <shade name="light" weight="0.347825391306" />
+ <shade name="dark" weight="0.347825391306" />
+ <shade name="soft" weight="0.304347217393" />
+</color>
+
+<color name="black" weight="0.166666472222">
+ <shade name="warm" weight="0.333332694446" />
+ <shade name="light" weight="0.333332694446" />
+ <shade name="dark" weight="0.333332694446" />
+</color>
+
+<color name="yellow" weight="0.111110981482">
+ <shade name="warm" weight="0.333332694446" />
+ <shade name="light" weight="0.333332694446" />
+ <shade name="dark" weight="0.333332694446" />
+</color>
+
+<color name="orange" weight="0.111110981482">
+ <shade name="warm" weight="0.333332694446" />
+ <shade name="light" weight="0.333332694446" />
+ <shade name="dark" weight="0.333332694446" />
+</color>
+
+</colors>

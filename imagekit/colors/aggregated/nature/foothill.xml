@@ -1,0 +1,33 @@
+<colors query="foothill">
+
+<color name="green" weight="0.378618729521">
+ <shade name="light" weight="0.388282826475" />
+ <shade name="fresh" weight="0.320163032357" />
+ <shade name="dark" weight="0.291552718827" />
+</color>
+
+<color name="orange" weight="0.298440645622">
+ <shade name="light" weight="0.388282826475" />
+ <shade name="fresh" weight="0.320163032357" />
+ <shade name="dark" weight="0.291552718827" />
+</color>
+
+<color name="white" weight="0.131402970834">
+ <shade name="light" weight="0.388282826475" />
+ <shade name="fresh" weight="0.320163032357" />
+ <shade name="dark" weight="0.291552718827" />
+</color>
+
+<color name="black" weight="0.129175801836">
+ <shade name="light" weight="0.388282826475" />
+ <shade name="fresh" weight="0.320163032357" />
+ <shade name="dark" weight="0.291552718827" />
+</color>
+
+<color name="blue" weight="0.0623607319211">
+ <shade name="light" weight="0.388282826475" />
+ <shade name="fresh" weight="0.320163032357" />
+ <shade name="dark" weight="0.291552718827" />
+</color>
+
+</colors>

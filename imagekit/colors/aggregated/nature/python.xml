@@ -1,0 +1,33 @@
+<colors query="python">
+
+<color name="black" weight="0.329083826163">
+ <shade name="cool" weight="0.763406035969" />
+ <shade name="hard" weight="0.130599214418" />
+ <shade name="soft" weight="0.105993565325" />
+</color>
+
+<color name="red" weight="0.282975927442">
+ <shade name="cool" weight="0.763406035969" />
+ <shade name="hard" weight="0.130599214418" />
+ <shade name="soft" weight="0.105993565325" />
+</color>
+
+<color name="white" weight="0.193472359338">
+ <shade name="cool" weight="0.763406035969" />
+ <shade name="hard" weight="0.130599214418" />
+ <shade name="soft" weight="0.105993565325" />
+</color>
+
+<color name="green" weight="0.166350065972">
+ <shade name="cool" weight="0.763406035969" />
+ <shade name="hard" weight="0.130599214418" />
+ <shade name="soft" weight="0.105993565325" />
+</color>
+
+<color name="orange" weight="0.0281167774551">
+ <shade name="cool" weight="0.763406035969" />
+ <shade name="hard" weight="0.130599214418" />
+ <shade name="soft" weight="0.105993565325" />
+</color>
+
+</colors>

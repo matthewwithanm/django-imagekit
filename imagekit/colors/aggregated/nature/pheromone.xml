@@ -1,0 +1,33 @@
+<colors query="pheromone">
+
+<color name="blue" weight="0.48703900929">
+ <shade name="intense" weight="0.990584267708" />
+ <shade name="light" weight="0.00824441969643" />
+ <shade name="fresh" weight="0.00117031052725" />
+</color>
+
+<color name="red" weight="0.18963143499">
+ <shade name="intense" weight="0.990584267708" />
+ <shade name="light" weight="0.00824441969643" />
+ <shade name="fresh" weight="0.00117031052725" />
+</color>
+
+<color name="green" weight="0.110504649167">
+ <shade name="intense" weight="0.990584267708" />
+ <shade name="light" weight="0.00824441969643" />
+ <shade name="fresh" weight="0.00117031052725" />
+</color>
+
+<color name="white" weight="0.109140394239">
+ <shade name="light" weight="0.7897139812" />
+ <shade name="fresh" weight="0.112101350943" />
+ <shade name="weak" weight="0.0980886820756" />
+</color>
+
+<color name="pink" weight="0.103683374527">
+ <shade name="light" weight="0.7897139812" />
+ <shade name="fresh" weight="0.112101350943" />
+ <shade name="weak" weight="0.0980886820756" />
+</color>
+
+</colors>

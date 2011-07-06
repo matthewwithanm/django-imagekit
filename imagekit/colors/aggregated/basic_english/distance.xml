@@ -1,0 +1,33 @@
+<colors query="distance">
+
+<color name="blue" weight="0.59559099">
+ <shade name="light" weight="0.522580062957" />
+ <shade name="soft" weight="0.238709411474" />
+ <shade name="cool" weight="0.238709411474" />
+</color>
+
+<color name="red" weight="0.354639649316">
+ <shade name="light" weight="0.522580062957" />
+ <shade name="soft" weight="0.238709411474" />
+ <shade name="cool" weight="0.238709411474" />
+</color>
+
+<color name="purple" weight="0.0269797627949">
+ <shade name="light" weight="0.522580062957" />
+ <shade name="soft" weight="0.238709411474" />
+ <shade name="cool" weight="0.238709411474" />
+</color>
+
+<color name="green" weight="0.0114536728846">
+ <shade name="light" weight="0.522580062957" />
+ <shade name="soft" weight="0.238709411474" />
+ <shade name="cool" weight="0.238709411474" />
+</color>
+
+<color name="yellow" weight="0.0113348940547">
+ <shade name="light" weight="0.522580062957" />
+ <shade name="soft" weight="0.238709411474" />
+ <shade name="cool" weight="0.238709411474" />
+</color>
+
+</colors>

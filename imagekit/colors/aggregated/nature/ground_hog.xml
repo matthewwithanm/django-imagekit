@@ -1,0 +1,33 @@
+<colors query="ground hog">
+
+<color name="red" weight="0.675323956149">
+ <shade name="fresh" weight="0.437499453126" />
+ <shade name="dark" weight="0.374999531251" />
+ <shade name="cool" weight="0.187499765625" />
+</color>
+
+<color name="white" weight="0.11688299241">
+ <shade name="fresh" weight="0.437499453126" />
+ <shade name="dark" weight="0.374999531251" />
+ <shade name="cool" weight="0.187499765625" />
+</color>
+
+<color name="green" weight="0.0779219949402">
+ <shade name="fresh" weight="0.437499453126" />
+ <shade name="dark" weight="0.374999531251" />
+ <shade name="cool" weight="0.187499765625" />
+</color>
+
+<color name="black" weight="0.0779219949402">
+ <shade name="fresh" weight="0.437499453126" />
+ <shade name="dark" weight="0.374999531251" />
+ <shade name="cool" weight="0.187499765625" />
+</color>
+
+<color name="yellow" weight="0.0519479966268">
+ <shade name="fresh" weight="0.437499453126" />
+ <shade name="dark" weight="0.374999531251" />
+ <shade name="cool" weight="0.187499765625" />
+</color>
+
+</colors>

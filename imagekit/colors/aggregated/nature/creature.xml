@@ -1,0 +1,33 @@
+<colors query="creature">
+
+<color name="white" weight="0.484790382886">
+ <shade name="dark" weight="0.507571380408" />
+ <shade name="weak" weight="0.381094577421" />
+ <shade name="light" weight="0.111332869998" />
+</color>
+
+<color name="black" weight="0.170627203388">
+ <shade name="dark" weight="0.507571380408" />
+ <shade name="weak" weight="0.381094577421" />
+ <shade name="light" weight="0.111332869998" />
+</color>
+
+<color name="green" weight="0.159695655539">
+ <shade name="dark" weight="0.507571380408" />
+ <shade name="weak" weight="0.381094577421" />
+ <shade name="light" weight="0.111332869998" />
+</color>
+
+<color name="blue" weight="0.113593040696">
+ <shade name="dark" weight="0.507571380408" />
+ <shade name="weak" weight="0.381094577421" />
+ <shade name="light" weight="0.111332869998" />
+</color>
+
+<color name="red" weight="0.0712927033657">
+ <shade name="dark" weight="0.507571380408" />
+ <shade name="weak" weight="0.381094577421" />
+ <shade name="light" weight="0.111332869998" />
+</color>
+
+</colors>

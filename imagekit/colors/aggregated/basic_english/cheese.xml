@@ -1,0 +1,33 @@
+<colors query="cheese">
+
+<color name="blue" weight="0.709337034289">
+ <shade name="soft" weight="0.371492298035" />
+ <shade name="hard" weight="0.364758298675" />
+ <shade name="fresh" weight="0.263748308273" />
+</color>
+
+<color name="white" weight="0.125796489675">
+ <shade name="soft" weight="0.371492298035" />
+ <shade name="hard" weight="0.364758298675" />
+ <shade name="fresh" weight="0.263748308273" />
+</color>
+
+<color name="green" weight="0.0759212294513">
+ <shade name="soft" weight="0.371492298035" />
+ <shade name="hard" weight="0.364758298675" />
+ <shade name="fresh" weight="0.263748308273" />
+</color>
+
+<color name="black" weight="0.0530894436601">
+ <shade name="soft" weight="0.371492298035" />
+ <shade name="hard" weight="0.364758298675" />
+ <shade name="fresh" weight="0.263748308273" />
+</color>
+
+<color name="yellow" weight="0.0358547704051">
+ <shade name="soft" weight="0.371492298035" />
+ <shade name="hard" weight="0.364758298675" />
+ <shade name="fresh" weight="0.263748308273" />
+</color>
+
+</colors>

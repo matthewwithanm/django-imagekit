@@ -1,0 +1,33 @@
+<colors query="quince">
+
+<color name="red" weight="0.467559221758">
+ <shade name="fresh" weight="0.595927211822" />
+ <shade name="warm" weight="0.257634760433" />
+ <shade name="light" weight="0.146436778726" />
+</color>
+
+<color name="black" weight="0.186498341263">
+ <shade name="fresh" weight="0.595927211822" />
+ <shade name="warm" weight="0.257634760433" />
+ <shade name="light" weight="0.146436778726" />
+</color>
+
+<color name="white" weight="0.136590334446">
+ <shade name="fresh" weight="0.595927211822" />
+ <shade name="warm" weight="0.257634760433" />
+ <shade name="light" weight="0.146436778726" />
+</color>
+
+<color name="yellow" weight="0.132650228645">
+ <shade name="fresh" weight="0.595927211822" />
+ <shade name="warm" weight="0.257634760433" />
+ <shade name="light" weight="0.146436778726" />
+</color>
+
+<color name="pink" weight="0.076700726266">
+ <shade name="fresh" weight="0.595927211822" />
+ <shade name="warm" weight="0.257634760433" />
+ <shade name="light" weight="0.146436778726" />
+</color>
+
+</colors>

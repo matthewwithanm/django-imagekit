@@ -1,0 +1,33 @@
+<colors query="Dominion">
+
+<color name="black" weight="0.39535278251">
+ <shade name="dark" weight="0.997262403128" />
+ <shade name="light" weight="0.00237731239533" />
+ <shade name="soft" weight="0.000359283087995" />
+</color>
+
+<color name="blue" weight="0.251077122542">
+ <shade name="dark" weight="0.997262403128" />
+ <shade name="light" weight="0.00237731239533" />
+ <shade name="soft" weight="0.000359283087995" />
+</color>
+
+<color name="white" weight="0.221097764627">
+ <shade name="dark" weight="0.997262403128" />
+ <shade name="light" weight="0.00237731239533" />
+ <shade name="soft" weight="0.000359283087995" />
+</color>
+
+<color name="red" weight="0.0685777812316">
+ <shade name="dark" weight="0.997262403128" />
+ <shade name="light" weight="0.00237731239533" />
+ <shade name="soft" weight="0.000359283087995" />
+</color>
+
+<color name="green" weight="0.0638935065573">
+ <shade name="dark" weight="0.997262403128" />
+ <shade name="light" weight="0.00237731239533" />
+ <shade name="soft" weight="0.000359283087995" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="mountain">
+
+<color name="blue" weight="0.221231385481">
+ <shade name="cool" weight="0.400770186317" />
+ <shade name="fresh" weight="0.381502388898" />
+ <shade name="light" weight="0.217726110836" />
+</color>
+
+<color name="black" weight="0.212976483037">
+ <shade name="cool" weight="0.400770186317" />
+ <shade name="fresh" weight="0.381502388898" />
+ <shade name="light" weight="0.217726110836" />
+</color>
+
+<color name="green" weight="0.20967452206">
+ <shade name="cool" weight="0.400770186317" />
+ <shade name="fresh" weight="0.381502388898" />
+ <shade name="light" weight="0.217726110836" />
+</color>
+
+<color name="white" weight="0.191513736685">
+ <shade name="cool" weight="0.400770186317" />
+ <shade name="fresh" weight="0.381502388898" />
+ <shade name="light" weight="0.217726110836" />
+</color>
+
+<color name="red" weight="0.16460275472">
+ <shade name="cool" weight="0.400770186317" />
+ <shade name="fresh" weight="0.381502388898" />
+ <shade name="light" weight="0.217726110836" />
+</color>
+
+</colors>

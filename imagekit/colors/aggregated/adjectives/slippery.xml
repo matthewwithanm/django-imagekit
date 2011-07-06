@@ -1,0 +1,33 @@
+<colors query="slippery">
+
+<color name="black" weight="0.327989730076">
+ <shade name="soft" weight="0.517950636526" />
+ <shade name="hard" weight="0.439151308918" />
+ <shade name="cool" weight="0.0428969373328" />
+</color>
+
+<color name="blue" weight="0.181010873591">
+ <shade name="soft" weight="0.517950636526" />
+ <shade name="hard" weight="0.439151308918" />
+ <shade name="cool" weight="0.0428969373328" />
+</color>
+
+<color name="green" weight="0.17533887074">
+ <shade name="soft" weight="0.517950636526" />
+ <shade name="hard" weight="0.439151308918" />
+ <shade name="cool" weight="0.0428969373328" />
+</color>
+
+<color name="red" weight="0.160295732744">
+ <shade name="soft" weight="0.517950636526" />
+ <shade name="hard" weight="0.439151308918" />
+ <shade name="cool" weight="0.0428969373328" />
+</color>
+
+<color name="pink" weight="0.155363556352">
+ <shade name="soft" weight="0.517950636526" />
+ <shade name="hard" weight="0.439151308918" />
+ <shade name="cool" weight="0.0428969373328" />
+</color>
+
+</colors>

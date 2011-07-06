@@ -1,0 +1,33 @@
+<colors query="tame">
+
+<color name="white" weight="0.358528729371">
+ <shade name="soft" weight="0.500572017505" />
+ <shade name="hard" weight="0.364260644317" />
+ <shade name="cool" weight="0.135165899463" />
+</color>
+
+<color name="blue" weight="0.245147849143">
+ <shade name="soft" weight="0.500572017505" />
+ <shade name="hard" weight="0.364260644317" />
+ <shade name="cool" weight="0.135165899463" />
+</color>
+
+<color name="orange" weight="0.211440019886">
+ <shade name="soft" weight="0.500572017505" />
+ <shade name="hard" weight="0.364260644317" />
+ <shade name="cool" weight="0.135165899463" />
+</color>
+
+<color name="red" weight="0.0944840668571">
+ <shade name="soft" weight="0.500572017505" />
+ <shade name="hard" weight="0.364260644317" />
+ <shade name="cool" weight="0.135165899463" />
+</color>
+
+<color name="black" weight="0.0903982693714">
+ <shade name="soft" weight="0.500572017505" />
+ <shade name="hard" weight="0.364260644317" />
+ <shade name="cool" weight="0.135165899463" />
+</color>
+
+</colors>

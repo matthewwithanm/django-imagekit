@@ -1,0 +1,33 @@
+<colors query="proton">
+
+<color name="blue" weight="0.305127872382">
+ <shade name="intense" weight="0.581920282089" />
+ <shade name="weak" weight="0.209039324634" />
+ <shade name="soft" weight="0.209039324634" />
+</color>
+
+<color name="black" weight="0.207692081201">
+ <shade name="intense" weight="0.581920282089" />
+ <shade name="weak" weight="0.209039324634" />
+ <shade name="soft" weight="0.209039324634" />
+</color>
+
+<color name="red" weight="0.198717732014">
+ <shade name="intense" weight="0.581920282089" />
+ <shade name="weak" weight="0.209039324634" />
+ <shade name="soft" weight="0.209039324634" />
+</color>
+
+<color name="green" weight="0.153845986075">
+ <shade name="intense" weight="0.581920282089" />
+ <shade name="weak" weight="0.209039324634" />
+ <shade name="soft" weight="0.209039324634" />
+</color>
+
+<color name="white" weight="0.134615237816">
+ <shade name="weak" weight="0.471136386476" />
+ <shade name="soft" weight="0.471136386476" />
+ <shade name="hard" weight="0.0577248185231" />
+</color>
+
+</colors>

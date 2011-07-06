@@ -1,0 +1,33 @@
+<colors query="cougar">
+
+<color name="black" weight="0.765297430232">
+ <shade name="cool" weight="0.590299167326" />
+ <shade name="fresh" weight="0.237076908823" />
+ <shade name="dark" weight="0.172622621364" />
+</color>
+
+<color name="blue" weight="0.0890781421829">
+ <shade name="cool" weight="0.590299167326" />
+ <shade name="fresh" weight="0.237076908823" />
+ <shade name="dark" weight="0.172622621364" />
+</color>
+
+<color name="red" weight="0.0602632996681">
+ <shade name="cool" weight="0.590299167326" />
+ <shade name="fresh" weight="0.237076908823" />
+ <shade name="dark" weight="0.172622621364" />
+</color>
+
+<color name="white" weight="0.0443066933292">
+ <shade name="cool" weight="0.590299167326" />
+ <shade name="fresh" weight="0.237076908823" />
+ <shade name="dark" weight="0.172622621364" />
+</color>
+
+<color name="green" weight="0.0410534046582">
+ <shade name="cool" weight="0.590299167326" />
+ <shade name="fresh" weight="0.237076908823" />
+ <shade name="dark" weight="0.172622621364" />
+</color>
+
+</colors>

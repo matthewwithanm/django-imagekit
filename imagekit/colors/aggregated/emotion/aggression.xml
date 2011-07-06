@@ -1,0 +1,33 @@
+<colors query="aggression">
+
+<color name="white" weight="0.568103447933">
+ <shade name="dark" weight="0.594009343646" />
+ <shade name="fresh" weight="0.222168849002" />
+ <shade name="warm" weight="0.183815489806" />
+</color>
+
+<color name="red" weight="0.188227046002">
+ <shade name="intense" weight="0.856318520684" />
+ <shade name="dark" weight="0.104569665507" />
+ <shade name="fresh" weight="0.0391107016659" />
+</color>
+
+<color name="black" weight="0.180697964162">
+ <shade name="intense" weight="0.856318520684" />
+ <shade name="dark" weight="0.104569665507" />
+ <shade name="fresh" weight="0.0391107016659" />
+</color>
+
+<color name="blue" weight="0.043121105084">
+ <shade name="intense" weight="0.856318520684" />
+ <shade name="dark" weight="0.104569665507" />
+ <shade name="fresh" weight="0.0391107016659" />
+</color>
+
+<color name="green" weight="0.0198493975784">
+ <shade name="intense" weight="0.856318520684" />
+ <shade name="dark" weight="0.104569665507" />
+ <shade name="fresh" weight="0.0391107016659" />
+</color>
+
+</colors>

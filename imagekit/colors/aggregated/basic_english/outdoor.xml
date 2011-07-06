@@ -1,0 +1,33 @@
+<colors query="outdoor">
+
+<color name="white" weight="0.370326707419">
+ <shade name="light" weight="0.465619308628" />
+ <shade name="cool" weight="0.419598795566" />
+ <shade name="bright" weight="0.114780573755" />
+</color>
+
+<color name="black" weight="0.287382870742">
+ <shade name="light" weight="0.465619308628" />
+ <shade name="cool" weight="0.419598795566" />
+ <shade name="bright" weight="0.114780573755" />
+</color>
+
+<color name="green" weight="0.169781750194">
+ <shade name="light" weight="0.465619308628" />
+ <shade name="cool" weight="0.419598795566" />
+ <shade name="bright" weight="0.114780573755" />
+</color>
+
+<color name="blue" weight="0.112149412972">
+ <shade name="light" weight="0.465619308628" />
+ <shade name="cool" weight="0.419598795566" />
+ <shade name="bright" weight="0.114780573755" />
+</color>
+
+<color name="red" weight="0.0603581910095">
+ <shade name="light" weight="0.465619308628" />
+ <shade name="cool" weight="0.419598795566" />
+ <shade name="bright" weight="0.114780573755" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="bee">
+
+<color name="red" weight="0.323780005603">
+ <shade name="light" weight="0.483318409534" />
+ <shade name="hard" weight="0.335328878827" />
+ <shade name="soft" weight="0.181351332427" />
+</color>
+
+<color name="black" weight="0.214613638849">
+ <shade name="light" weight="0.483318409534" />
+ <shade name="hard" weight="0.335328878827" />
+ <shade name="soft" weight="0.181351332427" />
+</color>
+
+<color name="green" weight="0.201049881857">
+ <shade name="light" weight="0.483318409534" />
+ <shade name="hard" weight="0.335328878827" />
+ <shade name="soft" weight="0.181351332427" />
+</color>
+
+<color name="blue" weight="0.167578029927">
+ <shade name="light" weight="0.483318409534" />
+ <shade name="hard" weight="0.335328878827" />
+ <shade name="soft" weight="0.181351332427" />
+</color>
+
+<color name="yellow" weight="0.0929773664738">
+ <shade name="light" weight="0.483318409534" />
+ <shade name="hard" weight="0.335328878827" />
+ <shade name="soft" weight="0.181351332427" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="grotto">
+
+<color name="blue" weight="0.903645200644">
+ <shade name="dark" weight="0.774286998937" />
+ <shade name="cool" weight="0.207206992483" />
+ <shade name="light" weight="0.0185049723016" />
+</color>
+
+<color name="green" weight="0.0761793919147">
+ <shade name="dark" weight="0.774286998937" />
+ <shade name="cool" weight="0.207206992483" />
+ <shade name="light" weight="0.0185049723016" />
+</color>
+
+<color name="purple" weight="0.0108227274031">
+ <shade name="dark" weight="0.774286998937" />
+ <shade name="cool" weight="0.207206992483" />
+ <shade name="light" weight="0.0185049723016" />
+</color>
+
+<color name="black" weight="0.00583166379485">
+ <shade name="dark" weight="0.767744261825" />
+ <shade name="cool" weight="0.205456090193" />
+ <shade name="warm" weight="0.0267986204599" />
+</color>
+
+<color name="white" weight="0.00352001328158">
+ <shade name="dark" weight="0.767744261825" />
+ <shade name="cool" weight="0.205456090193" />
+ <shade name="warm" weight="0.0267986204599" />
+</color>
+
+</colors>

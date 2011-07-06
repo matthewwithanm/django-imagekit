@@ -1,0 +1,33 @@
+<colors query="flag">
+
+<color name="black" weight="0.226414845358">
+ <shade name="light" weight="0.518926426037" />
+ <shade name="neutral" weight="0.368512969214" />
+ <shade name="hard" weight="0.112559403522" />
+</color>
+
+<color name="red" weight="0.224842520043">
+ <shade name="light" weight="0.518926426037" />
+ <shade name="neutral" weight="0.368512969214" />
+ <shade name="hard" weight="0.112559403522" />
+</color>
+
+<color name="white" weight="0.201257640318">
+ <shade name="light" weight="0.518926426037" />
+ <shade name="neutral" weight="0.368512969214" />
+ <shade name="hard" weight="0.112559403522" />
+</color>
+
+<color name="blue" weight="0.182389736538">
+ <shade name="light" weight="0.518926426037" />
+ <shade name="neutral" weight="0.368512969214" />
+ <shade name="hard" weight="0.112559403522" />
+</color>
+
+<color name="green" weight="0.165094158073">
+ <shade name="light" weight="0.518926426037" />
+ <shade name="neutral" weight="0.368512969214" />
+ <shade name="hard" weight="0.112559403522" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="boredom">
+
+<color name="black" weight="0.282645730498">
+ <shade name="intense" weight="0.907126474874" />
+ <shade name="cool" weight="0.0557234834565" />
+ <shade name="dark" weight="0.037148988971" />
+</color>
+
+<color name="blue" weight="0.277491097115">
+ <shade name="intense" weight="0.907126474874" />
+ <shade name="cool" weight="0.0557234834565" />
+ <shade name="dark" weight="0.037148988971" />
+</color>
+
+<color name="white" weight="0.203608018626">
+ <shade name="cool" weight="0.431146220911" />
+ <shade name="dark" weight="0.287430813941" />
+ <shade name="light" weight="0.281414820161" />
+</color>
+
+<color name="green" weight="0.183848590658">
+ <shade name="intense" weight="0.907126474874" />
+ <shade name="cool" weight="0.0557234834565" />
+ <shade name="dark" weight="0.037148988971" />
+</color>
+
+<color name="red" weight="0.0524054393932">
+ <shade name="intense" weight="0.907126474874" />
+ <shade name="cool" weight="0.0557234834565" />
+ <shade name="dark" weight="0.037148988971" />
+</color>
+
+</colors>

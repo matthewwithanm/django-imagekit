@@ -1,0 +1,33 @@
+<colors query="reinforcement">
+
+<color name="white" weight="0.404950531362">
+ <shade name="hard" weight="0.385603471958" />
+ <shade name="light" weight="0.328534158108" />
+ <shade name="soft" weight="0.285860707212" />
+</color>
+
+<color name="black" weight="0.308266840483">
+ <shade name="hard" weight="0.385603471958" />
+ <shade name="light" weight="0.328534158108" />
+ <shade name="soft" weight="0.285860707212" />
+</color>
+
+<color name="red" weight="0.111629961933">
+ <shade name="hard" weight="0.385603471958" />
+ <shade name="light" weight="0.328534158108" />
+ <shade name="soft" weight="0.285860707212" />
+</color>
+
+<color name="green" weight="0.106492181258">
+ <shade name="hard" weight="0.385603471958" />
+ <shade name="light" weight="0.328534158108" />
+ <shade name="soft" weight="0.285860707212" />
+</color>
+
+<color name="blue" weight="0.0686594326531">
+ <shade name="hard" weight="0.385603471958" />
+ <shade name="light" weight="0.328534158108" />
+ <shade name="soft" weight="0.285860707212" />
+</color>
+
+</colors>

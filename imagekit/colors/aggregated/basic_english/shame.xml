@@ -1,0 +1,33 @@
+<colors query="shame">
+
+<color name="red" weight="0.73652586004">
+ <shade name="intense" weight="0.830720059265" />
+ <shade name="dark" weight="0.120167052598" />
+ <shade name="cool" weight="0.0491117519314" />
+</color>
+
+<color name="pink" weight="0.168131075637">
+ <shade name="dark" weight="0.602090813176" />
+ <shade name="cool" weight="0.246071897559" />
+ <shade name="hard" weight="0.151831596366" />
+</color>
+
+<color name="black" weight="0.0390612680256">
+ <shade name="intense" weight="0.830720059265" />
+ <shade name="dark" weight="0.120167052598" />
+ <shade name="cool" weight="0.0491117519314" />
+</color>
+
+<color name="white" weight="0.0283435468898">
+ <shade name="dark" weight="0.602090813176" />
+ <shade name="cool" weight="0.246071897559" />
+ <shade name="hard" weight="0.151831596366" />
+</color>
+
+<color name="purple" weight="0.0279371877946">
+ <shade name="dark" weight="0.602090813176" />
+ <shade name="cool" weight="0.246071897559" />
+ <shade name="hard" weight="0.151831596366" />
+</color>
+
+</colors>

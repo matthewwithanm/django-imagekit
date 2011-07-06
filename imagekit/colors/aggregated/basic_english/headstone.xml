@@ -1,0 +1,33 @@
+<colors query="headstone">
+
+<color name="white" weight="0.61642482221">
+ <shade name="cool" weight="0.731342413976" />
+ <shade name="dark" weight="0.166666468491" />
+ <shade name="hard" weight="0.10198992848" />
+</color>
+
+<color name="green" weight="0.174966923621">
+ <shade name="cool" weight="0.731342413976" />
+ <shade name="dark" weight="0.166666468491" />
+ <shade name="hard" weight="0.10198992848" />
+</color>
+
+<color name="black" weight="0.116143457355">
+ <shade name="cool" weight="0.731342413976" />
+ <shade name="dark" weight="0.166666468491" />
+ <shade name="hard" weight="0.10198992848" />
+</color>
+
+<color name="red" weight="0.0541251063404">
+ <shade name="cool" weight="0.731342413976" />
+ <shade name="dark" weight="0.166666468491" />
+ <shade name="hard" weight="0.10198992848" />
+</color>
+
+<color name="blue" weight="0.0383386169911">
+ <shade name="cool" weight="0.731342413976" />
+ <shade name="dark" weight="0.166666468491" />
+ <shade name="hard" weight="0.10198992848" />
+</color>
+
+</colors>

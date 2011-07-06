@@ -1,0 +1,33 @@
+<colors query="cumulus">
+
+<color name="white" weight="0.831526069515">
+ <shade name="dark" weight="0.549449741532" />
+ <shade name="warm" weight="0.234150120622" />
+ <shade name="light" weight="0.216398667434" />
+</color>
+
+<color name="orange" weight="0.0901759241185">
+ <shade name="dark" weight="0.549449741532" />
+ <shade name="warm" weight="0.234150120622" />
+ <shade name="light" weight="0.216398667434" />
+</color>
+
+<color name="pink" weight="0.0267059467582">
+ <shade name="dark" weight="0.549449741532" />
+ <shade name="warm" weight="0.234150120622" />
+ <shade name="light" weight="0.216398667434" />
+</color>
+
+<color name="black" weight="0.0260989934227">
+ <shade name="dark" weight="0.549449741532" />
+ <shade name="warm" weight="0.234150120622" />
+ <shade name="light" weight="0.216398667434" />
+</color>
+
+<color name="blue" weight="0.0254920400873">
+ <shade name="dark" weight="0.583220265131" />
+ <shade name="light" weight="0.229699058267" />
+ <shade name="soft" weight="0.187079115815" />
+</color>
+
+</colors>

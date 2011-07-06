@@ -1,0 +1,33 @@
+<colors query="outlaw">
+
+<color name="orange" weight="0.867698605165">
+ <shade name="cool" weight="0.48588556663" />
+ <shade name="dark" weight="0.41508509835" />
+ <shade name="light" weight="0.0990281059608" />
+</color>
+
+<color name="white" weight="0.0624742995719">
+ <shade name="cool" weight="0.48588556663" />
+ <shade name="dark" weight="0.41508509835" />
+ <shade name="light" weight="0.0990281059608" />
+</color>
+
+<color name="red" weight="0.031868203317">
+ <shade name="cool" weight="0.48588556663" />
+ <shade name="dark" weight="0.41508509835" />
+ <shade name="light" weight="0.0990281059608" />
+</color>
+
+<color name="blue" weight="0.019625764815">
+ <shade name="cool" weight="0.48588556663" />
+ <shade name="dark" weight="0.41508509835" />
+ <shade name="light" weight="0.0990281059608" />
+</color>
+
+<color name="black" weight="0.0183321050764">
+ <shade name="cool" weight="0.48588556663" />
+ <shade name="dark" weight="0.41508509835" />
+ <shade name="light" weight="0.0990281059608" />
+</color>
+
+</colors>

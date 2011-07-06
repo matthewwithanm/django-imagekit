@@ -1,0 +1,33 @@
+<colors query="geography">
+
+<color name="blue" weight="0.40252585208">
+ <shade name="cool" weight="0.93213057765" />
+ <shade name="soft" weight="0.0388259348046" />
+ <shade name="neutral" weight="0.0290424155185" />
+</color>
+
+<color name="green" weight="0.243789192839">
+ <shade name="cool" weight="0.93213057765" />
+ <shade name="soft" weight="0.0388259348046" />
+ <shade name="neutral" weight="0.0290424155185" />
+</color>
+
+<color name="white" weight="0.1818945273">
+ <shade name="cool" weight="0.93213057765" />
+ <shade name="soft" weight="0.0388259348046" />
+ <shade name="neutral" weight="0.0290424155185" />
+</color>
+
+<color name="black" weight="0.0955788372616">
+ <shade name="cool" weight="0.93213057765" />
+ <shade name="soft" weight="0.0388259348046" />
+ <shade name="neutral" weight="0.0290424155185" />
+</color>
+
+<color name="orange" weight="0.0762104385214">
+ <shade name="cool" weight="0.93213057765" />
+ <shade name="soft" weight="0.0388259348046" />
+ <shade name="neutral" weight="0.0290424155185" />
+</color>
+
+</colors>

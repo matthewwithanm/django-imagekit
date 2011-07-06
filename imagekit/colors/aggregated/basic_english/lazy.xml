@@ -1,0 +1,33 @@
+<colors query="lazy">
+
+<color name="purple" weight="0.604132847205">
+ <shade name="cool" weight="0.562438003055" />
+ <shade name="dark" weight="0.249760604746" />
+ <shade name="weak" weight="0.187797095935" />
+</color>
+
+<color name="blue" weight="0.106518159902">
+ <shade name="cool" weight="0.562438003055" />
+ <shade name="dark" weight="0.249760604746" />
+ <shade name="weak" weight="0.187797095935" />
+</color>
+
+<color name="green" weight="0.105246301276">
+ <shade name="cool" weight="0.562438003055" />
+ <shade name="dark" weight="0.249760604746" />
+ <shade name="weak" weight="0.187797095935" />
+</color>
+
+<color name="red" weight="0.101430725399">
+ <shade name="warm" weight="0.770473202487" />
+ <shade name="cool" weight="0.158943772541" />
+ <shade name="dark" weight="0.0705818108572" />
+</color>
+
+<color name="black" weight="0.0826708106702">
+ <shade name="warm" weight="0.770473202487" />
+ <shade name="cool" weight="0.158943772541" />
+ <shade name="dark" weight="0.0705818108572" />
+</color>
+
+</colors>

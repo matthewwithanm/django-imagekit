@@ -1,0 +1,33 @@
+<colors query="lust">
+
+<color name="black" weight="0.658985463381">
+ <shade name="dark" weight="0.551138718268" />
+ <shade name="hard" weight="0.409114510099" />
+ <shade name="light" weight="0.0397455806443" />
+</color>
+
+<color name="pink" weight="0.121658854778">
+ <shade name="dark" weight="0.551138718268" />
+ <shade name="hard" weight="0.409114510099" />
+ <shade name="light" weight="0.0397455806443" />
+</color>
+
+<color name="purple" weight="0.103916938456">
+ <shade name="dark" weight="0.551138718268" />
+ <shade name="hard" weight="0.409114510099" />
+ <shade name="light" weight="0.0397455806443" />
+</color>
+
+<color name="green" weight="0.0594469404029">
+ <shade name="dark" weight="0.551138718268" />
+ <shade name="hard" weight="0.409114510099" />
+ <shade name="light" weight="0.0397455806443" />
+</color>
+
+<color name="white" weight="0.0559907229376">
+ <shade name="dark" weight="0.551138718268" />
+ <shade name="hard" weight="0.409114510099" />
+ <shade name="light" weight="0.0397455806443" />
+</color>
+
+</colors>

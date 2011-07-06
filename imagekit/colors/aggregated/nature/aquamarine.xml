@@ -1,0 +1,33 @@
+<colors query="aquamarine">
+
+<color name="blue" weight="0.759407067591">
+ <shade name="cool" weight="0.520278946265" />
+ <shade name="bright" weight="0.374824617201" />
+ <shade name="soft" weight="0.104894948844" />
+</color>
+
+<color name="green" weight="0.163860155953">
+ <shade name="cool" weight="0.520278946265" />
+ <shade name="bright" weight="0.374824617201" />
+ <shade name="soft" weight="0.104894948844" />
+</color>
+
+<color name="yellow" weight="0.0386483954042">
+ <shade name="cool" weight="0.464418858923" />
+ <shade name="bright" weight="0.334581328472" />
+ <shade name="warm" weight="0.200998484642" />
+</color>
+
+<color name="black" weight="0.0204542677431">
+ <shade name="cool" weight="0.464418858923" />
+ <shade name="bright" weight="0.334581328472" />
+ <shade name="warm" weight="0.200998484642" />
+</color>
+
+<color name="pink" weight="0.0176290926405">
+ <shade name="cool" weight="0.464418858923" />
+ <shade name="bright" weight="0.334581328472" />
+ <shade name="warm" weight="0.200998484642" />
+</color>
+
+</colors>

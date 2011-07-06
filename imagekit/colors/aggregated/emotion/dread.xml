@@ -1,0 +1,33 @@
+<colors query="dread">
+
+<color name="red" weight="0.591737371389">
+ <shade name="dark" weight="0.501550517572" />
+ <shade name="cool" weight="0.356773048582" />
+ <shade name="intense" weight="0.141675094654" />
+</color>
+
+<color name="black" weight="0.177521211417">
+ <shade name="dark" weight="0.501550517572" />
+ <shade name="cool" weight="0.356773048582" />
+ <shade name="intense" weight="0.141675094654" />
+</color>
+
+<color name="white" weight="0.11760315054">
+ <shade name="dark" weight="0.52688681986" />
+ <shade name="cool" weight="0.374795779076" />
+ <shade name="soft" weight="0.0983159942214" />
+</color>
+
+<color name="green" weight="0.0636396795644">
+ <shade name="dark" weight="0.501550517572" />
+ <shade name="cool" weight="0.356773048582" />
+ <shade name="intense" weight="0.141675094654" />
+</color>
+
+<color name="pink" weight="0.0494975285501">
+ <shade name="dark" weight="0.52688681986" />
+ <shade name="cool" weight="0.374795779076" />
+ <shade name="soft" weight="0.0983159942214" />
+</color>
+
+</colors>

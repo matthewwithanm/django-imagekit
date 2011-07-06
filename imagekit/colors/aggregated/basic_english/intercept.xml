@@ -1,0 +1,33 @@
+<colors query="intercept">
+
+<color name="black" weight="0.357142477041">
+ <shade name="light" weight="0.86389584686" />
+ <shade name="hard" weight="0.0759311440855" />
+ <shade name="cool" weight="0.06017185003" />
+</color>
+
+<color name="red" weight="0.249999733929">
+ <shade name="light" weight="0.86389584686" />
+ <shade name="hard" weight="0.0759311440855" />
+ <shade name="cool" weight="0.06017185003" />
+</color>
+
+<color name="white" weight="0.221428335766">
+ <shade name="light" weight="0.86389584686" />
+ <shade name="hard" weight="0.0759311440855" />
+ <shade name="cool" weight="0.06017185003" />
+</color>
+
+<color name="blue" weight="0.0999998935715">
+ <shade name="light" weight="0.86389584686" />
+ <shade name="hard" weight="0.0759311440855" />
+ <shade name="cool" weight="0.06017185003" />
+</color>
+
+<color name="green" weight="0.0714284954082">
+ <shade name="light" weight="0.86389584686" />
+ <shade name="hard" weight="0.0759311440855" />
+ <shade name="cool" weight="0.06017185003" />
+</color>
+
+</colors>

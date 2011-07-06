@@ -1,0 +1,33 @@
+<colors query="sea urchin">
+
+<color name="purple" weight="0.757832059929">
+ <shade name="fresh" weight="0.58019297481" />
+ <shade name="cool" weight="0.248654132061" />
+ <shade name="light" weight="0.171151545445" />
+</color>
+
+<color name="green" weight="0.10933895392">
+ <shade name="fresh" weight="0.58019297481" />
+ <shade name="cool" weight="0.248654132061" />
+ <shade name="light" weight="0.171151545445" />
+</color>
+
+<color name="red" weight="0.107830830418">
+ <shade name="fresh" weight="0.544443755916" />
+ <shade name="cool" weight="0.23333303825" />
+ <shade name="warm" weight="0.22222194119" />
+</color>
+
+<color name="blue" weight="0.0187384345166">
+ <shade name="fresh" weight="0.58019297481" />
+ <shade name="cool" weight="0.248654132061" />
+ <shade name="light" weight="0.171151545445" />
+</color>
+
+<color name="yellow" weight="0.00625871253474">
+ <shade name="fresh" weight="0.544443755916" />
+ <shade name="cool" weight="0.23333303825" />
+ <shade name="warm" weight="0.22222194119" />
+</color>
+
+</colors>

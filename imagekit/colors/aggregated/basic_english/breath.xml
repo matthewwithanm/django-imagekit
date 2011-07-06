@@ -1,0 +1,33 @@
+<colors query="breath">
+
+<color name="white" weight="0.620234099282">
+ <shade name="fresh" weight="0.752766713363" />
+ <shade name="warm" weight="0.19630975074" />
+ <shade name="soft" weight="0.0509224541392" />
+</color>
+
+<color name="blue" weight="0.180758832802">
+ <shade name="fresh" weight="0.889120202878" />
+ <shade name="soft" weight="0.0601463666653" />
+ <shade name="cool" weight="0.0507321527525" />
+</color>
+
+<color name="black" weight="0.154201847888">
+ <shade name="fresh" weight="0.752766713363" />
+ <shade name="warm" weight="0.19630975074" />
+ <shade name="soft" weight="0.0509224541392" />
+</color>
+
+<color name="pink" weight="0.0298980249516">
+ <shade name="fresh" weight="0.752766713363" />
+ <shade name="warm" weight="0.19630975074" />
+ <shade name="soft" weight="0.0509224541392" />
+</color>
+
+<color name="orange" weight="0.0149061786292">
+ <shade name="fresh" weight="0.752766713363" />
+ <shade name="warm" weight="0.19630975074" />
+ <shade name="soft" weight="0.0509224541392" />
+</color>
+
+</colors>

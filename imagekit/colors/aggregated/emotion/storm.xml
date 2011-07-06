@@ -1,0 +1,33 @@
+<colors query="storm">
+
+<color name="red" weight="0.624536744913">
+ <shade name="dark" weight="0.412237882011" />
+ <shade name="intense" weight="0.306601924746" />
+ <shade name="light" weight="0.281159117965" />
+</color>
+
+<color name="blue" weight="0.250277317776">
+ <shade name="dark" weight="0.412237882011" />
+ <shade name="intense" weight="0.306601924746" />
+ <shade name="light" weight="0.281159117965" />
+</color>
+
+<color name="black" weight="0.0758696490117">
+ <shade name="dark" weight="0.412237882011" />
+ <shade name="intense" weight="0.306601924746" />
+ <shade name="light" weight="0.281159117965" />
+</color>
+
+<color name="purple" weight="0.0254440896076">
+ <shade name="dark" weight="0.551723343939" />
+ <shade name="light" weight="0.376292561921" />
+ <shade name="weak" weight="0.0719826550296" />
+</color>
+
+<color name="white" weight="0.02387118225">
+ <shade name="dark" weight="0.551723343939" />
+ <shade name="light" weight="0.376292561921" />
+ <shade name="weak" weight="0.0719826550296" />
+</color>
+
+</colors>

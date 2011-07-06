@@ -1,0 +1,33 @@
+<colors query="revenge">
+
+<color name="orange" weight="0.330912462955">
+ <shade name="dark" weight="0.893888566814" />
+ <shade name="cool" weight="0.0809391637612" />
+ <shade name="light" weight="0.0251711904884" />
+</color>
+
+<color name="blue" weight="0.182572393354">
+ <shade name="dark" weight="0.893888566814" />
+ <shade name="cool" weight="0.0809391637612" />
+ <shade name="light" weight="0.0251711904884" />
+</color>
+
+<color name="white" weight="0.177385677634">
+ <shade name="dark" weight="0.893888566814" />
+ <shade name="cool" weight="0.0809391637612" />
+ <shade name="light" weight="0.0251711904884" />
+</color>
+
+<color name="pink" weight="0.17116161877">
+ <shade name="dark" weight="0.893888566814" />
+ <shade name="cool" weight="0.0809391637612" />
+ <shade name="light" weight="0.0251711904884" />
+</color>
+
+<color name="green" weight="0.13796663816">
+ <shade name="dark" weight="0.893888566814" />
+ <shade name="cool" weight="0.0809391637612" />
+ <shade name="light" weight="0.0251711904884" />
+</color>
+
+</colors>

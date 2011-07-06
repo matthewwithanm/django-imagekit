@@ -1,0 +1,33 @@
+<colors query="purring">
+
+<color name="white" weight="0.461537930219">
+ <shade name="soft" weight="0.890828786378" />
+ <shade name="warm" weight="0.0798252461519" />
+ <shade name="light" weight="0.0293449482572" />
+</color>
+
+<color name="black" weight="0.201591279866">
+ <shade name="soft" weight="0.890828786378" />
+ <shade name="warm" weight="0.0798252461519" />
+ <shade name="light" weight="0.0293449482572" />
+</color>
+
+<color name="red" weight="0.143235909378">
+ <shade name="soft" weight="0.890828786378" />
+ <shade name="warm" weight="0.0798252461519" />
+ <shade name="light" weight="0.0293449482572" />
+</color>
+
+<color name="pink" weight="0.124668291496">
+ <shade name="soft" weight="0.890828786378" />
+ <shade name="warm" weight="0.0798252461519" />
+ <shade name="light" weight="0.0293449482572" />
+</color>
+
+<color name="purple" weight="0.0689654378488">
+ <shade name="soft" weight="0.962535506956" />
+ <shade name="light" weight="0.0317070519938" />
+ <shade name="cool" weight="0.0057563397965" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="brass">
+
+<color name="yellow" weight="0.306925174977">
+ <shade name="bright" weight="0.70175354251" />
+ <shade name="light" weight="0.168051506233" />
+ <shade name="soft" weight="0.130193749334" />
+</color>
+
+<color name="red" weight="0.285938838227">
+ <shade name="bright" weight="0.70175354251" />
+ <shade name="light" weight="0.168051506233" />
+ <shade name="soft" weight="0.130193749334" />
+</color>
+
+<color name="black" weight="0.224816132441">
+ <shade name="bright" weight="0.70175354251" />
+ <shade name="light" weight="0.168051506233" />
+ <shade name="soft" weight="0.130193749334" />
+</color>
+
+<color name="white" weight="0.114375535291">
+ <shade name="bright" weight="0.70175354251" />
+ <shade name="light" weight="0.168051506233" />
+ <shade name="soft" weight="0.130193749334" />
+</color>
+
+<color name="blue" weight="0.0679432652301">
+ <shade name="bright" weight="0.70175354251" />
+ <shade name="light" weight="0.168051506233" />
+ <shade name="soft" weight="0.130193749334" />
+</color>
+
+</colors>

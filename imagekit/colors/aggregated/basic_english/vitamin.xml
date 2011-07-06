@@ -1,0 +1,33 @@
+<colors query="vitamin">
+
+<color name="orange" weight="0.493826612231">
+ <shade name="light" weight="0.49823054097" />
+ <shade name="fresh" weight="0.327240177797" />
+ <shade name="dark" weight="0.174528094825" />
+</color>
+
+<color name="green" weight="0.31026606229">
+ <shade name="light" weight="0.49823054097" />
+ <shade name="fresh" weight="0.327240177797" />
+ <shade name="dark" weight="0.174528094825" />
+</color>
+
+<color name="red" weight="0.0750486496219">
+ <shade name="light" weight="0.49823054097" />
+ <shade name="fresh" weight="0.327240177797" />
+ <shade name="dark" weight="0.174528094825" />
+</color>
+
+<color name="white" weight="0.0617283265288">
+ <shade name="light" weight="0.49823054097" />
+ <shade name="fresh" weight="0.327240177797" />
+ <shade name="dark" weight="0.174528094825" />
+</color>
+
+<color name="blue" weight="0.0591292390961">
+ <shade name="light" weight="0.49823054097" />
+ <shade name="fresh" weight="0.327240177797" />
+ <shade name="dark" weight="0.174528094825" />
+</color>
+
+</colors>

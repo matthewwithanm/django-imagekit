@@ -1,0 +1,33 @@
+<colors query="stain">
+
+<color name="blue" weight="0.461521169334">
+ <shade name="dark" weight="0.541515667564" />
+ <shade name="light" weight="0.385077808046" />
+ <shade name="intense" weight="0.0734054571587" />
+</color>
+
+<color name="red" weight="0.229672091343">
+ <shade name="dark" weight="0.541515667564" />
+ <shade name="light" weight="0.385077808046" />
+ <shade name="intense" weight="0.0734054571587" />
+</color>
+
+<color name="black" weight="0.138238652135">
+ <shade name="dark" weight="0.541515667564" />
+ <shade name="light" weight="0.385077808046" />
+ <shade name="intense" weight="0.0734054571587" />
+</color>
+
+<color name="purple" weight="0.0991617418073">
+ <shade name="dark" weight="0.564191950395" />
+ <shade name="light" weight="0.401203164725" />
+ <shade name="hard" weight="0.0346037729576" />
+</color>
+
+<color name="green" weight="0.0714051620479">
+ <shade name="dark" weight="0.541515667564" />
+ <shade name="light" weight="0.385077808046" />
+ <shade name="intense" weight="0.0734054571587" />
+</color>
+
+</colors>

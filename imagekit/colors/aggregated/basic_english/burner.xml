@@ -1,0 +1,33 @@
+<colors query="burner">
+
+<color name="red" weight="0.403739483889">
+ <shade name="cool" weight="0.444762641631" />
+ <shade name="warm" weight="0.403315226999" />
+ <shade name="light" weight="0.151920715941" />
+</color>
+
+<color name="black" weight="0.375406888528">
+ <shade name="cool" weight="0.444762641631" />
+ <shade name="warm" weight="0.403315226999" />
+ <shade name="light" weight="0.151920715941" />
+</color>
+
+<color name="blue" weight="0.140246347035">
+ <shade name="cool" weight="0.603372543827" />
+ <shade name="light" weight="0.206098220167" />
+ <shade name="dark" weight="0.190527315811" />
+</color>
+
+<color name="white" weight="0.0531236163011">
+ <shade name="cool" weight="0.444762641631" />
+ <shade name="warm" weight="0.403315226999" />
+ <shade name="light" weight="0.151920715941" />
+</color>
+
+<color name="green" weight="0.0274826174998">
+ <shade name="cool" weight="0.603372543827" />
+ <shade name="light" weight="0.206098220167" />
+ <shade name="dark" weight="0.190527315811" />
+</color>
+
+</colors>

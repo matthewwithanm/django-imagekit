@@ -1,0 +1,33 @@
+<colors query="challenge">
+
+<color name="green" weight="0.657480582969">
+ <shade name="fresh" weight="0.595627660312" />
+ <shade name="hard" weight="0.249726459415" />
+ <shade name="dark" weight="0.154644612723" />
+</color>
+
+<color name="blue" weight="0.180807160316">
+ <shade name="fresh" weight="0.595627660312" />
+ <shade name="hard" weight="0.249726459415" />
+ <shade name="dark" weight="0.154644612723" />
+</color>
+
+<color name="white" weight="0.0952379962095">
+ <shade name="fresh" weight="0.595627660312" />
+ <shade name="hard" weight="0.249726459415" />
+ <shade name="dark" weight="0.154644612723" />
+</color>
+
+<color name="red" weight="0.0497944853278">
+ <shade name="fresh" weight="0.595627660312" />
+ <shade name="hard" weight="0.249726459415" />
+ <shade name="dark" weight="0.154644612723" />
+</color>
+
+<color name="pink" weight="0.0166787353768">
+ <shade name="fresh" weight="0.595627660312" />
+ <shade name="hard" weight="0.249726459415" />
+ <shade name="dark" weight="0.154644612723" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cry">
+
+<color name="green" weight="0.321809082704">
+ <shade name="cool" weight="0.867934481817" />
+ <shade name="weak" weight="0.0859283972031" />
+ <shade name="soft" weight="0.0461360521896" />
+</color>
+
+<color name="white" weight="0.257447266163">
+ <shade name="cool" weight="0.867934481817" />
+ <shade name="weak" weight="0.0859283972031" />
+ <shade name="soft" weight="0.0461360521896" />
+</color>
+
+<color name="pink" weight="0.176535268226">
+ <shade name="cool" weight="0.867934481817" />
+ <shade name="weak" weight="0.0859283972031" />
+ <shade name="soft" weight="0.0461360521896" />
+</color>
+
+<color name="purple" weight="0.15998508683">
+ <shade name="cool" weight="0.867934481817" />
+ <shade name="weak" weight="0.0859283972031" />
+ <shade name="soft" weight="0.0461360521896" />
+</color>
+
+<color name="orange" weight="0.0842220342163">
+ <shade name="cool" weight="0.867934481817" />
+ <shade name="weak" weight="0.0859283972031" />
+ <shade name="soft" weight="0.0461360521896" />
+</color>
+
+</colors>

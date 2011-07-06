@@ -1,0 +1,33 @@
+<colors query="account">
+
+<color name="orange" weight="0.288429725069">
+ <shade name="fresh" weight="0.573032933058" />
+ <shade name="neutral" weight="0.228464110566" />
+ <shade name="light" weight="0.198501604262" />
+</color>
+
+<color name="green" weight="0.25893123046">
+ <shade name="fresh" weight="0.573032933058" />
+ <shade name="neutral" weight="0.228464110566" />
+ <shade name="light" weight="0.198501604262" />
+</color>
+
+<color name="white" weight="0.255653619948">
+ <shade name="fresh" weight="0.573032933058" />
+ <shade name="neutral" weight="0.228464110566" />
+ <shade name="light" weight="0.198501604262" />
+</color>
+
+<color name="blue" weight="0.152245008289">
+ <shade name="fresh" weight="0.573032933058" />
+ <shade name="neutral" weight="0.228464110566" />
+ <shade name="light" weight="0.198501604262" />
+</color>
+
+<color name="pink" weight="0.0447393834909">
+ <shade name="fresh" weight="0.573032933058" />
+ <shade name="neutral" weight="0.228464110566" />
+ <shade name="light" weight="0.198501604262" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="eagerness">
+
+<color name="black" weight="0.352200876864">
+ <shade name="intense" weight="0.914792040817" />
+ <shade name="fresh" weight="0.0641705387282" />
+ <shade name="light" weight="0.0210363570568" />
+</color>
+
+<color name="green" weight="0.327043671374">
+ <shade name="intense" weight="0.914792040817" />
+ <shade name="fresh" weight="0.0641705387282" />
+ <shade name="light" weight="0.0210363570568" />
+</color>
+
+<color name="white" weight="0.245282753531">
+ <shade name="fresh" weight="0.614596328233" />
+ <shade name="light" weight="0.20147669106" />
+ <shade name="bright" weight="0.183916795968" />
+</color>
+
+<color name="red" weight="0.0377358082355">
+ <shade name="intense" weight="0.914792040817" />
+ <shade name="fresh" weight="0.0641705387282" />
+ <shade name="light" weight="0.0210363570568" />
+</color>
+
+<color name="blue" weight="0.0377358082355">
+ <shade name="intense" weight="0.914792040817" />
+ <shade name="fresh" weight="0.0641705387282" />
+ <shade name="light" weight="0.0210363570568" />
+</color>
+
+</colors>

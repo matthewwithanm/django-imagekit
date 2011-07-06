@@ -1,0 +1,33 @@
+<colors query="revulsion">
+
+<color name="white" weight="0.790696875841">
+ <shade name="fresh" weight="0.591996784273" />
+ <shade name="dark" weight="0.359998044491" />
+ <shade name="light" weight="0.0479997392654" />
+</color>
+
+<color name="black" weight="0.1561460217">
+ <shade name="intense" weight="0.819422524449" />
+ <shade name="fresh" weight="0.112291234832" />
+ <shade name="dark" weight="0.0682852103708" />
+</color>
+
+<color name="red" weight="0.0232557904659">
+ <shade name="intense" weight="0.819422524449" />
+ <shade name="fresh" weight="0.112291234832" />
+ <shade name="dark" weight="0.0682852103708" />
+</color>
+
+<color name="green" weight="0.0232557904659">
+ <shade name="intense" weight="0.819422524449" />
+ <shade name="fresh" weight="0.112291234832" />
+ <shade name="dark" weight="0.0682852103708" />
+</color>
+
+<color name="pink" weight="0.00664451156169">
+ <shade name="fresh" weight="0.591996784273" />
+ <shade name="dark" weight="0.359998044491" />
+ <shade name="light" weight="0.0479997392654" />
+</color>
+
+</colors>

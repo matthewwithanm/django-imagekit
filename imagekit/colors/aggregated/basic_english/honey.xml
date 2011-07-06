@@ -1,0 +1,33 @@
+<colors query="honey">
+
+<color name="orange" weight="0.336013390169">
+ <shade name="warm" weight="0.402683997918" />
+ <shade name="dark" weight="0.302012998439" />
+ <shade name="light" weight="0.295301598473" />
+</color>
+
+<color name="black" weight="0.245835437594">
+ <shade name="warm" weight="0.402683997918" />
+ <shade name="dark" weight="0.302012998439" />
+ <shade name="light" weight="0.295301598473" />
+</color>
+
+<color name="white" weight="0.180355905151">
+ <shade name="warm" weight="0.402683997918" />
+ <shade name="dark" weight="0.302012998439" />
+ <shade name="light" weight="0.295301598473" />
+</color>
+
+<color name="blue" weight="0.167432313221">
+ <shade name="dark" weight="0.386058287792" />
+ <shade name="light" weight="0.37747921473" />
+ <shade name="fresh" weight="0.236460701272" />
+</color>
+
+<color name="green" weight="0.0703617782833">
+ <shade name="dark" weight="0.386058287792" />
+ <shade name="light" weight="0.37747921473" />
+ <shade name="fresh" weight="0.236460701272" />
+</color>
+
+</colors>

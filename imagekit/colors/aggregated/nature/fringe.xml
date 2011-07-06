@@ -1,0 +1,33 @@
+<colors query="fringe">
+
+<color name="white" weight="0.274202876566">
+ <shade name="dark" weight="0.533249113526" />
+ <shade name="bright" weight="0.257214278289" />
+ <shade name="light" weight="0.209535534021" />
+</color>
+
+<color name="black" weight="0.254359247341">
+ <shade name="dark" weight="0.533249113526" />
+ <shade name="bright" weight="0.257214278289" />
+ <shade name="light" weight="0.209535534021" />
+</color>
+
+<color name="blue" weight="0.195429681763">
+ <shade name="dark" weight="0.533249113526" />
+ <shade name="bright" weight="0.257214278289" />
+ <shade name="light" weight="0.209535534021" />
+</color>
+
+<color name="purple" weight="0.150330524433">
+ <shade name="dark" weight="0.533249113526" />
+ <shade name="bright" weight="0.257214278289" />
+ <shade name="light" weight="0.209535534021" />
+</color>
+
+<color name="red" weight="0.125676318426">
+ <shade name="dark" weight="0.533249113526" />
+ <shade name="bright" weight="0.257214278289" />
+ <shade name="light" weight="0.209535534021" />
+</color>
+
+</colors>

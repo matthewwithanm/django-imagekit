@@ -1,0 +1,33 @@
+<colors query="incompetence">
+
+<color name="black" weight="0.669301032897">
+ <shade name="weak" weight="0.399999488696" />
+ <shade name="light" weight="0.347825642345" />
+ <shade name="intense" weight="0.2521735907" />
+</color>
+
+<color name="white" weight="0.166007736506">
+ <shade name="weak" weight="0.48936093685" />
+ <shade name="light" weight="0.425531249435" />
+ <shade name="fresh" weight="0.085106249887" />
+</color>
+
+<color name="orange" weight="0.0988141288726">
+ <shade name="weak" weight="0.399999488696" />
+ <shade name="light" weight="0.347825642345" />
+ <shade name="intense" weight="0.2521735907" />
+</color>
+
+<color name="blue" weight="0.0342555646758">
+ <shade name="weak" weight="0.399999488696" />
+ <shade name="light" weight="0.347825642345" />
+ <shade name="intense" weight="0.2521735907" />
+</color>
+
+<color name="green" weight="0.0316205212392">
+ <shade name="weak" weight="0.399999488696" />
+ <shade name="light" weight="0.347825642345" />
+ <shade name="intense" weight="0.2521735907" />
+</color>
+
+</colors>

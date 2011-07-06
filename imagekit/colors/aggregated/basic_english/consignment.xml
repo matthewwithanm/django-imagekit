@@ -1,0 +1,33 @@
+<colors query="consignment">
+
+<color name="black" weight="0.668340978309">
+ <shade name="fresh" weight="0.713398781915" />
+ <shade name="cool" weight="0.263027029158" />
+ <shade name="light" weight="0.0235731771415" />
+</color>
+
+<color name="orange" weight="0.0954772826156">
+ <shade name="fresh" weight="0.713398781915" />
+ <shade name="cool" weight="0.263027029158" />
+ <shade name="light" weight="0.0235731771415" />
+</color>
+
+<color name="green" weight="0.0890164138672">
+ <shade name="fresh" weight="0.713398781915" />
+ <shade name="cool" weight="0.263027029158" />
+ <shade name="light" weight="0.0235731771415" />
+</color>
+
+<color name="blue" weight="0.0818376708134">
+ <shade name="fresh" weight="0.713398781915" />
+ <shade name="cool" weight="0.263027029158" />
+ <shade name="light" weight="0.0235731771415" />
+</color>
+
+<color name="pink" weight="0.0653265617896">
+ <shade name="fresh" weight="0.713398781915" />
+ <shade name="cool" weight="0.263027029158" />
+ <shade name="light" weight="0.0235731771415" />
+</color>
+
+</colors>

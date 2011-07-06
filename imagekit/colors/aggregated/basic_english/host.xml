@@ -1,0 +1,33 @@
+<colors query="host">
+
+<color name="blue" weight="0.663937444431">
+ <shade name="neutral" weight="0.412228120798" />
+ <shade name="fresh" weight="0.321498486556" />
+ <shade name="bright" weight="0.266271752669" />
+</color>
+
+<color name="red" weight="0.142337274046">
+ <shade name="neutral" weight="0.412228120798" />
+ <shade name="fresh" weight="0.321498486556" />
+ <shade name="bright" weight="0.266271752669" />
+</color>
+
+<color name="green" weight="0.0682127511402">
+ <shade name="neutral" weight="0.412228120798" />
+ <shade name="fresh" weight="0.321498486556" />
+ <shade name="bright" weight="0.266271752669" />
+</color>
+
+<color name="black" weight="0.0645747377461">
+ <shade name="neutral" weight="0.412228120798" />
+ <shade name="fresh" weight="0.321498486556" />
+ <shade name="bright" weight="0.266271752669" />
+</color>
+
+<color name="white" weight="0.0609367243519">
+ <shade name="neutral" weight="0.412228120798" />
+ <shade name="fresh" weight="0.321498486556" />
+ <shade name="bright" weight="0.266271752669" />
+</color>
+
+</colors>

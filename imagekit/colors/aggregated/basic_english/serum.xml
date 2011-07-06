@@ -1,0 +1,33 @@
+<colors query="serum">
+
+<color name="orange" weight="0.764054369258">
+ <shade name="fresh" weight="0.972176814416" />
+ <shade name="soft" weight="0.0159257912362" />
+ <shade name="cool" weight="0.0118963741764" />
+</color>
+
+<color name="green" weight="0.0678525895087">
+ <shade name="fresh" weight="0.972176814416" />
+ <shade name="soft" weight="0.0159257912362" />
+ <shade name="cool" weight="0.0118963741764" />
+</color>
+
+<color name="yellow" weight="0.0587295522639">
+ <shade name="fresh" weight="0.972176814416" />
+ <shade name="soft" weight="0.0159257912362" />
+ <shade name="cool" weight="0.0118963741764" />
+</color>
+
+<color name="blue" weight="0.0565628309182">
+ <shade name="fresh" weight="0.972176814416" />
+ <shade name="soft" weight="0.0159257912362" />
+ <shade name="cool" weight="0.0118963741764" />
+</color>
+
+<color name="red" weight="0.0527995780547">
+ <shade name="fresh" weight="0.972176814416" />
+ <shade name="soft" weight="0.0159257912362" />
+ <shade name="cool" weight="0.0118963741764" />
+</color>
+
+</colors>

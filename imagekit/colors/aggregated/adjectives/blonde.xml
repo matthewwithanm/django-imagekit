@@ -1,0 +1,33 @@
+<colors query="blonde">
+
+<color name="black" weight="0.61692308774">
+ <shade name="dark" weight="0.536788663886" />
+ <shade name="hard" weight="0.232441197135" />
+ <shade name="light" weight="0.230768958306" />
+</color>
+
+<color name="white" weight="0.27928274918">
+ <shade name="dark" weight="0.536788663886" />
+ <shade name="hard" weight="0.232441197135" />
+ <shade name="light" weight="0.230768958306" />
+</color>
+
+<color name="red" weight="0.050437630822">
+ <shade name="dark" weight="0.536788663886" />
+ <shade name="hard" weight="0.232441197135" />
+ <shade name="light" weight="0.230768958306" />
+</color>
+
+<color name="pink" weight="0.033764033856">
+ <shade name="dark" weight="0.536788663886" />
+ <shade name="hard" weight="0.232441197135" />
+ <shade name="light" weight="0.230768958306" />
+</color>
+
+<color name="blue" weight="0.019591476435">
+ <shade name="dark" weight="0.536788663886" />
+ <shade name="hard" weight="0.232441197135" />
+ <shade name="light" weight="0.230768958306" />
+</color>
+
+</colors>

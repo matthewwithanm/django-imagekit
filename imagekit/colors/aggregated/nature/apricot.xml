@@ -1,0 +1,33 @@
+<colors query="apricot">
+
+<color name="orange" weight="0.26738962512">
+ <shade name="fresh" weight="0.524547071495" />
+ <shade name="light" weight="0.250645645" />
+ <shade name="soft" weight="0.224805887784" />
+</color>
+
+<color name="white" weight="0.252073751605">
+ <shade name="fresh" weight="0.524547071495" />
+ <shade name="light" weight="0.250645645" />
+ <shade name="soft" weight="0.224805887784" />
+</color>
+
+<color name="pink" weight="0.231014425521">
+ <shade name="fresh" weight="0.524547071495" />
+ <shade name="light" weight="0.250645645" />
+ <shade name="soft" weight="0.224805887784" />
+</color>
+
+<color name="yellow" weight="0.145500798395">
+ <shade name="fresh" weight="0.524547071495" />
+ <shade name="light" weight="0.250645645" />
+ <shade name="soft" weight="0.224805887784" />
+</color>
+
+<color name="red" weight="0.104020307624">
+ <shade name="fresh" weight="0.524547071495" />
+ <shade name="light" weight="0.250645645" />
+ <shade name="soft" weight="0.224805887784" />
+</color>
+
+</colors>

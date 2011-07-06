@@ -1,0 +1,33 @@
+<colors query="archipelago">
+
+<color name="blue" weight="0.411421712927">
+ <shade name="dark" weight="0.382811964661" />
+ <shade name="cool" weight="0.328124541138" />
+ <shade name="light" weight="0.289062095765" />
+</color>
+
+<color name="orange" weight="0.388878057424">
+ <shade name="dark" weight="0.382811964661" />
+ <shade name="cool" weight="0.328124541138" />
+ <shade name="light" weight="0.289062095765" />
+</color>
+
+<color name="green" weight="0.100319266988">
+ <shade name="dark" weight="0.382811964661" />
+ <shade name="cool" weight="0.328124541138" />
+ <shade name="light" weight="0.289062095765" />
+</color>
+
+<color name="black" weight="0.0813450236061">
+ <shade name="dark" weight="0.382811964661" />
+ <shade name="cool" weight="0.328124541138" />
+ <shade name="light" weight="0.289062095765" />
+</color>
+
+<color name="white" weight="0.0180349244023">
+ <shade name="dark" weight="0.382811964661" />
+ <shade name="cool" weight="0.328124541138" />
+ <shade name="light" weight="0.289062095765" />
+</color>
+
+</colors>

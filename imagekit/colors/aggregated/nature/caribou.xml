@@ -1,0 +1,33 @@
+<colors query="caribou">
+
+<color name="white" weight="0.554616524246">
+ <shade name="fresh" weight="0.755772264731" />
+ <shade name="cool" weight="0.14835529641" />
+ <shade name="weak" weight="0.0958711113593" />
+</color>
+
+<color name="blue" weight="0.240990733378">
+ <shade name="fresh" weight="0.755772264731" />
+ <shade name="cool" weight="0.14835529641" />
+ <shade name="weak" weight="0.0958711113593" />
+</color>
+
+<color name="black" weight="0.0985359307036">
+ <shade name="fresh" weight="0.755772264731" />
+ <shade name="cool" weight="0.14835529641" />
+ <shade name="weak" weight="0.0958711113593" />
+</color>
+
+<color name="red" weight="0.0627814644197">
+ <shade name="fresh" weight="0.755772264731" />
+ <shade name="cool" weight="0.14835529641" />
+ <shade name="weak" weight="0.0958711113593" />
+</color>
+
+<color name="green" weight="0.043074278279">
+ <shade name="fresh" weight="0.755772264731" />
+ <shade name="cool" weight="0.14835529641" />
+ <shade name="weak" weight="0.0958711113593" />
+</color>
+
+</colors>

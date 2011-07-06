@@ -1,0 +1,33 @@
+<colors query="honor">
+
+<color name="black" weight="0.509444656551">
+ <shade name="cool" weight="0.454445087993" />
+ <shade name="dark" weight="0.392974254834" />
+ <shade name="bright" weight="0.152579389447" />
+</color>
+
+<color name="blue" weight="0.204521577447">
+ <shade name="cool" weight="0.454445087993" />
+ <shade name="dark" weight="0.392974254834" />
+ <shade name="bright" weight="0.152579389447" />
+</color>
+
+<color name="red" weight="0.174401126951">
+ <shade name="cool" weight="0.454445087993" />
+ <shade name="dark" weight="0.392974254834" />
+ <shade name="bright" weight="0.152579389447" />
+</color>
+
+<color name="pink" weight="0.0870146347685">
+ <shade name="cool" weight="0.454445087993" />
+ <shade name="dark" weight="0.392974254834" />
+ <shade name="bright" weight="0.152579389447" />
+</color>
+
+<color name="green" weight="0.0246169607764">
+ <shade name="cool" weight="0.454445087993" />
+ <shade name="dark" weight="0.392974254834" />
+ <shade name="bright" weight="0.152579389447" />
+</color>
+
+</colors>

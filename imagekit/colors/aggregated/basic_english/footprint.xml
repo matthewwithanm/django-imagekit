@@ -1,0 +1,33 @@
+<colors query="footprint">
+
+<color name="green" weight="0.616059722194">
+ <shade name="light" weight="0.710419931265" />
+ <shade name="neutral" weight="0.267062038043" />
+ <shade name="fresh" weight="0.0225169953644" />
+</color>
+
+<color name="blue" weight="0.209996009652">
+ <shade name="light" weight="0.710419931265" />
+ <shade name="neutral" weight="0.267062038043" />
+ <shade name="fresh" weight="0.0225169953644" />
+</color>
+
+<color name="pink" weight="0.0626773804319">
+ <shade name="light" weight="0.710419931265" />
+ <shade name="neutral" weight="0.267062038043" />
+ <shade name="fresh" weight="0.0225169953644" />
+</color>
+
+<color name="red" weight="0.0594631557943">
+ <shade name="light" weight="0.710419931265" />
+ <shade name="neutral" weight="0.267062038043" />
+ <shade name="fresh" weight="0.0225169953644" />
+</color>
+
+<color name="yellow" weight="0.0518025870749">
+ <shade name="light" weight="0.710419931265" />
+ <shade name="neutral" weight="0.267062038043" />
+ <shade name="fresh" weight="0.0225169953644" />
+</color>
+
+</colors>

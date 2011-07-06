@@ -1,0 +1,33 @@
+<colors query="bowel">
+
+<color name="green" weight="0.732258576234">
+ <shade name="soft" weight="0.473097800486" />
+ <shade name="hard" weight="0.453153481446" />
+ <shade name="dark" weight="0.073747598311" />
+</color>
+
+<color name="white" weight="0.115829992968">
+ <shade name="soft" weight="0.473097800486" />
+ <shade name="hard" weight="0.453153481446" />
+ <shade name="dark" weight="0.073747598311" />
+</color>
+
+<color name="black" weight="0.0612434445578">
+ <shade name="soft" weight="0.473097800486" />
+ <shade name="hard" weight="0.453153481446" />
+ <shade name="dark" weight="0.073747598311" />
+</color>
+
+<color name="orange" weight="0.0523897726815">
+ <shade name="soft" weight="0.473097800486" />
+ <shade name="hard" weight="0.453153481446" />
+ <shade name="dark" weight="0.073747598311" />
+</color>
+
+<color name="yellow" weight="0.0382771528486">
+ <shade name="soft" weight="0.473097800486" />
+ <shade name="hard" weight="0.453153481446" />
+ <shade name="dark" weight="0.073747598311" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="courage">
+
+<color name="red" weight="0.380413529081">
+ <shade name="fresh" weight="0.618283965029" />
+ <shade name="cool" weight="0.361922320993" />
+ <shade name="intense" weight="0.0197926269293" />
+</color>
+
+<color name="green" weight="0.242429780497">
+ <shade name="fresh" weight="0.618283965029" />
+ <shade name="cool" weight="0.361922320993" />
+ <shade name="intense" weight="0.0197926269293" />
+</color>
+
+<color name="blue" weight="0.213683166209">
+ <shade name="fresh" weight="0.618283965029" />
+ <shade name="cool" weight="0.361922320993" />
+ <shade name="intense" weight="0.0197926269293" />
+</color>
+
+<color name="white" weight="0.0862398428646">
+ <shade name="fresh" weight="0.61997853222" />
+ <shade name="cool" weight="0.362914262763" />
+ <shade name="dark" weight="0.0171061149896" />
+</color>
+
+<color name="pink" weight="0.0772325703877">
+ <shade name="fresh" weight="0.61997853222" />
+ <shade name="cool" weight="0.362914262763" />
+ <shade name="dark" weight="0.0171061149896" />
+</color>
+
+</colors>

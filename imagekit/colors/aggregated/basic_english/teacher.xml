@@ -1,0 +1,33 @@
+<colors query="teacher">
+
+<color name="white" weight="0.414117584473">
+ <shade name="hard" weight="0.505832004131" />
+ <shade name="cool" weight="0.463507285418" />
+ <shade name="dark" weight="0.0306596133116" />
+</color>
+
+<color name="black" weight="0.391322121107">
+ <shade name="hard" weight="0.505832004131" />
+ <shade name="cool" weight="0.463507285418" />
+ <shade name="dark" weight="0.0306596133116" />
+</color>
+
+<color name="green" weight="0.177804614251">
+ <shade name="hard" weight="0.505832004131" />
+ <shade name="cool" weight="0.463507285418" />
+ <shade name="dark" weight="0.0306596133116" />
+</color>
+
+<color name="pink" weight="0.00881424583465">
+ <shade name="hard" weight="0.505832004131" />
+ <shade name="cool" weight="0.463507285418" />
+ <shade name="dark" weight="0.0306596133116" />
+</color>
+
+<color name="orange" weight="0.00794041973897">
+ <shade name="hard" weight="0.505832004131" />
+ <shade name="cool" weight="0.463507285418" />
+ <shade name="dark" weight="0.0306596133116" />
+</color>
+
+</colors>

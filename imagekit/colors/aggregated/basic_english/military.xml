@@ -1,0 +1,33 @@
+<colors query="military">
+
+<color name="black" weight="0.479939490419">
+ <shade name="intense" weight="0.386288701298" />
+ <shade name="cool" weight="0.327529293213" />
+ <shade name="hard" weight="0.286180080117" />
+</color>
+
+<color name="green" weight="0.226471447041">
+ <shade name="intense" weight="0.386288701298" />
+ <shade name="cool" weight="0.327529293213" />
+ <shade name="hard" weight="0.286180080117" />
+</color>
+
+<color name="white" weight="0.13985736713">
+ <shade name="cool" weight="0.369778065979" />
+ <shade name="hard" weight="0.323095120773" />
+ <shade name="light" weight="0.307124639518" />
+</color>
+
+<color name="blue" weight="0.0892387489997">
+ <shade name="intense" weight="0.386288701298" />
+ <shade name="cool" weight="0.327529293213" />
+ <shade name="hard" weight="0.286180080117" />
+</color>
+
+<color name="red" weight="0.064491869025">
+ <shade name="intense" weight="0.386288701298" />
+ <shade name="cool" weight="0.327529293213" />
+ <shade name="hard" weight="0.286180080117" />
+</color>
+
+</colors>

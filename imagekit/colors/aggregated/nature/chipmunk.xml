@@ -1,0 +1,33 @@
+<colors query="chipmunk">
+
+<color name="white" weight="0.664008512266">
+ <shade name="cool" weight="0.591480418663" />
+ <shade name="dark" weight="0.241045211534" />
+ <shade name="bright" weight="0.167473179098" />
+</color>
+
+<color name="pink" weight="0.120633457995">
+ <shade name="cool" weight="0.591480418663" />
+ <shade name="dark" weight="0.241045211534" />
+ <shade name="bright" weight="0.167473179098" />
+</color>
+
+<color name="blue" weight="0.10322028058">
+ <shade name="cool" weight="0.591480418663" />
+ <shade name="dark" weight="0.241045211534" />
+ <shade name="bright" weight="0.167473179098" />
+</color>
+
+<color name="red" weight="0.0731143654107">
+ <shade name="cool" weight="0.591480418663" />
+ <shade name="dark" weight="0.241045211534" />
+ <shade name="bright" weight="0.167473179098" />
+</color>
+
+<color name="purple" weight="0.0390223011948">
+ <shade name="cool" weight="0.591480418663" />
+ <shade name="dark" weight="0.241045211534" />
+ <shade name="bright" weight="0.167473179098" />
+</color>
+
+</colors>

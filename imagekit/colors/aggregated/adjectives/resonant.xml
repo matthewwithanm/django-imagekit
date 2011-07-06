@@ -1,0 +1,33 @@
+<colors query="resonant">
+
+<color name="blue" weight="0.309233129901">
+ <shade name="light" weight="0.45916028906" />
+ <shade name="weak" weight="0.454745286281" />
+ <shade name="fresh" weight="0.0860925541988" />
+</color>
+
+<color name="black" weight="0.282229673487">
+ <shade name="warm" weight="0.434425726643" />
+ <shade name="light" weight="0.284152676546" />
+ <shade name="weak" weight="0.281420439272" />
+</color>
+
+<color name="red" weight="0.150696708374">
+ <shade name="warm" weight="0.434425726643" />
+ <shade name="light" weight="0.284152676546" />
+ <shade name="weak" weight="0.281420439272" />
+</color>
+
+<color name="white" weight="0.146341312178">
+ <shade name="warm" weight="0.434425726643" />
+ <shade name="light" weight="0.284152676546" />
+ <shade name="weak" weight="0.281420439272" />
+</color>
+
+<color name="yellow" weight="0.111498142612">
+ <shade name="warm" weight="0.434425726643" />
+ <shade name="light" weight="0.284152676546" />
+ <shade name="weak" weight="0.281420439272" />
+</color>
+
+</colors>

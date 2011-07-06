@@ -1,0 +1,33 @@
+<colors query="clam">
+
+<color name="white" weight="0.536475223365">
+ <shade name="hard" weight="0.772683944654" />
+ <shade name="fresh" weight="0.12722156958" />
+ <shade name="soft" weight="0.100093440772" />
+</color>
+
+<color name="red" weight="0.321885134019">
+ <shade name="hard" weight="0.772683944654" />
+ <shade name="fresh" weight="0.12722156958" />
+ <shade name="soft" weight="0.100093440772" />
+</color>
+
+<color name="black" weight="0.0738226589417">
+ <shade name="hard" weight="0.772683944654" />
+ <shade name="fresh" weight="0.12722156958" />
+ <shade name="soft" weight="0.100093440772" />
+</color>
+
+<color name="pink" weight="0.0531889965046">
+ <shade name="hard" weight="0.772683944654" />
+ <shade name="fresh" weight="0.12722156958" />
+ <shade name="soft" weight="0.100093440772" />
+</color>
+
+<color name="green" weight="0.0146269740388">
+ <shade name="hard" weight="0.772683944654" />
+ <shade name="fresh" weight="0.12722156958" />
+ <shade name="soft" weight="0.100093440772" />
+</color>
+
+</colors>

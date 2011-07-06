@@ -1,0 +1,33 @@
+<colors query="paraffin">
+
+<color name="white" weight="0.821883831899">
+ <shade name="soft" weight="0.552871091483" />
+ <shade name="hard" weight="0.245302998842" />
+ <shade name="warm" weight="0.201824786794" />
+</color>
+
+<color name="red" weight="0.0495547604527">
+ <shade name="soft" weight="0.552871091483" />
+ <shade name="hard" weight="0.245302998842" />
+ <shade name="warm" weight="0.201824786794" />
+</color>
+
+<color name="pink" weight="0.0455259181395">
+ <shade name="soft" weight="0.552871091483" />
+ <shade name="hard" weight="0.245302998842" />
+ <shade name="warm" weight="0.201824786794" />
+</color>
+
+<color name="yellow" weight="0.0451230339082">
+ <shade name="soft" weight="0.552871091483" />
+ <shade name="hard" weight="0.245302998842" />
+ <shade name="warm" weight="0.201824786794" />
+</color>
+
+<color name="blue" weight="0.0379114061675">
+ <shade name="soft" weight="0.603750725085" />
+ <shade name="hard" weight="0.267877748897" />
+ <shade name="light" weight="0.1283702998" />
+</color>
+
+</colors>

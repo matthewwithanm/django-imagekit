@@ -1,0 +1,33 @@
+<colors query="overlap">
+
+<color name="orange" weight="0.845525896418">
+ <shade name="weak" weight="0.839710761254" />
+ <shade name="soft" weight="0.110722923387" />
+ <shade name="light" weight="0.04956522812" />
+</color>
+
+<color name="yellow" weight="0.0458204153448">
+ <shade name="weak" weight="0.839710761254" />
+ <shade name="soft" weight="0.110722923387" />
+ <shade name="light" weight="0.04956522812" />
+</color>
+
+<color name="black" weight="0.0371626352078">
+ <shade name="weak" weight="0.839710761254" />
+ <shade name="soft" weight="0.110722923387" />
+ <shade name="light" weight="0.04956522812" />
+</color>
+
+<color name="green" weight="0.036960114035">
+ <shade name="weak" weight="0.839710761254" />
+ <shade name="soft" weight="0.110722923387" />
+ <shade name="light" weight="0.04956522812" />
+</color>
+
+<color name="red" weight="0.0345298599615">
+ <shade name="weak" weight="0.839710761254" />
+ <shade name="soft" weight="0.110722923387" />
+ <shade name="light" weight="0.04956522812" />
+</color>
+
+</colors>

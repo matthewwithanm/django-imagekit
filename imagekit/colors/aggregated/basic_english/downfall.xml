@@ -1,0 +1,33 @@
+<colors query="downfall">
+
+<color name="black" weight="0.821043412491">
+ <shade name="hard" weight="0.373460530543" />
+ <shade name="dark" weight="0.351572733881" />
+ <shade name="light" weight="0.274965445564" />
+</color>
+
+<color name="white" weight="0.0729373516921">
+ <shade name="hard" weight="0.373460530543" />
+ <shade name="dark" weight="0.351572733881" />
+ <shade name="light" weight="0.274965445564" />
+</color>
+
+<color name="blue" weight="0.0677560097686">
+ <shade name="hard" weight="0.373460530543" />
+ <shade name="dark" weight="0.351572733881" />
+ <shade name="light" weight="0.274965445564" />
+</color>
+
+<color name="green" weight="0.0290952277242">
+ <shade name="hard" weight="0.373460530543" />
+ <shade name="dark" weight="0.351572733881" />
+ <shade name="light" weight="0.274965445564" />
+</color>
+
+<color name="red" weight="0.00916698955693">
+ <shade name="hard" weight="0.373460530543" />
+ <shade name="dark" weight="0.351572733881" />
+ <shade name="light" weight="0.274965445564" />
+</color>
+
+</colors>

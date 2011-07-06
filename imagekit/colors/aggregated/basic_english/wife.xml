@@ -1,0 +1,33 @@
+<colors query="wife">
+
+<color name="white" weight="0.745554893934">
+ <shade name="soft" weight="0.385184624941" />
+ <shade name="hard" weight="0.30740696029" />
+ <shade name="cool" weight="0.30740696029" />
+</color>
+
+<color name="black" weight="0.183256139896">
+ <shade name="soft" weight="0.385184624941" />
+ <shade name="hard" weight="0.30740696029" />
+ <shade name="cool" weight="0.30740696029" />
+</color>
+
+<color name="green" weight="0.0592058298124">
+ <shade name="soft" weight="0.385184624941" />
+ <shade name="hard" weight="0.30740696029" />
+ <shade name="cool" weight="0.30740696029" />
+</color>
+
+<color name="yellow" weight="0.00972667204061">
+ <shade name="soft" weight="0.385184624941" />
+ <shade name="hard" weight="0.30740696029" />
+ <shade name="cool" weight="0.30740696029" />
+</color>
+
+<color name="orange" weight="0.00225546018333">
+ <shade name="soft" weight="0.385184624941" />
+ <shade name="hard" weight="0.30740696029" />
+ <shade name="cool" weight="0.30740696029" />
+</color>
+
+</colors>

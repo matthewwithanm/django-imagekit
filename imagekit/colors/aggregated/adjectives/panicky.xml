@@ -1,0 +1,33 @@
+<colors query="panicky">
+
+<color name="black" weight="0.553845548876">
+ <shade name="weak" weight="0.367924066661" />
+ <shade name="dark" weight="0.320754314525" />
+ <shade name="intense" weight="0.311320364098" />
+</color>
+
+<color name="red" weight="0.153845985799">
+ <shade name="weak" weight="0.367924066661" />
+ <shade name="dark" weight="0.320754314525" />
+ <shade name="intense" weight="0.311320364098" />
+</color>
+
+<color name="pink" weight="0.107692190059">
+ <shade name="weak" weight="0.487499189533" />
+ <shade name="dark" weight="0.424999293439" />
+ <shade name="soft" weight="0.0874998545315" />
+</color>
+
+<color name="white" weight="0.0923075914794">
+ <shade name="weak" weight="0.487499189533" />
+ <shade name="dark" weight="0.424999293439" />
+ <shade name="soft" weight="0.0874998545315" />
+</color>
+
+<color name="orange" weight="0.0923075914794">
+ <shade name="weak" weight="0.367924066661" />
+ <shade name="dark" weight="0.320754314525" />
+ <shade name="intense" weight="0.311320364098" />
+</color>
+
+</colors>

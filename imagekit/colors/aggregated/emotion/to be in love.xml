@@ -1,0 +1,33 @@
+<colors query="to be in love">
+
+<color name="white" weight="0.4999995">
+ <shade name="cool" weight="0.991238658335" />
+ <shade name="hard" weight="0.00874834118555" />
+ <shade name="weak" weight="1.20004680186e-05" />
+</color>
+
+<color name="blue" weight="0.4999995">
+ <shade name="cool" weight="0.991238658335" />
+ <shade name="hard" weight="0.00874834118555" />
+ <shade name="weak" weight="1.20004680186e-05" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="cool" weight="0.991238658335" />
+ <shade name="hard" weight="0.00874834118555" />
+ <shade name="weak" weight="1.20004680186e-05" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="cool" weight="0.991238658335" />
+ <shade name="hard" weight="0.00874834118555" />
+ <shade name="weak" weight="1.20004680186e-05" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="cool" weight="0.991238658335" />
+ <shade name="hard" weight="0.00874834118555" />
+ <shade name="weak" weight="1.20004680186e-05" />
+</color>
+
+</colors>

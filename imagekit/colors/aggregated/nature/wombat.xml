@@ -1,0 +1,33 @@
+<colors query="wombat">
+
+<color name="green" weight="0.938862476207">
+ <shade name="dark" weight="0.654665779813" />
+ <shade name="cool" weight="0.225333028082" />
+ <shade name="bright" weight="0.11999983744" />
+</color>
+
+<color name="white" weight="0.0266931488333">
+ <shade name="dark" weight="0.654665779813" />
+ <shade name="cool" weight="0.225333028082" />
+ <shade name="bright" weight="0.11999983744" />
+</color>
+
+<color name="purple" weight="0.0223670178155">
+ <shade name="dark" weight="0.654665779813" />
+ <shade name="cool" weight="0.225333028082" />
+ <shade name="bright" weight="0.11999983744" />
+</color>
+
+<color name="red" weight="0.00728078645765">
+ <shade name="dark" weight="0.654665779813" />
+ <shade name="cool" weight="0.225333028082" />
+ <shade name="bright" weight="0.11999983744" />
+</color>
+
+<color name="blue" weight="0.00479556225592">
+ <shade name="dark" weight="0.654665779813" />
+ <shade name="cool" weight="0.225333028082" />
+ <shade name="bright" weight="0.11999983744" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="claw">
+
+<color name="red" weight="0.42888841654">
+ <shade name="dark" weight="0.824684955235" />
+ <shade name="soft" weight="0.105406752557" />
+ <shade name="fresh" weight="0.069907069053" />
+</color>
+
+<color name="blue" weight="0.181666466591">
+ <shade name="dark" weight="0.824684955235" />
+ <shade name="soft" weight="0.105406752557" />
+ <shade name="fresh" weight="0.069907069053" />
+</color>
+
+<color name="black" weight="0.168333147942">
+ <shade name="dark" weight="0.824684955235" />
+ <shade name="soft" weight="0.105406752557" />
+ <shade name="fresh" weight="0.069907069053" />
+</color>
+
+<color name="yellow" weight="0.141110955701">
+ <shade name="dark" weight="0.824684955235" />
+ <shade name="soft" weight="0.105406752557" />
+ <shade name="fresh" weight="0.069907069053" />
+</color>
+
+<color name="white" weight="0.0799999118934">
+ <shade name="dark" weight="0.824684955235" />
+ <shade name="soft" weight="0.105406752557" />
+ <shade name="fresh" weight="0.069907069053" />
+</color>
+
+</colors>

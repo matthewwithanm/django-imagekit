@@ -1,0 +1,33 @@
+<colors query="bloody">
+
+<color name="black" weight="0.576114250856">
+ <shade name="dark" weight="0.676391802396" />
+ <shade name="hard" weight="0.258089891659" />
+ <shade name="cool" weight="0.0655171667419" />
+</color>
+
+<color name="red" weight="0.352594514185">
+ <shade name="dark" weight="0.676391802396" />
+ <shade name="hard" weight="0.258089891659" />
+ <shade name="cool" weight="0.0655171667419" />
+</color>
+
+<color name="pink" weight="0.0412409654984">
+ <shade name="dark" weight="0.676391802396" />
+ <shade name="hard" weight="0.258089891659" />
+ <shade name="cool" weight="0.0655171667419" />
+</color>
+
+<color name="green" weight="0.0193612166271">
+ <shade name="dark" weight="0.676391802396" />
+ <shade name="hard" weight="0.258089891659" />
+ <shade name="cool" weight="0.0655171667419" />
+</color>
+
+<color name="white" weight="0.0106880212112">
+ <shade name="dark" weight="0.676391802396" />
+ <shade name="hard" weight="0.258089891659" />
+ <shade name="cool" weight="0.0655171667419" />
+</color>
+
+</colors>

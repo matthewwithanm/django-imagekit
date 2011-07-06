@@ -1,0 +1,33 @@
+<colors query="anticipation">
+
+<color name="red" weight="0.631910840911">
+ <shade name="intense" weight="0.706318845086" />
+ <shade name="bright" weight="0.222428478409" />
+ <shade name="warm" weight="0.0712514624428" />
+</color>
+
+<color name="black" weight="0.158504302595">
+ <shade name="intense" weight="0.706318845086" />
+ <shade name="bright" weight="0.222428478409" />
+ <shade name="warm" weight="0.0712514624428" />
+</color>
+
+<color name="green" weight="0.077935670379">
+ <shade name="intense" weight="0.718516697382" />
+ <shade name="bright" weight="0.226269731895" />
+ <shade name="dark" weight="0.0552123356936" />
+</color>
+
+<color name="blue" weight="0.0700367848676">
+ <shade name="intense" weight="0.718516697382" />
+ <shade name="bright" weight="0.226269731895" />
+ <shade name="dark" weight="0.0552123356936" />
+</color>
+
+<color name="white" weight="0.0616113069888">
+ <shade name="bright" weight="0.639242783839" />
+ <shade name="warm" weight="0.204771365296" />
+ <shade name="dark" weight="0.155982361739" />
+</color>
+
+</colors>

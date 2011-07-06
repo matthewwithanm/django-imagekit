@@ -1,0 +1,33 @@
+<colors query="embarrassment">
+
+<color name="red" weight="0.387386965101">
+ <shade name="fresh" weight="0.364705426624" />
+ <shade name="intense" weight="0.355461740696" />
+ <shade name="cool" weight="0.279831583101" />
+</color>
+
+<color name="black" weight="0.276821975061">
+ <shade name="fresh" weight="0.364705426624" />
+ <shade name="intense" weight="0.355461740696" />
+ <shade name="cool" weight="0.279831583101" />
+</color>
+
+<color name="pink" weight="0.206387981407">
+ <shade name="fresh" weight="0.494868032077" />
+ <shade name="cool" weight="0.379702890971" />
+ <shade name="light" weight="0.125427381402" />
+</color>
+
+<color name="white" weight="0.0728909934333">
+ <shade name="fresh" weight="0.494868032077" />
+ <shade name="cool" weight="0.379702890971" />
+ <shade name="light" weight="0.125427381402" />
+</color>
+
+<color name="green" weight="0.056510994909">
+ <shade name="fresh" weight="0.364705426624" />
+ <shade name="intense" weight="0.355461740696" />
+ <shade name="cool" weight="0.279831583101" />
+</color>
+
+</colors>

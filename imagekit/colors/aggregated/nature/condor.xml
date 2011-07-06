@@ -1,0 +1,33 @@
+<colors query="condor">
+
+<color name="black" weight="0.583386377065">
+ <shade name="dark" weight="0.656538219411" />
+ <shade name="cool" weight="0.182298338589" />
+ <shade name="soft" weight="0.161162299332" />
+</color>
+
+<color name="red" weight="0.369547242411">
+ <shade name="dark" weight="0.656538219411" />
+ <shade name="cool" weight="0.182298338589" />
+ <shade name="soft" weight="0.161162299332" />
+</color>
+
+<color name="blue" weight="0.019349327524">
+ <shade name="dark" weight="0.656538219411" />
+ <shade name="cool" weight="0.182298338589" />
+ <shade name="soft" weight="0.161162299332" />
+</color>
+
+<color name="green" weight="0.0156123329378">
+ <shade name="dark" weight="0.656538219411" />
+ <shade name="cool" weight="0.182298338589" />
+ <shade name="soft" weight="0.161162299332" />
+</color>
+
+<color name="white" weight="0.012103710243">
+ <shade name="dark" weight="0.656538219411" />
+ <shade name="cool" weight="0.182298338589" />
+ <shade name="soft" weight="0.161162299332" />
+</color>
+
+</colors>

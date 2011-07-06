@@ -1,0 +1,33 @@
+<colors query="existence">
+
+<color name="black" weight="0.313745721134">
+ <shade name="neutral" weight="0.444590276388" />
+ <shade name="bright" weight="0.300791047526" />
+ <shade name="intense" weight="0.254616983213" />
+</color>
+
+<color name="green" weight="0.265127376387">
+ <shade name="neutral" weight="0.444590276388" />
+ <shade name="bright" weight="0.300791047526" />
+ <shade name="intense" weight="0.254616983213" />
+</color>
+
+<color name="white" weight="0.226302655043">
+ <shade name="neutral" weight="0.481427688903" />
+ <shade name="bright" weight="0.325713688635" />
+ <shade name="fresh" weight="0.192856789323" />
+</color>
+
+<color name="blue" weight="0.109478718746">
+ <shade name="neutral" weight="0.444590276388" />
+ <shade name="bright" weight="0.300791047526" />
+ <shade name="intense" weight="0.254616983213" />
+</color>
+
+<color name="red" weight="0.0853444325046">
+ <shade name="neutral" weight="0.444590276388" />
+ <shade name="bright" weight="0.300791047526" />
+ <shade name="intense" weight="0.254616983213" />
+</color>
+
+</colors>

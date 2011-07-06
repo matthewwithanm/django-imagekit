@@ -1,0 +1,33 @@
+<colors query="ant">
+
+<color name="red" weight="0.42152423402">
+ <shade name="cool" weight="0.658988229483" />
+ <shade name="light" weight="0.181701608906" />
+ <shade name="dark" weight="0.159308804991" />
+</color>
+
+<color name="blue" weight="0.252402048942">
+ <shade name="cool" weight="0.658988229483" />
+ <shade name="light" weight="0.181701608906" />
+ <shade name="dark" weight="0.159308804991" />
+</color>
+
+<color name="white" weight="0.123126075651">
+ <shade name="cool" weight="0.658988229483" />
+ <shade name="light" weight="0.181701608906" />
+ <shade name="dark" weight="0.159308804991" />
+</color>
+
+<color name="black" weight="0.121588601242">
+ <shade name="cool" weight="0.658988229483" />
+ <shade name="light" weight="0.181701608906" />
+ <shade name="dark" weight="0.159308804991" />
+</color>
+
+<color name="green" weight="0.0813580208519">
+ <shade name="cool" weight="0.658988229483" />
+ <shade name="light" weight="0.181701608906" />
+ <shade name="dark" weight="0.159308804991" />
+</color>
+
+</colors>

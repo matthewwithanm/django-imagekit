@@ -1,0 +1,33 @@
+<colors query="word">
+
+<color name="white" weight="0.260408481429">
+ <shade name="hard" weight="0.643606826828" />
+ <shade name="cool" weight="0.22985958101" />
+ <shade name="neutral" weight="0.126532226499" />
+</color>
+
+<color name="black" weight="0.236184436645">
+ <shade name="hard" weight="0.643606826828" />
+ <shade name="cool" weight="0.22985958101" />
+ <shade name="neutral" weight="0.126532226499" />
+</color>
+
+<color name="red" weight="0.186222344278">
+ <shade name="hard" weight="0.643606826828" />
+ <shade name="cool" weight="0.22985958101" />
+ <shade name="neutral" weight="0.126532226499" />
+</color>
+
+<color name="blue" weight="0.165026305092">
+ <shade name="hard" weight="0.643606826828" />
+ <shade name="cool" weight="0.22985958101" />
+ <shade name="neutral" weight="0.126532226499" />
+</color>
+
+<color name="green" weight="0.1521572813">
+ <shade name="hard" weight="0.643606826828" />
+ <shade name="cool" weight="0.22985958101" />
+ <shade name="neutral" weight="0.126532226499" />
+</color>
+
+</colors>

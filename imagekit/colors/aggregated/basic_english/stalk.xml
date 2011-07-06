@@ -1,0 +1,33 @@
+<colors query="stalk">
+
+<color name="green" weight="0.767488736546">
+ <shade name="light" weight="0.652693782405" />
+ <shade name="hard" weight="0.190119519187" />
+ <shade name="fresh" weight="0.157185429249" />
+</color>
+
+<color name="black" weight="0.130508453357">
+ <shade name="light" weight="0.652693782405" />
+ <shade name="hard" weight="0.190119519187" />
+ <shade name="fresh" weight="0.157185429249" />
+</color>
+
+<color name="pink" weight="0.0378439146592">
+ <shade name="light" weight="0.652693782405" />
+ <shade name="hard" weight="0.190119519187" />
+ <shade name="fresh" weight="0.157185429249" />
+</color>
+
+<color name="yellow" weight="0.0347315179395">
+ <shade name="light" weight="0.652693782405" />
+ <shade name="hard" weight="0.190119519187" />
+ <shade name="fresh" weight="0.157185429249" />
+</color>
+
+<color name="red" weight="0.0294262962584">
+ <shade name="light" weight="0.652693782405" />
+ <shade name="hard" weight="0.190119519187" />
+ <shade name="fresh" weight="0.157185429249" />
+</color>
+
+</colors>

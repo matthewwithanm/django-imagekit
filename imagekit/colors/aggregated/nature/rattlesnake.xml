@@ -1,0 +1,33 @@
+<colors query="rattlesnake">
+
+<color name="black" weight="0.32219532915">
+ <shade name="intense" weight="0.719278784015" />
+ <shade name="fresh" weight="0.164194715055" />
+ <shade name="cool" weight="0.116525281652" />
+</color>
+
+<color name="green" weight="0.262529527455">
+ <shade name="intense" weight="0.719278784015" />
+ <shade name="fresh" weight="0.164194715055" />
+ <shade name="cool" weight="0.116525281652" />
+</color>
+
+<color name="red" weight="0.163484296643">
+ <shade name="intense" weight="0.719278784015" />
+ <shade name="fresh" weight="0.164194715055" />
+ <shade name="cool" weight="0.116525281652" />
+</color>
+
+<color name="blue" weight="0.12887813166">
+ <shade name="intense" weight="0.719278784015" />
+ <shade name="fresh" weight="0.164194715055" />
+ <shade name="cool" weight="0.116525281652" />
+</color>
+
+<color name="white" weight="0.12291155149">
+ <shade name="fresh" weight="0.425822829335" />
+ <shade name="cool" weight="0.302196846625" />
+ <shade name="dark" weight="0.271977161962" />
+</color>
+
+</colors>

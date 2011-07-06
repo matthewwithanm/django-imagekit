@@ -1,0 +1,33 @@
+<colors query="tragedy">
+
+<color name="black" weight="0.457066265668">
+ <shade name="dark" weight="0.847613717693" />
+ <shade name="fresh" weight="0.0968039710371" />
+ <shade name="intense" weight="0.0555812273897" />
+</color>
+
+<color name="green" weight="0.161304453952">
+ <shade name="dark" weight="0.847613717693" />
+ <shade name="fresh" weight="0.0968039710371" />
+ <shade name="intense" weight="0.0555812273897" />
+</color>
+
+<color name="white" weight="0.15597941008">
+ <shade name="dark" weight="0.867338722376" />
+ <shade name="fresh" weight="0.0990567174735" />
+ <shade name="light" weight="0.0336034510472" />
+</color>
+
+<color name="blue" weight="0.142001169916">
+ <shade name="dark" weight="0.847613717693" />
+ <shade name="fresh" weight="0.0968039710371" />
+ <shade name="intense" weight="0.0555812273897" />
+</color>
+
+<color name="red" weight="0.0836475641537">
+ <shade name="dark" weight="0.847613717693" />
+ <shade name="fresh" weight="0.0968039710371" />
+ <shade name="intense" weight="0.0555812273897" />
+</color>
+
+</colors>

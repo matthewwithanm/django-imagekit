@@ -1,0 +1,33 @@
+<colors query="Biology">
+
+<color name="black" weight="0.450117076476">
+ <shade name="cool" weight="0.532825939625" />
+ <shade name="light" weight="0.329647176655" />
+ <shade name="dark" weight="0.13752576133" />
+</color>
+
+<color name="green" weight="0.191803619901">
+ <shade name="cool" weight="0.532825939625" />
+ <shade name="light" weight="0.329647176655" />
+ <shade name="dark" weight="0.13752576133" />
+</color>
+
+<color name="white" weight="0.178031380994">
+ <shade name="cool" weight="0.532825939625" />
+ <shade name="light" weight="0.329647176655" />
+ <shade name="dark" weight="0.13752576133" />
+</color>
+
+<color name="blue" weight="0.136714664273">
+ <shade name="cool" weight="0.532825939625" />
+ <shade name="light" weight="0.329647176655" />
+ <shade name="dark" weight="0.13752576133" />
+</color>
+
+<color name="red" weight="0.0433321663175">
+ <shade name="cool" weight="0.532825939625" />
+ <shade name="light" weight="0.329647176655" />
+ <shade name="dark" weight="0.13752576133" />
+</color>
+
+</colors>

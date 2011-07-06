@@ -1,0 +1,33 @@
+<colors query="dragonfly">
+
+<color name="blue" weight="0.492163325577">
+ <shade name="light" weight="0.424008283598" />
+ <shade name="cool" weight="0.398677918603" />
+ <shade name="dark" weight="0.177312554959" />
+</color>
+
+<color name="red" weight="0.220786117563">
+ <shade name="light" weight="0.424008283598" />
+ <shade name="cool" weight="0.398677918603" />
+ <shade name="dark" weight="0.177312554959" />
+</color>
+
+<color name="green" weight="0.126202774548">
+ <shade name="light" weight="0.424008283598" />
+ <shade name="cool" weight="0.398677918603" />
+ <shade name="dark" weight="0.177312554959" />
+</color>
+
+<color name="pink" weight="0.0921087788092">
+ <shade name="light" weight="0.424008283598" />
+ <shade name="cool" weight="0.398677918603" />
+ <shade name="dark" weight="0.177312554959" />
+</color>
+
+<color name="purple" weight="0.0687378946337">
+ <shade name="light" weight="0.424008283598" />
+ <shade name="cool" weight="0.398677918603" />
+ <shade name="dark" weight="0.177312554959" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="macaroni">
+
+<color name="white" weight="0.280200545229">
+ <shade name="light" weight="0.573430262468" />
+ <shade name="warm" weight="0.213443486585" />
+ <shade name="cool" weight="0.213124914217" />
+</color>
+
+<color name="purple" weight="0.246100667555">
+ <shade name="light" weight="0.593079904921" />
+ <shade name="cool" weight="0.220428031329" />
+ <shade name="fresh" weight="0.186490681214" />
+</color>
+
+<color name="blue" weight="0.233941021253">
+ <shade name="light" weight="0.593079904921" />
+ <shade name="cool" weight="0.220428031329" />
+ <shade name="fresh" weight="0.186490681214" />
+</color>
+
+<color name="orange" weight="0.128733646723">
+ <shade name="light" weight="0.573430262468" />
+ <shade name="warm" weight="0.213443486585" />
+ <shade name="cool" weight="0.213124914217" />
+</color>
+
+<color name="green" weight="0.111022857544">
+ <shade name="light" weight="0.593079904921" />
+ <shade name="cool" weight="0.220428031329" />
+ <shade name="fresh" weight="0.186490681214" />
+</color>
+
+</colors>

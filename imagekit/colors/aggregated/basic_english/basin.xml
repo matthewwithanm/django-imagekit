@@ -1,0 +1,33 @@
+<colors query="basin">
+
+<color name="red" weight="0.389261339985">
+ <shade name="light" weight="0.347878685207" />
+ <shade name="warm" weight="0.331565499499" />
+ <shade name="soft" weight="0.320554099147" />
+</color>
+
+<color name="white" weight="0.169702603885">
+ <shade name="light" weight="0.347878685207" />
+ <shade name="warm" weight="0.331565499499" />
+ <shade name="soft" weight="0.320554099147" />
+</color>
+
+<color name="green" weight="0.161073657925">
+ <shade name="light" weight="0.406189662264" />
+ <shade name="soft" weight="0.37428496429" />
+ <shade name="dark" weight="0.219523369641" />
+</color>
+
+<color name="blue" weight="0.144774537778">
+ <shade name="light" weight="0.406189662264" />
+ <shade name="soft" weight="0.37428496429" />
+ <shade name="dark" weight="0.219523369641" />
+</color>
+
+<color name="orange" weight="0.135186820044">
+ <shade name="light" weight="0.347878685207" />
+ <shade name="warm" weight="0.331565499499" />
+ <shade name="soft" weight="0.320554099147" />
+</color>
+
+</colors>

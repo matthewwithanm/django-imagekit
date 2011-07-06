@@ -1,0 +1,33 @@
+<colors query="tapir">
+
+<color name="purple" weight="0.482619755003">
+ <shade name="fresh" weight="0.839825789136" />
+ <shade name="cool" weight="0.116882970653" />
+ <shade name="neutral" weight="0.0432899891307" />
+</color>
+
+<color name="black" weight="0.187165555957">
+ <shade name="fresh" weight="0.839825789136" />
+ <shade name="cool" weight="0.116882970653" />
+ <shade name="neutral" weight="0.0432899891307" />
+</color>
+
+<color name="white" weight="0.114973127231">
+ <shade name="fresh" weight="0.839825789136" />
+ <shade name="cool" weight="0.116882970653" />
+ <shade name="neutral" weight="0.0432899891307" />
+</color>
+
+<color name="blue" weight="0.108288643089">
+ <shade name="fresh" weight="0.839825789136" />
+ <shade name="cool" weight="0.116882970653" />
+ <shade name="neutral" weight="0.0432899891307" />
+</color>
+
+<color name="red" weight="0.106951746261">
+ <shade name="fresh" weight="0.839825789136" />
+ <shade name="cool" weight="0.116882970653" />
+ <shade name="neutral" weight="0.0432899891307" />
+</color>
+
+</colors>

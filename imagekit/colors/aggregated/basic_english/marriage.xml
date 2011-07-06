@@ -1,0 +1,33 @@
+<colors query="marriage">
+
+<color name="white" weight="0.493552174411">
+ <shade name="neutral" weight="0.622193551216" />
+ <shade name="hard" weight="0.194513414809" />
+ <shade name="warm" weight="0.183291487032" />
+</color>
+
+<color name="black" weight="0.321624089631">
+ <shade name="neutral" weight="0.622193551216" />
+ <shade name="hard" weight="0.194513414809" />
+ <shade name="warm" weight="0.183291487032" />
+</color>
+
+<color name="green" weight="0.143619236338">
+ <shade name="neutral" weight="0.664446305799" />
+ <shade name="hard" weight="0.207722692795" />
+ <shade name="light" weight="0.127829349412" />
+</color>
+
+<color name="pink" weight="0.0210463689989">
+ <shade name="neutral" weight="0.622193551216" />
+ <shade name="hard" weight="0.194513414809" />
+ <shade name="warm" weight="0.183291487032" />
+</color>
+
+<color name="red" weight="0.0201570858018">
+ <shade name="neutral" weight="0.622193551216" />
+ <shade name="hard" weight="0.194513414809" />
+ <shade name="warm" weight="0.183291487032" />
+</color>
+
+</colors>

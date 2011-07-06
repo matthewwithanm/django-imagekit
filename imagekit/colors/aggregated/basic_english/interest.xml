@@ -1,0 +1,33 @@
+<colors query="interest">
+
+<color name="black" weight="0.789500255066">
+ <shade name="intense" weight="0.897035708453" />
+ <shade name="fresh" weight="0.0702158969999" />
+ <shade name="warm" weight="0.0327473282145" />
+</color>
+
+<color name="white" weight="0.169085721843">
+ <shade name="fresh" weight="0.563250621191" />
+ <shade name="warm" weight="0.262689130913" />
+ <shade name="neutral" weight="0.174051694102" />
+</color>
+
+<color name="blue" weight="0.0189896272224">
+ <shade name="intense" weight="0.907058442992" />
+ <shade name="fresh" weight="0.071000431316" />
+ <shade name="neutral" weight="0.0219400474453" />
+</color>
+
+<color name="green" weight="0.0123432576945">
+ <shade name="intense" weight="0.907058442992" />
+ <shade name="fresh" weight="0.071000431316" />
+ <shade name="neutral" weight="0.0219400474453" />
+</color>
+
+<color name="orange" weight="0.0100801103406">
+ <shade name="intense" weight="0.897035708453" />
+ <shade name="fresh" weight="0.0702158969999" />
+ <shade name="warm" weight="0.0327473282145" />
+</color>
+
+</colors>

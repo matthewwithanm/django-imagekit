@@ -1,0 +1,33 @@
+<colors query="whereas">
+
+<color name="black" weight="0.237600654157">
+ <shade name="light" weight="0.724286895314" />
+ <shade name="weak" weight="0.157894543178" />
+ <shade name="dark" weight="0.117817334971" />
+</color>
+
+<color name="white" weight="0.22029963565">
+ <shade name="light" weight="0.724286895314" />
+ <shade name="weak" weight="0.157894543178" />
+ <shade name="dark" weight="0.117817334971" />
+</color>
+
+<color name="red" weight="0.22029963565">
+ <shade name="light" weight="0.724286895314" />
+ <shade name="weak" weight="0.157894543178" />
+ <shade name="dark" weight="0.117817334971" />
+</color>
+
+<color name="blue" weight="0.167243178897">
+ <shade name="light" weight="0.724286895314" />
+ <shade name="weak" weight="0.157894543178" />
+ <shade name="dark" weight="0.117817334971" />
+</color>
+
+<color name="green" weight="0.154555765325">
+ <shade name="light" weight="0.724286895314" />
+ <shade name="weak" weight="0.157894543178" />
+ <shade name="dark" weight="0.117817334971" />
+</color>
+
+</colors>

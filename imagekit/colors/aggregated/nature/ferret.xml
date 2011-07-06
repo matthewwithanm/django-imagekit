@@ -1,0 +1,33 @@
+<colors query="ferret">
+
+<color name="red" weight="0.961484963084">
+ <shade name="cool" weight="0.634201901881" />
+ <shade name="dark" weight="0.290934578765" />
+ <shade name="fresh" weight="0.074862434292" />
+</color>
+
+<color name="white" weight="0.0183920419075">
+ <shade name="cool" weight="0.634201901881" />
+ <shade name="dark" weight="0.290934578765" />
+ <shade name="fresh" weight="0.074862434292" />
+</color>
+
+<color name="green" weight="0.00722934716561">
+ <shade name="cool" weight="0.634201901881" />
+ <shade name="dark" weight="0.290934578765" />
+ <shade name="fresh" weight="0.074862434292" />
+</color>
+
+<color name="black" weight="0.00691977814341">
+ <shade name="cool" weight="0.634201901881" />
+ <shade name="dark" weight="0.290934578765" />
+ <shade name="fresh" weight="0.074862434292" />
+</color>
+
+<color name="purple" weight="0.00597286113431">
+ <shade name="cool" weight="0.634201901881" />
+ <shade name="dark" weight="0.290934578765" />
+ <shade name="fresh" weight="0.074862434292" />
+</color>
+
+</colors>

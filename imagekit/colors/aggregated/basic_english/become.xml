@@ -1,0 +1,33 @@
+<colors query="become">
+
+<color name="black" weight="0.432308120789">
+ <shade name="light" weight="0.504577500623" />
+ <shade name="weak" weight="0.480692175149" />
+ <shade name="cool" weight="0.0147292840418" />
+</color>
+
+<color name="white" weight="0.428613179586">
+ <shade name="light" weight="0.504577500623" />
+ <shade name="weak" weight="0.480692175149" />
+ <shade name="cool" weight="0.0147292840418" />
+</color>
+
+<color name="orange" weight="0.0550546239296">
+ <shade name="light" weight="0.504577500623" />
+ <shade name="weak" weight="0.480692175149" />
+ <shade name="cool" weight="0.0147292840418" />
+</color>
+
+<color name="yellow" weight="0.0487732238839">
+ <shade name="light" weight="0.504577500623" />
+ <shade name="weak" weight="0.480692175149" />
+ <shade name="cool" weight="0.0147292840418" />
+</color>
+
+<color name="pink" weight="0.0352497390797">
+ <shade name="light" weight="0.504577500623" />
+ <shade name="weak" weight="0.480692175149" />
+ <shade name="cool" weight="0.0147292840418" />
+</color>
+
+</colors>

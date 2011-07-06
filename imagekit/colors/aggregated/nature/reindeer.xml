@@ -1,0 +1,33 @@
+<colors query="reindeer">
+
+<color name="white" weight="0.449794473271">
+ <shade name="cool" weight="0.358997591064" />
+ <shade name="light" weight="0.342763849866" />
+ <shade name="soft" weight="0.298237016865" />
+</color>
+
+<color name="red" weight="0.377033602595">
+ <shade name="cool" weight="0.358997591064" />
+ <shade name="light" weight="0.342763849866" />
+ <shade name="soft" weight="0.298237016865" />
+</color>
+
+<color name="green" weight="0.0737530643673">
+ <shade name="cool" weight="0.358997591064" />
+ <shade name="light" weight="0.342763849866" />
+ <shade name="soft" weight="0.298237016865" />
+</color>
+
+<color name="blue" weight="0.0684613646818">
+ <shade name="cool" weight="0.358997591064" />
+ <shade name="light" weight="0.342763849866" />
+ <shade name="soft" weight="0.298237016865" />
+</color>
+
+<color name="pink" weight="0.0309564431605">
+ <shade name="cool" weight="0.358997591064" />
+ <shade name="light" weight="0.342763849866" />
+ <shade name="soft" weight="0.298237016865" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="aspen">
+
+<color name="white" weight="0.719872728506">
+ <shade name="light" weight="0.514169390245" />
+ <shade name="fresh" weight="0.309041444531" />
+ <shade name="dark" weight="0.176787900583" />
+</color>
+
+<color name="red" weight="0.114430636034">
+ <shade name="light" weight="0.514169390245" />
+ <shade name="fresh" weight="0.309041444531" />
+ <shade name="dark" weight="0.176787900583" />
+</color>
+
+<color name="pink" weight="0.0794772781182">
+ <shade name="light" weight="0.514169390245" />
+ <shade name="fresh" weight="0.309041444531" />
+ <shade name="dark" weight="0.176787900583" />
+</color>
+
+<color name="orange" weight="0.0491011456437">
+ <shade name="light" weight="0.514169390245" />
+ <shade name="fresh" weight="0.309041444531" />
+ <shade name="dark" weight="0.176787900583" />
+</color>
+
+<color name="yellow" weight="0.0371171372154">
+ <shade name="light" weight="0.514169390245" />
+ <shade name="fresh" weight="0.309041444531" />
+ <shade name="dark" weight="0.176787900583" />
+</color>
+
+</colors>

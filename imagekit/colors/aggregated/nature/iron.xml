@@ -1,0 +1,33 @@
+<colors query="iron">
+
+<color name="black" weight="0.496399605815">
+ <shade name="dark" weight="0.727057959125" />
+ <shade name="soft" weight="0.181176255187" />
+ <shade name="warm" weight="0.0917645967828" />
+</color>
+
+<color name="red" weight="0.228116460077">
+ <shade name="dark" weight="0.727057959125" />
+ <shade name="soft" weight="0.181176255187" />
+ <shade name="warm" weight="0.0917645967828" />
+</color>
+
+<color name="white" weight="0.120500056984">
+ <shade name="dark" weight="0.727057959125" />
+ <shade name="soft" weight="0.181176255187" />
+ <shade name="warm" weight="0.0917645967828" />
+</color>
+
+<color name="yellow" weight="0.0985220591693">
+ <shade name="dark" weight="0.727057959125" />
+ <shade name="soft" weight="0.181176255187" />
+ <shade name="warm" weight="0.0917645967828" />
+</color>
+
+<color name="blue" weight="0.056460718524">
+ <shade name="dark" weight="0.741361865165" />
+ <shade name="soft" weight="0.184740658957" />
+ <shade name="cool" weight="0.0738962635828" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="bureaucracy">
+
+<color name="red" weight="0.649349992641">
+ <shade name="neutral" weight="0.477008419164" />
+ <shade name="weak" weight="0.309840603799" />
+ <shade name="intense" weight="0.213149708023" />
+</color>
+
+<color name="white" weight="0.157733016394">
+ <shade name="neutral" weight="0.504315543279" />
+ <shade name="weak" weight="0.327577933967" />
+ <shade name="soft" weight="0.168105181093" />
+</color>
+
+<color name="green" weight="0.148287925592">
+ <shade name="neutral" weight="0.477008419164" />
+ <shade name="weak" weight="0.309840603799" />
+ <shade name="intense" weight="0.213149708023" />
+</color>
+
+<color name="black" weight="0.0299881632965">
+ <shade name="neutral" weight="0.477008419164" />
+ <shade name="weak" weight="0.309840603799" />
+ <shade name="intense" weight="0.213149708023" />
+</color>
+
+<color name="blue" weight="0.0146398907432">
+ <shade name="neutral" weight="0.477008419164" />
+ <shade name="weak" weight="0.309840603799" />
+ <shade name="intense" weight="0.213149708023" />
+</color>
+
+</colors>

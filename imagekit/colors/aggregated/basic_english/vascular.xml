@@ -1,0 +1,33 @@
+<colors query="vascular">
+
+<color name="red" weight="0.920003540625">
+ <shade name="intense" weight="0.442513325377" />
+ <shade name="soft" weight="0.350535959825" />
+ <shade name="hard" weight="0.206949072491" />
+</color>
+
+<color name="green" weight="0.0364635549638">
+ <shade name="intense" weight="0.442513325377" />
+ <shade name="soft" weight="0.350535959825" />
+ <shade name="hard" weight="0.206949072491" />
+</color>
+
+<color name="blue" weight="0.0162122575147">
+ <shade name="intense" weight="0.442513325377" />
+ <shade name="soft" weight="0.350535959825" />
+ <shade name="hard" weight="0.206949072491" />
+</color>
+
+<color name="black" weight="0.0154829864154">
+ <shade name="intense" weight="0.442513325377" />
+ <shade name="soft" weight="0.350535959825" />
+ <shade name="hard" weight="0.206949072491" />
+</color>
+
+<color name="yellow" weight="0.011836630919">
+ <shade name="intense" weight="0.442513325377" />
+ <shade name="soft" weight="0.350535959825" />
+ <shade name="hard" weight="0.206949072491" />
+</color>
+
+</colors>

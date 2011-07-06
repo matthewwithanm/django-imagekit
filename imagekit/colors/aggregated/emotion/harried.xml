@@ -1,0 +1,33 @@
+<colors query="harried">
+
+<color name="red" weight="0.613587489">
+ <shade name="hard" weight="0.618643365269" />
+ <shade name="dark" weight="0.330508099254" />
+ <shade name="light" weight="0.0508473998852" />
+</color>
+
+<color name="blue" weight="0.242037971439">
+ <shade name="hard" weight="0.618643365269" />
+ <shade name="dark" weight="0.330508099254" />
+ <shade name="light" weight="0.0508473998852" />
+</color>
+
+<color name="black" weight="0.0764330436124">
+ <shade name="hard" weight="0.618643365269" />
+ <shade name="dark" weight="0.330508099254" />
+ <shade name="light" weight="0.0508473998852" />
+</color>
+
+<color name="white" weight="0.0573247827093">
+ <shade name="hard" weight="0.618643365269" />
+ <shade name="dark" weight="0.330508099254" />
+ <shade name="light" weight="0.0508473998852" />
+</color>
+
+<color name="pink" weight="0.0106157005017">
+ <shade name="hard" weight="0.618643365269" />
+ <shade name="dark" weight="0.330508099254" />
+ <shade name="light" weight="0.0508473998852" />
+</color>
+
+</colors>

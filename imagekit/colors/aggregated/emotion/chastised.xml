@@ -1,0 +1,33 @@
+<colors query="chastised">
+
+<color name="white" weight="0.436363180166">
+ <shade name="hard" weight="0.411764245675" />
+ <shade name="soft" weight="0.352940782007" />
+ <shade name="light" weight="0.235293854672" />
+</color>
+
+<color name="green" weight="0.390908682232">
+ <shade name="hard" weight="0.411764245675" />
+ <shade name="soft" weight="0.352940782007" />
+ <shade name="light" weight="0.235293854672" />
+</color>
+
+<color name="black" weight="0.0909089958679">
+ <shade name="hard" weight="0.411764245675" />
+ <shade name="soft" weight="0.352940782007" />
+ <shade name="light" weight="0.235293854672" />
+</color>
+
+<color name="red" weight="0.0454544979339">
+ <shade name="hard" weight="0.411764245675" />
+ <shade name="soft" weight="0.352940782007" />
+ <shade name="light" weight="0.235293854672" />
+</color>
+
+<color name="pink" weight="0.0363635983471">
+ <shade name="hard" weight="0.411764245675" />
+ <shade name="soft" weight="0.352940782007" />
+ <shade name="light" weight="0.235293854672" />
+</color>
+
+</colors>

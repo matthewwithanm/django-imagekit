@@ -1,0 +1,33 @@
+<colors query="religion">
+
+<color name="red" weight="0.476582631218">
+ <shade name="hard" weight="0.546307854333" />
+ <shade name="weak" weight="0.342281333796" />
+ <shade name="dark" weight="0.111409218451" />
+</color>
+
+<color name="black" weight="0.350703251115">
+ <shade name="hard" weight="0.546307854333" />
+ <shade name="weak" weight="0.342281333796" />
+ <shade name="dark" weight="0.111409218451" />
+</color>
+
+<color name="green" weight="0.0961960328294">
+ <shade name="hard" weight="0.546307854333" />
+ <shade name="weak" weight="0.342281333796" />
+ <shade name="dark" weight="0.111409218451" />
+</color>
+
+<color name="white" weight="0.0703605268695">
+ <shade name="hard" weight="0.546307854333" />
+ <shade name="weak" weight="0.342281333796" />
+ <shade name="dark" weight="0.111409218451" />
+</color>
+
+<color name="orange" weight="0.00615654610108">
+ <shade name="hard" weight="0.546307854333" />
+ <shade name="weak" weight="0.342281333796" />
+ <shade name="dark" weight="0.111409218451" />
+</color>
+
+</colors>

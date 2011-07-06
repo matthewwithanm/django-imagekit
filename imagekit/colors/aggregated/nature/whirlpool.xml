@@ -1,0 +1,33 @@
+<colors query="whirlpool">
+
+<color name="white" weight="0.648560335152">
+ <shade name="dark" weight="0.464248681268" />
+ <shade name="light" weight="0.303964282553" />
+ <shade name="warm" weight="0.231785472983" />
+</color>
+
+<color name="black" weight="0.263477636155">
+ <shade name="dark" weight="0.464248681268" />
+ <shade name="light" weight="0.303964282553" />
+ <shade name="warm" weight="0.231785472983" />
+</color>
+
+<color name="green" weight="0.033373833913">
+ <shade name="dark" weight="0.470466287685" />
+ <shade name="light" weight="0.308035226316" />
+ <shade name="cool" weight="0.221496901866" />
+</color>
+
+<color name="blue" weight="0.0287798648724">
+ <shade name="dark" weight="0.470466287685" />
+ <shade name="light" weight="0.308035226316" />
+ <shade name="cool" weight="0.221496901866" />
+</color>
+
+<color name="purple" weight="0.0258072966696">
+ <shade name="dark" weight="0.470466287685" />
+ <shade name="light" weight="0.308035226316" />
+ <shade name="cool" weight="0.221496901866" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="chin">
+
+<color name="white" weight="0.487245119196">
+ <shade name="weak" weight="0.777442350996" />
+ <shade name="hard" weight="0.180673222415" />
+ <shade name="light" weight="0.0418833379234" />
+</color>
+
+<color name="black" weight="0.328173918517">
+ <shade name="weak" weight="0.777442350996" />
+ <shade name="hard" weight="0.180673222415" />
+ <shade name="light" weight="0.0418833379234" />
+</color>
+
+<color name="yellow" weight="0.146173535759">
+ <shade name="weak" weight="0.777442350996" />
+ <shade name="hard" weight="0.180673222415" />
+ <shade name="light" weight="0.0418833379234" />
+</color>
+
+<color name="green" weight="0.0199197269318">
+ <shade name="weak" weight="0.777442350996" />
+ <shade name="hard" weight="0.180673222415" />
+ <shade name="light" weight="0.0418833379234" />
+</color>
+
+<color name="pink" weight="0.0184866530518">
+ <shade name="weak" weight="0.777442350996" />
+ <shade name="hard" weight="0.180673222415" />
+ <shade name="light" weight="0.0418833379234" />
+</color>
+
+</colors>

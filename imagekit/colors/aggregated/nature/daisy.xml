@@ -1,0 +1,33 @@
+<colors query="daisy">
+
+<color name="pink" weight="0.25894612487">
+ <shade name="bright" weight="0.605762517691" />
+ <shade name="cool" weight="0.242182383085" />
+ <shade name="dark" weight="0.15205374938" />
+</color>
+
+<color name="white" weight="0.244498487002">
+ <shade name="bright" weight="0.605762517691" />
+ <shade name="cool" weight="0.242182383085" />
+ <shade name="dark" weight="0.15205374938" />
+</color>
+
+<color name="yellow" weight="0.207823713952">
+ <shade name="bright" weight="0.605762517691" />
+ <shade name="cool" weight="0.242182383085" />
+ <shade name="dark" weight="0.15205374938" />
+</color>
+
+<color name="blue" weight="0.195598789602">
+ <shade name="bright" weight="0.605762517691" />
+ <shade name="cool" weight="0.242182383085" />
+ <shade name="dark" weight="0.15205374938" />
+</color>
+
+<color name="purple" weight="0.0931316964126">
+ <shade name="bright" weight="0.605762517691" />
+ <shade name="cool" weight="0.242182383085" />
+ <shade name="dark" weight="0.15205374938" />
+</color>
+
+</colors>

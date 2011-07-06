@@ -1,0 +1,33 @@
+<colors query="puma">
+
+<color name="black" weight="0.55968456234">
+ <shade name="cool" weight="0.585442284218" />
+ <shade name="dark" weight="0.234176913687" />
+ <shade name="fresh" weight="0.180379514597" />
+</color>
+
+<color name="white" weight="0.18583276484">
+ <shade name="cool" weight="0.585442284218" />
+ <shade name="dark" weight="0.234176913687" />
+ <shade name="fresh" weight="0.180379514597" />
+</color>
+
+<color name="pink" weight="0.0926977556376">
+ <shade name="cool" weight="0.585442284218" />
+ <shade name="dark" weight="0.234176913687" />
+ <shade name="fresh" weight="0.180379514597" />
+</color>
+
+<color name="red" weight="0.0857016986084">
+ <shade name="cool" weight="0.585442284218" />
+ <shade name="dark" weight="0.234176913687" />
+ <shade name="fresh" weight="0.180379514597" />
+</color>
+
+<color name="blue" weight="0.0760821201931">
+ <shade name="cool" weight="0.585442284218" />
+ <shade name="dark" weight="0.234176913687" />
+ <shade name="fresh" weight="0.180379514597" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="telephone">
+
+<color name="orange" weight="0.45546282934">
+ <shade name="light" weight="0.86109967609" />
+ <shade name="cool" weight="0.0696367564142" />
+ <shade name="soft" weight="0.0692623652507" />
+</color>
+
+<color name="red" weight="0.302893999807">
+ <shade name="light" weight="0.86109967609" />
+ <shade name="cool" weight="0.0696367564142" />
+ <shade name="soft" weight="0.0692623652507" />
+</color>
+
+<color name="white" weight="0.103881423638">
+ <shade name="light" weight="0.86109967609" />
+ <shade name="cool" weight="0.0696367564142" />
+ <shade name="soft" weight="0.0692623652507" />
+</color>
+
+<color name="black" weight="0.0953555184578">
+ <shade name="light" weight="0.86109967609" />
+ <shade name="cool" weight="0.0696367564142" />
+ <shade name="soft" weight="0.0692623652507" />
+</color>
+
+<color name="green" weight="0.042405159973">
+ <shade name="light" weight="0.86109967609" />
+ <shade name="cool" weight="0.0696367564142" />
+ <shade name="soft" weight="0.0692623652507" />
+</color>
+
+</colors>

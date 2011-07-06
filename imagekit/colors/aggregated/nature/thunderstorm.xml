@@ -1,0 +1,33 @@
+<colors query="thunderstorm">
+
+<color name="black" weight="0.303976941202">
+ <shade name="light" weight="0.632192288066" />
+ <shade name="intense" weight="0.334226346808" />
+ <shade name="weak" weight="0.033580288618" />
+</color>
+
+<color name="pink" weight="0.28977241124">
+ <shade name="light" weight="0.904373889189" />
+ <shade name="weak" weight="0.0480378150617" />
+ <shade name="dark" weight="0.0475867557653" />
+</color>
+
+<color name="blue" weight="0.207386137456">
+ <shade name="light" weight="0.632192288066" />
+ <shade name="intense" weight="0.334226346808" />
+ <shade name="weak" weight="0.033580288618" />
+</color>
+
+<color name="red" weight="0.131533947455">
+ <shade name="light" weight="0.632192288066" />
+ <shade name="intense" weight="0.334226346808" />
+ <shade name="weak" weight="0.033580288618" />
+</color>
+
+<color name="green" weight="0.0673294720233">
+ <shade name="light" weight="0.632192288066" />
+ <shade name="intense" weight="0.334226346808" />
+ <shade name="weak" weight="0.033580288618" />
+</color>
+
+</colors>

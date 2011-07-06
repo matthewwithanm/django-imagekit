@@ -1,0 +1,33 @@
+<colors query="weed">
+
+<color name="green" weight="0.352098296226">
+ <shade name="cool" weight="0.37681097961" />
+ <shade name="fresh" weight="0.312801422176" />
+ <shade name="weak" weight="0.310385967178" />
+</color>
+
+<color name="red" weight="0.266560292058">
+ <shade name="cool" weight="0.37681097961" />
+ <shade name="fresh" weight="0.312801422176" />
+ <shade name="weak" weight="0.310385967178" />
+</color>
+
+<color name="purple" weight="0.156156589004">
+ <shade name="cool" weight="0.37681097961" />
+ <shade name="fresh" weight="0.312801422176" />
+ <shade name="weak" weight="0.310385967178" />
+</color>
+
+<color name="white" weight="0.134274773985">
+ <shade name="cool" weight="0.37681097961" />
+ <shade name="fresh" weight="0.312801422176" />
+ <shade name="weak" weight="0.310385967178" />
+</color>
+
+<color name="yellow" weight="0.0909089951273">
+ <shade name="cool" weight="0.37681097961" />
+ <shade name="fresh" weight="0.312801422176" />
+ <shade name="weak" weight="0.310385967178" />
+</color>
+
+</colors>

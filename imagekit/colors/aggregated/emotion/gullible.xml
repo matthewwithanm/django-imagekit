@@ -1,0 +1,33 @@
+<colors query="gullible">
+
+<color name="green" weight="0.948338524558">
+ <shade name="weak" weight="0.806178844552" />
+ <shade name="fresh" weight="0.098314493238" />
+ <shade name="soft" weight="0.095505507717" />
+</color>
+
+<color name="white" weight="0.0184501658474">
+ <shade name="weak" weight="0.806178844552" />
+ <shade name="fresh" weight="0.098314493238" />
+ <shade name="soft" weight="0.095505507717" />
+</color>
+
+<color name="black" weight="0.0129151160932">
+ <shade name="weak" weight="0.806178844552" />
+ <shade name="fresh" weight="0.098314493238" />
+ <shade name="soft" weight="0.095505507717" />
+</color>
+
+<color name="blue" weight="0.0110700995085">
+ <shade name="weak" weight="0.806178844552" />
+ <shade name="fresh" weight="0.098314493238" />
+ <shade name="soft" weight="0.095505507717" />
+</color>
+
+<color name="purple" weight="0.00922508292372">
+ <shade name="weak" weight="0.806178844552" />
+ <shade name="fresh" weight="0.098314493238" />
+ <shade name="soft" weight="0.095505507717" />
+</color>
+
+</colors>

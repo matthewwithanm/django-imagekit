@@ -1,0 +1,33 @@
+<colors query="dizzy">
+
+<color name="blue" weight="0.393491794638">
+ <shade name="weak" weight="0.87772807823" />
+ <shade name="cool" weight="0.0933280488244" />
+ <shade name="dark" weight="0.0289428056176" />
+</color>
+
+<color name="white" weight="0.245932371649">
+ <shade name="weak" weight="0.87772807823" />
+ <shade name="cool" weight="0.0933280488244" />
+ <shade name="dark" weight="0.0289428056176" />
+</color>
+
+<color name="black" weight="0.213771984587">
+ <shade name="weak" weight="0.87772807823" />
+ <shade name="cool" weight="0.0933280488244" />
+ <shade name="dark" weight="0.0289428056176" />
+</color>
+
+<color name="pink" weight="0.0921300499946">
+ <shade name="weak" weight="0.87772807823" />
+ <shade name="cool" weight="0.0933280488244" />
+ <shade name="dark" weight="0.0289428056176" />
+</color>
+
+<color name="red" weight="0.054672658005">
+ <shade name="weak" weight="0.87772807823" />
+ <shade name="cool" weight="0.0933280488244" />
+ <shade name="dark" weight="0.0289428056176" />
+</color>
+
+</colors>

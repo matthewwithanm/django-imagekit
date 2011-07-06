@@ -1,0 +1,33 @@
+<colors query="detestation">
+
+<color name="red" weight="0.2999997">
+ <shade name="intense" weight="0.694322422495" />
+ <shade name="fresh" weight="0.288209307451" />
+ <shade name="hard" weight="0.0174672307546" />
+</color>
+
+<color name="black" weight="0.2999997">
+ <shade name="intense" weight="0.694322422495" />
+ <shade name="fresh" weight="0.288209307451" />
+ <shade name="hard" weight="0.0174672307546" />
+</color>
+
+<color name="white" weight="0.1999998">
+ <shade name="fresh" weight="0.904106641406" />
+ <shade name="hard" weight="0.0547943419034" />
+ <shade name="warm" weight="0.0410957564275" />
+</color>
+
+<color name="green" weight="0.0999999000001">
+ <shade name="intense" weight="0.694322422495" />
+ <shade name="fresh" weight="0.288209307451" />
+ <shade name="hard" weight="0.0174672307546" />
+</color>
+
+<color name="blue" weight="0.0999999000001">
+ <shade name="intense" weight="0.694322422495" />
+ <shade name="fresh" weight="0.288209307451" />
+ <shade name="hard" weight="0.0174672307546" />
+</color>
+
+</colors>

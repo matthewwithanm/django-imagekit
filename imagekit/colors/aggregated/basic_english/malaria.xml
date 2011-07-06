@@ -1,0 +1,33 @@
+<colors query="malaria">
+
+<color name="black" weight="0.395309451681">
+ <shade name="intense" weight="0.98680268517" />
+ <shade name="hard" weight="0.00694849228019" />
+ <shade name="dark" weight="0.00624780398303" />
+</color>
+
+<color name="white" weight="0.180904325346">
+ <shade name="hard" weight="0.375373665558" />
+ <shade name="dark" weight="0.337520858947" />
+ <shade name="warm" weight="0.287050450132" />
+</color>
+
+<color name="yellow" weight="0.1658289649">
+ <shade name="intense" weight="0.98680268517" />
+ <shade name="hard" weight="0.00694849228019" />
+ <shade name="dark" weight="0.00624780398303" />
+</color>
+
+<color name="red" weight="0.147403524356">
+ <shade name="intense" weight="0.98680268517" />
+ <shade name="hard" weight="0.00694849228019" />
+ <shade name="dark" weight="0.00624780398303" />
+</color>
+
+<color name="blue" weight="0.110552643267">
+ <shade name="intense" weight="0.98680268517" />
+ <shade name="hard" weight="0.00694849228019" />
+ <shade name="dark" weight="0.00624780398303" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="reagent">
+
+<color name="blue" weight="0.400775986786">
+ <shade name="fresh" weight="0.901661506197" />
+ <shade name="neutral" weight="0.0593124209545" />
+ <shade name="light" weight="0.0390250370651" />
+</color>
+
+<color name="green" weight="0.343265531283">
+ <shade name="fresh" weight="0.901661506197" />
+ <shade name="neutral" weight="0.0593124209545" />
+ <shade name="light" weight="0.0390250370651" />
+</color>
+
+<color name="red" weight="0.240825032419">
+ <shade name="fresh" weight="0.901661506197" />
+ <shade name="neutral" weight="0.0593124209545" />
+ <shade name="light" weight="0.0390250370651" />
+</color>
+
+<color name="yellow" weight="0.00801551973572">
+ <shade name="fresh" weight="0.901661506197" />
+ <shade name="neutral" weight="0.0593124209545" />
+ <shade name="light" weight="0.0390250370651" />
+</color>
+
+<color name="orange" weight="0.00711691886849">
+ <shade name="fresh" weight="0.901661506197" />
+ <shade name="neutral" weight="0.0593124209545" />
+ <shade name="light" weight="0.0390250370651" />
+</color>
+
+</colors>

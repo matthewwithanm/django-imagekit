@@ -1,0 +1,33 @@
+<colors query="boar">
+
+<color name="blue" weight="0.70692812875">
+ <shade name="soft" weight="0.590797488305" />
+ <shade name="fresh" weight="0.270128645095" />
+ <shade name="cool" weight="0.139072683088" />
+</color>
+
+<color name="black" weight="0.138108475484">
+ <shade name="soft" weight="0.590797488305" />
+ <shade name="fresh" weight="0.270128645095" />
+ <shade name="cool" weight="0.139072683088" />
+</color>
+
+<color name="white" weight="0.0997190009429">
+ <shade name="soft" weight="0.590797488305" />
+ <shade name="fresh" weight="0.270128645095" />
+ <shade name="cool" weight="0.139072683088" />
+</color>
+
+<color name="red" weight="0.0448033257757">
+ <shade name="soft" weight="0.590797488305" />
+ <shade name="fresh" weight="0.270128645095" />
+ <shade name="cool" weight="0.139072683088" />
+</color>
+
+<color name="green" weight="0.010440064418">
+ <shade name="soft" weight="0.590797488305" />
+ <shade name="fresh" weight="0.270128645095" />
+ <shade name="cool" weight="0.139072683088" />
+</color>
+
+</colors>

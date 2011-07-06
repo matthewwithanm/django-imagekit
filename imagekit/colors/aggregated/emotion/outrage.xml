@@ -1,0 +1,33 @@
+<colors query="outrage">
+
+<color name="black" weight="0.64009593555">
+ <shade name="intense" weight="0.436536578376" />
+ <shade name="fresh" weight="0.365370110977" />
+ <shade name="dark" weight="0.198092228843" />
+</color>
+
+<color name="white" weight="0.138888740733">
+ <shade name="fresh" weight="0.603269667449" />
+ <shade name="dark" weight="0.327073916087" />
+ <shade name="cool" weight="0.0696546302777" />
+</color>
+
+<color name="orange" weight="0.0824274483043">
+ <shade name="intense" weight="0.436536578376" />
+ <shade name="fresh" weight="0.365370110977" />
+ <shade name="dark" weight="0.198092228843" />
+</color>
+
+<color name="purple" weight="0.0818235842142">
+ <shade name="fresh" weight="0.603269667449" />
+ <shade name="dark" weight="0.327073916087" />
+ <shade name="cool" weight="0.0696546302777" />
+</color>
+
+<color name="blue" weight="0.0567632244733">
+ <shade name="intense" weight="0.436536578376" />
+ <shade name="fresh" weight="0.365370110977" />
+ <shade name="dark" weight="0.198092228843" />
+</color>
+
+</colors>

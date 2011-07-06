@@ -1,0 +1,33 @@
+<colors query="sandstone">
+
+<color name="red" weight="0.762170441353">
+ <shade name="soft" weight="0.615010997671" />
+ <shade name="hard" weight="0.376137160894" />
+ <shade name="light" weight="0.00885081044474" />
+</color>
+
+<color name="yellow" weight="0.0721879492912">
+ <shade name="soft" weight="0.615010997671" />
+ <shade name="hard" weight="0.376137160894" />
+ <shade name="light" weight="0.00885081044474" />
+</color>
+
+<color name="white" weight="0.070621079074">
+ <shade name="soft" weight="0.615010997671" />
+ <shade name="hard" weight="0.376137160894" />
+ <shade name="light" weight="0.00885081044474" />
+</color>
+
+<color name="pink" weight="0.0511471206606">
+ <shade name="soft" weight="0.615010997671" />
+ <shade name="hard" weight="0.376137160894" />
+ <shade name="light" weight="0.00885081044474" />
+</color>
+
+<color name="green" weight="0.0438723660808">
+ <shade name="soft" weight="0.615010997671" />
+ <shade name="hard" weight="0.376137160894" />
+ <shade name="light" weight="0.00885081044474" />
+</color>
+
+</colors>

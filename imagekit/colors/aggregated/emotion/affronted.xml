@@ -1,0 +1,33 @@
+<colors query="affronted">
+
+<color name="black" weight="0.987737427844">
+ <shade name="weak" weight="0.428570755103" />
+ <shade name="intense" weight="0.285713836735" />
+ <shade name="dark" weight="0.285713836735" />
+</color>
+
+<color name="red" weight="0.00681198226099">
+ <shade name="weak" weight="0.428570755103" />
+ <shade name="intense" weight="0.285713836735" />
+ <shade name="dark" weight="0.285713836735" />
+</color>
+
+<color name="blue" weight="0.0027247929044">
+ <shade name="weak" weight="0.428570755103" />
+ <shade name="intense" weight="0.285713836735" />
+ <shade name="dark" weight="0.285713836735" />
+</color>
+
+<color name="yellow" weight="0.0013623964522">
+ <shade name="weak" weight="0.428570755103" />
+ <shade name="intense" weight="0.285713836735" />
+ <shade name="dark" weight="0.285713836735" />
+</color>
+
+<color name="white" weight="0.0013623964522">
+ <shade name="weak" weight="0.499999083335" />
+ <shade name="dark" weight="0.333332722223" />
+ <shade name="warm" weight="0.166666361112" />
+</color>
+
+</colors>

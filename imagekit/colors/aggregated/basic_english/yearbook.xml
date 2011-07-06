@@ -1,0 +1,33 @@
+<colors query="yearbook">
+
+<color name="white" weight="0.355349148308">
+ <shade name="cool" weight="0.913977521066" />
+ <shade name="light" weight="0.0557795104768" />
+ <shade name="hard" weight="0.0302419032706" />
+</color>
+
+<color name="blue" weight="0.239474426033">
+ <shade name="cool" weight="0.913977521066" />
+ <shade name="light" weight="0.0557795104768" />
+ <shade name="hard" weight="0.0302419032706" />
+</color>
+
+<color name="green" weight="0.198918273237">
+ <shade name="cool" weight="0.913977521066" />
+ <shade name="light" weight="0.0557795104768" />
+ <shade name="hard" weight="0.0302419032706" />
+</color>
+
+<color name="red" weight="0.105639121807">
+ <shade name="cool" weight="0.913977521066" />
+ <shade name="light" weight="0.0557795104768" />
+ <shade name="hard" weight="0.0302419032706" />
+</color>
+
+<color name="black" weight="0.100617883841">
+ <shade name="cool" weight="0.913977521066" />
+ <shade name="light" weight="0.0557795104768" />
+ <shade name="hard" weight="0.0302419032706" />
+</color>
+
+</colors>

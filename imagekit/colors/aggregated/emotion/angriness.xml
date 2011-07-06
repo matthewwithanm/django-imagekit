@@ -1,0 +1,33 @@
+<colors query="angriness">
+
+<color name="green" weight="0.4999995">
+ <shade name="hard" weight="0.666665925927" />
+ <shade name="dark" weight="0.222221975309" />
+ <shade name="intense" weight="0.111110987654" />
+</color>
+
+<color name="black" weight="0.4999995">
+ <shade name="hard" weight="0.666665925927" />
+ <shade name="dark" weight="0.222221975309" />
+ <shade name="intense" weight="0.111110987654" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="hard" weight="0.666665925927" />
+ <shade name="dark" weight="0.222221975309" />
+ <shade name="intense" weight="0.111110987654" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="hard" weight="0.666665925927" />
+ <shade name="dark" weight="0.222221975309" />
+ <shade name="bright" weight="0.111110987654" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="hard" weight="0.666665925927" />
+ <shade name="dark" weight="0.222221975309" />
+ <shade name="intense" weight="0.111110987654" />
+</color>
+
+</colors>

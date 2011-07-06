@@ -1,0 +1,33 @@
+<colors query="irritation">
+
+<color name="red" weight="0.942934659698">
+ <shade name="intense" weight="0.95665295175" />
+ <shade name="light" weight="0.0322963070145" />
+ <shade name="fresh" weight="0.0110497123884" />
+</color>
+
+<color name="pink" weight="0.0228867635849">
+ <shade name="light" weight="0.606112165766" />
+ <shade name="fresh" weight="0.207372474625" />
+ <shade name="weak" weight="0.186496051005" />
+</color>
+
+<color name="white" weight="0.0140372149987">
+ <shade name="light" weight="0.606112165766" />
+ <shade name="fresh" weight="0.207372474625" />
+ <shade name="weak" weight="0.186496051005" />
+</color>
+
+<color name="black" weight="0.0128165876075">
+ <shade name="intense" weight="0.95665295175" />
+ <shade name="light" weight="0.0322963070145" />
+ <shade name="fresh" weight="0.0110497123884" />
+</color>
+
+<color name="blue" weight="0.00732376434717">
+ <shade name="intense" weight="0.95665295175" />
+ <shade name="light" weight="0.0322963070145" />
+ <shade name="fresh" weight="0.0110497123884" />
+</color>
+
+</colors>

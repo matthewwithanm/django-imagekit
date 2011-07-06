@@ -1,0 +1,33 @@
+<colors query="anxious">
+
+<color name="green" weight="0.546435232951">
+ <shade name="cool" weight="0.498810022995" />
+ <shade name="neutral" weight="0.278239679096" />
+ <shade name="hard" weight="0.222948460814" />
+</color>
+
+<color name="red" weight="0.186867357441">
+ <shade name="cool" weight="0.498810022995" />
+ <shade name="neutral" weight="0.278239679096" />
+ <shade name="hard" weight="0.222948460814" />
+</color>
+
+<color name="black" weight="0.137845595802">
+ <shade name="cool" weight="0.498810022995" />
+ <shade name="neutral" weight="0.278239679096" />
+ <shade name="hard" weight="0.222948460814" />
+</color>
+
+<color name="white" weight="0.0739823833913">
+ <shade name="cool" weight="0.498810022995" />
+ <shade name="neutral" weight="0.278239679096" />
+ <shade name="hard" weight="0.222948460814" />
+</color>
+
+<color name="blue" weight="0.0548683937613">
+ <shade name="cool" weight="0.498810022995" />
+ <shade name="neutral" weight="0.278239679096" />
+ <shade name="hard" weight="0.222948460814" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="brainy">
+
+<color name="black" weight="0.519230180104">
+ <shade name="cool" weight="0.698549883341" />
+ <shade name="bright" weight="0.246376514871" />
+ <shade name="intense" weight="0.0550723974418" />
+</color>
+
+<color name="green" weight="0.183760475263">
+ <shade name="cool" weight="0.698549883341" />
+ <shade name="bright" weight="0.246376514871" />
+ <shade name="intense" weight="0.0550723974418" />
+</color>
+
+<color name="blue" weight="0.166666477564">
+ <shade name="cool" weight="0.698549883341" />
+ <shade name="bright" weight="0.246376514871" />
+ <shade name="intense" weight="0.0550723974418" />
+</color>
+
+<color name="yellow" weight="0.0662392410833">
+ <shade name="cool" weight="0.698549883341" />
+ <shade name="bright" weight="0.246376514871" />
+ <shade name="intense" weight="0.0550723974418" />
+</color>
+
+<color name="purple" weight="0.0641024913709">
+ <shade name="cool" weight="0.698549883341" />
+ <shade name="bright" weight="0.246376514871" />
+ <shade name="hard" weight="0.0550723974418" />
+</color>
+
+</colors>

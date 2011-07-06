@@ -1,0 +1,33 @@
+<colors query="duster">
+
+<color name="red" weight="0.768565633467">
+ <shade name="soft" weight="0.710465192623" />
+ <shade name="dark" weight="0.199770589109" />
+ <shade name="light" weight="0.0897630754121" />
+</color>
+
+<color name="green" weight="0.0785836771298">
+ <shade name="soft" weight="0.710465192623" />
+ <shade name="dark" weight="0.199770589109" />
+ <shade name="light" weight="0.0897630754121" />
+</color>
+
+<color name="white" weight="0.0746976711178">
+ <shade name="soft" weight="0.710465192623" />
+ <shade name="dark" weight="0.199770589109" />
+ <shade name="light" weight="0.0897630754121" />
+</color>
+
+<color name="purple" weight="0.0391623050311">
+ <shade name="soft" weight="0.710465192623" />
+ <shade name="dark" weight="0.199770589109" />
+ <shade name="light" weight="0.0897630754121" />
+</color>
+
+<color name="yellow" weight="0.0389895936528">
+ <shade name="soft" weight="0.710465192623" />
+ <shade name="dark" weight="0.199770589109" />
+ <shade name="light" weight="0.0897630754121" />
+</color>
+
+</colors>

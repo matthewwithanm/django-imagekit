@@ -1,0 +1,33 @@
+<colors query="merriment">
+
+<color name="pink" weight="0.701491811392">
+ <shade name="bright" weight="0.422264251164" />
+ <shade name="light" weight="0.370440911249" />
+ <shade name="dark" weight="0.207293359662" />
+</color>
+
+<color name="green" weight="0.129353099973">
+ <shade name="bright" weight="0.422264251164" />
+ <shade name="light" weight="0.370440911249" />
+ <shade name="dark" weight="0.207293359662" />
+</color>
+
+<color name="blue" weight="0.0970148249797">
+ <shade name="bright" weight="0.422264251164" />
+ <shade name="light" weight="0.370440911249" />
+ <shade name="dark" weight="0.207293359662" />
+</color>
+
+<color name="black" weight="0.0497511922973">
+ <shade name="bright" weight="0.422264251164" />
+ <shade name="light" weight="0.370440911249" />
+ <shade name="dark" weight="0.207293359662" />
+</color>
+
+<color name="white" weight="0.0223880365338">
+ <shade name="bright" weight="0.422264251164" />
+ <shade name="light" weight="0.370440911249" />
+ <shade name="dark" weight="0.207293359662" />
+</color>
+
+</colors>

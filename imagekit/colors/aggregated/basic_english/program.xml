@@ -1,0 +1,33 @@
+<colors query="program">
+
+<color name="green" weight="0.552722810577">
+ <shade name="cool" weight="0.561643035326" />
+ <shade name="light" weight="0.251506490941" />
+ <shade name="intense" weight="0.186849048825" />
+</color>
+
+<color name="white" weight="0.193452983702">
+ <shade name="cool" weight="0.584377696892" />
+ <shade name="light" weight="0.261687183291" />
+ <shade name="soft" weight="0.15393363723" />
+</color>
+
+<color name="blue" weight="0.114569242775">
+ <shade name="cool" weight="0.561643035326" />
+ <shade name="light" weight="0.251506490941" />
+ <shade name="intense" weight="0.186849048825" />
+</color>
+
+<color name="red" weight="0.0834450456744">
+ <shade name="cool" weight="0.561643035326" />
+ <shade name="light" weight="0.251506490941" />
+ <shade name="intense" weight="0.186849048825" />
+</color>
+
+<color name="black" weight="0.0558089051456">
+ <shade name="cool" weight="0.561643035326" />
+ <shade name="light" weight="0.251506490941" />
+ <shade name="intense" weight="0.186849048825" />
+</color>
+
+</colors>

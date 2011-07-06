@@ -1,0 +1,33 @@
+<colors query="affront">
+
+<color name="black" weight="0.747898402338">
+ <shade name="fresh" weight="0.904108573467" />
+ <shade name="intense" weight="0.0616437663728" />
+ <shade name="cool" weight="0.0342465368738" />
+</color>
+
+<color name="blue" weight="0.189075438793">
+ <shade name="fresh" weight="0.904108573467" />
+ <shade name="intense" weight="0.0616437663728" />
+ <shade name="cool" weight="0.0342465368738" />
+</color>
+
+<color name="green" weight="0.0315125731322">
+ <shade name="fresh" weight="0.904108573467" />
+ <shade name="intense" weight="0.0616437663728" />
+ <shade name="cool" weight="0.0342465368738" />
+</color>
+
+<color name="red" weight="0.0210083820882">
+ <shade name="fresh" weight="0.904108573467" />
+ <shade name="intense" weight="0.0616437663728" />
+ <shade name="cool" weight="0.0342465368738" />
+</color>
+
+<color name="white" weight="0.0105041910441">
+ <shade name="fresh" weight="0.936169123888" />
+ <shade name="cool" weight="0.0354609516624" />
+ <shade name="light" weight="0.02836876133" />
+</color>
+
+</colors>

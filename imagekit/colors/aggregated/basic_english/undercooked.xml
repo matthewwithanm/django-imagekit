@@ -1,0 +1,33 @@
+<colors query="undercooked">
+
+<color name="pink" weight="0.787877984084">
+ <shade name="warm" weight="0.448779962404" />
+ <shade name="hard" weight="0.385365402499" />
+ <shade name="soft" weight="0.165853464367" />
+</color>
+
+<color name="red" weight="0.0909089981635">
+ <shade name="warm" weight="0.448779962404" />
+ <shade name="hard" weight="0.385365402499" />
+ <shade name="soft" weight="0.165853464367" />
+</color>
+
+<color name="white" weight="0.0707069985716">
+ <shade name="warm" weight="0.448779962404" />
+ <shade name="hard" weight="0.385365402499" />
+ <shade name="soft" weight="0.165853464367" />
+</color>
+
+<color name="green" weight="0.0404039991838">
+ <shade name="hard" weight="0.560282734271" />
+ <shade name="soft" weight="0.241134341332" />
+ <shade name="fresh" weight="0.198581222273" />
+</color>
+
+<color name="yellow" weight="0.0101009997959">
+ <shade name="warm" weight="0.448779962404" />
+ <shade name="hard" weight="0.385365402499" />
+ <shade name="soft" weight="0.165853464367" />
+</color>
+
+</colors>

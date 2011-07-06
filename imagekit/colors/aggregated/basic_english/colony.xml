@@ -1,0 +1,33 @@
+<colors query="colony">
+
+<color name="red" weight="0.443084332687">
+ <shade name="dark" weight="0.958598362131" />
+ <shade name="neutral" weight="0.0260204802637" />
+ <shade name="light" weight="0.0153801351745" />
+</color>
+
+<color name="white" weight="0.319370346019">
+ <shade name="dark" weight="0.958598362131" />
+ <shade name="neutral" weight="0.0260204802637" />
+ <shade name="light" weight="0.0153801351745" />
+</color>
+
+<color name="blue" weight="0.153297766089">
+ <shade name="dark" weight="0.958598362131" />
+ <shade name="neutral" weight="0.0260204802637" />
+ <shade name="light" weight="0.0153801351745" />
+</color>
+
+<color name="black" weight="0.0766488830444">
+ <shade name="dark" weight="0.958598362131" />
+ <shade name="neutral" weight="0.0260204802637" />
+ <shade name="light" weight="0.0153801351745" />
+</color>
+
+<color name="orange" weight="0.00759765244212">
+ <shade name="dark" weight="0.958598362131" />
+ <shade name="neutral" weight="0.0260204802637" />
+ <shade name="light" weight="0.0153801351745" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="optionless">
+
+<color name="blue" weight="0.999999000001">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="dark" weight="0.4999995" />
+ <shade name="soft" weight="0.0" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="dark" weight="0.4999995" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="dark" weight="0.4999995" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="dark" weight="0.4999995" />
+ <shade name="warm" weight="0.0" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="weak" weight="0.4999995" />
+ <shade name="dark" weight="0.4999995" />
+ <shade name="soft" weight="0.0" />
+</color>
+
+</colors>

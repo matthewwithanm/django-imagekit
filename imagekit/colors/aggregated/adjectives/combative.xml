@@ -1,0 +1,33 @@
+<colors query="combative">
+
+<color name="red" weight="0.36842066482">
+ <shade name="hard" weight="0.556850685293" />
+ <shade name="intense" weight="0.346938385078" />
+ <shade name="soft" weight="0.0962098042654" />
+</color>
+
+<color name="black" weight="0.360901875742">
+ <shade name="hard" weight="0.556850685293" />
+ <shade name="intense" weight="0.346938385078" />
+ <shade name="soft" weight="0.0962098042654" />
+</color>
+
+<color name="white" weight="0.187969726949">
+ <shade name="hard" weight="0.786006981898" />
+ <shade name="soft" weight="0.135802253417" />
+ <shade name="dark" weight="0.0781891762098" />
+</color>
+
+<color name="blue" weight="0.0526315235458">
+ <shade name="hard" weight="0.556850685293" />
+ <shade name="intense" weight="0.346938385078" />
+ <shade name="soft" weight="0.0962098042654" />
+</color>
+
+<color name="yellow" weight="0.0300751563119">
+ <shade name="hard" weight="0.556850685293" />
+ <shade name="intense" weight="0.346938385078" />
+ <shade name="soft" weight="0.0962098042654" />
+</color>
+
+</colors>

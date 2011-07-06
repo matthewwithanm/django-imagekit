@@ -1,0 +1,33 @@
+<colors query="chance">
+
+<color name="black" weight="0.384421707908">
+ <shade name="light" weight="0.930275770374" />
+ <shade name="fresh" weight="0.0650243778272" />
+ <shade name="dark" weight="0.00469884190138" />
+</color>
+
+<color name="white" weight="0.220267775991">
+ <shade name="light" weight="0.930275770374" />
+ <shade name="fresh" weight="0.0650243778272" />
+ <shade name="dark" weight="0.00469884190138" />
+</color>
+
+<color name="green" weight="0.173785412616">
+ <shade name="light" weight="0.930275770374" />
+ <shade name="fresh" weight="0.0650243778272" />
+ <shade name="dark" weight="0.00469884190138" />
+</color>
+
+<color name="blue" weight="0.128559329333">
+ <shade name="light" weight="0.930275770374" />
+ <shade name="fresh" weight="0.0650243778272" />
+ <shade name="dark" weight="0.00469884190138" />
+</color>
+
+<color name="red" weight="0.092964726749">
+ <shade name="light" weight="0.930275770374" />
+ <shade name="fresh" weight="0.0650243778272" />
+ <shade name="dark" weight="0.00469884190138" />
+</color>
+
+</colors>

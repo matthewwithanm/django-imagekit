@@ -1,0 +1,33 @@
+<colors query="army">
+
+<color name="red" weight="0.662738639064">
+ <shade name="dark" weight="0.615567921791" />
+ <shade name="cool" weight="0.22754456253" />
+ <shade name="weak" weight="0.156885987849" />
+</color>
+
+<color name="blue" weight="0.103583594698">
+ <shade name="dark" weight="0.615567921791" />
+ <shade name="cool" weight="0.22754456253" />
+ <shade name="weak" weight="0.156885987849" />
+</color>
+
+<color name="white" weight="0.092783409469">
+ <shade name="dark" weight="0.615567921791" />
+ <shade name="cool" weight="0.22754456253" />
+ <shade name="weak" weight="0.156885987849" />
+</color>
+
+<color name="green" weight="0.0711830390106">
+ <shade name="dark" weight="0.615567921791" />
+ <shade name="cool" weight="0.22754456253" />
+ <shade name="weak" weight="0.156885987849" />
+</color>
+
+<color name="black" weight="0.0697102864793">
+ <shade name="dark" weight="0.615567921791" />
+ <shade name="cool" weight="0.22754456253" />
+ <shade name="weak" weight="0.156885987849" />
+</color>
+
+</colors>

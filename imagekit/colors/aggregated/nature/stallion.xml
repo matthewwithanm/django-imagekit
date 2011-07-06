@@ -1,0 +1,33 @@
+<colors query="stallion">
+
+<color name="black" weight="0.775979643549">
+ <shade name="dark" weight="0.669977125483" />
+ <shade name="hard" weight="0.209712774039" />
+ <shade name="light" weight="0.120308907212" />
+</color>
+
+<color name="white" weight="0.190551214244">
+ <shade name="dark" weight="0.669977125483" />
+ <shade name="hard" weight="0.209712774039" />
+ <shade name="light" weight="0.120308907212" />
+</color>
+
+<color name="red" weight="0.0219248686269">
+ <shade name="dark" weight="0.669977125483" />
+ <shade name="hard" weight="0.209712774039" />
+ <shade name="light" weight="0.120308907212" />
+</color>
+
+<color name="blue" weight="0.0105721486939">
+ <shade name="dark" weight="0.669977125483" />
+ <shade name="hard" weight="0.209712774039" />
+ <shade name="light" weight="0.120308907212" />
+</color>
+
+<color name="pink" weight="0.000971122453317">
+ <shade name="dark" weight="0.669977125483" />
+ <shade name="hard" weight="0.209712774039" />
+ <shade name="light" weight="0.120308907212" />
+</color>
+
+</colors>

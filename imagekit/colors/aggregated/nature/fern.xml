@@ -1,0 +1,33 @@
+<colors query="fern">
+
+<color name="red" weight="0.878661577243">
+ <shade name="hard" weight="0.694443570137" />
+ <shade name="soft" weight="0.191570640038" />
+ <shade name="light" weight="0.113984530823" />
+</color>
+
+<color name="green" weight="0.0670082100029">
+ <shade name="hard" weight="0.694443570137" />
+ <shade name="soft" weight="0.191570640038" />
+ <shade name="light" weight="0.113984530823" />
+</color>
+
+<color name="blue" weight="0.0202010044862">
+ <shade name="hard" weight="0.694443570137" />
+ <shade name="soft" weight="0.191570640038" />
+ <shade name="light" weight="0.113984530823" />
+</color>
+
+<color name="black" weight="0.0182301747802">
+ <shade name="hard" weight="0.694443570137" />
+ <shade name="soft" weight="0.191570640038" />
+ <shade name="light" weight="0.113984530823" />
+</color>
+
+<color name="white" weight="0.0158980262948">
+ <shade name="hard" weight="0.694443570137" />
+ <shade name="soft" weight="0.191570640038" />
+ <shade name="light" weight="0.113984530823" />
+</color>
+
+</colors>

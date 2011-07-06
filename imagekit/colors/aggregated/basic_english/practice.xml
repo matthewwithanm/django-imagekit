@@ -1,0 +1,33 @@
+<colors query="practice">
+
+<color name="green" weight="0.33050157808">
+ <shade name="hard" weight="0.437837259459" />
+ <shade name="intense" weight="0.381981477388" />
+ <shade name="light" weight="0.180179942164" />
+</color>
+
+<color name="white" weight="0.254825983099">
+ <shade name="hard" weight="0.563804145353" />
+ <shade name="light" weight="0.232018166812" />
+ <shade name="soft" weight="0.204175986794" />
+</color>
+
+<color name="black" weight="0.168339588835">
+ <shade name="hard" weight="0.437837259459" />
+ <shade name="intense" weight="0.381981477388" />
+ <shade name="light" weight="0.180179942164" />
+</color>
+
+<color name="blue" weight="0.126640791601">
+ <shade name="hard" weight="0.437837259459" />
+ <shade name="intense" weight="0.381981477388" />
+ <shade name="light" weight="0.180179942164" />
+</color>
+
+<color name="red" weight="0.119690992062">
+ <shade name="hard" weight="0.437837259459" />
+ <shade name="intense" weight="0.381981477388" />
+ <shade name="light" weight="0.180179942164" />
+</color>
+
+</colors>

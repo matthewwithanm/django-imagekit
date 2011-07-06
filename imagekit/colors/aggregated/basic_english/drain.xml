@@ -1,0 +1,33 @@
+<colors query="drain">
+
+<color name="pink" weight="0.830595468363">
+ <shade name="soft" weight="0.636140529009" />
+ <shade name="cool" weight="0.312244801785" />
+ <shade name="hard" weight="0.051613599698" />
+</color>
+
+<color name="red" weight="0.0925598218013">
+ <shade name="soft" weight="0.636140529009" />
+ <shade name="cool" weight="0.312244801785" />
+ <shade name="hard" weight="0.051613599698" />
+</color>
+
+<color name="blue" weight="0.0339295534462">
+ <shade name="soft" weight="0.636140529009" />
+ <shade name="cool" weight="0.312244801785" />
+ <shade name="hard" weight="0.051613599698" />
+</color>
+
+<color name="green" weight="0.0227192289876">
+ <shade name="soft" weight="0.636140529009" />
+ <shade name="cool" weight="0.312244801785" />
+ <shade name="hard" weight="0.051613599698" />
+</color>
+
+<color name="black" weight="0.0201948702112">
+ <shade name="soft" weight="0.636140529009" />
+ <shade name="cool" weight="0.312244801785" />
+ <shade name="hard" weight="0.051613599698" />
+</color>
+
+</colors>

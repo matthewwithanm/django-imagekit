@@ -1,0 +1,33 @@
+<colors query="flurry">
+
+<color name="white" weight="0.36682574072">
+ <shade name="light" weight="0.724114939246" />
+ <shade name="fresh" weight="0.19055656296" />
+ <shade name="soft" weight="0.085326994303" />
+</color>
+
+<color name="black" weight="0.271132069228">
+ <shade name="light" weight="0.591694774805" />
+ <shade name="intense" weight="0.252594845385" />
+ <shade name="fresh" weight="0.155709151265" />
+</color>
+
+<color name="pink" weight="0.201222525888">
+ <shade name="light" weight="0.724114939246" />
+ <shade name="fresh" weight="0.19055656296" />
+ <shade name="soft" weight="0.085326994303" />
+</color>
+
+<color name="blue" weight="0.0887824618844">
+ <shade name="light" weight="0.591694774805" />
+ <shade name="intense" weight="0.252594845385" />
+ <shade name="fresh" weight="0.155709151265" />
+</color>
+
+<color name="red" weight="0.0720360693733">
+ <shade name="light" weight="0.591694774805" />
+ <shade name="intense" weight="0.252594845385" />
+ <shade name="fresh" weight="0.155709151265" />
+</color>
+
+</colors>

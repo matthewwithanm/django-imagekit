@@ -1,0 +1,33 @@
+<colors query="investment">
+
+<color name="green" weight="0.774837365982">
+ <shade name="fresh" weight="0.497262827956" />
+ <shade name="weak" weight="0.318998795292" />
+ <shade name="intense" weight="0.18373705121" />
+</color>
+
+<color name="black" weight="0.0922668179229">
+ <shade name="fresh" weight="0.497262827956" />
+ <shade name="weak" weight="0.318998795292" />
+ <shade name="intense" weight="0.18373705121" />
+</color>
+
+<color name="orange" weight="0.0779934980232">
+ <shade name="fresh" weight="0.497262827956" />
+ <shade name="weak" weight="0.318998795292" />
+ <shade name="intense" weight="0.18373705121" />
+</color>
+
+<color name="white" weight="0.0466431703864">
+ <shade name="fresh" weight="0.509614692319" />
+ <shade name="weak" weight="0.326922632809" />
+ <shade name="neutral" weight="0.163461316404" />
+</color>
+
+<color name="pink" weight="0.00825813508481">
+ <shade name="fresh" weight="0.509614692319" />
+ <shade name="weak" weight="0.326922632809" />
+ <shade name="neutral" weight="0.163461316404" />
+</color>
+
+</colors>

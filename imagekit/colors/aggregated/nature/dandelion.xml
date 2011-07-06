@@ -1,0 +1,33 @@
+<colors query="dandelion">
+
+<color name="pink" weight="0.395801662512">
+ <shade name="dark" weight="0.379295631972" />
+ <shade name="soft" weight="0.330195873788" />
+ <shade name="fresh" weight="0.290506902589" />
+</color>
+
+<color name="yellow" weight="0.305846739214">
+ <shade name="dark" weight="0.379295631972" />
+ <shade name="soft" weight="0.330195873788" />
+ <shade name="fresh" weight="0.290506902589" />
+</color>
+
+<color name="red" weight="0.132533586993">
+ <shade name="dark" weight="0.379295631972" />
+ <shade name="soft" weight="0.330195873788" />
+ <shade name="fresh" weight="0.290506902589" />
+</color>
+
+<color name="green" weight="0.0974511669065">
+ <shade name="dark" weight="0.379295631972" />
+ <shade name="soft" weight="0.330195873788" />
+ <shade name="fresh" weight="0.290506902589" />
+</color>
+
+<color name="black" weight="0.0683657417067">
+ <shade name="dark" weight="0.379295631972" />
+ <shade name="soft" weight="0.330195873788" />
+ <shade name="fresh" weight="0.290506902589" />
+</color>
+
+</colors>

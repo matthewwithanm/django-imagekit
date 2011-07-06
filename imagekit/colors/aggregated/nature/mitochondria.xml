@@ -1,0 +1,33 @@
+<colors query="mitochondria">
+
+<color name="green" weight="0.383170121244">
+ <shade name="light" weight="0.364925838503" />
+ <shade name="dark" weight="0.339954241467" />
+ <shade name="fresh" weight="0.295118874061" />
+</color>
+
+<color name="red" weight="0.347107051009">
+ <shade name="light" weight="0.364925838503" />
+ <shade name="dark" weight="0.339954241467" />
+ <shade name="fresh" weight="0.295118874061" />
+</color>
+
+<color name="yellow" weight="0.120210234116">
+ <shade name="light" weight="0.364925838503" />
+ <shade name="dark" weight="0.339954241467" />
+ <shade name="fresh" weight="0.295118874061" />
+</color>
+
+<color name="blue" weight="0.101427385035">
+ <shade name="light" weight="0.364925838503" />
+ <shade name="dark" weight="0.339954241467" />
+ <shade name="fresh" weight="0.295118874061" />
+</color>
+
+<color name="white" weight="0.0480840936463">
+ <shade name="light" weight="0.364925838503" />
+ <shade name="dark" weight="0.339954241467" />
+ <shade name="fresh" weight="0.295118874061" />
+</color>
+
+</colors>

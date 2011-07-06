@@ -1,0 +1,33 @@
+<colors query="leopard">
+
+<color name="black" weight="0.36235366949">
+ <shade name="dark" weight="0.661434174107" />
+ <shade name="cool" weight="0.221412287095" />
+ <shade name="light" weight="0.117152324058" />
+</color>
+
+<color name="pink" weight="0.286964651006">
+ <shade name="dark" weight="0.661434174107" />
+ <shade name="cool" weight="0.221412287095" />
+ <shade name="light" weight="0.117152324058" />
+</color>
+
+<color name="red" weight="0.162207984933">
+ <shade name="dark" weight="0.661434174107" />
+ <shade name="cool" weight="0.221412287095" />
+ <shade name="light" weight="0.117152324058" />
+</color>
+
+<color name="white" weight="0.102869531674">
+ <shade name="dark" weight="0.661434174107" />
+ <shade name="cool" weight="0.221412287095" />
+ <shade name="light" weight="0.117152324058" />
+</color>
+
+<color name="blue" weight="0.0856030145373">
+ <shade name="dark" weight="0.661434174107" />
+ <shade name="cool" weight="0.221412287095" />
+ <shade name="light" weight="0.117152324058" />
+</color>
+
+</colors>

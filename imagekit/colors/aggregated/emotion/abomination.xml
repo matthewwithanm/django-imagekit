@@ -1,0 +1,33 @@
+<colors query="abomination">
+
+<color name="black" weight="0.463612808933">
+ <shade name="dark" weight="0.775655330485" />
+ <shade name="light" weight="0.112171693947" />
+ <shade name="fresh" weight="0.112171693947" />
+</color>
+
+<color name="green" weight="0.253722646343">
+ <shade name="dark" weight="0.775655330485" />
+ <shade name="light" weight="0.112171693947" />
+ <shade name="fresh" weight="0.112171693947" />
+</color>
+
+<color name="orange" weight="0.114919781123">
+ <shade name="dark" weight="0.775655330485" />
+ <shade name="light" weight="0.112171693947" />
+ <shade name="fresh" weight="0.112171693947" />
+</color>
+
+<color name="blue" weight="0.096937223686">
+ <shade name="dark" weight="0.775655330485" />
+ <shade name="light" weight="0.112171693947" />
+ <shade name="fresh" weight="0.112171693947" />
+</color>
+
+<color name="pink" weight="0.0708063199098">
+ <shade name="dark" weight="0.775655330485" />
+ <shade name="light" weight="0.112171693947" />
+ <shade name="fresh" weight="0.112171693947" />
+</color>
+
+</colors>

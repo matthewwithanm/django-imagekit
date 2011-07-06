@@ -1,0 +1,33 @@
+<colors query="chubby">
+
+<color name="black" weight="0.79245075702">
+ <shade name="hard" weight="0.643004020172" />
+ <shade name="cool" weight="0.201929451136" />
+ <shade name="fresh" weight="0.155065278176" />
+</color>
+
+<color name="white" weight="0.157818582966">
+ <shade name="hard" weight="0.643004020172" />
+ <shade name="cool" weight="0.201929451136" />
+ <shade name="fresh" weight="0.155065278176" />
+</color>
+
+<color name="red" weight="0.0277581621103">
+ <shade name="hard" weight="0.643004020172" />
+ <shade name="cool" weight="0.201929451136" />
+ <shade name="fresh" weight="0.155065278176" />
+</color>
+
+<color name="blue" weight="0.0152222179315">
+ <shade name="hard" weight="0.643004020172" />
+ <shade name="cool" weight="0.201929451136" />
+ <shade name="fresh" weight="0.155065278176" />
+</color>
+
+<color name="purple" weight="0.00674926280343">
+ <shade name="hard" weight="0.643004020172" />
+ <shade name="cool" weight="0.201929451136" />
+ <shade name="fresh" weight="0.155065278176" />
+</color>
+
+</colors>

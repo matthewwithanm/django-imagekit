@@ -1,0 +1,33 @@
+<colors query="zoo">
+
+<color name="blue" weight="0.642578782366">
+ <shade name="dark" weight="0.535713712225" />
+ <shade name="hard" weight="0.426828811366" />
+ <shade name="light" weight="0.0374564058954" />
+</color>
+
+<color name="yellow" weight="0.105953085111">
+ <shade name="dark" weight="0.535713712225" />
+ <shade name="hard" weight="0.426828811366" />
+ <shade name="light" weight="0.0374564058954" />
+</color>
+
+<color name="white" weight="0.09604380377">
+ <shade name="dark" weight="0.535713712225" />
+ <shade name="hard" weight="0.426828811366" />
+ <shade name="light" weight="0.0374564058954" />
+</color>
+
+<color name="green" weight="0.0807987555525">
+ <shade name="dark" weight="0.535713712225" />
+ <shade name="hard" weight="0.426828811366" />
+ <shade name="light" weight="0.0374564058954" />
+</color>
+
+<color name="black" weight="0.0746245110245">
+ <shade name="dark" weight="0.535713712225" />
+ <shade name="hard" weight="0.426828811366" />
+ <shade name="light" weight="0.0374564058954" />
+</color>
+
+</colors>

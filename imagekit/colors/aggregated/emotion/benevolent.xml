@@ -1,0 +1,33 @@
+<colors query="benevolent">
+
+<color name="orange" weight="0.600666053186">
+ <shade name="bright" weight="0.615214205629" />
+ <shade name="warm" weight="0.267915863742" />
+ <shade name="neutral" weight="0.116868648381" />
+</color>
+
+<color name="black" weight="0.185999810032">
+ <shade name="bright" weight="0.615214205629" />
+ <shade name="warm" weight="0.267915863742" />
+ <shade name="neutral" weight="0.116868648381" />
+</color>
+
+<color name="white" weight="0.100666563853">
+ <shade name="bright" weight="0.615214205629" />
+ <shade name="warm" weight="0.267915863742" />
+ <shade name="neutral" weight="0.116868648381" />
+</color>
+
+<color name="green" weight="0.093333238009">
+ <shade name="bright" weight="0.729410655811" />
+ <shade name="neutral" weight="0.138561880853" />
+ <shade name="soft" weight="0.132025943077" />
+</color>
+
+<color name="red" weight="0.0193333135876">
+ <shade name="bright" weight="0.615214205629" />
+ <shade name="warm" weight="0.267915863742" />
+ <shade name="neutral" weight="0.116868648381" />
+</color>
+
+</colors>

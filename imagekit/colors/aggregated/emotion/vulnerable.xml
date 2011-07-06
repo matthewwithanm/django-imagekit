@@ -1,0 +1,33 @@
+<colors query="vulnerable">
+
+<color name="red" weight="0.321108034618">
+ <shade name="weak" weight="0.629071476321" />
+ <shade name="soft" weight="0.365086124651" />
+ <shade name="warm" weight="0.00584137799441" />
+</color>
+
+<color name="blue" weight="0.219233658153">
+ <shade name="weak" weight="0.629159821522" />
+ <shade name="soft" weight="0.365137396419" />
+ <shade name="light" weight="0.00570176088254" />
+</color>
+
+<color name="black" weight="0.208638723001">
+ <shade name="weak" weight="0.629071476321" />
+ <shade name="soft" weight="0.365086124651" />
+ <shade name="warm" weight="0.00584137799441" />
+</color>
+
+<color name="white" weight="0.145884107098">
+ <shade name="weak" weight="0.629071476321" />
+ <shade name="soft" weight="0.365086124651" />
+ <shade name="warm" weight="0.00584137799441" />
+</color>
+
+<color name="green" weight="0.105134356512">
+ <shade name="weak" weight="0.629159821522" />
+ <shade name="soft" weight="0.365137396419" />
+ <shade name="light" weight="0.00570176088254" />
+</color>
+
+</colors>

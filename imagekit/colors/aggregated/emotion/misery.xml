@@ -1,0 +1,33 @@
+<colors query="misery">
+
+<color name="black" weight="0.744046779378">
+ <shade name="intense" weight="0.385515934191" />
+ <shade name="dark" weight="0.32907299355" />
+ <shade name="fresh" weight="0.285409586639" />
+</color>
+
+<color name="white" weight="0.0730518656117">
+ <shade name="dark" weight="0.439543935756" />
+ <shade name="fresh" weight="0.381222572112" />
+ <shade name="hard" weight="0.179231507784" />
+</color>
+
+<color name="red" weight="0.0710226471224">
+ <shade name="intense" weight="0.385515934191" />
+ <shade name="dark" weight="0.32907299355" />
+ <shade name="fresh" weight="0.285409586639" />
+</color>
+
+<color name="purple" weight="0.0564799146164">
+ <shade name="dark" weight="0.439543935756" />
+ <shade name="fresh" weight="0.381222572112" />
+ <shade name="hard" weight="0.179231507784" />
+</color>
+
+<color name="pink" weight="0.0553976647555">
+ <shade name="dark" weight="0.439543935756" />
+ <shade name="fresh" weight="0.381222572112" />
+ <shade name="hard" weight="0.179231507784" />
+</color>
+
+</colors>

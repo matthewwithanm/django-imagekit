@@ -1,0 +1,33 @@
+<colors query="coconut">
+
+<color name="green" weight="0.306465936741">
+ <shade name="fresh" weight="0.810912354043" />
+ <shade name="light" weight="0.147404161553" />
+ <shade name="cool" weight="0.0416824107219" />
+</color>
+
+<color name="red" weight="0.276411327789">
+ <shade name="fresh" weight="0.800897354303" />
+ <shade name="light" weight="0.145583677955" />
+ <shade name="warm" weight="0.0535179073202" />
+</color>
+
+<color name="pink" weight="0.15163916335">
+ <shade name="fresh" weight="0.800897354303" />
+ <shade name="light" weight="0.145583677955" />
+ <shade name="warm" weight="0.0535179073202" />
+</color>
+
+<color name="blue" weight="0.144353197544">
+ <shade name="fresh" weight="0.810912354043" />
+ <shade name="light" weight="0.147404161553" />
+ <shade name="cool" weight="0.0416824107219" />
+</color>
+
+<color name="orange" weight="0.121129181535">
+ <shade name="fresh" weight="0.800897354303" />
+ <shade name="light" weight="0.145583677955" />
+ <shade name="warm" weight="0.0535179073202" />
+</color>
+
+</colors>

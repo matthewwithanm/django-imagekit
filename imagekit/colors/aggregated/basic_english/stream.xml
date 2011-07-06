@@ -1,0 +1,33 @@
+<colors query="stream">
+
+<color name="blue" weight="0.367217506028">
+ <shade name="cool" weight="0.510777074291" />
+ <shade name="light" weight="0.319587123547" />
+ <shade name="weak" weight="0.169634221003" />
+</color>
+
+<color name="red" weight="0.282100865558">
+ <shade name="cool" weight="0.510777074291" />
+ <shade name="light" weight="0.319587123547" />
+ <shade name="weak" weight="0.169634221003" />
+</color>
+
+<color name="white" weight="0.159046522478">
+ <shade name="cool" weight="0.510777074291" />
+ <shade name="light" weight="0.319587123547" />
+ <shade name="weak" weight="0.169634221003" />
+</color>
+
+<color name="black" weight="0.130593245521">
+ <shade name="cool" weight="0.510777074291" />
+ <shade name="light" weight="0.319587123547" />
+ <shade name="weak" weight="0.169634221003" />
+</color>
+
+<color name="green" weight="0.0610407907371">
+ <shade name="cool" weight="0.510777074291" />
+ <shade name="light" weight="0.319587123547" />
+ <shade name="weak" weight="0.169634221003" />
+</color>
+
+</colors>

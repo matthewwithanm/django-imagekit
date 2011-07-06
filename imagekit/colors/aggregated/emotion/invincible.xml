@@ -1,0 +1,33 @@
+<colors query="invincible">
+
+<color name="red" weight="0.66095063541">
+ <shade name="weak" weight="0.834511045297" />
+ <shade name="cool" weight="0.0990097850352" />
+ <shade name="light" weight="0.0664779985236" />
+</color>
+
+<color name="blue" weight="0.126382611039">
+ <shade name="weak" weight="0.834511045297" />
+ <shade name="cool" weight="0.0990097850352" />
+ <shade name="light" weight="0.0664779985236" />
+</color>
+
+<color name="orange" weight="0.100110514652">
+ <shade name="weak" weight="0.834511045297" />
+ <shade name="cool" weight="0.0990097850352" />
+ <shade name="light" weight="0.0664779985236" />
+</color>
+
+<color name="black" weight="0.0566924185184">
+ <shade name="weak" weight="0.834511045297" />
+ <shade name="cool" weight="0.0990097850352" />
+ <shade name="light" weight="0.0664779985236" />
+</color>
+
+<color name="white" weight="0.0558627733693">
+ <shade name="weak" weight="0.834511045297" />
+ <shade name="cool" weight="0.0990097850352" />
+ <shade name="light" weight="0.0664779985236" />
+</color>
+
+</colors>

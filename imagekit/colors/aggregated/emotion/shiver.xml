@@ -1,0 +1,33 @@
+<colors query="shiver">
+
+<color name="green" weight="0.342624469815">
+ <shade name="light" weight="0.462202033068" />
+ <shade name="cool" weight="0.276457290807" />
+ <shade name="dark" weight="0.261338532716" />
+</color>
+
+<color name="black" weight="0.272357417531">
+ <shade name="warm" weight="0.487255646848" />
+ <shade name="light" weight="0.320839102847" />
+ <shade name="cool" weight="0.191903762451" />
+</color>
+
+<color name="white" weight="0.182345904274">
+ <shade name="warm" weight="0.487255646848" />
+ <shade name="light" weight="0.320839102847" />
+ <shade name="cool" weight="0.191903762451" />
+</color>
+
+<color name="yellow" weight="0.104239139545">
+ <shade name="warm" weight="0.487255646848" />
+ <shade name="light" weight="0.320839102847" />
+ <shade name="cool" weight="0.191903762451" />
+</color>
+
+<color name="blue" weight="0.0984319451418">
+ <shade name="light" weight="0.462202033068" />
+ <shade name="cool" weight="0.276457290807" />
+ <shade name="dark" weight="0.261338532716" />
+</color>
+
+</colors>

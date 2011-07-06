@@ -1,0 +1,33 @@
+<colors query="lip">
+
+<color name="red" weight="0.310257659335">
+ <shade name="dark" weight="0.452028815873" />
+ <shade name="intense" weight="0.308117601023" />
+ <shade name="neutral" weight="0.239852024749" />
+</color>
+
+<color name="black" weight="0.265260858843">
+ <shade name="dark" weight="0.452028815873" />
+ <shade name="intense" weight="0.308117601023" />
+ <shade name="neutral" weight="0.239852024749" />
+</color>
+
+<color name="pink" weight="0.21900540659">
+ <shade name="dark" weight="0.49295690872" />
+ <shade name="neutral" weight="0.261568971974" />
+ <shade name="light" weight="0.245472419852" />
+</color>
+
+<color name="green" weight="0.11894259151">
+ <shade name="dark" weight="0.452028815873" />
+ <shade name="intense" weight="0.308117601023" />
+ <shade name="neutral" weight="0.239852024749" />
+</color>
+
+<color name="white" weight="0.0865323086381">
+ <shade name="dark" weight="0.49295690872" />
+ <shade name="neutral" weight="0.261568971974" />
+ <shade name="light" weight="0.245472419852" />
+</color>
+
+</colors>

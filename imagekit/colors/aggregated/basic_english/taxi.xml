@@ -1,0 +1,33 @@
+<colors query="taxi">
+
+<color name="yellow" weight="0.690622492395">
+ <shade name="dark" weight="0.435389425596" />
+ <shade name="cool" weight="0.370197426042" />
+ <shade name="hard" weight="0.194411855814" />
+</color>
+
+<color name="black" weight="0.161425989076">
+ <shade name="dark" weight="0.435389425596" />
+ <shade name="cool" weight="0.370197426042" />
+ <shade name="hard" weight="0.194411855814" />
+</color>
+
+<color name="white" weight="0.0541829841595">
+ <shade name="dark" weight="0.435389425596" />
+ <shade name="cool" weight="0.370197426042" />
+ <shade name="hard" weight="0.194411855814" />
+</color>
+
+<color name="blue" weight="0.048006685447">
+ <shade name="dark" weight="0.435389425596" />
+ <shade name="cool" weight="0.370197426042" />
+ <shade name="hard" weight="0.194411855814" />
+</color>
+
+<color name="red" weight="0.0457607586425">
+ <shade name="dark" weight="0.435389425596" />
+ <shade name="cool" weight="0.370197426042" />
+ <shade name="hard" weight="0.194411855814" />
+</color>
+
+</colors>

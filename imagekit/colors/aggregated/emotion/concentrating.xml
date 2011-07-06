@@ -1,0 +1,33 @@
+<colors query="concentrating">
+
+<color name="pink" weight="0.279772834288">
+ <shade name="light" weight="0.958050690226" />
+ <shade name="hard" weight="0.0385906399521" />
+ <shade name="dark" weight="0.00335765428818" />
+</color>
+
+<color name="white" weight="0.270321049346">
+ <shade name="light" weight="0.958050690226" />
+ <shade name="hard" weight="0.0385906399521" />
+ <shade name="dark" weight="0.00335765428818" />
+</color>
+
+<color name="black" weight="0.209829625716">
+ <shade name="light" weight="0.955782863735" />
+ <shade name="hard" weight="0.0384992910532" />
+ <shade name="intense" weight="0.00571683208215" />
+</color>
+
+<color name="blue" weight="0.12098284726">
+ <shade name="light" weight="0.955782863735" />
+ <shade name="hard" weight="0.0384992910532" />
+ <shade name="intense" weight="0.00571683208215" />
+</color>
+
+<color name="red" weight="0.119092490271">
+ <shade name="light" weight="0.955782863735" />
+ <shade name="hard" weight="0.0384992910532" />
+ <shade name="intense" weight="0.00571683208215" />
+</color>
+
+</colors>

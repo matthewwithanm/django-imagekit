@@ -1,0 +1,33 @@
+<colors query="hair">
+
+<color name="black" weight="0.299816068819">
+ <shade name="dark" weight="0.763357876968" />
+ <shade name="light" weight="0.135223395349" />
+ <shade name="soft" weight="0.101417546511" />
+</color>
+
+<color name="red" weight="0.271262157503">
+ <shade name="dark" weight="0.763357876968" />
+ <shade name="light" weight="0.135223395349" />
+ <shade name="soft" weight="0.101417546511" />
+</color>
+
+<color name="white" weight="0.226391725435">
+ <shade name="dark" weight="0.763357876968" />
+ <shade name="light" weight="0.135223395349" />
+ <shade name="soft" weight="0.101417546511" />
+</color>
+
+<color name="blue" weight="0.105853428379">
+ <shade name="dark" weight="0.763357876968" />
+ <shade name="light" weight="0.135223395349" />
+ <shade name="soft" weight="0.101417546511" />
+</color>
+
+<color name="pink" weight="0.096675385456">
+ <shade name="dark" weight="0.763357876968" />
+ <shade name="light" weight="0.135223395349" />
+ <shade name="soft" weight="0.101417546511" />
+</color>
+
+</colors>

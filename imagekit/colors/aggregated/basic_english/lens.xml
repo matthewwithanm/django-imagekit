@@ -1,0 +1,33 @@
+<colors query="lens">
+
+<color name="red" weight="0.304492772096">
+ <shade name="light" weight="0.53919626083" />
+ <shade name="soft" weight="0.349903956496" />
+ <shade name="weak" weight="0.110898521731" />
+</color>
+
+<color name="blue" weight="0.230226242316">
+ <shade name="light" weight="0.53919626083" />
+ <shade name="soft" weight="0.349903956496" />
+ <shade name="weak" weight="0.110898521731" />
+</color>
+
+<color name="black" weight="0.189379650938">
+ <shade name="light" weight="0.53919626083" />
+ <shade name="soft" weight="0.349903956496" />
+ <shade name="weak" weight="0.110898521731" />
+</color>
+
+<color name="green" weight="0.161715368595">
+ <shade name="light" weight="0.53919626083" />
+ <shade name="soft" weight="0.349903956496" />
+ <shade name="weak" weight="0.110898521731" />
+</color>
+
+<color name="yellow" weight="0.114184789536">
+ <shade name="light" weight="0.53919626083" />
+ <shade name="soft" weight="0.349903956496" />
+ <shade name="weak" weight="0.110898521731" />
+</color>
+
+</colors>

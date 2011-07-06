@@ -1,0 +1,33 @@
+<colors query="yak">
+
+<color name="black" weight="0.939532169868">
+ <shade name="fresh" weight="0.395862808258" />
+ <shade name="cool" weight="0.304472852524" />
+ <shade name="hard" weight="0.299662854854" />
+</color>
+
+<color name="yellow" weight="0.0240113735884">
+ <shade name="fresh" weight="0.395862808258" />
+ <shade name="cool" weight="0.304472852524" />
+ <shade name="hard" weight="0.299662854854" />
+</color>
+
+<color name="red" weight="0.0154429996108">
+ <shade name="fresh" weight="0.395862808258" />
+ <shade name="cool" weight="0.304472852524" />
+ <shade name="hard" weight="0.299662854854" />
+</color>
+
+<color name="green" weight="0.0142474125441">
+ <shade name="fresh" weight="0.395862808258" />
+ <shade name="cool" weight="0.304472852524" />
+ <shade name="hard" weight="0.299662854854" />
+</color>
+
+<color name="white" weight="0.00676503015207">
+ <shade name="fresh" weight="0.395862808258" />
+ <shade name="cool" weight="0.304472852524" />
+ <shade name="hard" weight="0.299662854854" />
+</color>
+
+</colors>

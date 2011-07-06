@@ -1,0 +1,33 @@
+<colors query="cross">
+
+<color name="red" weight="0.866543779274">
+ <shade name="light" weight="0.412125870783" />
+ <shade name="weak" weight="0.404217271983" />
+ <shade name="hard" weight="0.183655238792" />
+</color>
+
+<color name="blue" weight="0.0605086604493">
+ <shade name="light" weight="0.412125870783" />
+ <shade name="weak" weight="0.404217271983" />
+ <shade name="hard" weight="0.183655238792" />
+</color>
+
+<color name="white" weight="0.0280879707765">
+ <shade name="light" weight="0.412125870783" />
+ <shade name="weak" weight="0.404217271983" />
+ <shade name="hard" weight="0.183655238792" />
+</color>
+
+<color name="green" weight="0.022672072156">
+ <shade name="light" weight="0.412125870783" />
+ <shade name="weak" weight="0.404217271983" />
+ <shade name="hard" weight="0.183655238792" />
+</color>
+
+<color name="black" weight="0.0221865088314">
+ <shade name="light" weight="0.412125870783" />
+ <shade name="weak" weight="0.404217271983" />
+ <shade name="hard" weight="0.183655238792" />
+</color>
+
+</colors>

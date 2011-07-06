@@ -1,0 +1,33 @@
+<colors query="wheat">
+
+<color name="white" weight="0.556344587769">
+ <shade name="soft" weight="0.512163239718" />
+ <shade name="hard" weight="0.374519369044" />
+ <shade name="light" weight="0.113316116788" />
+</color>
+
+<color name="red" weight="0.225380471687">
+ <shade name="soft" weight="0.512163239718" />
+ <shade name="hard" weight="0.374519369044" />
+ <shade name="light" weight="0.113316116788" />
+</color>
+
+<color name="green" weight="0.123045554813">
+ <shade name="soft" weight="0.512163239718" />
+ <shade name="hard" weight="0.374519369044" />
+ <shade name="light" weight="0.113316116788" />
+</color>
+
+<color name="black" weight="0.0558375042469">
+ <shade name="soft" weight="0.512163239718" />
+ <shade name="hard" weight="0.374519369044" />
+ <shade name="light" weight="0.113316116788" />
+</color>
+
+<color name="yellow" weight="0.0393908211778">
+ <shade name="soft" weight="0.512163239718" />
+ <shade name="hard" weight="0.374519369044" />
+ <shade name="light" weight="0.113316116788" />
+</color>
+
+</colors>

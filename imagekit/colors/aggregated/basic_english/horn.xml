@@ -1,0 +1,33 @@
+<colors query="horn">
+
+<color name="black" weight="0.313666894466">
+ <shade name="dark" weight="0.445304428712" />
+ <shade name="light" weight="0.398515195261" />
+ <shade name="hard" weight="0.156179234418" />
+</color>
+
+<color name="green" weight="0.274193252808">
+ <shade name="dark" weight="0.445304428712" />
+ <shade name="light" weight="0.398515195261" />
+ <shade name="hard" weight="0.156179234418" />
+</color>
+
+<color name="red" weight="0.209677193324">
+ <shade name="dark" weight="0.445304428712" />
+ <shade name="light" weight="0.398515195261" />
+ <shade name="hard" weight="0.156179234418" />
+</color>
+
+<color name="white" weight="0.10823417874">
+ <shade name="dark" weight="0.445304428712" />
+ <shade name="light" weight="0.398515195261" />
+ <shade name="hard" weight="0.156179234418" />
+</color>
+
+<color name="blue" weight="0.0942274026677">
+ <shade name="dark" weight="0.445304428712" />
+ <shade name="light" weight="0.398515195261" />
+ <shade name="hard" weight="0.156179234418" />
+</color>
+
+</colors>

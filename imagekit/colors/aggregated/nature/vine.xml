@@ -1,0 +1,33 @@
+<colors query="vine">
+
+<color name="black" weight="0.305173463117">
+ <shade name="fresh" weight="0.785339383316" />
+ <shade name="soft" weight="0.119466778917" />
+ <shade name="dark" weight="0.0951926525232" />
+</color>
+
+<color name="red" weight="0.255052258579">
+ <shade name="fresh" weight="0.785339383316" />
+ <shade name="soft" weight="0.119466778917" />
+ <shade name="dark" weight="0.0951926525232" />
+</color>
+
+<color name="green" weight="0.224332810636">
+ <shade name="fresh" weight="0.785339383316" />
+ <shade name="soft" weight="0.119466778917" />
+ <shade name="dark" weight="0.0951926525232" />
+</color>
+
+<color name="white" weight="0.135812296169">
+ <shade name="fresh" weight="0.785339383316" />
+ <shade name="soft" weight="0.119466778917" />
+ <shade name="dark" weight="0.0951926525232" />
+</color>
+
+<color name="purple" weight="0.0796280426941">
+ <shade name="fresh" weight="0.785339383316" />
+ <shade name="soft" weight="0.119466778917" />
+ <shade name="dark" weight="0.0951926525232" />
+</color>
+
+</colors>

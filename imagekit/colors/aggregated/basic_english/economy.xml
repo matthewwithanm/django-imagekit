@@ -1,0 +1,33 @@
+<colors query="economy">
+
+<color name="green" weight="0.472467155437">
+ <shade name="weak" weight="0.763595904528" />
+ <shade name="soft" weight="0.194794873604" />
+ <shade name="bright" weight="0.0416081850018" />
+</color>
+
+<color name="black" weight="0.42161867234">
+ <shade name="weak" weight="0.763595904528" />
+ <shade name="soft" weight="0.194794873604" />
+ <shade name="bright" weight="0.0416081850018" />
+</color>
+
+<color name="blue" weight="0.0495772710189">
+ <shade name="weak" weight="0.763595904528" />
+ <shade name="soft" weight="0.194794873604" />
+ <shade name="bright" weight="0.0416081850018" />
+</color>
+
+<color name="white" weight="0.0455517661071">
+ <shade name="weak" weight="0.763595904528" />
+ <shade name="soft" weight="0.194794873604" />
+ <shade name="bright" weight="0.0416081850018" />
+</color>
+
+<color name="pink" weight="0.01078411579">
+ <shade name="weak" weight="0.763595904528" />
+ <shade name="soft" weight="0.194794873604" />
+ <shade name="bright" weight="0.0416081850018" />
+</color>
+
+</colors>

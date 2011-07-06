@@ -1,0 +1,33 @@
+<colors query="forsythia">
+
+<color name="yellow" weight="0.404168371742">
+ <shade name="bright" weight="0.845793511159" />
+ <shade name="fresh" weight="0.130840985152" />
+ <shade name="light" weight="0.0233644616342" />
+</color>
+
+<color name="white" weight="0.278596563163">
+ <shade name="bright" weight="0.845793511159" />
+ <shade name="fresh" weight="0.130840985152" />
+ <shade name="light" weight="0.0233644616342" />
+</color>
+
+<color name="pink" weight="0.274529460051">
+ <shade name="bright" weight="0.845793511159" />
+ <shade name="fresh" weight="0.130840985152" />
+ <shade name="light" weight="0.0233644616342" />
+</color>
+
+<color name="green" weight="0.032028437006">
+ <shade name="bright" weight="0.845793511159" />
+ <shade name="fresh" weight="0.130840985152" />
+ <shade name="light" weight="0.0233644616342" />
+</color>
+
+<color name="orange" weight="0.0106761456687">
+ <shade name="bright" weight="0.845793511159" />
+ <shade name="fresh" weight="0.130840985152" />
+ <shade name="light" weight="0.0233644616342" />
+</color>
+
+</colors>

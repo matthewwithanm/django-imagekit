@@ -1,0 +1,33 @@
+<colors query="cirrus">
+
+<color name="red" weight="0.732844026837">
+ <shade name="light" weight="0.515036870997" />
+ <shade name="bright" weight="0.29548830701" />
+ <shade name="cool" weight="0.189473418235" />
+</color>
+
+<color name="blue" weight="0.107761383037">
+ <shade name="light" weight="0.515036870997" />
+ <shade name="bright" weight="0.29548830701" />
+ <shade name="cool" weight="0.189473418235" />
+</color>
+
+<color name="white" weight="0.0967687226345">
+ <shade name="light" weight="0.515036870997" />
+ <shade name="bright" weight="0.29548830701" />
+ <shade name="cool" weight="0.189473418235" />
+</color>
+
+<color name="orange" weight="0.0411391987792">
+ <shade name="light" weight="0.515036870997" />
+ <shade name="bright" weight="0.29548830701" />
+ <shade name="cool" weight="0.189473418235" />
+</color>
+
+<color name="black" weight="0.0214856544232">
+ <shade name="light" weight="0.515036870997" />
+ <shade name="bright" weight="0.29548830701" />
+ <shade name="cool" weight="0.189473418235" />
+</color>
+
+</colors>

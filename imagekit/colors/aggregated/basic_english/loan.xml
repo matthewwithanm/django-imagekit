@@ -1,0 +1,33 @@
+<colors query="loan">
+
+<color name="green" weight="0.476600109528">
+ <shade name="soft" weight="0.681897298006" />
+ <shade name="hard" weight="0.246396910259" />
+ <shade name="light" weight="0.0717046643264" />
+</color>
+
+<color name="blue" weight="0.217628242784">
+ <shade name="soft" weight="0.681897298006" />
+ <shade name="hard" weight="0.246396910259" />
+ <shade name="light" weight="0.0717046643264" />
+</color>
+
+<color name="black" weight="0.15130617935">
+ <shade name="soft" weight="0.681897298006" />
+ <shade name="hard" weight="0.246396910259" />
+ <shade name="light" weight="0.0717046643264" />
+</color>
+
+<color name="purple" weight="0.084697007416">
+ <shade name="soft" weight="0.681897298006" />
+ <shade name="hard" weight="0.246396910259" />
+ <shade name="light" weight="0.0717046643264" />
+</color>
+
+<color name="red" weight="0.0697673654308">
+ <shade name="soft" weight="0.681897298006" />
+ <shade name="hard" weight="0.246396910259" />
+ <shade name="light" weight="0.0717046643264" />
+</color>
+
+</colors>

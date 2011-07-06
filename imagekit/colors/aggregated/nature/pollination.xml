@@ -1,0 +1,33 @@
+<colors query="pollination">
+
+<color name="pink" weight="0.284263595764">
+ <shade name="light" weight="0.64102453156" />
+ <shade name="weak" weight="0.230768831362" />
+ <shade name="cool" weight="0.128204906312" />
+</color>
+
+<color name="purple" weight="0.18781701863">
+ <shade name="light" weight="0.64102453156" />
+ <shade name="weak" weight="0.230768831362" />
+ <shade name="cool" weight="0.128204906312" />
+</color>
+
+<color name="orange" weight="0.18781701863">
+ <shade name="light" weight="0.499999325001" />
+ <shade name="intense" weight="0.319999568001" />
+ <shade name="weak" weight="0.179999757" />
+</color>
+
+<color name="green" weight="0.18781701863">
+ <shade name="light" weight="0.499999325001" />
+ <shade name="intense" weight="0.319999568001" />
+ <shade name="weak" weight="0.179999757" />
+</color>
+
+<color name="yellow" weight="0.152284069159">
+ <shade name="light" weight="0.499999325001" />
+ <shade name="intense" weight="0.319999568001" />
+ <shade name="weak" weight="0.179999757" />
+</color>
+
+</colors>

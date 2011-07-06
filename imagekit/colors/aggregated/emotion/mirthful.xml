@@ -1,0 +1,33 @@
+<colors query="mirthful">
+
+<color name="black" weight="0.454545">
+ <shade name="dark" weight="0.598484154787" />
+ <shade name="light" weight="0.227272463843" />
+ <shade name="bright" weight="0.17424222228" />
+</color>
+
+<color name="green" weight="0.181818">
+ <shade name="dark" weight="0.598484154787" />
+ <shade name="light" weight="0.227272463843" />
+ <shade name="bright" weight="0.17424222228" />
+</color>
+
+<color name="blue" weight="0.181818">
+ <shade name="dark" weight="0.598484154787" />
+ <shade name="light" weight="0.227272463843" />
+ <shade name="bright" weight="0.17424222228" />
+</color>
+
+<color name="yellow" weight="0.0909090000001">
+ <shade name="dark" weight="0.598484154787" />
+ <shade name="light" weight="0.227272463843" />
+ <shade name="bright" weight="0.17424222228" />
+</color>
+
+<color name="orange" weight="0.0909090000001">
+ <shade name="dark" weight="0.598484154787" />
+ <shade name="light" weight="0.227272463843" />
+ <shade name="bright" weight="0.17424222228" />
+</color>
+
+</colors>

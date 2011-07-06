@@ -1,0 +1,33 @@
+<colors query="courageous">
+
+<color name="black" weight="0.319999643023">
+ <shade name="cool" weight="0.616356602028" />
+ <shade name="bright" weight="0.238616851401" />
+ <shade name="hard" weight="0.14502508283" />
+</color>
+
+<color name="red" weight="0.293333006104">
+ <shade name="cool" weight="0.616356602028" />
+ <shade name="bright" weight="0.238616851401" />
+ <shade name="hard" weight="0.14502508283" />
+</color>
+
+<color name="white" weight="0.182222018943">
+ <shade name="cool" weight="0.616356602028" />
+ <shade name="bright" weight="0.238616851401" />
+ <shade name="hard" weight="0.14502508283" />
+</color>
+
+<color name="purple" weight="0.168888700484">
+ <shade name="cool" weight="0.616356602028" />
+ <shade name="bright" weight="0.238616851401" />
+ <shade name="hard" weight="0.14502508283" />
+</color>
+
+<color name="green" weight="0.0355555158914">
+ <shade name="cool" weight="0.616356602028" />
+ <shade name="bright" weight="0.238616851401" />
+ <shade name="hard" weight="0.14502508283" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="up in arms">
+
+<color name="white" weight="0.35714247449">
+ <shade name="weak" weight="0.0" />
+ <shade name="warm" weight="0.0" />
+ <shade name="soft" weight="0.0" />
+</color>
+
+<color name="black" weight="0.35714247449">
+ <shade name="weak" weight="0.0" />
+ <shade name="warm" weight="0.0" />
+ <shade name="soft" weight="0.0" />
+</color>
+
+<color name="green" weight="0.142856989796">
+ <shade name="weak" weight="0.0" />
+ <shade name="soft" weight="0.0" />
+ <shade name="neutral" weight="0.0" />
+</color>
+
+<color name="yellow" weight="0.071428494898">
+ <shade name="weak" weight="0.0" />
+ <shade name="warm" weight="0.0" />
+ <shade name="soft" weight="0.0" />
+</color>
+
+<color name="red" weight="0.071428494898">
+ <shade name="weak" weight="0.0" />
+ <shade name="warm" weight="0.0" />
+ <shade name="soft" weight="0.0" />
+</color>
+
+</colors>

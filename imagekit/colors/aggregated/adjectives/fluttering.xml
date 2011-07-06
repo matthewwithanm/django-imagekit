@@ -1,0 +1,33 @@
+<colors query="fluttering">
+
+<color name="white" weight="0.364366107234">
+ <shade name="weak" weight="0.440802570126" />
+ <shade name="light" weight="0.424647502111" />
+ <shade name="soft" weight="0.134548637897" />
+</color>
+
+<color name="pink" weight="0.2201530688">
+ <shade name="weak" weight="0.440802570126" />
+ <shade name="light" weight="0.424647502111" />
+ <shade name="soft" weight="0.134548637897" />
+</color>
+
+<color name="blue" weight="0.151880060731">
+ <shade name="weak" weight="0.440802570126" />
+ <shade name="light" weight="0.424647502111" />
+ <shade name="soft" weight="0.134548637897" />
+</color>
+
+<color name="green" weight="0.147498905133">
+ <shade name="weak" weight="0.440802570126" />
+ <shade name="light" weight="0.424647502111" />
+ <shade name="soft" weight="0.134548637897" />
+</color>
+
+<color name="black" weight="0.116100623347">
+ <shade name="weak" weight="0.440802570126" />
+ <shade name="light" weight="0.424647502111" />
+ <shade name="soft" weight="0.134548637897" />
+</color>
+
+</colors>

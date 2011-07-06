@@ -1,0 +1,33 @@
+<colors query="envious">
+
+<color name="green" weight="0.880747352507">
+ <shade name="dark" weight="0.951637061182" />
+ <shade name="cool" weight="0.0312012151207" />
+ <shade name="weak" weight="0.0171606683164" />
+</color>
+
+<color name="red" weight="0.0389711217924">
+ <shade name="dark" weight="0.951637061182" />
+ <shade name="cool" weight="0.0312012151207" />
+ <shade name="weak" weight="0.0171606683164" />
+</color>
+
+<color name="white" weight="0.0350740096131">
+ <shade name="dark" weight="0.951637061182" />
+ <shade name="cool" weight="0.0312012151207" />
+ <shade name="weak" weight="0.0171606683164" />
+</color>
+
+<color name="black" weight="0.025720940383">
+ <shade name="dark" weight="0.951637061182" />
+ <shade name="cool" weight="0.0312012151207" />
+ <shade name="weak" weight="0.0171606683164" />
+</color>
+
+<color name="blue" weight="0.0194855608962">
+ <shade name="dark" weight="0.951637061182" />
+ <shade name="cool" weight="0.0312012151207" />
+ <shade name="weak" weight="0.0171606683164" />
+</color>
+
+</colors>

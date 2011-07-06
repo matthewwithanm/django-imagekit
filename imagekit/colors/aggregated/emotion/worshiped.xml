@@ -1,0 +1,33 @@
+<colors query="worshiped">
+
+<color name="black" weight="0.559999432534">
+ <shade name="hard" weight="0.855720524542" />
+ <shade name="light" weight="0.109452625232" />
+ <shade name="dark" weight="0.0348258353011" />
+</color>
+
+<color name="white" weight="0.279999716267">
+ <shade name="hard" weight="0.855720524542" />
+ <shade name="light" weight="0.109452625232" />
+ <shade name="dark" weight="0.0348258353011" />
+</color>
+
+<color name="pink" weight="0.0666665991112">
+ <shade name="hard" weight="0.855720524542" />
+ <shade name="light" weight="0.109452625232" />
+ <shade name="dark" weight="0.0348258353011" />
+</color>
+
+<color name="blue" weight="0.0533332792889">
+ <shade name="hard" weight="0.855720524542" />
+ <shade name="light" weight="0.109452625232" />
+ <shade name="dark" weight="0.0348258353011" />
+</color>
+
+<color name="red" weight="0.0399999594667">
+ <shade name="hard" weight="0.855720524542" />
+ <shade name="light" weight="0.109452625232" />
+ <shade name="dark" weight="0.0348258353011" />
+</color>
+
+</colors>

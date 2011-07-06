@@ -1,0 +1,33 @@
+<colors query="molecule">
+
+<color name="green" weight="0.262119879601">
+ <shade name="neutral" weight="0.990975286181" />
+ <shade name="light" weight="0.00505980322591" />
+ <shade name="cool" weight="0.00396390114472" />
+</color>
+
+<color name="blue" weight="0.236909829528">
+ <shade name="neutral" weight="0.990975286181" />
+ <shade name="light" weight="0.00505980322591" />
+ <shade name="cool" weight="0.00396390114472" />
+</color>
+
+<color name="red" weight="0.190368198625">
+ <shade name="neutral" weight="0.990975286181" />
+ <shade name="light" weight="0.00505980322591" />
+ <shade name="cool" weight="0.00396390114472" />
+</color>
+
+<color name="black" weight="0.179055996669">
+ <shade name="neutral" weight="0.990975286181" />
+ <shade name="light" weight="0.00505980322591" />
+ <shade name="cool" weight="0.00396390114472" />
+</color>
+
+<color name="orange" weight="0.131544748456">
+ <shade name="neutral" weight="0.990975286181" />
+ <shade name="light" weight="0.00505980322591" />
+ <shade name="cool" weight="0.00396390114472" />
+</color>
+
+</colors>

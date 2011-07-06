@@ -1,0 +1,33 @@
+<colors query="bush">
+
+<color name="black" weight="0.314527871928">
+ <shade name="dark" weight="0.388367121953" />
+ <shade name="hard" weight="0.318948844116" />
+ <shade name="light" weight="0.292682468718" />
+</color>
+
+<color name="green" weight="0.249625295181">
+ <shade name="dark" weight="0.388367121953" />
+ <shade name="hard" weight="0.318948844116" />
+ <shade name="light" weight="0.292682468718" />
+</color>
+
+<color name="red" weight="0.199700236145">
+ <shade name="dark" weight="0.388367121953" />
+ <shade name="hard" weight="0.318948844116" />
+ <shade name="light" weight="0.292682468718" />
+</color>
+
+<color name="blue" weight="0.191379392972">
+ <shade name="dark" weight="0.388367121953" />
+ <shade name="hard" weight="0.318948844116" />
+ <shade name="light" weight="0.292682468718" />
+</color>
+
+<color name="white" weight="0.0447661362691">
+ <shade name="dark" weight="0.388367121953" />
+ <shade name="hard" weight="0.318948844116" />
+ <shade name="light" weight="0.292682468718" />
+</color>
+
+</colors>

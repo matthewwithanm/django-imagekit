@@ -1,0 +1,33 @@
+<colors query="lovebird">
+
+<color name="blue" weight="0.706782644616">
+ <shade name="light" weight="0.444443777779" />
+ <shade name="cool" weight="0.388888305556" />
+ <shade name="dark" weight="0.166666416667" />
+</color>
+
+<color name="green" weight="0.126914530612">
+ <shade name="light" weight="0.444443777779" />
+ <shade name="cool" weight="0.388888305556" />
+ <shade name="dark" weight="0.166666416667" />
+</color>
+
+<color name="yellow" weight="0.0737417186488">
+ <shade name="light" weight="0.444443777779" />
+ <shade name="cool" weight="0.388888305556" />
+ <shade name="dark" weight="0.166666416667" />
+</color>
+
+<color name="pink" weight="0.0551421753694">
+ <shade name="light" weight="0.444443777779" />
+ <shade name="cool" weight="0.388888305556" />
+ <shade name="dark" weight="0.166666416667" />
+</color>
+
+<color name="white" weight="0.037417904715">
+ <shade name="light" weight="0.444443777779" />
+ <shade name="cool" weight="0.388888305556" />
+ <shade name="dark" weight="0.166666416667" />
+</color>
+
+</colors>

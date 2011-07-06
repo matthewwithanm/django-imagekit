@@ -1,0 +1,33 @@
+<colors query="moral">
+
+<color name="white" weight="0.832145482392">
+ <shade name="light" weight="0.652173092105" />
+ <shade name="weak" weight="0.18952038574" />
+ <shade name="hard" weight="0.158305263383" />
+</color>
+
+<color name="black" weight="0.0632730438863">
+ <shade name="light" weight="0.629708599552" />
+ <shade name="intense" weight="0.187297942431" />
+ <shade name="weak" weight="0.182992242605" />
+</color>
+
+<color name="green" weight="0.0479045912836">
+ <shade name="light" weight="0.629708599552" />
+ <shade name="intense" weight="0.187297942431" />
+ <shade name="weak" weight="0.182992242605" />
+</color>
+
+<color name="yellow" weight="0.0325361386809">
+ <shade name="light" weight="0.629708599552" />
+ <shade name="intense" weight="0.187297942431" />
+ <shade name="weak" weight="0.182992242605" />
+</color>
+
+<color name="red" weight="0.0241397157955">
+ <shade name="light" weight="0.629708599552" />
+ <shade name="intense" weight="0.187297942431" />
+ <shade name="weak" weight="0.182992242605" />
+</color>
+
+</colors>

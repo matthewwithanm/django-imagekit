@@ -1,0 +1,33 @@
+<colors query="unhappiness">
+
+<color name="black" weight="0.739435849039">
+ <shade name="intense" weight="0.940593105509" />
+ <shade name="dark" weight="0.0530409645964" />
+ <shade name="fresh" weight="0.00636491575156" />
+</color>
+
+<color name="blue" weight="0.154929415989">
+ <shade name="intense" weight="0.940593105509" />
+ <shade name="dark" weight="0.0530409645964" />
+ <shade name="fresh" weight="0.00636491575156" />
+</color>
+
+<color name="white" weight="0.0352112309066">
+ <shade name="dark" weight="0.833320055767" />
+ <shade name="fresh" weight="0.0999984066921" />
+ <shade name="light" weight="0.0666656044614" />
+</color>
+
+<color name="red" weight="0.0352112309066">
+ <shade name="intense" weight="0.940593105509" />
+ <shade name="dark" weight="0.0530409645964" />
+ <shade name="fresh" weight="0.00636491575156" />
+</color>
+
+<color name="pink" weight="0.0352112309066">
+ <shade name="dark" weight="0.833320055767" />
+ <shade name="fresh" weight="0.0999984066921" />
+ <shade name="light" weight="0.0666656044614" />
+</color>
+
+</colors>

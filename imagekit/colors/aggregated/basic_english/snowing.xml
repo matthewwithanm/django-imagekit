@@ -1,0 +1,33 @@
+<colors query="snowing">
+
+<color name="white" weight="0.494805906722">
+ <shade name="light" weight="0.524071975063" />
+ <shade name="cool" weight="0.281767613099" />
+ <shade name="hard" weight="0.194159195581" />
+</color>
+
+<color name="blue" weight="0.222851515241">
+ <shade name="light" weight="0.524071975063" />
+ <shade name="cool" weight="0.281767613099" />
+ <shade name="hard" weight="0.194159195581" />
+</color>
+
+<color name="red" weight="0.167138636431">
+ <shade name="light" weight="0.524071975063" />
+ <shade name="cool" weight="0.281767613099" />
+ <shade name="hard" weight="0.194159195581" />
+</color>
+
+<color name="green" weight="0.0849857473378">
+ <shade name="light" weight="0.524071975063" />
+ <shade name="cool" weight="0.281767613099" />
+ <shade name="hard" weight="0.194159195581" />
+</color>
+
+<color name="purple" weight="0.030217154609">
+ <shade name="light" weight="0.524071975063" />
+ <shade name="cool" weight="0.281767613099" />
+ <shade name="hard" weight="0.194159195581" />
+</color>
+
+</colors>

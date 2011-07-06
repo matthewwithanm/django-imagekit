@@ -1,0 +1,33 @@
+<colors query="gunpowder">
+
+<color name="black" weight="0.920708154608">
+ <shade name="fresh" weight="0.753845318817" />
+ <shade name="light" weight="0.176922880947" />
+ <shade name="cool" weight="0.0692306925445" />
+</color>
+
+<color name="green" weight="0.0466537938044">
+ <shade name="fresh" weight="0.753845318817" />
+ <shade name="light" weight="0.176922880947" />
+ <shade name="cool" weight="0.0692306925445" />
+</color>
+
+<color name="white" weight="0.019376096985">
+ <shade name="fresh" weight="0.753845318817" />
+ <shade name="light" weight="0.176922880947" />
+ <shade name="cool" weight="0.0692306925445" />
+</color>
+
+<color name="red" weight="0.00762676157921">
+ <shade name="fresh" weight="0.753845318817" />
+ <shade name="light" weight="0.176922880947" />
+ <shade name="cool" weight="0.0692306925445" />
+</color>
+
+<color name="purple" weight="0.00563418422969">
+ <shade name="fresh" weight="0.753845318817" />
+ <shade name="light" weight="0.176922880947" />
+ <shade name="cool" weight="0.0692306925445" />
+</color>
+
+</colors>

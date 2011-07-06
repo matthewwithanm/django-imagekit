@@ -1,0 +1,33 @@
+<colors query="koala">
+
+<color name="pink" weight="0.611180988588">
+ <shade name="soft" weight="0.53188213178" />
+ <shade name="cool" weight="0.404955713969" />
+ <shade name="light" weight="0.0631610031489" />
+</color>
+
+<color name="white" weight="0.139135796778">
+ <shade name="soft" weight="0.53188213178" />
+ <shade name="cool" weight="0.404955713969" />
+ <shade name="light" weight="0.0631610031489" />
+</color>
+
+<color name="black" weight="0.108640279676">
+ <shade name="soft" weight="0.53188213178" />
+ <shade name="cool" weight="0.404955713969" />
+ <shade name="light" weight="0.0631610031489" />
+</color>
+
+<color name="red" weight="0.0889452582145">
+ <shade name="soft" weight="0.53188213178" />
+ <shade name="cool" weight="0.404955713969" />
+ <shade name="light" weight="0.0631610031489" />
+</color>
+
+<color name="orange" weight="0.0520965083828">
+ <shade name="soft" weight="0.53188213178" />
+ <shade name="cool" weight="0.404955713969" />
+ <shade name="light" weight="0.0631610031489" />
+</color>
+
+</colors>

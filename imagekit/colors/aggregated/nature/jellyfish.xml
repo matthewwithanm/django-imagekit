@@ -1,0 +1,33 @@
+<colors query="jellyfish">
+
+<color name="red" weight="0.472263358241">
+ <shade name="cool" weight="0.488874370532" />
+ <shade name="dark" weight="0.382324828236" />
+ <shade name="fresh" weight="0.128799593775" />
+</color>
+
+<color name="blue" weight="0.262368532356">
+ <shade name="cool" weight="0.488874370532" />
+ <shade name="dark" weight="0.382324828236" />
+ <shade name="fresh" weight="0.128799593775" />
+</color>
+
+<color name="purple" weight="0.189280155485">
+ <shade name="cool" weight="0.488874370532" />
+ <shade name="dark" weight="0.382324828236" />
+ <shade name="fresh" weight="0.128799593775" />
+</color>
+
+<color name="orange" weight="0.0406671225152">
+ <shade name="cool" weight="0.488874370532" />
+ <shade name="dark" weight="0.382324828236" />
+ <shade name="fresh" weight="0.128799593775" />
+</color>
+
+<color name="green" weight="0.0354197518681">
+ <shade name="cool" weight="0.488874370532" />
+ <shade name="dark" weight="0.382324828236" />
+ <shade name="fresh" weight="0.128799593775" />
+</color>
+
+</colors>

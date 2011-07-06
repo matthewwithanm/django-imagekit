@@ -1,0 +1,33 @@
+<colors query="irate">
+
+<color name="red" weight="0.439999517761">
+ <shade name="dark" weight="0.687499071876" />
+ <shade name="cool" weight="0.19999973" />
+ <shade name="light" weight="0.112499848125" />
+</color>
+
+<color name="black" weight="0.23999973696">
+ <shade name="dark" weight="0.687499071876" />
+ <shade name="cool" weight="0.19999973" />
+ <shade name="light" weight="0.112499848125" />
+</color>
+
+<color name="green" weight="0.111999877248">
+ <shade name="dark" weight="0.687499071876" />
+ <shade name="cool" weight="0.19999973" />
+ <shade name="light" weight="0.112499848125" />
+</color>
+
+<color name="white" weight="0.103999886016">
+ <shade name="dark" weight="0.687499071876" />
+ <shade name="cool" weight="0.19999973" />
+ <shade name="light" weight="0.112499848125" />
+</color>
+
+<color name="blue" weight="0.103999886016">
+ <shade name="dark" weight="0.687499071876" />
+ <shade name="cool" weight="0.19999973" />
+ <shade name="light" weight="0.112499848125" />
+</color>
+
+</colors>

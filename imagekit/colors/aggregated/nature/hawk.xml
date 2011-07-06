@@ -1,0 +1,33 @@
+<colors query="hawk">
+
+<color name="black" weight="0.768382057374">
+ <shade name="dark" weight="0.566758714885" />
+ <shade name="light" weight="0.3365781816" />
+ <shade name="bright" weight="0.0966619157902" />
+</color>
+
+<color name="red" weight="0.15464904699">
+ <shade name="dark" weight="0.566758714885" />
+ <shade name="light" weight="0.3365781816" />
+ <shade name="bright" weight="0.0966619157902" />
+</color>
+
+<color name="white" weight="0.0473349284289">
+ <shade name="dark" weight="0.566758714885" />
+ <shade name="light" weight="0.3365781816" />
+ <shade name="bright" weight="0.0966619157902" />
+</color>
+
+<color name="blue" weight="0.0236026218468">
+ <shade name="dark" weight="0.566758714885" />
+ <shade name="light" weight="0.3365781816" />
+ <shade name="bright" weight="0.0966619157902" />
+</color>
+
+<color name="yellow" weight="0.00603034019711">
+ <shade name="dark" weight="0.566758714885" />
+ <shade name="light" weight="0.3365781816" />
+ <shade name="bright" weight="0.0966619157902" />
+</color>
+
+</colors>

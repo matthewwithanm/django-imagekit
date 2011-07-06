@@ -1,0 +1,33 @@
+<colors query="poetry">
+
+<color name="black" weight="0.668637608979">
+ <shade name="dark" weight="0.869414906401" />
+ <shade name="light" weight="0.0725085159093" />
+ <shade name="cool" weight="0.0580755411786" />
+</color>
+
+<color name="pink" weight="0.169731085356">
+ <shade name="dark" weight="0.869414906401" />
+ <shade name="light" weight="0.0725085159093" />
+ <shade name="cool" weight="0.0580755411786" />
+</color>
+
+<color name="blue" weight="0.0790792556774">
+ <shade name="dark" weight="0.869414906401" />
+ <shade name="light" weight="0.0725085159093" />
+ <shade name="cool" weight="0.0580755411786" />
+</color>
+
+<color name="green" weight="0.0662208401201">
+ <shade name="dark" weight="0.869414906401" />
+ <shade name="light" weight="0.0725085159093" />
+ <shade name="cool" weight="0.0580755411786" />
+</color>
+
+<color name="red" weight="0.0163301877578">
+ <shade name="dark" weight="0.869414906401" />
+ <shade name="light" weight="0.0725085159093" />
+ <shade name="cool" weight="0.0580755411786" />
+</color>
+
+</colors>

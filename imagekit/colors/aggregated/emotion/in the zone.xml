@@ -1,0 +1,33 @@
+<colors query="in the zone">
+
+<color name="green" weight="0.517358228915">
+ <shade name="light" weight="0.691178543153" />
+ <shade name="cool" weight="0.241677395361" />
+ <shade name="intense" weight="0.0671430584777" />
+</color>
+
+<color name="red" weight="0.47878327325">
+ <shade name="light" weight="0.691178543153" />
+ <shade name="cool" weight="0.241677395361" />
+ <shade name="intense" weight="0.0671430584777" />
+</color>
+
+<color name="black" weight="0.00158838052737">
+ <shade name="light" weight="0.691178543153" />
+ <shade name="cool" weight="0.241677395361" />
+ <shade name="intense" weight="0.0671430584777" />
+</color>
+
+<color name="white" weight="0.00113455751955">
+ <shade name="light" weight="0.740404160658" />
+ <shade name="cool" weight="0.25888961808" />
+ <shade name="weak" weight="0.000705146819674" />
+</color>
+
+<color name="blue" weight="0.00113455751955">
+ <shade name="light" weight="0.691178543153" />
+ <shade name="cool" weight="0.241677395361" />
+ <shade name="intense" weight="0.0671430584777" />
+</color>
+
+</colors>

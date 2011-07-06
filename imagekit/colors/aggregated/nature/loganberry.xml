@@ -1,0 +1,33 @@
+<colors query="loganberry">
+
+<color name="black" weight="0.445497126772">
+ <shade name="warm" weight="0.583891970858" />
+ <shade name="fresh" weight="0.369127108014" />
+ <shade name="dark" weight="0.0469798137472" />
+</color>
+
+<color name="purple" weight="0.146919265212">
+ <shade name="fresh" weight="0.80882156683" />
+ <shade name="dark" weight="0.102940926687" />
+ <shade name="bright" weight="0.0882350800178" />
+</color>
+
+<color name="blue" weight="0.142179934076">
+ <shade name="fresh" weight="0.80882156683" />
+ <shade name="dark" weight="0.102940926687" />
+ <shade name="bright" weight="0.0882350800178" />
+</color>
+
+<color name="red" weight="0.135070937372">
+ <shade name="warm" weight="0.583891970858" />
+ <shade name="fresh" weight="0.369127108014" />
+ <shade name="dark" weight="0.0469798137472" />
+</color>
+
+<color name="green" weight="0.130331606237">
+ <shade name="fresh" weight="0.80882156683" />
+ <shade name="dark" weight="0.102940926687" />
+ <shade name="bright" weight="0.0882350800178" />
+</color>
+
+</colors>

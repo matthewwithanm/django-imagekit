@@ -1,0 +1,33 @@
+<colors query="fervent">
+
+<color name="black" weight="0.296295952447">
+ <shade name="intense" weight="0.421221281201" />
+ <shade name="warm" weight="0.353697259024" />
+ <shade name="light" weight="0.225080073924" />
+</color>
+
+<color name="red" weight="0.259258958391">
+ <shade name="intense" weight="0.421221281201" />
+ <shade name="warm" weight="0.353697259024" />
+ <shade name="light" weight="0.225080073924" />
+</color>
+
+<color name="white" weight="0.246913293706">
+ <shade name="warm" weight="0.491070483699" />
+ <shade name="light" weight="0.312499398718" />
+ <shade name="dark" weight="0.19642819348" />
+</color>
+
+<color name="pink" weight="0.111110982168">
+ <shade name="warm" weight="0.491070483699" />
+ <shade name="light" weight="0.312499398718" />
+ <shade name="dark" weight="0.19642819348" />
+</color>
+
+<color name="orange" weight="0.0864196527969">
+ <shade name="intense" weight="0.421221281201" />
+ <shade name="warm" weight="0.353697259024" />
+ <shade name="light" weight="0.225080073924" />
+</color>
+
+</colors>

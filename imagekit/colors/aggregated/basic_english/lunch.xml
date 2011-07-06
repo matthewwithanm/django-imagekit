@@ -1,0 +1,33 @@
+<colors query="lunch">
+
+<color name="red" weight="0.310512187171">
+ <shade name="light" weight="0.958874590095" />
+ <shade name="soft" weight="0.0219677023355" />
+ <shade name="cool" weight="0.0191566693352" />
+</color>
+
+<color name="blue" weight="0.298041818209">
+ <shade name="light" weight="0.958874590095" />
+ <shade name="soft" weight="0.0219677023355" />
+ <shade name="cool" weight="0.0191566693352" />
+</color>
+
+<color name="white" weight="0.180820349959">
+ <shade name="light" weight="0.958874590095" />
+ <shade name="soft" weight="0.0219677023355" />
+ <shade name="cool" weight="0.0191566693352" />
+</color>
+
+<color name="green" weight="0.145903316864">
+ <shade name="light" weight="0.958874590095" />
+ <shade name="soft" weight="0.0219677023355" />
+ <shade name="cool" weight="0.0191566693352" />
+</color>
+
+<color name="orange" weight="0.0647212149164">
+ <shade name="light" weight="0.958874590095" />
+ <shade name="soft" weight="0.0219677023355" />
+ <shade name="cool" weight="0.0191566693352" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="him">
+
+<color name="black" weight="0.614151565615">
+ <shade name="warm" weight="0.389228445912" />
+ <shade name="light" weight="0.330476982378" />
+ <shade name="cool" weight="0.28029344061" />
+</color>
+
+<color name="white" weight="0.221471536449">
+ <shade name="warm" weight="0.389228445912" />
+ <shade name="light" weight="0.330476982378" />
+ <shade name="cool" weight="0.28029344061" />
+</color>
+
+<color name="pink" weight="0.106808967933">
+ <shade name="warm" weight="0.389228445912" />
+ <shade name="light" weight="0.330476982378" />
+ <shade name="cool" weight="0.28029344061" />
+</color>
+
+<color name="purple" weight="0.0341631625374">
+ <shade name="light" weight="0.493420219345" />
+ <shade name="cool" weight="0.418493445296" />
+ <shade name="hard" weight="0.0880846465645" />
+</color>
+
+<color name="orange" weight="0.0234037297383">
+ <shade name="warm" weight="0.389228445912" />
+ <shade name="light" weight="0.330476982378" />
+ <shade name="cool" weight="0.28029344061" />
+</color>
+
+</colors>

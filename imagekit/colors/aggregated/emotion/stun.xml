@@ -1,0 +1,33 @@
+<colors query="stun">
+
+<color name="pink" weight="0.342231710545">
+ <shade name="light" weight="0.710394096958" />
+ <shade name="hard" weight="0.177712005725" />
+ <shade name="weak" weight="0.111892744345" />
+</color>
+
+<color name="blue" weight="0.274749401423">
+ <shade name="light" weight="0.710394096958" />
+ <shade name="hard" weight="0.177712005725" />
+ <shade name="weak" weight="0.111892744345" />
+</color>
+
+<color name="black" weight="0.180200012269">
+ <shade name="light" weight="0.710394096958" />
+ <shade name="hard" weight="0.177712005725" />
+ <shade name="weak" weight="0.111892744345" />
+</color>
+
+<color name="white" weight="0.105302064783">
+ <shade name="light" weight="0.710394096958" />
+ <shade name="hard" weight="0.177712005725" />
+ <shade name="weak" weight="0.111892744345" />
+</color>
+
+<color name="red" weight="0.0975156444997">
+ <shade name="light" weight="0.710394096958" />
+ <shade name="hard" weight="0.177712005725" />
+ <shade name="weak" weight="0.111892744345" />
+</color>
+
+</colors>

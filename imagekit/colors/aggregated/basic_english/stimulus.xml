@@ -1,0 +1,33 @@
+<colors query="stimulus">
+
+<color name="red" weight="0.464781999082">
+ <shade name="light" weight="0.637449439038" />
+ <shade name="neutral" weight="0.238158193196" />
+ <shade name="weak" weight="0.124391175257" />
+</color>
+
+<color name="white" weight="0.451111940285">
+ <shade name="light" weight="0.637449439038" />
+ <shade name="neutral" weight="0.238158193196" />
+ <shade name="weak" weight="0.124391175257" />
+</color>
+
+<color name="green" weight="0.0319195872899">
+ <shade name="light" weight="0.637449439038" />
+ <shade name="neutral" weight="0.238158193196" />
+ <shade name="weak" weight="0.124391175257" />
+</color>
+
+<color name="blue" weight="0.0281261459738">
+ <shade name="light" weight="0.637449439038" />
+ <shade name="neutral" weight="0.238158193196" />
+ <shade name="weak" weight="0.124391175257" />
+</color>
+
+<color name="yellow" weight="0.0240593034819">
+ <shade name="light" weight="0.637449439038" />
+ <shade name="neutral" weight="0.238158193196" />
+ <shade name="weak" weight="0.124391175257" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cleavage">
+
+<color name="black" weight="0.317777417913">
+ <shade name="soft" weight="0.421403874701" />
+ <shade name="weak" weight="0.300333872604" />
+ <shade name="fresh" weight="0.27826033631" />
+</color>
+
+<color name="white" weight="0.288888561739">
+ <shade name="soft" weight="0.421403874701" />
+ <shade name="weak" weight="0.300333872604" />
+ <shade name="fresh" weight="0.27826033631" />
+</color>
+
+<color name="pink" weight="0.176666466602">
+ <shade name="soft" weight="0.421403874701" />
+ <shade name="weak" weight="0.300333872604" />
+ <shade name="fresh" weight="0.27826033631" />
+</color>
+
+<color name="red" weight="0.129999852782">
+ <shade name="soft" weight="0.421403874701" />
+ <shade name="weak" weight="0.300333872604" />
+ <shade name="fresh" weight="0.27826033631" />
+</color>
+
+<color name="green" weight="0.0866665685216">
+ <shade name="soft" weight="0.421403874701" />
+ <shade name="weak" weight="0.300333872604" />
+ <shade name="fresh" weight="0.27826033631" />
+</color>
+
+</colors>

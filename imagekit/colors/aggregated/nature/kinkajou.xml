@@ -1,0 +1,33 @@
+<colors query="kinkajou">
+
+<color name="pink" weight="0.235293799308">
+ <shade name="warm" weight="0.599999400001" />
+ <shade name="light" weight="0.1999998" />
+ <shade name="cool" weight="0.1999998" />
+</color>
+
+<color name="black" weight="0.235293799308">
+ <shade name="warm" weight="0.599999400001" />
+ <shade name="light" weight="0.1999998" />
+ <shade name="cool" weight="0.1999998" />
+</color>
+
+<color name="red" weight="0.176470349481">
+ <shade name="warm" weight="0.599999400001" />
+ <shade name="light" weight="0.1999998" />
+ <shade name="cool" weight="0.1999998" />
+</color>
+
+<color name="purple" weight="0.176470349481">
+ <shade name="light" weight="0.499998750003" />
+ <shade name="cool" weight="0.499998750003" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="orange" weight="0.176470349481">
+ <shade name="warm" weight="0.599999400001" />
+ <shade name="light" weight="0.1999998" />
+ <shade name="cool" weight="0.1999998" />
+</color>
+
+</colors>

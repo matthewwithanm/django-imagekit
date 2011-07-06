@@ -1,0 +1,33 @@
+<colors query="nucleus">
+
+<color name="red" weight="0.929943266141">
+ <shade name="bright" weight="0.488859195308" />
+ <shade name="light" weight="0.364350821168" />
+ <shade name="dark" weight="0.146788820039" />
+</color>
+
+<color name="blue" weight="0.0579308919891">
+ <shade name="bright" weight="0.488859195308" />
+ <shade name="light" weight="0.364350821168" />
+ <shade name="dark" weight="0.146788820039" />
+</color>
+
+<color name="yellow" weight="0.00454300152967">
+ <shade name="bright" weight="0.488859195308" />
+ <shade name="light" weight="0.364350821168" />
+ <shade name="dark" weight="0.146788820039" />
+</color>
+
+<color name="black" weight="0.0038874677519">
+ <shade name="bright" weight="0.488859195308" />
+ <shade name="light" weight="0.364350821168" />
+ <shade name="dark" weight="0.146788820039" />
+</color>
+
+<color name="green" weight="0.0036943647786">
+ <shade name="bright" weight="0.488859195308" />
+ <shade name="light" weight="0.364350821168" />
+ <shade name="dark" weight="0.146788820039" />
+</color>
+
+</colors>

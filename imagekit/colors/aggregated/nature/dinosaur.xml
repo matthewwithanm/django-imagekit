@@ -1,0 +1,33 @@
+<colors query="dinosaur">
+
+<color name="purple" weight="0.637706606544">
+ <shade name="cool" weight="0.88268371985" />
+ <shade name="soft" weight="0.0617596596317" />
+ <shade name="fresh" weight="0.0555554929107" />
+</color>
+
+<color name="green" weight="0.165053474635">
+ <shade name="cool" weight="0.88268371985" />
+ <shade name="soft" weight="0.0617596596317" />
+ <shade name="fresh" weight="0.0555554929107" />
+</color>
+
+<color name="pink" weight="0.101282813981">
+ <shade name="cool" weight="0.88268371985" />
+ <shade name="soft" weight="0.0617596596317" />
+ <shade name="fresh" weight="0.0555554929107" />
+</color>
+
+<color name="blue" weight="0.0615199314549">
+ <shade name="cool" weight="0.88268371985" />
+ <shade name="soft" weight="0.0617596596317" />
+ <shade name="fresh" weight="0.0555554929107" />
+</color>
+
+<color name="red" weight="0.0344361567534">
+ <shade name="cool" weight="0.88268371985" />
+ <shade name="soft" weight="0.0617596596317" />
+ <shade name="fresh" weight="0.0555554929107" />
+</color>
+
+</colors>

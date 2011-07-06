@@ -1,0 +1,33 @@
+<colors query="intrusion">
+
+<color name="white" weight="0.389299998512">
+ <shade name="light" weight="0.956520711813" />
+ <shade name="hard" weight="0.0261380793442" />
+ <shade name="neutral" weight="0.0173401348291" />
+</color>
+
+<color name="black" weight="0.342797990233">
+ <shade name="light" weight="0.956520711813" />
+ <shade name="hard" weight="0.0261380793442" />
+ <shade name="neutral" weight="0.0173401348291" />
+</color>
+
+<color name="red" weight="0.142798202414">
+ <shade name="light" weight="0.956520711813" />
+ <shade name="hard" weight="0.0261380793442" />
+ <shade name="neutral" weight="0.0173401348291" />
+</color>
+
+<color name="blue" weight="0.0695472513198">
+ <shade name="light" weight="0.956520711813" />
+ <shade name="hard" weight="0.0261380793442" />
+ <shade name="neutral" weight="0.0173401348291" />
+</color>
+
+<color name="green" weight="0.0555554966164">
+ <shade name="light" weight="0.956520711813" />
+ <shade name="hard" weight="0.0261380793442" />
+ <shade name="neutral" weight="0.0173401348291" />
+</color>
+
+</colors>

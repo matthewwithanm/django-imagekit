@@ -1,0 +1,33 @@
+<colors query="hurricane">
+
+<color name="red" weight="0.309833528698">
+ <shade name="intense" weight="0.910022133085" />
+ <shade name="weak" weight="0.0717763935954" />
+ <shade name="dark" weight="0.0182004426617" />
+</color>
+
+<color name="black" weight="0.269420459738">
+ <shade name="intense" weight="0.910022133085" />
+ <shade name="weak" weight="0.0717763935954" />
+ <shade name="dark" weight="0.0182004426617" />
+</color>
+
+<color name="white" weight="0.214039587458">
+ <shade name="weak" weight="0.717941316526" />
+ <shade name="dark" weight="0.182049405262" />
+ <shade name="cool" weight="0.0999989690876" />
+</color>
+
+<color name="blue" weight="0.173626518498">
+ <shade name="intense" weight="0.910022133085" />
+ <shade name="weak" weight="0.0717763935954" />
+ <shade name="dark" weight="0.0182004426617" />
+</color>
+
+<color name="pink" weight="0.0330788453344">
+ <shade name="weak" weight="0.717941316526" />
+ <shade name="dark" weight="0.182049405262" />
+ <shade name="cool" weight="0.0999989690876" />
+</color>
+
+</colors>

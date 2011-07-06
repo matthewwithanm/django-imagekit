@@ -1,0 +1,33 @@
+<colors query="surgeon">
+
+<color name="white" weight="0.578577853392">
+ <shade name="light" weight="0.47557365408" />
+ <shade name="dark" weight="0.287608828896" />
+ <shade name="soft" weight="0.236816268562" />
+</color>
+
+<color name="blue" weight="0.2723804347">
+ <shade name="light" weight="0.47557365408" />
+ <shade name="dark" weight="0.287608828896" />
+ <shade name="soft" weight="0.236816268562" />
+</color>
+
+<color name="orange" weight="0.0597638335279">
+ <shade name="light" weight="0.47557365408" />
+ <shade name="dark" weight="0.287608828896" />
+ <shade name="soft" weight="0.236816268562" />
+</color>
+
+<color name="black" weight="0.0546605432163">
+ <shade name="light" weight="0.47557365408" />
+ <shade name="dark" weight="0.287608828896" />
+ <shade name="soft" weight="0.236816268562" />
+</color>
+
+<color name="red" weight="0.0346162945228">
+ <shade name="light" weight="0.47557365408" />
+ <shade name="dark" weight="0.287608828896" />
+ <shade name="soft" weight="0.236816268562" />
+</color>
+
+</colors>

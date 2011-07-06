@@ -1,0 +1,33 @@
+<colors query="rhubarb">
+
+<color name="orange" weight="0.403238425936">
+ <shade name="fresh" weight="0.925895716984" />
+ <shade name="warm" weight="0.0603570245542" />
+ <shade name="light" weight="0.0137462333409" />
+</color>
+
+<color name="pink" weight="0.286639363015">
+ <shade name="fresh" weight="0.925895716984" />
+ <shade name="warm" weight="0.0603570245542" />
+ <shade name="light" weight="0.0137462333409" />
+</color>
+
+<color name="red" weight="0.141376363792">
+ <shade name="fresh" weight="0.925895716984" />
+ <shade name="warm" weight="0.0603570245542" />
+ <shade name="light" weight="0.0137462333409" />
+</color>
+
+<color name="white" weight="0.087611240334">
+ <shade name="fresh" weight="0.925895716984" />
+ <shade name="warm" weight="0.0603570245542" />
+ <shade name="light" weight="0.0137462333409" />
+</color>
+
+<color name="green" weight="0.0811335146161">
+ <shade name="fresh" weight="0.974424436784" />
+ <shade name="light" weight="0.0144667109215" />
+ <shade name="cool" weight="0.0111077734432" />
+</color>
+
+</colors>

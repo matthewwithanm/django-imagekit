@@ -1,0 +1,33 @@
+<colors query="mischievous">
+
+<color name="black" weight="0.332509945156">
+ <shade name="dark" weight="0.553323419948" />
+ <shade name="bright" weight="0.264542611289" />
+ <shade name="light" weight="0.182132740233" />
+</color>
+
+<color name="red" weight="0.325102545388">
+ <shade name="dark" weight="0.553323419948" />
+ <shade name="bright" weight="0.264542611289" />
+ <shade name="light" weight="0.182132740233" />
+</color>
+
+<color name="blue" weight="0.211522415607">
+ <shade name="dark" weight="0.553323419948" />
+ <shade name="bright" weight="0.264542611289" />
+ <shade name="light" weight="0.182132740233" />
+</color>
+
+<color name="green" weight="0.0765431309395">
+ <shade name="dark" weight="0.553323419948" />
+ <shade name="bright" weight="0.264542611289" />
+ <shade name="light" weight="0.182132740233" />
+</color>
+
+<color name="white" weight="0.0543209316345">
+ <shade name="dark" weight="0.553323419948" />
+ <shade name="bright" weight="0.264542611289" />
+ <shade name="light" weight="0.182132740233" />
+</color>
+
+</colors>

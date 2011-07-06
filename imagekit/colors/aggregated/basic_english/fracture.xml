@@ -1,0 +1,33 @@
+<colors query="fracture">
+
+<color name="white" weight="0.342382692537">
+ <shade name="fresh" weight="0.9637676801" />
+ <shade name="light" weight="0.0204350740469" />
+ <shade name="weak" weight="0.0157961922672" />
+</color>
+
+<color name="blue" weight="0.235293832757">
+ <shade name="fresh" weight="0.9637676801" />
+ <shade name="light" weight="0.0204350740469" />
+ <shade name="weak" weight="0.0157961922672" />
+</color>
+
+<color name="black" weight="0.173830860418">
+ <shade name="fresh" weight="0.9637676801" />
+ <shade name="light" weight="0.0204350740469" />
+ <shade name="weak" weight="0.0157961922672" />
+</color>
+
+<color name="green" weight="0.138008882675">
+ <shade name="fresh" weight="0.9637676801" />
+ <shade name="light" weight="0.0204350740469" />
+ <shade name="weak" weight="0.0157961922672" />
+</color>
+
+<color name="pink" weight="0.11048252083">
+ <shade name="fresh" weight="0.9637676801" />
+ <shade name="light" weight="0.0204350740469" />
+ <shade name="weak" weight="0.0157961922672" />
+</color>
+
+</colors>

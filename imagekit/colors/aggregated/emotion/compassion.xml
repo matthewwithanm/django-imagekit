@@ -1,0 +1,33 @@
+<colors query="compassion">
+
+<color name="white" weight="0.544714860538">
+ <shade name="warm" weight="0.437721805638" />
+ <shade name="dark" weight="0.295373250959" />
+ <shade name="soft" weight="0.266903540023" />
+</color>
+
+<color name="green" weight="0.225765860682">
+ <shade name="dark" weight="0.407861617493" />
+ <shade name="soft" weight="0.368549654361" />
+ <shade name="intense" weight="0.223586790312" />
+</color>
+
+<color name="black" weight="0.0906815783904">
+ <shade name="warm" weight="0.437721805638" />
+ <shade name="dark" weight="0.295373250959" />
+ <shade name="soft" weight="0.266903540023" />
+</color>
+
+<color name="pink" weight="0.0725452627124">
+ <shade name="warm" weight="0.437721805638" />
+ <shade name="dark" weight="0.295373250959" />
+ <shade name="soft" weight="0.266903540023" />
+</color>
+
+<color name="red" weight="0.0662913607544">
+ <shade name="warm" weight="0.437721805638" />
+ <shade name="dark" weight="0.295373250959" />
+ <shade name="soft" weight="0.266903540023" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="circuit">
+
+<color name="green" weight="0.395572254302">
+ <shade name="light" weight="0.885176494878" />
+ <shade name="neutral" weight="0.0926930103127" />
+ <shade name="cool" weight="0.022129412372" />
+</color>
+
+<color name="black" weight="0.224253857062">
+ <shade name="light" weight="0.885176494878" />
+ <shade name="neutral" weight="0.0926930103127" />
+ <shade name="cool" weight="0.022129412372" />
+</color>
+
+<color name="red" weight="0.216554153815">
+ <shade name="light" weight="0.885176494878" />
+ <shade name="neutral" weight="0.0926930103127" />
+ <shade name="cool" weight="0.022129412372" />
+</color>
+
+<color name="white" weight="0.143406972971">
+ <shade name="light" weight="0.885176494878" />
+ <shade name="neutral" weight="0.0926930103127" />
+ <shade name="cool" weight="0.022129412372" />
+</color>
+
+<color name="purple" weight="0.0202117210228">
+ <shade name="light" weight="0.885176494878" />
+ <shade name="neutral" weight="0.0926930103127" />
+ <shade name="cool" weight="0.022129412372" />
+</color>
+
+</colors>

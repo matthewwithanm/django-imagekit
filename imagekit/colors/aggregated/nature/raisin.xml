@@ -1,0 +1,33 @@
+<colors query="raisin">
+
+<color name="orange" weight="0.827712147645">
+ <shade name="soft" weight="0.398195318867" />
+ <shade name="light" weight="0.347937657262" />
+ <shade name="warm" weight="0.253865624002" />
+</color>
+
+<color name="purple" weight="0.0521152092961">
+ <shade name="soft" weight="0.429166019162" />
+ <shade name="light" weight="0.37499943422" />
+ <shade name="fresh" weight="0.19583303787" />
+</color>
+
+<color name="yellow" weight="0.0477211818457">
+ <shade name="soft" weight="0.398195318867" />
+ <shade name="light" weight="0.347937657262" />
+ <shade name="warm" weight="0.253865624002" />
+</color>
+
+<color name="black" weight="0.0363784598224">
+ <shade name="soft" weight="0.398195318867" />
+ <shade name="light" weight="0.347937657262" />
+ <shade name="warm" weight="0.253865624002" />
+</color>
+
+<color name="white" weight="0.0360718997677">
+ <shade name="soft" weight="0.398195318867" />
+ <shade name="light" weight="0.347937657262" />
+ <shade name="warm" weight="0.253865624002" />
+</color>
+
+</colors>

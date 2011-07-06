@@ -1,0 +1,33 @@
+<colors query="rotten">
+
+<color name="red" weight="0.340605121633">
+ <shade name="soft" weight="0.763779350366" />
+ <shade name="fresh" weight="0.201861856354" />
+ <shade name="hard" weight="0.0343577118773" />
+</color>
+
+<color name="green" weight="0.233748612885">
+ <shade name="soft" weight="0.763779350366" />
+ <shade name="fresh" weight="0.201861856354" />
+ <shade name="hard" weight="0.0343577118773" />
+</color>
+
+<color name="black" weight="0.202136895714">
+ <shade name="soft" weight="0.763779350366" />
+ <shade name="fresh" weight="0.201861856354" />
+ <shade name="hard" weight="0.0343577118773" />
+</color>
+
+<color name="white" weight="0.119323101435">
+ <shade name="soft" weight="0.763779350366" />
+ <shade name="fresh" weight="0.201861856354" />
+ <shade name="hard" weight="0.0343577118773" />
+</color>
+
+<color name="yellow" weight="0.104185096029">
+ <shade name="soft" weight="0.763779350366" />
+ <shade name="fresh" weight="0.201861856354" />
+ <shade name="hard" weight="0.0343577118773" />
+</color>
+
+</colors>

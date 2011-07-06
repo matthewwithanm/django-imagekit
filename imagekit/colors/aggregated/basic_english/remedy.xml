@@ -1,0 +1,33 @@
+<colors query="remedy">
+
+<color name="black" weight="0.433324290365">
+ <shade name="light" weight="0.451585859204" />
+ <shade name="hard" weight="0.296582064288" />
+ <shade name="cool" weight="0.251830312475" />
+</color>
+
+<color name="white" weight="0.330151840278">
+ <shade name="light" weight="0.451585859204" />
+ <shade name="hard" weight="0.296582064288" />
+ <shade name="cool" weight="0.251830312475" />
+</color>
+
+<color name="red" weight="0.0935000328912">
+ <shade name="light" weight="0.451585859204" />
+ <shade name="hard" weight="0.296582064288" />
+ <shade name="cool" weight="0.251830312475" />
+</color>
+
+<color name="pink" weight="0.0786689931912">
+ <shade name="light" weight="0.451585859204" />
+ <shade name="hard" weight="0.296582064288" />
+ <shade name="cool" weight="0.251830312475" />
+</color>
+
+<color name="blue" weight="0.0643538157417">
+ <shade name="light" weight="0.451585859204" />
+ <shade name="hard" weight="0.296582064288" />
+ <shade name="cool" weight="0.251830312475" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="fruit">
+
+<color name="red" weight="0.411391917058">
+ <shade name="fresh" weight="0.808262955924" />
+ <shade name="soft" weight="0.117071271194" />
+ <shade name="dark" weight="0.0746646497401" />
+</color>
+
+<color name="black" weight="0.183544086072">
+ <shade name="fresh" weight="0.808262955924" />
+ <shade name="soft" weight="0.117071271194" />
+ <shade name="dark" weight="0.0746646497401" />
+</color>
+
+<color name="green" weight="0.167369703008">
+ <shade name="fresh" weight="0.808262955924" />
+ <shade name="soft" weight="0.117071271194" />
+ <shade name="dark" weight="0.0746646497401" />
+</color>
+
+<color name="orange" weight="0.149788851852">
+ <shade name="fresh" weight="0.808262955924" />
+ <shade name="soft" weight="0.117071271194" />
+ <shade name="dark" weight="0.0746646497401" />
+</color>
+
+<color name="yellow" weight="0.0879042557817">
+ <shade name="fresh" weight="0.808262955924" />
+ <shade name="soft" weight="0.117071271194" />
+ <shade name="dark" weight="0.0746646497401" />
+</color>
+
+</colors>

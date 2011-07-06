@@ -1,0 +1,33 @@
+<colors query="saucy">
+
+<color name="red" weight="0.330703853101">
+ <shade name="fresh" weight="0.507924305768" />
+ <shade name="light" weight="0.293947683338" />
+ <shade name="weak" weight="0.19812650225" />
+</color>
+
+<color name="black" weight="0.233802553725">
+ <shade name="fresh" weight="0.507924305768" />
+ <shade name="light" weight="0.293947683338" />
+ <shade name="weak" weight="0.19812650225" />
+</color>
+
+<color name="white" weight="0.210140608529">
+ <shade name="fresh" weight="0.507924305768" />
+ <shade name="light" weight="0.293947683338" />
+ <shade name="weak" weight="0.19812650225" />
+</color>
+
+<color name="blue" weight="0.143098430473">
+ <shade name="fresh" weight="0.507924305768" />
+ <shade name="light" weight="0.293947683338" />
+ <shade name="weak" weight="0.19812650225" />
+</color>
+
+<color name="pink" weight="0.0822534285395">
+ <shade name="fresh" weight="0.507924305768" />
+ <shade name="light" weight="0.293947683338" />
+ <shade name="weak" weight="0.19812650225" />
+</color>
+
+</colors>

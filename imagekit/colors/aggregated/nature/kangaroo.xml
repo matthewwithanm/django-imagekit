@@ -1,0 +1,33 @@
+<colors query="kangaroo">
+
+<color name="red" weight="0.536005982025">
+ <shade name="soft" weight="0.841158722489" />
+ <shade name="dark" weight="0.102082369234" />
+ <shade name="fresh" weight="0.0567577972942" />
+</color>
+
+<color name="green" weight="0.173895070504">
+ <shade name="soft" weight="0.841158722489" />
+ <shade name="dark" weight="0.102082369234" />
+ <shade name="fresh" weight="0.0567577972942" />
+</color>
+
+<color name="blue" weight="0.17062175153">
+ <shade name="soft" weight="0.841158722489" />
+ <shade name="dark" weight="0.102082369234" />
+ <shade name="fresh" weight="0.0567577972942" />
+</color>
+
+<color name="orange" weight="0.0658755443557">
+ <shade name="soft" weight="0.841158722489" />
+ <shade name="dark" weight="0.102082369234" />
+ <shade name="fresh" weight="0.0567577972942" />
+</color>
+
+<color name="black" weight="0.0536005982025">
+ <shade name="soft" weight="0.841158722489" />
+ <shade name="dark" weight="0.102082369234" />
+ <shade name="fresh" weight="0.0567577972942" />
+</color>
+
+</colors>

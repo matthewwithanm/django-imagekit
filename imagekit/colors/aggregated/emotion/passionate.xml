@@ -1,0 +1,33 @@
+<colors query="passionate">
+
+<color name="purple" weight="0.528993867235">
+ <shade name="bright" weight="0.693178091217" />
+ <shade name="soft" weight="0.241475974399" />
+ <shade name="dark" weight="0.0653405577787" />
+</color>
+
+<color name="black" weight="0.151603781776">
+ <shade name="intense" weight="0.580653866822" />
+ <shade name="warm" weight="0.278018809052" />
+ <shade name="bright" weight="0.141326227935" />
+</color>
+
+<color name="red" weight="0.131091774679">
+ <shade name="intense" weight="0.580653866822" />
+ <shade name="warm" weight="0.278018809052" />
+ <shade name="bright" weight="0.141326227935" />
+</color>
+
+<color name="pink" weight="0.105952999064">
+ <shade name="warm" weight="0.593323704685" />
+ <shade name="bright" weight="0.301606216548" />
+ <shade name="soft" weight="0.105067739371" />
+</color>
+
+<color name="white" weight="0.082356479622">
+ <shade name="warm" weight="0.593323704685" />
+ <shade name="bright" weight="0.301606216548" />
+ <shade name="soft" weight="0.105067739371" />
+</color>
+
+</colors>

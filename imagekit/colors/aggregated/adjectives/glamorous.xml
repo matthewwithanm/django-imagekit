@@ -1,0 +1,33 @@
+<colors query="glamorous">
+
+<color name="pink" weight="0.287555454062">
+ <shade name="cool" weight="0.594901862866" />
+ <shade name="bright" weight="0.21327936008" />
+ <shade name="fresh" weight="0.19181728611" />
+</color>
+
+<color name="black" weight="0.270202969765">
+ <shade name="cool" weight="0.594901862866" />
+ <shade name="bright" weight="0.21327936008" />
+ <shade name="fresh" weight="0.19181728611" />
+</color>
+
+<color name="white" weight="0.174764306133">
+ <shade name="cool" weight="0.594901862866" />
+ <shade name="bright" weight="0.21327936008" />
+ <shade name="fresh" weight="0.19181728611" />
+</color>
+
+<color name="green" weight="0.166831741883">
+ <shade name="cool" weight="0.594901862866" />
+ <shade name="bright" weight="0.21327936008" />
+ <shade name="fresh" weight="0.19181728611" />
+</color>
+
+<color name="blue" weight="0.100644408922">
+ <shade name="cool" weight="0.594901862866" />
+ <shade name="bright" weight="0.21327936008" />
+ <shade name="fresh" weight="0.19181728611" />
+</color>
+
+</colors>

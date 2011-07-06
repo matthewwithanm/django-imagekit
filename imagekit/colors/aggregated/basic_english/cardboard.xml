@@ -1,0 +1,33 @@
+<colors query="cardboard">
+
+<color name="white" weight="0.496234936302">
+ <shade name="hard" weight="0.683868991381" />
+ <shade name="light" weight="0.305140970329" />
+ <shade name="dark" weight="0.0109889995746" />
+</color>
+
+<color name="black" weight="0.254962087962">
+ <shade name="hard" weight="0.683868991381" />
+ <shade name="light" weight="0.305140970329" />
+ <shade name="dark" weight="0.0109889995746" />
+</color>
+
+<color name="blue" weight="0.102669297166">
+ <shade name="hard" weight="0.683868991381" />
+ <shade name="light" weight="0.305140970329" />
+ <shade name="dark" weight="0.0109889995746" />
+</color>
+
+<color name="red" weight="0.0869266716004">
+ <shade name="hard" weight="0.683868991381" />
+ <shade name="light" weight="0.305140970329" />
+ <shade name="dark" weight="0.0109889995746" />
+</color>
+
+<color name="green" weight="0.0592059613656">
+ <shade name="hard" weight="0.683868991381" />
+ <shade name="light" weight="0.305140970329" />
+ <shade name="dark" weight="0.0109889995746" />
+</color>
+
+</colors>

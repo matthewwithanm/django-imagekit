@@ -1,0 +1,33 @@
+<colors query="acorn">
+
+<color name="red" weight="0.904760935605">
+ <shade name="light" weight="0.43022654486" />
+ <shade name="dark" weight="0.355122341986" />
+ <shade name="fresh" weight="0.214649666239" />
+</color>
+
+<color name="green" weight="0.0288571119461">
+ <shade name="light" weight="0.43022654486" />
+ <shade name="dark" weight="0.355122341986" />
+ <shade name="fresh" weight="0.214649666239" />
+</color>
+
+<color name="black" weight="0.0224761664003">
+ <shade name="light" weight="0.43022654486" />
+ <shade name="dark" weight="0.355122341986" />
+ <shade name="fresh" weight="0.214649666239" />
+</color>
+
+<color name="blue" weight="0.0221587064229">
+ <shade name="light" weight="0.43022654486" />
+ <shade name="dark" weight="0.355122341986" />
+ <shade name="fresh" weight="0.214649666239" />
+</color>
+
+<color name="purple" weight="0.0217460084523">
+ <shade name="light" weight="0.43022654486" />
+ <shade name="dark" weight="0.355122341986" />
+ <shade name="fresh" weight="0.214649666239" />
+</color>
+
+</colors>

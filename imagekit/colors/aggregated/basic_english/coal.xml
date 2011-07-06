@@ -1,0 +1,33 @@
+<colors query="coal">
+
+<color name="black" weight="0.732518684983">
+ <shade name="hard" weight="0.891250123905" />
+ <shade name="soft" weight="0.0972107678469" />
+ <shade name="fresh" weight="0.0115381004828" />
+</color>
+
+<color name="white" weight="0.123196324293">
+ <shade name="hard" weight="0.891250123905" />
+ <shade name="soft" weight="0.0972107678469" />
+ <shade name="fresh" weight="0.0115381004828" />
+</color>
+
+<color name="red" weight="0.0607657545497">
+ <shade name="hard" weight="0.891250123905" />
+ <shade name="soft" weight="0.0972107678469" />
+ <shade name="fresh" weight="0.0115381004828" />
+</color>
+
+<color name="green" weight="0.0438401334194">
+ <shade name="hard" weight="0.891250123905" />
+ <shade name="soft" weight="0.0972107678469" />
+ <shade name="fresh" weight="0.0115381004828" />
+</color>
+
+<color name="blue" weight="0.0396780954366">
+ <shade name="hard" weight="0.891250123905" />
+ <shade name="soft" weight="0.0972107678469" />
+ <shade name="fresh" weight="0.0115381004828" />
+</color>
+
+</colors>

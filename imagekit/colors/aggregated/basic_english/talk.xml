@@ -1,0 +1,33 @@
+<colors query="talk">
+
+<color name="black" weight="0.369009896657">
+ <shade name="hard" weight="0.598577587804" />
+ <shade name="cool" weight="0.294425351001" />
+ <shade name="fresh" weight="0.10699574382" />
+</color>
+
+<color name="green" weight="0.317509729041">
+ <shade name="hard" weight="0.598577587804" />
+ <shade name="cool" weight="0.294425351001" />
+ <shade name="fresh" weight="0.10699574382" />
+</color>
+
+<color name="red" weight="0.107926438221">
+ <shade name="hard" weight="0.598577587804" />
+ <shade name="cool" weight="0.294425351001" />
+ <shade name="fresh" weight="0.10699574382" />
+</color>
+
+<color name="blue" weight="0.106135128043">
+ <shade name="hard" weight="0.598577587804" />
+ <shade name="cool" weight="0.294425351001" />
+ <shade name="fresh" weight="0.10699574382" />
+</color>
+
+<color name="white" weight="0.0994177148761">
+ <shade name="hard" weight="0.598577587804" />
+ <shade name="cool" weight="0.294425351001" />
+ <shade name="fresh" weight="0.10699574382" />
+</color>
+
+</colors>

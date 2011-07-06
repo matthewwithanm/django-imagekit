@@ -1,0 +1,33 @@
+<colors query="turtle">
+
+<color name="green" weight="0.630658090175">
+ <shade name="cool" weight="0.645560547844" />
+ <shade name="light" weight="0.246735982897" />
+ <shade name="fresh" weight="0.107702214757" />
+</color>
+
+<color name="blue" weight="0.134248999394">
+ <shade name="cool" weight="0.645560547844" />
+ <shade name="light" weight="0.246735982897" />
+ <shade name="fresh" weight="0.107702214757" />
+</color>
+
+<color name="purple" weight="0.119887478528">
+ <shade name="cool" weight="0.645560547844" />
+ <shade name="light" weight="0.246735982897" />
+ <shade name="fresh" weight="0.107702214757" />
+</color>
+
+<color name="black" weight="0.0730564322282">
+ <shade name="cool" weight="0.645560547844" />
+ <shade name="light" weight="0.246735982897" />
+ <shade name="fresh" weight="0.107702214757" />
+</color>
+
+<color name="white" weight="0.0421479416701">
+ <shade name="cool" weight="0.645560547844" />
+ <shade name="light" weight="0.246735982897" />
+ <shade name="fresh" weight="0.107702214757" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="midday">
+
+<color name="red" weight="0.85808493492">
+ <shade name="bright" weight="0.649262841876" />
+ <shade name="warm" weight="0.204149656466" />
+ <shade name="light" weight="0.146586146774" />
+</color>
+
+<color name="blue" weight="0.0700140729866">
+ <shade name="bright" weight="0.692856141086" />
+ <shade name="light" weight="0.156428345256" />
+ <shade name="intense" weight="0.150714067803" />
+</color>
+
+<color name="yellow" weight="0.0268740886211">
+ <shade name="bright" weight="0.649262841876" />
+ <shade name="warm" weight="0.204149656466" />
+ <shade name="light" weight="0.146586146774" />
+</color>
+
+<color name="white" weight="0.0261668757627">
+ <shade name="bright" weight="0.649262841876" />
+ <shade name="warm" weight="0.204149656466" />
+ <shade name="light" weight="0.146586146774" />
+</color>
+
+<color name="black" weight="0.0188590095587">
+ <shade name="bright" weight="0.649262841876" />
+ <shade name="warm" weight="0.204149656466" />
+ <shade name="light" weight="0.146586146774" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="transport">
+
+<color name="green" weight="0.950343543649">
+ <shade name="light" weight="0.822527525145" />
+ <shade name="neutral" weight="0.123581721758" />
+ <shade name="weak" weight="0.0538897344061" />
+</color>
+
+<color name="blue" weight="0.0354870347053">
+ <shade name="light" weight="0.822527525145" />
+ <shade name="neutral" weight="0.123581721758" />
+ <shade name="weak" weight="0.0538897344061" />
+</color>
+
+<color name="yellow" weight="0.00690130430507">
+ <shade name="light" weight="0.822527525145" />
+ <shade name="neutral" weight="0.123581721758" />
+ <shade name="weak" weight="0.0538897344061" />
+</color>
+
+<color name="orange" weight="0.00445002135518">
+ <shade name="light" weight="0.822527525145" />
+ <shade name="neutral" weight="0.123581721758" />
+ <shade name="weak" weight="0.0538897344061" />
+</color>
+
+<color name="white" weight="0.0028170897901">
+ <shade name="light" weight="0.822527525145" />
+ <shade name="neutral" weight="0.123581721758" />
+ <shade name="weak" weight="0.0538897344061" />
+</color>
+
+</colors>

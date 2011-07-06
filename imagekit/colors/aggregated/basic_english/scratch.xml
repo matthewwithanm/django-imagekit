@@ -1,0 +1,33 @@
+<colors query="scratch">
+
+<color name="white" weight="0.415032991306">
+ <shade name="light" weight="0.667916736861" />
+ <shade name="hard" weight="0.21106919353" />
+ <shade name="soft" weight="0.121013004291" />
+</color>
+
+<color name="black" weight="0.408115774784">
+ <shade name="light" weight="0.667916736861" />
+ <shade name="hard" weight="0.21106919353" />
+ <shade name="soft" weight="0.121013004291" />
+</color>
+
+<color name="pink" weight="0.0747059384351">
+ <shade name="light" weight="0.667916736861" />
+ <shade name="hard" weight="0.21106919353" />
+ <shade name="soft" weight="0.121013004291" />
+</color>
+
+<color name="blue" weight="0.0710167562902">
+ <shade name="light" weight="0.667916736861" />
+ <shade name="hard" weight="0.21106919353" />
+ <shade name="soft" weight="0.121013004291" />
+</color>
+
+<color name="yellow" weight="0.031127474348">
+ <shade name="light" weight="0.667916736861" />
+ <shade name="hard" weight="0.21106919353" />
+ <shade name="soft" weight="0.121013004291" />
+</color>
+
+</colors>

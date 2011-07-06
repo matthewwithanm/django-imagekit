@@ -1,0 +1,33 @@
+<colors query="acquitted">
+
+<color name="white" weight="0.852667357822">
+ <shade name="light" weight="0.428570816327" />
+ <shade name="dark" weight="0.285713877552" />
+ <shade name="bright" weight="0.285713877552" />
+</color>
+
+<color name="green" weight="0.090487148177">
+ <shade name="light" weight="0.428570816327" />
+ <shade name="dark" weight="0.285713877552" />
+ <shade name="bright" weight="0.285713877552" />
+</color>
+
+<color name="black" weight="0.0516240781267">
+ <shade name="light" weight="0.428570816327" />
+ <shade name="dark" weight="0.285713877552" />
+ <shade name="bright" weight="0.285713877552" />
+</color>
+
+<color name="red" weight="0.00290022910824">
+ <shade name="light" weight="0.428570816327" />
+ <shade name="dark" weight="0.285713877552" />
+ <shade name="bright" weight="0.285713877552" />
+</color>
+
+<color name="blue" weight="0.00232018328659">
+ <shade name="light" weight="0.428570816327" />
+ <shade name="dark" weight="0.285713877552" />
+ <shade name="bright" weight="0.285713877552" />
+</color>
+
+</colors>

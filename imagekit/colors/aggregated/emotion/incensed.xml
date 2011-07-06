@@ -1,0 +1,33 @@
+<colors query="incensed">
+
+<color name="black" weight="0.2799996528">
+ <shade name="dark" weight="0.558822806229" />
+ <shade name="light" weight="0.235293813149" />
+ <shade name="intense" weight="0.205882086506" />
+</color>
+
+<color name="white" weight="0.2399997024">
+ <shade name="dark" weight="0.593749183595" />
+ <shade name="light" weight="0.24999965625" />
+ <shade name="cool" weight="0.156249785157" />
+</color>
+
+<color name="red" weight="0.2399997024">
+ <shade name="dark" weight="0.558822806229" />
+ <shade name="light" weight="0.235293813149" />
+ <shade name="intense" weight="0.205882086506" />
+</color>
+
+<color name="green" weight="0.1199998512">
+ <shade name="dark" weight="0.558822806229" />
+ <shade name="light" weight="0.235293813149" />
+ <shade name="intense" weight="0.205882086506" />
+</color>
+
+<color name="blue" weight="0.1199998512">
+ <shade name="dark" weight="0.558822806229" />
+ <shade name="light" weight="0.235293813149" />
+ <shade name="intense" weight="0.205882086506" />
+</color>
+
+</colors>

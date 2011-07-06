@@ -1,0 +1,33 @@
+<colors query="trembling">
+
+<color name="white" weight="0.455484859302">
+ <shade name="soft" weight="0.501009403949" />
+ <shade name="light" weight="0.260605698022" />
+ <shade name="weak" weight="0.238383506718" />
+</color>
+
+<color name="black" weight="0.218839509955">
+ <shade name="soft" weight="0.501009403949" />
+ <shade name="light" weight="0.260605698022" />
+ <shade name="weak" weight="0.238383506718" />
+</color>
+
+<color name="blue" weight="0.164847609861">
+ <shade name="soft" weight="0.501009403949" />
+ <shade name="light" weight="0.260605698022" />
+ <shade name="weak" weight="0.238383506718" />
+</color>
+
+<color name="green" weight="0.090177960795">
+ <shade name="soft" weight="0.501009403949" />
+ <shade name="light" weight="0.260605698022" />
+ <shade name="weak" weight="0.238383506718" />
+</color>
+
+<color name="red" weight="0.0706489756546">
+ <shade name="soft" weight="0.501009403949" />
+ <shade name="light" weight="0.260605698022" />
+ <shade name="weak" weight="0.238383506718" />
+</color>
+
+</colors>

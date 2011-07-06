@@ -1,0 +1,33 @@
+<colors query="toast">
+
+<color name="white" weight="0.513034934624">
+ <shade name="warm" weight="0.473683681307" />
+ <shade name="light" weight="0.301052295231" />
+ <shade name="fresh" weight="0.225262906222" />
+</color>
+
+<color name="black" weight="0.259032344442">
+ <shade name="warm" weight="0.473683681307" />
+ <shade name="light" weight="0.301052295231" />
+ <shade name="fresh" weight="0.225262906222" />
+</color>
+
+<color name="blue" weight="0.117360932757">
+ <shade name="light" weight="0.531795157239" />
+ <shade name="fresh" weight="0.397916656116" />
+ <shade name="cool" weight="0.0702862130897" />
+</color>
+
+<color name="orange" weight="0.0955653309593">
+ <shade name="warm" weight="0.473683681307" />
+ <shade name="light" weight="0.301052295231" />
+ <shade name="fresh" weight="0.225262906222" />
+</color>
+
+<color name="green" weight="0.0150054335454">
+ <shade name="light" weight="0.531795157239" />
+ <shade name="fresh" weight="0.397916656116" />
+ <shade name="cool" weight="0.0702862130897" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="magnitude">
+
+<color name="blue" weight="0.538734989873">
+ <shade name="bright" weight="0.918776550912" />
+ <shade name="intense" weight="0.0463854550356" />
+ <shade name="weak" weight="0.0348369442221" />
+</color>
+
+<color name="green" weight="0.238943067134">
+ <shade name="bright" weight="0.918776550912" />
+ <shade name="intense" weight="0.0463854550356" />
+ <shade name="weak" weight="0.0348369442221" />
+</color>
+
+<color name="red" weight="0.216681290693">
+ <shade name="bright" weight="0.918776550912" />
+ <shade name="intense" weight="0.0463854550356" />
+ <shade name="weak" weight="0.0348369442221" />
+</color>
+
+<color name="white" weight="0.00417037278662">
+ <shade name="bright" weight="0.931374728359" />
+ <shade name="weak" weight="0.0353146251169" />
+ <shade name="light" weight="0.033309582299" />
+</color>
+
+<color name="black" weight="0.00146927724511">
+ <shade name="bright" weight="0.918776550912" />
+ <shade name="intense" weight="0.0463854550356" />
+ <shade name="weak" weight="0.0348369442221" />
+</color>
+
+</colors>

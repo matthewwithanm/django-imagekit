@@ -1,0 +1,33 @@
+<colors query="superstring">
+
+<color name="black" weight="0.624999362981">
+ <shade name="light" weight="0.615383763315" />
+ <shade name="soft" weight="0.230768911243" />
+ <shade name="neutral" weight="0.153845940829" />
+</color>
+
+<color name="green" weight="0.288461244453">
+ <shade name="light" weight="0.615383763315" />
+ <shade name="soft" weight="0.230768911243" />
+ <shade name="neutral" weight="0.153845940829" />
+</color>
+
+<color name="red" weight="0.0384614992604">
+ <shade name="light" weight="0.615383763315" />
+ <shade name="soft" weight="0.230768911243" />
+ <shade name="neutral" weight="0.153845940829" />
+</color>
+
+<color name="blue" weight="0.0288461244453">
+ <shade name="light" weight="0.615383763315" />
+ <shade name="soft" weight="0.230768911243" />
+ <shade name="neutral" weight="0.153845940829" />
+</color>
+
+<color name="yellow" weight="0.0192307496302">
+ <shade name="light" weight="0.615383763315" />
+ <shade name="soft" weight="0.230768911243" />
+ <shade name="neutral" weight="0.153845940829" />
+</color>
+
+</colors>

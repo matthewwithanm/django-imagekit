@@ -1,0 +1,33 @@
+<colors query="sister">
+
+<color name="white" weight="0.489280674142">
+ <shade name="weak" weight="0.52128968017" />
+ <shade name="dark" weight="0.299354469801" />
+ <shade name="light" weight="0.179354617682" />
+</color>
+
+<color name="black" weight="0.265447376049">
+ <shade name="weak" weight="0.52128968017" />
+ <shade name="dark" weight="0.299354469801" />
+ <shade name="light" weight="0.179354617682" />
+</color>
+
+<color name="red" weight="0.095838482564">
+ <shade name="weak" weight="0.52128968017" />
+ <shade name="dark" weight="0.299354469801" />
+ <shade name="light" weight="0.179354617682" />
+</color>
+
+<color name="green" weight="0.0775535089169">
+ <shade name="weak" weight="0.52128968017" />
+ <shade name="dark" weight="0.299354469801" />
+ <shade name="light" weight="0.179354617682" />
+</color>
+
+<color name="blue" weight="0.071878861923">
+ <shade name="weak" weight="0.52128968017" />
+ <shade name="dark" weight="0.299354469801" />
+ <shade name="light" weight="0.179354617682" />
+</color>
+
+</colors>

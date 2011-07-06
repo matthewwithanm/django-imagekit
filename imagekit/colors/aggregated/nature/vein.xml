@@ -1,0 +1,33 @@
+<colors query="vein">
+
+<color name="yellow" weight="0.468392464666">
+ <shade name="dark" weight="0.449397910478" />
+ <shade name="light" weight="0.438782211805" />
+ <shade name="hard" weight="0.111818692686" />
+</color>
+
+<color name="blue" weight="0.230768970397">
+ <shade name="dark" weight="0.449397910478" />
+ <shade name="light" weight="0.438782211805" />
+ <shade name="hard" weight="0.111818692686" />
+</color>
+
+<color name="red" weight="0.128331919181">
+ <shade name="dark" weight="0.449397910478" />
+ <shade name="light" weight="0.438782211805" />
+ <shade name="hard" weight="0.111818692686" />
+</color>
+
+<color name="pink" weight="0.10129463057">
+ <shade name="dark" weight="0.449397910478" />
+ <shade name="light" weight="0.438782211805" />
+ <shade name="hard" weight="0.111818692686" />
+</color>
+
+<color name="black" weight="0.0712108869046">
+ <shade name="dark" weight="0.449397910478" />
+ <shade name="light" weight="0.438782211805" />
+ <shade name="hard" weight="0.111818692686" />
+</color>
+
+</colors>

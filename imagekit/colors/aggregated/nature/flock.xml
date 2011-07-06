@@ -1,0 +1,33 @@
+<colors query="flock">
+
+<color name="white" weight="0.435966833303">
+ <shade name="soft" weight="0.783094136072" />
+ <shade name="fresh" weight="0.124300656519" />
+ <shade name="dark" weight="0.0926039891069" />
+</color>
+
+<color name="black" weight="0.37465899737">
+ <shade name="soft" weight="0.783094136072" />
+ <shade name="fresh" weight="0.124300656519" />
+ <shade name="dark" weight="0.0926039891069" />
+</color>
+
+<color name="blue" weight="0.0837873757754">
+ <shade name="soft" weight="0.783094136072" />
+ <shade name="fresh" weight="0.124300656519" />
+ <shade name="dark" weight="0.0926039891069" />
+</color>
+
+<color name="yellow" weight="0.056766514753">
+ <shade name="soft" weight="0.783094136072" />
+ <shade name="fresh" weight="0.124300656519" />
+ <shade name="dark" weight="0.0926039891069" />
+</color>
+
+<color name="pink" weight="0.0488192026876">
+ <shade name="soft" weight="0.783094136072" />
+ <shade name="fresh" weight="0.124300656519" />
+ <shade name="dark" weight="0.0926039891069" />
+</color>
+
+</colors>

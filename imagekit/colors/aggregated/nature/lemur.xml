@@ -1,0 +1,33 @@
+<colors query="lemur">
+
+<color name="black" weight="0.5486962745">
+ <shade name="cool" weight="0.504450418865" />
+ <shade name="soft" weight="0.252225209433" />
+ <shade name="dark" weight="0.243323143217" />
+</color>
+
+<color name="blue" weight="0.304526432347">
+ <shade name="cool" weight="0.504450418865" />
+ <shade name="soft" weight="0.252225209433" />
+ <shade name="dark" weight="0.243323143217" />
+</color>
+
+<color name="red" weight="0.0674896417634">
+ <shade name="cool" weight="0.504450418865" />
+ <shade name="soft" weight="0.252225209433" />
+ <shade name="dark" weight="0.243323143217" />
+</color>
+
+<color name="white" weight="0.0411522205875">
+ <shade name="cool" weight="0.504450418865" />
+ <shade name="soft" weight="0.252225209433" />
+ <shade name="dark" weight="0.243323143217" />
+</color>
+
+<color name="yellow" weight="0.0381343910777">
+ <shade name="cool" weight="0.504450418865" />
+ <shade name="soft" weight="0.252225209433" />
+ <shade name="dark" weight="0.243323143217" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="linden">
+
+<color name="green" weight="0.310870090005">
+ <shade name="soft" weight="0.387817508498" />
+ <shade name="fresh" weight="0.329991836256" />
+ <shade name="light" weight="0.282189280537" />
+</color>
+
+<color name="white" weight="0.254712912456">
+ <shade name="soft" weight="0.387817508498" />
+ <shade name="fresh" weight="0.329991836256" />
+ <shade name="light" weight="0.282189280537" />
+</color>
+
+<color name="blue" weight="0.18932991288">
+ <shade name="soft" weight="0.387817508498" />
+ <shade name="fresh" weight="0.329991836256" />
+ <shade name="light" weight="0.282189280537" />
+</color>
+
+<color name="orange" weight="0.165463112422">
+ <shade name="soft" weight="0.387817508498" />
+ <shade name="fresh" weight="0.329991836256" />
+ <shade name="light" weight="0.282189280537" />
+</color>
+
+<color name="red" weight="0.0796228553109">
+ <shade name="soft" weight="0.387817508498" />
+ <shade name="fresh" weight="0.329991836256" />
+ <shade name="light" weight="0.282189280537" />
+</color>
+
+</colors>

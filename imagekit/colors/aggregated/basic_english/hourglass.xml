@@ -1,0 +1,33 @@
+<colors query="hourglass">
+
+<color name="red" weight="0.740608693689">
+ <shade name="cool" weight="0.634827358286" />
+ <shade name="light" weight="0.211997393042" />
+ <shade name="soft" weight="0.153173940577" />
+</color>
+
+<color name="black" weight="0.0900069895679">
+ <shade name="cool" weight="0.634827358286" />
+ <shade name="light" weight="0.211997393042" />
+ <shade name="soft" weight="0.153173940577" />
+</color>
+
+<color name="white" weight="0.066973704836">
+ <shade name="cool" weight="0.634827358286" />
+ <shade name="light" weight="0.211997393042" />
+ <shade name="soft" weight="0.153173940577" />
+</color>
+
+<color name="orange" weight="0.0584691073965">
+ <shade name="cool" weight="0.634827358286" />
+ <shade name="light" weight="0.211997393042" />
+ <shade name="soft" weight="0.153173940577" />
+</color>
+
+<color name="green" weight="0.043940420104">
+ <shade name="cool" weight="0.634827358286" />
+ <shade name="light" weight="0.211997393042" />
+ <shade name="soft" weight="0.153173940577" />
+</color>
+
+</colors>

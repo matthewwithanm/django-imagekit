@@ -1,0 +1,33 @@
+<colors query="cliff">
+
+<color name="red" weight="0.705953863987">
+ <shade name="cool" weight="0.496063686052" />
+ <shade name="light" weight="0.380742607744" />
+ <shade name="hard" weight="0.123192199525" />
+</color>
+
+<color name="white" weight="0.129066782525">
+ <shade name="cool" weight="0.496063686052" />
+ <shade name="light" weight="0.380742607744" />
+ <shade name="hard" weight="0.123192199525" />
+</color>
+
+<color name="blue" weight="0.110036721843">
+ <shade name="cool" weight="0.496063686052" />
+ <shade name="light" weight="0.380742607744" />
+ <shade name="hard" weight="0.123192199525" />
+</color>
+
+<color name="black" weight="0.0352976931993">
+ <shade name="cool" weight="0.496063686052" />
+ <shade name="light" weight="0.380742607744" />
+ <shade name="hard" weight="0.123192199525" />
+</color>
+
+<color name="green" weight="0.0196439336066">
+ <shade name="cool" weight="0.496063686052" />
+ <shade name="light" weight="0.380742607744" />
+ <shade name="hard" weight="0.123192199525" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="piano">
+
+<color name="red" weight="0.416944947384">
+ <shade name="soft" weight="0.557051571884" />
+ <shade name="light" weight="0.255942614109" />
+ <shade name="cool" weight="0.187004510618" />
+</color>
+
+<color name="black" weight="0.280936167756">
+ <shade name="soft" weight="0.557051571884" />
+ <shade name="light" weight="0.255942614109" />
+ <shade name="cool" weight="0.187004510618" />
+</color>
+
+<color name="white" weight="0.159420126941">
+ <shade name="soft" weight="0.557051571884" />
+ <shade name="light" weight="0.255942614109" />
+ <shade name="cool" weight="0.187004510618" />
+</color>
+
+<color name="blue" weight="0.0998884152021">
+ <shade name="soft" weight="0.557051571884" />
+ <shade name="light" weight="0.255942614109" />
+ <shade name="cool" weight="0.187004510618" />
+</color>
+
+<color name="green" weight="0.0428093208009">
+ <shade name="soft" weight="0.557051571884" />
+ <shade name="light" weight="0.255942614109" />
+ <shade name="cool" weight="0.187004510618" />
+</color>
+
+</colors>

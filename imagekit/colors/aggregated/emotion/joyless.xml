@@ -1,0 +1,33 @@
+<colors query="joyless">
+
+<color name="red" weight="0.611110483025">
+ <shade name="dark" weight="0.625570113551" />
+ <shade name="hard" weight="0.333332980213" />
+ <shade name="weak" weight="0.0410958468756" />
+</color>
+
+<color name="black" weight="0.222221993827">
+ <shade name="dark" weight="0.625570113551" />
+ <shade name="hard" weight="0.333332980213" />
+ <shade name="weak" weight="0.0410958468756" />
+</color>
+
+<color name="white" weight="0.0833332476853">
+ <shade name="dark" weight="0.625570113551" />
+ <shade name="hard" weight="0.333332980213" />
+ <shade name="weak" weight="0.0410958468756" />
+</color>
+
+<color name="green" weight="0.0555554984568">
+ <shade name="dark" weight="0.625570113551" />
+ <shade name="hard" weight="0.333332980213" />
+ <shade name="weak" weight="0.0410958468756" />
+</color>
+
+<color name="pink" weight="0.0277777492284">
+ <shade name="dark" weight="0.625570113551" />
+ <shade name="hard" weight="0.333332980213" />
+ <shade name="weak" weight="0.0410958468756" />
+</color>
+
+</colors>

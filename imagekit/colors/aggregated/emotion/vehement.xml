@@ -1,0 +1,33 @@
+<colors query="vehement">
+
+<color name="red" weight="0.285713969388">
+ <shade name="intense" weight="0.732823470895" />
+ <shade name="fresh" weight="0.152671556436" />
+ <shade name="hard" weight="0.114503667327" />
+</color>
+
+<color name="white" weight="0.214285477041">
+ <shade name="fresh" weight="0.444442755562" />
+ <shade name="hard" weight="0.333332066671" />
+ <shade name="light" weight="0.222221377781" />
+</color>
+
+<color name="green" weight="0.178571230868">
+ <shade name="intense" weight="0.732823470895" />
+ <shade name="fresh" weight="0.152671556436" />
+ <shade name="hard" weight="0.114503667327" />
+</color>
+
+<color name="black" weight="0.178571230868">
+ <shade name="intense" weight="0.732823470895" />
+ <shade name="fresh" weight="0.152671556436" />
+ <shade name="hard" weight="0.114503667327" />
+</color>
+
+<color name="blue" weight="0.142856984694">
+ <shade name="intense" weight="0.732823470895" />
+ <shade name="fresh" weight="0.152671556436" />
+ <shade name="hard" weight="0.114503667327" />
+</color>
+
+</colors>

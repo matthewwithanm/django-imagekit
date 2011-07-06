@@ -1,0 +1,33 @@
+<colors query="runaway">
+
+<color name="black" weight="0.443052171424">
+ <shade name="cool" weight="0.447239652046" />
+ <shade name="dark" weight="0.374999490463" />
+ <shade name="light" weight="0.177759498726" />
+</color>
+
+<color name="pink" weight="0.214335186595">
+ <shade name="cool" weight="0.447239652046" />
+ <shade name="dark" weight="0.374999490463" />
+ <shade name="light" weight="0.177759498726" />
+</color>
+
+<color name="white" weight="0.192762489243">
+ <shade name="cool" weight="0.447239652046" />
+ <shade name="dark" weight="0.374999490463" />
+ <shade name="light" weight="0.177759498726" />
+</color>
+
+<color name="red" weight="0.08513096697">
+ <shade name="cool" weight="0.447239652046" />
+ <shade name="dark" weight="0.374999490463" />
+ <shade name="light" weight="0.177759498726" />
+</color>
+
+<color name="blue" weight="0.0647180920562">
+ <shade name="cool" weight="0.447239652046" />
+ <shade name="dark" weight="0.374999490463" />
+ <shade name="light" weight="0.177759498726" />
+</color>
+
+</colors>

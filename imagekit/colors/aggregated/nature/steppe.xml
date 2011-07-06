@@ -1,0 +1,33 @@
+<colors query="steppe">
+
+<color name="red" weight="0.489491388705">
+ <shade name="warm" weight="0.744889373058" />
+ <shade name="cool" weight="0.174110320938" />
+ <shade name="light" weight="0.0809991493061" />
+</color>
+
+<color name="white" weight="0.163075120259">
+ <shade name="warm" weight="0.744889373058" />
+ <shade name="cool" weight="0.174110320938" />
+ <shade name="light" weight="0.0809991493061" />
+</color>
+
+<color name="yellow" weight="0.153764142756">
+ <shade name="warm" weight="0.744889373058" />
+ <shade name="cool" weight="0.174110320938" />
+ <shade name="light" weight="0.0809991493061" />
+</color>
+
+<color name="green" weight="0.137004383252">
+ <shade name="cool" weight="0.543733260462" />
+ <shade name="light" weight="0.252954168998" />
+ <shade name="hard" weight="0.20330895826" />
+</color>
+
+<color name="black" weight="0.0566639488012">
+ <shade name="warm" weight="0.744889373058" />
+ <shade name="cool" weight="0.174110320938" />
+ <shade name="light" weight="0.0809991493061" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="heroism">
+
+<color name="black" weight="0.65765003736">
+ <shade name="cool" weight="0.430735438467" />
+ <shade name="dark" weight="0.370129447125" />
+ <shade name="intense" weight="0.199133971553" />
+</color>
+
+<color name="white" weight="0.181607237109">
+ <shade name="cool" weight="0.497499343301" />
+ <shade name="dark" weight="0.427499435701" />
+ <shade name="hard" weight="0.0749999010001" />
+</color>
+
+<color name="blue" weight="0.08037086238">
+ <shade name="cool" weight="0.430735438467" />
+ <shade name="dark" weight="0.370129447125" />
+ <shade name="intense" weight="0.199133971553" />
+</color>
+
+<color name="red" weight="0.0610509435387">
+ <shade name="cool" weight="0.430735438467" />
+ <shade name="dark" weight="0.370129447125" />
+ <shade name="intense" weight="0.199133971553" />
+</color>
+
+<color name="green" weight="0.0193199188413">
+ <shade name="cool" weight="0.430735438467" />
+ <shade name="dark" weight="0.370129447125" />
+ <shade name="intense" weight="0.199133971553" />
+</color>
+
+</colors>

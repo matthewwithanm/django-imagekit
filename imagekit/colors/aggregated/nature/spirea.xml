@@ -1,0 +1,33 @@
+<colors query="spirea">
+
+<color name="blue" weight="0.58952339336">
+ <shade name="light" weight="0.830507531458" />
+ <shade name="dark" weight="0.10169479977" />
+ <shade name="soft" weight="0.0677965331802" />
+</color>
+
+<color name="pink" weight="0.193387572619">
+ <shade name="light" weight="0.830507531458" />
+ <shade name="dark" weight="0.10169479977" />
+ <shade name="soft" weight="0.0677965331802" />
+</color>
+
+<color name="white" weight="0.129655313877">
+ <shade name="light" weight="0.830507531458" />
+ <shade name="dark" weight="0.10169479977" />
+ <shade name="soft" weight="0.0677965331802" />
+</color>
+
+<color name="red" weight="0.0569607062503">
+ <shade name="light" weight="0.830507531458" />
+ <shade name="dark" weight="0.10169479977" />
+ <shade name="soft" weight="0.0677965331802" />
+</color>
+
+<color name="yellow" weight="0.0304719862108">
+ <shade name="light" weight="0.830507531458" />
+ <shade name="dark" weight="0.10169479977" />
+ <shade name="soft" weight="0.0677965331802" />
+</color>
+
+</colors>

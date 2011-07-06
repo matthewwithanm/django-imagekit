@@ -1,0 +1,33 @@
+<colors query="reflux">
+
+<color name="red" weight="0.512819914531">
+ <shade name="light" weight="0.614712432854" />
+ <shade name="weak" weight="0.235660547281" />
+ <shade name="cool" weight="0.149625744305" />
+</color>
+
+<color name="blue" weight="0.196580967237">
+ <shade name="light" weight="0.614712432854" />
+ <shade name="weak" weight="0.235660547281" />
+ <shade name="cool" weight="0.149625744305" />
+</color>
+
+<color name="orange" weight="0.119657980057">
+ <shade name="light" weight="0.614712432854" />
+ <shade name="weak" weight="0.235660547281" />
+ <shade name="cool" weight="0.149625744305" />
+</color>
+
+<color name="black" weight="0.0897434850429">
+ <shade name="light" weight="0.614712432854" />
+ <shade name="weak" weight="0.235660547281" />
+ <shade name="cool" weight="0.149625744305" />
+</color>
+
+<color name="purple" weight="0.0811964864673">
+ <shade name="light" weight="0.614712432854" />
+ <shade name="weak" weight="0.235660547281" />
+ <shade name="cool" weight="0.149625744305" />
+</color>
+
+</colors>

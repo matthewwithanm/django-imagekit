@@ -1,0 +1,33 @@
+<colors query="roof">
+
+<color name="red" weight="0.599754593744">
+ <shade name="cool" weight="0.579374185338" />
+ <shade name="light" weight="0.266249625625" />
+ <shade name="hard" weight="0.154374782933" />
+</color>
+
+<color name="green" weight="0.24030983382">
+ <shade name="cool" weight="0.579374185338" />
+ <shade name="light" weight="0.266249625625" />
+ <shade name="hard" weight="0.154374782933" />
+</color>
+
+<color name="white" weight="0.0546715071848">
+ <shade name="cool" weight="0.579374185338" />
+ <shade name="light" weight="0.266249625625" />
+ <shade name="hard" weight="0.154374782933" />
+</color>
+
+<color name="blue" weight="0.053447518218">
+ <shade name="cool" weight="0.579374185338" />
+ <shade name="light" weight="0.266249625625" />
+ <shade name="hard" weight="0.154374782933" />
+</color>
+
+<color name="black" weight="0.0518155329289">
+ <shade name="cool" weight="0.579374185338" />
+ <shade name="light" weight="0.266249625625" />
+ <shade name="hard" weight="0.154374782933" />
+</color>
+
+</colors>

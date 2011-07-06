@@ -1,0 +1,33 @@
+<colors query="fraction">
+
+<color name="red" weight="0.740546690075">
+ <shade name="light" weight="0.531539046533" />
+ <shade name="neutral" weight="0.465214262851" />
+ <shade name="dark" weight="0.00324568090361" />
+</color>
+
+<color name="blue" weight="0.105087101734">
+ <shade name="light" weight="0.531539046533" />
+ <shade name="neutral" weight="0.465214262851" />
+ <shade name="dark" weight="0.00324568090361" />
+</color>
+
+<color name="yellow" weight="0.0804022120653">
+ <shade name="light" weight="0.531539046533" />
+ <shade name="neutral" weight="0.465214262851" />
+ <shade name="dark" weight="0.00324568090361" />
+</color>
+
+<color name="green" weight="0.0685534650241">
+ <shade name="light" weight="0.531539046533" />
+ <shade name="neutral" weight="0.465214262851" />
+ <shade name="dark" weight="0.00324568090361" />
+</color>
+
+<color name="orange" weight="0.00540951725036">
+ <shade name="light" weight="0.531539046533" />
+ <shade name="neutral" weight="0.465214262851" />
+ <shade name="dark" weight="0.00324568090361" />
+</color>
+
+</colors>

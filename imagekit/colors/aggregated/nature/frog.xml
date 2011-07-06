@@ -1,0 +1,33 @@
+<colors query="frog">
+
+<color name="green" weight="0.608579324607">
+ <shade name="cool" weight="0.65235618924" />
+ <shade name="fresh" weight="0.244107477264" />
+ <shade name="light" weight="0.103535240357" />
+</color>
+
+<color name="blue" weight="0.212005092588">
+ <shade name="cool" weight="0.65235618924" />
+ <shade name="fresh" weight="0.244107477264" />
+ <shade name="light" weight="0.103535240357" />
+</color>
+
+<color name="red" weight="0.108081027594">
+ <shade name="cool" weight="0.65235618924" />
+ <shade name="fresh" weight="0.244107477264" />
+ <shade name="light" weight="0.103535240357" />
+</color>
+
+<color name="black" weight="0.0404056764698">
+ <shade name="cool" weight="0.65235618924" />
+ <shade name="fresh" weight="0.244107477264" />
+ <shade name="light" weight="0.103535240357" />
+</color>
+
+<color name="pink" weight="0.0309278017423">
+ <shade name="cool" weight="0.65235618924" />
+ <shade name="fresh" weight="0.244107477264" />
+ <shade name="light" weight="0.103535240357" />
+</color>
+
+</colors>

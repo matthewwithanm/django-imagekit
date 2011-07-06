@@ -1,0 +1,33 @@
+<colors query="ear">
+
+<color name="red" weight="0.440224856911">
+ <shade name="soft" weight="0.516522411674" />
+ <shade name="fresh" weight="0.38577543125" />
+ <shade name="light" weight="0.0977010403167" />
+</color>
+
+<color name="blue" weight="0.277487706015">
+ <shade name="soft" weight="0.516522411674" />
+ <shade name="fresh" weight="0.38577543125" />
+ <shade name="light" weight="0.0977010403167" />
+</color>
+
+<color name="white" weight="0.138117940889">
+ <shade name="soft" weight="0.516522411674" />
+ <shade name="fresh" weight="0.38577543125" />
+ <shade name="light" weight="0.0977010403167" />
+</color>
+
+<color name="black" weight="0.0897140703657">
+ <shade name="soft" weight="0.516522411674" />
+ <shade name="fresh" weight="0.38577543125" />
+ <shade name="light" weight="0.0977010403167" />
+</color>
+
+<color name="green" weight="0.0544543543382">
+ <shade name="soft" weight="0.516522411674" />
+ <shade name="fresh" weight="0.38577543125" />
+ <shade name="light" weight="0.0977010403167" />
+</color>
+
+</colors>

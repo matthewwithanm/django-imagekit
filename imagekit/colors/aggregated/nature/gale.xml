@@ -1,0 +1,33 @@
+<colors query="gale">
+
+<color name="blue" weight="0.891051130168">
+ <shade name="fresh" weight="0.57128180635" />
+ <shade name="hard" weight="0.409276517982" />
+ <shade name="dark" weight="0.0194406346042" />
+</color>
+
+<color name="yellow" weight="0.0456757302019">
+ <shade name="fresh" weight="0.57128180635" />
+ <shade name="hard" weight="0.409276517982" />
+ <shade name="dark" weight="0.0194406346042" />
+</color>
+
+<color name="green" weight="0.0232122563321">
+ <shade name="fresh" weight="0.57128180635" />
+ <shade name="hard" weight="0.409276517982" />
+ <shade name="dark" weight="0.0194406346042" />
+</color>
+
+<color name="black" weight="0.0211531045607">
+ <shade name="fresh" weight="0.57128180635" />
+ <shade name="hard" weight="0.409276517982" />
+ <shade name="dark" weight="0.0194406346042" />
+</color>
+
+<color name="red" weight="0.0189067571737">
+ <shade name="fresh" weight="0.57128180635" />
+ <shade name="hard" weight="0.409276517982" />
+ <shade name="dark" weight="0.0194406346042" />
+</color>
+
+</colors>

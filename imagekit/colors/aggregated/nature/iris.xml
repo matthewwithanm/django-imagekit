@@ -1,0 +1,33 @@
+<colors query="iris">
+
+<color name="blue" weight="0.424544227584">
+ <shade name="light" weight="0.587700728583" />
+ <shade name="dark" weight="0.338098102544" />
+ <shade name="fresh" weight="0.074200053377" />
+</color>
+
+<color name="black" weight="0.201832501638">
+ <shade name="light" weight="0.587700728583" />
+ <shade name="dark" weight="0.338098102544" />
+ <shade name="fresh" weight="0.074200053377" />
+</color>
+
+<color name="purple" weight="0.153114311588">
+ <shade name="light" weight="0.587700728583" />
+ <shade name="dark" weight="0.338098102544" />
+ <shade name="fresh" weight="0.074200053377" />
+</color>
+
+<color name="yellow" weight="0.114255755238">
+ <shade name="light" weight="0.587700728583" />
+ <shade name="dark" weight="0.338098102544" />
+ <shade name="fresh" weight="0.074200053377" />
+</color>
+
+<color name="red" weight="0.106252052587">
+ <shade name="light" weight="0.587700728583" />
+ <shade name="dark" weight="0.338098102544" />
+ <shade name="fresh" weight="0.074200053377" />
+</color>
+
+</colors>

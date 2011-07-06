@@ -1,0 +1,33 @@
+<colors query="employer">
+
+<color name="white" weight="0.903792636975">
+ <shade name="cool" weight="0.375558910777" />
+ <shade name="weak" weight="0.356758583897" />
+ <shade name="neutral" weight="0.26768084463" />
+</color>
+
+<color name="black" weight="0.0612438431634">
+ <shade name="cool" weight="0.375558910777" />
+ <shade name="weak" weight="0.356758583897" />
+ <shade name="neutral" weight="0.26768084463" />
+</color>
+
+<color name="green" weight="0.0197407339129">
+ <shade name="cool" weight="0.375558910777" />
+ <shade name="weak" weight="0.356758583897" />
+ <shade name="neutral" weight="0.26768084463" />
+</color>
+
+<color name="yellow" weight="0.00862170607641">
+ <shade name="cool" weight="0.375558910777" />
+ <shade name="weak" weight="0.356758583897" />
+ <shade name="neutral" weight="0.26768084463" />
+</color>
+
+<color name="blue" weight="0.00660006465159">
+ <shade name="cool" weight="0.375558910777" />
+ <shade name="weak" weight="0.356758583897" />
+ <shade name="neutral" weight="0.26768084463" />
+</color>
+
+</colors>

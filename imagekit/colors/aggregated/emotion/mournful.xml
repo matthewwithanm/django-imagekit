@@ -1,0 +1,33 @@
+<colors query="mournful">
+
+<color name="red" weight="0.876933533338">
+ <shade name="dark" weight="0.608423701973" />
+ <shade name="soft" weight="0.362454119893" />
+ <shade name="light" weight="0.0291211344534" />
+</color>
+
+<color name="black" weight="0.0567427580395">
+ <shade name="dark" weight="0.608423701973" />
+ <shade name="soft" weight="0.362454119893" />
+ <shade name="light" weight="0.0291211344534" />
+</color>
+
+<color name="blue" weight="0.0353721089077">
+ <shade name="dark" weight="0.608423701973" />
+ <shade name="soft" weight="0.362454119893" />
+ <shade name="light" weight="0.0291211344534" />
+</color>
+
+<color name="white" weight="0.0257921627452">
+ <shade name="dark" weight="0.608423701973" />
+ <shade name="soft" weight="0.362454119893" />
+ <shade name="light" weight="0.0291211344534" />
+</color>
+
+<color name="green" weight="0.00515843254905">
+ <shade name="dark" weight="0.608423701973" />
+ <shade name="soft" weight="0.362454119893" />
+ <shade name="light" weight="0.0291211344534" />
+</color>
+
+</colors>

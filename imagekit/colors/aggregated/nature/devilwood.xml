@@ -1,0 +1,33 @@
+<colors query="devilwood">
+
+<color name="white" weight="0.461538">
+ <shade name="dark" weight="0.4999995" />
+ <shade name="cool" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="red" weight="0.384615">
+ <shade name="dark" weight="0.4999995" />
+ <shade name="cool" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="pink" weight="0.0769230000001">
+ <shade name="dark" weight="0.4999995" />
+ <shade name="cool" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="green" weight="0.0769230000001">
+ <shade name="dark" weight="0.4999995" />
+ <shade name="cool" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="dark" weight="0.4999995" />
+ <shade name="cool" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+</colors>

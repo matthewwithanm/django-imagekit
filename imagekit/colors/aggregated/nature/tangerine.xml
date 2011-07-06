@@ -1,0 +1,33 @@
+<colors query="tangerine">
+
+<color name="orange" weight="0.490071276057">
+ <shade name="fresh" weight="0.574711958528" />
+ <shade name="dark" weight="0.323928558443" />
+ <shade name="soft" weight="0.101358290868" />
+</color>
+
+<color name="blue" weight="0.193493658995">
+ <shade name="fresh" weight="0.574711958528" />
+ <shade name="dark" weight="0.323928558443" />
+ <shade name="soft" weight="0.101358290868" />
+</color>
+
+<color name="green" weight="0.142796630437">
+ <shade name="fresh" weight="0.574711958528" />
+ <shade name="dark" weight="0.323928558443" />
+ <shade name="soft" weight="0.101358290868" />
+</color>
+
+<color name="black" weight="0.103506433305">
+ <shade name="fresh" weight="0.574711958528" />
+ <shade name="dark" weight="0.323928558443" />
+ <shade name="soft" weight="0.101358290868" />
+</color>
+
+<color name="white" weight="0.0701308895047">
+ <shade name="fresh" weight="0.574711958528" />
+ <shade name="dark" weight="0.323928558443" />
+ <shade name="soft" weight="0.101358290868" />
+</color>
+
+</colors>

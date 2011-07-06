@@ -1,0 +1,33 @@
+<colors query="organism">
+
+<color name="green" weight="0.450396253465">
+ <shade name="weak" weight="0.47065019664" />
+ <shade name="cool" weight="0.30843062773" />
+ <shade name="intense" weight="0.220917439239" />
+</color>
+
+<color name="blue" weight="0.151454834131">
+ <shade name="weak" weight="0.47065019664" />
+ <shade name="cool" weight="0.30843062773" />
+ <shade name="intense" weight="0.220917439239" />
+</color>
+
+<color name="red" weight="0.147486585202">
+ <shade name="weak" weight="0.47065019664" />
+ <shade name="cool" weight="0.30843062773" />
+ <shade name="intense" weight="0.220917439239" />
+</color>
+
+<color name="black" weight="0.128968090199">
+ <shade name="weak" weight="0.47065019664" />
+ <shade name="cool" weight="0.30843062773" />
+ <shade name="intense" weight="0.220917439239" />
+</color>
+
+<color name="orange" weight="0.121692967162">
+ <shade name="weak" weight="0.47065019664" />
+ <shade name="cool" weight="0.30843062773" />
+ <shade name="intense" weight="0.220917439239" />
+</color>
+
+</colors>

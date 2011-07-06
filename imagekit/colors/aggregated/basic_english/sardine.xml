@@ -1,0 +1,33 @@
+<colors query="sardine">
+
+<color name="white" weight="0.266875682759">
+ <shade name="fresh" weight="0.69107470124" />
+ <shade name="cool" weight="0.165903694834" />
+ <shade name="warm" weight="0.143020426581" />
+</color>
+
+<color name="blue" weight="0.265567468628">
+ <shade name="fresh" weight="0.740195145024" />
+ <shade name="cool" weight="0.177695854352" />
+ <shade name="dark" weight="0.082107739597" />
+</color>
+
+<color name="pink" weight="0.183149978364">
+ <shade name="fresh" weight="0.69107470124" />
+ <shade name="cool" weight="0.165903694834" />
+ <shade name="warm" weight="0.143020426581" />
+</color>
+
+<color name="red" weight="0.166143194659">
+ <shade name="fresh" weight="0.69107470124" />
+ <shade name="cool" weight="0.165903694834" />
+ <shade name="warm" weight="0.143020426581" />
+</color>
+
+<color name="green" weight="0.118262557458">
+ <shade name="fresh" weight="0.740195145024" />
+ <shade name="cool" weight="0.177695854352" />
+ <shade name="dark" weight="0.082107739597" />
+</color>
+
+</colors>

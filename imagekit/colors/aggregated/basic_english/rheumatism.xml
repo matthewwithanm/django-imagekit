@@ -1,0 +1,33 @@
+<colors query="rheumatism">
+
+<color name="yellow" weight="0.48514801049">
+ <shade name="light" weight="0.380951782314" />
+ <shade name="intense" weight="0.380951782314" />
+ <shade name="hard" weight="0.238094863946" />
+</color>
+
+<color name="blue" weight="0.405940172042">
+ <shade name="light" weight="0.380951782314" />
+ <shade name="intense" weight="0.380951782314" />
+ <shade name="hard" weight="0.238094863946" />
+</color>
+
+<color name="white" weight="0.0594058788355">
+ <shade name="light" weight="0.470587321801" />
+ <shade name="hard" weight="0.294117076126" />
+ <shade name="soft" weight="0.235293660901" />
+</color>
+
+<color name="black" weight="0.0297029394177">
+ <shade name="light" weight="0.380951782314" />
+ <shade name="intense" weight="0.380951782314" />
+ <shade name="hard" weight="0.238094863946" />
+</color>
+
+<color name="green" weight="0.0198019596118">
+ <shade name="light" weight="0.380951782314" />
+ <shade name="intense" weight="0.380951782314" />
+ <shade name="hard" weight="0.238094863946" />
+</color>
+
+</colors>

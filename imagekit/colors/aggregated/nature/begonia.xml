@@ -1,0 +1,33 @@
+<colors query="begonia">
+
+<color name="green" weight="0.409346272553">
+ <shade name="bright" weight="0.58981962289" />
+ <shade name="light" weight="0.248502683756" />
+ <shade name="soft" weight="0.161676444853" />
+</color>
+
+<color name="yellow" weight="0.310420923353">
+ <shade name="bright" weight="0.58981962289" />
+ <shade name="light" weight="0.248502683756" />
+ <shade name="soft" weight="0.161676444853" />
+</color>
+
+<color name="black" weight="0.120245467562">
+ <shade name="bright" weight="0.58981962289" />
+ <shade name="light" weight="0.248502683756" />
+ <shade name="soft" weight="0.161676444853" />
+</color>
+
+<color name="orange" weight="0.0972197397313">
+ <shade name="bright" weight="0.58981962289" />
+ <shade name="light" weight="0.248502683756" />
+ <shade name="soft" weight="0.161676444853" />
+</color>
+
+<color name="pink" weight="0.0627664284581">
+ <shade name="bright" weight="0.58981962289" />
+ <shade name="light" weight="0.248502683756" />
+ <shade name="soft" weight="0.161676444853" />
+</color>
+
+</colors>

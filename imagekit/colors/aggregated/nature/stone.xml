@@ -1,0 +1,33 @@
+<colors query="stone">
+
+<color name="black" weight="0.287435933922">
+ <shade name="hard" weight="0.399310952893" />
+ <shade name="dark" weight="0.375214602287" />
+ <shade name="light" weight="0.225472994953" />
+</color>
+
+<color name="red" weight="0.25961955322">
+ <shade name="hard" weight="0.399310952893" />
+ <shade name="dark" weight="0.375214602287" />
+ <shade name="light" weight="0.225472994953" />
+</color>
+
+<color name="white" weight="0.215345147269">
+ <shade name="hard" weight="0.399310952893" />
+ <shade name="dark" weight="0.375214602287" />
+ <shade name="light" weight="0.225472994953" />
+</color>
+
+<color name="blue" weight="0.159944189037">
+ <shade name="hard" weight="0.399310952893" />
+ <shade name="dark" weight="0.375214602287" />
+ <shade name="light" weight="0.225472994953" />
+</color>
+
+<color name="yellow" weight="0.0776540627936">
+ <shade name="hard" weight="0.399310952893" />
+ <shade name="dark" weight="0.375214602287" />
+ <shade name="light" weight="0.225472994953" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="woodwork">
+
+<color name="white" weight="0.827771225966">
+ <shade name="dark" weight="0.791825450599" />
+ <shade name="light" weight="0.112388128472" />
+ <shade name="warm" weight="0.0957853367661" />
+</color>
+
+<color name="black" weight="0.0608957281738">
+ <shade name="dark" weight="0.791825450599" />
+ <shade name="light" weight="0.112388128472" />
+ <shade name="warm" weight="0.0957853367661" />
+</color>
+
+<color name="green" weight="0.053901382156">
+ <shade name="dark" weight="0.842218685106" />
+ <shade name="light" weight="0.119540716596" />
+ <shade name="bright" weight="0.0382394451383" />
+</color>
+
+<color name="blue" weight="0.0359342547706">
+ <shade name="dark" weight="0.842218685106" />
+ <shade name="light" weight="0.119540716596" />
+ <shade name="bright" weight="0.0382394451383" />
+</color>
+
+<color name="red" weight="0.0214963845503">
+ <shade name="dark" weight="0.791825450599" />
+ <shade name="light" weight="0.112388128472" />
+ <shade name="warm" weight="0.0957853367661" />
+</color>
+
+</colors>

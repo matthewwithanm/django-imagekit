@@ -1,0 +1,33 @@
+<colors query="sapphire">
+
+<color name="blue" weight="0.388991239581">
+ <shade name="light" weight="0.658481466069" />
+ <shade name="dark" weight="0.251673848472" />
+ <shade name="cool" weight="0.0898436576586" />
+</color>
+
+<color name="pink" weight="0.304810020076">
+ <shade name="light" weight="0.658481466069" />
+ <shade name="dark" weight="0.251673848472" />
+ <shade name="cool" weight="0.0898436576586" />
+</color>
+
+<color name="yellow" weight="0.126271829257">
+ <shade name="light" weight="0.658481466069" />
+ <shade name="dark" weight="0.251673848472" />
+ <shade name="cool" weight="0.0898436576586" />
+</color>
+
+<color name="black" weight="0.106382859814">
+ <shade name="light" weight="0.658481466069" />
+ <shade name="dark" weight="0.251673848472" />
+ <shade name="cool" weight="0.0898436576586" />
+</color>
+
+<color name="white" weight="0.0735429335235">
+ <shade name="light" weight="0.658481466069" />
+ <shade name="dark" weight="0.251673848472" />
+ <shade name="cool" weight="0.0898436576586" />
+</color>
+
+</colors>

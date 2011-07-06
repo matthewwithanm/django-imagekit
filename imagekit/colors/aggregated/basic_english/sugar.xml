@@ -1,0 +1,33 @@
+<colors query="sugar">
+
+<color name="white" weight="0.627715407748">
+ <shade name="neutral" weight="0.391990354267" />
+ <shade name="fresh" weight="0.309644179126" />
+ <shade name="soft" weight="0.298363881161" />
+</color>
+
+<color name="pink" weight="0.165982439549">
+ <shade name="neutral" weight="0.391990354267" />
+ <shade name="fresh" weight="0.309644179126" />
+ <shade name="soft" weight="0.298363881161" />
+</color>
+
+<color name="black" weight="0.0971751736995">
+ <shade name="neutral" weight="0.391990354267" />
+ <shade name="fresh" weight="0.309644179126" />
+ <shade name="soft" weight="0.298363881161" />
+</color>
+
+<color name="blue" weight="0.0778608534611">
+ <shade name="neutral" weight="0.391990354267" />
+ <shade name="fresh" weight="0.309644179126" />
+ <shade name="soft" weight="0.298363881161" />
+</color>
+
+<color name="red" weight="0.0312650558859">
+ <shade name="neutral" weight="0.391990354267" />
+ <shade name="fresh" weight="0.309644179126" />
+ <shade name="soft" weight="0.298363881161" />
+</color>
+
+</colors>

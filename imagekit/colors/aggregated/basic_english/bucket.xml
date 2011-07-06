@@ -1,0 +1,33 @@
+<colors query="bucket">
+
+<color name="white" weight="0.238314777408">
+ <shade name="light" weight="0.743829346374" />
+ <shade name="fresh" weight="0.143552112174" />
+ <shade name="cool" weight="0.112617153376" />
+</color>
+
+<color name="red" weight="0.222734876706">
+ <shade name="light" weight="0.743829346374" />
+ <shade name="fresh" weight="0.143552112174" />
+ <shade name="cool" weight="0.112617153376" />
+</color>
+
+<color name="blue" weight="0.216387509753">
+ <shade name="light" weight="0.743829346374" />
+ <shade name="fresh" weight="0.143552112174" />
+ <shade name="cool" weight="0.112617153376" />
+</color>
+
+<color name="black" weight="0.178880341396">
+ <shade name="light" weight="0.743829346374" />
+ <shade name="fresh" weight="0.143552112174" />
+ <shade name="cool" weight="0.112617153376" />
+</color>
+
+<color name="yellow" weight="0.143681306476">
+ <shade name="light" weight="0.743829346374" />
+ <shade name="fresh" weight="0.143552112174" />
+ <shade name="cool" weight="0.112617153376" />
+</color>
+
+</colors>

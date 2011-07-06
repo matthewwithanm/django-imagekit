@@ -1,0 +1,33 @@
+<colors query="gum">
+
+<color name="red" weight="0.324779717334">
+ <shade name="soft" weight="0.547022311318" />
+ <shade name="dark" weight="0.244056108127" />
+ <shade name="fresh" weight="0.208920444284" />
+</color>
+
+<color name="blue" weight="0.281524630827">
+ <shade name="soft" weight="0.547022311318" />
+ <shade name="dark" weight="0.244056108127" />
+ <shade name="fresh" weight="0.208920444284" />
+</color>
+
+<color name="black" weight="0.180351716623">
+ <shade name="soft" weight="0.547022311318" />
+ <shade name="dark" weight="0.244056108127" />
+ <shade name="fresh" weight="0.208920444284" />
+</color>
+
+<color name="white" weight="0.139296041294">
+ <shade name="soft" weight="0.547022311318" />
+ <shade name="dark" weight="0.244056108127" />
+ <shade name="fresh" weight="0.208920444284" />
+</color>
+
+<color name="yellow" weight="0.0740468430039">
+ <shade name="soft" weight="0.547022311318" />
+ <shade name="dark" weight="0.244056108127" />
+ <shade name="fresh" weight="0.208920444284" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="guanaco">
+
+<color name="white" weight="0.824741434797">
+ <shade name="fresh" weight="0.428570938776" />
+ <shade name="cool" weight="0.35714244898" />
+ <shade name="soft" weight="0.214285469388" />
+</color>
+
+<color name="green" weight="0.0927834114147">
+ <shade name="fresh" weight="0.428570938776" />
+ <shade name="cool" weight="0.35714244898" />
+ <shade name="soft" weight="0.214285469388" />
+</color>
+
+<color name="blue" weight="0.0309278038049">
+ <shade name="fresh" weight="0.428570938776" />
+ <shade name="cool" weight="0.35714244898" />
+ <shade name="soft" weight="0.214285469388" />
+</color>
+
+<color name="black" weight="0.0309278038049">
+ <shade name="fresh" weight="0.428570938776" />
+ <shade name="cool" weight="0.35714244898" />
+ <shade name="soft" weight="0.214285469388" />
+</color>
+
+<color name="red" weight="0.0206185358699">
+ <shade name="fresh" weight="0.428570938776" />
+ <shade name="cool" weight="0.35714244898" />
+ <shade name="soft" weight="0.214285469388" />
+</color>
+
+</colors>

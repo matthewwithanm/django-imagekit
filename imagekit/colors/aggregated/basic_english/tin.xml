@@ -1,0 +1,33 @@
+<colors query="tin">
+
+<color name="white" weight="0.262399702656">
+ <shade name="bright" weight="0.766033478214" />
+ <shade name="cool" weight="0.182474955895" />
+ <shade name="fresh" weight="0.0514904578517" />
+</color>
+
+<color name="red" weight="0.232533069833">
+ <shade name="bright" weight="0.766033478214" />
+ <shade name="cool" weight="0.182474955895" />
+ <shade name="fresh" weight="0.0514904578517" />
+</color>
+
+<color name="black" weight="0.204799767926">
+ <shade name="bright" weight="0.766033478214" />
+ <shade name="cool" weight="0.182474955895" />
+ <shade name="fresh" weight="0.0514904578517" />
+</color>
+
+<color name="green" weight="0.157866487777">
+ <shade name="bright" weight="0.766033478214" />
+ <shade name="cool" weight="0.182474955895" />
+ <shade name="fresh" weight="0.0514904578517" />
+</color>
+
+<color name="blue" weight="0.142399838636">
+ <shade name="bright" weight="0.766033478214" />
+ <shade name="cool" weight="0.182474955895" />
+ <shade name="fresh" weight="0.0514904578517" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="aluminum">
+
+<color name="black" weight="0.554444286794">
+ <shade name="light" weight="0.50446361871" />
+ <shade name="soft" weight="0.273213924469" />
+ <shade name="bright" weight="0.222321134617" />
+</color>
+
+<color name="white" weight="0.193255821118">
+ <shade name="light" weight="0.50446361871" />
+ <shade name="soft" weight="0.273213924469" />
+ <shade name="bright" weight="0.222321134617" />
+</color>
+
+<color name="blue" weight="0.122484206626">
+ <shade name="light" weight="0.50446361871" />
+ <shade name="soft" weight="0.273213924469" />
+ <shade name="bright" weight="0.222321134617" />
+</color>
+
+<color name="red" weight="0.0835664826491">
+ <shade name="light" weight="0.50446361871" />
+ <shade name="soft" weight="0.273213924469" />
+ <shade name="bright" weight="0.222321134617" />
+</color>
+
+<color name="green" weight="0.0462481171917">
+ <shade name="light" weight="0.50446361871" />
+ <shade name="soft" weight="0.273213924469" />
+ <shade name="bright" weight="0.222321134617" />
+</color>
+
+</colors>

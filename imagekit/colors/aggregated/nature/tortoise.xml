@@ -1,0 +1,33 @@
+<colors query="tortoise">
+
+<color name="green" weight="0.574128697504">
+ <shade name="dark" weight="0.817638832746" />
+ <shade name="light" weight="0.161644529314" />
+ <shade name="soft" weight="0.0207156095821" />
+</color>
+
+<color name="black" weight="0.227748289949">
+ <shade name="dark" weight="0.817638832746" />
+ <shade name="light" weight="0.161644529314" />
+ <shade name="soft" weight="0.0207156095821" />
+</color>
+
+<color name="red" weight="0.0881810927658">
+ <shade name="dark" weight="0.817638832746" />
+ <shade name="light" weight="0.161644529314" />
+ <shade name="soft" weight="0.0207156095821" />
+</color>
+
+<color name="white" weight="0.0869123000641">
+ <shade name="dark" weight="0.817638832746" />
+ <shade name="light" weight="0.161644529314" />
+ <shade name="soft" weight="0.0207156095821" />
+</color>
+
+<color name="pink" weight="0.0230285875352">
+ <shade name="dark" weight="0.817638832746" />
+ <shade name="light" weight="0.161644529314" />
+ <shade name="soft" weight="0.0207156095821" />
+</color>
+
+</colors>

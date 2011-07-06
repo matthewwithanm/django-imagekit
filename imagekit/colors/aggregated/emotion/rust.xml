@@ -1,0 +1,33 @@
+<colors query="rust">
+
+<color name="red" weight="0.250260393841">
+ <shade name="light" weight="0.581281748146" />
+ <shade name="dark" weight="0.3805047655" />
+ <shade name="warm" weight="0.0382123934715" />
+</color>
+
+<color name="white" weight="0.210635831483">
+ <shade name="light" weight="0.581281748146" />
+ <shade name="dark" weight="0.3805047655" />
+ <shade name="warm" weight="0.0382123934715" />
+</color>
+
+<color name="yellow" weight="0.208133227544">
+ <shade name="light" weight="0.581281748146" />
+ <shade name="dark" weight="0.3805047655" />
+ <shade name="warm" weight="0.0382123934715" />
+</color>
+
+<color name="black" weight="0.187486745052">
+ <shade name="light" weight="0.581281748146" />
+ <shade name="dark" weight="0.3805047655" />
+ <shade name="warm" weight="0.0382123934715" />
+</color>
+
+<color name="orange" weight="0.143482625802">
+ <shade name="light" weight="0.581281748146" />
+ <shade name="dark" weight="0.3805047655" />
+ <shade name="warm" weight="0.0382123934715" />
+</color>
+
+</colors>

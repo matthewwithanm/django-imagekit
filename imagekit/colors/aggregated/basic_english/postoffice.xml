@@ -1,0 +1,33 @@
+<colors query="postoffice">
+
+<color name="white" weight="0.507575211548">
+ <shade name="dark" weight="0.529411017302" />
+ <shade name="light" weight="0.294117231834" />
+ <shade name="soft" weight="0.176470339101" />
+</color>
+
+<color name="green" weight="0.325757225322">
+ <shade name="dark" weight="0.529411017302" />
+ <shade name="light" weight="0.294117231834" />
+ <shade name="soft" weight="0.176470339101" />
+</color>
+
+<color name="blue" weight="0.0606059954087">
+ <shade name="dark" weight="0.529411017302" />
+ <shade name="light" weight="0.294117231834" />
+ <shade name="soft" weight="0.176470339101" />
+</color>
+
+<color name="red" weight="0.0530302459826">
+ <shade name="dark" weight="0.529411017302" />
+ <shade name="light" weight="0.294117231834" />
+ <shade name="soft" weight="0.176470339101" />
+</color>
+
+<color name="black" weight="0.0530302459826">
+ <shade name="dark" weight="0.529411017302" />
+ <shade name="light" weight="0.294117231834" />
+ <shade name="soft" weight="0.176470339101" />
+</color>
+
+</colors>

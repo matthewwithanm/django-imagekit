@@ -1,0 +1,33 @@
+<colors query="dahlia">
+
+<color name="black" weight="0.89207152305">
+ <shade name="dark" weight="0.522746836159" />
+ <shade name="bright" weight="0.305084331" />
+ <shade name="light" weight="0.172167473342" />
+</color>
+
+<color name="blue" weight="0.0764632734043">
+ <shade name="dark" weight="0.522746836159" />
+ <shade name="bright" weight="0.305084331" />
+ <shade name="light" weight="0.172167473342" />
+</color>
+
+<color name="red" weight="0.017270153131">
+ <shade name="dark" weight="0.522746836159" />
+ <shade name="bright" weight="0.305084331" />
+ <shade name="light" weight="0.172167473342" />
+</color>
+
+<color name="pink" weight="0.00790999380044">
+ <shade name="dark" weight="0.522746836159" />
+ <shade name="bright" weight="0.305084331" />
+ <shade name="light" weight="0.172167473342" />
+</color>
+
+<color name="white" weight="0.00628405063035">
+ <shade name="dark" weight="0.522746836159" />
+ <shade name="bright" weight="0.305084331" />
+ <shade name="light" weight="0.172167473342" />
+</color>
+
+</colors>

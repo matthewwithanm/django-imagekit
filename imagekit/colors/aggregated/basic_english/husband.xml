@@ -1,0 +1,33 @@
+<colors query="husband">
+
+<color name="white" weight="0.589626024838">
+ <shade name="weak" weight="0.833607393732" />
+ <shade name="warm" weight="0.0891382163594" />
+ <shade name="dark" weight="0.0772531208448" />
+</color>
+
+<color name="black" weight="0.37675244567">
+ <shade name="weak" weight="0.833607393732" />
+ <shade name="warm" weight="0.0891382163594" />
+ <shade name="dark" weight="0.0772531208448" />
+</color>
+
+<color name="pink" weight="0.0138029931889">
+ <shade name="weak" weight="0.833607393732" />
+ <shade name="warm" weight="0.0891382163594" />
+ <shade name="dark" weight="0.0772531208448" />
+</color>
+
+<color name="red" weight="0.0105254158589">
+ <shade name="weak" weight="0.833607393732" />
+ <shade name="warm" weight="0.0891382163594" />
+ <shade name="dark" weight="0.0772531208448" />
+</color>
+
+<color name="green" weight="0.00929210067797">
+ <shade name="weak" weight="0.858039827269" />
+ <shade name="dark" weight="0.0795173542895" />
+ <shade name="bright" weight="0.0624415121824" />
+</color>
+
+</colors>

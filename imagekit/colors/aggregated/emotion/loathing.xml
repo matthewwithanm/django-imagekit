@@ -1,0 +1,33 @@
+<colors query="loathing">
+
+<color name="blue" weight="0.519999474401">
+ <shade name="intense" weight="0.752652208423" />
+ <shade name="dark" weight="0.207346703839" />
+ <shade name="fresh" weight="0.0399999546776" />
+</color>
+
+<color name="black" weight="0.269230497101">
+ <shade name="intense" weight="0.752652208423" />
+ <shade name="dark" weight="0.207346703839" />
+ <shade name="fresh" weight="0.0399999546776" />
+</color>
+
+<color name="white" weight="0.139999858492">
+ <shade name="dark" weight="0.73198554468" />
+ <shade name="fresh" weight="0.141209809801" />
+ <shade name="weak" weight="0.126800645535" />
+</color>
+
+<color name="red" weight="0.0615383993373">
+ <shade name="intense" weight="0.752652208423" />
+ <shade name="dark" weight="0.207346703839" />
+ <shade name="fresh" weight="0.0399999546776" />
+</color>
+
+<color name="green" weight="0.0092307599006">
+ <shade name="intense" weight="0.752652208423" />
+ <shade name="dark" weight="0.207346703839" />
+ <shade name="fresh" weight="0.0399999546776" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="church">
+
+<color name="black" weight="0.601837514665">
+ <shade name="light" weight="0.550688701313" />
+ <shade name="cool" weight="0.232765327359" />
+ <shade name="dark" weight="0.216544747055" />
+</color>
+
+<color name="white" weight="0.248047974025">
+ <shade name="light" weight="0.550688701313" />
+ <shade name="cool" weight="0.232765327359" />
+ <shade name="dark" weight="0.216544747055" />
+</color>
+
+<color name="green" weight="0.0719437948565">
+ <shade name="light" weight="0.550688701313" />
+ <shade name="cool" weight="0.232765327359" />
+ <shade name="dark" weight="0.216544747055" />
+</color>
+
+<color name="red" weight="0.0423954505404">
+ <shade name="light" weight="0.550688701313" />
+ <shade name="cool" weight="0.232765327359" />
+ <shade name="dark" weight="0.216544747055" />
+</color>
+
+<color name="blue" weight="0.0357742496402">
+ <shade name="light" weight="0.550688701313" />
+ <shade name="cool" weight="0.232765327359" />
+ <shade name="dark" weight="0.216544747055" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="childlike">
+
+<color name="blue" weight="0.443076452734">
+ <shade name="bright" weight="0.503379807269" />
+ <shade name="soft" weight="0.336201165538" />
+ <shade name="fresh" weight="0.160417740778" />
+</color>
+
+<color name="black" weight="0.221538226367">
+ <shade name="bright" weight="0.503379807269" />
+ <shade name="soft" weight="0.336201165538" />
+ <shade name="fresh" weight="0.160417740778" />
+</color>
+
+<color name="white" weight="0.206153627314">
+ <shade name="bright" weight="0.503379807269" />
+ <shade name="soft" weight="0.336201165538" />
+ <shade name="fresh" weight="0.160417740778" />
+</color>
+
+<color name="green" weight="0.104615273562">
+ <shade name="bright" weight="0.503379807269" />
+ <shade name="soft" weight="0.336201165538" />
+ <shade name="fresh" weight="0.160417740778" />
+</color>
+
+<color name="red" weight="0.0246153584852">
+ <shade name="bright" weight="0.503379807269" />
+ <shade name="soft" weight="0.336201165538" />
+ <shade name="fresh" weight="0.160417740778" />
+</color>
+
+</colors>

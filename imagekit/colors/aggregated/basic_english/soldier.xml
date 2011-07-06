@@ -1,0 +1,33 @@
+<colors query="soldier">
+
+<color name="black" weight="0.622405978074">
+ <shade name="dark" weight="0.748213407232" />
+ <shade name="light" weight="0.144999829755" />
+ <shade name="hard" weight="0.106785588908" />
+</color>
+
+<color name="purple" weight="0.133125723088">
+ <shade name="dark" weight="0.748213407232" />
+ <shade name="light" weight="0.144999829755" />
+ <shade name="hard" weight="0.106785588908" />
+</color>
+
+<color name="white" weight="0.112033076053">
+ <shade name="dark" weight="0.748213407232" />
+ <shade name="light" weight="0.144999829755" />
+ <shade name="hard" weight="0.106785588908" />
+</color>
+
+<color name="red" weight="0.0836790259411">
+ <shade name="dark" weight="0.748213407232" />
+ <shade name="light" weight="0.144999829755" />
+ <shade name="hard" weight="0.106785588908" />
+</color>
+
+<color name="blue" weight="0.0487551349492">
+ <shade name="dark" weight="0.748213407232" />
+ <shade name="light" weight="0.144999829755" />
+ <shade name="hard" weight="0.106785588908" />
+</color>
+
+</colors>

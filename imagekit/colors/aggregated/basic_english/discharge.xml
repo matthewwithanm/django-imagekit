@@ -1,0 +1,33 @@
+<colors query="discharge">
+
+<color name="white" weight="0.450562725931">
+ <shade name="dark" weight="0.416464412591" />
+ <shade name="light" weight="0.317190918892" />
+ <shade name="weak" weight="0.26634351968" />
+</color>
+
+<color name="yellow" weight="0.226115738384">
+ <shade name="dark" weight="0.416464412591" />
+ <shade name="light" weight="0.317190918892" />
+ <shade name="weak" weight="0.26634351968" />
+</color>
+
+<color name="green" weight="0.147684449055">
+ <shade name="dark" weight="0.416464412591" />
+ <shade name="light" weight="0.317190918892" />
+ <shade name="weak" weight="0.26634351968" />
+</color>
+
+<color name="red" weight="0.111389118355">
+ <shade name="dark" weight="0.416464412591" />
+ <shade name="light" weight="0.317190918892" />
+ <shade name="weak" weight="0.26634351968" />
+</color>
+
+<color name="pink" weight="0.0642469072161">
+ <shade name="dark" weight="0.416464412591" />
+ <shade name="light" weight="0.317190918892" />
+ <shade name="weak" weight="0.26634351968" />
+</color>
+
+</colors>

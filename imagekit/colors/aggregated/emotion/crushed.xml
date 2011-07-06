@@ -1,0 +1,33 @@
+<colors query="crushed">
+
+<color name="red" weight="0.295044708631">
+ <shade name="fresh" weight="0.88330010459" />
+ <shade name="light" weight="0.0754351184212" />
+ <shade name="dark" weight="0.041263654521" />
+</color>
+
+<color name="black" weight="0.206080846105">
+ <shade name="fresh" weight="0.88330010459" />
+ <shade name="light" weight="0.0754351184212" />
+ <shade name="dark" weight="0.041263654521" />
+</color>
+
+<color name="blue" weight="0.191441223157">
+ <shade name="fresh" weight="0.88330010459" />
+ <shade name="light" weight="0.0754351184212" />
+ <shade name="dark" weight="0.041263654521" />
+</color>
+
+<color name="green" weight="0.154279103368">
+ <shade name="fresh" weight="0.88330010459" />
+ <shade name="light" weight="0.0754351184212" />
+ <shade name="dark" weight="0.041263654521" />
+</color>
+
+<color name="orange" weight="0.153152978526">
+ <shade name="fresh" weight="0.88330010459" />
+ <shade name="light" weight="0.0754351184212" />
+ <shade name="dark" weight="0.041263654521" />
+</color>
+
+</colors>

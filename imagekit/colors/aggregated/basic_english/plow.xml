@@ -1,0 +1,33 @@
+<colors query="plow">
+
+<color name="red" weight="0.437157929498">
+ <shade name="light" weight="0.507520588876" />
+ <shade name="hard" weight="0.248528123419" />
+ <shade name="fresh" weight="0.243949973777" />
+</color>
+
+<color name="yellow" weight="0.172000828213">
+ <shade name="light" weight="0.507520588876" />
+ <shade name="hard" weight="0.248528123419" />
+ <shade name="fresh" weight="0.243949973777" />
+</color>
+
+<color name="white" weight="0.168097632414">
+ <shade name="light" weight="0.507520588876" />
+ <shade name="hard" weight="0.248528123419" />
+ <shade name="fresh" weight="0.243949973777" />
+</color>
+
+<color name="black" weight="0.115014169547">
+ <shade name="light" weight="0.507520588876" />
+ <shade name="hard" weight="0.248528123419" />
+ <shade name="fresh" weight="0.243949973777" />
+</color>
+
+<color name="green" weight="0.107728204055">
+ <shade name="light" weight="0.507520588876" />
+ <shade name="hard" weight="0.248528123419" />
+ <shade name="fresh" weight="0.243949973777" />
+</color>
+
+</colors>

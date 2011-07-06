@@ -1,0 +1,33 @@
+<colors query="spark">
+
+<color name="blue" weight="0.584643986862">
+ <shade name="bright" weight="0.925043630141" />
+ <shade name="weak" weight="0.041046952077" />
+ <shade name="light" weight="0.0339083517158" />
+</color>
+
+<color name="red" weight="0.231958519149">
+ <shade name="bright" weight="0.925043630141" />
+ <shade name="weak" weight="0.041046952077" />
+ <shade name="light" weight="0.0339083517158" />
+</color>
+
+<color name="black" weight="0.0841019192237">
+ <shade name="bright" weight="0.925043630141" />
+ <shade name="weak" weight="0.041046952077" />
+ <shade name="light" weight="0.0339083517158" />
+</color>
+
+<color name="white" weight="0.0653824597836">
+ <shade name="bright" weight="0.925043630141" />
+ <shade name="weak" weight="0.041046952077" />
+ <shade name="light" weight="0.0339083517158" />
+</color>
+
+<color name="yellow" weight="0.0339120642031">
+ <shade name="bright" weight="0.925043630141" />
+ <shade name="weak" weight="0.041046952077" />
+ <shade name="light" weight="0.0339083517158" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="immortal">
+
+<color name="white" weight="0.565538520009">
+ <shade name="bright" weight="0.407638026819" />
+ <shade name="light" weight="0.403965612163" />
+ <shade name="dark" weight="0.188394871854" />
+</color>
+
+<color name="red" weight="0.137772935404">
+ <shade name="bright" weight="0.407638026819" />
+ <shade name="light" weight="0.403965612163" />
+ <shade name="dark" weight="0.188394871854" />
+</color>
+
+<color name="black" weight="0.112402983105">
+ <shade name="bright" weight="0.407638026819" />
+ <shade name="light" weight="0.403965612163" />
+ <shade name="dark" weight="0.188394871854" />
+</color>
+
+<color name="blue" weight="0.0935516991043">
+ <shade name="bright" weight="0.407638026819" />
+ <shade name="light" weight="0.403965612163" />
+ <shade name="dark" weight="0.188394871854" />
+</color>
+
+<color name="green" weight="0.0907328155154">
+ <shade name="bright" weight="0.407638026819" />
+ <shade name="light" weight="0.403965612163" />
+ <shade name="dark" weight="0.188394871854" />
+</color>
+
+</colors>

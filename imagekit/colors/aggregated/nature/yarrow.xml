@@ -1,0 +1,33 @@
+<colors query="yarrow">
+
+<color name="white" weight="0.786368764803">
+ <shade name="fresh" weight="0.680321177463" />
+ <shade name="dark" weight="0.281638336907" />
+ <shade name="soft" weight="0.0380394636861" />
+</color>
+
+<color name="blue" weight="0.0601691251857">
+ <shade name="fresh" weight="0.680321177463" />
+ <shade name="dark" weight="0.281638336907" />
+ <shade name="soft" weight="0.0380394636861" />
+</color>
+
+<color name="green" weight="0.056952162057">
+ <shade name="fresh" weight="0.680321177463" />
+ <shade name="dark" weight="0.281638336907" />
+ <shade name="soft" weight="0.0380394636861" />
+</color>
+
+<color name="yellow" weight="0.0505778091908">
+ <shade name="fresh" weight="0.680321177463" />
+ <shade name="dark" weight="0.281638336907" />
+ <shade name="soft" weight="0.0380394636861" />
+</color>
+
+<color name="pink" weight="0.0459310846715">
+ <shade name="fresh" weight="0.680321177463" />
+ <shade name="dark" weight="0.281638336907" />
+ <shade name="soft" weight="0.0380394636861" />
+</color>
+
+</colors>

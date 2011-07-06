@@ -1,0 +1,33 @@
+<colors query="passage">
+
+<color name="purple" weight="0.468383588248">
+ <shade name="dark" weight="0.84079547589" />
+ <shade name="light" weight="0.151085470572" />
+ <shade name="cool" weight="0.00811802528445" />
+</color>
+
+<color name="green" weight="0.448567359514">
+ <shade name="dark" weight="0.84079547589" />
+ <shade name="light" weight="0.151085470572" />
+ <shade name="cool" weight="0.00811802528445" />
+</color>
+
+<color name="blue" weight="0.0335074413131">
+ <shade name="dark" weight="0.84079547589" />
+ <shade name="light" weight="0.151085470572" />
+ <shade name="cool" weight="0.00811802528445" />
+</color>
+
+<color name="white" weight="0.0268419825573">
+ <shade name="dark" weight="0.84079547589" />
+ <shade name="light" weight="0.151085470572" />
+ <shade name="cool" weight="0.00811802528445" />
+</color>
+
+<color name="orange" weight="0.0226985892766">
+ <shade name="dark" weight="0.84079547589" />
+ <shade name="light" weight="0.151085470572" />
+ <shade name="cool" weight="0.00811802528445" />
+</color>
+
+</colors>

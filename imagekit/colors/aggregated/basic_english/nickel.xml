@@ -1,0 +1,33 @@
+<colors query="nickel">
+
+<color name="black" weight="0.880397765566">
+ <shade name="bright" weight="0.735079176611" />
+ <shade name="hard" weight="0.143376829497" />
+ <shade name="light" weight="0.121542794548" />
+</color>
+
+<color name="white" weight="0.0321151386181">
+ <shade name="bright" weight="0.735079176611" />
+ <shade name="hard" weight="0.143376829497" />
+ <shade name="light" weight="0.121542794548" />
+</color>
+
+<color name="blue" weight="0.0299003014721">
+ <shade name="bright" weight="0.735079176611" />
+ <shade name="hard" weight="0.143376829497" />
+ <shade name="light" weight="0.121542794548" />
+</color>
+
+<color name="green" weight="0.0293465921855">
+ <shade name="bright" weight="0.735079176611" />
+ <shade name="hard" weight="0.143376829497" />
+ <shade name="light" weight="0.121542794548" />
+</color>
+
+<color name="red" weight="0.0282391736125">
+ <shade name="bright" weight="0.735079176611" />
+ <shade name="hard" weight="0.143376829497" />
+ <shade name="light" weight="0.121542794548" />
+</color>
+
+</colors>

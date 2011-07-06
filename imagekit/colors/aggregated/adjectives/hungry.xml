@@ -1,0 +1,33 @@
+<colors query="hungry">
+
+<color name="white" weight="0.394736289709">
+ <shade name="fresh" weight="0.481822248779" />
+ <shade name="dark" weight="0.386584269743" />
+ <shade name="light" weight="0.131592261356" />
+</color>
+
+<color name="purple" weight="0.171476839831">
+ <shade name="fresh" weight="0.481822248779" />
+ <shade name="dark" weight="0.386584269743" />
+ <shade name="light" weight="0.131592261356" />
+</color>
+
+<color name="black" weight="0.150042234852">
+ <shade name="fresh" weight="0.481822248779" />
+ <shade name="dark" weight="0.386584269743" />
+ <shade name="light" weight="0.131592261356" />
+</color>
+
+<color name="pink" weight="0.142402177632">
+ <shade name="fresh" weight="0.481822248779" />
+ <shade name="dark" weight="0.386584269743" />
+ <shade name="light" weight="0.131592261356" />
+</color>
+
+<color name="blue" weight="0.141341058573">
+ <shade name="fresh" weight="0.481822248779" />
+ <shade name="dark" weight="0.386584269743" />
+ <shade name="light" weight="0.131592261356" />
+</color>
+
+</colors>

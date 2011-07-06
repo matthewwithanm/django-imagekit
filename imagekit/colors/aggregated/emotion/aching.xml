@@ -1,0 +1,33 @@
+<colors query="aching">
+
+<color name="red" weight="0.362483756086">
+ <shade name="hard" weight="0.592148305419" />
+ <shade name="intense" weight="0.321024221758" />
+ <shade name="weak" weight="0.086826240289" />
+</color>
+
+<color name="black" weight="0.339670093115">
+ <shade name="hard" weight="0.592148305419" />
+ <shade name="intense" weight="0.321024221758" />
+ <shade name="weak" weight="0.086826240289" />
+</color>
+
+<color name="white" weight="0.111533463411">
+ <shade name="hard" weight="0.796063081658" />
+ <shade name="weak" weight="0.116726103546" />
+ <shade name="light" weight="0.087209157822" />
+</color>
+
+<color name="pink" weight="0.0937895033229">
+ <shade name="hard" weight="0.796063081658" />
+ <shade name="weak" weight="0.116726103546" />
+ <shade name="light" weight="0.087209157822" />
+</color>
+
+<color name="blue" weight="0.0925220776023">
+ <shade name="hard" weight="0.592148305419" />
+ <shade name="intense" weight="0.321024221758" />
+ <shade name="weak" weight="0.086826240289" />
+</color>
+
+</colors>

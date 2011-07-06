@@ -1,0 +1,33 @@
+<colors query="elephant">
+
+<color name="white" weight="0.484736277341">
+ <shade name="soft" weight="0.554802964808" />
+ <shade name="dark" weight="0.238159321478" />
+ <shade name="bright" weight="0.207036228331" />
+</color>
+
+<color name="pink" weight="0.293245417367">
+ <shade name="soft" weight="0.554802964808" />
+ <shade name="dark" weight="0.238159321478" />
+ <shade name="bright" weight="0.207036228331" />
+</color>
+
+<color name="blue" weight="0.122986807557">
+ <shade name="soft" weight="0.554802964808" />
+ <shade name="dark" weight="0.238159321478" />
+ <shade name="bright" weight="0.207036228331" />
+</color>
+
+<color name="yellow" weight="0.068103443924">
+ <shade name="soft" weight="0.554802964808" />
+ <shade name="dark" weight="0.238159321478" />
+ <shade name="bright" weight="0.207036228331" />
+</color>
+
+<color name="red" weight="0.0309269757114">
+ <shade name="soft" weight="0.554802964808" />
+ <shade name="dark" weight="0.238159321478" />
+ <shade name="bright" weight="0.207036228331" />
+</color>
+
+</colors>

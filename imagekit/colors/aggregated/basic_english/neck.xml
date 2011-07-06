@@ -1,0 +1,33 @@
+<colors query="neck">
+
+<color name="red" weight="0.713032580354">
+ <shade name="soft" weight="0.535713472673" />
+ <shade name="weak" weight="0.238094876744" />
+ <shade name="warm" weight="0.226190132907" />
+</color>
+
+<color name="white" weight="0.128579645638">
+ <shade name="soft" weight="0.535713472673" />
+ <shade name="weak" weight="0.238094876744" />
+ <shade name="warm" weight="0.226190132907" />
+</color>
+
+<color name="black" weight="0.0914084389896">
+ <shade name="soft" weight="0.535713472673" />
+ <shade name="weak" weight="0.238094876744" />
+ <shade name="warm" weight="0.226190132907" />
+</color>
+
+<color name="blue" weight="0.0459380006687">
+ <shade name="soft" weight="0.566036828161" />
+ <shade name="weak" weight="0.251571923627" />
+ <shade name="hard" weight="0.18238964463" />
+</color>
+
+<color name="green" weight="0.0210403056498">
+ <shade name="soft" weight="0.566036828161" />
+ <shade name="weak" weight="0.251571923627" />
+ <shade name="hard" weight="0.18238964463" />
+</color>
+
+</colors>

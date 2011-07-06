@@ -1,0 +1,33 @@
+<colors query="champagne">
+
+<color name="pink" weight="0.679568234664">
+ <shade name="light" weight="0.561778500442" />
+ <shade name="dark" weight="0.240526865292" />
+ <shade name="warm" weight="0.197693313939" />
+</color>
+
+<color name="blue" weight="0.123597847211">
+ <shade name="light" weight="0.581117134065" />
+ <shade name="dark" weight="0.248806749482" />
+ <shade name="fresh" weight="0.170074750674" />
+</color>
+
+<color name="white" weight="0.0813722481637">
+ <shade name="light" weight="0.561778500442" />
+ <shade name="dark" weight="0.240526865292" />
+ <shade name="warm" weight="0.197693313939" />
+</color>
+
+<color name="black" weight="0.0800526981935">
+ <shade name="light" weight="0.561778500442" />
+ <shade name="dark" weight="0.240526865292" />
+ <shade name="warm" weight="0.197693313939" />
+</color>
+
+<color name="red" weight="0.035407924201">
+ <shade name="light" weight="0.561778500442" />
+ <shade name="dark" weight="0.240526865292" />
+ <shade name="warm" weight="0.197693313939" />
+</color>
+
+</colors>

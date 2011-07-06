@@ -1,0 +1,33 @@
+<colors query="weirdness">
+
+<color name="white" weight="0.40567564535">
+ <shade name="cool" weight="0.513210655065" />
+ <shade name="dark" weight="0.304369487509" />
+ <shade name="light" weight="0.182418440761" />
+</color>
+
+<color name="green" weight="0.230383699828">
+ <shade name="cool" weight="0.456187320754" />
+ <shade name="intense" weight="0.273260721838" />
+ <shade name="dark" weight="0.27055069815" />
+</color>
+
+<color name="black" weight="0.146911344818">
+ <shade name="cool" weight="0.456187320754" />
+ <shade name="intense" weight="0.273260721838" />
+ <shade name="dark" weight="0.27055069815" />
+</color>
+
+<color name="blue" weight="0.133555768016">
+ <shade name="cool" weight="0.456187320754" />
+ <shade name="intense" weight="0.273260721838" />
+ <shade name="dark" weight="0.27055069815" />
+</color>
+
+<color name="purple" weight="0.0834723550103">
+ <shade name="cool" weight="0.513210655065" />
+ <shade name="dark" weight="0.304369487509" />
+ <shade name="light" weight="0.182418440761" />
+</color>
+
+</colors>

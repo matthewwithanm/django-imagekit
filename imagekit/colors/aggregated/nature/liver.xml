@@ -1,0 +1,33 @@
+<colors query="liver">
+
+<color name="white" weight="0.566058827951">
+ <shade name="fresh" weight="0.668048127436" />
+ <shade name="dark" weight="0.224602387672" />
+ <shade name="weak" weight="0.107348423236" />
+</color>
+
+<color name="black" weight="0.272972531246">
+ <shade name="fresh" weight="0.668048127436" />
+ <shade name="dark" weight="0.224602387672" />
+ <shade name="weak" weight="0.107348423236" />
+</color>
+
+<color name="blue" weight="0.105166259406">
+ <shade name="fresh" weight="0.668048127436" />
+ <shade name="dark" weight="0.224602387672" />
+ <shade name="weak" weight="0.107348423236" />
+</color>
+
+<color name="green" weight="0.0284178772002">
+ <shade name="fresh" weight="0.668048127436" />
+ <shade name="dark" weight="0.224602387672" />
+ <shade name="weak" weight="0.107348423236" />
+</color>
+
+<color name="red" weight="0.0273834549765">
+ <shade name="fresh" weight="0.668048127436" />
+ <shade name="dark" weight="0.224602387672" />
+ <shade name="weak" weight="0.107348423236" />
+</color>
+
+</colors>

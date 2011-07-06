@@ -1,0 +1,33 @@
+<colors query="sunset">
+
+<color name="red" weight="0.438232756431">
+ <shade name="light" weight="0.351004834608" />
+ <shade name="warm" weight="0.343692233887" />
+ <shade name="dark" weight="0.305301080101" />
+</color>
+
+<color name="orange" weight="0.207039097526">
+ <shade name="light" weight="0.351004834608" />
+ <shade name="warm" weight="0.343692233887" />
+ <shade name="dark" weight="0.305301080101" />
+</color>
+
+<color name="blue" weight="0.161145430908">
+ <shade name="light" weight="0.37646984067" />
+ <shade name="dark" weight="0.327450330166" />
+ <shade name="cool" weight="0.296077843443" />
+</color>
+
+<color name="pink" weight="0.0979985061625">
+ <shade name="light" weight="0.351004834608" />
+ <shade name="warm" weight="0.343692233887" />
+ <shade name="dark" weight="0.305301080101" />
+</color>
+
+<color name="purple" weight="0.0955830500246">
+ <shade name="light" weight="0.37646984067" />
+ <shade name="dark" weight="0.327450330166" />
+ <shade name="cool" weight="0.296077843443" />
+</color>
+
+</colors>

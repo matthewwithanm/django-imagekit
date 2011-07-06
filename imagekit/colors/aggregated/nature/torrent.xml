@@ -1,0 +1,33 @@
+<colors query="torrent">
+
+<color name="black" weight="0.340968773123">
+ <shade name="dark" weight="0.381957303573" />
+ <shade name="soft" weight="0.320537033652" />
+ <shade name="hard" weight="0.297504432431" />
+</color>
+
+<color name="red" weight="0.252863146993">
+ <shade name="dark" weight="0.381957303573" />
+ <shade name="soft" weight="0.320537033652" />
+ <shade name="hard" weight="0.297504432431" />
+</color>
+
+<color name="blue" weight="0.169162802169">
+ <shade name="dark" weight="0.381957303573" />
+ <shade name="soft" weight="0.320537033652" />
+ <shade name="hard" weight="0.297504432431" />
+</color>
+
+<color name="white" weight="0.131277382934">
+ <shade name="dark" weight="0.381957303573" />
+ <shade name="soft" weight="0.320537033652" />
+ <shade name="hard" weight="0.297504432431" />
+</color>
+
+<color name="pink" weight="0.105726751356">
+ <shade name="dark" weight="0.381957303573" />
+ <shade name="soft" weight="0.320537033652" />
+ <shade name="hard" weight="0.297504432431" />
+</color>
+
+</colors>

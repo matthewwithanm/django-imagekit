@@ -1,0 +1,33 @@
+<colors query="crush">
+
+<color name="orange" weight="0.496583839273">
+ <shade name="cool" weight="0.708190317581" />
+ <shade name="hard" weight="0.218998612264" />
+ <shade name="dark" weight="0.0728099282333" />
+</color>
+
+<color name="blue" weight="0.46177042197">
+ <shade name="cool" weight="0.708190317581" />
+ <shade name="hard" weight="0.218998612264" />
+ <shade name="dark" weight="0.0728099282333" />
+</color>
+
+<color name="purple" weight="0.0225958784008">
+ <shade name="cool" weight="0.708190317581" />
+ <shade name="hard" weight="0.218998612264" />
+ <shade name="dark" weight="0.0728099282333" />
+</color>
+
+<color name="red" weight="0.0107067679632">
+ <shade name="cool" weight="0.708190317581" />
+ <shade name="hard" weight="0.218998612264" />
+ <shade name="dark" weight="0.0728099282333" />
+</color>
+
+<color name="black" weight="0.00834208301425">
+ <shade name="cool" weight="0.708190317581" />
+ <shade name="hard" weight="0.218998612264" />
+ <shade name="dark" weight="0.0728099282333" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="jealous">
+
+<color name="green" weight="0.604129398295">
+ <shade name="weak" weight="0.640197628234" />
+ <shade name="hard" weight="0.224317308497" />
+ <shade name="cool" weight="0.135483684115" />
+</color>
+
+<color name="yellow" weight="0.112697593209">
+ <shade name="weak" weight="0.640197628234" />
+ <shade name="hard" weight="0.224317308497" />
+ <shade name="cool" weight="0.135483684115" />
+</color>
+
+<color name="white" weight="0.102152789166">
+ <shade name="weak" weight="0.640197628234" />
+ <shade name="hard" weight="0.224317308497" />
+ <shade name="cool" weight="0.135483684115" />
+</color>
+
+<color name="blue" weight="0.0944638695516">
+ <shade name="weak" weight="0.640197628234" />
+ <shade name="hard" weight="0.224317308497" />
+ <shade name="cool" weight="0.135483684115" />
+</color>
+
+<color name="black" weight="0.0865552665193">
+ <shade name="weak" weight="0.640197628234" />
+ <shade name="hard" weight="0.224317308497" />
+ <shade name="cool" weight="0.135483684115" />
+</color>
+
+</colors>

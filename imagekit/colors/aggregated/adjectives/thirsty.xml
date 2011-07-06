@@ -1,0 +1,33 @@
+<colors query="thirsty">
+
+<color name="pink" weight="0.313057218278">
+ <shade name="light" weight="0.588543605962" />
+ <shade name="soft" weight="0.289016949356" />
+ <shade name="hard" weight="0.122438089455" />
+</color>
+
+<color name="black" weight="0.244119747932">
+ <shade name="light" weight="0.588543605962" />
+ <shade name="soft" weight="0.289016949356" />
+ <shade name="hard" weight="0.122438089455" />
+</color>
+
+<color name="white" weight="0.182481539152">
+ <shade name="light" weight="0.588543605962" />
+ <shade name="soft" weight="0.289016949356" />
+ <shade name="hard" weight="0.122438089455" />
+</color>
+
+<color name="blue" weight="0.145174202258">
+ <shade name="light" weight="0.588543605962" />
+ <shade name="soft" weight="0.289016949356" />
+ <shade name="hard" weight="0.122438089455" />
+</color>
+
+<color name="green" weight="0.115166126931">
+ <shade name="light" weight="0.588543605962" />
+ <shade name="soft" weight="0.289016949356" />
+ <shade name="hard" weight="0.122438089455" />
+</color>
+
+</colors>

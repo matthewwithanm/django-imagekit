@@ -1,0 +1,33 @@
+<colors query="blushing">
+
+<color name="red" weight="0.394871370537">
+ <shade name="dark" weight="0.519272848901" />
+ <shade name="intense" weight="0.244344954053" />
+ <shade name="soft" weight="0.236380646555" />
+</color>
+
+<color name="white" weight="0.370939772323">
+ <shade name="dark" weight="0.575360818821" />
+ <shade name="soft" weight="0.261912716297" />
+ <shade name="cool" weight="0.162724746918" />
+</color>
+
+<color name="blue" weight="0.0991451926023">
+ <shade name="dark" weight="0.519272848901" />
+ <shade name="intense" weight="0.244344954053" />
+ <shade name="soft" weight="0.236380646555" />
+</color>
+
+<color name="black" weight="0.0823076038587">
+ <shade name="dark" weight="0.519272848901" />
+ <shade name="intense" weight="0.244344954053" />
+ <shade name="soft" weight="0.236380646555" />
+</color>
+
+<color name="pink" weight="0.0527349860652">
+ <shade name="dark" weight="0.575360818821" />
+ <shade name="soft" weight="0.261912716297" />
+ <shade name="cool" weight="0.162724746918" />
+</color>
+
+</colors>

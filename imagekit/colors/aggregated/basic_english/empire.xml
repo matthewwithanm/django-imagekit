@@ -1,0 +1,33 @@
+<colors query="Empire">
+
+<color name="orange" weight="0.478547329414">
+ <shade name="dark" weight="0.969407486208" />
+ <shade name="weak" weight="0.016137441986" />
+ <shade name="bright" weight="0.0144540397644" />
+</color>
+
+<color name="black" weight="0.220296787851">
+ <shade name="dark" weight="0.969407486208" />
+ <shade name="weak" weight="0.016137441986" />
+ <shade name="bright" weight="0.0144540397644" />
+</color>
+
+<color name="red" weight="0.158415667668">
+ <shade name="dark" weight="0.969407486208" />
+ <shade name="weak" weight="0.016137441986" />
+ <shade name="bright" weight="0.0144540397644" />
+</color>
+
+<color name="white" weight="0.0804454562377">
+ <shade name="dark" weight="0.969407486208" />
+ <shade name="weak" weight="0.016137441986" />
+ <shade name="bright" weight="0.0144540397644" />
+</color>
+
+<color name="blue" weight="0.0622936609841">
+ <shade name="dark" weight="0.969407486208" />
+ <shade name="weak" weight="0.016137441986" />
+ <shade name="bright" weight="0.0144540397644" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="elm">
+
+<color name="red" weight="0.478886044533">
+ <shade name="light" weight="0.741327118011" />
+ <shade name="dark" weight="0.136174259378" />
+ <shade name="hard" weight="0.122497368698" />
+</color>
+
+<color name="white" weight="0.47180891087">
+ <shade name="light" weight="0.741327118011" />
+ <shade name="dark" weight="0.136174259378" />
+ <shade name="hard" weight="0.122497368698" />
+</color>
+
+<color name="blue" weight="0.0195800698011">
+ <shade name="light" weight="0.741327118011" />
+ <shade name="dark" weight="0.136174259378" />
+ <shade name="hard" weight="0.122497368698" />
+</color>
+
+<color name="black" weight="0.0168671685636">
+ <shade name="light" weight="0.741327118011" />
+ <shade name="dark" weight="0.136174259378" />
+ <shade name="hard" weight="0.122497368698" />
+</color>
+
+<color name="yellow" weight="0.0128567928212">
+ <shade name="light" weight="0.741327118011" />
+ <shade name="dark" weight="0.136174259378" />
+ <shade name="hard" weight="0.122497368698" />
+</color>
+
+</colors>

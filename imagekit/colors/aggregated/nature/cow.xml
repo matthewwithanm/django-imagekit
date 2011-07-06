@@ -1,0 +1,33 @@
+<colors query="cow">
+
+<color name="purple" weight="0.42625559703">
+ <shade name="fresh" weight="0.60167061888" />
+ <shade name="cool" weight="0.267409163947" />
+ <shade name="soft" weight="0.130919069849" />
+</color>
+
+<color name="red" weight="0.220421145232">
+ <shade name="fresh" weight="0.60167061888" />
+ <shade name="cool" weight="0.267409163947" />
+ <shade name="soft" weight="0.130919069849" />
+</color>
+
+<color name="black" weight="0.15072916549">
+ <shade name="fresh" weight="0.60167061888" />
+ <shade name="cool" weight="0.267409163947" />
+ <shade name="soft" weight="0.130919069849" />
+</color>
+
+<color name="white" weight="0.115883175618">
+ <shade name="fresh" weight="0.60167061888" />
+ <shade name="cool" weight="0.267409163947" />
+ <shade name="soft" weight="0.130919069849" />
+</color>
+
+<color name="blue" weight="0.0867097887494">
+ <shade name="fresh" weight="0.60167061888" />
+ <shade name="cool" weight="0.267409163947" />
+ <shade name="soft" weight="0.130919069849" />
+</color>
+
+</colors>

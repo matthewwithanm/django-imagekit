@@ -1,0 +1,33 @@
+<colors query="aghast">
+
+<color name="black" weight="0.584905009257">
+ <shade name="light" weight="0.416666041668" />
+ <shade name="cool" weight="0.333332833334" />
+ <shade name="hard" weight="0.249999625001" />
+</color>
+
+<color name="white" weight="0.132075324671">
+ <shade name="light" weight="0.416666041668" />
+ <shade name="cool" weight="0.333332833334" />
+ <shade name="hard" weight="0.249999625001" />
+</color>
+
+<color name="orange" weight="0.113207421146">
+ <shade name="light" weight="0.416666041668" />
+ <shade name="cool" weight="0.333332833334" />
+ <shade name="hard" weight="0.249999625001" />
+</color>
+
+<color name="green" weight="0.094339517622">
+ <shade name="light" weight="0.416666041668" />
+ <shade name="cool" weight="0.333332833334" />
+ <shade name="hard" weight="0.249999625001" />
+</color>
+
+<color name="red" weight="0.0754716140976">
+ <shade name="light" weight="0.416666041668" />
+ <shade name="cool" weight="0.333332833334" />
+ <shade name="hard" weight="0.249999625001" />
+</color>
+
+</colors>

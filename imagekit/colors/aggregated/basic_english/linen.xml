@@ -1,0 +1,33 @@
+<colors query="linen">
+
+<color name="white" weight="0.732782387661">
+ <shade name="fresh" weight="0.65610785534" />
+ <shade name="soft" weight="0.241628686036" />
+ <shade name="cool" weight="0.102262327798" />
+</color>
+
+<color name="black" weight="0.0960442935284">
+ <shade name="fresh" weight="0.65610785534" />
+ <shade name="soft" weight="0.241628686036" />
+ <shade name="cool" weight="0.102262327798" />
+</color>
+
+<color name="blue" weight="0.0768354348227">
+ <shade name="fresh" weight="0.65610785534" />
+ <shade name="soft" weight="0.241628686036" />
+ <shade name="cool" weight="0.102262327798" />
+</color>
+
+<color name="green" weight="0.0491604495023">
+ <shade name="fresh" weight="0.65610785534" />
+ <shade name="soft" weight="0.241628686036" />
+ <shade name="cool" weight="0.102262327798" />
+</color>
+
+<color name="red" weight="0.0451763899189">
+ <shade name="fresh" weight="0.65610785534" />
+ <shade name="soft" weight="0.241628686036" />
+ <shade name="cool" weight="0.102262327798" />
+</color>
+
+</colors>

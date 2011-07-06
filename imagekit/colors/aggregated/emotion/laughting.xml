@@ -1,0 +1,33 @@
+<colors query="laughting">
+
+<color name="red" weight="0.599999400001">
+ <shade name="cool" weight="0.499999437501" />
+ <shade name="light" weight="0.24999971875" />
+ <shade name="hard" weight="0.24999971875" />
+</color>
+
+<color name="pink" weight="0.1999998">
+ <shade name="cool" weight="0.499999437501" />
+ <shade name="light" weight="0.24999971875" />
+ <shade name="hard" weight="0.24999971875" />
+</color>
+
+<color name="black" weight="0.1999998">
+ <shade name="cool" weight="0.499999437501" />
+ <shade name="light" weight="0.24999971875" />
+ <shade name="hard" weight="0.24999971875" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="cool" weight="0.499999437501" />
+ <shade name="light" weight="0.24999971875" />
+ <shade name="hard" weight="0.24999971875" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="cool" weight="0.499999437501" />
+ <shade name="light" weight="0.24999971875" />
+ <shade name="hard" weight="0.24999971875" />
+</color>
+
+</colors>

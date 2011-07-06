@@ -1,0 +1,33 @@
+<colors query="footlights">
+
+<color name="pink" weight="0.307855281869">
+ <shade name="bright" weight="0.911457326933" />
+ <shade name="soft" weight="0.0520832758247" />
+ <shade name="light" weight="0.0364582930773" />
+</color>
+
+<color name="red" weight="0.23991480587">
+ <shade name="bright" weight="0.911457326933" />
+ <shade name="soft" weight="0.0520832758247" />
+ <shade name="light" weight="0.0364582930773" />
+</color>
+
+<color name="yellow" weight="0.197452008371">
+ <shade name="bright" weight="0.911457326933" />
+ <shade name="soft" weight="0.0520832758247" />
+ <shade name="light" weight="0.0364582930773" />
+</color>
+
+<color name="green" weight="0.135880951997">
+ <shade name="bright" weight="0.911457326933" />
+ <shade name="soft" weight="0.0520832758247" />
+ <shade name="light" weight="0.0364582930773" />
+</color>
+
+<color name="white" weight="0.118895832998">
+ <shade name="bright" weight="0.911457326933" />
+ <shade name="soft" weight="0.0520832758247" />
+ <shade name="light" weight="0.0364582930773" />
+</color>
+
+</colors>

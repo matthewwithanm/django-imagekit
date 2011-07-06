@@ -1,0 +1,33 @@
+<colors query="outskirts">
+
+<color name="green" weight="0.983522204562">
+ <shade name="dark" weight="0.859126068749" />
+ <shade name="hard" weight="0.0714284953232" />
+ <shade name="light" weight="0.0694443704531" />
+</color>
+
+<color name="red" weight="0.00803497974772">
+ <shade name="dark" weight="0.859126068749" />
+ <shade name="hard" weight="0.0714284953232" />
+ <shade name="light" weight="0.0694443704531" />
+</color>
+
+<color name="blue" weight="0.00325467534085">
+ <shade name="dark" weight="0.859126068749" />
+ <shade name="hard" weight="0.0714284953232" />
+ <shade name="light" weight="0.0694443704531" />
+</color>
+
+<color name="white" weight="0.00284784092324">
+ <shade name="dark" weight="0.859126068749" />
+ <shade name="hard" weight="0.0714284953232" />
+ <shade name="light" weight="0.0694443704531" />
+</color>
+
+<color name="black" weight="0.00233929790123">
+ <shade name="dark" weight="0.859126068749" />
+ <shade name="hard" weight="0.0714284953232" />
+ <shade name="light" weight="0.0694443704531" />
+</color>
+
+</colors>

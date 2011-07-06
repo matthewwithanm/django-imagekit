@@ -1,0 +1,33 @@
+<colors query="building">
+
+<color name="green" weight="0.587925858735">
+ <shade name="light" weight="0.46831457511" />
+ <shade name="cool" weight="0.351879928273" />
+ <shade name="dark" weight="0.179803945779" />
+</color>
+
+<color name="white" weight="0.220472197026">
+ <shade name="light" weight="0.46831457511" />
+ <shade name="cool" weight="0.351879928273" />
+ <shade name="dark" weight="0.179803945779" />
+</color>
+
+<color name="blue" weight="0.0803148717736">
+ <shade name="light" weight="0.46831457511" />
+ <shade name="cool" weight="0.351879928273" />
+ <shade name="dark" weight="0.179803945779" />
+</color>
+
+<color name="red" weight="0.0587925858735">
+ <shade name="light" weight="0.46831457511" />
+ <shade name="cool" weight="0.351879928273" />
+ <shade name="dark" weight="0.179803945779" />
+</color>
+
+<color name="yellow" weight="0.0524933802442">
+ <shade name="light" weight="0.46831457511" />
+ <shade name="cool" weight="0.351879928273" />
+ <shade name="dark" weight="0.179803945779" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="rhythm">
+
+<color name="black" weight="0.54108995632">
+ <shade name="cool" weight="0.350445863258" />
+ <shade name="light" weight="0.345981584746" />
+ <shade name="dark" weight="0.303570938874" />
+</color>
+
+<color name="blue" weight="0.322341623551">
+ <shade name="cool" weight="0.350445863258" />
+ <shade name="light" weight="0.345981584746" />
+ <shade name="dark" weight="0.303570938874" />
+</color>
+
+<color name="white" weight="0.064283336691">
+ <shade name="cool" weight="0.350445863258" />
+ <shade name="light" weight="0.345981584746" />
+ <shade name="dark" weight="0.303570938874" />
+</color>
+
+<color name="red" weight="0.0601211062578">
+ <shade name="cool" weight="0.350445863258" />
+ <shade name="light" weight="0.345981584746" />
+ <shade name="dark" weight="0.303570938874" />
+</color>
+
+<color name="pink" weight="0.012162962266">
+ <shade name="cool" weight="0.350445863258" />
+ <shade name="light" weight="0.345981584746" />
+ <shade name="dark" weight="0.303570938874" />
+</color>
+
+</colors>

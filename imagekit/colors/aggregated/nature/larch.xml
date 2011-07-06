@@ -1,0 +1,33 @@
+<colors query="larch">
+
+<color name="blue" weight="0.763502496182">
+ <shade name="dark" weight="0.587391851669" />
+ <shade name="light" weight="0.252148697302" />
+ <shade name="fresh" weight="0.160458261919" />
+</color>
+
+<color name="black" weight="0.121150809312">
+ <shade name="dark" weight="0.587391851669" />
+ <shade name="light" weight="0.252148697302" />
+ <shade name="fresh" weight="0.160458261919" />
+</color>
+
+<color name="red" weight="0.0750882620212">
+ <shade name="dark" weight="0.587391851669" />
+ <shade name="light" weight="0.252148697302" />
+ <shade name="fresh" weight="0.160458261919" />
+</color>
+
+<color name="yellow" weight="0.020570397831">
+ <shade name="dark" weight="0.587391851669" />
+ <shade name="light" weight="0.252148697302" />
+ <shade name="fresh" weight="0.160458261919" />
+</color>
+
+<color name="green" weight="0.0196870065131">
+ <shade name="dark" weight="0.587391851669" />
+ <shade name="light" weight="0.252148697302" />
+ <shade name="fresh" weight="0.160458261919" />
+</color>
+
+</colors>

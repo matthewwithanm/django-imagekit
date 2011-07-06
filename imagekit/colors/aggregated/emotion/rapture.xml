@@ -1,0 +1,33 @@
+<colors query="rapture">
+
+<color name="purple" weight="0.825749831762">
+ <shade name="dark" weight="0.860351502687" />
+ <shade name="fresh" weight="0.0725179504388" />
+ <shade name="hard" weight="0.0671293369931" />
+</color>
+
+<color name="blue" weight="0.0712010185514">
+ <shade name="dark" weight="0.832595807902" />
+ <shade name="intense" weight="0.0972245635554" />
+ <shade name="fresh" weight="0.0701784576937" />
+</color>
+
+<color name="red" weight="0.0491355271792">
+ <shade name="dark" weight="0.832595807902" />
+ <shade name="intense" weight="0.0972245635554" />
+ <shade name="fresh" weight="0.0701784576937" />
+</color>
+
+<color name="black" weight="0.0309371837795">
+ <shade name="dark" weight="0.832595807902" />
+ <shade name="intense" weight="0.0972245635554" />
+ <shade name="fresh" weight="0.0701784576937" />
+</color>
+
+<color name="pink" weight="0.0229754085421">
+ <shade name="dark" weight="0.860351502687" />
+ <shade name="fresh" weight="0.0725179504388" />
+ <shade name="hard" weight="0.0671293369931" />
+</color>
+
+</colors>

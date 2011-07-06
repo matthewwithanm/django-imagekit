@@ -1,0 +1,33 @@
+<colors query="parsley">
+
+<color name="green" weight="0.80267896245">
+ <shade name="fresh" weight="0.999292382043" />
+ <shade name="light" weight="0.000514221634167" />
+ <shade name="bright" weight="0.000192395849518" />
+</color>
+
+<color name="orange" weight="0.0739475894541">
+ <shade name="fresh" weight="0.999292382043" />
+ <shade name="light" weight="0.000514221634167" />
+ <shade name="bright" weight="0.000192395849518" />
+</color>
+
+<color name="pink" weight="0.0498672205806">
+ <shade name="fresh" weight="0.999292382043" />
+ <shade name="light" weight="0.000514221634167" />
+ <shade name="bright" weight="0.000192395849518" />
+</color>
+
+<color name="blue" weight="0.0441789444687">
+ <shade name="fresh" weight="0.999292382043" />
+ <shade name="light" weight="0.000514221634167" />
+ <shade name="bright" weight="0.000192395849518" />
+</color>
+
+<color name="white" weight="0.02932622351">
+ <shade name="fresh" weight="0.999292382043" />
+ <shade name="light" weight="0.000514221634167" />
+ <shade name="bright" weight="0.000192395849518" />
+</color>
+
+</colors>

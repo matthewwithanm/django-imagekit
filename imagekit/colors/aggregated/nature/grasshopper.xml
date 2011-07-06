@@ -1,0 +1,33 @@
+<colors query="grasshopper">
+
+<color name="green" weight="0.854748333559">
+ <shade name="dark" weight="0.385819639703" />
+ <shade name="cool" weight="0.326462772056" />
+ <shade name="light" weight="0.287715927898" />
+</color>
+
+<color name="black" weight="0.0574549376531">
+ <shade name="dark" weight="0.385819639703" />
+ <shade name="cool" weight="0.326462772056" />
+ <shade name="light" weight="0.287715927898" />
+</color>
+
+<color name="yellow" weight="0.037359860937">
+ <shade name="dark" weight="0.385819639703" />
+ <shade name="cool" weight="0.326462772056" />
+ <shade name="light" weight="0.287715927898" />
+</color>
+
+<color name="pink" weight="0.0331144221942">
+ <shade name="dark" weight="0.385819639703" />
+ <shade name="cool" weight="0.326462772056" />
+ <shade name="light" weight="0.287715927898" />
+</color>
+
+<color name="blue" weight="0.0173213900708">
+ <shade name="dark" weight="0.385819639703" />
+ <shade name="cool" weight="0.326462772056" />
+ <shade name="light" weight="0.287715927898" />
+</color>
+
+</colors>

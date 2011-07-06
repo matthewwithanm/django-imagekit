@@ -1,0 +1,33 @@
+<colors query="dodo">
+
+<color name="white" weight="0.347402193416">
+ <shade name="dark" weight="0.733045073276" />
+ <shade name="cool" weight="0.166601153017" />
+ <shade name="soft" weight="0.100352694523" />
+</color>
+
+<color name="pink" weight="0.278138204698">
+ <shade name="dark" weight="0.733045073276" />
+ <shade name="cool" weight="0.166601153017" />
+ <shade name="soft" weight="0.100352694523" />
+</color>
+
+<color name="green" weight="0.147185976027">
+ <shade name="dark" weight="0.733045073276" />
+ <shade name="cool" weight="0.166601153017" />
+ <shade name="soft" weight="0.100352694523" />
+</color>
+
+<color name="blue" weight="0.1277054792">
+ <shade name="dark" weight="0.733045073276" />
+ <shade name="cool" weight="0.166601153017" />
+ <shade name="soft" weight="0.100352694523" />
+</color>
+
+<color name="red" weight="0.0995669837828">
+ <shade name="dark" weight="0.733045073276" />
+ <shade name="cool" weight="0.166601153017" />
+ <shade name="soft" weight="0.100352694523" />
+</color>
+
+</colors>

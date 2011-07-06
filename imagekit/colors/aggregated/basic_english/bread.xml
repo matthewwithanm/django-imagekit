@@ -1,0 +1,33 @@
+<colors query="bread">
+
+<color name="white" weight="0.832506591938">
+ <shade name="fresh" weight="0.781993796166" />
+ <shade name="warm" weight="0.112974273035" />
+ <shade name="soft" weight="0.105030769462" />
+</color>
+
+<color name="black" weight="0.10967943989">
+ <shade name="fresh" weight="0.781993796166" />
+ <shade name="warm" weight="0.112974273035" />
+ <shade name="soft" weight="0.105030769462" />
+</color>
+
+<color name="orange" weight="0.0337627673397">
+ <shade name="fresh" weight="0.781993796166" />
+ <shade name="warm" weight="0.112974273035" />
+ <shade name="soft" weight="0.105030769462" />
+</color>
+
+<color name="blue" weight="0.0120911671686">
+ <shade name="fresh" weight="0.817116042462" />
+ <shade name="soft" weight="0.109748091482" />
+ <shade name="dark" weight="0.073134652559" />
+</color>
+
+<color name="red" weight="0.0119590232651">
+ <shade name="fresh" weight="0.781993796166" />
+ <shade name="warm" weight="0.112974273035" />
+ <shade name="soft" weight="0.105030769462" />
+</color>
+
+</colors>

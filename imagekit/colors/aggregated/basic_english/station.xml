@@ -1,0 +1,33 @@
+<colors query="station">
+
+<color name="green" weight="0.442365546498">
+ <shade name="light" weight="0.687463133967" />
+ <shade name="cool" weight="0.218948342667" />
+ <shade name="dark" weight="0.0935874182375" />
+</color>
+
+<color name="white" weight="0.278058343513">
+ <shade name="light" weight="0.687463133967" />
+ <shade name="cool" weight="0.218948342667" />
+ <shade name="dark" weight="0.0935874182375" />
+</color>
+
+<color name="black" weight="0.141809755192">
+ <shade name="light" weight="0.687463133967" />
+ <shade name="cool" weight="0.218948342667" />
+ <shade name="dark" weight="0.0935874182375" />
+</color>
+
+<color name="blue" weight="0.0811424802434">
+ <shade name="light" weight="0.687463133967" />
+ <shade name="cool" weight="0.218948342667" />
+ <shade name="dark" weight="0.0935874182375" />
+</color>
+
+<color name="red" weight="0.0566227899518">
+ <shade name="light" weight="0.687463133967" />
+ <shade name="cool" weight="0.218948342667" />
+ <shade name="dark" weight="0.0935874182375" />
+</color>
+
+</colors>

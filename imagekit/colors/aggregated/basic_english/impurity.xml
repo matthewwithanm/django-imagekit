@@ -1,0 +1,33 @@
+<colors query="impurity">
+
+<color name="yellow" weight="0.593811743213">
+ <shade name="neutral" weight="0.434298001198" />
+ <shade name="weak" weight="0.289532000798" />
+ <shade name="light" weight="0.276168985377" />
+</color>
+
+<color name="white" weight="0.202345094011">
+ <shade name="neutral" weight="0.434298001198" />
+ <shade name="weak" weight="0.289532000798" />
+ <shade name="light" weight="0.276168985377" />
+</color>
+
+<color name="black" weight="0.0865767541576">
+ <shade name="neutral" weight="0.434298001198" />
+ <shade name="weak" weight="0.289532000798" />
+ <shade name="light" weight="0.276168985377" />
+</color>
+
+<color name="red" weight="0.0698602050839">
+ <shade name="neutral" weight="0.434298001198" />
+ <shade name="weak" weight="0.289532000798" />
+ <shade name="light" weight="0.276168985377" />
+</color>
+
+<color name="blue" weight="0.0474051391641">
+ <shade name="neutral" weight="0.434298001198" />
+ <shade name="weak" weight="0.289532000798" />
+ <shade name="light" weight="0.276168985377" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="dog">
+
+<color name="yellow" weight="0.273037239339">
+ <shade name="cool" weight="0.489882214431" />
+ <shade name="dark" weight="0.372736467502" />
+ <shade name="soft" weight="0.137380012308" />
+</color>
+
+<color name="black" weight="0.260463155949">
+ <shade name="cool" weight="0.489882214431" />
+ <shade name="dark" weight="0.372736467502" />
+ <shade name="soft" weight="0.137380012308" />
+</color>
+
+<color name="red" weight="0.235314989167">
+ <shade name="cool" weight="0.489882214431" />
+ <shade name="dark" weight="0.372736467502" />
+ <shade name="soft" weight="0.137380012308" />
+</color>
+
+<color name="white" weight="0.118914902923">
+ <shade name="cool" weight="0.489882214431" />
+ <shade name="dark" weight="0.372736467502" />
+ <shade name="soft" weight="0.137380012308" />
+</color>
+
+<color name="blue" weight="0.112268601702">
+ <shade name="cool" weight="0.489882214431" />
+ <shade name="dark" weight="0.372736467502" />
+ <shade name="soft" weight="0.137380012308" />
+</color>
+
+</colors>

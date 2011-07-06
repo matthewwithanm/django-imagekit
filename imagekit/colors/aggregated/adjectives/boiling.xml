@@ -1,0 +1,33 @@
+<colors query="boiling">
+
+<color name="red" weight="0.96030864679">
+ <shade name="hard" weight="0.62972984558" />
+ <shade name="fresh" weight="0.305782280786" />
+ <shade name="soft" weight="0.0644867582252" />
+</color>
+
+<color name="white" weight="0.0197115985394">
+ <shade name="hard" weight="0.62972984558" />
+ <shade name="fresh" weight="0.305782280786" />
+ <shade name="soft" weight="0.0644867582252" />
+</color>
+
+<color name="black" weight="0.00938647549494">
+ <shade name="hard" weight="0.62972984558" />
+ <shade name="fresh" weight="0.305782280786" />
+ <shade name="soft" weight="0.0644867582252" />
+</color>
+
+<color name="blue" weight="0.00772579136891">
+ <shade name="hard" weight="0.62972984558" />
+ <shade name="fresh" weight="0.305782280786" />
+ <shade name="soft" weight="0.0644867582252" />
+</color>
+
+<color name="green" weight="0.00286648520884">
+ <shade name="hard" weight="0.62972984558" />
+ <shade name="fresh" weight="0.305782280786" />
+ <shade name="soft" weight="0.0644867582252" />
+</color>
+
+</colors>

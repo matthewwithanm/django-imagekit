@@ -1,0 +1,33 @@
+<colors query="mole">
+
+<color name="black" weight="0.361540799069">
+ <shade name="dark" weight="0.827973287019" />
+ <shade name="soft" weight="0.0908359043041" />
+ <shade name="light" weight="0.0811896135815" />
+</color>
+
+<color name="red" weight="0.300844168568">
+ <shade name="dark" weight="0.827973287019" />
+ <shade name="soft" weight="0.0908359043041" />
+ <shade name="light" weight="0.0811896135815" />
+</color>
+
+<color name="green" weight="0.292047555452">
+ <shade name="dark" weight="0.827973287019" />
+ <shade name="soft" weight="0.0908359043041" />
+ <shade name="light" weight="0.0811896135815" />
+</color>
+
+<color name="blue" weight="0.0264778054792">
+ <shade name="dark" weight="0.827973287019" />
+ <shade name="soft" weight="0.0908359043041" />
+ <shade name="light" weight="0.0811896135815" />
+</color>
+
+<color name="yellow" weight="0.0190886504618">
+ <shade name="dark" weight="0.827973287019" />
+ <shade name="soft" weight="0.0908359043041" />
+ <shade name="light" weight="0.0811896135815" />
+</color>
+
+</colors>

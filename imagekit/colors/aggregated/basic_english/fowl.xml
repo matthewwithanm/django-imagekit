@@ -1,0 +1,33 @@
+<colors query="fowl">
+
+<color name="white" weight="0.73893315682">
+ <shade name="fresh" weight="0.344216765655" />
+ <shade name="light" weight="0.330448095028" />
+ <shade name="dark" weight="0.325334017367" />
+</color>
+
+<color name="red" weight="0.111198678939">
+ <shade name="fresh" weight="0.344216765655" />
+ <shade name="light" weight="0.330448095028" />
+ <shade name="dark" weight="0.325334017367" />
+</color>
+
+<color name="black" weight="0.0716693421032">
+ <shade name="fresh" weight="0.344216765655" />
+ <shade name="light" weight="0.330448095028" />
+ <shade name="dark" weight="0.325334017367" />
+</color>
+
+<color name="orange" weight="0.0418967925808">
+ <shade name="fresh" weight="0.344216765655" />
+ <shade name="light" weight="0.330448095028" />
+ <shade name="dark" weight="0.325334017367" />
+</color>
+
+<color name="blue" weight="0.0363009880923">
+ <shade name="fresh" weight="0.344216765655" />
+ <shade name="light" weight="0.330448095028" />
+ <shade name="dark" weight="0.325334017367" />
+</color>
+
+</colors>

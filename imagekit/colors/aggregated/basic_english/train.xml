@@ -1,0 +1,33 @@
+<colors query="train">
+
+<color name="blue" weight="0.565639292907">
+ <shade name="cool" weight="0.395809855756" />
+ <shade name="light" weight="0.310914705635" />
+ <shade name="dark" weight="0.293274154961" />
+</color>
+
+<color name="black" weight="0.187935259394">
+ <shade name="cool" weight="0.395809855756" />
+ <shade name="light" weight="0.310914705635" />
+ <shade name="dark" weight="0.293274154961" />
+</color>
+
+<color name="red" weight="0.150348207515">
+ <shade name="cool" weight="0.395809855756" />
+ <shade name="light" weight="0.310914705635" />
+ <shade name="dark" weight="0.293274154961" />
+</color>
+
+<color name="white" weight="0.0515217637948">
+ <shade name="cool" weight="0.395809855756" />
+ <shade name="light" weight="0.310914705635" />
+ <shade name="dark" weight="0.293274154961" />
+</color>
+
+<color name="orange" weight="0.0445544078367">
+ <shade name="cool" weight="0.395809855756" />
+ <shade name="light" weight="0.310914705635" />
+ <shade name="dark" weight="0.293274154961" />
+</color>
+
+</colors>

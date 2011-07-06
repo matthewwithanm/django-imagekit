@@ -1,0 +1,33 @@
+<colors query="ceremony">
+
+<color name="black" weight="0.586309707437">
+ <shade name="light" weight="0.93091688126" />
+ <shade name="cool" weight="0.0405183246879" />
+ <shade name="dark" weight="0.0285637445941" />
+</color>
+
+<color name="white" weight="0.152713226123">
+ <shade name="light" weight="0.93091688126" />
+ <shade name="cool" weight="0.0405183246879" />
+ <shade name="dark" weight="0.0285637445941" />
+</color>
+
+<color name="blue" weight="0.117261941487">
+ <shade name="light" weight="0.93091688126" />
+ <shade name="cool" weight="0.0405183246879" />
+ <shade name="dark" weight="0.0285637445941" />
+</color>
+
+<color name="green" weight="0.0818106568517">
+ <shade name="light" weight="0.93091688126" />
+ <shade name="cool" weight="0.0405183246879" />
+ <shade name="dark" weight="0.0285637445941" />
+</color>
+
+<color name="red" weight="0.0619033970178">
+ <shade name="light" weight="0.93091688126" />
+ <shade name="cool" weight="0.0405183246879" />
+ <shade name="dark" weight="0.0285637445941" />
+</color>
+
+</colors>

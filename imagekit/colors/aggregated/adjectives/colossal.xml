@@ -1,0 +1,33 @@
+<colors query="colossal">
+
+<color name="black" weight="0.3260569418">
+ <shade name="dark" weight="0.817437810958" />
+ <shade name="fresh" weight="0.123705588725" />
+ <shade name="hard" weight="0.058855522389" />
+</color>
+
+<color name="red" weight="0.244883770097">
+ <shade name="dark" weight="0.817437810958" />
+ <shade name="fresh" weight="0.123705588725" />
+ <shade name="hard" weight="0.058855522389" />
+</color>
+
+<color name="white" weight="0.218280797858">
+ <shade name="dark" weight="0.817437810958" />
+ <shade name="fresh" weight="0.123705588725" />
+ <shade name="hard" weight="0.058855522389" />
+</color>
+
+<color name="green" weight="0.127557841248">
+ <shade name="dark" weight="0.817437810958" />
+ <shade name="fresh" weight="0.123705588725" />
+ <shade name="hard" weight="0.058855522389" />
+</color>
+
+<color name="yellow" weight="0.0832195541832">
+ <shade name="dark" weight="0.817437810958" />
+ <shade name="fresh" weight="0.123705588725" />
+ <shade name="hard" weight="0.058855522389" />
+</color>
+
+</colors>

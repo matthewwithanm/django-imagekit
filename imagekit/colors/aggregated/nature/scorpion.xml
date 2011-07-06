@@ -1,0 +1,33 @@
+<colors query="scorpion">
+
+<color name="black" weight="0.550458149847">
+ <shade name="dark" weight="0.843157395873" />
+ <shade name="cool" weight="0.0850302797533" />
+ <shade name="light" weight="0.0718112866824" />
+</color>
+
+<color name="red" weight="0.305221986934">
+ <shade name="dark" weight="0.843157395873" />
+ <shade name="cool" weight="0.0850302797533" />
+ <shade name="light" weight="0.0718112866824" />
+</color>
+
+<color name="purple" weight="0.0894494493502">
+ <shade name="dark" weight="0.843157395873" />
+ <shade name="cool" weight="0.0850302797533" />
+ <shade name="light" weight="0.0718112866824" />
+</color>
+
+<color name="blue" weight="0.0312279142702">
+ <shade name="dark" weight="0.843157395873" />
+ <shade name="cool" weight="0.0850302797533" />
+ <shade name="light" weight="0.0718112866824" />
+</color>
+
+<color name="white" weight="0.0236414718204">
+ <shade name="dark" weight="0.843157395873" />
+ <shade name="cool" weight="0.0850302797533" />
+ <shade name="light" weight="0.0718112866824" />
+</color>
+
+</colors>

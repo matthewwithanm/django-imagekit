@@ -1,0 +1,33 @@
+<colors query="woodchuck">
+
+<color name="green" weight="0.307691963077">
+ <shade name="cool" weight="0.370785725289" />
+ <shade name="fresh" weight="0.325842001011" />
+ <shade name="dark" weight="0.303370138873" />
+</color>
+
+<color name="black" weight="0.258461248985">
+ <shade name="cool" weight="0.370785725289" />
+ <shade name="fresh" weight="0.325842001011" />
+ <shade name="dark" weight="0.303370138873" />
+</color>
+
+<color name="white" weight="0.255384329354">
+ <shade name="cool" weight="0.370785725289" />
+ <shade name="fresh" weight="0.325842001011" />
+ <shade name="dark" weight="0.303370138873" />
+</color>
+
+<color name="red" weight="0.095384508554">
+ <shade name="cool" weight="0.370785725289" />
+ <shade name="fresh" weight="0.325842001011" />
+ <shade name="dark" weight="0.303370138873" />
+</color>
+
+<color name="purple" weight="0.0830768300309">
+ <shade name="cool" weight="0.370785725289" />
+ <shade name="fresh" weight="0.325842001011" />
+ <shade name="dark" weight="0.303370138873" />
+</color>
+
+</colors>

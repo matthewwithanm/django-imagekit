@@ -1,0 +1,33 @@
+<colors query="walrus">
+
+<color name="blue" weight="0.505617448206">
+ <shade name="cool" weight="0.543407545891" />
+ <shade name="fresh" weight="0.299034921703" />
+ <shade name="dark" weight="0.157556034016" />
+</color>
+
+<color name="white" weight="0.353932213744">
+ <shade name="cool" weight="0.543407545891" />
+ <shade name="fresh" weight="0.299034921703" />
+ <shade name="dark" weight="0.157556034016" />
+</color>
+
+<color name="black" weight="0.0570224122144">
+ <shade name="cool" weight="0.543407545891" />
+ <shade name="fresh" weight="0.299034921703" />
+ <shade name="dark" weight="0.157556034016" />
+</color>
+
+<color name="red" weight="0.0488763533266">
+ <shade name="cool" weight="0.543407545891" />
+ <shade name="fresh" weight="0.299034921703" />
+ <shade name="dark" weight="0.157556034016" />
+</color>
+
+<color name="pink" weight="0.0345505256274">
+ <shade name="cool" weight="0.543407545891" />
+ <shade name="fresh" weight="0.299034921703" />
+ <shade name="dark" weight="0.157556034016" />
+</color>
+
+</colors>

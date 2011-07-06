@@ -1,0 +1,33 @@
+<colors query="spot">
+
+<color name="black" weight="0.330389835751">
+ <shade name="soft" weight="0.411549306754" />
+ <shade name="bright" weight="0.378359846532" />
+ <shade name="dark" weight="0.210089283206" />
+</color>
+
+<color name="red" weight="0.313300706316">
+ <shade name="soft" weight="0.411549306754" />
+ <shade name="bright" weight="0.378359846532" />
+ <shade name="dark" weight="0.210089283206" />
+</color>
+
+<color name="white" weight="0.231272885026">
+ <shade name="soft" weight="0.411549306754" />
+ <shade name="bright" weight="0.378359846532" />
+ <shade name="dark" weight="0.210089283206" />
+</color>
+
+<color name="green" weight="0.0626601412632">
+ <shade name="soft" weight="0.411549306754" />
+ <shade name="bright" weight="0.378359846532" />
+ <shade name="dark" weight="0.210089283206" />
+</color>
+
+<color name="blue" weight="0.0623753224393">
+ <shade name="soft" weight="0.411549306754" />
+ <shade name="bright" weight="0.378359846532" />
+ <shade name="dark" weight="0.210089283206" />
+</color>
+
+</colors>

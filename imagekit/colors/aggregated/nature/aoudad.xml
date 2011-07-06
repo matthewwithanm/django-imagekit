@@ -1,0 +1,33 @@
+<colors query="aoudad">
+
+<color name="cyan" weight="0.333333">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="fresh" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+</color>
+
+<color name="black" weight="0.333333">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="fresh" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+</color>
+
+<color name="white" weight="0.1666665">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="fresh" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+</color>
+
+<color name="red" weight="0.1666665">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="fresh" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="weak" weight="0.333332888889" />
+ <shade name="fresh" weight="0.333332888889" />
+ <shade name="dark" weight="0.333332888889" />
+</color>
+
+</colors>

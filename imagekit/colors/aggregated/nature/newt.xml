@@ -1,0 +1,33 @@
+<colors query="newt">
+
+<color name="red" weight="0.492720661756">
+ <shade name="cool" weight="0.430106758008" />
+ <shade name="light" weight="0.330644570219" />
+ <shade name="dark" weight="0.239246884142" />
+</color>
+
+<color name="black" weight="0.399935602075">
+ <shade name="cool" weight="0.430106758008" />
+ <shade name="light" weight="0.330644570219" />
+ <shade name="dark" weight="0.239246884142" />
+</color>
+
+<color name="blue" weight="0.0543912418822">
+ <shade name="cool" weight="0.430106758008" />
+ <shade name="light" weight="0.330644570219" />
+ <shade name="dark" weight="0.239246884142" />
+</color>
+
+<color name="orange" weight="0.0377539208359">
+ <shade name="cool" weight="0.430106758008" />
+ <shade name="light" weight="0.330644570219" />
+ <shade name="dark" weight="0.239246884142" />
+</color>
+
+<color name="green" weight="0.0151975528789">
+ <shade name="cool" weight="0.430106758008" />
+ <shade name="light" weight="0.330644570219" />
+ <shade name="dark" weight="0.239246884142" />
+</color>
+
+</colors>

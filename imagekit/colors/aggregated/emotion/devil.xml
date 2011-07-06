@@ -1,0 +1,33 @@
+<colors query="devil">
+
+<color name="red" weight="0.385697805144">
+ <shade name="dark" weight="0.786349302202" />
+ <shade name="cool" weight="0.137240208403" />
+ <shade name="hard" weight="0.0764094133272" />
+</color>
+
+<color name="blue" weight="0.31249968154">
+ <shade name="dark" weight="0.786349302202" />
+ <shade name="cool" weight="0.137240208403" />
+ <shade name="hard" weight="0.0764094133272" />
+</color>
+
+<color name="black" weight="0.20608087107">
+ <shade name="dark" weight="0.786349302202" />
+ <shade name="cool" weight="0.137240208403" />
+ <shade name="hard" weight="0.0764094133272" />
+</color>
+
+<color name="white" weight="0.0816440609428">
+ <shade name="dark" weight="0.786349302202" />
+ <shade name="cool" weight="0.137240208403" />
+ <shade name="hard" weight="0.0764094133272" />
+</color>
+
+<color name="green" weight="0.0140765622315">
+ <shade name="dark" weight="0.786349302202" />
+ <shade name="cool" weight="0.137240208403" />
+ <shade name="hard" weight="0.0764094133272" />
+</color>
+
+</colors>

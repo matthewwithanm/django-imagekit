@@ -1,0 +1,33 @@
+<colors query="father">
+
+<color name="white" weight="0.48336203098">
+ <shade name="cool" weight="0.593438734271" />
+ <shade name="dark" weight="0.245526578501" />
+ <shade name="weak" weight="0.161033626385" />
+</color>
+
+<color name="black" weight="0.37478070518">
+ <shade name="cool" weight="0.593438734271" />
+ <shade name="dark" weight="0.245526578501" />
+ <shade name="weak" weight="0.161033626385" />
+</color>
+
+<color name="green" weight="0.0619964344083">
+ <shade name="cool" weight="0.593438734271" />
+ <shade name="dark" weight="0.245526578501" />
+ <shade name="weak" weight="0.161033626385" />
+</color>
+
+<color name="red" weight="0.0430822679787">
+ <shade name="cool" weight="0.593438734271" />
+ <shade name="dark" weight="0.245526578501" />
+ <shade name="weak" weight="0.161033626385" />
+</color>
+
+<color name="blue" weight="0.0367775458354">
+ <shade name="cool" weight="0.593438734271" />
+ <shade name="dark" weight="0.245526578501" />
+ <shade name="weak" weight="0.161033626385" />
+</color>
+
+</colors>

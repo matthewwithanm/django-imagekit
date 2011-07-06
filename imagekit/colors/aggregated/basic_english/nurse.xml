@@ -1,0 +1,33 @@
+<colors query="nurse">
+
+<color name="black" weight="0.507693894381">
+ <shade name="cool" weight="0.568671636018" />
+ <shade name="hard" weight="0.370652048476" />
+ <shade name="light" weight="0.060675232593" />
+</color>
+
+<color name="white" weight="0.280983494996">
+ <shade name="cool" weight="0.568671636018" />
+ <shade name="hard" weight="0.370652048476" />
+ <shade name="light" weight="0.060675232593" />
+</color>
+
+<color name="red" weight="0.0776311367592">
+ <shade name="cool" weight="0.568671636018" />
+ <shade name="hard" weight="0.370652048476" />
+ <shade name="light" weight="0.060675232593" />
+</color>
+
+<color name="pink" weight="0.0686314209048">
+ <shade name="cool" weight="0.568671636018" />
+ <shade name="hard" weight="0.370652048476" />
+ <shade name="light" weight="0.060675232593" />
+</color>
+
+<color name="blue" weight="0.0650590146115">
+ <shade name="cool" weight="0.568671636018" />
+ <shade name="hard" weight="0.370652048476" />
+ <shade name="light" weight="0.060675232593" />
+</color>
+
+</colors>

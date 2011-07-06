@@ -1,0 +1,33 @@
+<colors query="undergrowth">
+
+<color name="green" weight="0.702352205772">
+ <shade name="dark" weight="0.526315208918" />
+ <shade name="light" weight="0.346674688509" />
+ <shade name="soft" weight="0.127008999517" />
+</color>
+
+<color name="black" weight="0.170588056678">
+ <shade name="dark" weight="0.526315208918" />
+ <shade name="light" weight="0.346674688509" />
+ <shade name="soft" weight="0.127008999517" />
+</color>
+
+<color name="red" weight="0.0494117129689">
+ <shade name="dark" weight="0.526315208918" />
+ <shade name="light" weight="0.346674688509" />
+ <shade name="soft" weight="0.127008999517" />
+</color>
+
+<color name="blue" weight="0.0423528968305">
+ <shade name="dark" weight="0.526315208918" />
+ <shade name="light" weight="0.346674688509" />
+ <shade name="soft" weight="0.127008999517" />
+</color>
+
+<color name="purple" weight="0.0352940806921">
+ <shade name="dark" weight="0.526315208918" />
+ <shade name="light" weight="0.346674688509" />
+ <shade name="soft" weight="0.127008999517" />
+</color>
+
+</colors>

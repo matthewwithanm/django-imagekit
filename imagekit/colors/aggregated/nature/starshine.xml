@@ -1,0 +1,33 @@
+<colors query="starshine">
+
+<color name="pink" weight="0.899572569102">
+ <shade name="soft" weight="0.663903538201" />
+ <shade name="bright" weight="0.22559828968" />
+ <shade name="dark" weight="0.110497121476" />
+</color>
+
+<color name="blue" weight="0.0422644008759">
+ <shade name="soft" weight="0.663903538201" />
+ <shade name="bright" weight="0.22559828968" />
+ <shade name="dark" weight="0.110497121476" />
+</color>
+
+<color name="white" weight="0.0356727053265">
+ <shade name="soft" weight="0.663903538201" />
+ <shade name="bright" weight="0.22559828968" />
+ <shade name="dark" weight="0.110497121476" />
+</color>
+
+<color name="purple" weight="0.01434663149">
+ <shade name="soft" weight="0.663903538201" />
+ <shade name="bright" weight="0.22559828968" />
+ <shade name="dark" weight="0.110497121476" />
+</color>
+
+<color name="red" weight="0.00814268273756">
+ <shade name="soft" weight="0.663903538201" />
+ <shade name="bright" weight="0.22559828968" />
+ <shade name="dark" weight="0.110497121476" />
+</color>
+
+</colors>

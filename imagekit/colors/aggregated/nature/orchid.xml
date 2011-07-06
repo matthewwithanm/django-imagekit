@@ -1,0 +1,33 @@
+<colors query="orchid">
+
+<color name="black" weight="0.332931600741">
+ <shade name="dark" weight="0.476135826723" />
+ <shade name="fresh" weight="0.268181515768" />
+ <shade name="light" weight="0.255681529863" />
+</color>
+
+<color name="blue" weight="0.246236934363">
+ <shade name="dark" weight="0.476135826723" />
+ <shade name="fresh" weight="0.268181515768" />
+ <shade name="light" weight="0.255681529863" />
+</color>
+
+<color name="white" weight="0.228175545535">
+ <shade name="dark" weight="0.476135826723" />
+ <shade name="fresh" weight="0.268181515768" />
+ <shade name="light" weight="0.255681529863" />
+</color>
+
+<color name="purple" weight="0.121613351446">
+ <shade name="dark" weight="0.476135826723" />
+ <shade name="fresh" weight="0.268181515768" />
+ <shade name="light" weight="0.255681529863" />
+</color>
+
+<color name="pink" weight="0.0710414627258">
+ <shade name="dark" weight="0.476135826723" />
+ <shade name="fresh" weight="0.268181515768" />
+ <shade name="light" weight="0.255681529863" />
+</color>
+
+</colors>

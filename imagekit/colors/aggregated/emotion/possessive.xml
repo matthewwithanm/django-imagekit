@@ -1,0 +1,33 @@
+<colors query="possessive">
+
+<color name="white" weight="0.384614930967">
+ <shade name="neutral" weight="0.709301183277" />
+ <shade name="hard" weight="0.153100528631" />
+ <shade name="dark" weight="0.13759667763" />
+</color>
+
+<color name="red" weight="0.23076895858">
+ <shade name="neutral" weight="0.59512114708" />
+ <shade name="intense" weight="0.27642239072" />
+ <shade name="hard" weight="0.128455110982" />
+</color>
+
+<color name="green" weight="0.128204976989">
+ <shade name="neutral" weight="0.59512114708" />
+ <shade name="intense" weight="0.27642239072" />
+ <shade name="hard" weight="0.128455110982" />
+</color>
+
+<color name="blue" weight="0.128204976989">
+ <shade name="neutral" weight="0.59512114708" />
+ <shade name="intense" weight="0.27642239072" />
+ <shade name="hard" weight="0.128455110982" />
+</color>
+
+<color name="black" weight="0.128204976989">
+ <shade name="neutral" weight="0.59512114708" />
+ <shade name="intense" weight="0.27642239072" />
+ <shade name="hard" weight="0.128455110982" />
+</color>
+
+</colors>

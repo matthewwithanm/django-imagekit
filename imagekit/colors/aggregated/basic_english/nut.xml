@@ -1,0 +1,33 @@
+<colors query="nut">
+
+<color name="black" weight="0.37125092161">
+ <shade name="hard" weight="0.936493041247" />
+ <shade name="warm" weight="0.0464065748118" />
+ <shade name="cool" weight="0.0170993595478" />
+</color>
+
+<color name="orange" weight="0.283157482584">
+ <shade name="hard" weight="0.936493041247" />
+ <shade name="warm" weight="0.0464065748118" />
+ <shade name="cool" weight="0.0170993595478" />
+</color>
+
+<color name="yellow" weight="0.182479266554">
+ <shade name="hard" weight="0.936493041247" />
+ <shade name="warm" weight="0.0464065748118" />
+ <shade name="cool" weight="0.0170993595478" />
+</color>
+
+<color name="white" weight="0.151017324045">
+ <shade name="hard" weight="0.936493041247" />
+ <shade name="warm" weight="0.0464065748118" />
+ <shade name="cool" weight="0.0170993595478" />
+</color>
+
+<color name="pink" weight="0.0120939707006">
+ <shade name="hard" weight="0.936493041247" />
+ <shade name="warm" weight="0.0464065748118" />
+ <shade name="cool" weight="0.0170993595478" />
+</color>
+
+</colors>

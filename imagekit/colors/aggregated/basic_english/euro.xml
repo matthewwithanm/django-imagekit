@@ -1,0 +1,33 @@
+<colors query="euro">
+
+<color name="black" weight="0.362687149884">
+ <shade name="weak" weight="0.61388483103" />
+ <shade name="fresh" weight="0.260657448096" />
+ <shade name="light" weight="0.125456622215" />
+</color>
+
+<color name="red" weight="0.209393120706">
+ <shade name="weak" weight="0.61388483103" />
+ <shade name="fresh" weight="0.260657448096" />
+ <shade name="light" weight="0.125456622215" />
+</color>
+
+<color name="white" weight="0.208740805689">
+ <shade name="weak" weight="0.61388483103" />
+ <shade name="fresh" weight="0.260657448096" />
+ <shade name="light" weight="0.125456622215" />
+</color>
+
+<color name="green" weight="0.11154586804">
+ <shade name="weak" weight="0.61388483103" />
+ <shade name="fresh" weight="0.260657448096" />
+ <shade name="light" weight="0.125456622215" />
+</color>
+
+<color name="blue" weight="0.107631977933">
+ <shade name="weak" weight="0.61388483103" />
+ <shade name="fresh" weight="0.260657448096" />
+ <shade name="light" weight="0.125456622215" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cotton">
+
+<color name="white" weight="0.474631217612">
+ <shade name="soft" weight="0.795306563248" />
+ <shade name="light" weight="0.122977210187" />
+ <shade name="cool" weight="0.0817151199268" />
+</color>
+
+<color name="black" weight="0.216857366668">
+ <shade name="soft" weight="0.795306563248" />
+ <shade name="light" weight="0.122977210187" />
+ <shade name="cool" weight="0.0817151199268" />
+</color>
+
+<color name="blue" weight="0.136251892642">
+ <shade name="soft" weight="0.795306563248" />
+ <shade name="light" weight="0.122977210187" />
+ <shade name="cool" weight="0.0817151199268" />
+</color>
+
+<color name="green" weight="0.0916529247803">
+ <shade name="soft" weight="0.795306563248" />
+ <shade name="light" weight="0.122977210187" />
+ <shade name="cool" weight="0.0817151199268" />
+</color>
+
+<color name="pink" weight="0.0806054740255">
+ <shade name="soft" weight="0.795306563248" />
+ <shade name="light" weight="0.122977210187" />
+ <shade name="cool" weight="0.0817151199268" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="coyote">
+
+<color name="blue" weight="0.907954103346">
+ <shade name="cool" weight="0.66670122546" />
+ <shade name="dark" weight="0.280437817058" />
+ <shade name="light" weight="0.0528598828757" />
+</color>
+
+<color name="black" weight="0.048313154123">
+ <shade name="cool" weight="0.66670122546" />
+ <shade name="dark" weight="0.280437817058" />
+ <shade name="light" weight="0.0528598828757" />
+</color>
+
+<color name="red" weight="0.0313757839994">
+ <shade name="cool" weight="0.66670122546" />
+ <shade name="dark" weight="0.280437817058" />
+ <shade name="light" weight="0.0528598828757" />
+</color>
+
+<color name="purple" weight="0.00696931131314">
+ <shade name="cool" weight="0.66670122546" />
+ <shade name="dark" weight="0.280437817058" />
+ <shade name="light" weight="0.0528598828757" />
+</color>
+
+<color name="green" weight="0.00538663902291">
+ <shade name="cool" weight="0.66670122546" />
+ <shade name="dark" weight="0.280437817058" />
+ <shade name="light" weight="0.0528598828757" />
+</color>
+
+</colors>

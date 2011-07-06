@@ -1,0 +1,33 @@
+<colors query="amusement">
+
+<color name="green" weight="0.715983996723">
+ <shade name="dark" weight="0.572363310956" />
+ <shade name="cool" weight="0.299934092011" />
+ <shade name="intense" weight="0.12770119638" />
+</color>
+
+<color name="black" weight="0.121550771537">
+ <shade name="dark" weight="0.572363310956" />
+ <shade name="cool" weight="0.299934092011" />
+ <shade name="intense" weight="0.12770119638" />
+</color>
+
+<color name="white" weight="0.0927686906054">
+ <shade name="dark" weight="0.572438286396" />
+ <shade name="cool" weight="0.299973381201" />
+ <shade name="light" weight="0.127586931567" />
+</color>
+
+<color name="orange" weight="0.03544239718">
+ <shade name="dark" weight="0.572363310956" />
+ <shade name="cool" weight="0.299934092011" />
+ <shade name="intense" weight="0.12770119638" />
+</color>
+
+<color name="red" weight="0.0342530549927">
+ <shade name="dark" weight="0.572363310956" />
+ <shade name="cool" weight="0.299934092011" />
+ <shade name="intense" weight="0.12770119638" />
+</color>
+
+</colors>

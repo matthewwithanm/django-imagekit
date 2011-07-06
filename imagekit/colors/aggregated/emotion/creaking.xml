@@ -1,0 +1,33 @@
+<colors query="creaking">
+
+<color name="black" weight="0.789472844876">
+ <shade name="soft" weight="0.742724993376" />
+ <shade name="light" weight="0.155819109435" />
+ <shade name="dark" weight="0.101454702703" />
+</color>
+
+<color name="white" weight="0.0631578275901">
+ <shade name="soft" weight="0.742724993376" />
+ <shade name="light" weight="0.155819109435" />
+ <shade name="dark" weight="0.101454702703" />
+</color>
+
+<color name="red" weight="0.0631578275901">
+ <shade name="soft" weight="0.742724993376" />
+ <shade name="light" weight="0.155819109435" />
+ <shade name="dark" weight="0.101454702703" />
+</color>
+
+<color name="yellow" weight="0.0421052183934">
+ <shade name="soft" weight="0.742724993376" />
+ <shade name="light" weight="0.155819109435" />
+ <shade name="dark" weight="0.101454702703" />
+</color>
+
+<color name="orange" weight="0.0421052183934">
+ <shade name="soft" weight="0.742724993376" />
+ <shade name="light" weight="0.155819109435" />
+ <shade name="dark" weight="0.101454702703" />
+</color>
+
+</colors>

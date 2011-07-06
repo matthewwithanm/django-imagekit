@@ -1,0 +1,33 @@
+<colors query="copper">
+
+<color name="blue" weight="0.338629955041">
+ <shade name="bright" weight="0.419888845789" />
+ <shade name="soft" weight="0.303130280776" />
+ <shade name="dark" weight="0.276979308801" />
+</color>
+
+<color name="red" weight="0.249715944499">
+ <shade name="bright" weight="0.419888845789" />
+ <shade name="soft" weight="0.303130280776" />
+ <shade name="dark" weight="0.276979308801" />
+</color>
+
+<color name="black" weight="0.208096620416">
+ <shade name="bright" weight="0.419888845789" />
+ <shade name="soft" weight="0.303130280776" />
+ <shade name="dark" weight="0.276979308801" />
+</color>
+
+<color name="green" weight="0.131857585845">
+ <shade name="bright" weight="0.419888845789" />
+ <shade name="soft" weight="0.303130280776" />
+ <shade name="dark" weight="0.276979308801" />
+</color>
+
+<color name="white" weight="0.0716987446706">
+ <shade name="bright" weight="0.419888845789" />
+ <shade name="soft" weight="0.303130280776" />
+ <shade name="dark" weight="0.276979308801" />
+</color>
+
+</colors>

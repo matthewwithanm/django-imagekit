@@ -1,0 +1,33 @@
+<colors query="buoyant">
+
+<color name="red" weight="0.324533763382">
+ <shade name="light" weight="0.541260142795" />
+ <shade name="warm" weight="0.420517495556" />
+ <shade name="soft" weight="0.0382212931604" />
+</color>
+
+<color name="yellow" weight="0.200310313284">
+ <shade name="light" weight="0.541260142795" />
+ <shade name="warm" weight="0.420517495556" />
+ <shade name="soft" weight="0.0382212931604" />
+</color>
+
+<color name="green" weight="0.161490485128">
+ <shade name="light" weight="0.894514349692" />
+ <shade name="soft" weight="0.0631664748475" />
+ <shade name="bright" weight="0.0423174096201" />
+</color>
+
+<color name="blue" weight="0.161490485128">
+ <shade name="light" weight="0.894514349692" />
+ <shade name="soft" weight="0.0631664748475" />
+ <shade name="bright" weight="0.0423174096201" />
+</color>
+
+<color name="black" weight="0.152173726371">
+ <shade name="light" weight="0.541260142795" />
+ <shade name="warm" weight="0.420517495556" />
+ <shade name="soft" weight="0.0382212931604" />
+</color>
+
+</colors>

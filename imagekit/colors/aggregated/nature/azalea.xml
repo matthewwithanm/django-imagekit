@@ -1,0 +1,33 @@
+<colors query="azalea">
+
+<color name="pink" weight="0.573337434107">
+ <shade name="fresh" weight="0.615464740882" />
+ <shade name="soft" weight="0.213571525468" />
+ <shade name="bright" weight="0.170962428023" />
+</color>
+
+<color name="red" weight="0.27611649434">
+ <shade name="fresh" weight="0.615464740882" />
+ <shade name="soft" weight="0.213571525468" />
+ <shade name="bright" weight="0.170962428023" />
+</color>
+
+<color name="white" weight="0.0961424736131">
+ <shade name="fresh" weight="0.615464740882" />
+ <shade name="soft" weight="0.213571525468" />
+ <shade name="bright" weight="0.170962428023" />
+</color>
+
+<color name="green" weight="0.0322429027361">
+ <shade name="fresh" weight="0.615464740882" />
+ <shade name="soft" weight="0.213571525468" />
+ <shade name="bright" weight="0.170962428023" />
+</color>
+
+<color name="purple" weight="0.0221596676986">
+ <shade name="fresh" weight="0.615464740882" />
+ <shade name="soft" weight="0.213571525468" />
+ <shade name="bright" weight="0.170962428023" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="divorce">
+
+<color name="orange" weight="0.598531296609">
+ <shade name="hard" weight="0.46044247998" />
+ <shade name="cool" weight="0.303797100193" />
+ <shade name="light" weight="0.235759207962" />
+</color>
+
+<color name="black" weight="0.27752653989">
+ <shade name="hard" weight="0.46044247998" />
+ <shade name="cool" weight="0.303797100193" />
+ <shade name="light" weight="0.235759207962" />
+</color>
+
+<color name="white" weight="0.0640880209105">
+ <shade name="hard" weight="0.46044247998" />
+ <shade name="cool" weight="0.303797100193" />
+ <shade name="light" weight="0.235759207962" />
+</color>
+
+<color name="green" weight="0.0403726299128">
+ <shade name="hard" weight="0.46044247998" />
+ <shade name="cool" weight="0.303797100193" />
+ <shade name="light" weight="0.235759207962" />
+</color>
+
+<color name="blue" weight="0.0194804997481">
+ <shade name="hard" weight="0.46044247998" />
+ <shade name="cool" weight="0.303797100193" />
+ <shade name="light" weight="0.235759207962" />
+</color>
+
+</colors>

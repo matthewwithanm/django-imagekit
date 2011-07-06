@@ -1,0 +1,33 @@
+<colors query="longitude">
+
+<color name="red" weight="0.454781576028">
+ <shade name="light" weight="0.736136877681" />
+ <shade name="hard" weight="0.246653655119" />
+ <shade name="cool" weight="0.0172083945432" />
+</color>
+
+<color name="white" weight="0.270006228972">
+ <shade name="light" weight="0.736136877681" />
+ <shade name="hard" weight="0.246653655119" />
+ <shade name="cool" weight="0.0172083945432" />
+</color>
+
+<color name="blue" weight="0.128822249004">
+ <shade name="light" weight="0.736136877681" />
+ <shade name="hard" weight="0.246653655119" />
+ <shade name="cool" weight="0.0172083945432" />
+</color>
+
+<color name="black" weight="0.102146934816">
+ <shade name="light" weight="0.736136877681" />
+ <shade name="hard" weight="0.246653655119" />
+ <shade name="cool" weight="0.0172083945432" />
+</color>
+
+<color name="green" weight="0.0442419845063">
+ <shade name="light" weight="0.736136877681" />
+ <shade name="hard" weight="0.246653655119" />
+ <shade name="cool" weight="0.0172083945432" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="imprisoned">
+
+<color name="black" weight="0.733332579499">
+ <shade name="light" weight="0.731020804532" />
+ <shade name="soft" weight="0.237113158393" />
+ <shade name="dark" weight="0.0318650094283" />
+</color>
+
+<color name="white" weight="0.126881590001">
+ <shade name="light" weight="0.731020804532" />
+ <shade name="soft" weight="0.237113158393" />
+ <shade name="dark" weight="0.0318650094283" />
+</color>
+
+<color name="green" weight="0.0817203461025">
+ <shade name="light" weight="0.731020804532" />
+ <shade name="soft" weight="0.237113158393" />
+ <shade name="dark" weight="0.0318650094283" />
+</color>
+
+<color name="red" weight="0.0365591022038">
+ <shade name="light" weight="0.731020804532" />
+ <shade name="soft" weight="0.237113158393" />
+ <shade name="dark" weight="0.0318650094283" />
+</color>
+
+<color name="blue" weight="0.0215053542375">
+ <shade name="light" weight="0.731020804532" />
+ <shade name="soft" weight="0.237113158393" />
+ <shade name="dark" weight="0.0318650094283" />
+</color>
+
+</colors>

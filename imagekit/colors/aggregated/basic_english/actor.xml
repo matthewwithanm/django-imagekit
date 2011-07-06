@@ -1,0 +1,33 @@
+<colors query="actor">
+
+<color name="black" weight="0.687620321702">
+ <shade name="cool" weight="0.52327618199" />
+ <shade name="intense" weight="0.436664951868" />
+ <shade name="dark" weight="0.0400576939316" />
+</color>
+
+<color name="white" weight="0.226794071018">
+ <shade name="cool" weight="0.882369095046" />
+ <shade name="dark" weight="0.0675468755518" />
+ <shade name="bright" weight="0.050082052774" />
+</color>
+
+<color name="red" weight="0.0772064922613">
+ <shade name="cool" weight="0.52327618199" />
+ <shade name="intense" weight="0.436664951868" />
+ <shade name="dark" weight="0.0400576939316" />
+</color>
+
+<color name="green" weight="0.00504858078302">
+ <shade name="cool" weight="0.52327618199" />
+ <shade name="intense" weight="0.436664951868" />
+ <shade name="dark" weight="0.0400576939316" />
+</color>
+
+<color name="blue" weight="0.00332952997877">
+ <shade name="cool" weight="0.52327618199" />
+ <shade name="intense" weight="0.436664951868" />
+ <shade name="dark" weight="0.0400576939316" />
+</color>
+
+</colors>

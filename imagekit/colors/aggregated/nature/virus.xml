@@ -1,0 +1,33 @@
+<colors query="virus">
+
+<color name="red" weight="0.489022393713">
+ <shade name="soft" weight="0.634619240351" />
+ <shade name="fresh" weight="0.265214010893" />
+ <shade name="hard" weight="0.100165648757" />
+</color>
+
+<color name="orange" weight="0.18750569624">
+ <shade name="soft" weight="0.634619240351" />
+ <shade name="fresh" weight="0.265214010893" />
+ <shade name="hard" weight="0.100165648757" />
+</color>
+
+<color name="yellow" weight="0.179025539124">
+ <shade name="soft" weight="0.634619240351" />
+ <shade name="fresh" weight="0.265214010893" />
+ <shade name="hard" weight="0.100165648757" />
+</color>
+
+<color name="blue" weight="0.132855794824">
+ <shade name="soft" weight="0.634619240351" />
+ <shade name="fresh" weight="0.265214010893" />
+ <shade name="hard" weight="0.100165648757" />
+</color>
+
+<color name="pink" weight="0.0115895480591">
+ <shade name="soft" weight="0.634619240351" />
+ <shade name="fresh" weight="0.265214010893" />
+ <shade name="hard" weight="0.100165648757" />
+</color>
+
+</colors>

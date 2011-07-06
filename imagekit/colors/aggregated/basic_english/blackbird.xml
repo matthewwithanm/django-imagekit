@@ -1,0 +1,33 @@
+<colors query="blackbird">
+
+<color name="white" weight="0.668323369617">
+ <shade name="cool" weight="0.696077585161" />
+ <shade name="light" weight="0.196078193003" />
+ <shade name="dark" weight="0.107843006152" />
+</color>
+
+<color name="black" weight="0.168177653186">
+ <shade name="cool" weight="0.696077585161" />
+ <shade name="light" weight="0.196078193003" />
+ <shade name="dark" weight="0.107843006152" />
+</color>
+
+<color name="blue" weight="0.0729744773389">
+ <shade name="cool" weight="0.696077585161" />
+ <shade name="light" weight="0.196078193003" />
+ <shade name="dark" weight="0.107843006152" />
+</color>
+
+<color name="green" weight="0.0453348456414">
+ <shade name="cool" weight="0.696077585161" />
+ <shade name="light" weight="0.196078193003" />
+ <shade name="dark" weight="0.107843006152" />
+</color>
+
+<color name="red" weight="0.0451886042038">
+ <shade name="cool" weight="0.696077585161" />
+ <shade name="light" weight="0.196078193003" />
+ <shade name="dark" weight="0.107843006152" />
+</color>
+
+</colors>

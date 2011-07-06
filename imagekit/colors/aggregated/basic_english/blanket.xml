@@ -1,0 +1,33 @@
+<colors query="blanket">
+
+<color name="blue" weight="0.285919880325">
+ <shade name="soft" weight="0.604561261475" />
+ <shade name="light" weight="0.301646918723" />
+ <shade name="fresh" weight="0.0937893780904" />
+</color>
+
+<color name="white" weight="0.271503751905">
+ <shade name="warm" weight="0.589079807545" />
+ <shade name="soft" weight="0.274137627511" />
+ <shade name="light" weight="0.136781457752" />
+</color>
+
+<color name="red" weight="0.159298219038">
+ <shade name="warm" weight="0.589079807545" />
+ <shade name="soft" weight="0.274137627511" />
+ <shade name="light" weight="0.136781457752" />
+</color>
+
+<color name="yellow" weight="0.149447197951">
+ <shade name="warm" weight="0.589079807545" />
+ <shade name="soft" weight="0.274137627511" />
+ <shade name="light" weight="0.136781457752" />
+</color>
+
+<color name="pink" weight="0.133829725497">
+ <shade name="warm" weight="0.589079807545" />
+ <shade name="soft" weight="0.274137627511" />
+ <shade name="light" weight="0.136781457752" />
+</color>
+
+</colors>

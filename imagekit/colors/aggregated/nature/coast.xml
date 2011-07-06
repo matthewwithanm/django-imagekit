@@ -1,0 +1,33 @@
+<colors query="coast">
+
+<color name="orange" weight="0.588741196399">
+ <shade name="warm" weight="0.39370017897" />
+ <shade name="fresh" weight="0.379383808826" />
+ <shade name="cool" weight="0.226914466788" />
+</color>
+
+<color name="blue" weight="0.158217469599">
+ <shade name="fresh" weight="0.486237569025" />
+ <shade name="cool" weight="0.29082511204" />
+ <shade name="light" weight="0.222935338251" />
+</color>
+
+<color name="green" weight="0.146378067112">
+ <shade name="fresh" weight="0.486237569025" />
+ <shade name="cool" weight="0.29082511204" />
+ <shade name="light" weight="0.222935338251" />
+</color>
+
+<color name="black" weight="0.0628564641129">
+ <shade name="warm" weight="0.39370017897" />
+ <shade name="fresh" weight="0.379383808826" />
+ <shade name="cool" weight="0.226914466788" />
+</color>
+
+<color name="white" weight="0.0438057892019">
+ <shade name="warm" weight="0.39370017897" />
+ <shade name="fresh" weight="0.379383808826" />
+ <shade name="cool" weight="0.226914466788" />
+</color>
+
+</colors>

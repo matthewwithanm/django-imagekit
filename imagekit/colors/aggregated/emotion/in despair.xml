@@ -1,0 +1,33 @@
+<colors query="in despair">
+
+<color name="black" weight="0.454544958678">
+ <shade name="light" weight="0.809218140639" />
+ <shade name="dark" weight="0.190524777416" />
+ <shade name="weak" weight="0.000256081690076" />
+</color>
+
+<color name="red" weight="0.181817983471">
+ <shade name="light" weight="0.809218140639" />
+ <shade name="dark" weight="0.190524777416" />
+ <shade name="weak" weight="0.000256081690076" />
+</color>
+
+<color name="green" weight="0.181817983471">
+ <shade name="light" weight="0.809218140639" />
+ <shade name="dark" weight="0.190524777416" />
+ <shade name="weak" weight="0.000256081690076" />
+</color>
+
+<color name="yellow" weight="0.0909089917356">
+ <shade name="light" weight="0.809218140639" />
+ <shade name="dark" weight="0.190524777416" />
+ <shade name="weak" weight="0.000256081690076" />
+</color>
+
+<color name="white" weight="0.0909089917356">
+ <shade name="light" weight="0.809218140639" />
+ <shade name="dark" weight="0.190524777416" />
+ <shade name="weak" weight="0.000256081690076" />
+</color>
+
+</colors>

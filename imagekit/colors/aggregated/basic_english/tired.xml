@@ -1,0 +1,33 @@
+<colors query="tired">
+
+<color name="green" weight="0.688098547594">
+ <shade name="weak" weight="0.819716593691" />
+ <shade name="hard" weight="0.115757275731" />
+ <shade name="cool" weight="0.064524988625" />
+</color>
+
+<color name="black" weight="0.108854934169">
+ <shade name="weak" weight="0.819716593691" />
+ <shade name="hard" weight="0.115757275731" />
+ <shade name="cool" weight="0.064524988625" />
+</color>
+
+<color name="white" weight="0.108290918966">
+ <shade name="weak" weight="0.819716593691" />
+ <shade name="hard" weight="0.115757275731" />
+ <shade name="cool" weight="0.064524988625" />
+</color>
+
+<color name="blue" weight="0.062605687527">
+ <shade name="weak" weight="0.819716593691" />
+ <shade name="hard" weight="0.115757275731" />
+ <shade name="cool" weight="0.064524988625" />
+</color>
+
+<color name="red" weight="0.0321488665679">
+ <shade name="weak" weight="0.819716593691" />
+ <shade name="hard" weight="0.115757275731" />
+ <shade name="cool" weight="0.064524988625" />
+</color>
+
+</colors>

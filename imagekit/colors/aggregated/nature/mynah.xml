@@ -1,0 +1,33 @@
+<colors query="mynah">
+
+<color name="black" weight="0.609374384278">
+ <shade name="cool" weight="0.714284693879" />
+ <shade name="soft" weight="0.142856938776" />
+ <shade name="hard" weight="0.142856938776" />
+</color>
+
+<color name="blue" weight="0.302083028104">
+ <shade name="cool" weight="0.714284693879" />
+ <shade name="soft" weight="0.142856938776" />
+ <shade name="hard" weight="0.142856938776" />
+</color>
+
+<color name="white" weight="0.0520832807075">
+ <shade name="cool" weight="0.714284693879" />
+ <shade name="soft" weight="0.142856938776" />
+ <shade name="hard" weight="0.142856938776" />
+</color>
+
+<color name="yellow" weight="0.0234374763184">
+ <shade name="cool" weight="0.714284693879" />
+ <shade name="soft" weight="0.142856938776" />
+ <shade name="hard" weight="0.142856938776" />
+</color>
+
+<color name="green" weight="0.0130208201769">
+ <shade name="cool" weight="0.714284693879" />
+ <shade name="soft" weight="0.142856938776" />
+ <shade name="hard" weight="0.142856938776" />
+</color>
+
+</colors>

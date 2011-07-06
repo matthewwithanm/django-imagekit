@@ -1,0 +1,33 @@
+<colors query="finch">
+
+<color name="purple" weight="0.783882778595">
+ <shade name="cool" weight="0.642334699773" />
+ <shade name="hard" weight="0.189780706751" />
+ <shade name="dark" weight="0.167882932895" />
+</color>
+
+<color name="green" weight="0.0987210734818">
+ <shade name="cool" weight="0.642334699773" />
+ <shade name="hard" weight="0.189780706751" />
+ <shade name="dark" weight="0.167882932895" />
+</color>
+
+<color name="yellow" weight="0.0834714767651">
+ <shade name="cool" weight="0.642334699773" />
+ <shade name="hard" weight="0.189780706751" />
+ <shade name="dark" weight="0.167882932895" />
+</color>
+
+<color name="blue" weight="0.0304991934334">
+ <shade name="cool" weight="0.642334699773" />
+ <shade name="hard" weight="0.189780706751" />
+ <shade name="dark" weight="0.167882932895" />
+</color>
+
+<color name="white" weight="0.00342447084165">
+ <shade name="cool" weight="0.642334699773" />
+ <shade name="hard" weight="0.189780706751" />
+ <shade name="dark" weight="0.167882932895" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="farther">
+
+<color name="blue" weight="0.239713500256">
+ <shade name="light" weight="0.535713403534" />
+ <shade name="hard" weight="0.23602445605" />
+ <shade name="dark" weight="0.22826049368" />
+</color>
+
+<color name="black" weight="0.211538219443">
+ <shade name="light" weight="0.535713403534" />
+ <shade name="hard" weight="0.23602445605" />
+ <shade name="dark" weight="0.22826049368" />
+</color>
+
+<color name="white" weight="0.204382592569">
+ <shade name="light" weight="0.535713403534" />
+ <shade name="hard" weight="0.23602445605" />
+ <shade name="dark" weight="0.22826049368" />
+</color>
+
+<color name="green" weight="0.18246848527">
+ <shade name="light" weight="0.535713403534" />
+ <shade name="hard" weight="0.23602445605" />
+ <shade name="dark" weight="0.22826049368" />
+</color>
+
+<color name="red" weight="0.161896058009">
+ <shade name="light" weight="0.535713403534" />
+ <shade name="hard" weight="0.23602445605" />
+ <shade name="dark" weight="0.22826049368" />
+</color>
+
+</colors>

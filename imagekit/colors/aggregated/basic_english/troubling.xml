@@ -1,0 +1,33 @@
+<colors query="troubling">
+
+<color name="blue" weight="0.732142077063">
+ <shade name="dark" weight="0.716048602261" />
+ <shade name="light" weight="0.204585314932" />
+ <shade name="hard" weight="0.0793649928614" />
+</color>
+
+<color name="white" weight="0.107142742985">
+ <shade name="dark" weight="0.716048602261" />
+ <shade name="light" weight="0.204585314932" />
+ <shade name="hard" weight="0.0793649928614" />
+</color>
+
+<color name="black" weight="0.107142742985">
+ <shade name="dark" weight="0.716048602261" />
+ <shade name="light" weight="0.204585314932" />
+ <shade name="hard" weight="0.0793649928614" />
+</color>
+
+<color name="red" weight="0.0297618730513">
+ <shade name="dark" weight="0.716048602261" />
+ <shade name="light" weight="0.204585314932" />
+ <shade name="hard" weight="0.0793649928614" />
+</color>
+
+<color name="yellow" weight="0.0238094984411">
+ <shade name="dark" weight="0.716048602261" />
+ <shade name="light" weight="0.204585314932" />
+ <shade name="hard" weight="0.0793649928614" />
+</color>
+
+</colors>

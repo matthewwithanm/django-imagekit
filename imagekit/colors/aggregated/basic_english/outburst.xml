@@ -1,0 +1,33 @@
+<colors query="outburst">
+
+<color name="orange" weight="0.448877308475">
+ <shade name="bright" weight="0.523822232926" />
+ <shade name="fresh" weight="0.415156982478" />
+ <shade name="intense" weight="0.0610197175589" />
+</color>
+
+<color name="white" weight="0.232276194544">
+ <shade name="bright" weight="0.547354326099" />
+ <shade name="fresh" weight="0.433807418025" />
+ <shade name="hard" weight="0.0188371409035" />
+</color>
+
+<color name="blue" weight="0.153188287813">
+ <shade name="bright" weight="0.523822232926" />
+ <shade name="fresh" weight="0.415156982478" />
+ <shade name="intense" weight="0.0610197175589" />
+</color>
+
+<color name="red" weight="0.100819268491">
+ <shade name="bright" weight="0.523822232926" />
+ <shade name="fresh" weight="0.415156982478" />
+ <shade name="intense" weight="0.0610197175589" />
+</color>
+
+<color name="yellow" weight="0.0648378334464">
+ <shade name="bright" weight="0.523822232926" />
+ <shade name="fresh" weight="0.415156982478" />
+ <shade name="intense" weight="0.0610197175589" />
+</color>
+
+</colors>

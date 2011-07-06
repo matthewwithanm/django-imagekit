@@ -1,0 +1,33 @@
+<colors query="screw">
+
+<color name="black" weight="0.375138325988">
+ <shade name="hard" weight="0.730511281611" />
+ <shade name="soft" weight="0.171491977695" />
+ <shade name="neutral" weight="0.0979954158258" />
+</color>
+
+<color name="white" weight="0.193118546515">
+ <shade name="hard" weight="0.730511281611" />
+ <shade name="soft" weight="0.171491977695" />
+ <shade name="neutral" weight="0.0979954158258" />
+</color>
+
+<color name="green" weight="0.163151875504">
+ <shade name="hard" weight="0.730511281611" />
+ <shade name="soft" weight="0.171491977695" />
+ <shade name="neutral" weight="0.0979954158258" />
+</color>
+
+<color name="blue" weight="0.140954341422">
+ <shade name="hard" weight="0.730511281611" />
+ <shade name="soft" weight="0.171491977695" />
+ <shade name="neutral" weight="0.0979954158258" />
+</color>
+
+<color name="red" weight="0.127635820972">
+ <shade name="hard" weight="0.730511281611" />
+ <shade name="soft" weight="0.171491977695" />
+ <shade name="neutral" weight="0.0979954158258" />
+</color>
+
+</colors>

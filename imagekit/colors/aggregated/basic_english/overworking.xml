@@ -1,0 +1,33 @@
+<colors query="overworking">
+
+<color name="red" weight="0.4999995">
+ <shade name="hard" weight="0.69696893664" />
+ <shade name="intense" weight="0.181817983471" />
+ <shade name="light" weight="0.121211988981" />
+</color>
+
+<color name="green" weight="0.24999975">
+ <shade name="hard" weight="0.69696893664" />
+ <shade name="intense" weight="0.181817983471" />
+ <shade name="light" weight="0.121211988981" />
+</color>
+
+<color name="black" weight="0.24999975">
+ <shade name="hard" weight="0.69696893664" />
+ <shade name="intense" weight="0.181817983471" />
+ <shade name="light" weight="0.121211988981" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="hard" weight="0.69696893664" />
+ <shade name="intense" weight="0.181817983471" />
+ <shade name="light" weight="0.121211988981" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="hard" weight="0.821427515307" />
+ <shade name="light" weight="0.142856959184" />
+ <shade name="weak" weight="0.035714239796" />
+</color>
+
+</colors>

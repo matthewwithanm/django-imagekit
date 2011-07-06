@@ -1,0 +1,33 @@
+<colors query="joyfulness">
+
+<color name="pink" weight="0.599999400001">
+ <shade name="light" weight="0.855854699295" />
+ <shade name="bright" weight="0.0810809715122" />
+ <shade name="warm" weight="0.0630629778428" />
+</color>
+
+<color name="red" weight="0.1999998">
+ <shade name="light" weight="0.71969615186" />
+ <shade name="intense" weight="0.212120971075" />
+ <shade name="bright" weight="0.0681817407026" />
+</color>
+
+<color name="black" weight="0.1999998">
+ <shade name="light" weight="0.71969615186" />
+ <shade name="intense" weight="0.212120971075" />
+ <shade name="bright" weight="0.0681817407026" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="light" weight="0.71969615186" />
+ <shade name="intense" weight="0.212120971075" />
+ <shade name="bright" weight="0.0681817407026" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="light" weight="0.855854699295" />
+ <shade name="bright" weight="0.0810809715122" />
+ <shade name="warm" weight="0.0630629778428" />
+</color>
+
+</colors>

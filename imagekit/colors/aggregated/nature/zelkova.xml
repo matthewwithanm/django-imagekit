@@ -1,0 +1,33 @@
+<colors query="zelkova">
+
+<color name="yellow" weight="0.468084638298">
+ <shade name="hard" weight="0.515336904814" />
+ <shade name="light" weight="0.466257199594" />
+ <shade name="dark" weight="0.0184048894577" />
+</color>
+
+<color name="green" weight="0.445435381606">
+ <shade name="hard" weight="0.515336904814" />
+ <shade name="light" weight="0.466257199594" />
+ <shade name="dark" weight="0.0184048894577" />
+</color>
+
+<color name="red" weight="0.0555936300618">
+ <shade name="hard" weight="0.515336904814" />
+ <shade name="light" weight="0.466257199594" />
+ <shade name="dark" weight="0.0184048894577" />
+</color>
+
+<color name="white" weight="0.0281399855869">
+ <shade name="hard" weight="0.515336904814" />
+ <shade name="light" weight="0.466257199594" />
+ <shade name="dark" weight="0.0184048894577" />
+</color>
+
+<color name="orange" weight="0.0027453644475">
+ <shade name="hard" weight="0.515336904814" />
+ <shade name="light" weight="0.466257199594" />
+ <shade name="dark" weight="0.0184048894577" />
+</color>
+
+</colors>

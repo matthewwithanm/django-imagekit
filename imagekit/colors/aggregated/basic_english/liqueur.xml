@@ -1,0 +1,33 @@
+<colors query="liqueur">
+
+<color name="orange" weight="0.86567367198">
+ <shade name="hard" weight="0.585447677734" />
+ <shade name="dark" weight="0.257190887328" />
+ <shade name="light" weight="0.157360213957" />
+</color>
+
+<color name="green" weight="0.0525240205471">
+ <shade name="hard" weight="0.585447677734" />
+ <shade name="dark" weight="0.257190887328" />
+ <shade name="light" weight="0.157360213957" />
+</color>
+
+<color name="blue" weight="0.0444022507032">
+ <shade name="hard" weight="0.585447677734" />
+ <shade name="dark" weight="0.257190887328" />
+ <shade name="light" weight="0.157360213957" />
+</color>
+
+<color name="yellow" weight="0.0307849120429">
+ <shade name="hard" weight="0.585447677734" />
+ <shade name="dark" weight="0.257190887328" />
+ <shade name="light" weight="0.157360213957" />
+</color>
+
+<color name="black" weight="0.00661413592074">
+ <shade name="hard" weight="0.585447677734" />
+ <shade name="dark" weight="0.257190887328" />
+ <shade name="light" weight="0.157360213957" />
+</color>
+
+</colors>

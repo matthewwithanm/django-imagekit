@@ -1,0 +1,33 @@
+<colors query="granulocyte">
+
+<color name="white" weight="0.4090905">
+ <shade name="neutral" weight="0.651005549212" />
+ <shade name="fresh" weight="0.201341922437" />
+ <shade name="weak" weight="0.14765074312" />
+</color>
+
+<color name="red" weight="0.2272725">
+ <shade name="intense" weight="0.468618725303" />
+ <shade name="neutral" weight="0.405857288878" />
+ <shade name="fresh" weight="0.125522872849" />
+</color>
+
+<color name="black" weight="0.181818">
+ <shade name="intense" weight="0.468618725303" />
+ <shade name="neutral" weight="0.405857288878" />
+ <shade name="fresh" weight="0.125522872849" />
+</color>
+
+<color name="blue" weight="0.1363635">
+ <shade name="intense" weight="0.468618725303" />
+ <shade name="neutral" weight="0.405857288878" />
+ <shade name="fresh" weight="0.125522872849" />
+</color>
+
+<color name="green" weight="0.0454545">
+ <shade name="intense" weight="0.468618725303" />
+ <shade name="neutral" weight="0.405857288878" />
+ <shade name="fresh" weight="0.125522872849" />
+</color>
+
+</colors>

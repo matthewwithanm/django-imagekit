@@ -1,0 +1,33 @@
+<colors query="shoe">
+
+<color name="red" weight="0.327343391013">
+ <shade name="soft" weight="0.525256019964" />
+ <shade name="cool" weight="0.408532459972" />
+ <shade name="hard" weight="0.0662104331679" />
+</color>
+
+<color name="black" weight="0.285937186422">
+ <shade name="soft" weight="0.525256019964" />
+ <shade name="cool" weight="0.408532459972" />
+ <shade name="hard" weight="0.0662104331679" />
+</color>
+
+<color name="white" weight="0.168749814938">
+ <shade name="soft" weight="0.525256019964" />
+ <shade name="cool" weight="0.408532459972" />
+ <shade name="hard" weight="0.0662104331679" />
+</color>
+
+<color name="green" weight="0.132812354349">
+ <shade name="soft" weight="0.525256019964" />
+ <shade name="cool" weight="0.408532459972" />
+ <shade name="hard" weight="0.0662104331679" />
+</color>
+
+<color name="blue" weight="0.0851561566121">
+ <shade name="soft" weight="0.525256019964" />
+ <shade name="cool" weight="0.408532459972" />
+ <shade name="hard" weight="0.0662104331679" />
+</color>
+
+</colors>

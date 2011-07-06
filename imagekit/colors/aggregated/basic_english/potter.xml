@@ -1,0 +1,33 @@
+<colors query="potter">
+
+<color name="blue" weight="0.277886159468">
+ <shade name="dark" weight="0.449135619498" />
+ <shade name="hard" weight="0.347408321065" />
+ <shade name="light" weight="0.203454596867" />
+</color>
+
+<color name="white" weight="0.264187545973">
+ <shade name="dark" weight="0.449135619498" />
+ <shade name="hard" weight="0.347408321065" />
+ <shade name="light" weight="0.203454596867" />
+</color>
+
+<color name="pink" weight="0.171624057643">
+ <shade name="dark" weight="0.449135619498" />
+ <shade name="hard" weight="0.347408321065" />
+ <shade name="light" weight="0.203454596867" />
+</color>
+
+<color name="green" weight="0.15127183188">
+ <shade name="dark" weight="0.449135619498" />
+ <shade name="hard" weight="0.347408321065" />
+ <shade name="light" weight="0.203454596867" />
+</color>
+
+<color name="black" weight="0.135029190164">
+ <shade name="dark" weight="0.449135619498" />
+ <shade name="hard" weight="0.347408321065" />
+ <shade name="light" weight="0.203454596867" />
+</color>
+
+</colors>

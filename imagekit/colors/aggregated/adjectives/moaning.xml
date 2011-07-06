@@ -1,0 +1,33 @@
+<colors query="moaning">
+
+<color name="black" weight="0.49388695909">
+ <shade name="light" weight="0.59248690662" />
+ <shade name="hard" weight="0.293408587728" />
+ <shade name="soft" weight="0.114103339672" />
+</color>
+
+<color name="white" weight="0.242053509653">
+ <shade name="light" weight="0.59248690662" />
+ <shade name="hard" weight="0.293408587728" />
+ <shade name="soft" weight="0.114103339672" />
+</color>
+
+<color name="red" weight="0.103911860205">
+ <shade name="light" weight="0.59248690662" />
+ <shade name="hard" weight="0.293408587728" />
+ <shade name="soft" weight="0.114103339672" />
+</color>
+
+<color name="green" weight="0.0843519806367">
+ <shade name="light" weight="0.59248690662" />
+ <shade name="hard" weight="0.293408587728" />
+ <shade name="soft" weight="0.114103339672" />
+</color>
+
+<color name="pink" weight="0.0757945333258">
+ <shade name="light" weight="0.59248690662" />
+ <shade name="hard" weight="0.293408587728" />
+ <shade name="soft" weight="0.114103339672" />
+</color>
+
+</colors>

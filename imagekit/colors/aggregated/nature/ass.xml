@@ -1,0 +1,33 @@
+<colors query="ass">
+
+<color name="black" weight="0.58896818041">
+ <shade name="hard" weight="0.588511555942" />
+ <shade name="cool" weight="0.243879188783" />
+ <shade name="weak" weight="0.167608091132" />
+</color>
+
+<color name="white" weight="0.251505331094">
+ <shade name="hard" weight="0.588511555942" />
+ <shade name="cool" weight="0.243879188783" />
+ <shade name="weak" weight="0.167608091132" />
+</color>
+
+<color name="red" weight="0.138752413673">
+ <shade name="hard" weight="0.588511555942" />
+ <shade name="cool" weight="0.243879188783" />
+ <shade name="weak" weight="0.167608091132" />
+</color>
+
+<color name="pink" weight="0.0147772647067">
+ <shade name="hard" weight="0.588511555942" />
+ <shade name="cool" weight="0.243879188783" />
+ <shade name="weak" weight="0.167608091132" />
+</color>
+
+<color name="blue" weight="0.00599580219697">
+ <shade name="hard" weight="0.588511555942" />
+ <shade name="cool" weight="0.243879188783" />
+ <shade name="weak" weight="0.167608091132" />
+</color>
+
+</colors>

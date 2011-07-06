@@ -1,0 +1,33 @@
+<colors query="plate">
+
+<color name="blue" weight="0.511826119888">
+ <shade name="light" weight="0.495791561041" />
+ <shade name="hard" weight="0.2840107245" />
+ <shade name="fresh" weight="0.220195969119" />
+</color>
+
+<color name="white" weight="0.183859868309">
+ <shade name="light" weight="0.428224672446" />
+ <shade name="warm" weight="0.326468314637" />
+ <shade name="hard" weight="0.245305505432" />
+</color>
+
+<color name="black" weight="0.176903008427">
+ <shade name="light" weight="0.428224672446" />
+ <shade name="warm" weight="0.326468314637" />
+ <shade name="hard" weight="0.245305505432" />
+</color>
+
+<color name="red" weight="0.0806995746309">
+ <shade name="light" weight="0.428224672446" />
+ <shade name="warm" weight="0.326468314637" />
+ <shade name="hard" weight="0.245305505432" />
+</color>
+
+<color name="yellow" weight="0.0467103449218">
+ <shade name="light" weight="0.428224672446" />
+ <shade name="warm" weight="0.326468314637" />
+ <shade name="hard" weight="0.245305505432" />
+</color>
+
+</colors>

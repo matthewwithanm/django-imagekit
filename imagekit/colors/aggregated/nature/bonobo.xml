@@ -1,0 +1,33 @@
+<colors query="bonobo">
+
+<color name="green" weight="0.343557928112">
+ <shade name="cool" weight="0.486841547958" />
+ <shade name="light" weight="0.394736390236" />
+ <shade name="fresh" weight="0.118420917071" />
+</color>
+
+<color name="black" weight="0.322085557605">
+ <shade name="cool" weight="0.486841547958" />
+ <shade name="light" weight="0.394736390236" />
+ <shade name="fresh" weight="0.118420917071" />
+</color>
+
+<color name="blue" weight="0.174846445557">
+ <shade name="cool" weight="0.486841547958" />
+ <shade name="light" weight="0.394736390236" />
+ <shade name="fresh" weight="0.118420917071" />
+</color>
+
+<color name="white" weight="0.134969186044">
+ <shade name="cool" weight="0.486841547958" />
+ <shade name="light" weight="0.394736390236" />
+ <shade name="fresh" weight="0.118420917071" />
+</color>
+
+<color name="red" weight="0.024539852008">
+ <shade name="cool" weight="0.486841547958" />
+ <shade name="light" weight="0.394736390236" />
+ <shade name="fresh" weight="0.118420917071" />
+</color>
+
+</colors>

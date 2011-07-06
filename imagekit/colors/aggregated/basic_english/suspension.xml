@@ -1,0 +1,33 @@
+<colors query="suspension">
+
+<color name="white" weight="0.392962695785">
+ <shade name="soft" weight="0.575178291146" />
+ <shade name="light" weight="0.214796872212" />
+ <shade name="hard" weight="0.210023608385" />
+</color>
+
+<color name="yellow" weight="0.281050989542">
+ <shade name="soft" weight="0.575178291146" />
+ <shade name="light" weight="0.214796872212" />
+ <shade name="hard" weight="0.210023608385" />
+</color>
+
+<color name="black" weight="0.119965957829">
+ <shade name="soft" weight="0.575178291146" />
+ <shade name="light" weight="0.214796872212" />
+ <shade name="hard" weight="0.210023608385" />
+</color>
+
+<color name="orange" weight="0.114455154112">
+ <shade name="soft" weight="0.575178291146" />
+ <shade name="light" weight="0.214796872212" />
+ <shade name="hard" weight="0.210023608385" />
+</color>
+
+<color name="red" weight="0.0915641232896">
+ <shade name="soft" weight="0.575178291146" />
+ <shade name="light" weight="0.214796872212" />
+ <shade name="hard" weight="0.210023608385" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="snappy">
+
+<color name="green" weight="0.313745710489">
+ <shade name="bright" weight="0.371727176504" />
+ <shade name="light" weight="0.34845786968" />
+ <shade name="cool" weight="0.279813414551" />
+</color>
+
+<color name="red" weight="0.293808692097">
+ <shade name="bright" weight="0.371727176504" />
+ <shade name="light" weight="0.34845786968" />
+ <shade name="cool" weight="0.279813414551" />
+</color>
+
+<color name="black" weight="0.144805712533">
+ <shade name="bright" weight="0.371727176504" />
+ <shade name="light" weight="0.34845786968" />
+ <shade name="cool" weight="0.279813414551" />
+</color>
+
+<color name="blue" weight="0.12539335252">
+ <shade name="bright" weight="0.371727176504" />
+ <shade name="light" weight="0.34845786968" />
+ <shade name="cool" weight="0.279813414551" />
+</color>
+
+<color name="pink" weight="0.122245402247">
+ <shade name="bright" weight="0.371727176504" />
+ <shade name="light" weight="0.34845786968" />
+ <shade name="cool" weight="0.279813414551" />
+</color>
+
+</colors>

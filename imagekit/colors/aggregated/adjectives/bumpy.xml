@@ -1,0 +1,33 @@
+<colors query="bumpy">
+
+<color name="red" weight="0.535643303271">
+ <shade name="light" weight="0.567461559627" />
+ <shade name="soft" weight="0.284948508482" />
+ <shade name="dark" weight="0.14758871465" />
+</color>
+
+<color name="green" weight="0.139030945628">
+ <shade name="light" weight="0.567461559627" />
+ <shade name="soft" weight="0.284948508482" />
+ <shade name="dark" weight="0.14758871465" />
+</color>
+
+<color name="pink" weight="0.126821429157">
+ <shade name="light" weight="0.567461559627" />
+ <shade name="soft" weight="0.284948508482" />
+ <shade name="dark" weight="0.14758871465" />
+</color>
+
+<color name="white" weight="0.121307453976">
+ <shade name="light" weight="0.567461559627" />
+ <shade name="soft" weight="0.284948508482" />
+ <shade name="dark" weight="0.14758871465" />
+</color>
+
+<color name="purple" weight="0.0771956525302">
+ <shade name="light" weight="0.567461559627" />
+ <shade name="soft" weight="0.284948508482" />
+ <shade name="dark" weight="0.14758871465" />
+</color>
+
+</colors>

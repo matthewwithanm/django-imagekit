@@ -1,0 +1,33 @@
+<colors query="guilt">
+
+<color name="white" weight="0.936975611374">
+ <shade name="cool" weight="0.875288227706" />
+ <shade name="fresh" weight="0.0656867679141" />
+ <shade name="dark" weight="0.0590217291159" />
+</color>
+
+<color name="green" weight="0.0475292656496">
+ <shade name="intense" weight="0.699676340722" />
+ <shade name="cool" weight="0.279357952889" />
+ <shade name="fresh" weight="0.0209646610517" />
+</color>
+
+<color name="black" weight="0.0112541763377">
+ <shade name="intense" weight="0.699676340722" />
+ <shade name="cool" weight="0.279357952889" />
+ <shade name="fresh" weight="0.0209646610517" />
+</color>
+
+<color name="red" weight="0.00324015588514">
+ <shade name="intense" weight="0.699676340722" />
+ <shade name="cool" weight="0.279357952889" />
+ <shade name="fresh" weight="0.0209646610517" />
+</color>
+
+<color name="blue" weight="0.00099978961884">
+ <shade name="intense" weight="0.699676340722" />
+ <shade name="cool" weight="0.279357952889" />
+ <shade name="fresh" weight="0.0209646610517" />
+</color>
+
+</colors>

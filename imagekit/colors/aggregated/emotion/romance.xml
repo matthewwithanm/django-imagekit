@@ -1,0 +1,33 @@
+<colors query="romance">
+
+<color name="black" weight="0.342285328951">
+ <shade name="dark" weight="0.512612005565" />
+ <shade name="light" weight="0.364864432783" />
+ <shade name="intense" weight="0.122522377428" />
+</color>
+
+<color name="red" weight="0.26285684694">
+ <shade name="dark" weight="0.512612005565" />
+ <shade name="light" weight="0.364864432783" />
+ <shade name="intense" weight="0.122522377428" />
+</color>
+
+<color name="white" weight="0.169714094655">
+ <shade name="dark" weight="0.520584918295" />
+ <shade name="light" weight="0.370539353092" />
+ <shade name="soft" weight="0.10887452597" />
+</color>
+
+<color name="blue" weight="0.153714112667">
+ <shade name="dark" weight="0.512612005565" />
+ <shade name="light" weight="0.364864432783" />
+ <shade name="intense" weight="0.122522377428" />
+</color>
+
+<color name="orange" weight="0.0714284910164">
+ <shade name="dark" weight="0.512612005565" />
+ <shade name="light" weight="0.364864432783" />
+ <shade name="intense" weight="0.122522377428" />
+</color>
+
+</colors>

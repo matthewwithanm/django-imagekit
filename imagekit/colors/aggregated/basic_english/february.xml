@@ -1,0 +1,33 @@
+<colors query="February">
+
+<color name="white" weight="0.301541271431">
+ <shade name="light" weight="0.412026234802" />
+ <shade name="warm" weight="0.349665507372" />
+ <shade name="cool" weight="0.238307065534" />
+</color>
+
+<color name="green" weight="0.22530892753">
+ <shade name="light" weight="0.585998372796" />
+ <shade name="cool" weight="0.33892878859" />
+ <shade name="fresh" weight="0.0750711428933" />
+</color>
+
+<color name="blue" weight="0.196510042056">
+ <shade name="light" weight="0.585998372796" />
+ <shade name="cool" weight="0.33892878859" />
+ <shade name="fresh" weight="0.0750711428933" />
+</color>
+
+<color name="black" weight="0.186345729536">
+ <shade name="light" weight="0.412026234802" />
+ <shade name="warm" weight="0.349665507372" />
+ <shade name="cool" weight="0.238307065534" />
+</color>
+
+<color name="purple" weight="0.0902929762207">
+ <shade name="light" weight="0.585998372796" />
+ <shade name="cool" weight="0.33892878859" />
+ <shade name="fresh" weight="0.0750711428933" />
+</color>
+
+</colors>

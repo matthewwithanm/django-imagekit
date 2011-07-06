@@ -1,0 +1,33 @@
+<colors query="mustang">
+
+<color name="black" weight="0.342288499718">
+ <shade name="hard" weight="0.539349850629" />
+ <shade name="dark" weight="0.310034437947" />
+ <shade name="cool" weight="0.15061436305" />
+</color>
+
+<color name="red" weight="0.281925695996">
+ <shade name="hard" weight="0.539349850629" />
+ <shade name="dark" weight="0.310034437947" />
+ <shade name="cool" weight="0.15061436305" />
+</color>
+
+<color name="blue" weight="0.150034714454">
+ <shade name="hard" weight="0.539349850629" />
+ <shade name="dark" weight="0.310034437947" />
+ <shade name="cool" weight="0.15061436305" />
+</color>
+
+<color name="white" weight="0.136775832711">
+ <shade name="hard" weight="0.539349850629" />
+ <shade name="dark" weight="0.310034437947" />
+ <shade name="cool" weight="0.15061436305" />
+</color>
+
+<color name="yellow" weight="0.0889740748504">
+ <shade name="hard" weight="0.539349850629" />
+ <shade name="dark" weight="0.310034437947" />
+ <shade name="cool" weight="0.15061436305" />
+</color>
+
+</colors>

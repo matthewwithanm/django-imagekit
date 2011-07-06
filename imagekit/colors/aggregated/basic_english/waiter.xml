@@ -1,0 +1,33 @@
+<colors query="waiter">
+
+<color name="black" weight="0.812331169751">
+ <shade name="cool" weight="0.872975934367" />
+ <shade name="dark" weight="0.0765080032366" />
+ <shade name="fresh" weight="0.0505148995729" />
+</color>
+
+<color name="white" weight="0.128528096145">
+ <shade name="cool" weight="0.872975934367" />
+ <shade name="dark" weight="0.0765080032366" />
+ <shade name="fresh" weight="0.0505148995729" />
+</color>
+
+<color name="red" weight="0.0220093863986">
+ <shade name="cool" weight="0.872975934367" />
+ <shade name="dark" weight="0.0765080032366" />
+ <shade name="fresh" weight="0.0505148995729" />
+</color>
+
+<color name="blue" weight="0.0214213493574">
+ <shade name="cool" weight="0.872975934367" />
+ <shade name="dark" weight="0.0765080032366" />
+ <shade name="fresh" weight="0.0505148995729" />
+</color>
+
+<color name="green" weight="0.0157089895288">
+ <shade name="cool" weight="0.872975934367" />
+ <shade name="dark" weight="0.0765080032366" />
+ <shade name="fresh" weight="0.0505148995729" />
+</color>
+
+</colors>

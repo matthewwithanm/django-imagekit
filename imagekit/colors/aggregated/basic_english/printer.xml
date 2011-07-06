@@ -1,0 +1,33 @@
+<colors query="printer">
+
+<color name="white" weight="0.471187017659">
+ <shade name="dark" weight="0.81983056897" />
+ <shade name="cool" weight="0.131237699776" />
+ <shade name="fresh" weight="0.0489305991757" />
+</color>
+
+<color name="black" weight="0.340655478983">
+ <shade name="dark" weight="0.81983056897" />
+ <shade name="cool" weight="0.131237699776" />
+ <shade name="fresh" weight="0.0489305991757" />
+</color>
+
+<color name="green" weight="0.0703596830423">
+ <shade name="dark" weight="0.81983056897" />
+ <shade name="cool" weight="0.131237699776" />
+ <shade name="fresh" weight="0.0489305991757" />
+</color>
+
+<color name="blue" weight="0.067175986977">
+ <shade name="dark" weight="0.81983056897" />
+ <shade name="cool" weight="0.131237699776" />
+ <shade name="fresh" weight="0.0489305991757" />
+</color>
+
+<color name="yellow" weight="0.0506207674377">
+ <shade name="dark" weight="0.81983056897" />
+ <shade name="cool" weight="0.131237699776" />
+ <shade name="fresh" weight="0.0489305991757" />
+</color>
+
+</colors>

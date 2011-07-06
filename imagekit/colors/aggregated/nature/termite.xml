@@ -1,0 +1,33 @@
+<colors query="termite">
+
+<color name="green" weight="0.345999590406">
+ <shade name="light" weight="0.496465719728" />
+ <shade name="hard" weight="0.296819362685" />
+ <shade name="weak" weight="0.206713484727" />
+</color>
+
+<color name="white" weight="0.271999678007">
+ <shade name="light" weight="0.496465719728" />
+ <shade name="hard" weight="0.296819362685" />
+ <shade name="weak" weight="0.206713484727" />
+</color>
+
+<color name="blue" weight="0.198999764424">
+ <shade name="light" weight="0.496465719728" />
+ <shade name="hard" weight="0.296819362685" />
+ <shade name="weak" weight="0.206713484727" />
+</color>
+
+<color name="red" weight="0.0925998903802">
+ <shade name="light" weight="0.496465719728" />
+ <shade name="hard" weight="0.296819362685" />
+ <shade name="weak" weight="0.206713484727" />
+</color>
+
+<color name="orange" weight="0.0903998929846">
+ <shade name="light" weight="0.496465719728" />
+ <shade name="hard" weight="0.296819362685" />
+ <shade name="weak" weight="0.206713484727" />
+</color>
+
+</colors>

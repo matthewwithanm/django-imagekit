@@ -1,0 +1,33 @@
+<colors query="gazelle">
+
+<color name="red" weight="0.533005406934">
+ <shade name="light" weight="0.373971984918" />
+ <shade name="weak" weight="0.360273377411" />
+ <shade name="fresh" weight="0.265752985619" />
+</color>
+
+<color name="purple" weight="0.18821582947">
+ <shade name="light" weight="0.373971984918" />
+ <shade name="weak" weight="0.360273377411" />
+ <shade name="fresh" weight="0.265752985619" />
+</color>
+
+<color name="black" weight="0.119476135229">
+ <shade name="light" weight="0.373971984918" />
+ <shade name="weak" weight="0.360273377411" />
+ <shade name="fresh" weight="0.265752985619" />
+</color>
+
+<color name="white" weight="0.0812874162059">
+ <shade name="light" weight="0.373971984918" />
+ <shade name="weak" weight="0.360273377411" />
+ <shade name="fresh" weight="0.265752985619" />
+</color>
+
+<color name="blue" weight="0.0780140974325">
+ <shade name="light" weight="0.373971984918" />
+ <shade name="weak" weight="0.360273377411" />
+ <shade name="fresh" weight="0.265752985619" />
+</color>
+
+</colors>

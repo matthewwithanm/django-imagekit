@@ -1,0 +1,33 @@
+<colors query="tion">
+
+<color name="black" weight="0.743420286224">
+ <shade name="light" weight="0.506710608521" />
+ <shade name="hard" weight="0.251677454563" />
+ <shade name="soft" weight="0.241610356381" />
+</color>
+
+<color name="red" weight="0.0907893800875">
+ <shade name="light" weight="0.506710608521" />
+ <shade name="hard" weight="0.251677454563" />
+ <shade name="soft" weight="0.241610356381" />
+</color>
+
+<color name="white" weight="0.0736841345638">
+ <shade name="light" weight="0.506710608521" />
+ <shade name="hard" weight="0.251677454563" />
+ <shade name="soft" weight="0.241610356381" />
+</color>
+
+<color name="green" weight="0.0493420543954">
+ <shade name="light" weight="0.506710608521" />
+ <shade name="hard" weight="0.251677454563" />
+ <shade name="soft" weight="0.241610356381" />
+</color>
+
+<color name="blue" weight="0.0427631138093">
+ <shade name="light" weight="0.506710608521" />
+ <shade name="hard" weight="0.251677454563" />
+ <shade name="soft" weight="0.241610356381" />
+</color>
+
+</colors>

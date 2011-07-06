@@ -1,0 +1,33 @@
+<colors query="crayfish">
+
+<color name="blue" weight="0.836945181756">
+ <shade name="fresh" weight="0.524772946636" />
+ <shade name="cool" weight="0.3862541993" />
+ <shade name="soft" weight="0.0889716569423" />
+</color>
+
+<color name="red" weight="0.0591882815587">
+ <shade name="fresh" weight="0.524772946636" />
+ <shade name="cool" weight="0.3862541993" />
+ <shade name="soft" weight="0.0889716569423" />
+</color>
+
+<color name="white" weight="0.0433525561773">
+ <shade name="fresh" weight="0.524772946636" />
+ <shade name="cool" weight="0.3862541993" />
+ <shade name="soft" weight="0.0889716569423" />
+</color>
+
+<color name="orange" weight="0.032514417133">
+ <shade name="fresh" weight="0.524772946636" />
+ <shade name="cool" weight="0.3862541993" />
+ <shade name="soft" weight="0.0889716569423" />
+</color>
+
+<color name="pink" weight="0.0279985258645">
+ <shade name="fresh" weight="0.524772946636" />
+ <shade name="cool" weight="0.3862541993" />
+ <shade name="soft" weight="0.0889716569423" />
+</color>
+
+</colors>

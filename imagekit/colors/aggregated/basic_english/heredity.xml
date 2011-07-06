@@ -1,0 +1,33 @@
+<colors query="heredity">
+
+<color name="blue" weight="0.462898286187">
+ <shade name="hard" weight="0.455719045142" />
+ <shade name="weak" weight="0.36162320991" />
+ <shade name="light" weight="0.182656621332" />
+</color>
+
+<color name="black" weight="0.322468469029">
+ <shade name="hard" weight="0.455719045142" />
+ <shade name="weak" weight="0.36162320991" />
+ <shade name="light" weight="0.182656621332" />
+</color>
+
+<color name="pink" weight="0.134708602385">
+ <shade name="hard" weight="0.455719045142" />
+ <shade name="weak" weight="0.36162320991" />
+ <shade name="light" weight="0.182656621332" />
+</color>
+
+<color name="yellow" weight="0.0511441926686">
+ <shade name="hard" weight="0.455719045142" />
+ <shade name="weak" weight="0.36162320991" />
+ <shade name="light" weight="0.182656621332" />
+</color>
+
+<color name="green" weight="0.0287794440101">
+ <shade name="hard" weight="0.455719045142" />
+ <shade name="weak" weight="0.36162320991" />
+ <shade name="light" weight="0.182656621332" />
+</color>
+
+</colors>

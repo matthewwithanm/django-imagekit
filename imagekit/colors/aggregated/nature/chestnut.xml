@@ -1,0 +1,33 @@
+<colors query="chestnut">
+
+<color name="red" weight="0.412875394395">
+ <shade name="dark" weight="0.593524517279" />
+ <shade name="light" weight="0.292565620639" />
+ <shade name="bright" weight="0.11390874574" />
+</color>
+
+<color name="white" weight="0.399944173989">
+ <shade name="dark" weight="0.593524517279" />
+ <shade name="light" weight="0.292565620639" />
+ <shade name="bright" weight="0.11390874574" />
+</color>
+
+<color name="black" weight="0.120075618057">
+ <shade name="dark" weight="0.593524517279" />
+ <shade name="light" weight="0.292565620639" />
+ <shade name="bright" weight="0.11390874574" />
+</color>
+
+<color name="green" weight="0.0503393937238">
+ <shade name="dark" weight="0.593524517279" />
+ <shade name="light" weight="0.292565620639" />
+ <shade name="bright" weight="0.11390874574" />
+</color>
+
+<color name="orange" weight="0.0167644035979">
+ <shade name="dark" weight="0.593524517279" />
+ <shade name="light" weight="0.292565620639" />
+ <shade name="bright" weight="0.11390874574" />
+</color>
+
+</colors>

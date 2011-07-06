@@ -1,0 +1,33 @@
+<colors query="ache">
+
+<color name="red" weight="0.470821772567">
+ <shade name="intense" weight="0.419551198177" />
+ <shade name="hard" weight="0.362524821726" />
+ <shade name="light" weight="0.217922224296" />
+</color>
+
+<color name="green" weight="0.254973199369">
+ <shade name="intense" weight="0.419551198177" />
+ <shade name="hard" weight="0.362524821726" />
+ <shade name="light" weight="0.217922224296" />
+</color>
+
+<color name="black" weight="0.170092654456">
+ <shade name="intense" weight="0.419551198177" />
+ <shade name="hard" weight="0.362524821726" />
+ <shade name="light" weight="0.217922224296" />
+</color>
+
+<color name="blue" weight="0.0610078916566">
+ <shade name="intense" weight="0.419551198177" />
+ <shade name="hard" weight="0.362524821726" />
+ <shade name="light" weight="0.217922224296" />
+</color>
+
+<color name="pink" weight="0.0431034017139">
+ <shade name="hard" weight="0.484220844813" />
+ <shade name="light" weight="0.291076575253" />
+ <shade name="soft" weight="0.224700234728" />
+</color>
+
+</colors>

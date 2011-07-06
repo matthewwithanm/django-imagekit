@@ -1,0 +1,33 @@
+<colors query="rusty">
+
+<color name="red" weight="0.484847948754">
+ <shade name="dark" weight="0.50238635719" />
+ <shade name="light" weight="0.434189114133" />
+ <shade name="cool" weight="0.0634234360435" />
+</color>
+
+<color name="white" weight="0.174949301509">
+ <shade name="dark" weight="0.50238635719" />
+ <shade name="light" weight="0.434189114133" />
+ <shade name="cool" weight="0.0634234360435" />
+</color>
+
+<color name="blue" weight="0.138989745309">
+ <shade name="dark" weight="0.50238635719" />
+ <shade name="light" weight="0.434189114133" />
+ <shade name="cool" weight="0.0634234360435" />
+</color>
+
+<color name="yellow" weight="0.123636226932">
+ <shade name="dark" weight="0.50238635719" />
+ <shade name="light" weight="0.434189114133" />
+ <shade name="cool" weight="0.0634234360435" />
+</color>
+
+<color name="orange" weight="0.0775756718006">
+ <shade name="dark" weight="0.50238635719" />
+ <shade name="light" weight="0.434189114133" />
+ <shade name="cool" weight="0.0634234360435" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="landslip">
+
+<color name="black" weight="0.599999400001">
+ <shade name="fresh" weight="0.920633970774" />
+ <shade name="dark" weight="0.0476189984883" />
+ <shade name="intense" weight="0.0317459989922" />
+</color>
+
+<color name="red" weight="0.3999996">
+ <shade name="fresh" weight="0.920633970774" />
+ <shade name="dark" weight="0.0476189984883" />
+ <shade name="intense" weight="0.0317459989922" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="fresh" weight="0.920633970774" />
+ <shade name="dark" weight="0.0476189984883" />
+ <shade name="intense" weight="0.0317459989922" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="fresh" weight="0.93548289022" />
+ <shade name="dark" weight="0.0483870460458" />
+ <shade name="warm" weight="0.0161290153486" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="fresh" weight="0.93548289022" />
+ <shade name="dark" weight="0.0483870460458" />
+ <shade name="cool" weight="0.0161290153486" />
+</color>
+
+</colors>

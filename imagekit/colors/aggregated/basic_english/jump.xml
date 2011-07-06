@@ -1,0 +1,33 @@
+<colors query="jump">
+
+<color name="red" weight="0.336774835582">
+ <shade name="cool" weight="0.411305467474" />
+ <shade name="hard" weight="0.356724647146" />
+ <shade name="weak" weight="0.231968486395" />
+</color>
+
+<color name="orange" weight="0.314534987949">
+ <shade name="cool" weight="0.411305467474" />
+ <shade name="hard" weight="0.356724647146" />
+ <shade name="weak" weight="0.231968486395" />
+</color>
+
+<color name="white" weight="0.123907722525">
+ <shade name="cool" weight="0.411305467474" />
+ <shade name="hard" weight="0.356724647146" />
+ <shade name="weak" weight="0.231968486395" />
+</color>
+
+<color name="green" weight="0.116759200072">
+ <shade name="cool" weight="0.411305467474" />
+ <shade name="hard" weight="0.356724647146" />
+ <shade name="weak" weight="0.231968486395" />
+</color>
+
+<color name="blue" weight="0.108022117073">
+ <shade name="cool" weight="0.411305467474" />
+ <shade name="hard" weight="0.356724647146" />
+ <shade name="weak" weight="0.231968486395" />
+</color>
+
+</colors>

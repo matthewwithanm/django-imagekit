@@ -1,0 +1,33 @@
+<colors query="grieving">
+
+<color name="blue" weight="0.545160729335">
+ <shade name="intense" weight="0.584974685427" />
+ <shade name="hard" weight="0.299260733808" />
+ <shade name="dark" weight="0.115763411432" />
+</color>
+
+<color name="black" weight="0.280644872498">
+ <shade name="intense" weight="0.584974685427" />
+ <shade name="hard" weight="0.299260733808" />
+ <shade name="dark" weight="0.115763411432" />
+</color>
+
+<color name="white" weight="0.0806450783039">
+ <shade name="hard" weight="0.592681554266" />
+ <shade name="dark" weight="0.229267761732" />
+ <shade name="light" weight="0.178048368154" />
+</color>
+
+<color name="green" weight="0.0774192751718">
+ <shade name="intense" weight="0.584974685427" />
+ <shade name="hard" weight="0.299260733808" />
+ <shade name="dark" weight="0.115763411432" />
+</color>
+
+<color name="red" weight="0.0161290156608">
+ <shade name="intense" weight="0.584974685427" />
+ <shade name="hard" weight="0.299260733808" />
+ <shade name="dark" weight="0.115763411432" />
+</color>
+
+</colors>

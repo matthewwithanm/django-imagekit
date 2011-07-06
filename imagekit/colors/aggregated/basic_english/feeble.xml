@@ -1,0 +1,33 @@
+<colors query="feeble">
+
+<color name="white" weight="0.417039902432">
+ <shade name="weak" weight="0.983505690172" />
+ <shade name="soft" weight="0.0115322569865" />
+ <shade name="light" weight="0.00496104640175" />
+</color>
+
+<color name="black" weight="0.417039902432">
+ <shade name="weak" weight="0.983505690172" />
+ <shade name="soft" weight="0.0115322569865" />
+ <shade name="light" weight="0.00496104640175" />
+</color>
+
+<color name="red" weight="0.0852017004968">
+ <shade name="weak" weight="0.983505690172" />
+ <shade name="soft" weight="0.0115322569865" />
+ <shade name="light" weight="0.00496104640175" />
+</color>
+
+<color name="green" weight="0.0403587002353">
+ <shade name="weak" weight="0.983505690172" />
+ <shade name="soft" weight="0.0115322569865" />
+ <shade name="light" weight="0.00496104640175" />
+</color>
+
+<color name="blue" weight="0.0403587002353">
+ <shade name="weak" weight="0.983505690172" />
+ <shade name="soft" weight="0.0115322569865" />
+ <shade name="light" weight="0.00496104640175" />
+</color>
+
+</colors>

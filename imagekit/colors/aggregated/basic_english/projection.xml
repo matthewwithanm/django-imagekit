@@ -1,0 +1,33 @@
+<colors query="projection">
+
+<color name="white" weight="0.702736394609">
+ <shade name="light" weight="0.907993212211" />
+ <shade name="bright" weight="0.0634960288259" />
+ <shade name="cool" weight="0.0285097169428" />
+</color>
+
+<color name="red" weight="0.24493927957">
+ <shade name="light" weight="0.907993212211" />
+ <shade name="bright" weight="0.0634960288259" />
+ <shade name="cool" weight="0.0285097169428" />
+</color>
+
+<color name="green" weight="0.0186632527989">
+ <shade name="light" weight="0.907993212211" />
+ <shade name="bright" weight="0.0634960288259" />
+ <shade name="cool" weight="0.0285097169428" />
+</color>
+
+<color name="black" weight="0.0169318732759">
+ <shade name="light" weight="0.907993212211" />
+ <shade name="bright" weight="0.0634960288259" />
+ <shade name="cool" weight="0.0285097169428" />
+</color>
+
+<color name="blue" weight="0.0167281815673">
+ <shade name="light" weight="0.907993212211" />
+ <shade name="bright" weight="0.0634960288259" />
+ <shade name="cool" weight="0.0285097169428" />
+</color>
+
+</colors>

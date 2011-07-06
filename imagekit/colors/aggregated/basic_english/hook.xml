@@ -1,0 +1,33 @@
+<colors query="hook">
+
+<color name="red" weight="0.935438291892">
+ <shade name="light" weight="0.425605015238" />
+ <shade name="soft" weight="0.415224405111" />
+ <shade name="dark" weight="0.159169355292" />
+</color>
+
+<color name="white" weight="0.033397466289">
+ <shade name="light" weight="0.425605015238" />
+ <shade name="soft" weight="0.415224405111" />
+ <shade name="dark" weight="0.159169355292" />
+</color>
+
+<color name="black" weight="0.020177635883">
+ <shade name="light" weight="0.425605015238" />
+ <shade name="soft" weight="0.415224405111" />
+ <shade name="dark" weight="0.159169355292" />
+</color>
+
+<color name="blue" weight="0.00834936657226">
+ <shade name="light" weight="0.425605015238" />
+ <shade name="soft" weight="0.415224405111" />
+ <shade name="dark" weight="0.159169355292" />
+</color>
+
+<color name="yellow" weight="0.00263623518624">
+ <shade name="light" weight="0.425605015238" />
+ <shade name="soft" weight="0.415224405111" />
+ <shade name="dark" weight="0.159169355292" />
+</color>
+
+</colors>

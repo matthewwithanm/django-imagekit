@@ -1,0 +1,33 @@
+<colors query="society">
+
+<color name="white" weight="0.667146820427">
+ <shade name="warm" weight="0.369415095655" />
+ <shade name="dark" weight="0.324741642227" />
+ <shade name="neutral" weight="0.305841335008" />
+</color>
+
+<color name="black" weight="0.205553344672">
+ <shade name="warm" weight="0.369415095655" />
+ <shade name="dark" weight="0.324741642227" />
+ <shade name="neutral" weight="0.305841335008" />
+</color>
+
+<color name="green" weight="0.0834835075291">
+ <shade name="dark" weight="0.349352325644" />
+ <shade name="neutral" weight="0.329019650607" />
+ <shade name="light" weight="0.321625950593" />
+</color>
+
+<color name="red" weight="0.0387666395653">
+ <shade name="warm" weight="0.369415095655" />
+ <shade name="dark" weight="0.324741642227" />
+ <shade name="neutral" weight="0.305841335008" />
+</color>
+
+<color name="purple" weight="0.00504867864107">
+ <shade name="dark" weight="0.349352325644" />
+ <shade name="neutral" weight="0.329019650607" />
+ <shade name="light" weight="0.321625950593" />
+</color>
+
+</colors>

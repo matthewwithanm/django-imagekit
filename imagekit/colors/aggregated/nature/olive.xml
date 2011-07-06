@@ -1,0 +1,33 @@
+<colors query="olive">
+
+<color name="black" weight="0.491208151926">
+ <shade name="dark" weight="0.502161881818" />
+ <shade name="light" weight="0.458913490082" />
+ <shade name="warm" weight="0.0389235525619" />
+</color>
+
+<color name="green" weight="0.336670755814">
+ <shade name="dark" weight="0.502463697746" />
+ <shade name="light" weight="0.459189312294" />
+ <shade name="fresh" weight="0.0383459137753" />
+</color>
+
+<color name="blue" weight="0.0796340663636">
+ <shade name="dark" weight="0.502463697746" />
+ <shade name="light" weight="0.459189312294" />
+ <shade name="fresh" weight="0.0383459137753" />
+</color>
+
+<color name="yellow" weight="0.0475439029874">
+ <shade name="dark" weight="0.502161881818" />
+ <shade name="light" weight="0.458913490082" />
+ <shade name="warm" weight="0.0389235525619" />
+</color>
+
+<color name="white" weight="0.0449419978488">
+ <shade name="dark" weight="0.502161881818" />
+ <shade name="light" weight="0.458913490082" />
+ <shade name="warm" weight="0.0389235525619" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="fainthearted">
+
+<color name="yellow" weight="0.0">
+ <shade name="weak" weight="0.818181000001" />
+ <shade name="soft" weight="0.0909090000001" />
+ <shade name="dark" weight="0.0909090000001" />
+</color>
+
+<color name="white" weight="0.0">
+ <shade name="weak" weight="0.818181000001" />
+ <shade name="soft" weight="0.0909090000001" />
+ <shade name="dark" weight="0.0909090000001" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="weak" weight="0.818181000001" />
+ <shade name="soft" weight="0.0909090000001" />
+ <shade name="dark" weight="0.0909090000001" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="weak" weight="0.818181000001" />
+ <shade name="soft" weight="0.0909090000001" />
+ <shade name="dark" weight="0.0909090000001" />
+</color>
+
+<color name="pink" weight="0.0">
+ <shade name="weak" weight="0.818181000001" />
+ <shade name="soft" weight="0.0909090000001" />
+ <shade name="dark" weight="0.0909090000001" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="lever">
+
+<color name="red" weight="0.332492562411">
+ <shade name="light" weight="0.802588018658" />
+ <shade name="cool" weight="0.114077530878" />
+ <shade name="neutral" weight="0.083333231776" />
+</color>
+
+<color name="black" weight="0.332492562411">
+ <shade name="light" weight="0.802588018658" />
+ <shade name="cool" weight="0.114077530878" />
+ <shade name="neutral" weight="0.083333231776" />
+</color>
+
+<color name="blue" weight="0.155373301676">
+ <shade name="light" weight="0.802588018658" />
+ <shade name="cool" weight="0.114077530878" />
+ <shade name="neutral" weight="0.083333231776" />
+</color>
+
+<color name="white" weight="0.148282228071">
+ <shade name="light" weight="0.802588018658" />
+ <shade name="cool" weight="0.114077530878" />
+ <shade name="neutral" weight="0.083333231776" />
+</color>
+
+<color name="orange" weight="0.0313583032795">
+ <shade name="light" weight="0.802588018658" />
+ <shade name="cool" weight="0.114077530878" />
+ <shade name="neutral" weight="0.083333231776" />
+</color>
+
+</colors>

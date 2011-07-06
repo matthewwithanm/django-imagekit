@@ -1,0 +1,33 @@
+<colors query="thimble">
+
+<color name="pink" weight="0.375691813855">
+ <shade name="soft" weight="0.763735423627" />
+ <shade name="light" weight="0.171428382857" />
+ <shade name="cool" weight="0.0648350935166" />
+</color>
+
+<color name="blue" weight="0.333781970078">
+ <shade name="soft" weight="0.763735423627" />
+ <shade name="light" weight="0.171428382857" />
+ <shade name="cool" weight="0.0648350935166" />
+</color>
+
+<color name="black" weight="0.107618491698">
+ <shade name="soft" weight="0.763735423627" />
+ <shade name="light" weight="0.171428382857" />
+ <shade name="cool" weight="0.0648350935166" />
+</color>
+
+<color name="red" weight="0.101781049172">
+ <shade name="soft" weight="0.763735423627" />
+ <shade name="light" weight="0.171428382857" />
+ <shade name="cool" weight="0.0648350935166" />
+</color>
+
+<color name="white" weight="0.0811254833105">
+ <shade name="soft" weight="0.763735423627" />
+ <shade name="light" weight="0.171428382857" />
+ <shade name="cool" weight="0.0648350935166" />
+</color>
+
+</colors>

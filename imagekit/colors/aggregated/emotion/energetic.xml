@@ -1,0 +1,33 @@
+<colors query="energetic">
+
+<color name="black" weight="0.55758619799">
+ <shade name="bright" weight="0.834552557818" />
+ <shade name="fresh" weight="0.109809547081" />
+ <shade name="intense" weight="0.0556368371879" />
+</color>
+
+<color name="red" weight="0.124618991791">
+ <shade name="bright" weight="0.834552557818" />
+ <shade name="fresh" weight="0.109809547081" />
+ <shade name="intense" weight="0.0556368371879" />
+</color>
+
+<color name="white" weight="0.122790840322">
+ <shade name="bright" weight="0.852431127336" />
+ <shade name="fresh" weight="0.112161990439" />
+ <shade name="warm" weight="0.0354058016486" />
+</color>
+
+<color name="orange" weight="0.11822046165">
+ <shade name="bright" weight="0.834552557818" />
+ <shade name="fresh" weight="0.109809547081" />
+ <shade name="intense" weight="0.0556368371879" />
+</color>
+
+<color name="green" weight="0.0767823616904">
+ <shade name="bright" weight="0.834552557818" />
+ <shade name="fresh" weight="0.109809547081" />
+ <shade name="intense" weight="0.0556368371879" />
+</color>
+
+</colors>

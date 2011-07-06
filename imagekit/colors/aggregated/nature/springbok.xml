@@ -1,0 +1,33 @@
+<colors query="springbok">
+
+<color name="black" weight="0.539681970232">
+ <shade name="weak" weight="0.430434258602" />
+ <shade name="fresh" weight="0.391303871456" />
+ <shade name="hard" weight="0.178260652552" />
+</color>
+
+<color name="white" weight="0.35317423052">
+ <shade name="weak" weight="0.430434258602" />
+ <shade name="fresh" weight="0.391303871456" />
+ <shade name="hard" weight="0.178260652552" />
+</color>
+
+<color name="green" weight="0.0420634476799">
+ <shade name="weak" weight="0.430434258602" />
+ <shade name="fresh" weight="0.391303871456" />
+ <shade name="hard" weight="0.178260652552" />
+</color>
+
+<color name="red" weight="0.0384920228769">
+ <shade name="weak" weight="0.430434258602" />
+ <shade name="fresh" weight="0.391303871456" />
+ <shade name="hard" weight="0.178260652552" />
+</color>
+
+<color name="orange" weight="0.0265872735335">
+ <shade name="weak" weight="0.430434258602" />
+ <shade name="fresh" weight="0.391303871456" />
+ <shade name="hard" weight="0.178260652552" />
+</color>
+
+</colors>

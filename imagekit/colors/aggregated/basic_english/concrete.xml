@@ -1,0 +1,33 @@
+<colors query="concrete">
+
+<color name="green" weight="0.419147534779">
+ <shade name="fresh" weight="0.597812205863" />
+ <shade name="hard" weight="0.325637543031" />
+ <shade name="light" weight="0.0765491239215" />
+</color>
+
+<color name="white" weight="0.410443924768">
+ <shade name="fresh" weight="0.597812205863" />
+ <shade name="hard" weight="0.325637543031" />
+ <shade name="light" weight="0.0765491239215" />
+</color>
+
+<color name="red" weight="0.0797067443187">
+ <shade name="fresh" weight="0.597812205863" />
+ <shade name="hard" weight="0.325637543031" />
+ <shade name="light" weight="0.0765491239215" />
+</color>
+
+<color name="black" weight="0.0787905748438">
+ <shade name="fresh" weight="0.597812205863" />
+ <shade name="hard" weight="0.325637543031" />
+ <shade name="light" weight="0.0765491239215" />
+</color>
+
+<color name="pink" weight="0.0119102031741">
+ <shade name="fresh" weight="0.597812205863" />
+ <shade name="hard" weight="0.325637543031" />
+ <shade name="light" weight="0.0765491239215" />
+</color>
+
+</colors>

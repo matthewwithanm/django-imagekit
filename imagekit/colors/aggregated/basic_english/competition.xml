@@ -1,0 +1,33 @@
+<colors query="competition">
+
+<color name="blue" weight="0.431009496317">
+ <shade name="intense" weight="0.906101178299" />
+ <shade name="weak" weight="0.0505171453388" />
+ <shade name="hard" weight="0.0433805962354" />
+</color>
+
+<color name="green" weight="0.224750826462">
+ <shade name="intense" weight="0.906101178299" />
+ <shade name="weak" weight="0.0505171453388" />
+ <shade name="hard" weight="0.0433805962354" />
+</color>
+
+<color name="black" weight="0.165006935884">
+ <shade name="intense" weight="0.906101178299" />
+ <shade name="weak" weight="0.0505171453388" />
+ <shade name="hard" weight="0.0433805962354" />
+</color>
+
+<color name="white" weight="0.134281506443">
+ <shade name="weak" weight="0.39448634074" />
+ <shade name="hard" weight="0.338757318001" />
+ <shade name="light" weight="0.266747906596" />
+</color>
+
+<color name="pink" weight="0.0449501652925">
+ <shade name="weak" weight="0.39448634074" />
+ <shade name="hard" weight="0.338757318001" />
+ <shade name="light" weight="0.266747906596" />
+</color>
+
+</colors>

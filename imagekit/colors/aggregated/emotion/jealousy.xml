@@ -1,0 +1,33 @@
+<colors query="jealousy">
+
+<color name="green" weight="0.958328800305">
+ <shade name="intense" weight="0.96390650118" />
+ <shade name="dark" weight="0.0257185815337" />
+ <shade name="weak" weight="0.010373881627" />
+</color>
+
+<color name="black" weight="0.0131484993137">
+ <shade name="intense" weight="0.96390650118" />
+ <shade name="dark" weight="0.0257185815337" />
+ <shade name="weak" weight="0.010373881627" />
+</color>
+
+<color name="yellow" weight="0.0111805026702">
+ <shade name="intense" weight="0.96390650118" />
+ <shade name="dark" weight="0.0257185815337" />
+ <shade name="weak" weight="0.010373881627" />
+</color>
+
+<color name="white" weight="0.00921250602674">
+ <shade name="dark" weight="0.575421869335" />
+ <shade name="weak" weight="0.232102938891" />
+ <shade name="hard" weight="0.192452020164" />
+</color>
+
+<color name="red" weight="0.0081286817883">
+ <shade name="intense" weight="0.96390650118" />
+ <shade name="dark" weight="0.0257185815337" />
+ <shade name="weak" weight="0.010373881627" />
+</color>
+
+</colors>

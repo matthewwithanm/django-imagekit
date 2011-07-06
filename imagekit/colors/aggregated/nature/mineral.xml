@@ -1,0 +1,33 @@
+<colors query="mineral">
+
+<color name="white" weight="0.496140591829">
+ <shade name="light" weight="0.483469005495" />
+ <shade name="warm" weight="0.340561255341" />
+ <shade name="hard" weight="0.175968498323" />
+</color>
+
+<color name="black" weight="0.17714056686">
+ <shade name="light" weight="0.483469005495" />
+ <shade name="warm" weight="0.340561255341" />
+ <shade name="hard" weight="0.175968498323" />
+</color>
+
+<color name="green" weight="0.163175127979">
+ <shade name="light" weight="0.65478946291" />
+ <shade name="hard" weight="0.238324105986" />
+ <shade name="fresh" weight="0.106884750563" />
+</color>
+
+<color name="blue" weight="0.0915103758262">
+ <shade name="light" weight="0.65478946291" />
+ <shade name="hard" weight="0.238324105986" />
+ <shade name="fresh" weight="0.106884750563" />
+</color>
+
+<color name="red" weight="0.0720322637026">
+ <shade name="light" weight="0.483469005495" />
+ <shade name="warm" weight="0.340561255341" />
+ <shade name="hard" weight="0.175968498323" />
+</color>
+
+</colors>

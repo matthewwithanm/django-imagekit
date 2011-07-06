@@ -1,0 +1,33 @@
+<colors query="ape">
+
+<color name="red" weight="0.638654805966">
+ <shade name="fresh" weight="0.396414346473" />
+ <shade name="dark" weight="0.334366883547" />
+ <shade name="light" weight="0.269217047474" />
+</color>
+
+<color name="white" weight="0.203361135584">
+ <shade name="fresh" weight="0.396414346473" />
+ <shade name="dark" weight="0.334366883547" />
+ <shade name="light" weight="0.269217047474" />
+</color>
+
+<color name="black" weight="0.0907562092689">
+ <shade name="fresh" weight="0.396414346473" />
+ <shade name="dark" weight="0.334366883547" />
+ <shade name="light" weight="0.269217047474" />
+</color>
+
+<color name="green" weight="0.0531652114791">
+ <shade name="fresh" weight="0.396414346473" />
+ <shade name="dark" weight="0.334366883547" />
+ <shade name="light" weight="0.269217047474" />
+</color>
+
+<color name="purple" weight="0.0140616102015">
+ <shade name="fresh" weight="0.396414346473" />
+ <shade name="dark" weight="0.334366883547" />
+ <shade name="light" weight="0.269217047474" />
+</color>
+
+</colors>

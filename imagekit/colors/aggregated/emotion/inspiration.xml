@@ -1,0 +1,33 @@
+<colors query="inspiration">
+
+<color name="purple" weight="0.683550201052">
+ <shade name="fresh" weight="0.784791969373" />
+ <shade name="cool" weight="0.172009198767" />
+ <shade name="dark" weight="0.0431977646903" />
+</color>
+
+<color name="white" weight="0.100341664129">
+ <shade name="fresh" weight="0.784791969373" />
+ <shade name="cool" weight="0.172009198767" />
+ <shade name="dark" weight="0.0431977646903" />
+</color>
+
+<color name="pink" weight="0.095521758865">
+ <shade name="fresh" weight="0.784791969373" />
+ <shade name="cool" weight="0.172009198767" />
+ <shade name="dark" weight="0.0431977646903" />
+</color>
+
+<color name="red" weight="0.0797475234561">
+ <shade name="fresh" weight="0.784791969373" />
+ <shade name="cool" weight="0.172009198767" />
+ <shade name="dark" weight="0.0431977646903" />
+</color>
+
+<color name="orange" weight="0.0408377427808">
+ <shade name="fresh" weight="0.784791969373" />
+ <shade name="cool" weight="0.172009198767" />
+ <shade name="dark" weight="0.0431977646903" />
+</color>
+
+</colors>

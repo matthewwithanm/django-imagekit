@@ -1,0 +1,33 @@
+<colors query="winter">
+
+<color name="red" weight="0.34916163487">
+ <shade name="warm" weight="0.604165909872" />
+ <shade name="dark" weight="0.209677156707" />
+ <shade name="hard" weight="0.186155680795" />
+</color>
+
+<color name="white" weight="0.310255052698">
+ <shade name="warm" weight="0.604165909872" />
+ <shade name="dark" weight="0.209677156707" />
+ <shade name="hard" weight="0.186155680795" />
+</color>
+
+<color name="black" weight="0.199520934211">
+ <shade name="warm" weight="0.604165909872" />
+ <shade name="dark" weight="0.209677156707" />
+ <shade name="hard" weight="0.186155680795" />
+</color>
+
+<color name="blue" weight="0.0815043016253">
+ <shade name="dark" weight="0.434539261919" />
+ <shade name="hard" weight="0.385792870358" />
+ <shade name="cool" weight="0.179665271755" />
+</color>
+
+<color name="green" weight="0.0595569988621">
+ <shade name="dark" weight="0.434539261919" />
+ <shade name="hard" weight="0.385792870358" />
+ <shade name="cool" weight="0.179665271755" />
+</color>
+
+</colors>

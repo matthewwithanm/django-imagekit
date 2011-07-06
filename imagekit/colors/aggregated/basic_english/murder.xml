@@ -1,0 +1,33 @@
+<colors query="murder">
+
+<color name="blue" weight="0.894851645574">
+ <shade name="soft" weight="0.463076171041" />
+ <shade name="cool" weight="0.344614824961" />
+ <shade name="intense" weight="0.192307380001" />
+</color>
+
+<color name="black" weight="0.0591241265826">
+ <shade name="soft" weight="0.463076171041" />
+ <shade name="cool" weight="0.344614824961" />
+ <shade name="intense" weight="0.192307380001" />
+</color>
+
+<color name="white" weight="0.0433729113926">
+ <shade name="soft" weight="0.482912706943" />
+ <shade name="cool" weight="0.35937689819" />
+ <shade name="fresh" weight="0.157708701304" />
+</color>
+
+<color name="green" weight="0.0013285807595">
+ <shade name="soft" weight="0.463076171041" />
+ <shade name="cool" weight="0.344614824961" />
+ <shade name="intense" weight="0.192307380001" />
+</color>
+
+<color name="red" weight="0.00132173240507">
+ <shade name="soft" weight="0.463076171041" />
+ <shade name="cool" weight="0.344614824961" />
+ <shade name="intense" weight="0.192307380001" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="euonymus">
+
+<color name="green" weight="0.373332933867">
+ <shade name="weak" weight="0.399999520001" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="light" weight="0.19999976" />
+</color>
+
+<color name="red" weight="0.233333083667">
+ <shade name="weak" weight="0.399999520001" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="light" weight="0.19999976" />
+</color>
+
+<color name="orange" weight="0.143333179967">
+ <shade name="weak" weight="0.399999520001" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="light" weight="0.19999976" />
+</color>
+
+<color name="yellow" weight="0.1299998609">
+ <shade name="weak" weight="0.399999520001" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="light" weight="0.19999976" />
+</color>
+
+<color name="white" weight="0.1199998716">
+ <shade name="weak" weight="0.399999520001" />
+ <shade name="cool" weight="0.399999520001" />
+ <shade name="light" weight="0.19999976" />
+</color>
+
+</colors>

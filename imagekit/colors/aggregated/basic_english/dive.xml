@@ -1,0 +1,33 @@
+<colors query="dive">
+
+<color name="blue" weight="0.650446195527">
+ <shade name="hard" weight="0.538546897194" />
+ <shade name="cool" weight="0.341899067513" />
+ <shade name="soft" weight="0.119552941908" />
+</color>
+
+<color name="red" weight="0.231711112911">
+ <shade name="hard" weight="0.538546897194" />
+ <shade name="cool" weight="0.341899067513" />
+ <shade name="soft" weight="0.119552941908" />
+</color>
+
+<color name="white" weight="0.0594173496678">
+ <shade name="hard" weight="0.538546897194" />
+ <shade name="cool" weight="0.341899067513" />
+ <shade name="soft" weight="0.119552941908" />
+</color>
+
+<color name="yellow" weight="0.0309499843673">
+ <shade name="hard" weight="0.538546897194" />
+ <shade name="cool" weight="0.341899067513" />
+ <shade name="soft" weight="0.119552941908" />
+</color>
+
+<color name="orange" weight="0.0274743176737">
+ <shade name="hard" weight="0.538546897194" />
+ <shade name="cool" weight="0.341899067513" />
+ <shade name="soft" weight="0.119552941908" />
+</color>
+
+</colors>

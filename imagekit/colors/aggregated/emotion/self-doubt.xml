@@ -1,0 +1,33 @@
+<colors query="self-doubt">
+
+<color name="black" weight="0.946901707966">
+ <shade name="intense" weight="0.989398296896" />
+ <shade name="dark" weight="0.00706713069211" />
+ <shade name="hard" weight="0.00353356534606" />
+</color>
+
+<color name="white" weight="0.0265486460177">
+ <shade name="dark" weight="0.499964377538" />
+ <shade name="hard" weight="0.249982188769" />
+ <shade name="fresh" weight="0.249982188769" />
+</color>
+
+<color name="blue" weight="0.0176990973452">
+ <shade name="intense" weight="0.989398296896" />
+ <shade name="dark" weight="0.00706713069211" />
+ <shade name="hard" weight="0.00353356534606" />
+</color>
+
+<color name="pink" weight="0.00884954867258">
+ <shade name="dark" weight="0.499964377538" />
+ <shade name="hard" weight="0.249982188769" />
+ <shade name="fresh" weight="0.249982188769" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="intense" weight="0.989398296896" />
+ <shade name="dark" weight="0.00706713069211" />
+ <shade name="hard" weight="0.00353356534606" />
+</color>
+
+</colors>

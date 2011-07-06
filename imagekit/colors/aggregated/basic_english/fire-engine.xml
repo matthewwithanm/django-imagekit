@@ -1,0 +1,33 @@
+<colors query="fire-engine">
+
+<color name="red" weight="0.829709270246">
+ <shade name="light" weight="0.746887192852" />
+ <shade name="cool" weight="0.172890553901" />
+ <shade name="bright" weight="0.08022121701" />
+</color>
+
+<color name="blue" weight="0.0543477687934">
+ <shade name="light" weight="0.746887192852" />
+ <shade name="cool" weight="0.172890553901" />
+ <shade name="bright" weight="0.08022121701" />
+</color>
+
+<color name="white" weight="0.0454709665571">
+ <shade name="light" weight="0.746887192852" />
+ <shade name="cool" weight="0.172890553901" />
+ <shade name="bright" weight="0.08022121701" />
+</color>
+
+<color name="green" weight="0.0393115527605">
+ <shade name="light" weight="0.746887192852" />
+ <shade name="cool" weight="0.172890553901" />
+ <shade name="bright" weight="0.08022121701" />
+</color>
+
+<color name="yellow" weight="0.0311593874415">
+ <shade name="light" weight="0.746887192852" />
+ <shade name="cool" weight="0.172890553901" />
+ <shade name="bright" weight="0.08022121701" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="smoggy">
+
+<color name="yellow" weight="0.251256002374">
+ <shade name="dark" weight="0.621075522985" />
+ <shade name="fresh" weight="0.197309191418" />
+ <shade name="warm" weight="0.1816141421" />
+</color>
+
+<color name="black" weight="0.251256002374">
+ <shade name="dark" weight="0.621075522985" />
+ <shade name="fresh" weight="0.197309191418" />
+ <shade name="warm" weight="0.1816141421" />
+</color>
+
+<color name="white" weight="0.195979681852">
+ <shade name="dark" weight="0.621075522985" />
+ <shade name="fresh" weight="0.197309191418" />
+ <shade name="warm" weight="0.1816141421" />
+</color>
+
+<color name="orange" weight="0.160803841519">
+ <shade name="dark" weight="0.621075522985" />
+ <shade name="fresh" weight="0.197309191418" />
+ <shade name="warm" weight="0.1816141421" />
+</color>
+
+<color name="green" weight="0.140703361329">
+ <shade name="dark" weight="0.694234701605" />
+ <shade name="fresh" weight="0.220551096539" />
+ <shade name="cool" weight="0.0852129236627" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="liked">
+
+<color name="black" weight="0.374674345613">
+ <shade name="light" weight="0.458241191836" />
+ <shade name="weak" weight="0.336263320627" />
+ <shade name="cool" weight="0.205494251495" />
+</color>
+
+<color name="white" weight="0.2272330522">
+ <shade name="light" weight="0.458241191836" />
+ <shade name="weak" weight="0.336263320627" />
+ <shade name="cool" weight="0.205494251495" />
+</color>
+
+<color name="red" weight="0.202948603874">
+ <shade name="light" weight="0.458241191836" />
+ <shade name="weak" weight="0.336263320627" />
+ <shade name="cool" weight="0.205494251495" />
+</color>
+
+<color name="blue" weight="0.150216658936">
+ <shade name="light" weight="0.458241191836" />
+ <shade name="weak" weight="0.336263320627" />
+ <shade name="cool" weight="0.205494251495" />
+</color>
+
+<color name="orange" weight="0.0449262294045">
+ <shade name="light" weight="0.458241191836" />
+ <shade name="weak" weight="0.336263320627" />
+ <shade name="cool" weight="0.205494251495" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="rice">
+
+<color name="white" weight="0.572319907952">
+ <shade name="fresh" weight="0.47200710448" />
+ <shade name="soft" weight="0.272200416081" />
+ <shade name="warm" weight="0.25579117114" />
+</color>
+
+<color name="red" weight="0.168053936608">
+ <shade name="fresh" weight="0.47200710448" />
+ <shade name="soft" weight="0.272200416081" />
+ <shade name="warm" weight="0.25579117114" />
+</color>
+
+<color name="yellow" weight="0.101456710955">
+ <shade name="fresh" weight="0.47200710448" />
+ <shade name="soft" weight="0.272200416081" />
+ <shade name="warm" weight="0.25579117114" />
+</color>
+
+<color name="black" weight="0.0806450779387">
+ <shade name="fresh" weight="0.47200710448" />
+ <shade name="soft" weight="0.272200416081" />
+ <shade name="warm" weight="0.25579117114" />
+</color>
+
+<color name="green" weight="0.0775233329863">
+ <shade name="fresh" weight="0.520766021463" />
+ <shade name="soft" weight="0.300319055322" />
+ <shade name="hard" weight="0.178913479766" />
+</color>
+
+</colors>

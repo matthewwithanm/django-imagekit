@@ -1,0 +1,33 @@
+<colors query="pitiful">
+
+<color name="white" weight="0.333332951112">
+ <shade name="weak" weight="0.821916951989" />
+ <shade name="soft" weight="0.119373652551" />
+ <shade name="dark" weight="0.0587083537135" />
+</color>
+
+<color name="black" weight="0.333332951112">
+ <shade name="weak" weight="0.821916951989" />
+ <shade name="soft" weight="0.119373652551" />
+ <shade name="dark" weight="0.0587083537135" />
+</color>
+
+<color name="green" weight="0.133333180445">
+ <shade name="weak" weight="0.821916951989" />
+ <shade name="soft" weight="0.119373652551" />
+ <shade name="dark" weight="0.0587083537135" />
+</color>
+
+<color name="pink" weight="0.106666544356">
+ <shade name="weak" weight="0.821916951989" />
+ <shade name="soft" weight="0.119373652551" />
+ <shade name="dark" weight="0.0587083537135" />
+</color>
+
+<color name="purple" weight="0.0933332263112">
+ <shade name="weak" weight="0.821916951989" />
+ <shade name="soft" weight="0.119373652551" />
+ <shade name="dark" weight="0.0587083537135" />
+</color>
+
+</colors>

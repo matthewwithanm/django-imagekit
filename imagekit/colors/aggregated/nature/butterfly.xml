@@ -1,0 +1,33 @@
+<colors query="butterfly">
+
+<color name="blue" weight="0.353456731417">
+ <shade name="bright" weight="0.478421140735" />
+ <shade name="dark" weight="0.394574136689" />
+ <shade name="cool" weight="0.127003550247" />
+</color>
+
+<color name="white" weight="0.195046196315">
+ <shade name="bright" weight="0.478421140735" />
+ <shade name="dark" weight="0.394574136689" />
+ <shade name="cool" weight="0.127003550247" />
+</color>
+
+<color name="black" weight="0.166666458756">
+ <shade name="bright" weight="0.478421140735" />
+ <shade name="dark" weight="0.394574136689" />
+ <shade name="cool" weight="0.127003550247" />
+</color>
+
+<color name="pink" weight="0.164086482614">
+ <shade name="bright" weight="0.478421140735" />
+ <shade name="dark" weight="0.394574136689" />
+ <shade name="cool" weight="0.127003550247" />
+</color>
+
+<color name="purple" weight="0.120742883433">
+ <shade name="bright" weight="0.478421140735" />
+ <shade name="dark" weight="0.394574136689" />
+ <shade name="cool" weight="0.127003550247" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="enchanted">
+
+<color name="white" weight="0.360482254481">
+ <shade name="soft" weight="0.545453822567" />
+ <shade name="light" weight="0.254940373591" />
+ <shade name="cool" weight="0.199604478548" />
+</color>
+
+<color name="pink" weight="0.194569919783">
+ <shade name="soft" weight="0.545453822567" />
+ <shade name="light" weight="0.254940373591" />
+ <shade name="cool" weight="0.199604478548" />
+</color>
+
+<color name="blue" weight="0.170437216554">
+ <shade name="soft" weight="0.545453822567" />
+ <shade name="light" weight="0.254940373591" />
+ <shade name="cool" weight="0.199604478548" />
+</color>
+
+<color name="red" weight="0.145550366349">
+ <shade name="soft" weight="0.545453822567" />
+ <shade name="light" weight="0.254940373591" />
+ <shade name="cool" weight="0.199604478548" />
+</color>
+
+<color name="green" weight="0.128959132879">
+ <shade name="soft" weight="0.545453822567" />
+ <shade name="light" weight="0.254940373591" />
+ <shade name="cool" weight="0.199604478548" />
+</color>
+
+</colors>

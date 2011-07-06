@@ -1,0 +1,33 @@
+<colors query="stereotyped">
+
+<color name="black" weight="0.664150264209">
+ <shade name="intense" weight="0.81777688004" />
+ <shade name="weak" weight="0.102222110005" />
+ <shade name="hard" weight="0.0799999121779" />
+</color>
+
+<color name="white" weight="0.286792159545">
+ <shade name="weak" weight="0.459997727611" />
+ <shade name="hard" weight="0.359998221609" />
+ <shade name="neutral" weight="0.179999110804" />
+</color>
+
+<color name="pink" weight="0.0301886483731">
+ <shade name="weak" weight="0.459997727611" />
+ <shade name="hard" weight="0.359998221609" />
+ <shade name="neutral" weight="0.179999110804" />
+</color>
+
+<color name="red" weight="0.0113207431399">
+ <shade name="intense" weight="0.81777688004" />
+ <shade name="weak" weight="0.102222110005" />
+ <shade name="hard" weight="0.0799999121779" />
+</color>
+
+<color name="yellow" weight="0.00754716209328">
+ <shade name="intense" weight="0.81777688004" />
+ <shade name="weak" weight="0.102222110005" />
+ <shade name="hard" weight="0.0799999121779" />
+</color>
+
+</colors>

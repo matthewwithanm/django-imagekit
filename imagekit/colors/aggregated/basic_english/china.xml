@@ -1,0 +1,33 @@
+<colors query="china">
+
+<color name="red" weight="0.417608619448">
+ <shade name="light" weight="0.725228982591" />
+ <shade name="bright" weight="0.193564636903" />
+ <shade name="cool" weight="0.0812052170648" />
+</color>
+
+<color name="green" weight="0.184167824437">
+ <shade name="light" weight="0.725228982591" />
+ <shade name="bright" weight="0.193564636903" />
+ <shade name="cool" weight="0.0812052170648" />
+</color>
+
+<color name="white" weight="0.170436012966">
+ <shade name="light" weight="0.725228982591" />
+ <shade name="bright" weight="0.193564636903" />
+ <shade name="cool" weight="0.0812052170648" />
+</color>
+
+<color name="black" weight="0.14378014364">
+ <shade name="light" weight="0.725228982591" />
+ <shade name="bright" weight="0.193564636903" />
+ <shade name="cool" weight="0.0812052170648" />
+</color>
+
+<color name="blue" weight="0.0840063760592">
+ <shade name="light" weight="0.725228982591" />
+ <shade name="bright" weight="0.193564636903" />
+ <shade name="cool" weight="0.0812052170648" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="ewe">
+
+<color name="white" weight="0.469935662928">
+ <shade name="warm" weight="0.528702326186" />
+ <shade name="cool" weight="0.323174612253" />
+ <shade name="fresh" weight="0.148121697283" />
+</color>
+
+<color name="black" weight="0.383579964185">
+ <shade name="warm" weight="0.528702326186" />
+ <shade name="cool" weight="0.323174612253" />
+ <shade name="fresh" weight="0.148121697283" />
+</color>
+
+<color name="blue" weight="0.0859540443304">
+ <shade name="cool" weight="0.533332132556" />
+ <shade name="fresh" weight="0.244443894088" />
+ <shade name="soft" weight="0.222221721898" />
+</color>
+
+<color name="red" weight="0.0546250001352">
+ <shade name="warm" weight="0.528702326186" />
+ <shade name="cool" weight="0.323174612253" />
+ <shade name="fresh" weight="0.148121697283" />
+</color>
+
+<color name="pink" weight="0.00590431986756">
+ <shade name="warm" weight="0.528702326186" />
+ <shade name="cool" weight="0.323174612253" />
+ <shade name="fresh" weight="0.148121697283" />
+</color>
+
+</colors>

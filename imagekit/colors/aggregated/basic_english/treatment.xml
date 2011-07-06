@@ -1,0 +1,33 @@
+<colors query="treatment">
+
+<color name="white" weight="0.270660850121">
+ <shade name="light" weight="0.861999623838" />
+ <shade name="dark" weight="0.0818504229974" />
+ <shade name="fresh" weight="0.0561485993509" />
+</color>
+
+<color name="orange" weight="0.217974959449">
+ <shade name="light" weight="0.796346035971" />
+ <shade name="intense" weight="0.128036369545" />
+ <shade name="dark" weight="0.0756163437826" />
+</color>
+
+<color name="red" weight="0.21074356269">
+ <shade name="light" weight="0.796346035971" />
+ <shade name="intense" weight="0.128036369545" />
+ <shade name="dark" weight="0.0756163437826" />
+</color>
+
+<color name="blue" weight="0.170454352176">
+ <shade name="light" weight="0.796346035971" />
+ <shade name="intense" weight="0.128036369545" />
+ <shade name="dark" weight="0.0756163437826" />
+</color>
+
+<color name="green" weight="0.130165141661">
+ <shade name="light" weight="0.796346035971" />
+ <shade name="intense" weight="0.128036369545" />
+ <shade name="dark" weight="0.0756163437826" />
+</color>
+
+</colors>

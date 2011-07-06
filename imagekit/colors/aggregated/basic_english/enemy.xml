@@ -1,0 +1,33 @@
+<colors query="enemy">
+
+<color name="white" weight="0.531506277021">
+ <shade name="dark" weight="0.42658650134" />
+ <shade name="weak" weight="0.293650242783" />
+ <shade name="hard" weight="0.279761379948" />
+</color>
+
+<color name="red" weight="0.271780529281">
+ <shade name="intense" weight="0.498618133386" />
+ <shade name="dark" weight="0.296960938166" />
+ <shade name="weak" weight="0.204419622552" />
+</color>
+
+<color name="green" weight="0.0879451107855">
+ <shade name="intense" weight="0.498618133386" />
+ <shade name="dark" weight="0.296960938166" />
+ <shade name="weak" weight="0.204419622552" />
+</color>
+
+<color name="blue" weight="0.0706848553977">
+ <shade name="intense" weight="0.498618133386" />
+ <shade name="dark" weight="0.296960938166" />
+ <shade name="weak" weight="0.204419622552" />
+</color>
+
+<color name="purple" weight="0.0380821507763">
+ <shade name="dark" weight="0.42658650134" />
+ <shade name="weak" weight="0.293650242783" />
+ <shade name="hard" weight="0.279761379948" />
+</color>
+
+</colors>

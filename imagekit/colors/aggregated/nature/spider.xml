@@ -1,0 +1,33 @@
+<colors query="spider">
+
+<color name="red" weight="0.355947553578">
+ <shade name="dark" weight="0.484567378944" />
+ <shade name="cool" weight="0.356995499986" />
+ <shade name="intense" weight="0.158436043222" />
+</color>
+
+<color name="black" weight="0.316914140392">
+ <shade name="dark" weight="0.484567378944" />
+ <shade name="cool" weight="0.356995499986" />
+ <shade name="intense" weight="0.158436043222" />
+</color>
+
+<color name="pink" weight="0.141263781055">
+ <shade name="dark" weight="0.558784451985" />
+ <shade name="cool" weight="0.411673470995" />
+ <shade name="fresh" weight="0.0295408340858" />
+</color>
+
+<color name="white" weight="0.118029606539">
+ <shade name="dark" weight="0.558784451985" />
+ <shade name="cool" weight="0.411673470995" />
+ <shade name="fresh" weight="0.0295408340858" />
+</color>
+
+<color name="yellow" weight="0.0678437895855">
+ <shade name="dark" weight="0.484567378944" />
+ <shade name="cool" weight="0.356995499986" />
+ <shade name="intense" weight="0.158436043222" />
+</color>
+
+</colors>

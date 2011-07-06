@@ -1,0 +1,33 @@
+<colors query="onion">
+
+<color name="red" weight="0.500267002961">
+ <shade name="fresh" weight="0.942055008877" />
+ <shade name="dark" weight="0.0479761018118" />
+ <shade name="cool" weight="0.00996785027934" />
+</color>
+
+<color name="green" weight="0.28624903378">
+ <shade name="fresh" weight="0.942055008877" />
+ <shade name="dark" weight="0.0479761018118" />
+ <shade name="cool" weight="0.00996785027934" />
+</color>
+
+<color name="yellow" weight="0.0842695753651">
+ <shade name="fresh" weight="0.942055008877" />
+ <shade name="dark" weight="0.0479761018118" />
+ <shade name="cool" weight="0.00996785027934" />
+</color>
+
+<color name="white" weight="0.0762439015208">
+ <shade name="fresh" weight="0.942055008877" />
+ <shade name="dark" weight="0.0479761018118" />
+ <shade name="cool" weight="0.00996785027934" />
+</color>
+
+<color name="purple" weight="0.0529694473724">
+ <shade name="fresh" weight="0.942055008877" />
+ <shade name="dark" weight="0.0479761018118" />
+ <shade name="cool" weight="0.00996785027934" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="houseboat">
+
+<color name="blue" weight="0.399325582226">
+ <shade name="cool" weight="0.965837282523" />
+ <shade name="light" weight="0.0217391028221" />
+ <shade name="fresh" weight="0.0124223444698" />
+</color>
+
+<color name="white" weight="0.247682956064">
+ <shade name="cool" weight="0.797435061151" />
+ <shade name="warm" weight="0.184615191006" />
+ <shade name="light" weight="0.0179486991256" />
+</color>
+
+<color name="pink" weight="0.139005740648">
+ <shade name="cool" weight="0.797435061151" />
+ <shade name="warm" weight="0.184615191006" />
+ <shade name="light" weight="0.0179486991256" />
+</color>
+
+<color name="green" weight="0.1255263961">
+ <shade name="cool" weight="0.965837282523" />
+ <shade name="light" weight="0.0217391028221" />
+ <shade name="fresh" weight="0.0124223444698" />
+</color>
+
+<color name="red" weight="0.0884581985943">
+ <shade name="cool" weight="0.797435061151" />
+ <shade name="warm" weight="0.184615191006" />
+ <shade name="light" weight="0.0179486991256" />
+</color>
+
+</colors>

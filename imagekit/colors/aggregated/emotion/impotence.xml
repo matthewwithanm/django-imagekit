@@ -1,0 +1,33 @@
+<colors query="impotence">
+
+<color name="blue" weight="0.294635355429">
+ <shade name="soft" weight="0.574547481509" />
+ <shade name="hard" weight="0.264306901716" />
+ <shade name="light" weight="0.161144378824" />
+</color>
+
+<color name="yellow" weight="0.231384830758">
+ <shade name="soft" weight="0.574547481509" />
+ <shade name="hard" weight="0.264306901716" />
+ <shade name="light" weight="0.161144378824" />
+</color>
+
+<color name="green" weight="0.165732387429">
+ <shade name="soft" weight="0.574547481509" />
+ <shade name="hard" weight="0.264306901716" />
+ <shade name="light" weight="0.161144378824" />
+</color>
+
+<color name="black" weight="0.158526631454">
+ <shade name="soft" weight="0.574547481509" />
+ <shade name="hard" weight="0.264306901716" />
+ <shade name="light" weight="0.161144378824" />
+</color>
+
+<color name="white" weight="0.149719596373">
+ <shade name="soft" weight="0.574547481509" />
+ <shade name="hard" weight="0.264306901716" />
+ <shade name="light" weight="0.161144378824" />
+</color>
+
+</colors>

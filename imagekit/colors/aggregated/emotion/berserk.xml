@@ -1,0 +1,33 @@
+<colors query="berserk">
+
+<color name="black" weight="0.640971284147">
+ <shade name="dark" weight="0.684804196924" />
+ <shade name="cool" weight="0.200205125038" />
+ <shade name="hard" weight="0.114989610278" />
+</color>
+
+<color name="blue" weight="0.183912675647">
+ <shade name="dark" weight="0.684804196924" />
+ <shade name="cool" weight="0.200205125038" />
+ <shade name="hard" weight="0.114989610278" />
+</color>
+
+<color name="red" weight="0.132383611628">
+ <shade name="dark" weight="0.684804196924" />
+ <shade name="cool" weight="0.200205125038" />
+ <shade name="hard" weight="0.114989610278" />
+</color>
+
+<color name="white" weight="0.0242982578304">
+ <shade name="dark" weight="0.684804196924" />
+ <shade name="cool" weight="0.200205125038" />
+ <shade name="hard" weight="0.114989610278" />
+</color>
+
+<color name="green" weight="0.0184331611127">
+ <shade name="dark" weight="0.684804196924" />
+ <shade name="cool" weight="0.200205125038" />
+ <shade name="hard" weight="0.114989610278" />
+</color>
+
+</colors>

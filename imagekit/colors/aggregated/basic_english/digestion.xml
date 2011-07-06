@@ -1,0 +1,33 @@
+<colors query="digestion">
+
+<color name="black" weight="0.423880111134">
+ <shade name="weak" weight="0.958832117485" />
+ <shade name="light" weight="0.0250629090169" />
+ <shade name="hard" weight="0.0161039371083" />
+</color>
+
+<color name="blue" weight="0.235820625209">
+ <shade name="weak" weight="0.958832117485" />
+ <shade name="light" weight="0.0250629090169" />
+ <shade name="hard" weight="0.0161039371083" />
+</color>
+
+<color name="green" weight="0.134328204233">
+ <shade name="weak" weight="0.958832117485" />
+ <shade name="light" weight="0.0250629090169" />
+ <shade name="hard" weight="0.0161039371083" />
+</color>
+
+<color name="orange" weight="0.128358061822">
+ <shade name="weak" weight="0.958832117485" />
+ <shade name="light" weight="0.0250629090169" />
+ <shade name="hard" weight="0.0161039371083" />
+</color>
+
+<color name="red" weight="0.0776118513345">
+ <shade name="weak" weight="0.958832117485" />
+ <shade name="light" weight="0.0250629090169" />
+ <shade name="hard" weight="0.0161039371083" />
+</color>
+
+</colors>

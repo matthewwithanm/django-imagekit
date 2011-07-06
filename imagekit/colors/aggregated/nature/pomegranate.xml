@@ -1,0 +1,33 @@
+<colors query="pomegranate">
+
+<color name="red" weight="0.476669509722">
+ <shade name="fresh" weight="0.962620601788" />
+ <shade name="light" weight="0.0198924523295" />
+ <shade name="dark" weight="0.017485900825" />
+</color>
+
+<color name="orange" weight="0.382678338791">
+ <shade name="fresh" weight="0.962620601788" />
+ <shade name="light" weight="0.0198924523295" />
+ <shade name="dark" weight="0.017485900825" />
+</color>
+
+<color name="green" weight="0.0661295024051">
+ <shade name="fresh" weight="0.962620601788" />
+ <shade name="light" weight="0.0198924523295" />
+ <shade name="dark" weight="0.017485900825" />
+</color>
+
+<color name="black" weight="0.0382678338791">
+ <shade name="fresh" weight="0.962620601788" />
+ <shade name="light" weight="0.0198924523295" />
+ <shade name="dark" weight="0.017485900825" />
+</color>
+
+<color name="pink" weight="0.0362537373591">
+ <shade name="fresh" weight="0.962620601788" />
+ <shade name="light" weight="0.0198924523295" />
+ <shade name="dark" weight="0.017485900825" />
+</color>
+
+</colors>

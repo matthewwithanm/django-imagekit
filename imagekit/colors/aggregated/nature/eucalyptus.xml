@@ -1,0 +1,33 @@
+<colors query="eucalyptus">
+
+<color name="white" weight="0.544807937763">
+ <shade name="dark" weight="0.392677214066" />
+ <shade name="light" weight="0.327723088431" />
+ <shade name="fresh" weight="0.279597986256" />
+</color>
+
+<color name="red" weight="0.180023492478">
+ <shade name="dark" weight="0.356567810545" />
+ <shade name="intense" weight="0.345843966619" />
+ <shade name="light" weight="0.297586668951" />
+</color>
+
+<color name="orange" weight="0.161863227886">
+ <shade name="dark" weight="0.356567810545" />
+ <shade name="intense" weight="0.345843966619" />
+ <shade name="light" weight="0.297586668951" />
+</color>
+
+<color name="green" weight="0.0590603387604">
+ <shade name="dark" weight="0.356567810545" />
+ <shade name="intense" weight="0.345843966619" />
+ <shade name="light" weight="0.297586668951" />
+</color>
+
+<color name="blue" weight="0.0542439207599">
+ <shade name="dark" weight="0.356567810545" />
+ <shade name="intense" weight="0.345843966619" />
+ <shade name="light" weight="0.297586668951" />
+</color>
+
+</colors>

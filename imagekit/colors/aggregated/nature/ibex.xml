@@ -1,0 +1,33 @@
+<colors query="ibex">
+
+<color name="black" weight="0.768365030583">
+ <shade name="cool" weight="0.67943105849" />
+ <shade name="warm" weight="0.271772423396" />
+ <shade name="light" weight="0.0487955032915" />
+</color>
+
+<color name="red" weight="0.130434649094">
+ <shade name="cool" weight="0.67943105849" />
+ <shade name="warm" weight="0.271772423396" />
+ <shade name="light" weight="0.0487955032915" />
+</color>
+
+<color name="blue" weight="0.0489129934103">
+ <shade name="cool" weight="0.927486067572" />
+ <shade name="light" weight="0.0666103630347" />
+ <shade name="soft" weight="0.00590218406637" />
+</color>
+
+<color name="green" weight="0.0299849768032">
+ <shade name="cool" weight="0.927486067572" />
+ <shade name="light" weight="0.0666103630347" />
+ <shade name="soft" weight="0.00590218406637" />
+</color>
+
+<color name="white" weight="0.0223013264974">
+ <shade name="cool" weight="0.67943105849" />
+ <shade name="warm" weight="0.271772423396" />
+ <shade name="light" weight="0.0487955032915" />
+</color>
+
+</colors>

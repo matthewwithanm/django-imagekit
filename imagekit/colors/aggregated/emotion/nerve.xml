@@ -1,0 +1,33 @@
+<colors query="nerve">
+
+<color name="red" weight="0.287606856321">
+ <shade name="light" weight="0.371466459373" />
+ <shade name="weak" weight="0.362045208592" />
+ <shade name="hard" weight="0.266486807811" />
+</color>
+
+<color name="black" weight="0.259547650826">
+ <shade name="light" weight="0.371466459373" />
+ <shade name="weak" weight="0.362045208592" />
+ <shade name="hard" weight="0.266486807811" />
+</color>
+
+<color name="blue" weight="0.245518048079">
+ <shade name="light" weight="0.371466459373" />
+ <shade name="weak" weight="0.362045208592" />
+ <shade name="hard" weight="0.266486807811" />
+</color>
+
+<color name="white" weight="0.121589890477">
+ <shade name="light" weight="0.371466459373" />
+ <shade name="weak" weight="0.362045208592" />
+ <shade name="hard" weight="0.266486807811" />
+</color>
+
+<color name="green" weight="0.085736461234">
+ <shade name="light" weight="0.371466459373" />
+ <shade name="weak" weight="0.362045208592" />
+ <shade name="hard" weight="0.266486807811" />
+</color>
+
+</colors>

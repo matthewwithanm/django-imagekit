@@ -1,0 +1,33 @@
+<colors query="circus">
+
+<color name="black" weight="0.64660562447">
+ <shade name="light" weight="0.61847160918" />
+ <shade name="dark" weight="0.339954593126" />
+ <shade name="cool" weight="0.0415727604846" />
+</color>
+
+<color name="blue" weight="0.209367785032">
+ <shade name="light" weight="0.61847160918" />
+ <shade name="dark" weight="0.339954593126" />
+ <shade name="cool" weight="0.0415727604846" />
+</color>
+
+<color name="white" weight="0.088421371539">
+ <shade name="light" weight="0.61847160918" />
+ <shade name="dark" weight="0.339954593126" />
+ <shade name="cool" weight="0.0415727604846" />
+</color>
+
+<color name="yellow" weight="0.0314538579373">
+ <shade name="light" weight="0.61847160918" />
+ <shade name="dark" weight="0.339954593126" />
+ <shade name="cool" weight="0.0415727604846" />
+</color>
+
+<color name="orange" weight="0.0241503305525">
+ <shade name="light" weight="0.61847160918" />
+ <shade name="dark" weight="0.339954593126" />
+ <shade name="cool" weight="0.0415727604846" />
+</color>
+
+</colors>

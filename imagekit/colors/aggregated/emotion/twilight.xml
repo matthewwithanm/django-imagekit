@@ -1,0 +1,33 @@
+<colors query="twilight">
+
+<color name="blue" weight="0.47086157177">
+ <shade name="dark" weight="0.430198937763" />
+ <shade name="bright" weight="0.287748958371" />
+ <shade name="light" weight="0.282050959195" />
+</color>
+
+<color name="purple" weight="0.256019789974">
+ <shade name="dark" weight="0.430198937763" />
+ <shade name="bright" weight="0.287748958371" />
+ <shade name="light" weight="0.282050959195" />
+</color>
+
+<color name="green" weight="0.146808550894">
+ <shade name="dark" weight="0.430198937763" />
+ <shade name="bright" weight="0.287748958371" />
+ <shade name="light" weight="0.282050959195" />
+</color>
+
+<color name="red" weight="0.101154672262">
+ <shade name="dark" weight="0.430198937763" />
+ <shade name="bright" weight="0.287748958371" />
+ <shade name="light" weight="0.282050959195" />
+</color>
+
+<color name="orange" weight="0.025154391952">
+ <shade name="dark" weight="0.430198937763" />
+ <shade name="bright" weight="0.287748958371" />
+ <shade name="light" weight="0.282050959195" />
+</color>
+
+</colors>

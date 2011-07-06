@@ -1,0 +1,33 @@
+<colors query="willow">
+
+<color name="white" weight="0.35539332849">
+ <shade name="dark" weight="0.861055805299" />
+ <shade name="light" weight="0.0884974022112" />
+ <shade name="soft" weight="0.0504456936438" />
+</color>
+
+<color name="blue" weight="0.312067993392">
+ <shade name="dark" weight="0.861055805299" />
+ <shade name="light" weight="0.0884974022112" />
+ <shade name="soft" weight="0.0504456936438" />
+</color>
+
+<color name="red" weight="0.186487311946">
+ <shade name="dark" weight="0.861055805299" />
+ <shade name="light" weight="0.0884974022112" />
+ <shade name="soft" weight="0.0504456936438" />
+</color>
+
+<color name="black" weight="0.0954413178985">
+ <shade name="dark" weight="0.861055805299" />
+ <shade name="light" weight="0.0884974022112" />
+ <shade name="soft" weight="0.0504456936438" />
+</color>
+
+<color name="green" weight="0.0506090146225">
+ <shade name="dark" weight="0.861055805299" />
+ <shade name="light" weight="0.0884974022112" />
+ <shade name="soft" weight="0.0504456936438" />
+</color>
+
+</colors>

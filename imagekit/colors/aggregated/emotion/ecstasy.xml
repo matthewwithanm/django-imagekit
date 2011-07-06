@@ -1,0 +1,33 @@
+<colors query="ecstasy">
+
+<color name="blue" weight="0.506878870432">
+ <shade name="intense" weight="0.487182930363" />
+ <shade name="dark" weight="0.41713048286" />
+ <shade name="light" weight="0.0956852748851" />
+</color>
+
+<color name="pink" weight="0.171711408876">
+ <shade name="dark" weight="0.683893073537" />
+ <shade name="warm" weight="0.159227013304" />
+ <shade name="light" weight="0.156877762288" />
+</color>
+
+<color name="orange" weight="0.112272844265">
+ <shade name="intense" weight="0.486485849182" />
+ <shade name="dark" weight="0.416533635574" />
+ <shade name="warm" weight="0.0969792052291" />
+</color>
+
+<color name="black" weight="0.112272844265">
+ <shade name="intense" weight="0.486485849182" />
+ <shade name="dark" weight="0.416533635574" />
+ <shade name="warm" weight="0.0969792052291" />
+</color>
+
+<color name="white" weight="0.0968628460326">
+ <shade name="dark" weight="0.683893073537" />
+ <shade name="warm" weight="0.159227013304" />
+ <shade name="light" weight="0.156877762288" />
+</color>
+
+</colors>

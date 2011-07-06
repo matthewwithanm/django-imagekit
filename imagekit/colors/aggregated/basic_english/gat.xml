@@ -1,0 +1,33 @@
+<colors query="gat">
+
+<color name="black" weight="0.826854282563">
+ <shade name="cool" weight="0.451874418494" />
+ <shade name="light" weight="0.339374563267" />
+ <shade name="warm" weight="0.208749731365" />
+</color>
+
+<color name="red" weight="0.0862189935663">
+ <shade name="cool" weight="0.451874418494" />
+ <shade name="light" weight="0.339374563267" />
+ <shade name="warm" weight="0.208749731365" />
+</color>
+
+<color name="blue" weight="0.0519434100584">
+ <shade name="cool" weight="0.502082615425" />
+ <shade name="light" weight="0.377082794157" />
+ <shade name="hard" weight="0.120833160559" />
+</color>
+
+<color name="white" weight="0.023109517128">
+ <shade name="cool" weight="0.451874418494" />
+ <shade name="light" weight="0.339374563267" />
+ <shade name="warm" weight="0.208749731365" />
+</color>
+
+<color name="green" weight="0.0118727794419">
+ <shade name="cool" weight="0.502082615425" />
+ <shade name="light" weight="0.377082794157" />
+ <shade name="hard" weight="0.120833160559" />
+</color>
+
+</colors>

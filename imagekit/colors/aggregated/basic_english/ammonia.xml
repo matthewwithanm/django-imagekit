@@ -1,0 +1,33 @@
+<colors query="ammonia">
+
+<color name="blue" weight="0.560625227924">
+ <shade name="light" weight="0.443872916123" />
+ <shade name="weak" weight="0.285399279954" />
+ <shade name="neutral" weight="0.270725795123" />
+</color>
+
+<color name="white" weight="0.197652987333">
+ <shade name="light" weight="0.431371706884" />
+ <shade name="warm" weight="0.291265028532" />
+ <shade name="weak" weight="0.27736131236" />
+</color>
+
+<color name="black" weight="0.103520100226">
+ <shade name="light" weight="0.431371706884" />
+ <shade name="warm" weight="0.291265028532" />
+ <shade name="weak" weight="0.27736131236" />
+</color>
+
+<color name="yellow" weight="0.0764014845497">
+ <shade name="light" weight="0.431371706884" />
+ <shade name="warm" weight="0.291265028532" />
+ <shade name="weak" weight="0.27736131236" />
+</color>
+
+<color name="green" weight="0.0617991530317">
+ <shade name="light" weight="0.443872916123" />
+ <shade name="weak" weight="0.285399279954" />
+ <shade name="neutral" weight="0.270725795123" />
+</color>
+
+</colors>

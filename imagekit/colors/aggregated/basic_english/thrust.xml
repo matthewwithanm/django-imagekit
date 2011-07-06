@@ -1,0 +1,33 @@
+<colors query="thrust">
+
+<color name="red" weight="0.45949575306">
+ <shade name="hard" weight="0.841583132192" />
+ <shade name="light" weight="0.0990097802579" />
+ <shade name="fresh" weight="0.0594058681547" />
+</color>
+
+<color name="blue" weight="0.221238695918">
+ <shade name="hard" weight="0.841583132192" />
+ <shade name="light" weight="0.0990097802579" />
+ <shade name="fresh" weight="0.0594058681547" />
+</color>
+
+<color name="black" weight="0.150952864061">
+ <shade name="hard" weight="0.841583132192" />
+ <shade name="light" weight="0.0990097802579" />
+ <shade name="fresh" weight="0.0594058681547" />
+</color>
+
+<color name="green" weight="0.100918882061">
+ <shade name="hard" weight="0.841583132192" />
+ <shade name="light" weight="0.0990097802579" />
+ <shade name="fresh" weight="0.0594058681547" />
+</color>
+
+<color name="white" weight="0.0673927104489">
+ <shade name="hard" weight="0.841583132192" />
+ <shade name="light" weight="0.0990097802579" />
+ <shade name="fresh" weight="0.0594058681547" />
+</color>
+
+</colors>

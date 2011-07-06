@@ -1,0 +1,33 @@
+<colors query="plasma">
+
+<color name="black" weight="0.345381139879">
+ <shade name="neutral" weight="0.412761055759" />
+ <shade name="fresh" weight="0.392820908138" />
+ <shade name="warm" weight="0.194416439307" />
+</color>
+
+<color name="blue" weight="0.244979645728">
+ <shade name="neutral" weight="0.423962438286" />
+ <shade name="fresh" weight="0.403481161074" />
+ <shade name="cool" weight="0.17255476051" />
+</color>
+
+<color name="purple" weight="0.188754809003">
+ <shade name="neutral" weight="0.423962438286" />
+ <shade name="fresh" weight="0.403481161074" />
+ <shade name="cool" weight="0.17255476051" />
+</color>
+
+<color name="green" weight="0.119143106392">
+ <shade name="neutral" weight="0.423962438286" />
+ <shade name="fresh" weight="0.403481161074" />
+ <shade name="cool" weight="0.17255476051" />
+</color>
+
+<color name="white" weight="0.101740180739">
+ <shade name="neutral" weight="0.412761055759" />
+ <shade name="fresh" weight="0.392820908138" />
+ <shade name="warm" weight="0.194416439307" />
+</color>
+
+</colors>

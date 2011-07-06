@@ -1,0 +1,33 @@
+<colors query="street">
+
+<color name="green" weight="0.420544208036">
+ <shade name="light" weight="0.538436432331" />
+ <shade name="dark" weight="0.317661611995" />
+ <shade name="cool" weight="0.143900710234" />
+</color>
+
+<color name="orange" weight="0.296793904196">
+ <shade name="light" weight="0.538436432331" />
+ <shade name="dark" weight="0.317661611995" />
+ <shade name="cool" weight="0.143900710234" />
+</color>
+
+<color name="white" weight="0.128920929349">
+ <shade name="light" weight="0.538436432331" />
+ <shade name="dark" weight="0.317661611995" />
+ <shade name="cool" weight="0.143900710234" />
+</color>
+
+<color name="black" weight="0.121337345269">
+ <shade name="light" weight="0.538436432331" />
+ <shade name="dark" weight="0.317661611995" />
+ <shade name="cool" weight="0.143900710234" />
+</color>
+
+<color name="blue" weight="0.0324025865208">
+ <shade name="light" weight="0.538436432331" />
+ <shade name="dark" weight="0.317661611995" />
+ <shade name="cool" weight="0.143900710234" />
+</color>
+
+</colors>

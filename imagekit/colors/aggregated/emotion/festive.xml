@@ -1,0 +1,33 @@
+<colors query="festive">
+
+<color name="white" weight="0.550981031592">
+ <shade name="warm" weight="0.483810416905" />
+ <shade name="bright" weight="0.454037468173" />
+ <shade name="light" weight="0.0621510304794" />
+</color>
+
+<color name="green" weight="0.168179395339">
+ <shade name="bright" weight="0.844288954897" />
+ <shade name="light" weight="0.115570701203" />
+ <shade name="dark" weight="0.040138327364" />
+</color>
+
+<color name="red" weight="0.161846280034">
+ <shade name="warm" weight="0.483810416905" />
+ <shade name="bright" weight="0.454037468173" />
+ <shade name="light" weight="0.0621510304794" />
+</color>
+
+<color name="blue" weight="0.0681161735098">
+ <shade name="bright" weight="0.844288954897" />
+ <shade name="light" weight="0.115570701203" />
+ <shade name="dark" weight="0.040138327364" />
+</color>
+
+<color name="black" weight="0.0508760262888">
+ <shade name="warm" weight="0.483810416905" />
+ <shade name="bright" weight="0.454037468173" />
+ <shade name="light" weight="0.0621510304794" />
+</color>
+
+</colors>

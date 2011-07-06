@@ -1,0 +1,33 @@
+<colors query="thermometer">
+
+<color name="red" weight="0.78508930827">
+ <shade name="light" weight="0.569895332688" />
+ <shade name="cool" weight="0.284277201247" />
+ <shade name="hard" weight="0.145826158658" />
+</color>
+
+<color name="white" weight="0.0696340082118">
+ <shade name="light" weight="0.569895332688" />
+ <shade name="cool" weight="0.284277201247" />
+ <shade name="hard" weight="0.145826158658" />
+</color>
+
+<color name="black" weight="0.0600763992416">
+ <shade name="light" weight="0.569895332688" />
+ <shade name="cool" weight="0.284277201247" />
+ <shade name="hard" weight="0.145826158658" />
+</color>
+
+<color name="blue" weight="0.0546149084014">
+ <shade name="light" weight="0.569895332688" />
+ <shade name="cool" weight="0.284277201247" />
+ <shade name="hard" weight="0.145826158658" />
+</color>
+
+<color name="yellow" weight="0.0305843487048">
+ <shade name="light" weight="0.569895332688" />
+ <shade name="cool" weight="0.284277201247" />
+ <shade name="hard" weight="0.145826158658" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="belonging">
+
+<color name="orange" weight="0.962406859199">
+ <shade name="light" weight="0.630479187732" />
+ <shade name="hard" weight="0.248433852119" />
+ <shade name="neutral" weight="0.121085406915" />
+</color>
+
+<color name="black" weight="0.0175202250777">
+ <shade name="light" weight="0.630479187732" />
+ <shade name="hard" weight="0.248433852119" />
+ <shade name="neutral" weight="0.121085406915" />
+</color>
+
+<color name="white" weight="0.00775551247705">
+ <shade name="light" weight="0.630479187732" />
+ <shade name="hard" weight="0.248433852119" />
+ <shade name="neutral" weight="0.121085406915" />
+</color>
+
+<color name="green" weight="0.00775551247705">
+ <shade name="light" weight="0.630479187732" />
+ <shade name="hard" weight="0.248433852119" />
+ <shade name="neutral" weight="0.121085406915" />
+</color>
+
+<color name="blue" weight="0.00456088428055">
+ <shade name="light" weight="0.630479187732" />
+ <shade name="hard" weight="0.248433852119" />
+ <shade name="neutral" weight="0.121085406915" />
+</color>
+
+</colors>

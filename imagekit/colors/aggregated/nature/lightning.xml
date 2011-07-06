@@ -1,0 +1,33 @@
+<colors query="lightning">
+
+<color name="white" weight="0.678248367812">
+ <shade name="light" weight="0.47792906114" />
+ <shade name="cool" weight="0.301369280591" />
+ <shade name="bright" weight="0.220699725685" />
+</color>
+
+<color name="blue" weight="0.115302222528">
+ <shade name="intense" weight="0.397646464829" />
+ <shade name="light" weight="0.369411212888" />
+ <shade name="cool" weight="0.232940828509" />
+</color>
+
+<color name="black" weight="0.115302222528">
+ <shade name="intense" weight="0.397646464829" />
+ <shade name="light" weight="0.369411212888" />
+ <shade name="cool" weight="0.232940828509" />
+</color>
+
+<color name="red" weight="0.0657379187264">
+ <shade name="intense" weight="0.397646464829" />
+ <shade name="light" weight="0.369411212888" />
+ <shade name="cool" weight="0.232940828509" />
+</color>
+
+<color name="green" weight="0.0254082273173">
+ <shade name="intense" weight="0.397646464829" />
+ <shade name="light" weight="0.369411212888" />
+ <shade name="cool" weight="0.232940828509" />
+</color>
+
+</colors>

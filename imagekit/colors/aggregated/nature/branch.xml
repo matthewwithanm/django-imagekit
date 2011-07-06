@@ -1,0 +1,33 @@
+<colors query="branch">
+
+<color name="red" weight="0.435656341122">
+ <shade name="cool" weight="0.395091445806" />
+ <shade name="weak" weight="0.370551604452" />
+ <shade name="light" weight="0.234355484935" />
+</color>
+
+<color name="green" weight="0.25536163995">
+ <shade name="cool" weight="0.395091445806" />
+ <shade name="weak" weight="0.370551604452" />
+ <shade name="light" weight="0.234355484935" />
+</color>
+
+<color name="black" weight="0.12701057945">
+ <shade name="cool" weight="0.395091445806" />
+ <shade name="weak" weight="0.370551604452" />
+ <shade name="light" weight="0.234355484935" />
+</color>
+
+<color name="blue" weight="0.0931634329477">
+ <shade name="cool" weight="0.395091445806" />
+ <shade name="weak" weight="0.370551604452" />
+ <shade name="light" weight="0.234355484935" />
+</color>
+
+<color name="white" weight="0.0888068695365">
+ <shade name="cool" weight="0.395091445806" />
+ <shade name="weak" weight="0.370551604452" />
+ <shade name="light" weight="0.234355484935" />
+</color>
+
+</colors>

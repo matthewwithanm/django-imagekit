@@ -1,0 +1,33 @@
+<colors query="voluptuous">
+
+<color name="black" weight="0.720828585641">
+ <shade name="hard" weight="0.694373210827" />
+ <shade name="soft" weight="0.18550408406" />
+ <shade name="dark" weight="0.120121497055" />
+</color>
+
+<color name="white" weight="0.145612195895">
+ <shade name="hard" weight="0.694373210827" />
+ <shade name="soft" weight="0.18550408406" />
+ <shade name="dark" weight="0.120121497055" />
+</color>
+
+<color name="red" weight="0.0527964750018">
+ <shade name="hard" weight="0.694373210827" />
+ <shade name="soft" weight="0.18550408406" />
+ <shade name="dark" weight="0.120121497055" />
+</color>
+
+<color name="pink" weight="0.0511089164401">
+ <shade name="hard" weight="0.694373210827" />
+ <shade name="soft" weight="0.18550408406" />
+ <shade name="dark" weight="0.120121497055" />
+</color>
+
+<color name="blue" weight="0.0296528147271">
+ <shade name="hard" weight="0.694373210827" />
+ <shade name="soft" weight="0.18550408406" />
+ <shade name="dark" weight="0.120121497055" />
+</color>
+
+</colors>

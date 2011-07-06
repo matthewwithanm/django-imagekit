@@ -1,0 +1,33 @@
+<colors query="cashew">
+
+<color name="white" weight="0.589344943793">
+ <shade name="fresh" weight="0.635953174567" />
+ <shade name="warm" weight="0.215823478928" />
+ <shade name="dark" weight="0.148222157222" />
+</color>
+
+<color name="orange" weight="0.140729700102">
+ <shade name="fresh" weight="0.635953174567" />
+ <shade name="warm" weight="0.215823478928" />
+ <shade name="dark" weight="0.148222157222" />
+</color>
+
+<color name="pink" weight="0.107801886516">
+ <shade name="fresh" weight="0.635953174567" />
+ <shade name="warm" weight="0.215823478928" />
+ <shade name="dark" weight="0.148222157222" />
+</color>
+
+<color name="blue" weight="0.0849411751731">
+ <shade name="fresh" weight="0.713883251561" />
+ <shade name="dark" weight="0.166385387765" />
+ <shade name="soft" weight="0.119730025656" />
+</color>
+
+<color name="red" weight="0.0771811171943">
+ <shade name="fresh" weight="0.635953174567" />
+ <shade name="warm" weight="0.215823478928" />
+ <shade name="dark" weight="0.148222157222" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="woebegone">
+
+<color name="green" weight="0.454544876034">
+ <shade name="weak" weight="0.44444380247" />
+ <shade name="light" weight="0.333332851853" />
+ <shade name="dark" weight="0.222221901235" />
+</color>
+
+<color name="red" weight="0.27272692562">
+ <shade name="weak" weight="0.44444380247" />
+ <shade name="light" weight="0.333332851853" />
+ <shade name="dark" weight="0.222221901235" />
+</color>
+
+<color name="yellow" weight="0.0909089752068">
+ <shade name="weak" weight="0.44444380247" />
+ <shade name="light" weight="0.333332851853" />
+ <shade name="dark" weight="0.222221901235" />
+</color>
+
+<color name="white" weight="0.0909089752068">
+ <shade name="weak" weight="0.44444380247" />
+ <shade name="light" weight="0.333332851853" />
+ <shade name="dark" weight="0.222221901235" />
+</color>
+
+<color name="purple" weight="0.0909089752068">
+ <shade name="weak" weight="0.44444380247" />
+ <shade name="light" weight="0.333332851853" />
+ <shade name="dark" weight="0.222221901235" />
+</color>
+
+</colors>

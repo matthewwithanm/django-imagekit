@@ -1,0 +1,33 @@
+<colors query="colt">
+
+<color name="black" weight="0.701835205025">
+ <shade name="cool" weight="0.641363033682" />
+ <shade name="dark" weight="0.190176317266" />
+ <shade name="hard" weight="0.168459277834" />
+</color>
+
+<color name="white" weight="0.243240898872">
+ <shade name="cool" weight="0.641363033682" />
+ <shade name="dark" weight="0.190176317266" />
+ <shade name="hard" weight="0.168459277834" />
+</color>
+
+<color name="green" weight="0.0269579085374">
+ <shade name="cool" weight="0.641363033682" />
+ <shade name="dark" weight="0.190176317266" />
+ <shade name="hard" weight="0.168459277834" />
+</color>
+
+<color name="pink" weight="0.0151986829168">
+ <shade name="cool" weight="0.641363033682" />
+ <shade name="dark" weight="0.190176317266" />
+ <shade name="hard" weight="0.168459277834" />
+</color>
+
+<color name="red" weight="0.012766273928">
+ <shade name="cool" weight="0.641363033682" />
+ <shade name="dark" weight="0.190176317266" />
+ <shade name="hard" weight="0.168459277834" />
+</color>
+
+</colors>

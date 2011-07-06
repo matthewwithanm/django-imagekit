@@ -1,0 +1,33 @@
+<colors query="telegram">
+
+<color name="yellow" weight="0.509403821025">
+ <shade name="light" weight="0.453038118373" />
+ <shade name="warm" weight="0.386739857148" />
+ <shade name="fresh" weight="0.160220797961" />
+</color>
+
+<color name="white" weight="0.205328924782">
+ <shade name="light" weight="0.453038118373" />
+ <shade name="warm" weight="0.386739857148" />
+ <shade name="fresh" weight="0.160220797961" />
+</color>
+
+<color name="pink" weight="0.120689520674">
+ <shade name="light" weight="0.453038118373" />
+ <shade name="warm" weight="0.386739857148" />
+ <shade name="fresh" weight="0.160220797961" />
+</color>
+
+<color name="blue" weight="0.0909089895983">
+ <shade name="light" weight="0.677684707058" />
+ <shade name="fresh" weight="0.239668981764" />
+ <shade name="cool" weight="0.0826444764705" />
+</color>
+
+<color name="black" weight="0.0736676295021">
+ <shade name="light" weight="0.453038118373" />
+ <shade name="warm" weight="0.386739857148" />
+ <shade name="fresh" weight="0.160220797961" />
+</color>
+
+</colors>

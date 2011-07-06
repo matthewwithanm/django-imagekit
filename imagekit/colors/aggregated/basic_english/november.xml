@@ -1,0 +1,33 @@
+<colors query="november">
+
+<color name="blue" weight="0.261216079387">
+ <shade name="cool" weight="0.390287153678" />
+ <shade name="dark" weight="0.309352029643" />
+ <shade name="light" weight="0.300359238084" />
+</color>
+
+<color name="black" weight="0.239281904782">
+ <shade name="warm" weight="0.399690816653" />
+ <shade name="cool" weight="0.334876089628" />
+ <shade name="dark" weight="0.265431739245" />
+</color>
+
+<color name="white" weight="0.171485365093">
+ <shade name="warm" weight="0.399690816653" />
+ <shade name="cool" weight="0.334876089628" />
+ <shade name="dark" weight="0.265431739245" />
+</color>
+
+<color name="red" weight="0.165503317474">
+ <shade name="warm" weight="0.399690816653" />
+ <shade name="cool" weight="0.334876089628" />
+ <shade name="dark" weight="0.265431739245" />
+</color>
+
+<color name="green" weight="0.162512293664">
+ <shade name="cool" weight="0.390287153678" />
+ <shade name="dark" weight="0.309352029643" />
+ <shade name="light" weight="0.300359238084" />
+</color>
+
+</colors>

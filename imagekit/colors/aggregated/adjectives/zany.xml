@@ -1,0 +1,33 @@
+<colors query="zany">
+
+<color name="black" weight="0.417218023596">
+ <shade name="cool" weight="0.738522094694" />
+ <shade name="bright" weight="0.177644503859" />
+ <shade name="light" weight="0.0838322377761" />
+</color>
+
+<color name="yellow" weight="0.193708368098">
+ <shade name="cool" weight="0.738522094694" />
+ <shade name="bright" weight="0.177644503859" />
+ <shade name="light" weight="0.0838322377761" />
+</color>
+
+<color name="blue" weight="0.15562894531">
+ <shade name="cool" weight="0.738522094694" />
+ <shade name="bright" weight="0.177644503859" />
+ <shade name="light" weight="0.0838322377761" />
+</color>
+
+<color name="purple" weight="0.117549522521">
+ <shade name="cool" weight="0.738522094694" />
+ <shade name="bright" weight="0.177644503859" />
+ <shade name="light" weight="0.0838322377761" />
+</color>
+
+<color name="red" weight="0.115893895443">
+ <shade name="cool" weight="0.738522094694" />
+ <shade name="bright" weight="0.177644503859" />
+ <shade name="light" weight="0.0838322377761" />
+</color>
+
+</colors>

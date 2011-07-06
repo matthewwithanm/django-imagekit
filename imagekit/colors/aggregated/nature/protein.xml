@@ -1,0 +1,33 @@
+<colors query="protein">
+
+<color name="white" weight="0.345726982558">
+ <shade name="weak" weight="0.460470902631" />
+ <shade name="light" weight="0.29542259717" />
+ <shade name="fresh" weight="0.244105056817" />
+</color>
+
+<color name="yellow" weight="0.293867935174">
+ <shade name="weak" weight="0.460470902631" />
+ <shade name="light" weight="0.29542259717" />
+ <shade name="fresh" weight="0.244105056817" />
+</color>
+
+<color name="blue" weight="0.186235950038">
+ <shade name="weak" weight="0.460470902631" />
+ <shade name="light" weight="0.29542259717" />
+ <shade name="fresh" weight="0.244105056817" />
+</color>
+
+<color name="red" weight="0.0932810537845">
+ <shade name="weak" weight="0.460470902631" />
+ <shade name="light" weight="0.29542259717" />
+ <shade name="fresh" weight="0.244105056817" />
+</color>
+
+<color name="green" weight="0.0808870676174">
+ <shade name="weak" weight="0.460470902631" />
+ <shade name="light" weight="0.29542259717" />
+ <shade name="fresh" weight="0.244105056817" />
+</color>
+
+</colors>

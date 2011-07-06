@@ -1,0 +1,33 @@
+<colors query="devastation">
+
+<color name="green" weight="0.551795347605">
+ <shade name="intense" weight="0.403652542635" />
+ <shade name="dark" weight="0.400912819495" />
+ <shade name="fresh" weight="0.195433583991" />
+</color>
+
+<color name="black" weight="0.191046125067">
+ <shade name="intense" weight="0.403652542635" />
+ <shade name="dark" weight="0.400912819495" />
+ <shade name="fresh" weight="0.195433583991" />
+</color>
+
+<color name="blue" weight="0.0937010967632">
+ <shade name="intense" weight="0.403652542635" />
+ <shade name="dark" weight="0.400912819495" />
+ <shade name="fresh" weight="0.195433583991" />
+</color>
+
+<color name="white" weight="0.0853721103842">
+ <shade name="dark" weight="0.646537929154" />
+ <shade name="fresh" weight="0.315168831068" />
+ <shade name="cool" weight="0.0382915402232" />
+</color>
+
+<color name="red" weight="0.0780842473026">
+ <shade name="intense" weight="0.403652542635" />
+ <shade name="dark" weight="0.400912819495" />
+ <shade name="fresh" weight="0.195433583991" />
+</color>
+
+</colors>

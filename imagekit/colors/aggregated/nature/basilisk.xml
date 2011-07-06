@@ -1,0 +1,33 @@
+<colors query="basilisk">
+
+<color name="red" weight="0.562888585356">
+ <shade name="dark" weight="0.521633970866" />
+ <shade name="hard" weight="0.341345732087" />
+ <shade name="cool" weight="0.137019061472" />
+</color>
+
+<color name="green" weight="0.199501662332">
+ <shade name="dark" weight="0.521633970866" />
+ <shade name="hard" weight="0.341345732087" />
+ <shade name="cool" weight="0.137019061472" />
+</color>
+
+<color name="blue" weight="0.137982423136">
+ <shade name="dark" weight="0.521633970866" />
+ <shade name="hard" weight="0.341345732087" />
+ <shade name="cool" weight="0.137019061472" />
+</color>
+
+<color name="black" weight="0.0709837375338">
+ <shade name="dark" weight="0.521633970866" />
+ <shade name="hard" weight="0.341345732087" />
+ <shade name="cool" weight="0.137019061472" />
+</color>
+
+<color name="purple" weight="0.0286425607593">
+ <shade name="dark" weight="0.521633970866" />
+ <shade name="hard" weight="0.341345732087" />
+ <shade name="cool" weight="0.137019061472" />
+</color>
+
+</colors>

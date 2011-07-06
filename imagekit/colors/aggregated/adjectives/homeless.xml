@@ -1,0 +1,33 @@
+<colors query="homeless">
+
+<color name="black" weight="0.906169267496">
+ <shade name="cool" weight="0.52007012968" />
+ <shade name="light" weight="0.269184993342" />
+ <shade name="hard" weight="0.210743514524" />
+</color>
+
+<color name="white" weight="0.049262656542">
+ <shade name="cool" weight="0.52007012968" />
+ <shade name="light" weight="0.269184993342" />
+ <shade name="hard" weight="0.210743514524" />
+</color>
+
+<color name="green" weight="0.0169700790095">
+ <shade name="cool" weight="0.52007012968" />
+ <shade name="light" weight="0.269184993342" />
+ <shade name="hard" weight="0.210743514524" />
+</color>
+
+<color name="blue" weight="0.0161462887663">
+ <shade name="cool" weight="0.52007012968" />
+ <shade name="light" weight="0.269184993342" />
+ <shade name="hard" weight="0.210743514524" />
+</color>
+
+<color name="red" weight="0.0114506843802">
+ <shade name="cool" weight="0.52007012968" />
+ <shade name="light" weight="0.269184993342" />
+ <shade name="hard" weight="0.210743514524" />
+</color>
+
+</colors>

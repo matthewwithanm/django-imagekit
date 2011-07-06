@@ -1,0 +1,33 @@
+<colors query="gooseberry">
+
+<color name="pink" weight="0.525841251202">
+ <shade name="fresh" weight="0.794654475145" />
+ <shade name="bright" weight="0.134552114671" />
+ <shade name="light" weight="0.0707922275793" />
+</color>
+
+<color name="white" weight="0.181883446477">
+ <shade name="fresh" weight="0.794654475145" />
+ <shade name="bright" weight="0.134552114671" />
+ <shade name="light" weight="0.0707922275793" />
+</color>
+
+<color name="red" weight="0.103727589278">
+ <shade name="fresh" weight="0.758049234267" />
+ <shade name="bright" weight="0.128354059135" />
+ <shade name="intense" weight="0.113595578468" />
+</color>
+
+<color name="black" weight="0.0943632930239">
+ <shade name="fresh" weight="0.758049234267" />
+ <shade name="bright" weight="0.128354059135" />
+ <shade name="intense" weight="0.113595578468" />
+</color>
+
+<color name="green" weight="0.0941832104036">
+ <shade name="fresh" weight="0.758049234267" />
+ <shade name="bright" weight="0.128354059135" />
+ <shade name="intense" weight="0.113595578468" />
+</color>
+
+</colors>

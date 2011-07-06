@@ -1,0 +1,33 @@
+<colors query="rosemary">
+
+<color name="orange" weight="0.840335251263">
+ <shade name="fresh" weight="0.995809817981" />
+ <shade name="light" weight="0.00252341336075" />
+ <shade name="warm" weight="0.00166576563793" />
+</color>
+
+<color name="red" weight="0.0785900579116">
+ <shade name="fresh" weight="0.995809817981" />
+ <shade name="light" weight="0.00252341336075" />
+ <shade name="warm" weight="0.00166576563793" />
+</color>
+
+<color name="pink" weight="0.0357227535962">
+ <shade name="fresh" weight="0.995809817981" />
+ <shade name="light" weight="0.00252341336075" />
+ <shade name="warm" weight="0.00166576563793" />
+</color>
+
+<color name="black" weight="0.0242914724454">
+ <shade name="fresh" weight="0.995809817981" />
+ <shade name="light" weight="0.00252341336075" />
+ <shade name="warm" weight="0.00166576563793" />
+</color>
+
+<color name="green" weight="0.0210594137867">
+ <shade name="fresh" weight="0.996285096038" />
+ <shade name="light" weight="0.00252461773027" />
+ <shade name="cool" weight="0.00118928273244" />
+</color>
+
+</colors>

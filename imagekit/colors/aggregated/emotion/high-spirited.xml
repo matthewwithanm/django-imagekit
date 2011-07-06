@@ -1,0 +1,33 @@
+<colors query="high-spirited">
+
+<color name="black" weight="0.428571">
+ <shade name="bright" weight="0.562188439396" />
+ <shade name="fresh" weight="0.233830589837" />
+ <shade name="warm" weight="0.203979876241" />
+</color>
+
+<color name="white" weight="0.285714">
+ <shade name="bright" weight="0.562188439396" />
+ <shade name="fresh" weight="0.233830589837" />
+ <shade name="warm" weight="0.203979876241" />
+</color>
+
+<color name="red" weight="0.142857">
+ <shade name="bright" weight="0.562188439396" />
+ <shade name="fresh" weight="0.233830589837" />
+ <shade name="warm" weight="0.203979876241" />
+</color>
+
+<color name="pink" weight="0.0714285000001">
+ <shade name="bright" weight="0.562188439396" />
+ <shade name="fresh" weight="0.233830589837" />
+ <shade name="warm" weight="0.203979876241" />
+</color>
+
+<color name="green" weight="0.0714285000001">
+ <shade name="bright" weight="0.67261816681" />
+ <shade name="fresh" weight="0.279761538408" />
+ <shade name="light" weight="0.0476189852609" />
+</color>
+
+</colors>

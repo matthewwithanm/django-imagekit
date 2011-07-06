@@ -1,0 +1,33 @@
+<colors query="cedar">
+
+<color name="red" weight="0.733476100324">
+ <shade name="fresh" weight="0.451186795585" />
+ <shade name="light" weight="0.28232156215" />
+ <shade name="dark" weight="0.266490446515" />
+</color>
+
+<color name="white" weight="0.197719644435">
+ <shade name="fresh" weight="0.451186795585" />
+ <shade name="light" weight="0.28232156215" />
+ <shade name="dark" weight="0.266490446515" />
+</color>
+
+<color name="yellow" weight="0.0482340261626">
+ <shade name="fresh" weight="0.451186795585" />
+ <shade name="light" weight="0.28232156215" />
+ <shade name="dark" weight="0.266490446515" />
+</color>
+
+<color name="blue" weight="0.0118392609672">
+ <shade name="fresh" weight="0.451186795585" />
+ <shade name="light" weight="0.28232156215" />
+ <shade name="dark" weight="0.266490446515" />
+</color>
+
+<color name="green" weight="0.00872996010712">
+ <shade name="fresh" weight="0.451186795585" />
+ <shade name="light" weight="0.28232156215" />
+ <shade name="dark" weight="0.266490446515" />
+</color>
+
+</colors>

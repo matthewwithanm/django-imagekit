@@ -1,0 +1,33 @@
+<colors query="amphibian">
+
+<color name="green" weight="0.702568052403">
+ <shade name="light" weight="0.7561166503" />
+ <shade name="cool" weight="0.208808913136" />
+ <shade name="soft" weight="0.0350733721283" />
+</color>
+
+<color name="purple" weight="0.095945416848">
+ <shade name="light" weight="0.7561166503" />
+ <shade name="cool" weight="0.208808913136" />
+ <shade name="soft" weight="0.0350733721283" />
+</color>
+
+<color name="black" weight="0.0820178563378">
+ <shade name="light" weight="0.7561166503" />
+ <shade name="cool" weight="0.208808913136" />
+ <shade name="soft" weight="0.0350733721283" />
+</color>
+
+<color name="blue" weight="0.0634477756575">
+ <shade name="light" weight="0.7561166503" />
+ <shade name="cool" weight="0.208808913136" />
+ <shade name="soft" weight="0.0350733721283" />
+</color>
+
+<color name="yellow" weight="0.0560197433854">
+ <shade name="light" weight="0.7561166503" />
+ <shade name="cool" weight="0.208808913136" />
+ <shade name="soft" weight="0.0350733721283" />
+</color>
+
+</colors>

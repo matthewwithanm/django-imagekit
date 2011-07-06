@@ -1,0 +1,33 @@
+<colors query="snowstorm">
+
+<color name="white" weight="0.445835919556">
+ <shade name="light" weight="0.679819923312" />
+ <shade name="fresh" weight="0.222635440384" />
+ <shade name="hard" weight="0.0975426176932" />
+</color>
+
+<color name="black" weight="0.325718142882">
+ <shade name="intense" weight="0.466548739079" />
+ <shade name="light" weight="0.401848112055" />
+ <shade name="fresh" weight="0.131601955646" />
+</color>
+
+<color name="red" weight="0.0851141300971">
+ <shade name="intense" weight="0.466548739079" />
+ <shade name="light" weight="0.401848112055" />
+ <shade name="fresh" weight="0.131601955646" />
+</color>
+
+<color name="blue" weight="0.0766395630312">
+ <shade name="intense" weight="0.466548739079" />
+ <shade name="light" weight="0.401848112055" />
+ <shade name="fresh" weight="0.131601955646" />
+</color>
+
+<color name="pink" weight="0.0666911582146">
+ <shade name="light" weight="0.679819923312" />
+ <shade name="fresh" weight="0.222635440384" />
+ <shade name="hard" weight="0.0975426176932" />
+</color>
+
+</colors>

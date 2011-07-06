@@ -1,0 +1,33 @@
+<colors query="quagga">
+
+<color name="green" weight="0.333332955556">
+ <shade name="soft" weight="0.571427918368" />
+ <shade name="cool" weight="0.285713959184" />
+ <shade name="fresh" weight="0.142856979592" />
+</color>
+
+<color name="white" weight="0.199999773334">
+ <shade name="soft" weight="0.571427918368" />
+ <shade name="cool" weight="0.285713959184" />
+ <shade name="warm" weight="0.142856979592" />
+</color>
+
+<color name="red" weight="0.199999773334">
+ <shade name="soft" weight="0.571427918368" />
+ <shade name="cool" weight="0.285713959184" />
+ <shade name="warm" weight="0.142856979592" />
+</color>
+
+<color name="pink" weight="0.133333182222">
+ <shade name="soft" weight="0.571427918368" />
+ <shade name="cool" weight="0.285713959184" />
+ <shade name="warm" weight="0.142856979592" />
+</color>
+
+<color name="black" weight="0.133333182222">
+ <shade name="soft" weight="0.571427918368" />
+ <shade name="cool" weight="0.285713959184" />
+ <shade name="warm" weight="0.142856979592" />
+</color>
+
+</colors>

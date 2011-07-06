@@ -1,0 +1,33 @@
+<colors query="pupil">
+
+<color name="black" weight="0.390986624921">
+ <shade name="bright" weight="0.444711084001" />
+ <shade name="dark" weight="0.281249712584" />
+ <shade name="light" weight="0.274038181493" />
+</color>
+
+<color name="white" weight="0.293964017996">
+ <shade name="bright" weight="0.444711084001" />
+ <shade name="dark" weight="0.281249712584" />
+ <shade name="light" weight="0.274038181493" />
+</color>
+
+<color name="red" weight="0.26500204578">
+ <shade name="bright" weight="0.444711084001" />
+ <shade name="dark" weight="0.281249712584" />
+ <shade name="light" weight="0.274038181493" />
+</color>
+
+<color name="green" weight="0.0362024652705">
+ <shade name="bright" weight="0.444711084001" />
+ <shade name="dark" weight="0.281249712584" />
+ <shade name="light" weight="0.274038181493" />
+</color>
+
+<color name="blue" weight="0.0138438227194">
+ <shade name="bright" weight="0.444711084001" />
+ <shade name="dark" weight="0.281249712584" />
+ <shade name="light" weight="0.274038181493" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="overcoat">
+
+<color name="black" weight="0.686299176343">
+ <shade name="dark" weight="0.488120611016" />
+ <shade name="light" weight="0.484307168742" />
+ <shade name="hard" weight="0.0275711876379" />
+</color>
+
+<color name="blue" weight="0.209034520018">
+ <shade name="dark" weight="0.488120611016" />
+ <shade name="light" weight="0.484307168742" />
+ <shade name="hard" weight="0.0275711876379" />
+</color>
+
+<color name="red" weight="0.0721446573515">
+ <shade name="dark" weight="0.488120611016" />
+ <shade name="light" weight="0.484307168742" />
+ <shade name="hard" weight="0.0275711876379" />
+</color>
+
+<color name="yellow" weight="0.0178326794069">
+ <shade name="dark" weight="0.488120611016" />
+ <shade name="light" weight="0.484307168742" />
+ <shade name="hard" weight="0.0275711876379" />
+</color>
+
+<color name="purple" weight="0.0146879122916">
+ <shade name="dark" weight="0.488120611016" />
+ <shade name="light" weight="0.484307168742" />
+ <shade name="hard" weight="0.0275711876379" />
+</color>
+
+</colors>

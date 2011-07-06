@@ -1,0 +1,33 @@
+<colors query="from">
+
+<color name="white" weight="0.223031147511">
+ <shade name="light" weight="0.466180909856" />
+ <shade name="fresh" weight="0.363782790928" />
+ <shade name="hard" weight="0.170034771167" />
+</color>
+
+<color name="black" weight="0.201865946778">
+ <shade name="light" weight="0.466180909856" />
+ <shade name="fresh" weight="0.363782790928" />
+ <shade name="hard" weight="0.170034771167" />
+</color>
+
+<color name="red" weight="0.19822462192">
+ <shade name="light" weight="0.466180909856" />
+ <shade name="fresh" weight="0.363782790928" />
+ <shade name="hard" weight="0.170034771167" />
+</color>
+
+<color name="blue" weight="0.195948793884">
+ <shade name="light" weight="0.466180909856" />
+ <shade name="fresh" weight="0.363782790928" />
+ <shade name="hard" weight="0.170034771167" />
+</color>
+
+<color name="green" weight="0.180928328848">
+ <shade name="light" weight="0.466180909856" />
+ <shade name="fresh" weight="0.363782790928" />
+ <shade name="hard" weight="0.170034771167" />
+</color>
+
+</colors>

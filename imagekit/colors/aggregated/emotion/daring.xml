@@ -1,0 +1,33 @@
+<colors query="daring">
+
+<color name="white" weight="0.407532762976">
+ <shade name="cool" weight="0.484801109496" />
+ <shade name="hard" weight="0.294728293551" />
+ <shade name="dark" weight="0.220469075985" />
+</color>
+
+<color name="black" weight="0.355047482896">
+ <shade name="cool" weight="0.484801109496" />
+ <shade name="hard" weight="0.294728293551" />
+ <shade name="dark" weight="0.220469075985" />
+</color>
+
+<color name="blue" weight="0.102500664627">
+ <shade name="cool" weight="0.484801109496" />
+ <shade name="hard" weight="0.294728293551" />
+ <shade name="dark" weight="0.220469075985" />
+</color>
+
+<color name="red" weight="0.0978696105026">
+ <shade name="cool" weight="0.484801109496" />
+ <shade name="hard" weight="0.294728293551" />
+ <shade name="dark" weight="0.220469075985" />
+</color>
+
+<color name="green" weight="0.0370484329978">
+ <shade name="cool" weight="0.484801109496" />
+ <shade name="hard" weight="0.294728293551" />
+ <shade name="dark" weight="0.220469075985" />
+</color>
+
+</colors>

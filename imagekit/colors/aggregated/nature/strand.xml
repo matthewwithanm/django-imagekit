@@ -1,0 +1,33 @@
+<colors query="strand">
+
+<color name="white" weight="0.556076531193">
+ <shade name="light" weight="0.759560566806" />
+ <shade name="dark" weight="0.203262686892" />
+ <shade name="soft" weight="0.0371756756289" />
+</color>
+
+<color name="red" weight="0.351459625776">
+ <shade name="light" weight="0.759560566806" />
+ <shade name="dark" weight="0.203262686892" />
+ <shade name="soft" weight="0.0371756756289" />
+</color>
+
+<color name="pink" weight="0.0404419295413">
+ <shade name="light" weight="0.759560566806" />
+ <shade name="dark" weight="0.203262686892" />
+ <shade name="soft" weight="0.0371756756289" />
+</color>
+
+<color name="purple" weight="0.0300907213849">
+ <shade name="light" weight="0.759560566806" />
+ <shade name="dark" weight="0.203262686892" />
+ <shade name="soft" weight="0.0371756756289" />
+</color>
+
+<color name="green" weight="0.0219301177453">
+ <shade name="light" weight="0.759560566806" />
+ <shade name="dark" weight="0.203262686892" />
+ <shade name="soft" weight="0.0371756756289" />
+</color>
+
+</colors>

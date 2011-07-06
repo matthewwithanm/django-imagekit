@@ -1,0 +1,33 @@
+<colors query="calendar">
+
+<color name="pink" weight="0.341154851409">
+ <shade name="cool" weight="0.802188102684" />
+ <shade name="light" weight="0.136145069008" />
+ <shade name="dark" weight="0.0616657077271" />
+</color>
+
+<color name="green" weight="0.277075501012">
+ <shade name="cool" weight="0.802188102684" />
+ <shade name="light" weight="0.136145069008" />
+ <shade name="dark" weight="0.0616657077271" />
+</color>
+
+<color name="blue" weight="0.155234482652">
+ <shade name="cool" weight="0.802188102684" />
+ <shade name="light" weight="0.136145069008" />
+ <shade name="dark" weight="0.0616657077271" />
+</color>
+
+<color name="black" weight="0.125451122608">
+ <shade name="cool" weight="0.802188102684" />
+ <shade name="light" weight="0.136145069008" />
+ <shade name="dark" weight="0.0616657077271" />
+</color>
+
+<color name="white" weight="0.101082918936">
+ <shade name="cool" weight="0.802188102684" />
+ <shade name="light" weight="0.136145069008" />
+ <shade name="dark" weight="0.0616657077271" />
+</color>
+
+</colors>

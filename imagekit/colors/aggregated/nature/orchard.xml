@@ -1,0 +1,33 @@
+<colors query="orchard">
+
+<color name="orange" weight="0.359240474003">
+ <shade name="light" weight="0.551038154551" />
+ <shade name="dark" weight="0.334236257678" />
+ <shade name="fresh" weight="0.114724337095" />
+</color>
+
+<color name="blue" weight="0.320831115147">
+ <shade name="light" weight="0.551038154551" />
+ <shade name="dark" weight="0.334236257678" />
+ <shade name="fresh" weight="0.114724337095" />
+</color>
+
+<color name="green" weight="0.167193679725">
+ <shade name="light" weight="0.551038154551" />
+ <shade name="dark" weight="0.334236257678" />
+ <shade name="fresh" weight="0.114724337095" />
+</color>
+
+<color name="white" weight="0.122006198718">
+ <shade name="light" weight="0.551038154551" />
+ <shade name="dark" weight="0.334236257678" />
+ <shade name="fresh" weight="0.114724337095" />
+</color>
+
+<color name="red" weight="0.0307274870845">
+ <shade name="light" weight="0.551038154551" />
+ <shade name="dark" weight="0.334236257678" />
+ <shade name="fresh" weight="0.114724337095" />
+</color>
+
+</colors>

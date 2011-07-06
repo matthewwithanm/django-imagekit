@@ -1,0 +1,33 @@
+<colors query="pecan">
+
+<color name="orange" weight="0.915791913792">
+ <shade name="warm" weight="0.697911917181" />
+ <shade name="dark" weight="0.264438185134" />
+ <shade name="fresh" weight="0.037648826358" />
+</color>
+
+<color name="yellow" weight="0.0261000695431">
+ <shade name="warm" weight="0.697911917181" />
+ <shade name="dark" weight="0.264438185134" />
+ <shade name="fresh" weight="0.037648826358" />
+</color>
+
+<color name="green" weight="0.0249553296508">
+ <shade name="dark" weight="0.785317904556" />
+ <shade name="fresh" weight="0.111807972852" />
+ <shade name="light" weight="0.102870941008" />
+</color>
+
+<color name="white" weight="0.0177663631276">
+ <shade name="warm" weight="0.697911917181" />
+ <shade name="dark" weight="0.264438185134" />
+ <shade name="fresh" weight="0.037648826358" />
+</color>
+
+<color name="blue" weight="0.0153853041517">
+ <shade name="dark" weight="0.785317904556" />
+ <shade name="fresh" weight="0.111807972852" />
+ <shade name="light" weight="0.102870941008" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="apathy">
+
+<color name="black" weight="0.699869058763">
+ <shade name="intense" weight="0.483034340331" />
+ <shade name="neutral" weight="0.313383254947" />
+ <shade name="dark" weight="0.203581302462" />
+</color>
+
+<color name="white" weight="0.164387848686">
+ <shade name="neutral" weight="0.561654295854" />
+ <shade name="dark" weight="0.364864144073" />
+ <shade name="cool" weight="0.0734795845703" />
+</color>
+
+<color name="green" weight="0.0742186722782">
+ <shade name="intense" weight="0.483034340331" />
+ <shade name="neutral" weight="0.313383254947" />
+ <shade name="dark" weight="0.203581302462" />
+</color>
+
+<color name="yellow" weight="0.031249967275">
+ <shade name="intense" weight="0.483034340331" />
+ <shade name="neutral" weight="0.313383254947" />
+ <shade name="dark" weight="0.203581302462" />
+</color>
+
+<color name="orange" weight="0.0302734057977">
+ <shade name="intense" weight="0.483034340331" />
+ <shade name="neutral" weight="0.313383254947" />
+ <shade name="dark" weight="0.203581302462" />
+</color>
+
+</colors>

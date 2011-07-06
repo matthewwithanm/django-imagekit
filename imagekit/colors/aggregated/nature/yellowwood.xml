@@ -1,0 +1,33 @@
+<colors query="yellowwood">
+
+<color name="pink" weight="0.847999124865">
+ <shade name="warm" weight="0.642856408164" />
+ <shade name="light" weight="0.214285469388" />
+ <shade name="cool" weight="0.142856979592" />
+</color>
+
+<color name="yellow" weight="0.0559999422081">
+ <shade name="warm" weight="0.642856408164" />
+ <shade name="light" weight="0.214285469388" />
+ <shade name="cool" weight="0.142856979592" />
+</color>
+
+<color name="white" weight="0.0479999504641">
+ <shade name="warm" weight="0.642856408164" />
+ <shade name="light" weight="0.214285469388" />
+ <shade name="cool" weight="0.142856979592" />
+</color>
+
+<color name="green" weight="0.023999975232">
+ <shade name="light" weight="0.49999866667" />
+ <shade name="cool" weight="0.333332444447" />
+ <shade name="weak" weight="0.166666222223" />
+</color>
+
+<color name="black" weight="0.023999975232">
+ <shade name="warm" weight="0.642856408164" />
+ <shade name="light" weight="0.214285469388" />
+ <shade name="cool" weight="0.142856979592" />
+</color>
+
+</colors>

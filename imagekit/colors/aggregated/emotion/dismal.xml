@@ -1,0 +1,33 @@
+<colors query="dismal">
+
+<color name="black" weight="0.937392146127">
+ <shade name="dark" weight="0.991548848584" />
+ <shade name="light" weight="0.00571483819135" />
+ <shade name="bright" weight="0.00273530716851" />
+</color>
+
+<color name="white" weight="0.0256585441458">
+ <shade name="dark" weight="0.991548848584" />
+ <shade name="light" weight="0.00571483819135" />
+ <shade name="bright" weight="0.00273530716851" />
+</color>
+
+<color name="blue" weight="0.0229216327703">
+ <shade name="dark" weight="0.991548848584" />
+ <shade name="light" weight="0.00571483819135" />
+ <shade name="bright" weight="0.00273530716851" />
+</color>
+
+<color name="green" weight="0.0106055315803">
+ <shade name="dark" weight="0.991548848584" />
+ <shade name="light" weight="0.00571483819135" />
+ <shade name="bright" weight="0.00273530716851" />
+</color>
+
+<color name="red" weight="0.00342113921944">
+ <shade name="dark" weight="0.991548848584" />
+ <shade name="light" weight="0.00571483819135" />
+ <shade name="bright" weight="0.00273530716851" />
+</color>
+
+</colors>

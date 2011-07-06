@@ -1,0 +1,33 @@
+<colors query="autobus">
+
+<color name="green" weight="0.366108394461">
+ <shade name="hard" weight="0.715414278899" />
+ <shade name="cool" weight="0.256916729991" />
+ <shade name="light" weight="0.0276679555375" />
+</color>
+
+<color name="white" weight="0.261505996044">
+ <shade name="hard" weight="0.715414278899" />
+ <shade name="cool" weight="0.256916729991" />
+ <shade name="light" weight="0.0276679555375" />
+</color>
+
+<color name="red" weight="0.207112748867">
+ <shade name="hard" weight="0.715414278899" />
+ <shade name="cool" weight="0.256916729991" />
+ <shade name="light" weight="0.0276679555375" />
+</color>
+
+<color name="black" weight="0.108786494354">
+ <shade name="hard" weight="0.715414278899" />
+ <shade name="cool" weight="0.256916729991" />
+ <shade name="light" weight="0.0276679555375" />
+</color>
+
+<color name="blue" weight="0.0564852951455">
+ <shade name="hard" weight="0.715414278899" />
+ <shade name="cool" weight="0.256916729991" />
+ <shade name="light" weight="0.0276679555375" />
+</color>
+
+</colors>

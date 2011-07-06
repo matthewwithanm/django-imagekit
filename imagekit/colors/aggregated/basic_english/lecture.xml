@@ -1,0 +1,33 @@
+<colors query="lecture">
+
+<color name="white" weight="0.577179874915">
+ <shade name="light" weight="0.413925829866" />
+ <shade name="cool" weight="0.328819584473" />
+ <shade name="dark" weight="0.257252969029" />
+</color>
+
+<color name="green" weight="0.351326880383">
+ <shade name="light" weight="0.413925829866" />
+ <shade name="cool" weight="0.328819584473" />
+ <shade name="dark" weight="0.257252969029" />
+</color>
+
+<color name="red" weight="0.0281619166021">
+ <shade name="light" weight="0.413925829866" />
+ <shade name="cool" weight="0.328819584473" />
+ <shade name="dark" weight="0.257252969029" />
+</color>
+
+<color name="blue" weight="0.0262658667715">
+ <shade name="light" weight="0.413925829866" />
+ <shade name="cool" weight="0.328819584473" />
+ <shade name="dark" weight="0.257252969029" />
+</color>
+
+<color name="black" weight="0.0170644484757">
+ <shade name="light" weight="0.413925829866" />
+ <shade name="cool" weight="0.328819584473" />
+ <shade name="dark" weight="0.257252969029" />
+</color>
+
+</colors>

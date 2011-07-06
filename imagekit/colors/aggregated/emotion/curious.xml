@@ -1,0 +1,33 @@
+<colors query="curious">
+
+<color name="yellow" weight="0.265776056843">
+ <shade name="bright" weight="0.74731064112" />
+ <shade name="cool" weight="0.199282837632" />
+ <shade name="soft" weight="0.0534053702069" />
+</color>
+
+<color name="blue" weight="0.246137431953">
+ <shade name="bright" weight="0.74731064112" />
+ <shade name="cool" weight="0.199282837632" />
+ <shade name="soft" weight="0.0534053702069" />
+</color>
+
+<color name="red" weight="0.212097148811">
+ <shade name="bright" weight="0.74731064112" />
+ <shade name="cool" weight="0.199282837632" />
+ <shade name="soft" weight="0.0534053702069" />
+</color>
+
+<color name="white" weight="0.167582932394">
+ <shade name="bright" weight="0.74731064112" />
+ <shade name="cool" weight="0.199282837632" />
+ <shade name="soft" weight="0.0534053702069" />
+</color>
+
+<color name="green" weight="0.108405209392">
+ <shade name="bright" weight="0.74731064112" />
+ <shade name="cool" weight="0.199282837632" />
+ <shade name="soft" weight="0.0534053702069" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cooker">
+
+<color name="white" weight="0.677159845152">
+ <shade name="light" weight="0.444443949846" />
+ <shade name="cool" weight="0.350694054176" />
+ <shade name="fresh" weight="0.204860883132" />
+</color>
+
+<color name="black" weight="0.258087337209">
+ <shade name="light" weight="0.444443949846" />
+ <shade name="cool" weight="0.350694054176" />
+ <shade name="fresh" weight="0.204860883132" />
+</color>
+
+<color name="blue" weight="0.0304083100276">
+ <shade name="light" weight="0.444443949846" />
+ <shade name="cool" weight="0.350694054176" />
+ <shade name="fresh" weight="0.204860883132" />
+</color>
+
+<color name="green" weight="0.0227423495164">
+ <shade name="light" weight="0.444443949846" />
+ <shade name="cool" weight="0.350694054176" />
+ <shade name="fresh" weight="0.204860883132" />
+</color>
+
+<color name="red" weight="0.0116011535735">
+ <shade name="light" weight="0.444443949846" />
+ <shade name="cool" weight="0.350694054176" />
+ <shade name="fresh" weight="0.204860883132" />
+</color>
+
+</colors>

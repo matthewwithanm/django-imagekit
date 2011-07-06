@@ -1,0 +1,33 @@
+<colors query="steamer">
+
+<color name="black" weight="0.386229639143">
+ <shade name="fresh" weight="0.883551402292" />
+ <shade name="warm" weight="0.0699591469302" />
+ <shade name="cool" weight="0.0464883968591" />
+</color>
+
+<color name="red" weight="0.187027504607">
+ <shade name="fresh" weight="0.883551402292" />
+ <shade name="warm" weight="0.0699591469302" />
+ <shade name="cool" weight="0.0464883968591" />
+</color>
+
+<color name="green" weight="0.144836114678">
+ <shade name="fresh" weight="0.930875422371" />
+ <shade name="cool" weight="0.0489783683771" />
+ <shade name="light" weight="0.0201450988841" />
+</color>
+
+<color name="blue" weight="0.14336676279">
+ <shade name="fresh" weight="0.930875422371" />
+ <shade name="cool" weight="0.0489783683771" />
+ <shade name="light" weight="0.0201450988841" />
+</color>
+
+<color name="white" weight="0.138538892301">
+ <shade name="fresh" weight="0.883551402292" />
+ <shade name="warm" weight="0.0699591469302" />
+ <shade name="cool" weight="0.0464883968591" />
+</color>
+
+</colors>

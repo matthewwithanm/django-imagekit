@@ -1,0 +1,33 @@
+<colors query="shrill">
+
+<color name="black" weight="0.530611645704">
+ <shade name="soft" weight="0.448206360615" />
+ <shade name="bright" weight="0.33067669272" />
+ <shade name="hard" weight="0.221115137903" />
+</color>
+
+<color name="green" weight="0.170067835161">
+ <shade name="soft" weight="0.448206360615" />
+ <shade name="bright" weight="0.33067669272" />
+ <shade name="hard" weight="0.221115137903" />
+</color>
+
+<color name="white" weight="0.136054268129">
+ <shade name="soft" weight="0.448206360615" />
+ <shade name="bright" weight="0.33067669272" />
+ <shade name="hard" weight="0.221115137903" />
+</color>
+
+<color name="blue" weight="0.0952379876904">
+ <shade name="soft" weight="0.448206360615" />
+ <shade name="bright" weight="0.33067669272" />
+ <shade name="hard" weight="0.221115137903" />
+</color>
+
+<color name="red" weight="0.0680271340646">
+ <shade name="soft" weight="0.448206360615" />
+ <shade name="bright" weight="0.33067669272" />
+ <shade name="hard" weight="0.221115137903" />
+</color>
+
+</colors>

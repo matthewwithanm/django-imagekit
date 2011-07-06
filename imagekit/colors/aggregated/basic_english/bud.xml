@@ -1,0 +1,33 @@
+<colors query="bud">
+
+<color name="red" weight="0.737435248979">
+ <shade name="light" weight="0.884584173429" />
+ <shade name="dark" weight="0.0622872879515" />
+ <shade name="warm" weight="0.0531273926645" />
+</color>
+
+<color name="orange" weight="0.145650022485">
+ <shade name="light" weight="0.884584173429" />
+ <shade name="dark" weight="0.0622872879515" />
+ <shade name="warm" weight="0.0531273926645" />
+</color>
+
+<color name="green" weight="0.0534050082446">
+ <shade name="light" weight="0.884815739701" />
+ <shade name="dark" weight="0.0623035935056" />
+ <shade name="bright" weight="0.0528795205383" />
+</color>
+
+<color name="pink" weight="0.0326728428818">
+ <shade name="light" weight="0.884584173429" />
+ <shade name="dark" weight="0.0622872879515" />
+ <shade name="warm" weight="0.0531273926645" />
+</color>
+
+<color name="white" weight="0.0308358155712">
+ <shade name="light" weight="0.884584173429" />
+ <shade name="dark" weight="0.0622872879515" />
+ <shade name="warm" weight="0.0531273926645" />
+</color>
+
+</colors>

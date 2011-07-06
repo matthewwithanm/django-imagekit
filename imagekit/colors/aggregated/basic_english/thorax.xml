@@ -1,0 +1,33 @@
+<colors query="thorax">
+
+<color name="black" weight="0.547513597588">
+ <shade name="dark" weight="0.79104377846" />
+ <shade name="soft" weight="0.111940157329" />
+ <shade name="hard" weight="0.0970148030186" />
+</color>
+
+<color name="red" weight="0.380742214415">
+ <shade name="dark" weight="0.79104377846" />
+ <shade name="soft" weight="0.111940157329" />
+ <shade name="hard" weight="0.0970148030186" />
+</color>
+
+<color name="green" weight="0.0371302324801">
+ <shade name="dark" weight="0.79104377846" />
+ <shade name="soft" weight="0.111940157329" />
+ <shade name="hard" weight="0.0970148030186" />
+</color>
+
+<color name="orange" weight="0.0182189869542">
+ <shade name="dark" weight="0.79104377846" />
+ <shade name="soft" weight="0.111940157329" />
+ <shade name="hard" weight="0.0970148030186" />
+</color>
+
+<color name="yellow" weight="0.0163939416289">
+ <shade name="dark" weight="0.79104377846" />
+ <shade name="soft" weight="0.111940157329" />
+ <shade name="hard" weight="0.0970148030186" />
+</color>
+
+</colors>

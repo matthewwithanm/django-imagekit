@@ -1,0 +1,33 @@
+<colors query="memory">
+
+<color name="orange" weight="0.61914160861">
+ <shade name="weak" weight="0.41686664005" />
+ <shade name="fresh" weight="0.34618404983" />
+ <shade name="hard" weight="0.236947319489" />
+</color>
+
+<color name="black" weight="0.120420202776">
+ <shade name="weak" weight="0.41686664005" />
+ <shade name="fresh" weight="0.34618404983" />
+ <shade name="hard" weight="0.236947319489" />
+</color>
+
+<color name="blue" weight="0.107639756726">
+ <shade name="weak" weight="0.41686664005" />
+ <shade name="fresh" weight="0.34618404983" />
+ <shade name="hard" weight="0.236947319489" />
+</color>
+
+<color name="white" weight="0.100539508921">
+ <shade name="weak" weight="0.41686664005" />
+ <shade name="fresh" weight="0.34618404983" />
+ <shade name="hard" weight="0.236947319489" />
+</color>
+
+<color name="red" weight="0.052257823846">
+ <shade name="weak" weight="0.41686664005" />
+ <shade name="fresh" weight="0.34618404983" />
+ <shade name="hard" weight="0.236947319489" />
+</color>
+
+</colors>

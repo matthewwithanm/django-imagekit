@@ -1,0 +1,33 @@
+<colors query="shrew">
+
+<color name="black" weight="0.635385468655">
+ <shade name="dark" weight="0.893185066086" />
+ <shade name="cool" weight="0.092080934648" />
+ <shade name="hard" weight="0.0147329495437" />
+</color>
+
+<color name="white" weight="0.251221639145">
+ <shade name="dark" weight="0.893185066086" />
+ <shade name="cool" weight="0.092080934648" />
+ <shade name="hard" weight="0.0147329495437" />
+</color>
+
+<color name="blue" weight="0.0669598532351">
+ <shade name="dark" weight="0.893185066086" />
+ <shade name="cool" weight="0.092080934648" />
+ <shade name="hard" weight="0.0147329495437" />
+</color>
+
+<color name="red" weight="0.0273704509574">
+ <shade name="dark" weight="0.893185066086" />
+ <shade name="cool" weight="0.092080934648" />
+ <shade name="hard" weight="0.0147329495437" />
+</color>
+
+<color name="green" weight="0.0190615640596">
+ <shade name="dark" weight="0.893185066086" />
+ <shade name="cool" weight="0.092080934648" />
+ <shade name="hard" weight="0.0147329495437" />
+</color>
+
+</colors>

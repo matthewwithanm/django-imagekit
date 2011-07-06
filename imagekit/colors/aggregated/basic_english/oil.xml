@@ -1,0 +1,33 @@
+<colors query="oil">
+
+<color name="yellow" weight="0.37645916849">
+ <shade name="light" weight="0.633433226685" />
+ <shade name="fresh" weight="0.220543524076" />
+ <shade name="dark" weight="0.146021967996" />
+</color>
+
+<color name="orange" weight="0.237739102682">
+ <shade name="light" weight="0.633433226685" />
+ <shade name="fresh" weight="0.220543524076" />
+ <shade name="dark" weight="0.146021967996" />
+</color>
+
+<color name="black" weight="0.167678463385">
+ <shade name="light" weight="0.633433226685" />
+ <shade name="fresh" weight="0.220543524076" />
+ <shade name="dark" weight="0.146021967996" />
+</color>
+
+<color name="red" weight="0.11069581009">
+ <shade name="light" weight="0.633433226685" />
+ <shade name="fresh" weight="0.220543524076" />
+ <shade name="dark" weight="0.146021967996" />
+</color>
+
+<color name="white" weight="0.107426313589">
+ <shade name="light" weight="0.633433226685" />
+ <shade name="fresh" weight="0.220543524076" />
+ <shade name="dark" weight="0.146021967996" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="neutron">
+
+<color name="white" weight="0.734393362543">
+ <shade name="light" weight="0.942758768849" />
+ <shade name="neutral" weight="0.0300439607655" />
+ <shade name="bright" weight="0.027194964486" />
+</color>
+
+<color name="pink" weight="0.101591081818">
+ <shade name="light" weight="0.942758768849" />
+ <shade name="neutral" weight="0.0300439607655" />
+ <shade name="bright" weight="0.027194964486" />
+</color>
+
+<color name="blue" weight="0.088739197974">
+ <shade name="intense" weight="0.555291860784" />
+ <shade name="light" weight="0.430972787474" />
+ <shade name="neutral" weight="0.0137342976228" />
+</color>
+
+<color name="red" weight="0.0432680089432">
+ <shade name="intense" weight="0.555291860784" />
+ <shade name="light" weight="0.430972787474" />
+ <shade name="neutral" weight="0.0137342976228" />
+</color>
+
+<color name="black" weight="0.0320073107175">
+ <shade name="intense" weight="0.555291860784" />
+ <shade name="light" weight="0.430972787474" />
+ <shade name="neutral" weight="0.0137342976228" />
+</color>
+
+</colors>

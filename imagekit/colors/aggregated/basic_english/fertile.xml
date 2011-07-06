@@ -1,0 +1,33 @@
+<colors query="fertile">
+
+<color name="green" weight="0.861114234057">
+ <shade name="fresh" weight="0.862693062897" />
+ <shade name="light" weight="0.0814352503339" />
+ <shade name="dark" weight="0.0558705313364" />
+</color>
+
+<color name="white" weight="0.0451724170827">
+ <shade name="fresh" weight="0.862693062897" />
+ <shade name="light" weight="0.0814352503339" />
+ <shade name="dark" weight="0.0558705313364" />
+</color>
+
+<color name="red" weight="0.0384855523601">
+ <shade name="fresh" weight="0.862693062897" />
+ <shade name="light" weight="0.0814352503339" />
+ <shade name="dark" weight="0.0558705313364" />
+</color>
+
+<color name="black" weight="0.0294414475555">
+ <shade name="fresh" weight="0.862693062897" />
+ <shade name="light" weight="0.0814352503339" />
+ <shade name="dark" weight="0.0558705313364" />
+</color>
+
+<color name="blue" weight="0.0257853200813">
+ <shade name="fresh" weight="0.862693062897" />
+ <shade name="light" weight="0.0814352503339" />
+ <shade name="dark" weight="0.0558705313364" />
+</color>
+
+</colors>

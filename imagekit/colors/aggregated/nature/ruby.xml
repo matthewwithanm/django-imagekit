@@ -1,0 +1,33 @@
+<colors query="ruby">
+
+<color name="red" weight="0.636182195183">
+ <shade name="dark" weight="0.644256935897" />
+ <shade name="bright" weight="0.184473569844" />
+ <shade name="intense" weight="0.171268303456" />
+</color>
+
+<color name="pink" weight="0.111331884157">
+ <shade name="dark" weight="0.691282929526" />
+ <shade name="bright" weight="0.197938776715" />
+ <shade name="light" weight="0.110777016036" />
+</color>
+
+<color name="black" weight="0.106759324629">
+ <shade name="dark" weight="0.644256935897" />
+ <shade name="bright" weight="0.184473569844" />
+ <shade name="intense" weight="0.171268303456" />
+</color>
+
+<color name="blue" weight="0.103777220589">
+ <shade name="dark" weight="0.644256935897" />
+ <shade name="bright" weight="0.184473569844" />
+ <shade name="intense" weight="0.171268303456" />
+</color>
+
+<color name="yellow" weight="0.0419482634949">
+ <shade name="dark" weight="0.644256935897" />
+ <shade name="bright" weight="0.184473569844" />
+ <shade name="intense" weight="0.171268303456" />
+</color>
+
+</colors>

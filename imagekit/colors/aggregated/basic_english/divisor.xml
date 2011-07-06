@@ -1,0 +1,33 @@
+<colors query="divisor">
+
+<color name="red" weight="0.294117318339">
+ <shade name="weak" weight="0.388888219137" />
+ <shade name="neutral" weight="0.33333275926" />
+ <shade name="hard" weight="0.277777299384" />
+</color>
+
+<color name="green" weight="0.294117318339">
+ <shade name="weak" weight="0.388888219137" />
+ <shade name="neutral" weight="0.33333275926" />
+ <shade name="hard" weight="0.277777299384" />
+</color>
+
+<color name="black" weight="0.294117318339">
+ <shade name="weak" weight="0.388888219137" />
+ <shade name="neutral" weight="0.33333275926" />
+ <shade name="hard" weight="0.277777299384" />
+</color>
+
+<color name="yellow" weight="0.0588234636679">
+ <shade name="weak" weight="0.388888219137" />
+ <shade name="neutral" weight="0.33333275926" />
+ <shade name="hard" weight="0.277777299384" />
+</color>
+
+<color name="white" weight="0.0588234636679">
+ <shade name="weak" weight="0.388888219137" />
+ <shade name="neutral" weight="0.33333275926" />
+ <shade name="hard" weight="0.277777299384" />
+</color>
+
+</colors>

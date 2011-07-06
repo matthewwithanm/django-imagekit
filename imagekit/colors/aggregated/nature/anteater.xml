@@ -1,0 +1,33 @@
+<colors query="anteater">
+
+<color name="purple" weight="0.68440991811">
+ <shade name="light" weight="0.874357030596" />
+ <shade name="cool" weight="0.0871792933732" />
+ <shade name="bright" weight="0.0384614529588" />
+</color>
+
+<color name="blue" weight="0.216458216164">
+ <shade name="intense" weight="0.525315879179" />
+ <shade name="light" weight="0.431645095903" />
+ <shade name="cool" weight="0.0430379274508" />
+</color>
+
+<color name="green" weight="0.0450841453993">
+ <shade name="intense" weight="0.525315879179" />
+ <shade name="light" weight="0.431645095903" />
+ <shade name="cool" weight="0.0430379274508" />
+</color>
+
+<color name="black" weight="0.029060262396">
+ <shade name="intense" weight="0.525315879179" />
+ <shade name="light" weight="0.431645095903" />
+ <shade name="cool" weight="0.0430379274508" />
+</color>
+
+<color name="red" weight="0.0249863938358">
+ <shade name="intense" weight="0.525315879179" />
+ <shade name="light" weight="0.431645095903" />
+ <shade name="cool" weight="0.0430379274508" />
+</color>
+
+</colors>

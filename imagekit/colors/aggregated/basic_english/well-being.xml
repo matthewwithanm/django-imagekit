@@ -1,0 +1,33 @@
+<colors query="well-being">
+
+<color name="black" weight="0.355003296364">
+ <shade name="light" weight="0.663476516972" />
+ <shade name="warm" weight="0.236686119906" />
+ <shade name="intense" weight="0.0998362197265" />
+</color>
+
+<color name="white" weight="0.322863080232">
+ <shade name="light" weight="0.666497274171" />
+ <shade name="warm" weight="0.23776373348" />
+ <shade name="fresh" weight="0.0957378437472" />
+</color>
+
+<color name="green" weight="0.201606810281">
+ <shade name="light" weight="0.77272624371" />
+ <shade name="intense" weight="0.116275504983" />
+ <shade name="fresh" weight="0.110996919637" />
+</color>
+
+<color name="blue" weight="0.11921098347">
+ <shade name="light" weight="0.77272624371" />
+ <shade name="intense" weight="0.116275504983" />
+ <shade name="fresh" weight="0.110996919637" />
+</color>
+
+<color name="red" weight="0.00131482702357">
+ <shade name="light" weight="0.663476516972" />
+ <shade name="warm" weight="0.236686119906" />
+ <shade name="intense" weight="0.0998362197265" />
+</color>
+
+</colors>

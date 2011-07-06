@@ -1,0 +1,33 @@
+<colors query="unconformity">
+
+<color name="red" weight="0.666665972223">
+ <shade name="weak" weight="0.72727186777" />
+ <shade name="bright" weight="0.181817966942" />
+ <shade name="soft" weight="0.0909089834712" />
+</color>
+
+<color name="yellow" weight="0.0833332465279">
+ <shade name="weak" weight="0.72727186777" />
+ <shade name="bright" weight="0.181817966942" />
+ <shade name="soft" weight="0.0909089834712" />
+</color>
+
+<color name="purple" weight="0.0833332465279">
+ <shade name="weak" weight="0.72727186777" />
+ <shade name="bright" weight="0.181817966942" />
+ <shade name="soft" weight="0.0909089834712" />
+</color>
+
+<color name="green" weight="0.0833332465279">
+ <shade name="weak" weight="0.72727186777" />
+ <shade name="bright" weight="0.181817966942" />
+ <shade name="soft" weight="0.0909089834712" />
+</color>
+
+<color name="blue" weight="0.0833332465279">
+ <shade name="weak" weight="0.72727186777" />
+ <shade name="bright" weight="0.181817966942" />
+ <shade name="soft" weight="0.0909089834712" />
+</color>
+
+</colors>

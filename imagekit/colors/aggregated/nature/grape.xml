@@ -1,0 +1,33 @@
+<colors query="grape">
+
+<color name="white" weight="0.358784421029">
+ <shade name="fresh" weight="0.569947463705" />
+ <shade name="soft" weight="0.220725108671" />
+ <shade name="dark" weight="0.209326159397" />
+</color>
+
+<color name="red" weight="0.288469886254">
+ <shade name="fresh" weight="0.569947463705" />
+ <shade name="soft" weight="0.220725108671" />
+ <shade name="dark" weight="0.209326159397" />
+</color>
+
+<color name="black" weight="0.190209831249">
+ <shade name="fresh" weight="0.569947463705" />
+ <shade name="soft" weight="0.220725108671" />
+ <shade name="dark" weight="0.209326159397" />
+</color>
+
+<color name="purple" weight="0.0876227279498">
+ <shade name="fresh" weight="0.569947463705" />
+ <shade name="soft" weight="0.220725108671" />
+ <shade name="dark" weight="0.209326159397" />
+</color>
+
+<color name="green" weight="0.0749120235867">
+ <shade name="fresh" weight="0.569947463705" />
+ <shade name="soft" weight="0.220725108671" />
+ <shade name="dark" weight="0.209326159397" />
+</color>
+
+</colors>

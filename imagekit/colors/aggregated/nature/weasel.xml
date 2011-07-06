@@ -1,0 +1,33 @@
+<colors query="weasel">
+
+<color name="white" weight="0.450634857956">
+ <shade name="cool" weight="0.65210118757" />
+ <shade name="dark" weight="0.28235650406" />
+ <shade name="light" weight="0.0655411345883" />
+</color>
+
+<color name="pink" weight="0.149071184031">
+ <shade name="cool" weight="0.65210118757" />
+ <shade name="dark" weight="0.28235650406" />
+ <shade name="light" weight="0.0655411345883" />
+</color>
+
+<color name="red" weight="0.144672362207">
+ <shade name="cool" weight="0.65210118757" />
+ <shade name="dark" weight="0.28235650406" />
+ <shade name="light" weight="0.0655411345883" />
+</color>
+
+<color name="yellow" weight="0.133430928657">
+ <shade name="cool" weight="0.65210118757" />
+ <shade name="dark" weight="0.28235650406" />
+ <shade name="light" weight="0.0655411345883" />
+</color>
+
+<color name="blue" weight="0.122189495107">
+ <shade name="cool" weight="0.65210118757" />
+ <shade name="dark" weight="0.28235650406" />
+ <shade name="light" weight="0.0655411345883" />
+</color>
+
+</colors>

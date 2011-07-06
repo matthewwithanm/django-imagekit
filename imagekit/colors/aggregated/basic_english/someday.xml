@@ -1,0 +1,33 @@
+<colors query="someday">
+
+<color name="blue" weight="0.274280275936">
+ <shade name="hard" weight="0.564351543449" />
+ <shade name="cool" weight="0.23020670873" />
+ <shade name="light" weight="0.205440202147" />
+</color>
+
+<color name="red" weight="0.224819898308">
+ <shade name="hard" weight="0.564351543449" />
+ <shade name="cool" weight="0.23020670873" />
+ <shade name="light" weight="0.205440202147" />
+</color>
+
+<color name="white" weight="0.202337908477">
+ <shade name="hard" weight="0.564351543449" />
+ <shade name="cool" weight="0.23020670873" />
+ <shade name="light" weight="0.205440202147" />
+</color>
+
+<color name="black" weight="0.199340309833">
+ <shade name="hard" weight="0.564351543449" />
+ <shade name="cool" weight="0.23020670873" />
+ <shade name="light" weight="0.205440202147" />
+</color>
+
+<color name="green" weight="0.09922051512">
+ <shade name="hard" weight="0.564351543449" />
+ <shade name="cool" weight="0.23020670873" />
+ <shade name="light" weight="0.205440202147" />
+</color>
+
+</colors>

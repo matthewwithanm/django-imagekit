@@ -1,0 +1,33 @@
+<colors query="hackberry">
+
+<color name="black" weight="0.325925551715">
+ <shade name="light" weight="0.776594910254" />
+ <shade name="fresh" weight="0.191489155953" />
+ <shade name="soft" weight="0.0319148593255" />
+</color>
+
+<color name="green" weight="0.251851562689">
+ <shade name="light" weight="0.776594910254" />
+ <shade name="fresh" weight="0.191489155953" />
+ <shade name="soft" weight="0.0319148593255" />
+</color>
+
+<color name="orange" weight="0.199999770371">
+ <shade name="light" weight="0.776594910254" />
+ <shade name="fresh" weight="0.191489155953" />
+ <shade name="soft" weight="0.0319148593255" />
+</color>
+
+<color name="purple" weight="0.133333180247">
+ <shade name="light" weight="0.776594910254" />
+ <shade name="fresh" weight="0.191489155953" />
+ <shade name="soft" weight="0.0319148593255" />
+</color>
+
+<color name="white" weight="0.0888887868314">
+ <shade name="light" weight="0.776594910254" />
+ <shade name="fresh" weight="0.191489155953" />
+ <shade name="soft" weight="0.0319148593255" />
+</color>
+
+</colors>

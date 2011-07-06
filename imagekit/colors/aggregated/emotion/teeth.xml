@@ -1,0 +1,33 @@
+<colors query="teeth">
+
+<color name="white" weight="0.769229987934">
+ <shade name="light" weight="0.469578002026" />
+ <shade name="weak" weight="0.324492439938" />
+ <shade name="soft" weight="0.205927894576" />
+</color>
+
+<color name="yellow" weight="0.163802627911">
+ <shade name="light" weight="0.469578002026" />
+ <shade name="weak" weight="0.324492439938" />
+ <shade name="soft" weight="0.205927894576" />
+</color>
+
+<color name="black" weight="0.0332422980172">
+ <shade name="light" weight="0.469578002026" />
+ <shade name="weak" weight="0.324492439938" />
+ <shade name="soft" weight="0.205927894576" />
+</color>
+
+<color name="green" weight="0.0184679433429">
+ <shade name="light" weight="0.469578002026" />
+ <shade name="weak" weight="0.324492439938" />
+ <shade name="soft" weight="0.205927894576" />
+</color>
+
+<color name="blue" weight="0.0152561271093">
+ <shade name="light" weight="0.469578002026" />
+ <shade name="weak" weight="0.324492439938" />
+ <shade name="soft" weight="0.205927894576" />
+</color>
+
+</colors>

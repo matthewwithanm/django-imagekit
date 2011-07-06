@@ -1,0 +1,33 @@
+<colors query="intimacy">
+
+<color name="white" weight="0.503771947185">
+ <shade name="dark" weight="0.391781444087" />
+ <shade name="warm" weight="0.338529597318" />
+ <shade name="soft" weight="0.269682566852" />
+</color>
+
+<color name="black" weight="0.323273012191">
+ <shade name="intense" weight="0.868672052177" />
+ <shade name="dark" weight="0.0704513554128" />
+ <shade name="warm" weight="0.0608754430266" />
+</color>
+
+<color name="pink" weight="0.0829946871514">
+ <shade name="dark" weight="0.391781444087" />
+ <shade name="warm" weight="0.338529597318" />
+ <shade name="soft" weight="0.269682566852" />
+</color>
+
+<color name="blue" weight="0.0487521239211">
+ <shade name="intense" weight="0.879561272931" />
+ <shade name="dark" weight="0.0713344969385" />
+ <shade name="soft" weight="0.0491030663392" />
+</color>
+
+<color name="green" weight="0.0412071523619">
+ <shade name="intense" weight="0.879561272931" />
+ <shade name="dark" weight="0.0713344969385" />
+ <shade name="soft" weight="0.0491030663392" />
+</color>
+
+</colors>

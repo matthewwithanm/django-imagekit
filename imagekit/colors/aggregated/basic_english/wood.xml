@@ -1,0 +1,33 @@
+<colors query="wood">
+
+<color name="black" weight="0.272888597794">
+ <shade name="dark" weight="0.395424355285" />
+ <shade name="hard" weight="0.388888415528" />
+ <shade name="light" weight="0.215686011973" />
+</color>
+
+<color name="green" weight="0.258221946773">
+ <shade name="dark" weight="0.395424355285" />
+ <shade name="hard" weight="0.388888415528" />
+ <shade name="light" weight="0.215686011973" />
+</color>
+
+<color name="white" weight="0.224888648996">
+ <shade name="dark" weight="0.395424355285" />
+ <shade name="hard" weight="0.388888415528" />
+ <shade name="light" weight="0.215686011973" />
+</color>
+
+<color name="red" weight="0.143110958452">
+ <shade name="dark" weight="0.395424355285" />
+ <shade name="hard" weight="0.388888415528" />
+ <shade name="light" weight="0.215686011973" />
+</color>
+
+<color name="yellow" weight="0.100888781269">
+ <shade name="dark" weight="0.395424355285" />
+ <shade name="hard" weight="0.388888415528" />
+ <shade name="light" weight="0.215686011973" />
+</color>
+
+</colors>

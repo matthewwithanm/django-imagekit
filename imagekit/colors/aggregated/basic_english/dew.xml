@@ -1,0 +1,33 @@
+<colors query="dew">
+
+<color name="blue" weight="0.66652445217">
+ <shade name="fresh" weight="0.749103072941" />
+ <shade name="soft" weight="0.178494416423" />
+ <shade name="dark" weight="0.0724013496335" />
+</color>
+
+<color name="white" weight="0.197410108445">
+ <shade name="fresh" weight="0.749103072941" />
+ <shade name="soft" weight="0.178494416423" />
+ <shade name="dark" weight="0.0724013496335" />
+</color>
+
+<color name="green" weight="0.0559328640595">
+ <shade name="fresh" weight="0.749103072941" />
+ <shade name="soft" weight="0.178494416423" />
+ <shade name="dark" weight="0.0724013496335" />
+</color>
+
+<color name="pink" weight="0.0451071484351">
+ <shade name="fresh" weight="0.749103072941" />
+ <shade name="soft" weight="0.178494416423" />
+ <shade name="dark" weight="0.0724013496335" />
+</color>
+
+<color name="black" weight="0.035024374079">
+ <shade name="fresh" weight="0.749103072941" />
+ <shade name="soft" weight="0.178494416423" />
+ <shade name="dark" weight="0.0724013496335" />
+</color>
+
+</colors>

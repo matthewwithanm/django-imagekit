@@ -1,0 +1,33 @@
+<colors query="skirt">
+
+<color name="black" weight="0.425266412047">
+ <shade name="dark" weight="0.785920083706" />
+ <shade name="soft" weight="0.184827831546" />
+ <shade name="bright" weight="0.0292510133404" />
+</color>
+
+<color name="white" weight="0.185942845435">
+ <shade name="dark" weight="0.785920083706" />
+ <shade name="soft" weight="0.184827831546" />
+ <shade name="bright" weight="0.0292510133404" />
+</color>
+
+<color name="blue" weight="0.138789875062">
+ <shade name="dark" weight="0.785920083706" />
+ <shade name="soft" weight="0.184827831546" />
+ <shade name="bright" weight="0.0292510133404" />
+</color>
+
+<color name="pink" weight="0.13434148163">
+ <shade name="dark" weight="0.785920083706" />
+ <shade name="soft" weight="0.184827831546" />
+ <shade name="bright" weight="0.0292510133404" />
+</color>
+
+<color name="red" weight="0.115658229218">
+ <shade name="dark" weight="0.785920083706" />
+ <shade name="soft" weight="0.184827831546" />
+ <shade name="bright" weight="0.0292510133404" />
+</color>
+
+</colors>

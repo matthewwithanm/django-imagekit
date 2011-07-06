@@ -1,0 +1,33 @@
+<colors query="chauffeur">
+
+<color name="black" weight="0.388471765576">
+ <shade name="cool" weight="0.705881433516" />
+ <shade name="dark" weight="0.159663657581" />
+ <shade name="hard" weight="0.134453606384" />
+</color>
+
+<color name="green" weight="0.350966869509">
+ <shade name="cool" weight="0.705881433516" />
+ <shade name="dark" weight="0.159663657581" />
+ <shade name="hard" weight="0.134453606384" />
+</color>
+
+<color name="white" weight="0.197788978205">
+ <shade name="cool" weight="0.705881433516" />
+ <shade name="dark" weight="0.159663657581" />
+ <shade name="hard" weight="0.134453606384" />
+</color>
+
+<color name="blue" weight="0.0481641823173">
+ <shade name="cool" weight="0.705881433516" />
+ <shade name="dark" weight="0.159663657581" />
+ <shade name="hard" weight="0.134453606384" />
+</color>
+
+<color name="red" weight="0.0146071700471">
+ <shade name="cool" weight="0.705881433516" />
+ <shade name="dark" weight="0.159663657581" />
+ <shade name="hard" weight="0.134453606384" />
+</color>
+
+</colors>

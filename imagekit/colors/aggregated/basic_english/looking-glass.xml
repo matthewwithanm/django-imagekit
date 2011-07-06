@@ -1,0 +1,33 @@
+<colors query="looking-glass">
+
+<color name="blue" weight="0.294365888928">
+ <shade name="cool" weight="0.758359027156" />
+ <shade name="dark" weight="0.153463204708" />
+ <shade name="fresh" weight="0.0881766532887" />
+</color>
+
+<color name="black" weight="0.257041984351">
+ <shade name="cool" weight="0.758359027156" />
+ <shade name="dark" weight="0.153463204708" />
+ <shade name="fresh" weight="0.0881766532887" />
+</color>
+
+<color name="white" weight="0.160563212143">
+ <shade name="cool" weight="0.758359027156" />
+ <shade name="dark" weight="0.153463204708" />
+ <shade name="fresh" weight="0.0881766532887" />
+</color>
+
+<color name="red" weight="0.157042089069">
+ <shade name="cool" weight="0.758359027156" />
+ <shade name="dark" weight="0.153463204708" />
+ <shade name="fresh" weight="0.0881766532887" />
+</color>
+
+<color name="green" weight="0.130985778327">
+ <shade name="cool" weight="0.758359027156" />
+ <shade name="dark" weight="0.153463204708" />
+ <shade name="fresh" weight="0.0881766532887" />
+</color>
+
+</colors>

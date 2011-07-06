@@ -1,0 +1,33 @@
+<colors query="plum">
+
+<color name="black" weight="0.299932956338">
+ <shade name="dark" weight="0.611724036477" />
+ <shade name="fresh" weight="0.22599804681" />
+ <shade name="light" weight="0.16227679301" />
+</color>
+
+<color name="red" weight="0.264385346698">
+ <shade name="dark" weight="0.611724036477" />
+ <shade name="fresh" weight="0.22599804681" />
+ <shade name="light" weight="0.16227679301" />
+</color>
+
+<color name="purple" weight="0.196622715821">
+ <shade name="dark" weight="0.611724036477" />
+ <shade name="fresh" weight="0.22599804681" />
+ <shade name="light" weight="0.16227679301" />
+</color>
+
+<color name="blue" weight="0.121528390457">
+ <shade name="dark" weight="0.611724036477" />
+ <shade name="fresh" weight="0.22599804681" />
+ <shade name="light" weight="0.16227679301" />
+</color>
+
+<color name="pink" weight="0.117529284372">
+ <shade name="dark" weight="0.611724036477" />
+ <shade name="fresh" weight="0.22599804681" />
+ <shade name="light" weight="0.16227679301" />
+</color>
+
+</colors>

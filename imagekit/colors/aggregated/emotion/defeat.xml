@@ -1,0 +1,33 @@
+<colors query="defeat">
+
+<color name="blue" weight="0.287914580285">
+ <shade name="hard" weight="0.584621554397" />
+ <shade name="light" weight="0.232028788127" />
+ <shade name="fresh" weight="0.183348238461" />
+</color>
+
+<color name="red" weight="0.194388187963">
+ <shade name="hard" weight="0.584621554397" />
+ <shade name="light" weight="0.232028788127" />
+ <shade name="fresh" weight="0.183348238461" />
+</color>
+
+<color name="orange" weight="0.188886635473">
+ <shade name="hard" weight="0.584621554397" />
+ <shade name="light" weight="0.232028788127" />
+ <shade name="fresh" weight="0.183348238461" />
+</color>
+
+<color name="green" weight="0.181551232154">
+ <shade name="hard" weight="0.584621554397" />
+ <shade name="light" weight="0.232028788127" />
+ <shade name="fresh" weight="0.183348238461" />
+</color>
+
+<color name="white" weight="0.147258221636">
+ <shade name="hard" weight="0.584621554397" />
+ <shade name="light" weight="0.232028788127" />
+ <shade name="fresh" weight="0.183348238461" />
+</color>
+
+</colors>

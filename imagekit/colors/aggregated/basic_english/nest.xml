@@ -1,0 +1,33 @@
+<colors query="nest">
+
+<color name="red" weight="0.388295505065">
+ <shade name="dark" weight="0.646829831398" />
+ <shade name="warm" weight="0.283958295984" />
+ <shade name="fresh" weight="0.0692107919596" />
+</color>
+
+<color name="green" weight="0.34596945475">
+ <shade name="dark" weight="0.834096760759" />
+ <shade name="fresh" weight="0.0892483534013" />
+ <shade name="soft" weight="0.0766534923138" />
+</color>
+
+<color name="purple" weight="0.213470514633">
+ <shade name="dark" weight="0.834096760759" />
+ <shade name="fresh" weight="0.0892483534013" />
+ <shade name="soft" weight="0.0766534923138" />
+</color>
+
+<color name="yellow" weight="0.0322046035007">
+ <shade name="dark" weight="0.646829831398" />
+ <shade name="warm" weight="0.283958295984" />
+ <shade name="fresh" weight="0.0692107919596" />
+</color>
+
+<color name="pink" weight="0.0200588673233">
+ <shade name="dark" weight="0.646829831398" />
+ <shade name="warm" weight="0.283958295984" />
+ <shade name="fresh" weight="0.0692107919596" />
+</color>
+
+</colors>

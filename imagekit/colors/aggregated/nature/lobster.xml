@@ -1,0 +1,33 @@
+<colors query="lobster">
+
+<color name="red" weight="0.918793409783">
+ <shade name="fresh" weight="0.915704030903" />
+ <shade name="warm" weight="0.0758905395474" />
+ <shade name="cool" weight="0.00840440685897" />
+</color>
+
+<color name="blue" weight="0.0497198490894">
+ <shade name="fresh" weight="0.983362562503" />
+ <shade name="cool" weight="0.00902538242298" />
+ <shade name="dark" weight="0.00761095681937" />
+</color>
+
+<color name="green" weight="0.0238361261738">
+ <shade name="fresh" weight="0.983362562503" />
+ <shade name="cool" weight="0.00902538242298" />
+ <shade name="dark" weight="0.00761095681937" />
+</color>
+
+<color name="white" weight="0.00598528278373">
+ <shade name="fresh" weight="0.915704030903" />
+ <shade name="warm" weight="0.0758905395474" />
+ <shade name="cool" weight="0.00840440685897" />
+</color>
+
+<color name="pink" weight="0.00166432863372">
+ <shade name="fresh" weight="0.915704030903" />
+ <shade name="warm" weight="0.0758905395474" />
+ <shade name="cool" weight="0.00840440685897" />
+</color>
+
+</colors>

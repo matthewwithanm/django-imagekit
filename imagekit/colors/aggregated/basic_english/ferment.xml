@@ -1,0 +1,33 @@
+<colors query="ferment">
+
+<color name="red" weight="0.371697727483">
+ <shade name="cool" weight="0.498058926588" />
+ <shade name="warm" weight="0.349934908161" />
+ <shade name="intense" weight="0.152004997076" />
+</color>
+
+<color name="yellow" weight="0.322641174618">
+ <shade name="cool" weight="0.498058926588" />
+ <shade name="warm" weight="0.349934908161" />
+ <shade name="intense" weight="0.152004997076" />
+</color>
+
+<color name="white" weight="0.12075459167">
+ <shade name="cool" weight="0.536584690542" />
+ <shade name="warm" weight="0.377003009848" />
+ <shade name="fresh" weight="0.0864110410743" />
+</color>
+
+<color name="black" weight="0.107547058206">
+ <shade name="cool" weight="0.498058926588" />
+ <shade name="warm" weight="0.349934908161" />
+ <shade name="intense" weight="0.152004997076" />
+</color>
+
+<color name="green" weight="0.0773584102884">
+ <shade name="cool" weight="0.682018395283" />
+ <shade name="intense" weight="0.208148471288" />
+ <shade name="fresh" weight="0.109831533786" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="plaything">
+
+<color name="pink" weight="0.424937506317">
+ <shade name="cool" weight="0.351681360296" />
+ <shade name="fresh" weight="0.3302746688" />
+ <shade name="soft" weight="0.318042273659" />
+</color>
+
+<color name="purple" weight="0.35173659282">
+ <shade name="cool" weight="0.351681360296" />
+ <shade name="fresh" weight="0.3302746688" />
+ <shade name="soft" weight="0.318042273659" />
+</color>
+
+<color name="black" weight="0.107319983347">
+ <shade name="cool" weight="0.351681360296" />
+ <shade name="fresh" weight="0.3302746688" />
+ <shade name="soft" weight="0.318042273659" />
+</color>
+
+<color name="green" weight="0.0669974462515">
+ <shade name="cool" weight="0.351681360296" />
+ <shade name="fresh" weight="0.3302746688" />
+ <shade name="soft" weight="0.318042273659" />
+</color>
+
+<color name="red" weight="0.0490073912395">
+ <shade name="cool" weight="0.351681360296" />
+ <shade name="fresh" weight="0.3302746688" />
+ <shade name="soft" weight="0.318042273659" />
+</color>
+
+</colors>

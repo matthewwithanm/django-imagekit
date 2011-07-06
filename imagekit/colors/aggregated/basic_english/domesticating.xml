@@ -1,0 +1,33 @@
+<colors query="domesticating">
+
+<color name="white" weight="0.4999995">
+ <shade name="light" weight="0.4999995" />
+ <shade name="hard" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="green" weight="0.4999995">
+ <shade name="light" weight="0.4999995" />
+ <shade name="hard" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="yellow" weight="0.0">
+ <shade name="light" weight="0.4999995" />
+ <shade name="hard" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="light" weight="0.4999995" />
+ <shade name="hard" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+<color name="purple" weight="0.0">
+ <shade name="light" weight="0.4999995" />
+ <shade name="hard" weight="0.4999995" />
+ <shade name="weak" weight="0.0" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="investigation">
+
+<color name="white" weight="0.387729636322">
+ <shade name="fresh" weight="0.927967440557" />
+ <shade name="light" weight="0.0385753906976" />
+ <shade name="hard" weight="0.0334499891364" />
+</color>
+
+<color name="black" weight="0.250306474081">
+ <shade name="intense" weight="0.863154605169" />
+ <shade name="fresh" weight="0.131382824858" />
+ <shade name="light" weight="0.00546155347518" />
+</color>
+
+<color name="green" weight="0.202208367297">
+ <shade name="intense" weight="0.863154605169" />
+ <shade name="fresh" weight="0.131382824858" />
+ <shade name="light" weight="0.00546155347518" />
+</color>
+
+<color name="blue" weight="0.0895704539604">
+ <shade name="intense" weight="0.863154605169" />
+ <shade name="fresh" weight="0.131382824858" />
+ <shade name="light" weight="0.00546155347518" />
+</color>
+
+<color name="red" weight="0.0701839721443">
+ <shade name="intense" weight="0.863154605169" />
+ <shade name="fresh" weight="0.131382824858" />
+ <shade name="light" weight="0.00546155347518" />
+</color>
+
+</colors>

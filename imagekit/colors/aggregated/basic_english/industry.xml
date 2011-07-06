@@ -1,0 +1,33 @@
+<colors query="industry">
+
+<color name="green" weight="0.899856520111">
+ <shade name="light" weight="0.966562629399" />
+ <shade name="intense" weight="0.0186569065675" />
+ <shade name="hard" weight="0.0147794169495" />
+</color>
+
+<color name="black" weight="0.0294012526373">
+ <shade name="light" weight="0.966562629399" />
+ <shade name="intense" weight="0.0186569065675" />
+ <shade name="hard" weight="0.0147794169495" />
+</color>
+
+<color name="blue" weight="0.0251247067992">
+ <shade name="light" weight="0.966562629399" />
+ <shade name="intense" weight="0.0186569065675" />
+ <shade name="hard" weight="0.0147794169495" />
+</color>
+
+<color name="orange" weight="0.0229864338801">
+ <shade name="light" weight="0.966562629399" />
+ <shade name="intense" weight="0.0186569065675" />
+ <shade name="hard" weight="0.0147794169495" />
+</color>
+
+<color name="white" weight="0.0226300550602">
+ <shade name="light" weight="0.970489302996" />
+ <shade name="hard" weight="0.0148394585284" />
+ <shade name="weak" weight="0.0146701871383" />
+</color>
+
+</colors>

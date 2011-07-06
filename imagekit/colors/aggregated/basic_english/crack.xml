@@ -1,0 +1,33 @@
+<colors query="crack">
+
+<color name="black" weight="0.469896730163">
+ <shade name="soft" weight="0.512886028284" />
+ <shade name="hard" weight="0.269973926949" />
+ <shade name="cool" weight="0.217138934085" />
+</color>
+
+<color name="white" weight="0.237885219645">
+ <shade name="soft" weight="0.512886028284" />
+ <shade name="hard" weight="0.269973926949" />
+ <shade name="cool" weight="0.217138934085" />
+</color>
+
+<color name="blue" weight="0.190895546629">
+ <shade name="soft" weight="0.512886028284" />
+ <shade name="hard" weight="0.269973926949" />
+ <shade name="cool" weight="0.217138934085" />
+</color>
+
+<color name="red" weight="0.0922172332946">
+ <shade name="soft" weight="0.512886028284" />
+ <shade name="hard" weight="0.269973926949" />
+ <shade name="cool" weight="0.217138934085" />
+</color>
+
+<color name="orange" weight="0.00910424914692">
+ <shade name="soft" weight="0.512886028284" />
+ <shade name="hard" weight="0.269973926949" />
+ <shade name="cool" weight="0.217138934085" />
+</color>
+
+</colors>

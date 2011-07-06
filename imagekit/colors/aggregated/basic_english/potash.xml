@@ -1,0 +1,33 @@
+<colors query="potash">
+
+<color name="red" weight="0.939316984571">
+ <shade name="weak" weight="0.499999342467" />
+ <shade name="soft" weight="0.308218772753" />
+ <shade name="fresh" weight="0.191780569713" />
+</color>
+
+<color name="white" weight="0.0374659388164">
+ <shade name="weak" weight="0.499999342467" />
+ <shade name="soft" weight="0.308218772753" />
+ <shade name="fresh" weight="0.191780569713" />
+</color>
+
+<color name="pink" weight="0.0119015731568">
+ <shade name="weak" weight="0.499999342467" />
+ <shade name="soft" weight="0.308218772753" />
+ <shade name="fresh" weight="0.191780569713" />
+</color>
+
+<color name="black" weight="0.00752520993321">
+ <shade name="weak" weight="0.499999342467" />
+ <shade name="soft" weight="0.308218772753" />
+ <shade name="fresh" weight="0.191780569713" />
+</color>
+
+<color name="blue" weight="0.00378929010821">
+ <shade name="weak" weight="0.499999342467" />
+ <shade name="soft" weight="0.308218772753" />
+ <shade name="fresh" weight="0.191780569713" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="lamb">
+
+<color name="black" weight="0.433332884092">
+ <shade name="fresh" weight="0.587899736606" />
+ <shade name="soft" weight="0.28185023692" />
+ <shade name="light" weight="0.130248973122" />
+</color>
+
+<color name="green" weight="0.24624974471">
+ <shade name="fresh" weight="0.587899736606" />
+ <shade name="soft" weight="0.28185023692" />
+ <shade name="light" weight="0.130248973122" />
+</color>
+
+<color name="white" weight="0.177499815984">
+ <shade name="fresh" weight="0.587899736606" />
+ <shade name="soft" weight="0.28185023692" />
+ <shade name="light" weight="0.130248973122" />
+</color>
+
+<color name="pink" weight="0.0774999196549">
+ <shade name="fresh" weight="0.587899736606" />
+ <shade name="soft" weight="0.28185023692" />
+ <shade name="light" weight="0.130248973122" />
+</color>
+
+<color name="blue" weight="0.0654165988485">
+ <shade name="fresh" weight="0.587899736606" />
+ <shade name="soft" weight="0.28185023692" />
+ <shade name="light" weight="0.130248973122" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="sponge">
+
+<color name="red" weight="0.273821133997">
+ <shade name="soft" weight="0.754552531626" />
+ <shade name="light" weight="0.137900979918" />
+ <shade name="hard" weight="0.107545418301" />
+</color>
+
+<color name="yellow" weight="0.210130137627">
+ <shade name="soft" weight="0.754552531626" />
+ <shade name="light" weight="0.137900979918" />
+ <shade name="hard" weight="0.107545418301" />
+</color>
+
+<color name="white" weight="0.208124121994">
+ <shade name="soft" weight="0.754552531626" />
+ <shade name="light" weight="0.137900979918" />
+ <shade name="hard" weight="0.107545418301" />
+</color>
+
+<color name="blue" weight="0.168505313229">
+ <shade name="soft" weight="0.754552531626" />
+ <shade name="light" weight="0.137900979918" />
+ <shade name="hard" weight="0.107545418301" />
+</color>
+
+<color name="orange" weight="0.13941808654">
+ <shade name="soft" weight="0.754552531626" />
+ <shade name="light" weight="0.137900979918" />
+ <shade name="hard" weight="0.107545418301" />
+</color>
+
+</colors>

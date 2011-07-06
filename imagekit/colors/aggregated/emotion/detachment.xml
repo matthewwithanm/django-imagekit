@@ -1,0 +1,33 @@
+<colors query="detachment">
+
+<color name="red" weight="0.977469517571">
+ <shade name="cool" weight="0.938208353123" />
+ <shade name="weak" weight="0.0441361456442" />
+ <shade name="fresh" weight="0.0176544582577" />
+</color>
+
+<color name="black" weight="0.0118011563707">
+ <shade name="cool" weight="0.938208353123" />
+ <shade name="weak" weight="0.0441361456442" />
+ <shade name="fresh" weight="0.0176544582577" />
+</color>
+
+<color name="blue" weight="0.004827745788">
+ <shade name="cool" weight="0.938208353123" />
+ <shade name="weak" weight="0.0441361456442" />
+ <shade name="fresh" weight="0.0176544582577" />
+</color>
+
+<color name="white" weight="0.00441053318904">
+ <shade name="cool" weight="0.938208353123" />
+ <shade name="weak" weight="0.0441361456442" />
+ <shade name="fresh" weight="0.0176544582577" />
+</color>
+
+<color name="green" weight="0.0014900449963">
+ <shade name="cool" weight="0.938208353123" />
+ <shade name="weak" weight="0.0441361456442" />
+ <shade name="fresh" weight="0.0176544582577" />
+</color>
+
+</colors>

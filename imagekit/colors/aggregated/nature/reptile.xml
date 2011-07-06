@@ -1,0 +1,33 @@
+<colors query="reptile">
+
+<color name="black" weight="0.368614658233">
+ <shade name="cool" weight="0.528476172111" />
+ <shade name="light" weight="0.242383808262" />
+ <shade name="dark" weight="0.229138791417" />
+</color>
+
+<color name="green" weight="0.25978556866">
+ <shade name="cool" weight="0.528476172111" />
+ <shade name="light" weight="0.242383808262" />
+ <shade name="dark" weight="0.229138791417" />
+</color>
+
+<color name="red" weight="0.187817944909">
+ <shade name="cool" weight="0.528476172111" />
+ <shade name="light" weight="0.242383808262" />
+ <shade name="dark" weight="0.229138791417" />
+</color>
+
+<color name="pink" weight="0.104440819833">
+ <shade name="cool" weight="0.528476172111" />
+ <shade name="light" weight="0.242383808262" />
+ <shade name="dark" weight="0.229138791417" />
+</color>
+
+<color name="orange" weight="0.0793399169149">
+ <shade name="cool" weight="0.528476172111" />
+ <shade name="light" weight="0.242383808262" />
+ <shade name="dark" weight="0.229138791417" />
+</color>
+
+</colors>

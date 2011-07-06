@@ -1,0 +1,33 @@
+<colors query="horse">
+
+<color name="white" weight="0.400601432256">
+ <shade name="dark" weight="0.761696704704" />
+ <shade name="light" weight="0.217957368749" />
+ <shade name="hard" weight="0.0203448860088" />
+</color>
+
+<color name="black" weight="0.381793853277">
+ <shade name="dark" weight="0.761696704704" />
+ <shade name="light" weight="0.217957368749" />
+ <shade name="hard" weight="0.0203448860088" />
+</color>
+
+<color name="red" weight="0.160804800272">
+ <shade name="dark" weight="0.761696704704" />
+ <shade name="light" weight="0.217957368749" />
+ <shade name="hard" weight="0.0203448860088" />
+</color>
+
+<color name="blue" weight="0.0331013390033">
+ <shade name="dark" weight="0.761696704704" />
+ <shade name="light" weight="0.217957368749" />
+ <shade name="hard" weight="0.0203448860088" />
+</color>
+
+<color name="green" weight="0.0236975495137">
+ <shade name="dark" weight="0.761696704704" />
+ <shade name="light" weight="0.217957368749" />
+ <shade name="hard" weight="0.0203448860088" />
+</color>
+
+</colors>

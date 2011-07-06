@@ -1,0 +1,33 @@
+<colors query="envy">
+
+<color name="green" weight="0.377097305608">
+ <shade name="dark" weight="0.4186039923" />
+ <shade name="cool" weight="0.304650683285" />
+ <shade name="hard" weight="0.276743750465" />
+</color>
+
+<color name="orange" weight="0.247778596093">
+ <shade name="dark" weight="0.4186039923" />
+ <shade name="cool" weight="0.304650683285" />
+ <shade name="hard" weight="0.276743750465" />
+</color>
+
+<color name="pink" weight="0.149062023944">
+ <shade name="dark" weight="0.4186039923" />
+ <shade name="cool" weight="0.304650683285" />
+ <shade name="hard" weight="0.276743750465" />
+</color>
+
+<color name="black" weight="0.12635721235">
+ <shade name="dark" weight="0.4186039923" />
+ <shade name="cool" weight="0.304650683285" />
+ <shade name="hard" weight="0.276743750465" />
+</color>
+
+<color name="red" weight="0.0997037378701">
+ <shade name="dark" weight="0.4186039923" />
+ <shade name="cool" weight="0.304650683285" />
+ <shade name="hard" weight="0.276743750465" />
+</color>
+
+</colors>

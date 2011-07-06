@@ -1,0 +1,33 @@
+<colors query="island">
+
+<color name="green" weight="0.399214248006">
+ <shade name="dark" weight="0.587957715747" />
+ <shade name="cool" weight="0.208372214461" />
+ <shade name="fresh" weight="0.203668552735" />
+</color>
+
+<color name="blue" weight="0.379580760399">
+ <shade name="dark" weight="0.587957715747" />
+ <shade name="cool" weight="0.208372214461" />
+ <shade name="fresh" weight="0.203668552735" />
+</color>
+
+<color name="white" weight="0.134162165314">
+ <shade name="dark" weight="0.587957715747" />
+ <shade name="cool" weight="0.208372214461" />
+ <shade name="fresh" weight="0.203668552735" />
+</color>
+
+<color name="black" weight="0.0526831917451">
+ <shade name="dark" weight="0.587957715747" />
+ <shade name="cool" weight="0.208372214461" />
+ <shade name="fresh" weight="0.203668552735" />
+</color>
+
+<color name="red" weight="0.034358603312">
+ <shade name="dark" weight="0.587957715747" />
+ <shade name="cool" weight="0.208372214461" />
+ <shade name="fresh" weight="0.203668552735" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="poplar">
+
+<color name="yellow" weight="0.537726221511">
+ <shade name="light" weight="0.852966322841" />
+ <shade name="fresh" weight="0.0821079731333" />
+ <shade name="dark" weight="0.0649246432651" />
+</color>
+
+<color name="black" weight="0.232516801338">
+ <shade name="light" weight="0.852966322841" />
+ <shade name="fresh" weight="0.0821079731333" />
+ <shade name="dark" weight="0.0649246432651" />
+</color>
+
+<color name="white" weight="0.22529732892">
+ <shade name="light" weight="0.852966322841" />
+ <shade name="fresh" weight="0.0821079731333" />
+ <shade name="dark" weight="0.0649246432651" />
+</color>
+
+<color name="green" weight="0.00239985221082">
+ <shade name="light" weight="0.852966322841" />
+ <shade name="fresh" weight="0.0821079731333" />
+ <shade name="dark" weight="0.0649246432651" />
+</color>
+
+<color name="red" weight="0.00205879437588">
+ <shade name="light" weight="0.852966322841" />
+ <shade name="fresh" weight="0.0821079731333" />
+ <shade name="dark" weight="0.0649246432651" />
+</color>
+
+</colors>

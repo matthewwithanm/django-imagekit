@@ -1,0 +1,33 @@
+<colors query="knee">
+
+<color name="white" weight="0.385483461404">
+ <shade name="soft" weight="0.530007825933" />
+ <shade name="hard" weight="0.326288709426" />
+ <shade name="weak" weight="0.143702281354" />
+</color>
+
+<color name="black" weight="0.353628656539">
+ <shade name="soft" weight="0.530007825933" />
+ <shade name="hard" weight="0.326288709426" />
+ <shade name="weak" weight="0.143702281354" />
+</color>
+
+<color name="red" weight="0.142741783825">
+ <shade name="soft" weight="0.530007825933" />
+ <shade name="hard" weight="0.326288709426" />
+ <shade name="weak" weight="0.143702281354" />
+</color>
+
+<color name="blue" weight="0.0657257366201">
+ <shade name="soft" weight="0.530007825933" />
+ <shade name="hard" weight="0.326288709426" />
+ <shade name="weak" weight="0.143702281354" />
+</color>
+
+<color name="green" weight="0.0524192991449">
+ <shade name="soft" weight="0.530007825933" />
+ <shade name="hard" weight="0.326288709426" />
+ <shade name="weak" weight="0.143702281354" />
+</color>
+
+</colors>

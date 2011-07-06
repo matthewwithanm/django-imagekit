@@ -1,0 +1,33 @@
+<colors query="sunrise">
+
+<color name="red" weight="0.441418670798">
+ <shade name="dark" weight="0.685409298046" />
+ <shade name="light" weight="0.254533064566" />
+ <shade name="warm" weight="0.0600564943191" />
+</color>
+
+<color name="orange" weight="0.259900712713">
+ <shade name="dark" weight="0.685409298046" />
+ <shade name="light" weight="0.254533064566" />
+ <shade name="warm" weight="0.0600564943191" />
+</color>
+
+<color name="black" weight="0.111386019734">
+ <shade name="dark" weight="0.685409298046" />
+ <shade name="light" weight="0.254533064566" />
+ <shade name="warm" weight="0.0600564943191" />
+</color>
+
+<color name="blue" weight="0.0952969279947">
+ <shade name="dark" weight="0.689538956013" />
+ <shade name="light" weight="0.256066651141" />
+ <shade name="cool" weight="0.0543932428894" />
+</color>
+
+<color name="pink" weight="0.0919966014841">
+ <shade name="dark" weight="0.685409298046" />
+ <shade name="light" weight="0.254533064566" />
+ <shade name="warm" weight="0.0600564943191" />
+</color>
+
+</colors>

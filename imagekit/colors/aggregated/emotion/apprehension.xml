@@ -1,0 +1,33 @@
+<colors query="apprehension">
+
+<color name="white" weight="0.38372052569">
+ <shade name="weak" weight="0.498606259942" />
+ <shade name="fresh" weight="0.31290560447" />
+ <shade name="dark" weight="0.188486165304" />
+</color>
+
+<color name="black" weight="0.38372052569">
+ <shade name="intense" weight="0.498565084363" />
+ <shade name="weak" weight="0.30808912578" />
+ <shade name="fresh" weight="0.193344572417" />
+</color>
+
+<color name="blue" weight="0.143410701521">
+ <shade name="intense" weight="0.498565084363" />
+ <shade name="weak" weight="0.30808912578" />
+ <shade name="fresh" weight="0.193344572417" />
+</color>
+
+<color name="green" weight="0.0542635086834">
+ <shade name="intense" weight="0.498565084363" />
+ <shade name="weak" weight="0.30808912578" />
+ <shade name="fresh" weight="0.193344572417" />
+</color>
+
+<color name="red" weight="0.0348836841536">
+ <shade name="intense" weight="0.498565084363" />
+ <shade name="weak" weight="0.30808912578" />
+ <shade name="fresh" weight="0.193344572417" />
+</color>
+
+</colors>

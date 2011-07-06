@@ -1,0 +1,33 @@
+<colors query="salt">
+
+<color name="white" weight="0.41213462139">
+ <shade name="neutral" weight="0.38906704447" />
+ <shade name="warm" weight="0.337620162557" />
+ <shade name="fresh" weight="0.273311560165" />
+</color>
+
+<color name="black" weight="0.259873775154">
+ <shade name="neutral" weight="0.38906704447" />
+ <shade name="warm" weight="0.337620162557" />
+ <shade name="fresh" weight="0.273311560165" />
+</color>
+
+<color name="pink" weight="0.129650682979">
+ <shade name="neutral" weight="0.38906704447" />
+ <shade name="warm" weight="0.337620162557" />
+ <shade name="fresh" weight="0.273311560165" />
+</color>
+
+<color name="blue" weight="0.0993129955709">
+ <shade name="neutral" weight="0.519312450187" />
+ <shade name="fresh" weight="0.36480626666" />
+ <shade name="light" weight="0.115879637645" />
+</color>
+
+<color name="green" weight="0.0990267909728">
+ <shade name="neutral" weight="0.519312450187" />
+ <shade name="fresh" weight="0.36480626666" />
+ <shade name="light" weight="0.115879637645" />
+</color>
+
+</colors>

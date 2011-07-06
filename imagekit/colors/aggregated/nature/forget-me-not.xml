@@ -1,0 +1,33 @@
+<colors query="forget-me-not">
+
+<color name="blue" weight="0.778846304815">
+ <shade name="light" weight="0.538460904416" />
+ <shade name="bright" weight="0.337277709359" />
+ <shade name="dark" weight="0.124260208711" />
+</color>
+
+<color name="pink" weight="0.12005146864">
+ <shade name="light" weight="0.538460904416" />
+ <shade name="bright" weight="0.337277709359" />
+ <shade name="dark" weight="0.124260208711" />
+</color>
+
+<color name="white" weight="0.0639943779115">
+ <shade name="light" weight="0.538460904416" />
+ <shade name="bright" weight="0.337277709359" />
+ <shade name="dark" weight="0.124260208711" />
+</color>
+
+<color name="purple" weight="0.0195951777326">
+ <shade name="light" weight="0.538460904416" />
+ <shade name="bright" weight="0.337277709359" />
+ <shade name="dark" weight="0.124260208711" />
+</color>
+
+<color name="yellow" weight="0.0175116398471">
+ <shade name="light" weight="0.538460904416" />
+ <shade name="bright" weight="0.337277709359" />
+ <shade name="dark" weight="0.124260208711" />
+</color>
+
+</colors>

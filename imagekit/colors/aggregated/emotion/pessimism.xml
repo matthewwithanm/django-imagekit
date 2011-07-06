@@ -1,0 +1,33 @@
+<colors query="pessimism">
+
+<color name="black" weight="0.614798074752">
+ <shade name="dark" weight="0.763127278997" />
+ <shade name="intense" weight="0.221382468065" />
+ <shade name="fresh" weight="0.0154892170489" />
+</color>
+
+<color name="white" weight="0.275298960907">
+ <shade name="dark" weight="0.961903505934" />
+ <shade name="fresh" weight="0.0195237840313" />
+ <shade name="weak" weight="0.0185714043225" />
+</color>
+
+<color name="green" weight="0.0968442985007">
+ <shade name="dark" weight="0.763127278997" />
+ <shade name="intense" weight="0.221382468065" />
+ <shade name="fresh" weight="0.0154892170489" />
+</color>
+
+<color name="purple" weight="0.00652882911241">
+ <shade name="dark" weight="0.961903505934" />
+ <shade name="fresh" weight="0.0195237840313" />
+ <shade name="weak" weight="0.0185714043225" />
+</color>
+
+<color name="blue" weight="0.00652882911241">
+ <shade name="dark" weight="0.763127278997" />
+ <shade name="intense" weight="0.221382468065" />
+ <shade name="fresh" weight="0.0154892170489" />
+</color>
+
+</colors>

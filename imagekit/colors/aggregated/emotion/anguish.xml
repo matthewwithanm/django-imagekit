@@ -1,0 +1,33 @@
+<colors query="anguish">
+
+<color name="black" weight="0.461647216444">
+ <shade name="intense" weight="0.828882546616" />
+ <shade name="dark" weight="0.0916552815969" />
+ <shade name="fresh" weight="0.0794611441323" />
+</color>
+
+<color name="white" weight="0.221590663893">
+ <shade name="dark" weight="0.500432353101" />
+ <shade name="fresh" weight="0.43385309221" />
+ <shade name="hard" weight="0.065708943755" />
+</color>
+
+<color name="red" weight="0.165482771433">
+ <shade name="intense" weight="0.828882546616" />
+ <shade name="dark" weight="0.0916552815969" />
+ <shade name="fresh" weight="0.0794611441323" />
+</color>
+
+<color name="yellow" weight="0.0759942340916">
+ <shade name="intense" weight="0.828882546616" />
+ <shade name="dark" weight="0.0916552815969" />
+ <shade name="fresh" weight="0.0794611441323" />
+</color>
+
+<color name="blue" weight="0.0752840076048">
+ <shade name="intense" weight="0.828882546616" />
+ <shade name="dark" weight="0.0916552815969" />
+ <shade name="fresh" weight="0.0794611441323" />
+</color>
+
+</colors>

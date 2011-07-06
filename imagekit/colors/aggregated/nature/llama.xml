@@ -1,0 +1,33 @@
+<colors query="llama">
+
+<color name="yellow" weight="0.670413800464">
+ <shade name="dark" weight="0.708874659268" />
+ <shade name="cool" weight="0.213633458958" />
+ <shade name="light" weight="0.077490681931" />
+</color>
+
+<color name="green" weight="0.125859912478">
+ <shade name="dark" weight="0.708874659268" />
+ <shade name="cool" weight="0.213633458958" />
+ <shade name="light" weight="0.077490681931" />
+</color>
+
+<color name="white" weight="0.0864238065679">
+ <shade name="dark" weight="0.708874659268" />
+ <shade name="cool" weight="0.213633458958" />
+ <shade name="light" weight="0.077490681931" />
+</color>
+
+<color name="pink" weight="0.0646080884052">
+ <shade name="dark" weight="0.708874659268" />
+ <shade name="cool" weight="0.213633458958" />
+ <shade name="light" weight="0.077490681931" />
+</color>
+
+<color name="orange" weight="0.052693350024">
+ <shade name="dark" weight="0.708874659268" />
+ <shade name="cool" weight="0.213633458958" />
+ <shade name="light" weight="0.077490681931" />
+</color>
+
+</colors>

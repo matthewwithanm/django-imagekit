@@ -1,0 +1,33 @@
+<colors query="krill">
+
+<color name="blue" weight="0.455958043653">
+ <shade name="fresh" weight="0.655253126505" />
+ <shade name="soft" weight="0.321133063801" />
+ <shade name="hard" weight="0.0236127252795" />
+</color>
+
+<color name="pink" weight="0.19170963199">
+ <shade name="fresh" weight="0.655253126505" />
+ <shade name="soft" weight="0.321133063801" />
+ <shade name="hard" weight="0.0236127252795" />
+</color>
+
+<color name="red" weight="0.18134694918">
+ <shade name="fresh" weight="0.655253126505" />
+ <shade name="soft" weight="0.321133063801" />
+ <shade name="hard" weight="0.0236127252795" />
+</color>
+
+<color name="black" weight="0.0880828038875">
+ <shade name="fresh" weight="0.655253126505" />
+ <shade name="soft" weight="0.321133063801" />
+ <shade name="hard" weight="0.0236127252795" />
+</color>
+
+<color name="green" weight="0.0829014624823">
+ <shade name="fresh" weight="0.655253126505" />
+ <shade name="soft" weight="0.321133063801" />
+ <shade name="hard" weight="0.0236127252795" />
+</color>
+
+</colors>

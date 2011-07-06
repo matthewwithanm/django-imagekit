@@ -1,0 +1,33 @@
+<colors query="slimy">
+
+<color name="green" weight="0.523798133966">
+ <shade name="dark" weight="0.422525594645" />
+ <shade name="soft" weight="0.413813726714" />
+ <shade name="cool" weight="0.163658661843" />
+</color>
+
+<color name="black" weight="0.373490843349">
+ <shade name="warm" weight="0.383768343057" />
+ <shade name="dark" weight="0.311324617605" />
+ <shade name="soft" weight="0.304905553325" />
+</color>
+
+<color name="yellow" weight="0.0389432525687">
+ <shade name="warm" weight="0.383768343057" />
+ <shade name="dark" weight="0.311324617605" />
+ <shade name="soft" weight="0.304905553325" />
+</color>
+
+<color name="pink" weight="0.0337052712291">
+ <shade name="warm" weight="0.383768343057" />
+ <shade name="dark" weight="0.311324617605" />
+ <shade name="soft" weight="0.304905553325" />
+</color>
+
+<color name="red" weight="0.0300614581232">
+ <shade name="warm" weight="0.383768343057" />
+ <shade name="dark" weight="0.311324617605" />
+ <shade name="soft" weight="0.304905553325" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="August">
+
+<color name="black" weight="0.490014841857">
+ <shade name="warm" weight="0.442692867659" />
+ <shade name="cool" weight="0.285099937424" />
+ <shade name="light" weight="0.272205970405" />
+</color>
+
+<color name="red" weight="0.145929184879">
+ <shade name="warm" weight="0.442692867659" />
+ <shade name="cool" weight="0.285099937424" />
+ <shade name="light" weight="0.272205970405" />
+</color>
+
+<color name="white" weight="0.133640411416">
+ <shade name="warm" weight="0.442692867659" />
+ <shade name="cool" weight="0.285099937424" />
+ <shade name="light" weight="0.272205970405" />
+</color>
+
+<color name="green" weight="0.122887734635">
+ <shade name="cool" weight="0.407368785707" />
+ <shade name="light" weight="0.38894507178" />
+ <shade name="dark" weight="0.203684392853" />
+</color>
+
+<color name="blue" weight="0.107526767806">
+ <shade name="cool" weight="0.407368785707" />
+ <shade name="light" weight="0.38894507178" />
+ <shade name="dark" weight="0.203684392853" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="revolt">
+
+<color name="black" weight="0.840674618788">
+ <shade name="fresh" weight="0.387584650181" />
+ <shade name="intense" weight="0.33080955494" />
+ <shade name="light" weight="0.281604472397" />
+</color>
+
+<color name="white" weight="0.0594713049099">
+ <shade name="fresh" weight="0.465453806229" />
+ <shade name="light" weight="0.338181281088" />
+ <shade name="dark" weight="0.196363324503" />
+</color>
+
+<color name="green" weight="0.0521291685013">
+ <shade name="fresh" weight="0.387584650181" />
+ <shade name="intense" weight="0.33080955494" />
+ <shade name="light" weight="0.281604472397" />
+</color>
+
+<color name="orange" weight="0.0259544522045">
+ <shade name="fresh" weight="0.387584650181" />
+ <shade name="intense" weight="0.33080955494" />
+ <shade name="light" weight="0.281604472397" />
+</color>
+
+<color name="red" weight="0.0217694344516">
+ <shade name="fresh" weight="0.387584650181" />
+ <shade name="intense" weight="0.33080955494" />
+ <shade name="light" weight="0.281604472397" />
+</color>
+
+</colors>

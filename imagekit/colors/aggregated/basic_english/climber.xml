@@ -1,0 +1,33 @@
+<colors query="climber">
+
+<color name="blue" weight="0.728099291734">
+ <shade name="light" weight="0.480208927135" />
+ <shade name="soft" weight="0.302677141952" />
+ <shade name="hard" weight="0.217112642208" />
+</color>
+
+<color name="pink" weight="0.0984071698984">
+ <shade name="light" weight="0.480208927135" />
+ <shade name="soft" weight="0.302677141952" />
+ <shade name="hard" weight="0.217112642208" />
+</color>
+
+<color name="black" weight="0.0625710328834">
+ <shade name="light" weight="0.480208927135" />
+ <shade name="soft" weight="0.302677141952" />
+ <shade name="hard" weight="0.217112642208" />
+</color>
+
+<color name="yellow" weight="0.0564276951094">
+ <shade name="light" weight="0.480208927135" />
+ <shade name="soft" weight="0.302677141952" />
+ <shade name="hard" weight="0.217112642208" />
+</color>
+
+<color name="white" weight="0.0544936813657">
+ <shade name="light" weight="0.480208927135" />
+ <shade name="soft" weight="0.302677141952" />
+ <shade name="hard" weight="0.217112642208" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="omelet">
+
+<color name="white" weight="0.91119801287">
+ <shade name="fresh" weight="0.545261420789" />
+ <shade name="warm" weight="0.356272753584" />
+ <shade name="light" weight="0.0984646837542" />
+</color>
+
+<color name="blue" weight="0.0751166820645">
+ <shade name="fresh" weight="0.760707798488" />
+ <shade name="light" weight="0.137370534484" />
+ <shade name="soft" weight="0.101920073972" />
+</color>
+
+<color name="orange" weight="0.00561742144135">
+ <shade name="fresh" weight="0.545261420789" />
+ <shade name="warm" weight="0.356272753584" />
+ <shade name="light" weight="0.0984646837542" />
+</color>
+
+<color name="green" weight="0.00480093576673">
+ <shade name="fresh" weight="0.760707798488" />
+ <shade name="light" weight="0.137370534484" />
+ <shade name="soft" weight="0.101920073972" />
+</color>
+
+<color name="yellow" weight="0.00326594269846">
+ <shade name="fresh" weight="0.545261420789" />
+ <shade name="warm" weight="0.356272753584" />
+ <shade name="light" weight="0.0984646837542" />
+</color>
+
+</colors>

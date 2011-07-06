@@ -1,0 +1,33 @@
+<colors query="narwhal">
+
+<color name="blue" weight="0.573912452099">
+ <shade name="cool" weight="0.720929461331" />
+ <shade name="fresh" weight="0.209302101677" />
+ <shade name="hard" weight="0.0697673672256" />
+</color>
+
+<color name="black" weight="0.243478009981">
+ <shade name="cool" weight="0.720929461331" />
+ <shade name="fresh" weight="0.209302101677" />
+ <shade name="hard" weight="0.0697673672256" />
+</color>
+
+<color name="white" weight="0.143478113025">
+ <shade name="cool" weight="0.720929461331" />
+ <shade name="fresh" weight="0.209302101677" />
+ <shade name="hard" weight="0.0697673672256" />
+</color>
+
+<color name="green" weight="0.0260869296409">
+ <shade name="cool" weight="0.720929461331" />
+ <shade name="fresh" weight="0.209302101677" />
+ <shade name="hard" weight="0.0697673672256" />
+</color>
+
+<color name="yellow" weight="0.0130434648204">
+ <shade name="cool" weight="0.720929461331" />
+ <shade name="fresh" weight="0.209302101677" />
+ <shade name="hard" weight="0.0697673672256" />
+</color>
+
+</colors>

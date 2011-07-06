@@ -1,0 +1,33 @@
+<colors query="deficiency">
+
+<color name="green" weight="0.323706011303">
+ <shade name="light" weight="0.892483288728" />
+ <shade name="soft" weight="0.0553235255001" />
+ <shade name="intense" weight="0.0521920051888" />
+</color>
+
+<color name="red" weight="0.253910663141">
+ <shade name="light" weight="0.892483288728" />
+ <shade name="soft" weight="0.0553235255001" />
+ <shade name="intense" weight="0.0521920051888" />
+</color>
+
+<color name="yellow" weight="0.162454689687">
+ <shade name="light" weight="0.892483288728" />
+ <shade name="soft" weight="0.0553235255001" />
+ <shade name="intense" weight="0.0521920051888" />
+</color>
+
+<color name="black" weight="0.153429429149">
+ <shade name="light" weight="0.892483288728" />
+ <shade name="soft" weight="0.0553235255001" />
+ <shade name="intense" weight="0.0521920051888" />
+</color>
+
+<color name="blue" weight="0.106498074351">
+ <shade name="light" weight="0.892483288728" />
+ <shade name="soft" weight="0.0553235255001" />
+ <shade name="intense" weight="0.0521920051888" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="knot">
+
+<color name="red" weight="0.828700528161">
+ <shade name="hard" weight="0.507086679356" />
+ <shade name="bright" weight="0.433219722127" />
+ <shade name="soft" weight="0.0596924870581" />
+</color>
+
+<color name="black" weight="0.124709323384">
+ <shade name="hard" weight="0.507086679356" />
+ <shade name="bright" weight="0.433219722127" />
+ <shade name="soft" weight="0.0596924870581" />
+</color>
+
+<color name="blue" weight="0.030924678246">
+ <shade name="hard" weight="0.507086679356" />
+ <shade name="bright" weight="0.433219722127" />
+ <shade name="soft" weight="0.0596924870581" />
+</color>
+
+<color name="pink" weight="0.0106316214101">
+ <shade name="hard" weight="0.507086679356" />
+ <shade name="bright" weight="0.433219722127" />
+ <shade name="soft" weight="0.0596924870581" />
+</color>
+
+<color name="green" weight="0.00503283979298">
+ <shade name="hard" weight="0.507086679356" />
+ <shade name="bright" weight="0.433219722127" />
+ <shade name="soft" weight="0.0596924870581" />
+</color>
+
+</colors>

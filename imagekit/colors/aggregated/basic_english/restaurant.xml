@@ -1,0 +1,33 @@
+<colors query="restaurant">
+
+<color name="green" weight="0.365569437554">
+ <shade name="fresh" weight="0.414947824795" />
+ <shade name="cool" weight="0.336769249109" />
+ <shade name="light" weight="0.248281410695" />
+</color>
+
+<color name="red" weight="0.219100892321">
+ <shade name="fresh" weight="0.414947824795" />
+ <shade name="cool" weight="0.336769249109" />
+ <shade name="light" weight="0.248281410695" />
+</color>
+
+<color name="blue" weight="0.205858530697">
+ <shade name="fresh" weight="0.414947824795" />
+ <shade name="cool" weight="0.336769249109" />
+ <shade name="light" weight="0.248281410695" />
+</color>
+
+<color name="white" weight="0.119983821985">
+ <shade name="fresh" weight="0.414947824795" />
+ <shade name="cool" weight="0.336769249109" />
+ <shade name="light" weight="0.248281410695" />
+</color>
+
+<color name="orange" weight="0.089486261882">
+ <shade name="fresh" weight="0.414947824795" />
+ <shade name="cool" weight="0.336769249109" />
+ <shade name="light" weight="0.248281410695" />
+</color>
+
+</colors>

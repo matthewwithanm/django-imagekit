@@ -1,0 +1,33 @@
+<colors query="blizzard">
+
+<color name="white" weight="0.936719726771">
+ <shade name="cool" weight="0.496044559496" />
+ <shade name="light" weight="0.29491487478" />
+ <shade name="dark" weight="0.209039279059" />
+</color>
+
+<color name="black" weight="0.0492690245899">
+ <shade name="cool" weight="0.496044559496" />
+ <shade name="light" weight="0.29491487478" />
+ <shade name="dark" weight="0.209039279059" />
+</color>
+
+<color name="blue" weight="0.00788709899814">
+ <shade name="cool" weight="0.496044559496" />
+ <shade name="light" weight="0.29491487478" />
+ <shade name="dark" weight="0.209039279059" />
+</color>
+
+<color name="green" weight="0.00393341183969">
+ <shade name="cool" weight="0.496044559496" />
+ <shade name="light" weight="0.29491487478" />
+ <shade name="dark" weight="0.209039279059" />
+</color>
+
+<color name="pink" weight="0.00218973442622">
+ <shade name="cool" weight="0.496044559496" />
+ <shade name="light" weight="0.29491487478" />
+ <shade name="dark" weight="0.209039279059" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="dolphin">
+
+<color name="blue" weight="0.520678930276">
+ <shade name="cool" weight="0.690309431751" />
+ <shade name="dark" weight="0.196959847041" />
+ <shade name="soft" weight="0.112729430139" />
+</color>
+
+<color name="green" weight="0.30428328975">
+ <shade name="cool" weight="0.690309431751" />
+ <shade name="dark" weight="0.196959847041" />
+ <shade name="soft" weight="0.112729430139" />
+</color>
+
+<color name="white" weight="0.0819792358307">
+ <shade name="cool" weight="0.690309431751" />
+ <shade name="dark" weight="0.196959847041" />
+ <shade name="soft" weight="0.112729430139" />
+</color>
+
+<color name="pink" weight="0.0641062853162">
+ <shade name="cool" weight="0.690309431751" />
+ <shade name="dark" weight="0.196959847041" />
+ <shade name="soft" weight="0.112729430139" />
+</color>
+
+<color name="orange" weight="0.0289512256267">
+ <shade name="cool" weight="0.690309431751" />
+ <shade name="dark" weight="0.196959847041" />
+ <shade name="soft" weight="0.112729430139" />
+</color>
+
+</colors>

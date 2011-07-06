@@ -1,0 +1,33 @@
+<colors query="pity">
+
+<color name="pink" weight="0.665023861389">
+ <shade name="cool" weight="0.502214493947" />
+ <shade name="weak" weight="0.249999420884" />
+ <shade name="light" weight="0.247783768705" />
+</color>
+
+<color name="black" weight="0.114004090524">
+ <shade name="intense" weight="0.433693989279" />
+ <shade name="cool" weight="0.378092195782" />
+ <shade name="weak" weight="0.188212070989" />
+</color>
+
+<color name="white" weight="0.0904291705698">
+ <shade name="cool" weight="0.502214493947" />
+ <shade name="weak" weight="0.249999420884" />
+ <shade name="light" weight="0.247783768705" />
+</color>
+
+<color name="green" weight="0.0696691664312">
+ <shade name="intense" weight="0.433693989279" />
+ <shade name="cool" weight="0.378092195782" />
+ <shade name="weak" weight="0.188212070989" />
+</color>
+
+<color name="red" weight="0.0608725545081">
+ <shade name="intense" weight="0.433693989279" />
+ <shade name="cool" weight="0.378092195782" />
+ <shade name="weak" weight="0.188212070989" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="unstoppable">
+
+<color name="black" weight="0.399440913447">
+ <shade name="intense" weight="0.466666034075" />
+ <shade name="cool" weight="0.333332881482" />
+ <shade name="hard" weight="0.199999728889" />
+</color>
+
+<color name="green" weight="0.388267741043">
+ <shade name="intense" weight="0.466666034075" />
+ <shade name="cool" weight="0.333332881482" />
+ <shade name="hard" weight="0.199999728889" />
+</color>
+
+<color name="red" weight="0.100558551637">
+ <shade name="intense" weight="0.466666034075" />
+ <shade name="cool" weight="0.333332881482" />
+ <shade name="hard" weight="0.199999728889" />
+</color>
+
+<color name="white" weight="0.0614524482227">
+ <shade name="cool" weight="0.543477059706" />
+ <shade name="hard" weight="0.326086235824" />
+ <shade name="dark" weight="0.13043449433" />
+</color>
+
+<color name="blue" weight="0.0502792758185">
+ <shade name="intense" weight="0.466666034075" />
+ <shade name="cool" weight="0.333332881482" />
+ <shade name="hard" weight="0.199999728889" />
+</color>
+
+</colors>

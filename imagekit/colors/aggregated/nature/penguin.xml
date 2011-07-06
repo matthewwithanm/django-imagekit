@@ -1,0 +1,33 @@
+<colors query="penguin">
+
+<color name="blue" weight="0.480768624807">
+ <shade name="cool" weight="0.912569891676" />
+ <shade name="soft" weight="0.0540022632528" />
+ <shade name="dark" weight="0.0334267173805" />
+</color>
+
+<color name="white" weight="0.143076742742">
+ <shade name="cool" weight="0.912569891676" />
+ <shade name="soft" weight="0.0540022632528" />
+ <shade name="dark" weight="0.0334267173805" />
+</color>
+
+<color name="purple" weight="0.132692140447">
+ <shade name="cool" weight="0.912569891676" />
+ <shade name="soft" weight="0.0540022632528" />
+ <shade name="dark" weight="0.0334267173805" />
+</color>
+
+<color name="black" weight="0.129615221248">
+ <shade name="cool" weight="0.912569891676" />
+ <shade name="soft" weight="0.0540022632528" />
+ <shade name="dark" weight="0.0334267173805" />
+</color>
+
+<color name="red" weight="0.113846010354">
+ <shade name="cool" weight="0.912569891676" />
+ <shade name="soft" weight="0.0540022632528" />
+ <shade name="dark" weight="0.0334267173805" />
+</color>
+
+</colors>

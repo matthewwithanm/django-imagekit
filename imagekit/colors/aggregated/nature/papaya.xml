@@ -1,0 +1,33 @@
+<colors query="papaya">
+
+<color name="green" weight="0.912120740306">
+ <shade name="fresh" weight="0.973786231882" />
+ <shade name="bright" weight="0.0135336413043" />
+ <shade name="cool" weight="0.0126790942029" />
+</color>
+
+<color name="orange" weight="0.0389571075942">
+ <shade name="fresh" weight="0.973786231882" />
+ <shade name="bright" weight="0.0135336413043" />
+ <shade name="cool" weight="0.0126790942029" />
+</color>
+
+<color name="red" weight="0.0256592487519">
+ <shade name="fresh" weight="0.973786231882" />
+ <shade name="bright" weight="0.0135336413043" />
+ <shade name="cool" weight="0.0126790942029" />
+</color>
+
+<color name="pink" weight="0.0173621340095">
+ <shade name="fresh" weight="0.973786231882" />
+ <shade name="bright" weight="0.0135336413043" />
+ <shade name="cool" weight="0.0126790942029" />
+</color>
+
+<color name="black" weight="0.00589975427508">
+ <shade name="fresh" weight="0.973786231882" />
+ <shade name="bright" weight="0.0135336413043" />
+ <shade name="cool" weight="0.0126790942029" />
+</color>
+
+</colors>

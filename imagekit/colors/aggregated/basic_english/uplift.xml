@@ -1,0 +1,33 @@
+<colors query="uplift">
+
+<color name="pink" weight="0.383486616343">
+ <shade name="fresh" weight="0.510637334995" />
+ <shade name="light" weight="0.323137688552" />
+ <shade name="weak" weight="0.166223090819" />
+</color>
+
+<color name="black" weight="0.247275523106">
+ <shade name="fresh" weight="0.408075899414" />
+ <shade name="intense" weight="0.333687063583" />
+ <shade name="light" weight="0.258235530098" />
+</color>
+
+<color name="red" weight="0.180217754128">
+ <shade name="fresh" weight="0.408075899414" />
+ <shade name="intense" weight="0.333687063583" />
+ <shade name="light" weight="0.258235530098" />
+</color>
+
+<color name="white" weight="0.17246419959">
+ <shade name="fresh" weight="0.510637334995" />
+ <shade name="light" weight="0.323137688552" />
+ <shade name="weak" weight="0.166223090819" />
+</color>
+
+<color name="orange" weight="0.0165548867164">
+ <shade name="fresh" weight="0.408075899414" />
+ <shade name="intense" weight="0.333687063583" />
+ <shade name="light" weight="0.258235530098" />
+</color>
+
+</colors>

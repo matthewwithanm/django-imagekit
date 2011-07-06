@@ -1,0 +1,33 @@
+<colors query="meeting">
+
+<color name="green" weight="0.462359501381">
+ <shade name="cool" weight="0.584904800641" />
+ <shade name="neutral" weight="0.224318328561" />
+ <shade name="light" weight="0.190775400926" />
+</color>
+
+<color name="black" weight="0.252669699346">
+ <shade name="cool" weight="0.584904800641" />
+ <shade name="neutral" weight="0.224318328561" />
+ <shade name="light" weight="0.190775400926" />
+</color>
+
+<color name="white" weight="0.22010917108">
+ <shade name="cool" weight="0.584904800641" />
+ <shade name="neutral" weight="0.224318328561" />
+ <shade name="light" weight="0.190775400926" />
+</color>
+
+<color name="red" weight="0.0395936023718">
+ <shade name="cool" weight="0.584904800641" />
+ <shade name="neutral" weight="0.224318328561" />
+ <shade name="light" weight="0.190775400926" />
+</color>
+
+<color name="yellow" weight="0.0252669699346">
+ <shade name="cool" weight="0.584904800641" />
+ <shade name="neutral" weight="0.224318328561" />
+ <shade name="light" weight="0.190775400926" />
+</color>
+
+</colors>

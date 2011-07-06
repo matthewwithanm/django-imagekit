@@ -1,0 +1,33 @@
+<colors query="ambition">
+
+<color name="black" weight="0.862158724712">
+ <shade name="fresh" weight="0.687878030275" />
+ <shade name="dark" weight="0.280302721588" />
+ <shade name="cool" weight="0.0318181467748" />
+</color>
+
+<color name="red" weight="0.0693932632085">
+ <shade name="fresh" weight="0.687878030275" />
+ <shade name="dark" weight="0.280302721588" />
+ <shade name="cool" weight="0.0318181467748" />
+</color>
+
+<color name="blue" weight="0.0283180589255">
+ <shade name="fresh" weight="0.687878030275" />
+ <shade name="dark" weight="0.280302721588" />
+ <shade name="cool" weight="0.0318181467748" />
+</color>
+
+<color name="green" weight="0.0278974936939">
+ <shade name="fresh" weight="0.687878030275" />
+ <shade name="dark" weight="0.280302721588" />
+ <shade name="cool" weight="0.0318181467748" />
+</color>
+
+<color name="white" weight="0.0122314388181">
+ <shade name="fresh" weight="0.687878030275" />
+ <shade name="dark" weight="0.280302721588" />
+ <shade name="cool" weight="0.0318181467748" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="womb">
+
+<color name="black" weight="0.486239291518">
+ <shade name="dark" weight="0.831056245372" />
+ <shade name="soft" weight="0.119137433777" />
+ <shade name="warm" weight="0.0498052589009" />
+</color>
+
+<color name="white" weight="0.218166016429">
+ <shade name="dark" weight="0.831056245372" />
+ <shade name="soft" weight="0.119137433777" />
+ <shade name="warm" weight="0.0498052589009" />
+</color>
+
+<color name="blue" weight="0.118921867779">
+ <shade name="dark" weight="0.85510879475" />
+ <shade name="soft" weight="0.12258552652" />
+ <shade name="light" weight="0.0223045860449" />
+</color>
+
+<color name="red" weight="0.0996719251528">
+ <shade name="dark" weight="0.831056245372" />
+ <shade name="soft" weight="0.119137433777" />
+ <shade name="warm" weight="0.0498052589009" />
+</color>
+
+<color name="green" weight="0.0769997705043">
+ <shade name="dark" weight="0.85510879475" />
+ <shade name="soft" weight="0.12258552652" />
+ <shade name="light" weight="0.0223045860449" />
+</color>
+
+</colors>

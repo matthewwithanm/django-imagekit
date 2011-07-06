@@ -1,0 +1,33 @@
+<colors query="ironwood">
+
+<color name="black" weight="0.292713804036">
+ <shade name="light" weight="0.484095690848" />
+ <shade name="dark" weight="0.309541956167" />
+ <shade name="hard" weight="0.206361304111" />
+</color>
+
+<color name="red" weight="0.27780116482">
+ <shade name="light" weight="0.484095690848" />
+ <shade name="dark" weight="0.309541956167" />
+ <shade name="hard" weight="0.206361304111" />
+</color>
+
+<color name="white" weight="0.248401961795">
+ <shade name="light" weight="0.484095690848" />
+ <shade name="dark" weight="0.309541956167" />
+ <shade name="hard" weight="0.206361304111" />
+</color>
+
+<color name="green" weight="0.166595483811">
+ <shade name="light" weight="0.484095690848" />
+ <shade name="dark" weight="0.309541956167" />
+ <shade name="hard" weight="0.206361304111" />
+</color>
+
+<color name="pink" weight="0.0144865638096">
+ <shade name="light" weight="0.484095690848" />
+ <shade name="dark" weight="0.309541956167" />
+ <shade name="hard" weight="0.206361304111" />
+</color>
+
+</colors>

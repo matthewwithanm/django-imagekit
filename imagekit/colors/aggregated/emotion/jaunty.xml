@@ -1,0 +1,33 @@
+<colors query="jaunty">
+
+<color name="white" weight="0.817833561444">
+ <shade name="light" weight="0.547898448777" />
+ <shade name="cool" weight="0.248739173064" />
+ <shade name="bright" weight="0.203361080681" />
+</color>
+
+<color name="black" weight="0.0675158547609">
+ <shade name="light" weight="0.547898448777" />
+ <shade name="cool" weight="0.248739173064" />
+ <shade name="bright" weight="0.203361080681" />
+</color>
+
+<color name="blue" weight="0.0471337099274">
+ <shade name="light" weight="0.547898448777" />
+ <shade name="cool" weight="0.248739173064" />
+ <shade name="bright" weight="0.203361080681" />
+</color>
+
+<color name="green" weight="0.0343948694065">
+ <shade name="light" weight="0.547898448777" />
+ <shade name="cool" weight="0.248739173064" />
+ <shade name="bright" weight="0.203361080681" />
+</color>
+
+<color name="purple" weight="0.0331209853544">
+ <shade name="light" weight="0.547898448777" />
+ <shade name="cool" weight="0.248739173064" />
+ <shade name="bright" weight="0.203361080681" />
+</color>
+
+</colors>

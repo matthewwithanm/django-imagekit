@@ -1,0 +1,33 @@
+<colors query="process">
+
+<color name="green" weight="0.280366927211">
+ <shade name="hard" weight="0.467835587246" />
+ <shade name="intense" weight="0.315464135566" />
+ <shade name="neutral" weight="0.216698844926" />
+</color>
+
+<color name="white" weight="0.254943226003">
+ <shade name="hard" weight="0.584651815898" />
+ <shade name="neutral" weight="0.270807473058" />
+ <shade name="light" weight="0.144538921153" />
+</color>
+
+<color name="black" weight="0.192796400827">
+ <shade name="hard" weight="0.467835587246" />
+ <shade name="intense" weight="0.315464135566" />
+ <shade name="neutral" weight="0.216698844926" />
+</color>
+
+<color name="blue" weight="0.179378336301">
+ <shade name="hard" weight="0.467835587246" />
+ <shade name="intense" weight="0.315464135566" />
+ <shade name="neutral" weight="0.216698844926" />
+</color>
+
+<color name="red" weight="0.0925140238403">
+ <shade name="hard" weight="0.467835587246" />
+ <shade name="intense" weight="0.315464135566" />
+ <shade name="neutral" weight="0.216698844926" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="earthy">
+
+<color name="red" weight="0.48688133198">
+ <shade name="warm" weight="0.568137473698" />
+ <shade name="soft" weight="0.255277986492" />
+ <shade name="dark" weight="0.176583268852" />
+</color>
+
+<color name="white" weight="0.433728348139">
+ <shade name="warm" weight="0.568137473698" />
+ <shade name="soft" weight="0.255277986492" />
+ <shade name="dark" weight="0.176583268852" />
+</color>
+
+<color name="blue" weight="0.0448611183615">
+ <shade name="soft" weight="0.453150596038" />
+ <shade name="dark" weight="0.313457555154" />
+ <shade name="fresh" weight="0.233389592696" />
+</color>
+
+<color name="yellow" weight="0.0177956189898">
+ <shade name="warm" weight="0.568137473698" />
+ <shade name="soft" weight="0.255277986492" />
+ <shade name="dark" weight="0.176583268852" />
+</color>
+
+<color name="green" weight="0.016732559313">
+ <shade name="soft" weight="0.453150596038" />
+ <shade name="dark" weight="0.313457555154" />
+ <shade name="fresh" weight="0.233389592696" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="disrespect">
+
+<color name="blue" weight="0.746798671995">
+ <shade name="intense" weight="0.687762928102" />
+ <shade name="hard" weight="0.20253141441" />
+ <shade name="cool" weight="0.109704516139" />
+</color>
+
+<color name="black" weight="0.111664182384">
+ <shade name="intense" weight="0.687762928102" />
+ <shade name="hard" weight="0.20253141441" />
+ <shade name="cool" weight="0.109704516139" />
+</color>
+
+<color name="purple" weight="0.0640113147424">
+ <shade name="hard" weight="0.518917401436" />
+ <shade name="cool" weight="0.281080259111" />
+ <shade name="light" weight="0.199999415137" />
+</color>
+
+<color name="white" weight="0.0490753413025">
+ <shade name="hard" weight="0.518917401436" />
+ <shade name="cool" weight="0.281080259111" />
+ <shade name="light" weight="0.199999415137" />
+</color>
+
+<color name="red" weight="0.0284494732188">
+ <shade name="intense" weight="0.687762928102" />
+ <shade name="hard" weight="0.20253141441" />
+ <shade name="cool" weight="0.109704516139" />
+</color>
+
+</colors>

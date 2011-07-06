@@ -1,0 +1,33 @@
+<colors query="fervor">
+
+<color name="yellow" weight="0.29729693572">
+ <shade name="intense" weight="0.560957220013" />
+ <shade name="fresh" weight="0.258345110381" />
+ <shade name="cool" weight="0.180696439564" />
+</color>
+
+<color name="red" weight="0.179360961219">
+ <shade name="intense" weight="0.560957220013" />
+ <shade name="fresh" weight="0.258345110381" />
+ <shade name="cool" weight="0.180696439564" />
+</color>
+
+<color name="white" weight="0.176903961751">
+ <shade name="fresh" weight="0.456409264598" />
+ <shade name="cool" weight="0.319230075519" />
+ <shade name="dark" weight="0.224358486811" />
+</color>
+
+<color name="green" weight="0.174446962282">
+ <shade name="intense" weight="0.560957220013" />
+ <shade name="fresh" weight="0.258345110381" />
+ <shade name="cool" weight="0.180696439564" />
+</color>
+
+<color name="blue" weight="0.171989962813">
+ <shade name="intense" weight="0.560957220013" />
+ <shade name="fresh" weight="0.258345110381" />
+ <shade name="cool" weight="0.180696439564" />
+</color>
+
+</colors>

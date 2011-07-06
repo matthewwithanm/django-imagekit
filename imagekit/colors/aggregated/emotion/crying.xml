@@ -1,0 +1,33 @@
+<colors query="crying">
+
+<color name="blue" weight="0.341879966012">
+ <shade name="cool" weight="0.704826682708" />
+ <shade name="neutral" weight="0.238765251983" />
+ <shade name="soft" weight="0.0564069874771" />
+</color>
+
+<color name="green" weight="0.304093232927">
+ <shade name="cool" weight="0.704826682708" />
+ <shade name="neutral" weight="0.238765251983" />
+ <shade name="soft" weight="0.0564069874771" />
+</color>
+
+<color name="black" weight="0.237066765906">
+ <shade name="cool" weight="0.704826682708" />
+ <shade name="neutral" weight="0.238765251983" />
+ <shade name="soft" weight="0.0564069874771" />
+</color>
+
+<color name="red" weight="0.063877572597">
+ <shade name="cool" weight="0.704826682708" />
+ <shade name="neutral" weight="0.238765251983" />
+ <shade name="soft" weight="0.0564069874771" />
+</color>
+
+<color name="purple" weight="0.053081363144">
+ <shade name="cool" weight="0.704826682708" />
+ <shade name="neutral" weight="0.238765251983" />
+ <shade name="soft" weight="0.0564069874771" />
+</color>
+
+</colors>

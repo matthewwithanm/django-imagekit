@@ -1,0 +1,33 @@
+<colors query="kettle">
+
+<color name="black" weight="0.64493089019">
+ <shade name="light" weight="0.69036135589" />
+ <shade name="fresh" weight="0.185919097824" />
+ <shade name="cool" weight="0.123718223184" />
+</color>
+
+<color name="red" weight="0.25718102983">
+ <shade name="light" weight="0.69036135589" />
+ <shade name="fresh" weight="0.185919097824" />
+ <shade name="cool" weight="0.123718223184" />
+</color>
+
+<color name="pink" weight="0.0415446278957">
+ <shade name="light" weight="0.69036135589" />
+ <shade name="fresh" weight="0.185919097824" />
+ <shade name="cool" weight="0.123718223184" />
+</color>
+
+<color name="blue" weight="0.0415446278957">
+ <shade name="light" weight="0.69036135589" />
+ <shade name="fresh" weight="0.185919097824" />
+ <shade name="cool" weight="0.123718223184" />
+</color>
+
+<color name="yellow" weight="0.0147978007933">
+ <shade name="light" weight="0.69036135589" />
+ <shade name="fresh" weight="0.185919097824" />
+ <shade name="cool" weight="0.123718223184" />
+</color>
+
+</colors>

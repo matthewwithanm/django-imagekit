@@ -1,0 +1,33 @@
+<colors query="zealous">
+
+<color name="purple" weight="0.510637737257">
+ <shade name="bright" weight="0.487802094008" />
+ <shade name="hard" weight="0.304876308755" />
+ <shade name="light" weight="0.207315889953" />
+</color>
+
+<color name="yellow" weight="0.20851040938">
+ <shade name="warm" weight="0.669974408069" />
+ <shade name="intense" weight="0.230768962779" />
+ <shade name="bright" weight="0.0992554678621" />
+</color>
+
+<color name="blue" weight="0.144680692223">
+ <shade name="intense" weight="0.588605851471" />
+ <shade name="bright" weight="0.253163807084" />
+ <shade name="hard" weight="0.158227379428" />
+</color>
+
+<color name="red" weight="0.0765956605886">
+ <shade name="warm" weight="0.669974408069" />
+ <shade name="intense" weight="0.230768962779" />
+ <shade name="bright" weight="0.0992554678621" />
+</color>
+
+<color name="white" weight="0.05957440268">
+ <shade name="warm" weight="0.805969023303" />
+ <shade name="bright" weight="0.119402818267" />
+ <shade name="hard" weight="0.0746267614169" />
+</color>
+
+</colors>

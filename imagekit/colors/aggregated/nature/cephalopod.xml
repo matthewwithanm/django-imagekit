@@ -1,0 +1,33 @@
+<colors query="cephalopod">
+
+<color name="blue" weight="0.378504221876">
+ <shade name="cool" weight="0.672130381753" />
+ <shade name="fresh" weight="0.262294783123" />
+ <shade name="hard" weight="0.0655736957808" />
+</color>
+
+<color name="pink" weight="0.219625906521">
+ <shade name="cool" weight="0.672130381753" />
+ <shade name="fresh" weight="0.262294783123" />
+ <shade name="hard" weight="0.0655736957808" />
+</color>
+
+<color name="red" weight="0.149532532099">
+ <shade name="cool" weight="0.672130381753" />
+ <shade name="fresh" weight="0.262294783123" />
+ <shade name="hard" weight="0.0655736957808" />
+</color>
+
+<color name="purple" weight="0.149532532099">
+ <shade name="cool" weight="0.672130381753" />
+ <shade name="fresh" weight="0.262294783123" />
+ <shade name="hard" weight="0.0655736957808" />
+</color>
+
+<color name="black" weight="0.102803615818">
+ <shade name="cool" weight="0.672130381753" />
+ <shade name="fresh" weight="0.262294783123" />
+ <shade name="hard" weight="0.0655736957808" />
+</color>
+
+</colors>

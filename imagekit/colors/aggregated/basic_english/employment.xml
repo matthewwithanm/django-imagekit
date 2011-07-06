@@ -1,0 +1,33 @@
+<colors query="employment">
+
+<color name="orange" weight="0.392503508611">
+ <shade name="weak" weight="0.640914840928" />
+ <shade name="neutral" weight="0.194563433853" />
+ <shade name="fresh" weight="0.164520550685" />
+</color>
+
+<color name="black" weight="0.299322967442">
+ <shade name="weak" weight="0.640914840928" />
+ <shade name="neutral" weight="0.194563433853" />
+ <shade name="fresh" weight="0.164520550685" />
+</color>
+
+<color name="white" weight="0.166579738403">
+ <shade name="weak" weight="0.640914840928" />
+ <shade name="neutral" weight="0.194563433853" />
+ <shade name="fresh" weight="0.164520550685" />
+</color>
+
+<color name="blue" weight="0.0780842523763">
+ <shade name="weak" weight="0.640914840928" />
+ <shade name="neutral" weight="0.194563433853" />
+ <shade name="fresh" weight="0.164520550685" />
+</color>
+
+<color name="green" weight="0.063508525266">
+ <shade name="weak" weight="0.640914840928" />
+ <shade name="neutral" weight="0.194563433853" />
+ <shade name="fresh" weight="0.164520550685" />
+</color>
+
+</colors>

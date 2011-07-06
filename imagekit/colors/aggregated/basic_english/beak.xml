@@ -1,0 +1,33 @@
+<colors query="beak">
+
+<color name="yellow" weight="0.306034166381">
+ <shade name="hard" weight="0.632403946149" />
+ <shade name="dark" weight="0.259365669053" />
+ <shade name="soft" weight="0.108229131037" />
+</color>
+
+<color name="red" weight="0.258620422294">
+ <shade name="hard" weight="0.632403946149" />
+ <shade name="dark" weight="0.259365669053" />
+ <shade name="soft" weight="0.108229131037" />
+</color>
+
+<color name="black" weight="0.224137699321">
+ <shade name="hard" weight="0.632403946149" />
+ <shade name="dark" weight="0.259365669053" />
+ <shade name="soft" weight="0.108229131037" />
+</color>
+
+<color name="orange" weight="0.129310211147">
+ <shade name="hard" weight="0.632403946149" />
+ <shade name="dark" weight="0.259365669053" />
+ <shade name="soft" weight="0.108229131037" />
+</color>
+
+<color name="white" weight="0.0818964670596">
+ <shade name="hard" weight="0.632403946149" />
+ <shade name="dark" weight="0.259365669053" />
+ <shade name="soft" weight="0.108229131037" />
+</color>
+
+</colors>

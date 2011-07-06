@@ -1,0 +1,33 @@
+<colors query="influenza">
+
+<color name="black" weight="0.300220419845">
+ <shade name="weak" weight="0.393161923552" />
+ <shade name="light" weight="0.354700431031" />
+ <shade name="intense" weight="0.252136450974" />
+</color>
+
+<color name="blue" weight="0.284767898236">
+ <shade name="weak" weight="0.393161923552" />
+ <shade name="light" weight="0.354700431031" />
+ <shade name="intense" weight="0.252136450974" />
+</color>
+
+<color name="yellow" weight="0.185430259316">
+ <shade name="weak" weight="0.393161923552" />
+ <shade name="light" weight="0.354700431031" />
+ <shade name="intense" weight="0.252136450974" />
+</color>
+
+<color name="red" weight="0.128035179052">
+ <shade name="weak" weight="0.393161923552" />
+ <shade name="light" weight="0.354700431031" />
+ <shade name="intense" weight="0.252136450974" />
+</color>
+
+<color name="white" weight="0.101545142007">
+ <shade name="weak" weight="0.484209814018" />
+ <shade name="light" weight="0.436841462646" />
+ <shade name="fresh" weight="0.0789472522855" />
+</color>
+
+</colors>

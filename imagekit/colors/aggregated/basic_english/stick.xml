@@ -1,0 +1,33 @@
+<colors query="stick">
+
+<color name="red" weight="0.421758432699">
+ <shade name="light" weight="0.759435183912" />
+ <shade name="hard" weight="0.140518246604" />
+ <shade name="soft" weight="0.100045353569" />
+</color>
+
+<color name="white" weight="0.202012703844">
+ <shade name="light" weight="0.759435183912" />
+ <shade name="hard" weight="0.140518246604" />
+ <shade name="soft" weight="0.100045353569" />
+</color>
+
+<color name="black" weight="0.174454624434">
+ <shade name="light" weight="0.759435183912" />
+ <shade name="hard" weight="0.140518246604" />
+ <shade name="soft" weight="0.100045353569" />
+</color>
+
+<color name="green" weight="0.12652752981">
+ <shade name="light" weight="0.759435183912" />
+ <shade name="hard" weight="0.140518246604" />
+ <shade name="soft" weight="0.100045353569" />
+</color>
+
+<color name="orange" weight="0.075245538561">
+ <shade name="light" weight="0.759435183912" />
+ <shade name="hard" weight="0.140518246604" />
+ <shade name="soft" weight="0.100045353569" />
+</color>
+
+</colors>

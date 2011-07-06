@@ -1,0 +1,33 @@
+<colors query="lift">
+
+<color name="yellow" weight="0.474313245167">
+ <shade name="light" weight="0.55299471806" />
+ <shade name="soft" weight="0.321300171836" />
+ <shade name="intense" weight="0.125703891929" />
+</color>
+
+<color name="orange" weight="0.173117297197">
+ <shade name="light" weight="0.55299471806" />
+ <shade name="soft" weight="0.321300171836" />
+ <shade name="intense" weight="0.125703891929" />
+</color>
+
+<color name="blue" weight="0.119352413027">
+ <shade name="light" weight="0.55299471806" />
+ <shade name="soft" weight="0.321300171836" />
+ <shade name="intense" weight="0.125703891929" />
+</color>
+
+<color name="green" weight="0.118507938407">
+ <shade name="light" weight="0.55299471806" />
+ <shade name="soft" weight="0.321300171836" />
+ <shade name="intense" weight="0.125703891929" />
+</color>
+
+<color name="pink" weight="0.114707802615">
+ <shade name="light" weight="0.555912329136" />
+ <shade name="soft" weight="0.322995357901" />
+ <shade name="weak" weight="0.12109108836" />
+</color>
+
+</colors>

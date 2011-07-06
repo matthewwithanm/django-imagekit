@@ -1,0 +1,33 @@
+<colors query="certificate">
+
+<color name="green" weight="0.73503490911">
+ <shade name="fresh" weight="0.91268435717" />
+ <shade name="cool" weight="0.0540361857674" />
+ <shade name="light" weight="0.0332783826982" />
+</color>
+
+<color name="blue" weight="0.112684676643">
+ <shade name="fresh" weight="0.91268435717" />
+ <shade name="cool" weight="0.0540361857674" />
+ <shade name="light" weight="0.0332783826982" />
+</color>
+
+<color name="white" weight="0.106481850405">
+ <shade name="fresh" weight="0.91268435717" />
+ <shade name="cool" weight="0.0540361857674" />
+ <shade name="light" weight="0.0332783826982" />
+</color>
+
+<color name="red" weight="0.0339087834301">
+ <shade name="fresh" weight="0.91268435717" />
+ <shade name="cool" weight="0.0540361857674" />
+ <shade name="light" weight="0.0332783826982" />
+</color>
+
+<color name="yellow" weight="0.011888750288">
+ <shade name="fresh" weight="0.91268435717" />
+ <shade name="cool" weight="0.0540361857674" />
+ <shade name="light" weight="0.0332783826982" />
+</color>
+
+</colors>

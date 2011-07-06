@@ -1,0 +1,33 @@
+<colors query="clay">
+
+<color name="red" weight="0.606059946818">
+ <shade name="soft" weight="0.599015840869" />
+ <shade name="hard" weight="0.254805245743" />
+ <shade name="light" weight="0.146177746242" />
+</color>
+
+<color name="white" weight="0.191287670714">
+ <shade name="soft" weight="0.599015840869" />
+ <shade name="hard" weight="0.254805245743" />
+ <shade name="light" weight="0.146177746242" />
+</color>
+
+<color name="green" weight="0.0852271800212">
+ <shade name="soft" weight="0.599015840869" />
+ <shade name="hard" weight="0.254805245743" />
+ <shade name="light" weight="0.146177746242" />
+</color>
+
+<color name="blue" weight="0.0591855416814">
+ <shade name="soft" weight="0.599015840869" />
+ <shade name="hard" weight="0.254805245743" />
+ <shade name="light" weight="0.146177746242" />
+</color>
+
+<color name="black" weight="0.0582385730145">
+ <shade name="soft" weight="0.599015840869" />
+ <shade name="hard" weight="0.254805245743" />
+ <shade name="light" weight="0.146177746242" />
+</color>
+
+</colors>

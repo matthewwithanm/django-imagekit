@@ -1,0 +1,33 @@
+<colors query="splendid">
+
+<color name="black" weight="0.60356278439">
+ <shade name="bright" weight="0.484002524405" />
+ <shade name="soft" weight="0.266611560053" />
+ <shade name="fresh" weight="0.249384351558" />
+</color>
+
+<color name="red" weight="0.134298287449">
+ <shade name="bright" weight="0.484002524405" />
+ <shade name="soft" weight="0.266611560053" />
+ <shade name="fresh" weight="0.249384351558" />
+</color>
+
+<color name="white" weight="0.10244977152">
+ <shade name="bright" weight="0.484002524405" />
+ <shade name="soft" weight="0.266611560053" />
+ <shade name="fresh" weight="0.249384351558" />
+</color>
+
+<color name="orange" weight="0.0815143834269">
+ <shade name="bright" weight="0.484002524405" />
+ <shade name="soft" weight="0.266611560053" />
+ <shade name="fresh" weight="0.249384351558" />
+</color>
+
+<color name="blue" weight="0.0781736300077">
+ <shade name="bright" weight="0.484002524405" />
+ <shade name="soft" weight="0.266611560053" />
+ <shade name="fresh" weight="0.249384351558" />
+</color>
+
+</colors>

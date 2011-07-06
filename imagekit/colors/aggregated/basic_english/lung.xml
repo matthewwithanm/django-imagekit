@@ -1,0 +1,33 @@
+<colors query="lung">
+
+<color name="black" weight="0.873184492252">
+ <shade name="light" weight="0.588234607609" />
+ <shade name="fresh" weight="0.334130936997" />
+ <shade name="hard" weight="0.0776332883298" />
+</color>
+
+<color name="green" weight="0.100024229763">
+ <shade name="light" weight="0.588234607609" />
+ <shade name="fresh" weight="0.334130936997" />
+ <shade name="hard" weight="0.0776332883298" />
+</color>
+
+<color name="white" weight="0.0223026998795">
+ <shade name="light" weight="0.588234607609" />
+ <shade name="fresh" weight="0.334130936997" />
+ <shade name="hard" weight="0.0776332883298" />
+</color>
+
+<color name="pink" weight="0.00250060574407">
+ <shade name="light" weight="0.588234607609" />
+ <shade name="fresh" weight="0.334130936997" />
+ <shade name="hard" weight="0.0776332883298" />
+</color>
+
+<color name="orange" weight="0.00198696780745">
+ <shade name="light" weight="0.588234607609" />
+ <shade name="fresh" weight="0.334130936997" />
+ <shade name="hard" weight="0.0776332883298" />
+</color>
+
+</colors>

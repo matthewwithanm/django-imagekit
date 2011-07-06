@@ -1,0 +1,33 @@
+<colors query="cobra">
+
+<color name="black" weight="0.725266644396">
+ <shade name="light" weight="0.486026099105" />
+ <shade name="cool" weight="0.348723726108" />
+ <shade name="bright" weight="0.165248873696" />
+</color>
+
+<color name="red" weight="0.107285987489">
+ <shade name="light" weight="0.486026099105" />
+ <shade name="cool" weight="0.348723726108" />
+ <shade name="bright" weight="0.165248873696" />
+</color>
+
+<color name="blue" weight="0.0815507194621">
+ <shade name="light" weight="0.486026099105" />
+ <shade name="cool" weight="0.348723726108" />
+ <shade name="bright" weight="0.165248873696" />
+</color>
+
+<color name="white" weight="0.0728608886997">
+ <shade name="light" weight="0.486026099105" />
+ <shade name="cool" weight="0.348723726108" />
+ <shade name="bright" weight="0.165248873696" />
+</color>
+
+<color name="purple" weight="0.0130347461435">
+ <shade name="light" weight="0.486026099105" />
+ <shade name="cool" weight="0.348723726108" />
+ <shade name="bright" weight="0.165248873696" />
+</color>
+
+</colors>

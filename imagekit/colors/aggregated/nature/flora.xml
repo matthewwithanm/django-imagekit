@@ -1,0 +1,33 @@
+<colors query="flora">
+
+<color name="green" weight="0.402774677001">
+ <shade name="light" weight="0.541674604815" />
+ <shade name="dark" weight="0.25404119063" />
+ <shade name="soft" weight="0.20428270949" />
+</color>
+
+<color name="pink" weight="0.302562795642">
+ <shade name="light" weight="0.541674604815" />
+ <shade name="dark" weight="0.25404119063" />
+ <shade name="soft" weight="0.20428270949" />
+</color>
+
+<color name="blue" weight="0.215840975235">
+ <shade name="light" weight="0.541674604815" />
+ <shade name="dark" weight="0.25404119063" />
+ <shade name="soft" weight="0.20428270949" />
+</color>
+
+<color name="yellow" weight="0.0408556131695">
+ <shade name="light" weight="0.541674604815" />
+ <shade name="dark" weight="0.25404119063" />
+ <shade name="soft" weight="0.20428270949" />
+</color>
+
+<color name="orange" weight="0.0379648858226">
+ <shade name="light" weight="0.541674604815" />
+ <shade name="dark" weight="0.25404119063" />
+ <shade name="soft" weight="0.20428270949" />
+</color>
+
+</colors>

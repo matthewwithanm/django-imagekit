@@ -1,0 +1,33 @@
+<colors query="reluctance">
+
+<color name="white" weight="0.650280240376">
+ <shade name="hard" weight="0.344946248437" />
+ <shade name="soft" weight="0.341461942897" />
+ <shade name="warm" weight="0.313587498579" />
+</color>
+
+<color name="black" weight="0.192415535489">
+ <shade name="intense" weight="0.801209897985" />
+ <shade name="hard" weight="0.0998989671291" />
+ <shade name="soft" weight="0.0988898866531" />
+</color>
+
+<color name="green" weight="0.129213352299">
+ <shade name="intense" weight="0.801209897985" />
+ <shade name="hard" weight="0.0998989671291" />
+ <shade name="soft" weight="0.0988898866531" />
+</color>
+
+<color name="red" weight="0.0154494225575">
+ <shade name="intense" weight="0.801209897985" />
+ <shade name="hard" weight="0.0998989671291" />
+ <shade name="soft" weight="0.0988898866531" />
+</color>
+
+<color name="blue" weight="0.012640436638">
+ <shade name="intense" weight="0.801209897985" />
+ <shade name="hard" weight="0.0998989671291" />
+ <shade name="soft" weight="0.0988898866531" />
+</color>
+
+</colors>

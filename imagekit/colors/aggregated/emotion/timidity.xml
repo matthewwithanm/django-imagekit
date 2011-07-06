@@ -1,0 +1,33 @@
+<colors query="timidity">
+
+<color name="yellow" weight="0.473683720222">
+ <shade name="weak" weight="0.77631497911" />
+ <shade name="soft" weight="0.129385829852" />
+ <shade name="intense" weight="0.09429814718" />
+</color>
+
+<color name="white" weight="0.280701463835">
+ <shade name="weak" weight="0.846888987753" />
+ <shade name="soft" weight="0.141148164626" />
+ <shade name="hard" weight="0.0119617088666" />
+</color>
+
+<color name="black" weight="0.157894573407">
+ <shade name="weak" weight="0.77631497911" />
+ <shade name="soft" weight="0.129385829852" />
+ <shade name="intense" weight="0.09429814718" />
+</color>
+
+<color name="green" weight="0.0526315244691">
+ <shade name="weak" weight="0.77631497911" />
+ <shade name="soft" weight="0.129385829852" />
+ <shade name="intense" weight="0.09429814718" />
+</color>
+
+<color name="blue" weight="0.0350876829794">
+ <shade name="weak" weight="0.77631497911" />
+ <shade name="soft" weight="0.129385829852" />
+ <shade name="intense" weight="0.09429814718" />
+</color>
+
+</colors>

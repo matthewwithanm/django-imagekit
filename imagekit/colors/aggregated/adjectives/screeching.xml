@@ -1,0 +1,33 @@
+<colors query="screeching">
+
+<color name="black" weight="0.453051151855">
+ <shade name="cool" weight="0.820418333751" />
+ <shade name="soft" weight="0.104375443572" />
+ <shade name="intense" weight="0.0752050139272" />
+</color>
+
+<color name="white" weight="0.208919961218">
+ <shade name="cool" weight="0.821541680179" />
+ <shade name="soft" weight="0.104518358201" />
+ <shade name="light" weight="0.0739387512161" />
+</color>
+
+<color name="green" weight="0.140844917675">
+ <shade name="cool" weight="0.820418333751" />
+ <shade name="soft" weight="0.104375443572" />
+ <shade name="intense" weight="0.0752050139272" />
+</color>
+
+<color name="red" weight="0.119718180024">
+ <shade name="cool" weight="0.820418333751" />
+ <shade name="soft" weight="0.104375443572" />
+ <shade name="intense" weight="0.0752050139272" />
+</color>
+
+<color name="blue" weight="0.0774647047214">
+ <shade name="cool" weight="0.820418333751" />
+ <shade name="soft" weight="0.104375443572" />
+ <shade name="intense" weight="0.0752050139272" />
+</color>
+
+</colors>

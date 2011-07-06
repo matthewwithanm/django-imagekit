@@ -1,0 +1,33 @@
+<colors query="pea">
+
+<color name="green" weight="0.712047651597">
+ <shade name="fresh" weight="0.92001556808" />
+ <shade name="hard" weight="0.0453791462634" />
+ <shade name="dark" weight="0.0346041891598" />
+</color>
+
+<color name="white" weight="0.0891625651706">
+ <shade name="fresh" weight="0.92001556808" />
+ <shade name="hard" weight="0.0453791462634" />
+ <shade name="dark" weight="0.0346041891598" />
+</color>
+
+<color name="yellow" weight="0.0828982163296">
+ <shade name="fresh" weight="0.92001556808" />
+ <shade name="hard" weight="0.0453791462634" />
+ <shade name="dark" weight="0.0346041891598" />
+</color>
+
+<color name="black" weight="0.0636875465504">
+ <shade name="fresh" weight="0.92001556808" />
+ <shade name="hard" weight="0.0453791462634" />
+ <shade name="dark" weight="0.0346041891598" />
+</color>
+
+<color name="red" weight="0.0522029070086">
+ <shade name="fresh" weight="0.92001556808" />
+ <shade name="hard" weight="0.0453791462634" />
+ <shade name="dark" weight="0.0346041891598" />
+</color>
+
+</colors>

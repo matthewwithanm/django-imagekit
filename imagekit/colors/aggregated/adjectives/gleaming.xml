@@ -1,0 +1,33 @@
+<colors query="gleaming">
+
+<color name="white" weight="0.708262317068">
+ <shade name="light" weight="0.616621309782" />
+ <shade name="bright" weight="0.321715465973" />
+ <shade name="soft" weight="0.0616621309782" />
+</color>
+
+<color name="red" weight="0.133558036933">
+ <shade name="light" weight="0.616621309782" />
+ <shade name="bright" weight="0.321715465973" />
+ <shade name="soft" weight="0.0616621309782" />
+</color>
+
+<color name="black" weight="0.0789206581876">
+ <shade name="light" weight="0.616621309782" />
+ <shade name="bright" weight="0.321715465973" />
+ <shade name="soft" weight="0.0616621309782" />
+</color>
+
+<color name="blue" weight="0.0454636954004">
+ <shade name="light" weight="0.616621309782" />
+ <shade name="bright" weight="0.321715465973" />
+ <shade name="soft" weight="0.0616621309782" />
+</color>
+
+<color name="green" weight="0.0337942305572">
+ <shade name="light" weight="0.616621309782" />
+ <shade name="bright" weight="0.321715465973" />
+ <shade name="soft" weight="0.0616621309782" />
+</color>
+
+</colors>

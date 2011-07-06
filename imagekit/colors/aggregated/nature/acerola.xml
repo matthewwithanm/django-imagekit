@@ -1,0 +1,33 @@
+<colors query="acerola">
+
+<color name="orange" weight="0.949509219163">
+ <shade name="cool" weight="0.611202019678" />
+ <shade name="fresh" weight="0.380559748101" />
+ <shade name="light" weight="0.00823722398487" />
+</color>
+
+<color name="red" weight="0.0422004097406">
+ <shade name="cool" weight="0.611202019678" />
+ <shade name="fresh" weight="0.380559748101" />
+ <shade name="light" weight="0.00823722398487" />
+</color>
+
+<color name="green" weight="0.00376789372684">
+ <shade name="cool" weight="0.611202019678" />
+ <shade name="fresh" weight="0.380559748101" />
+ <shade name="light" weight="0.00823722398487" />
+</color>
+
+<color name="white" weight="0.0022607362361">
+ <shade name="cool" weight="0.611202019678" />
+ <shade name="fresh" weight="0.380559748101" />
+ <shade name="light" weight="0.00823722398487" />
+</color>
+
+<color name="pink" weight="0.0022607362361">
+ <shade name="cool" weight="0.611202019678" />
+ <shade name="fresh" weight="0.380559748101" />
+ <shade name="light" weight="0.00823722398487" />
+</color>
+
+</colors>

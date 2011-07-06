@@ -1,0 +1,33 @@
+<colors query="visa">
+
+<color name="black" weight="0.500846735492">
+ <shade name="cool" weight="0.456521214627" />
+ <shade name="fresh" weight="0.321428202136" />
+ <shade name="light" weight="0.222049434326" />
+</color>
+
+<color name="white" weight="0.215590042157">
+ <shade name="cool" weight="0.456521214627" />
+ <shade name="fresh" weight="0.321428202136" />
+ <shade name="light" weight="0.222049434326" />
+</color>
+
+<color name="pink" weight="0.124270242641">
+ <shade name="cool" weight="0.456521214627" />
+ <shade name="fresh" weight="0.321428202136" />
+ <shade name="light" weight="0.222049434326" />
+</color>
+
+<color name="green" weight="0.0805873694702">
+ <shade name="cool" weight="0.456521214627" />
+ <shade name="fresh" weight="0.321428202136" />
+ <shade name="light" weight="0.222049434326" />
+</color>
+
+<color name="blue" weight="0.0787044870059">
+ <shade name="cool" weight="0.456521214627" />
+ <shade name="fresh" weight="0.321428202136" />
+ <shade name="light" weight="0.222049434326" />
+</color>
+
+</colors>

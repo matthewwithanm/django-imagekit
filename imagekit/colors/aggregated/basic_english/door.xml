@@ -1,0 +1,33 @@
+<colors query="door">
+
+<color name="red" weight="0.434782116909">
+ <shade name="hard" weight="0.558607252017" />
+ <shade name="cool" weight="0.239010643896" />
+ <shade name="light" weight="0.202380660157" />
+</color>
+
+<color name="green" weight="0.220948366684">
+ <shade name="hard" weight="0.558607252017" />
+ <shade name="cool" weight="0.239010643896" />
+ <shade name="light" weight="0.202380660157" />
+</color>
+
+<color name="blue" weight="0.140711303291">
+ <shade name="hard" weight="0.558607252017" />
+ <shade name="cool" weight="0.239010643896" />
+ <shade name="light" weight="0.202380660157" />
+</color>
+
+<color name="black" weight="0.128063096253">
+ <shade name="hard" weight="0.558607252017" />
+ <shade name="cool" weight="0.239010643896" />
+ <shade name="light" weight="0.202380660157" />
+</color>
+
+<color name="pink" weight="0.0754939857542">
+ <shade name="hard" weight="0.558607252017" />
+ <shade name="cool" weight="0.239010643896" />
+ <shade name="light" weight="0.202380660157" />
+</color>
+
+</colors>

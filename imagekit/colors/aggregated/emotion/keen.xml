@@ -1,0 +1,33 @@
+<colors query="keen">
+
+<color name="black" weight="0.384034433398">
+ <shade name="cool" weight="0.413398972309" />
+ <shade name="intense" weight="0.335352097364" />
+ <shade name="fresh" weight="0.251246789205" />
+</color>
+
+<color name="green" weight="0.256581957685">
+ <shade name="cool" weight="0.413398972309" />
+ <shade name="intense" weight="0.335352097364" />
+ <shade name="fresh" weight="0.251246789205" />
+</color>
+
+<color name="red" weight="0.146738047696">
+ <shade name="cool" weight="0.413398972309" />
+ <shade name="intense" weight="0.335352097364" />
+ <shade name="fresh" weight="0.251246789205" />
+</color>
+
+<color name="white" weight="0.110514712493">
+ <shade name="cool" weight="0.45383304905" />
+ <shade name="fresh" weight="0.275820947914" />
+ <shade name="bright" weight="0.270343652494" />
+</color>
+
+<color name="blue" weight="0.102129681196">
+ <shade name="cool" weight="0.413398972309" />
+ <shade name="intense" weight="0.335352097364" />
+ <shade name="fresh" weight="0.251246789205" />
+</color>
+
+</colors>

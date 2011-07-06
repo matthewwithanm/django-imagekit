@@ -1,0 +1,33 @@
+<colors query="caretaker">
+
+<color name="black" weight="0.586117657523">
+ <shade name="neutral" weight="0.777387413803" />
+ <shade name="weak" weight="0.194565959261" />
+ <shade name="cool" weight="0.0280455436772" />
+</color>
+
+<color name="white" weight="0.320051089306">
+ <shade name="neutral" weight="0.777387413803" />
+ <shade name="weak" weight="0.194565959261" />
+ <shade name="cool" weight="0.0280455436772" />
+</color>
+
+<color name="green" weight="0.0784060901512">
+ <shade name="neutral" weight="0.777387413803" />
+ <shade name="weak" weight="0.194565959261" />
+ <shade name="cool" weight="0.0280455436772" />
+</color>
+
+<color name="blue" weight="0.00964009305137">
+ <shade name="neutral" weight="0.777387413803" />
+ <shade name="weak" weight="0.194565959261" />
+ <shade name="cool" weight="0.0280455436772" />
+</color>
+
+<color name="yellow" weight="0.00578405583082">
+ <shade name="neutral" weight="0.777387413803" />
+ <shade name="weak" weight="0.194565959261" />
+ <shade name="cool" weight="0.0280455436772" />
+</color>
+
+</colors>

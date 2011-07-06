@@ -1,0 +1,33 @@
+<colors query="betrayal">
+
+<color name="black" weight="0.521471860569">
+ <shade name="fresh" weight="0.35810757627" />
+ <shade name="dark" weight="0.353377853565" />
+ <shade name="intense" weight="0.288513085033" />
+</color>
+
+<color name="blue" weight="0.210889355377">
+ <shade name="fresh" weight="0.35810757627" />
+ <shade name="dark" weight="0.353377853565" />
+ <shade name="intense" weight="0.288513085033" />
+</color>
+
+<color name="white" weight="0.138036668974">
+ <shade name="fresh" weight="0.393174433088" />
+ <shade name="dark" weight="0.387981563217" />
+ <shade name="soft" weight="0.218842373134" />
+</color>
+
+<color name="red" weight="0.109279029604">
+ <shade name="fresh" weight="0.35810757627" />
+ <shade name="dark" weight="0.353377853565" />
+ <shade name="intense" weight="0.288513085033" />
+</color>
+
+<color name="green" weight="0.0203220651545">
+ <shade name="fresh" weight="0.35810757627" />
+ <shade name="dark" weight="0.353377853565" />
+ <shade name="intense" weight="0.288513085033" />
+</color>
+
+</colors>

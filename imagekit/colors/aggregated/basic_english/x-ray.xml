@@ -1,0 +1,33 @@
+<colors query="x-ray">
+
+<color name="white" weight="0.650455207182">
+ <shade name="soft" weight="0.47724208712" />
+ <shade name="hard" weight="0.459566454263" />
+ <shade name="bright" weight="0.0631903874612" />
+</color>
+
+<color name="black" weight="0.199999778657">
+ <shade name="soft" weight="0.47724208712" />
+ <shade name="hard" weight="0.459566454263" />
+ <shade name="bright" weight="0.0631903874612" />
+</color>
+
+<color name="green" weight="0.0586625490589">
+ <shade name="soft" weight="0.47724208712" />
+ <shade name="hard" weight="0.459566454263" />
+ <shade name="bright" weight="0.0631903874612" />
+</color>
+
+<color name="pink" weight="0.0477203119287">
+ <shade name="soft" weight="0.47724208712" />
+ <shade name="hard" weight="0.459566454263" />
+ <shade name="bright" weight="0.0631903874612" />
+</color>
+
+<color name="orange" weight="0.0431610464578">
+ <shade name="soft" weight="0.47724208712" />
+ <shade name="hard" weight="0.459566454263" />
+ <shade name="bright" weight="0.0631903874612" />
+</color>
+
+</colors>

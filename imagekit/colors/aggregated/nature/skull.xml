@@ -1,0 +1,33 @@
+<colors query="skull">
+
+<color name="white" weight="0.235970966914">
+ <shade name="dark" weight="0.409157630087" />
+ <shade name="soft" weight="0.392909493153" />
+ <shade name="cool" weight="0.197931849934" />
+</color>
+
+<color name="pink" weight="0.215107680205">
+ <shade name="dark" weight="0.409157630087" />
+ <shade name="soft" weight="0.392909493153" />
+ <shade name="cool" weight="0.197931849934" />
+</color>
+
+<color name="red" weight="0.202158053972">
+ <shade name="dark" weight="0.409157630087" />
+ <shade name="soft" weight="0.392909493153" />
+ <shade name="cool" weight="0.197931849934" />
+</color>
+
+<color name="blue" weight="0.189927851418">
+ <shade name="dark" weight="0.409157630087" />
+ <shade name="soft" weight="0.392909493153" />
+ <shade name="cool" weight="0.197931849934" />
+</color>
+
+<color name="black" weight="0.156834362156">
+ <shade name="dark" weight="0.409157630087" />
+ <shade name="soft" weight="0.392909493153" />
+ <shade name="cool" weight="0.197931849934" />
+</color>
+
+</colors>

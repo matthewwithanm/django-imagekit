@@ -1,0 +1,33 @@
+<colors query="gardener">
+
+<color name="green" weight="0.505140744511">
+ <shade name="hard" weight="0.697134086545" />
+ <shade name="bright" weight="0.171896076134" />
+ <shade name="light" weight="0.13096843896" />
+</color>
+
+<color name="black" weight="0.285514333854">
+ <shade name="hard" weight="0.697134086545" />
+ <shade name="bright" weight="0.171896076134" />
+ <shade name="light" weight="0.13096843896" />
+</color>
+
+<color name="blue" weight="0.172506562552">
+ <shade name="hard" weight="0.697134086545" />
+ <shade name="bright" weight="0.171896076134" />
+ <shade name="light" weight="0.13096843896" />
+</color>
+
+<color name="white" weight="0.022162301439">
+ <shade name="hard" weight="0.697134086545" />
+ <shade name="bright" weight="0.171896076134" />
+ <shade name="light" weight="0.13096843896" />
+</color>
+
+<color name="yellow" weight="0.0146750374393">
+ <shade name="hard" weight="0.697134086545" />
+ <shade name="bright" weight="0.171896076134" />
+ <shade name="light" weight="0.13096843896" />
+</color>
+
+</colors>

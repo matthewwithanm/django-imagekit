@@ -1,0 +1,33 @@
+<colors query="mud">
+
+<color name="black" weight="0.449574257906">
+ <shade name="soft" weight="0.76042047203" />
+ <shade name="fresh" weight="0.124140932482" />
+ <shade name="hard" weight="0.11543732467" />
+</color>
+
+<color name="red" weight="0.338482549388">
+ <shade name="soft" weight="0.76042047203" />
+ <shade name="fresh" weight="0.124140932482" />
+ <shade name="hard" weight="0.11543732467" />
+</color>
+
+<color name="blue" weight="0.07463974166">
+ <shade name="soft" weight="0.76042047203" />
+ <shade name="fresh" weight="0.124140932482" />
+ <shade name="hard" weight="0.11543732467" />
+</color>
+
+<color name="white" weight="0.0709945449743">
+ <shade name="soft" weight="0.76042047203" />
+ <shade name="fresh" weight="0.124140932482" />
+ <shade name="hard" weight="0.11543732467" />
+</color>
+
+<color name="yellow" weight="0.0663078635212">
+ <shade name="soft" weight="0.76042047203" />
+ <shade name="fresh" weight="0.124140932482" />
+ <shade name="hard" weight="0.11543732467" />
+</color>
+
+</colors>

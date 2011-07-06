@@ -1,0 +1,33 @@
+<colors query="wicked">
+
+<color name="red" weight="0.390722704016">
+ <shade name="cool" weight="0.777634015935" />
+ <shade name="fresh" weight="0.129819893569" />
+ <shade name="hard" weight="0.0925448746236" />
+</color>
+
+<color name="pink" weight="0.338169357862">
+ <shade name="cool" weight="0.777634015935" />
+ <shade name="fresh" weight="0.129819893569" />
+ <shade name="hard" weight="0.0925448746236" />
+</color>
+
+<color name="white" weight="0.102250532191">
+ <shade name="cool" weight="0.777634015935" />
+ <shade name="fresh" weight="0.129819893569" />
+ <shade name="hard" weight="0.0925448746236" />
+</color>
+
+<color name="purple" weight="0.0909401381277">
+ <shade name="cool" weight="0.777634015935" />
+ <shade name="fresh" weight="0.129819893569" />
+ <shade name="hard" weight="0.0925448746236" />
+</color>
+
+<color name="blue" weight="0.0779160479939">
+ <shade name="cool" weight="0.777634015935" />
+ <shade name="fresh" weight="0.129819893569" />
+ <shade name="hard" weight="0.0925448746236" />
+</color>
+
+</colors>

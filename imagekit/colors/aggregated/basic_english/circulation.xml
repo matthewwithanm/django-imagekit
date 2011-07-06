@@ -1,0 +1,33 @@
+<colors query="circulation">
+
+<color name="green" weight="0.305599596853">
+ <shade name="intense" weight="0.424106694099" />
+ <shade name="weak" weight="0.294642545374" />
+ <shade name="light" weight="0.281249702403" />
+</color>
+
+<color name="white" weight="0.212799719275">
+ <shade name="weak" weight="0.493438623193" />
+ <shade name="light" weight="0.471009594866" />
+ <shade name="cool" weight="0.0355500098982" />
+</color>
+
+<color name="orange" weight="0.192799745659">
+ <shade name="intense" weight="0.424106694099" />
+ <shade name="weak" weight="0.294642545374" />
+ <shade name="light" weight="0.281249702403" />
+</color>
+
+<color name="black" weight="0.147999804759">
+ <shade name="intense" weight="0.424106694099" />
+ <shade name="weak" weight="0.294642545374" />
+ <shade name="light" weight="0.281249702403" />
+</color>
+
+<color name="blue" weight="0.140799814257">
+ <shade name="intense" weight="0.424106694099" />
+ <shade name="weak" weight="0.294642545374" />
+ <shade name="light" weight="0.281249702403" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="lethargic">
+
+<color name="white" weight="0.719999251201">
+ <shade name="weak" weight="0.782434256725" />
+ <shade name="soft" weight="0.143712414501" />
+ <shade name="dark" weight="0.0738522130072" />
+</color>
+
+<color name="blue" weight="0.1199998752">
+ <shade name="weak" weight="0.782434256725" />
+ <shade name="soft" weight="0.143712414501" />
+ <shade name="dark" weight="0.0738522130072" />
+</color>
+
+<color name="black" weight="0.0971427561144">
+ <shade name="weak" weight="0.782434256725" />
+ <shade name="soft" weight="0.143712414501" />
+ <shade name="dark" weight="0.0738522130072" />
+</color>
+
+<color name="yellow" weight="0.0342856786286">
+ <shade name="weak" weight="0.782434256725" />
+ <shade name="soft" weight="0.143712414501" />
+ <shade name="dark" weight="0.0738522130072" />
+</color>
+
+<color name="red" weight="0.0285713988572">
+ <shade name="weak" weight="0.782434256725" />
+ <shade name="soft" weight="0.143712414501" />
+ <shade name="dark" weight="0.0738522130072" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="blithe">
+
+<color name="purple" weight="0.385174026712">
+ <shade name="bright" weight="0.628098405301" />
+ <shade name="light" weight="0.289255844547" />
+ <shade name="cool" weight="0.0826445270133" />
+</color>
+
+<color name="green" weight="0.30813922137">
+ <shade name="bright" weight="0.628098405301" />
+ <shade name="light" weight="0.289255844547" />
+ <shade name="cool" weight="0.0826445270133" />
+</color>
+
+<color name="black" weight="0.222383494668">
+ <shade name="bright" weight="0.628098405301" />
+ <shade name="light" weight="0.289255844547" />
+ <shade name="cool" weight="0.0826445270133" />
+</color>
+
+<color name="red" weight="0.0523255281572">
+ <shade name="bright" weight="0.628098405301" />
+ <shade name="light" weight="0.289255844547" />
+ <shade name="cool" weight="0.0826445270133" />
+</color>
+
+<color name="white" weight="0.0319767116516">
+ <shade name="bright" weight="0.628098405301" />
+ <shade name="light" weight="0.289255844547" />
+ <shade name="cool" weight="0.0826445270133" />
+</color>
+
+</colors>

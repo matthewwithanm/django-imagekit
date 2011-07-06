@@ -1,0 +1,33 @@
+<colors query="cascade">
+
+<color name="white" weight="0.307771697846">
+ <shade name="fresh" weight="0.373517074074" />
+ <shade name="cool" weight="0.326086334509" />
+ <shade name="soft" weight="0.300394683911" />
+</color>
+
+<color name="red" weight="0.214507546983">
+ <shade name="fresh" weight="0.373517074074" />
+ <shade name="cool" weight="0.326086334509" />
+ <shade name="soft" weight="0.300394683911" />
+</color>
+
+<color name="blue" weight="0.183419496696">
+ <shade name="fresh" weight="0.373517074074" />
+ <shade name="cool" weight="0.326086334509" />
+ <shade name="soft" weight="0.300394683911" />
+</color>
+
+<color name="green" weight="0.158549056466">
+ <shade name="fresh" weight="0.373517074074" />
+ <shade name="cool" weight="0.326086334509" />
+ <shade name="soft" weight="0.300394683911" />
+</color>
+
+<color name="pink" weight="0.135751152922">
+ <shade name="fresh" weight="0.373517074074" />
+ <shade name="cool" weight="0.326086334509" />
+ <shade name="soft" weight="0.300394683911" />
+</color>
+
+</colors>

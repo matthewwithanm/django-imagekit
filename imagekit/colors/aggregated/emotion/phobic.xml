@@ -1,0 +1,33 @@
+<colors query="phobic">
+
+<color name="white" weight="0.281481158299">
+ <shade name="light" weight="0.874457201255" />
+ <shade name="dark" weight="0.112553897191" />
+ <shade name="weak" weight="0.0129869881375" />
+</color>
+
+<color name="pink" weight="0.244444163786">
+ <shade name="light" weight="0.874457201255" />
+ <shade name="dark" weight="0.112553897191" />
+ <shade name="weak" weight="0.0129869881375" />
+</color>
+
+<color name="red" weight="0.214814568176">
+ <shade name="light" weight="0.469766958984" />
+ <shade name="intense" weight="0.469766958984" />
+ <shade name="dark" weight="0.0604650541266" />
+</color>
+
+<color name="black" weight="0.199999770371">
+ <shade name="light" weight="0.469766958984" />
+ <shade name="intense" weight="0.469766958984" />
+ <shade name="dark" weight="0.0604650541266" />
+</color>
+
+<color name="blue" weight="0.0592591912209">
+ <shade name="light" weight="0.469766958984" />
+ <shade name="intense" weight="0.469766958984" />
+ <shade name="dark" weight="0.0604650541266" />
+</color>
+
+</colors>

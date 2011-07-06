@@ -1,0 +1,33 @@
+<colors query="creep">
+
+<color name="red" weight="0.35084862975">
+ <shade name="light" weight="0.410637746307" />
+ <shade name="dark" weight="0.30212725376" />
+ <shade name="cool" weight="0.287233656743" />
+</color>
+
+<color name="green" weight="0.198654018671">
+ <shade name="light" weight="0.410637746307" />
+ <shade name="dark" weight="0.30212725376" />
+ <shade name="cool" weight="0.287233656743" />
+</color>
+
+<color name="black" weight="0.187439678907">
+ <shade name="light" weight="0.410637746307" />
+ <shade name="dark" weight="0.30212725376" />
+ <shade name="cool" weight="0.287233656743" />
+</color>
+
+<color name="orange" weight="0.142422114999">
+ <shade name="light" weight="0.410637746307" />
+ <shade name="dark" weight="0.30212725376" />
+ <shade name="cool" weight="0.287233656743" />
+</color>
+
+<color name="yellow" weight="0.120634254887">
+ <shade name="light" weight="0.410637746307" />
+ <shade name="dark" weight="0.30212725376" />
+ <shade name="cool" weight="0.287233656743" />
+</color>
+
+</colors>

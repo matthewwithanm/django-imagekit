@@ -1,0 +1,33 @@
+<colors query="sulk">
+
+<color name="black" weight="0.263374194043">
+ <shade name="dark" weight="0.506492868444" />
+ <shade name="hard" weight="0.298700922416" />
+ <shade name="light" weight="0.194804949402" />
+</color>
+
+<color name="blue" weight="0.255143750479">
+ <shade name="dark" weight="0.506492868444" />
+ <shade name="hard" weight="0.298700922416" />
+ <shade name="light" weight="0.194804949402" />
+</color>
+
+<color name="purple" weight="0.226337198005">
+ <shade name="dark" weight="0.506492868444" />
+ <shade name="hard" weight="0.298700922416" />
+ <shade name="light" weight="0.194804949402" />
+</color>
+
+<color name="white" weight="0.139917540585">
+ <shade name="dark" weight="0.506492868444" />
+ <shade name="hard" weight="0.298700922416" />
+ <shade name="light" weight="0.194804949402" />
+</color>
+
+<color name="green" weight="0.115226209894">
+ <shade name="dark" weight="0.506492868444" />
+ <shade name="hard" weight="0.298700922416" />
+ <shade name="light" weight="0.194804949402" />
+</color>
+
+</colors>

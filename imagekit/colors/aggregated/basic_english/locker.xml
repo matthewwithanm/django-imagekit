@@ -1,0 +1,33 @@
+<colors query="locker">
+
+<color name="red" weight="0.350938729814">
+ <shade name="cool" weight="0.547036259931" />
+ <shade name="soft" weight="0.357231254591" />
+ <shade name="hard" weight="0.0957313454879" />
+</color>
+
+<color name="white" weight="0.261968347608">
+ <shade name="cool" weight="0.547036259931" />
+ <shade name="soft" weight="0.357231254591" />
+ <shade name="hard" weight="0.0957313454879" />
+</color>
+
+<color name="blue" weight="0.214658699927">
+ <shade name="cool" weight="0.547036259931" />
+ <shade name="soft" weight="0.357231254591" />
+ <shade name="hard" weight="0.0957313454879" />
+</color>
+
+<color name="green" weight="0.123569975287">
+ <shade name="cool" weight="0.547036259931" />
+ <shade name="soft" weight="0.357231254591" />
+ <shade name="hard" weight="0.0957313454879" />
+</color>
+
+<color name="pink" weight="0.0488630987991">
+ <shade name="cool" weight="0.547036259931" />
+ <shade name="soft" weight="0.357231254591" />
+ <shade name="hard" weight="0.0957313454879" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="elation">
+
+<color name="red" weight="0.438094777053">
+ <shade name="intense" weight="0.522554093215" />
+ <shade name="bright" weight="0.401964687089" />
+ <shade name="weak" weight="0.0754800356867" />
+</color>
+
+<color name="pink" weight="0.223809288277">
+ <shade name="bright" weight="0.758212291474" />
+ <shade name="weak" weight="0.142375419177" />
+ <shade name="dark" weight="0.0994100559932" />
+</color>
+
+<color name="white" weight="0.178571240646">
+ <shade name="bright" weight="0.758212291474" />
+ <shade name="weak" weight="0.142375419177" />
+ <shade name="dark" weight="0.0994100559932" />
+</color>
+
+<color name="black" weight="0.128571293265">
+ <shade name="intense" weight="0.522554093215" />
+ <shade name="bright" weight="0.401964687089" />
+ <shade name="weak" weight="0.0754800356867" />
+</color>
+
+<color name="blue" weight="0.0309523483787">
+ <shade name="intense" weight="0.522554093215" />
+ <shade name="bright" weight="0.401964687089" />
+ <shade name="weak" weight="0.0754800356867" />
+</color>
+
+</colors>

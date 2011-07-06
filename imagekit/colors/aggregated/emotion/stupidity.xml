@@ -1,0 +1,33 @@
+<colors query="stupidity">
+
+<color name="white" weight="0.362204343996">
+ <shade name="light" weight="0.461394393083" />
+ <shade name="fresh" weight="0.323527542561" />
+ <shade name="dark" weight="0.215072286816" />
+</color>
+
+<color name="black" weight="0.27437887597">
+ <shade name="intense" weight="0.839894023327" />
+ <shade name="light" weight="0.0941131249353" />
+ <shade name="fresh" weight="0.0659916732614" />
+</color>
+
+<color name="blue" weight="0.167776928573">
+ <shade name="intense" weight="0.839894023327" />
+ <shade name="light" weight="0.0941131249353" />
+ <shade name="fresh" weight="0.0659916732614" />
+</color>
+
+<color name="green" weight="0.166565542808">
+ <shade name="intense" weight="0.839894023327" />
+ <shade name="light" weight="0.0941131249353" />
+ <shade name="fresh" weight="0.0659916732614" />
+</color>
+
+<color name="red" weight="0.029073258381">
+ <shade name="intense" weight="0.839894023327" />
+ <shade name="light" weight="0.0941131249353" />
+ <shade name="fresh" weight="0.0659916732614" />
+</color>
+
+</colors>

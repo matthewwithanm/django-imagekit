@@ -1,0 +1,33 @@
+<colors query="observation">
+
+<color name="white" weight="0.271181243361">
+ <shade name="light" weight="0.629159164831" />
+ <shade name="neutral" weight="0.348652433911" />
+ <shade name="dark" weight="0.0221869730671" />
+</color>
+
+<color name="blue" weight="0.202881610336">
+ <shade name="light" weight="0.473181851696" />
+ <shade name="intense" weight="0.264600430923" />
+ <shade name="neutral" weight="0.262216643257" />
+</color>
+
+<color name="red" weight="0.189913325584">
+ <shade name="light" weight="0.473181851696" />
+ <shade name="intense" weight="0.264600430923" />
+ <shade name="neutral" weight="0.262216643257" />
+</color>
+
+<color name="black" weight="0.178385961361">
+ <shade name="light" weight="0.473181851696" />
+ <shade name="intense" weight="0.264600430923" />
+ <shade name="neutral" weight="0.262216643257" />
+</color>
+
+<color name="green" weight="0.157636705758">
+ <shade name="light" weight="0.473181851696" />
+ <shade name="intense" weight="0.264600430923" />
+ <shade name="neutral" weight="0.262216643257" />
+</color>
+
+</colors>

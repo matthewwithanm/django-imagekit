@@ -1,0 +1,33 @@
+<colors query="grease">
+
+<color name="pink" weight="0.416038150312">
+ <shade name="light" weight="0.475963299848" />
+ <shade name="fresh" weight="0.475963299848" />
+ <shade name="dark" weight="0.0480722932847" />
+</color>
+
+<color name="white" weight="0.201085105984">
+ <shade name="light" weight="0.475963299848" />
+ <shade name="fresh" weight="0.475963299848" />
+ <shade name="dark" weight="0.0480722932847" />
+</color>
+
+<color name="yellow" weight="0.167922644728">
+ <shade name="light" weight="0.475963299848" />
+ <shade name="fresh" weight="0.475963299848" />
+ <shade name="dark" weight="0.0480722932847" />
+</color>
+
+<color name="black" weight="0.159782767874">
+ <shade name="light" weight="0.475963299848" />
+ <shade name="fresh" weight="0.475963299848" />
+ <shade name="dark" weight="0.0480722932847" />
+</color>
+
+<color name="green" weight="0.0551702764545">
+ <shade name="light" weight="0.475963299848" />
+ <shade name="fresh" weight="0.475963299848" />
+ <shade name="dark" weight="0.0480722932847" />
+</color>
+
+</colors>

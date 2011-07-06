@@ -1,0 +1,33 @@
+<colors query="lugubrious">
+
+<color name="black" weight="0.347825693762">
+ <shade name="dark" weight="0.923663149118" />
+ <shade name="warm" weight="0.0381678987239" />
+ <shade name="soft" weight="0.0381678987239" />
+</color>
+
+<color name="blue" weight="0.217391058601">
+ <shade name="dark" weight="0.9379834927" />
+ <shade name="soft" weight="0.0387596484587" />
+ <shade name="light" weight="0.0232557890752" />
+</color>
+
+<color name="red" weight="0.173912846881">
+ <shade name="dark" weight="0.923663149118" />
+ <shade name="warm" weight="0.0381678987239" />
+ <shade name="soft" weight="0.0381678987239" />
+</color>
+
+<color name="pink" weight="0.130434635161">
+ <shade name="dark" weight="0.923663149118" />
+ <shade name="warm" weight="0.0381678987239" />
+ <shade name="soft" weight="0.0381678987239" />
+</color>
+
+<color name="green" weight="0.130434635161">
+ <shade name="dark" weight="0.9379834927" />
+ <shade name="soft" weight="0.0387596484587" />
+ <shade name="light" weight="0.0232557890752" />
+</color>
+
+</colors>

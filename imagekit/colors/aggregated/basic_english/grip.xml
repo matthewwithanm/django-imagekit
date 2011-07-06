@@ -1,0 +1,33 @@
+<colors query="grip">
+
+<color name="black" weight="0.484119623488">
+ <shade name="soft" weight="0.915364062349" />
+ <shade name="weak" weight="0.0427412055568" />
+ <shade name="cool" weight="0.0418936462398" />
+</color>
+
+<color name="blue" weight="0.177682202238">
+ <shade name="soft" weight="0.915364062349" />
+ <shade name="weak" weight="0.0427412055568" />
+ <shade name="cool" weight="0.0418936462398" />
+</color>
+
+<color name="red" weight="0.12961358714">
+ <shade name="soft" weight="0.915364062349" />
+ <shade name="weak" weight="0.0427412055568" />
+ <shade name="cool" weight="0.0418936462398" />
+</color>
+
+<color name="white" weight="0.104720911464">
+ <shade name="soft" weight="0.915364062349" />
+ <shade name="weak" weight="0.0427412055568" />
+ <shade name="cool" weight="0.0418936462398" />
+</color>
+
+<color name="green" weight="0.103862543337">
+ <shade name="soft" weight="0.915364062349" />
+ <shade name="weak" weight="0.0427412055568" />
+ <shade name="cool" weight="0.0418936462398" />
+</color>
+
+</colors>

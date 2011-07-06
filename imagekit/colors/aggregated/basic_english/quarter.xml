@@ -1,0 +1,33 @@
+<colors query="quarter">
+
+<color name="black" weight="0.349514192545">
+ <shade name="dark" weight="0.437287616318" />
+ <shade name="weak" weight="0.399999525004" />
+ <shade name="cool" weight="0.162711671188" />
+</color>
+
+<color name="green" weight="0.234627582959">
+ <shade name="dark" weight="0.437287616318" />
+ <shade name="weak" weight="0.399999525004" />
+ <shade name="cool" weight="0.162711671188" />
+</color>
+
+<color name="blue" weight="0.193365490783">
+ <shade name="dark" weight="0.437287616318" />
+ <shade name="weak" weight="0.399999525004" />
+ <shade name="cool" weight="0.162711671188" />
+</color>
+
+<color name="white" weight="0.134304064728">
+ <shade name="dark" weight="0.437287616318" />
+ <shade name="weak" weight="0.399999525004" />
+ <shade name="cool" weight="0.162711671188" />
+</color>
+
+<color name="red" weight="0.0881876087672">
+ <shade name="dark" weight="0.437287616318" />
+ <shade name="weak" weight="0.399999525004" />
+ <shade name="cool" weight="0.162711671188" />
+</color>
+
+</colors>

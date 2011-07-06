@@ -1,0 +1,33 @@
+<colors query="antagonistic">
+
+<color name="green" weight="0.404761461452">
+ <shade name="weak" weight="0.778067007507" />
+ <shade name="intense" weight="0.125326229397" />
+ <shade name="neutral" weight="0.0966056351602" />
+</color>
+
+<color name="black" weight="0.214285479592">
+ <shade name="weak" weight="0.778067007507" />
+ <shade name="intense" weight="0.125326229397" />
+ <shade name="neutral" weight="0.0966056351602" />
+</color>
+
+<color name="white" weight="0.166666484127">
+ <shade name="weak" weight="0.81980645349" />
+ <shade name="neutral" weight="0.101788049594" />
+ <shade name="dark" weight="0.0784043084714" />
+</color>
+
+<color name="red" weight="0.119047488662">
+ <shade name="weak" weight="0.778067007507" />
+ <shade name="intense" weight="0.125326229397" />
+ <shade name="neutral" weight="0.0966056351602" />
+</color>
+
+<color name="blue" weight="0.0952379909298">
+ <shade name="weak" weight="0.778067007507" />
+ <shade name="intense" weight="0.125326229397" />
+ <shade name="neutral" weight="0.0966056351602" />
+</color>
+
+</colors>

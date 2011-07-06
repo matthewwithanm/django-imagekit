@@ -1,0 +1,33 @@
+<colors query="woeful">
+
+<color name="black" weight="0.835820022278">
+ <shade name="dark" weight="0.543589172124" />
+ <shade name="weak" weight="0.415384178699" />
+ <shade name="soft" weight="0.0410255978962" />
+</color>
+
+<color name="white" weight="0.0597014301627">
+ <shade name="dark" weight="0.543589172124" />
+ <shade name="weak" weight="0.415384178699" />
+ <shade name="soft" weight="0.0410255978962" />
+</color>
+
+<color name="green" weight="0.0597014301627">
+ <shade name="dark" weight="0.543589172124" />
+ <shade name="weak" weight="0.415384178699" />
+ <shade name="soft" weight="0.0410255978962" />
+</color>
+
+<color name="red" weight="0.0298507150813">
+ <shade name="dark" weight="0.543589172124" />
+ <shade name="weak" weight="0.415384178699" />
+ <shade name="soft" weight="0.0410255978962" />
+</color>
+
+<color name="purple" weight="0.0149253575407">
+ <shade name="dark" weight="0.543589172124" />
+ <shade name="weak" weight="0.415384178699" />
+ <shade name="soft" weight="0.0410255978962" />
+</color>
+
+</colors>

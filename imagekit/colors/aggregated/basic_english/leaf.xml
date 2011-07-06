@@ -1,0 +1,33 @@
+<colors query="leaf">
+
+<color name="green" weight="0.461291103429">
+ <shade name="fresh" weight="0.678300092772" />
+ <shade name="bright" weight="0.179782451774" />
+ <shade name="dark" weight="0.141916184459" />
+</color>
+
+<color name="red" weight="0.251503932043">
+ <shade name="fresh" weight="0.678300092772" />
+ <shade name="bright" weight="0.179782451774" />
+ <shade name="dark" weight="0.141916184459" />
+</color>
+
+<color name="yellow" weight="0.125952527371">
+ <shade name="fresh" weight="0.678300092772" />
+ <shade name="bright" weight="0.179782451774" />
+ <shade name="dark" weight="0.141916184459" />
+</color>
+
+<color name="black" weight="0.0926593433844">
+ <shade name="fresh" weight="0.678300092772" />
+ <shade name="bright" weight="0.179782451774" />
+ <shade name="dark" weight="0.141916184459" />
+</color>
+
+<color name="blue" weight="0.0685919814664">
+ <shade name="fresh" weight="0.678300092772" />
+ <shade name="bright" weight="0.179782451774" />
+ <shade name="dark" weight="0.141916184459" />
+</color>
+
+</colors>

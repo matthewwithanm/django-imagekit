@@ -1,0 +1,33 @@
+<colors query="diamond">
+
+<color name="black" weight="0.418205775461">
+ <shade name="dark" weight="0.495778336859" />
+ <shade name="bright" weight="0.33537946317" />
+ <shade name="hard" weight="0.168840919673" />
+</color>
+
+<color name="blue" weight="0.285522015375">
+ <shade name="dark" weight="0.495778336859" />
+ <shade name="bright" weight="0.33537946317" />
+ <shade name="hard" weight="0.168840919673" />
+</color>
+
+<color name="white" weight="0.13352353072">
+ <shade name="dark" weight="0.495778336859" />
+ <shade name="bright" weight="0.33537946317" />
+ <shade name="hard" weight="0.168840919673" />
+</color>
+
+<color name="red" weight="0.0856566046125">
+ <shade name="dark" weight="0.495778336859" />
+ <shade name="bright" weight="0.33537946317" />
+ <shade name="hard" weight="0.168840919673" />
+</color>
+
+<color name="pink" weight="0.0770909441513">
+ <shade name="dark" weight="0.495778336859" />
+ <shade name="bright" weight="0.33537946317" />
+ <shade name="hard" weight="0.168840919673" />
+</color>
+
+</colors>

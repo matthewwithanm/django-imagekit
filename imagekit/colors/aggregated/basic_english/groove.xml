@@ -1,0 +1,33 @@
+<colors query="groove">
+
+<color name="blue" weight="0.391068703671">
+ <shade name="cool" weight="0.457264454894" />
+ <shade name="hard" weight="0.42841833274" />
+ <shade name="dark" weight="0.114316113724" />
+</color>
+
+<color name="black" weight="0.32942915318">
+ <shade name="cool" weight="0.457264454894" />
+ <shade name="hard" weight="0.42841833274" />
+ <shade name="dark" weight="0.114316113724" />
+</color>
+
+<color name="red" weight="0.167796554114">
+ <shade name="cool" weight="0.457264454894" />
+ <shade name="hard" weight="0.42841833274" />
+ <shade name="dark" weight="0.114316113724" />
+</color>
+
+<color name="orange" weight="0.102732584152">
+ <shade name="cool" weight="0.457264454894" />
+ <shade name="hard" weight="0.42841833274" />
+ <shade name="dark" weight="0.114316113724" />
+</color>
+
+<color name="purple" weight="0.00897197901592">
+ <shade name="cool" weight="0.457264454894" />
+ <shade name="hard" weight="0.42841833274" />
+ <shade name="dark" weight="0.114316113724" />
+</color>
+
+</colors>

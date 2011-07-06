@@ -1,0 +1,33 @@
+<colors query="ear-ring">
+
+<color name="purple" weight="0.450849498367">
+ <shade name="light" weight="0.912086979955" />
+ <shade name="cool" weight="0.0549449987925" />
+ <shade name="bright" weight="0.0329669992755" />
+</color>
+
+<color name="black" weight="0.280117967018">
+ <shade name="light" weight="0.912086979955" />
+ <shade name="cool" weight="0.0549449987925" />
+ <shade name="bright" weight="0.0329669992755" />
+</color>
+
+<color name="blue" weight="0.12232064259">
+ <shade name="light" weight="0.912086979955" />
+ <shade name="cool" weight="0.0549449987925" />
+ <shade name="bright" weight="0.0329669992755" />
+</color>
+
+<color name="pink" weight="0.0746488513689">
+ <shade name="light" weight="0.912086979955" />
+ <shade name="cool" weight="0.0549449987925" />
+ <shade name="bright" weight="0.0329669992755" />
+</color>
+
+<color name="green" weight="0.0720620099849">
+ <shade name="light" weight="0.912086979955" />
+ <shade name="cool" weight="0.0549449987925" />
+ <shade name="bright" weight="0.0329669992755" />
+</color>
+
+</colors>

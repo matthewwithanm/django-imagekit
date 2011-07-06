@@ -1,0 +1,33 @@
+<colors query="cloudberry">
+
+<color name="red" weight="0.387754674719">
+ <shade name="warm" weight="0.536457771729" />
+ <shade name="fresh" weight="0.42187455835" />
+ <shade name="cool" weight="0.0416666230469" />
+</color>
+
+<color name="yellow" weight="0.336734322783">
+ <shade name="warm" weight="0.536457771729" />
+ <shade name="fresh" weight="0.42187455835" />
+ <shade name="cool" weight="0.0416666230469" />
+</color>
+
+<color name="orange" weight="0.15306105581">
+ <shade name="warm" weight="0.536457771729" />
+ <shade name="fresh" weight="0.42187455835" />
+ <shade name="cool" weight="0.0416666230469" />
+</color>
+
+<color name="white" weight="0.0612244223241">
+ <shade name="warm" weight="0.536457771729" />
+ <shade name="fresh" weight="0.42187455835" />
+ <shade name="cool" weight="0.0416666230469" />
+</color>
+
+<color name="pink" weight="0.0612244223241">
+ <shade name="warm" weight="0.536457771729" />
+ <shade name="fresh" weight="0.42187455835" />
+ <shade name="cool" weight="0.0416666230469" />
+</color>
+
+</colors>

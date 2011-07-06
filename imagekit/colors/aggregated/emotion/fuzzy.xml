@@ -1,0 +1,33 @@
+<colors query="fuzzy">
+
+<color name="pink" weight="0.325013781291">
+ <shade name="warm" weight="0.903110679282" />
+ <shade name="soft" weight="0.086053226016" />
+ <shade name="dark" weight="0.010835087182" />
+</color>
+
+<color name="white" weight="0.259216925044">
+ <shade name="warm" weight="0.903110679282" />
+ <shade name="soft" weight="0.086053226016" />
+ <shade name="dark" weight="0.010835087182" />
+</color>
+
+<color name="black" weight="0.154849497893">
+ <shade name="warm" weight="0.903110679282" />
+ <shade name="soft" weight="0.086053226016" />
+ <shade name="dark" weight="0.010835087182" />
+</color>
+
+<color name="green" weight="0.139534712387">
+ <shade name="soft" weight="0.855034860477" />
+ <shade name="dark" weight="0.107658686208" />
+ <shade name="cool" weight="0.0372964424817" />
+</color>
+
+<color name="blue" weight="0.121383855491">
+ <shade name="soft" weight="0.855034860477" />
+ <shade name="dark" weight="0.107658686208" />
+ <shade name="cool" weight="0.0372964424817" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="bite">
+
+<color name="black" weight="0.559591834279">
+ <shade name="light" weight="0.417878888311" />
+ <shade name="soft" weight="0.389812395813" />
+ <shade name="hard" weight="0.192307448601" />
+</color>
+
+<color name="yellow" weight="0.329908618717">
+ <shade name="light" weight="0.417878888311" />
+ <shade name="soft" weight="0.389812395813" />
+ <shade name="hard" weight="0.192307448601" />
+</color>
+
+<color name="white" weight="0.0653553149736">
+ <shade name="light" weight="0.417878888311" />
+ <shade name="soft" weight="0.389812395813" />
+ <shade name="hard" weight="0.192307448601" />
+</color>
+
+<color name="orange" weight="0.0300676209463">
+ <shade name="light" weight="0.417878888311" />
+ <shade name="soft" weight="0.389812395813" />
+ <shade name="hard" weight="0.192307448601" />
+</color>
+
+<color name="red" weight="0.0150755710578">
+ <shade name="light" weight="0.417878888311" />
+ <shade name="soft" weight="0.389812395813" />
+ <shade name="hard" weight="0.192307448601" />
+</color>
+
+</colors>

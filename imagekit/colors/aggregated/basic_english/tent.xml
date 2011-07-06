@@ -1,0 +1,33 @@
+<colors query="tent">
+
+<color name="red" weight="0.541291322966">
+ <shade name="light" weight="0.906920309314" />
+ <shade name="dark" weight="0.0817421594579" />
+ <shade name="soft" weight="0.0113365038664" />
+</color>
+
+<color name="white" weight="0.201144509743">
+ <shade name="light" weight="0.906920309314" />
+ <shade name="dark" weight="0.0817421594579" />
+ <shade name="soft" weight="0.0113365038664" />
+</color>
+
+<color name="blue" weight="0.153720194438">
+ <shade name="light" weight="0.906920309314" />
+ <shade name="dark" weight="0.0817421594579" />
+ <shade name="soft" weight="0.0113365038664" />
+</color>
+
+<color name="black" weight="0.0549467929053">
+ <shade name="light" weight="0.906920309314" />
+ <shade name="dark" weight="0.0817421594579" />
+ <shade name="soft" weight="0.0113365038664" />
+</color>
+
+<color name="green" weight="0.0488961044009">
+ <shade name="light" weight="0.906920309314" />
+ <shade name="dark" weight="0.0817421594579" />
+ <shade name="soft" weight="0.0113365038664" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="starfish">
+
+<color name="blue" weight="0.314410129298">
+ <shade name="cool" weight="0.407449928817" />
+ <shade name="hard" weight="0.351571081437" />
+ <shade name="bright" weight="0.240977529329" />
+</color>
+
+<color name="pink" weight="0.19213952346">
+ <shade name="cool" weight="0.407449928817" />
+ <shade name="hard" weight="0.351571081437" />
+ <shade name="bright" weight="0.240977529329" />
+</color>
+
+<color name="red" weight="0.181222505082">
+ <shade name="cool" weight="0.407449928817" />
+ <shade name="hard" weight="0.351571081437" />
+ <shade name="bright" weight="0.240977529329" />
+</color>
+
+<color name="purple" weight="0.174672294054">
+ <shade name="cool" weight="0.407449928817" />
+ <shade name="hard" weight="0.351571081437" />
+ <shade name="bright" weight="0.240977529329" />
+</color>
+
+<color name="orange" weight="0.137554431568">
+ <shade name="cool" weight="0.407449928817" />
+ <shade name="hard" weight="0.351571081437" />
+ <shade name="bright" weight="0.240977529329" />
+</color>
+
+</colors>

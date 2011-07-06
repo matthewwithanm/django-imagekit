@@ -1,0 +1,33 @@
+<colors query="prickly">
+
+<color name="yellow" weight="0.338195164603">
+ <shade name="soft" weight="0.347623353753" />
+ <shade name="hard" weight="0.340908489565" />
+ <shade name="fresh" weight="0.311466392739" />
+</color>
+
+<color name="white" weight="0.250675010185">
+ <shade name="soft" weight="0.347623353753" />
+ <shade name="hard" weight="0.340908489565" />
+ <shade name="fresh" weight="0.311466392739" />
+</color>
+
+<color name="red" weight="0.166396342968">
+ <shade name="soft" weight="0.347623353753" />
+ <shade name="hard" weight="0.340908489565" />
+ <shade name="fresh" weight="0.311466392739" />
+</color>
+
+<color name="pink" weight="0.156671881366">
+ <shade name="soft" weight="0.347623353753" />
+ <shade name="hard" weight="0.340908489565" />
+ <shade name="fresh" weight="0.311466392739" />
+</color>
+
+<color name="green" weight="0.0880604022848">
+ <shade name="soft" weight="0.347623353753" />
+ <shade name="hard" weight="0.340908489565" />
+ <shade name="fresh" weight="0.311466392739" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="monsoon">
+
+<color name="blue" weight="0.280046353351">
+ <shade name="weak" weight="0.665194645107" />
+ <shade name="cool" weight="0.309595264732" />
+ <shade name="dark" weight="0.0252090120178" />
+</color>
+
+<color name="black" weight="0.259401910636">
+ <shade name="weak" weight="0.665194645107" />
+ <shade name="cool" weight="0.309595264732" />
+ <shade name="dark" weight="0.0252090120178" />
+</color>
+
+<color name="red" weight="0.225293700933">
+ <shade name="weak" weight="0.665194645107" />
+ <shade name="cool" weight="0.309595264732" />
+ <shade name="dark" weight="0.0252090120178" />
+</color>
+
+<color name="pink" weight="0.158872450459">
+ <shade name="weak" weight="0.665194645107" />
+ <shade name="cool" weight="0.309595264732" />
+ <shade name="dark" weight="0.0252090120178" />
+</color>
+
+<color name="white" weight="0.0763844380455">
+ <shade name="weak" weight="0.665194645107" />
+ <shade name="cool" weight="0.309595264732" />
+ <shade name="dark" weight="0.0252090120178" />
+</color>
+
+</colors>

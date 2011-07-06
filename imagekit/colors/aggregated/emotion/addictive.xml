@@ -1,0 +1,33 @@
+<colors query="addictive">
+
+<color name="black" weight="0.45253113146">
+ <shade name="cool" weight="0.969599960108" />
+ <shade name="soft" weight="0.0159232894857" />
+ <shade name="intense" weight="0.0144757177143" />
+</color>
+
+<color name="blue" weight="0.189873202011">
+ <shade name="cool" weight="0.969599960108" />
+ <shade name="soft" weight="0.0159232894857" />
+ <shade name="intense" weight="0.0144757177143" />
+</color>
+
+<color name="red" weight="0.180379541911">
+ <shade name="cool" weight="0.969599960108" />
+ <shade name="soft" weight="0.0159232894857" />
+ <shade name="intense" weight="0.0144757177143" />
+</color>
+
+<color name="pink" weight="0.0996834310558">
+ <shade name="cool" weight="0.972974927693" />
+ <shade name="soft" weight="0.0159787150097" />
+ <shade name="hard" weight="0.0110453210102" />
+</color>
+
+<color name="white" weight="0.0775315574879">
+ <shade name="cool" weight="0.972974927693" />
+ <shade name="soft" weight="0.0159787150097" />
+ <shade name="hard" weight="0.0110453210102" />
+</color>
+
+</colors>

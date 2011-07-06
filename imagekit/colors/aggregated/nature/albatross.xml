@@ -1,0 +1,33 @@
+<colors query="albatross">
+
+<color name="black" weight="0.392289780954">
+ <shade name="dark" weight="0.933013360787" />
+ <shade name="fresh" weight="0.0334927873103" />
+ <shade name="cool" weight="0.0334927873103" />
+</color>
+
+<color name="pink" weight="0.278911231545">
+ <shade name="dark" weight="0.933013360787" />
+ <shade name="fresh" weight="0.0334927873103" />
+ <shade name="cool" weight="0.0334927873103" />
+</color>
+
+<color name="blue" weight="0.150793470713">
+ <shade name="dark" weight="0.933013360787" />
+ <shade name="fresh" weight="0.0334927873103" />
+ <shade name="cool" weight="0.0334927873103" />
+</color>
+
+<color name="purple" weight="0.0916098679221">
+ <shade name="dark" weight="0.933013360787" />
+ <shade name="fresh" weight="0.0334927873103" />
+ <shade name="cool" weight="0.0334927873103" />
+</color>
+
+<color name="yellow" weight="0.0863944546493">
+ <shade name="dark" weight="0.933013360787" />
+ <shade name="fresh" weight="0.0334927873103" />
+ <shade name="cool" weight="0.0334927873103" />
+</color>
+
+</colors>

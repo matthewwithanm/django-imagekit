@@ -1,0 +1,33 @@
+<colors query="cotoneaster">
+
+<color name="orange" weight="0.505327588564">
+ <shade name="light" weight="0.428570632655" />
+ <shade name="soft" weight="0.285713755103" />
+ <shade name="fresh" weight="0.285713755103" />
+</color>
+
+<color name="red" weight="0.403813389308">
+ <shade name="light" weight="0.428570632655" />
+ <shade name="soft" weight="0.285713755103" />
+ <shade name="fresh" weight="0.285713755103" />
+</color>
+
+<color name="black" weight="0.0510375255931">
+ <shade name="light" weight="0.428570632655" />
+ <shade name="soft" weight="0.285713755103" />
+ <shade name="fresh" weight="0.285713755103" />
+</color>
+
+<color name="green" weight="0.0246774849021">
+ <shade name="light" weight="0.428570632655" />
+ <shade name="soft" weight="0.285713755103" />
+ <shade name="fresh" weight="0.285713755103" />
+</color>
+
+<color name="purple" weight="0.015143002099">
+ <shade name="light" weight="0.428570632655" />
+ <shade name="soft" weight="0.285713755103" />
+ <shade name="fresh" weight="0.285713755103" />
+</color>
+
+</colors>

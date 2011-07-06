@@ -1,0 +1,33 @@
+<colors query="hedgehog">
+
+<color name="blue" weight="0.759597770025">
+ <shade name="dark" weight="0.80378158039" />
+ <shade name="cool" weight="0.10007868697" />
+ <shade name="soft" weight="0.0961385811838" />
+</color>
+
+<color name="pink" weight="0.108645499228">
+ <shade name="dark" weight="0.80378158039" />
+ <shade name="cool" weight="0.10007868697" />
+ <shade name="soft" weight="0.0961385811838" />
+</color>
+
+<color name="green" weight="0.0527575178453">
+ <shade name="dark" weight="0.80378158039" />
+ <shade name="cool" weight="0.10007868697" />
+ <shade name="soft" weight="0.0961385811838" />
+</color>
+
+<color name="white" weight="0.043734417062">
+ <shade name="dark" weight="0.80378158039" />
+ <shade name="cool" weight="0.10007868697" />
+ <shade name="soft" weight="0.0961385811838" />
+</color>
+
+<color name="purple" weight="0.0352637510205">
+ <shade name="dark" weight="0.80378158039" />
+ <shade name="cool" weight="0.10007868697" />
+ <shade name="soft" weight="0.0961385811838" />
+</color>
+
+</colors>

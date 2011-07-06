@@ -1,0 +1,33 @@
+<colors query="pendulum">
+
+<color name="black" weight="0.276929944107">
+ <shade name="fresh" weight="0.769371860761" />
+ <shade name="light" weight="0.121771085876" />
+ <shade name="dark" weight="0.108855970707" />
+</color>
+
+<color name="blue" weight="0.213095245126">
+ <shade name="fresh" weight="0.769371860761" />
+ <shade name="light" weight="0.121771085876" />
+ <shade name="dark" weight="0.108855970707" />
+</color>
+
+<color name="white" weight="0.194085647268">
+ <shade name="fresh" weight="0.769371860761" />
+ <shade name="light" weight="0.121771085876" />
+ <shade name="dark" weight="0.108855970707" />
+</color>
+
+<color name="red" weight="0.174841363017">
+ <shade name="fresh" weight="0.769371860761" />
+ <shade name="light" weight="0.121771085876" />
+ <shade name="dark" weight="0.108855970707" />
+</color>
+
+<color name="pink" weight="0.14104652238">
+ <shade name="fresh" weight="0.769371860761" />
+ <shade name="light" weight="0.121771085876" />
+ <shade name="dark" weight="0.108855970707" />
+</color>
+
+</colors>

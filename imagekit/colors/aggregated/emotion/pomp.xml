@@ -1,0 +1,33 @@
+<colors query="pomp">
+
+<color name="purple" weight="0.381786862153">
+ <shade name="hard" weight="0.444980176124" />
+ <shade name="bright" weight="0.438223427245" />
+ <shade name="dark" weight="0.116795230609" />
+</color>
+
+<color name="black" weight="0.261311896762">
+ <shade name="hard" weight="0.444980176124" />
+ <shade name="bright" weight="0.438223427245" />
+ <shade name="dark" weight="0.116795230609" />
+</color>
+
+<color name="blue" weight="0.156108405858">
+ <shade name="hard" weight="0.444980176124" />
+ <shade name="bright" weight="0.438223427245" />
+ <shade name="dark" weight="0.116795230609" />
+</color>
+
+<color name="pink" weight="0.123303016221">
+ <shade name="hard" weight="0.444980176124" />
+ <shade name="bright" weight="0.438223427245" />
+ <shade name="dark" weight="0.116795230609" />
+</color>
+
+<color name="white" weight="0.0774885927629">
+ <shade name="hard" weight="0.444980176124" />
+ <shade name="bright" weight="0.438223427245" />
+ <shade name="dark" weight="0.116795230609" />
+</color>
+
+</colors>

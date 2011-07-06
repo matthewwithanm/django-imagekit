@@ -1,0 +1,33 @@
+<colors query="brother">
+
+<color name="black" weight="0.455318644542">
+ <shade name="cool" weight="0.471554430264" />
+ <shade name="dark" weight="0.300884596254" />
+ <shade name="weak" weight="0.22755977868" />
+</color>
+
+<color name="white" weight="0.317446456849">
+ <shade name="cool" weight="0.471554430264" />
+ <shade name="dark" weight="0.300884596254" />
+ <shade name="weak" weight="0.22755977868" />
+</color>
+
+<color name="blue" weight="0.081276505708">
+ <shade name="cool" weight="0.471554430264" />
+ <shade name="dark" weight="0.300884596254" />
+ <shade name="weak" weight="0.22755977868" />
+</color>
+
+<color name="red" weight="0.073616939725">
+ <shade name="cool" weight="0.471554430264" />
+ <shade name="dark" weight="0.300884596254" />
+ <shade name="weak" weight="0.22755977868" />
+</color>
+
+<color name="cyan" weight="0.0723403453945">
+ <shade name="cool" weight="0.471554430264" />
+ <shade name="dark" weight="0.300884596254" />
+ <shade name="weak" weight="0.22755977868" />
+</color>
+
+</colors>

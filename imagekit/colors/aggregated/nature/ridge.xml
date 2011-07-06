@@ -1,0 +1,33 @@
+<colors query="ridge">
+
+<color name="blue" weight="0.842815794588">
+ <shade name="cool" weight="0.540570756101" />
+ <shade name="weak" weight="0.301713910382" />
+ <shade name="hard" weight="0.157714089518" />
+</color>
+
+<color name="green" weight="0.0862235513357">
+ <shade name="cool" weight="0.540570756101" />
+ <shade name="weak" weight="0.301713910382" />
+ <shade name="hard" weight="0.157714089518" />
+</color>
+
+<color name="black" weight="0.0351496909725">
+ <shade name="cool" weight="0.540570756101" />
+ <shade name="weak" weight="0.301713910382" />
+ <shade name="hard" weight="0.157714089518" />
+</color>
+
+<color name="red" weight="0.0212451723336">
+ <shade name="cool" weight="0.540570756101" />
+ <shade name="weak" weight="0.301713910382" />
+ <shade name="hard" weight="0.157714089518" />
+</color>
+
+<color name="white" weight="0.014564789077">
+ <shade name="cool" weight="0.540570756101" />
+ <shade name="weak" weight="0.301713910382" />
+ <shade name="hard" weight="0.157714089518" />
+</color>
+
+</colors>

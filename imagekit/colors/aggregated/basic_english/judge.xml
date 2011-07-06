@@ -1,0 +1,33 @@
+<colors query="judge">
+
+<color name="black" weight="0.525138610647">
+ <shade name="neutral" weight="0.764282123768" />
+ <shade name="cool" weight="0.163828791877" />
+ <shade name="weak" weight="0.0718879225326" />
+</color>
+
+<color name="white" weight="0.312055759764">
+ <shade name="neutral" weight="0.764282123768" />
+ <shade name="cool" weight="0.163828791877" />
+ <shade name="weak" weight="0.0718879225326" />
+</color>
+
+<color name="green" weight="0.12342503931">
+ <shade name="neutral" weight="0.764282123768" />
+ <shade name="cool" weight="0.163828791877" />
+ <shade name="weak" weight="0.0718879225326" />
+</color>
+
+<color name="red" weight="0.0330685954376">
+ <shade name="neutral" weight="0.764282123768" />
+ <shade name="cool" weight="0.163828791877" />
+ <shade name="weak" weight="0.0718879225326" />
+</color>
+
+<color name="orange" weight="0.00631097842507">
+ <shade name="neutral" weight="0.764282123768" />
+ <shade name="cool" weight="0.163828791877" />
+ <shade name="weak" weight="0.0718879225326" />
+</color>
+
+</colors>

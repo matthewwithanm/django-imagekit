@@ -1,0 +1,33 @@
+<colors query="piteous">
+
+<color name="white" weight="0.759999224801">
+ <shade name="soft" weight="0.736841329641" />
+ <shade name="weak" weight="0.219298014774" />
+ <shade name="dark" weight="0.0438596029548" />
+</color>
+
+<color name="black" weight="0.1599998368">
+ <shade name="soft" weight="0.736841329641" />
+ <shade name="weak" weight="0.219298014774" />
+ <shade name="dark" weight="0.0438596029548" />
+</color>
+
+<color name="green" weight="0.0399999592">
+ <shade name="soft" weight="0.736841329641" />
+ <shade name="weak" weight="0.219298014774" />
+ <shade name="dark" weight="0.0438596029548" />
+</color>
+
+<color name="red" weight="0.0199999796">
+ <shade name="soft" weight="0.736841329641" />
+ <shade name="weak" weight="0.219298014774" />
+ <shade name="dark" weight="0.0438596029548" />
+</color>
+
+<color name="purple" weight="0.0199999796">
+ <shade name="soft" weight="0.736841329641" />
+ <shade name="weak" weight="0.219298014774" />
+ <shade name="dark" weight="0.0438596029548" />
+</color>
+
+</colors>

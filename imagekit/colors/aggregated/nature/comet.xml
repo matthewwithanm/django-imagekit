@@ -1,0 +1,33 @@
+<colors query="comet">
+
+<color name="red" weight="0.401955997532">
+ <shade name="bright" weight="0.631727388884" />
+ <shade name="neutral" weight="0.206798651967" />
+ <shade name="cool" weight="0.161472920029" />
+</color>
+
+<color name="blue" weight="0.352600781021">
+ <shade name="bright" weight="0.631727388884" />
+ <shade name="neutral" weight="0.206798651967" />
+ <shade name="cool" weight="0.161472920029" />
+</color>
+
+<color name="black" weight="0.100044357793">
+ <shade name="bright" weight="0.631727388884" />
+ <shade name="neutral" weight="0.206798651967" />
+ <shade name="cool" weight="0.161472920029" />
+</color>
+
+<color name="green" weight="0.0755890703323">
+ <shade name="bright" weight="0.631727388884" />
+ <shade name="neutral" weight="0.206798651967" />
+ <shade name="cool" weight="0.161472920029" />
+</color>
+
+<color name="white" weight="0.0698087296598">
+ <shade name="bright" weight="0.631727388884" />
+ <shade name="neutral" weight="0.206798651967" />
+ <shade name="cool" weight="0.161472920029" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="melancholy">
+
+<color name="blue" weight="0.311578066426">
+ <shade name="dark" weight="0.652414565541" />
+ <shade name="soft" weight="0.294280612542" />
+ <shade name="light" weight="0.0533036581208" />
+</color>
+
+<color name="yellow" weight="0.296191495245">
+ <shade name="dark" weight="0.621035252807" />
+ <shade name="soft" weight="0.280126539564" />
+ <shade name="warm" weight="0.0988370998084" />
+</color>
+
+<color name="white" weight="0.169252282997">
+ <shade name="dark" weight="0.621035252807" />
+ <shade name="soft" weight="0.280126539564" />
+ <shade name="warm" weight="0.0988370998084" />
+</color>
+
+<color name="red" weight="0.121169248055">
+ <shade name="dark" weight="0.621035252807" />
+ <shade name="soft" weight="0.280126539564" />
+ <shade name="warm" weight="0.0988370998084" />
+</color>
+
+<color name="black" weight="0.101807812651">
+ <shade name="dark" weight="0.621035252807" />
+ <shade name="soft" weight="0.280126539564" />
+ <shade name="warm" weight="0.0988370998084" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="dreary">
+
+<color name="black" weight="0.658694970568">
+ <shade name="dark" weight="0.987441317355" />
+ <shade name="cool" weight="0.0088655057406" />
+ <shade name="hard" weight="0.00369217188228" />
+</color>
+
+<color name="white" weight="0.149999844783">
+ <shade name="dark" weight="0.987441317355" />
+ <shade name="cool" weight="0.0088655057406" />
+ <shade name="hard" weight="0.00369217188228" />
+</color>
+
+<color name="blue" weight="0.149999844783">
+ <shade name="dark" weight="0.987441317355" />
+ <shade name="cool" weight="0.0088655057406" />
+ <shade name="hard" weight="0.00369217188228" />
+</color>
+
+<color name="red" weight="0.0217391079395">
+ <shade name="dark" weight="0.987441317355" />
+ <shade name="cool" weight="0.0088655057406" />
+ <shade name="hard" weight="0.00369217188228" />
+</color>
+
+<color name="green" weight="0.0195651971456">
+ <shade name="dark" weight="0.987441317355" />
+ <shade name="cool" weight="0.0088655057406" />
+ <shade name="hard" weight="0.00369217188228" />
+</color>
+
+</colors>

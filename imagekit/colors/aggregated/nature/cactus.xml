@@ -1,0 +1,33 @@
+<colors query="cactus">
+
+<color name="blue" weight="0.365428275477">
+ <shade name="bright" weight="0.824640562054" />
+ <shade name="cool" weight="0.137548741971" />
+ <shade name="light" weight="0.0378096067977" />
+</color>
+
+<color name="black" weight="0.281063403849">
+ <shade name="bright" weight="0.824640562054" />
+ <shade name="cool" weight="0.137548741971" />
+ <shade name="light" weight="0.0378096067977" />
+</color>
+
+<color name="green" weight="0.141677963767">
+ <shade name="bright" weight="0.824640562054" />
+ <shade name="cool" weight="0.137548741971" />
+ <shade name="light" weight="0.0378096067977" />
+</color>
+
+<color name="red" weight="0.107290108484">
+ <shade name="bright" weight="0.824640562054" />
+ <shade name="cool" weight="0.137548741971" />
+ <shade name="light" weight="0.0378096067977" />
+</color>
+
+<color name="purple" weight="0.104539080061">
+ <shade name="bright" weight="0.824640562054" />
+ <shade name="cool" weight="0.137548741971" />
+ <shade name="light" weight="0.0378096067977" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="swamp">
+
+<color name="black" weight="0.595001384069">
+ <shade name="dark" weight="0.580338830657" />
+ <shade name="fresh" weight="0.217528364416" />
+ <shade name="light" weight="0.20213161993" />
+</color>
+
+<color name="green" weight="0.201833802831">
+ <shade name="dark" weight="0.580338830657" />
+ <shade name="fresh" weight="0.217528364416" />
+ <shade name="light" weight="0.20213161993" />
+</color>
+
+<color name="red" weight="0.120400280071">
+ <shade name="dark" weight="0.580338830657" />
+ <shade name="fresh" weight="0.217528364416" />
+ <shade name="light" weight="0.20213161993" />
+</color>
+
+<color name="blue" weight="0.059733472283">
+ <shade name="dark" weight="0.580338830657" />
+ <shade name="fresh" weight="0.217528364416" />
+ <shade name="light" weight="0.20213161993" />
+</color>
+
+<color name="white" weight="0.0230300535716">
+ <shade name="dark" weight="0.580338830657" />
+ <shade name="fresh" weight="0.217528364416" />
+ <shade name="light" weight="0.20213161993" />
+</color>
+
+</colors>

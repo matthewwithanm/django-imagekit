@@ -1,0 +1,33 @@
+<colors query="grassland">
+
+<color name="green" weight="0.963006372878">
+ <shade name="neutral" weight="0.988914452897" />
+ <shade name="fresh" weight="0.00753911430436" />
+ <shade name="cool" weight="0.00354542132151" />
+</color>
+
+<color name="blue" weight="0.0239628335397">
+ <shade name="neutral" weight="0.988914452897" />
+ <shade name="fresh" weight="0.00753911430436" />
+ <shade name="cool" weight="0.00354542132151" />
+</color>
+
+<color name="yellow" weight="0.00597573161397">
+ <shade name="neutral" weight="0.988914452897" />
+ <shade name="fresh" weight="0.00753911430436" />
+ <shade name="cool" weight="0.00354542132151" />
+</color>
+
+<color name="red" weight="0.00384903013732">
+ <shade name="neutral" weight="0.988914452897" />
+ <shade name="fresh" weight="0.00753911430436" />
+ <shade name="cool" weight="0.00354542132151" />
+</color>
+
+<color name="black" weight="0.00320502898594">
+ <shade name="neutral" weight="0.988914452897" />
+ <shade name="fresh" weight="0.00753911430436" />
+ <shade name="cool" weight="0.00354542132151" />
+</color>
+
+</colors>

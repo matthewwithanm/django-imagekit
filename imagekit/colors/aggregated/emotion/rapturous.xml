@@ -1,0 +1,33 @@
+<colors query="rapturous">
+
+<color name="red" weight="0.444443987655">
+ <shade name="intense" weight="0.465464956669" />
+ <shade name="warm" weight="0.417416961142" />
+ <shade name="soft" weight="0.117116989097" />
+</color>
+
+<color name="black" weight="0.374999614584">
+ <shade name="intense" weight="0.465464956669" />
+ <shade name="warm" weight="0.417416961142" />
+ <shade name="soft" weight="0.117116989097" />
+</color>
+
+<color name="blue" weight="0.0972221222995">
+ <shade name="intense" weight="0.771142882109" />
+ <shade name="soft" weight="0.194029499369" />
+ <shade name="fresh" weight="0.0348258075791" />
+</color>
+
+<color name="white" weight="0.0555554984568">
+ <shade name="warm" weight="0.75134987302" />
+ <shade name="soft" weight="0.210810396027" />
+ <shade name="fresh" weight="0.0378377633895" />
+</color>
+
+<color name="purple" weight="0.0277777492284">
+ <shade name="soft" weight="0.735844002883" />
+ <shade name="fresh" weight="0.13207456462" />
+ <shade name="dark" weight="0.13207456462" />
+</color>
+
+</colors>

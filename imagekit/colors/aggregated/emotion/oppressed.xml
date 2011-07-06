@@ -1,0 +1,33 @@
+<colors query="oppressed">
+
+<color name="black" weight="0.76922999536">
+ <shade name="weak" weight="0.640470838325" />
+ <shade name="hard" weight="0.241650040227" />
+ <shade name="dark" weight="0.117878068403" />
+</color>
+
+<color name="white" weight="0.187782616514">
+ <shade name="weak" weight="0.640470838325" />
+ <shade name="hard" weight="0.241650040227" />
+ <shade name="dark" weight="0.117878068403" />
+</color>
+
+<color name="red" weight="0.0309200292252">
+ <shade name="weak" weight="0.640470838325" />
+ <shade name="hard" weight="0.241650040227" />
+ <shade name="dark" weight="0.117878068403" />
+</color>
+
+<color name="yellow" weight="0.0060331764342">
+ <shade name="weak" weight="0.640470838325" />
+ <shade name="hard" weight="0.241650040227" />
+ <shade name="dark" weight="0.117878068403" />
+</color>
+
+<color name="blue" weight="0.0060331764342">
+ <shade name="weak" weight="0.640470838325" />
+ <shade name="hard" weight="0.241650040227" />
+ <shade name="dark" weight="0.117878068403" />
+</color>
+
+</colors>

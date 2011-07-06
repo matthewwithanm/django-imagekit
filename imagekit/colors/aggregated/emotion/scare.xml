@@ -1,0 +1,33 @@
+<colors query="scare">
+
+<color name="red" weight="0.796926619676">
+ <shade name="fresh" weight="0.708623786588" />
+ <shade name="soft" weight="0.19627014089" />
+ <shade name="weak" weight="0.0951047713578" />
+</color>
+
+<color name="green" weight="0.190333930525">
+ <shade name="fresh" weight="0.708623786588" />
+ <shade name="soft" weight="0.19627014089" />
+ <shade name="weak" weight="0.0951047713578" />
+</color>
+
+<color name="white" weight="0.00646825877717">
+ <shade name="fresh" weight="0.708623786588" />
+ <shade name="soft" weight="0.19627014089" />
+ <shade name="weak" weight="0.0951047713578" />
+</color>
+
+<color name="black" weight="0.00527673742348">
+ <shade name="fresh" weight="0.708623786588" />
+ <shade name="soft" weight="0.19627014089" />
+ <shade name="weak" weight="0.0951047713578" />
+</color>
+
+<color name="purple" weight="0.000993450271518">
+ <shade name="fresh" weight="0.708623786588" />
+ <shade name="soft" weight="0.19627014089" />
+ <shade name="weak" weight="0.0951047713578" />
+</color>
+
+</colors>

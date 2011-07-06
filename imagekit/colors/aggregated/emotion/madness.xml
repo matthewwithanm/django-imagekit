@@ -1,0 +1,33 @@
+<colors query="madness">
+
+<color name="blue" weight="0.420368613584">
+ <shade name="cool" weight="0.503545296404" />
+ <shade name="light" weight="0.268084678931" />
+ <shade name="soft" weight="0.2283684302" />
+</color>
+
+<color name="red" weight="0.177716812247">
+ <shade name="cool" weight="0.503545296404" />
+ <shade name="light" weight="0.268084678931" />
+ <shade name="soft" weight="0.2283684302" />
+</color>
+
+<color name="yellow" weight="0.169856260936">
+ <shade name="cool" weight="0.503545296404" />
+ <shade name="light" weight="0.268084678931" />
+ <shade name="soft" weight="0.2283684302" />
+</color>
+
+<color name="orange" weight="0.131578793683">
+ <shade name="cool" weight="0.503545296404" />
+ <shade name="light" weight="0.268084678931" />
+ <shade name="soft" weight="0.2283684302" />
+</color>
+
+<color name="white" weight="0.10047835154">
+ <shade name="cool" weight="0.503545296404" />
+ <shade name="light" weight="0.268084678931" />
+ <shade name="soft" weight="0.2283684302" />
+</color>
+
+</colors>

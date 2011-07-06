@@ -1,0 +1,33 @@
+<colors query="buckeye">
+
+<color name="red" weight="0.655810463494">
+ <shade name="hard" weight="0.844443476618" />
+ <shade name="cool" weight="0.0866665673372" />
+ <shade name="dark" weight="0.0688888099347" />
+</color>
+
+<color name="yellow" weight="0.311909854589">
+ <shade name="hard" weight="0.844443476618" />
+ <shade name="cool" weight="0.0866665673372" />
+ <shade name="dark" weight="0.0688888099347" />
+</color>
+
+<color name="green" weight="0.0123644265434">
+ <shade name="hard" weight="0.844443476618" />
+ <shade name="cool" weight="0.0866665673372" />
+ <shade name="dark" weight="0.0688888099347" />
+</color>
+
+<color name="blue" weight="0.0120125282459">
+ <shade name="hard" weight="0.844443476618" />
+ <shade name="cool" weight="0.0866665673372" />
+ <shade name="dark" weight="0.0688888099347" />
+</color>
+
+<color name="white" weight="0.00790171631624">
+ <shade name="hard" weight="0.844443476618" />
+ <shade name="cool" weight="0.0866665673372" />
+ <shade name="dark" weight="0.0688888099347" />
+</color>
+
+</colors>

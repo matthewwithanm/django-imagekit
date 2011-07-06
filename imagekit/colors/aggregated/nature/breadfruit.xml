@@ -1,0 +1,33 @@
+<colors query="breadfruit">
+
+<color name="green" weight="0.688844690761">
+ <shade name="fresh" weight="0.940809004591" />
+ <shade name="soft" weight="0.0404984008599" />
+ <shade name="hard" weight="0.0186915696276" />
+</color>
+
+<color name="orange" weight="0.123287544085">
+ <shade name="fresh" weight="0.940809004591" />
+ <shade name="soft" weight="0.0404984008599" />
+ <shade name="hard" weight="0.0186915696276" />
+</color>
+
+<color name="red" weight="0.117416708652">
+ <shade name="fresh" weight="0.940809004591" />
+ <shade name="soft" weight="0.0404984008599" />
+ <shade name="hard" weight="0.0186915696276" />
+</color>
+
+<color name="white" weight="0.0410958480284">
+ <shade name="fresh" weight="0.940809004591" />
+ <shade name="soft" weight="0.0404984008599" />
+ <shade name="hard" weight="0.0186915696276" />
+</color>
+
+<color name="blue" weight="0.0293541771631">
+ <shade name="fresh" weight="0.940809004591" />
+ <shade name="soft" weight="0.0404984008599" />
+ <shade name="hard" weight="0.0186915696276" />
+</color>
+
+</colors>

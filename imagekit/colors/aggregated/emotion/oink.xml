@@ -1,0 +1,33 @@
+<colors query="oink">
+
+<color name="pink" weight="0.564769788361">
+ <shade name="cool" weight="0.40606009664" />
+ <shade name="soft" weight="0.348484411295" />
+ <shade name="light" weight="0.245454237521" />
+</color>
+
+<color name="orange" weight="0.198766066292">
+ <shade name="cool" weight="0.40606009664" />
+ <shade name="soft" weight="0.348484411295" />
+ <shade name="light" weight="0.245454237521" />
+</color>
+
+<color name="blue" weight="0.122686640918">
+ <shade name="cool" weight="0.40606009664" />
+ <shade name="soft" weight="0.348484411295" />
+ <shade name="light" weight="0.245454237521" />
+</color>
+
+<color name="black" weight="0.0795064265168">
+ <shade name="cool" weight="0.40606009664" />
+ <shade name="soft" weight="0.348484411295" />
+ <shade name="light" weight="0.245454237521" />
+</color>
+
+<color name="red" weight="0.0342700114297">
+ <shade name="cool" weight="0.40606009664" />
+ <shade name="soft" weight="0.348484411295" />
+ <shade name="light" weight="0.245454237521" />
+</color>
+
+</colors>

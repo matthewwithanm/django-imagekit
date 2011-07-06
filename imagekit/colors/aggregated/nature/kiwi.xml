@@ -1,0 +1,33 @@
+<colors query="kiwi">
+
+<color name="blue" weight="0.314454453923">
+ <shade name="fresh" weight="0.677200050124" />
+ <shade name="cool" weight="0.249811574046" />
+ <shade name="soft" weight="0.0729871165134" />
+</color>
+
+<color name="orange" weight="0.25781883991">
+ <shade name="fresh" weight="0.677200050124" />
+ <shade name="cool" weight="0.249811574046" />
+ <shade name="soft" weight="0.0729871165134" />
+</color>
+
+<color name="black" weight="0.206255071928">
+ <shade name="fresh" weight="0.677200050124" />
+ <shade name="cool" weight="0.249811574046" />
+ <shade name="soft" weight="0.0729871165134" />
+</color>
+
+<color name="green" weight="0.202028533569">
+ <shade name="fresh" weight="0.677200050124" />
+ <shade name="cool" weight="0.249811574046" />
+ <shade name="soft" weight="0.0729871165134" />
+</color>
+
+<color name="yellow" weight="0.0194420764522">
+ <shade name="fresh" weight="0.677200050124" />
+ <shade name="cool" weight="0.249811574046" />
+ <shade name="soft" weight="0.0729871165134" />
+</color>
+
+</colors>

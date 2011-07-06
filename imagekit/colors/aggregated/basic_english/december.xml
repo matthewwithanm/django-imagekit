@@ -1,0 +1,33 @@
+<colors query="December">
+
+<color name="black" weight="0.277777491729">
+ <shade name="dark" weight="0.433174834023" />
+ <shade name="warm" weight="0.417061109344" />
+ <shade name="cool" weight="0.149762852901" />
+</color>
+
+<color name="white" weight="0.265567492092">
+ <shade name="dark" weight="0.433174834023" />
+ <shade name="warm" weight="0.417061109344" />
+ <shade name="cool" weight="0.149762852901" />
+</color>
+
+<color name="green" weight="0.225884993274">
+ <shade name="dark" weight="0.594277302085" />
+ <shade name="cool" weight="0.205461299189" />
+ <shade name="light" weight="0.200259747311" />
+</color>
+
+<color name="blue" weight="0.218253743501">
+ <shade name="dark" weight="0.594277302085" />
+ <shade name="cool" weight="0.205461299189" />
+ <shade name="light" weight="0.200259747311" />
+</color>
+
+<color name="yellow" weight="0.0125152496273">
+ <shade name="dark" weight="0.433174834023" />
+ <shade name="warm" weight="0.417061109344" />
+ <shade name="cool" weight="0.149762852901" />
+</color>
+
+</colors>

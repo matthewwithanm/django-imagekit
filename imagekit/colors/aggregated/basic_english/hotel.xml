@@ -1,0 +1,33 @@
+<colors query="hotel">
+
+<color name="green" weight="0.410046464777">
+ <shade name="light" weight="0.512594437739" />
+ <shade name="cool" weight="0.256297218869" />
+ <shade name="fresh" weight="0.231106863643" />
+</color>
+
+<color name="blue" weight="0.323043986088">
+ <shade name="light" weight="0.512594437739" />
+ <shade name="cool" weight="0.256297218869" />
+ <shade name="fresh" weight="0.231106863643" />
+</color>
+
+<color name="white" weight="0.133908162852">
+ <shade name="light" weight="0.512594437739" />
+ <shade name="cool" weight="0.256297218869" />
+ <shade name="fresh" weight="0.231106863643" />
+</color>
+
+<color name="orange" weight="0.0824632189312">
+ <shade name="light" weight="0.512594437739" />
+ <shade name="cool" weight="0.256297218869" />
+ <shade name="fresh" weight="0.231106863643" />
+</color>
+
+<color name="black" weight="0.0505370919689">
+ <shade name="light" weight="0.512594437739" />
+ <shade name="cool" weight="0.256297218869" />
+ <shade name="fresh" weight="0.231106863643" />
+</color>
+
+</colors>

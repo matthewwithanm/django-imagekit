@@ -1,0 +1,33 @@
+<colors query="shelf">
+
+<color name="white" weight="0.529143720347">
+ <shade name="light" weight="0.981254501037" />
+ <shade name="dark" weight="0.011699572897" />
+ <shade name="soft" weight="0.00704490411001" />
+</color>
+
+<color name="black" weight="0.332781792875">
+ <shade name="light" weight="0.981254501037" />
+ <shade name="dark" weight="0.011699572897" />
+ <shade name="soft" weight="0.00704490411001" />
+</color>
+
+<color name="yellow" weight="0.0692434165298">
+ <shade name="light" weight="0.981254501037" />
+ <shade name="dark" weight="0.011699572897" />
+ <shade name="soft" weight="0.00704490411001" />
+</color>
+
+<color name="pink" weight="0.0479536496565">
+ <shade name="light" weight="0.981254501037" />
+ <shade name="dark" weight="0.011699572897" />
+ <shade name="soft" weight="0.00704490411001" />
+</color>
+
+<color name="orange" weight="0.0208763733418">
+ <shade name="light" weight="0.981254501037" />
+ <shade name="dark" weight="0.011699572897" />
+ <shade name="soft" weight="0.00704490411001" />
+</color>
+
+</colors>

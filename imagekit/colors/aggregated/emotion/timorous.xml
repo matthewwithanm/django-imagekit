@@ -1,0 +1,33 @@
+<colors query="timorous">
+
+<color name="black" weight="0.545454000001">
+ <shade name="hard" weight="0.730511502662" />
+ <shade name="weak" weight="0.224944090759" />
+ <shade name="soft" weight="0.0445433843087" />
+</color>
+
+<color name="yellow" weight="0.181818">
+ <shade name="hard" weight="0.730511502662" />
+ <shade name="weak" weight="0.224944090759" />
+ <shade name="soft" weight="0.0445433843087" />
+</color>
+
+<color name="pink" weight="0.181818">
+ <shade name="hard" weight="0.730511502662" />
+ <shade name="weak" weight="0.224944090759" />
+ <shade name="soft" weight="0.0445433843087" />
+</color>
+
+<color name="white" weight="0.0909090000001">
+ <shade name="hard" weight="0.730511502662" />
+ <shade name="weak" weight="0.224944090759" />
+ <shade name="soft" weight="0.0445433843087" />
+</color>
+
+<color name="red" weight="0.0">
+ <shade name="hard" weight="0.730511502662" />
+ <shade name="weak" weight="0.224944090759" />
+ <shade name="soft" weight="0.0445433843087" />
+</color>
+
+</colors>

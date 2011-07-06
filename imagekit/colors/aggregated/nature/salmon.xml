@@ -1,0 +1,33 @@
+<colors query="salmon">
+
+<color name="pink" weight="0.454349781864">
+ <shade name="fresh" weight="0.798056067029" />
+ <shade name="light" weight="0.114503696574" />
+ <shade name="dark" weight="0.0874391864745" />
+</color>
+
+<color name="white" weight="0.322081603401">
+ <shade name="fresh" weight="0.798056067029" />
+ <shade name="light" weight="0.114503696574" />
+ <shade name="dark" weight="0.0874391864745" />
+</color>
+
+<color name="red" weight="0.170917970871">
+ <shade name="fresh" weight="0.798056067029" />
+ <shade name="light" weight="0.114503696574" />
+ <shade name="dark" weight="0.0874391864745" />
+</color>
+
+<color name="orange" weight="0.0367602470015">
+ <shade name="fresh" weight="0.798056067029" />
+ <shade name="light" weight="0.114503696574" />
+ <shade name="dark" weight="0.0874391864745" />
+</color>
+
+<color name="blue" weight="0.0158893591011">
+ <shade name="fresh" weight="0.798056067029" />
+ <shade name="light" weight="0.114503696574" />
+ <shade name="dark" weight="0.0874391864745" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="tulip">
+
+<color name="black" weight="0.34525047057">
+ <shade name="fresh" weight="0.496561648058" />
+ <shade name="light" weight="0.339189802674" />
+ <shade name="soft" weight="0.164247314358" />
+</color>
+
+<color name="red" weight="0.210219175414">
+ <shade name="fresh" weight="0.496561648058" />
+ <shade name="light" weight="0.339189802674" />
+ <shade name="soft" weight="0.164247314358" />
+</color>
+
+<color name="yellow" weight="0.194874710055">
+ <shade name="fresh" weight="0.496561648058" />
+ <shade name="light" weight="0.339189802674" />
+ <shade name="soft" weight="0.164247314358" />
+</color>
+
+<color name="white" weight="0.140708747339">
+ <shade name="fresh" weight="0.496561648058" />
+ <shade name="light" weight="0.339189802674" />
+ <shade name="soft" weight="0.164247314358" />
+</color>
+
+<color name="pink" weight="0.108945704046">
+ <shade name="fresh" weight="0.496561648058" />
+ <shade name="light" weight="0.339189802674" />
+ <shade name="soft" weight="0.164247314358" />
+</color>
+
+</colors>

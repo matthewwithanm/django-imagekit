@@ -1,0 +1,33 @@
+<colors query="crab">
+
+<color name="blue" weight="0.754870843978">
+ <shade name="fresh" weight="0.772612190581" />
+ <shade name="soft" weight="0.144472198239" />
+ <shade name="hard" weight="0.0829144789892" />
+</color>
+
+<color name="red" weight="0.130802254802">
+ <shade name="fresh" weight="0.772612190581" />
+ <shade name="soft" weight="0.144472198239" />
+ <shade name="hard" weight="0.0829144789892" />
+</color>
+
+<color name="green" weight="0.0811604352085">
+ <shade name="fresh" weight="0.772612190581" />
+ <shade name="soft" weight="0.144472198239" />
+ <shade name="hard" weight="0.0829144789892" />
+</color>
+
+<color name="white" weight="0.0254512821091">
+ <shade name="fresh" weight="0.772612190581" />
+ <shade name="soft" weight="0.144472198239" />
+ <shade name="hard" weight="0.0829144789892" />
+</color>
+
+<color name="yellow" weight="0.00771418117176">
+ <shade name="fresh" weight="0.772612190581" />
+ <shade name="soft" weight="0.144472198239" />
+ <shade name="hard" weight="0.0829144789892" />
+</color>
+
+</colors>

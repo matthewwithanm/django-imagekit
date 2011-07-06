@@ -1,0 +1,33 @@
+<colors query="jeweler">
+
+<color name="black" weight="0.323379108214">
+ <shade name="light" weight="0.668075361353" />
+ <shade name="bright" weight="0.211416253593" />
+ <shade name="cool" weight="0.120507264548" />
+</color>
+
+<color name="green" weight="0.24399099381">
+ <shade name="light" weight="0.668075361353" />
+ <shade name="bright" weight="0.211416253593" />
+ <shade name="cool" weight="0.120507264548" />
+</color>
+
+<color name="red" weight="0.196649457698">
+ <shade name="light" weight="0.668075361353" />
+ <shade name="bright" weight="0.211416253593" />
+ <shade name="cool" weight="0.120507264548" />
+</color>
+
+<color name="white" weight="0.185724487826">
+ <shade name="light" weight="0.668075361353" />
+ <shade name="bright" weight="0.211416253593" />
+ <shade name="cool" weight="0.120507264548" />
+</color>
+
+<color name="blue" weight="0.0502548614117">
+ <shade name="light" weight="0.668075361353" />
+ <shade name="bright" weight="0.211416253593" />
+ <shade name="cool" weight="0.120507264548" />
+</color>
+
+</colors>

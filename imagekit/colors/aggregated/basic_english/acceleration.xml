@@ -1,0 +1,33 @@
+<colors query="acceleration">
+
+<color name="green" weight="0.453164063644">
+ <shade name="hard" weight="0.826264148957" />
+ <shade name="light" weight="0.101637802394" />
+ <shade name="weak" weight="0.0720970310505" />
+</color>
+
+<color name="white" weight="0.172151711329">
+ <shade name="hard" weight="0.826264148957" />
+ <shade name="light" weight="0.101637802394" />
+ <shade name="weak" weight="0.0720970310505" />
+</color>
+
+<color name="red" weight="0.150210806944">
+ <shade name="hard" weight="0.826264148957" />
+ <shade name="light" weight="0.101637802394" />
+ <shade name="weak" weight="0.0720970310505" />
+</color>
+
+<color name="blue" weight="0.14767916413">
+ <shade name="hard" weight="0.826264148957" />
+ <shade name="light" weight="0.101637802394" />
+ <shade name="weak" weight="0.0720970310505" />
+</color>
+
+<color name="black" weight="0.0767931653475">
+ <shade name="hard" weight="0.826264148957" />
+ <shade name="light" weight="0.101637802394" />
+ <shade name="weak" weight="0.0720970310505" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="rabid">
+
+<color name="black" weight="0.276218271655">
+ <shade name="hard" weight="0.800251963313" />
+ <shade name="cool" weight="0.147913869996" />
+ <shade name="intense" weight="0.0518330655542" />
+</color>
+
+<color name="red" weight="0.194977603521">
+ <shade name="hard" weight="0.800251963313" />
+ <shade name="cool" weight="0.147913869996" />
+ <shade name="intense" weight="0.0518330655542" />
+</color>
+
+<color name="blue" weight="0.187592088236">
+ <shade name="hard" weight="0.800251963313" />
+ <shade name="cool" weight="0.147913869996" />
+ <shade name="intense" weight="0.0518330655542" />
+</color>
+
+<color name="pink" weight="0.184637882122">
+ <shade name="hard" weight="0.803298604476" />
+ <shade name="cool" weight="0.148476993244" />
+ <shade name="dark" weight="0.0482232969512" />
+</color>
+
+<color name="green" weight="0.15657292404">
+ <shade name="hard" weight="0.800251963313" />
+ <shade name="cool" weight="0.147913869996" />
+ <shade name="intense" weight="0.0518330655542" />
+</color>
+
+</colors>

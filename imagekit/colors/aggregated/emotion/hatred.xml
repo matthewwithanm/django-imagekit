@@ -1,0 +1,33 @@
+<colors query="hatred">
+
+<color name="orange" weight="0.330304888811">
+ <shade name="intense" weight="0.885515300948" />
+ <shade name="dark" weight="0.0774377753056" />
+ <shade name="light" weight="0.0370458492974" />
+</color>
+
+<color name="black" weight="0.235828242946">
+ <shade name="intense" weight="0.885515300948" />
+ <shade name="dark" weight="0.0774377753056" />
+ <shade name="light" weight="0.0370458492974" />
+</color>
+
+<color name="white" weight="0.222746861211">
+ <shade name="dark" weight="0.562007759747" />
+ <shade name="light" weight="0.268861736916" />
+ <shade name="fresh" weight="0.169122705479" />
+</color>
+
+<color name="red" weight="0.147528916234">
+ <shade name="intense" weight="0.885515300948" />
+ <shade name="dark" weight="0.0774377753056" />
+ <shade name="light" weight="0.0370458492974" />
+</color>
+
+<color name="green" weight="0.0635900501011">
+ <shade name="intense" weight="0.885515300948" />
+ <shade name="dark" weight="0.0774377753056" />
+ <shade name="light" weight="0.0370458492974" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="cusp">
+
+<color name="white" weight="0.313829445026">
+ <shade name="weak" weight="0.423850080221" />
+ <shade name="dark" weight="0.410200670858" />
+ <shade name="bright" weight="0.165948082256" />
+</color>
+
+<color name="red" weight="0.30851030189">
+ <shade name="weak" weight="0.423850080221" />
+ <shade name="dark" weight="0.410200670858" />
+ <shade name="bright" weight="0.165948082256" />
+</color>
+
+<color name="black" weight="0.170212580353">
+ <shade name="weak" weight="0.423850080221" />
+ <shade name="dark" weight="0.410200670858" />
+ <shade name="bright" weight="0.165948082256" />
+</color>
+
+<color name="green" weight="0.106382862721">
+ <shade name="weak" weight="0.423850080221" />
+ <shade name="dark" weight="0.410200670858" />
+ <shade name="bright" weight="0.165948082256" />
+</color>
+
+<color name="blue" weight="0.101063719585">
+ <shade name="weak" weight="0.423850080221" />
+ <shade name="dark" weight="0.410200670858" />
+ <shade name="bright" weight="0.165948082256" />
+</color>
+
+</colors>

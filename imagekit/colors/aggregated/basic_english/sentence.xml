@@ -1,0 +1,33 @@
+<colors query="sentence">
+
+<color name="black" weight="0.394707379248">
+ <shade name="light" weight="0.923317741777" />
+ <shade name="hard" weight="0.0601793620349" />
+ <shade name="cool" weight="0.016501849002" />
+</color>
+
+<color name="red" weight="0.214994242886">
+ <shade name="light" weight="0.923317741777" />
+ <shade name="hard" weight="0.0601793620349" />
+ <shade name="cool" weight="0.016501849002" />
+</color>
+
+<color name="white" weight="0.154354841047">
+ <shade name="light" weight="0.923317741777" />
+ <shade name="hard" weight="0.0601793620349" />
+ <shade name="cool" weight="0.016501849002" />
+</color>
+
+<color name="blue" weight="0.123483872837">
+ <shade name="light" weight="0.923317741777" />
+ <shade name="hard" weight="0.0601793620349" />
+ <shade name="cool" weight="0.016501849002" />
+</color>
+
+<color name="green" weight="0.112458527048">
+ <shade name="light" weight="0.923317741777" />
+ <shade name="hard" weight="0.0601793620349" />
+ <shade name="cool" weight="0.016501849002" />
+</color>
+
+</colors>

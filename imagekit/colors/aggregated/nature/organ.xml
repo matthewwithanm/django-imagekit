@@ -1,0 +1,33 @@
+<colors query="organ">
+
+<color name="red" weight="0.614319062691">
+ <shade name="light" weight="0.747735283384" />
+ <shade name="soft" weight="0.15265183986" />
+ <shade name="hard" weight="0.0996117938072" />
+</color>
+
+<color name="blue" weight="0.302833340763">
+ <shade name="light" weight="0.747735283384" />
+ <shade name="soft" weight="0.15265183986" />
+ <shade name="hard" weight="0.0996117938072" />
+</color>
+
+<color name="orange" weight="0.0410988105321">
+ <shade name="light" weight="0.747735283384" />
+ <shade name="soft" weight="0.15265183986" />
+ <shade name="hard" weight="0.0996117938072" />
+</color>
+
+<color name="pink" weight="0.0255245244357">
+ <shade name="light" weight="0.747735283384" />
+ <shade name="soft" weight="0.15265183986" />
+ <shade name="hard" weight="0.0996117938072" />
+</color>
+
+<color name="purple" weight="0.0162232146837">
+ <shade name="light" weight="0.747735283384" />
+ <shade name="soft" weight="0.15265183986" />
+ <shade name="hard" weight="0.0996117938072" />
+</color>
+
+</colors>

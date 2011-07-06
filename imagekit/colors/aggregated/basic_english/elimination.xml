@@ -1,0 +1,33 @@
+<colors query="elimination">
+
+<color name="yellow" weight="0.884692135814">
+ <shade name="light" weight="0.404588795881" />
+ <shade name="intense" weight="0.363526052419" />
+ <shade name="hard" weight="0.231883727789" />
+</color>
+
+<color name="black" weight="0.0426908487014">
+ <shade name="light" weight="0.404588795881" />
+ <shade name="intense" weight="0.363526052419" />
+ <shade name="hard" weight="0.231883727789" />
+</color>
+
+<color name="green" weight="0.0400189597006">
+ <shade name="light" weight="0.404588795881" />
+ <shade name="intense" weight="0.363526052419" />
+ <shade name="hard" weight="0.231883727789" />
+</color>
+
+<color name="red" weight="0.0171594649161">
+ <shade name="light" weight="0.404588795881" />
+ <shade name="intense" weight="0.363526052419" />
+ <shade name="hard" weight="0.231883727789" />
+</color>
+
+<color name="blue" weight="0.0154375808934">
+ <shade name="light" weight="0.404588795881" />
+ <shade name="intense" weight="0.363526052419" />
+ <shade name="hard" weight="0.231883727789" />
+</color>
+
+</colors>

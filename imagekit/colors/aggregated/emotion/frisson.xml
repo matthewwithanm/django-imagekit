@@ -1,0 +1,33 @@
+<colors query="frisson">
+
+<color name="purple" weight="0.666665977778">
+ <shade name="cool" weight="0.60354588533" />
+ <shade name="light" weight="0.242601777437" />
+ <shade name="fresh" weight="0.153845029594" />
+</color>
+
+<color name="orange" weight="0.273333050889">
+ <shade name="intense" weight="0.842843686644" />
+ <shade name="cool" weight="0.089552141706" />
+ <shade name="warm" weight="0.0676030873663" />
+</color>
+
+<color name="green" weight="0.0199999793334">
+ <shade name="intense" weight="0.870352606631" />
+ <shade name="cool" weight="0.0924749644546" />
+ <shade name="light" weight="0.0371713092416" />
+</color>
+
+<color name="blue" weight="0.0199999793334">
+ <shade name="intense" weight="0.870352606631" />
+ <shade name="cool" weight="0.0924749644546" />
+ <shade name="light" weight="0.0371713092416" />
+</color>
+
+<color name="black" weight="0.0199999793334">
+ <shade name="intense" weight="0.842843686644" />
+ <shade name="cool" weight="0.089552141706" />
+ <shade name="warm" weight="0.0676030873663" />
+</color>
+
+</colors>

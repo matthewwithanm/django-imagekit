@@ -1,0 +1,33 @@
+<colors query="germinating">
+
+<color name="red" weight="0.437499521485">
+ <shade name="dark" weight="0.738040163367" />
+ <shade name="light" weight="0.182232139103" />
+ <shade name="fresh" weight="0.0797265608575" />
+</color>
+
+<color name="green" weight="0.249999726563">
+ <shade name="dark" weight="0.738040163367" />
+ <shade name="light" weight="0.182232139103" />
+ <shade name="fresh" weight="0.0797265608575" />
+</color>
+
+<color name="black" weight="0.156249829102">
+ <shade name="dark" weight="0.738040163367" />
+ <shade name="light" weight="0.182232139103" />
+ <shade name="fresh" weight="0.0797265608575" />
+</color>
+
+<color name="yellow" weight="0.093749897461">
+ <shade name="dark" weight="0.738040163367" />
+ <shade name="light" weight="0.182232139103" />
+ <shade name="fresh" weight="0.0797265608575" />
+</color>
+
+<color name="white" weight="0.0624999316407">
+ <shade name="dark" weight="0.738040163367" />
+ <shade name="light" weight="0.182232139103" />
+ <shade name="fresh" weight="0.0797265608575" />
+</color>
+
+</colors>

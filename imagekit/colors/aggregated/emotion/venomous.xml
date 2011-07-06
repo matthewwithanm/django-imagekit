@@ -1,0 +1,33 @@
+<colors query="venomous">
+
+<color name="black" weight="0.567200364684">
+ <shade name="dark" weight="0.628098403571" />
+ <shade name="bright" weight="0.209366134524" />
+ <shade name="cool" weight="0.162534236012" />
+</color>
+
+<color name="green" weight="0.167694020863">
+ <shade name="dark" weight="0.628098403571" />
+ <shade name="bright" weight="0.209366134524" />
+ <shade name="cool" weight="0.162534236012" />
+</color>
+
+<color name="red" weight="0.118372250021">
+ <shade name="dark" weight="0.628098403571" />
+ <shade name="bright" weight="0.209366134524" />
+ <shade name="cool" weight="0.162534236012" />
+</color>
+
+<color name="purple" weight="0.0801478776184">
+ <shade name="dark" weight="0.628098403571" />
+ <shade name="bright" weight="0.209366134524" />
+ <shade name="cool" weight="0.162534236012" />
+</color>
+
+<color name="white" weight="0.0665843906368">
+ <shade name="dark" weight="0.628098403571" />
+ <shade name="bright" weight="0.209366134524" />
+ <shade name="cool" weight="0.162534236012" />
+</color>
+
+</colors>

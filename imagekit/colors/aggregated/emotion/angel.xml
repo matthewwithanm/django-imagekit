@@ -1,0 +1,33 @@
+<colors query="angel">
+
+<color name="blue" weight="0.416286401434">
+ <shade name="dark" weight="0.887723464361" />
+ <shade name="bright" weight="0.0934651577014" />
+ <shade name="light" weight="0.0188103518219" />
+</color>
+
+<color name="black" weight="0.29504678525">
+ <shade name="dark" weight="0.887723464361" />
+ <shade name="bright" weight="0.0934651577014" />
+ <shade name="light" weight="0.0188103518219" />
+</color>
+
+<color name="white" weight="0.118504887999">
+ <shade name="dark" weight="0.887723464361" />
+ <shade name="bright" weight="0.0934651577014" />
+ <shade name="light" weight="0.0188103518219" />
+</color>
+
+<color name="red" weight="0.114250866379">
+ <shade name="dark" weight="0.887723464361" />
+ <shade name="bright" weight="0.0934651577014" />
+ <shade name="light" weight="0.0188103518219" />
+</color>
+
+<color name="pink" weight="0.0559099984407">
+ <shade name="dark" weight="0.887723464361" />
+ <shade name="bright" weight="0.0934651577014" />
+ <shade name="light" weight="0.0188103518219" />
+</color>
+
+</colors>

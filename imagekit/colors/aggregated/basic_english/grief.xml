@@ -1,0 +1,33 @@
+<colors query="grief">
+
+<color name="black" weight="0.559371324904">
+ <shade name="intense" weight="0.948891086196" />
+ <shade name="dark" weight="0.0278770262611" />
+ <shade name="light" weight="0.0232308552176" />
+</color>
+
+<color name="green" weight="0.184739740198">
+ <shade name="intense" weight="0.948891086196" />
+ <shade name="dark" weight="0.0278770262611" />
+ <shade name="light" weight="0.0232308552176" />
+</color>
+
+<color name="red" weight="0.125122533202">
+ <shade name="intense" weight="0.948891086196" />
+ <shade name="dark" weight="0.0278770262611" />
+ <shade name="light" weight="0.0232308552176" />
+</color>
+
+<color name="white" weight="0.0905298328462">
+ <shade name="dark" weight="0.405399319253" />
+ <shade name="light" weight="0.337832766044" />
+ <shade name="fresh" weight="0.256752902194" />
+</color>
+
+<color name="blue" weight="0.040235481265">
+ <shade name="intense" weight="0.948891086196" />
+ <shade name="dark" weight="0.0278770262611" />
+ <shade name="light" weight="0.0232308552176" />
+</color>
+
+</colors>

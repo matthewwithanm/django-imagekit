@@ -1,0 +1,33 @@
+<colors query="stamen">
+
+<color name="red" weight="0.373790164204">
+ <shade name="soft" weight="0.515570222448" />
+ <shade name="dark" weight="0.328719269346" />
+ <shade name="bright" weight="0.155709127585" />
+</color>
+
+<color name="orange" weight="0.18469631643">
+ <shade name="soft" weight="0.515570222448" />
+ <shade name="dark" weight="0.328719269346" />
+ <shade name="bright" weight="0.155709127585" />
+</color>
+
+<color name="pink" weight="0.159630387772">
+ <shade name="soft" weight="0.515570222448" />
+ <shade name="dark" weight="0.328719269346" />
+ <shade name="bright" weight="0.155709127585" />
+</color>
+
+<color name="white" weight="0.149735942249">
+ <shade name="soft" weight="0.515570222448" />
+ <shade name="dark" weight="0.328719269346" />
+ <shade name="bright" weight="0.155709127585" />
+</color>
+
+<color name="blue" weight="0.132145816875">
+ <shade name="soft" weight="0.515570222448" />
+ <shade name="dark" weight="0.328719269346" />
+ <shade name="bright" weight="0.155709127585" />
+</color>
+
+</colors>

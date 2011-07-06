@@ -1,0 +1,33 @@
+<colors query="river">
+
+<color name="red" weight="0.208458956461">
+ <shade name="dark" weight="0.522478034916" />
+ <shade name="cool" weight="0.343255918288" />
+ <shade name="warm" weight="0.134264704322" />
+</color>
+
+<color name="yellow" weight="0.205437812164">
+ <shade name="dark" weight="0.522478034916" />
+ <shade name="cool" weight="0.343255918288" />
+ <shade name="warm" weight="0.134264704322" />
+</color>
+
+<color name="black" weight="0.199395523571">
+ <shade name="dark" weight="0.522478034916" />
+ <shade name="cool" weight="0.343255918288" />
+ <shade name="warm" weight="0.134264704322" />
+</color>
+
+<color name="white" weight="0.197884951423">
+ <shade name="dark" weight="0.522478034916" />
+ <shade name="cool" weight="0.343255918288" />
+ <shade name="warm" weight="0.134264704322" />
+</color>
+
+<color name="green" weight="0.188821518534">
+ <shade name="dark" weight="0.528579491082" />
+ <shade name="cool" weight="0.347264433094" />
+ <shade name="fresh" weight="0.124154717673" />
+</color>
+
+</colors>

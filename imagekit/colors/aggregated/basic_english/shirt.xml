@@ -1,0 +1,33 @@
+<colors query="shirt">
+
+<color name="white" weight="0.314960244141">
+ <shade name="cool" weight="0.559185959033" />
+ <shade name="dark" weight="0.281045410579" />
+ <shade name="light" weight="0.159767416867" />
+</color>
+
+<color name="red" weight="0.217847502197">
+ <shade name="cool" weight="0.559185959033" />
+ <shade name="dark" weight="0.281045410579" />
+ <shade name="light" weight="0.159767416867" />
+</color>
+
+<color name="blue" weight="0.213313983532">
+ <shade name="cool" weight="0.559185959033" />
+ <shade name="dark" weight="0.281045410579" />
+ <shade name="light" weight="0.159767416867" />
+</color>
+
+<color name="black" weight="0.162968065718">
+ <shade name="cool" weight="0.559185959033" />
+ <shade name="dark" weight="0.281045410579" />
+ <shade name="light" weight="0.159767416867" />
+</color>
+
+<color name="green" weight="0.0909089795588">
+ <shade name="cool" weight="0.559185959033" />
+ <shade name="dark" weight="0.281045410579" />
+ <shade name="light" weight="0.159767416867" />
+</color>
+
+</colors>

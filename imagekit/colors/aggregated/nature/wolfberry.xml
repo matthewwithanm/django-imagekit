@@ -1,0 +1,33 @@
+<colors query="wolfberry">
+
+<color name="red" weight="0.992062498689">
+ <shade name="fresh" weight="0.998150573014" />
+ <shade name="weak" weight="0.000924213493531" />
+ <shade name="light" weight="0.000924213493531" />
+</color>
+
+<color name="white" weight="0.00396824999475">
+ <shade name="fresh" weight="0.998150573014" />
+ <shade name="weak" weight="0.000924213493531" />
+ <shade name="light" weight="0.000924213493531" />
+</color>
+
+<color name="black" weight="0.0026454999965">
+ <shade name="fresh" weight="0.998150573014" />
+ <shade name="weak" weight="0.000924213493531" />
+ <shade name="light" weight="0.000924213493531" />
+</color>
+
+<color name="yellow" weight="0.000661374999126">
+ <shade name="fresh" weight="0.998150573014" />
+ <shade name="weak" weight="0.000924213493531" />
+ <shade name="light" weight="0.000924213493531" />
+</color>
+
+<color name="purple" weight="0.000661374999126">
+ <shade name="fresh" weight="0.998150573014" />
+ <shade name="weak" weight="0.000924213493531" />
+ <shade name="light" weight="0.000924213493531" />
+</color>
+
+</colors>

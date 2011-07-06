@@ -1,0 +1,33 @@
+<colors query="hysteria">
+
+<color name="red" weight="0.435004018364">
+ <shade name="dark" weight="0.503391408298" />
+ <shade name="intense" weight="0.256444679699" />
+ <shade name="light" weight="0.240162477813" />
+</color>
+
+<color name="blue" weight="0.247480291973">
+ <shade name="dark" weight="0.503391408298" />
+ <shade name="intense" weight="0.256444679699" />
+ <shade name="light" weight="0.240162477813" />
+</color>
+
+<color name="green" weight="0.169664323878">
+ <shade name="dark" weight="0.503391408298" />
+ <shade name="intense" weight="0.256444679699" />
+ <shade name="light" weight="0.240162477813" />
+</color>
+
+<color name="white" weight="0.0938894303566">
+ <shade name="dark" weight="0.568146094134" />
+ <shade name="light" weight="0.271056222808" />
+ <shade name="cool" weight="0.160796064378" />
+</color>
+
+<color name="black" weight="0.0539609090229">
+ <shade name="dark" weight="0.503391408298" />
+ <shade name="intense" weight="0.256444679699" />
+ <shade name="light" weight="0.240162477813" />
+</color>
+
+</colors>

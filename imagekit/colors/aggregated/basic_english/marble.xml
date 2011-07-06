@@ -1,0 +1,33 @@
+<colors query="marble">
+
+<color name="white" weight="0.388807726244">
+ <shade name="cool" weight="0.443068776641" />
+ <shade name="dark" weight="0.326732282216" />
+ <shade name="light" weight="0.230197744288" />
+</color>
+
+<color name="blue" weight="0.27107529325">
+ <shade name="cool" weight="0.443068776641" />
+ <shade name="dark" weight="0.326732282216" />
+ <shade name="light" weight="0.230197744288" />
+</color>
+
+<color name="black" weight="0.191860261174">
+ <shade name="cool" weight="0.443068776641" />
+ <shade name="dark" weight="0.326732282216" />
+ <shade name="light" weight="0.230197744288" />
+</color>
+
+<color name="green" weight="0.0981103608278">
+ <shade name="cool" weight="0.443068776641" />
+ <shade name="dark" weight="0.326732282216" />
+ <shade name="light" weight="0.230197744288" />
+</color>
+
+<color name="red" weight="0.0501452955342">
+ <shade name="cool" weight="0.443068776641" />
+ <shade name="dark" weight="0.326732282216" />
+ <shade name="light" weight="0.230197744288" />
+</color>
+
+</colors>

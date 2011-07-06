@@ -1,0 +1,33 @@
+<colors query="inheritance">
+
+<color name="black" weight="0.354521818284">
+ <shade name="dark" weight="0.865447697752" />
+ <shade name="soft" weight="0.0850653720013" />
+ <shade name="hard" weight="0.0494858555381" />
+</color>
+
+<color name="green" weight="0.285835882371">
+ <shade name="dark" weight="0.865447697752" />
+ <shade name="soft" weight="0.0850653720013" />
+ <shade name="hard" weight="0.0494858555381" />
+</color>
+
+<color name="white" weight="0.228668705897">
+ <shade name="dark" weight="0.865447697752" />
+ <shade name="soft" weight="0.0850653720013" />
+ <shade name="hard" weight="0.0494858555381" />
+</color>
+
+<color name="red" weight="0.0789248331919">
+ <shade name="dark" weight="0.865447697752" />
+ <shade name="soft" weight="0.0850653720013" />
+ <shade name="hard" weight="0.0494858555381" />
+</color>
+
+<color name="blue" weight="0.0520477278347">
+ <shade name="dark" weight="0.865447697752" />
+ <shade name="soft" weight="0.0850653720013" />
+ <shade name="hard" weight="0.0494858555381" />
+</color>
+
+</colors>

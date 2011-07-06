@@ -1,0 +1,33 @@
+<colors query="loch">
+
+<color name="white" weight="0.424897804305">
+ <shade name="light" weight="0.767467667081" />
+ <shade name="dark" weight="0.155326292024" />
+ <shade name="cool" weight="0.0772049563601" />
+</color>
+
+<color name="blue" weight="0.30378207504">
+ <shade name="light" weight="0.767467667081" />
+ <shade name="dark" weight="0.155326292024" />
+ <shade name="cool" weight="0.0772049563601" />
+</color>
+
+<color name="green" weight="0.155862045037">
+ <shade name="light" weight="0.767467667081" />
+ <shade name="dark" weight="0.155326292024" />
+ <shade name="cool" weight="0.0772049563601" />
+</color>
+
+<color name="black" weight="0.0956020059686">
+ <shade name="light" weight="0.767467667081" />
+ <shade name="dark" weight="0.155326292024" />
+ <shade name="cool" weight="0.0772049563601" />
+</color>
+
+<color name="red" weight="0.0198550375843">
+ <shade name="light" weight="0.767467667081" />
+ <shade name="dark" weight="0.155326292024" />
+ <shade name="cool" weight="0.0772049563601" />
+</color>
+
+</colors>

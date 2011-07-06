@@ -1,0 +1,33 @@
+<colors query="wedge">
+
+<color name="green" weight="0.435054310325">
+ <shade name="light" weight="0.824027626216" />
+ <shade name="fresh" weight="0.101161115088" />
+ <shade name="cool" weight="0.074810096147" />
+</color>
+
+<color name="black" weight="0.180281498379">
+ <shade name="light" weight="0.824027626216" />
+ <shade name="fresh" weight="0.101161115088" />
+ <shade name="cool" weight="0.074810096147" />
+</color>
+
+<color name="orange" weight="0.172143791855">
+ <shade name="light" weight="0.824027626216" />
+ <shade name="fresh" weight="0.101161115088" />
+ <shade name="cool" weight="0.074810096147" />
+</color>
+
+<color name="red" weight="0.117057778462">
+ <shade name="light" weight="0.824027626216" />
+ <shade name="fresh" weight="0.101161115088" />
+ <shade name="cool" weight="0.074810096147" />
+</color>
+
+<color name="white" weight="0.0954615573016">
+ <shade name="light" weight="0.824027626216" />
+ <shade name="fresh" weight="0.101161115088" />
+ <shade name="cool" weight="0.074810096147" />
+</color>
+
+</colors>

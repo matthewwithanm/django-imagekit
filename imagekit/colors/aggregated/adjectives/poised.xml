@@ -1,0 +1,33 @@
+<colors query="poised">
+
+<color name="green" weight="0.390272785847">
+ <shade name="cool" weight="0.350815374476" />
+ <shade name="light" weight="0.34848437531" />
+ <shade name="bright" weight="0.300698892408" />
+</color>
+
+<color name="orange" weight="0.375262294084">
+ <shade name="cool" weight="0.350815374476" />
+ <shade name="light" weight="0.34848437531" />
+ <shade name="bright" weight="0.300698892408" />
+</color>
+
+<color name="black" weight="0.0981686161323">
+ <shade name="cool" weight="0.350815374476" />
+ <shade name="light" weight="0.34848437531" />
+ <shade name="bright" weight="0.300698892408" />
+</color>
+
+<color name="white" weight="0.0729509899699">
+ <shade name="cool" weight="0.350815374476" />
+ <shade name="light" weight="0.34848437531" />
+ <shade name="bright" weight="0.300698892408" />
+</color>
+
+<color name="blue" weight="0.0633442752413">
+ <shade name="cool" weight="0.350815374476" />
+ <shade name="light" weight="0.34848437531" />
+ <shade name="bright" weight="0.300698892408" />
+</color>
+
+</colors>

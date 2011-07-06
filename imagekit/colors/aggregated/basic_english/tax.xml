@@ -1,0 +1,33 @@
+<colors query="tax">
+
+<color name="green" weight="0.820062846177">
+ <shade name="neutral" weight="0.634164577461" />
+ <shade name="weak" weight="0.204367920412" />
+ <shade name="light" weight="0.16146625773" />
+</color>
+
+<color name="orange" weight="0.0575901739872">
+ <shade name="neutral" weight="0.634164577461" />
+ <shade name="weak" weight="0.204367920412" />
+ <shade name="light" weight="0.16146625773" />
+</color>
+
+<color name="black" weight="0.0536092863844">
+ <shade name="neutral" weight="0.634164577461" />
+ <shade name="weak" weight="0.204367920412" />
+ <shade name="light" weight="0.16146625773" />
+</color>
+
+<color name="red" weight="0.0400742685349">
+ <shade name="neutral" weight="0.634164577461" />
+ <shade name="weak" weight="0.204367920412" />
+ <shade name="light" weight="0.16146625773" />
+</color>
+
+<color name="blue" weight="0.0286623907402">
+ <shade name="neutral" weight="0.634164577461" />
+ <shade name="weak" weight="0.204367920412" />
+ <shade name="light" weight="0.16146625773" />
+</color>
+
+</colors>

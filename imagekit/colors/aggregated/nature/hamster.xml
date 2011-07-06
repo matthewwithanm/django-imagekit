@@ -1,0 +1,33 @@
+<colors query="hamster">
+
+<color name="black" weight="0.324734772794">
+ <shade name="cool" weight="0.764531525902" />
+ <shade name="dark" weight="0.137110199273" />
+ <shade name="fresh" weight="0.0983570861147" />
+</color>
+
+<color name="white" weight="0.274066935904">
+ <shade name="cool" weight="0.764531525902" />
+ <shade name="dark" weight="0.137110199273" />
+ <shade name="fresh" weight="0.0983570861147" />
+</color>
+
+<color name="blue" weight="0.138185009699">
+ <shade name="cool" weight="0.764531525902" />
+ <shade name="dark" weight="0.137110199273" />
+ <shade name="fresh" weight="0.0983570861147" />
+</color>
+
+<color name="orange" weight="0.133578842709">
+ <shade name="cool" weight="0.764531525902" />
+ <shade name="dark" weight="0.137110199273" />
+ <shade name="fresh" weight="0.0983570861147" />
+</color>
+
+<color name="green" weight="0.129433292418">
+ <shade name="cool" weight="0.764531525902" />
+ <shade name="dark" weight="0.137110199273" />
+ <shade name="fresh" weight="0.0983570861147" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="oak">
+
+<color name="white" weight="0.371652022697">
+ <shade name="light" weight="0.568093510928" />
+ <shade name="dark" weight="0.353008870967" />
+ <shade name="cool" weight="0.078896518156" />
+</color>
+
+<color name="red" weight="0.366186551775">
+ <shade name="light" weight="0.568093510928" />
+ <shade name="dark" weight="0.353008870967" />
+ <shade name="cool" weight="0.078896518156" />
+</color>
+
+<color name="black" weight="0.182182364067">
+ <shade name="light" weight="0.568093510928" />
+ <shade name="dark" weight="0.353008870967" />
+ <shade name="cool" weight="0.078896518156" />
+</color>
+
+<color name="green" weight="0.0510110619388">
+ <shade name="light" weight="0.568093510928" />
+ <shade name="dark" weight="0.353008870967" />
+ <shade name="cool" weight="0.078896518156" />
+</color>
+
+<color name="blue" weight="0.0289669958867">
+ <shade name="light" weight="0.568093510928" />
+ <shade name="dark" weight="0.353008870967" />
+ <shade name="cool" weight="0.078896518156" />
+</color>
+
+</colors>

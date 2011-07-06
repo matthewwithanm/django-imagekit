@@ -1,0 +1,33 @@
+<colors query="tingle">
+
+<color name="pink" weight="0.254748306478">
+ <shade name="cool" weight="0.452602798131" />
+ <shade name="light" weight="0.325767205735" />
+ <shade name="soft" weight="0.22162850882" />
+</color>
+
+<color name="yellow" weight="0.251396355077">
+ <shade name="cool" weight="0.452602798131" />
+ <shade name="light" weight="0.325767205735" />
+ <shade name="soft" weight="0.22162850882" />
+</color>
+
+<color name="red" weight="0.243947574185">
+ <shade name="cool" weight="0.452602798131" />
+ <shade name="light" weight="0.325767205735" />
+ <shade name="soft" weight="0.22162850882" />
+</color>
+
+<color name="green" weight="0.135940251264">
+ <shade name="cool" weight="0.452602798131" />
+ <shade name="light" weight="0.325767205735" />
+ <shade name="soft" weight="0.22162850882" />
+</color>
+
+<color name="white" weight="0.113966347635">
+ <shade name="cool" weight="0.452602798131" />
+ <shade name="light" weight="0.325767205735" />
+ <shade name="soft" weight="0.22162850882" />
+</color>
+
+</colors>

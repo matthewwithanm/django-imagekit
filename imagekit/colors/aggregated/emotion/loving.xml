@@ -1,0 +1,33 @@
+<colors query="loving">
+
+<color name="black" weight="0.4602402037">
+ <shade name="warm" weight="0.809730309751" />
+ <shade name="hard" weight="0.115105160624" />
+ <shade name="soft" weight="0.0751633067796" />
+</color>
+
+<color name="blue" weight="0.385260020461">
+ <shade name="hard" weight="0.436036494568" />
+ <shade name="soft" weight="0.284730455444" />
+ <shade name="light" weight="0.279228417657" />
+</color>
+
+<color name="purple" weight="0.0705405671266">
+ <shade name="hard" weight="0.436036494568" />
+ <shade name="soft" weight="0.284730455444" />
+ <shade name="light" weight="0.279228417657" />
+</color>
+
+<color name="yellow" weight="0.0451360971475">
+ <shade name="warm" weight="0.809730309751" />
+ <shade name="hard" weight="0.115105160624" />
+ <shade name="soft" weight="0.0751633067796" />
+</color>
+
+<color name="red" weight="0.0388219764536">
+ <shade name="warm" weight="0.809730309751" />
+ <shade name="hard" weight="0.115105160624" />
+ <shade name="soft" weight="0.0751633067796" />
+</color>
+
+</colors>

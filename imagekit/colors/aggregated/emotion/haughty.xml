@@ -1,0 +1,33 @@
+<colors query="haughty">
+
+<color name="white" weight="0.461537955622">
+ <shade name="hard" weight="0.843690278075" />
+ <shade name="cool" weight="0.0885121497087" />
+ <shade name="dark" weight="0.0677965402024" />
+</color>
+
+<color name="black" weight="0.192307481509">
+ <shade name="hard" weight="0.843690278075" />
+ <shade name="cool" weight="0.0885121497087" />
+ <shade name="dark" weight="0.0677965402024" />
+</color>
+
+<color name="green" weight="0.173076733358">
+ <shade name="hard" weight="0.843690278075" />
+ <shade name="cool" weight="0.0885121497087" />
+ <shade name="dark" weight="0.0677965402024" />
+</color>
+
+<color name="blue" weight="0.0961537407546">
+ <shade name="hard" weight="0.843690278075" />
+ <shade name="cool" weight="0.0885121497087" />
+ <shade name="dark" weight="0.0677965402024" />
+</color>
+
+<color name="red" weight="0.0769229926036">
+ <shade name="hard" weight="0.843690278075" />
+ <shade name="cool" weight="0.0885121497087" />
+ <shade name="dark" weight="0.0677965402024" />
+</color>
+
+</colors>

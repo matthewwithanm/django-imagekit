@@ -1,0 +1,33 @@
+<colors query="indoors">
+
+<color name="green" weight="0.507560099179">
+ <shade name="light" weight="0.659157190834" />
+ <shade name="cool" weight="0.284342317615" />
+ <shade name="dark" weight="0.0564991877858" />
+</color>
+
+<color name="red" weight="0.159418414523">
+ <shade name="light" weight="0.549230172581" />
+ <shade name="cool" weight="0.236922819545" />
+ <shade name="warm" weight="0.213845921537" />
+</color>
+
+<color name="white" weight="0.137146724258">
+ <shade name="light" weight="0.549230172581" />
+ <shade name="cool" weight="0.236922819545" />
+ <shade name="warm" weight="0.213845921537" />
+</color>
+
+<color name="black" weight="0.107724649225">
+ <shade name="light" weight="0.549230172581" />
+ <shade name="cool" weight="0.236922819545" />
+ <shade name="warm" weight="0.213845921537" />
+</color>
+
+<color name="blue" weight="0.0881490056773">
+ <shade name="light" weight="0.659157190834" />
+ <shade name="cool" weight="0.284342317615" />
+ <shade name="dark" weight="0.0564991877858" />
+</color>
+
+</colors>

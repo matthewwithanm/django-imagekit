@@ -1,0 +1,33 @@
+<colors query="tasmanian devil">
+
+<color name="black" weight="0.428792080465">
+ <shade name="cool" weight="0.699999253334" />
+ <shade name="soft" weight="0.166666488889" />
+ <shade name="light" weight="0.133333191111" />
+</color>
+
+<color name="white" weight="0.208978089757">
+ <shade name="cool" weight="0.699999253334" />
+ <shade name="soft" weight="0.166666488889" />
+ <shade name="light" weight="0.133333191111" />
+</color>
+
+<color name="red" weight="0.145510669905">
+ <shade name="cool" weight="0.699999253334" />
+ <shade name="soft" weight="0.166666488889" />
+ <shade name="light" weight="0.133333191111" />
+</color>
+
+<color name="pink" weight="0.114550952904">
+ <shade name="cool" weight="0.699999253334" />
+ <shade name="soft" weight="0.166666488889" />
+ <shade name="light" weight="0.133333191111" />
+</color>
+
+<color name="blue" weight="0.102167066104">
+ <shade name="cool" weight="0.699999253334" />
+ <shade name="soft" weight="0.166666488889" />
+ <shade name="light" weight="0.133333191111" />
+</color>
+
+</colors>

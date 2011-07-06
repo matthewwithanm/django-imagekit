@@ -1,0 +1,33 @@
+<colors query="bedroom">
+
+<color name="white" weight="0.452829683373">
+ <shade name="dark" weight="0.643794805892" />
+ <shade name="bright" weight="0.182481520944" />
+ <shade name="cool" weight="0.173722407939" />
+</color>
+
+<color name="blue" weight="0.187306823577">
+ <shade name="dark" weight="0.643794805892" />
+ <shade name="bright" weight="0.182481520944" />
+ <shade name="cool" weight="0.173722407939" />
+</color>
+
+<color name="black" weight="0.139622485707">
+ <shade name="dark" weight="0.643794805892" />
+ <shade name="bright" weight="0.182481520944" />
+ <shade name="cool" weight="0.173722407939" />
+</color>
+
+<color name="pink" weight="0.130017007574">
+ <shade name="dark" weight="0.643794805892" />
+ <shade name="bright" weight="0.182481520944" />
+ <shade name="cool" weight="0.173722407939" />
+</color>
+
+<color name="red" weight="0.0902228838841">
+ <shade name="dark" weight="0.643794805892" />
+ <shade name="bright" weight="0.182481520944" />
+ <shade name="cool" weight="0.173722407939" />
+</color>
+
+</colors>

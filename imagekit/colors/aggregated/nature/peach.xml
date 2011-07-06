@@ -1,0 +1,33 @@
+<colors query="peach">
+
+<color name="white" weight="0.298874019474">
+ <shade name="fresh" weight="0.557083246426" />
+ <shade name="light" weight="0.28656545598" />
+ <shade name="soft" weight="0.156350112783" />
+</color>
+
+<color name="green" weight="0.208306134785">
+ <shade name="fresh" weight="0.557083246426" />
+ <shade name="light" weight="0.28656545598" />
+ <shade name="soft" weight="0.156350112783" />
+</color>
+
+<color name="pink" weight="0.205718480937">
+ <shade name="fresh" weight="0.557083246426" />
+ <shade name="light" weight="0.28656545598" />
+ <shade name="soft" weight="0.156350112783" />
+</color>
+
+<color name="orange" weight="0.164316019364">
+ <shade name="fresh" weight="0.557083246426" />
+ <shade name="light" weight="0.28656545598" />
+ <shade name="soft" weight="0.156350112783" />
+</color>
+
+<color name="yellow" weight="0.1227841751">
+ <shade name="fresh" weight="0.557083246426" />
+ <shade name="light" weight="0.28656545598" />
+ <shade name="soft" weight="0.156350112783" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="disgust">
+
+<color name="black" weight="0.372806554806">
+ <shade name="intense" weight="0.963374794836" />
+ <shade name="dark" weight="0.023407618982" />
+ <shade name="light" weight="0.0132165467721" />
+</color>
+
+<color name="white" weight="0.219297973415">
+ <shade name="dark" weight="0.476489107674" />
+ <shade name="light" weight="0.269038067598" />
+ <shade name="cool" weight="0.254451666343" />
+</color>
+
+<color name="yellow" weight="0.155701561125">
+ <shade name="intense" weight="0.963374794836" />
+ <shade name="dark" weight="0.023407618982" />
+ <shade name="light" weight="0.0132165467721" />
+</color>
+
+<color name="green" weight="0.129385804315">
+ <shade name="intense" weight="0.963374794836" />
+ <shade name="dark" weight="0.023407618982" />
+ <shade name="light" weight="0.0132165467721" />
+</color>
+
+<color name="red" weight="0.122806865113">
+ <shade name="intense" weight="0.963374794836" />
+ <shade name="dark" weight="0.023407618982" />
+ <shade name="light" weight="0.0132165467721" />
+</color>
+
+</colors>

@@ -1,0 +1,33 @@
+<colors query="birthday">
+
+<color name="white" weight="0.263447957677">
+ <shade name="cool" weight="0.683040154938" />
+ <shade name="warm" weight="0.167251270815" />
+ <shade name="bright" weight="0.149707431219" />
+</color>
+
+<color name="pink" weight="0.249654870888">
+ <shade name="cool" weight="0.683040154938" />
+ <shade name="warm" weight="0.167251270815" />
+ <shade name="bright" weight="0.149707431219" />
+</color>
+
+<color name="blue" weight="0.23379282108">
+ <shade name="cool" weight="0.77638824946" />
+ <shade name="bright" weight="0.170167287553" />
+ <shade name="light" weight="0.053443163747" />
+</color>
+
+<color name="black" weight="0.135172250536">
+ <shade name="cool" weight="0.683040154938" />
+ <shade name="warm" weight="0.167251270815" />
+ <shade name="bright" weight="0.149707431219" />
+</color>
+
+<color name="red" weight="0.117930892049">
+ <shade name="cool" weight="0.683040154938" />
+ <shade name="warm" weight="0.167251270815" />
+ <shade name="bright" weight="0.149707431219" />
+</color>
+
+</colors>

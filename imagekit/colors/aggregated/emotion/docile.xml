@@ -1,0 +1,33 @@
+<colors query="docile">
+
+<color name="black" weight="0.605404741096">
+ <shade name="weak" weight="0.445992447062" />
+ <shade name="soft" weight="0.428570867099" />
+ <shade name="cool" weight="0.125435375736" />
+</color>
+
+<color name="white" weight="0.270269973704">
+ <shade name="weak" weight="0.445992447062" />
+ <shade name="soft" weight="0.428570867099" />
+ <shade name="cool" weight="0.125435375736" />
+</color>
+
+<color name="yellow" weight="0.0540539947408">
+ <shade name="weak" weight="0.445992447062" />
+ <shade name="soft" weight="0.428570867099" />
+ <shade name="cool" weight="0.125435375736" />
+</color>
+
+<color name="green" weight="0.0378377963185">
+ <shade name="weak" weight="0.445992447062" />
+ <shade name="soft" weight="0.428570867099" />
+ <shade name="cool" weight="0.125435375736" />
+</color>
+
+<color name="red" weight="0.0324323968445">
+ <shade name="weak" weight="0.445992447062" />
+ <shade name="soft" weight="0.428570867099" />
+ <shade name="cool" weight="0.125435375736" />
+</color>
+
+</colors>

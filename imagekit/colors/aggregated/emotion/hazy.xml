@@ -1,0 +1,33 @@
+<colors query="hazy">
+
+<color name="purple" weight="0.306273788951">
+ <shade name="soft" weight="0.368470177473" />
+ <shade name="dark" weight="0.357549025306" />
+ <shade name="light" weight="0.27397846959" />
+</color>
+
+<color name="yellow" weight="0.283476710809">
+ <shade name="warm" weight="0.355395555586" />
+ <shade name="soft" weight="0.327149408227" />
+ <shade name="dark" weight="0.317452969581" />
+</color>
+
+<color name="orange" weight="0.206164880588">
+ <shade name="warm" weight="0.355395555586" />
+ <shade name="soft" weight="0.327149408227" />
+ <shade name="dark" weight="0.317452969581" />
+</color>
+
+<color name="red" weight="0.120923631883">
+ <shade name="warm" weight="0.355395555586" />
+ <shade name="soft" weight="0.327149408227" />
+ <shade name="dark" weight="0.317452969581" />
+</color>
+
+<color name="white" weight="0.0831597763526">
+ <shade name="warm" weight="0.355395555586" />
+ <shade name="soft" weight="0.327149408227" />
+ <shade name="dark" weight="0.317452969581" />
+</color>
+
+</colors>
