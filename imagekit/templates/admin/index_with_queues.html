@@ -1,0 +1,12 @@
+{% extends "admin/index.html" %}
+{% load i18n adminmedia queue %}
+
+{% block sidebar %}
+    
+    {% sidebar_queue_module %}
+    
+    <div style="clear: right;"></div>
+    
+    {{ block.super }}
+    
+{% endblock %}

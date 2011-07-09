@@ -1,0 +1,120 @@
+{% load i18n adminmedia queue %}
+    
+    <style type="text/css">
+    
+        .content-related {
+            float: right;
+            width: 18em;
+            position: relative;
+            margin-right: -19em;
+        }
+        
+        .colSM .content-related {
+            float: left;
+            margin-right: 0;
+            margin-left: -19em;
+        }
+        
+        .content-related h3 {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        .content-related h4 {
+            font-size: 11px;
+        }
+        
+        .content-related .module h2 {
+            background: #eee url({% admin_media_prefix %}img/admin/nav-bg.gif) bottom left repeat-x;
+            color: #666;
+        }
+        
+        #default-queuelist {}
+        
+        #first-non-default-queuelist {
+            border-top: #ccc dotted 1px;
+            padding-top: 8px;
+        }
+    
+    </style>
+    
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+            
+            if ("WebSocket" in window) {
+                var lastvalues = [0,0,0,0,0,0,0,0,0];
+                var defaultq = $('#default-queue-status');
+                
+                var sock = new WebSocket("{% sock_status_url %}");
+                sock.onopen = function () {};
+                sock.onclose = function () {};
+                sock.onmessage = function (e) {
+                    //console.log("DATA:",e);
+                    var d = $.parseJSON(e.data);
+                    var qlen = d["default"];
+                    
+                    lastvalues.shift();
+                    lastvalues.push(qlen);
+                    if (lastvalues.every(function (itm) { return itm == 0; })) {
+                        defaultq.html("<b>Currently Idle</b>");
+                    } else {
+                        defaultq.html("<b>" + qlen + "</b> Queued Signals");
+                    }
+                };
+                
+                window.setInterval(function () {
+                    sock.send({
+                        status: 'default'
+                    });
+                }, 500);
+                
+            }
+            
+        });
+        
+    </script>
+    
+    
+    <div class="content-related">
+        <div class="module" id="imagekit-queue">
+            <h2>{% trans 'ImageKit Queues' %} ({{ queues|length|add:"1" }})</h2>
+            
+            <h3>Default Queue:</h3>
+            <ul class="actionlist queuelist" id="default-queuelist">
+                {% if default.count == 0 %}
+                    {% if default.ping %}
+                        <li><span class="queue-status" id="default-queue-status"><b>Currently Idle</b></span>
+                    {% else %}
+                        <li><span class="queue-status" id="default-queue-status"><b>Queue Unavailable</b></span>
+                    {% endif %}
+                {% else %}
+                    <li><span class="queue-status" id="default-queue-status"><b>{{ default.count }}</b> Queued Signals</span>
+                {% endif %}
+                <br />
+                <span style="padding-left: 14px;" class="mini quiet">{% queue_classname 'default' %}</span>
+            </ul>
+            
+            {% for queue_name, queue in queues.items %}
+                {% if queue_name != 'default' %}
+                    <h3{% if forloop.counter0 == 0 %} id="first-non-default-queuelist"{% endif %}>{{ queue_name|capfirst }}:</h3>
+                    <ul class="actionlist queuelist">
+                        {% if queue.count == 0 %}
+                             {% if queue.ping %}
+                                <li><b>Currently Idle</b>
+                            {% else %}
+                                <li><b>Queue Unavailable</b>
+                            {% endif %}
+                        {% else %}
+                            <li><b>{{ queue.count }}</b> Queued Signals
+                        {% endif %}
+                        <br />
+                        <span style="padding-left: 14px;" class="mini quiet">{% queue_classname queue_name %}</span>
+                        </li>
+                    </ul>
+                {% endif %}
+            {% endfor %}
+            
+        </div>
+    </div>

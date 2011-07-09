@@ -1,13 +1,13 @@
 import os, numpy
 from django.conf import settings
 from django.contrib import admin
-#from imagekit.models import ICCModel, RGBHistogram, LumaHistogram, EnqueuedSignal
+from imagekit.lib import IK_ROOT
+from imagekit.utils.memoize import memoize
 from imagekit.utils import json, oldcolors, seriescolors
 from imagekit.utils import ADict, AODict, xy, static
 from imagekit.utils import logg
 from imagekit.etc.profileinfo import profileinfo
 from imagekit.etc.cieXYZ import cieYxy3
-from imagekit.memoize import memoize
 import imagekit.models
 
 
@@ -522,3 +522,8 @@ admin.site.register(imagekit.models.ICCModel, ICCModelAdmin)
 admin.site.register(imagekit.models.RGBHistogram, RGBHistogramAdmin)
 admin.site.register(imagekit.models.LumaHistogram, LumaHistogramAdmin)
 admin.site.register(imagekit.models.EnqueuedSignal)
+
+admin.site.index_template = os.path.join(IK_ROOT, 'templates/admin/index_with_queues.html')
+admin.site.app_index_template = os.path.join(IK_ROOT, 'templates/admin/app_index.html')
+
+

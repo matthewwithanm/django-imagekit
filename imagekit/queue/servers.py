@@ -16,6 +16,7 @@ sys.path.append('/Users/fish/Dropbox/ost2/ost2')
 sys.path.append('/Users/fish/Dropbox/ost2/ost2/lib')
 
 import os, hashlib, curses
+#import daemon, daemon.pidlockfile
 
 from django.core.management import setup_environ
 import settings
@@ -27,6 +28,7 @@ from django.template.loader import render_to_string
 
 import tornado.options
 import tornado.web
+import tornado.websocket
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop, PeriodicCallback
 from tornado.options import define, options, _LogFormatter
@@ -52,7 +54,8 @@ class Application(tornado.web.Application):
         handlers = [
             (r'/', MainHandler),
             (r'/status', QueueServerStatusHandler),
-            (r'/queue', VisualQueueHandler),
+            (r'/sock/status', QueueStatusSock),
+            #(r'/queue', VisualQueueHandler),
         ]
         
         settings = dict(
@@ -67,8 +70,7 @@ class Application(tornado.web.Application):
         #self.asyncqueue = None
 
 
-class BaseHandler(tornado.web.RequestHandler):
-    
+class BaseQueueConnector(object):
     @property
     def asyncqueue(self):
         if not hasattr(self.application, 'asyncqueue'):
@@ -77,6 +79,31 @@ class BaseHandler(tornado.web.RequestHandler):
                 interval=30, # 3 minutes
             )
         return self.application.asyncqueue
+    
+    def clientlist_get(self):
+        if not hasattr(self.application, 'clientlist'):
+            self.application.clientlist = []
+        return self.application.clientlist
+    def clientlist_set(self, val):
+        self.application.clientlist = val
+    
+    clientlist = property(clientlist_get, clientlist_set)
+    
+
+class QueueStatusSock(tornado.websocket.WebSocketHandler, BaseQueueConnector):
+    def open(self):
+        self.clientlist.append(self)
+    
+    def on_message(self, mess):
+        self.write_message({
+            'default': self.asyncqueue.signalqueue.queue_length(),
+        })
+    
+    def on_close(self):
+        self.clientlist.remove(self)
+
+class BaseHandler(tornado.web.RequestHandler, BaseQueueConnector):
+    pass
 
 class MainHandler(BaseHandler):
     def get(self):
@@ -121,7 +148,6 @@ class VisualQueueHandler(BaseHandler):
                 {% endfor %}
             </tr>
         """)
-        
     
     @tornado.web.asynchronous
     def get(self):
@@ -176,15 +202,17 @@ def main():
     channel.setFormatter(_LogFormatter(color=color))
     logg.addHandler(channel)
     
-    
     logg.info("YO DOGG.")
     
     try:
         tornado.options.parse_command_line()
         http_server = HTTPServer(Application())
-        http_server.bind(settings.IK_QUEUE_SERVER_PORT)
-        http_server.start(num_processes=10) # Forks multiple sub-processes
+        
+        #http_server.bind(settings.IK_QUEUE_SERVER_PORT)
+        #http_server.start(num_processes=10) # Forks multiple sub-processes
+        http_server.listen(settings.IK_QUEUE_SERVER_PORT)
         IOLoop.instance().start()
+        
     except KeyboardInterrupt:
         print 'NOOOOOOOOOOOO DOGGGGG!!!'
 
@@ -196,4 +224,15 @@ if __name__ == '__main__':
     from django.conf import settings
     
     main()
+    
+    '''
+    log = open('/tmp/log/tornado-11231.log', 'a+')
+    pid = daemon.pidlockfile.TimeoutPIDLockFile("/tmp/tornado-11231.pid", 10)
+    daemon_context = daemon.DaemonContext(stdout=log, stderr=log, working_directory='/tmp', pidfile=pid)
+    
+    with daemon_context:
+        main()
+    '''
+    
+
 

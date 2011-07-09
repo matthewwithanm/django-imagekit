@@ -46,6 +46,9 @@ class QueueBase(object):
     def values(self):
         raise NotImplementedError("WTF: Queue backend needs a Queue.values() implementaton")
     
+    def __str__(self):
+        return str(self.__class__.__name__)
+    
     def __unicode__(self):
         return u"<QueueBase name:%s count:%s options:%s>" % (self.queue_name, self.count(), self.queue_options)
     
@@ -263,5 +266,14 @@ class ConnectionHandler(object):
     
     def all(self):
         return [self[alias] for alias in self.connections_info]
+    
+    def keys(self):
+        return self.connections_info.keys()
+    
+    def items(self):
+        return [(qn, self[qn]) for qn in self.keys()]
+    
+    
+    
 
 

@@ -236,9 +236,9 @@ class DescriptorBase(object):
         self._name = spec.name()
     
     def __get__(self, obj, otype=None):
-        if hasattr(obj, '_ik'):
-            if self._name in obj._ik.specs.keys():
-                signalqueue.send_now('prepare_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
+        #if hasattr(obj, '_ik'):
+        #    if self._name in obj._ik.specs.keys():
+        #        signalqueue.send_now('prepare_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
         
         return obj, self._spec
     
