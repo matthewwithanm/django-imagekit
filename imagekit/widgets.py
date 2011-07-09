@@ -4,7 +4,7 @@ from imagekit.utils import static
 
 class RGBColorFieldWidget(forms.TextInput):
     """
-    ColorFieldWidget -- edit a hex color.
+    RGBColorFieldWidget -- edit a hex color.
     
     The colorpicker is (minimally) adapted from here: from http://www.eyecon.ro/colorpicker/.
     
@@ -24,7 +24,7 @@ class RGBColorFieldWidget(forms.TextInput):
         super(RGBColorFieldWidget, self).__init__(attrs=attrs)
     
     def render(self, name, value, attrs={}):
-        out = super(ColorFieldWidget, self).render(name, value, attrs)
+        out = super(RGBColorFieldWidget, self).render(name, value, attrs)
         
         out += mark_safe("""
             <div id="swatch_%s" class="colorswatch"></div>
