@@ -8,10 +8,12 @@ from optparse import make_option
 from imagekit.signals import signalqueue, KewGardens
 import imagekit
 
+from . import echo_banner
+
 class Command(BaseCommand):
     
     option_list = BaseCommand.option_list + (
-        make_option('--queue-name', '-n', dest='queue_name', default='default',
+        make_option('--queuename', '-n', dest='queue_name', default='default',
             help="Name of queue, as specified in settings.py (defaults to 'default')",
         ),
     )
@@ -27,14 +29,6 @@ class Command(BaseCommand):
         except ImproperlyConfigured, err:
             print "*** ERROR in configuration: %s" % err
             print "*** Check the Imagekit options in your settings.py."
-
-def echo_banner():
-    print ""
-    print "+++ django-imagekit by Justin Driscoll -- http://adevelopingstory.com/"
-    print u"+++ color management components by Alexander Böhn -- http://objectsinspaceandtime.com/"
-    print u"+++ profileinfo() and ICCProfile base class from DispcalGUI by Florian Höch -- http://dispcalgui.hoech.net/"
-    print ""
-
 
 def flush_imagekit_queue(apps, options):
     """
@@ -63,7 +57,7 @@ def flush_imagekit_queue(apps, options):
             signalmgr.dequeue(queued_signal=signalblip)
             
             print ""
-            break
+            
     
     
     print ">>> Done flushing signal queue '%s' -- %s enqueued signals remaining" % (signalmgr.queue_name, signalmgr.queue_length())

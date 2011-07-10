@@ -118,6 +118,14 @@ class KewGardens(object):
             self.forkingpaths = queues
     
     @classmethod
+    def get_runmode_label(self, runmodeint):
+        for label in dir(imagekit):
+            if label.startswith('IK_'):
+                if int(runmodeint) == getattr(imagekit, label):
+                    return label
+        return ''
+    
+    @classmethod
     def get_id_dict(cls, name, obj):
         if name in cls.id_map:
             return cls.id_map[name](obj)
@@ -159,6 +167,13 @@ class KewGardens(object):
         
         raise AttributeError("Can't connect(): no signal '%s' registered amongst: %s" % (signal_name, str(self.signals.keys())))
     
+    def ping(self):
+        try:
+            return self.garden.ping()
+        except:
+            print "*** Exception thrown trying to ping queue %s" % self.queue_name
+            return False
+    
     def queue_add(self, queue_string):
         if self.garden:
             return self.garden.push(queue_string)
@@ -176,7 +191,7 @@ class KewGardens(object):
     
     def queue_values(self, floor=0, ceil=-1):
         if self.garden:
-            return self.garden.values(floor, ceil)
+            return self.garden.values(floor=floor, ceil=ceil)
         return []
     
     def send_now(self, name, sender, **kwargs):
@@ -186,7 +201,7 @@ class KewGardens(object):
         return -2
     
     def enqueue(self, name, sender, **kwargs):
-        if self.garden and (name in self.signals):
+        if self.ping() and (name in self.signals):
             queue_json = {
                 'name': name,
                 'enqueue_runmode': self.runmode,
@@ -305,6 +320,8 @@ signalqueue.add_signal('clear_cache')
 signalqueue.add_signal('prepare_spec', providing_args=['instance', 'spec_name'])
 signalqueue.add_signal('delete_spec', providing_args=['instance', 'spec_name'])
 
+signalqueue.add_signal('refresh_hash')
+signalqueue.add_signal('refresh_color')
 signalqueue.add_signal('refresh_icc_data')
 signalqueue.add_signal('refresh_exif_data')
 signalqueue.add_signal('save_related_histogram')

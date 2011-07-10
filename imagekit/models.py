@@ -29,6 +29,7 @@ from imagekit.utils.delegate import DelegateManager, delegate
 from imagekit.modelfields import ICCField, ICCHashField, RGBColorField
 from imagekit.modelfields import ICCDataField, ICCMetaField, EXIFMetaField
 from imagekit.modelfields import HistogramChannelField, Histogram
+from imagekit.modelfields import ImageHashField
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -131,17 +132,17 @@ class ImageModel(models.Model):
         return self.pilimage.quantize(1).convert('RGB').getpixel((0, 0))
     
     def _mean(self):
-        return ImageStat.Stat(self.pilimage).mean
+        return ImageStat.Stat(self.pilimage.convert('RGB')).mean
     
     def _average(self):
-        return self.pilimage.resize((1, 1), Image.ANTIALIAS).getpixel((0, 0))
+        return self.pilimage.convert('RGB').resize((1, 1), Image.ANTIALIAS).getpixel((0, 0))
     
     def _median(self):
-        return reduce((lambda x,y: x[0] > y[0] and x or y), self.pilimage.getcolors(self.pilimage.size[0] * self.pilimage.size[1]))
+        return reduce((lambda x,y: x[0] > y[0] and x or y), self.pilimage.convert('RGB').getcolors(self.pilimage.size[0] * self.pilimage.size[1]))
     
     def _topcolors(self, numcolors=3):
         if self.pilimage:
-            colors = self.pilimage.getcolors(self.pilimage.size[0] * self.pilimage.size[1])
+            colors = self.pilimage.convert('RGB').getcolors(self.pilimage.size[0] * self.pilimage.size[1])
             fmax = lambda x,y: x[0] > y[0] and x or y
             out = []
             out.append(reduce(fmax, colors))
@@ -168,7 +169,9 @@ class ImageModel(models.Model):
     #@property
     def meanhex(self):
         m = self._mean()
-        return hexstr((int(m[0]), int(m[1]), int(m[2])))
+        if len(m) == 3:
+            return hexstr((int(m[0]), int(m[1]), int(m[2])))
+        return hexstr((int(m[0]), int(m[0]), int(m[0])))
     
     #@property
     def averagehex(self):
@@ -439,28 +442,16 @@ class ImageWithMetadata(ImageModel):
     
     # We can sort by these color values.
     dominantcolor = RGBColorField(verbose_name="Dominant Color",
-        default=lambda self: self.dominanthex(),
-        db_index=True,
-        blank=True,
-        null=True)
+        extractor=lambda instance: instance.dominanthex())
     
     meancolor = RGBColorField(verbose_name="Mean Color",
-        default=lambda self: self.meanhex(),
-        db_index=True,
-        blank=True,
-        null=True)
+        extractor=lambda instance: instance.meanhex())
     
     averagecolor = RGBColorField(verbose_name="Average Color",
-        default=lambda self: self.averagehex(),
-        db_index=True,
-        blank=True,
-        null=True)
+        extractor=lambda instance: instance.averagehex())
     
     mediancolor = RGBColorField(verbose_name="Median Color",
-        default=lambda self: self.medianhex(),
-        db_index=True,
-        blank=True,
-        null=True)
+        extractor=lambda instance: instance.medianhex())
     
     # EXIF image metadata
     exif = EXIFMetaField(verbose_name="EXIF data",
@@ -481,6 +472,10 @@ class ImageWithMetadata(ImageModel):
         editable=True,
         blank=True,
         null=True)
+    
+    # Unique hash of the image data
+    imagehash = ImageHashField(verbose_name="Image data hash",
+        editable=True)
     
     @property
     def iccmodel(self):

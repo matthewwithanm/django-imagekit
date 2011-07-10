@@ -227,9 +227,11 @@ class ICCMetaField(ICCDataField):
                 
                 # save if sent asynchronously
                 dequeue_runmode = kwargs.get('dequeue_runmode', None)
+                enqueue_runmode = kwargs.get('enqueue_runmode', None)
                 if dequeue_runmode is not None:
-                    if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
-                        instance.save()
+                    if not dequeue_runmode == enqueue_runmode:
+                        if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
+                            instance.save_base()
                 
     
     def south_field_triple(self):
@@ -334,7 +336,8 @@ class EXIFMetaField(models.TextField):
             enqueue_runmode = kwargs.get('enqueue_runmode', None)
             if dequeue_runmode is not None:
                 if not dequeue_runmode == enqueue_runmode:
-                    instance.save_base()
+                    if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
+                        instance.save_base()
     
     def south_field_triple(self):
         """
@@ -693,6 +696,126 @@ class Histogram(fields.CharField):
         return ('imagekit.modelfields.Histogram', args, kwargs)
 
 
+class ImageHashField(fields.CharField):
+    """
+    Store a unique hash of the data in the image field of an ImageModel.
+    
+    Custom callables can be specified for the 'pil_reference' and 'hasher' kwargs:
+    
+        * 'pil_reference' works as it does in ICCMetaField and friends (see the above) --
+           it can be a string that names a field name on the ImageModel instance in question,
+           or a callable. The pil image it yields provides the data for the hasher.
+    
+        * 'hasher' can also be either a string or a callable. If it's a string, we assume
+           that you're naming a hash algorithm from the hashlib module. If it's a callable,
+           it should take the value of tostring() from a pil Image instance as its one
+           argument, and return a string that uniquely and deterministically identifies
+           the stringified image data it was given.
+    
+    NOTE: ImageHashField is a subclass of django.db.models.CharField, which requires 
+    max_length to be specified. We default to 40, which is the value of:
+    
+        len(hashlib.sha1(pil_reference.tostring()).hexdigest())
+    
+    ... So if you are using another algorithm, make sure to specify max_length in your
+    ImageHashField declarations. Ideally, your hashes will always be the same length,
+    and your max_length should be whatever that number is; otherwise make sure you set it
+    to something that accommodates your hash length (and not more).
+    
+    """
+    
+    def __init__(self, *args, **kwargs):
+        self.pil_reference = kwargs.pop('pil_reference', 'pilimage')
+        self.hasher = kwargs.pop('hasher', 'sha1')
+        
+        kwargs.setdefault('db_index', True)
+        kwargs.setdefault('max_length', 40) # size of sha1, the deafult
+        kwargs.setdefault('editable', False)
+        kwargs.setdefault('unique', False)
+        kwargs.setdefault('blank', True)
+        kwargs.setdefault('null', True)
+        super(ImageHashField, self).__init__(*args, **kwargs)
+    
+    def contribute_to_class(self, cls, name):
+        super(ImageHashField, self).contribute_to_class(cls, name)
+        signals.pre_save.connect(self.check_hash_field, sender=cls)
+        signalqueue.refresh_hash.connect(self.refresh_hash, sender=cls)
+    
+    def check_hash_field(self, **kwargs): # signal, sender, instance
+        instance = kwargs.get('instance')
+        if not getattr(instance, self.name, None):
+            signalqueue.send('refresh_hash', sender=instance.__class__, instance=instance)
+    
+    def refresh_hash(self, **kwargs): # signal, sender, instance
+        """
+        Stores image hash data in the field before saving.
+        
+        """
+        instance = kwargs.get('instance')
+        
+        try:
+            image = instance.image
+            pil_reference = self.pil_reference
+            
+            if callable(pil_reference):
+                pilimage = pil_reference(instance)
+            else:
+                pilimage = getattr(instance, getattr(self, 'pil_reference', 'pilimage'))
+        
+        except AttributeError, err:
+            logg.warning("*** Couldn't get pilimage reference to refresh image hash (AttributeError was thrown: %s)" % err)
+            return
+        except TypeError, err:
+            logg.warning("*** Couldn't get pilimage reference to refresh image hash (TypeError was thrown: %s)" % err)
+            return
+        except IOError, err:
+            logg.warning("*** Couldn't get pilimage reference to refresh image hash (IOError was thrown: %s)" % err)
+            return
+        
+        hash_string = ''
+        hashee = pilimage.tostring()
+        
+        if pilimage:
+            try:
+                hasher = self.hasher
+                
+                if callable(hasher):
+                    # use the custom callable
+                    hash_string = hasher(pil_reference)
+                    setattr(instance, self.name, hash_string)
+                else:
+                    # use the specified alorithm in hashlib to create a digest
+                    hash_string = getattr(hashlib, hasher)(hashee).hexdigest()
+                    setattr(instance, self.name, hash_string)
+            
+            except AttributeError, err:
+                logg.warning("*** Couldn't refresh image hash (AttributeError was thrown: %s)" % err)
+                return
+            except TypeError, err:
+                logg.warning("*** Couldn't refresh image hash (TypeError was thrown: %s)" % err)
+                return
+            except IOError, err:
+                logg.warning("*** Couldn't refresh image hash (IOError was thrown: %s)" % err)
+                return
+            
+            # save if sent asynchronously
+            dequeue_runmode = kwargs.get('dequeue_runmode', None)
+            enqueue_runmode = kwargs.get('enqueue_runmode', None)
+            if dequeue_runmode is not None:
+                if not dequeue_runmode == enqueue_runmode:
+                    if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
+                        instance.save_base()
+    
+    
+    def south_field_triple(self):
+        """
+        Represent the field properly to the django-south model inspector.
+        See also: http://south.aeracode.org/docs/extendingintrospection.html
+        """
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('imagekit.modelfields.ImageHashField', args, kwargs)
+
 class ICCHashField(fields.CharField):
     """
     Store the sha1 of the ICC profile file we're talking about.
@@ -748,7 +871,14 @@ class RGBColorField(models.CharField):
     __metaclass__ = models.SubfieldBase
     
     def __init__(self, *args, **kwargs):
-        kwargs['max_length'] = 10
+        self.extractor = kwargs.pop('extractor', None)
+        
+        kwargs.setdefault('db_index', True)
+        kwargs.setdefault('max_length', 8)
+        kwargs.setdefault('editable', True)
+        kwargs.setdefault('unique', False)
+        kwargs.setdefault('blank', True)
+        kwargs.setdefault('null', True)
         super(RGBColorField, self).__init__(*args, **kwargs)
     
     def to_python(self, value):
@@ -773,10 +903,55 @@ class RGBColorField(models.CharField):
         })
         return super(RGBColorField, self).formfield(**kwargs)
     
+    def contribute_to_class(self, cls, name):
+        super(RGBColorField, self).contribute_to_class(cls, name)
+        signals.pre_save.connect(self.check_rgb_color_field, sender=cls)
+        signalqueue.refresh_color.connect(self.refresh_color, sender=cls)
+    
+    def check_rgb_color_field(self, **kwargs):
+        instance = kwargs.get('instance')
+        if not getattr(instance, self.name, None):
+            if self.extractor is not None:
+                signalqueue.send('refresh_color', sender=instance.__class__, instance=instance)
+    
+    def refresh_color(self, **kwargs): # signal, sender, instance
+        """
+        Stores image hash data in the field before saving.
+        
+        """
+        instance = kwargs.get('instance')
+        extractor = self.extractor
+        
+        try:
+            if callable(extractor):
+                setattr(instance, self.name, extractor(instance))
+            else:
+                # call the named method on the ImageModel instance
+                color_hex_value = getattr(instance, getattr(self, 'extractor', instance.dominanthex))()
+                setattr(instance, self.name, color_hex_value)
+        
+        except AttributeError, err:
+            logg.warning("*** Couldn't refresh color %s (AttributeError was thrown: %s)" % (err, self.name))
+            return
+        except TypeError, err:
+            logg.warning("*** Couldn't refresh color %s (TypeError was thrown: %s)" % (err, self.name))
+            return
+        except IOError, err:
+            logg.warning("*** Couldn't refresh color %s (IOError was thrown: %s)" % (err, self.name))
+            return
+        
+        # save if sent asynchronously
+        dequeue_runmode = kwargs.get('dequeue_runmode', None)
+        enqueue_runmode = kwargs.get('enqueue_runmode', None)
+        if dequeue_runmode is not None:
+            if not dequeue_runmode == enqueue_runmode:
+                if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
+                    instance.save_base()
+    
     def south_field_triple(self):
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
-        return ('imagekit.models.RGBColorField', args, kwargs)
+        return ('imagekit.modelfields.RGBColorField', args, kwargs)
 
 
 """

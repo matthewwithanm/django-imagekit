@@ -7,7 +7,16 @@ from optparse import make_option
 from imagekit.models import ICCModel, _storage
 from imagekit.etc.profileinfo import profileinfo
 
+from . import echo_banner
+
 class Command(BaseCommand):
+    
+    option_list = BaseCommand.option_list + (
+        make_option('--info', '-i', dest='info', action="store_true",
+            default=False,
+            help="Print extended ICC profile information.",
+        ),
+    )
     
     help = ('Prints out extensive logorrheic minutiae concerning the ICC profiles stored as ICCModels.')
     args = '[apps]'
@@ -19,13 +28,10 @@ class Command(BaseCommand):
         # verbose by definition
         
         iccs = ICCModel.objects.all()
+        info = options.get('info', False)
         
-        print ""
-        print "+++ django-imagekit by Justin Driscoll -- http://adevelopingstory.com/"
-        print "+++ color management components by Alexander Böhn -- http://objectsinspaceandtime.com/"
-        print "+++ profileinfo() and ICCProfile base class from DispcalGUI by Florian Höch -- http://dispcalgui.hoech.net/"
+        echo_banner()
         
-        print ""
         print ""
         print "ICC Inventory: %s unique ICCModel instances" % iccs.count()
         
@@ -42,16 +48,17 @@ class Command(BaseCommand):
             
             print ""
             print ">>> %d : %s" % (icc.pk, icc.iccfile.name)
-            print ">>> %s" % st.url(icc.iccfile)
+            print ">>> %s" % st.url(icc.iccfile.name)
             print ""
             print "--- Created:   \t\t %s" % icc.createdate
             print "--- Altered:   \t\t %s" % icc.modifydate
             print "--- ICC Hash:  \t\t %s" % icc.icchash
             print "--- Profile Signature: \t %s" % icc.icc.getIDString()
-            print ""
-            print "--- Profile Info:"
             
-            profileinfo(icc.icc)
+            if info:
+                profileinfo(icc.icc)
+                print ""
+                print "--- Profile Info:"
             
             print ""
         

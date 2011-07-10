@@ -13,6 +13,7 @@ from imagekit.models import ImageWithMetadata, ICCModel
 from imagekit.specs import ImageSpec
 from imagekit.modelfields import *
 
+from . import echo_banner
 
 icchash = lambda icc: hashlib.sha1(icc.data).hexdigest()
 
@@ -29,8 +30,9 @@ class Command(BaseCommand):
     args = '[apps]'
     requires_model_validation = True
     can_import_settings = True
-
+    
     def handle(self, *args, **options):
+        echo_banner()
         return update_icc_cache(args, options)
 
 def update_icc_cache(apps, options):
@@ -38,14 +40,6 @@ def update_icc_cache(apps, options):
     Updates the ICCModes data store with profiles harvested from ImageModel subclasses specified on the command line.
     
     """
-    
-    print ""
-    print "+++ django-imagekit by Justin Driscoll -- http://adevelopingstory.com/"
-    print "+++ color management components by Alexander Böhn -- http://objectsinspaceandtime.com/"
-    print "+++ profileinfo() and ICCProfile base class from DispcalGUI by Florian Höch -- http://dispcalgui.hoech.net/"
-    
-    print ""
-    
     apps = [a.strip(',') for a in apps]
     
     if apps:

@@ -27,7 +27,8 @@ try:
     from jogging import logging as logg
 except ImportError:
     try:
-        import logging as logg
+        import logging
+        logg = logging.getLogger("imagekit")
     except ImportError:
         print "SRSLY: You have no logging facilities available whatsoever, so we're using a fake logger class. Love, Django ImageKit."
         # set up fake logger
@@ -89,7 +90,7 @@ class AODict(ADict, OrderedDict):
 xy = lambda n: (n.X / (n.X + n.Y + n.Z), n.Y / (n.X + n.Y + n.Z))
 
 # get the URL for a static asset (e.g. ImageKit's css/js/etc)
-static = lambda pth: os.path.join(settings.STATIC_URL, pth)
+static = lambda pth: os.path.join(settings.STATIC_URL, 'imagekit', pth)
 
 # convert a triple of 8-bit values (like what you get out of PIL) to #000000 format.
 hexstr = lambda triple: "#%02X%02X%02X" % tuple(triple)

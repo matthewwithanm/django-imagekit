@@ -188,7 +188,7 @@ class VisualQueueHandler(BaseHandler):
 
 
 def main():
-    logg = logging.getLogger(__name__)
+    logg = logging.getLogger("imagekit")
     # Set up color if we are in a tty and curses is installed
     color = False
     if curses and sys.stderr.isatty():

@@ -1,5 +1,6 @@
 
 from django import forms
+from django.utils.safestring import mark_safe
 from imagekit.utils import static
 
 class RGBColorFieldWidget(forms.TextInput):
@@ -33,23 +34,79 @@ class RGBColorFieldWidget(forms.TextInput):
         out += mark_safe(u"""
             
             <script type="text/javascript">
-                $('#id_%s').ColorPicker({
-                    livePreview: true,
-                    onChange:function(hsb, hex, rgb, el) {
-                        $('#swatch_%s').css('backgroundColor', '#' + hex);
-                    },
-                    onSubmit:function(hsb, hex, rgb, el) {
-                        $(el).val(hex.toUpperCase());
-                        $(el).ColorPickerHide();
-                    },
-                    onBeforeShow:function() {
-                        $(this).ColorPickerSetColor(this.value);
-                    }
-                }).bind('keyup', function() {
-                    $(this).ColorPickerSetColor(this.value);
+                $(document).ready(function () {
+                    var elem = $('#id_%s');
+                    var pickers = $('.colorfield');
+                    var valid = "0123456789ABCDEF"
+                    elem.ColorPicker({
+                        livePreview: true,
+                        onChange:function(hsb, hex, rgb, el) {
+                            if (typeof(hex) !== "undefined") {
+                                $('#swatch_%s').css('backgroundColor', '#' + hex);
+                                $(el).val(hex.toUpperCase());
+                            }
+                        },
+                        onSubmit:function(hsb, hex, rgb, el) {
+                            $(el).val(hex.toUpperCase());
+                            $('#swatch_%s').css('backgroundColor', '#' + hex);
+                            $(el).ColorPickerHide();
+                        },
+                        onBeforeShow:function(hsb, hex, rgb, el) {
+                            $(this).ColorPickerSetColor('#' + elem.val());
+                            $('#swatch_%s').css('backgroundColor', '#' + elem.val());
+                        },
+                        onHide:function(hsb, hex, rgb, el) {
+                            if (typeof(hex) !== "undefined") {
+                                elem.val(hex.toUpperCase());
+                                $('#swatch_%s').css('backgroundColor', '#' + hex);
+                            }
+                        }
+                    }).bind('keypress', function(e) {
+                        if (!e.ctrlKey && !e.altKey && !e.metaKey) {
+                            e.preventDefault();
+                        }
+                        var pressed = String.fromCharCode(e.which).toUpperCase();
+                        if (valid.indexOf(pressed) != -1) {
+                            var currentval = elem.val();
+                            if (currentval.length < 6) {
+                                var newval = currentval + pressed;
+                                elem.val(newval);
+                            }
+                        }
+                    }).bind('focus', function() {
+                        pickers.not("#id_%s").ColorPickerHide();
+                        $(this).ColorPickerShow();
+                    }).bind('blur', function () {
+                        var newval = elem.val();
+                        if (newval.length < 6) {
+                            if (newval.length == 0) {
+                                elem.val('');
+                                $(this).ColorPickerSetColor('#FF0000');
+                                $('#swatch_%s').css('backgroundColor', '#FFFFFF');
+                            } else if (newval.length != 3) {
+                                var padme = newval;
+                                for (var idx = newval.length; idx < 6; idx++) {
+                                    padme += "0";
+                                }
+                                elem.val(padme);
+                                $(this).ColorPickerSetColor('#' + padme);
+                                $('#swatch_%s').css('backgroundColor', '#' + padme);
+                            } else {
+                                var triple = newval;
+                                var sextuple = '';
+                                for (var idx = 0; idx < 6; idx++) {
+                                    sextuple += triple.charAt(idx);
+                                    sextuple += triple.charAt(idx);
+                                }
+                                elem.val(sextuple);
+                                $(this).ColorPickerSetColor('#' + sextuple);
+                                $('#swatch_%s').css('backgroundColor', '#' + sextuple);
+                            }
+                        }
+                    });
                 });
             </script>
             
-        """ % (name, name))
+        """ % (name, name, name, name, name, name, name, name, name))
         
         return out
