@@ -121,10 +121,13 @@ class ImageModel(models.Model):
         self._imgfield.save(name, content, save)
 
     def save(self, clear_cache=True, *args, **kwargs):
-        is_new_object = self._get_pk_val() is None
         super(ImageModel, self).save(*args, **kwargs)
-        if is_new_object and self._imgfield:
+
+        is_new_object = self._get_pk_val() is None
+        if is_new_object:
             clear_cache = False
+
+        if self._imgfield:
             spec = self._ik.preprocessor_spec
             if spec is not None:
                 newfile = self._imgfield.storage.open(str(self._imgfield))
