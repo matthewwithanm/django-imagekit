@@ -806,7 +806,6 @@ class ImageHashField(fields.CharField):
                     if dequeue_runmode == imagekit.IK_ASYNC_DAEMON:
                         instance.save_base()
     
-    
     def south_field_triple(self):
         """
         Represent the field properly to the django-south model inspector.
@@ -815,6 +814,7 @@ class ImageHashField(fields.CharField):
         from south.modelsinspector import introspector
         args, kwargs = introspector(self)
         return ('imagekit.modelfields.ImageHashField', args, kwargs)
+
 
 class ICCHashField(fields.CharField):
     """

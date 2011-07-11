@@ -12,10 +12,9 @@ from optparse import make_option
 from imagekit.models import ImageWithMetadata, ICCModel
 from imagekit.specs import ImageSpec
 from imagekit.modelfields import *
+from imagekit.utils import icchash
 
 from . import echo_banner
-
-icchash = lambda icc: hashlib.sha1(icc.data).hexdigest()
 
 
 class Command(BaseCommand):

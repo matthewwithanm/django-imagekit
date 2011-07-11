@@ -95,6 +95,9 @@ static = lambda pth: os.path.join(settings.STATIC_URL, 'imagekit', pth)
 # convert a triple of 8-bit values (like what you get out of PIL) to #000000 format.
 hexstr = lambda triple: "#%02X%02X%02X" % tuple(triple)
 
+# hash an ICC profile object
+icchash = lambda icc: hashlib.sha1(icc.data).hexdigest()
+
 
 # color dicts for admin and templates.
 class SeriesColors(ADict):
@@ -148,3 +151,46 @@ getallcase = lambda wtf, st: map(lambda m: getcase(wtf, m), list(st))
 is pretty significant.
 
 """
+
+
+def itersubclasses(cls, _seen=None):
+    """
+    itersubclasses(cls) -- from http://code.activestate.com/recipes/576949/
+    
+    Generator over all subclasses of a given class, in depth first order.
+    
+    >>> list(itersubclasses(int)) == [bool]
+    True
+    >>> class A(object): pass
+    >>> class B(A): pass
+    >>> class C(A): pass
+    >>> class D(B,C): pass
+    >>> class E(D): pass
+    >>> 
+    >>> for cls in itersubclasses(A):
+    ...     print(cls.__name__)
+    B
+    D
+    E
+    C
+    >>> 
+    >>> # get ALL (new-style) classes currently defined
+    >>> [cls.__name__ for cls in itersubclasses(object)]
+    ['type', ...'tuple', ...]
+    
+    """
+    
+    if not isinstance(cls, type):
+        raise TypeError('itersubclasses must be called with '
+                        'new-style classes, not %.100r' % cls)
+    if _seen is None: _seen = set()
+    try:
+        subs = cls.__subclasses__()
+    except TypeError: # fails only when cls is type
+        subs = cls.__subclasses__(cls)
+    for sub in subs:
+        if sub not in _seen:
+            _seen.add(sub)
+            yield sub
+            for sub in itersubclasses(sub, _seen):
+                yield sub

@@ -28,3 +28,6 @@ it's where you at.
 """
 import os
 IK_ROOT = os.path.dirname(os.path.realpath(__file__))
+
+from imagekit.ICCProfile import ICCProfile
+IK_sRGB = ICCProfile(os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc"))

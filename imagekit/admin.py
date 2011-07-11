@@ -522,6 +522,7 @@ admin.site.register(imagekit.models.ICCModel, ICCModelAdmin)
 admin.site.register(imagekit.models.RGBHistogram, RGBHistogramAdmin)
 admin.site.register(imagekit.models.LumaHistogram, LumaHistogramAdmin)
 admin.site.register(imagekit.models.EnqueuedSignal)
+admin.site.register(imagekit.models.Proof)
 
 admin.site.index_template = os.path.join(IK_ROOT, 'templates/admin/index_with_queues.html')
 admin.site.app_index_template = os.path.join(IK_ROOT, 'templates/admin/app_index.html')

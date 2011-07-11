@@ -14,10 +14,7 @@ class Options(object):
     crop_vert_field = 'crop_vert'
     preprocessor_spec = None
     cache_dir = 'cache'
-    
-    enable_metadata = False
-    icc_dir = None # setting icc_dir enables icc processing
-    icc_field = None
+    proof_dir = 'proofs'
     
     save_count_as = None
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
@@ -29,6 +26,10 @@ class Options(object):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
             self.specs = {}
+    
+    def update(self, opts):
+        for key, value in opts.__dict__.iteritems():
+            setattr(self, key, value)
     
     def clear_cache(self, **kwargs):
         #logg.info('clear_cache() called: %s' % kwargs)

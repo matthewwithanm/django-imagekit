@@ -24,7 +24,8 @@ from imagekit.options import Options
 from imagekit.modelfields import VALID_CHANNELS, to_matrix
 from imagekit.ICCProfile import ICCProfile
 from imagekit.utils import logg, img_to_fobj, hexstr
-from imagekit.utils import EXIF, ADict
+from imagekit.utils import EXIF, ADict, itersubclasses
+from imagekit.utils import icchash as icchasher
 from imagekit.utils.delegate import DelegateManager, delegate
 from imagekit.modelfields import ICCField, ICCHashField, RGBColorField
 from imagekit.modelfields import ICCDataField, ICCMetaField, EXIFMetaField
@@ -70,8 +71,7 @@ class ImageModelBase(ModelBase):
     """
     ImageModel metaclass
     
-    This metaclass parses IKOptions and loads the specified specification
-    module.
+    This metaclass parses IKOptions and loads any ImageSpecs it can find in 'spec_module'.
     
     """
     def __init__(cls, name, bases, attrs):
@@ -83,15 +83,16 @@ class ImageModelBase(ModelBase):
         user_opts = getattr(cls, 'IKOptions', None)
         opts = Options(user_opts)
         
-        try:
-            module = __import__(opts.spec_module,  {}, {}, [''])
-        except ImportError:
-            raise ImportError('Unable to load imagekit config module: %s' % opts.spec_module)
-        
-        for spec in module.__dict__.values():
-            if isinstance(spec, type):
-                if issubclass(spec, specs.Spec):
-                    opts.specs.update({ spec.name(): spec })
+        if opts.spec_module:
+            try:
+                module = __import__(opts.spec_module,  {}, {}, [''])
+            except ImportError:
+                raise ImportError('Unable to load imagekit config module: %s' % opts.spec_module)
+            
+            for spec in module.__dict__.values():
+                if isinstance(spec, type):
+                    if issubclass(spec, specs.Spec):
+                        opts.specs.update({ spec.name(): spec })
         
         # Options.contribute_to_class() won't work unless you do both of these. But... why?
         setattr(cls, '_ik', opts)
@@ -105,6 +106,7 @@ class ImageModel(models.Model):
     Subclasses of ImageModel are augmented with accessors for each defined
     image specification and can override the inner IKOptions class to customize
     storage locations and other options.
+    
     """
     __metaclass__ = ImageModelBase
     
@@ -215,7 +217,213 @@ class ImageModel(models.Model):
     def clear_cache(self, **kwargs):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
         signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
+
+
+class Proof(ImageModel):
+    class Meta:
+         abstract = False
+         verbose_name = "Proof"
+         verbose_name_plural = "Proof Images"
     
+    class IKOptions:
+        spec_module = None
+        cache_dir = 'cache'
+        proof_dir = 'proofs'
+        image_field = 'image'
+        storage = _storage
+    
+    intent_choices = (
+        ("---",                     None),
+        ("Perceptual",              ImageCms.INTENT_PERCEPTUAL),
+        ("Saturation",              ImageCms.INTENT_SATURATION),
+        ("Absolute Colorimetric",   ImageCms.INTENT_ABSOLUTE_COLORIMETRIC),
+        ("Relative Colorimetric",   ImageCms.INTENT_RELATIVE_COLORIMETRIC),
+    )
+    
+    content_type = models.ForeignKey(ContentType,
+        limit_choices_to=dict(
+            model__in=(cls.__name__ for cls in itersubclasses(ImageModel))),
+        blank=True,
+        null=True) # GFK defaults
+    
+    object_id = models.PositiveIntegerField(verbose_name="Object ID",
+        db_index=True,
+        blank=True,
+        null=True) # GFK defaults
+    
+    sourceimage = generic.GenericForeignKey(
+        'content_type',
+        'object_id')
+    
+    sourceprofile = models.ForeignKey('imagekit.ICCModel',
+        verbose_name="Source ICC Profile",
+        related_name="proofs_as_source",
+        on_delete=models.SET_NULL,
+        db_index=True,
+        editable=True,
+        blank=True,
+        null=True)
+    
+    proofprofile = models.ForeignKey('imagekit.ICCModel',
+        verbose_name="Proofing ICC Profile",
+        related_name="proofs",
+        on_delete=models.SET_NULL,
+        db_index=True,
+        editable=True,
+        blank=True,
+        null=True)
+    
+    intent = models.PositiveIntegerField(verbose_name="Proof Intent",
+        choices=intent_choices,
+        default=ImageCms.INTENT_PERCEPTUAL,
+        editable=True,
+        blank=True,
+        null=True)
+    
+    proofintent = models.PositiveIntegerField(verbose_name="Proof Intent",
+        choices=intent_choices,
+        default=ImageCms.INTENT_ABSOLUTE_COLORIMETRIC,
+        editable=True,
+        blank=True,
+        null=True)
+    
+    image = models.ImageField(verbose_name="Image",
+        storage=_storage,
+        null=True,
+        blank=True,
+        upload_to='images/proofs',
+        height_field='h',
+        width_field='w',
+        max_length=255)
+    
+    w = models.PositiveIntegerField(verbose_name="width",
+        editable=False,
+        null=True)
+    
+    h = models.PositiveIntegerField(verbose_name="height",
+        editable=False,
+        null=True)
+    
+    def __init__(self, *args, **kwargs):
+        super(Proof, self).__init__(*args, **kwargs)
+        
+        if self.sourceimage and self.image:
+            sourcecls = self.sourceimage.__class__
+            
+            user_opts = getattr(sourcecls, 'IKOptions', None)
+            opts = self._ik
+            opts.update(user_opts)
+            
+            for spec_name, spec in sourcecls._ik.specs.items():
+                opts.specs.update({ spec_name: spec })
+                
+                if issubclass(spec, specs.ImageSpec):
+                    prop = specs.FileDescriptor(spec)
+                elif issubclass(spec, specs.MatrixSpec):
+                    prop = specs.MatrixDescriptor(spec)
+                
+                opts._props.update({ spec_name: prop })
+                propr = opts._props.get(spec_name).accessor(self, opts.specs[spec_name])
+                setattr(self, spec_name, propr)
+                #self._meta.add_to_class(spec_name, propr)
+            
+            setattr(self, '_ik', opts)
+            #self._meta.add_to_class('_ik', opts)
+    
+    def _get_targetimage(self):
+        return self.image
+    def _set_targetimage(self, newimage):
+        self.image = newimage
+    
+    targetimage = property(_get_targetimage, _set_targetimage)
+    targetprofile = IK_sRGB
+    
+    @property
+    def targetname(self):
+        if self.sourceimage:
+            nn = self.sourceimage._imgfield.name
+            if nn:
+                filepath, basename = os.path.split(str(nn))
+                filename, extension = os.path.splitext(basename)
+                
+                out_filename = "PROOF-" + (self._ik.cache_filename_format % {
+                    'filename': filename,
+                    'specname': "%s-%s" % (
+                        self.proofprofile.icc.getDescription(),
+                        self.targetprofile.getDescription(),
+                    ),
+                    'extension': extension.lstrip('.'),
+                })
+                
+                if callable(self._ik.cache_dir):
+                    return self._ik.cache_dir(self, filepath, out_filename)
+                else:
+                    return os.path.join(self._ik.cache_dir, filepath, out_filename)
+        return ''
+    
+    def generate(self, source=None, reuse_transform=False):
+        
+        if isinstance(source, ImageModel):
+            self.sourceimage = source
+            if hasattr(source, 'iccmodel'):
+                if source.iccmodel is not None:
+                    self.sourceprofile = source.iccmodel
+                else:
+                    # assume it's sRGB
+                    self.sourceprofile = ICCModel.objects.get(icchash__iexact=icchasher(IK_sRGB))
+            self.save()
+        elif isinstance(source, ICCProfile):
+            try:
+                matching_icc = ICCModel.objects.get(icchash__iexact=icchasher(source))
+            except ObjectDoesNotExist:
+                # create a new ICCModel
+                new_icc = ICCModel()
+                new_icc_file = ContentFile(obj.icc.data)
+                new_icc.iccfile.save(
+                    new_icc._storage.get_valid_name("%s.icc" % obj.icc.getDescription()),
+                    File(new_icc_file),
+                )
+                new_icc.save()
+                self.sourceprofile = new_icc
+            else:
+                self.sourceprofile = matching_icc
+            self.save()
+        
+        if not hasattr(self, 'prooftransform') or not reuse_transform:
+            self.prooftransform = ImageCms.ImageCmsTransform(
+                self.sourceprofile.icc.lcmsinstance,
+                self.targetprofile.lcmsinstance, # sRGB
+                self.sourceimage.pilimage.mode,
+                'RGB',
+                self.intent,
+                proof=self.proofprofile.icc.lcmsinstance,
+                proof_intent=self.proofintent,
+                flags=ImageCms.FLAGS.get('SOFTPROOFING'),
+            )
+        
+        if self.prooftransform:
+            target = self.prooftransform.apply(self.sourceimage.pilimage)
+            targetdata = StringIO.StringIO()
+            target.save(targetdata, format=self.sourceimage.pilimage.format)
+            targetdata.seek(0)
+            
+            if self.targetname:
+                self.save_image(
+                    self.targetname,
+                    targetdata,
+                    save=True,
+                    replace=True,
+                )
+            else:
+                logg.warning("*** Not saving a perfectly good proofed image due to the lack of a targetname.")
+    
+    def __repr__(self):
+        pk = self.pk or '-nil-'
+        src = self.sourceprofile and self.sourceprofile.icc.getDescription() or '-src-'
+        prf = self.proofprofile and self.proofprofile.icc.getDescription() or '-PRF-'
+        dst = self.targetprofile and self.targetprofile.getDescription() or '-dst-'
+        return "<imagekit.Proof #%s %s>" % (self.pk, [src,prf,dst])
+
 
 class HistogramBase(models.Model):
     """
@@ -477,6 +685,32 @@ class ImageWithMetadata(ImageModel):
     # Unique hash of the image data
     imagehash = ImageHashField(verbose_name="Image data hash",
         editable=True)
+    
+    def proofimage(self, proofprofile, sourceprofile=None, **kwargs):
+        
+        if sourceprofile is None:
+            if self.iccmodel:
+                sourceprofile = self.iccmodel
+        
+        proof = Proof(
+            content_type=self.content_type,
+            object_id=self.pk,
+            #sourceimage=self,
+            sourceprofile=sourceprofile,
+            proofprofile=proofprofile,
+        )
+        
+        if 'intent' in kwargs:
+            proof.intent = kwargs.pop('intent')
+        
+        if 'proofintent' in kwargs:
+            proof.proofintent = kwargs.pop('proofintent')
+        
+        return proof
+    
+    @property
+    def content_type(self):
+        return ContentType.objects.get_for_model(self.__class__)
     
     @property
     def iccmodel(self):

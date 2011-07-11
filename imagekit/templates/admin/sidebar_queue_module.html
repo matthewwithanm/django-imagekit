@@ -45,10 +45,17 @@
         
         $(document).ready(function () {
             
-            $("#queue-status-default").queuestatus();
+            /// "ws://localhost:11231/sock/status"
+            
+            $("#queue-status-default").queuestatus({
+                endpoint: "{% sock_status_url %}"
+            });
             
             {% for queue_name, queue in queues.items %}
-            $("#queue-status-{{ queue_name }}").queuestatus({ queuename: "{{ queue_name }}" });
+            $("#queue-status-{{ queue_name }}").queuestatus({
+                queuename: "{{ queue_name }}",
+                endpoint: "{% sock_status_url %}" 
+            });
             {% endfor %}
             
             /// start all status monitors
