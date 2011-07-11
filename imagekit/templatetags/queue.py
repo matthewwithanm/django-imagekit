@@ -4,6 +4,7 @@ from django.conf import settings
 from django.utils.safestring import mark_safe
 from imagekit.signals import KewGardens
 from imagekit.queue import queues
+from imagekit.utils import static
 
 register = template.Library()
 
@@ -23,7 +24,8 @@ def sock_status_url():
 def sidebar_queue_module(context):
     qs = dict(queues.items())
     default = qs.pop('default')
-    return dict(default=default, queues=qs)
+    qjs = static('js/jquery.queuestatus.js')
+    return dict(default=default, queues=qs, queue_javascript=qjs)
 
 
 

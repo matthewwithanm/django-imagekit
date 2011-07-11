@@ -125,7 +125,8 @@ class ImageModel(models.Model):
     @property
     def pilimage(self):
         if self.pk:
-            return Image.open(self._storage.open(self._imgfield.name))
+            if self._imgfield.name:
+                return Image.open(self._storage.open(self._imgfield.name))
         return None
     
     def _dominant(self):

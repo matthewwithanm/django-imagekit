@@ -35,14 +35,14 @@ from tornado.options import define, options, _LogFormatter
 
 from imagekit.signals import signalqueue as ik_signal_queue
 from imagekit.signals import KewGardens
-#from imagekit.utils import logg
+from imagekit.utils import logg
 from imagekit.utils.json import json
+from imagekit.queue import queues
 from imagekit.queue.poolqueue import PoolQueue
 import logging
 import imagekit
 
 define('port', default=settings.IK_QUEUE_SERVER_PORT, help='Queue server HTTP port', type=int)
-#logg = logging.getLogger(__name__)
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -67,18 +67,22 @@ class Application(tornado.web.Application):
         )
         
         tornado.web.Application.__init__(self, handlers, **settings)
-        #self.asyncqueue = None
+        self.queues = {}
 
 
 class BaseQueueConnector(object):
+    
+    def queue(self, queue_name='default'):
+        if queue_name not in queues.keys():
+            raise IndexError("No queue named %s is defined" % queue_name)
+        
+        if not queue_name in self.application.queues:
+            self.application.queues[queue_name] = PoolQueue(queue_name=queue_name)
+        return self.application.queues[queue_name]
+    
     @property
-    def asyncqueue(self):
-        if not hasattr(self.application, 'asyncqueue'):
-            self.application.asyncqueue = PoolQueue(
-                active=True,
-                interval=30, # 3 minutes
-            )
-        return self.application.asyncqueue
+    def defaultqueue(self):
+        return self.queue('default')
     
     def clientlist_get(self):
         if not hasattr(self.application, 'clientlist'):
@@ -94,9 +98,11 @@ class QueueStatusSock(tornado.websocket.WebSocketHandler, BaseQueueConnector):
     def open(self):
         self.clientlist.append(self)
     
-    def on_message(self, mess):
+    def on_message(self, inmess):
+        mess = json.loads(str(inmess))
+        nm = mess.get('status', "default")
         self.write_message({
-            'default': self.asyncqueue.signalqueue.queue_length(),
+            nm: self.queue(nm).signalqueue.queue_length(),
         })
     
     def on_close(self):
@@ -117,7 +123,7 @@ class QueueServerStatusHandler(BaseHandler):
     def get(self):
         self.write(
             self.template.render(Context({
-                'items': [json.loads(morsel) for morsel in self.asyncqueue.signalqueue.garden.values()]
+                'items': [json.loads(morsel) for morsel in self.defaultqueue.signalqueue.garden.values()]
             }))
         )
 
@@ -152,7 +158,7 @@ class VisualQueueHandler(BaseHandler):
     @tornado.web.asynchronous
     def get(self):
         
-        raw_items = [json.loads(morsel) for morsel in self.asyncqueue.signalqueue.garden.values()[:40]]
+        raw_items = [json.loads(morsel) for morsel in self.defaultqueue.signalqueue.garden.values()[:40]]
         items = []
         
         self.write(self.tophalf.render(Context({
@@ -190,6 +196,7 @@ class VisualQueueHandler(BaseHandler):
 def main():
     logg = logging.getLogger("imagekit")
     # Set up color if we are in a tty and curses is installed
+    
     color = False
     if curses and sys.stderr.isatty():
         try:

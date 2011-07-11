@@ -25,6 +25,7 @@ class QueueBase(object):
         
         super(QueueBase, self).__init__()
         self.queue_name = kwargs.pop('queue_name', "imagekit_queue")
+        self.queue_interval = kwargs.pop('queue_interval', None)
         self.queue_options = {}
         self.queue_options.update(kwargs.pop('queue_options', {}))
     
@@ -260,6 +261,7 @@ class ConnectionHandler(object):
         ConnectionClass = load_backend(self.connections_info[key]['ENGINE'])
         self._connections[key] = ConnectionClass(
             queue_name=self.connections_info[key].get('NAME'),
+            queue_interval=self.connections_info[key].get('INTERVAL', None),
             queue_options=self.connections_info[key].get('OPTIONS', {}),
         )
         return self._connections[key]

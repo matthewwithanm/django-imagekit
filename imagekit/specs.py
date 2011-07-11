@@ -145,6 +145,11 @@ class FileAccessor(AccessorBase):
     def _create(self):
         if self._exists():
             return
+        
+        # we need a better answer for fucked images
+        if not self.name:
+            return
+        
         # process the original image file
         try:
             fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)

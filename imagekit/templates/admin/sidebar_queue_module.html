@@ -39,38 +39,20 @@
     
     </style>
     
+    <script type="text/javascript" src="{{ queue_javascript }}"></script>
+    
     <script type="text/javascript">
         
         $(document).ready(function () {
             
-            if ("WebSocket" in window) {
-                var lastvalues = [0,0,0,0,0,0,0,0,0];
-                var defaultq = $('#default-queue-status');
-                
-                var sock = new WebSocket("{% sock_status_url %}");
-                sock.onopen = function () {};
-                sock.onclose = function () {};
-                sock.onmessage = function (e) {
-                    //console.log("DATA:",e);
-                    var d = $.parseJSON(e.data);
-                    var qlen = d["default"];
-                    
-                    lastvalues.shift();
-                    lastvalues.push(qlen);
-                    if (lastvalues.every(function (itm) { return itm == 0; })) {
-                        defaultq.html("<b>Currently Idle</b>");
-                    } else {
-                        defaultq.html("<b>" + qlen + "</b> Queued Signals");
-                    }
-                };
-                
-                window.setInterval(function () {
-                    sock.send({
-                        status: 'default'
-                    });
-                }, 500);
-                
-            }
+            $("#queue-status-default").queuestatus();
+            
+            {% for queue_name, queue in queues.items %}
+            $("#queue-status-{{ queue_name }}").queuestatus({ queuename: "{{ queue_name }}" });
+            {% endfor %}
+            
+            /// start all status monitors
+            $(".queue-status").queuestatus('start');
             
         });
         
@@ -85,12 +67,12 @@
             <ul class="actionlist queuelist" id="default-queuelist">
                 {% if default.count == 0 %}
                     {% if default.ping %}
-                        <li><span class="queue-status" id="default-queue-status"><b>Currently Idle</b></span>
+                        <li><span class="queue-status" id="queue-status-default"><b>Currently Idle</b></span>
                     {% else %}
-                        <li><span class="queue-status" id="default-queue-status"><b>Queue Unavailable</b></span>
+                        <li><span class="queue-status" id="queue-status-default"><b>Queue Unavailable</b></span>
                     {% endif %}
                 {% else %}
-                    <li><span class="queue-status" id="default-queue-status"><b>{{ default.count }}</b> Queued Signals</span>
+                    <li><span class="queue-status" id="queue-status-default"><b>{{ default.count }}</b> Queued Signals</span>
                 {% endif %}
                 <br />
                 <span style="padding-left: 14px;" class="mini quiet">{% queue_classname 'default' %}</span>
@@ -102,12 +84,12 @@
                     <ul class="actionlist queuelist">
                         {% if queue.count == 0 %}
                              {% if queue.ping %}
-                                <li><b>Currently Idle</b>
+                                <li><span class="queue-status" id="queue-status-{{ queue_name }}"><b>Currently Idle</b></span>
                             {% else %}
-                                <li><b>Queue Unavailable</b>
+                                <li><span class="queue-status" id="queue-status-{{ queue_name }}"><b>Queue Unavailable</b></span>
                             {% endif %}
                         {% else %}
-                            <li><b>{{ queue.count }}</b> Queued Signals
+                            <li><span class="queue-status" id="queue-status-{{ queue_name }}"><b>{{ queue.count }}</b> Queued Signals</span>
                         {% endif %}
                         <br />
                         <span style="padding-left: 14px;" class="mini quiet">{% queue_classname queue_name %}</span>

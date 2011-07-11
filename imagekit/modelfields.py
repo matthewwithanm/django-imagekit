@@ -641,7 +641,7 @@ class Histogram(fields.CharField):
         kwargs.setdefault('max_length', 10)
         kwargs.setdefault('editable', False)
         kwargs.setdefault('blank', True)
-        kwargs.setdefault('null', False)
+        kwargs.setdefault('null', True)
         super(Histogram, self).__init__(*args, **kwargs)
     
     def get_internal_type(self):

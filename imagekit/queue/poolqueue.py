@@ -16,25 +16,30 @@ from tornado.ioloop import IOLoop, PeriodicCallback
 
 from imagekit.signals import signalqueue as ik_signal_queue
 from imagekit.signals import KewGardens
-#from imagekit.utils import logg
+from imagekit.utils import logg
 from imagekit.utils.json import json
 import imagekit
 import logging
 
-logg = logging.getLogger(__name__)
+#logg = logging.getLogger(__name__)
 
 class PoolQueue(object):
     
     def __init__(self, *args, **kwargs):
         super(PoolQueue, self).__init__()
         self.active = kwargs.pop('active', True)
-        self.interval = kwargs.pop('interval', 1)
+        self.interval = 1
         
         self.signalqueue = KewGardens(
             runmode=imagekit.IK_ASYNC_DAEMON, # running in daemon mode
             signals=ik_signal_queue.signals,
             queue_name=kwargs.get('queue_name', "default"),
         )
+        
+        # use interval from the config if it exists
+        interval = kwargs.pop('interval', self.signalqueue.garden.queue_interval)
+        if interval is not None:
+            self.interval = interval
         
         if self.interval > 0:
             self.shark = PeriodicCallback(self.cueball, self.interval*10)
