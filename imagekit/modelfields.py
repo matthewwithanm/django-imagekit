@@ -890,7 +890,7 @@ class RGBColorField(models.CharField):
     
     def get_db_prep_value(self, value):
         if hasattr(value, 'hex'):
-            return getattr(value, 'hex')[1:].upper()
+            return getattr(value, 'hex').upper()
         return value
     
     def value_to_string(self, obj):

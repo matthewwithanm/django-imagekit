@@ -609,7 +609,7 @@ class Color(BaseColor):
         # or a named color or descriptive word.
         if len(args) == 1 \
         and isinstance(args[0], (str, unicode)):
-            if args[0].startswith("#"):
+            if args[0].startswith("#") or len(args[0]) == 6:
                 r, g, b = hex_to_rgb(args[0])
                 a = 1.0
             else:
@@ -742,7 +742,7 @@ class Color(BaseColor):
     @property
     def hex(self):
         r, g, b = [int(n * 255) for n in (self.r, self.g, self.b)]
-        s = "#%2x%2x%2x" % (r, g, b)
+        s = "%2x%2x%2x" % (r, g, b)
         return s.replace(" ", "0")
 
     def __eq__(self, clr):
@@ -941,13 +941,13 @@ class Color(BaseColor):
     A little standardization won't hurt a bit.
     """
     def __str__(self, *args, **kw):
-        return getattr(self, 'hex')[1:].upper()
+        return getattr(self, 'hex').lstrip('#').upper()
     
     def __unicode__(self, *args, **kw):
-        return unicode(getattr(self, 'hex')[1:].upper())
+        return unicode(getattr(self, 'hex').lstrip('#').upper())
     
     def __repr__(self, *args, **kw):
-        return getattr(self, 'hex')[1:].upper()
+        return getattr(self, 'hex').lstrip('#').upper()
     
     def __len__(self, *args, **kw):
         return len(str(self))

@@ -165,22 +165,18 @@ class ImageModel(models.Model):
         except TypeError:
             return ""
     
-    #@property
     def dominanthex(self):
         return hexstr(self._dominant())
     
-    #@property
     def meanhex(self):
         m = self._mean()
         if len(m) == 3:
             return hexstr((int(m[0]), int(m[1]), int(m[2])))
         return hexstr((int(m[0]), int(m[0]), int(m[0])))
     
-    #@property
     def averagehex(self):
         return hexstr(self._average())
     
-    #@property
     def medianhex(self):
         return hexstr(self._median()[1])
     
