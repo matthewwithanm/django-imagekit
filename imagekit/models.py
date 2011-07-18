@@ -242,7 +242,7 @@ class Proof(ImageModel):
     
     content_type = models.ForeignKey(ContentType,
         limit_choices_to=dict(
-            model__in=(cls.__name__ for cls in itersubclasses(ImageModel))),
+            model__in=(cls.__name__.lower() for cls in itersubclasses(ImageModel))),
         blank=True,
         null=True) # GFK defaults
     
