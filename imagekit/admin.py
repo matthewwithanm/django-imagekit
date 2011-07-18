@@ -1,23 +1,18 @@
+
 import os, numpy
 from django.conf import settings
+from django.core import urlresolvers
 from django.contrib import admin
+
 from imagekit.lib import IK_ROOT
 from imagekit.utils.memoize import memoize
+from imagekit.utils.ui import icon, arrow
 from imagekit.utils import json, oldcolors, seriescolors
 from imagekit.utils import ADict, AODict, xy, static
 from imagekit.utils import logg
 from imagekit.etc.profileinfo import profileinfo
 from imagekit.etc.cieXYZ import cieYxy3
 import imagekit.models
-
-
-# The icon immediately below is copyright (C) 2011 Yusuke Kamiyamane -- All of his rights are reserved.
-# It's licensed under Creative Commons Attribution 3.0: http://creativecommons.org/licenses/by/3.0/
-# It comes from Mr. Kamiyamane's Fugue Icon Set: https://github.com/yusukekamiyamane/fugue-icons
-icon = u"""
-<img width="16" height="16" title="Download ICC File" alt="Download ICC File" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgdJREFUeNqEk79r20AUx786R6dKxUUNNWmyeuxQCsZkaYd0DvkHOiRbpgydDfbgpUO0GUqzpYXMxf0HMrRTPHpKPSamoDrBgtrWyVLeO/2wAgUfHLovp/e993n3zmi320iSBPkwDGOfPttYP8adTqe/kQUhiqJ8Y6fb7X5eF91qtY75WxhUKhXM53Mt4zjGdf8QVcfUP2/tfcHvox+omo7WL8/eQyllFAY8hBCQUiIIAmO5XMKWAjXX0nucnS0kaparNe8vFovCYJ9qoJk5C8uy3g4GA9yPHdxMpQ5I1ACxNcEL9Sw9rGxA7v9n3t19JC+VQvj6FbIgxk0NmIWZ+9eHcKop894WMx8Rs5kxn+Hi4h7n5/+09rynKwNOhZmkLeDWysxUA8sqmOOY8WqZDjCbzR4bqIhSpDS1QRIhorXKNDMrFVK/qMKQDIQ24FT4xHebPSBMeSkUm71eLjXzwYGgskyzZtuA7/srA3Y8ufwD06nqHz69kfj58S8cM9VNYvY87/twOPyVF5Xq5msDZmEDIW1YbsqolA8pbLglZsdxriaTybfSxdxpPGbRNVARVKj0ZCTWXBOevE+9EjQajVuKyedMZ8As3MqnTW7TaWZuonlqFrrMXK/XMRqNVo/Pdd0P1MY76x4PMY8pk6+8DsOQO1G/Yr7LJzSfs9kaj7s87XywwYMAAwASbxzfXa6dmwAAAABJRU5ErkJggg==" />
-"""
-
 
 class ICCModelAdmin(admin.ModelAdmin):
     
@@ -518,11 +513,76 @@ class LumaHistogramAdmin(admin.ModelAdmin):
     luma_flot_histogram.allow_tags = True
 
 
+class ProofAdmin(admin.ModelAdmin):
+
+    class Media:
+        css = { 'all': (
+            static('css/iccprofile-admin.css'),
+        )}
+        js = (
+            'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js',
+        )
+    
+    list_display = (
+        'id',
+        'with_sourceimage',
+        'with_sourceprofile',
+        'with_proofprofile',
+        'intent',
+        'proofintent',
+    )
+    
+    list_display_links = ('id',)
+    list_per_page = 10
+    
+    def with_sourceimage(self, obj):
+        if obj.sourceprofile_id:
+            return u"""
+                <a href="%s">%s.%s (id: %s) %s</a>
+            """ % (
+                urlresolvers.reverse('admin:%s_%s_change' % (obj.content_type.app_label, obj.content_type.model), args=(obj.object_id,)),
+                obj.content_type.app_label,
+                obj.content_type.model_class().__name__,
+                obj.object_id,
+                arrow,
+            )
+        return u'<i style="color: gray;">No Source Image</i>'
+    with_sourceimage.short_description = "Source Image"
+    with_sourceimage.allow_tags = True
+    
+    def with_sourceprofile(self, obj):
+        if obj.sourceprofile_id:
+            return u"""
+                <a href="%s">%s %s</a>
+            """ % (
+                urlresolvers.reverse('admin:imagekit_iccmodel_change', args=(obj.sourceprofile_id,)),
+                obj.sourceprofile,
+                arrow,
+            )
+        return u'<i style="color: gray;">No Source Profile</i>'
+    with_sourceprofile.short_description = "Source ICC Profile"
+    with_sourceprofile.allow_tags = True
+    
+    def with_proofprofile(self, obj):
+        if obj.proofprofile_id:
+            return u"""
+                <a href="%s">%s %s</a>
+            """ % (
+                urlresolvers.reverse('admin:imagekit_iccmodel_change', args=(obj.proofprofile_id,)),
+                obj.proofprofile,
+                arrow,
+            )
+        return u'<i style="color: gray;">No Proof Profile</i>'
+    with_proofprofile.short_description = "Proofing ICC Profile"
+    with_proofprofile.allow_tags = True
+
+
+
 admin.site.register(imagekit.models.ICCModel, ICCModelAdmin)
 admin.site.register(imagekit.models.RGBHistogram, RGBHistogramAdmin)
 admin.site.register(imagekit.models.LumaHistogram, LumaHistogramAdmin)
 admin.site.register(imagekit.models.EnqueuedSignal)
-admin.site.register(imagekit.models.Proof)
+admin.site.register(imagekit.models.Proof, ProofAdmin)
 
 admin.site.index_template = os.path.join(IK_ROOT, 'templates/admin/index_with_queues.html')
 admin.site.app_index_template = os.path.join(IK_ROOT, 'templates/admin/app_index.html')

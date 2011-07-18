@@ -233,20 +233,21 @@ class Proof(ImageModel):
         storage = _storage
     
     intent_choices = (
-        ("---",                     None),
-        ("Perceptual",              ImageCms.INTENT_PERCEPTUAL),
-        ("Saturation",              ImageCms.INTENT_SATURATION),
-        ("Absolute Colorimetric",   ImageCms.INTENT_ABSOLUTE_COLORIMETRIC),
-        ("Relative Colorimetric",   ImageCms.INTENT_RELATIVE_COLORIMETRIC),
+        (None,                                      "----"),
+        (ImageCms.INTENT_PERCEPTUAL,                "Perceptual"),
+        (ImageCms.INTENT_SATURATION,                "Saturation"),
+        (ImageCms.INTENT_ABSOLUTE_COLORIMETRIC,     "Absolute Colorimetric"),
+        (ImageCms.INTENT_RELATIVE_COLORIMETRIC,     "Relative Colorimetric"),
     )
     
     content_type = models.ForeignKey(ContentType,
+        verbose_name="Source Image Type",
         limit_choices_to=dict(
             model__in=(cls.__name__.lower() for cls in itersubclasses(ImageModel))),
         blank=True,
         null=True) # GFK defaults
     
-    object_id = models.PositiveIntegerField(verbose_name="Object ID",
+    object_id = models.PositiveIntegerField(verbose_name="Source Image ID",
         db_index=True,
         blank=True,
         null=True) # GFK defaults
@@ -273,14 +274,14 @@ class Proof(ImageModel):
         blank=True,
         null=True)
     
-    intent = models.PositiveIntegerField(verbose_name="Proof Intent",
+    intent = models.PositiveIntegerField(verbose_name="Render Intent",
         choices=intent_choices,
         default=ImageCms.INTENT_PERCEPTUAL,
         editable=True,
         blank=True,
         null=True)
     
-    proofintent = models.PositiveIntegerField(verbose_name="Proof Intent",
+    proofintent = models.PositiveIntegerField(verbose_name="Proof Render Intent",
         choices=intent_choices,
         default=ImageCms.INTENT_ABSOLUTE_COLORIMETRIC,
         editable=True,
