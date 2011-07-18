@@ -412,8 +412,8 @@ class Proof(ImageModel):
                     self.targetname,
                     targetdata,
                     save=True,
-                    replace=True,
-                )
+                    replace=True)
+            
             else:
                 logg.warning("*** Not saving a perfectly good proofed image due to the lack of a targetname.")
     

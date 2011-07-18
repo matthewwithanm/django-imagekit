@@ -362,12 +362,12 @@ class RGBHistogramAdmin(admin.ModelAdmin):
     
     class Media:
         css = { 'all': (
-            os.path.join(settings.STATIC_URL, 'css/iccprofile-admin.css'),
+            static('css/iccprofile-admin.css'),
         )}
         js = (
             'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js',
-            os.path.join(settings.STATIC_URL, 'flot/jquery.flot.js'),
-            os.path.join(settings.STATIC_URL, 'flot/jquery.flot.stack.js'),
+            static('flot/jquery.flot.js'),
+            static('flot/jquery.flot.stack.js'),
         )
     
     list_display = (
@@ -445,11 +445,11 @@ class LumaHistogramAdmin(admin.ModelAdmin):
 
     class Media:
         css = { 'all': (
-            os.path.join(settings.STATIC_URL, 'css/iccprofile-admin.css'),
+            static('css/iccprofile-admin.css'),
         )}
         js = (
             'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js',
-            os.path.join(settings.STATIC_URL, 'flot/jquery.flot.js'),
+            static('flot/jquery.flot.js'),
         )
     
     list_display = (

@@ -34,6 +34,8 @@ class ICCModelIndex(indexes.RealTimeSearchIndex):
     tags = indexes.CharField(boost=1.1)
     
     description = indexes.CharField()
+    description_ngram = indexes.EdgeNgramField()
+    
     colorspace = indexes.CharField()
     pcs = indexes.CharField()
     
@@ -185,20 +187,12 @@ class ICCModelIndex(indexes.RealTimeSearchIndex):
             return obj.icc.getCopyright()
         return ''
     
-    def prepare(self, obj):
+    def _everything(self, obj):
         
-        if not hasattr(self, 'cnt'):
-            self.cnt = 1
-        else:
-            self.cnt += 1
-        
-        #print "%3d \t Preparing %s (%s)..." % (self.cnt, obj, obj.pk)
-        self.prepared_data = super(ICCModelIndex, self).prepare(obj)
-        self.prepared_data['text'] = ""
+        out = ""
         
         try:
-        
-            self.prepared_data['text'] += "" + \
+            out += "" + \
                 self.prepare_icc(obj) + " " + \
                 self.prepare_tags(obj) + " " + \
                 self.prepare_description(obj) + " " + \
@@ -217,4 +211,22 @@ class ICCModelIndex(indexes.RealTimeSearchIndex):
         except UnicodeDecodeError:
             pass
         
+        return out
+    
+    @whatever
+    def prepare_description_ngram(self, obj):
+        if obj.icc:
+            return self._everything(obj)
+        return ''
+    
+    @whatever
+    def prepare(self, obj):
+        if not hasattr(self, 'cnt'):
+            self.cnt = 1
+        else:
+            self.cnt += 1
+        
+        #print "%3d \t Preparing %s (%s)..." % (self.cnt, obj, obj.pk)
+        self.prepared_data = super(ICCModelIndex, self).prepare(obj)
+        self.prepared_data['text'] = self._everything(obj)
         return self.prepared_data
