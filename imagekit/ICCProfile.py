@@ -16,7 +16,6 @@ from imagekit.utils.memoize import memoize
 from imagekit.utils.encoding import get_encodings
 from imagekit.utils.ordereddict import OrderedDict
 from imagekit.etc import spectralarithmetic
-from scipy import interpolate
 from hashlib import md5
 from time import localtime, mktime, strftime
 from UserString import UserString
@@ -25,8 +24,19 @@ try:
     from imagekit.utils import logg
 except ImportError:
     safe_print = lambda s: sys.stdout.echo(u"%s\n" % s)
+    logg = ADict(
+        info=safe_print, debug=safe_print, warn=safe_print, warning=safe_print, error=safe_print, critical=safe_print,
+    )
 else:
     safe_print = lambda s: logg.info(s)
+
+try:
+    from scipy import interpolate
+except ImportError, err:
+    logg.warning("*** SCIPY DIDN'T IMPORT (apparently, %s)" % err)
+    interpolate = None
+
+
 
 # Keep this off -- trust me.
 #from django.conf import settings
@@ -1575,7 +1585,7 @@ class ICCTransformer(ICCProfile):
             trc = self.tags[tagkey]
             thealgorithm = None
             
-            if len(trc) > 1:
+            if len(trc) > 1 and interpolate is not None:
                 # build a callable with scipy
                 x = numpy.linspace(0.0, 1.0, len(trc))
                 y = numpy.array([v / float(max(trc)) for v in trc])
@@ -1583,6 +1593,13 @@ class ICCTransformer(ICCProfile):
             
             elif len(trc) > 0:
                 thealgorithm = lambda x: numpy.array([ x ** float(trc[0]), ])
+            
+            elif interpolate is None:
+                # default to 2.2 gamma -- we can't read a gamma LUT, which
+                # 99% of the time a gamma LUT means it's the sRGB IEC-61966-2.1
+                # ICC profile; see also:
+                # http://b.qr.ae/nnyCtZ
+                thealgorithm = lambda x: (float(x) / scale) ** 2.2
             
             if thealgorithm:
                 # append scaling factor and return a callable
@@ -1599,7 +1616,7 @@ class ICCTransformer(ICCProfile):
             trc = self.tags[tagkey]
             thealgorithm = None
             
-            if len(trc) > 1:
+            if len(trc) > 1 and interpolate is not None:
                 # build a callable with numpy
                 x = numpy.linspace(0.0, 1.0, len(trc))
                 y = numpy.array([v / float(max(trc)) for v in trc])
@@ -1607,6 +1624,13 @@ class ICCTransformer(ICCProfile):
             
             elif len(trc) > 0:
                 thealgorithm = lambda x: numpy.array([ x ** (1.0 / trc[0]), ])
+            
+            elif interpolate is None:
+                # default to 2.2 gamma -- we can't read a gamma LUT, which
+                # 99% of the time a gamma LUT means it's the sRGB IEC-61966-2.1
+                # ICC profile; see also:
+                # http://b.qr.ae/nnyCtZ
+                thealgorithm = lambda x: (float(x) ** (1.0 / 2.2)) * float(scale)
             
             if thealgorithm:
                 # append scaling factor and return a callable
