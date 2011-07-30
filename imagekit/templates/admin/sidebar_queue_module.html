@@ -45,8 +45,6 @@
         
         $(document).ready(function () {
             
-            /// "ws://localhost:11231/sock/status"
-            
             $("#queue-status-default").queuestatus({
                 endpoint: "{% sock_status_url %}"
             });
