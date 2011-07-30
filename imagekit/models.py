@@ -1,4 +1,4 @@
-import os, urlparse, numpy, uuid, random, hashlib
+import os, urlparse, numpy, random, hashlib
 import cStringIO as StringIO
 from datetime import datetime
 from django.conf import settings

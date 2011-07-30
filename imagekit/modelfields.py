@@ -1064,15 +1064,15 @@ class ICCField(files.FileField):
             setattr(instance, self.data_field, iccdata)
         if self.hash_field:
             setattr(instance, self.hash_field, hsh)
-        
-        def south_field_triple(self):
-            """
-            Represent the field properly to the django-south model inspector.
-            See also: http://south.aeracode.org/docs/extendingintrospection.html
-            """
-            from south.modelsinspector import introspector
-            args, kwargs = introspector(self)
-            return ('imagekit.modelfields.ICCField', args, kwargs)
+    
+    def south_field_triple(self):
+        """
+        Represent the field properly to the django-south model inspector.
+        See also: http://south.aeracode.org/docs/extendingintrospection.html
+        """
+        from south.modelsinspector import introspector
+        args, kwargs = introspector(self)
+        return ('imagekit.modelfields.ICCField', args, kwargs)
 
 """
 South has assuaged me, so I'm happy to assuage it.

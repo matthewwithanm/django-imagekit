@@ -53,8 +53,9 @@ class StentifordModel(object):
         
         WARNING: right now this is incredibly slow -- analyzing an image larger than
         a thumbnail will criminally abuse your processor for a few minutes, with the
-        default settings;unless you have a stack of amazon cluster AMIs you're not
-        using it's not going to play nice with synchronous web request invocations.
+        default settings; unless you have a stack of amazon large-cluster AMIs you're
+        just keeping around idling that you can throw at it, this implementation isn't
+        going to play nice with synchronous web request invocations.
         
         """
         self.neighborhood_size = kwargs.pop('neighborhood_size', self.neighborhood_size)

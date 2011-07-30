@@ -45,17 +45,18 @@ import imagekit
 define('port', default=settings.IK_QUEUE_SERVER_PORT, help='Queue server HTTP port', type=int)
 
 class Application(tornado.web.Application):
-    def __init__(self):
+    def __init__(self, **kwargs):
         from django.core.management import setup_environ
         import settings
         setup_environ(settings)
         from django.conf import settings
         
+        nm = kwargs.get('queue_name', "default")
+        
         handlers = [
             (r'/', MainHandler),
             (r'/status', QueueServerStatusHandler),
             (r'/sock/status', QueueStatusSock),
-            #(r'/queue', VisualQueueHandler),
         ]
         
         settings = dict(
@@ -64,10 +65,15 @@ class Application(tornado.web.Application):
             xsrf_cookies=True,
             cookie_secret=hashlib.sha1(settings.SECRET_KEY).hexdigest(),
             logging='info',
+            queue_name=nm,
         )
         
         tornado.web.Application.__init__(self, handlers, **settings)
         self.queues = {}
+        if nm is not None:
+            self.queues.update({
+                nm: PoolQueue(queue_name=nm, active=True)
+            })
 
 
 class BaseQueueConnector(object):
@@ -77,7 +83,8 @@ class BaseQueueConnector(object):
             raise IndexError("No queue named %s is defined" % queue_name)
         
         if not queue_name in self.application.queues:
-            self.application.queues[queue_name] = PoolQueue(queue_name=queue_name)
+            self.application.queues[queue_name] = PoolQueue(queue_name=queue_name, active=False)
+        
         return self.application.queues[queue_name]
     
     @property
@@ -121,76 +128,14 @@ class QueueServerStatusHandler(BaseHandler):
         self.template = loader.get_template('queueserver/status.html')
     
     def get(self):
+        nm = self.get_argument('queue', "default")
         self.write(
             self.template.render(Context({
-                'items': [json.loads(morsel) for morsel in self.defaultqueue.signalqueue.garden.values()]
+                'queue_name': nm,
+                'items': [json.loads(morsel) for morsel in self.queue(nm).signalqueue.garden.values()],
             }))
         )
 
-class VisualQueueHandler(BaseHandler):
-    def __init__(self, *args, **kwargs):
-        super(VisualQueueHandler, self).__init__(*args, **kwargs)
-        #self.template = loader.get_template('queueserver/status.html')
-        self.tophalf = loader.get_template('queueserver/tophalf.html')
-        self.bottomhalf = loader.get_template('queueserver/bottomhalf.html')
-        self.morsel = loader.get_template_from_string("""
-            <tr>
-                {% for key, thingy in item.items %}
-                    {% if key == 'instance' %}
-                        {% if thingy.thumbelina %}
-                            <td>
-                                {{ key }}: <img src="{{ thingy.thumbelina.url }}" />
-                            </td>
-                        {% else %}
-                            <td>
-                                {{ key }}: <span{% if key == 'name' %} class="big"{% endif %}>{{ thingy }}</span>
-                            </td>
-                        {% endif %}
-                    {% else %}
-                        <td>
-                            {{ key }}: <span{% if key == 'name' %} class="big"{% endif %}>{{ thingy }}</span>
-                        </td>
-                    {% endif %}
-                {% endfor %}
-            </tr>
-        """)
-    
-    @tornado.web.asynchronous
-    def get(self):
-        
-        raw_items = [json.loads(morsel) for morsel in self.defaultqueue.signalqueue.garden.values()[:40]]
-        items = []
-        
-        self.write(self.tophalf.render(Context({
-            'somenumber': len(raw_items)
-        })))
-        
-        for raw_item in raw_items:
-            item = {}
-            for k, v in raw_item.items():
-                if k == 'name':
-                    item.update({
-                        'name': v,
-                    })
-                elif k == 'sender':
-                    item.update({
-                        'sender': KewGardens.get_modlclass(**v)
-                    })
-                else:
-                    item.update({
-                        k: KewGardens.get_object(k, v)
-                    })
-            #items.append(item)
-            self.write(
-                self.morsel.render(Context({
-                    'item': item,
-                }))
-            )
-        
-        self.write(
-            self.bottomhalf.render(Context({}))
-        )
-        self.finish()
 
 
 def main():
@@ -231,15 +176,6 @@ if __name__ == '__main__':
     from django.conf import settings
     
     main()
-    
-    '''
-    log = open('/tmp/log/tornado-11231.log', 'a+')
-    pid = daemon.pidlockfile.TimeoutPIDLockFile("/tmp/tornado-11231.pid", 10)
-    daemon_context = daemon.DaemonContext(stdout=log, stderr=log, working_directory='/tmp', pidfile=pid)
-    
-    with daemon_context:
-        main()
-    '''
     
 
 

@@ -1,5 +1,5 @@
 """ ImageKit utility functions """
-import tempfile, os
+import tempfile, os, hashlib
 from django.conf import settings
 from imagekit.utils.ordereddict import OrderedDict
 from imagekit.utils.json import json
