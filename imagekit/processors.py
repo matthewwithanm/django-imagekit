@@ -1,9 +1,28 @@
-""" Imagekit Image "ImageProcessors"
+"""
+Imagekit Image Processor Implementations
 
-A processor defines a set of class variables (optional) and a
-class method named "process" which processes the supplied image using
-the class properties as settings. The process method can be overridden as well allowing user to define their
-own effects/processes entirely.
+An ImageProcessor subclass defines a set of class variables (optional)
+and a class method named "process" which processes the supplied image
+using the class properties as settings. The process method can be
+overridden as well, allowing the user to define their own effects
+and processes as per their whim.
+
+ImageProcessors are designed to be chainable -- ImageSpecs specify one or
+more ImageProcessors to be invoked when the spec property is populated;
+when more than one ImageProcessor is used in an ImageSpec, the PIL image
+object returned by the processor invocation is passed to the next, which 
+likewise passes its output along, until all ImageProcessors have been run.
+
+In addition to the PIL image object, an ImageProcessor.process() class method
+must return the image output format 'fmt', as a string. Most processors pass
+on the 'fmt' argument with which they were called -- ensuring that the thumbnails
+of a JPEG will also be JPEGs, if possible. However, some ImageProcessors will
+override 'fmt', particularly if they modify the images' mode; see the code
+for the Atkinsonify processor, below, for an example.
+
+Here's the latest list of supported PIL image modes:
+
+    http://www.pythonware.com/library/pil/handbook/index.htm
 
 """
 import os, numpy
@@ -14,7 +33,10 @@ from imagekit.utils import logg
 from imagekit.utils.memoize import memoize
 
 class ImageProcessor(object):
-    """ Base image processor class """
+    """
+    Base image processor class.
+    
+    """
 
     @classmethod
     def process(cls, img, fmt, obj):
@@ -194,6 +216,52 @@ class NeuQuantize(ImageProcessor):
             outimg.resize((cls.width, cls.height), cls.resize_mode)
             return outimg, fmt
 
+
+class Atkinsonify(Format):
+    """
+    Apply the Atkinson dither/halftone algorithm to the image.
+    A minimal implementation, adapted from Michael Migurski's
+    minimal python script:
+        
+        http://mike.teczno.com/img/atkinson.py
+    
+    ... so designated as minimal by Mr. Migurski himself; I changed
+    nothing of consequence when wiring his snippet into this class.
+    
+    ImageProcessor yield is a 1-bit image that will remind you of HyperCard;
+    run it to see what I mean, or look here: 
+        
+        http://mike.teczno.com/notes/atkinson.html (Mr. Migurski's relevant post)
+        http://verlagmartinkoch.at/software/dither/index.html (another example)
+        http://en.wikipedia.org/wiki/Dither#cite_ref-10 (a comparative explanation)
+        http://www.tinrocket.com/hyperdither-mac (an optimized nostalgic implementation)
+    
+    """
+    format = 'PNG'                      # default; 'BMP' should also work.
+    extension = format.lower()
+    
+    threshold = 128*[0] + 128*[255]     # Adjust threshold by building your own list,
+                                        # full of zeros and/or 255s as per your taste.
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        img = img.convert('L')
+        
+        for y in range(img.size[1]):
+            for x in range(img.size[0]):
+                
+                old = img.getpixel((x, y))
+                new = cls.threshold[old]
+                err = (old - new) >> 3 # divide by 8.
+                img.putpixel((x, y), new)
+                
+                for nxy in [(x+1, y), (x+2, y), (x-1, y+1), (x, y+1), (x+1, y+1), (x, y+2)]:
+                    try:
+                        img.putpixel(nxy, img.getpixel(nxy) + err)
+                    except IndexError:
+                        pass # it happens, evidently.
+        
+        return img, cls.format
 
 class Reflection(ImageProcessor):
     background_color = '#FFFFFF'

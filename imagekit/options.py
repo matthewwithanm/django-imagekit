@@ -7,7 +7,8 @@ from imagekit.utils import logg
 
 class Options(object):
     """
-    Class handling per-model imagekit options
+    Encapsulation of per-model imagekit options.
+    
     """
     image_field = 'image'
     crop_horz_field = 'crop_horz'

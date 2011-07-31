@@ -126,8 +126,9 @@ class FileAccessor(AccessorBase):
     def __init__(self, obj, spec, **kwargs):
         super(FileAccessor, self).__init__(obj, spec, **kwargs)
     
-    def _get_imgfile(self):
-        format = self._img.format or 'JPEG'
+    def _get_imgfile(self, format=None):
+        if format is None:
+            format = self._fmt and self._fmt or (self._img.format and self._img.format or 'JPEG')
         if format != 'JPEG':
             imgfile = img_to_fobj(self._img, format)
         else:
@@ -162,7 +163,7 @@ class FileAccessor(AccessorBase):
         
         # save the new image to the cache
         logg.info("*** creating: %s" % self.name)
-        content = ContentFile(self._get_imgfile().read())
+        content = ContentFile(self._get_imgfile(format=self._fmt).read())
         self._obj._storage.save(self.name, content)
     
     def _delete(self):
