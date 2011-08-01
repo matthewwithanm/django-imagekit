@@ -27,7 +27,7 @@ def whatever(f, *args, **kwargs):
         return ''
 
 
-class ICCModelIndex(indexes.RealTimeSearchIndex):
+class ICCModelIndex(indexes.RealTimeSearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=False)
     
     icc = indexes.CharField(model_attr='icc')
