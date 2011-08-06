@@ -381,8 +381,10 @@ class RGBHistogramAdmin(admin.ModelAdmin):
         markings = []
         
         for k in obj.keys():
-            mean = float(obj[k].mean())
+            #mean = float(obj[k].mean())
             #std = float(obj[k].std())
+            mean = float(getattr(obj, k).mean())
+            
             series.append({
                 'color': seriescolors[k],
                 'fillColor': seriescolors[k],
