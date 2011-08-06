@@ -390,7 +390,7 @@ class RGBHistogramAdmin(admin.ModelAdmin):
                 'fillColor': seriescolors[k],
                 'data': [list(s) for s in zip(
                     xrange(1, len(getattr(obj, k))+1),
-                    obj[k].astype(float).tolist(),
+                    getattr(obj, k).astype(float).tolist(),
                 )],
                 'clickable': True,
                 'hoverable': True,
