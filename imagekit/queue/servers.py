@@ -113,7 +113,8 @@ class QueueStatusSock(tornado.websocket.WebSocketHandler, BaseQueueConnector):
         })
     
     def on_close(self):
-        self.clientlist.remove(self)
+        if self in self.clientlist:
+            self.clientlist.remove(self)
 
 class BaseHandler(tornado.web.RequestHandler, BaseQueueConnector):
     pass

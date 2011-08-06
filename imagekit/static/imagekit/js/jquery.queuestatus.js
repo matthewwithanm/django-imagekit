@@ -54,7 +54,6 @@
     $.fn.queuestatus = function () {
         var _defaults = {
             interval: 500,
-            endpoint: "ws://localhost:11231/sock/status",
             queuename: 'default'
         };
         
@@ -67,6 +66,7 @@
                 
                 self.data('recently', [0,0,0,0,0,0,0,0,0]);
                 self.data('options', options);
+                self.data('sock', null);
                 
                 var sock = null;
                 if ('endpoint' in options && options['endpoint']) {
@@ -106,6 +106,25 @@
                     var elem = $(this);
                     var interval_id = elem.data('interval_id');
                     var sock = elem.data('sock');
+                    
+                    /*
+                    if (typeof(sock.send) === "undefined") {
+                        console.log("Undefined socket:  "+sock);
+                        sock = null
+                        elem.data('sock', null);
+                        return;
+                    }
+                    
+                    try {
+                        sock.send(JSON.stringify({ status: options['queuename'] }));
+                    } catch (e) {
+                        console.log("Can't send: "+e);
+                        sock = null
+                        elem.data('sock', null);
+                        return;
+                    }
+                    */
+                    
                     if (!interval_id) {
                         interval_id = window.setInterval(function () {
                             if (sock) {
