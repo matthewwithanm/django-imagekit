@@ -840,7 +840,7 @@ class ICCHashField(fields.CharField):
         kwargs.setdefault('db_index', True)
         kwargs.setdefault('max_length', 40)
         kwargs.setdefault('editable', False)
-        kwargs.setdefault('unique', True)
+        #kwargs.setdefault('unique', True)
         kwargs.setdefault('blank', True)
         kwargs.setdefault('null', True)
         super(ICCHashField, self).__init__(*args, **kwargs)
