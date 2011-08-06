@@ -248,7 +248,7 @@ class KewGardens(object):
                 self.signals[name].send(sender=sender, **kwargs)
     
     def send(self, name, sender, **kwargs):
-        #print "send() called, runmode = %s" % self.runmode
+        print "send() called, runmode = %s" % self.runmode
         
         if self.runmode:
             

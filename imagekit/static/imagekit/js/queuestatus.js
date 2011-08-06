@@ -6,8 +6,8 @@ var WebSocket = require('websocket-client').WebSocket;
 sys.puts("YO DOGG --");
 
 //var wsurl = 'ws://localhost:11231/sock/status';
-//var wsurl = 'ws://asio-otus.local:11231/sock/status';
-var wsurl = 'ws://objectsinspaceandtime.com:11231/sock/status';
+var wsurl = 'ws://asio-otus.local:11231/sock/status';
+//var wsurl = 'ws://objectsinspaceandtime.com:11231/sock/status';
 
 
 var ws = new WebSocket(wsurl, 'sockstatus');

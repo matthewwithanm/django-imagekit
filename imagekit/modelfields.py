@@ -657,7 +657,7 @@ class Histogram(fields.CharField):
         super(Histogram, self).contribute_to_class(cls, name)
         if not cls._meta.abstract:
             setattr(cls, self.name, HistogramDescriptor(self))
-            #signals.pre_save.connect(self.save_related_histogram, sender=cls)
+            signals.post_save.connect(self.queue_related_histogram_update, sender=cls, dispatch_uid="queue_related_histogram_update")
             signalqueue.save_related_histogram.connect(self.save_related_histogram, sender=cls)
             
             histogram = generic.GenericRelation(imagekit.models.HISTOGRAMS.get(self.original_colorspace.lower()))
@@ -665,6 +665,12 @@ class Histogram(fields.CharField):
             histogram.related_name = '_%s_histogram_relation' % self.original_colorspace.lower()
             self.creation_counter = histogram.creation_counter + 1
             cls.add_to_class('_%s_histogram_relation' % self.original_colorspace.lower(), histogram)
+    
+    def queue_related_histogram_update(self, **kwargs): # signal, sender, instance
+        instance = kwargs.get('instance')
+        sender = kwargs.get('sender')
+        logg.info("-- Enqueueing async signal 'save_related_histogram' for %s %s." % (sender.__name__, getattr(instance, 'pk', "<NONE>")))
+        signalqueue.send('save_related_histogram', sender=sender, instance=instance)
     
     def save_related_histogram(self, **kwargs): # signal, sender, instance
         """
