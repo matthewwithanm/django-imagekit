@@ -1,4 +1,4 @@
-import os, urlparse, numpy, random, hashlib
+import os, urlparse, numpy, random, hashlib, math
 import cStringIO as StringIO
 from datetime import datetime
 from django.conf import settings
@@ -513,6 +513,17 @@ class HistogramBase(models.Model):
             for i in xrange(256):
                 out.append(getattr(self, "__%s_%02X" % (channel, i)))
         return to_matrix(out)
+    
+    @property
+    def entropy(self):
+        """
+        Calculate the entropy of an images' histogram. Used for "smart cropping" in easy-thumbnails;
+        see: https://raw.github.com/SmileyChris/easy-thumbnails/master/easy_thumbnails/utils.py
+        """
+        hist = self.all
+        hist_size = float(sum(hist))
+        hist = [h / hist_size for h in hist]
+        return -sum([p * math.log(p, 2) for p in hist if p != 0])
 
 
 """
