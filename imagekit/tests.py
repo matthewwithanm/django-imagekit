@@ -5,7 +5,7 @@ from django.db import models
 from django.test import TestCase
 
 from imagekit import processors
-from imagekit.models import ImageModel, _storage
+from imagekit.models import ImageModel, ImageWithMetadata, _storage
 from imagekit.specs import ImageSpec
 from imagekit.lib import *
 from imagekit.signals import signalqueue
@@ -65,13 +65,28 @@ class TestICCProof(ImageSpec):
     processors = [ProofICC]
 
 
-class TestPhoto(ImageModel):
-    """ Minimal ImageModel class for testing """
-    image = models.ImageField(upload_to='testimages')
+class TestImage(ImageModel):
+    """
+    Minimal ImageModel class for testing.
     
+    """
     class IKOptions:
         spec_module = 'imagekit.tests'
         storage = _storage
+    
+    image = models.ImageField(upload_to='testimages', storage=_storage)
+
+
+class TestImageM(ImageWithMetadata):
+    """
+    Minimal ImageWithMetadata class for testing.
+
+    """
+    class IKOptions:
+        spec_module = 'imagekit.tests'
+        storage = _storage
+    
+    image = models.ImageField(upload_to='testmimages', storage=_storage)
 
 
 class IKTest(TestCase):
@@ -114,7 +129,7 @@ class IKTest(TestCase):
         signalqueue.runmode = 0
         
         # image instance for testing
-        self.p = TestPhoto()
+        self.p = TestImage()
         try:
             img = self.get_image()
         except:
@@ -125,13 +140,13 @@ class IKTest(TestCase):
     
     def test_save_image(self):
         img = self.generate_image()
-        path = self.p.image.path
+        path = self.p.image.name
         self.p.save_image('test2.jpeg', ContentFile(img.read()))
-        self.failIf(os.path.isfile(path))
-        path = self.p.image.path
+        self.failIf(self.p._ik.storage.exists(path))
+        path = self.p.image.name
         img.seek(0)
         self.p.save_image('test.jpeg', ContentFile(img.read()))
-        self.failIf(os.path.isfile(path))
+        self.failIf(self.p._ik.storage.exists(path))
         img.close()
     
     def test_icc_transform(self):
@@ -139,6 +154,18 @@ class IKTest(TestCase):
     
     def test_icc_proof_transform(self):
         self.assertTrue(self.p.iccproof.url is not None)
+    
+    def test_imagewithmetadata(self):
+        pm = TestImageM()
+        try:
+            img = self.get_image()
+        except:
+            img = self.generate_image()
+        pm.save_image('mtest.jpg', ContentFile(img.read()))
+        img.close()
+        pm.save()
+        pm.save()
+        pm.delete(clear_cache=True)
     
     def test_setup(self):
         self.assertEqual(self.p.image.width, 800)

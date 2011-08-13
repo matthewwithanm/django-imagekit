@@ -214,6 +214,7 @@ class ImageModel(models.Model):
         clear_cache = kwargs.pop('clear_cache', False)
         if clear_cache:
             signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
+            self._imgfield.delete()
         super(ImageModel, self).delete(*args, **kwargs)
     
     def clear_cache(self, **kwargs):
