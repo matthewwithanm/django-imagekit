@@ -105,7 +105,6 @@
                 return this.each(function () {
                     var elem = $(this);
                     var interval_id = elem.data('interval_id');
-                    var sock = elem.data('sock');
                     
                     /*
                     if (typeof(sock.send) === "undefined") {
@@ -127,9 +126,19 @@
                     
                     if (!interval_id) {
                         interval_id = window.setInterval(function () {
-                            if (sock) {
-                                var out = { status: options['queuename'] };
-                                sock.send(JSON.stringify(out));
+                            var ssck = elem.data('sock');
+                            var opts = elem.data('options');
+                            if (typeof(ssck.send) !== "undefined") {
+                                var out = { status: opts['queuename'] };
+                                try {
+                                    ssck.send(JSON.stringify(out));
+                                } catch (e) {
+                                    console.log("Can't send: "+e);
+                                    ssck = null;
+                                    
+                                    ssck = new WebSocket(opts['endpoint']);
+                                    elem.data('sock', ssck);
+                                }
                             }
                         }, 500);
                     }
@@ -144,6 +153,12 @@
                         window.clearInterval(interval_id);
                     }
                     elem.data('interval_id', null);
+                    
+                    var sock = elem.data('sock');
+                    sock.disconnect()
+                    sock = null;
+                    
+                    elem.data('sock', sock);
                 });
             }
         };

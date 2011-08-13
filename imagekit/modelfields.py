@@ -413,11 +413,6 @@ class HistogramChannelDescriptor(object):
         # get the fucking histogram channel data out of the database here
         elif isinstance(histogram_channel, (basestring, type(None))):
             out = []
-            '''
-            if int(getattr(instance, "__%s_00" % histogram_channel)) < 0:
-                if not instance.id:
-                    instance.save() # refresh and save
-            '''
             if histogram_channel:
                 for i in xrange(256):
                     histocolname = "__%s_%02X" % (histogram_channel, i)

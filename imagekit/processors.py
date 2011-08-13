@@ -42,12 +42,21 @@ class ImageProcessor(object):
         return img, fmt
 
 
+class Format(ImageProcessor):
+    format = 'JPEG'
+    extension = 'jpg'
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        return img, cls.format
+
+
 class Adjustment(ImageProcessor):
     color = 1.0
     brightness = 1.0
     contrast = 1.0
     sharpness = 1.0
-
+    
     @classmethod
     def process(cls, img, fmt, obj):
         img = img.convert('RGB')
@@ -115,11 +124,11 @@ class ICCProofTransform(ImageProcessor):
         if not destination:
             raise AttributeError("WTF: destination transform ICC profile '%s' doesn't exist" % destination)
         
-        if proofing and not cls.proof:
+        if proofing is not None and cls.proof is None:
             logg.warning("ICCProofTransform.process() was invoked explicitly but without a specified proofing profile.")
             logg.warning("ICCProofTransform.process() executing as a non-proof transformation...")
         
-        if TXID:
+        if TXID is not None:
             if TXID not in cls.transformers:
                 raise AttributeError("WTF: the TXID %s wasn't found in ICCProofTransform.transformers[].")
         
@@ -172,15 +181,6 @@ class ICCTransform(ImageProcessor):
         return ICCProofTransform.process(img, fmt, obj, source=cls.source, destination=cls.destination, proofing=False, TXID=TXID)
 
 
-class Format(ImageProcessor):
-    format = 'JPEG'
-    extension = 'jpg'
-    
-    @classmethod
-    def process(cls, img, fmt, obj):
-        return img, cls.format
-
-
 class HSVArray(ImageProcessor):
     """
     Convert to HSV using NumPy and return as an array.
@@ -199,10 +199,10 @@ class HSVArray(ImageProcessor):
 class NeuQuantize(ImageProcessor):
     """
     Extract and return a 256-color quantized LUT of the images' dominant colors.
-    Return as a 16 x 16 x 3 array (or a PIL image if format is set to 'JPEG'.
+    Return as a 16 x 16 x 3 array (or a PIL image if format is set to 'JPEG').
     
     """
-    structure = 'array'
+    structure = 'PIL'
     quantfactor = 10
     width = 16 # for JPEG output
     height = 16 # for JPEG output
@@ -358,6 +358,13 @@ class Resize(ImageProcessor):
 
 
 class SmartCrop(ImageProcessor):
+    """
+    Crop an image 'smartly' -- based on smart crop implementation from easy-thumbnails:
+    https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L193
+    
+    Smart cropping whittles away the parts of the image with the least entropy.
+    
+    """
     width = None
     height = None
     
@@ -416,7 +423,8 @@ class SmartCrop(ImageProcessor):
 
 
 class Transpose(ImageProcessor):
-    """ Rotates or flips the image
+    """
+    Rotates or flips the image.
 
     Method should be one of the following strings:
         - FLIP_LEFT RIGHT
@@ -426,8 +434,8 @@ class Transpose(ImageProcessor):
         - ROTATE_180
         - auto
 
-    If method is set to 'auto' the processor will attempt to rotate the image
-    according to the EXIF Orientation data.
+    If method is set to 'auto', the processor will attempt to rotate the image
+    according to any EXIF Orientation data it can find.
 
     """
     EXIF_ORIENTATION_STEPS = {

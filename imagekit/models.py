@@ -513,6 +513,10 @@ class HistogramBase(models.Model):
     # distance:
     # math.sqrt(reduce(operator.add, map(lambda h,i: h*(i**2), abs(axim.histogram_rgb.all - pxim.histogram_rgb.all), range(256*3))) / float(axim.w) * axim.h)
     
+    def normalized(self, channel):
+        # ch*255.0/sum(ch)
+        return self[channel].astype(float) / max(self[channel])
+    
     @property
     def all(self):
         out = []
@@ -526,10 +530,10 @@ class HistogramBase(models.Model):
         """
         Calculate the entropy of an images' histogram. Used for "smart cropping" in easy-thumbnails;
         see: https://raw.github.com/SmileyChris/easy-thumbnails/master/easy_thumbnails/utils.py
+        
         """
-        hist = self.all
-        hist_size = float(sum(hist))
-        hist = [h / hist_size for h in hist]
+        hist_size = float(sum(self.all))
+        hist = [h / hist_size for h in self.all]
         return -sum([p * math.log(p, 2) for p in hist if p != 0])
 
 
@@ -580,8 +584,9 @@ class LumaHistogram(HistogramBase):
         verbose_name = "Luma Histogram"
         verbose_name_plural = "Luma Histograms"
     
-    L = HistogramChannelField(channel='L', verbose_name="Luma",
-        pil_reference=lambda instance: instance.pilimage.convert('L'))
+    L = HistogramChannelField(channel='L',
+            verbose_name="Luma",
+            pil_reference=lambda instance: instance.pilimage.convert('L'))
 
 class RGBHistogram(HistogramBase):
     """

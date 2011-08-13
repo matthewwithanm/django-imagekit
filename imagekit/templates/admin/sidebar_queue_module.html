@@ -61,6 +61,13 @@
             
         });
         
+        $(window).unload(function () {
+            
+            /// start all status monitors
+            $(".queue-status").queuestatus('stop');
+            
+        });
+        
     </script>
     
     
