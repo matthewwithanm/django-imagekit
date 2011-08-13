@@ -29,7 +29,7 @@ import os, numpy
 from imagekit.lib import *
 from imagekit.neuquant import NeuQuant
 from imagekit.ICCProfile import ICCProfile
-from imagekit.utils import logg
+from imagekit.utils import logg, entropy
 from imagekit.utils.memoize import memoize
 
 class ImageProcessor(object):
@@ -37,7 +37,6 @@ class ImageProcessor(object):
     Base image processor class.
     
     """
-
     @classmethod
     def process(cls, img, fmt, obj):
         return img, fmt
@@ -103,7 +102,7 @@ class ICCProofTransform(ImageProcessor):
             
         source = (
             getattr(cls, 'source', None) or \
-            getattr(img, 'icc', None) or \
+            #getattr(img, 'icc', None) or \
             getattr(obj, 'icc', None) or \
             cls._srgb
         )
@@ -350,6 +349,64 @@ class Resize(ImageProcessor):
                 if not cls.upscale:
                     return img, fmt
             img = img.resize(new_dimensions, Image.ANTIALIAS)
+        return img, fmt
+
+
+class SmartCrop(ImageProcessor):
+    width = None
+    height = None
+    
+    @classmethod
+    def compare_entropy(cls, start_slice, end_slice, slice, difference):
+        """
+        Calculate the entropy of two slices (from the start and end of an axis),
+        returning a tuple containing the amount that should be added to the start
+        and removed from the end of the axis.
+        
+        see: https://raw.github.com/SmileyChris/easy-thumbnails/master/easy_thumbnails/processors.py
+        """
+        start_entropy = entropy(start_slice)
+        end_entropy = entropy(end_slice)
+        if end_entropy and abs(start_entropy / end_entropy - 1) < 0.01:
+            # Less than 1% difference, remove from both sides.
+            if difference >= slice * 2:
+                return slice, slice
+            half_slice = slice // 2
+            return half_slice, slice - half_slice
+        if start_entropy > end_entropy:
+            return 0, slice
+        else:
+            return slice, 0
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        source_x, source_y = img.size
+        diff_x = int(source_x - min(source_x, cls.width))
+        diff_y = int(source_y - min(source_y, cls.height))
+        left = top = 0
+        right, bottom = source_x, source_y
+        
+        while diff_x:
+            slice = min(diff_x, max(diff_x // 5, 10))
+            start = img.crop((left, 0, left + slice, source_y))
+            end = img.crop((right - slice, 0, right, source_y))
+            add, remove = cls.compare_entropy(start, end, slice, diff_x)
+            left += add
+            right -= remove
+            diff_x = diff_x - add - remove
+        
+        while diff_y:
+            slice = min(diff_y, max(diff_y // 5, 10))
+            start = img.crop((0, top, source_x, top + slice))
+            end = img.crop((0, bottom - slice, source_x, bottom))
+            add, remove = cls.compare_entropy(start, end, slice, diff_y)
+            top += add
+            bottom -= remove
+            diff_y = diff_y - add - remove
+        
+        box = (left, top, right, bottom)
+        img = img.crop(box)
+        
         return img, fmt
 
 

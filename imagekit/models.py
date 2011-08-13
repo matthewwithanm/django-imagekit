@@ -114,7 +114,7 @@ class ImageModel(models.Model):
         abstract = True
     
     class IKOptions:
-        pass
+        storage = _storage
     
     @property
     def _imgfield(self):
@@ -209,6 +209,12 @@ class ImageModel(models.Model):
         
         #logg.info("About to send the pre_cache signal...")
         return signalqueue.send_now('pre_cache', sender=self.__class__, instance=self)
+    
+    def delete(self, *args, **kwargs):
+        clear_cache = kwargs.pop('clear_cache', False)
+        if clear_cache:
+            signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
+        super(ImageModel, self).delete(*args, **kwargs)
     
     def clear_cache(self, **kwargs):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)

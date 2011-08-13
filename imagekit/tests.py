@@ -5,7 +5,7 @@ from django.db import models
 from django.test import TestCase
 
 from imagekit import processors
-from imagekit.models import ImageModel
+from imagekit.models import ImageModel, _storage
 from imagekit.specs import ImageSpec
 from imagekit.lib import Image
 
@@ -23,6 +23,10 @@ class ResizeToFit(processors.Resize):
 class ResizeCropped(ResizeToFit):
     crop = ('center', 'center')
 
+class SmartCropped(processors.SmartCrop):
+    width = 100
+    height = 100
+
 class TestResizeToWidth(ImageSpec):
     access_as = 'to_width'
     processors = [ResizeToWidth]
@@ -35,12 +39,17 @@ class TestResizeCropped(ImageSpec):
     access_as = 'cropped'
     processors = [ResizeCropped]
 
+class TestSmartCropped(ImageSpec):
+    access_as = 'smartcropped'
+    processors = [ResizeToHeight, SmartCropped]
+
 class TestPhoto(ImageModel):
     """ Minimal ImageModel class for testing """
-    image = models.ImageField(upload_to='images')
-
+    image = models.ImageField(upload_to='testimages')
+    
     class IKOptions:
         spec_module = 'imagekit.tests'
+        storage = _storage
 
 
 class IKTest(TestCase):
@@ -51,9 +60,42 @@ class IKTest(TestCase):
         tmp.seek(0)
         return tmp
     
+    def get_image(self):
+        import urllib2, StringIO, random
+        urls = [
+            'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Orange_2to3_010.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/2805163544_1321ee6d30_o.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Silver_2to3_010.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/Josef_Muller_Brockmann_Detail_Lights_2to3_000.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/P4141870.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/After_The_Quake_Detail_Text_2to3_000.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/P4141477.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/P4141469.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/IMG_1310.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/P4141472.jpg',
+        ]
+        
+        random.seed()
+        imgurl = random.choice(urls)
+        
+        print "Loading image: %s" % imgurl
+        imgstr = urllib2.urlopen(imgurl).read()
+        img = Image.open(StringIO.StringIO(imgstr)).crop((0, 0, 800, 600))
+        tmp = tempfile.TemporaryFile()
+        img.save(tmp, 'JPEG')
+        tmp.seek(0)
+        return tmp
+    
     def setUp(self):
+        # dispatch all signals synchronously
+        settings.IK_RUNMODE = 0
+        
+        # image instance for testing
         self.p = TestPhoto()
-        img = self.generate_image()
+        try:
+            img = self.get_image()
+        except:
+            img = self.generate_image()
         self.p.save_image('test.jpeg', ContentFile(img.read()))
         self.p.save()
         img.close()
@@ -85,13 +127,18 @@ class IKTest(TestCase):
         self.assertEqual(self.p.cropped.width, 100)
         self.assertEqual(self.p.cropped.height, 100)
     
+    def test_smartcrop(self):
+        self.assertEqual(self.p.smartcropped.width, 100)
+        self.assertEqual(self.p.smartcropped.height, 100)
+    
     def test_url(self):
-        tup = (settings.MEDIA_URL, self.p._ik.cache_dir,
-               'images/test_to_width.jpeg')
-        self.assertEqual(self.p.to_width.url, "%s%s/%s" % tup)
+        self.assertEqual(
+            self.p.to_width.url,
+            _storage.url(os.path.join(self.p._ik.cache_dir, self.p.image.name.replace('.jpeg', '_to_width.jpeg'))),
+        )
     
     def tearDown(self):
         # make sure image file is deleted
-        path = self.p.image.path
-        self.p.delete()
-        self.failIf(os.path.isfile(path))
+        pth = self.p.image.name
+        self.p.delete(clear_cache=True)
+        self.failIf(_storage.exists(pth))

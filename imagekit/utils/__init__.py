@@ -39,6 +39,7 @@ def img_to_fobj(img, format, **kwargs):
     given a PIL instance and an output format type,
     return a temporary disk filehandle for use in spec accessor(s).
     Integrates Photoshop CMYK fix from https://github.com/jdriscoll/django-imagekit/commit/25f628de9311a66780961e74fa03e1696ee3bf79
+    
     """
     tmp = tempfile.TemporaryFile()
     #img.save(tmp, format, **kwargs)
@@ -46,6 +47,23 @@ def img_to_fobj(img, format, **kwargs):
     tmp.seek(0)
     return tmp
 
+def entropy(im):
+    """
+    Calculate the entropy of an images' histogram. Used for "smart cropping" in easy-thumbnails;
+    see: https://raw.github.com/SmileyChris/easy-thumbnails/master/easy_thumbnails/utils.py
+    
+    """
+    from PIL import Image
+    
+    if not isinstance(im, Image.Image):
+        # Can only deal with PIL images. Fall back to a constant entropy.
+        return 0
+    
+    hist = im.histogram()
+    hist_size = float(sum(hist))
+    hist = [h / hist_size for h in hist]
+    
+    return -sum([p * math.log(p, 2) for p in hist if p != 0])
 
 class ADict(dict):
     """
