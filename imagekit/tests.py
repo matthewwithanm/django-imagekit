@@ -164,7 +164,6 @@ class IKTest(TestCase):
         pm.save_image('mtest.jpg', ContentFile(img.read()))
         img.close()
         pm.save()
-        pm.save()
         pm.delete(clear_cache=True)
     
     def test_setup(self):
