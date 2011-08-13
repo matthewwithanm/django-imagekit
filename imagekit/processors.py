@@ -82,27 +82,27 @@ class ICCProofTransform(ImageProcessor):
     transformers = {}
     
     @classmethod
-    def makeTXID(cls, srcID, proof=None):
+    def makeTXID(cls, srcID, destination, proof=None):
         if not proof:
             return "%s>%s" % (
                 srcID,
-                cls.destination.getIDString(),
+                destination.getIDString(),
             )
             
         return "%s:%s>%s" % (
             srcID,
             proof.getIDString(),
-            cls.destination.getIDString(),
+            destination.getIDString(),
         )
     
     @classmethod
-    def process(cls, img, fmt, obj, proofing=True, TXID=None):
+    def process(cls, img, fmt, obj, source=None, destination=None, proofing=True, TXID=None):
         if img.mode == "L":
             img = img.convert(cls.mode)
             
         source = (
+            source is not None and source or \
             getattr(cls, 'source', None) or \
-            #getattr(img, 'icc', None) or \
             getattr(obj, 'icc', None) or \
             cls._srgb
         )
@@ -111,8 +111,9 @@ class ICCProofTransform(ImageProcessor):
             raise AttributeError("WTF: no source profile found (including default sRGB!)")
         
         # freak out if running w/o destination profiles
-        if not cls.destination:
-            raise AttributeError("WTF: destination transform ICC profile '%s' doesn't exist" % cls.destination)
+        destination = destination is not None and destination or cls.destination
+        if not destination:
+            raise AttributeError("WTF: destination transform ICC profile '%s' doesn't exist" % destination)
         
         if proofing and not cls.proof:
             logg.warning("ICCProofTransform.process() was invoked explicitly but without a specified proofing profile.")
@@ -123,14 +124,14 @@ class ICCProofTransform(ImageProcessor):
                 raise AttributeError("WTF: the TXID %s wasn't found in ICCProofTransform.transformers[].")
         
         else:
-            TXID = cls.makeTXID(source.getIDString(), cls.proof)
+            TXID = cls.makeTXID(source.getIDString(), destination, cls.proof)
         
         if TXID not in cls.transformers:
             
             if cls.proof:
                 cls.transformers[TXID] = ImageCms.ImageCmsTransform(
-                    cls.source.lcmsinstance,
-                    cls.destination.lcmsinstance,
+                    source.lcmsinstance,
+                    destination.lcmsinstance,
                     img.mode,
                     cls.mode,
                     cls.intent,
@@ -140,8 +141,8 @@ class ICCProofTransform(ImageProcessor):
             
             else: # fall back to vanilla non-proof transform
                 cls.transformers[TXID] = ImageCms.ImageCmsTransform(
-                    cls.source.lcmsinstance,
-                    cls.destination.lcmsinstance,
+                    source.lcmsinstance,
+                    destination.lcmsinstance,
                     img.mode,
                     cls.mode,
                     cls.intent,
@@ -159,12 +160,16 @@ class ICCTransform(ImageProcessor):
     this may be (losslessly) overridden by an applied profile at conversion time.
     RGB images sans ICC data will be treated as sRGB IEC61966-2.1 by default.
     Relative colorimetric is the default intent.
+    
     """
+    source = None
+    destination = None
+    
     # ICCTransform.process() hands everything off to ICCProofTransform.process();
     # all it needs to do is set the kwarg proofing=False.
     @classmethod
     def process(cls, img, fmt, obj, TXID=None):
-        return ICCProofTransform.process(cls, img, fmt, obj, proofing=False, TXID=TXID)
+        return ICCProofTransform.process(img, fmt, obj, source=cls.source, destination=cls.destination, proofing=False, TXID=TXID)
 
 
 class Format(ImageProcessor):

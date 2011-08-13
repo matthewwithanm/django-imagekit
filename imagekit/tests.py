@@ -7,7 +7,8 @@ from django.test import TestCase
 from imagekit import processors
 from imagekit.models import ImageModel, _storage
 from imagekit.specs import ImageSpec
-from imagekit.lib import Image
+from imagekit.lib import *
+from imagekit.signals import signalqueue
 
 
 class ResizeToWidth(processors.Resize):
@@ -27,6 +28,16 @@ class SmartCropped(processors.SmartCrop):
     width = 100
     height = 100
 
+class TransformICC(processors.ICCTransform):
+    source = ICCProfile(os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc"))
+    destination = ICCProfile(os.path.join(IK_ROOT, "icc/adobeRGB-1998.icc"))
+
+class ProofICC(processors.ICCProofTransform):
+    source = ICCProfile(os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc"))
+    destination = ICCProfile(os.path.join(IK_ROOT, "icc/adobeRGB-1998.icc"))
+    proof = ICCProfile(os.path.join(IK_ROOT, "icc/CMYK-USWebCoatedSWOP-2.icc"))
+
+
 class TestResizeToWidth(ImageSpec):
     access_as = 'to_width'
     processors = [ResizeToWidth]
@@ -42,6 +53,17 @@ class TestResizeCropped(ImageSpec):
 class TestSmartCropped(ImageSpec):
     access_as = 'smartcropped'
     processors = [ResizeToHeight, SmartCropped]
+
+class TestICCTransform(ImageSpec):
+    #pre_cache = True
+    access_as = 'icctrans'
+    processors = [TransformICC]
+
+class TestICCProof(ImageSpec):
+    #pre_cache = True
+    access_as = 'iccproof'
+    processors = [ProofICC]
+
 
 class TestPhoto(ImageModel):
     """ Minimal ImageModel class for testing """
@@ -89,6 +111,7 @@ class IKTest(TestCase):
     def setUp(self):
         # dispatch all signals synchronously
         settings.IK_RUNMODE = 0
+        signalqueue.runmode = 0
         
         # image instance for testing
         self.p = TestPhoto()
@@ -110,6 +133,12 @@ class IKTest(TestCase):
         self.p.save_image('test.jpeg', ContentFile(img.read()))
         self.failIf(os.path.isfile(path))
         img.close()
+    
+    def test_icc_transform(self):
+        self.assertTrue(self.p.icctrans.url is not None)
+    
+    def test_icc_proof_transform(self):
+        self.assertTrue(self.p.iccproof.url is not None)
     
     def test_setup(self):
         self.assertEqual(self.p.image.width, 800)
