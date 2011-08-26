@@ -68,7 +68,10 @@ class Accessor(object):
 
     def _delete(self):
         if self._obj._imgfield:
-            self._obj._storage.delete(self.name)
+            try:
+                self._obj._storage.delete(self.name)
+            except (NotImplementedError, IOError):
+                return
 
     def _exists(self):
         if self._obj._imgfield:
