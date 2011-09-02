@@ -78,8 +78,8 @@ class ICCProofTransform(ImageProcessor):
     this may be (losslessly) overridden by an applied profile at conversion time.
     RGB images sans ICC data will be treated as sRGB IEC61966-2.1 by default.
     Relative colorimetric is the default intent.
+    
     """
-    _srgb = ICCProfile(os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc"))
     source = None
     destination = None
     proof = None
@@ -113,7 +113,7 @@ class ICCProofTransform(ImageProcessor):
             source is not None and source or \
             getattr(cls, 'source', None) or \
             getattr(obj, 'icc', None) or \
-            cls._srgb
+            IK_sRGB
         )
         
         if not source.getIDString():
@@ -425,7 +425,7 @@ class SmartCrop(ImageProcessor):
 class Transpose(ImageProcessor):
     """
     Rotates or flips the image.
-
+    
     Method should be one of the following strings:
         - FLIP_LEFT RIGHT
         - FLIP_TOP_BOTTOM
@@ -433,10 +433,10 @@ class Transpose(ImageProcessor):
         - ROTATE_270
         - ROTATE_180
         - auto
-
+    
     If method is set to 'auto', the processor will attempt to rotate the image
     according to any EXIF Orientation data it can find.
-
+    
     """
     EXIF_ORIENTATION_STEPS = {
         1: [],
@@ -448,9 +448,9 @@ class Transpose(ImageProcessor):
         7: ['ROTATE_90', 'FLIP_LEFT_RIGHT'],
         8: ['ROTATE_90'],
     }
-
+    
     method = 'auto'
-
+    
     @classmethod
     def process(cls, img, fmt, obj):
         if cls.method == 'auto':
