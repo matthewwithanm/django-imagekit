@@ -42,9 +42,15 @@ def img_to_fobj(img, format, **kwargs):
     
     """
     tmp = tempfile.TemporaryFile()
-    #img.save(tmp, format, **kwargs)
-    img.convert('RGB').save(tmp, format, **kwargs)
-    tmp.seek(0)
+    
+    # preserve transparency if the image is in Pallette (P) mode
+    # from https://github.com/ryanbagwell/django-imagekit/blob/db95e63a632bc0bd62f1842bda8ef30e0e6df6ff/imagekit/utils.py
+    if img.mode == 'P':
+        kwargs['transparency'] = 255
+    else:
+        img.convert('RGB')
+    
+    img.save(tmp, format, **kwargs)tmp.seek(0)
     return tmp
 
 def entropy(im):
