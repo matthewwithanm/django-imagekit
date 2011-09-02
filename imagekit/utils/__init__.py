@@ -50,7 +50,8 @@ def img_to_fobj(img, format, **kwargs):
     else:
         img.convert('RGB')
     
-    img.save(tmp, format, **kwargs)tmp.seek(0)
+    img.save(tmp, format, **kwargs)
+    tmp.seek(0)
     return tmp
 
 def entropy(im):

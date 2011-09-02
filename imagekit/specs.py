@@ -168,9 +168,14 @@ class FileAccessor(AccessorBase):
     
     def _delete(self):
         if self._exists():
-            #if not self.name == self._obj._imgfield.name:
             logg.info("*** deleting: %s" % self.name)
-            self._obj._storage.delete(self.name)
+            
+            # error checks from https://github.com/jdriscoll/django-imagekit/commit/3e3302c7f794d0f417557d6ce912ebe9f6edb34f
+            try:
+                self._obj._storage.delete(self.name)
+            except (NotImplementedError, IOError), err:
+                logg.info("--- exception thrown when deleting: %s" % err)
+                return
     
     def _exists(self):
         if self._obj._imgfield:
