@@ -79,7 +79,7 @@ Copyright (c) 2011 OST, LLC. All rights reserved.
 
 """
 
-import hashlib, uuid, PIL
+import hashlib
 import django.dispatch
 from django.conf import settings
 from django.db.models.loading import cache

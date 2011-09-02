@@ -5,21 +5,18 @@ poolqueue.py
 
 Created by FI$H 2000 on 2011-07-05.
 Copyright (c) 2011 OST, LLC. All rights reserved.
-"""
 
+"""
 from django.core.management import setup_environ
 import settings
 setup_environ(settings)
 
-from django.conf import settings
-from tornado.ioloop import IOLoop, PeriodicCallback
-
+#from imagekit.utils import logg
+#import logging
+from tornado.ioloop import PeriodicCallback
 from imagekit.signals import signalqueue as ik_signal_queue
 from imagekit.signals import KewGardens
-from imagekit.utils import logg
-from imagekit.utils.json import json
 import imagekit
-import logging
 
 #logg = logging.getLogger(__name__)
 

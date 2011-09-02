@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys, os
-from django.conf import settings
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from optparse import make_option
-from imagekit.models import ICCModel, _storage
+from imagekit.models import ICCModel
 from imagekit.etc.profileinfo import profileinfo
 
 from . import echo_banner

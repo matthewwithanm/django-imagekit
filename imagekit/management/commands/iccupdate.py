@@ -1,16 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys, os, hashlib
-from pprint import pprint
 from django.db.models import Q
 from django.db.models.loading import cache
 from django.core.files import File
 from django.core.files.base import ContentFile
 from django.core.exceptions import ImproperlyConfigured, ObjectDoesNotExist
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from optparse import make_option
 from imagekit.models import ImageWithMetadata, ICCModel
-from imagekit.specs import ImageSpec
 from imagekit.modelfields import *
 from imagekit.utils import icchash
 
@@ -49,7 +46,7 @@ def update_icc_cache(apps, options):
             
             try:
                 cache.load_app(app_parts[0])
-                app = cache.get_app(app_parts[0])
+                #app = cache.get_app(app_parts[0])
             except ImproperlyConfigured:
                 print "WTF: no app with label %s found" % app_parts[0]
             else:
@@ -65,6 +62,7 @@ def update_icc_cache(apps, options):
                 
                 for modl in modls:
                     
+                    # TODO: buckets!
                     buckets = dict()
                     profiles = dict()
                     

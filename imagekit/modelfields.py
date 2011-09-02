@@ -1,15 +1,14 @@
-import base64, hashlib, numpy, uuid, cStringIO
+import base64, hashlib, numpy, uuid
 from django.conf import settings
 from django.db import models
 from django.db.models import fields
 from django.db.models.fields import files
 from django.db.models import signals
-from django.utils.translation import ugettext_lazy, ugettext as _
+from django.utils.translation import ugettext_lazy
 from django.core.files import File
 from django.core.files.storage import FileSystemStorage
-from django.core.exceptions import MultipleObjectsReturned
 from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.contenttypes.models import ContentType
+#from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from ICCProfile import ICCProfile
 from imagekit import colors
@@ -187,7 +186,6 @@ class ICCMetaField(ICCDataField):
         instance = kwargs.get('instance')
         
         try:
-            image = instance.image
             pil_reference = self.pil_reference
             
             if callable(pil_reference):
@@ -286,7 +284,8 @@ class EXIFMetaField(models.TextField):
         instance = kwargs.get('instance')
         
         # use the PIL accessor to test whether or not we have any EXIF data
-        if hasattr(instance.pilimage, "_getexif"):
+        p = instance.pilimage
+        if hasattr(p, "_getexif"):
             if not getattr(instance, self.name, None):
                 signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
 
@@ -682,10 +681,10 @@ class Histogram(fields.CharField):
                 related_histogram.save()
             
             if not related_histogram:
-                logg.info("--X DID NOT SAVE A HISTOGRAM OF ANY TYPE (much less '%s') -- RelatedHistogramClass came up NoneType" % histogram_type.upper())
+                logg.info("--X DID NOT SAVE A HISTOGRAM OF ANY TYPE -- RelatedHistogramClass came up NoneType")
         
         else:
-            logg.info("--X an ImageWithMetadata subclass didn't have a property for histogram (type '%s') for some reason, so we did no save." % histogram_type.upper())
+            logg.info("--X an ImageWithMetadata subclass didn't have a property for any sort of histogram for some reason, so we did no save.")
     
     def south_field_triple(self):
         """
@@ -755,7 +754,6 @@ class ImageHashField(fields.CharField):
         instance = kwargs.get('instance')
         
         try:
-            image = instance.image
             pil_reference = self.pil_reference
             
             if callable(pil_reference):
@@ -923,23 +921,34 @@ class RGBColorField(models.CharField):
         instance = kwargs.get('instance')
         extractor = self.extractor
         
-        try:
-            if callable(extractor):
+        if callable(extractor):
+            try:
                 setattr(instance, self.name, extractor(instance))
-            else:
-                # call the named method on the ImageModel instance
+            
+            except AttributeError, err:
+                logg.warning("""*** Couldn't refresh color '%s' (AttributeError was thrown: %s)""" % (self.name, err))
+                return
+            except TypeError, err:
+                logg.warning("""*** Couldn't refresh color '%s' (TypeError was thrown: %s)""" % (self.name, err))
+                return
+            except IOError, err:
+                logg.warning("""*** Couldn't refresh color '%s' (IOError was thrown: %s)""" % (self.name, err))
+                return
+        else:
+            # call the named method on the ImageModel instance
+            try:
                 color_hex_value = getattr(instance, getattr(self, 'extractor', instance.dominanthex))()
                 setattr(instance, self.name, color_hex_value)
-        
-        except AttributeError, err:
-            logg.warning("*** Couldn't refresh color %s (AttributeError was thrown: %s)" % (err, self.name))
-            return
-        except TypeError, err:
-            logg.warning("*** Couldn't refresh color %s (TypeError was thrown: %s)" % (err, self.name))
-            return
-        except IOError, err:
-            logg.warning("*** Couldn't refresh color %s (IOError was thrown: %s)" % (err, self.name))
-            return
+            
+            except AttributeError, err:
+                logg.warning("""*** Couldn't refresh color '%s' (AttributeError was thrown: %s)""" % (self.name, err))
+                return
+            except TypeError, err:
+                logg.warning("""*** Couldn't refresh color '%s' (TypeError was thrown: %s)""" % (self.name, err))
+                return
+            except IOError, err:
+                logg.warning("""*** Couldn't refresh color '%s' (IOError was thrown: %s)""" % (self.name, err))
+                return
         
         # save if sent asynchronously
         dequeue_runmode = kwargs.get('dequeue_runmode', None)

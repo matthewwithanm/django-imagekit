@@ -1,6 +1,5 @@
 """ Default ImageKit configuration """
 
-from imagekit.specs import ImageSpec
 from imagekit import processors
 
 class ResizeThumbnail(processors.Resize):
@@ -20,8 +19,14 @@ class PNGFormat(processors.Format):
     format = 'PNG'
     extension = 'png'
 
+
+
 """
+
+from imagekit.specs import ImageSpec
+
 class DjangoAdminThumbnail(ImageSpec):
     access_as = 'admin_thumbnail'
     processors = [ResizeThumbnail, EnhanceSmall, SampleReflection, PNGFormat]
+
 """

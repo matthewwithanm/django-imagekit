@@ -7,7 +7,9 @@ Party like it's 1931.
 
 Created by FI$H 2000 on 2011-04-18.
 Copyright (c) 2011 OST, LLC. All rights reserved.
+
 """
+
 
 coords = """
 360, 0.175560, 0.005294, 0.819146
@@ -107,7 +109,7 @@ coords = """
 830, 0.734690, 0.265310, 0.000000
 """
 from colormath.color_objects import XYZColor
-import StringIO, numpy, csv, sys, os
+import StringIO, numpy, csv, sys
 
 
 cie_xyz = []
@@ -135,7 +137,7 @@ if __name__ == '__main__':
     print "YO DOGG:"
     print json.dumps(cieXYZ.tolist())
     print ""
-
+    
     #print "I HEARD YOU LIKE HISTORICALLY SIGNIFICIANT ABSTRACT COLORSPACE DEFINITIONS:"
     #print cieYxy
     print ""
@@ -143,7 +145,7 @@ if __name__ == '__main__':
     print "SO WE PUT SOME RGB IN YOUR XYZ SO YOU CAN OBSERVE WHILE YOU OBSERVE."
     print json.dumps(cieYxy2.tolist())
     print ""
-
+    
     sys.exit(0)
 
 

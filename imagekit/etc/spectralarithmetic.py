@@ -552,7 +552,7 @@ def XYZ2Lab(X, Y, Z, Xr=None, Yr=None, Zr=None):
 				Zr = 82.521
 			Yr = 100.0
 		else:
-			xyY = CIEDCCT2xyY(Xr, true)
+			xyY = CIEDCCT2xyY(Xr, True)
 			XYZ = xyY2XYZ(xyY[0], xyY[1], xyY[2])
 			Xr = XYZ[0]
 			Yr = XYZ[1]

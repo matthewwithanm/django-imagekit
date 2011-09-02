@@ -339,7 +339,7 @@ class micromanage(object):
         # delegate all methods. (currently we delegate everything, ignoring status
         # as it is set per the @delegate decorator... that may change)
         if issubclass(qs, models.query.QuerySet):
-            qs_delegates = dict()
+            #qs_delegates = dict()
             qs_funcs = dict(filter(lambda attr: type(attr[1]) in comsumable_types, qs.__dict__.items()))
             for f_name, f in qs_funcs.items():
                 setattr(newmgr, f_name, f)

@@ -22,6 +22,13 @@ except ImportError:
         raise ImportError('ImageKit was unable to import the Python Imaging Library. Please confirm it`s installed and available on your current Python path.')
 
 
+# Attempt to load OpenCV (optional)
+try:
+    import cv, cv2
+except ImportError:
+    cv = None
+    cv2 = None
+
 """
 it ain't where you from,
 it's where you at.
@@ -32,3 +39,4 @@ IK_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 from imagekit.ICCProfile import ICCProfile
 IK_sRGB = ICCProfile(os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc"))
+

@@ -1,11 +1,9 @@
 
 import os, numpy
-from django.conf import settings
 from django.core import urlresolvers
 from django.contrib import admin
 
 from imagekit.lib import IK_ROOT
-from imagekit.utils.memoize import memoize
 from imagekit.utils.ui import icon, arrow
 from imagekit.utils import json, oldcolors, seriescolors
 from imagekit.utils import ADict, AODict, xy, static
@@ -344,7 +342,7 @@ class ICCModelAdmin(admin.ModelAdmin):
     '''
     def save_form(self, request, form, change):
         maybe = super(ICCModelAdmin, self).save_form(request, form, change)
-        theothers = ICCModel.objects.filter(icchash__iexact=maybe.icchash)
+        theothers = imagekit.models.ICCModel.objects.filter(icchash__iexact=maybe.icchash)
         
         if theothers.count():
             self.message_user(request, "YO DOGG: that ICC file's signature was already in the database.")

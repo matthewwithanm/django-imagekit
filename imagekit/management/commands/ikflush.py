@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
-import sys, os
-from pprint import pprint
-from django.conf import settings
 from django.db.models import Q
 from django.db.models.loading import cache
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from django.core.exceptions import ImproperlyConfigured
 from optparse import make_option
 
@@ -55,9 +52,7 @@ class Command(BaseCommand):
         
         echo_banner()
         
-        from imagekit.models import ImageModel
-        from imagekit.specs import ImageSpec
-        from imagekit.signals import signalqueue, KewGardens
+        from imagekit.signals import signalqueue
         import imagekit
         
         runmode = options.get('runmode').upper()
@@ -76,7 +71,6 @@ def flush_image_cache(apps, signalqueue, options):
     
     """
     from imagekit.models import ImageModel
-    from imagekit.specs import ImageSpec
     from imagekit.signals import KewGardens
     import imagekit
     

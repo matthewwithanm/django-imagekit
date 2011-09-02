@@ -5,9 +5,8 @@ neuquant.py
 
 Created by FI$H 2000 on 2011-06-14.
 Copyright (c) 2011 OST, LLC.
-"""
 
-import os
+"""
 from django.core.management import setup_environ
 import settings
 setup_environ(settings)
@@ -15,11 +14,9 @@ setup_environ(settings)
 from imagekit.utils import logg
 
 try:
-    import PIL
-    from PIL import Image, ImageChops
-    from PIL.GifImagePlugin import getheader, getdata
+    from PIL import Image
 except ImportError:
-    PIL = None
+    import Image
 
 try:
     import numpy as np
@@ -282,15 +279,16 @@ class NeuQuant:
             step = NeuQuant.PRIME4
         
         i = 0
-        printed_string = ''
+        #printed_string = ''
         
         while i < samplepixels:
             
+            '''
             if i % 100 == 99:
                 tmp = '\b' * len(printed_string)
                 printed_string = str((i + 1) * 100 / samplepixels) + "%\n"
-                
-                #print tmp + printed_string,
+                print tmp + printed_string,
+            '''
             
             p = self.pixels[pos]
             r = (p >> 16) & 0xff

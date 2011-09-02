@@ -1,5 +1,15 @@
-""" ImageKit utility functions """
-import tempfile, os, hashlib
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+__init__.py
+
+ImageKit utility functions.
+
+Created by FI$H 2000 on 2011-09-01.
+Copyright (c) 2011 Objects In Space And Time, LLC. All rights reserved.
+
+"""
+import tempfile, os, hashlib, math
 from django.conf import settings
 from imagekit.utils.ordereddict import OrderedDict
 from imagekit.utils.json import json
@@ -36,7 +46,7 @@ except ImportError:
 
 def img_to_fobj(img, format, **kwargs):
     """
-    given a PIL instance and an output format type,
+    Given a PIL instance and an output format type,
     return a temporary disk filehandle for use in spec accessor(s).
     Integrates Photoshop CMYK fix from https://github.com/jdriscoll/django-imagekit/commit/25f628de9311a66780961e74fa03e1696ee3bf79
     

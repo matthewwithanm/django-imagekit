@@ -12,7 +12,6 @@ Copyright (c) 2011 OST, LLC. All rights reserved.
 
 from django.utils import importlib
 from django.core.exceptions import ImproperlyConfigured
-from imagekit.utils import AODict
 
 class QueueBase(object):
     

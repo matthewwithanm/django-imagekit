@@ -12,7 +12,7 @@ from imagekit import processors
 from imagekit.lib import *
 from imagekit.signals import signalqueue
 from imagekit.utils import img_to_fobj, logg
-from imagekit.utils.memoize import memoize
+#from imagekit.utils.memoize import memoize
 from django.core.files.base import ContentFile
 
 matrixlike = (numpy.matrixlib.matrix, numpy.ndarray)
@@ -69,7 +69,7 @@ class MatrixAccessor(AccessorBase):
     #@memoize
     def _get_matrixdata(self):
         mat = self._img
-        format = getattr(mat, "format", None) or 'array'
+        #format = getattr(mat, "format", None) or 'array'
         if not isinstance(mat, matrixlike):
             mat = numpy.array(mat)
         if self.spec.dtype:
@@ -103,7 +103,7 @@ class MatrixAccessor(AccessorBase):
     def _exists(self):
         if self._obj._imgfield:
             if self.name:
-                return hasattr(self, _data)
+                return hasattr(self, "_data")
     
     @property
     def name(self):

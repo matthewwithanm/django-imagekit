@@ -15,32 +15,29 @@ sys.path.append('/Users/fish/Dropbox/ost2')
 sys.path.append('/Users/fish/Dropbox/ost2/ost2')
 sys.path.append('/Users/fish/Dropbox/ost2/ost2/lib')
 
-import os, hashlib, curses
-#import daemon, daemon.pidlockfile
+import hashlib, curses
 
 from django.core.management import setup_environ
 import settings
 setup_environ(settings)
 
 from django.conf import settings
-from django.template import Context, RequestContext, loader
-from django.template.loader import render_to_string
-
+from django.template import Context, loader
 import tornado.options
 import tornado.web
 import tornado.websocket
 from tornado.httpserver import HTTPServer
-from tornado.ioloop import IOLoop, PeriodicCallback
-from tornado.options import define, options, _LogFormatter
+from tornado.ioloop import IOLoop
+from tornado.options import define, _LogFormatter
 
-from imagekit.signals import signalqueue as ik_signal_queue
-from imagekit.signals import KewGardens
+#from imagekit.signals import signalqueue as ik_signal_queue
+#from imagekit.signals import KewGardens
 from imagekit.utils import logg
 from imagekit.utils.json import json
 from imagekit.queue import queues
 from imagekit.queue.poolqueue import PoolQueue
 import logging
-import imagekit
+#import imagekit
 
 define('port', default=settings.IK_QUEUE_SERVER_PORT, help='Queue server HTTP port', type=int)
 

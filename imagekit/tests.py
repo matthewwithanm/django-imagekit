@@ -1,3 +1,19 @@
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+tests.py
+
+Tests for django-imagekit.
+
+Created by FI$H 2000 on 2011-09-01.
+Copyright (c) 2011 Objects In Space And Time, LLC. All rights reserved.
+
+"""
+if __name__ == '__main__':
+    from django.core.management import setup_environ
+    import settings
+    setup_environ(settings)
+
 import os, tempfile, unittest
 from django.conf import settings
 from django.core.files.base import ContentFile
@@ -89,8 +105,43 @@ class TestImageM(ImageWithMetadata):
     image = models.ImageField(upload_to='testmimages', storage=_storage)
 
 
+def get_image():
+    import urllib2, StringIO, random
+    urls = [
+        'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Orange_2to3_010.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/2805163544_1321ee6d30_o.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Silver_2to3_010.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/Josef_Muller_Brockmann_Detail_Lights_2to3_000.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/P4141870.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/After_The_Quake_Detail_Text_2to3_000.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/P4141477.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/P4141469.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/IMG_1310.jpg',
+        'http://ost2.s3.amazonaws.com/images/_uploads/P4141472.jpg',
+    ]
+    
+    random.seed()
+    imgurl = random.choice(urls)
+    
+    if get_image.imgstr is None:
+        print "Loading image: %s" % imgurl
+        get_image.imgstr = urllib2.urlopen(imgurl).read()
+    
+    img = Image.open(StringIO.StringIO(get_image.imgstr)).crop((0, 0, 800, 600))
+    tmp = tempfile.TemporaryFile()
+    img.save(tmp, 'JPEG')
+    tmp.seek(0)
+    #img.show()
+    return tmp
+
+get_image.imgstr = None
+
 class IKTest(TestCase):
-    """ Base TestCase class """
+    """
+    Base TestCase class.
+    
+    """
+    
     def generate_image(self):
         tmp = tempfile.TemporaryFile()
         Image.new('RGB', (800, 600)).save(tmp, 'JPEG')
@@ -98,6 +149,9 @@ class IKTest(TestCase):
         return tmp
     
     def get_image(self):
+        return get_image()
+    
+    def _get_image(self):
         import urllib2, StringIO, random
         urls = [
             'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Orange_2to3_010.jpg',
@@ -115,12 +169,15 @@ class IKTest(TestCase):
         random.seed()
         imgurl = random.choice(urls)
         
-        print "Loading image: %s" % imgurl
-        imgstr = urllib2.urlopen(imgurl).read()
+        if imgstr is None:
+            print "Loading image: %s" % imgurl
+            imgstr = urllib2.urlopen(imgurl).read()
+        
         img = Image.open(StringIO.StringIO(imgstr)).crop((0, 0, 800, 600))
         tmp = tempfile.TemporaryFile()
         img.save(tmp, 'JPEG')
         tmp.seek(0)
+        #img.show()
         return tmp
     
     def setUp(self):
@@ -132,7 +189,8 @@ class IKTest(TestCase):
         self.p = TestImage()
         try:
             img = self.get_image()
-        except:
+        except (IOError, AttributeError, ValueError), err:
+            print "~~~ Exception thrown DURING SETUP by IKTest.get_image(): %s" % err
             img = self.generate_image()
         self.p.save_image('test.jpeg', ContentFile(img.read()))
         self.p.save()
@@ -140,13 +198,16 @@ class IKTest(TestCase):
     
     def test_save_image(self):
         img = self.generate_image()
+        
         path = self.p.image.name
         self.p.save_image('test2.jpeg', ContentFile(img.read()))
         self.failIf(self.p._ik.storage.exists(path))
+        
         path = self.p.image.name
         img.seek(0)
         self.p.save_image('test.jpeg', ContentFile(img.read()))
         self.failIf(self.p._ik.storage.exists(path))
+        
         img.close()
     
     def test_icc_transform(self):
@@ -159,12 +220,23 @@ class IKTest(TestCase):
         pm = TestImageM()
         try:
             img = self.get_image()
-        except:
+        except (IOError, AttributeError, ValueError), err:
+            print "&&& Exception thrown WHILE TESTING IMAGEWITHMETADATA by IKTest.get_image(): %s" % err
             img = self.generate_image()
+        
         pm.save_image('mtest.jpg', ContentFile(img.read()))
+        #pm.pilimage.show()
         img.close()
+        
+        self.assertEqual(pm.image.width, 800)
+        self.assertEqual(pm.image.height, 600)
+        
+        pth = pm.image.name
         pm.save()
         pm.delete(clear_cache=True)
+        
+        self.failIf(pm._ik.storage.exists(pth))
+        
     
     def test_setup(self):
         self.assertEqual(self.p.image.width, 800)
@@ -197,3 +269,11 @@ class IKTest(TestCase):
         pth = self.p.image.name
         self.p.delete(clear_cache=True)
         self.failIf(_storage.exists(pth))
+
+if __name__ == '__main__':
+    from django.core.management import setup_environ
+    import settings
+    setup_environ(settings)
+    from django.conf import settings
+    
+    unittest.main()

@@ -1,18 +1,16 @@
-import os, urlparse, numpy, random, hashlib, math
+import os, random, hashlib, math
 import cStringIO as StringIO
 from datetime import datetime
 from django.conf import settings
 from django.core.files import File
 from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage
-from django.core.exceptions import MultipleObjectsReturned
 from django.db import models
 from django.db.models import Q
-from django.db.models import signals
 from django.db.models.base import ModelBase
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
-from django.utils.html import conditional_escape as escape
+#from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 from colorsys import rgb_to_hls, hls_to_rgb
 
@@ -23,10 +21,11 @@ from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.modelfields import VALID_CHANNELS, to_matrix
 from imagekit.ICCProfile import ICCProfile
-from imagekit.utils import logg, img_to_fobj, hexstr
-from imagekit.utils import EXIF, ADict, itersubclasses
+from imagekit.utils import logg, hexstr
+from imagekit.utils import itersubclasses
 from imagekit.utils import icchash as icchasher
 from imagekit.utils.delegate import DelegateManager, delegate
+from imagekit.utils.memoize import memoize
 from imagekit.modelfields import ICCField, ICCHashField, RGBColorField
 from imagekit.modelfields import ICCDataField, ICCMetaField, EXIFMetaField
 from imagekit.modelfields import HistogramChannelField, Histogram
@@ -125,11 +124,39 @@ class ImageModel(models.Model):
         return getattr(self._ik, 'storage')
     
     @property
+    @memoize
     def pilimage(self):
         if self.pk:
             if self._imgfield.name:
                 return Image.open(self._storage.open(self._imgfield.name))
         return None
+    
+    @memoize
+    def _cvimage_via_pil(self):
+        if self.pk:
+            if cv is not None:
+                pilimage = self.pilimage
+                if pilimage is not None:
+                    cvim = cv.CreateImageHeader(pilimage.size, cv.IPL_DEPTH_8U, 1)
+                    cv.SetData(cvim, pilimage.tostring())
+                    return cvim
+        return None
+    
+    @memoize
+    def _cvimage_via_storage(self):
+        if self.pk:
+            if cv is not None:
+                if self._imgfield.name:
+                    return cv.LoadImage(self._storage.open(self._imgfield.path))
+        return None
+    
+    @property
+    @memoize
+    def cvimage(self):
+        try:
+            return self._cvimage_via_storage()
+        except NotImplementedError:
+            return self._cvimage_via_pil()
     
     def _dominant(self):
         return self.pilimage.quantize(1).convert('RGB').getpixel((0, 0))
@@ -193,7 +220,7 @@ class ImageModel(models.Model):
             self._imgfield.delete(save=False)
         
         content = ContentFile(data)
-        self._imgfield.save(name, content, save)
+        self._imgfield.save(name, content, save=save)
     
     def save(self, *args, **kwargs):
         is_new_object = self._get_pk_val() is None
@@ -379,12 +406,12 @@ class Proof(ImageModel):
         elif isinstance(source, ICCProfile):
             try:
                 matching_icc = ICCModel.objects.get(icchash__iexact=icchasher(source))
-            except ObjectDoesNotExist:
+            except ICCModel.DoesNotExist:
                 # create a new ICCModel
                 new_icc = ICCModel()
-                new_icc_file = ContentFile(obj.icc.data)
+                new_icc_file = ContentFile(source.data)
                 new_icc.iccfile.save(
-                    new_icc._storage.get_valid_name("%s.icc" % obj.icc.getDescription()),
+                    new_icc._storage.get_valid_name("%s.icc" % source.getDescription()),
                     File(new_icc_file),
                 )
                 new_icc.save()
@@ -426,7 +453,7 @@ class Proof(ImageModel):
         src = self.sourceprofile and self.sourceprofile.icc.getDescription() or '-src-'
         prf = self.proofprofile and self.proofprofile.icc.getDescription() or '-PRF-'
         dst = self.targetprofile and self.targetprofile.getDescription() or '-dst-'
-        return "<imagekit.Proof #%s %s>" % (self.pk, [src,prf,dst])
+        return "<imagekit.Proof #%s %s>" % (pk, [src,prf,dst])
 
 
 class HistogramBase(models.Model):

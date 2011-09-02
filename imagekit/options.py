@@ -1,8 +1,7 @@
 # Imagekit options
-import os
-from imagekit import processors, specs
+from imagekit import specs
 from imagekit.signals import signalqueue
-from imagekit.utils import logg
+#from imagekit.utils import logg
 
 
 class Options(object):
@@ -21,8 +20,7 @@ class Options(object):
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     admin_thumbnail_spec = 'admin_thumbnail'
     spec_module = 'imagekit.defaults'
-    #storage = defaults to image_field.storage
-
+    
     def __init__(self, opts):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
@@ -53,15 +51,14 @@ class Options(object):
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
         if instance and spec_name:
-            prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
-            #if instance._storage.exists(prop.name):
+            #prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
             signalqueue.send_now('delete_spec', sender=instance.__class__, instance=instance, spec_name=spec_name)
     
     def prepare_spec(self, **kwargs):
         #logg.info('prepare_spec() called: %s' % kwargs)
         instance = kwargs.get('instance', None)
         spec_name = kwargs.get('spec_name', None)
-        spec = kwargs.get('spec', None)
+        #spec = kwargs.get('spec', None)
         if instance and spec_name:
             prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
             if not instance._storage.exists(prop.name):

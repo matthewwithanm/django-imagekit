@@ -25,12 +25,10 @@ Here's the latest list of supported PIL image modes:
     http://www.pythonware.com/library/pil/handbook/index.htm
 
 """
-import os, numpy
+import numpy
 from imagekit.lib import *
 from imagekit.neuquant import NeuQuant
-from imagekit.ICCProfile import ICCProfile
 from imagekit.utils import logg, entropy
-from imagekit.utils.memoize import memoize
 
 class ImageProcessor(object):
     """
@@ -124,7 +122,7 @@ class ICCProofTransform(ImageProcessor):
         if not destination:
             raise AttributeError("WTF: destination transform ICC profile '%s' doesn't exist" % destination)
         
-        if proofing is not None and cls.proof is None:
+        if proofing and cls.proof is None:
             logg.warning("ICCProofTransform.process() was invoked explicitly but without a specified proofing profile.")
             logg.warning("ICCProofTransform.process() executing as a non-proof transformation...")
         
