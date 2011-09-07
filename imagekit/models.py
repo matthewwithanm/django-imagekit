@@ -44,17 +44,18 @@ class ImageModelBase(ModelBase):
             return
         user_opts = getattr(cls, 'IKOptions', None)
         opts = Options(user_opts)
-        try:
-            module = __import__(opts.spec_module,  {}, {}, [''])
-        except ImportError:
-            raise ImportError('Unable to load imagekit config module: %s' % \
-                opts.spec_module)
-        for spec in [spec for spec in module.__dict__.values() \
-                     if isinstance(spec, type) \
-                     and issubclass(spec, specs.ImageSpec) \
-                     and spec != specs.ImageSpec]:
+        if not opts.specs:
+            try:
+                module = __import__(opts.spec_module,  {}, {}, [''])
+            except ImportError:
+                raise ImportError('Unable to load imagekit config module: %s' \
+                    % opts.spec_module)
+            opts.specs.extend([spec for spec in module.__dict__.values() \
+                    if isinstance(spec, type) \
+                    and issubclass(spec, specs.ImageSpec) \
+                    and spec != specs.ImageSpec])
+        for spec in opts.specs:
             setattr(cls, spec.name(), specs.Descriptor(spec))
-            opts.specs.append(spec)
         setattr(cls, '_ik', opts)
 
 
@@ -121,10 +122,13 @@ class ImageModel(models.Model):
         self._imgfield.save(name, content, save)
 
     def save(self, clear_cache=True, *args, **kwargs):
-        is_new_object = self._get_pk_val() is None
         super(ImageModel, self).save(*args, **kwargs)
-        if is_new_object and self._imgfield:
+
+        is_new_object = self._get_pk_val() is None
+        if is_new_object:
             clear_cache = False
+
+        if self._imgfield:
             spec = self._ik.preprocessor_spec
             if spec is not None:
                 newfile = self._imgfield.storage.open(str(self._imgfield))

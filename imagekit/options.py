@@ -13,12 +13,14 @@ class Options(object):
     preprocessor_spec = None
     cache_dir = 'cache'
     save_count_as = None
+    cache_filename_fields = ['pk', ]
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     admin_thumbnail_spec = 'admin_thumbnail'
     spec_module = 'imagekit.defaults'
+    specs = None
     #storage = defaults to image_field.storage
 
     def __init__(self, opts):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
-            self.specs = []
+        self.specs = list(self.specs or [])

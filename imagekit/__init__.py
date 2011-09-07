@@ -2,10 +2,10 @@
 Django ImageKit
 
 Author: Justin Driscoll <justin.driscoll@gmail.com>
-Version: 0.3.6
+Version: 0.4.0
 
 """
 __author__ = 'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett'
-__version__ = (0, 3, 6)
+__version__ = (0, 4, 0)
 
 

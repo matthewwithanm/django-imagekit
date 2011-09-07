@@ -67,12 +67,14 @@ Create your specifications.
 
     # now we can define our thumbnail spec
     class Thumbnail(ImageSpec):
+        quality = 90  # defaults to 70
         access_as = 'thumbnail_image'
         pre_cache = True
         processors = [ResizeThumb, EnchanceThumb]
 
     # and our display spec
     class Display(ImageSpec):
+        quality = 90  # defaults to 70
         increment_count = True
         processors = [ResizeDisplay]
 

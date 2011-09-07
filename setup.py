@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name='django-imagekit',
-    version='0.3.6',
+    version='0.4.0',
     description='Automated image processing for Django models.',
     author='Justin Driscoll',
     author_email='justin@driscolldev.com',
@@ -19,11 +19,13 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
+        'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Framework :: Django',
+        'Programming Language :: Python :: 2.5',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
         'Topic :: Utilities'
     ]
 )
