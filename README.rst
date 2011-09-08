@@ -2,7 +2,7 @@
 django-imagekit
 ===============
 
-ImageKit In 7 Steps
+ImageKit In 6 Steps
 ===================
 
 Step 1
@@ -17,7 +17,7 @@ Step 1
 Step 2
 ******
 
-Add ImageKit to your models.
+Create an ImageModel subclass and add specs to it.
 
 ::
 
@@ -25,60 +25,57 @@ Add ImageKit to your models.
 
     from django.db import models
     from imagekit.models import ImageModel
+    from imagekit.specs import ImageSpec
+    from imagekit.processors import Crop, Fit, Adjust
 
     class Photo(ImageModel):
         name = models.CharField(max_length=100)
         original_image = models.ImageField(upload_to='photos')
         num_views = models.PositiveIntegerField(editable=False, default=0)
 
-        class IKOptions:
-            # This inner class is where we define the ImageKit options for the model
-            spec_module = 'myapp.specs'
-            cache_dir = 'photos'
-            image_field = 'original_image'
-            save_count_as = 'num_views'
+        thumbnail_image = ImageSpec([Crop(100, 75), Adjust(contrast=1.2, sharpness=1.1)], quality=90, pre_cache=True, image_field='original_image', cache_dir='photos')
+        display = ImageSpec([Fit(600)], quality=90, increment_count=True, image_field='original_image', cache_dir='photos', save_count_as='num_views')
 
-Step 3
-******
 
-Create your specifications.
+Of course, you don't have to define your ImageSpecs inline if you don't want to:
 
 ::
 
     # myapp/specs.py
 
     from imagekit.specs import ImageSpec
-    from imagekit import processors
+    from imagekit.processors import Crop, Fit, Adjust
 
-    # first we define our thumbnail resize processor
-    class ResizeThumb(processors.Resize):
-        width = 100
-        height = 75
-        crop = True
+    class _BaseSpec(ImageSpec):
+        quality = 90        
+        image_field = 'original_image'
+        cache_dir = 'photos'
 
-    # now we define a display size resize processor
-    class ResizeDisplay(processors.Resize):
-        width = 600
-
-    # now let's create an adjustment processor to enhance the image at small sizes
-    class EnchanceThumb(processors.Adjustment):
-        contrast = 1.2
-        sharpness = 1.1
-
-    # now we can define our thumbnail spec
-    class Thumbnail(ImageSpec):
-        quality = 90  # defaults to 70
-        access_as = 'thumbnail_image'
+    class DisplaySpec(_BaseSpec):
         pre_cache = True
-        processors = [ResizeThumb, EnchanceThumb]
-
-    # and our display spec
-    class Display(ImageSpec):
-        quality = 90  # defaults to 70
         increment_count = True
-        processors = [ResizeDisplay]
+        save_count_as = 'num_views'
+        processors = [Fit(600)]
 
-Step 4
+    class ThumbnailSpec(_BaseSpec):
+        processors = [Crop(100, 75), Adjust(contrast=1.2, sharpness=1.1)]
+
+    # myapp/models.py
+
+    from django.db import models
+    from imagekit.models import ImageModel
+    from myapp.specs import DisplaySpec, ThumbnailSpec
+
+    class Photo(ImageModel):
+        name = models.CharField(max_length=100)
+        original_image = models.ImageField(upload_to='photos')
+        num_views = models.PositiveIntegerField(editable=False, default=0)
+
+        thumbnail_image = ThumbnailSpec()
+        display = DisplaySpec()
+            
+
+Step 3
 ******
 
 Flush the cache and pre-generate thumbnails (ImageKit has to be added to ``INSTALLED_APPS`` for management command to work).
@@ -87,7 +84,7 @@ Flush the cache and pre-generate thumbnails (ImageKit has to be added to ``INSTA
 
     $ python manage.py ikflush myapp
 
-Step 5
+Step 4
 ******
 
 Use your new model in templates.
@@ -108,7 +105,7 @@ Use your new model in templates.
     {% endfor %}
     </div>
 
-Step 6
+Step 5
 ******
 
 Play with the API.
@@ -131,7 +128,7 @@ Play with the API.
     >>> p.display.spec
     <class 'myapp.specs.Display'>
 
-Step 7
+Step 6
 ******
 
 Enjoy a nice beverage.
