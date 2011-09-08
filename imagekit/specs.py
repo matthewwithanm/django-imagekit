@@ -15,11 +15,15 @@ from django.core.files.base import ContentFile
 
 class ImageSpec(object):
 
-    def __init__(self, processors, pre_cache=False, quality=70, increment_count=False):
-        self.processors = list(processors or [])
-        self.pre_cache = pre_cache
-        self.quality = quality
-        self.increment_count = increment_count
+    processors = []
+    pre_cache = False
+    quality = 70
+    increment_count = False
+
+    def __init__(self, processors=None, **kwargs):
+        if processors:
+            self.processors = processors
+        self.__dict__.update(kwargs)
 
     def process(self, image, obj):
         fmt = image.format
