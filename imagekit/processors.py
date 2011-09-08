@@ -85,7 +85,7 @@ class Reflection(ImageProcessor):
         return composite, fmt
 
 
-class Resize(ImageProcessor):
+class _Resize(ImageProcessor):
     
     def __init__(self, width, height, crop=False, upscale=False):
         self.width = width
@@ -131,6 +131,16 @@ class Resize(ImageProcessor):
                     return img, fmt
             img = img.resize(new_dimensions, Image.ANTIALIAS)
         return img, fmt
+
+
+class Crop(_Resize):
+    def __init__(self, width, height):
+        super(Crop, self).__init__(width, height, True)
+
+
+class Fit(_Resize):
+    def __init__(self, width, height, upscale=False):
+        super(Fit, self).__init__(width, height, False, upscale)
 
 
 class Transpose(ImageProcessor):
