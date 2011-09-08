@@ -62,18 +62,18 @@ class Accessor(object):
             self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
             # save the new image to the cache
             content = ContentFile(self._get_imgfile().read())
-            self._obj._storage.save(self.name, content)
+            self._storage.save(self.name, content)
 
     def _delete(self):
         if self._obj._imgfield:
             try:
-                self._obj._storage.delete(self.name)
+                self._storage.delete(self.name)
             except (NotImplementedError, IOError):
                 return
 
     def _exists(self):
         if self._obj._imgfield:
-            return self._obj._storage.exists(self.name)
+            return self._storage.exists(self.name)
 
     @property
     def name(self):
@@ -102,6 +102,10 @@ class Accessor(object):
                                     cache_filename)
 
     @property
+    def _storage(self):
+        return getattr(self._obj._ik, 'storage', self._obj._imgfield.storage)
+
+    @property
     def url(self):
         if not self.spec.pre_cache:
             self._create()
@@ -111,12 +115,12 @@ class Accessor(object):
                 current_count = getattr(self._obj, fieldname)
                 setattr(self._obj, fieldname, current_count + 1)
                 self._obj.save(clear_cache=False)
-        return self._obj._storage.url(self.name)
+        return self._storage.url(self.name)
 
     @property
     def file(self):
         self._create()
-        return self._obj._storage.open(self.name)
+        return self._storage.open(self.name)
 
     @property
     def image(self):
