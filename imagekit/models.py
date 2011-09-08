@@ -8,7 +8,7 @@ from django.db.models.signals import post_delete
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 
-from imagekit import specs
+from imagekit.specs import ImageSpec, Descriptor
 from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj
@@ -38,25 +38,20 @@ class ImageModelBase(ModelBase):
     module.
 
     """
-    def __init__(cls, name, bases, attrs):
-        parents = [b for b in bases if isinstance(b, ImageModelBase)]
-        if not parents:
-            return
-        user_opts = getattr(cls, 'IKOptions', None)
-        opts = Options(user_opts)
-        if not opts.specs:
-            try:
-                module = __import__(opts.spec_module,  {}, {}, [''])
-            except ImportError:
-                raise ImportError('Unable to load imagekit config module: %s' \
-                    % opts.spec_module)
-            opts.specs.extend([spec for spec in module.__dict__.values() \
-                    if isinstance(spec, type) \
-                    and issubclass(spec, specs.ImageSpec) \
-                    and spec != specs.ImageSpec])
-        for spec in opts.specs:
-            setattr(cls, spec.name(), specs.Descriptor(spec))
-        setattr(cls, '_ik', opts)
+    def __init__(self, name, bases, attrs):
+        if [b for b in bases if isinstance(b, ImageModelBase)]:
+            user_opts = getattr(self, 'IKOptions', None)
+            
+            specs = []
+            for k, v in attrs.items():
+                if isinstance(v, ImageSpec):
+                    setattr(self, k, Descriptor(v, k))
+                    specs.append(v)
+            
+            user_opts.specs = specs
+            opts = Options(user_opts)
+            setattr(self, '_ik', opts)
+        ModelBase.__init__(self, name, bases, attrs)
 
 
 class ImageModel(models.Model):
@@ -71,9 +66,6 @@ class ImageModel(models.Model):
 
     class Meta:
         abstract = True
-
-    class IKOptions:
-        pass
 
     def admin_thumbnail_view(self):
         if not self._imgfield:
@@ -91,6 +83,9 @@ class ImageModel(models.Model):
                     (escape(self._imgfield.url), escape(prop.url))
     admin_thumbnail_view.short_description = _('Thumbnail')
     admin_thumbnail_view.allow_tags = True
+
+    class IKOptions:
+        pass
 
     @property
     def _imgfield(self):

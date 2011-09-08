@@ -34,11 +34,12 @@ class ImageSpec(object):
 
 
 class Accessor(object):
-    def __init__(self, obj, spec):
+    def __init__(self, obj, spec, property_name):
         self._img = None
         self._fmt = None
         self._obj = obj
         self.spec = spec
+        self.property_name = property_name
 
     def _get_imgfile(self):
         format = self._img.format or 'JPEG'
@@ -86,7 +87,7 @@ class Accessor(object):
                 if issubclass(processor, processors.Format):
                     extension = processor.extension
             filename_format_dict = {'filename': filename,
-                                    'specname': self.spec.name(),
+                                    'specname': self.property_name,
                                     'extension': extension.lstrip('.')}
             cache_filename_fields = self._obj._ik.cache_filename_fields
             filename_format_dict.update(dict(zip(
@@ -138,8 +139,9 @@ class Accessor(object):
 
 
 class Descriptor(object):
-    def __init__(self, spec):
+    def __init__(self, spec, property_name):
+        self._property_name = property_name
         self._spec = spec
 
     def __get__(self, obj, type=None):
-        return Accessor(obj, self._spec)
+        return Accessor(obj, self._spec, self._property_name)
