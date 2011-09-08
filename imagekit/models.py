@@ -12,6 +12,7 @@ from imagekit.specs import ImageSpec, Descriptor
 from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj
+from imagekit import defaults
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -39,18 +40,17 @@ class ImageModelBase(ModelBase):
 
     """
     def __init__(self, name, bases, attrs):
-        if [b for b in bases if isinstance(b, ImageModelBase)]:
-            user_opts = getattr(self, 'IKOptions', None)
-            
-            specs = []
-            for k, v in attrs.items():
-                if isinstance(v, ImageSpec):
-                    setattr(self, k, Descriptor(v, k))
-                    specs.append(v)
-            
-            user_opts.specs = specs
-            opts = Options(user_opts)
-            setattr(self, '_ik', opts)
+        user_opts = getattr(self, 'IKOptions', None)
+        
+        specs = []
+        for k, v in attrs.items():
+            if isinstance(v, ImageSpec):
+                setattr(self, k, Descriptor(v, k))
+                specs.append(v)
+        
+        user_opts.specs = specs
+        opts = Options(user_opts)
+        setattr(self, '_ik', opts)
         ModelBase.__init__(self, name, bases, attrs)
 
 
@@ -64,16 +64,18 @@ class ImageModel(models.Model):
     """
     __metaclass__ = ImageModelBase
 
+    admin_thumbnail = defaults.DjangoAdminThumbnail()
+
     class Meta:
         abstract = True
 
     def admin_thumbnail_view(self):
         if not self._imgfield:
             return None
-        prop = getattr(self, self._ik.admin_thumbnail_spec, None)
+        prop = getattr(self, self._ik.admin_thumbnail_property, None)
         if prop is None:
-            return 'An "%s" image spec has not been defined.' % \
-              self._ik.admin_thumbnail_spec
+            return 'The property "%s" has not been defined.' % \
+              self._ik.admin_thumbnail_property
         else:
             if hasattr(self, 'get_absolute_url'):
                 return u'<a href="%s"><img src="%s"></a>' % \

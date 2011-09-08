@@ -20,5 +20,4 @@ class PNGFormat(processors.Format):
     extension = 'png'
 
 class DjangoAdminThumbnail(ImageSpec):
-    access_as = 'admin_thumbnail'
-    processors = [ResizeThumbnail, EnhanceSmall, SampleReflection, PNGFormat]
+    processors = [ResizeThumbnail(), EnhanceSmall(), SampleReflection(), PNGFormat()]

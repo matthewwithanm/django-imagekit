@@ -7,6 +7,10 @@ class Options(object):
     """ Class handling per-model imagekit options
 
     """
+    
+    admin_thumbnail_property = 'admin_thumbnail'
+    """The name of the spec to be used by the admin_thumbnail_view"""
+    
     image_field = 'image'
     crop_horz_field = 'crop_horz'
     crop_vert_field = 'crop_vert'
@@ -15,7 +19,6 @@ class Options(object):
     save_count_as = None
     cache_filename_fields = ['pk', ]
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
-    admin_thumbnail_spec = 'admin_thumbnail'
     specs = None
     #storage = defaults to image_field.storage
 
