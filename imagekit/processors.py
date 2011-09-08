@@ -87,11 +87,20 @@ class Reflection(ImageProcessor):
 
 class _Resize(ImageProcessor):
     
-    def __init__(self, width, height, crop=False, upscale=False):
-        self.width = width
-        self.height = height
-        self.crop = crop
-        self.upscale = upscale
+    width = None
+    height = None
+    crop = False
+    upscale = False
+    
+    def __init__(self, width=None, height=None, crop=None, upscale=None):
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if crop is not None:
+            self.crop = crop
+        if upscale is not None:
+            self.upscale = upscale
 
     def process(self, img, fmt, obj):
         cur_width, cur_height = img.size
@@ -134,13 +143,13 @@ class _Resize(ImageProcessor):
 
 
 class Crop(_Resize):
-    def __init__(self, width, height):
-        super(Crop, self).__init__(width, height, True)
+    def __init__(self, width=None, height=None):
+        super(Crop, self).__init__(width, height, crop=True)
 
 
 class Fit(_Resize):
-    def __init__(self, width, height, upscale=False):
-        super(Fit, self).__init__(width, height, False, upscale)
+    def __init__(self, width=None, height=None, upscale=None):
+        super(Fit, self).__init__(width, height, crop=False, upscale=upscale)
 
 
 class Transpose(ImageProcessor):
