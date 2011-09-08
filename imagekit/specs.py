@@ -14,20 +14,17 @@ from django.core.files.base import ContentFile
 
 
 class ImageSpec(object):
-    pre_cache = False
-    quality = 70
-    increment_count = False
-    processors = []
 
-    @classmethod
-    def name(cls):
-        return getattr(cls, 'access_as', cls.__name__.lower())
+    def __init__(self, processors, pre_cache=False, quality=70, increment_count=False):
+        self.processors = list(processors or [])
+        self.pre_cache = pre_cache
+        self.quality = quality
+        self.increment_count = increment_count
 
-    @classmethod
-    def process(cls, image, obj):
+    def process(self, image, obj):
         fmt = image.format
         img = image.copy()
-        for proc in cls.processors:
+        for proc in self.processors:
             img, fmt = proc.process(img, fmt, obj)
         img.format = fmt
         return img, fmt
@@ -84,7 +81,7 @@ class Accessor(object):
             filepath, basename = os.path.split(self._obj._imgfield.name)
             filename, extension = os.path.splitext(basename)
             for processor in self.spec.processors:
-                if issubclass(processor, processors.Format):
+                if isinstance(processor, processors.Format):
                     extension = processor.extension
             filename_format_dict = {'filename': filename,
                                     'specname': self.property_name,
