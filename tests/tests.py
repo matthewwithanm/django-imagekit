@@ -3,46 +3,9 @@ import tempfile
 import unittest
 from django.conf import settings
 from django.core.files.base import ContentFile
-from django.db import models
 from django.test import TestCase
 
-from imagekit import processors
-from imagekit.models import ImageModel
-from imagekit.specs import ImageSpec
 from imagekit.lib import Image
-
-
-class ResizeToWidth(processors.Resize):
-    width = 100
-
-class ResizeToHeight(processors.Resize):
-    height = 100
-
-class ResizeToFit(processors.Resize):
-    width = 100
-    height = 100
-
-class ResizeCropped(ResizeToFit):
-    crop = ('center', 'center')
-
-class TestResizeToWidth(ImageSpec):
-    access_as = 'to_width'
-    processors = [ResizeToWidth]
-
-class TestResizeToHeight(ImageSpec):
-    access_as = 'to_height'
-    processors = [ResizeToHeight]
-
-class TestResizeCropped(ImageSpec):
-    access_as = 'cropped'
-    processors = [ResizeCropped]
-
-class TestPhoto(ImageModel):
-    """ Minimal ImageModel class for testing """
-    image = models.ImageField(upload_to='images')
-
-    class IKOptions:
-        spec_module = 'imagekit.tests'
 
 
 class IKTest(TestCase):
