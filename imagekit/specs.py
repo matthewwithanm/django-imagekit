@@ -15,6 +15,7 @@ from django.core.files.base import ContentFile
 
 class ImageSpec(object):
 
+    image_field = 'original_image' # TODO: Get rid of this. It can be specified in a SpecDefaults nested class.
     processors = []
     pre_cache = False
     quality = 70
@@ -25,11 +26,14 @@ class ImageSpec(object):
             self.processors = processors
         self.__dict__.update(kwargs)
 
+    def _get_imgfield(self, obj):
+        return getattr(obj, self.image_field)
+
     def process(self, image, obj):
         fmt = image.format
         img = image.copy()
         for proc in self.processors:
-            img, fmt = proc.process(img, fmt, obj)
+            img, fmt = proc.process(img, fmt, obj, self)
         img.format = fmt
         return img, fmt
 
@@ -52,13 +56,17 @@ class Accessor(object):
                                   optimize=True)
         return imgfile
 
+    @property
+    def _imgfield(self):
+        return self.spec._get_imgfield(self._obj)
+
     def _create(self):
-        if self._obj._imgfield:
+        if self._imgfield:
             if self._exists():
                 return
             # process the original image file
             try:
-                fp = self._obj._imgfield.storage.open(self._obj._imgfield.name)
+                fp = self._imgfield.storage.open(self._imgfield.name)
             except IOError:
                 return
             fp.seek(0)
@@ -69,20 +77,20 @@ class Accessor(object):
             self._storage.save(self.name, content)
 
     def _delete(self):
-        if self._obj._imgfield:
+        if self._imgfield:
             try:
                 self._storage.delete(self.name)
             except (NotImplementedError, IOError):
                 return
 
     def _exists(self):
-        if self._obj._imgfield:
+        if self._imgfield:
             return self._storage.exists(self.name)
 
     @property
     def name(self):
-        if self._obj._imgfield.name:
-            filepath, basename = os.path.split(self._obj._imgfield.name)
+        if self._imgfield.name:
+            filepath, basename = os.path.split(self._imgfield.name)
             filename, extension = os.path.splitext(basename)
             for processor in self.spec.processors:
                 if isinstance(processor, processors.Format):
@@ -107,7 +115,7 @@ class Accessor(object):
 
     @property
     def _storage(self):
-        return getattr(self._obj._ik, 'storage', self._obj._imgfield.storage)
+        return getattr(self._obj._ik, 'storage', self._imgfield.storage)
 
     @property
     def url(self):

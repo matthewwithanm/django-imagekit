@@ -70,7 +70,7 @@ class ImageModel(models.Model):
         abstract = True
 
     def admin_thumbnail_view(self):
-        if not self._imgfield:
+        if not self._imgfields:
             return None
         prop = getattr(self, self._ik.admin_thumbnail_property, None)
         if prop is None:
@@ -82,16 +82,12 @@ class ImageModel(models.Model):
                     (escape(self.get_absolute_url()), escape(prop.url))
             else:
                 return u'<a href="%s"><img src="%s"></a>' % \
-                    (escape(self._imgfield.url), escape(prop.url))
+                    (escape(self._get_imgfield(self).url), escape(prop.url))
     admin_thumbnail_view.short_description = _('Thumbnail')
     admin_thumbnail_view.allow_tags = True
 
     class IKOptions:
         pass
-
-    @property
-    def _imgfield(self):
-        return getattr(self, self._ik.image_field)
 
     def _clear_cache(self):
         for spec in self._ik.specs:
@@ -105,14 +101,20 @@ class ImageModel(models.Model):
                 prop._create()
 
     def save_image(self, name, image, save=True, replace=True):
-        if self._imgfield and replace:
-            self._imgfield.delete(save=False)
-        if hasattr(image, 'read'):
-            data = image.read()
-        else:
-            data = image
-        content = ContentFile(data)
-        self._imgfield.save(name, content, save)
+        imgfields = self._imgfields
+        for imgfield in imgfields:
+            if imgfield and replace:
+                imgfield.delete(save=False)
+            if hasattr(image, 'read'):
+                data = image.read()
+            else:
+                data = image
+            content = ContentFile(data)
+            imgfield.save(name, content, save)
+
+    @property
+    def _imgfields(self):
+        return set([spec._get_imgfield(self) for spec in self._ik.specs])
 
     def save(self, clear_cache=True, *args, **kwargs):
         super(ImageModel, self).save(*args, **kwargs)
@@ -121,10 +123,11 @@ class ImageModel(models.Model):
         if is_new_object:
             clear_cache = False
 
-        if self._imgfield:
+        imgfields = self._imgfields
+        for imgfield in imgfields:
             spec = self._ik.preprocessor_spec
             if spec is not None:
-                newfile = self._imgfield.storage.open(str(self._imgfield))
+                newfile = imgfield.storage.open(str(imgfield))
                 img = Image.open(newfile)
                 img, format = spec.process(img, self)
                 if format != 'JPEG':
@@ -135,10 +138,10 @@ class ImageModel(models.Model):
                                           optimize=True)
                 content = ContentFile(imgfile.read())
                 newfile.close()
-                name = str(self._imgfield)
-                self._imgfield.storage.delete(name)
-                self._imgfield.storage.save(name, content)
-        if self._imgfield:
+                name = str(imgfield)
+                imgfield.storage.delete(name)
+                imgfield.storage.save(name, content)
+        if self._imgfields:
             if clear_cache:
                 self._clear_cache()
             self._pre_cache()

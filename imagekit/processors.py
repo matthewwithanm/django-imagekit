@@ -11,7 +11,7 @@ from imagekit.lib import *
 class ImageProcessor(object):
     """ Base image processor class """
 
-    def process(self, img, fmt, obj):
+    def process(self, img, fmt, obj, spec):
         return img, fmt
 
 
@@ -23,7 +23,7 @@ class Adjust(ImageProcessor):
         self.contrast = contrast
         self.sharpness = sharpness
 
-    def process(self, img, fmt, obj):
+    def process(self, img, fmt, obj, spec):
         img = img.convert('RGB')
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(self, name.lower())
@@ -39,7 +39,7 @@ class Format(ImageProcessor):
     format = 'JPEG'
     extension = 'jpg'
 
-    def process(self, img, fmt, obj):
+    def process(self, img, fmt, obj, spec):
         return img, self.format
 
 
@@ -48,7 +48,7 @@ class Reflection(ImageProcessor):
     size = 0.0
     opacity = 0.6
 
-    def process(self, img, fmt, obj):
+    def process(self, img, fmt, obj, spec):
         # convert bgcolor string to rgb value
         background_color = ImageColor.getrgb(self.background_color)
         # handle palleted images
@@ -102,7 +102,7 @@ class _Resize(ImageProcessor):
         if upscale is not None:
             self.upscale = upscale
 
-    def process(self, img, fmt, obj):
+    def process(self, img, fmt, obj, spec):
         cur_width, cur_height = img.size
         if self.crop:
             crop_horz = getattr(obj, obj._ik.crop_horz_field, 1)
@@ -180,10 +180,10 @@ class Transpose(ImageProcessor):
 
     method = 'auto'
 
-    def process(self, img, fmt, obj):
+    def process(self, img, fmt, obj, spec):
         if self.method == 'auto':
             try:
-                orientation = Image.open(obj._imgfield.file)._getexif()[0x0112]
+                orientation = Image.open(spec._get_imgfield(obj).file)._getexif()[0x0112]
                 ops = self.EXIF_ORIENTATION_STEPS[orientation]
             except:
                 ops = []

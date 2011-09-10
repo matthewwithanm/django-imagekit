@@ -7,7 +7,7 @@ class Options(object):
     """ Class handling per-model imagekit options
 
     """
-    
+
     admin_thumbnail_property = 'admin_thumbnail'
     """The name of the spec to be used by the admin_thumbnail_view"""
     
