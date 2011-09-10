@@ -20,6 +20,7 @@ class ImageSpec(object):
     pre_cache = False
     quality = 70
     increment_count = False
+    storage = None
 
     def __init__(self, processors=None, **kwargs):
         if processors:
@@ -116,7 +117,9 @@ class Accessor(object):
 
     @property
     def _storage(self):
-        return getattr(self._obj._ik, 'storage', self._imgfield.storage)
+        return getattr(self.spec, 'storage', None) or \
+            getattr(self._obj._ik, 'default_storage', None) or \
+            self._imgfield.storage
 
     @property
     def url(self):

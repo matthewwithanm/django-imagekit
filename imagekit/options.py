@@ -20,6 +20,12 @@ class Options(object):
 
     """
 
+    default_storage = None
+    """Storage used for specs that don't define their own storage explicitly.
+    If neither is specified, the image field's storage will be used.
+
+    """
+
     crop_horz_field = 'crop_horz'
     crop_vert_field = 'crop_vert'
     preprocessor_spec = None
@@ -28,7 +34,6 @@ class Options(object):
     cache_filename_fields = ['pk', ]
     cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     specs = None
-    #storage = defaults to image_field.storage
 
     def __init__(self, opts):
         for key, value in opts.__dict__.iteritems():
