@@ -41,14 +41,18 @@ class ImageModelBase(ModelBase):
     """
     def __init__(self, name, bases, attrs):
         user_opts = getattr(self, 'IKOptions', None)
-        
         specs = []
+        default_image_field = getattr(user_opts, 'default_image_field', None)
+        
         for k, v in attrs.items():
             if isinstance(v, ImageSpec):
                 setattr(self, k, Descriptor(v, k))
                 specs.append(v)
-        
+            elif not default_image_field and isinstance(v, models.ImageField):
+                default_image_field = k
+
         user_opts.specs = specs
+        user_opts.default_image_field = default_image_field
         opts = Options(user_opts)
         setattr(self, '_ik', opts)
         ModelBase.__init__(self, name, bases, attrs)

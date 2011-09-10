@@ -10,8 +10,16 @@ class Options(object):
 
     admin_thumbnail_property = 'admin_thumbnail'
     """The name of the spec to be used by the admin_thumbnail_view"""
-    
-    image_field = 'image'
+
+    default_image_field = None
+    """The name of the image field property on the model.
+    Can be overridden on a per-spec basis by setting the image_field property on
+    the spec. If you don't define default_image_field on your IKOptions class,
+    it will be automatically populated with the name of the first ImageField the
+    model defines.
+
+    """
+
     crop_horz_field = 'crop_horz'
     crop_vert_field = 'crop_vert'
     preprocessor_spec = None

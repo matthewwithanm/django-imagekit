@@ -15,7 +15,7 @@ from django.core.files.base import ContentFile
 
 class ImageSpec(object):
 
-    image_field = 'original_image' # TODO: Get rid of this. It can be specified in a SpecDefaults nested class.
+    image_field = None
     processors = []
     pre_cache = False
     quality = 70
@@ -27,7 +27,8 @@ class ImageSpec(object):
         self.__dict__.update(kwargs)
 
     def _get_imgfield(self, obj):
-        return getattr(obj, self.image_field)
+        field_name = getattr(self, 'image_field', None) or obj._ik.default_image_field
+        return getattr(obj, field_name)
 
     def process(self, image, obj):
         fmt = image.format
