@@ -1,3 +1,4 @@
+from imagekit import processors
 from imagekit.specs import ImageSpec
 
 
