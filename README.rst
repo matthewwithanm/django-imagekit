@@ -61,7 +61,7 @@ Create your specifications.
         width = 600
 
     # now let's create an adjustment processor to enhance the image at small sizes
-    class EnchanceThumb(processors.Adjustment):
+    class EnhanceThumb(processors.Adjustment):
         contrast = 1.2
         sharpness = 1.1
 
@@ -70,7 +70,7 @@ Create your specifications.
         quality = 90  # defaults to 70
         access_as = 'thumbnail_image'
         pre_cache = True
-        processors = [ResizeThumb, EnchanceThumb]
+        processors = [ResizeThumb, EnhanceThumb]
 
     # and our display spec
     class Display(ImageSpec):
