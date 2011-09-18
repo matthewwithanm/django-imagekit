@@ -128,7 +128,7 @@ class ICCDataField(models.TextField):
                 return value
         return value
     
-    def get_db_prep_value(self, value, connection, prepared=False):
+    def get_db_prep_value(self, value, connection=None, prepared=False):
         """
         Always return a valid unicode data string.
         """
@@ -173,9 +173,10 @@ class ICCMetaField(ICCDataField):
         signalqueue.refresh_icc_data.connect(self.refresh_icc_data, sender=cls)
     
     def check_icc_field(self, **kwargs): # signal, sender, instance
-        instance = kwargs.get('instance')
-        if not getattr(instance, self.name, None):
-            signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
+        if not kwargs.get('raw', False):
+            instance = kwargs.get('instance')
+            if not getattr(instance, self.name, None):
+                signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
     
     def refresh_icc_data(self, **kwargs): # signal, sender, instance
         """
@@ -269,11 +270,11 @@ class EXIFMetaField(models.TextField):
                 pass
         return value
     
-    def get_db_prep_save(self, value):
+    def get_db_prep_save(self, value, **kwargs):
         if not value or value == "":
             return None
         value = json.dumps(value)
-        return super(EXIFMetaField, self).get_db_prep_save(value)
+        return super(EXIFMetaField, self).get_db_prep_save(value, **kwargs)
     
     def contribute_to_class(self, cls, name):
         super(EXIFMetaField, self).contribute_to_class(cls, name)
@@ -281,13 +282,14 @@ class EXIFMetaField(models.TextField):
         signalqueue.refresh_exif_data.connect(self.refresh_exif_data, sender=cls)
     
     def check_exif_field(self, **kwargs): # signal, sender, instance
-        instance = kwargs.get('instance')
-        
-        # use the PIL accessor to test whether or not we have any EXIF data
-        p = instance.pilimage
-        if hasattr(p, "_getexif"):
-            if not getattr(instance, self.name, None):
-                signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
+        if not kwargs.get('raw', False):
+            instance = kwargs.get('instance')
+            
+            # use the PIL accessor to test whether or not we have any EXIF data
+            p = instance.pilimage
+            if hasattr(p, "_getexif"):
+                if not getattr(instance, self.name, None):
+                    signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
 
     def refresh_exif_data(self, **kwargs): # signal, sender, instance
         """
@@ -494,7 +496,6 @@ class HistogramChannelField(models.CharField):
         
         setattr(cls, self.original_channel, HistogramChannelDescriptor(self))
         signals.pre_save.connect(self.refresh_histogram_channel, sender=cls)
-        #signalqueue.refresh_histogram_channel.connect(self.refresh_histogram_channel, sender=cls)
         
         if self.add_columns and not cls._meta.abstract:
             if hasattr(self, 'original_channel'):
@@ -509,35 +510,37 @@ class HistogramChannelField(models.CharField):
     def refresh_histogram_channel(self, **kwargs):
         """
         Stores histogram column values in their respective db fields before saving
+        
         """
-        instance = kwargs.get('instance')
-        image = instance.image
+        if not kwargs.get('raw', False):
+            instance = kwargs.get('instance')
+            image = instance.image
         
-        pil_reference = self.pil_reference
+            pil_reference = self.pil_reference
         
-        try:
-            if callable(pil_reference):
-                pilimage = pil_reference(image)
-            else:
-                pilimage = getattr(image, getattr(self, 'pil_reference', 'pilimage'))
+            try:
+                if callable(pil_reference):
+                    pilimage = pil_reference(image)
+                else:
+                    pilimage = getattr(image, getattr(self, 'pil_reference', 'pilimage'))
         
-        except AttributeError, err:
-            logg.warning("*** Couldn't refresh histogram channel '%s' with callable (AttributeError was thrown: %s)" % (self.original_channel, err))
-            return
-        except TypeError, err:
-            logg.warning("*** Couldn't refresh histogram channel '%s' with callable (TypeError was thrown: %s)" % (self.original_channel, err))
-            return
-        except IOError, err:
-            logg.warning("*** Couldn't refresh histogram channel '%s' with callable (IOError was thrown: %s)" % (self.original_channel, err))
-            return
+            except AttributeError, err:
+                logg.warning("*** Couldn't refresh histogram channel '%s' with callable (AttributeError was thrown: %s)" % (self.original_channel, err))
+                return
+            except TypeError, err:
+                logg.warning("*** Couldn't refresh histogram channel '%s' with callable (TypeError was thrown: %s)" % (self.original_channel, err))
+                return
+            except IOError, err:
+                logg.warning("*** Couldn't refresh histogram channel '%s' with callable (IOError was thrown: %s)" % (self.original_channel, err))
+                return
         
-        if pilimage:
-            if self.original_channel in pilimage.mode:
-                channel_data = pilimage.split()[pilimage.mode.index(self.original_channel)].histogram()[:256]
-                for i in xrange(256):
-                    histocolname = "__%s_%02X" % (self.original_channel, i)
-                    setattr(instance, histocolname, int(channel_data[i]))
-                logg.info("Refreshed histogram channel %s" % self.original_channel)
+            if pilimage:
+                if self.original_channel in pilimage.mode:
+                    channel_data = pilimage.split()[pilimage.mode.index(self.original_channel)].histogram()[:256]
+                    for i in xrange(256):
+                        histocolname = "__%s_%02X" % (self.original_channel, i)
+                        setattr(instance, histocolname, int(channel_data[i]))
+                    logg.info("Refreshed histogram channel %s" % self.original_channel)
     
     def save_form_data(self, instance, data):
         """
@@ -661,10 +664,11 @@ class Histogram(fields.CharField):
             cls.add_to_class('_%s_histogram_relation' % self.original_colorspace.lower(), histogram)
     
     def queue_related_histogram_update(self, **kwargs): # signal, sender, instance
-        instance = kwargs.get('instance')
-        sender = kwargs.get('sender')
-        logg.info("-- Enqueueing async signal 'save_related_histogram' for %s %s." % (sender.__name__, getattr(instance, 'pk', "<NONE>")))
-        signalqueue.send('save_related_histogram', sender=sender, instance=instance)
+        if not kwargs.get('raw', False):
+            instance = kwargs.get('instance')
+            sender = kwargs.get('sender')
+            logg.info("-- Enqueueing async signal 'save_related_histogram' for %s %s." % (sender.__name__, getattr(instance, 'pk', "<NONE>")))
+            signalqueue.send('save_related_histogram', sender=sender, instance=instance)
     
     def save_related_histogram(self, **kwargs): # signal, sender, instance
         """
@@ -742,9 +746,10 @@ class ImageHashField(fields.CharField):
         signalqueue.refresh_hash.connect(self.refresh_hash, sender=cls)
     
     def check_hash_field(self, **kwargs): # signal, sender, instance
-        instance = kwargs.get('instance')
-        if not getattr(instance, self.name, None):
-            signalqueue.send('refresh_hash', sender=instance.__class__, instance=instance)
+        if not kwargs.get('raw', False):
+            instance = kwargs.get('instance')
+            if not getattr(instance, self.name, None):
+                signalqueue.send('refresh_hash', sender=instance.__class__, instance=instance)
     
     def refresh_hash(self, **kwargs): # signal, sender, instance
         """
@@ -887,7 +892,7 @@ class RGBColorField(models.CharField):
             return colors.Color("#%s" % value)
         return None
     
-    def get_db_prep_value(self, value):
+    def get_db_prep_value(self, value, connection=None, prepared=None):
         if hasattr(value, 'hex'):
             return getattr(value, 'hex').upper()
         return value
@@ -908,10 +913,11 @@ class RGBColorField(models.CharField):
         signalqueue.refresh_color.connect(self.refresh_color, sender=cls)
     
     def check_rgb_color_field(self, **kwargs):
-        instance = kwargs.get('instance')
-        if not getattr(instance, self.name, None):
-            if self.extractor is not None:
-                signalqueue.send('refresh_color', sender=instance.__class__, instance=instance)
+        if not kwargs.get('raw', False):
+            instance = kwargs.get('instance')
+            if not getattr(instance, self.name, None):
+                if self.extractor is not None:
+                    signalqueue.send('refresh_color', sender=instance.__class__, instance=instance)
     
     def refresh_color(self, **kwargs): # signal, sender, instance
         """

@@ -1113,7 +1113,7 @@ class ICCProfile(object):
     
     """
 
-    def __init__(self, profile=None, load=True):
+    def __init__(self, profile=None, load=False):
         self.ID = "\0" * 16
         self._data = None
         self._file = None

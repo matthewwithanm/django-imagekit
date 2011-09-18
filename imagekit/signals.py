@@ -109,7 +109,10 @@ class KewGardens(object):
         super(KewGardens, self).__init__(*args, **kwargs)
         
         if not runmode:
-            runmode = settings.IK_RUNMODE
+            try:
+                runmode = settings.IK_RUNMODE
+            except:
+                runmode = imagekit.IK_SYNC
         self.runmode = runmode
         
         if not self.runmode == imagekit.IK_SYNC:

@@ -1,5 +1,5 @@
 
-# To consistently use the best-available JSON serializer, use:
+# To consistently use the fastest serializer possible, use:
 #   from imagekit.utils import json
 # ... so if you need to swap a library, do it there once.
 # ... you can also import imagekit.utils.json directly to avoid
@@ -8,14 +8,18 @@
 try:
     import ujson as json
 except ImportError:
-    logg.info("--- Loading yajl in leu of ujson")
+    #logg.info("--- Loading czjson in leu of ujson")
     try:
-        import yajl as json
+        import czjson as json
     except ImportError:
-        logg.info("--- Loading simplejson in leu of yajl")
+        #logg.info("--- Loading yajl in leu of czjson")
         try:
-            import simplejson as json
+            import yajl as json
         except ImportError:
-            logg.info("--- Loading stdlib json module in leu of simplejson")
-            import json
+            #logg.info("--- Loading simplejson in leu of yajl")
+            try:
+                import simplejson as json
+            except ImportError:
+                #logg.info("--- Loading stdlib json module in leu of simplejson")
+                import json
 

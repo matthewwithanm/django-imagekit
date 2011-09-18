@@ -584,7 +584,7 @@ admin.site.register(imagekit.models.LumaHistogram, LumaHistogramAdmin)
 admin.site.register(imagekit.models.EnqueuedSignal)
 admin.site.register(imagekit.models.Proof, ProofAdmin)
 
-admin.site.index_template = os.path.join(IK_ROOT, 'templates/admin/index_with_queues.html')
-admin.site.app_index_template = os.path.join(IK_ROOT, 'templates/admin/app_index.html')
+#admin.site.index_template = os.path.join(IK_ROOT, 'templates/admin/index_with_queues.html')
+#admin.site.app_index_template = os.path.join(IK_ROOT, 'templates/admin/app_index.html')
 
 

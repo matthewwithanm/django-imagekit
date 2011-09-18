@@ -18,6 +18,11 @@ class soweputsometestsinyourtests:
         pass
 
 
+class soyoucanprogramwhileyouprogram:
+    def __init__(self):
+        print "*** %s" % self.__module__
+
+
 class soweputsometestsinyourtestsTests(unittest.TestCase):
     def setUp(self):
         pass
@@ -29,6 +34,33 @@ class soweputsometestsinyourtestsTests(unittest.TestCase):
                     print "YO DOGG! %s" % ll.__name__
 
         
+class soyoucanprogramwhileyouprogramTests(unittest.TestCase):
+    def setUp(self):
+        pass
+    
+    def test_while_you_program(self):
+        whileyoutest = soyoucanprogramwhileyouprogram()
+        self.assertEqual(whileyoutest.__module__, '__main__')
+    
+    def test_program_while_you_program(self):
+        self.assertEqual(soyoucanprogramwhileyouprogram.__module__, '__main__')
+    
+    def test_program_while_you_test(self):
+        self.assertEqual(yodogg.__package__, None)
+        self.assertEqual(os.__package__, None)
+        
+        import numpy
+        self.assertEqual(numpy.__package__, 'numpy')
+    
+    def test_test_while_you_program_tests(self):
+        """
+        THIS IS WACK. it is not equal because setup() has never been run to define the package.
+        
+        """
+        import imagekit
+        self.assertNotEqual(imagekit.__package__, 'imagekit') # MOTHERFUCKER SHOULD FAIL
+        
+
 
 
 if __name__ == '__main__':

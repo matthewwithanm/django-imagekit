@@ -5,6 +5,7 @@ from django.conf import settings
 from django.core.files import File
 from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage
+from django.core.exceptions import ImproperlyConfigured
 from django.db import models
 from django.db.models import Q
 from django.db.models.base import ModelBase
@@ -15,7 +16,6 @@ from django.utils.translation import ugettext_lazy as _
 from colorsys import rgb_to_hls, hls_to_rgb
 
 from imagekit.signals import signalqueue
-from imagekit.queue.backends import QueueBase
 from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
@@ -31,6 +31,12 @@ from imagekit.modelfields import ICCDataField, ICCMetaField, EXIFMetaField
 from imagekit.modelfields import HistogramChannelField, Histogram
 from imagekit.modelfields import ImageHashField
 
+try:
+    from imagekit.queue.backends import QueueBase
+except ImproperlyConfigured:
+    class QueueBase(object):
+        pass
+
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
@@ -45,7 +51,7 @@ else:
 # attempt to load haystack
 try:
     from haystack.query import SearchQuerySet
-except ImportError:
+except (ImportError, ImproperlyConfigured):
     HAYSTACK = False
 else:
     HAYSTACK = True

@@ -9,12 +9,16 @@ Created by FI$H 2000 on 2011-09-01.
 Copyright (c) 2011 Objects In Space And Time, LLC. All rights reserved.
 
 """
+
 if __name__ == '__main__':
-    from django.core.management import setup_environ
+    from django.core.management import setup_environ, call_command
     import settings
     setup_environ(settings)
+    call_command('test', 'imagekit')
+    import sys
+    sys.exit(0)
 
-import os, tempfile, unittest
+import os, tempfile
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
@@ -269,11 +273,4 @@ class IKTest(TestCase):
         pth = self.p.image.name
         self.p.delete(clear_cache=True)
         self.failIf(_storage.exists(pth))
-
-if __name__ == '__main__':
-    from django.core.management import setup_environ
-    import settings
-    setup_environ(settings)
-    from django.conf import settings
     
-    unittest.main()
