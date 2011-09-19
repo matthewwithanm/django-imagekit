@@ -1,6 +1,8 @@
 # Imagekit options
 from imagekit import processors
 from imagekit.specs import ImageSpec
+import os
+import os.path
 
 
 class Options(object):
@@ -26,13 +28,22 @@ class Options(object):
 
     """
 
+    def default_cache_to(self, instance, path, specname, extension):
+        """Determines the filename to use for the transformed image. Can be
+        overridden on a per-spec basis by setting the cache_to property on the
+        spec, or on a per-model basis by defining default_cache_to on your own
+        IKOptions class.
+
+        """
+        filepath, basename = os.path.split(path)
+        filename = os.path.splitext(basename)[0]
+        new_name = '{0}_{1}.{2}'.format(filename, specname, extension)
+        return os.path.join(os.path.join('cache', filepath), new_name)
+
     crop_horz_field = 'crop_horz'
     crop_vert_field = 'crop_vert'
     preprocessor_spec = None
-    cache_dir = 'cache'
     save_count_as = None
-    cache_filename_fields = ['pk', ]
-    cache_filename_format = "%(filename)s_%(specname)s.%(extension)s"
     specs = None
 
     def __init__(self, opts):

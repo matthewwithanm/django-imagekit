@@ -6,11 +6,13 @@ spec found.
 
 """
 import os
+import datetime
 from StringIO import StringIO
 from imagekit import processors
 from imagekit.lib import *
 from imagekit.utils import img_to_fobj
 from django.core.files.base import ContentFile
+from django.utils.encoding import force_unicode, smart_str
 
 
 class ImageSpec(object):
@@ -91,29 +93,27 @@ class Accessor(object):
 
     @property
     def name(self):
-        if self._imgfield.name:
-            filepath, basename = os.path.split(self._imgfield.name)
-            filename, extension = os.path.splitext(basename)
-            for processor in self.spec.processors:
-                if isinstance(processor, processors.Format):
-                    extension = processor.extension
-            filename_format_dict = {'filename': filename,
-                                    'specname': self.property_name,
-                                    'extension': extension.lstrip('.')}
-            cache_filename_fields = self._obj._ik.cache_filename_fields
-            filename_format_dict.update(dict(zip(
-                        cache_filename_fields,
-                        [getattr(self._obj, field) for
-                         field in cache_filename_fields])))
-            cache_filename = self._obj._ik.cache_filename_format % \
-                filename_format_dict
+        filename = self._imgfield.name
+        if filename:
+            cache_to = getattr(self.spec, 'cache_to', None) or \
+                getattr(self._obj._ik, 'default_cache_to', None)
 
-            if callable(self._obj._ik.cache_dir):
-                return self._obj._ik.cache_dir(self._obj, filepath,
-                                               cache_filename)
+            if not cache_to:
+                raise Exception('No cache_to or default_cache_to value specified')
+            if callable(cache_to):
+                extension = os.path.splitext(filename)[1]
+                for processor in self.spec.processors:
+                    if isinstance(processor, processors.Format):
+                        extension = processor.extension
+                new_filename = force_unicode(datetime.datetime.now().strftime( \
+                        smart_str(cache_to(self._obj, self._imgfield.name, \
+                            self.property_name, extension.lstrip('.')))))
             else:
-                return os.path.join(self._obj._ik.cache_dir, filepath,
-                                    cache_filename)
+               dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
+               filename = os.path.normpath(os.path.basename(filename))
+               new_filename = os.path.join(dir_name, filename)
+
+            return new_filename
 
     @property
     def _storage(self):

@@ -33,8 +33,8 @@ Create an ImageModel subclass and add specs to it.
         original_image = models.ImageField(upload_to='photos')
         num_views = models.PositiveIntegerField(editable=False, default=0)
 
-        thumbnail_image = ImageSpec([Crop(100, 75), Adjust(contrast=1.2, sharpness=1.1)], quality=90, pre_cache=True, image_field='original_image', cache_dir='photos')
-        display = ImageSpec([Fit(600)], quality=90, increment_count=True, image_field='original_image', cache_dir='photos', save_count_as='num_views')
+        thumbnail_image = ImageSpec([Crop(100, 75), Adjust(contrast=1.2, sharpness=1.1)], quality=90, pre_cache=True, image_field='original_image', cache_to='cache/photos/thumbnails/')
+        display = ImageSpec([Fit(600)], quality=90, increment_count=True, image_field='original_image', cache_to='cache/photos/display/', save_count_as='num_views')
 
 
 Of course, you don't have to define your ImageSpecs inline if you don't want to:
@@ -49,16 +49,17 @@ Of course, you don't have to define your ImageSpecs inline if you don't want to:
     class _BaseSpec(ImageSpec):
         quality = 90        
         image_field = 'original_image'
-        cache_dir = 'photos'
 
     class DisplaySpec(_BaseSpec):
         pre_cache = True
         increment_count = True
         save_count_as = 'num_views'
         processors = [Fit(600)]
+        cache_to = 'cache/photos/display/'
 
     class ThumbnailSpec(_BaseSpec):
         processors = [Crop(100, 75), Adjust(contrast=1.2, sharpness=1.1)]
+        cache_to = 'cache/photos/thumbnails/'
 
     # myapp/models.py
 
