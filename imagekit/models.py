@@ -12,7 +12,6 @@ from imagekit.specs import ImageSpec
 from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj
-from imagekit import defaults
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
