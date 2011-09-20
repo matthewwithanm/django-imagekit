@@ -8,7 +8,7 @@ from django.db.models.signals import post_delete
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 
-from imagekit.specs import ImageSpec, Descriptor
+from imagekit.specs import ImageSpec
 from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj
@@ -46,7 +46,6 @@ class ImageModelBase(ModelBase):
         
         for k, v in attrs.items():
             if isinstance(v, ImageSpec):
-                setattr(self, k, Descriptor(v, k))
                 specs.append(v)
             elif not default_image_field and isinstance(v, models.ImageField):
                 default_image_field = k

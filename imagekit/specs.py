@@ -41,6 +41,9 @@ class ImageSpec(object):
         img.format = fmt
         return img, fmt
 
+    def contribute_to_class(self, cls, name):
+        setattr(cls, name, Descriptor(self, name))
+
 
 class Accessor(object):
     def __init__(self, obj, spec, property_name):
