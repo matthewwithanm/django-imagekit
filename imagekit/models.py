@@ -67,27 +67,8 @@ class ImageModel(models.Model):
     """
     __metaclass__ = ImageModelBase
 
-    admin_thumbnail = defaults.DjangoAdminThumbnail()
-
     class Meta:
         abstract = True
-
-    def admin_thumbnail_view(self):
-        if not self._imgfields:
-            return None
-        prop = getattr(self, self._ik.admin_thumbnail_property, None)
-        if prop is None:
-            return 'The property "%s" has not been defined.' % \
-              self._ik.admin_thumbnail_property
-        else:
-            if hasattr(self, 'get_absolute_url'):
-                return u'<a href="%s"><img src="%s"></a>' % \
-                    (escape(self.get_absolute_url()), escape(prop.url))
-            else:
-                return u'<a href="%s"><img src="%s"></a>' % \
-                    (escape(self._get_imgfield(self).url), escape(prop.url))
-    admin_thumbnail_view.short_description = _('Thumbnail')
-    admin_thumbnail_view.allow_tags = True
 
     class IKOptions:
         pass

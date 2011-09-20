@@ -10,9 +10,6 @@ class Options(object):
 
     """
 
-    admin_thumbnail_property = 'admin_thumbnail'
-    """The name of the spec to be used by the admin_thumbnail_view"""
-
     default_image_field = None
     """The name of the image field property on the model.
     Can be overridden on a per-spec basis by setting the image_field property on
