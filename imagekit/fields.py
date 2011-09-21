@@ -2,14 +2,30 @@ from django.utils.translation import ugettext_lazy as _
 from django.template.loader import render_to_string
 
 
-class BoundAdminThumbnailView(object):
+class AdminThumbnailView(object):
     short_description = _('Thumbnail')
     allow_tags = True
 
-    def __init__(self, model_instance, image_field, template=None):
-        self.model_instance = model_instance
+    def __init__(self, image_field, template=None):
+        """
+        Keyword arguments:
+        image_field -- the name of the ImageField or ImageSpec on the model to
+                use for the thumbnail.
+        template -- the template with which to render the thumbnail
+
+        """
         self.image_field = image_field
         self.template = template
+
+    def __get__(self, obj, type=None):
+        return BoundAdminThumbnailView(obj, self)
+
+
+class BoundAdminThumbnailView(AdminThumbnailView):
+    def __init__(self, model_instance, unbound_field):
+        super(BoundAdminThumbnailView, self).__init__(unbound_field.image_field,
+                unbound_field.template)
+        self.model_instance = model_instance
 
     def __unicode__(self):
         thumbnail = getattr(self.model_instance, self.image_field, None)
@@ -26,19 +42,7 @@ class BoundAdminThumbnailView(object):
             'thumbnail': thumbnail,
             'original_image': original_image,
         })
-
-
-class AdminThumbnailView(object):
-    def __init__(self, image_field, template=None):
-        """
-        Keyword arguments:
-        image_field -- the name of the ImageField or ImageSpec on the model to
-                use for the thumbnail.
-        template -- the template with which to render the thumbnail
-
-        """
-        self.image_field = image_field
-        self.template = template
-
+    
     def __get__(self, obj, type=None):
-        return BoundAdminThumbnailView(obj, self.image_field, self.template)
+        """Override AdminThumbnailView's implementation."""
+        return self

@@ -62,15 +62,21 @@ class ImageSpec(object):
         return img, format
 
     def contribute_to_class(self, cls, name):
-        setattr(cls, name, Descriptor(self, name))
+        setattr(cls, name, _ImageSpecDescriptor(self, name))
 
 
-class Accessor(object):
-    def __init__(self, obj, spec, property_name):
+class BoundImageSpec(ImageSpec):
+    def __init__(self, obj, unbound_field, property_name):
+        super(BoundImageSpec, self).__init__(unbound_field.processors,
+                image_field=unbound_field.image_field,
+                pre_cache=unbound_field.pre_cache,
+                quality=unbound_field.quality,
+                increment_count=unbound_field.increment_count,
+                storage=unbound_field.storage, format=unbound_field.format,
+                cache_to=unbound_field.cache_to)
         self._img = None
         self._fmt = None
         self._obj = obj
-        self.spec = spec
         self.property_name = property_name
 
     @property
@@ -81,7 +87,7 @@ class Accessor(object):
         the `name` property).
 
         """
-        format = self.spec.format
+        format = self.format
         if not format:
             # Get the real (not suggested) extension.
             extension = os.path.splitext(self.name)[1].lower()
@@ -95,13 +101,13 @@ class Accessor(object):
             imgfile = img_to_fobj(self._img, format)
         else:
             imgfile = img_to_fobj(self._img, format,
-                                  quality=int(self.spec.quality),
+                                  quality=int(self.quality),
                                   optimize=True)
         return imgfile
 
     @property
     def _imgfield(self):
-        return self.spec._get_imgfield(self._obj)
+        return self._get_imgfield(self._obj)
 
     def _create(self):
         if self._imgfield:
@@ -114,7 +120,7 @@ class Accessor(object):
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
-            self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
+            self._img, self._fmt = self.process(Image.open(fp), self._obj)
             # save the new image to the cache
             content = ContentFile(self._get_imgfile().read())
             self._storage.save(self.name, content)
@@ -132,10 +138,10 @@ class Accessor(object):
 
     @property
     def _suggested_extension(self):
-        if self.spec.format:
+        if self.format:
             # Try to look up an extension by the format
             extensions = [k.lstrip('.') for k, v in Image.EXTENSION.iteritems() \
-                    if v == self.spec.format.upper()]
+                    if v == self.format.upper()]
         else:
             extensions = []
         original_extension = os.path.splitext(self._imgfield.name)[1].lstrip('.')
@@ -155,7 +161,7 @@ class Accessor(object):
         """
         filename = self._imgfield.name
         if filename:
-            cache_to = getattr(self.spec, 'cache_to', None) or \
+            cache_to = self.cache_to or \
                 getattr(self._obj._ik, 'default_cache_to', None)
 
             if not cache_to:
@@ -173,15 +179,15 @@ class Accessor(object):
 
     @property
     def _storage(self):
-        return getattr(self.spec, 'storage', None) or \
+        return self.storage or \
             getattr(self._obj._ik, 'default_storage', None) or \
             self._imgfield.storage
 
     @property
     def url(self):
-        if not self.spec.pre_cache:
+        if not self.pre_cache:
             self._create()
-        if self.spec.increment_count:
+        if self.increment_count:
             fieldname = self._obj._ik.save_count_as
             if fieldname is not None:
                 current_count = getattr(self._obj, fieldname)
@@ -211,10 +217,10 @@ class Accessor(object):
         return self.image.size[1]
 
 
-class Descriptor(object):
+class _ImageSpecDescriptor(object):
     def __init__(self, spec, property_name):
         self._property_name = property_name
         self._spec = spec
 
     def __get__(self, obj, type=None):
-        return Accessor(obj, self._spec, self._property_name)
+        return BoundImageSpec(obj, self._spec, self._property_name)
