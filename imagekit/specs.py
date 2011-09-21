@@ -222,5 +222,8 @@ class _ImageSpecDescriptor(object):
         self._property_name = property_name
         self._spec = spec
 
-    def __get__(self, obj, type=None):
-        return BoundImageSpec(obj, self._spec, self._property_name)
+    def __get__(self, instance, owner):
+        if instance is None:
+            return self._spec
+        else:
+            return BoundImageSpec(instance, self._spec, self._property_name)

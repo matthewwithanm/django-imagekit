@@ -17,8 +17,11 @@ class AdminThumbnailView(object):
         self.image_field = image_field
         self.template = template
 
-    def __get__(self, obj, type=None):
-        return BoundAdminThumbnailView(obj, self)
+    def __get__(self, instance, owner):
+        if instance is None:
+            return self
+        else:
+            return BoundAdminThumbnailView(instance, self)
 
 
 class BoundAdminThumbnailView(AdminThumbnailView):
@@ -43,6 +46,6 @@ class BoundAdminThumbnailView(AdminThumbnailView):
             'original_image': original_image,
         })
     
-    def __get__(self, obj, type=None):
+    def __get__(self, instance, owner):
         """Override AdminThumbnailView's implementation."""
         return self
