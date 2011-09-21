@@ -8,7 +8,6 @@ spec found.
 import os
 import datetime
 from StringIO import StringIO
-from imagekit import processors
 from imagekit.lib import *
 from imagekit.utils import img_to_fobj
 from django.core.files.base import ContentFile
@@ -23,6 +22,26 @@ class ImageSpec(object):
     quality = 70
     increment_count = False
     storage = None
+    format = None
+
+    cache_to = None
+    """Specifies the filename to use when saving the image cache file. This is
+    modeled after ImageField's `upload_to` and can accept either a string
+    (that specifies a directory) or a callable (that returns a filepath).
+    Callable values should accept the following arguments:
+
+    instance -- the model instance this spec belongs to
+    path -- the path of the original image
+    specname -- the property name that the spec is bound to on the model instance
+    extension -- a recommended extension. If the format of the spec is set
+            explicitly, this suggestion will be based on that format. if not,
+            the extension of the original file will be passed. You do not have
+            to use this extension, it's only a recommendation.
+
+    If you have not explicitly set a format on your ImageSpec, the extension of
+    the path returned by this function will be used to infer one.
+
+    """
 
     def __init__(self, processors=None, **kwargs):
         if processors:
@@ -38,8 +57,9 @@ class ImageSpec(object):
         img = image.copy()
         for proc in self.processors:
             img, fmt = proc.process(img, fmt, obj, self)
-        img.format = fmt
-        return img, fmt
+        format = self.format or fmt
+        img.format = format
+        return img, format
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, Descriptor(self, name))
@@ -53,8 +73,24 @@ class Accessor(object):
         self.spec = spec
         self.property_name = property_name
 
+    @property
+    def _format(self):
+        """The format used to save the cache file. If the format is set
+        explicitly on the ImageSpec, that format will be used. Otherwise, the
+        format will be inferred from the extension of the cache filename (see
+        the `name` property).
+
+        """
+        format = self.spec.format
+        if not format:
+            # Get the real (not suggested) extension.
+            extension = os.path.splitext(self.name)[1].lower()
+            # Try to guess the format from the extension.
+            format = Image.EXTENSION.get(extension)
+        return format or self._img.format or 'JPEG'
+
     def _get_imgfile(self):
-        format = self._img.format or 'JPEG'
+        format = self._format
         if format != 'JPEG':
             imgfile = img_to_fobj(self._img, format)
         else:
@@ -95,7 +131,28 @@ class Accessor(object):
             return self._storage.exists(self.name)
 
     @property
+    def _suggested_extension(self):
+        if self.spec.format:
+            # Try to look up an extension by the format
+            extensions = [k.lstrip('.') for k, v in Image.EXTENSION.iteritems() \
+                    if v == self.spec.format.upper()]
+        else:
+            extensions = []
+        original_extension = os.path.splitext(self._imgfield.name)[1].lstrip('.')
+        if not extensions or original_extension.lower() in extensions:
+            # If the original extension matches the format, use it.
+            extension = original_extension
+        else:
+            extension = extensions[0]
+        return extension
+
+    @property
     def name(self):
+        """
+        Specifies the filename that the cached image will use. The user can
+        control this by providing a `cache_to` method to the ImageSpec.
+
+        """
         filename = self._imgfield.name
         if filename:
             cache_to = getattr(self.spec, 'cache_to', None) or \
@@ -104,13 +161,9 @@ class Accessor(object):
             if not cache_to:
                 raise Exception('No cache_to or default_cache_to value specified')
             if callable(cache_to):
-                extension = os.path.splitext(filename)[1]
-                for processor in self.spec.processors:
-                    if isinstance(processor, processors.Format):
-                        extension = processor.extension
                 new_filename = force_unicode(datetime.datetime.now().strftime( \
                         smart_str(cache_to(self._obj, self._imgfield.name, \
-                            self.property_name, extension.lstrip('.')))))
+                            self.property_name, self._suggested_extension))))
             else:
                dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
                filename = os.path.normpath(os.path.basename(filename))

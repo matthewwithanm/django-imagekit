@@ -35,14 +35,6 @@ class Adjust(ImageProcessor):
         return img, fmt
 
 
-class Format(ImageProcessor):
-    format = 'JPEG'
-    extension = 'jpg'
-
-    def process(self, img, fmt, obj, spec):
-        return img, self.format
-
-
 class Reflection(ImageProcessor):
     background_color = '#FFFFFF'
     size = 0.0
