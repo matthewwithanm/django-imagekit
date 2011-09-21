@@ -81,67 +81,68 @@ class _Resize(ImageProcessor):
     
     width = None
     height = None
-    crop = False
-    upscale = False
     
-    def __init__(self, width=None, height=None, crop=None, upscale=None):
+    def __init__(self, width=None, height=None):
         if width is not None:
             self.width = width
         if height is not None:
             self.height = height
-        if crop is not None:
-            self.crop = crop
+
+    def process(self, img, fmt, obj, spec):
+        raise NotImplementedError('process must be overridden by subclasses.')
+
+
+class Crop(_Resize):
+    def __init__(self, width=None, height=None):
+        super(Crop, self).__init__(width, height)
+
+    def process(self, img, fmt, obj, spec):
+        cur_width, cur_height = img.size
+        crop_horz = getattr(obj, obj._ik.crop_horz_field, 1)
+        crop_vert = getattr(obj, obj._ik.crop_vert_field, 1)
+        ratio = max(float(self.width)/cur_width, float(self.height)/cur_height)
+        resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
+        crop_x, crop_y = (abs(self.width - resize_x), abs(self.height - resize_y))
+        x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
+        box_left, box_right = {
+            0: (0, self.width),
+            1: (int(x_diff), int(x_diff + self.width)),
+            2: (int(crop_x), int(resize_x)),
+        }[crop_horz]
+        box_upper, box_lower = {
+            0: (0, self.height),
+            1: (int(y_diff), int(y_diff + self.height)),
+            2: (int(crop_y), int(resize_y)),
+        }[crop_vert]
+        box = (box_left, box_upper, box_right, box_lower)
+        img = img.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
+        return img, fmt
+
+
+class Fit(_Resize):
+    def __init__(self, width=None, height=None, upscale=None):
+        super(Fit, self).__init__(width, height)
         if upscale is not None:
             self.upscale = upscale
 
     def process(self, img, fmt, obj, spec):
         cur_width, cur_height = img.size
-        if self.crop:
-            crop_horz = getattr(obj, obj._ik.crop_horz_field, 1)
-            crop_vert = getattr(obj, obj._ik.crop_vert_field, 1)
-            ratio = max(float(self.width)/cur_width, float(self.height)/cur_height)
-            resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
-            crop_x, crop_y = (abs(self.width - resize_x), abs(self.height - resize_y))
-            x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
-            box_left, box_right = {
-                0: (0, self.width),
-                1: (int(x_diff), int(x_diff + self.width)),
-                2: (int(crop_x), int(resize_x)),
-            }[crop_horz]
-            box_upper, box_lower = {
-                0: (0, self.height),
-                1: (int(y_diff), int(y_diff + self.height)),
-                2: (int(crop_y), int(resize_y)),
-            }[crop_vert]
-            box = (box_left, box_upper, box_right, box_lower)
-            img = img.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
+        if not self.width is None and not self.height is None:
+            ratio = min(float(self.width)/cur_width,
+                        float(self.height)/cur_height)
         else:
-            if not self.width is None and not self.height is None:
-                ratio = min(float(self.width)/cur_width,
-                            float(self.height)/cur_height)
+            if self.width is None:
+                ratio = float(self.height)/cur_height
             else:
-                if self.width is None:
-                    ratio = float(self.height)/cur_height
-                else:
-                    ratio = float(self.width)/cur_width
-            new_dimensions = (int(round(cur_width*ratio)),
-                              int(round(cur_height*ratio)))
-            if new_dimensions[0] > cur_width or \
-               new_dimensions[1] > cur_height:
-                if not self.upscale:
-                    return img, fmt
-            img = img.resize(new_dimensions, Image.ANTIALIAS)
+                ratio = float(self.width)/cur_width
+        new_dimensions = (int(round(cur_width*ratio)),
+                          int(round(cur_height*ratio)))
+        if new_dimensions[0] > cur_width or \
+           new_dimensions[1] > cur_height:
+            if not self.upscale:
+                return img, fmt
+        img = img.resize(new_dimensions, Image.ANTIALIAS)
         return img, fmt
-
-
-class Crop(_Resize):
-    def __init__(self, width=None, height=None):
-        super(Crop, self).__init__(width, height, crop=True)
-
-
-class Fit(_Resize):
-    def __init__(self, width=None, height=None, upscale=None):
-        super(Fit, self).__init__(width, height, crop=False, upscale=upscale)
 
 
 class Transpose(ImageProcessor):
