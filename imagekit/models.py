@@ -8,7 +8,7 @@ from django.db.models.signals import post_delete
 from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 
-from imagekit.specs import ImageSpec
+from imagekit.fields import ImageSpec
 from imagekit.lib import *
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj

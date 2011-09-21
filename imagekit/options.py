@@ -1,6 +1,4 @@
 # Imagekit options
-from imagekit import processors
-from imagekit.specs import ImageSpec
 import os
 import os.path
 

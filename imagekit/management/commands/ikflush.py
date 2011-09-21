@@ -2,7 +2,7 @@ from django.db.models.loading import cache
 from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
 from imagekit.models import ImageModel
-from imagekit.specs import ImageSpec
+from imagekit.fields import ImageSpec
 
 
 class Command(BaseCommand):
