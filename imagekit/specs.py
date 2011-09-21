@@ -12,6 +12,7 @@ from imagekit.lib import *
 from imagekit.utils import img_to_fobj
 from django.core.files.base import ContentFile
 from django.utils.encoding import force_unicode, smart_str
+from django.db.models.signals import post_save, post_delete
 
 
 class ImageSpec(object):
@@ -63,6 +64,16 @@ class ImageSpec(object):
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecDescriptor(self, name))
+        # Connect to the signals only once for this class's attribute.
+        uid = '%s.%s_%s' % (cls.__module__, cls.__name__, name)
+        post_save.connect(_create_post_save_handler(name),
+            sender=cls,
+            weak=False,
+            dispatch_uid='%s_save' % uid)
+        post_delete.connect(_create_post_delete_handler(name, uid),
+            sender=cls,
+            weak=False,
+            dispatch_uid='%s.delete' % uid)
 
 
 class BoundImageSpec(ImageSpec):
@@ -227,3 +238,41 @@ class _ImageSpecDescriptor(object):
             return self._spec
         else:
             return BoundImageSpec(instance, self._spec, self._property_name)
+
+
+def _create_post_save_handler(accessor_name):
+    def handler(sender, instance=None, created=False, raw=False, **kwargs):
+        if raw:
+            return
+        accessor = getattr(instance, accessor_name)
+        spec = accessor.spec
+        imgfield = spec._get_imgfield(instance)
+        newfile = imgfield.storage.open(str(imgfield))
+        img = Image.open(newfile)
+        img, format = spec.process(img, instance)
+        if format != 'JPEG':
+            imgfile = img_to_fobj(img, format)
+        else:
+            imgfile = img_to_fobj(img, format,
+                                  quality=int(spec.quality),
+                                  optimize=True)
+        content = ContentFile(imgfile.read())
+        newfile.close()
+        name = str(imgfield)
+        imgfield.storage.delete(name)
+        imgfield.storage.save(name, content)
+        if not created:
+            accessor._delete()
+            accessor._create()
+    return handler
+
+
+def _create_post_delete_handler(accessor_name, uid):
+    def handler(sender, instance=None, **kwargs):
+        assert instance._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (instance._meta.object_name, instance._meta.pk.attname)
+        accessor = getattr(instance, accessor_name)
+        accessor._delete()
+        post_save.disconnect(dispatch_uid='%s_save' % uid)
+        post_delete.disconnect(dispatch_uid='%s.delete' % uid)
+
+    return handler
