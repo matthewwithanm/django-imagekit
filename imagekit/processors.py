@@ -93,27 +93,51 @@ class _Resize(ImageProcessor):
 
 
 class Crop(_Resize):
-    def __init__(self, width=None, height=None):
+
+    TOP_LEFT = 'tl'
+    TOP = 't'
+    TOP_RIGHT = 'tr'
+    BOTTOM_LEFT = 'bl'
+    BOTTOM = 'b'
+    BOTTOM_RIGHT = 'br'
+    CENTER = 'c'
+    LEFT = 'l'
+    RIGHT = 'r'
+
+    _ANCHOR_PTS = {
+        TOP_LEFT: (0, 0),
+        TOP: (0.5, 0),
+        TOP_RIGHT: (1, 0),
+        LEFT: (0, 0.5),
+        CENTER: (0.5, 0.5),
+        RIGHT: (1, 0.5),
+        BOTTOM_LEFT: (0, 1),
+        BOTTOM: (0.5, 1),
+        BOTTOM_RIGHT: (1, 1),
+    }
+
+    def __init__(self, width=None, height=None, anchor=None):
         super(Crop, self).__init__(width, height)
+        self.anchor = anchor
 
     def process(self, img, fmt, obj, spec):
         cur_width, cur_height = img.size
-        crop_horz = getattr(obj, obj._ik.crop_horz_field, 1)
-        crop_vert = getattr(obj, obj._ik.crop_vert_field, 1)
+        horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
+                Crop.CENTER]
         ratio = max(float(self.width)/cur_width, float(self.height)/cur_height)
         resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
         crop_x, crop_y = (abs(self.width - resize_x), abs(self.height - resize_y))
         x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
         box_left, box_right = {
-            0: (0, self.width),
-            1: (int(x_diff), int(x_diff + self.width)),
-            2: (int(crop_x), int(resize_x)),
-        }[crop_horz]
+            0:   (0, self.width),
+            0.5: (int(x_diff), int(x_diff + self.width)),
+            1:   (int(crop_x), int(resize_x)),
+        }[horizontal_anchor]
         box_upper, box_lower = {
-            0: (0, self.height),
-            1: (int(y_diff), int(y_diff + self.height)),
-            2: (int(crop_y), int(resize_y)),
-        }[crop_vert]
+            0:   (0, self.height),
+            0.5: (int(y_diff), int(y_diff + self.height)),
+            1:   (int(crop_y), int(resize_y)),
+        }[vertical_anchor]
         box = (box_left, box_upper, box_right, box_lower)
         img = img.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
         return img, fmt

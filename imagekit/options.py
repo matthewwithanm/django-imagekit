@@ -35,8 +35,6 @@ class Options(object):
         new_name = '{0}_{1}.{2}'.format(filename, specname, extension)
         return os.path.join(os.path.join('cache', filepath), new_name)
 
-    crop_horz_field = 'crop_horz'
-    crop_vert_field = 'crop_vert'
     preprocessor_spec = None
     save_count_as = None
     specs = None

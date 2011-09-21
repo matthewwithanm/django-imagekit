@@ -16,20 +16,6 @@ from imagekit.utils import img_to_fobj
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
-# Choice tuples for specifying the crop origin.
-# These are provided for convenience.
-CROP_HORZ_CHOICES = (
-    (0, _('left')),
-    (1, _('center')),
-    (2, _('right')),
-)
-
-CROP_VERT_CHOICES = (
-    (0, _('top')),
-    (1, _('center')),
-    (2, _('bottom')),
-)
-
 
 class ImageModelBase(ModelBase):
     """ ImageModel metaclass
