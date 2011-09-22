@@ -9,14 +9,14 @@ def img_to_fobj(img, format, **kwargs):
     return tmp
 
 
-def get_bound_specs(instance):
-    from imagekit.fields import BoundImageSpec
-    bound_specs = []
+def get_spec_files(instance):
+    from imagekit.fields import ImageSpecFile
+    spec_files = []
     for key in dir(instance):
         try:
             value = getattr(instance, key)
         except AttributeError:
             continue
-        if isinstance(value, BoundImageSpec):
-            bound_specs.append(value)
-    return bound_specs
+        if isinstance(value, ImageSpecFile):
+            spec_files.append(value)
+    return spec_files

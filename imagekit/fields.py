@@ -2,7 +2,7 @@ import os
 import datetime
 from StringIO import StringIO
 from imagekit.lib import *
-from imagekit.utils import img_to_fobj, get_bound_specs
+from imagekit.utils import img_to_fobj, get_spec_files
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.utils.encoding import force_unicode, smart_str
@@ -93,14 +93,9 @@ def _get_suggested_extension(name, format):
     return extension
 
 
-class BoundImageSpec(ImageSpec):
-    def __init__(self, obj, unbound_field, attname):
-        super(BoundImageSpec, self).__init__(unbound_field.processors,
-                image_field=unbound_field.image_field,
-                pre_cache=unbound_field.pre_cache,
-                quality=unbound_field.quality,
-                storage=unbound_field.storage, format=unbound_field.format,
-                cache_to=unbound_field.cache_to)
+class ImageSpecFile(object):
+    def __init__(self, obj, spec, attname):
+        self._spec = spec
         self._img = None
         self._fmt = None
         self._obj = obj
@@ -114,7 +109,7 @@ class BoundImageSpec(ImageSpec):
         the `name` property).
 
         """
-        format = self.format
+        format = self._spec.format
         if not format:
             # Get the real (not suggested) extension.
             extension = os.path.splitext(self.name)[1].lower()
@@ -128,13 +123,13 @@ class BoundImageSpec(ImageSpec):
             imgfile = img_to_fobj(self._img, format)
         else:
             imgfile = img_to_fobj(self._img, format,
-                                  quality=int(self.quality),
+                                  quality=int(self._spec.quality),
                                   optimize=True)
         return imgfile
 
     @property
     def _imgfield(self):
-        field_name = getattr(self, 'image_field', None)
+        field_name = getattr(self._spec, 'image_field', None)
         if field_name:
             field = getattr(self._obj, field_name)
         else:
@@ -166,25 +161,25 @@ class BoundImageSpec(ImageSpec):
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
-            self._img, self._fmt = self.process(Image.open(fp), self._obj)
+            self._img, self._fmt = self._spec.process(Image.open(fp), self._obj)
             # save the new image to the cache
             content = ContentFile(self._get_imgfile().read())
-            self._storage.save(self.name, content)
+            self.storage.save(self.name, content)
 
     def _delete(self):
         if self._imgfield:
             try:
-                self._storage.delete(self.name)
+                self.storage.delete(self.name)
             except (NotImplementedError, IOError):
                 return
 
     def _exists(self):
         if self._imgfield:
-            return self._storage.exists(self.name)
+            return self.storage.exists(self.name)
 
     @property
     def _suggested_extension(self):
-        return _get_suggested_extension(self._imgfield.name, self.format)
+        return _get_suggested_extension(self._imgfield.name, self._spec.format)
 
     def _default_cache_to(self, instance, path, specname, extension):
         """Determines the filename to use for the transformed image. Can be
@@ -206,7 +201,7 @@ class BoundImageSpec(ImageSpec):
         """
         filename = self._imgfield.name
         if filename:
-            cache_to = self.cache_to or self._default_cache_to
+            cache_to = self._spec.cache_to or self._default_cache_to
 
             if not cache_to:
                 raise Exception('No cache_to or default_cache_to value specified')
@@ -222,19 +217,19 @@ class BoundImageSpec(ImageSpec):
             return new_filename
 
     @property
-    def _storage(self):
-        return self.storage or self._imgfield.storage
+    def storage(self):
+        return self._spec.storage or self._imgfield.storage
 
     @property
     def url(self):
-        if not self.pre_cache:
+        if not self._spec.pre_cache:
             self._create()
-        return self._storage.url(self.name)
+        return self.storage.url(self.name)
 
     @property
     def file(self):
         self._create()
-        return self._storage.open(self.name)
+        return self.storage.open(self.name)
 
     @property
     def image(self):
@@ -262,25 +257,25 @@ class _ImageSpecDescriptor(object):
         if instance is None:
             return self._spec
         else:
-            return BoundImageSpec(instance, self._spec, self._attname)
+            return ImageSpecFile(instance, self._spec, self._attname)
 
 
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
     if raw:
         return
-    bound_specs = get_bound_specs(instance)
-    for bound_spec in bound_specs:
-        name = bound_spec.attname
-        imgfield = bound_spec._imgfield
+    spec_files = get_spec_files(instance)
+    for spec_file in spec_files:
+        name = spec_file.attname
+        imgfield = spec_file._imgfield
         if imgfield:
             newfile = imgfield.storage.open(imgfield.name)
             img = Image.open(newfile)
-            img, format = bound_spec.process(img, instance)
+            img, format = spec_file._spec.process(img, instance)
             if format != 'JPEG':
                 imgfile = img_to_fobj(img, format)
             else:
                 imgfile = img_to_fobj(img, format,
-                                      quality=int(bound_spec.quality),
+                                      quality=int(spec_file._spec.quality),
                                       optimize=True)
             content = ContentFile(imgfile.read())
             newfile.close()
@@ -288,15 +283,15 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
             imgfield.storage.delete(name)
             imgfield.storage.save(name, content)
             if not created:
-                bound_spec._delete()
-                bound_spec._create()
+                spec_file._delete()
+                spec_file._create()
 
 
 def _post_delete_handler(sender, instance=None, **kwargs):
     assert instance._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (instance._meta.object_name, instance._meta.pk.attname)
-    bound_specs = get_bound_specs(instance)
-    for bound_spec in bound_specs:
-        bound_spec._delete()
+    spec_files = get_spec_files(instance)
+    for spec_file in spec_files:
+        spec_file._delete()
 
 
 class AdminThumbnailView(object):

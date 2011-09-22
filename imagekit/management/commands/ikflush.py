@@ -1,7 +1,7 @@
 from django.db.models.loading import cache
 from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
-from imagekit.utils import get_bound_specs
+from imagekit.utils import get_spec_files
 
 
 class Command(BaseCommand):
@@ -24,10 +24,10 @@ def flush_cache(apps, options):
             for model in [m for m in cache.get_models(app)]:
                 print 'Flushing cache for "%s.%s"' % (app_label, model.__name__)
                 for obj in model.objects.order_by('-id'):
-                    for spec in get_bound_specs(obj):
-                        if spec is not None:
-                            spec._delete()
-                        if spec.pre_cache:
-                            spec._create()
+                    for spec_file in get_spec_files(obj):
+                        if spec_file is not None:
+                            spec_file._delete()
+                        if spec_file._spec.pre_cache:
+                            spec_file._create()
     else:
         print 'Please specify on or more app names'

@@ -146,8 +146,7 @@ class Crop(_Resize):
 class Fit(_Resize):
     def __init__(self, width=None, height=None, upscale=None):
         super(Fit, self).__init__(width, height)
-        if upscale is not None:
-            self.upscale = upscale
+        self.upscale = upscale
 
     def process(self, img, fmt, obj, spec):
         cur_width, cur_height = img.size
