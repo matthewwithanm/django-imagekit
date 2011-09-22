@@ -10,20 +10,31 @@ from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.utils.translation import ugettext_lazy as _
 from django.template.loader import render_to_string
+from django.db.models.fields.files import ImageFieldFile
 
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
 
-class ImageSpec(object):
+class _ImageSpecMixin(object):
 
-    image_field = None
-    processors = []
-    pre_cache = False
-    quality = 70
-    storage = None
-    format = None
+    def __init__(self, processors=None, quality=70, format=None):
+        self.processors = processors
+        self.quality = quality
+        self.format = format
+
+    def process(self, image, obj):
+        fmt = image.format
+        img = image.copy()
+        for proc in self.processors:
+            img, fmt = proc.process(img, fmt, obj, self)
+        format = self.format or fmt
+        img.format = format
+        return img, format
+
+
+class ImageSpec(_ImageSpecMixin):
 
     cache_to = None
     """Specifies the filename to use when saving the image cache file. This is
@@ -44,19 +55,15 @@ class ImageSpec(object):
 
     """
 
-    def __init__(self, processors=None, **kwargs):
-        if processors:
-            self.processors = processors
-        self.__dict__.update(kwargs)
+    def __init__(self, processors=None, quality=70, format=None,
+        image_field=None, pre_cache=False, storage=None, cache_to=None):
 
-    def process(self, image, obj):
-        fmt = image.format
-        img = image.copy()
-        for proc in self.processors:
-            img, fmt = proc.process(img, fmt, obj, self)
-        format = self.format or fmt
-        img.format = format
-        return img, format
+        _ImageSpecMixin.__init__(self, processors, quality=quality,
+                format=format)
+        self.image_field = image_field
+        self.pre_cache = pre_cache
+        self.storage = storage
+        self.cache_to = cache_to
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecDescriptor(self, name))
@@ -68,6 +75,22 @@ class ImageSpec(object):
         post_delete.connect(_post_delete_handler,
             sender=cls,
             dispatch_uid='%s.delete' % uid)
+
+
+def _get_suggested_extension(name, format):
+    if format:
+        # Try to look up an extension by the format
+        extensions = [k.lstrip('.') for k, v in Image.EXTENSION.iteritems() \
+                if v == format.upper()]
+    else:
+        extensions = []
+    original_extension = os.path.splitext(name)[1].lstrip('.')
+    if not extensions or original_extension.lower() in extensions:
+        # If the original extension matches the format, use it.
+        extension = original_extension
+    else:
+        extension = extensions[0]
+    return extension
 
 
 class BoundImageSpec(ImageSpec):
@@ -133,6 +156,7 @@ class BoundImageSpec(ImageSpec):
 
     def _create(self):
         if self._imgfield:
+            # TODO: Should we error here or something if the image doesn't exist?
             if self._exists():
                 return
             # process the original image file
@@ -160,19 +184,7 @@ class BoundImageSpec(ImageSpec):
 
     @property
     def _suggested_extension(self):
-        if self.format:
-            # Try to look up an extension by the format
-            extensions = [k.lstrip('.') for k, v in Image.EXTENSION.iteritems() \
-                    if v == self.format.upper()]
-        else:
-            extensions = []
-        original_extension = os.path.splitext(self._imgfield.name)[1].lstrip('.')
-        if not extensions or original_extension.lower() in extensions:
-            # If the original extension matches the format, use it.
-            extension = original_extension
-        else:
-            extension = extensions[0]
-        return extension
+        return _get_suggested_extension(self._imgfield.name, self.format)
 
     def _default_cache_to(self, instance, path, specname, extension):
         """Determines the filename to use for the transformed image. Can be
@@ -334,3 +346,48 @@ class BoundAdminThumbnailView(AdminThumbnailView):
     def __get__(self, instance, owner):
         """Override AdminThumbnailView's implementation."""
         return self
+
+
+class ProcessedImageFieldFile(ImageFieldFile):
+    def save(self, name, content, save=True):
+        new_filename = self.field.generate_filename(self.instance, name)
+        img = Image.open(content)
+        img, format = self.field.process(img, self.instance)
+        format = self._get_format(new_filename, format)
+        if format != 'JPEG':
+            imgfile = img_to_fobj(img, format)
+        else:
+            imgfile = img_to_fobj(img, format,
+                                  quality=int(self.field.quality),
+                                  optimize=True)
+        content = ContentFile(imgfile.read())
+        return super(ProcessedImageFieldFile, self).save(name, content, save)
+
+    def _get_format(self, name, fallback):
+        format = self.field.format
+        if not format:
+            if callable(self.field.upload_to):
+                # The extension is explicit, so assume they want the matching format.
+                extension = os.path.splitext(name)[1].lower()
+                # Try to guess the format from the extension.
+                format = Image.EXTENSION.get(extension)
+        return format or fallback
+
+
+class ProcessedImageField(models.ImageField, _ImageSpecMixin):
+    attr_class = ProcessedImageFieldFile
+
+    def __init__(self, processors=None, quality=70, format=None,
+        verbose_name=None, name=None, width_field=None, height_field=None,
+        **kwargs):
+
+        _ImageSpecMixin.__init__(self, processors, quality=quality,
+                format=format)
+        models.ImageField.__init__(self, verbose_name, name, width_field,
+                height_field, **kwargs)
+
+    def get_filename(self, filename):
+        filename = os.path.normpath(self.storage.get_valid_name(os.path.basename(filename)))
+        name, ext = os.path.splitext(filename)
+        ext = _get_suggested_extension(filename, self.format)
+        return '{0}.{1}'.format(name, ext)
