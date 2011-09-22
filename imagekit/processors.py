@@ -11,7 +11,7 @@ from imagekit.lib import *
 class ImageProcessor(object):
     """ Base image processor class """
 
-    def process(self, img, fmt, obj, spec):
+    def process(self, img, fmt, file):
         return img, fmt
 
 
@@ -23,7 +23,7 @@ class Adjust(ImageProcessor):
         self.contrast = contrast
         self.sharpness = sharpness
 
-    def process(self, img, fmt, obj, spec):
+    def process(self, img, fmt, file):
         img = img.convert('RGB')
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(self, name.lower())
@@ -40,7 +40,7 @@ class Reflection(ImageProcessor):
     size = 0.0
     opacity = 0.6
 
-    def process(self, img, fmt, obj, spec):
+    def process(self, img, fmt, file):
         # convert bgcolor string to rgb value
         background_color = ImageColor.getrgb(self.background_color)
         # handle palleted images
@@ -88,7 +88,7 @@ class _Resize(ImageProcessor):
         if height is not None:
             self.height = height
 
-    def process(self, img, fmt, obj, spec):
+    def process(self, img, fmt, file):
         raise NotImplementedError('process must be overridden by subclasses.')
 
 
@@ -120,7 +120,7 @@ class Crop(_Resize):
         super(Crop, self).__init__(width, height)
         self.anchor = anchor
 
-    def process(self, img, fmt, obj, spec):
+    def process(self, img, fmt, file):
         cur_width, cur_height = img.size
         horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
                 Crop.CENTER]
@@ -148,7 +148,7 @@ class Fit(_Resize):
         super(Fit, self).__init__(width, height)
         self.upscale = upscale
 
-    def process(self, img, fmt, obj, spec):
+    def process(self, img, fmt, file):
         cur_width, cur_height = img.size
         if not self.width is None and not self.height is None:
             ratio = min(float(self.width)/cur_width,
@@ -196,10 +196,10 @@ class Transpose(ImageProcessor):
 
     method = 'auto'
 
-    def process(self, img, fmt, obj, spec):
+    def process(self, img, fmt, file):
         if self.method == 'auto':
             try:
-                orientation = Image.open(spec._get_imgfield(obj).file)._getexif()[0x0112]
+                orientation = Image.open(file.file)._getexif()[0x0112]
                 ops = self.EXIF_ORIENTATION_STEPS[orientation]
             except:
                 ops = []

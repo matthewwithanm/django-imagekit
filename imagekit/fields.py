@@ -24,11 +24,11 @@ class _ImageSpecMixin(object):
         self.quality = quality
         self.format = format
 
-    def process(self, image, obj):
+    def process(self, image, file):
         fmt = image.format
         img = image.copy()
         for proc in self.processors:
-            img, fmt = proc.process(img, fmt, obj, self)
+            img, fmt = proc.process(img, fmt, file)
         format = self.format or fmt
         img.format = format
         return img, format
@@ -161,7 +161,7 @@ class ImageSpecFile(object):
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
-            self._img, self._fmt = self._spec.process(Image.open(fp), self._obj)
+            self._img, self._fmt = self._spec.process(Image.open(fp), self)
             # save the new image to the cache
             content = ContentFile(self._get_imgfile().read())
             self.storage.save(self.name, content)
@@ -270,7 +270,7 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
         if imgfield:
             newfile = imgfield.storage.open(imgfield.name)
             img = Image.open(newfile)
-            img, format = spec_file._spec.process(img, instance)
+            img, format = spec_file._spec.process(img, spec_file)
             if format != 'JPEG':
                 imgfile = img_to_fobj(img, format)
             else:
@@ -347,7 +347,7 @@ class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
         img = Image.open(content)
-        img, format = self.field.process(img, self.instance)
+        img, format = self.field.process(img, self)
         format = self._get_format(new_filename, format)
         if format != 'JPEG':
             imgfile = img_to_fobj(img, format)
