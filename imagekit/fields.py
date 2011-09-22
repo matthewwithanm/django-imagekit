@@ -265,26 +265,10 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
         return
     spec_files = get_spec_files(instance)
     for spec_file in spec_files:
-        name = spec_file.attname
-        imgfield = spec_file._imgfield
-        if imgfield:
-            newfile = imgfield.storage.open(imgfield.name)
-            img = Image.open(newfile)
-            img, format = spec_file.field.process(img, spec_file)
-            if format != 'JPEG':
-                imgfile = img_to_fobj(img, format)
-            else:
-                imgfile = img_to_fobj(img, format,
-                                      quality=int(spec_file.field.quality),
-                                      optimize=True)
-            content = ContentFile(imgfile.read())
-            newfile.close()
-            name = str(imgfield)
-            imgfield.storage.delete(name)
-            imgfield.storage.save(name, content)
-            if not created:
-                spec_file._delete()
-                spec_file._create()
+        if not created:
+            spec_file._delete()
+        if spec_file.field.pre_cache:
+            spec_file._create()
 
 
 def _post_delete_handler(sender, instance=None, **kwargs):
