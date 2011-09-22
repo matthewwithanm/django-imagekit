@@ -3,11 +3,17 @@ import datetime
 from StringIO import StringIO
 from imagekit.lib import *
 from imagekit.utils import img_to_fobj, get_bound_specs
+from django.conf import settings
 from django.core.files.base import ContentFile
 from django.utils.encoding import force_unicode, smart_str
+from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.utils.translation import ugettext_lazy as _
 from django.template.loader import render_to_string
+
+
+# Modify image file buffer size.
+ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
 
 class ImageSpec(object):
@@ -43,10 +49,6 @@ class ImageSpec(object):
         if processors:
             self.processors = processors
         self.__dict__.update(kwargs)
-
-    def _get_imgfield(self, obj):
-        field_name = getattr(self, 'image_field', None) or obj._ik.default_image_field
-        return getattr(obj, field_name)
 
     def process(self, image, obj):
         fmt = image.format
@@ -111,7 +113,25 @@ class BoundImageSpec(ImageSpec):
 
     @property
     def _imgfield(self):
-        return self._get_imgfield(self._obj)
+        field_name = getattr(self, 'image_field', None)
+        if field_name:
+            field = getattr(self._obj, field_name)
+        else:
+            image_fields = [getattr(self._obj, f.attname) for f in \
+                    self._obj.__class__._meta.fields if \
+                    isinstance(f, models.ImageField)]
+            if len(image_fields) == 0:
+                raise Exception('{0} does not define any ImageFields, so your '
+                        '{1} ImageSpec has no image to act on.'.format(
+                        self._obj.__class__.__name__, self.property_name))
+            elif len(image_fields) > 1:
+                raise Exception('{0} defines multiple ImageFields, but you have '
+                        'not specified an image_field for your {1} '
+                        'ImageSpec.'.format(self._obj.__class__.__name__,
+                        self.property_name))
+            else:
+                field = image_fields[0]
+        return field
 
     def _create(self):
         if self._imgfield:
@@ -156,6 +176,17 @@ class BoundImageSpec(ImageSpec):
             extension = extensions[0]
         return extension
 
+    def _default_cache_to(self, instance, path, specname, extension):
+        """Determines the filename to use for the transformed image. Can be
+        overridden on a per-spec basis by setting the cache_to property on the
+        spec.
+
+        """
+        filepath, basename = os.path.split(path)
+        filename = os.path.splitext(basename)[0]
+        new_name = '{0}_{1}.{2}'.format(filename, specname, extension)
+        return os.path.join(os.path.join('cache', filepath), new_name)
+
     @property
     def name(self):
         """
@@ -165,8 +196,7 @@ class BoundImageSpec(ImageSpec):
         """
         filename = self._imgfield.name
         if filename:
-            cache_to = self.cache_to or \
-                getattr(self._obj._ik, 'default_cache_to', None)
+            cache_to = self.cache_to or self._default_cache_to
 
             if not cache_to:
                 raise Exception('No cache_to or default_cache_to value specified')
@@ -183,9 +213,7 @@ class BoundImageSpec(ImageSpec):
 
     @property
     def _storage(self):
-        return self.storage or \
-            getattr(self._obj._ik, 'default_storage', None) or \
-            self._imgfield.storage
+        return self.storage or self._imgfield.storage
 
     @property
     def url(self):
