@@ -37,9 +37,7 @@ class Options(object):
 
     preprocessor_spec = None
     save_count_as = None
-    specs = None
 
     def __init__(self, opts):
         for key, value in opts.__dict__.iteritems():
             setattr(self, key, value)
-        self.specs = list(self.specs or [])

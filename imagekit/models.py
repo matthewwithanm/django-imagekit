@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from imagekit.fields import ImageSpec
 from imagekit.lib import *
 from imagekit.options import Options
-from imagekit.utils import img_to_fobj
+from imagekit.utils import img_to_fobj, get_bound_specs
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -26,16 +26,12 @@ class ImageModelBase(ModelBase):
     """
     def __init__(self, name, bases, attrs):
         user_opts = getattr(self, 'IKOptions', None)
-        specs = []
         default_image_field = getattr(user_opts, 'default_image_field', None)
         
         for k, v in attrs.items():
-            if isinstance(v, ImageSpec):
-                specs.append(v)
-            elif not default_image_field and isinstance(v, models.ImageField):
+            if not default_image_field and isinstance(v, models.ImageField):
                 default_image_field = k
 
-        user_opts.specs = specs
         user_opts.default_image_field = default_image_field
         opts = Options(user_opts)
         setattr(self, '_ik', opts)
@@ -60,4 +56,4 @@ class ImageModel(models.Model):
 
     @property
     def _imgfields(self):
-        return set([spec._get_imgfield(self) for spec in self._ik.specs])
+        return set([spec._get_imgfield(self) for spec in get_bound_specs(self)])
