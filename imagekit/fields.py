@@ -22,7 +22,6 @@ class ImageSpec(object):
     processors = []
     pre_cache = False
     quality = 70
-    increment_count = False
     storage = None
     format = None
 
@@ -77,7 +76,6 @@ class BoundImageSpec(ImageSpec):
                 image_field=unbound_field.image_field,
                 pre_cache=unbound_field.pre_cache,
                 quality=unbound_field.quality,
-                increment_count=unbound_field.increment_count,
                 storage=unbound_field.storage, format=unbound_field.format,
                 cache_to=unbound_field.cache_to)
         self._img = None
@@ -219,12 +217,6 @@ class BoundImageSpec(ImageSpec):
     def url(self):
         if not self.pre_cache:
             self._create()
-        if self.increment_count:
-            fieldname = self._obj._ik.save_count_as
-            if fieldname is not None:
-                current_count = getattr(self._obj, fieldname)
-                setattr(self._obj, fieldname, current_count + 1)
-                self._obj.save(clear_cache=False)
         return self._storage.url(self.name)
 
     @property
