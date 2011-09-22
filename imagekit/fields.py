@@ -72,7 +72,7 @@ class ImageSpec(object):
 
 
 class BoundImageSpec(ImageSpec):
-    def __init__(self, obj, unbound_field, property_name):
+    def __init__(self, obj, unbound_field, attname):
         super(BoundImageSpec, self).__init__(unbound_field.processors,
                 image_field=unbound_field.image_field,
                 pre_cache=unbound_field.pre_cache,
@@ -83,7 +83,7 @@ class BoundImageSpec(ImageSpec):
         self._img = None
         self._fmt = None
         self._obj = obj
-        self.property_name = property_name
+        self.attname = attname
 
     @property
     def _format(self):
@@ -123,12 +123,12 @@ class BoundImageSpec(ImageSpec):
             if len(image_fields) == 0:
                 raise Exception('{0} does not define any ImageFields, so your '
                         '{1} ImageSpec has no image to act on.'.format(
-                        self._obj.__class__.__name__, self.property_name))
+                        self._obj.__class__.__name__, self.attname))
             elif len(image_fields) > 1:
                 raise Exception('{0} defines multiple ImageFields, but you have '
                         'not specified an image_field for your {1} '
                         'ImageSpec.'.format(self._obj.__class__.__name__,
-                        self.property_name))
+                        self.attname))
             else:
                 field = image_fields[0]
         return field
@@ -203,7 +203,7 @@ class BoundImageSpec(ImageSpec):
             if callable(cache_to):
                 new_filename = force_unicode(datetime.datetime.now().strftime( \
                         smart_str(cache_to(self._obj, self._imgfield.name, \
-                            self.property_name, self._suggested_extension))))
+                            self.attname, self._suggested_extension))))
             else:
                dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
                filename = os.path.normpath(os.path.basename(filename))
@@ -250,15 +250,15 @@ class BoundImageSpec(ImageSpec):
 
 
 class _ImageSpecDescriptor(object):
-    def __init__(self, spec, property_name):
-        self._property_name = property_name
+    def __init__(self, spec, attname):
+        self._attname = attname
         self._spec = spec
 
     def __get__(self, instance, owner):
         if instance is None:
             return self._spec
         else:
-            return BoundImageSpec(instance, self._spec, self._property_name)
+            return BoundImageSpec(instance, self._spec, self._attname)
 
 
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
@@ -266,7 +266,7 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
         return
     bound_specs = get_bound_specs(instance)
     for bound_spec in bound_specs:
-        name = bound_spec.property_name
+        name = bound_spec.attname
         imgfield = bound_spec._get_imgfield(instance)
         newfile = imgfield.storage.open(str(imgfield))
         img = Image.open(newfile)
