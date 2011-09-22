@@ -2,7 +2,7 @@ import os
 import datetime
 from StringIO import StringIO
 from imagekit.lib import *
-from imagekit.utils import img_to_fobj
+from imagekit.utils import img_to_fobj, get_bound_specs
 from django.core.files.base import ContentFile
 from django.utils.encoding import force_unicode, smart_str
 from django.db.models.signals import post_save, post_delete
@@ -236,7 +236,7 @@ class _ImageSpecDescriptor(object):
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
     if raw:
         return
-    bound_specs = _get_bound_specs(instance)
+    bound_specs = get_bound_specs(instance)
     for bound_spec in bound_specs:
         name = bound_spec.property_name
         imgfield = bound_spec._get_imgfield(instance)
@@ -261,21 +261,9 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
 
 def _post_delete_handler(sender, instance=None, **kwargs):
     assert instance._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (instance._meta.object_name, instance._meta.pk.attname)
-    bound_specs = _get_bound_specs(instance)
+    bound_specs = get_bound_specs(instance)
     for bound_spec in bound_specs:
         bound_spec._delete()
-
-
-def _get_bound_specs(instance):
-    bound_specs = []
-    for key in dir(instance):
-        try:
-            value = getattr(instance, key)
-        except AttributeError:
-            continue
-        if isinstance(value, BoundImageSpec):
-            bound_specs.append(value)
-    return bound_specs
 
 
 class AdminThumbnailView(object):
