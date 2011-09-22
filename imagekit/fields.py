@@ -94,11 +94,11 @@ def _get_suggested_extension(name, format):
 
 
 class ImageSpecFile(object):
-    def __init__(self, obj, spec, attname):
-        self._spec = spec
+    def __init__(self, instance, field, attname):
+        self.field = field
         self._img = None
         self._fmt = None
-        self._obj = obj
+        self.instance = instance
         self.attname = attname
 
     @property
@@ -109,7 +109,7 @@ class ImageSpecFile(object):
         the `name` property).
 
         """
-        format = self._spec.format
+        format = self.field.format
         if not format:
             # Get the real (not suggested) extension.
             extension = os.path.splitext(self.name)[1].lower()
@@ -123,27 +123,27 @@ class ImageSpecFile(object):
             imgfile = img_to_fobj(self._img, format)
         else:
             imgfile = img_to_fobj(self._img, format,
-                                  quality=int(self._spec.quality),
+                                  quality=int(self.field.quality),
                                   optimize=True)
         return imgfile
 
     @property
     def _imgfield(self):
-        field_name = getattr(self._spec, 'image_field', None)
+        field_name = getattr(self.field, 'image_field', None)
         if field_name:
-            field = getattr(self._obj, field_name)
+            field = getattr(self.instance, field_name)
         else:
-            image_fields = [getattr(self._obj, f.attname) for f in \
-                    self._obj.__class__._meta.fields if \
+            image_fields = [getattr(self.instance, f.attname) for f in \
+                    self.instance.__class__._meta.fields if \
                     isinstance(f, models.ImageField)]
             if len(image_fields) == 0:
                 raise Exception('{0} does not define any ImageFields, so your '
                         '{1} ImageSpec has no image to act on.'.format(
-                        self._obj.__class__.__name__, self.attname))
+                        self.instance.__class__.__name__, self.attname))
             elif len(image_fields) > 1:
                 raise Exception('{0} defines multiple ImageFields, but you have '
                         'not specified an image_field for your {1} '
-                        'ImageSpec.'.format(self._obj.__class__.__name__,
+                        'ImageSpec.'.format(self.instance.__class__.__name__,
                         self.attname))
             else:
                 field = image_fields[0]
@@ -161,7 +161,7 @@ class ImageSpecFile(object):
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
-            self._img, self._fmt = self._spec.process(Image.open(fp), self)
+            self._img, self._fmt = self.field.process(Image.open(fp), self)
             # save the new image to the cache
             content = ContentFile(self._get_imgfile().read())
             self.storage.save(self.name, content)
@@ -179,7 +179,7 @@ class ImageSpecFile(object):
 
     @property
     def _suggested_extension(self):
-        return _get_suggested_extension(self._imgfield.name, self._spec.format)
+        return _get_suggested_extension(self._imgfield.name, self.field.format)
 
     def _default_cache_to(self, instance, path, specname, extension):
         """Determines the filename to use for the transformed image. Can be
@@ -201,13 +201,13 @@ class ImageSpecFile(object):
         """
         filename = self._imgfield.name
         if filename:
-            cache_to = self._spec.cache_to or self._default_cache_to
+            cache_to = self.field.cache_to or self._default_cache_to
 
             if not cache_to:
                 raise Exception('No cache_to or default_cache_to value specified')
             if callable(cache_to):
                 new_filename = force_unicode(datetime.datetime.now().strftime( \
-                        smart_str(cache_to(self._obj, self._imgfield.name, \
+                        smart_str(cache_to(self.instance, self._imgfield.name, \
                             self.attname, self._suggested_extension))))
             else:
                dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
@@ -218,11 +218,11 @@ class ImageSpecFile(object):
 
     @property
     def storage(self):
-        return self._spec.storage or self._imgfield.storage
+        return self.field.storage or self._imgfield.storage
 
     @property
     def url(self):
-        if not self._spec.pre_cache:
+        if not self.field.pre_cache:
             self._create()
         return self.storage.url(self.name)
 
@@ -249,15 +249,15 @@ class ImageSpecFile(object):
 
 
 class _ImageSpecDescriptor(object):
-    def __init__(self, spec, attname):
+    def __init__(self, field, attname):
         self._attname = attname
-        self._spec = spec
+        self.field = field
 
     def __get__(self, instance, owner):
         if instance is None:
-            return self._spec
+            return self.field
         else:
-            return ImageSpecFile(instance, self._spec, self._attname)
+            return ImageSpecFile(instance, self.field, self._attname)
 
 
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
@@ -270,12 +270,12 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
         if imgfield:
             newfile = imgfield.storage.open(imgfield.name)
             img = Image.open(newfile)
-            img, format = spec_file._spec.process(img, spec_file)
+            img, format = spec_file.field.process(img, spec_file)
             if format != 'JPEG':
                 imgfile = img_to_fobj(img, format)
             else:
                 imgfile = img_to_fobj(img, format,
-                                      quality=int(spec_file._spec.quality),
+                                      quality=int(spec_file.field.quality),
                                       optimize=True)
             content = ContentFile(imgfile.read())
             newfile.close()

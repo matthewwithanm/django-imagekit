@@ -27,7 +27,7 @@ def flush_cache(apps, options):
                     for spec_file in get_spec_files(obj):
                         if spec_file is not None:
                             spec_file._delete()
-                        if spec_file._spec.pre_cache:
+                        if spec_file.field.pre_cache:
                             spec_file._create()
     else:
         print 'Please specify on or more app names'
