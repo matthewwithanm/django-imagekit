@@ -259,24 +259,25 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
     bound_specs = get_bound_specs(instance)
     for bound_spec in bound_specs:
         name = bound_spec.attname
-        imgfield = bound_spec._get_imgfield(instance)
-        newfile = imgfield.storage.open(str(imgfield))
-        img = Image.open(newfile)
-        img, format = bound_spec.process(img, instance)
-        if format != 'JPEG':
-            imgfile = img_to_fobj(img, format)
-        else:
-            imgfile = img_to_fobj(img, format,
-                                  quality=int(bound_spec.quality),
-                                  optimize=True)
-        content = ContentFile(imgfile.read())
-        newfile.close()
-        name = str(imgfield)
-        imgfield.storage.delete(name)
-        imgfield.storage.save(name, content)
-        if not created:
-            bound_spec._delete()
-            bound_spec._create()
+        imgfield = bound_spec._imgfield
+        if imgfield:
+            newfile = imgfield.storage.open(imgfield.name)
+            img = Image.open(newfile)
+            img, format = bound_spec.process(img, instance)
+            if format != 'JPEG':
+                imgfile = img_to_fobj(img, format)
+            else:
+                imgfile = img_to_fobj(img, format,
+                                      quality=int(bound_spec.quality),
+                                      optimize=True)
+            content = ContentFile(imgfile.read())
+            newfile.close()
+            name = str(imgfield)
+            imgfield.storage.delete(name)
+            imgfield.storage.save(name, content)
+            if not created:
+                bound_spec._delete()
+                bound_spec._create()
 
 
 def _post_delete_handler(sender, instance=None, **kwargs):
