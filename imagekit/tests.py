@@ -8,7 +8,7 @@ from django.test import TestCase
 
 from imagekit import processors
 from imagekit.models import ImageModel
-from imagekit.fields import ImageSpec
+from imagekit.models import ImageSpec
 from imagekit.lib import Image
 
 

@@ -10,7 +10,7 @@ def img_to_fobj(img, format, **kwargs):
 
 
 def get_spec_files(instance):
-    from imagekit.fields import ImageSpecFile
+    from imagekit.models import ImageSpecFile
     spec_files = []
     for key in dir(instance):
         try:
