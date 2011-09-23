@@ -80,11 +80,11 @@ class ImageSpec(_ImageSpecMixin):
 def _get_suggested_extension(name, format):
     if format:
         # Try to look up an extension by the format
-        extensions = [k.lstrip('.') for k, v in Image.EXTENSION.iteritems() \
+        extensions = [k for k, v in Image.EXTENSION.iteritems() \
                 if v == format.upper()]
     else:
         extensions = []
-    original_extension = os.path.splitext(name)[1].lstrip('.')
+    original_extension = os.path.splitext(name)[1]
     if not extensions or original_extension.lower() in extensions:
         # If the original extension matches the format, use it.
         extension = original_extension
@@ -189,7 +189,7 @@ class ImageSpecFile(object):
         """
         filepath, basename = os.path.split(path)
         filename = os.path.splitext(basename)[0]
-        new_name = '{0}_{1}.{2}'.format(filename, specname, extension)
+        new_name = '{0}_{1}{2}'.format(filename, specname, extension)
         return os.path.join(os.path.join('cache', filepath), new_name)
 
     @property
