@@ -8,10 +8,23 @@ own effects/processes entirely.
 """
 from imagekit.lib import *
 
+
 class ImageProcessor(object):
     """ Base image processor class """
 
     def process(self, img, fmt, file):
+        return img, fmt
+
+
+class ProcessorPipeline(ImageProcessor, list):
+    """A processor that just runs a bunch of other processors. This class allows
+    any object that knows how to deal with a single processor to deal with a
+    list of them.
+
+    """
+    def process(self, img, fmt, file):
+        for proc in self:
+            img, fmt = proc.process(img, fmt, file)
         return img, fmt
 
 

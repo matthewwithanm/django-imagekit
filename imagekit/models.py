@@ -3,6 +3,7 @@ import datetime
 from StringIO import StringIO
 from imagekit.lib import *
 from imagekit.utils import img_to_fobj, get_spec_files
+from imagekit.processors import ProcessorPipeline
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.utils.encoding import force_unicode, smart_str
@@ -18,7 +19,6 @@ ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
 
 class _ImageSpecMixin(object):
-
     def __init__(self, processors=None, quality=70, format=None):
         self.processors = processors
         self.quality = quality
@@ -27,11 +27,9 @@ class _ImageSpecMixin(object):
     def process(self, image, file):
         fmt = image.format
         img = image.copy()
-        for proc in self.processors:
-            img, fmt = proc.process(img, fmt, file)
-        format = self.format or fmt
-        img.format = format
-        return img, format
+        processors = ProcessorPipeline(self.processors)
+        img, fmt = processors.process(img, fmt, file)
+        return img, self.format or fmt
 
 
 class ImageSpec(_ImageSpecMixin):
