@@ -12,7 +12,7 @@ from imagekit.lib import *
 class ImageProcessor(object):
     """ Base image processor class """
 
-    def process(self, img, file):
+    def process(self, img):
         return img
 
 
@@ -22,9 +22,9 @@ class ProcessorPipeline(ImageProcessor, list):
     list of them.
 
     """
-    def process(self, img, file):
+    def process(self, img):
         for proc in self:
-            img = proc.process(img, file)
+            img = proc.process(img)
         return img
 
 
@@ -36,7 +36,7 @@ class Adjust(ImageProcessor):
         self.contrast = contrast
         self.sharpness = sharpness
 
-    def process(self, img, file):
+    def process(self, img):
         img = img.convert('RGB')
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(self, name.lower())
@@ -53,7 +53,7 @@ class Reflection(ImageProcessor):
     size = 0.0
     opacity = 0.6
 
-    def process(self, img, file):
+    def process(self, img):
         # convert bgcolor string to rgb value
         background_color = ImageColor.getrgb(self.background_color)
         # handle palleted images
@@ -99,7 +99,7 @@ class _Resize(ImageProcessor):
         if height is not None:
             self.height = height
 
-    def process(self, img, file):
+    def process(self, img):
         raise NotImplementedError('process must be overridden by subclasses.')
 
 
@@ -131,7 +131,7 @@ class Crop(_Resize):
         super(Crop, self).__init__(width, height)
         self.anchor = anchor
 
-    def process(self, img, file):
+    def process(self, img):
         cur_width, cur_height = img.size
         horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
                 Crop.CENTER]
@@ -159,7 +159,7 @@ class Fit(_Resize):
         super(Fit, self).__init__(width, height)
         self.upscale = upscale
 
-    def process(self, img, file):
+    def process(self, img):
         cur_width, cur_height = img.size
         if not self.width is None and not self.height is None:
             ratio = min(float(self.width)/cur_width,
@@ -222,7 +222,7 @@ class Transpose(ImageProcessor):
         if args:
             self.methods = args
 
-    def process(self, img, file):
+    def process(self, img):
         if self.AUTO in self.methods:
             raise Exception("AUTO is not yet supported. Sorry!")
             try:

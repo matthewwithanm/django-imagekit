@@ -26,7 +26,7 @@ class _ImageSpecMixin(object):
 
     def process(self, image, file):
         processors = ProcessorPipeline(self.processors)
-        return processors.process(image.copy(), file)
+        return processors.process(image.copy())
 
 
 class ImageSpec(_ImageSpecMixin):
