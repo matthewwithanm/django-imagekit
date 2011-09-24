@@ -111,16 +111,6 @@ class ImageSpecFile(object):
             format = Image.EXTENSION.get(extension)
         return format or self._img.format or 'JPEG'
 
-    def _get_imgfile(self):
-        format = self._format
-        if format != 'JPEG':
-            imgfile = img_to_fobj(self._img, format)
-        else:
-            imgfile = img_to_fobj(self._img, format,
-                                  quality=int(self.field.quality),
-                                  optimize=True)
-        return imgfile
-
     @property
     def _imgfield(self):
         field_name = getattr(self.field, 'image_field', None)
@@ -156,8 +146,16 @@ class ImageSpecFile(object):
             fp.seek(0)
             fp = StringIO(fp.read())
             self._img = self.field.process(Image.open(fp), self)
+
             # save the new image to the cache
-            content = ContentFile(self._get_imgfile().read())
+            format = self._format
+            if format != 'JPEG':
+                imgfile = img_to_fobj(self._img, format)
+            else:
+                imgfile = img_to_fobj(self._img, format,
+                                          quality=int(self.field.quality),
+                                          optimize=True)
+            content = ContentFile(imgfile.read())
             self.storage.save(self.name, content)
 
     def _delete(self):
