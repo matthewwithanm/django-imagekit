@@ -89,89 +89,71 @@ def _get_suggested_extension(name, format):
 
 
 class ImageSpecFile(object):
-    def __init__(self, instance, field, attname):
+    def __init__(self, instance, field, attname, source_file):
         self.field = field
         self._img = None
+        self._file = None
         self.instance = instance
         self.attname = attname
+        self.source_file = source_file
 
-    @property
-    def _format(self):
-        """The format used to save the cache file. If the format is set
-        explicitly on the ImageSpec, that format will be used. Otherwise, the
-        format will be inferred from the extension of the cache filename (see
-        the `name` property).
+    def _create(self, lazy=False):
+        """Creates a new image by running the processors on the source file.
+        
+        Keyword Arguments:
+        lazy -- True if an already-existing image should be returned; False if
+                a new image should be created and the existing one overwritten.
 
         """
-        format = self.field.format
-        if not format:
-            # Get the real (not suggested) extension.
-            extension = os.path.splitext(self.name)[1].lower()
-            # Try to guess the format from the extension.
-            format = Image.EXTENSION.get(extension)
-        return format or self._img.format or 'JPEG'
-
-    @property
-    def _imgfield(self):
-        field_name = getattr(self.field, 'image_field', None)
-        if field_name:
-            field = getattr(self.instance, field_name)
-        else:
-            image_fields = [getattr(self.instance, f.attname) for f in \
-                    self.instance.__class__._meta.fields if \
-                    isinstance(f, models.ImageField)]
-            if len(image_fields) == 0:
-                raise Exception('{0} does not define any ImageFields, so your '
-                        '{1} ImageSpec has no image to act on.'.format(
-                        self.instance.__class__.__name__, self.attname))
-            elif len(image_fields) > 1:
-                raise Exception('{0} defines multiple ImageFields, but you have '
-                        'not specified an image_field for your {1} '
-                        'ImageSpec.'.format(self.instance.__class__.__name__,
-                        self.attname))
-            else:
-                field = image_fields[0]
-        return field
-
-    def _create(self):
-        if self._imgfield:
-            # TODO: Should we error here or something if the image doesn't exist?
-            if self._exists():
-                return
+        img = None
+        if lazy:
+            img = self._img
+            if not img and self.storage.exists(self.name):
+                img = Image.open(self.file)
+        if not img and self.source_file:
             # process the original image file
             try:
-                fp = self._imgfield.storage.open(self._imgfield.name)
+                fp = self.source_file.storage.open(self.source_file.name)
             except IOError:
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
-            self._img = self.field.process(Image.open(fp), self)
+            img = self.field.process(Image.open(fp), self)
+
+            # Determine the format.
+            format = self.field.format
+            if not format:
+                # Get the real (not suggested) extension.
+                extension = os.path.splitext(self.name)[1].lower()
+                # Try to guess the format from the extension.
+                format = Image.EXTENSION.get(extension)
+            format = format or img.format or 'JPEG'
 
             # save the new image to the cache
-            format = self._format
             if format != 'JPEG':
-                imgfile = img_to_fobj(self._img, format)
+                imgfile = img_to_fobj(img, format)
             else:
-                imgfile = img_to_fobj(self._img, format,
+                imgfile = img_to_fobj(img, format,
                                           quality=int(self.field.quality),
                                           optimize=True)
             content = ContentFile(imgfile.read())
-            self.storage.save(self.name, content)
+            self._file = self.storage.save(self.name, content)
+        else:
+            # TODO: Should we error here or something if the imagefield doesn't exist?
+            img = None
+        self._img = img
+        return self._img
 
     def _delete(self):
-        if self._imgfield:
+        if self.source_file:
             try:
                 self.storage.delete(self.name)
             except (NotImplementedError, IOError):
                 return
 
-    def _exists(self):
-        if self._imgfield:
-            return self.storage.exists(self.name)
-
     @property
     def _suggested_extension(self):
-        return _get_suggested_extension(self._imgfield.name, self.field.format)
+        return _get_suggested_extension(self.source_file.name, self.field.format)
 
     def _default_cache_to(self, instance, path, specname, extension):
         """Determines the filename to use for the transformed image. Can be
@@ -191,7 +173,7 @@ class ImageSpecFile(object):
         control this by providing a `cache_to` method to the ImageSpec.
 
         """
-        filename = self._imgfield.name
+        filename = self.source_file.name
         if filename:
             cache_to = self.field.cache_to or self._default_cache_to
 
@@ -199,7 +181,7 @@ class ImageSpecFile(object):
                 raise Exception('No cache_to or default_cache_to value specified')
             if callable(cache_to):
                 new_filename = force_unicode(datetime.datetime.now().strftime( \
-                        smart_str(cache_to(self.instance, self._imgfield.name, \
+                        smart_str(cache_to(self.instance, self.source_file.name,
                             self.attname, self._suggested_extension))))
             else:
                dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
@@ -210,26 +192,25 @@ class ImageSpecFile(object):
 
     @property
     def storage(self):
-        return self.field.storage or self._imgfield.storage
+        return self.field.storage or self.source_file.storage
 
     @property
     def url(self):
         if not self.field.pre_cache:
-            self._create()
+            self._create(True)
         return self.storage.url(self.name)
 
     @property
     def file(self):
-        self._create()
-        return self.storage.open(self.name)
+        if not self._file:
+            if not self.storage.exists(self.name):
+                self._create()
+            self._file = self.storage.open(self.name)
+        return self._file
 
     @property
     def image(self):
-        if not self._img:
-            self._create()
-            if not self._img:
-                self._img = Image.open(self.file)
-        return self._img
+        return self._create(True)
 
     @property
     def width(self):
@@ -242,14 +223,36 @@ class ImageSpecFile(object):
 
 class _ImageSpecDescriptor(object):
     def __init__(self, field, attname):
-        self._attname = attname
+        self.attname = attname
         self.field = field
+
+    def _get_image_field_file(self, instance):
+        field_name = getattr(self.field, 'image_field', None)
+        if field_name:
+            field = getattr(instance, field_name)
+        else:
+            image_fields = [getattr(instance, f.attname) for f in \
+                    instance.__class__._meta.fields if \
+                    isinstance(f, models.ImageField)]
+            if len(image_fields) == 0:
+                raise Exception('{0} does not define any ImageFields, so your '
+                        '{1} ImageSpec has no image to act on.'.format(
+                        instance.__class__.__name__, self.attname))
+            elif len(image_fields) > 1:
+                raise Exception('{0} defines multiple ImageFields, but you have '
+                        'not specified an image_field for your {1} '
+                        'ImageSpec.'.format(instance.__class__.__name__,
+                        self.attname))
+            else:
+                field = image_fields[0]
+        return field
 
     def __get__(self, instance, owner):
         if instance is None:
             return self.field
         else:
-            return ImageSpecFile(instance, self.field, self._attname)
+            return ImageSpecFile(instance, self.field, self.attname,
+                    self._get_image_field_file(instance))
 
 
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
@@ -305,7 +308,7 @@ class BoundAdminThumbnailView(AdminThumbnailView):
             raise Exception('The property {0} is not defined on {1}.'.format(
                     self.model_instance, self.image_field))
 
-        original_image = getattr(thumbnail, '_imgfield', None) or thumbnail
+        original_image = getattr(thumbnail, 'source_file', None) or thumbnail
         template = self.template or 'imagekit/admin/thumbnail.html'
 
         return render_to_string(template, {
