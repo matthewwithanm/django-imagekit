@@ -31,6 +31,8 @@ class _ImageSpecMixin(object):
 
 class ImageSpec(_ImageSpecMixin):
 
+    _upload_to_attr = 'cache_to'
+
     cache_to = None
     """Specifies the filename to use when saving the image cache file. This is
     modeled after ImageField's `upload_to` and can accept either a string
@@ -88,7 +90,34 @@ def _get_suggested_extension(name, format):
     return extension
 
 
-class ImageSpecFile(object):
+class _ImageSpecFileMixin(object):
+
+    def _process_content(self, filename, content):
+        img = Image.open(content)
+        original_format = img.format
+        img = self.field.process(img, self)
+
+        # Determine the format.
+        format = self.field.format
+        if not format:
+            if callable(getattr(self.field, self.field._upload_to_attr)):
+                # The extension is explicit, so assume they want the matching format.
+                extension = os.path.splitext(filename)[1].lower()
+                # Try to guess the format from the extension.
+                format = Image.EXTENSION.get(extension)
+        format = format or img.format or original_format or 'JPEG'
+
+        if format != 'JPEG':
+            imgfile = img_to_fobj(img, format)
+        else:
+            imgfile = img_to_fobj(img, format,
+                                  quality=int(self.field.quality),
+                                  optimize=True)
+        content = ContentFile(imgfile.read())
+        return img, content
+
+
+class ImageSpecFile(_ImageSpecFileMixin):
     def __init__(self, instance, field, attname, source_file):
         self.field = field
         self._img = None
@@ -111,32 +140,15 @@ class ImageSpecFile(object):
             if not img and self.storage.exists(self.name):
                 img = Image.open(self.file)
         if not img and self.source_file:
-            # process the original image file
+            # Process the original image file
             try:
                 fp = self.source_file.storage.open(self.source_file.name)
             except IOError:
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
-            img = self.field.process(Image.open(fp), self)
 
-            # Determine the format.
-            format = self.field.format
-            if not format:
-                # Get the real (not suggested) extension.
-                extension = os.path.splitext(self.name)[1].lower()
-                # Try to guess the format from the extension.
-                format = Image.EXTENSION.get(extension)
-            format = format or img.format or 'JPEG'
-
-            # save the new image to the cache
-            if format != 'JPEG':
-                imgfile = img_to_fobj(img, format)
-            else:
-                imgfile = img_to_fobj(img, format,
-                                          quality=int(self.field.quality),
-                                          optimize=True)
-            content = ContentFile(imgfile.read())
+            img, content = self._process_content(self.name, fp)
             self._file = self.storage.save(self.name, content)
         else:
             # TODO: Should we error here or something if the imagefield doesn't exist?
@@ -322,33 +334,15 @@ class BoundAdminThumbnailView(AdminThumbnailView):
         return self
 
 
-class ProcessedImageFieldFile(ImageFieldFile):
+class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
-        img = Image.open(content)
-        img = self.field.process(img, self)
-        format = self._get_format(new_filename, img.format)
-        if format != 'JPEG':
-            imgfile = img_to_fobj(img, format)
-        else:
-            imgfile = img_to_fobj(img, format,
-                                  quality=int(self.field.quality),
-                                  optimize=True)
-        content = ContentFile(imgfile.read())
+        img, content = self._process_content(new_filename, content)
         return super(ProcessedImageFieldFile, self).save(name, content, save)
-
-    def _get_format(self, name, fallback):
-        format = self.field.format
-        if not format:
-            if callable(self.field.upload_to):
-                # The extension is explicit, so assume they want the matching format.
-                extension = os.path.splitext(name)[1].lower()
-                # Try to guess the format from the extension.
-                format = Image.EXTENSION.get(extension)
-        return format or fallback or 'JPEG'
 
 
 class ProcessedImageField(models.ImageField, _ImageSpecMixin):
+    _upload_to_attr = 'upload_to'
     attr_class = ProcessedImageFieldFile
 
     def __init__(self, processors=None, quality=70, format=None,
