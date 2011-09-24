@@ -1,9 +1,9 @@
 """ Imagekit Image "ImageProcessors"
 
-A processor defines a set of class variables (optional) and a
-class method named "process" which processes the supplied image using
-the class properties as settings. The process method can be overridden as well allowing user to define their
-own effects/processes entirely.
+A processor accepts an image, does some stuff, and returns a new image.
+Processors can do anything with the image you want, but their responsibilities
+should be limited to image manipulations--they should be completely decoupled
+from both the filesystem and the ORM.
 
 """
 from imagekit.lib import *
@@ -12,8 +12,8 @@ from imagekit.lib import *
 class ImageProcessor(object):
     """ Base image processor class """
 
-    def process(self, img, fmt, file):
-        return img, fmt
+    def process(self, img, file):
+        return img
 
 
 class ProcessorPipeline(ImageProcessor, list):
@@ -22,10 +22,10 @@ class ProcessorPipeline(ImageProcessor, list):
     list of them.
 
     """
-    def process(self, img, fmt, file):
+    def process(self, img, file):
         for proc in self:
-            img, fmt = proc.process(img, fmt, file)
-        return img, fmt
+            img = proc.process(img, file)
+        return img
 
 
 class Adjust(ImageProcessor):
@@ -36,7 +36,7 @@ class Adjust(ImageProcessor):
         self.contrast = contrast
         self.sharpness = sharpness
 
-    def process(self, img, fmt, file):
+    def process(self, img, file):
         img = img.convert('RGB')
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(self, name.lower())
@@ -45,7 +45,7 @@ class Adjust(ImageProcessor):
                     img = getattr(ImageEnhance, name)(img).enhance(factor)
                 except ValueError:
                     pass
-        return img, fmt
+        return img
 
 
 class Reflection(ImageProcessor):
@@ -53,7 +53,7 @@ class Reflection(ImageProcessor):
     size = 0.0
     opacity = 0.6
 
-    def process(self, img, fmt, file):
+    def process(self, img, file):
         # convert bgcolor string to rgb value
         background_color = ImageColor.getrgb(self.background_color)
         # handle palleted images
@@ -84,10 +84,8 @@ class Reflection(ImageProcessor):
         # paste the orignal image and the reflection into the composite image
         composite.paste(img, (0, 0))
         composite.paste(reflection, (0, img.size[1]))
-        # Save the file as a JPEG
-        fmt = 'JPEG'
         # return the image complete with reflection effect
-        return composite, fmt
+        return composite
 
 
 class _Resize(ImageProcessor):
@@ -101,7 +99,7 @@ class _Resize(ImageProcessor):
         if height is not None:
             self.height = height
 
-    def process(self, img, fmt, file):
+    def process(self, img, file):
         raise NotImplementedError('process must be overridden by subclasses.')
 
 
@@ -133,7 +131,7 @@ class Crop(_Resize):
         super(Crop, self).__init__(width, height)
         self.anchor = anchor
 
-    def process(self, img, fmt, file):
+    def process(self, img, file):
         cur_width, cur_height = img.size
         horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
                 Crop.CENTER]
@@ -153,7 +151,7 @@ class Crop(_Resize):
         }[vertical_anchor]
         box = (box_left, box_upper, box_right, box_lower)
         img = img.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
-        return img, fmt
+        return img
 
 
 class Fit(_Resize):
@@ -161,7 +159,7 @@ class Fit(_Resize):
         super(Fit, self).__init__(width, height)
         self.upscale = upscale
 
-    def process(self, img, fmt, file):
+    def process(self, img, file):
         cur_width, cur_height = img.size
         if not self.width is None and not self.height is None:
             ratio = min(float(self.width)/cur_width,
@@ -176,9 +174,9 @@ class Fit(_Resize):
         if new_dimensions[0] > cur_width or \
            new_dimensions[1] > cur_height:
             if not self.upscale:
-                return img, fmt
+                return img
         img = img.resize(new_dimensions, Image.ANTIALIAS)
-        return img, fmt
+        return img
 
 
 class Transpose(ImageProcessor):
@@ -209,7 +207,7 @@ class Transpose(ImageProcessor):
 
     method = 'auto'
 
-    def process(self, img, fmt, file):
+    def process(self, img, file):
         if self.method == 'auto':
             try:
                 orientation = Image.open(file.file)._getexif()[0x0112]
@@ -220,4 +218,4 @@ class Transpose(ImageProcessor):
             ops = [self.method]
         for method in ops:
             img = img.transpose(getattr(Image, method))
-        return img, fmt
+        return img

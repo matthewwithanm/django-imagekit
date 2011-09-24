@@ -25,11 +25,8 @@ class _ImageSpecMixin(object):
         self.format = format
 
     def process(self, image, file):
-        fmt = image.format
-        img = image.copy()
         processors = ProcessorPipeline(self.processors)
-        img, fmt = processors.process(img, fmt, file)
-        return img, self.format or fmt
+        return processors.process(image.copy(), file)
 
 
 class ImageSpec(_ImageSpecMixin):
@@ -95,7 +92,6 @@ class ImageSpecFile(object):
     def __init__(self, instance, field, attname):
         self.field = field
         self._img = None
-        self._fmt = None
         self.instance = instance
         self.attname = attname
 
@@ -159,7 +155,7 @@ class ImageSpecFile(object):
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
-            self._img, self._fmt = self.field.process(Image.open(fp), self)
+            self._img = self.field.process(Image.open(fp), self)
             # save the new image to the cache
             content = ContentFile(self._get_imgfile().read())
             self.storage.save(self.name, content)
@@ -329,8 +325,8 @@ class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
         img = Image.open(content)
-        img, format = self.field.process(img, self)
-        format = self._get_format(new_filename, format)
+        img = self.field.process(img, self)
+        format = self._get_format(new_filename, img.format)
         if format != 'JPEG':
             imgfile = img_to_fobj(img, format)
         else:
@@ -348,7 +344,7 @@ class ProcessedImageFieldFile(ImageFieldFile):
                 extension = os.path.splitext(name)[1].lower()
                 # Try to guess the format from the extension.
                 format = Image.EXTENSION.get(extension)
-        return format or fallback
+        return format or fallback or 'JPEG'
 
 
 class ProcessedImageField(models.ImageField, _ImageSpecMixin):
