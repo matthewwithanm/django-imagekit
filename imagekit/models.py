@@ -358,4 +358,4 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
         filename = os.path.normpath(self.storage.get_valid_name(os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
         ext = _get_suggested_extension(filename, self.format)
-        return '{0}.{1}'.format(name, ext)
+        return '{0}{1}'.format(name, ext)
