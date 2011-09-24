@@ -182,40 +182,57 @@ class Fit(_Resize):
 class Transpose(ImageProcessor):
     """ Rotates or flips the image
 
-    Method should be one of the following strings:
-        - FLIP_LEFT RIGHT
-        - FLIP_TOP_BOTTOM
-        - ROTATE_90
-        - ROTATE_270
-        - ROTATE_180
-        - auto
+    Possible arguments:
+        - Transpose.AUTO 
+        - Transpose.FLIP_HORIZONTAL
+        - Transpose.FLIP_VERTICAL
+        - Transpose.ROTATE_90
+        - Transpose.ROTATE_180
+        - Transpose.ROTATE_270
+    
+    The order of the arguments dictates the order in which the Transposition
+    steps are taken.
 
-    If method is set to 'auto' the processor will attempt to rotate the image
-    according to the EXIF Orientation data.
+    If Transpose.AUTO is present, all other arguments are ignored, and the 
+    processor will attempt to rotate the image according to the 
+    EXIF Orientation data.
 
     """
-    EXIF_ORIENTATION_STEPS = {
+    AUTO = 'auto'
+    FLIP_HORIZONTAL = Image.FLIP_LEFT_RIGHT
+    FLIP_VERTICAL = Image.FLIP_TOP_BOTTOM
+    ROTATE_90 = Image.ROTATE_90
+    ROTATE_180 = Image.ROTATE_180
+    ROTATE_270 = Image.ROTATE_270
+
+    methods = [AUTO]
+    _EXIF_ORIENTATION_STEPS = {
         1: [],
-        2: ['FLIP_LEFT_RIGHT'],
-        3: ['ROTATE_180'],
-        4: ['FLIP_TOP_BOTTOM'],
-        5: ['ROTATE_270', 'FLIP_LEFT_RIGHT'],
-        6: ['ROTATE_270'],
-        7: ['ROTATE_90', 'FLIP_LEFT_RIGHT'],
-        8: ['ROTATE_90'],
+        2: [FLIP_HORIZONTAL],
+        3: [ROTATE_180],
+        4: [FLIP_VERTICAL],
+        5: [ROTATE_270, FLIP_HORIZONTAL],
+        6: [ROTATE_270],
+        7: [ROTATE_90, FLIP_HORIZONTAL],
+        8: [ROTATE_90],
     }
 
-    method = 'auto'
+    def __init__(self, *args):
+        super(Transpose, self).__init__()
+        if args:
+            self.methods = args
 
     def process(self, img, file):
-        if self.method == 'auto':
+        if self.AUTO in self.methods:
+            raise Exception("AUTO is not yet supported. Sorry!")
             try:
-                orientation = Image.open(file.file)._getexif()[0x0112]
-                ops = self.EXIF_ORIENTATION_STEPS[orientation]
-            except:
+                orientation = img._getexif()[0x0112]
+                ops = self._EXIF_ORIENTATION_STEPS[orientation]
+                print 'GOT %s >>>> %s' % (orientation, ops)
+            except AttributeError:
                 ops = []
         else:
-            ops = [self.method]
+            ops = self.methods
         for method in ops:
-            img = img.transpose(getattr(Image, method))
+            img = img.transpose(method)
         return img
