@@ -1,6 +1,9 @@
 """ ImageKit utility functions """
 
-import tempfile
+import tempfile, types
+from django.utils.functional import wraps
+from lib import Image
+
 
 def img_to_fobj(img, format, **kwargs):
     tmp = tempfile.TemporaryFile()
@@ -20,3 +23,26 @@ def get_spec_files(instance):
         if isinstance(value, ImageSpecFile):
             spec_files.append(value)
     return spec_files
+
+
+def open_image(target):
+    img = Image.open(target)
+    img.copy = types.MethodType(_wrap_copy(img.copy), img, img.__class__)
+    return img
+
+
+def _wrap_copy(f):
+    @wraps(f)
+    def copy(self):
+        img = f()
+        try:
+            img.app = self.app
+        except AttributeError:
+            pass
+        try:
+            img._getexif = self._getexif
+        except AttributeError:
+            pass
+        return img
+    return copy
+

@@ -224,11 +224,9 @@ class Transpose(ImageProcessor):
 
     def process(self, img):
         if self.AUTO in self.methods:
-            raise Exception("AUTO is not yet supported. Sorry!")
             try:
                 orientation = img._getexif()[0x0112]
                 ops = self._EXIF_ORIENTATION_STEPS[orientation]
-                print 'GOT %s >>>> %s' % (orientation, ops)
             except AttributeError:
                 ops = []
         else:

@@ -2,7 +2,7 @@ import os
 import datetime
 from StringIO import StringIO
 from imagekit.lib import *
-from imagekit.utils import img_to_fobj, get_spec_files
+from imagekit.utils import img_to_fobj, get_spec_files, open_image
 from imagekit.processors import ProcessorPipeline
 from django.conf import settings
 from django.core.files.base import ContentFile
@@ -93,7 +93,7 @@ def _get_suggested_extension(name, format):
 class _ImageSpecFileMixin(object):
 
     def _process_content(self, filename, content):
-        img = Image.open(content)
+        img = open_image(content)
         original_format = img.format
         img = self.field.process(img, self)
 
@@ -138,7 +138,7 @@ class ImageSpecFile(_ImageSpecFileMixin):
         if lazy:
             img = self._img
             if not img and self.storage.exists(self.name):
-                img = Image.open(self.file)
+                img = open_image(self.file)
         if not img and self.source_file:
             # Process the original image file
             try:
