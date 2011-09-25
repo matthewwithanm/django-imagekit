@@ -139,7 +139,7 @@ class ImageSpecFile(_ImageSpecFileMixin):
             img = self._img
             if not img and self.storage.exists(self.name):
                 img = open_image(self.file)
-        if not img and self.source_file:
+        if not img and self.source_file: # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file
             try:
                 fp = self.source_file.storage.open(self.source_file.name)
@@ -149,10 +149,7 @@ class ImageSpecFile(_ImageSpecFileMixin):
             fp = StringIO(fp.read())
 
             img, content = self._process_content(self.name, fp)
-            self._file = self.storage.save(self.name, content)
-        else:
-            # TODO: Should we error here or something if the imagefield doesn't exist?
-            img = None
+            self.storage.save(self.name, content)
         self._img = img
         return self._img
 
