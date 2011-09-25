@@ -7,7 +7,7 @@ def img_to_fobj(img, format, **kwargs):
     
     #preserve transparency if the image is in Pallette (P) mode
     if img.mode == 'P':
-        kwargs['transparency'] = 255
+        kwargs['transparency'] = len(img.split()[-1].getcolors())
     else:
         img.convert('RGB')
     
