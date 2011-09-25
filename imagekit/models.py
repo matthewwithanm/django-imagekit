@@ -263,8 +263,10 @@ class _ImageSpecDescriptor(object):
         if instance is None:
             return self.field
         else:
-            return ImageSpecFile(instance, self.field, self.attname,
-                    self._get_image_field_file(instance))
+            img_spec_file = ImageSpecFile(instance, self.field,
+                self.attname, self._get_image_field_file(instance))
+            setattr(instance, self.attname, img_spec_file)
+            return img_spec_file
 
 
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
