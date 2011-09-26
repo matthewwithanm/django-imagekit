@@ -89,8 +89,8 @@ for displaying specs (or even regular ImageFields) in the
 AdminThumbnailView is used as a property on Django model classes::
 
     from django.db import models
-    from imagekit.models import ImageSpec
-    from imagekit.processors import resize, AdminThumbnailView
+    from imagekit.models import ImageSpec, AdminThumbnailView
+    from imagekit.processors import resize 
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to'photos')
