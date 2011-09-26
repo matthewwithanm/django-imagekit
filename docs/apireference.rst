@@ -13,3 +13,6 @@ API Reference
 
 .. automodule:: imagekit.processors
    :members:
+
+.. automodule:: imagekit.processors.resize
+  :members:
