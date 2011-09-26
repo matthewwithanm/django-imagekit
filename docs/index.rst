@@ -24,7 +24,7 @@ of a model class::
     from imagekit.models import ImageSpec
 
     class Photo(models.Model):
-        original_image = models.ImageField(upload_to'photos')
+        original_image = models.ImageField(upload_to='photos')
         formatted_image = ImageSpec(image_field='original_image', format='JPEG',
                 quality=90)
 
