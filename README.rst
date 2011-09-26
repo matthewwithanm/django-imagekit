@@ -97,7 +97,7 @@ AdminThumbnailView is used as a property on Django model classes::
         thumbnail = ImageSpec([resize.Crop(50, 50)], image_field='original_image')
         admin_thumbnail_view = AdminThumbnailView(image_field='thumbnail')
 
-You can then then add this property to the `list_display`__ field of your admin
+You can then add this property to the `list_display`__ field of your admin
 class::
 
     from django.contrib import admin
