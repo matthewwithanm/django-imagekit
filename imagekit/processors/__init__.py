@@ -7,6 +7,7 @@ from both the filesystem and the ORM.
 
 """
 from imagekit.lib import *
+from imagekit.processors import resize
 
 
 class ProcessorPipeline(list):
