@@ -6,6 +6,14 @@ your models. These variations are called "specs" and can include things like
 different sizes (e.g. thumbnails) and black and white versions.
 
 
+Installation
+------------
+
+1. ``pip install django-imagekit``
+    (or clone the source and put the imagekit module on your path)
+2. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's settings.py
+
+
 Adding Specs to a Model
 -----------------------
 
