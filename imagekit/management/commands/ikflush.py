@@ -1,3 +1,7 @@
+"""Flushes the cached ImageKit images.
+
+"""
+
 from django.db.models.loading import cache
 from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
@@ -14,9 +18,6 @@ class Command(BaseCommand):
         return flush_cache(args, options)
 
 def flush_cache(apps, options):
-    """ Clears the image cache
-
-    """
     apps = [a.strip(',') for a in apps]
     if apps:
         for app_label in apps:

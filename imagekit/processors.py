@@ -10,16 +10,16 @@ from imagekit.lib import *
 
 
 class ImageProcessor(object):
-    """ Base image processor class """
-
     def process(self, img):
         return img
 
 
 class ProcessorPipeline(ImageProcessor, list):
-    """A processor that just runs a bunch of other processors. This class allows
-    any object that knows how to deal with a single processor to deal with a
-    list of them.
+    """A :class:`list` of other processors. This class allows any object that
+    knows how to deal with a single processor to deal with a list of them.
+    For example::
+
+        processed_image = ProcessorPipeline([ProcessorA(), ProcessorB()]).process(image)
 
     """
     def process(self, img):
@@ -29,8 +29,28 @@ class ProcessorPipeline(ImageProcessor, list):
 
 
 class Adjust(ImageProcessor):
-    
+    """Performs color, brightness, contrast, and sharpness enhancements on the
+    image. See :mod:`PIL.ImageEnhance` for more imformation.
+
+    """
     def __init__(self, color=1.0, brightness=1.0, contrast=1.0, sharpness=1.0):
+        """
+        :param color: A number between 0 and 1 that specifies the saturation of
+                the image. 0 corresponds to a completely desaturated image
+                (black and white) and 1 to the original color.
+                See :class:`PIL.ImageEnhance.Color`
+        :param brightness: A number representing the brightness; 0 results in a
+                completely black image whereas 1 corresponds to the brightness
+                of the original. See :class:`PIL.ImageEnhance.Brightness`
+        :param contrast: A number representing the contrast; 0 results in a
+                completely gray image whereas 1 corresponds to the contrast of
+                the original. See :class:`PIL.ImageEnhance.Contrast`
+        :param sharpness: A number representing the sharpness; 0 results in a
+                blurred image; 1 corresponds to the original sharpness; 2
+                results in a sharpened image. See
+                :class:`PIL.ImageEnhance.Sharpness`
+        
+        """
         self.color = color
         self.brightness = brightness
         self.contrast = contrast
@@ -49,6 +69,9 @@ class Adjust(ImageProcessor):
 
 
 class Reflection(ImageProcessor):
+    """Creates an image with a reflection.
+    
+    """
     background_color = '#FFFFFF'
     size = 0.0
     opacity = 0.6
@@ -104,6 +127,9 @@ class _Resize(ImageProcessor):
 
 
 class Crop(_Resize):
+    """Resizes an image , cropping it to the specified width and height.
+
+    """
 
     TOP_LEFT = 'tl'
     TOP = 't'
@@ -128,6 +154,23 @@ class Crop(_Resize):
     }
 
     def __init__(self, width=None, height=None, anchor=None):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+        :param anchor: Specifies which part of the image should be retained when
+            cropping. Valid values are:
+
+            - Crop.TOP_LEFT
+            - Crop.TOP
+            - Crop.TOP_RIGHT
+            - Crop.LEFT
+            - Crop.CENTER
+            - Crop.RIGHT
+            - Crop.BOTTOM_LEFT
+            - Crop.BOTTOM
+            - Crop.BOTTOM_RIGHT
+
+        """
         super(Crop, self).__init__(width, height)
         self.anchor = anchor
 
@@ -155,7 +198,19 @@ class Crop(_Resize):
 
 
 class Fit(_Resize):
+    """Resizes an image to fit within the specified dimensions.
+
+    """
+    
     def __init__(self, width=None, height=None, upscale=None):
+        """
+        :param width: The maximum width of the desired image.
+        :param height: The maximum height of the desired image.
+        :param upscale: A boolean value specifying whether the image should be
+                enlarged if its dimensions are smaller than the target
+                dimensions.
+
+        """
         super(Fit, self).__init__(width, height)
         self.upscale = upscale
 
@@ -182,21 +237,6 @@ class Fit(_Resize):
 class Transpose(ImageProcessor):
     """ Rotates or flips the image
 
-    Possible arguments:
-        - Transpose.AUTO 
-        - Transpose.FLIP_HORIZONTAL
-        - Transpose.FLIP_VERTICAL
-        - Transpose.ROTATE_90
-        - Transpose.ROTATE_180
-        - Transpose.ROTATE_270
-    
-    The order of the arguments dictates the order in which the Transposition
-    steps are taken.
-
-    If Transpose.AUTO is present, all other arguments are ignored, and the 
-    processor will attempt to rotate the image according to the 
-    EXIF Orientation data.
-
     """
     AUTO = 'auto'
     FLIP_HORIZONTAL = Image.FLIP_LEFT_RIGHT
@@ -218,6 +258,23 @@ class Transpose(ImageProcessor):
     }
 
     def __init__(self, *args):
+        """
+        Possible arguments:
+            - Transpose.AUTO 
+            - Transpose.FLIP_HORIZONTAL
+            - Transpose.FLIP_VERTICAL
+            - Transpose.ROTATE_90
+            - Transpose.ROTATE_180
+            - Transpose.ROTATE_270
+
+        The order of the arguments dictates the order in which the Transposition
+        steps are taken.
+
+        If Transpose.AUTO is present, all other arguments are ignored, and the 
+        processor will attempt to rotate the image according to the 
+        EXIF Orientation data.
+
+        """
         super(Transpose, self).__init__()
         if args:
             self.methods = args
