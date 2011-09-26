@@ -1,6 +1,6 @@
-""" Imagekit Image "ImageProcessors"
+"""Imagekit image processors.
 
-A processor accepts an image, does some stuff, and returns a new image.
+A processor accepts an image, does some stuff, and returns the result.
 Processors can do anything with the image you want, but their responsibilities
 should be limited to image manipulations--they should be completely decoupled
 from both the filesystem and the ORM.
@@ -9,12 +9,7 @@ from both the filesystem and the ORM.
 from imagekit.lib import *
 
 
-class ImageProcessor(object):
-    def process(self, img):
-        return img
-
-
-class ProcessorPipeline(ImageProcessor, list):
+class ProcessorPipeline(list):
     """A :class:`list` of other processors. This class allows any object that
     knows how to deal with a single processor to deal with a list of them.
     For example::
@@ -28,7 +23,7 @@ class ProcessorPipeline(ImageProcessor, list):
         return img
 
 
-class Adjust(ImageProcessor):
+class Adjust(object):
     """Performs color, brightness, contrast, and sharpness enhancements on the
     image. See :mod:`PIL.ImageEnhance` for more imformation.
 
@@ -68,7 +63,7 @@ class Adjust(ImageProcessor):
         return img
 
 
-class Reflection(ImageProcessor):
+class Reflection(object):
     """Creates an image with a reflection.
     
     """
@@ -111,7 +106,7 @@ class Reflection(ImageProcessor):
         return composite
 
 
-class _Resize(ImageProcessor):
+class _Resize(object):
     
     width = None
     height = None
@@ -234,7 +229,7 @@ class Fit(_Resize):
         return img
 
 
-class Transpose(ImageProcessor):
+class Transpose(object):
     """ Rotates or flips the image
 
     """
