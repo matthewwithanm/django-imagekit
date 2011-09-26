@@ -1,16 +1,29 @@
-Original Author:
+ImageKit was originally written by `Justin Driscoll`_.
 
-* Justin Driscoll (jdriscoll)
+The field-based API was written by the bright minds at HZDG_.
+
+Maintainers
+~~~~~~~~~~~
+
+* `Bryan Veloso`_
+* `Chris Drackett`_
+* `Greg Newman`_
+
+Contributors
+~~~~~~~~~~~~
+
+* `Josh Ourisman`_
+* `Jonathan Slenders`_
+* `Matthew Tretter`_
+* `Eric Eldredge`_
 
 
-Maintainers:
-
-* Bryan Veloso (bryanveloso)
-* Chris Drackett (chrisdrackett)
-* Greg Newman (gregnewman)
-
-
-Contributors:
-
-* Josh Ourisman (joshourisman)
-* Jonathan Slenders (jonathanslenders)
+.. _Justin Driscoll: http://github.com/jdriscoll
+.. _HZDG: http://hzdg.com
+.. _Bryan Veloso: http://github.com/bryanveloso
+.. _Chris Drackett: http://github.com/chrisdrackett
+.. _Greg Newman: http://github.com/gregnewman
+.. _Josh Ourisman: http://github.com/joshourisman
+.. _Jonathan Slenders: http://github.com/jonathanslenders
+.. _Matthew Tretter: http://github.com/matthewwithanm
+.. _Eric Eldredge: http://github.com/lettertwo

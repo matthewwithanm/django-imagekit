@@ -1,143 +1,117 @@
-===============
-django-imagekit
-===============
+ImageKit is a Django app that helps you to add variations of uploaded images to
+your models. These variations are called "specs" and can include things like
+different sizes (e.g. thumbnails) and black and white versions.
 
-ImageKit In 6 Steps
-===================
 
-Step 1
-******
+Installation
+------------
 
-::
+1. ``pip install django-imagekit``
+    (or clone the source and put the imagekit module on your path)
+2. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's settings.py
 
-    $ pip install django-imagekit
 
-(or clone the source and put the imagekit module on your path)
+Adding Specs to a Model
+-----------------------
 
-Step 2
-******
-
-Create an ImageModel subclass and add specs to it.
-
-::
-
-    # myapp/models.py
+Much like ``django.db.models.ImageField``, Specs are defined as properties
+of a model class::
 
     from django.db import models
-    from imagekit.models import ImageModel
-    from imagekit.specs import ImageSpec
-    from imagekit.processors import Crop, Fit, Adjust
+    from imagekit.models import ImageSpec
 
-    class Photo(ImageModel):
-        name = models.CharField(max_length=100)
+    class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
-        num_views = models.PositiveIntegerField(editable=False, default=0)
+        formatted_image = ImageSpec(image_field='original_image', format='JPEG',
+                quality=90)
 
-        thumbnail_image = ImageSpec([Crop(100, 75), Adjust(contrast=1.2, sharpness=1.1)], quality=90, pre_cache=True, image_field='original_image', cache_to='cache/photos/thumbnails/')
-        display = ImageSpec([Fit(600)], quality=90, increment_count=True, image_field='original_image', cache_to='cache/photos/display/', save_count_as='num_views')
+Accessing the spec through a model instance will create the image and return an
+ImageFile-like object (just like with a normal
+``django.db.models.ImageField``)::
+
+    photo = Photo.objects.all()[0]
+    photo.original_image.url # > '/media/photos/birthday.tiff'
+    photo.formatted_image.url # > '/media/cache/photos/birthday_formatted_image.jpeg'
+
+Check out ``imagekit.models.ImageSpec`` for more information.
 
 
-Of course, you don't have to define your ImageSpecs inline if you don't want to:
+Processors
+----------
 
-::
-
-    # myapp/specs.py
-
-    from imagekit.specs import ImageSpec
-    from imagekit.processors import Crop, Fit, Adjust
-
-    class _BaseSpec(ImageSpec):
-        quality = 90        
-        image_field = 'original_image'
-
-    class DisplaySpec(_BaseSpec):
-        pre_cache = True
-        increment_count = True
-        save_count_as = 'num_views'
-        processors = [Fit(600)]
-        cache_to = 'cache/photos/display/'
-
-    class ThumbnailSpec(_BaseSpec):
-        processors = [Crop(100, 75), Adjust(contrast=1.2, sharpness=1.1)]
-        cache_to = 'cache/photos/thumbnails/'
-
-    # myapp/models.py
+The real power of ImageKit comes from processors. Processors take an image, do
+something to it, and return the result. By providing a list of processors to
+your spec, you can expose different versions of the original image::
 
     from django.db import models
-    from imagekit.models import ImageModel
-    from myapp.specs import DisplaySpec, ThumbnailSpec
+    from imagekit.models import ImageSpec
+    from imagekit.processors import Crop, Adjust
 
-    class Photo(ImageModel):
-        name = models.CharField(max_length=100)
-        original_image = models.ImageField(upload_to='photos')
-        num_views = models.PositiveIntegerField(editable=False, default=0)
+    class Photo(models.Model):
+        original_image = models.ImageField(upload_to'photos')
+        thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1), Crop(50, 50)],
+                image_field='original_image', format='JPEG', quality=90)
 
-        thumbnail_image = ThumbnailSpec()
-        display = DisplaySpec()
-            
+The ``thumbnail`` property will now return a cropped image::
 
-Step 3
-******
+    photo = Photo.objects.all()[0]
+    photo.thumbnail.url # > '/media/cache/photos/birthday_thumbnail.jpeg'
+    photo.thumbnail.width # > 50
+    photo.original_image.width # > 1000
 
-Flush the cache and pre-generate thumbnails (ImageKit has to be added to ``INSTALLED_APPS`` for management command to work).
+The original image is not modified; ``thumbnail`` is a new file that is the
+result of running the ``imagekit.processors.Crop`` processor on the
+original.
 
-::
+The ``imagekit.processors`` module contains processors for many common
+image manipulations, like resizing, rotating, and color adjustments. However, if
+they aren't up to the task, you can create your own. All you have to do is
+implement a ``process()`` method::
 
-    $ python manage.py ikflush myapp
+    class Watermark(object):
+        def process(self, image):
+            # Code for adding the watermark goes here.
+            return image
 
-Step 4
-******
-
-Use your new model in templates.
-
-::
-
-    <div class="original">
-    <img src="{{ photo.original_image.url }}" alt="{{ photo.name }}">
-    </div>
-
-    <div class="display">
-    <img src="{{ photo.display.url }}" alt="{{ photo.name }}">
-    </div>
-
-    <div class="thumbs">
-    {% for p in photos %}
-    <img src="{{ p.thumbnail_image.url }}" alt="{{ p.name }}">
-    {% endfor %}
-    </div>
-
-Step 5
-******
-
-Play with the API.
-
-::
-
-    >>> from myapp.models import Photo
-    >>> p = Photo.objects.all()[0]
-    <Photo: MyPhoto>
-    >>> p.display.url
-    u'/static/photos/myphoto_display.jpg'
-    >>> p.display.width
-    600
-    >>> p.display.height
-    420
-    >>> p.display.image
-    <JpegImagePlugin.JpegImageFile instance at 0xf18990>
-    >>> p.display.file
-    <File: /path/to/media/photos/myphoto_display.jpg>
-    >>> p.display.spec
-    <class 'myapp.specs.Display'>
-
-Step 6
-******
-
-Enjoy a nice beverage.
-
-::
-
-    from refrigerator import beer
-
-    beer.enjoy()
+    class Photo(models.Model):
+        original_image = models.ImageField(upload_to'photos')
+        watermarked_image = ImageSpec([Watermark()], image_field='original_image',
+                format='JPEG', quality=90)
 
 
+Admin
+-----
+
+ImageKit also contains a class named ``imagekit.models.AdminThumbnailView``
+for displaying specs (or even regular ImageFields) in the
+`Django admin change list`__. Like ``imagekit.models.ImageSpec``,
+AdminThumbnailView is used as a property on Django model classes::
+
+    from django.db import models
+    from imagekit.models import ImageSpec
+    from imagekit.processors import Crop, AdminThumbnailView
+
+    class Photo(models.Model):
+        original_image = models.ImageField(upload_to'photos')
+        thumbnail = ImageSpec([Crop(50, 50)], image_field='original_image')
+        admin_thumbnail_view = AdminThumbnailView(image_field='thumbnail')
+
+You can then then add this property to the `list_display`__ field of your admin
+class::
+
+    from django.contrib import admin
+    from .models import Photo
+
+
+    class PhotoAdmin(admin.ModelAdmin):
+        list_display = ('__str__', 'admin_thumbnail_view')
+
+
+    admin.site.register(Photo, PhotoAdmin)
+
+AdminThumbnailView can even use a custom template. For more information, see
+``imagekit.models.AdminThumbnailView``.
+
+
+__ https://docs.djangoproject.com/en/dev/intro/tutorial02/#customize-the-admin-change-list
+__ https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.list_display
