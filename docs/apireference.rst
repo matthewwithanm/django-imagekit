@@ -8,6 +8,7 @@ API Reference
 .. automodule:: imagekit.models
    :members:
 
+
 :mod:`processors` Module
 ------------------------
 
@@ -16,3 +17,10 @@ API Reference
 
 .. automodule:: imagekit.processors.resize
   :members:
+
+
+:mod:`admin` Module
+--------------------
+
+.. automodule:: imagekit.admin
+   :members:

@@ -4,7 +4,7 @@ import Image
 from django.core.files.base import ContentFile
 from django.db import models
 from django.test import TestCase
-from imagekit.models import ImageSpec, AdminThumbnailView
+from imagekit.models import ImageSpec
 from imagekit.processors.resize import Crop
 from imagekit.processors import Adjust
 
@@ -14,8 +14,7 @@ class Photo(models.Model):
     original_image = models.ImageField(upload_to='photos')
     thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1), Crop(50, 50)],
             image_field='original_image', format='JPEG', quality=90)
-    admin_thumbnail_view = AdminThumbnailView(image_field='thumbnail')
-    
+
 
 class IKTest(TestCase):
     """ Base TestCase class """

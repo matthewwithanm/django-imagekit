@@ -83,35 +83,25 @@ implement a ``process()`` method::
 Admin
 -----
 
-ImageKit also contains a class named ``imagekit.models.AdminThumbnailView``
+ImageKit also contains a class named ``imagekit.admin.AdminThumbnail``
 for displaying specs (or even regular ImageFields) in the
-`Django admin change list`__. Like ``imagekit.models.ImageSpec``,
-AdminThumbnailView is used as a property on Django model classes::
-
-    from django.db import models
-    from imagekit.models import ImageSpec, AdminThumbnailView
-    from imagekit.processors import resize 
-
-    class Photo(models.Model):
-        original_image = models.ImageField(upload_to'photos')
-        thumbnail = ImageSpec([resize.Crop(50, 50)], image_field='original_image')
-        admin_thumbnail_view = AdminThumbnailView(image_field='thumbnail')
-
-You can then add this property to the `list_display`__ field of your admin
-class::
+`Django admin change list`__. AdminThumbnail is used as a property on
+Django admin classes::
 
     from django.contrib import admin
+    from imagekit.admin import AdminThumbnail
     from .models import Photo
 
 
     class PhotoAdmin(admin.ModelAdmin):
-        list_display = ('__str__', 'admin_thumbnail_view')
+        list_display = ('__str__', 'admin_thumbnail')
+        admin_thumbnail = AdminThumbnail(image_field='thumbnail')
 
 
     admin.site.register(Photo, PhotoAdmin)
 
-AdminThumbnailView can even use a custom template. For more information, see
-``imagekit.models.AdminThumbnailView``.
+AdminThumbnail can even use a custom template. For more information, see
+``imagekit.admin.AdminThumbnail``.
 
 
 __ https://docs.djangoproject.com/en/dev/intro/tutorial02/#customize-the-admin-change-list
