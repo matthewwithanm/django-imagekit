@@ -21,16 +21,16 @@ class Command(BaseCommand):
             """,
         ),
         make_option('--runmode', '-r', dest='runmode',
-            default='IK_SYNC',
+            default='SQ_SYNC',
             help="""
-            Runmode for the ImageKit queue. Default is synchronous execution --
-            IK_SYNC; use IK_ASYNC_MGMT or IK_ASYNC_REQUEST for async execution.
+            Runmode for ImageKit's signal queue. Default is synchronous execution --
+            SQ_SYNC; use SQ_ASYNC_MGMT or SQ_ASYNC_REQUEST for async execution.
             """,
         ),
         make_option('--queuename', '-q', dest='queue_name',
             default='default',
             help="""
-            Name of the ImageKit queue to use. If not specified, the default queue will be used.
+            Name of the signal queue for ImageKit to use. If not specified, the default queue will be used.
             """,
         ),
         make_option('--keep-cache', '-C', action="store_false", dest='clear_cache',
@@ -52,12 +52,17 @@ class Command(BaseCommand):
         
         echo_banner()
         
-        from imagekit.signals import signalqueue
-        import imagekit
+        import signalqueue
+        signalqueue.autodiscover()
         
-        runmode = options.get('runmode').upper()
-        signalqueue.runmode = getattr(imagekit, runmode)
-        signalqueue.queue_name = options.get('queuename', "default")
+        from signalqueue import SQ_RUNMODES as runmodes
+        from signalqueue.worker import backends
+        from imagekit import signals as iksignals
+        
+        runmode_name = options.get('runmode').upper()
+        queue_name = options.get('queuename', "default")
+        queues = backends.ConnectionHandler(django_settings.SQ_QUEUES, runmodes.get(runmode_name))
+        signalqueue = queues[queue_name]
         
         return flush_image_cache(args, signalqueue, options)
 
@@ -99,13 +104,13 @@ def flush_image_cache(apps, signalqueue, options):
                 print '>>> Cached ImageKit images will be %s.' % (clear_cache and "deleted" or "preserved")
                 
                 # set the runmode, if provided
-                if options.get("runmode").upper().startswith("IK_ASYNC_"):
-                    print '>>> Executing asynchronous signals using the queue "%s" in runmode %s.' % (
+                if options.get("runmode").upper().startswith("SQ_ASYNC_"):
+                    print '>>> Dequeueing signals in runmode %s from the queue "%s".' % (
+                        options.get("runmode").upper(),
                         signalqueue.queue_name,
-                        KewGardens.get_runmode_label(signalqueue.runmode),
                     )
                 else:
-                    print '>>> Executing with synchronous signals -- not using a signal queue.'
+                    print '>>> Running in synchronous mode -- not using a signal queue.'
                 
                 
                 print ''

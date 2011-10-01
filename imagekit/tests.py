@@ -10,16 +10,29 @@ Copyright (c) 2011 Objects In Space And Time, LLC. All rights reserved.
 
 """
 
+import os, tempfile
+from django.conf import settings
+
 if __name__ == '__main__':
-    from django.core.management import setup_environ, call_command
-    import settings
-    setup_environ(settings)
-    call_command('test', 'imagekit')
+    import imagekit.settings as ik_settings
+    ik_settings.__dict__.update({
+        "SQ_RUNMODE": 'SQ_SYNC',
+        "NOSE_ARGS": ['--rednose', '--nocapture', '--nologcapture'],
+    })
+    
+    settings.configure(**ik_settings.__dict__)
+    
+    from django.core.management import call_command
+    call_command('test', 'imagekit',
+        interactive=False, traceback=True, verbosity=2)
+    
+    tempdata = ik_settings.tempdata
+    print "Deleting test data: %s" % tempdata
+    os.rmdir(tempdata)
+    
     import sys
     sys.exit(0)
 
-import os, tempfile
-from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
 from django.test import TestCase
@@ -28,7 +41,6 @@ from imagekit import processors
 from imagekit.models import ImageModel, ImageWithMetadata, _storage
 from imagekit.specs import ImageSpec
 from imagekit.lib import *
-from imagekit.signals import signalqueue
 
 
 class ResizeToWidth(processors.Resize):
@@ -186,19 +198,24 @@ class IKTest(TestCase):
     
     def setUp(self):
         # dispatch all signals synchronously
-        settings.IK_RUNMODE = 0
-        signalqueue.runmode = 0
-        
-        # image instance for testing
-        self.p = TestImage()
-        try:
-            img = self.get_image()
-        except (IOError, AttributeError, ValueError), err:
-            print "~~~ Exception thrown DURING SETUP by IKTest.get_image(): %s" % err
-            img = self.generate_image()
-        self.p.save_image('test.jpeg', ContentFile(img.read()))
-        self.p.save()
-        img.close()
+        from django.conf import settings
+        settings.SQ_RUNMODE = 'SQ_SYNC'
+        with self.settings(SQ_RUNMODE='SQ_SYNC'):
+            import signalqueue
+            queues = backends.ConnectionHandler(settings.SQ_QUEUES, 0)
+            signalqueue.worker.queues = queues
+            signalqueue.autodiscover()
+            
+            # image instance for testing
+            self.p = TestImage()
+            try:
+                img = self.get_image()
+            except (IOError, AttributeError, ValueError), err:
+                print "~~~ Exception thrown DURING SETUP by IKTest.get_image(): %s" % err
+                img = self.generate_image()
+            self.p.save_image('test.jpeg', ContentFile(img.read()))
+            self.p.save()
+            img.close()
     
     def test_save_image(self):
         img = self.generate_image()

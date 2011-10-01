@@ -15,7 +15,7 @@ from imagekit import colors
 from imagekit.utils import logg
 from imagekit.utils import EXIF
 from imagekit.utils.json import json
-from imagekit.signals import signalqueue
+from imagekit import signals as iksignals
 from imagekit.widgets import RGBColorFieldWidget
 import imagekit
 import imagekit.models
@@ -170,13 +170,13 @@ class ICCMetaField(ICCDataField):
     def contribute_to_class(self, cls, name):
         super(ICCMetaField, self).contribute_to_class(cls, name)
         signals.pre_save.connect(self.check_icc_field, sender=cls)
-        signalqueue.refresh_icc_data.connect(self.refresh_icc_data, sender=cls)
+        iksignals.refresh_icc_data.connect(self.refresh_icc_data, sender=cls)
     
     def check_icc_field(self, **kwargs): # signal, sender, instance
         if not kwargs.get('raw', False):
             instance = kwargs.get('instance')
             if not getattr(instance, self.name, None):
-                signalqueue.send('refresh_icc_data', sender=instance.__class__, instance=instance)
+                iksignals.refresh_icc_data.send(sender=instance.__class__, instance=instance)
     
     def refresh_icc_data(self, **kwargs): # signal, sender, instance
         """
@@ -279,7 +279,7 @@ class EXIFMetaField(models.TextField):
     def contribute_to_class(self, cls, name):
         super(EXIFMetaField, self).contribute_to_class(cls, name)
         signals.post_save.connect(self.check_exif_field, sender=cls)
-        signalqueue.refresh_exif_data.connect(self.refresh_exif_data, sender=cls)
+        iksignals.refresh_exif_data.connect(self.refresh_exif_data, sender=cls)
     
     def check_exif_field(self, **kwargs): # signal, sender, instance
         if not kwargs.get('raw', False):
@@ -289,7 +289,7 @@ class EXIFMetaField(models.TextField):
             p = instance.pilimage
             if hasattr(p, "_getexif"):
                 if not getattr(instance, self.name, None):
-                    signalqueue.send('refresh_exif_data', sender=instance.__class__, instance=instance)
+                    iksignals.refresh_exif_data.send(sender=instance.__class__, instance=instance)
 
     def refresh_exif_data(self, **kwargs): # signal, sender, instance
         """
@@ -655,7 +655,7 @@ class Histogram(fields.CharField):
         if not cls._meta.abstract:
             setattr(cls, self.name, HistogramDescriptor(self))
             signals.post_save.connect(self.queue_related_histogram_update, sender=cls, dispatch_uid="queue_related_histogram_update")
-            signalqueue.save_related_histogram.connect(self.save_related_histogram, sender=cls)
+            iksignals.save_related_histogram.connect(self.save_related_histogram, sender=cls)
             
             histogram = generic.GenericRelation(imagekit.models.HISTOGRAMS.get(self.original_colorspace.lower()))
             histogram.verbose_name = "Related %s Histogram" % self.original_colorspace
@@ -668,7 +668,7 @@ class Histogram(fields.CharField):
             instance = kwargs.get('instance')
             sender = kwargs.get('sender')
             logg.info("-- Enqueueing async signal 'save_related_histogram' for %s %s." % (sender.__name__, getattr(instance, 'pk', "<NONE>")))
-            signalqueue.send('save_related_histogram', sender=sender, instance=instance)
+            iksignals.save_related_histogram.send(sender=sender, instance=instance)
     
     def save_related_histogram(self, **kwargs): # signal, sender, instance
         """
@@ -743,13 +743,13 @@ class ImageHashField(fields.CharField):
     def contribute_to_class(self, cls, name):
         super(ImageHashField, self).contribute_to_class(cls, name)
         signals.pre_save.connect(self.check_hash_field, sender=cls)
-        signalqueue.refresh_hash.connect(self.refresh_hash, sender=cls)
+        iksignals.refresh_hash.connect(self.refresh_hash, sender=cls)
     
     def check_hash_field(self, **kwargs): # signal, sender, instance
         if not kwargs.get('raw', False):
             instance = kwargs.get('instance')
             if not getattr(instance, self.name, None):
-                signalqueue.send('refresh_hash', sender=instance.__class__, instance=instance)
+                iksignals.refresh_hash.send(sender=instance.__class__, instance=instance)
     
     def refresh_hash(self, **kwargs): # signal, sender, instance
         """
@@ -910,14 +910,14 @@ class RGBColorField(models.CharField):
     def contribute_to_class(self, cls, name):
         super(RGBColorField, self).contribute_to_class(cls, name)
         signals.pre_save.connect(self.check_rgb_color_field, sender=cls)
-        signalqueue.refresh_color.connect(self.refresh_color, sender=cls)
+        iksignals.refresh_color.connect(self.refresh_color, sender=cls)
     
     def check_rgb_color_field(self, **kwargs):
         if not kwargs.get('raw', False):
             instance = kwargs.get('instance')
             if not getattr(instance, self.name, None):
                 if self.extractor is not None:
-                    signalqueue.send('refresh_color', sender=instance.__class__, instance=instance)
+                    iksignals.refresh_color.send(sender=instance.__class__, instance=instance)
     
     def refresh_color(self, **kwargs): # signal, sender, instance
         """

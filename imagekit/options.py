@@ -1,6 +1,6 @@
 # Imagekit options
 from imagekit import specs
-from imagekit.signals import signalqueue
+from imagekit import signals as iksignals
 #from imagekit.utils import logg
 
 
@@ -52,7 +52,7 @@ class Options(object):
         spec_name = kwargs.get('spec_name', None)
         if instance and spec_name:
             #prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
-            signalqueue.send_now('delete_spec', sender=instance.__class__, instance=instance, spec_name=spec_name)
+            iksignals.delete_spec.send_now(sender=instance.__class__, instance=instance, spec_name=spec_name)
     
     def prepare_spec(self, **kwargs):
         #logg.info('prepare_spec() called: %s' % kwargs)
@@ -62,7 +62,7 @@ class Options(object):
         if instance and spec_name:
             prop = instance._ik._props.get(spec_name).accessor(instance, self.specs[spec_name])
             if not instance._storage.exists(prop.name):
-                signalqueue.send('prepare_spec', sender=instance.__class__, instance=instance, spec_name=spec_name)
+                iksignals.prepare_spec.send(sender=instance.__class__, instance=instance, spec_name=spec_name)
     
     def contribute_to_class(self, cls, name):
         self._props = {}
@@ -76,10 +76,10 @@ class Options(object):
             setattr(cls, spec_name, prop)
             cls.add_to_class(spec_name, prop)
         
-        signalqueue.pre_cache.connect(self.pre_cache, sender=cls, dispatch_uid="imagekit-options-pre-cache")
-        signalqueue.clear_cache.connect(self.clear_cache, sender=cls, dispatch_uid="imagekit-options-clear-cache")
-        signalqueue.prepare_spec.connect(self.do_prepare_spec, sender=cls, dispatch_uid="imagekit-options-prepare-spec")
-        signalqueue.delete_spec.connect(self.do_delete_spec, sender=cls, dispatch_uid="imagekit-options-delete-spec")
+        iksignals.pre_cache.connect(self.pre_cache, sender=cls, dispatch_uid="imagekit-options-pre-cache")
+        iksignals.clear_cache.connect(self.clear_cache, sender=cls, dispatch_uid="imagekit-options-clear-cache")
+        iksignals.prepare_spec.connect(self.do_prepare_spec, sender=cls, dispatch_uid="imagekit-options-prepare-spec")
+        iksignals.delete_spec.connect(self.do_delete_spec, sender=cls, dispatch_uid="imagekit-options-delete-spec")
     
     def do_delete_spec(self, **kwargs):
         instance = kwargs.get('instance', None)

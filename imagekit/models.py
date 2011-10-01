@@ -15,7 +15,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.utils.translation import ugettext_lazy as _
 from colorsys import rgb_to_hls, hls_to_rgb
 
-from imagekit.signals import signalqueue
+from delegate import DelegateManager, delegate
+from imagekit import signals as iksignals
 from imagekit import specs
 from imagekit.lib import *
 from imagekit.options import Options
@@ -24,18 +25,11 @@ from imagekit.ICCProfile import ICCProfile
 from imagekit.utils import logg, hexstr
 from imagekit.utils import itersubclasses
 from imagekit.utils import icchash as icchasher
-from imagekit.utils.delegate import DelegateManager, delegate
 from imagekit.utils.memoize import memoize
 from imagekit.modelfields import ICCField, ICCHashField, RGBColorField
 from imagekit.modelfields import ICCDataField, ICCMetaField, EXIFMetaField
 from imagekit.modelfields import HistogramChannelField, Histogram
 from imagekit.modelfields import ImageHashField
-
-try:
-    from imagekit.queue.backends import QueueBase
-except ImproperlyConfigured:
-    class QueueBase(object):
-        pass
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -238,21 +232,21 @@ class ImageModel(models.Model):
             clear_cache = False
         
         if clear_cache:
-            signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
+            iksignals.clear_cache.send_now(sender=self.__class__, instance=self)
         
         #logg.info("About to send the pre_cache signal...")
-        return signalqueue.send_now('pre_cache', sender=self.__class__, instance=self)
+        return iksignals.pre_cache.send_now(sender=self.__class__, instance=self)
     
     def delete(self, *args, **kwargs):
         clear_cache = kwargs.pop('clear_cache', False)
         if clear_cache:
-            signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
+            iksignals.clear_cache.send_now(sender=self.__class__, instance=self)
             self._imgfield.delete()
         super(ImageModel, self).delete(*args, **kwargs)
     
     def clear_cache(self, **kwargs):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
-        signalqueue.send_now('clear_cache', sender=self.__class__, instance=self)
+        iksignals.clear_cache.send_now(sender=self.__class__, instance=self)
 
 
 class Proof(ImageModel):
@@ -925,123 +919,6 @@ class ICCModel(models.Model):
             )
         
         return u'-empty-'
-
-
-class SignalQuerySet(models.query.QuerySet):
-    """
-    SignalQuerySet is a QuerySet that works as an ImageKit queue backend.
-    
-    The actual QueueBase override methods are implemented here and delegated to
-    SignalManager, which is a DelegateManager subclass with the QueueBase
-    implementation "mixed in".
-    
-    Since you can't nakedly instantiate managers outside of a model
-    class, we use a proxy class to hand off SignalQuerySet's delegated
-    manager to the queue config stuff. See the working implementation in
-    imagekit.queue.backends.DatabaseQueueProxy for details.
-    
-    """
-    @delegate
-    def queued(self, enqueued=True):
-        return self.filter(queue_name=self.queue_name, enqueued=enqueued).order_by("createdate")
-    
-    @delegate
-    def ping(self):
-        return True
-    
-    @delegate
-    def push(self, value):
-        return self.get_or_create(queue_name=self.queue_name, value=value, enqueued=True)
-    
-    @delegate
-    def pop(self):
-        """
-        Dequeued signals are marked as such (but not deleted) by default.
-        """
-        out = self.queued()[0]
-        out.enqueued = False
-        out.save()
-        return str(out.value)
-    
-    def count(self, enqueued=True):
-        """
-        This override can't be delegated as the super() call isn't portable.
-        """
-        return super(self.__class__, self.all().queued(enqueued=enqueued)).count()
-    
-    @delegate
-    def clear(self):
-        self.queued().update(enqueued=False)
-    
-    @delegate
-    def values(self, floor=0, ceil=-1):
-        if floor < 1:
-            floor = 0
-        if ceil < 1:
-            ceil = self.count()
-        
-        out = self.queued()[floor:ceil]
-        return [str(value[0]) for value in out.values_list('value')]
-
-class SignalManager(DelegateManager, QueueBase):
-    __queryset__ = SignalQuerySet
-    
-    def __init__(self, *args, **kwargs):
-        QueueBase.__init__(self, *args, **kwargs)
-        DelegateManager.__init__(self, *args, **kwargs)
-    
-    def count(self, enqueued=True):
-        return self.queued(enqueued=enqueued).count()
-    
-    def _get_queue_name(self):
-        if self._queue_name:
-            return self._queue_name
-        return None
-    
-    def _set_queue_name(self, queue_name):
-        self._queue_name = queue_name
-        self.__queryset__.queue_name = queue_name
-    
-    queue_name = property(_get_queue_name, _set_queue_name)
-
-class EnqueuedSignal(models.Model):
-    class Meta:
-        abstract = False
-        verbose_name = "Enqueued Signal"
-        verbose_name_plural = "Enqueued Signals"
-    
-    objects = SignalManager()
-    
-    enqueued = models.BooleanField("Enqueued",
-        default=True,
-        editable=True)
-    
-    queue_name = models.CharField(verbose_name="Queue name",
-        default="default",
-        unique=False,
-        blank=True,
-        max_length=255, db_index=True)
-    
-    value = models.TextField(verbose_name='Serialized signal value',
-        editable=False,
-        unique=True, db_index=True,
-        blank=True,
-        null=True)
-    
-    createdate = models.DateTimeField('Created on',
-        default=datetime.now,
-        blank=True,
-        editable=False)
-    
-    def __repr__(self):
-        if self.value:
-            return str(self.value)
-        return "{'instance':null}"
-    
-    def __unicode__(self):
-        if self.value:
-            return unicode(self.value)
-        return u"{'instance':null}"
 
 
 """

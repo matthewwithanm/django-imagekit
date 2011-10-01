@@ -10,7 +10,7 @@ import os, warnings, numpy
 from StringIO import StringIO
 from imagekit import processors
 from imagekit.lib import *
-from imagekit.signals import signalqueue
+from imagekit import signals
 from imagekit.utils import img_to_fobj, logg
 #from imagekit.utils.memoize import memoize
 from django.core.files.base import ContentFile
@@ -252,7 +252,7 @@ class DescriptorBase(object):
     def __delete__(self, obj):
         if hasattr(obj, '_ik'):
             if self._name in obj._ik.specs.keys():
-                signalqueue.send_now('delete_spec', sender=obj.__class__, instance=obj, spec_name=self._name)
+                signals.delete_spec.send_now(sender=obj.__class__, instance=obj, spec_name=self._name)
 
 
 class FileDescriptor(DescriptorBase):
