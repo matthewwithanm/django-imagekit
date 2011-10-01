@@ -426,7 +426,7 @@ class NeuQuant:
         a = np.argmin((dists * dists).sum(1))
         return a
 
-if __name__ == "__main__":
+def main():
     from django.core.management import setup_environ
     import settings
     setup_environ(settings)
@@ -466,10 +466,16 @@ if __name__ == "__main__":
         outimg = Image.new('RGBA', (256, 1), (0,0,0))
         outimg.putdata([tuple(t[0]) for t in out.T[0:3].T.reshape(256, 1, 3).tolist()])
         a = outimg.resize((512, 256), Image.NEAREST)
-        a.show()
+        #a.show()
     
     else:
         logg.info("**** QUANT! %s" % quant)
+
+
+if __name__ == "__main__":
+    main()
+    import sys
+    sys.exit(0)
     
 
 
