@@ -10,7 +10,7 @@ MANAGERS = ADMINS
 import tempfile, os
 from django import contrib
 tempdata = tempfile.mkdtemp()
-approot = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+approot = os.path.dirname(os.path.abspath(__file__))
 adminroot = os.path.join(contrib.__path__[0], 'admin')
 
 DATABASES = {
@@ -32,7 +32,7 @@ MEDIA_URL = '/face/'
 STATIC_ROOT = os.path.join(adminroot, 'static', 'admin')[0]
 STATIC_URL = '/staticfiles/'
 ADMIN_MEDIA_PREFIX = '/admin-media/'
-ROOT_URLCONF = 'settings.urlconf'
+#ROOT_URLCONF = 'signalqueue.settings.urlconf'
 
 from django.core.files.storage import FileSystemStorage
 #STATICFILES_STORAGE = FileSystemStorage(location=STATIC_ROOT, base_url=STATIC_URL)
@@ -81,8 +81,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django_nose',
     'delegate',
-    'signalqueue',
     'imagekit',
+    'signalqueue',
 )
 
 # Logging Configuration
@@ -97,9 +97,10 @@ LOGGING = dict(
         'nil': { 'level':'INFO', 'class':'django.utils.log.NullHandler', },
     },
     loggers={
-        'imagekit': { 'handlers': ['default'], 'level': logging.INFO, 'propagate': False },
-        # CATCHALL:
-        '': {  'handlers': ['default'], 'level': 'INFO', 'propagate': False },
+        'imagekit': { 'handlers': ['default'], 'level': logging.DEBUG, 'propagate': False },
+        'signalqueue': { 'handlers': ['default'], 'level': logging.DEBUG, 'propagate': False },
+        '': {  'handlers': ['default'], 'level': 'DEBUG', 'propagate': False },
+        '*': {  'handlers': ['default'], 'level': 'DEBUG', 'propagate': False },
     },
 )
 
@@ -115,15 +116,14 @@ SQ_QUEUES = {
         'INTERVAL': 30, # 1/3 sec
         'OPTIONS': dict(port=4332),
     },
-    'ikdb': {
+    'db': {
         'ENGINE': 'signalqueue.worker.backends.DatabaseQueueProxy',
         'INTERVAL': 30, # 1/3 sec
         'OPTIONS': dict(app_label='signalqueue', modl_name='EnqueuedSignal'),
     },
 }
 
-#SQ_ADDITIONAL_SIGNALS=['signalqueue.tests']
 SQ_WORKER_PORT = 11201
-
+SQ_RUNMODE = 'SQ_SYNC'
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

@@ -776,11 +776,10 @@ class ImageHashField(fields.CharField):
             logg.warning("*** Couldn't get pilimage reference to refresh image hash (IOError was thrown: %s)" % err)
             return
         
-        hash_string = ''
-        hashee = pilimage.tostring()
-        
         if pilimage:
             try:
+                hash_string = ''
+                hashee = pilimage.tostring()
                 hasher = self.hasher
                 
                 if callable(hasher):

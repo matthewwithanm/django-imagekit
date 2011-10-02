@@ -8,9 +8,6 @@ from optparse import make_option
 
 from . import echo_banner
 
-# disable async queue
-#signalqueue.runmode = imagekit.IK_SYNC
-
 
 class Command(BaseCommand):
     

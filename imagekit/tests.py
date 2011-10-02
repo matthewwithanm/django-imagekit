@@ -12,30 +12,54 @@ Copyright (c) 2011 Objects In Space And Time, LLC. All rights reserved.
 
 import os, tempfile
 from django.conf import settings
+from pprint import pprint
+rp = None
+
+pprint(os.environ)
+print
+print
+
+#pprint(dir(settings))
 
 if __name__ == '__main__':
-    import imagekit.settings as ik_settings
-    ik_settings.__dict__.update({
-        "SQ_RUNMODE": 'SQ_SYNC',
+    import imagekit.schmettings
+    from django.conf import settings
+    
+    imagekit.schmettings.__dict__.update({
+        #"SQ_RUNMODE": 'SQ_SYNC',
         "NOSE_ARGS": ['--rednose', '--nocapture', '--nologcapture'],
     })
     
-    settings.configure(**ik_settings.__dict__)
+    if not settings.configured:
+        print "!!! CONFIGURING SETTINGS, DOGG."
+        settings.configure(**imagekit.schmettings.__dict__)
+    
+    import subprocess, os, signalqueue
+    rp = subprocess.Popen(['redis-server', "%s" % os.path.join(os.path.dirname(signalqueue.__file__), 'settings', 'redis.conf')])
     
     from django.core.management import call_command
     call_command('test', 'imagekit',
         interactive=False, traceback=True, verbosity=2)
+    #call_command('test', 'signalqueue',
+    #    interactive=False, traceback=True, verbosity=2)
     
-    tempdata = ik_settings.tempdata
+    tempdata = imagekit.schmettings.tempdata
     print "Deleting test data: %s" % tempdata
     os.rmdir(tempdata)
+    
+    if rp is not None:
+        import signal
+        print "Shutting down test Redis server instance (pid = %s)" % rp.pid
+        os.kill(rp.pid, signal.SIGKILL)
     
     import sys
     sys.exit(0)
 
+from django.test import TestCase
+from django.test.utils import override_settings as override
+
 from django.core.files.base import ContentFile
 from django.db import models
-from django.test import TestCase
 
 from imagekit import processors
 from imagekit.models import ImageModel, ImageWithMetadata, _storage
@@ -202,7 +226,7 @@ class IKTest(TestCase):
         settings.SQ_RUNMODE = 'SQ_SYNC'
         with self.settings(SQ_RUNMODE='SQ_SYNC'):
             import signalqueue
-            queues = backends.ConnectionHandler(settings.SQ_QUEUES, 0)
+            queues = signalqueue.worker.backends.ConnectionHandler(settings.SQ_QUEUES, 0)
             signalqueue.worker.queues = queues
             signalqueue.autodiscover()
             
