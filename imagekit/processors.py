@@ -196,6 +196,7 @@ class HSVArray(ImageProcessor):
         hsv_array = color.rgb2hsv(rgb_array.astype(numpy.float32) / 255)
         return hsv_array, 
 
+
 class NeuQuantize(ImageProcessor):
     """
     Extract and return a 256-color quantized LUT of the images' dominant colors.
@@ -219,6 +220,7 @@ class NeuQuantize(ImageProcessor):
             outimg.putdata([tuple(t[0]) for t in out.T[0:3].T.reshape(256, 1, 3).tolist()])
             outimg.resize((cls.width, cls.height), cls.resize_mode)
             return outimg, fmt
+
 
 class Atkinsonify(Format):
     """
@@ -266,6 +268,7 @@ class Atkinsonify(Format):
         
         return img, cls.format
 
+
 @memoize
 def get_stentiford_model(max_checks=None):
     from imagekit.stentiford import StentifordModel
@@ -273,7 +276,6 @@ def get_stentiford_model(max_checks=None):
         max_checks = Stentifordize.max_checks
     return StentifordModel(max_checks=max_checks)
 
-#@memoize
 def get_stentiford_image(img):
     stenty = get_stentiford_model()
     stenty.ogle(img)
@@ -285,6 +287,7 @@ class Stentifordize(ImageProcessor):
     @classmethod
     def process(cls, img, fmt, obj):
         return get_stentiford_image(img), fmt
+
 
 class Reflection(ImageProcessor):
     background_color = '#FFFFFF'
@@ -379,7 +382,8 @@ class Resize(ImageProcessor):
 class SmartCrop(ImageProcessor):
     """
     Crop an image 'smartly' -- based on smart crop implementation from easy-thumbnails:
-    https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L193
+    
+        https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L193
     
     Smart cropping whittles away the parts of the image with the least entropy.
     
@@ -438,6 +442,29 @@ class SmartCrop(ImageProcessor):
         box = (left, top, right, bottom)
         img = img.crop(box)
         
+        return img, fmt
+
+
+class Trim(ImageProcessor):
+    """
+    Trims the solid border color from an image. Defaults to trimming white borders.
+    The Trim processor is based on the implementation of 'autocrop' from easy-thumbnails:
+    
+        https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L76
+    
+    """
+    trim_luma = 255 # remove white borders
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        bw = img.convert('1')
+        bw = bw.filter(ImageFilter.MedianFilter)
+        # White background.
+        bg = Image.new('1', img.size, 255)
+        diff = ImageChops.difference(bw, bg)
+        bbox = diff.getbbox()
+        if bbox:
+            img = img.crop(bbox)
         return img, fmt
 
 

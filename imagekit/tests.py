@@ -109,6 +109,8 @@ class NeuQuantizer(processors.NeuQuantize):
 class Stentifordizer(processors.Stentifordize):
     max_checks = 10
 
+class Trimmer(processors.Trim):
+    pass
 
 
 class TestResizeToWidth(ImageSpec):
@@ -149,6 +151,9 @@ class TestStentifordizer(ImageSpec):
     access_as = 'stentifordized'
     processors = [SmarterCropped, Stentifordizer]
 
+class TestTrimmer(ImageSpec):
+    access_as = 'trimmed'
+    processors = [Trimmer]
 
 
 
@@ -319,6 +324,11 @@ class IKTest(TestCase):
     
     def _test_stentifordizer(self):
         self.assertTrue(self.p.stentifordized.url is not None)
+    
+    def test_trimmer(self):
+        self.assertTrue(self.p.trimmed.url is not None)
+        self.assertTrue(self.p.trimmed.width <= self.p.image.width)
+        self.assertTrue(self.p.trimmed.height <= self.p.image.height)
     
     def test_url(self):
         self.assertEqual(

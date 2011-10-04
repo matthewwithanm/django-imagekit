@@ -5,6 +5,8 @@ try:
     import ImageFile
     import ImageFilter
     import ImageEnhance
+    import ImageFilter
+    import ImageChops
     import ImageColor
     import ImageCms
     import ImageStat
@@ -14,6 +16,8 @@ except ImportError:
         from PIL import ImageFile
         from PIL import ImageFilter
         from PIL import ImageEnhance
+        from PIL import ImageFilter
+        from PIL import ImageChops
         from PIL import ImageColor
         from PIL import ImageCms
         from PIL import ImageStat
