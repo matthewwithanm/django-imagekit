@@ -69,6 +69,7 @@ from imagekit.specs import ImageSpec
 from imagekit.lib import *
 
 
+
 class ResizeToWidth(processors.Resize):
     width = 100
 
@@ -86,6 +87,10 @@ class SmartCropped(processors.SmartCrop):
     width = 100
     height = 100
 
+class SmarterCropped(processors.SmartCrop):
+    width = 100
+    height = 100
+
 class TransformICC(processors.ICCTransform):
     source = ICCProfile(os.path.join(IK_ROOT, "icc/sRGB-IEC61966-2-1.icc"))
     destination = ICCProfile(os.path.join(IK_ROOT, "icc/adobeRGB-1998.icc"))
@@ -100,6 +105,10 @@ class Atkinsonizer(processors.Atkinsonify):
 
 class NeuQuantizer(processors.NeuQuantize):
     pass
+
+class Stentifordizer(processors.Stentifordize):
+    max_checks = 10
+
 
 
 class TestResizeToWidth(ImageSpec):
@@ -135,6 +144,10 @@ class TestAtkinsonizer(ImageSpec):
 class TestNeuQuantizer(ImageSpec):
     access_as = 'neuquantized'
     processors = [ResizeToHeight, SmartCropped, NeuQuantizer]
+
+class TestStentifordizer(ImageSpec):
+    access_as = 'stentifordized'
+    processors = [SmarterCropped, Stentifordizer]
 
 
 
@@ -264,7 +277,6 @@ class IKTest(TestCase):
             img = self.generate_image()
         
         pm.save_image('mtest.jpg', ContentFile(img.read()))
-        #pm.pilimage.show()
         img.close()
         
         self.assertEqual(pm.image.width, 800)
@@ -304,6 +316,9 @@ class IKTest(TestCase):
     
     def test_neuquantizer(self):
         self.assertTrue(self.p.neuquantized.url is not None)
+    
+    def _test_stentifordizer(self):
+        self.assertTrue(self.p.stentifordized.url is not None)
     
     def test_url(self):
         self.assertEqual(

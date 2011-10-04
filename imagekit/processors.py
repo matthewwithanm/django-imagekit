@@ -28,7 +28,9 @@ Here's the latest list of supported PIL image modes:
 import numpy
 from imagekit.lib import *
 from imagekit.neuquant import NeuQuant
+#from imagekit.stentiford import StentifordModel
 from imagekit.utils import logg, entropy
+from imagekit.utils.memoize import memoize
 
 class ImageProcessor(object):
     """
@@ -218,7 +220,6 @@ class NeuQuantize(ImageProcessor):
             outimg.resize((cls.width, cls.height), cls.resize_mode)
             return outimg, fmt
 
-
 class Atkinsonify(Format):
     """
     Apply the Atkinson dither/halftone algorithm to the image.
@@ -264,6 +265,26 @@ class Atkinsonify(Format):
                         pass # it happens, evidently.
         
         return img, cls.format
+
+@memoize
+def get_stentiford_model(max_checks=None):
+    from imagekit.stentiford import StentifordModel
+    if max_checks is None:
+        max_checks = Stentifordize.max_checks
+    return StentifordModel(max_checks=max_checks)
+
+#@memoize
+def get_stentiford_image(img):
+    stenty = get_stentiford_model()
+    stenty.ogle(img)
+    return stenty.pilimage
+
+class Stentifordize(ImageProcessor):
+    max_checks = 55
+    
+    @classmethod
+    def process(cls, img, fmt, obj):
+        return get_stentiford_image(img), fmt
 
 class Reflection(ImageProcessor):
     background_color = '#FFFFFF'
