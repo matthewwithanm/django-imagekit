@@ -27,9 +27,9 @@ TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 USE_I18N = False
-MEDIA_ROOT = os.path.join(approot, 'static')
+MEDIA_ROOT = os.path.join(tempdata, 'static')
 MEDIA_URL = '/face/'
-STATIC_ROOT = os.path.join(adminroot, 'static', 'admin')[0]
+STATIC_ROOT = os.path.join(tempdata, 'static', 'admin')[0]
 STATIC_URL = '/staticfiles/'
 ADMIN_MEDIA_PREFIX = '/admin-media/'
 #ROOT_URLCONF = 'signalqueue.settings.urlconf'
@@ -37,6 +37,10 @@ ADMIN_MEDIA_PREFIX = '/admin-media/'
 from django.core.files.storage import FileSystemStorage
 #STATICFILES_STORAGE = FileSystemStorage(location=STATIC_ROOT, base_url=STATIC_URL)
 #STATICFILES_STORAGE = FileSystemStorage
+IK_STORAGE = lambda: FileSystemStorage(
+    location=os.path.join(tempdata, 'static', 'ik_storage'),
+    base_url=MEDIA_URL)
+
 
 TEMPLATE_DIRS = (
     os.path.join(approot, 'templates'),
@@ -87,20 +91,17 @@ INSTALLED_APPS = (
 
 # Logging Configuration
 import logging
-GLOBAL_LOG_LEVEL = logging.DEBUG
 LOGGING = dict(
     version=1,
     disable_existing_loggers=False,
     formatters={ 'standard': { 'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s' }, },
     handlers={
-        'default': { 'level':'INFO', 'class':'logging.StreamHandler', 'formatter':'standard' },
-        'nil': { 'level':'INFO', 'class':'django.utils.log.NullHandler', },
+        'default': { 'level':'DEBUG', 'class':'logging.StreamHandler', 'formatter':'standard' },
+        'nil': { 'level':'DEBUG', 'class':'django.utils.log.NullHandler', },
     },
     loggers={
-        'imagekit': { 'handlers': ['default'], 'level': logging.DEBUG, 'propagate': False },
-        'signalqueue': { 'handlers': ['default'], 'level': logging.DEBUG, 'propagate': False },
-        '': {  'handlers': ['default'], 'level': 'DEBUG', 'propagate': False },
-        '*': {  'handlers': ['default'], 'level': 'DEBUG', 'propagate': False },
+        'imagekit': { 'handlers': ['default'], 'level': 'DEBUG', 'propagate': False },
+        'signalqueue': { 'handlers': ['default'], 'level': 'INFO', 'propagate': False },
     },
 )
 
@@ -124,6 +125,7 @@ SQ_QUEUES = {
 }
 
 SQ_WORKER_PORT = 11201
-SQ_RUNMODE = 'SQ_SYNC'
+#SQ_RUNMODE = 'SQ_SYNC'
+SQ_ASYNC = False
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

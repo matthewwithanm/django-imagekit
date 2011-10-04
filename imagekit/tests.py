@@ -10,42 +10,31 @@ Copyright (c) 2011 Objects In Space And Time, LLC. All rights reserved.
 
 """
 
-import os, tempfile
+import os, tempfile, shutil
 from django.conf import settings
-from pprint import pprint
 rp = None
-
-pprint(os.environ)
-print
-print
-
-#pprint(dir(settings))
 
 if __name__ == '__main__':
     import imagekit.schmettings
     from django.conf import settings
     
     imagekit.schmettings.__dict__.update({
-        #"SQ_RUNMODE": 'SQ_SYNC',
         "NOSE_ARGS": ['--rednose', '--nocapture', '--nologcapture'],
     })
     
     if not settings.configured:
-        print "!!! CONFIGURING SETTINGS, DOGG."
         settings.configure(**imagekit.schmettings.__dict__)
     
     import subprocess, os, signalqueue
-    rp = subprocess.Popen(['redis-server', "%s" % os.path.join(os.path.dirname(signalqueue.__file__), 'settings', 'redis.conf')])
+    #rp = subprocess.Popen(['redis-server', "%s" % os.path.join(os.path.dirname(signalqueue.__file__), 'settings', 'redis.conf')])
     
     from django.core.management import call_command
-    call_command('test', 'imagekit',
+    call_command('test', 'tests.py:IKTest',
         interactive=False, traceback=True, verbosity=2)
-    #call_command('test', 'signalqueue',
-    #    interactive=False, traceback=True, verbosity=2)
     
     tempdata = imagekit.schmettings.tempdata
     print "Deleting test data: %s" % tempdata
-    os.rmdir(tempdata)
+    shutil.rmtree(tempdata)
     
     if rp is not None:
         import signal
@@ -62,7 +51,8 @@ from django.core.files.base import ContentFile
 from django.db import models
 
 from imagekit import processors
-from imagekit.models import ImageModel, ImageWithMetadata, _storage
+from imagekit.models import ImageModel, ImageWithMetadata
+from imagekit.models import _storage
 from imagekit.specs import ImageSpec
 from imagekit.lib import *
 
@@ -146,24 +136,24 @@ class TestImageM(ImageWithMetadata):
 
 
 def get_image():
-    import urllib2, StringIO, random
-    urls = [
-        'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Orange_2to3_010.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/2805163544_1321ee6d30_o.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Silver_2to3_010.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/Josef_Muller_Brockmann_Detail_Lights_2to3_000.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/P4141870.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/After_The_Quake_Detail_Text_2to3_000.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/P4141477.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/P4141469.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/IMG_1310.jpg',
-        'http://ost2.s3.amazonaws.com/images/_uploads/P4141472.jpg',
-    ]
-    
-    random.seed()
-    imgurl = random.choice(urls)
+    import StringIO
     
     if get_image.imgstr is None:
+        import urllib2, random
+        urls = [
+            'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Orange_2to3_010.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/2805163544_1321ee6d30_o.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Silver_2to3_010.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/Josef_Muller_Brockmann_Detail_Lights_2to3_000.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/P4141870.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/After_The_Quake_Detail_Text_2to3_000.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/P4141477.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/P4141469.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/IMG_1310.jpg',
+            'http://ost2.s3.amazonaws.com/images/_uploads/P4141472.jpg',
+        ]
+        random.seed()
+        imgurl = random.choice(urls)
         print "Loading image: %s" % imgurl
         get_image.imgstr = urllib2.urlopen(imgurl).read()
     
@@ -171,7 +161,8 @@ def get_image():
     tmp = tempfile.TemporaryFile()
     img.save(tmp, 'JPEG')
     tmp.seek(0)
-    #img.show()
+    
+    get_image.imgstr = None
     return tmp
 
 get_image.imgstr = None
@@ -190,35 +181,6 @@ class IKTest(TestCase):
     
     def get_image(self):
         return get_image()
-    
-    def _get_image(self):
-        import urllib2, StringIO, random
-        urls = [
-            'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Orange_2to3_010.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/2805163544_1321ee6d30_o.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/IfThen_Detail_Computron_Silver_2to3_010.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/Josef_Muller_Brockmann_Detail_Lights_2to3_000.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/P4141870.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/After_The_Quake_Detail_Text_2to3_000.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/P4141477.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/P4141469.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/IMG_1310.jpg',
-            'http://ost2.s3.amazonaws.com/images/_uploads/P4141472.jpg',
-        ]
-        
-        random.seed()
-        imgurl = random.choice(urls)
-        
-        if imgstr is None:
-            print "Loading image: %s" % imgurl
-            imgstr = urllib2.urlopen(imgurl).read()
-        
-        img = Image.open(StringIO.StringIO(imgstr)).crop((0, 0, 800, 600))
-        tmp = tempfile.TemporaryFile()
-        img.save(tmp, 'JPEG')
-        tmp.seek(0)
-        #img.show()
-        return tmp
     
     def setUp(self):
         # dispatch all signals synchronously
