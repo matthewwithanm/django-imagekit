@@ -98,6 +98,9 @@ class ProofICC(processors.ICCProofTransform):
 class Atkinsonizer(processors.Atkinsonify):
     pass
 
+class NeuQuantizer(processors.NeuQuantize):
+    pass
+
 
 class TestResizeToWidth(ImageSpec):
     access_as = 'to_width'
@@ -128,6 +131,13 @@ class TestICCProof(ImageSpec):
 class TestAtkinsonizer(ImageSpec):
     access_as = 'atkinsonized'
     processors = [Atkinsonizer]
+
+class TestNeuQuantizer(ImageSpec):
+    access_as = 'neuquantized'
+    processors = [ResizeToHeight, SmartCropped, NeuQuantizer]
+
+
+
 
 class TestImage(ImageModel):
     """
@@ -237,9 +247,13 @@ class IKTest(TestCase):
     
     def test_icc_transform(self):
         self.assertTrue(self.p.icctrans.url is not None)
+        self.assertEqual(self.p.image.width, self.p.icctrans.width)
+        self.assertEqual(self.p.image.height, self.p.icctrans.height)
     
     def test_icc_proof_transform(self):
         self.assertTrue(self.p.iccproof.url is not None)
+        self.assertEqual(self.p.image.width, self.p.iccproof.width)
+        self.assertEqual(self.p.image.height, self.p.iccproof.height)
     
     def test_imagewithmetadata(self):
         pm = TestImageM()
@@ -287,6 +301,9 @@ class IKTest(TestCase):
         self.assertEqual(self.p.image.width, self.p.atkinsonized.width)
         self.assertEqual(self.p.image.height, self.p.atkinsonized.height)
         self.assertTrue(self.p.atkinsonized.name.lower().endswith('.png'))
+    
+    def test_neuquantizer(self):
+        self.assertTrue(self.p.neuquantized.url is not None)
     
     def test_url(self):
         self.assertEqual(
