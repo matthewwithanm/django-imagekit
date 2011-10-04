@@ -19,7 +19,7 @@ if __name__ == '__main__':
     from django.conf import settings
     
     imagekit.schmettings.__dict__.update({
-        'NOSE_ARGS': ['--rednose', '--nocapture', '--nologcapture'],
+        'NOSE_ARGS': ['--rednose',],
         'SQ_ASYNC': True,
     })
     
@@ -30,22 +30,28 @@ if __name__ == '__main__':
     
     if settings.SQ_ASYNC:
         import subprocess, os, signalqueue
-        rp = subprocess.Popen(['redis-server', "%s" % os.path.join(os.path.dirname(signalqueue.__file__), 'settings', 'redis.conf')])
+        rp = subprocess.Popen(['redis-server',
+            "%s" % os.path.join(os.path.dirname(signalqueue.__file__), 'settings', 'redis.conf')],
+            stdout=subprocess.PIPE)
+        print "*** Starting test Redis server instance (pid = %s)" % rp.pid
     
     from django.core.management import call_command
     call_command('test', 'imagekit.tests:IKTest',
         interactive=False, traceback=True, verbosity=2)
-    call_command('test', 'imagekit.tests:IKSyncTest',
-        interactive=False, traceback=True, verbosity=2)
-    
-    tempdata = imagekit.schmettings.tempdata
-    print "Deleting test data: %s" % tempdata
-    shutil.rmtree(tempdata)
+    print ""
     
     if rp is not None:
         import signal
-        print "Shutting down test Redis server instance (pid = %s)" % rp.pid
+        print "*** Shutting down test Redis server instance (pid = %s)" % rp.pid
         os.kill(rp.pid, signal.SIGKILL)
+    
+    call_command('test', 'imagekit.tests:IKSyncTest',
+        interactive=False, traceback=True, verbosity=2)
+    print ""
+    
+    tempdata = imagekit.schmettings.tempdata
+    print "*** Deleting test data: %s" % tempdata
+    shutil.rmtree(tempdata)
     
     import sys
     sys.exit(0)
