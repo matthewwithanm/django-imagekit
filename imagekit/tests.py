@@ -95,6 +95,9 @@ class ProofICC(processors.ICCProofTransform):
     destination = ICCProfile(os.path.join(IK_ROOT, "icc/adobeRGB-1998.icc"))
     proof = ICCProfile(os.path.join(IK_ROOT, "icc/CMYK-USWebCoatedSWOP-2.icc"))
 
+class Atkinsonizer(processors.Atkinsonify):
+    pass
+
 
 class TestResizeToWidth(ImageSpec):
     access_as = 'to_width'
@@ -122,6 +125,9 @@ class TestICCProof(ImageSpec):
     access_as = 'iccproof'
     processors = [ProofICC]
 
+class TestAtkinsonizer(ImageSpec):
+    access_as = 'atkinsonized'
+    processors = [Atkinsonizer]
 
 class TestImage(ImageModel):
     """
@@ -276,6 +282,11 @@ class IKTest(TestCase):
     def test_smartcrop(self):
         self.assertEqual(self.p.smartcropped.width, 100)
         self.assertEqual(self.p.smartcropped.height, 100)
+    
+    def test_atkinsonizer(self):
+        self.assertEqual(self.p.image.width, self.p.atkinsonized.width)
+        self.assertEqual(self.p.image.height, self.p.atkinsonized.height)
+        self.assertTrue(self.p.atkinsonized.name.lower().endswith('.png'))
     
     def test_url(self):
         self.assertEqual(
