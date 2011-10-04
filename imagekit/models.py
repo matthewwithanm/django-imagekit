@@ -77,6 +77,13 @@ class ImageSpec(_ImageSpecMixin):
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecDescriptor(self, name))
+        try:
+            ik = getattr(cls, '_ik')
+        except AttributeError:
+            ik = type('ImageKitMeta', (object,), {'spec_file_names': []})
+            setattr(cls, '_ik', ik)
+        ik.spec_file_names.append(name)
+
         # Connect to the signals only once for this class.
         uid = '%s.%s' % (cls.__module__, cls.__name__)
         post_save.connect(_post_save_handler,

@@ -13,16 +13,12 @@ def img_to_fobj(img, format, **kwargs):
 
 
 def get_spec_files(instance):
-    from imagekit.models import ImageSpecFile
-    spec_files = []
-    for key in dir(instance):
-        try:
-            value = getattr(instance, key)
-        except AttributeError:
-            continue
-        if isinstance(value, ImageSpecFile):
-            spec_files.append(value)
-    return spec_files
+    try:
+        ik = getattr(instance, '_ik')
+    except AttributeError:
+        return []
+    else:
+        return [getattr(instance, n) for n in ik.spec_file_names]
 
 
 def open_image(target):
