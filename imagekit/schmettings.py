@@ -35,8 +35,6 @@ ADMIN_MEDIA_PREFIX = '/admin-media/'
 #ROOT_URLCONF = 'signalqueue.settings.urlconf'
 
 from django.core.files.storage import FileSystemStorage
-#STATICFILES_STORAGE = FileSystemStorage(location=STATIC_ROOT, base_url=STATIC_URL)
-#STATICFILES_STORAGE = FileSystemStorage
 IK_STORAGE = lambda: FileSystemStorage(
     location=os.path.join(tempdata, 'static', 'ik_storage'),
     base_url=MEDIA_URL)
@@ -125,7 +123,6 @@ SQ_QUEUES = {
 }
 
 SQ_WORKER_PORT = 11201
-#SQ_RUNMODE = 'SQ_SYNC'
 SQ_ASYNC = False
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
