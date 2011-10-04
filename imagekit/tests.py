@@ -33,7 +33,9 @@ if __name__ == '__main__':
         rp = subprocess.Popen(['redis-server', "%s" % os.path.join(os.path.dirname(signalqueue.__file__), 'settings', 'redis.conf')])
     
     from django.core.management import call_command
-    call_command('test', 'tests.py:IKTest',
+    call_command('test', 'imagekit.tests:IKTest',
+        interactive=False, traceback=True, verbosity=2)
+    call_command('test', 'imagekit.tests:IKSyncTest',
         interactive=False, traceback=True, verbosity=2)
     
     tempdata = imagekit.schmettings.tempdata
@@ -177,6 +179,8 @@ class IKTest(TestCase):
     
     """
     
+    __test__ = True
+    
     def generate_image(self):
         tmp = tempfile.TemporaryFile()
         Image.new('RGB', (800, 600)).save(tmp, 'JPEG')
@@ -187,16 +191,12 @@ class IKTest(TestCase):
         return get_image()
     
     def setUp(self):
-        # dispatch all signals synchronously
-        #from django.conf import settings
-        #settings.SQ_RUNMODE = 'SQ_SYNC'
-        #with self.settings(SQ_RUNMODE='SQ_SYNC'):
+        # dispatch all signals asynchronously
         with self.settings(SQ_ASYNC=True):
             import signalqueue
-            #queues = signalqueue.worker.backends.ConnectionHandler(settings.SQ_QUEUES, 0)
-            #signalqueue.worker.queues = queues
-            signalqueue.autodiscover()
-            queues = signalqueue.worker.queues
+            queues = signalqueue.worker.backends.ConnectionHandler(settings.SQ_QUEUES, 4)
+            signalqueue.worker.queues = queues
+            signalqueue.rediscover()
             
             # image instance for testing
             self.p = TestImage()
@@ -282,4 +282,55 @@ class IKTest(TestCase):
         pth = self.p.image.name
         self.p.delete(clear_cache=True)
         self.failIf(_storage.exists(pth))
+
+
+class TestCopier(type):
+    def __new__(cls, name, bases, attrs):
+        import types
+        from copy import deepcopy
+        
+        print ""
+        
+        for base in bases:
+            basefuncs = dict(filter(lambda attr: type(attr[1]) in (types.FunctionType, types.MethodType) and (not attr[0].lower().startswith('setup')), base.__dict__.items()))
+            
+            print "--- Copying %s test funcs from base %s" % (len(basefuncs), base.__name__)
+            
+            for funcname, func in basefuncs.items():
+                attrs[funcname] = deepcopy(func)
+            if 'tearDown' in base.__dict__:
+                attrs['tearDown'] = deepcopy(base.__dict__.get('tearDown'))
+        
+        #return type.__new__(cls, name, bases, attrs)
+        return type(name, (TestCase,), attrs)
+
+
+class IKSyncTest(IKTest):
     
+    __metaclass__ = TestCopier
+    __test__ = True
+    
+    def setUp(self):
+        # dispatch all signals synchronously
+        from django.conf import settings
+        settings.SQ_RUNMODE = 'SQ_SYNC'
+        with self.settings(SQ_RUNMODE='SQ_SYNC'):
+            import signalqueue
+            queues = signalqueue.worker.backends.ConnectionHandler(settings.SQ_QUEUES, 1)
+            signalqueue.worker.queues = queues
+            signalqueue.rediscover()
+            
+            # image instance for testing
+            self.p = TestImage()
+            try:
+                img = self.get_image()
+            except (IOError, AttributeError, ValueError), err:
+                print "~~~ Exception thrown DURING SETUP by IKTest.get_image(): %s" % err
+                img = self.generate_image()
+            self.p.save_image('test.jpeg', ContentFile(img.read()))
+            self.p.save()
+            img.close()
+
+def suite():
+    tests = [IKTest, IKSyncTest]
+    return [unittest.TestSuite(map(unittest.TestLoader().loadTestsFromTestCase, tests))]

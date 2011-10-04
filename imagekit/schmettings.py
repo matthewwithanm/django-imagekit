@@ -83,8 +83,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django_nose',
     'delegate',
-    'imagekit',
     'signalqueue',
+    'imagekit',
 )
 
 # Logging Configuration
