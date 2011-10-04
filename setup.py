@@ -13,12 +13,10 @@ setup(
     url='http://github.com/jdriscoll/django-imagekit/',
     install_requires=[
         'django',
-        'numpy',
-        'scipy',
-        'struct',
-        'uuid',
-        'hashlib',
-        'PIL',
+        'django-signalqueue>=0.2.8',
+        'django-delegate>=0.1.5',
+        'pil',
+        'ujson',
     ],
     packages=[
         'imagekit',
