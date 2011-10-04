@@ -10,7 +10,7 @@ Copyright (c) 2011 Objects In Space And Time, LLC. All rights reserved.
 
 """
 
-import os, tempfile, shutil
+import os, tempfile, shutil, logging
 from django.conf import settings
 rp = None
 
@@ -19,14 +19,18 @@ if __name__ == '__main__':
     from django.conf import settings
     
     imagekit.schmettings.__dict__.update({
-        "NOSE_ARGS": ['--rednose', '--nocapture', '--nologcapture'],
+        'NOSE_ARGS': ['--rednose', '--nocapture', '--nologcapture'],
+        'SQ_ASYNC': True,
     })
     
     if not settings.configured:
         settings.configure(**imagekit.schmettings.__dict__)
+        import logging.config
+        logging.config.dictConfig(settings.LOGGING)
     
-    import subprocess, os, signalqueue
-    #rp = subprocess.Popen(['redis-server', "%s" % os.path.join(os.path.dirname(signalqueue.__file__), 'settings', 'redis.conf')])
+    if settings.SQ_ASYNC:
+        import subprocess, os, signalqueue
+        rp = subprocess.Popen(['redis-server', "%s" % os.path.join(os.path.dirname(signalqueue.__file__), 'settings', 'redis.conf')])
     
     from django.core.management import call_command
     call_command('test', 'tests.py:IKTest',
@@ -184,13 +188,15 @@ class IKTest(TestCase):
     
     def setUp(self):
         # dispatch all signals synchronously
-        from django.conf import settings
-        settings.SQ_RUNMODE = 'SQ_SYNC'
-        with self.settings(SQ_RUNMODE='SQ_SYNC'):
+        #from django.conf import settings
+        #settings.SQ_RUNMODE = 'SQ_SYNC'
+        #with self.settings(SQ_RUNMODE='SQ_SYNC'):
+        with self.settings(SQ_ASYNC=True):
             import signalqueue
-            queues = signalqueue.worker.backends.ConnectionHandler(settings.SQ_QUEUES, 0)
-            signalqueue.worker.queues = queues
+            #queues = signalqueue.worker.backends.ConnectionHandler(settings.SQ_QUEUES, 0)
+            #signalqueue.worker.queues = queues
             signalqueue.autodiscover()
+            queues = signalqueue.worker.queues
             
             # image instance for testing
             self.p = TestImage()
