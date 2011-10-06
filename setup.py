@@ -14,7 +14,7 @@ setup(
     install_requires=[
         'django',
         'django-signalqueue>=0.2.8',
-        'django-delegate>=0.1.5',
+        'django-delegate>=0.1.8',
         'pil',
         'ujson',
     ],
