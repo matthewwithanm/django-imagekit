@@ -30,7 +30,7 @@ class Spec(object):
     def _process(cls, image, obj, procs):
         fmt = image.format
         img = image.copy()
-        logg.info("About to apply processors: %s" % procs)
+        logg.info("Applying processors: %s" % ", ".join([proc.__name__ for proc in procs]))
         for proc in list(procs):
             img, fmt = proc.process(img, fmt, obj)
         return img, fmt

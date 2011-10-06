@@ -20,6 +20,7 @@ def whatever(f, *args, **kwargs):
     Apparently Haystack will abort the entire index job
     for your model, with a cryptic fail message, if it
     encounters a UnicodeDecodeError.
+    
     """
     try:
         return f(*args, **kwargs)

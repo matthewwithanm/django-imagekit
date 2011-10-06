@@ -460,7 +460,7 @@ class Trim(ImageProcessor):
         bw = img.convert('1')
         bw = bw.filter(ImageFilter.MedianFilter)
         # White background.
-        bg = Image.new('1', img.size, 255)
+        bg = Image.new('1', img.size, cls.trim_luma)
         diff = ImageChops.difference(bw, bg)
         bbox = diff.getbbox()
         if bbox:

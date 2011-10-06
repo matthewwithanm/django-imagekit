@@ -38,21 +38,21 @@ if __name__ == '__main__':
     from django.core.management import call_command
     call_command('test', 'imagekit.tests:IKTest',
         interactive=False, traceback=True, verbosity=2)
-    print ""
     
     if rp is not None:
         import signal
         print "*** Shutting down test Redis server instance (pid = %s)" % rp.pid
         os.kill(rp.pid, signal.SIGKILL)
     
+    print ""
     call_command('test', 'imagekit.tests:IKSyncTest',
         interactive=False, traceback=True, verbosity=2)
-    print ""
     
     tempdata = imagekit.schmettings.tempdata
     print "*** Deleting test data: %s" % tempdata
     shutil.rmtree(tempdata)
     
+    #print ""
     import sys
     sys.exit(0)
 
@@ -141,7 +141,7 @@ class TestICCProof(ImageSpec):
 
 class TestAtkinsonizer(ImageSpec):
     access_as = 'atkinsonized'
-    processors = [Atkinsonizer]
+    processors = [SmartCropped, Atkinsonizer]
 
 class TestNeuQuantizer(ImageSpec):
     access_as = 'neuquantized'
@@ -208,7 +208,7 @@ def get_image():
     img.save(tmp, 'JPEG')
     tmp.seek(0)
     
-    get_image.imgstr = None
+    #get_image.imgstr = None
     return tmp
 
 get_image.imgstr = None
@@ -231,6 +231,8 @@ class IKTest(TestCase):
         return get_image()
     
     def setUp(self):
+        print ""
+        
         # dispatch all signals asynchronously
         with self.settings(SQ_ASYNC=True):
             import signalqueue
@@ -315,8 +317,8 @@ class IKTest(TestCase):
         self.assertEqual(self.p.smartcropped.height, 100)
     
     def test_atkinsonizer(self):
-        self.assertEqual(self.p.image.width, self.p.atkinsonized.width)
-        self.assertEqual(self.p.image.height, self.p.atkinsonized.height)
+        self.assertEqual(self.p.smartcropped.width, self.p.atkinsonized.width)
+        self.assertEqual(self.p.smartcropped.height, self.p.atkinsonized.height)
         self.assertTrue(self.p.atkinsonized.name.lower().endswith('.png'))
     
     def test_neuquantizer(self):
@@ -348,19 +350,15 @@ class TestCopier(type):
         import types
         from copy import deepcopy
         
-        print ""
-        
         for base in bases:
             basefuncs = dict(filter(lambda attr: type(attr[1]) in (types.FunctionType, types.MethodType) and (not attr[0].lower().startswith('setup')), base.__dict__.items()))
             
-            print "--- Copying %s test funcs from base %s" % (len(basefuncs), base.__name__)
-            
+            #print "--- Copying %s test funcs from base %s" % (len(basefuncs), base.__name__)
             for funcname, func in basefuncs.items():
                 attrs[funcname] = deepcopy(func)
             if 'tearDown' in base.__dict__:
                 attrs['tearDown'] = deepcopy(base.__dict__.get('tearDown'))
         
-        #return type.__new__(cls, name, bases, attrs)
         return type(name, (TestCase,), attrs)
 
 
@@ -370,6 +368,8 @@ class IKSyncTest(IKTest):
     __test__ = True
     
     def setUp(self):
+        print ""
+        
         # dispatch all signals synchronously
         from django.conf import settings
         settings.SQ_RUNMODE = 'SQ_SYNC'

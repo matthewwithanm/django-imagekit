@@ -32,7 +32,6 @@ MEDIA_URL = '/face/'
 STATIC_ROOT = os.path.join(tempdata, 'static', 'admin')[0]
 STATIC_URL = '/staticfiles/'
 ADMIN_MEDIA_PREFIX = '/admin-media/'
-#ROOT_URLCONF = 'signalqueue.settings.urlconf'
 
 from django.core.files.storage import FileSystemStorage
 IK_STORAGE = lambda: FileSystemStorage(
