@@ -27,7 +27,7 @@ def flush_cache(apps, options):
                 for obj in model.objects.order_by('-id'):
                     for spec_file in get_spec_files(obj):
                         if spec_file is not None:
-                            spec_file._delete()
+                            spec_file.delete(save=False)
                         if spec_file.field.pre_cache:
                             spec_file._create()
     else:

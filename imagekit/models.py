@@ -137,14 +137,27 @@ class _ImageSpecFileMixin(object):
         return img, content
 
 
-class ImageSpecFile(_ImageSpecFileMixin):
+class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
     def __init__(self, instance, field, attname, source_file):
-        self.field = field
-        self._img = None
-        self._file = None
-        self.instance = instance
+        ImageFieldFile.__init__(self, instance, field, None)
+        self.storage = field.storage or source_file.storage
         self.attname = attname
         self.source_file = source_file
+
+    def _require_file(self):
+        if not self.source_file:
+            raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
+
+    def _get_file(self):
+        self._create(True)
+        return super(ImageFieldFile, self).file
+
+    file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
+
+    @property
+    def url(self):
+        self._create(True)
+        return super(ImageFieldFile, self).url
 
     def _create(self, lazy=False):
         """Creates a new image by running the processors on the source file.
@@ -154,12 +167,10 @@ class ImageSpecFile(_ImageSpecFileMixin):
                 a new image should be created and the existing one overwritten.
 
         """
-        img = None
-        if lazy:
-            img = self._img
-            if not img and self.storage.exists(self.name):
-                img = open_image(self.file)
-        if not img and self.source_file: # TODO: Should we error here or something if the source_file doesn't exist?
+        if lazy and (getattr(self, '_file', None) or self.storage.exists(self.name)):
+            return
+
+        if self.source_file: # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file
             try:
                 fp = self.source_file.storage.open(self.source_file.name)
@@ -170,15 +181,35 @@ class ImageSpecFile(_ImageSpecFileMixin):
 
             img, content = self._process_content(self.name, fp)
             self.storage.save(self.name, content)
-        self._img = img
-        return self._img
 
-    def _delete(self):
-        if self.source_file:
-            try:
-                self.storage.delete(self.name)
-            except (NotImplementedError, IOError):
-                return
+    def delete(self, save=False):
+        """Pulled almost verbatim from ``ImageFieldFile.delete()`` and
+        ``FieldFile.delete()`` but with the attempts to reset the instance
+        property removed.
+
+        """
+        # Clear the image dimensions cache
+        if hasattr(self, '_dimensions_cache'):
+            del self._dimensions_cache
+
+        # Only close the file if it's already open, which we know by the
+        # presence of self._file
+        if hasattr(self, '_file'):
+            self.close()
+            del self.file
+
+        try:
+            self.storage.delete(self.name)
+        except (NotImplementedError, IOError):
+            pass
+
+        # Delete the filesize cache
+        if hasattr(self, '_size'):
+            del self._size
+        self._committed = False
+
+        if save:
+            self.instance.save()
 
     @property
     def _suggested_extension(self):
@@ -219,35 +250,13 @@ class ImageSpecFile(_ImageSpecFileMixin):
 
             return new_filename
 
-    @property
-    def storage(self):
-        return self.field.storage or self.source_file.storage
-
-    @property
-    def url(self):
-        if not self.field.pre_cache:
-            self._create(True)
-        return self.storage.url(self.name)
-
-    @property
-    def file(self):
-        if not self._file:
-            if not self.storage.exists(self.name):
-                self._create()
-            self._file = self.storage.open(self.name)
-        return self._file
-
-    @property
-    def image(self):
-        return self._create(True)
-
-    @property
-    def width(self):
-        return self.image.size[0]
-
-    @property
-    def height(self):
-        return self.image.size[1]
+    @name.setter
+    def name(self, value):
+        # TODO: Figure out a better way to handle this. We really don't want to
+        # allow anybody to set the name, but ``File.__init__`` (which is called
+        # by ``ImageSpecFile.__init__``) does, so we have to allow it at least
+        # that one time.
+        pass
 
 
 class _ImageSpecDescriptor(object):
@@ -292,7 +301,7 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
     spec_files = get_spec_files(instance)
     for spec_file in spec_files:
         if not created:
-            spec_file._delete()
+            spec_file.delete(save=False)
         if spec_file.field.pre_cache:
             spec_file._create()
 
@@ -301,7 +310,7 @@ def _post_delete_handler(sender, instance=None, **kwargs):
     assert instance._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (instance._meta.object_name, instance._meta.pk.attname)
     spec_files = get_spec_files(instance)
     for spec_file in spec_files:
-        spec_file._delete()
+        spec_file.delete(save=False)
 
 
 class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
