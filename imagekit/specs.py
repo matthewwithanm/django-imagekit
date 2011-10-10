@@ -11,7 +11,7 @@ import cStringIO as StringIO
 from django.core.files.base import ContentFile
 
 from imagekit import processors
-from imagekit.lib import *
+from imagekit.lib import Image
 from imagekit.utils import img_to_fobj
 
 

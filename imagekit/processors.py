@@ -6,7 +6,8 @@ the class properties as settings. The process method can be overridden as well a
 own effects/processes entirely.
 
 """
-from imagekit.lib import *
+from imagekit.lib import Image, ImageEnhance, ImageColor
+
 
 class ImageProcessor(object):
     """ Base image processor class """

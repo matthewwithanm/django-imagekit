@@ -9,7 +9,7 @@ from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 
 from imagekit import specs
-from imagekit.lib import *
+from imagekit.lib import Image, ImageFile
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj
 
