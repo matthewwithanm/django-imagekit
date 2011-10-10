@@ -82,13 +82,13 @@ class Accessor(object):
         if self._obj._imgfield.name:
             filepath, basename = os.path.split(self._obj._imgfield.name)
             filename, extension = os.path.splitext(basename)
-	    original_extension = extension
+            original_extension = extension
             for processor in self.spec.processors:
                 if issubclass(processor, processors.Format):
                     extension = processor.extension
             filename_format_dict = {'filename': filename,
                                     'specname': self.spec.name(),
-				    'original_extension': original_extension,
+                                    'original_extension': original_extension,
                                     'extension': extension.lstrip('.')}
             cache_filename_fields = self._obj._ik.cache_filename_fields
             filename_format_dict.update(dict(zip(
