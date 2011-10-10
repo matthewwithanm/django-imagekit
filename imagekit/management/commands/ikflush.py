@@ -31,4 +31,4 @@ def flush_cache(apps, options):
                         if spec_file.field.pre_cache:
                             spec_file._create()
     else:
-        print 'Please specify on or more app names'
+        print 'Please specify one or more app names'
