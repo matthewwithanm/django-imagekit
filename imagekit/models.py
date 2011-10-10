@@ -154,5 +154,3 @@ class ImageModel(models.Model):
 
 
 post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
-
-

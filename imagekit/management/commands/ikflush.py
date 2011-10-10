@@ -14,6 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         return flush_cache(args, options)
 
+
 def flush_cache(apps, options):
     """ Clears the image cache
 
