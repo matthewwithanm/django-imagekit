@@ -48,7 +48,7 @@ your spec, you can expose different versions of the original image::
     from imagekit.processors import resize, Adjust
 
     class Photo(models.Model):
-        original_image = models.ImageField(upload_to'photos')
+        original_image = models.ImageField(upload_to='photos')
         thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1),
                 resize.Crop(50, 50)], image_field='original_image',
                 format='JPEG', quality=90)
@@ -75,7 +75,7 @@ implement a ``process()`` method::
             return image
 
     class Photo(models.Model):
-        original_image = models.ImageField(upload_to'photos')
+        original_image = models.ImageField(upload_to='photos')
         watermarked_image = ImageSpec([Watermark()], image_field='original_image',
                 format='JPEG', quality=90)
 
