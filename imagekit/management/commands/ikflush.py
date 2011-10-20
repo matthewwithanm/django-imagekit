@@ -3,8 +3,8 @@
 """
 
 from django.db.models.loading import cache
-from django.core.management.base import BaseCommand, CommandError
-from optparse import make_option
+from django.core.management.base import BaseCommand
+
 from imagekit.utils import get_spec_files
 
 

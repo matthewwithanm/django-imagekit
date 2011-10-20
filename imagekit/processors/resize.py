@@ -1,11 +1,11 @@
-from imagekit.lib import *
+from imagekit.lib import Image
 
 
 class _Resize(object):
-    
+
     width = None
     height = None
-    
+
     def __init__(self, width=None, height=None):
         if width is not None:
             self.width = width
@@ -68,7 +68,7 @@ class Crop(_Resize):
         cur_width, cur_height = img.size
         horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
                 Crop.CENTER]
-        ratio = max(float(self.width)/cur_width, float(self.height)/cur_height)
+        ratio = max(float(self.width) / cur_width, float(self.height)/cur_height)
         resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
         crop_x, crop_y = (abs(self.width - resize_x), abs(self.height - resize_y))
         x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
@@ -91,7 +91,7 @@ class Fit(_Resize):
     """Resizes an image to fit within the specified dimensions.
 
     """
-    
+
     def __init__(self, width=None, height=None, upscale=None):
         """
         :param width: The maximum width of the desired image.
@@ -107,15 +107,15 @@ class Fit(_Resize):
     def process(self, img):
         cur_width, cur_height = img.size
         if not self.width is None and not self.height is None:
-            ratio = min(float(self.width)/cur_width,
-                        float(self.height)/cur_height)
+            ratio = min(float(self.width) / cur_width,
+                        float(self.height) / cur_height)
         else:
             if self.width is None:
-                ratio = float(self.height)/cur_height
+                ratio = float(self.height) / cur_height
             else:
-                ratio = float(self.width)/cur_width
-        new_dimensions = (int(round(cur_width*ratio)),
-                          int(round(cur_height*ratio)))
+                ratio = float(self.width) / cur_width
+        new_dimensions = (int(round(cur_width * ratio)),
+                          int(round(cur_height * ratio)))
         if new_dimensions[0] > cur_width or \
            new_dimensions[1] > cur_height:
             if not self.upscale:

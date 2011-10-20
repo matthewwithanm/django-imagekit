@@ -1,16 +1,17 @@
 import os
 import datetime
 from StringIO import StringIO
-from imagekit.lib import *
-from imagekit.utils import img_to_fobj, get_spec_files, open_image
-from imagekit.processors import ProcessorPipeline
+
 from django.conf import settings
 from django.core.files.base import ContentFile
-from django.utils.encoding import force_unicode, smart_str
 from django.db import models
-from django.db.models.signals import post_save, post_delete
 from django.db.models.fields.files import ImageFieldFile
+from django.db.models.signals import post_save, post_delete
+from django.utils.encoding import force_unicode, smart_str
 
+from imagekit.lib import Image, ImageFile
+from imagekit.utils import img_to_fobj, get_spec_files, open_image
+from imagekit.processors import ProcessorPipeline
 
 # Modify image file buffer size.
 ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
@@ -170,7 +171,7 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
         if lazy and (getattr(self, '_file', None) or self.storage.exists(self.name)):
             return
 
-        if self.source_file: # TODO: Should we error here or something if the source_file doesn't exist?
+        if self.source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file
             try:
                 fp = self.source_file.storage.open(self.source_file.name)
@@ -244,9 +245,9 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
                         smart_str(cache_to(self.instance, self.source_file.name,
                             self.attname, self._suggested_extension))))
             else:
-               dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
-               filename = os.path.normpath(os.path.basename(filename))
-               new_filename = os.path.join(dir_name, filename)
+                dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
+                filename = os.path.normpath(os.path.basename(filename))
+                new_filename = os.path.join(dir_name, filename)
 
             return new_filename
 

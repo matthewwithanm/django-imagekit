@@ -22,7 +22,7 @@ class AdminThumbnail(object):
 
     def __call__(self, obj):
         thumbnail = getattr(obj, self.image_field, None)
-        
+
         if not thumbnail:
             raise Exception('The property {0} is not defined on {1}.'.format(
                     obj, self.image_field))

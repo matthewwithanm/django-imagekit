@@ -1,9 +1,9 @@
-""" ImageKit utility functions """
+import tempfile
+import types
 
-import tempfile, types
 from django.utils.functional import wraps
-from lib import Image
 
+from imagekit.lib import Image
 
 
 def img_to_fobj(img, format, **kwargs):
@@ -49,4 +49,3 @@ def _wrap_copy(f):
             pass
         return img
     return copy
-
