@@ -352,3 +352,11 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
         name, ext = os.path.splitext(filename)
         ext = _get_suggested_extension(filename, self.format)
         return '{0}{1}'.format(name, ext)
+
+
+try:
+    from south.modelsinspector import add_introspection_rules
+except ImportError:
+    pass
+else:
+    add_introspection_rules([], [r'^imagekit\.models\.ProcessedImageField$'])
