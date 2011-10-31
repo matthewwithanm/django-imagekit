@@ -1,12 +1,8 @@
 #/usr/bin/env python
 import os
 import sys
-import imagekit
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup, find_packages
 
 if 'publish' in sys.argv:
     os.system('python setup.py sdist upload')
@@ -14,7 +10,7 @@ if 'publish' in sys.argv:
 
 setup(
     name='django-imagekit',
-    version=imagekit.__version__,
+    version=':versiontools:imagekit:',
     description='Automated image processing for Django models.',
     author='Justin Driscoll',
     author_email='justin@driscolldev.com',
@@ -22,13 +18,9 @@ setup(
     maintainer_email='bryan@revyver.com',
     license='BSD',
     url='http://github.com/jdriscoll/django-imagekit/',
-    packages=[
-        'imagekit',
-        'imagekit.management',
-        'imagekit.management.commands'
-    ],
+    packages=find_packages(),
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
@@ -38,5 +30,8 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Topic :: Utilities'
-    ]
+    ],
+    setup_requires=[
+        'versiontools >= 1.8',
+    ],
 )
