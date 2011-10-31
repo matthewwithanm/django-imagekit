@@ -7,7 +7,7 @@ Installation
 ------------
 
 1. ``pip install django-imagekit``
-    (or clone the source and put the imagekit module on your path)
+   (or clone the source and put the imagekit module on your path)
 2. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's settings.py
 
 
@@ -85,7 +85,7 @@ Admin
 
 ImageKit also contains a class named ``imagekit.admin.AdminThumbnail``
 for displaying specs (or even regular ImageFields) in the
-`Django admin change list`__. AdminThumbnail is used as a property on
+`Django admin change list`_. AdminThumbnail is used as a property on
 Django admin classes::
 
     from django.contrib import admin
@@ -103,6 +103,4 @@ Django admin classes::
 AdminThumbnail can even use a custom template. For more information, see
 ``imagekit.admin.AdminThumbnail``.
 
-
-__ https://docs.djangoproject.com/en/dev/intro/tutorial02/#customize-the-admin-change-list
-__ https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.list_display
+.. _`Django admin change list`: https://docs.djangoproject.com/en/dev/intro/tutorial02/#customize-the-admin-change-list
