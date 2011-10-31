@@ -1,5 +1,3 @@
-import os
-from datetime import datetime
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
@@ -9,7 +7,7 @@ from django.utils.html import conditional_escape as escape
 from django.utils.translation import ugettext_lazy as _
 
 from imagekit import specs
-from imagekit.lib import *
+from imagekit.lib import Image, ImageFile
 from imagekit.options import Options
 from imagekit.utils import img_to_fobj
 
@@ -156,5 +154,3 @@ class ImageModel(models.Model):
 
 
 post_delete.connect(ImageModel.clear_cache, sender=ImageModel)
-
-

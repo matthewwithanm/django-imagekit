@@ -1,10 +1,6 @@
-===============
-django-imagekit
-===============
+.. _ref-tutorial:
 
-NOTE: This, the **class-based** version of ImageKit, has been discontinued.
-
-ImageKit In 7 Steps
+ImageKit in 7 Steps
 ===================
 
 Step 1
@@ -63,20 +59,18 @@ Create your specifications.
         width = 600
 
     # now let's create an adjustment processor to enhance the image at small sizes
-    class EnhanceThumb(processors.Adjustment):
+    class EnchanceThumb(processors.Adjustment):
         contrast = 1.2
         sharpness = 1.1
 
     # now we can define our thumbnail spec
     class Thumbnail(ImageSpec):
-        quality = 90  # defaults to 70
         access_as = 'thumbnail_image'
         pre_cache = True
-        processors = [ResizeThumb, EnhanceThumb]
+        processors = [ResizeThumb, EnchanceThumb]
 
     # and our display spec
     class Display(ImageSpec):
-        quality = 90  # defaults to 70
         increment_count = True
         processors = [ResizeDisplay]
 

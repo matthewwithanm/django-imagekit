@@ -1,9 +1,20 @@
 #/usr/bin/env python
-from distutils.core import setup
+import os
+import sys
+import imagekit
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+if 'publish' in sys.argv:
+    os.system('python setup.py sdist upload')
+    sys.exit()
 
 setup(
     name='django-imagekit',
-    version='0.4.0',
+    version=imagekit.__version__,
     description='Automated image processing for Django models.',
     author='Justin Driscoll',
     author_email='justin@driscolldev.com',
@@ -29,5 +40,3 @@ setup(
         'Topic :: Utilities'
     ]
 )
-
-

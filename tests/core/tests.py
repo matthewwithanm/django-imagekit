@@ -1,52 +1,18 @@
 import os
 import tempfile
 import unittest
+
 from django.conf import settings
 from django.core.files.base import ContentFile
-from django.db import models
 from django.test import TestCase
 
-from imagekit import processors
-from imagekit.models import ImageModel
-from imagekit.specs import ImageSpec
 from imagekit.lib import Image
 
-
-class ResizeToWidth(processors.Resize):
-    width = 100
-
-class ResizeToHeight(processors.Resize):
-    height = 100
-
-class ResizeToFit(processors.Resize):
-    width = 100
-    height = 100
-
-class ResizeCropped(ResizeToFit):
-    crop = ('center', 'center')
-
-class TestResizeToWidth(ImageSpec):
-    access_as = 'to_width'
-    processors = [ResizeToWidth]
-
-class TestResizeToHeight(ImageSpec):
-    access_as = 'to_height'
-    processors = [ResizeToHeight]
-
-class TestResizeCropped(ImageSpec):
-    access_as = 'cropped'
-    processors = [ResizeCropped]
-
-class TestPhoto(ImageModel):
-    """ Minimal ImageModel class for testing """
-    image = models.ImageField(upload_to='images')
-
-    class IKOptions:
-        spec_module = 'imagekit.tests'
+from core.models import TestPhoto
 
 
 class IKTest(TestCase):
-    """ Base TestCase class """
+    """ Base TestCase class. """
     def generate_image(self):
         tmp = tempfile.TemporaryFile()
         Image.new('RGB', (800, 600)).save(tmp, 'JPEG')
@@ -93,7 +59,20 @@ class IKTest(TestCase):
         self.assertEqual(self.p.to_width.url, "%s%s/%s" % tup)
 
     def tearDown(self):
-        # make sure image file is deleted
+        # ImageKit doesn't delete processed files unless you clear the cache.
+        # We also attempt to remove the cache directory as to not clutter up
+        # your filesystem.
+        self.p._clear_cache()
+        try:
+            os.removedirs(os.path.join(settings.MEDIA_ROOT, self.p._ik.cache_dir, 'images'))
+        except OSError:
+            pass
+
+        # As of Django 1.3, FileFields no longer delete the underlying image
+        # when you delete the model. For the sanity of these tests, we have
+        # to do this ourselves.
         path = self.p.image.path
+        os.remove(os.path.join(settings.MEDIA_ROOT, path))
+        os.removedirs(os.path.join(settings.MEDIA_ROOT, 'images'))
         self.p.delete()
         self.failIf(os.path.isfile(path))

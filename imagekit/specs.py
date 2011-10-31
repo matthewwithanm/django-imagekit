@@ -6,11 +6,13 @@ spec found.
 
 """
 import os
-from StringIO import StringIO
-from imagekit import processors
-from imagekit.lib import *
-from imagekit.utils import img_to_fobj
+import cStringIO as StringIO
+
 from django.core.files.base import ContentFile
+
+from imagekit import processors
+from imagekit.lib import Image
+from imagekit.utils import img_to_fobj
 
 
 class ImageSpec(object):
@@ -60,7 +62,7 @@ class Accessor(object):
             except IOError:
                 return
             fp.seek(0)
-            fp = StringIO(fp.read())
+            fp = StringIO.StringIO(fp.read())
             self._img, self._fmt = self.spec.process(Image.open(fp), self._obj)
             # save the new image to the cache
             content = ContentFile(self._get_imgfile().read())
@@ -82,11 +84,13 @@ class Accessor(object):
         if self._obj._imgfield.name:
             filepath, basename = os.path.split(self._obj._imgfield.name)
             filename, extension = os.path.splitext(basename)
+            original_extension = extension
             for processor in self.spec.processors:
                 if issubclass(processor, processors.Format):
                     extension = processor.extension
             filename_format_dict = {'filename': filename,
                                     'specname': self.spec.name(),
+                                    'original_extension': original_extension,
                                     'extension': extension.lstrip('.')}
             cache_filename_fields = self._obj._ik.cache_filename_fields
             filename_format_dict.update(dict(zip(

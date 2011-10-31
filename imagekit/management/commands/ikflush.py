@@ -14,6 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         return flush_cache(args, options)
 
+
 def flush_cache(apps, options):
     """ Clears the image cache
 
@@ -25,7 +26,7 @@ def flush_cache(apps, options):
             models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
             for model in models:
                 print 'Flushing cache for "%s.%s"' % (app_label, model.__name__)
-                for obj in model.objects.order_by('-id'):
+                for obj in model.objects.order_by('-pk'):
                     for spec in model._ik.specs:
                         prop = getattr(obj, spec.name(), None)
                         if prop is not None:
