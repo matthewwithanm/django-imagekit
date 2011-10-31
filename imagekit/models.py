@@ -29,11 +29,11 @@ class _ImageSpecMixin(object):
 
 
 class ImageSpec(_ImageSpecMixin):
-    """The heart and soul of the ImageKit library, ImageSpec allows you to add
+    """
+    The heart and soul of the ImageKit library, ImageSpec allows you to add
     variants of uploaded images to your models.
 
     """
-
     _upload_to_attr = 'cache_to'
 
     def __init__(self, processors=None, quality=70, format=None,
@@ -41,31 +41,31 @@ class ImageSpec(_ImageSpecMixin):
         """
         :param processors: A list of processors to run on the original image.
         :param quality: The quality of the output image. This option is only
-                used for the JPEG format.
-        :param format: The format of the output file. If not provided, ImageSpec
-                will try to guess the appropriate format based on the extension
-                of the filename and the format of the input image.
+            used for the JPEG format.
+        :param format: The format of the output file. If not provided,
+            ImageSpec will try to guess the appropriate format based on the
+            extension of the filename and the format of the input image.
         :param image_field: The name of the model property that contains the
-                original image.
-        :param pre_cache: A boolean that specifies whether the image should be
-                generated immediately (True) or on demand (False).
+            original image.
+        :param pre_cache: A boolean that specifies whether the image should
+            be generated immediately (True) or on demand (False).
         :param storage: A Django storage system to use to save the generated
-                image.
+            image.
         :param cache_to: Specifies the filename to use when saving the image
-                cache file. This is modeled after ImageField's ``upload_to`` and
-                can be either a string (that specifies a directory) or a
-                callable (that returns a filepath). Callable values should
-                accept the following arguments:
+            cache file. This is modeled after ImageField's ``upload_to`` and
+            can be either a string (that specifies a directory) or a
+            callable (that returns a filepath). Callable values should
+            accept the following arguments:
 
-                    - instance -- The model instance this spec belongs to
-                    - path -- The path of the original image
-                    - specname -- the property name that the spec is bound to on
-                            the model instance
-                    - extension -- A recommended extension. If the format of the
-                            spec is set explicitly, this suggestion will be
-                            based on that format. if not, the extension of the
-                            original file will be passed. You do not have to use
-                            this extension, it's only a recommendation.
+                - instance -- The model instance this spec belongs to
+                - path -- The path of the original image
+                - specname -- the property name that the spec is bound to on
+                    the model instance
+                - extension -- A recommended extension. If the format of the
+                    spec is set explicitly, this suggestion will be
+                    based on that format. if not, the extension of the
+                    original file will be passed. You do not have to use
+                    this extension, it's only a recommendation.
 
         """
 
@@ -97,7 +97,7 @@ class ImageSpec(_ImageSpecMixin):
 
 def _get_suggested_extension(name, format):
     if format:
-        # Try to look up an extension by the format
+        # Try to look up an extension by the format.
         extensions = [k for k, v in Image.EXTENSION.iteritems() \
                 if v == format.upper()]
     else:
@@ -112,7 +112,6 @@ def _get_suggested_extension(name, format):
 
 
 class _ImageSpecFileMixin(object):
-
     def _process_content(self, filename, content):
         img = open_image(content)
         original_format = img.format
@@ -161,18 +160,20 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
         return super(ImageFieldFile, self).url
 
     def _create(self, lazy=False):
-        """Creates a new image by running the processors on the source file.
+        """
+        Creates a new image by running the processors on the source file.
 
         Keyword Arguments:
-        lazy -- True if an already-existing image should be returned; False if
-                a new image should be created and the existing one overwritten.
+            lazy -- True if an already-existing image should be returned;
+                False if a new image should be created and the existing
+                one overwritten.
 
         """
         if lazy and (getattr(self, '_file', None) or self.storage.exists(self.name)):
             return
 
         if self.source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
-            # Process the original image file
+            # Process the original image file.
             try:
                 fp = self.source_file.storage.open(self.source_file.name)
             except IOError:
@@ -184,7 +185,8 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
             self.storage.save(self.name, content)
 
     def delete(self, save=False):
-        """Pulled almost verbatim from ``ImageFieldFile.delete()`` and
+        """
+        Pulled almost verbatim from ``ImageFieldFile.delete()`` and
         ``FieldFile.delete()`` but with the attempts to reset the instance
         property removed.
 
@@ -194,7 +196,7 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
             del self._dimensions_cache
 
         # Only close the file if it's already open, which we know by the
-        # presence of self._file
+        # presence of self._file.
         if hasattr(self, '_file'):
             self.close()
             del self.file
@@ -204,7 +206,7 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
         except (NotImplementedError, IOError):
             pass
 
-        # Delete the filesize cache
+        # Delete the filesize cache.
         if hasattr(self, '_size'):
             del self._size
         self._committed = False
@@ -217,9 +219,10 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
         return _get_suggested_extension(self.source_file.name, self.field.format)
 
     def _default_cache_to(self, instance, path, specname, extension):
-        """Determines the filename to use for the transformed image. Can be
-        overridden on a per-spec basis by setting the cache_to property on the
-        spec.
+        """
+        Determines the filename to use for the transformed image. Can be
+        overridden on a per-spec basis by setting the cache_to property on
+        the spec.
 
         """
         filepath, basename = os.path.split(path)
@@ -253,10 +256,10 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
 
     @name.setter
     def name(self, value):
-        # TODO: Figure out a better way to handle this. We really don't want to
-        # allow anybody to set the name, but ``File.__init__`` (which is called
-        # by ``ImageSpecFile.__init__``) does, so we have to allow it at least
-        # that one time.
+        # TODO: Figure out a better way to handle this. We really don't want
+        # to allow anybody to set the name, but ``File.__init__`` (which is
+        # called by ``ImageSpecFile.__init__``) does, so we have to allow it
+        # at least that one time.
         pass
 
 
@@ -322,7 +325,8 @@ class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
 
 
 class ProcessedImageField(models.ImageField, _ImageSpecMixin):
-    """ProcessedImageField is an ImageField that runs processors on the uploaded
+    """
+    ProcessedImageField is an ImageField that runs processors on the uploaded
     image *before* saving it to storage. This is in contrast to specs, which
     maintain the original. Useful for coercing fileformats or keeping images
     within a reasonable size.
@@ -336,12 +340,11 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
         **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
-        the :class:`django.db.models.ImageField` constructor accepts, as well as
-        the ``processors``, ``format``, and ``quality`` arguments of
+        the :class:`django.db.models.ImageField` constructor accepts, as well
+        as the ``processors``, ``format``, and ``quality`` arguments of
         :class:`imagekit.models.ImageSpec`.
 
         """
-
         _ImageSpecMixin.__init__(self, processors, quality=quality,
                 format=format)
         models.ImageField.__init__(self, verbose_name, name, width_field,

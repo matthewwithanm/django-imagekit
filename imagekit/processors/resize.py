@@ -2,7 +2,6 @@ from imagekit.lib import Image
 
 
 class _Resize(object):
-
     width = None
     height = None
 
@@ -17,10 +16,10 @@ class _Resize(object):
 
 
 class Crop(_Resize):
-    """Resizes an image , cropping it to the specified width and height.
+    """
+    Resizes an image , cropping it to the specified width and height.
 
     """
-
     TOP_LEFT = 'tl'
     TOP = 't'
     TOP_RIGHT = 'tr'
@@ -47,8 +46,8 @@ class Crop(_Resize):
         """
         :param width: The target width, in pixels.
         :param height: The target height, in pixels.
-        :param anchor: Specifies which part of the image should be retained when
-            cropping. Valid values are:
+        :param anchor: Specifies which part of the image should be retained
+            when cropping. Valid values are:
 
             - Crop.TOP_LEFT
             - Crop.TOP
@@ -68,7 +67,7 @@ class Crop(_Resize):
         cur_width, cur_height = img.size
         horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
                 Crop.CENTER]
-        ratio = max(float(self.width) / cur_width, float(self.height)/cur_height)
+        ratio = max(float(self.width) / cur_width, float(self.height) / cur_height)
         resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
         crop_x, crop_y = (abs(self.width - resize_x), abs(self.height - resize_y))
         x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
@@ -88,17 +87,17 @@ class Crop(_Resize):
 
 
 class Fit(_Resize):
-    """Resizes an image to fit within the specified dimensions.
+    """
+    Resizes an image to fit within the specified dimensions.
 
     """
-
     def __init__(self, width=None, height=None, upscale=None):
         """
         :param width: The maximum width of the desired image.
         :param height: The maximum height of the desired image.
-        :param upscale: A boolean value specifying whether the image should be
-                enlarged if its dimensions are smaller than the target
-                dimensions.
+        :param upscale: A boolean value specifying whether the image should
+            be enlarged if its dimensions are smaller than the target
+            dimensions.
 
         """
         super(Fit, self).__init__(width, height)

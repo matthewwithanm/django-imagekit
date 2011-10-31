@@ -3,8 +3,8 @@ from django.template.loader import render_to_string
 
 
 class AdminThumbnail(object):
-    """A convenience utility for adding thumbnails to the Django admin change
-    list.
+    """
+    A convenience utility for adding thumbnails to Django's admin change list.
 
     """
     short_description = _('Thumbnail')
@@ -12,8 +12,8 @@ class AdminThumbnail(object):
 
     def __init__(self, image_field, template=None):
         """
-        :param image_field: The name of the ImageField or ImageSpec on the model
-                to use for the thumbnail.
+        :param image_field: The name of the ImageField or ImageSpec on the
+            model to use for the thumbnail.
         :param template: The template with which to render the thumbnail
 
         """
@@ -25,7 +25,7 @@ class AdminThumbnail(object):
 
         if not thumbnail:
             raise Exception('The property {0} is not defined on {1}.'.format(
-                    obj, self.image_field))
+                obj, self.image_field))
 
         original_image = getattr(thumbnail, 'source_file', None) or thumbnail
         template = self.template or 'imagekit/admin/thumbnail.html'

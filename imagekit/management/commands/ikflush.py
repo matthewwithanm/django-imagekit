@@ -1,7 +1,7 @@
-"""Flushes the cached ImageKit images.
+"""
+Flushes and re-caches all images under ImageKit.
 
 """
-
 from django.db.models.loading import cache
 from django.core.management.base import BaseCommand
 
