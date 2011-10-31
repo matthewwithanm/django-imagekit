@@ -2,6 +2,8 @@
 django-imagekit
 ===============
 
+NOTE: This, the **class-based** version of ImageKit, has been discontinued.
+
 ImageKit In 7 Steps
 ===================
 
