@@ -1,12 +1,14 @@
 import os
 import tempfile
-import Image
+
 from django.core.files.base import ContentFile
 from django.db import models
 from django.test import TestCase
+
+from imagekit.lib import Image
 from imagekit.models import ImageSpec
-from imagekit.processors.resize import Crop
 from imagekit.processors import Adjust
+from imagekit.processors.resize import Crop
 
 
 class Photo(models.Model):
