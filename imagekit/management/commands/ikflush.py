@@ -1,8 +1,11 @@
+"""
+Flushes and re-caches all images under ImageKit.
+
+"""
 from django.db.models.loading import cache
-from django.core.management.base import BaseCommand, CommandError
-from optparse import make_option
-from imagekit.models import ImageModel
-from imagekit.specs import ImageSpec
+from django.core.management.base import BaseCommand
+
+from imagekit.utils import get_spec_files
 
 
 class Command(BaseCommand):
@@ -16,22 +19,17 @@ class Command(BaseCommand):
 
 
 def flush_cache(apps, options):
-    """ Clears the image cache
-
-    """
     apps = [a.strip(',') for a in apps]
     if apps:
         for app_label in apps:
             app = cache.get_app(app_label)
-            models = [m for m in cache.get_models(app) if issubclass(m, ImageModel)]
-            for model in models:
+            for model in [m for m in cache.get_models(app)]:
                 print 'Flushing cache for "%s.%s"' % (app_label, model.__name__)
                 for obj in model.objects.order_by('-pk'):
-                    for spec in model._ik.specs:
-                        prop = getattr(obj, spec.name(), None)
-                        if prop is not None:
-                            prop._delete()
-                        if spec.pre_cache:
-                            prop._create()
+                    for spec_file in get_spec_files(obj):
+                        if spec_file is not None:
+                            spec_file.delete(save=False)
+                        if spec_file.field.pre_cache:
+                            spec_file._create()
     else:
-        print 'Please specify on or more app names'
+        print 'Please specify one or more app names'

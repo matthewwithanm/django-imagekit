@@ -1,13 +1,5 @@
-"""
-Django ImageKit
-
-:author: Justin Driscoll <justin.driscoll@gmail.com>
-:maintainer: Bryan Veloso <bryan@revyver.com>
-:license: BSD
-
-"""
 __title__ = 'django-imagekit'
-__version__ = '0.4.1'
-__build__ = 0x000400
-__author__ = 'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett'
+__author__ = 'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett, Matthew Tretter, Eric Eldredge'
+__version__ = (1, 0, 0, 'final', 0)
+__build__ = 0x001000
 __license__ = 'BSD'
