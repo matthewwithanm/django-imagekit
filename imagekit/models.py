@@ -95,10 +95,15 @@ class ImageSpec(_ImageSpecMixin):
             dispatch_uid='%s.delete' % uid)
 
 
+def get_registered_extensions():
+    Image.preinit()
+    return Image.EXTENSION
+
+
 def _get_suggested_extension(name, format):
     if format:
         # Try to look up an extension by the format.
-        extensions = [k for k, v in Image.EXTENSION.iteritems() \
+        extensions = [k for k, v in get_registered_extensions().iteritems() \
                 if v == format.upper()]
     else:
         extensions = []
@@ -124,7 +129,7 @@ class _ImageSpecFileMixin(object):
                 # The extension is explicit, so assume they want the matching format.
                 extension = os.path.splitext(filename)[1].lower()
                 # Try to guess the format from the extension.
-                format = Image.EXTENSION.get(extension)
+                format = get_registered_extensions().get(extension)
         format = format or img.format or original_format or 'JPEG'
 
         if format != 'JPEG':
