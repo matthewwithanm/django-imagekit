@@ -125,7 +125,7 @@ def format_to_extension(format):
     if not extension and _preinit_pil():
         extension = _format_to_extension(format)
     if not extension and _init_pil():
-        extension = _extension_to_format(extension)
+        extension = _format_to_extension(format)
     if not extension:
         raise UnknownFormatError(format)
     return extension
