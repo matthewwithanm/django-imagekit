@@ -10,7 +10,9 @@ from django.db.models.signals import post_save, post_delete
 from django.utils.encoding import force_unicode, smart_str
 
 from imagekit.lib import Image, ImageFile
-from imagekit.utils import img_to_fobj, get_spec_files, open_image
+from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
+        format_to_extension, extension_to_format, UnknownFormatError, \
+        UnknownExtensionError
 from imagekit.processors import ProcessorPipeline
 
 # Modify image file buffer size.
@@ -95,24 +97,26 @@ class ImageSpec(_ImageSpecMixin):
             dispatch_uid='%s.delete' % uid)
 
 
-def get_registered_extensions():
-    Image.preinit()
-    return Image.EXTENSION
-
-
 def _get_suggested_extension(name, format):
-    if format:
-        # Try to look up an extension by the format.
-        extensions = [k for k, v in get_registered_extensions().iteritems() \
-                if v == format.upper()]
-    else:
-        extensions = []
     original_extension = os.path.splitext(name)[1]
-    if not extensions or original_extension.lower() in extensions:
-        # If the original extension matches the format, use it.
+    try:
+        suggested_extension = format_to_extension(format)
+    except UnknownFormatError:
         extension = original_extension
     else:
-        extension = extensions[0]
+        if suggested_extension.lower() == original_extension.lower():
+            extension = original_extension
+        else:
+            try:
+                original_format = extension_to_format(original_extension)
+            except UnknownExtensionError:
+                extension = suggested_extension
+            else:
+                # If the formats match, give precedence to the original extension.
+                if format.lower() == original_format.lower():
+                    extension = original_extension
+                else:
+                    extension = suggested_extension
     return extension
 
 
@@ -129,7 +133,10 @@ class _ImageSpecFileMixin(object):
                 # The extension is explicit, so assume they want the matching format.
                 extension = os.path.splitext(filename)[1].lower()
                 # Try to guess the format from the extension.
-                format = get_registered_extensions().get(extension)
+                try:
+                    format = extension_to_format(extension)
+                except UnknownExtensionError:
+                    pass
         format = format or img.format or original_format or 'JPEG'
 
         if format != 'JPEG':
