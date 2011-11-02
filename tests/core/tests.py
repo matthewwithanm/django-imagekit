@@ -5,6 +5,7 @@ from django.core.files.base import ContentFile
 from django.db import models
 from django.test import TestCase
 
+from imagekit import utils
 from imagekit.lib import Image
 from imagekit.models import ImageSpec
 from imagekit.processors import Adjust
@@ -18,7 +19,6 @@ class Photo(models.Model):
 
 
 class IKTest(TestCase):
-    """ Base TestCase class. """
     def generate_image(self):
         tmp = tempfile.TemporaryFile()
         Image.new('RGB', (800, 600)).save(tmp, 'JPEG')
@@ -53,3 +53,19 @@ class IKTest(TestCase):
     def test_thumbnail_source_file(self):
         self.assertEqual(
             self.photo.thumbnail.source_file, self.photo.original_image)
+
+
+class IKUtilsTest(TestCase):
+    def test_extension_to_format(self):
+        self.assertEqual(utils.extension_to_format('.jpeg'), 'JPEG')
+        self.assertEqual(utils.extension_to_format('.rgba'), 'SGI')
+
+        with self.assertRaises(utils.UnknownExtensionError):
+            utils.extension_to_format('.txt')
+
+    def test_format_to_extension_no_init(self):
+        self.assertEqual(utils.format_to_extension('PNG'), '.png')
+        self.assertEqual(utils.format_to_extension('ICO'), '.ico')
+
+        with self.assertRaises(utils.UnknownFormatError):
+            utils.format_to_extension('TXT')
