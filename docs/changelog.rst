@@ -16,7 +16,7 @@ v1.0.2
 v1.0.1
 ------
 
-- Minor fixes related to the rendering of `README.rst` as a reStructured
+- Minor fixes related to the rendering of ``README.rst`` as a reStructured
   text file.
 
 - Fixed the included admin template not being found when ImageKit was  and
