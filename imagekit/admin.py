@@ -21,9 +21,9 @@ class AdminThumbnail(object):
         self.template = template
 
     def __call__(self, obj):
-        thumbnail = getattr(obj, self.image_field, None)
-
-        if not thumbnail:
+        try:
+            thumbnail = getattr(obj, self.image_field)
+        except AttributeError:
             raise Exception('The property %s is not defined on %s.' % \
                     (self.image_field, obj.__class__.__name__))
 
