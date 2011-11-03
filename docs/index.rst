@@ -22,6 +22,7 @@ Digging Deeper
 .. toctree::
 
     apireference
+    changelog
 
 
 Indices and tables
