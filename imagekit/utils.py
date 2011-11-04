@@ -1,3 +1,4 @@
+import os
 import tempfile
 import types
 
@@ -31,6 +32,11 @@ def get_spec_files(instance):
 
 
 def open_image(target):
+    if hasattr(target, 'mode') and 'w' in target.mode and os.path.exists(target.name):
+        # target is a file like object with write mode enabled
+        # PIL will zero this file out and then give and IO error
+        # instead just pass PIL the path
+        target = target.name
     img = Image.open(target)
     img.copy = types.MethodType(_wrap_copy(img.copy), img, img.__class__)
     return img
