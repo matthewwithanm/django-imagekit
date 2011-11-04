@@ -21,11 +21,11 @@ class AdminThumbnail(object):
         self.template = template
 
     def __call__(self, obj):
-        thumbnail = getattr(obj, self.image_field, None)
-
-        if not thumbnail:
-            raise Exception('The property {0} is not defined on {1}.'.format(
-                obj, self.image_field))
+        try:
+            thumbnail = getattr(obj, self.image_field)
+        except AttributeError:
+            raise Exception('The property %s is not defined on %s.' % \
+                    (self.image_field, obj.__class__.__name__))
 
         original_image = getattr(thumbnail, 'source_file', None) or thumbnail
         template = self.template or 'imagekit/admin/thumbnail.html'

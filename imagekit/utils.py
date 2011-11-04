@@ -97,9 +97,10 @@ def _extension_to_format(extension):
 
 
 def _format_to_extension(format):
-    for k, v in Image.EXTENSION.iteritems():
-        if v == format.upper():
-            return k
+    if format:
+        for k, v in Image.EXTENSION.iteritems():
+            if v == format.upper():
+                return k
     return None
 
 
@@ -121,11 +122,13 @@ def format_to_extension(format):
     """Returns the first extension that matches the provided format.
 
     """
-    extension = _format_to_extension(format)
-    if not extension and _preinit_pil():
+    extension = None
+    if format:
         extension = _format_to_extension(format)
-    if not extension and _init_pil():
-        extension = _format_to_extension(format)
+        if not extension and _preinit_pil():
+            extension = _format_to_extension(format)
+        if not extension and _init_pil():
+            extension = _format_to_extension(format)
     if not extension:
         raise UnknownFormatError(format)
     return extension
