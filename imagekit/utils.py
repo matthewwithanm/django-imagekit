@@ -4,7 +4,7 @@ import types
 
 from django.utils.functional import wraps
 
-from imagekit.lib import Image
+from imagekit.lib import Image, ImageFile
 
 
 def img_to_fobj(img, format, **kwargs):
@@ -17,7 +17,13 @@ def img_to_fobj(img, format, **kwargs):
     else:
         img = img.convert('RGB')
 
-    img.save(tmp, format, **kwargs)
+    try:
+        img.save(tmp, format, **kwargs)
+    except IOError:
+        old_maxblock = ImageFile.MAXBLOCK
+        ImageFile.MAXBLOCK = img.size[0] * img.size[1]
+        img.save(tmp, format, **kwargs)
+        ImageFile.MAXBLOCK = old_maxblock
     tmp.seek(0)
     return tmp
 
