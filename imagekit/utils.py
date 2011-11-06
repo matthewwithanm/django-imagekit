@@ -7,17 +7,71 @@ from django.utils.functional import wraps
 from imagekit.lib import Image, ImageFile
 
 
-def img_to_fobj(img, format, **kwargs):
-    tmp = tempfile.TemporaryFile()
+RGBA_TRANSPARENCY_FORMATS = ['PNG']
+PALETTE_TRANSPARENCY_FORMATS = ['PNG', 'GIF']
 
-    # Preserve transparency if the image is in Pallette (P) mode.
-    transparency_formats = ('PNG', 'GIF', )
-    if format in transparency_formats:
-        if img.mode == 'P':
-            kwargs['transparency'] = len(img.split()[-1].getcolors())
+
+def img_to_fobj(img, format, **kwargs):
+    # Attempt to preserve transparency.
+    matte = False
+    if img.mode == 'RGBA':
+        if format in RGBA_TRANSPARENCY_FORMATS:
+            pass
+        elif format in PALETTE_TRANSPARENCY_FORMATS:
+            # If you're going from a format with alpha transparency to one with
+            # palette transparency, transparency values will be snapped: pixels
+            # that are more opaque than not will become fully opaque; pixels
+            # that are more transparent than not will become fully transparent.
+            # This will not produce a good-looking result if your image contains
+            # varying levels of opacity; in that case, you'll probably want to
+            # use a processor to matte the image on a solid color. The reason we
+            # don't matte by default is because not doing so allows processors
+            # to treat RGBA-format images as a super-type of P-format images: if
+            # you have an RGBA-format image with only a single transparent
+            # color, and save it as a GIF, it will retain its transparency. In
+            # other words, a P-format image converted to an RGBA-formatted image
+            # by a processor and then saved as a P-format image will give the
+            # expected results.
+            alpha = img.split()[-1]
+            mask = Image.eval(alpha, lambda a: 255 if a <= 128 else 0)
+            img = img.convert('RGB').convert('P', palette=Image.ADAPTIVE,
+                    colors=255)
+            img.paste(255, mask)
+            kwargs['transparency'] = 255
+        else:
+            # Simply converting an RGBA-format image to an RGB one creates a
+            # gross result, so we matte the image on a white background. If
+            # that's not what you want, that's fine: use a processor to deal
+            # with the transparency however you want. This is simply a sensible
+            # default that will always produce something that looks good. Or at
+            # least, it will look better than just a straight conversion.
+            matte = True
+    elif img.mode == 'P':
+        if format in PALETTE_TRANSPARENCY_FORMATS:
+            kwargs['transparency'] = img.info['transparency']
+        elif format in RGBA_TRANSPARENCY_FORMATS:
+            # Currently PIL doesn't support any RGBA-mode formats that aren't
+            # also P-mode formats, so this will never happen.
+            img = img.convert('RGBA')
+        else:
+            matte = True
     else:
         img = img.convert('RGB')
 
+        # GIFs are always going to be in palette mode, so we can do a little
+        # optimization. Note that the RGBA sources also use adaptive
+        # quantization (above). Images that are already in P mode don't need any
+        # quantization because their colors are already limited.
+        if format == 'GIF':
+            img = img.convert('P', palette=Image.ADAPTIVE)
+
+    if matte:
+        img = img.convert('RGBA')
+        bg = Image.new('RGBA', img.size, (255, 255, 255))
+        bg.paste(img, img)
+        img = bg.convert('RGB')
+
+    tmp = tempfile.TemporaryFile()
     try:
         img.save(tmp, format, **kwargs)
     except IOError:
