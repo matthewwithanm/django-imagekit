@@ -2,21 +2,16 @@ import os
 import datetime
 from StringIO import StringIO
 
-from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.fields.files import ImageFieldFile
 from django.db.models.signals import post_save, post_delete
 from django.utils.encoding import force_unicode, smart_str
 
-from imagekit.lib import Image, ImageFile
 from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
 from imagekit.processors import ProcessorPipeline
-
-# Modify image file buffer size.
-ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
 
 
 class _ImageSpecMixin(object):

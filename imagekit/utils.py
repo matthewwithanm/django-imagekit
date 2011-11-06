@@ -21,10 +21,15 @@ def img_to_fobj(img, format, **kwargs):
     try:
         img.save(tmp, format, **kwargs)
     except IOError:
+        # PIL can have problems saving large JPEGs if MAXBLOCK isn't big enough,
+        # So if we have a problem saving, we temporarily increase it. See
+        # http://github.com/jdriscoll/django-imagekit/issues/50
         old_maxblock = ImageFile.MAXBLOCK
         ImageFile.MAXBLOCK = img.size[0] * img.size[1]
-        img.save(tmp, format, **kwargs)
-        ImageFile.MAXBLOCK = old_maxblock
+        try:
+            img.save(tmp, format, **kwargs)
+        finally:
+            ImageFile.MAXBLOCK = old_maxblock
     tmp.seek(0)
     return tmp
 
