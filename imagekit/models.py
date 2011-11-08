@@ -168,19 +168,19 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
 
     def _get_file(self):
-        self._create(True)
+        self.generate()
         return super(ImageFieldFile, self).file
 
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
     @property
     def url(self):
-        self._create(True)
+        self.generate()
         return super(ImageFieldFile, self).url
 
-    def _create(self, lazy=False):
+    def generate(self, lazy=True):
         """
-        Creates a new image by running the processors on the source file.
+        Generates a new image by running the processors on the source file.
 
         Keyword Arguments:
             lazy -- True if an already-existing image should be returned;
@@ -330,7 +330,7 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
         if not created:
             spec_file.delete(save=False)
         if spec_file.field.pre_cache:
-            spec_file._create()
+            spec_file.generate(False)
 
 
 def _post_delete_handler(sender, instance=None, **kwargs):
