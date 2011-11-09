@@ -1,11 +1,12 @@
 # Required PIL classes may or may not be available from the root namespace
 # depending on the installation method used.
 try:
-    from PIL import Image, ImageColor, ImageEnhance, ImageFile, ImageFilter
+    from PIL import Image, ImageColor, ImageChops, ImageEnhance, ImageFile, ImageFilter
 except ImportError:
     try:
         import Image
         import ImageColor
+        import ImageChops
         import ImageEnhance
         import ImageFile
         import ImageFilter

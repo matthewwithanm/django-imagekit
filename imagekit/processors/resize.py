@@ -1,5 +1,6 @@
-from imagekit.lib import Image
 
+import math
+from imagekit.lib import Image, ImageFilter, ImageChops
 
 class _Resize(object):
     width = None
@@ -121,3 +122,115 @@ class Fit(_Resize):
                 return img
         img = img.resize(new_dimensions, Image.ANTIALIAS)
         return img
+
+
+def histogram_entropy(im):
+    """
+    Calculate the entropy of an images' histogram. Used for "smart cropping" in easy-thumbnails;
+    see: https://raw.github.com/SmileyChris/easy-thumbnails/master/easy_thumbnails/utils.py
+    
+    """
+    if not isinstance(im, Image.Image):
+        return 0 # Fall back to a constant entropy.
+    
+    histogram = im.histogram()
+    hist_ceil = float(sum(histogram))
+    histonorm = [histocol / hist_ceil for histocol in histogram]
+    
+    return -sum([p * math.log(p, 2) for p in histonorm if p != 0])
+
+
+class SmartCrop(_Resize):
+    """
+    Crop an image 'smartly' -- based on smart crop implementation from easy-thumbnails:
+    
+        https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L193
+    
+    Smart cropping whittles away the parts of the image with the least entropy.
+    
+    """
+    
+    def __init__(self, width=None, height=None):
+        super(SmartCrop, self).__init__(width, height)
+    
+    
+    def compare_entropy(self, start_slice, end_slice, slice, difference):
+        """
+        Calculate the entropy of two slices (from the start and end of an axis),
+        returning a tuple containing the amount that should be added to the start
+        and removed from the end of the axis.
+        
+        """
+        start_entropy = histogram_entropy(start_slice)
+        end_entropy = histogram_entropy(end_slice)
+        
+        if end_entropy and abs(start_entropy / end_entropy - 1) < 0.01:
+            # Less than 1% difference, remove from both sides.
+            if difference >= slice * 2:
+                return slice, slice
+            half_slice = slice // 2
+            return half_slice, slice - half_slice
+        
+        if start_entropy > end_entropy:
+            return 0, slice
+        else:
+            return slice, 0
+    
+    def process(self, img):
+        source_x, source_y = img.size
+        diff_x = int(source_x - min(source_x, self.width))
+        diff_y = int(source_y - min(source_y, self.height))
+        left = top = 0
+        right, bottom = source_x, source_y
+        
+        while diff_x:
+            slice = min(diff_x, max(diff_x // 5, 10))
+            start = img.crop((left, 0, left + slice, source_y))
+            end = img.crop((right - slice, 0, right, source_y))
+            add, remove = self.compare_entropy(start, end, slice, diff_x)
+            left += add
+            right -= remove
+            diff_x = diff_x - add - remove
+        
+        while diff_y:
+            slice = min(diff_y, max(diff_y // 5, 10))
+            start = img.crop((0, top, source_x, top + slice))
+            end = img.crop((0, bottom - slice, source_x, bottom))
+            add, remove = self.compare_entropy(start, end, slice, diff_y)
+            top += add
+            bottom -= remove
+            diff_y = diff_y - add - remove
+        
+        box = (left, top, right, bottom)
+        img = img.crop(box)
+        
+        return img
+
+
+class Trim(object):
+    """
+    Trims away the solid border color from an image. Defaults to trimming white borders.
+    The Trim processor is based on the implementation of 'autocrop' from easy-thumbnails:
+    
+        https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L76
+    
+    """
+    def __init__(self, trim_luma=255):
+        self.trim_luma = trim_luma
+    
+    def process(self, img):
+        bw = img.convert('1')
+        bw = bw.filter(ImageFilter.MedianFilter)
+        
+        # fill a new image with the background and subtract it.
+        bg = Image.new('1', img.size, self.trim_luma)
+        diff = ImageChops.difference(bw, bg)
+        
+        bbox = diff.getbbox()
+        if bbox:
+            img = img.crop(bbox)
+        
+        return img
+
+
+
