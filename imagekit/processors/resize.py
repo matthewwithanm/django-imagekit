@@ -1,6 +1,6 @@
 
 import math
-from imagekit.lib import Image, ImageFilter, ImageChops
+from imagekit.lib import Image
 
 class _Resize(object):
     width = None
@@ -205,32 +205,4 @@ class SmartCrop(_Resize):
         img = img.crop(box)
         
         return img
-
-
-class Trim(object):
-    """
-    Trims away the solid border color from an image. Defaults to trimming white borders.
-    The Trim processor is based on the implementation of 'autocrop' from easy-thumbnails:
-    
-        https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L76
-    
-    """
-    def __init__(self, trim_luma=255):
-        self.trim_luma = trim_luma
-    
-    def process(self, img):
-        bw = img.convert('1')
-        bw = bw.filter(ImageFilter.MedianFilter)
-        
-        # fill a new image with the background and subtract it.
-        bg = Image.new('1', img.size, self.trim_luma)
-        diff = ImageChops.difference(bw, bg)
-        
-        bbox = diff.getbbox()
-        if bbox:
-            img = img.crop(bbox)
-        
-        return img
-
-
 

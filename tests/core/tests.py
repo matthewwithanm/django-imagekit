@@ -9,7 +9,7 @@ from imagekit import utils
 from imagekit.lib import Image
 from imagekit.models import ImageSpec
 from imagekit.processors import Adjust
-from imagekit.processors.resize import Crop, SmartCrop, Trim
+from imagekit.processors.resize import Crop, SmartCrop
 
 
 class Photo(models.Model):
@@ -19,9 +19,6 @@ class Photo(models.Model):
             image_field='original_image', format='JPEG', quality=90)
     
     smartcropped_thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1), SmartCrop(50, 50)],
-            image_field='original_image', format='JPEG', quality=90)
-    
-    trimmed_thumbnail = ImageSpec([Trim(), Adjust(contrast=1.2, sharpness=1.1)],
             image_field='original_image', format='JPEG', quality=90)
 
 
@@ -38,8 +35,6 @@ class IKTest(TestCase):
         
         http://en.wikipedia.org/wiki/Lenna
         http://sipi.usc.edu/database/database.php?volume=misc&image=12
-        
-        White border allows processors.resize.Trim to be tested.
         
         """
         tmp = tempfile.TemporaryFile()
@@ -80,12 +75,6 @@ class IKTest(TestCase):
     def test_thumbnail_source_file(self):
         self.assertEqual(
             self.photo.thumbnail.source_file, self.photo.original_image)
-    
-    def test_trimmed_thumbnail_size(self):
-        """ Trimmed thumbnail size """
-        # Nondeterministic, due to JPEG compression
-        self.assertTrue(self.photo.original_image.width > self.photo.trimmed_thumbnail.width)
-        self.assertTrue(self.photo.original_image.height > self.photo.trimmed_thumbnail.height)
 
 
 class IKUtilsTest(TestCase):
