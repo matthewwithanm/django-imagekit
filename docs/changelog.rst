@@ -1,6 +1,21 @@
 Changelog
 =========
 
+v1.0.3
+------
+
+- ``ImageSpec._create()`` was renamed ``ImageSpec.generate()`` and is now
+  available in the public API.
+
+- Added an ``AutoConvert`` processor to encapsulate the trasnparency
+  handling logic.
+
+- Refactored trasnaprency handling to be smarter, handleing a lot more of
+  the situations in which one would convert to or from formats that support
+  transparency.
+
+- Fixed PIL zeroing out files when write mode is enabled.
+
 v1.0.2
 ------
 

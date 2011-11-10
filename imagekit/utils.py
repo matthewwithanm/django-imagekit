@@ -3,20 +3,23 @@ import types
 
 from django.utils.functional import wraps
 
-from imagekit.lib import Image
+from imagekit.lib import Image, ImageFile
 
 
 def img_to_fobj(img, format, **kwargs):
     tmp = tempfile.TemporaryFile()
-
-    # Preserve transparency if the image is in Pallette (P) mode.
-    transparency_formats = ('PNG', 'GIF', )
-    if img.mode == 'P' and format in transparency_formats:
-        kwargs['transparency'] = len(img.split()[-1].getcolors())
-    else:
-        img = img.convert('RGB')
-
-    img.save(tmp, format, **kwargs)
+    try:
+        img.save(tmp, format, **kwargs)
+    except IOError:
+        # PIL can have problems saving large JPEGs if MAXBLOCK isn't big enough,
+        # So if we have a problem saving, we temporarily increase it. See
+        # http://github.com/jdriscoll/django-imagekit/issues/50
+        old_maxblock = ImageFile.MAXBLOCK
+        ImageFile.MAXBLOCK = img.size[0] * img.size[1]
+        try:
+            img.save(tmp, format, **kwargs)
+        finally:
+            ImageFile.MAXBLOCK = old_maxblock
     tmp.seek(0)
     return tmp
 
@@ -31,6 +34,7 @@ def get_spec_files(instance):
 
 
 def open_image(target):
+    target.seek(0)
     img = Image.open(target)
     img.copy = types.MethodType(_wrap_copy(img.copy), img, img.__class__)
     return img
@@ -97,9 +101,10 @@ def _extension_to_format(extension):
 
 
 def _format_to_extension(format):
-    for k, v in Image.EXTENSION.iteritems():
-        if v == format.upper():
-            return k
+    if format:
+        for k, v in Image.EXTENSION.iteritems():
+            if v == format.upper():
+                return k
     return None
 
 
@@ -121,11 +126,13 @@ def format_to_extension(format):
     """Returns the first extension that matches the provided format.
 
     """
-    extension = _format_to_extension(format)
-    if not extension and _preinit_pil():
+    extension = None
+    if format:
         extension = _format_to_extension(format)
-    if not extension and _init_pil():
-        extension = _format_to_extension(format)
+        if not extension and _preinit_pil():
+            extension = _format_to_extension(format)
+        if not extension and _init_pil():
+            extension = _format_to_extension(format)
     if not extension:
         raise UnknownFormatError(format)
     return extension

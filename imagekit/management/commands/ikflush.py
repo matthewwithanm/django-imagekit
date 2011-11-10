@@ -30,6 +30,6 @@ def flush_cache(apps, options):
                         if spec_file is not None:
                             spec_file.delete(save=False)
                         if spec_file.field.pre_cache:
-                            spec_file._create()
+                            spec_file.generate(False)
     else:
         print 'Please specify one or more app names'

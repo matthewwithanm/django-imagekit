@@ -2,28 +2,25 @@ import os
 import datetime
 from StringIO import StringIO
 
-from django.conf import settings
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.fields.files import ImageFieldFile
 from django.db.models.signals import post_save, post_delete
 from django.utils.encoding import force_unicode, smart_str
 
-from imagekit.lib import Image, ImageFile
 from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
-from imagekit.processors import ProcessorPipeline
-
-# Modify image file buffer size.
-ImageFile.MAXBLOCK = getattr(settings, 'PIL_IMAGEFILE_MAXBLOCK', 256 * 2 ** 10)
+from imagekit.processors import ProcessorPipeline, AutoConvert
 
 
 class _ImageSpecMixin(object):
-    def __init__(self, processors=None, quality=70, format=None):
+    def __init__(self, processors=None, quality=70, format=None,
+            autoconvert=True):
         self.processors = processors
         self.quality = quality
         self.format = format
+        self.autoconvert = autoconvert
 
     def process(self, image, file):
         processors = ProcessorPipeline(self.processors)
@@ -39,7 +36,8 @@ class ImageSpec(_ImageSpecMixin):
     _upload_to_attr = 'cache_to'
 
     def __init__(self, processors=None, quality=70, format=None,
-        image_field=None, pre_cache=False, storage=None, cache_to=None):
+        image_field=None, pre_cache=False, storage=None, cache_to=None,
+        autoconvert=True):
         """
         :param processors: A list of processors to run on the original image.
         :param quality: The quality of the output image. This option is only
@@ -68,11 +66,13 @@ class ImageSpec(_ImageSpecMixin):
                     based on that format. if not, the extension of the
                     original file will be passed. You do not have to use
                     this extension, it's only a recommendation.
+        :param autoconvert: Specifies whether the AutoConvert processor
+            should be run before saving.
 
         """
 
         _ImageSpecMixin.__init__(self, processors, quality=quality,
-                format=format)
+                format=format, autoconvert=autoconvert)
         self.image_field = image_field
         self.pre_cache = pre_cache
         self.storage = storage
@@ -139,12 +139,19 @@ class _ImageSpecFileMixin(object):
                     pass
         format = format or img.format or original_format or 'JPEG'
 
-        if format != 'JPEG':
-            imgfile = img_to_fobj(img, format)
+        if format == 'JPEG':
+            img_to_fobj_kwargs = dict(quality=int(self.field.quality),
+                optimize=True)
         else:
-            imgfile = img_to_fobj(img, format,
-                                  quality=int(self.field.quality),
-                                  optimize=True)
+            img_to_fobj_kwargs = {}
+
+        # Run the AutoConvert processor
+        if getattr(self.field, 'autoconvert', True):
+            autoconvert_processor = AutoConvert(format)
+            img = autoconvert_processor.process(img)
+            img_to_fobj_kwargs.update(autoconvert_processor.save_kwargs)
+
+        imgfile = img_to_fobj(img, format, **img_to_fobj_kwargs)
         content = ContentFile(imgfile.read())
         return img, content
 
@@ -161,19 +168,19 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
 
     def _get_file(self):
-        self._create(True)
+        self.generate()
         return super(ImageFieldFile, self).file
 
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
     @property
     def url(self):
-        self._create(True)
+        self.generate()
         return super(ImageFieldFile, self).url
 
-    def _create(self, lazy=False):
+    def generate(self, lazy=True):
         """
-        Creates a new image by running the processors on the source file.
+        Generates a new image by running the processors on the source file.
 
         Keyword Arguments:
             lazy -- True if an already-existing image should be returned;
@@ -323,7 +330,7 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
         if not created:
             spec_file.delete(save=False)
         if spec_file.field.pre_cache:
-            spec_file._create()
+            spec_file.generate(False)
 
 
 def _post_delete_handler(sender, instance=None, **kwargs):
@@ -353,7 +360,7 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
 
     def __init__(self, processors=None, quality=70, format=None,
         verbose_name=None, name=None, width_field=None, height_field=None,
-        **kwargs):
+        autoconvert=True, **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
@@ -362,7 +369,7 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
 
         """
         _ImageSpecMixin.__init__(self, processors, quality=quality,
-                format=format)
+                format=format, autoconvert=autoconvert)
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
 
