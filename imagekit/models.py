@@ -15,11 +15,11 @@ from imagekit.processors import ProcessorPipeline, AutoConvert
 
 
 class _ImageSpecMixin(object):
-    def __init__(self, processors=None, quality=70, format=None,
+    def __init__(self, processors=None, format=None, options={},
             autoconvert=True):
         self.processors = processors
-        self.quality = quality
         self.format = format
+        self.options = options
         self.autoconvert = autoconvert
 
     def process(self, image, file):
@@ -35,16 +35,19 @@ class ImageSpec(_ImageSpecMixin):
     """
     _upload_to_attr = 'cache_to'
 
-    def __init__(self, processors=None, quality=70, format=None,
+    def __init__(self, processors=None, format=None, options={},
         image_field=None, pre_cache=False, storage=None, cache_to=None,
         autoconvert=True):
         """
         :param processors: A list of processors to run on the original image.
-        :param quality: The quality of the output image. This option is only
-            used for the JPEG format.
         :param format: The format of the output file. If not provided,
             ImageSpec will try to guess the appropriate format based on the
             extension of the filename and the format of the input image.
+        :param options: A dictionary that will be passed to PIL's
+            ``Image.save()`` method as keyword arguments. Valid options vary
+            between formats, but some examples include ``quality``,
+            ``optimize``, and ``progressive`` for JPEGs. See the PIL
+            documentation for others.
         :param image_field: The name of the model property that contains the
             original image.
         :param pre_cache: A boolean that specifies whether the image should
@@ -71,8 +74,8 @@ class ImageSpec(_ImageSpecMixin):
 
         """
 
-        _ImageSpecMixin.__init__(self, processors, quality=quality,
-                format=format, autoconvert=autoconvert)
+        _ImageSpecMixin.__init__(self, processors, format=format,
+                options=options, autoconvert=autoconvert)
         self.image_field = image_field
         self.pre_cache = pre_cache
         self.storage = storage
@@ -125,6 +128,7 @@ class _ImageSpecFileMixin(object):
         img = open_image(content)
         original_format = img.format
         img = self.field.process(img, self)
+        options = dict(self.field.options or {})
 
         # Determine the format.
         format = self.field.format
@@ -139,19 +143,13 @@ class _ImageSpecFileMixin(object):
                     pass
         format = format or img.format or original_format or 'JPEG'
 
-        if format == 'JPEG':
-            img_to_fobj_kwargs = dict(quality=int(self.field.quality),
-                optimize=True)
-        else:
-            img_to_fobj_kwargs = {}
-
         # Run the AutoConvert processor
         if getattr(self.field, 'autoconvert', True):
             autoconvert_processor = AutoConvert(format)
             img = autoconvert_processor.process(img)
-            img_to_fobj_kwargs.update(autoconvert_processor.save_kwargs)
+            options.update(autoconvert_processor.save_kwargs)
 
-        imgfile = img_to_fobj(img, format, **img_to_fobj_kwargs)
+        imgfile = img_to_fobj(img, format, **options)
         content = ContentFile(imgfile.read())
         return img, content
 
@@ -358,18 +356,22 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
     _upload_to_attr = 'upload_to'
     attr_class = ProcessedImageFieldFile
 
-    def __init__(self, processors=None, quality=70, format=None,
+    def __init__(self, processors=None, format=None, options={},
         verbose_name=None, name=None, width_field=None, height_field=None,
         autoconvert=True, **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
-        as the ``processors``, ``format``, and ``quality`` arguments of
+        as the ``processors``, ``format``, and ``options`` arguments of
         :class:`imagekit.models.ImageSpec`.
 
         """
-        _ImageSpecMixin.__init__(self, processors, quality=quality,
-                format=format, autoconvert=autoconvert)
+        if 'quality' in kwargs:
+            raise Exception('The "quality" keyword argument has been'
+                    """ deprecated. Use `options={'quality': %s}` instead.""" \
+                    % kwargs['quality'])
+        _ImageSpecMixin.__init__(self, processors, format=format,
+                options=options, autoconvert=autoconvert)
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
 

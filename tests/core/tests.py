@@ -16,10 +16,12 @@ class Photo(models.Model):
     original_image = models.ImageField(upload_to='photos')
     
     thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1), Crop(50, 50)],
-            image_field='original_image', format='JPEG', quality=90)
+            image_field='original_image', format='JPEG',
+            options={'quality': 90})
     
     smartcropped_thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1), SmartCrop(50, 50)],
-            image_field='original_image', format='JPEG', quality=90)
+            image_field='original_image', format='JPEG',
+            options={'quality': 90})
 
 
 class IKTest(TestCase):
