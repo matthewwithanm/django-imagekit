@@ -187,10 +187,10 @@ class AutoConvert(object):
 
     def __init__(self, format):
         self.format = format
-        self.save_kwargs = {}
 
     def process(self, img):
         matte = False
+        self.save_kwargs = {}
         if img.mode == 'RGBA':
             if self.format in RGBA_TRANSPARENCY_FORMATS:
                 pass
@@ -249,5 +249,8 @@ class AutoConvert(object):
             bg = Image.new('RGBA', img.size, (255, 255, 255))
             bg.paste(img, img)
             img = bg.convert('RGB')
+
+        if self.format == 'JPEG':
+            self.save_kwargs['optimize'] = True
 
         return img

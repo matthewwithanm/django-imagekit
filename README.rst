@@ -23,7 +23,7 @@ of a model class::
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
         formatted_image = ImageSpec(image_field='original_image', format='JPEG',
-                quality=90)
+                options={'quality': 90})
 
 Accessing the spec through a model instance will create the image and return
 an ImageFile-like object (just like with a normal
@@ -51,7 +51,7 @@ your spec, you can expose different versions of the original image::
         original_image = models.ImageField(upload_to='photos')
         thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1),
                 resize.Crop(50, 50)], image_field='original_image',
-                format='JPEG', quality=90)
+                format='JPEG', options={'quality': 90})
 
 The ``thumbnail`` property will now return a cropped image::
 
@@ -77,7 +77,7 @@ implement a ``process()`` method::
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
         watermarked_image = ImageSpec([Watermark()], image_field='original_image',
-                format='JPEG', quality=90)
+                format='JPEG', options={'quality': 90})
 
 
 Admin
