@@ -251,6 +251,6 @@ class AutoConvert(object):
             img = bg.convert('RGB')
 
         if self.format == 'JPEG':
-            self.save_kwargs.setdefault('optimize', True)
+            self.save_kwargs['optimize'] = True
 
         return img

@@ -147,7 +147,8 @@ class _ImageSpecFileMixin(object):
         if getattr(self.field, 'autoconvert', True):
             autoconvert_processor = AutoConvert(format)
             img = autoconvert_processor.process(img)
-            options.update(autoconvert_processor.save_kwargs)
+            options = dict(autoconvert_processor.save_kwargs.items() + \
+                    options.items())
 
         imgfile = img_to_fobj(img, format, **options)
         content = ContentFile(imgfile.read())
