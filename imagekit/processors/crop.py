@@ -28,7 +28,7 @@ def detect_border_color(img):
     return ImageStat.Stat(img.convert('RGBA').histogram(mask)).median
 
 
-class TrimColor(object):
+class TrimBorderColor(object):
     """Trims a color from the sides of an image.
 
     """
