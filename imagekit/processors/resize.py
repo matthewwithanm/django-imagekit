@@ -2,21 +2,8 @@
 import math
 from imagekit.lib import Image
 
-class _Resize(object):
-    width = None
-    height = None
 
-    def __init__(self, width=None, height=None):
-        if width is not None:
-            self.width = width
-        if height is not None:
-            self.height = height
-
-    def process(self, img):
-        raise NotImplementedError('process must be overridden by subclasses.')
-
-
-class Crop(_Resize):
+class Crop(object):
     """
     Resizes an image , cropping it to the specified width and height.
 
@@ -61,7 +48,8 @@ class Crop(_Resize):
             - Crop.BOTTOM_RIGHT
 
         """
-        super(Crop, self).__init__(width, height)
+        self.width = width
+        self.height = height
         self.anchor = anchor
 
     def process(self, img):
@@ -87,7 +75,7 @@ class Crop(_Resize):
         return img
 
 
-class Fit(_Resize):
+class Fit(object):
     """
     Resizes an image to fit within the specified dimensions.
 
@@ -101,7 +89,8 @@ class Fit(_Resize):
             dimensions.
 
         """
-        super(Fit, self).__init__(width, height)
+        self.width = width
+        self.height = height
         self.upscale = upscale
 
     def process(self, img):
@@ -140,7 +129,7 @@ def histogram_entropy(im):
     return -sum([p * math.log(p, 2) for p in histonorm if p != 0])
 
 
-class SmartCrop(_Resize):
+class SmartCrop(object):
     """
     Crop an image 'smartly' -- based on smart crop implementation from easy-thumbnails:
     
@@ -151,8 +140,8 @@ class SmartCrop(_Resize):
     """
     
     def __init__(self, width=None, height=None):
-        super(SmartCrop, self).__init__(width, height)
-    
+        self.width = width
+        self.height = height
     
     def compare_entropy(self, start_slice, end_slice, slice, difference):
         """
