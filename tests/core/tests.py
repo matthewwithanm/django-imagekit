@@ -9,7 +9,7 @@ from imagekit import utils
 from imagekit.lib import Image
 from imagekit.models import ImageSpec
 from imagekit.processors import Adjust
-from imagekit.processors.resize import Crop, SmartCrop
+from imagekit.processors.scale import Crop, SmartCrop
 
 
 class Photo(models.Model):
