@@ -18,6 +18,9 @@ API Reference
 .. automodule:: imagekit.processors.resize
   :members:
 
+.. automodule:: imagekit.processors.crop
+:members:
+
 
 :mod:`admin` Module
 --------------------
