@@ -23,7 +23,7 @@ class _ImageSpecMixin(object):
         self.autoconvert = autoconvert
 
     def process(self, image, file):
-        processors = ProcessorPipeline(self.processors)
+        processors = ProcessorPipeline(self.processors or [])
         return processors.process(image.copy())
 
 
