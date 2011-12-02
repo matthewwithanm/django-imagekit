@@ -1,11 +1,12 @@
 import os
 import datetime
+from hashlib import md5
 from StringIO import StringIO
 
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.fields.files import ImageFieldFile
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save, post_delete, post_init
 from django.utils.encoding import force_unicode, smart_str
 
 from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
@@ -92,6 +93,8 @@ class ImageSpec(_ImageSpecMixin):
 
         # Connect to the signals only once for this class.
         uid = '%s.%s' % (cls.__module__, cls.__name__)
+        post_init.connect(_post_init_handler, sender=cls,
+                dispatch_uid='%s_init' % uid)
         post_save.connect(_post_save_handler, sender=cls,
                 dispatch_uid='%s_save' % uid)
         post_delete.connect(_post_delete_handler, sender=cls,
@@ -318,15 +321,38 @@ class _ImageSpecDescriptor(object):
             return img_spec_file
 
 
+def get_source_hash(spec_file):
+    """Generates a hash for the spec file's source image.
+
+    """
+    # FIXME: It's too costly to open up every file like this when the model is init'd.
+    if spec_file.source_file:
+        file = getattr(spec_file.source_file, 'file', None)
+        if file:
+            file.seek(0)
+            return md5(file.read()).hexdigest()
+    return None
+
+
+def _post_init_handler(sender, instance, **kwargs):
+    # If the model is not just being created, store a hash of each spec's source
+    # image. Later, we can use this to see if the image has changed and,
+    # therefore, we need to regenerate the spec image.
+    if instance.pk:
+        for spec_file in get_spec_files(instance):
+            spec_file._source_hash = get_source_hash(spec_file)
+
+
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
     if raw:
         return
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        if not created:
+    for spec_file in get_spec_files(instance):
+        source_hash = get_source_hash(spec_file)
+        if source_hash != getattr(spec_file, '_source_hash', None):
             spec_file.delete(save=False)
         if spec_file.field.pre_cache:
-            spec_file.generate(False)
+            spec_file.generate()
+        spec_file._source_hash = source_hash
 
 
 def _post_delete_handler(sender, instance=None, **kwargs):
