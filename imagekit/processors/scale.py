@@ -1,4 +1,3 @@
-
 import math
 from imagekit.lib import Image
 
@@ -194,4 +193,3 @@ class SmartCrop(object):
         img = img.crop(box)
         
         return img
-
