@@ -59,6 +59,15 @@ class IKTest(TestCase):
     def setUp(self):
         self.photo = self.create_photo('test.jpg')
 
+    def test_nodelete(self):
+        """Don't delete the spec file when the source image hasn't changed.
+
+        """
+        filename = self.photo.thumbnail.file.name
+        thumbnail_timestamp = os.path.getmtime(filename)
+        self.photo.save()
+        self.assertTrue(self.photo.thumbnail.storage.exists(filename))
+
     def test_save_image(self):
         photo = Photo.objects.get(id=self.photo.id)
         self.assertTrue(os.path.isfile(photo.original_image.path))
