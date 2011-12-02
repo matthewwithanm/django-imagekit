@@ -45,16 +45,20 @@ class IKTest(TestCase):
             Image.open(lennafile).save(tmp, 'JPEG')
         tmp.seek(0)
         return tmp
-    
-    def setUp(self):
-        self.photo = Photo()
+
+    def create_photo(self, name):
+        photo = Photo()
         img = self.generate_lenna()
         file = ContentFile(img.read())
-        self.photo.original_image = file
-        self.photo.original_image.save('test.jpeg', file)
-        self.photo.save()
+        photo.original_image = file
+        photo.original_image.save(name, file)
+        photo.save()
         img.close()
+        return photo
     
+    def setUp(self):
+        self.photo = self.create_photo('test.jpg')
+
     def test_save_image(self):
         photo = Photo.objects.get(id=self.photo.id)
         self.assertTrue(os.path.isfile(photo.original_image.path))
