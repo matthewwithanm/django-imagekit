@@ -92,12 +92,10 @@ class ImageSpec(_ImageSpecMixin):
 
         # Connect to the signals only once for this class.
         uid = '%s.%s' % (cls.__module__, cls.__name__)
-        post_save.connect(_post_save_handler,
-            sender=cls,
-            dispatch_uid='%s_save' % uid)
-        post_delete.connect(_post_delete_handler,
-            sender=cls,
-            dispatch_uid='%s.delete' % uid)
+        post_save.connect(_post_save_handler, sender=cls,
+                dispatch_uid='%s_save' % uid)
+        post_delete.connect(_post_delete_handler, sender=cls,
+                dispatch_uid='%s.delete' % uid)
 
 
 def _get_suggested_extension(name, format):
