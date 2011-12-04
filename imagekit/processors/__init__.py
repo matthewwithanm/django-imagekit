@@ -227,7 +227,10 @@ class AutoConvert(object):
                 matte = True
         elif img.mode == 'P':
             if self.format in PALETTE_TRANSPARENCY_FORMATS:
-                self.save_kwargs['transparency'] = img.info['transparency']
+                try:
+                    self.save_kwargs['transparency'] = img.info['transparency']
+                except KeyError:
+                    pass
             elif self.format in RGBA_TRANSPARENCY_FORMATS:
                 # Currently PIL doesn't support any RGBA-mode formats that
                 # aren't also P-mode formats, so this will never happen.
