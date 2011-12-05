@@ -52,8 +52,19 @@ class TrimBorderColor(object):
         source = img.convert('RGBA')
         border_color = self.color or tuple(detect_border_color(source))
         bg = Image.new('RGBA', img.size, border_color)
-        offset = -int(self.tolerance * 255)
-        bbox = ImageChops.subtract(bg, source, offset=offset).getbbox()
+        diff = ImageChops.difference(source, bg)
+        if self.tolerance not in (0, 1):
+            # If tolerance is zero, we've already done the job. A tolerance of
+            # one would mean to trim EVERY color, and since that would result
+            # in a zero-sized image, we just ignore it.
+            if not 0 <= self.tolerance <= 1:
+                raise ValueError('%s is an invalid tolerance. Acceptable values'
+                        ' are between 0 and 1 (inclusive).' % self.tolerance)
+            tmp = ImageChops.constant(diff, int(self.tolerance * 255)) \
+                    .convert('RGBA')
+            diff = ImageChops.subtract(diff, tmp)
+
+        bbox = diff.getbbox()
         if bbox:
             img = crop(img, bbox, self.sides)
 
