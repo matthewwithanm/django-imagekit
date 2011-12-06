@@ -8,7 +8,7 @@ from both the filesystem and the ORM.
 
 """
 from imagekit.lib import Image, ImageColor, ImageEnhance
-from imagekit.processors import resize
+from imagekit.processors import resize, crop
 
 
 RGBA_TRANSPARENCY_FORMATS = ['PNG']
