@@ -238,10 +238,11 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
             self.close()
             del self.file
 
-        try:
-            self.storage.delete(self.name)
-        except (NotImplementedError, IOError):
-            pass
+        if self.name and self.storage.exists(self.name):
+            try:
+                self.storage.delete(self.name)
+            except NotImplementedError:
+                pass
 
         # Delete the filesize cache.
         if hasattr(self, '_size'):
