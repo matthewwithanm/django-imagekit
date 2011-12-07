@@ -27,8 +27,7 @@ def flush_cache(apps, options):
                 print 'Flushing cache for "%s.%s"' % (app_label, model.__name__)
                 for obj in model.objects.order_by('-pk'):
                     for spec_file in get_spec_files(obj):
-                        if spec_file is not None:
-                            spec_file.delete(save=False)
+                        spec_file.delete(save=False)
                         if spec_file.field.pre_cache:
                             spec_file.generate(False)
     else:
