@@ -6,9 +6,19 @@ like different sizes (e.g. thumbnails) and black and white versions.
 Installation
 ------------
 
-1. ``pip install django-imagekit``
+1. Install `PIL`_ or `Pillow`_. If you're using `ImageField`s in Django, you
+   should have already done this.
+2. ``pip install django-imagekit``
    (or clone the source and put the imagekit module on your path)
-2. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's settings.py
+3. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's settings.py
+
+.. note:: If you've never seen Pillow before, it considers itself a
+   more-frequently updated "friendly" fork of PIL that's compatible with
+   setuptools. As such, it shares the same namespace as PIL does and is a
+   drop-in replacement.
+
+.. _`PIL`: http://pypi.python.org/pypi/PIL
+.. _`Pillow`: http://pypi.python.org/pypi/Pillow
 
 
 Adding Specs to a Model
@@ -23,7 +33,7 @@ of a model class::
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
         formatted_image = ImageSpec(image_field='original_image', format='JPEG',
-                quality=90)
+                options={'quality': 90})
 
 Accessing the spec through a model instance will create the image and return
 an ImageFile-like object (just like with a normal
@@ -51,7 +61,7 @@ your spec, you can expose different versions of the original image::
         original_image = models.ImageField(upload_to='photos')
         thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1),
                 resize.Crop(50, 50)], image_field='original_image',
-                format='JPEG', quality=90)
+                format='JPEG', options={'quality': 90})
 
 The ``thumbnail`` property will now return a cropped image::
 
@@ -77,7 +87,7 @@ implement a ``process()`` method::
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
         watermarked_image = ImageSpec([Watermark()], image_field='original_image',
-                format='JPEG', quality=90)
+                format='JPEG', options={'quality': 90})
 
 
 Admin

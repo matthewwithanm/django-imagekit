@@ -8,7 +8,7 @@ from both the filesystem and the ORM.
 
 """
 from imagekit.lib import Image, ImageColor, ImageEnhance
-from imagekit.processors import resize
+from imagekit.processors import resize, crop
 
 
 RGBA_TRANSPARENCY_FORMATS = ['PNG']
@@ -167,7 +167,7 @@ class Transpose(object):
             try:
                 orientation = img._getexif()[0x0112]
                 ops = self._EXIF_ORIENTATION_STEPS[orientation]
-            except (TypeError, AttributeError):
+            except (KeyError, TypeError, AttributeError):
                 ops = []
         else:
             ops = self.methods
@@ -187,10 +187,10 @@ class AutoConvert(object):
 
     def __init__(self, format):
         self.format = format
-        self.save_kwargs = {}
 
     def process(self, img):
         matte = False
+        self.save_kwargs = {}
         if img.mode == 'RGBA':
             if self.format in RGBA_TRANSPARENCY_FORMATS:
                 pass
@@ -227,7 +227,10 @@ class AutoConvert(object):
                 matte = True
         elif img.mode == 'P':
             if self.format in PALETTE_TRANSPARENCY_FORMATS:
-                self.save_kwargs['transparency'] = img.info['transparency']
+                try:
+                    self.save_kwargs['transparency'] = img.info['transparency']
+                except KeyError:
+                    pass
             elif self.format in RGBA_TRANSPARENCY_FORMATS:
                 # Currently PIL doesn't support any RGBA-mode formats that
                 # aren't also P-mode formats, so this will never happen.
@@ -249,5 +252,8 @@ class AutoConvert(object):
             bg = Image.new('RGBA', img.size, (255, 255, 255))
             bg.paste(img, img)
             img = bg.convert('RGB')
+
+        if self.format == 'JPEG':
+            self.save_kwargs['optimize'] = True
 
         return img

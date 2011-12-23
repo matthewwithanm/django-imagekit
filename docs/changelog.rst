@@ -1,16 +1,30 @@
 Changelog
 =========
 
+v1.1.0
+------
+
+- A ``SmartCrop`` resize processor was added. This allows an image to be
+  cropped based on the amount of entropy in the target image's histogram.
+
+- The ``quality`` argument was removed in favor of an ``options`` dictionary.
+  This is a more general solution which grants access to PIL's format-specific
+  options (including "quality", "progressive", and "optimize" for JPEGs).
+
+- The ``TrimColor`` processor was renamed to ``TrimBorderColor``.
+
+- The private ``_Resize`` class has been removed.
+
 v1.0.3
 ------
 
 - ``ImageSpec._create()`` was renamed ``ImageSpec.generate()`` and is now
   available in the public API.
 
-- Added an ``AutoConvert`` processor to encapsulate the trasnparency
+- Added an ``AutoConvert`` processor to encapsulate the transparency
   handling logic.
 
-- Refactored trasnaprency handling to be smarter, handleing a lot more of
+- Refactored transparency handling to be smarter, handling a lot more of
   the situations in which one would convert to or from formats that support
   transparency.
 
