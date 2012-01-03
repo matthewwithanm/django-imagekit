@@ -60,7 +60,7 @@ class Adjust(object):
         self.sharpness = sharpness
 
     def process(self, img):
-        img = img.convert('RGB')
+        original = img = img.convert('RGBA')
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(self, name.lower())
             if factor != 1.0:
@@ -68,6 +68,13 @@ class Adjust(object):
                     img = getattr(ImageEnhance, name)(img).enhance(factor)
                 except ValueError:
                     pass
+                else:
+                    # PIL's Color and Contrast filters both convert the image
+                    # to L mode, losing transparency info, so we put it back.
+                    # See https://github.com/jdriscoll/django-imagekit/issues/64
+                    if name in ('Color', 'Contrast'):
+                        img = Image.merge('RGBA', img.split()[:3] +
+                                original.split()[3:4])
         return img
 
 
