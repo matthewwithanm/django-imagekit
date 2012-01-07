@@ -1,7 +1,10 @@
-*.pyc
 *.db
+*.egg*
 *.orig
+*.pyc
 .DS_Store
-dist
-build
+.tox
 MANIFEST
+build
+dist
+/tests/media
