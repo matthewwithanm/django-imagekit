@@ -81,7 +81,7 @@ if they aren't up to the task, you can create your own. All you have to do is
 implement a ``process()`` method::
 
     class Watermark(object):
-        def process(self, image):
+        def process(self, image, instance, *args, **kwargs):
             # Code for adding the watermark goes here.
             return image
 

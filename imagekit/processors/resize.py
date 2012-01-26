@@ -52,7 +52,7 @@ class Crop(object):
         self.height = height
         self.anchor = anchor
 
-    def process(self, img):
+    def process(self, img, *args, **kwargs):
         cur_width, cur_height = img.size
         horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
                 Crop.CENTER]
@@ -93,7 +93,7 @@ class Fit(object):
         self.height = height
         self.upscale = upscale
 
-    def process(self, img):
+    def process(self, img, *args, **kwargs):
         cur_width, cur_height = img.size
         if not self.width is None and not self.height is None:
             ratio = min(float(self.width) / cur_width,
@@ -165,7 +165,7 @@ class SmartCrop(object):
         else:
             return slice, 0
     
-    def process(self, img):
+    def process(self, img, *args, **kwargs):
         source_x, source_y = img.size
         diff_x = int(source_x - min(source_x, self.width))
         diff_y = int(source_y - min(source_y, self.height))
