@@ -19,7 +19,7 @@ def crop(img, bbox, sides=Side.ALL):
     return img.crop(bbox)
 
 
-def detect_border_color(img, *args, **kwargs):
+def detect_border_color(img):
     mask = Image.new('1', img.size, 1)
     w, h = img.size[0] - 2, img.size[1] - 2
     if w > 0 and h > 0:
@@ -48,7 +48,7 @@ class TrimBorderColor(object):
         self.sides = sides
         self.tolerance = tolerance
 
-    def process(self, img, *args, **kwargs):
+    def process(self, img):
         source = img.convert('RGBA')
         border_color = self.color or tuple(detect_border_color(source))
         bg = Image.new('RGBA', img.size, border_color)

@@ -59,7 +59,7 @@ class Adjust(object):
         self.contrast = contrast
         self.sharpness = sharpness
 
-    def process(self, img, *args, **kwargs):
+    def process(self, img):
         original = img = img.convert('RGBA')
         for name in ['Color', 'Brightness', 'Contrast', 'Sharpness']:
             factor = getattr(self, name.lower())
@@ -87,7 +87,7 @@ class Reflection(object):
     size = 0.0
     opacity = 0.6
 
-    def process(self, img, *args, **kwargs):
+    def process(self, img):
         # Convert bgcolor string to RGB value.
         background_color = ImageColor.getrgb(self.background_color)
         # Handle palleted images.
@@ -169,7 +169,7 @@ class Transpose(object):
         if args:
             self.methods = args
 
-    def process(self, img, *args, **kwargs):
+    def process(self, img):
         if self.AUTO in self.methods:
             try:
                 orientation = img._getexif()[0x0112]
@@ -195,7 +195,7 @@ class AutoConvert(object):
     def __init__(self, format):
         self.format = format
 
-    def process(self, img, *args, **kwargs):
+    def process(self, img):
         matte = False
         self.save_kwargs = {}
         if img.mode == 'RGBA':
