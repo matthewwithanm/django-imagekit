@@ -24,9 +24,9 @@ class ProcessorPipeline(list):
         processed_image = ProcessorPipeline([ProcessorA(), ProcessorB()]).process(image)
 
     """
-    def process(self, img, instance):
+    def process(self, img):
         for proc in self:
-            img = proc.process(img, instance)
+            img = proc.process(img)
         return img
 
 
