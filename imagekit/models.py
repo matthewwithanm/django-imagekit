@@ -22,8 +22,11 @@ class _ImageSpecMixin(object):
         self.options = options
         self.autoconvert = autoconvert
 
-    def process(self, image, file):
-        processors = ProcessorPipeline(self.processors or [])
+    def process(self, image, file, instance):
+        processors = self.processors
+        if callable(processors):
+            processors = processors(instance=instance, file=file)
+        processors = ProcessorPipeline(processors or [])
         return processors.process(image.copy())
 
 
@@ -125,7 +128,7 @@ class _ImageSpecFileMixin(object):
     def _process_content(self, filename, content):
         img = open_image(content)
         original_format = img.format
-        img = self.field.process(img, self)
+        img = self.field.process(img, self, self.instance)
         options = dict(self.field.options or {})
 
         # Determine the format.
