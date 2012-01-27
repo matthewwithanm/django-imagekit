@@ -5,13 +5,14 @@ from StringIO import StringIO
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.fields.files import ImageFieldFile
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save, post_delete, post_init
 from django.utils.encoding import force_unicode, smart_str
 
-from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
+from imagekit.utils import img_to_fobj, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
 from imagekit.processors import ProcessorPipeline, AutoConvert
+from imagekit.signals import PostSaveHandler, PostDeleteHandler, PostInitHandler
 
 
 class _ImageSpecMixin(object):
@@ -40,7 +41,7 @@ class ImageSpec(_ImageSpecMixin):
 
     def __init__(self, processors=None, format=None, options={},
         image_field=None, pre_cache=False, storage=None, cache_to=None,
-        autoconvert=True):
+        autoconvert=True, on_save=None, on_delete=None):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -83,6 +84,8 @@ class ImageSpec(_ImageSpecMixin):
         self.pre_cache = pre_cache
         self.storage = storage
         self.cache_to = cache_to
+        self.on_save = on_save
+        self.on_delete = on_delete
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecDescriptor(self, name))
@@ -94,11 +97,13 @@ class ImageSpec(_ImageSpecMixin):
         ik.spec_file_names.append(name)
 
         # Connect to the signals only once for this class.
-        uid = '%s.%s' % (cls.__module__, cls.__name__)
-        post_save.connect(_post_save_handler, sender=cls,
-                dispatch_uid='%s_save' % uid)
-        post_delete.connect(_post_delete_handler, sender=cls,
-                dispatch_uid='%s.delete' % uid)
+        uid = "%s.%s" % (cls.__module__, cls.__name__)
+        post_init.connect(PostInitHandler(self.image_field), sender=cls,
+            dispatch_uid="%s_init" % uid)
+        post_save.connect(PostSaveHandler(self.on_delete), sender=cls,
+            dispatch_uid="%s_save" % uid)
+        post_delete.connect(PostDeleteHandler(self.on_delete), sender=cls,
+            dispatch_uid="%s.delete" % uid)
 
 
 def _get_suggested_extension(name, format):
@@ -172,13 +177,13 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
                     self.instance.__class__._meta.fields if \
                     isinstance(f, models.ImageField)]
             if len(image_fields) == 0:
-                raise Exception('%s does not define any ImageFields, so your' \
-                        ' %s ImageSpec has no image to act on.' % \
-                        (self.instance.__class__.__name__, self.attname))
+                raise Exception('%s does not define any ImageFields, so your '
+                        '%s ImageSpec has no image to act on.' % (
+                        self.instance.__class__.__name__, self.attname))
             elif len(image_fields) > 1:
-                raise Exception('%s defines multiple ImageFields, but you' \
-                        ' have not specified an image_field for your %s' \
-                        ' ImageSpec.' % (self.instance.__class__.__name__,
+                raise Exception('%s defines multiple ImageFields, but you have '
+                        'not specified an image_field for your %s '
+                        'ImageSpec.' % (self.instance.__class__.__name__,
                         self.attname))
             else:
                 field_file = image_fields[0]
@@ -268,7 +273,7 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
         """
         filepath, basename = os.path.split(path)
         filename = os.path.splitext(basename)[0]
-        new_name = '%s_%s%s' % (filename, specname, extension)
+        new_name = "%s_%s%s" % (filename, specname, extension)
         return os.path.join(os.path.join('cache', filepath), new_name)
 
     @property
@@ -322,24 +327,6 @@ class _ImageSpecDescriptor(object):
             return img_spec_file
 
 
-def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
-    if raw:
-        return
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        if not created:
-            spec_file.delete(save=False)
-        if spec_file.field.pre_cache:
-            spec_file.generate(False)
-
-
-def _post_delete_handler(sender, instance=None, **kwargs):
-    assert instance._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (instance._meta.object_name, instance._meta.pk.attname)
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        spec_file.delete(save=False)
-
-
 class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
@@ -381,7 +368,7 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
         filename = os.path.normpath(self.storage.get_valid_name(os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
         ext = _get_suggested_extension(filename, self.format)
-        return '%s%s' % (name, ext)
+        return "%s%s" % (name, ext)
 
 
 try:
