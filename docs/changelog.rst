@@ -1,6 +1,20 @@
 Changelog
 =========
 
+v1.1.0
+------
+
+- A ``SmartCrop`` resize processor was added. This allows an image to be
+  cropped based on the amount of entropy in the target image's histogram.
+
+- The ``quality`` argument was removed in favor of an ``options`` dictionary.
+  This is a more general solution which grants access to PIL's format-specific
+  options (including "quality", "progressive", and "optimize" for JPEGs).
+
+- The ``TrimColor`` processor was renamed to ``TrimBorderColor``.
+
+- The private ``_Resize`` class has been removed.
+
 v1.0.3
 ------
 
