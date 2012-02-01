@@ -1,3 +1,4 @@
+
 ImageKit is a Django app that helps you to add variations of uploaded images
 to your models. These variations are called "specs" and can include things
 like different sizes (e.g. thumbnails) and black and white versions.
@@ -6,8 +7,8 @@ like different sizes (e.g. thumbnails) and black and white versions.
 Installation
 ------------
 
-1. Install `PIL`_ or `Pillow`_. If you're using `ImageField`s in Django, you
-   should have already done this.
+1. Install `PIL`_ or `Pillow`_. If you're using an ``ImageField`` in Django,
+   you should have already done this.
 2. ``pip install django-imagekit``
    (or clone the source and put the imagekit module on your path)
 3. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's settings.py

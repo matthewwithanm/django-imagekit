@@ -22,8 +22,11 @@ class _ImageSpecMixin(object):
         self.options = options
         self.autoconvert = autoconvert
 
-    def process(self, image, file):
-        processors = ProcessorPipeline(self.processors or [])
+    def process(self, image, file, instance):
+        processors = self.processors
+        if callable(processors):
+            processors = processors(instance=instance, file=file)
+        processors = ProcessorPipeline(processors or [])
         return processors.process(image.copy())
 
 
@@ -125,7 +128,7 @@ class _ImageSpecFileMixin(object):
     def _process_content(self, filename, content):
         img = open_image(content)
         original_format = img.format
-        img = self.field.process(img, self)
+        img = self.field.process(img, self, self.instance)
         options = dict(self.field.options or {})
 
         # Determine the format.
@@ -169,13 +172,13 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
                     self.instance.__class__._meta.fields if \
                     isinstance(f, models.ImageField)]
             if len(image_fields) == 0:
-                raise Exception('{0} does not define any ImageFields, so your '
-                        '{1} ImageSpec has no image to act on.'.format(
-                        self.instance.__class__.__name__, self.attname))
+                raise Exception('%s does not define any ImageFields, so your' \
+                        ' %s ImageSpec has no image to act on.' % \
+                        (self.instance.__class__.__name__, self.attname))
             elif len(image_fields) > 1:
-                raise Exception('{0} defines multiple ImageFields, but you have '
-                        'not specified an image_field for your {1} '
-                        'ImageSpec.'.format(self.instance.__class__.__name__,
+                raise Exception('%s defines multiple ImageFields, but you' \
+                        ' have not specified an image_field for your %s' \
+                        ' ImageSpec.' % (self.instance.__class__.__name__,
                         self.attname))
             else:
                 field_file = image_fields[0]
@@ -267,7 +270,7 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
         """
         filepath, basename = os.path.split(path)
         filename = os.path.splitext(basename)[0]
-        new_name = '{0}_{1}{2}'.format(filename, specname, extension)
+        new_name = '%s_%s%s' % (filename, specname, extension)
         return os.path.join(os.path.join('cache', filepath), new_name)
 
     @property
@@ -380,7 +383,7 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
         filename = os.path.normpath(self.storage.get_valid_name(os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
         ext = _get_suggested_extension(filename, self.format)
-        return '{0}{1}'.format(name, ext)
+        return '%s%s' % (name, ext)
 
 
 try:
