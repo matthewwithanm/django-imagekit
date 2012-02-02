@@ -4,8 +4,7 @@ Flushes and re-caches all images under ImageKit.
 """
 from django.db.models.loading import cache
 from django.core.management.base import BaseCommand
-
-from imagekit.utils import get_spec_files
+from .utils import get_spec_files
 
 
 class Command(BaseCommand):
@@ -26,7 +25,7 @@ def flush_cache(apps, options):
             for model in [m for m in cache.get_models(app)]:
                 print 'Flushing cache for "%s.%s"' % (app_label, model.__name__)
                 for obj in model.objects.order_by('-pk'):
-                    for spec_file in get_spec_files(obj):
-                        spec_file.invalidate()
+                    for f in get_spec_files(obj):
+                        f.invalidate()
     else:
         print 'Please specify one or more app names'

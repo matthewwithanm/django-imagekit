@@ -8,7 +8,7 @@ from django.db.models.fields.files import ImageFieldFile
 from django.db.models.signals import post_save, post_delete
 from django.utils.encoding import force_unicode, smart_str
 
-from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
+from imagekit.utils import img_to_fobj, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
 from imagekit.processors import ProcessorPipeline, AutoConvert
@@ -29,6 +29,29 @@ class _ImageSpecMixin(object):
             processors = processors(instance=instance, file=file)
         processors = ProcessorPipeline(processors or [])
         return processors.process(image.copy())
+
+
+class BoundImageKitMeta(object):
+    def __init__(self, instance, spec_fields):
+        self.instance = instance
+        self.spec_fields = spec_fields
+
+    @property
+    def spec_files(self):
+        return [getattr(self.instance, n) for n in self.spec_fields]
+
+
+class ImageKitMeta(object):
+    def __init__(self, spec_fields=None):
+        self.spec_fields = spec_fields or []
+
+    def __get__(self, instance, owner):
+        if instance is None:
+            return self
+        else:
+            ik = BoundImageKitMeta(instance, self.spec_fields)
+            setattr(instance, '_ik', ik)
+            return ik
 
 
 class ImageSpec(_ImageSpecMixin):
@@ -97,9 +120,9 @@ class ImageSpec(_ImageSpecMixin):
         try:
             ik = getattr(cls, '_ik')
         except AttributeError:
-            ik = type('ImageKitMeta', (object,), {'spec_file_names': []})
+            ik = ImageKitMeta()
             setattr(cls, '_ik', ik)
-        ik.spec_file_names.append(name)
+        ik.spec_fields.append(name)
 
         # Connect to the signals only once for this class.
         uid = '%s.%s' % (cls.__module__, cls.__name__)
@@ -338,12 +361,12 @@ class _ImageSpecDescriptor(object):
 
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
     if not raw:
-        for spec_file in get_spec_files(instance):
+        for spec_file in instance._ik.spec_files:
             spec_file.invalidate()
 
 
 def _post_delete_handler(sender, instance=None, **kwargs):
-    for spec_file in get_spec_files(instance):
+    for spec_file in instance._ik.spec_files:
         spec_file.invalidate()
 
 

@@ -26,11 +26,9 @@ def img_to_fobj(img, format, **kwargs):
 
 def get_spec_files(instance):
     try:
-        ik = getattr(instance, '_ik')
+        return obj._ik.spec_files
     except AttributeError:
         return []
-    else:
-        return [getattr(instance, n) for n in ik.spec_file_names]
 
 
 def open_image(target):
