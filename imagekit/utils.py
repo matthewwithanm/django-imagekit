@@ -26,7 +26,7 @@ def img_to_fobj(img, format, **kwargs):
 
 def get_spec_files(instance):
     try:
-        return obj._ik.spec_files
+        return instance._ik.spec_files
     except AttributeError:
         return []
 
