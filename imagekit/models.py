@@ -12,6 +12,7 @@ from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
 from imagekit.processors import ProcessorPipeline, AutoConvert
+from .cachestate import get_default_cache_state_backend
 
 
 class _ImageSpecMixin(object):
@@ -39,8 +40,8 @@ class ImageSpec(_ImageSpecMixin):
     _upload_to_attr = 'cache_to'
 
     def __init__(self, processors=None, format=None, options={},
-        image_field=None, pre_cache=False, storage=None, cache_to=None,
-        autoconvert=True):
+        image_field=None, pre_cache=None, storage=None, cache_to=None,
+        autoconvert=True, cache_state_backend=None):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -53,8 +54,6 @@ class ImageSpec(_ImageSpecMixin):
             documentation for others.
         :param image_field: The name of the model property that contains the
             original image.
-        :param pre_cache: A boolean that specifies whether the image should
-            be generated immediately (True) or on demand (False).
         :param storage: A Django storage system to use to save the generated
             image.
         :param cache_to: Specifies the filename to use when saving the image
@@ -74,8 +73,15 @@ class ImageSpec(_ImageSpecMixin):
                     this extension, it's only a recommendation.
         :param autoconvert: Specifies whether the AutoConvert processor
             should be run before saving.
+        :param cache_state_backend: An object responsible for managing the state
+            of cached files. Defaults to an instance of
+            IMAGEKIT_DEFAULT_CACHE_STATE_BACKEND
 
         """
+
+        if pre_cache is not None:
+            raise Exception('The pre_cache argument has been removed in favor'
+                    ' of cache state backends.')
 
         _ImageSpecMixin.__init__(self, processors, format=format,
                 options=options, autoconvert=autoconvert)
@@ -83,6 +89,8 @@ class ImageSpec(_ImageSpecMixin):
         self.pre_cache = pre_cache
         self.storage = storage
         self.cache_to = cache_to
+        self.cache_state_backend = cache_state_backend or \
+                get_default_cache_state_backend()
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecDescriptor(self, name))
@@ -99,6 +107,12 @@ class ImageSpec(_ImageSpecMixin):
                 dispatch_uid='%s_save' % uid)
         post_delete.connect(_post_delete_handler, sender=cls,
                 dispatch_uid='%s.delete' % uid)
+
+        # Register the field with the cache_state_backend
+        try:
+            self.cache_state_backend.register_field(cls, self, name)
+        except AttributeError:
+            pass
 
 
 def _get_suggested_extension(name, format):
@@ -189,40 +203,40 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
 
     def _get_file(self):
-        self.generate()
+        self.validate()
         return super(ImageFieldFile, self).file
 
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
-    @property
-    def url(self):
-        self.generate()
-        return super(ImageFieldFile, self).url
+    def invalidate(self):
+        return self.field.cache_state_backend.invalidate(self)
 
-    def generate(self, lazy=True):
+    def validate(self):
+        return self.field.cache_state_backend.validate(self)
+
+    def generate(self):
         """
-        Generates a new image by running the processors on the source file.
-
-        Keyword Arguments:
-            lazy -- True if an already-existing image should be returned;
-                False if a new image should be created and the existing
-                one overwritten.
+        Generates a new image file by processing the source file and returns
+        the content of the result, ready for saving.
 
         """
-        if lazy and (getattr(self, '_file', None) or self.storage.exists(self.name)):
-            return
-
-        if self.source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
+        source_file = self.source_file
+        if source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file.
             try:
-                fp = self.source_file.storage.open(self.source_file.name)
+                fp = source_file.storage.open(source_file.name)
             except IOError:
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
 
             img, content = self._process_content(self.name, fp)
-            self.storage.save(self.name, content)
+            return content
+
+    @property
+    def url(self):
+        self.validate()
+        return super(ImageFieldFile, self).url
 
     def delete(self, save=False):
         """
@@ -323,21 +337,14 @@ class _ImageSpecDescriptor(object):
 
 
 def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
-    if raw:
-        return
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        if not created:
-            spec_file.delete(save=False)
-        if spec_file.field.pre_cache:
-            spec_file.generate(False)
+    if not raw:
+        for spec_file in get_spec_files(instance):
+            spec_file.invalidate()
 
 
 def _post_delete_handler(sender, instance=None, **kwargs):
-    assert instance._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (instance._meta.object_name, instance._meta.pk.attname)
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        spec_file.delete(save=False)
+    for spec_file in get_spec_files(instance):
+        spec_file.invalidate()
 
 
 class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
