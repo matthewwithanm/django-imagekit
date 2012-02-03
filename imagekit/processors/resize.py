@@ -80,24 +80,27 @@ class Fit(object):
     Resizes an image to fit within the specified dimensions.
 
     """
-    def __init__(self, width=None, height=None, upscale=None):
+    def __init__(self, width=None, height=None, upscale=None, mat_color=None):
         """
         :param width: The maximum width of the desired image.
         :param height: The maximum height of the desired image.
         :param upscale: A boolean value specifying whether the image should
             be enlarged if its dimensions are smaller than the target
             dimensions.
+        :param mat_color: If set, the target image size will be enforced and
+            the specified color will be used as background color to pad the image.
 
         """
         self.width = width
         self.height = height
         self.upscale = upscale
+        self.mat_color = mat_color
 
     def process(self, img):
         cur_width, cur_height = img.size
         if not self.width is None and not self.height is None:
             ratio = min(float(self.width) / cur_width,
-                        float(self.height) / cur_height)
+                    float(self.height) / cur_height)
         else:
             if self.width is None:
                 ratio = float(self.height) / cur_height
@@ -105,11 +108,13 @@ class Fit(object):
                 ratio = float(self.width) / cur_width
         new_dimensions = (int(round(cur_width * ratio)),
                           int(round(cur_height * ratio)))
-        if new_dimensions[0] > cur_width or \
-           new_dimensions[1] > cur_height:
-            if not self.upscale:
-                return img
-        img = img.resize(new_dimensions, Image.ANTIALIAS)
+        if (cur_width > new_dimensions[0] or cur_height > new_dimensions[1]) or \
+            self.upscale:
+                img = img.resize(new_dimensions, Image.ANTIALIAS)
+        if self.mat_color:
+            new_img = Image.new('RGBA', (self.width, self.height),  self.mat_color)
+            new_img.paste(img, ((self.width - img.size[0]) / 2, (self.height - img.size[1]) / 2))
+            return new_img
         return img
 
 
