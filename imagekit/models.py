@@ -231,6 +231,9 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
 
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
+    def clear(self):
+        return self.field.cache_state_backend.clear(self)
+
     def invalidate(self):
         return self.field.cache_state_backend.invalidate(self)
 
@@ -367,7 +370,7 @@ def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs
 
 def _post_delete_handler(sender, instance=None, **kwargs):
     for spec_file in instance._ik.spec_files:
-        spec_file.invalidate()
+        spec_file.clear()
 
 
 class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):

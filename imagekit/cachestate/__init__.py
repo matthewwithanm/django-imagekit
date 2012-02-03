@@ -23,6 +23,9 @@ class DefaultCacheStateBackend(object):
     def invalidate(self, file):
         file.delete(save=False)
 
+    def clear(self, file):
+        file.delete(save=False)
+
 
 _default_cache_state_backend = None
 
