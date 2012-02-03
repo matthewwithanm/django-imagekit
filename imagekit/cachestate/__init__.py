@@ -16,9 +16,7 @@ class DefaultCacheStateBackend(object):
 
         """
         if self.is_invalid(file):
-            content = file.generate()
-            if content:
-                file.storage.save(file.name, content)
+            file.generate(save=True)
 
     def invalidate(self, file):
         file.delete(save=False)

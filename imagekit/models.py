@@ -240,7 +240,7 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
     def validate(self):
         return self.field.cache_state_backend.validate(self)
 
-    def generate(self):
+    def generate(self, save=True):
         """
         Generates a new image file by processing the source file and returns
         the content of the result, ready for saving.
@@ -257,6 +257,10 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
             fp = StringIO(fp.read())
 
             img, content = self._process_content(self.name, fp)
+
+            if save:
+                self.storage.save(self.name, content)
+
             return content
 
     @property
