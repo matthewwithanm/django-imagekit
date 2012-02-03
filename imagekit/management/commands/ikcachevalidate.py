@@ -11,7 +11,7 @@ class Command(BaseCommand):
     can_import_settings = True
 
     option_list = BaseCommand.option_list + (
-        make_option('--force',
+        make_option('--force-revalidation',
             dest='force_revalidation',
             action='store_true',
             default=False,
