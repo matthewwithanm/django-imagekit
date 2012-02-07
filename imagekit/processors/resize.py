@@ -80,7 +80,7 @@ class Fit(object):
     Resizes an image to fit within the specified dimensions.
 
     """
-    def __init__(self, width=None, height=None, upscale=None, pad=None):
+    def __init__(self, width=None, height=None, upscale=None, pad=None, mat_color=None):
         """
         :param width: The maximum width of the desired image.
         :param height: The maximum height of the desired image.
@@ -89,12 +89,15 @@ class Fit(object):
             dimensions.
         :param pad: Fill the image with transparency to enforce the targeted
             size.
+        :param mat_color: Background color to use when filling image (only used
+            in conjunction with pad option)
 
         """
         self.width = width
         self.height = height
         self.upscale = upscale
         self.pad = pad
+        self.mat_color = mat_color if (mat_color is not None) else (255, 255, 255, 0)
 
     def process(self, img):
         cur_width, cur_height = img.size
@@ -112,7 +115,7 @@ class Fit(object):
             self.upscale:
                 img = img.resize(new_dimensions, Image.ANTIALIAS)
         if self.pad:
-            new_img = Image.new('RGBA', (self.width, self.height), (255, 255, 255, 0))
+            new_img = Image.new('RGBA', (self.width, self.height),  self.mat_color)
             new_img.paste(img, ((self.width - img.size[0]) / 2, (self.height - img.size[1]) / 2))
             return new_img
         return img
