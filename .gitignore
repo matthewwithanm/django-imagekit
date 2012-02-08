@@ -8,3 +8,4 @@ MANIFEST
 build
 dist
 /tests/media
+.idea/
