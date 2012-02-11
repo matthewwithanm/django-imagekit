@@ -11,7 +11,7 @@ class Cover(object):
     """
     Resizes the image to the smallest possible size that will entirely cover the
     provided dimensions. You probably won't be using this processor directly,
-    but it's used internally by ``Fill``.
+    but it's used internally by ``Fill`` and ``SmartFill``.
 
     """
     def __init__(self, width, height):
@@ -67,6 +67,22 @@ class Fill(object):
         img = Cover(self.width, self.height).process(img)
         return crop.Crop(self.width, self.height,
                 anchor=self.anchor).process(img)
+
+
+class SmartFill(object):
+    """
+    The ``SmartFill`` processor is identical to ``Fill``, except that it uses
+    entropy to crop the image instead of a user-specified anchor point.
+    Internally, it simply runs the ``resize.Cover`` and ``crop.SmartCrop``
+    processors in series.
+
+    """
+    def __init__(self, width, height):
+        self.width, self.height = width, height
+
+    def process(self, img):
+        img = Cover(self.width, self.height).process(img)
+        return crop.SmartCrop(self.width, self.height).process(img)
 
 
 class Crop(Fill):
