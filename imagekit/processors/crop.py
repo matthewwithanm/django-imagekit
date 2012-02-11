@@ -158,7 +158,7 @@ class Crop(object):
         x = int(float(trim_x) * float(anchor[0]))
         y = int(float(trim_y) * float(anchor[1]))
 
-        return img.crop((x, y, x + new_width, y + new_height))
+        return BasicCrop(x, y, new_width, new_height).process(img)
 
 
 class SmartCrop(object):
