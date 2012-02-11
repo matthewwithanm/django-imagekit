@@ -114,7 +114,7 @@ class Fit(object):
         if self.mat_color:
             new_img = Image.new('RGBA', (self.width, self.height),  self.mat_color)
             new_img.paste(img, ((self.width - img.size[0]) / 2, (self.height - img.size[1]) / 2))
-            return new_img
+            img = new_img
         return img
 
 
