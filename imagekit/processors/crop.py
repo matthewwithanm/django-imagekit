@@ -10,7 +10,7 @@ class Side(object):
     ALL = (TOP, RIGHT, BOTTOM, LEFT)
 
 
-def crop(img, bbox, sides=Side.ALL):
+def _crop(img, bbox, sides=Side.ALL):
     bbox = (
         bbox[0] if Side.LEFT in sides else 0,
         bbox[1] if Side.TOP in sides else 0,
@@ -67,7 +67,7 @@ class TrimBorderColor(object):
 
         bbox = diff.getbbox()
         if bbox:
-            img = crop(img, bbox, self.sides)
+            img = _crop(img, bbox, self.sides)
         return img
 
 
