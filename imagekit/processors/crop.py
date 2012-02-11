@@ -76,6 +76,13 @@ class BasicCrop(object):
 
     """
     def __init__(self, x, y, width, height):
+        """
+        :param x: The x position of the clipping box, in pixels.
+        :param y: The y position of the clipping box, in pixels.
+        :param width: The width position of the clipping box, in pixels.
+        :param height: The height position of the clipping box, in pixels.
+
+        """
         self.x = x
         self.y = y
         self.width = width
@@ -163,15 +170,20 @@ class Crop(object):
 
 class SmartCrop(object):
     """
-    Crop an image 'smartly' -- based on smart crop implementation from easy-thumbnails:
+    Crop an image to the specified dimensions, whittling away the parts of the
+    image with the least entropy.
 
+    Based on smart crop implementation from easy-thumbnails:
         https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L193
-
-    Smart cropping whittles away the parts of the image with the least entropy.
 
     """
 
     def __init__(self, width=None, height=None):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+
+        """
         self.width = width
         self.height = height
 

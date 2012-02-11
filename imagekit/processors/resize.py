@@ -9,6 +9,11 @@ class BasicResize(object):
 
     """
     def __init__(self, width, height):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+
+        """
         self.width = width
         self.height = height
 
@@ -24,6 +29,11 @@ class Cover(object):
 
     """
     def __init__(self, width, height):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+
+        """
         self.width, self.height = width, height
 
     def process(self, img):
@@ -87,6 +97,11 @@ class SmartFill(object):
 
     """
     def __init__(self, width, height):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+
+        """
         self.width, self.height = width, height
 
     def process(self, img):
@@ -113,8 +128,8 @@ class Fit(object):
         :param upscale: A boolean value specifying whether the image should
             be enlarged if its dimensions are smaller than the target
             dimensions.
-        :param mat_color: If set, the target image size will be enforced and
-            the specified color will be used as background color to pad the image.
+        :param mat_color: If set, the target image size will be enforced and the
+            specified color will be used as a background color to pad the image.
 
         """
         self.width = width
