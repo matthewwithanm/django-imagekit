@@ -3,8 +3,17 @@ from . import crop
 import warnings
 
 
-class Resize(object):
-    pass
+class BasicResize(object):
+    """
+    Resizes an image to the specified width and height.
+
+    """
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def process(self, img):
+        return img.resize((self.width, self.height), Image.ANTIALIAS)
 
 
 class Cover(object):
