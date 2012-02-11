@@ -141,7 +141,6 @@ class Crop(object):
         cur_width, cur_height = img.size
         horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
                 Crop.CENTER]
-        print horizontal_anchor, self.width, cur_width
         crop_x, crop_y = (abs(self.width - cur_width), abs(self.height - cur_height))
         x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
         box_left, box_right = {
