@@ -32,7 +32,7 @@ class Cover(object):
                 float(self.height) / original_height)
         new_width, new_height = (int(original_width * ratio),
                 int(original_height * ratio))
-        return img.resize((new_width, new_height), Image.ANTIALIAS)
+        return BasicResize(new_width, new_height).process(img)
 
 
 class Fill(object):
@@ -136,7 +136,8 @@ class Fit(object):
                           int(round(cur_height * ratio)))
         if (cur_width > new_dimensions[0] or cur_height > new_dimensions[1]) or \
             self.upscale:
-                img = img.resize(new_dimensions, Image.ANTIALIAS)
+                img = BasicResize(new_dimensions[0],
+                        new_dimensions[1]).process(img)
         if self.mat_color:
             new_img = Image.new('RGBA', (self.width, self.height),  self.mat_color)
             new_img.paste(img, ((self.width - img.size[0]) / 2, (self.height - img.size[1]) / 2))
