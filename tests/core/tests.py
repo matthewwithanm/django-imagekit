@@ -11,7 +11,7 @@ from imagekit import utils
 from imagekit.lib import Image
 from imagekit.models import ImageSpecField
 from imagekit.processors import Adjust
-from imagekit.processors.resize import Crop
+from imagekit.processors.resize import Fill
 from imagekit.processors.crop import SmartCrop
 
 
@@ -19,7 +19,7 @@ class Photo(models.Model):
     original_image = models.ImageField(upload_to='photos')
 
     thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            Crop(50, 50)], image_field='original_image', format='JPEG',
+            Fill(50, 50)], image_field='original_image', format='JPEG',
             options={'quality': 90})
 
     smartcropped_thumbnail = ImageSpecField([Adjust(contrast=1.2,

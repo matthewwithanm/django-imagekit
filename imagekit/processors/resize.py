@@ -3,7 +3,7 @@ from .crop import SmartCrop as _SmartCrop
 import warnings
 
 
-class Crop(object):
+class Fill(object):
     """
     Resizes an image , cropping it to the specified width and height.
 
@@ -37,15 +37,15 @@ class Crop(object):
         :param anchor: Specifies which part of the image should be retained
             when cropping. Valid values are:
 
-            - Crop.TOP_LEFT
-            - Crop.TOP
-            - Crop.TOP_RIGHT
-            - Crop.LEFT
-            - Crop.CENTER
-            - Crop.RIGHT
-            - Crop.BOTTOM_LEFT
-            - Crop.BOTTOM
-            - Crop.BOTTOM_RIGHT
+            - Fill.TOP_LEFT
+            - Fill.TOP
+            - Fill.TOP_RIGHT
+            - Fill.LEFT
+            - Fill.CENTER
+            - Fill.RIGHT
+            - Fill.BOTTOM_LEFT
+            - Fill.BOTTOM
+            - Fill.BOTTOM_RIGHT
 
         """
         self.width = width
@@ -54,8 +54,8 @@ class Crop(object):
 
     def process(self, img):
         cur_width, cur_height = img.size
-        horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
-                Crop.CENTER]
+        horizontal_anchor, vertical_anchor = Fill._ANCHOR_PTS[self.anchor or \
+                Fill.CENTER]
         ratio = max(float(self.width) / cur_width, float(self.height) / cur_height)
         resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
         crop_x, crop_y = (abs(self.width - resize_x), abs(self.height - resize_y))
@@ -73,6 +73,13 @@ class Crop(object):
         box = (box_left, box_upper, box_right, box_lower)
         img = img.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
         return img
+
+
+class Crop(Fill):
+    def __init__(self, *args, **kwargs):
+        warnings.warn('`imagekit.processors.resize.Crop` has been renamed to'
+                '`imagekit.processors.resize.Fill`.', DeprecationWarning)
+        super(Crop, self).__init__(*args, **kwargs)
 
 
 class Fit(object):
