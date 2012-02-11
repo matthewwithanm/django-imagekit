@@ -5,13 +5,14 @@ from StringIO import StringIO
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.fields.files import ImageFieldFile
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.encoding import force_unicode, smart_str
 
-from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
+from imagekit.utils import img_to_fobj, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
 from imagekit.processors import ProcessorPipeline, AutoConvert
+from .cachestate import get_default_cache_state_backend
 
 
 class _ImageSpecMixin(object):
@@ -30,6 +31,29 @@ class _ImageSpecMixin(object):
         return processors.process(image.copy())
 
 
+class BoundImageKitMeta(object):
+    def __init__(self, instance, spec_fields):
+        self.instance = instance
+        self.spec_fields = spec_fields
+
+    @property
+    def spec_files(self):
+        return [getattr(self.instance, n) for n in self.spec_fields]
+
+
+class ImageKitMeta(object):
+    def __init__(self, spec_fields=None):
+        self.spec_fields = spec_fields or []
+
+    def __get__(self, instance, owner):
+        if instance is None:
+            return self
+        else:
+            ik = BoundImageKitMeta(instance, self.spec_fields)
+            setattr(instance, '_ik', ik)
+            return ik
+
+
 class ImageSpec(_ImageSpecMixin):
     """
     The heart and soul of the ImageKit library, ImageSpec allows you to add
@@ -39,8 +63,8 @@ class ImageSpec(_ImageSpecMixin):
     _upload_to_attr = 'cache_to'
 
     def __init__(self, processors=None, format=None, options={},
-        image_field=None, pre_cache=False, storage=None, cache_to=None,
-        autoconvert=True):
+        image_field=None, pre_cache=None, storage=None, cache_to=None,
+        autoconvert=True, cache_state_backend=None):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -53,8 +77,6 @@ class ImageSpec(_ImageSpecMixin):
             documentation for others.
         :param image_field: The name of the model property that contains the
             original image.
-        :param pre_cache: A boolean that specifies whether the image should
-            be generated immediately (True) or on demand (False).
         :param storage: A Django storage system to use to save the generated
             image.
         :param cache_to: Specifies the filename to use when saving the image
@@ -74,8 +96,15 @@ class ImageSpec(_ImageSpecMixin):
                     this extension, it's only a recommendation.
         :param autoconvert: Specifies whether the AutoConvert processor
             should be run before saving.
+        :param cache_state_backend: An object responsible for managing the state
+            of cached files. Defaults to an instance of
+            IMAGEKIT_DEFAULT_CACHE_STATE_BACKEND
 
         """
+
+        if pre_cache is not None:
+            raise Exception('The pre_cache argument has been removed in favor'
+                    ' of cache state backends.')
 
         _ImageSpecMixin.__init__(self, processors, format=format,
                 options=options, autoconvert=autoconvert)
@@ -83,22 +112,62 @@ class ImageSpec(_ImageSpecMixin):
         self.pre_cache = pre_cache
         self.storage = storage
         self.cache_to = cache_to
+        self.cache_state_backend = cache_state_backend or \
+                get_default_cache_state_backend()
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecDescriptor(self, name))
         try:
             ik = getattr(cls, '_ik')
         except AttributeError:
-            ik = type('ImageKitMeta', (object,), {'spec_file_names': []})
+            ik = ImageKitMeta()
             setattr(cls, '_ik', ik)
-        ik.spec_file_names.append(name)
+        ik.spec_fields.append(name)
 
         # Connect to the signals only once for this class.
         uid = '%s.%s' % (cls.__module__, cls.__name__)
-        post_save.connect(_post_save_handler, sender=cls,
-                dispatch_uid='%s_save' % uid)
-        post_delete.connect(_post_delete_handler, sender=cls,
-                dispatch_uid='%s.delete' % uid)
+        post_init.connect(ImageSpec._post_init_receiver, sender=cls,
+                dispatch_uid=uid)
+        post_save.connect(ImageSpec._post_save_receiver, sender=cls,
+                dispatch_uid=uid)
+        post_delete.connect(ImageSpec._post_delete_receiver, sender=cls,
+                dispatch_uid=uid)
+
+        # Register the field with the cache_state_backend
+        try:
+            self.cache_state_backend.register_field(cls, self, name)
+        except AttributeError:
+            pass
+
+    @staticmethod
+    def _post_save_receiver(sender, instance=None, created=False, raw=False, **kwargs):
+        if not raw:
+            old_hashes = instance._ik._source_hashes.copy()
+            new_hashes = ImageSpec._update_source_hashes(instance)
+            for attname in instance._ik.spec_fields:
+                if old_hashes[attname] != new_hashes[attname]:
+                    getattr(instance, attname).invalidate()
+
+    @staticmethod
+    def _update_source_hashes(instance):
+        """
+        Stores hashes of the source image files so that they can be compared
+        later to see whether the source image has changed (and therefore whether
+        the spec file needs to be regenerated).
+
+        """
+        instance._ik._source_hashes = dict((f.attname, hash(f.source_file)) \
+                for f in instance._ik.spec_files)
+        return instance._ik._source_hashes
+
+    @staticmethod
+    def _post_delete_receiver(sender, instance=None, **kwargs):
+        for spec_file in instance._ik.spec_files:
+            spec_file.clear()
+
+    @staticmethod
+    def _post_init_receiver(sender, instance, **kwargs):
+        ImageSpec._update_source_hashes(instance)
 
 
 def _get_suggested_extension(name, format):
@@ -189,40 +258,47 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
 
     def _get_file(self):
-        self.generate()
+        self.validate()
         return super(ImageFieldFile, self).file
 
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
-    @property
-    def url(self):
-        self.generate()
-        return super(ImageFieldFile, self).url
+    def clear(self):
+        return self.field.cache_state_backend.clear(self)
 
-    def generate(self, lazy=True):
+    def invalidate(self):
+        return self.field.cache_state_backend.invalidate(self)
+
+    def validate(self):
+        return self.field.cache_state_backend.validate(self)
+
+    def generate(self, save=True):
         """
-        Generates a new image by running the processors on the source file.
-
-        Keyword Arguments:
-            lazy -- True if an already-existing image should be returned;
-                False if a new image should be created and the existing
-                one overwritten.
+        Generates a new image file by processing the source file and returns
+        the content of the result, ready for saving.
 
         """
-        if lazy and (getattr(self, '_file', None) or self.storage.exists(self.name)):
-            return
-
-        if self.source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
+        source_file = self.source_file
+        if source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file.
             try:
-                fp = self.source_file.storage.open(self.source_file.name)
+                fp = source_file.storage.open(source_file.name)
             except IOError:
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
 
             img, content = self._process_content(self.name, fp)
-            self.storage.save(self.name, content)
+
+            if save:
+                self.storage.save(self.name, content)
+
+            return content
+
+    @property
+    def url(self):
+        self.validate()
+        return super(ImageFieldFile, self).url
 
     def delete(self, save=False):
         """
@@ -320,24 +396,6 @@ class _ImageSpecDescriptor(object):
             img_spec_file = ImageSpecFile(instance, self.field, self.attname)
             setattr(instance, self.attname, img_spec_file)
             return img_spec_file
-
-
-def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
-    if raw:
-        return
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        if not created:
-            spec_file.delete(save=False)
-        if spec_file.field.pre_cache:
-            spec_file.generate(False)
-
-
-def _post_delete_handler(sender, instance=None, **kwargs):
-    assert instance._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (instance._meta.object_name, instance._meta.pk.attname)
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        spec_file.delete(save=False)
 
 
 class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
