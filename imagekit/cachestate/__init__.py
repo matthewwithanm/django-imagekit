@@ -2,7 +2,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.utils.importlib import import_module
 
 
-class DefaultCacheStateBackend(object):
+class PessimisticCacheStateBackend(object):
 
     def is_invalid(self, file):
         if not getattr(file, '_file', None):
