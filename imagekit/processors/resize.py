@@ -7,6 +7,25 @@ class Resize(object):
     pass
 
 
+class Cover(object):
+    """
+    Resizes the image to the smallest possible size that will entirely cover the
+    provided dimensions. You probably won't be using this processor directly,
+    but it's used internally by ``Fill``.
+
+    """
+    def __init__(self, width, height):
+        self.width, self.height = width, height
+
+    def process(self, img):
+        original_width, original_height = img.size
+        ratio = max(float(self.width) / original_width,
+                float(self.height) / original_height)
+        new_width, new_height = (int(original_width * ratio),
+                int(original_height * ratio))
+        return img.resize((new_width, new_height), Image.ANTIALIAS)
+
+
 class Fill(object):
     """
     Resizes an image , cropping it to the exact specified width and height.
@@ -45,12 +64,7 @@ class Fill(object):
         self.anchor = anchor
 
     def process(self, img):
-        original_width, original_height = img.size
-        ratio = max(float(self.width) / original_width,
-                float(self.height) / original_height)
-        new_width, new_height = (int(original_width * ratio),
-                int(original_height * ratio))
-        img = img.resize((new_width, new_height), Image.ANTIALIAS)
+        img = Cover(self.width, self.height).process(img)
         return crop.Crop(self.width, self.height,
                 anchor=self.anchor).process(img)
 
