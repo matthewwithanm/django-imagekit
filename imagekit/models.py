@@ -5,7 +5,7 @@ from StringIO import StringIO
 from django.core.files.base import ContentFile
 from django.db import models
 from django.db.models.fields.files import ImageFieldFile
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.encoding import force_unicode, smart_str
 
 from imagekit.utils import img_to_fobj, open_image, \
@@ -126,16 +126,48 @@ class ImageSpec(_ImageSpecMixin):
 
         # Connect to the signals only once for this class.
         uid = '%s.%s' % (cls.__module__, cls.__name__)
-        post_save.connect(_post_save_handler, sender=cls,
-                dispatch_uid='%s_save' % uid)
-        post_delete.connect(_post_delete_handler, sender=cls,
-                dispatch_uid='%s.delete' % uid)
+        post_init.connect(ImageSpec._post_init_receiver, sender=cls,
+                dispatch_uid=uid)
+        post_save.connect(ImageSpec._post_save_receiver, sender=cls,
+                dispatch_uid=uid)
+        post_delete.connect(ImageSpec._post_delete_receiver, sender=cls,
+                dispatch_uid=uid)
 
         # Register the field with the cache_state_backend
         try:
             self.cache_state_backend.register_field(cls, self, name)
         except AttributeError:
             pass
+
+    @staticmethod
+    def _post_save_receiver(sender, instance=None, created=False, raw=False, **kwargs):
+        if not raw:
+            old_hashes = instance._ik._source_hashes.copy()
+            new_hashes = ImageSpec._update_source_hashes(instance)
+            for attname in instance._ik.spec_fields:
+                if old_hashes[attname] != new_hashes[attname]:
+                    getattr(instance, attname).invalidate()
+
+    @staticmethod
+    def _update_source_hashes(instance):
+        """
+        Stores hashes of the source image files so that they can be compared
+        later to see whether the source image has changed (and therefore whether
+        the spec file needs to be regenerated).
+
+        """
+        instance._ik._source_hashes = dict((f.attname, hash(f.source_file)) \
+                for f in instance._ik.spec_files)
+        return instance._ik._source_hashes
+
+    @staticmethod
+    def _post_delete_receiver(sender, instance=None, **kwargs):
+        for spec_file in instance._ik.spec_files:
+            spec_file.clear()
+
+    @staticmethod
+    def _post_init_receiver(sender, instance, **kwargs):
+        ImageSpec._update_source_hashes(instance)
 
 
 def _get_suggested_extension(name, format):
@@ -364,17 +396,6 @@ class _ImageSpecDescriptor(object):
             img_spec_file = ImageSpecFile(instance, self.field, self.attname)
             setattr(instance, self.attname, img_spec_file)
             return img_spec_file
-
-
-def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
-    if not raw:
-        for spec_file in instance._ik.spec_files:
-            spec_file.invalidate()
-
-
-def _post_delete_handler(sender, instance=None, **kwargs):
-    for spec_file in instance._ik.spec_files:
-        spec_file.clear()
 
 
 class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
