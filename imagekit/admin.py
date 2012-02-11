@@ -12,7 +12,7 @@ class AdminThumbnail(object):
 
     def __init__(self, image_field, template=None):
         """
-        :param image_field: The name of the ImageField or ImageSpec on the
+        :param image_field: The name of the ImageField or ImageSpecField on the
             model to use for the thumbnail.
         :param template: The template with which to render the thumbnail
 

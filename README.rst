@@ -29,11 +29,11 @@ Much like ``django.db.models.ImageField``, Specs are defined as properties
 of a model class::
 
     from django.db import models
-    from imagekit.models import ImageSpec
+    from imagekit.models import ImageSpecField
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
-        formatted_image = ImageSpec(image_field='original_image', format='JPEG',
+        formatted_image = ImageSpecField(image_field='original_image', format='JPEG',
                 options={'quality': 90})
 
 Accessing the spec through a model instance will create the image and return
@@ -44,7 +44,7 @@ an ImageFile-like object (just like with a normal
     photo.original_image.url # > '/media/photos/birthday.tiff'
     photo.formatted_image.url # > '/media/cache/photos/birthday_formatted_image.jpeg'
 
-Check out ``imagekit.models.ImageSpec`` for more information.
+Check out ``imagekit.models.ImageSpecField`` for more information.
 
 
 Processors
@@ -55,12 +55,12 @@ something to it, and return the result. By providing a list of processors to
 your spec, you can expose different versions of the original image::
 
     from django.db import models
-    from imagekit.models import ImageSpec
+    from imagekit.models import ImageSpecField
     from imagekit.processors import resize, Adjust
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
-        thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1),
+        thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
                 resize.Crop(50, 50)], image_field='original_image',
                 format='JPEG', options={'quality': 90})
 
@@ -87,7 +87,7 @@ implement a ``process()`` method::
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
-        watermarked_image = ImageSpec([Watermark()], image_field='original_image',
+        watermarked_image = ImageSpecField([Watermark()], image_field='original_image',
                 format='JPEG', options={'quality': 90})
 
 

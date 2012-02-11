@@ -186,7 +186,7 @@ class Transpose(object):
 class AutoConvert(object):
     """A processor that does some common-sense conversions based on the target
     format. This includes things like preserving transparency and quantizing.
-    This processors is used automatically by ``ImageSpec`` and
+    This processors is used automatically by ``ImageSpecField`` and
     ``ProcessedImageField`` immediately before saving the image unless you
     specify ``autoconvert=False``.
 

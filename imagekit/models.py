@@ -12,9 +12,10 @@ from imagekit.utils import img_to_fobj, get_spec_files, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
 from imagekit.processors import ProcessorPipeline, AutoConvert
+import warnings
 
 
-class _ImageSpecMixin(object):
+class _ImageSpecFieldMixin(object):
     def __init__(self, processors=None, format=None, options={},
             autoconvert=True):
         self.processors = processors
@@ -30,9 +31,9 @@ class _ImageSpecMixin(object):
         return processors.process(image.copy())
 
 
-class ImageSpec(_ImageSpecMixin):
+class ImageSpecField(_ImageSpecFieldMixin):
     """
-    The heart and soul of the ImageKit library, ImageSpec allows you to add
+    The heart and soul of the ImageKit library, ImageSpecField allows you to add
     variants of uploaded images to your models.
 
     """
@@ -44,7 +45,7 @@ class ImageSpec(_ImageSpecMixin):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
-            ImageSpec will try to guess the appropriate format based on the
+            ImageSpecField will try to guess the appropriate format based on the
             extension of the filename and the format of the input image.
         :param options: A dictionary that will be passed to PIL's
             ``Image.save()`` method as keyword arguments. Valid options vary
@@ -77,7 +78,7 @@ class ImageSpec(_ImageSpecMixin):
 
         """
 
-        _ImageSpecMixin.__init__(self, processors, format=format,
+        _ImageSpecFieldMixin.__init__(self, processors, format=format,
                 options=options, autoconvert=autoconvert)
         self.image_field = image_field
         self.pre_cache = pre_cache
@@ -85,7 +86,7 @@ class ImageSpec(_ImageSpecMixin):
         self.cache_to = cache_to
 
     def contribute_to_class(self, cls, name):
-        setattr(cls, name, _ImageSpecDescriptor(self, name))
+        setattr(cls, name, _ImageSpecFieldDescriptor(self, name))
         try:
             ik = getattr(cls, '_ik')
         except AttributeError:
@@ -99,6 +100,13 @@ class ImageSpec(_ImageSpecMixin):
                 dispatch_uid='%s_save' % uid)
         post_delete.connect(_post_delete_handler, sender=cls,
                 dispatch_uid='%s.delete' % uid)
+
+
+class ImageSpec(ImageSpecField):
+    def __init__(self, *args, **kwargs):
+        warnings.warn('ImageSpec has been renamed to ImageSpecField. Please'
+                ' use that instead.', DeprecationWarning)
+        super(ImageSpec, self).__init__(*args, **kwargs)
 
 
 def _get_suggested_extension(name, format):
@@ -124,7 +132,7 @@ def _get_suggested_extension(name, format):
     return extension
 
 
-class _ImageSpecFileMixin(object):
+class _ImageSpecFieldFileMixin(object):
     def _process_content(self, filename, content):
         img = open_image(content)
         original_format = img.format
@@ -156,7 +164,7 @@ class _ImageSpecFileMixin(object):
         return img, content
 
 
-class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
+class ImageSpecFieldFile(_ImageSpecFieldFileMixin, ImageFieldFile):
     def __init__(self, instance, field, attname):
         ImageFieldFile.__init__(self, instance, field, None)
         self.attname = attname
@@ -173,12 +181,12 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
                     isinstance(f, models.ImageField)]
             if len(image_fields) == 0:
                 raise Exception('%s does not define any ImageFields, so your' \
-                        ' %s ImageSpec has no image to act on.' % \
+                        ' %s ImageSpecField has no image to act on.' % \
                         (self.instance.__class__.__name__, self.attname))
             elif len(image_fields) > 1:
                 raise Exception('%s defines multiple ImageFields, but you' \
                         ' have not specified an image_field for your %s' \
-                        ' ImageSpec.' % (self.instance.__class__.__name__,
+                        ' ImageSpecField.' % (self.instance.__class__.__name__,
                         self.attname))
             else:
                 field_file = image_fields[0]
@@ -275,7 +283,7 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
     def name(self):
         """
         Specifies the filename that the cached image will use. The user can
-        control this by providing a `cache_to` method to the ImageSpec.
+        control this by providing a `cache_to` method to the ImageSpecField.
 
         """
         name = getattr(self, '_name', None)
@@ -303,12 +311,12 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
     def name(self, value):
         # TODO: Figure out a better way to handle this. We really don't want
         # to allow anybody to set the name, but ``File.__init__`` (which is
-        # called by ``ImageSpecFile.__init__``) does, so we have to allow it
-        # at least that one time.
+        # called by ``ImageSpecFieldFile.__init__``) does, so we have to allow
+        # it at least that one time.
         pass
 
 
-class _ImageSpecDescriptor(object):
+class _ImageSpecFieldDescriptor(object):
     def __init__(self, field, attname):
         self.attname = attname
         self.field = field
@@ -317,7 +325,8 @@ class _ImageSpecDescriptor(object):
         if instance is None:
             return self.field
         else:
-            img_spec_file = ImageSpecFile(instance, self.field, self.attname)
+            img_spec_file = ImageSpecFieldFile(instance, self.field,
+                    self.attname)
             setattr(instance, self.attname, img_spec_file)
             return img_spec_file
 
@@ -340,14 +349,14 @@ def _post_delete_handler(sender, instance=None, **kwargs):
         spec_file.delete(save=False)
 
 
-class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
+class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFieldFileMixin):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
         img, content = self._process_content(new_filename, content)
         return super(ProcessedImageFieldFile, self).save(name, content, save)
 
 
-class ProcessedImageField(models.ImageField, _ImageSpecMixin):
+class ProcessedImageField(models.ImageField, _ImageSpecFieldMixin):
     """
     ProcessedImageField is an ImageField that runs processors on the uploaded
     image *before* saving it to storage. This is in contrast to specs, which
@@ -365,14 +374,14 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
         as the ``processors``, ``format``, and ``options`` arguments of
-        :class:`imagekit.models.ImageSpec`.
+        :class:`imagekit.models.ImageSpecField`.
 
         """
         if 'quality' in kwargs:
             raise Exception('The "quality" keyword argument has been'
                     """ deprecated. Use `options={'quality': %s}` instead.""" \
                     % kwargs['quality'])
-        _ImageSpecMixin.__init__(self, processors, format=format,
+        _ImageSpecFieldMixin.__init__(self, processors, format=format,
                 options=options, autoconvert=autoconvert)
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
