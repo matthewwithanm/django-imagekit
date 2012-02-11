@@ -132,30 +132,35 @@ class Crop(object):
             - Crop.BOTTOM
             - Crop.BOTTOM_RIGHT
 
+            You may also pass a tuple that indicates the percentages of excess
+            to be trimmed from each dimension. For example, ``(0, 0)``
+            corresponds to "top left", ``(0.5, 0.5)`` to "center" and ``(1, 1)``
+            to "bottom right". This is basically the same as using percentages
+            in CSS background positions.
+
         """
         self.width = width
         self.height = height
         self.anchor = anchor
 
     def process(self, img):
-        cur_width, cur_height = img.size
-        horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
-                Crop.CENTER]
-        crop_x, crop_y = (abs(self.width - cur_width), abs(self.height - cur_height))
-        x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
-        box_left, box_right = {
-            0: (0, self.width),
-            0.5: (int(x_diff), int(x_diff + self.width)),
-            1: (int(crop_x), int(cur_width)),
-        }[horizontal_anchor]
-        box_upper, box_lower = {
-            0: (0, self.height),
-            0.5: (int(y_diff), int(y_diff + self.height)),
-            1: (int(crop_y), int(cur_height)),
-        }[vertical_anchor]
-        box = (box_left, box_upper, box_right, box_lower)
-        img = img.crop(box)
-        return img
+        original_width, original_height = img.size
+        new_width, new_height = min(original_width, self.width), \
+                min(original_height, self.height)
+        trim_x, trim_y = original_width - new_width, \
+                original_height - new_height
+
+        # If the user passed in one of the string values, convert it to a
+        # percentage tuple.
+        if self.anchor in Crop._ANCHOR_PTS.keys():
+            anchor = Crop._ANCHOR_PTS[self.anchor]
+        else:
+            anchor = self.anchor
+
+        x = int(float(trim_x) * float(anchor[0]))
+        y = int(float(trim_y) * float(anchor[1]))
+
+        return img.crop((x, y, x + new_width, y + new_height))
 
 
 class SmartCrop(object):
