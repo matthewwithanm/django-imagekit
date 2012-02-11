@@ -152,10 +152,9 @@ class Crop(object):
 
         # If the user passed in one of the string values, convert it to a
         # percentage tuple.
-        if self.anchor in Crop._ANCHOR_PTS.keys():
-            anchor = Crop._ANCHOR_PTS[self.anchor]
-        else:
-            anchor = self.anchor
+        anchor = self.anchor or Crop.CENTER
+        if anchor in Crop._ANCHOR_PTS.keys():
+            anchor = Crop._ANCHOR_PTS[anchor]
 
         x = int(float(trim_x) * float(anchor[0]))
         y = int(float(trim_y) * float(anchor[1]))
