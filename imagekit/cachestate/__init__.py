@@ -3,6 +3,11 @@ from django.utils.importlib import import_module
 
 
 class PessimisticCacheStateBackend(object):
+    """
+    A very safe cache state backend. Guarantees that files will always be
+    available, but at the cost of hitting the storage backend.
+
+    """
 
     def is_invalid(self, file):
         if not getattr(file, '_file', None):
