@@ -197,14 +197,16 @@ class ImageSpecFieldFile(_ImageSpecFieldFileMixin, ImageFieldFile):
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
 
     def _get_file(self):
-        self.generate()
+        if not self.field.pre_cache:
+            self.generate()
         return super(ImageFieldFile, self).file
 
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
     @property
     def url(self):
-        self.generate()
+        if not self.field.pre_cache:
+            self.generate()
         return super(ImageFieldFile, self).url
 
     def generate(self, lazy=True):
