@@ -75,16 +75,15 @@ class BasicCrop(object):
     """Crops an image to the specified rectangular region.
 
     """
-    def __init__(self, left, top, right, bottom):
-        self.left = left
-        self.top = top
-        self.right = right
-        self.bottom = bottom
+    def __init__(self, x, y, width, height):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
 
     def process(self, img):
-        box = (self.left, self.top, self.right, self.bottom)
-        img = img.crop(box)
-        return img
+        box = (self.x, self.y, self.x + self.width, self.y + self.height)
+        return img.crop(box)
 
 
 class Crop(object):
