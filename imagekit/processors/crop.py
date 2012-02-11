@@ -68,9 +68,94 @@ class TrimBorderColor(object):
         bbox = diff.getbbox()
         if bbox:
             img = crop(img, bbox, self.sides)
-
         return img
 
+class BasicCrop(object):
+    """Crops an image to the specified rectangular region.
+    
+    """
+    def __init__(self, left, top, right, bottom):
+        self.left = left
+        self.top = top
+        self.right = right
+        self.bottom = bottom
+
+    def process(self, img):
+        box = (self.left, self.top, self.right, self.bottom)
+        img = img.crop(box)
+        return img
+
+class Crop(object):
+    """
+    Crops an image , cropping it to the specified width and height
+    relative to the anchor.
+
+    """
+    TOP_LEFT = 'tl'
+    TOP = 't'
+    TOP_RIGHT = 'tr'
+    BOTTOM_LEFT = 'bl'
+    BOTTOM = 'b'
+    BOTTOM_RIGHT = 'br'
+    CENTER = 'c'
+    LEFT = 'l'
+    RIGHT = 'r'
+
+    _ANCHOR_PTS = {
+        TOP_LEFT: (0, 0),
+        TOP: (0.5, 0),
+        TOP_RIGHT: (1, 0),
+        LEFT: (0, 0.5),
+        CENTER: (0.5, 0.5),
+        RIGHT: (1, 0.5),
+        BOTTOM_LEFT: (0, 1),
+        BOTTOM: (0.5, 1),
+        BOTTOM_RIGHT: (1, 1),
+    }
+    
+    def __init__(self, width=None, height=None, anchor=None):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+        :param anchor: Specifies which part of the image should be retained
+            when cropping. Valid values are:
+
+            - Crop.TOP_LEFT
+            - Crop.TOP
+            - Crop.TOP_RIGHT
+            - Crop.LEFT
+            - Crop.CENTER
+            - Crop.RIGHT
+            - Crop.BOTTOM_LEFT
+            - Crop.BOTTOM
+            - Crop.BOTTOM_RIGHT
+
+        """
+        self.width = width
+        self.height = height
+        self.anchor = anchor
+    
+    def process(self, img):
+        cur_width, cur_height = img.size
+        horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
+                Crop.CENTER]
+        print horizontal_anchor, self.width, cur_width
+        crop_x, crop_y = (abs(self.width - cur_width), abs(self.height - cur_height))
+        x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
+        box_left, box_right = {
+            0: (0, self.width),
+            0.5: (int(x_diff), int(x_diff + self.width)),
+            1: (int(crop_x), int(cur_width)),
+        }[horizontal_anchor]
+        box_upper, box_lower = {
+            0: (0, self.height),
+            0.5: (int(y_diff), int(y_diff + self.height)),
+            1: (int(crop_y), int(cur_height)),
+        }[vertical_anchor]
+        box = (box_left, box_upper, box_right, box_lower)
+        img = img.crop(box)
+        return img
+    
 
 class SmartCrop(object):
     """
@@ -135,5 +220,4 @@ class SmartCrop(object):
 
         box = (left, top, right, bottom)
         img = img.crop(box)
-
         return img

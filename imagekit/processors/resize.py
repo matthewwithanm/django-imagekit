@@ -1,11 +1,14 @@
 from imagekit.lib import Image
-from .crop import SmartCrop as _SmartCrop
+from .crop import Crop as _Crop, SmartCrop as _SmartCrop
 import warnings
 
 
-class Crop(object):
+class Resize(object):
+    pass
+
+class Fill(object):
     """
-    Resizes an image , cropping it to the specified width and height.
+    Resizes an image , cropping it to the exact specified width and height.
 
     """
     TOP_LEFT = 'tl'
@@ -54,8 +57,8 @@ class Crop(object):
 
     def process(self, img):
         cur_width, cur_height = img.size
-        horizontal_anchor, vertical_anchor = Crop._ANCHOR_PTS[self.anchor or \
-                Crop.CENTER]
+        horizontal_anchor, vertical_anchor = Fill._ANCHOR_PTS[self.anchor or \
+                Fill.CENTER]
         ratio = max(float(self.width) / cur_width, float(self.height) / cur_height)
         resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
         crop_x, crop_y = (abs(self.width - resize_x), abs(self.height - resize_y))
@@ -117,6 +120,13 @@ class Fit(object):
             img = new_img
         return img
 
+
+class Crop(_Crop):
+    def __init__(self, *args, **kwargs):
+        warnings.warn('The Crop processor has been moved to'
+                ' `imagekit.processors.crop.Crop`, where it belongs.',
+                DeprecationWarning)
+        super(SmartCrop, self).__init__(*args, **kwargs)
 
 class SmartCrop(_SmartCrop):
     def __init__(self, *args, **kwargs):
