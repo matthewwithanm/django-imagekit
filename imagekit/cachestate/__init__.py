@@ -30,6 +30,33 @@ class PessimisticCacheStateBackend(object):
         file.delete(save=False)
 
 
+class NonValidatingCacheStateBackend(object):
+    """
+    A backend that is super optimistic about the existence of spec files. It
+    will hit your file storage much less frequently than the pessimistic
+    backend, but it is technically possible for a cache file to be missing
+    after validation.
+
+    """
+
+    def validate(self, file):
+        """
+        NonValidatingCacheStateBackend has faith, so validate's a no-op.
+
+        """
+        pass
+
+    def invalidate(self, file):
+        """
+        Immediately generate a new spec file upon invalidation.
+
+        """
+        file.generate(save=True)
+
+    def clear(self, file):
+        file.delete(save=False)
+
+
 _default_cache_state_backend = None
 
 
