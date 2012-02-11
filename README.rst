@@ -3,6 +3,10 @@ ImageKit is a Django app that helps you to add variations of uploaded images
 to your models. These variations are called "specs" and can include things
 like different sizes (e.g. thumbnails) and black and white versions.
 
+For the full documentation, see `ImageKit on RTD`_.
+
+.. _`ImageKit on RTD`: http://django-imagekit.readthedocs.org
+
 
 Installation
 ------------
