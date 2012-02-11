@@ -1,5 +1,5 @@
 from imagekit.lib import Image
-from .crop import Crop as _Crop, SmartCrop as _SmartCrop
+from .crop import SmartCrop as _SmartCrop
 import warnings
 
 
@@ -127,13 +127,6 @@ class Fit(object):
             img = new_img
         return img
 
-
-class Crop(_Crop):
-    def __init__(self, *args, **kwargs):
-        warnings.warn('The Crop processor has been moved to'
-                ' `imagekit.processors.crop.Crop`, where it belongs.',
-                DeprecationWarning)
-        super(SmartCrop, self).__init__(*args, **kwargs)
 
 class SmartCrop(_SmartCrop):
     def __init__(self, *args, **kwargs):
