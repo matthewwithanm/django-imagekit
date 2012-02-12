@@ -25,14 +25,14 @@ class SpecFileGenerator(object):
         self.storage = storage
         self.cache_state_backend = cache_state_backend or get_default_cache_state_backend()
 
-    def process_content(self, filename, content, model=None):
+    def process_content(self, content, filename=None, source_file=None):
         img = open_image(content)
         original_format = img.format
 
         # Run the processors
         processors = self.processors
         if callable(processors):
-            processors = processors(instance=model, file=content)
+            processors = processors(source_file)
         img = ProcessorPipeline(processors or []).process(img)
 
         options = dict(self.options or {})
@@ -90,6 +90,7 @@ class SpecFileGenerator(object):
         """
         if source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file.
+
             try:
                 fp = source_file.storage.open(source_file.name)
             except IOError:
@@ -97,8 +98,7 @@ class SpecFileGenerator(object):
             fp.seek(0)
             fp = StringIO(fp.read())
 
-            img, content = self.process_content(filename, fp,
-                    getattr(source_file, 'instance', None))
+            img, content = self.process_content(fp, filename, source_file)
 
             if save:
                 storage = self.storage or source_file.storage
@@ -187,8 +187,16 @@ class ImageSpecField(object):
             raise Exception('The pre_cache argument has been removed in favor'
                     ' of cache state backends.')
 
-        self.generator = SpecFileGenerator(processors, format=format,
-                options=options, autoconvert=autoconvert, image_cache_backend=image_cache_backend)
+        # The generator accepts a callable value for processors, but it
+        # takes different arguments than the callable that ImageSpecField
+        # expects, so we create a partial application and pass that instead.
+        # TODO: Should we change the signatures to match? Even if `instance` is not part of the signature, it's accessible through the source file object's instance property.
+        p = lambda file: processors(instance=file.instance, file=file) if \
+                callable(processors) else processors
+
+        self.generator = SpecFileGenerator(p, format=format, options=options,
+                autoconvert=autoconvert,
+                cache_state_backend=cache_state_backend)
         self.image_field = image_field
         self.storage = storage
         self.cache_to = cache_to
@@ -427,7 +435,8 @@ def _post_delete_handler(sender, instance=None, **kwargs):
 class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
-        img, content = self.field.generator.process_content(new_filename, content)
+        img, content = self.field.generator.process_content(content,
+                new_filename, self)
         return super(ProcessedImageFieldFile, self).save(name, content, save)
 
 
