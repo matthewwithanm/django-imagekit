@@ -1,34 +1,64 @@
 from imagekit.lib import Image
-from .crop import SmartCrop as _SmartCrop
+from . import crop
 import warnings
+
+
+class BasicResize(object):
+    """
+    Resizes an image to the specified width and height.
+
+    """
+    def __init__(self, width, height):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+
+        """
+        self.width = width
+        self.height = height
+
+    def process(self, img):
+        return img.resize((self.width, self.height), Image.ANTIALIAS)
+
+
+class Cover(object):
+    """
+    Resizes the image to the smallest possible size that will entirely cover the
+    provided dimensions. You probably won't be using this processor directly,
+    but it's used internally by ``Fill`` and ``SmartFill``.
+
+    """
+    def __init__(self, width, height):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+
+        """
+        self.width, self.height = width, height
+
+    def process(self, img):
+        original_width, original_height = img.size
+        ratio = max(float(self.width) / original_width,
+                float(self.height) / original_height)
+        new_width, new_height = (int(original_width * ratio),
+                int(original_height * ratio))
+        return BasicResize(new_width, new_height).process(img)
 
 
 class Fill(object):
     """
-    Resizes an image , cropping it to the specified width and height.
+    Resizes an image , cropping it to the exact specified width and height.
 
     """
-    TOP_LEFT = 'tl'
-    TOP = 't'
-    TOP_RIGHT = 'tr'
-    BOTTOM_LEFT = 'bl'
-    BOTTOM = 'b'
-    BOTTOM_RIGHT = 'br'
-    CENTER = 'c'
-    LEFT = 'l'
-    RIGHT = 'r'
-
-    _ANCHOR_PTS = {
-        TOP_LEFT: (0, 0),
-        TOP: (0.5, 0),
-        TOP_RIGHT: (1, 0),
-        LEFT: (0, 0.5),
-        CENTER: (0.5, 0.5),
-        RIGHT: (1, 0.5),
-        BOTTOM_LEFT: (0, 1),
-        BOTTOM: (0.5, 1),
-        BOTTOM_RIGHT: (1, 1),
-    }
+    TOP_LEFT = crop.Crop.TOP_LEFT
+    TOP = crop.Crop.TOP
+    TOP_RIGHT = crop.Crop.TOP_RIGHT
+    BOTTOM_LEFT = crop.Crop.BOTTOM_LEFT
+    BOTTOM = crop.Crop.BOTTOM
+    BOTTOM_RIGHT = crop.Crop.BOTTOM_RIGHT
+    CENTER = crop.Crop.CENTER
+    LEFT = crop.Crop.LEFT
+    RIGHT = crop.Crop.RIGHT
 
     def __init__(self, width=None, height=None, anchor=None):
         """
@@ -53,26 +83,30 @@ class Fill(object):
         self.anchor = anchor
 
     def process(self, img):
-        cur_width, cur_height = img.size
-        horizontal_anchor, vertical_anchor = Fill._ANCHOR_PTS[self.anchor or \
-                Fill.CENTER]
-        ratio = max(float(self.width) / cur_width, float(self.height) / cur_height)
-        resize_x, resize_y = ((cur_width * ratio), (cur_height * ratio))
-        crop_x, crop_y = (abs(self.width - resize_x), abs(self.height - resize_y))
-        x_diff, y_diff = (int(crop_x / 2), int(crop_y / 2))
-        box_left, box_right = {
-            0: (0, self.width),
-            0.5: (int(x_diff), int(x_diff + self.width)),
-            1: (int(crop_x), int(resize_x)),
-        }[horizontal_anchor]
-        box_upper, box_lower = {
-            0: (0, self.height),
-            0.5: (int(y_diff), int(y_diff + self.height)),
-            1: (int(crop_y), int(resize_y)),
-        }[vertical_anchor]
-        box = (box_left, box_upper, box_right, box_lower)
-        img = img.resize((int(resize_x), int(resize_y)), Image.ANTIALIAS).crop(box)
-        return img
+        img = Cover(self.width, self.height).process(img)
+        return crop.Crop(self.width, self.height,
+                anchor=self.anchor).process(img)
+
+
+class SmartFill(object):
+    """
+    The ``SmartFill`` processor is identical to ``Fill``, except that it uses
+    entropy to crop the image instead of a user-specified anchor point.
+    Internally, it simply runs the ``resize.Cover`` and ``crop.SmartCrop``
+    processors in series.
+
+    """
+    def __init__(self, width, height):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+
+        """
+        self.width, self.height = width, height
+
+    def process(self, img):
+        img = Cover(self.width, self.height).process(img)
+        return crop.SmartCrop(self.width, self.height).process(img)
 
 
 class Crop(Fill):
@@ -94,8 +128,8 @@ class Fit(object):
         :param upscale: A boolean value specifying whether the image should
             be enlarged if its dimensions are smaller than the target
             dimensions.
-        :param mat_color: If set, the target image size will be enforced and
-            the specified color will be used as background color to pad the image.
+        :param mat_color: If set, the target image size will be enforced and the
+            specified color will be used as a background color to pad the image.
 
         """
         self.width = width
@@ -117,7 +151,8 @@ class Fit(object):
                           int(round(cur_height * ratio)))
         if (cur_width > new_dimensions[0] or cur_height > new_dimensions[1]) or \
             self.upscale:
-                img = img.resize(new_dimensions, Image.ANTIALIAS)
+                img = BasicResize(new_dimensions[0],
+                        new_dimensions[1]).process(img)
         if self.mat_color:
             new_img = Image.new('RGBA', (self.width, self.height),  self.mat_color)
             new_img.paste(img, ((self.width - img.size[0]) / 2, (self.height - img.size[1]) / 2))
@@ -125,7 +160,7 @@ class Fit(object):
         return img
 
 
-class SmartCrop(_SmartCrop):
+class SmartCrop(crop.SmartCrop):
     def __init__(self, *args, **kwargs):
         warnings.warn('The SmartCrop processor has been moved to'
                 ' `imagekit.processors.crop.SmartCrop`, where it belongs.',

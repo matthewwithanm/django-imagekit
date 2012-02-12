@@ -10,7 +10,7 @@ class Side(object):
     ALL = (TOP, RIGHT, BOTTOM, LEFT)
 
 
-def crop(img, bbox, sides=Side.ALL):
+def _crop(img, bbox, sides=Side.ALL):
     bbox = (
         bbox[0] if Side.LEFT in sides else 0,
         bbox[1] if Side.TOP in sides else 0,
@@ -67,22 +67,123 @@ class TrimBorderColor(object):
 
         bbox = diff.getbbox()
         if bbox:
-            img = crop(img, bbox, self.sides)
-
+            img = _crop(img, bbox, self.sides)
         return img
+
+
+class BasicCrop(object):
+    """Crops an image to the specified rectangular region.
+
+    """
+    def __init__(self, x, y, width, height):
+        """
+        :param x: The x position of the clipping box, in pixels.
+        :param y: The y position of the clipping box, in pixels.
+        :param width: The width position of the clipping box, in pixels.
+        :param height: The height position of the clipping box, in pixels.
+
+        """
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+
+    def process(self, img):
+        box = (self.x, self.y, self.x + self.width, self.y + self.height)
+        return img.crop(box)
+
+
+class Crop(object):
+    """
+    Crops an image , cropping it to the specified width and height
+    relative to the anchor.
+
+    """
+    TOP_LEFT = 'tl'
+    TOP = 't'
+    TOP_RIGHT = 'tr'
+    BOTTOM_LEFT = 'bl'
+    BOTTOM = 'b'
+    BOTTOM_RIGHT = 'br'
+    CENTER = 'c'
+    LEFT = 'l'
+    RIGHT = 'r'
+
+    _ANCHOR_PTS = {
+        TOP_LEFT: (0, 0),
+        TOP: (0.5, 0),
+        TOP_RIGHT: (1, 0),
+        LEFT: (0, 0.5),
+        CENTER: (0.5, 0.5),
+        RIGHT: (1, 0.5),
+        BOTTOM_LEFT: (0, 1),
+        BOTTOM: (0.5, 1),
+        BOTTOM_RIGHT: (1, 1),
+    }
+
+    def __init__(self, width=None, height=None, anchor=None):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+        :param anchor: Specifies which part of the image should be retained
+            when cropping. Valid values are:
+
+            - Crop.TOP_LEFT
+            - Crop.TOP
+            - Crop.TOP_RIGHT
+            - Crop.LEFT
+            - Crop.CENTER
+            - Crop.RIGHT
+            - Crop.BOTTOM_LEFT
+            - Crop.BOTTOM
+            - Crop.BOTTOM_RIGHT
+
+            You may also pass a tuple that indicates the percentages of excess
+            to be trimmed from each dimension. For example, ``(0, 0)``
+            corresponds to "top left", ``(0.5, 0.5)`` to "center" and ``(1, 1)``
+            to "bottom right". This is basically the same as using percentages
+            in CSS background positions.
+
+        """
+        self.width = width
+        self.height = height
+        self.anchor = anchor
+
+    def process(self, img):
+        original_width, original_height = img.size
+        new_width, new_height = min(original_width, self.width), \
+                min(original_height, self.height)
+        trim_x, trim_y = original_width - new_width, \
+                original_height - new_height
+
+        # If the user passed in one of the string values, convert it to a
+        # percentage tuple.
+        anchor = self.anchor or Crop.CENTER
+        if anchor in Crop._ANCHOR_PTS.keys():
+            anchor = Crop._ANCHOR_PTS[anchor]
+
+        x = int(float(trim_x) * float(anchor[0]))
+        y = int(float(trim_y) * float(anchor[1]))
+
+        return BasicCrop(x, y, new_width, new_height).process(img)
 
 
 class SmartCrop(object):
     """
-    Crop an image 'smartly' -- based on smart crop implementation from easy-thumbnails:
+    Crop an image to the specified dimensions, whittling away the parts of the
+    image with the least entropy.
 
+    Based on smart crop implementation from easy-thumbnails:
         https://github.com/SmileyChris/easy-thumbnails/blob/master/easy_thumbnails/processors.py#L193
-
-    Smart cropping whittles away the parts of the image with the least entropy.
 
     """
 
     def __init__(self, width=None, height=None):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+
+        """
         self.width = width
         self.height = height
 
@@ -135,5 +236,4 @@ class SmartCrop(object):
 
         box = (left, top, right, bottom)
         img = img.crop(box)
-
         return img
