@@ -17,8 +17,7 @@ from ..imagecache import get_default_image_cache_backend
 
 class SpecFileGenerator(object):
     def __init__(self, processors=None, format=None, options={},
-            autoconvert=True, storage=None,
-            cache_state_backend=None):
+            autoconvert=True, storage=None, cache_state_backend=None):
         self.processors = processors
         self.format = format
         self.options = options
@@ -26,17 +25,16 @@ class SpecFileGenerator(object):
         self.storage = storage
         self.cache_state_backend = cache_state_backend or get_default_cache_state_backend()
 
-    def process(self, image, file, instance):
-        processors = self.processors
-        if callable(processors):
-            processors = processors(instance=instance, file=file)
-        processors = ProcessorPipeline(processors or [])
-        return processors.process(image.copy())
-
     def generate_content(self, filename, content, model=None):
         img = open_image(content)
         original_format = img.format
-        img = self.process(img, self, model)
+
+        # Run the processors
+        processors = self.processors
+        if callable(processors):
+            processors = processors(instance=model, file=content)
+        img = ProcessorPipeline(processors or []).process(img)
+
         options = dict(self.options or {})
 
         # Determine the format.
@@ -305,7 +303,8 @@ class ImageSpecFieldFile(ImageFieldFile):
         the content of the result, ready for saving.
 
         """
-        return self.field.generator.generate_file(self.name, self.source_file, save)
+        return self.field.generator.generate_file(self.name, self.source_file,
+                save)
 
     @property
     def url(self):
