@@ -12,7 +12,7 @@ from imagekit.utils import img_to_fobj, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
 from imagekit.processors import ProcessorPipeline, AutoConvert
-from .cachestate import get_default_cache_state_backend
+from .imagecache import get_default_image_cache_backend
 
 
 class _ImageSpecMixin(object):
@@ -64,7 +64,7 @@ class ImageSpec(_ImageSpecMixin):
 
     def __init__(self, processors=None, format=None, options={},
         image_field=None, pre_cache=None, storage=None, cache_to=None,
-        autoconvert=True, cache_state_backend=None):
+        autoconvert=True, image_cache_backend=None):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -96,9 +96,9 @@ class ImageSpec(_ImageSpecMixin):
                     this extension, it's only a recommendation.
         :param autoconvert: Specifies whether the AutoConvert processor
             should be run before saving.
-        :param cache_state_backend: An object responsible for managing the state
+        :param image_cache_backend: An object responsible for managing the state
             of cached files. Defaults to an instance of
-            IMAGEKIT_DEFAULT_CACHE_STATE_BACKEND
+            IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
 
         """
 
@@ -112,8 +112,8 @@ class ImageSpec(_ImageSpecMixin):
         self.pre_cache = pre_cache
         self.storage = storage
         self.cache_to = cache_to
-        self.cache_state_backend = cache_state_backend or \
-                get_default_cache_state_backend()
+        self.image_cache_backend = image_cache_backend or \
+                get_default_image_cache_backend()
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecDescriptor(self, name))
@@ -133,9 +133,9 @@ class ImageSpec(_ImageSpecMixin):
         post_delete.connect(ImageSpec._post_delete_receiver, sender=cls,
                 dispatch_uid=uid)
 
-        # Register the field with the cache_state_backend
+        # Register the field with the image_cache_backend
         try:
-            self.cache_state_backend.register_field(cls, self, name)
+            self.image_cache_backend.register_field(cls, self, name)
         except AttributeError:
             pass
 
@@ -264,13 +264,13 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
     def clear(self):
-        return self.field.cache_state_backend.clear(self)
+        return self.field.image_cache_backend.clear(self)
 
     def invalidate(self):
-        return self.field.cache_state_backend.invalidate(self)
+        return self.field.image_cache_backend.invalidate(self)
 
     def validate(self):
-        return self.field.cache_state_backend.validate(self)
+        return self.field.image_cache_backend.validate(self)
 
     def generate(self, save=True):
         """
