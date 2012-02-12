@@ -25,7 +25,7 @@ class SpecFileGenerator(object):
         self.storage = storage
         self.cache_state_backend = cache_state_backend or get_default_cache_state_backend()
 
-    def generate_content(self, filename, content, model=None):
+    def process_content(self, filename, content, model=None):
         img = open_image(content)
         original_format = img.format
 
@@ -97,7 +97,7 @@ class SpecFileGenerator(object):
             fp.seek(0)
             fp = StringIO(fp.read())
 
-            img, content = self.generate_content(filename, fp,
+            img, content = self.process_content(filename, fp,
                     getattr(source_file, 'instance', None))
 
             if save:
@@ -427,7 +427,7 @@ def _post_delete_handler(sender, instance=None, **kwargs):
 class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
-        img, content = self.field.generator.generate_content(new_filename, content)
+        img, content = self.field.generator.process_content(new_filename, content)
         return super(ProcessedImageFieldFile, self).save(name, content, save)
 
 
