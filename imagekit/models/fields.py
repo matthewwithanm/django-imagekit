@@ -15,13 +15,17 @@ from imagekit.processors import ProcessorPipeline, AutoConvert
 from ..imagecache import get_default_image_cache_backend
 
 
-class _ImageSpecFieldMixin(object):
+class SpecFileGenerator(object):
     def __init__(self, processors=None, format=None, options={},
-            autoconvert=True):
+            autoconvert=True, cache_to=None, storage=None,
+            cache_state_backend=None):
         self.processors = processors
         self.format = format
         self.options = options
         self.autoconvert = autoconvert
+        self.cache_to = cache_to
+        self.storage = storage
+        self.cache_state_backend = cache_state_backend or get_default_cache_state_backend()
 
     def process(self, image, file, instance):
         processors = self.processors
@@ -29,6 +33,91 @@ class _ImageSpecFieldMixin(object):
             processors = processors(instance=instance, file=file)
         processors = ProcessorPipeline(processors or [])
         return processors.process(image.copy())
+
+    def generate_content(self, filename, content, model=None):
+        img = open_image(content)
+        original_format = img.format
+        img = self.process(img, self, model)
+        options = dict(self.options or {})
+
+        # Determine the format.
+        format = self.format
+        if not format:
+            if callable(self.cache_to):
+                # The extension is explicit, so assume they want the matching format.
+                extension = os.path.splitext(filename)[1].lower()
+                # Try to guess the format from the extension.
+                try:
+                    format = extension_to_format(extension)
+                except UnknownExtensionError:
+                    pass
+        format = format or img.format or original_format or 'JPEG'
+
+        # Run the AutoConvert processor
+        if self.autoconvert:
+            autoconvert_processor = AutoConvert(format)
+            img = autoconvert_processor.process(img)
+            options = dict(autoconvert_processor.save_kwargs.items() + \
+                    options.items())
+
+        imgfile = img_to_fobj(img, format, **options)
+        content = ContentFile(imgfile.read())
+        return img, content
+
+    def suggest_extension(self, name):
+        original_extension = os.path.splitext(name)[1]
+        try:
+            suggested_extension = format_to_extension(self.format)
+        except UnknownFormatError:
+            extension = original_extension
+        else:
+            if suggested_extension.lower() == original_extension.lower():
+                extension = original_extension
+            else:
+                try:
+                    original_format = extension_to_format(original_extension)
+                except UnknownExtensionError:
+                    extension = suggested_extension
+                else:
+                    # If the formats match, give precedence to the original extension.
+                    if self.format.lower() == original_format.lower():
+                        extension = original_extension
+                    else:
+                        extension = suggested_extension
+        return extension
+
+    def generate_file(self, filename, source_file, save=True):
+        """
+        Generates a new image file by processing the source file and returns
+        the content of the result, ready for saving.
+
+        """
+        if source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
+            # Process the original image file.
+            try:
+                fp = source_file.storage.open(source_file.name)
+            except IOError:
+                return
+            fp.seek(0)
+            fp = StringIO(fp.read())
+
+            img, content = self.generate_content(filename, fp,
+                    getattr(source_file, 'instance', None))
+
+            if save:
+                storage = self.storage or source_file.storage
+                storage.save(filename, content)
+
+            return content
+
+    def invalidate(self, file):
+        return self.cache_state_backend.invalidate(file)
+
+    def validate(self, file):
+        return self.cache_state_backend.validate(file)
+
+    def clear(self, file):
+        return self.cache_state_backend.clear(file)
 
 
 class BoundImageKitMeta(object):
@@ -54,14 +143,12 @@ class ImageKitMeta(object):
             return ik
 
 
-class ImageSpecField(_ImageSpecFieldMixin):
+class ImageSpecField(object):
     """
     The heart and soul of the ImageKit library, ImageSpecField allows you to add
     variants of uploaded images to your models.
 
     """
-    _upload_to_attr = 'cache_to'
-
     def __init__(self, processors=None, format=None, options={},
         image_field=None, pre_cache=None, storage=None, cache_to=None,
         autoconvert=True, image_cache_backend=None):
@@ -106,14 +193,11 @@ class ImageSpecField(_ImageSpecFieldMixin):
             raise Exception('The pre_cache argument has been removed in favor'
                     ' of cache state backends.')
 
-        _ImageSpecFieldMixin.__init__(self, processors, format=format,
-                options=options, autoconvert=autoconvert)
+        self.generator = SpecFileGenerator(processors, format=format,
+                options=options, autoconvert=autoconvert, image_cache_backend=image_cache_backend)
         self.image_field = image_field
-        self.pre_cache = pre_cache
         self.storage = storage
         self.cache_to = cache_to
-        self.image_cache_backend = image_cache_backend or \
-                get_default_image_cache_backend()
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecFieldDescriptor(self, name))
@@ -170,64 +254,13 @@ class ImageSpecField(_ImageSpecFieldMixin):
         ImageSpecField._update_source_hashes(instance)
 
 
-def _get_suggested_extension(name, format):
-    original_extension = os.path.splitext(name)[1]
-    try:
-        suggested_extension = format_to_extension(format)
-    except UnknownFormatError:
-        extension = original_extension
-    else:
-        if suggested_extension.lower() == original_extension.lower():
-            extension = original_extension
-        else:
-            try:
-                original_format = extension_to_format(original_extension)
-            except UnknownExtensionError:
-                extension = suggested_extension
-            else:
-                # If the formats match, give precedence to the original extension.
-                if format.lower() == original_format.lower():
-                    extension = original_extension
-                else:
-                    extension = suggested_extension
-    return extension
 
 
-class _ImageSpecFieldFileMixin(object):
-    def _process_content(self, filename, content):
-        img = open_image(content)
-        original_format = img.format
-        img = self.field.process(img, self, self.instance)
-        options = dict(self.field.options or {})
 
-        # Determine the format.
-        format = self.field.format
-        if not format:
-            if callable(getattr(self.field, self.field._upload_to_attr)):
-                # The extension is explicit, so assume they want the matching format.
-                extension = os.path.splitext(filename)[1].lower()
-                # Try to guess the format from the extension.
-                try:
-                    format = extension_to_format(extension)
-                except UnknownExtensionError:
-                    pass
-        format = format or img.format or original_format or 'JPEG'
-
-        # Run the AutoConvert processor
-        if getattr(self.field, 'autoconvert', True):
-            autoconvert_processor = AutoConvert(format)
-            img = autoconvert_processor.process(img)
-            options = dict(autoconvert_processor.save_kwargs.items() + \
-                    options.items())
-
-        imgfile = img_to_fobj(img, format, **options)
-        content = ContentFile(imgfile.read())
-        return img, content
-
-
-class ImageSpecFieldFile(_ImageSpecFieldFileMixin, ImageFieldFile):
+class ImageSpecFieldFile(ImageFieldFile):
     def __init__(self, instance, field, attname):
         ImageFieldFile.__init__(self, instance, field, None)
+        self.generator = field.generator
         self.attname = attname
         self.storage = self.field.storage or self.source_file.storage
 
@@ -264,13 +297,13 @@ class ImageSpecFieldFile(_ImageSpecFieldFileMixin, ImageFieldFile):
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
     def clear(self):
-        return self.field.image_cache_backend.clear(self)
+        return self.generator.clear(self)
 
     def invalidate(self):
-        return self.field.image_cache_backend.invalidate(self)
+        return self.generator.invalidate(self)
 
     def validate(self):
-        return self.field.image_cache_backend.validate(self)
+        return self.generator.validate(self)
 
     def generate(self, save=True):
         """
@@ -278,22 +311,7 @@ class ImageSpecFieldFile(_ImageSpecFieldFileMixin, ImageFieldFile):
         the content of the result, ready for saving.
 
         """
-        source_file = self.source_file
-        if source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
-            # Process the original image file.
-            try:
-                fp = source_file.storage.open(source_file.name)
-            except IOError:
-                return
-            fp.seek(0)
-            fp = StringIO(fp.read())
-
-            img, content = self._process_content(self.name, fp)
-
-            if save:
-                self.storage.save(self.name, content)
-
-            return content
+        return self.generator.generate_file(self.name, self.source_file, save)
 
     @property
     def url(self):
@@ -331,10 +349,6 @@ class ImageSpecFieldFile(_ImageSpecFieldFileMixin, ImageFieldFile):
         if save:
             self.instance.save()
 
-    @property
-    def _suggested_extension(self):
-        return _get_suggested_extension(self.source_file.name, self.field.format)
-
     def _default_cache_to(self, instance, path, specname, extension):
         """
         Determines the filename to use for the transformed image. Can be
@@ -364,9 +378,11 @@ class ImageSpecFieldFile(_ImageSpecFieldFileMixin, ImageFieldFile):
                 if not cache_to:
                     raise Exception('No cache_to or default_cache_to value specified')
                 if callable(cache_to):
+                    suggested_extension = self.generator.suggest_extension(
+                            self.source_file.name)
                     new_filename = force_unicode(datetime.datetime.now().strftime( \
                             smart_str(cache_to(self.instance, self.source_file.name,
-                                self.attname, self._suggested_extension))))
+                                self.attname, suggested_extension))))
                 else:
                     dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
                     filename = os.path.normpath(os.path.basename(filename))
@@ -417,14 +433,14 @@ def _post_delete_handler(sender, instance=None, **kwargs):
         spec_file.delete(save=False)
 
 
-class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFieldFileMixin):
+class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
-        img, content = self._process_content(new_filename, content)
+        img, content = self.field.generator.generate_content(new_filename, content)
         return super(ProcessedImageFieldFile, self).save(name, content, save)
 
 
-class ProcessedImageField(models.ImageField, _ImageSpecFieldMixin):
+class ProcessedImageField(models.ImageField):
     """
     ProcessedImageField is an ImageField that runs processors on the uploaded
     image *before* saving it to storage. This is in contrast to specs, which
@@ -432,7 +448,6 @@ class ProcessedImageField(models.ImageField, _ImageSpecFieldMixin):
     within a reasonable size.
 
     """
-    _upload_to_attr = 'upload_to'
     attr_class = ProcessedImageFieldFile
 
     def __init__(self, processors=None, format=None, options={},
@@ -449,15 +464,16 @@ class ProcessedImageField(models.ImageField, _ImageSpecFieldMixin):
             raise Exception('The "quality" keyword argument has been'
                     """ deprecated. Use `options={'quality': %s}` instead.""" \
                     % kwargs['quality'])
-        _ImageSpecFieldMixin.__init__(self, processors, format=format,
-                options=options, autoconvert=autoconvert)
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
+        self.generator = SpecFileGenerator(processors, format=format,
+                options=options, autoconvert=autoconvert,
+                cache_to=kwargs.get('upload_to'))
 
     def get_filename(self, filename):
         filename = os.path.normpath(self.storage.get_valid_name(os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
-        ext = _get_suggested_extension(filename, self.format)
+        ext = self.generator.suggested_extension(filename, self.format)
         return '%s%s' % (name, ext)
 
 
