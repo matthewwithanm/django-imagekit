@@ -12,7 +12,7 @@ from imagekit.utils import img_to_fobj, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
 from imagekit.processors import ProcessorPipeline, AutoConvert
-from .imagecache import get_default_image_cache_backend
+from ..imagecache import get_default_image_cache_backend
 
 
 class _ImageSpecFieldMixin(object):
@@ -54,7 +54,7 @@ class ImageKitMeta(object):
             return ik
 
 
-class ImageSpec(_ImageSpecMixin):
+class ImageSpecField(_ImageSpecFieldMixin):
     """
     The heart and soul of the ImageKit library, ImageSpecField allows you to add
     variants of uploaded images to your models.
@@ -106,7 +106,7 @@ class ImageSpec(_ImageSpecMixin):
             raise Exception('The pre_cache argument has been removed in favor'
                     ' of cache state backends.')
 
-        _ImageSpecMixin.__init__(self, processors, format=format,
+        _ImageSpecFieldMixin.__init__(self, processors, format=format,
                 options=options, autoconvert=autoconvert)
         self.image_field = image_field
         self.pre_cache = pre_cache
@@ -126,11 +126,11 @@ class ImageSpec(_ImageSpecMixin):
 
         # Connect to the signals only once for this class.
         uid = '%s.%s' % (cls.__module__, cls.__name__)
-        post_init.connect(ImageSpec._post_init_receiver, sender=cls,
+        post_init.connect(ImageSpecField._post_init_receiver, sender=cls,
                 dispatch_uid=uid)
-        post_save.connect(ImageSpec._post_save_receiver, sender=cls,
+        post_save.connect(ImageSpecField._post_save_receiver, sender=cls,
                 dispatch_uid=uid)
-        post_delete.connect(ImageSpec._post_delete_receiver, sender=cls,
+        post_delete.connect(ImageSpecField._post_delete_receiver, sender=cls,
                 dispatch_uid=uid)
 
         # Register the field with the image_cache_backend
@@ -143,7 +143,7 @@ class ImageSpec(_ImageSpecMixin):
     def _post_save_receiver(sender, instance=None, created=False, raw=False, **kwargs):
         if not raw:
             old_hashes = instance._ik._source_hashes.copy()
-            new_hashes = ImageSpec._update_source_hashes(instance)
+            new_hashes = ImageSpecField._update_source_hashes(instance)
             for attname in instance._ik.spec_fields:
                 if old_hashes[attname] != new_hashes[attname]:
                     getattr(instance, attname).invalidate()
@@ -167,7 +167,7 @@ class ImageSpec(_ImageSpecMixin):
 
     @staticmethod
     def _post_init_receiver(sender, instance, **kwargs):
-        ImageSpec._update_source_hashes(instance)
+        ImageSpecField._update_source_hashes(instance)
 
 
 def _get_suggested_extension(name, format):
@@ -417,7 +417,7 @@ def _post_delete_handler(sender, instance=None, **kwargs):
         spec_file.delete(save=False)
 
 
-class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFileMixin):
+class ProcessedImageFieldFile(ImageFieldFile, _ImageSpecFieldFileMixin):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
         img, content = self._process_content(new_filename, content)

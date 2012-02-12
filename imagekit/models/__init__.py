@@ -1,4 +1,5 @@
 from .fields import ImageSpecField, ProcessedImageField
+import warnings
 
 
 class ImageSpec(ImageSpecField):
