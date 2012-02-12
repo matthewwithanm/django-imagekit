@@ -479,7 +479,7 @@ class ProcessedImageField(models.ImageField):
         filename = os.path.normpath(self.storage.get_valid_name(
                 os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
-        ext = self.generator.suggested_extension(filename, self.format)
+        ext = self.generator.suggest_extension(filename)
         return '%s%s' % (name, ext)
 
 
