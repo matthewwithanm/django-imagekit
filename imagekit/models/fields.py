@@ -17,13 +17,12 @@ from ..imagecache import get_default_image_cache_backend
 
 class SpecFileGenerator(object):
     def __init__(self, processors=None, format=None, options={},
-            autoconvert=True, cache_to=None, storage=None,
+            autoconvert=True, storage=None,
             cache_state_backend=None):
         self.processors = processors
         self.format = format
         self.options = options
         self.autoconvert = autoconvert
-        self.cache_to = cache_to
         self.storage = storage
         self.cache_state_backend = cache_state_backend or get_default_cache_state_backend()
 
@@ -43,10 +42,9 @@ class SpecFileGenerator(object):
         # Determine the format.
         format = self.format
         if not format:
-            if callable(self.cache_to):
-                # The extension is explicit, so assume they want the matching format.
-                extension = os.path.splitext(filename)[1].lower()
-                # Try to guess the format from the extension.
+            # Try to guess the format from the extension.
+            extension = os.path.splitext(filename)[1].lower()
+            if extension:
                 try:
                     format = extension_to_format(extension)
                 except UnknownExtensionError:
@@ -467,8 +465,7 @@ class ProcessedImageField(models.ImageField):
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
         self.generator = SpecFileGenerator(processors, format=format,
-                options=options, autoconvert=autoconvert,
-                cache_to=kwargs.get('upload_to'))
+                options=options, autoconvert=autoconvert)
 
     def get_filename(self, filename):
         filename = os.path.normpath(self.storage.get_valid_name(os.path.basename(filename)))
