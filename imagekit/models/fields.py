@@ -252,13 +252,9 @@ class ImageSpecField(object):
         ImageSpecField._update_source_hashes(instance)
 
 
-
-
-
 class ImageSpecFieldFile(ImageFieldFile):
     def __init__(self, instance, field, attname):
         ImageFieldFile.__init__(self, instance, field, None)
-        self.generator = field.generator
         self.attname = attname
         self.storage = self.field.storage or self.source_file.storage
 
@@ -295,13 +291,13 @@ class ImageSpecFieldFile(ImageFieldFile):
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
     def clear(self):
-        return self.generator.clear(self)
+        return self.field.generator.clear(self)
 
     def invalidate(self):
-        return self.generator.invalidate(self)
+        return self.field.generator.invalidate(self)
 
     def validate(self):
-        return self.generator.validate(self)
+        return self.field.generator.validate(self)
 
     def generate(self, save=True):
         """
@@ -309,7 +305,7 @@ class ImageSpecFieldFile(ImageFieldFile):
         the content of the result, ready for saving.
 
         """
-        return self.generator.generate_file(self.name, self.source_file, save)
+        return self.field.generator.generate_file(self.name, self.source_file, save)
 
     @property
     def url(self):
@@ -376,7 +372,7 @@ class ImageSpecFieldFile(ImageFieldFile):
                 if not cache_to:
                     raise Exception('No cache_to or default_cache_to value specified')
                 if callable(cache_to):
-                    suggested_extension = self.generator.suggest_extension(
+                    suggested_extension = self.field.generator.suggest_extension(
                             self.source_file.name)
                     new_filename = force_unicode(datetime.datetime.now().strftime( \
                             smart_str(cache_to(self.instance, self.source_file.name,
