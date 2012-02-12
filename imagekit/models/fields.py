@@ -8,11 +8,11 @@ from django.db.models.fields.files import ImageFieldFile
 from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.encoding import force_unicode, smart_str
 
-from imagekit.utils import img_to_fobj, open_image, \
+from ..imagecache import get_default_image_cache_backend
+from ..processors import ProcessorPipeline, AutoConvert
+from ..utils import img_to_fobj, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
-from imagekit.processors import ProcessorPipeline, AutoConvert
-from ..imagecache import get_default_image_cache_backend
 
 
 class SpecFileGenerator(object):
@@ -375,15 +375,21 @@ class ImageSpecFieldFile(ImageFieldFile):
                 cache_to = self.field.cache_to or self._default_cache_to
 
                 if not cache_to:
-                    raise Exception('No cache_to or default_cache_to value specified')
+                    raise Exception('No cache_to or default_cache_to value'
+                            ' specified')
                 if callable(cache_to):
-                    suggested_extension = self.field.generator.suggest_extension(
+                    suggested_extension = \
+                            self.field.generator.suggest_extension(
                             self.source_file.name)
-                    new_filename = force_unicode(datetime.datetime.now().strftime( \
-                            smart_str(cache_to(self.instance, self.source_file.name,
-                                self.attname, suggested_extension))))
+                    new_filename = force_unicode(
+                            datetime.datetime.now().strftime(
+                            smart_str(cache_to(self.instance,
+                            self.source_file.name, self.attname,
+                            suggested_extension))))
                 else:
-                    dir_name = os.path.normpath(force_unicode(datetime.datetime.now().strftime(smart_str(cache_to))))
+                    dir_name = os.path.normpath(
+                            force_unicode(datetime.datetime.now().strftime(
+                            smart_str(cache_to))))
                     filename = os.path.normpath(os.path.basename(filename))
                     new_filename = os.path.join(dir_name, filename)
 
@@ -470,7 +476,8 @@ class ProcessedImageField(models.ImageField):
                 options=options, autoconvert=autoconvert)
 
     def get_filename(self, filename):
-        filename = os.path.normpath(self.storage.get_valid_name(os.path.basename(filename)))
+        filename = os.path.normpath(self.storage.get_valid_name(
+                os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
         ext = self.generator.suggested_extension(filename, self.format)
         return '%s%s' % (name, ext)
