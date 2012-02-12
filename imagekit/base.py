@@ -36,26 +36,32 @@ def autodiscover():
                 raise
 
 
-class ImageSpec(object):
-    def __init__(self, *args, **kwargs):
-        self._args = args
-        self._kwargs = kwargs
+class SpecWrapper(object):
+    """
+    Wraps a user-defined spec object so we can access properties that don't
+    exist without errors.
 
-    def get_file(self, source_file, spec_id):
-        return ImageSpecFile(source_file, spec_id, *self._args, **self._kwargs)
+    """
+    def __init__(self, spec):
+        self.processors = getattr(spec, 'processors', None)
+        self.format = getattr(spec, 'format', None)
+        self.options = getattr(spec, 'options', None)
+        self.autoconvert = getattr(spec, 'autoconvert', True)
+        self.storage = getattr(spec, 'storage', None)
         self.image_cache_backend = getattr(spec, 'image_cache_backend', None) \
                 or get_default_image_cache_backend()
 
 
 class ImageSpecFile(ImageFieldFile):
-    def __init__(self, source_file, spec_id, processors=None, format=None, options={},
-            autoconvert=True, storage=None, cache_state_backend=None):
-        self.generator = SpecFileGenerator(processors=processors,
-                format=format, options=options, autoconvert=autoconvert,
-                storage=storage)
-        self.storage = storage or source_file.storage
-        self.cache_state_backend = cache_state_backend or \
-                get_default_cache_state_backend()
+    def __init__(self, spec, source_file, spec_id):
+        spec = SpecWrapper(spec)
+
+        self.storage = spec.storage or source_file.storage
+        self.generator = SpecFileGenerator(processors=spec.processors,
+                format=spec.format, options=spec.options,
+                autoconvert=spec.autoconvert, storage=self.storage)
+
+        self.spec = spec
         self.source_file = source_file
         self.spec_id = spec_id
 
@@ -71,13 +77,13 @@ class ImageSpecFile(ImageFieldFile):
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
     def clear(self):
-        return self.cache_state_backend.clear(self)
+        return self.spec.image_cache_backend.clear(self)
 
     def invalidate(self):
-        return self.cache_state_backend.invalidate(self)
+        return self.spec.image_cache_backend.invalidate(self)
 
     def validate(self):
-        return self.cache_state_backend.validate(self)
+        return self.spec.image_cache_backend.validate(self)
 
     @property
     def name(self):

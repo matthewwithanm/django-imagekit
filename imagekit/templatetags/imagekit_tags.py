@@ -1,5 +1,7 @@
-from django import template
 import os
+from django import template
+from .. import ImageSpecFile
+
 
 register = template.Library()
 
@@ -56,11 +58,13 @@ class SpecNode(template.Node):
         return os.path.join(os.path.join('cache', filepath), new_name)
 
     def render(self, context):
-        spec_id = self.spec_id.resolve(context)
-        spec = spec_registry.get_spec(spec_id)
         source_image = self.source_image.resolve(context)
         variable_name = str(self.variable_name)
-        context[variable_name] = spec.get_file(source_image, spec_id)
+        spec_id = self.spec_id.resolve(context)
+        spec = spec_registry.get_spec(spec_id)
+        if callable(spec):
+            spec = spec()
+        context[variable_name] = ImageSpecFile(spec, source_image, spec_id)
         return ''
 
 
