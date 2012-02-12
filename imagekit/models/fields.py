@@ -17,13 +17,12 @@ from ..utils import img_to_fobj, open_image, \
 
 class SpecFileGenerator(object):
     def __init__(self, processors=None, format=None, options={},
-            autoconvert=True, storage=None, cache_state_backend=None):
+            autoconvert=True, storage=None):
         self.processors = processors
         self.format = format
         self.options = options
         self.autoconvert = autoconvert
         self.storage = storage
-        self.cache_state_backend = cache_state_backend or get_default_cache_state_backend()
 
     def process_content(self, content, filename=None, source_file=None):
         img = open_image(content)
@@ -103,15 +102,6 @@ class SpecFileGenerator(object):
             if save:
                 storage = self.storage or source_file.storage
                 storage.save(filename, content)
-
-    def invalidate(self, file):
-        return self.cache_state_backend.invalidate(file)
-
-    def validate(self, file):
-        return self.cache_state_backend.validate(file)
-
-    def clear(self, file):
-        return self.cache_state_backend.clear(file)
 
 
 class BoundImageKitMeta(object):
@@ -195,11 +185,12 @@ class ImageSpecField(object):
                 callable(processors) else processors
 
         self.generator = SpecFileGenerator(p, format=format, options=options,
-                autoconvert=autoconvert,
-                cache_state_backend=cache_state_backend)
+                autoconvert=autoconvert)
         self.image_field = image_field
         self.storage = storage
         self.cache_to = cache_to
+        self.image_cache_backend = image_cache_backend or \
+                get_default_image_cache_backend()
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, _ImageSpecFieldDescriptor(self, name))
@@ -295,13 +286,13 @@ class ImageSpecFieldFile(ImageFieldFile):
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
     def clear(self):
-        return self.field.generator.clear(self)
+        return self.field.image_cache_backend.clear(self)
 
     def invalidate(self):
-        return self.field.generator.invalidate(self)
+        return self.field.image_cache_backend.invalidate(self)
 
     def validate(self):
-        return self.field.generator.validate(self)
+        return self.field.image_cache_backend.validate(self)
 
     def generate(self, save=True):
         """
