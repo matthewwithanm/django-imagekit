@@ -185,7 +185,7 @@ class ImageSpecField(object):
                 callable(processors) else processors
 
         self.generator = SpecFileGenerator(p, format=format, options=options,
-                autoconvert=autoconvert)
+                autoconvert=autoconvert, storage=storage)
         self.image_field = image_field
         self.storage = storage
         self.cache_to = cache_to
