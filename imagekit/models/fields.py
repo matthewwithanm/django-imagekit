@@ -104,8 +104,6 @@ class SpecFileGenerator(object):
                 storage = self.storage or source_file.storage
                 storage.save(filename, content)
 
-            return content
-
     def invalidate(self, file):
         return self.cache_state_backend.invalidate(file)
 
