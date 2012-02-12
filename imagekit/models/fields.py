@@ -102,13 +102,6 @@ class ImageSpecField(_ImageSpecFieldMixin):
                 dispatch_uid='%s.delete' % uid)
 
 
-class ImageSpec(ImageSpecField):
-    def __init__(self, *args, **kwargs):
-        warnings.warn('ImageSpec has been renamed to ImageSpecField. Please'
-                ' use that instead.', DeprecationWarning)
-        super(ImageSpec, self).__init__(*args, **kwargs)
-
-
 def _get_suggested_extension(name, format):
     original_extension = os.path.splitext(name)[1]
     try:
@@ -374,7 +367,7 @@ class ProcessedImageField(models.ImageField, _ImageSpecFieldMixin):
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
         as the ``processors``, ``format``, and ``options`` arguments of
-        :class:`imagekit.models.ImageSpecField`.
+        :class:`imagekit.models.fields.ImageSpecField`.
 
         """
         if 'quality' in kwargs:
@@ -398,4 +391,4 @@ try:
 except ImportError:
     pass
 else:
-    add_introspection_rules([], [r'^imagekit\.models\.ProcessedImageField$'])
+    add_introspection_rules([], [r'^imagekit\.models\.fields\.ProcessedImageField$'])

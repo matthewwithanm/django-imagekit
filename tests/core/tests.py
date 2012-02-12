@@ -9,7 +9,7 @@ from django.test import TestCase
 
 from imagekit import utils
 from imagekit.lib import Image
-from imagekit.models import ImageSpecField
+from imagekit.models.fields import ImageSpecField
 from imagekit.processors import Adjust
 from imagekit.processors.resize import Fill
 from imagekit.processors.crop import SmartCrop
