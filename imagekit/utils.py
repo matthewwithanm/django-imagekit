@@ -1,6 +1,7 @@
 import tempfile
 import types
 
+from django.db.models.loading import cache
 from django.utils.functional import wraps
 
 from imagekit.lib import Image, ImageFile
@@ -26,11 +27,9 @@ def img_to_fobj(img, format, **kwargs):
 
 def get_spec_files(instance):
     try:
-        ik = getattr(instance, '_ik')
+        return instance._ik.spec_files
     except AttributeError:
         return []
-    else:
-        return [getattr(instance, n) for n in ik.spec_file_names]
 
 
 def open_image(target):
@@ -136,3 +135,33 @@ def format_to_extension(format):
     if not extension:
         raise UnknownFormatError(format)
     return extension
+
+
+def _get_models(apps):
+    models = []
+    for app_label in apps or []:
+        app = cache.get_app(app_label)
+        models += [m for m in cache.get_models(app)]
+    return models
+
+
+def invalidate_app_cache(apps):
+    for model in _get_models(apps):
+        print 'Invalidating cache for "%s.%s"' % (model._meta.app_label, model.__name__)
+        for obj in model._default_manager.order_by('-pk'):
+            for f in get_spec_files(obj):
+                f.invalidate()
+
+
+def validate_app_cache(apps, force_revalidation=False):
+    for model in _get_models(apps):
+        for obj in model._default_manager.order_by('-pk'):
+            model_name = '%s.%s' % (model._meta.app_label, model.__name__)
+            if force_revalidation:
+                print 'Invalidating & validating cache for "%s"' % model_name
+            else:
+                print 'Validating cache for "%s"' % model_name
+            for f in get_spec_files(obj):
+                if force_revalidation:
+                    f.invalidate()
+                f.validate()
