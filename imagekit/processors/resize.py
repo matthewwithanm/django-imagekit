@@ -116,6 +116,20 @@ class Crop(Fill):
         super(Crop, self).__init__(*args, **kwargs)
 
 
+class Mat(object):
+    def __init__(self, width, height, color=(0, 0, 0, 0), anchor=(0.5, 0.5)):
+        """Anchor behaves like Crop's anchor argument"""
+        self.width = width
+        self.height = height
+        self.color = color
+        self.anchor = anchor
+
+    def process(self, img):
+        new_img = Image.new('RGBA', (self.width, self.height),  self.color)
+        new_img.paste(img, ((self.width - img.size[0]) / 2, (self.height - img.size[1]) / 2))
+        return new_img
+
+
 class Fit(object):
     """
     Resizes an image to fit within the specified dimensions.
@@ -154,9 +168,7 @@ class Fit(object):
                 img = BasicResize(new_dimensions[0],
                         new_dimensions[1]).process(img)
         if self.mat_color:
-            new_img = Image.new('RGBA', (self.width, self.height), self.mat_color)
-            new_img.paste(img, ((self.width - img.size[0]) / 2, (self.height - img.size[1]) / 2))
-            img = new_img
+            img = Mat(self.width, self.height, self.mat_color).process(img)
         return img
 
 
