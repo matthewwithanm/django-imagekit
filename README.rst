@@ -3,6 +3,10 @@ ImageKit is a Django app that helps you to add variations of uploaded images
 to your models. These variations are called "specs" and can include things
 like different sizes (e.g. thumbnails) and black and white versions.
 
+For the full documentation, see `ImageKit on RTD`_.
+
+.. _`ImageKit on RTD`: http://django-imagekit.readthedocs.org
+
 
 Installation
 ------------
@@ -29,11 +33,11 @@ Much like ``django.db.models.ImageField``, Specs are defined as properties
 of a model class::
 
     from django.db import models
-    from imagekit.models import ImageSpec
+    from imagekit.models.fields import ImageSpecField
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
-        formatted_image = ImageSpec(image_field='original_image', format='JPEG',
+        formatted_image = ImageSpecField(image_field='original_image', format='JPEG',
                 options={'quality': 90})
 
 Accessing the spec through a model instance will create the image and return
@@ -44,7 +48,7 @@ an ImageFile-like object (just like with a normal
     photo.original_image.url # > '/media/photos/birthday.tiff'
     photo.formatted_image.url # > '/media/cache/photos/birthday_formatted_image.jpeg'
 
-Check out ``imagekit.models.ImageSpec`` for more information.
+Check out ``imagekit.models.fields.ImageSpecField`` for more information.
 
 
 Processors
@@ -55,13 +59,13 @@ something to it, and return the result. By providing a list of processors to
 your spec, you can expose different versions of the original image::
 
     from django.db import models
-    from imagekit.models import ImageSpec
+    from imagekit.models.fields import ImageSpecField
     from imagekit.processors import resize, Adjust
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
-        thumbnail = ImageSpec([Adjust(contrast=1.2, sharpness=1.1),
-                resize.Crop(50, 50)], image_field='original_image',
+        thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
+                resize.Fill(50, 50)], image_field='original_image',
                 format='JPEG', options={'quality': 90})
 
 The ``thumbnail`` property will now return a cropped image::
@@ -72,7 +76,7 @@ The ``thumbnail`` property will now return a cropped image::
     photo.original_image.width # > 1000
 
 The original image is not modified; ``thumbnail`` is a new file that is the
-result of running the ``imagekit.processors.resize.Crop`` processor on the
+result of running the ``imagekit.processors.resize.Fill`` processor on the
 original.
 
 The ``imagekit.processors`` module contains processors for many common
@@ -87,7 +91,7 @@ implement a ``process()`` method::
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
-        watermarked_image = ImageSpec([Watermark()], image_field='original_image',
+        watermarked_image = ImageSpecField([Watermark()], image_field='original_image',
                 format='JPEG', options={'quality': 90})
 
 
