@@ -317,24 +317,6 @@ class _ImageSpecFieldDescriptor(object):
             return img_spec_file
 
 
-def _post_save_handler(sender, instance=None, created=False, raw=False, **kwargs):
-    if raw:
-        return
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        if not created:
-            spec_file.delete(save=False)
-        if spec_file.field.pre_cache:
-            spec_file.generate(False)
-
-
-def _post_delete_handler(sender, instance=None, **kwargs):
-    assert instance._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (instance._meta.object_name, instance._meta.pk.attname)
-    spec_files = get_spec_files(instance)
-    for spec_file in spec_files:
-        spec_file.delete(save=False)
-
-
 class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
         new_filename = self.field.generate_filename(self.instance, name)
