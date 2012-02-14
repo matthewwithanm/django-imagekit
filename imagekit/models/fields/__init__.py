@@ -4,29 +4,7 @@ from django.db.models.signals import post_init, post_save, post_delete
 from ...imagecache import get_default_image_cache_backend
 from ...generators import SpecFileGenerator
 from .files import ImageSpecFieldFile, ProcessedImageFieldFile
-
-
-class BoundImageKitMeta(object):
-    def __init__(self, instance, spec_fields):
-        self.instance = instance
-        self.spec_fields = spec_fields
-
-    @property
-    def spec_files(self):
-        return [getattr(self.instance, n) for n in self.spec_fields]
-
-
-class ImageKitMeta(object):
-    def __init__(self, spec_fields=None):
-        self.spec_fields = spec_fields or []
-
-    def __get__(self, instance, owner):
-        if instance is None:
-            return self
-        else:
-            ik = BoundImageKitMeta(instance, self.spec_fields)
-            setattr(instance, '_ik', ik)
-            return ik
+from .utils import ImageSpecFieldDescriptor, ImageKitMeta, BoundImageKitMeta
 
 
 class ImageSpecField(object):
@@ -95,7 +73,7 @@ class ImageSpecField(object):
                 get_default_image_cache_backend()
 
     def contribute_to_class(self, cls, name):
-        setattr(cls, name, _ImageSpecFieldDescriptor(self, name))
+        setattr(cls, name, ImageSpecFieldDescriptor(self, name))
         try:
             ik = getattr(cls, '_ik')
         except AttributeError:
@@ -147,21 +125,6 @@ class ImageSpecField(object):
     @staticmethod
     def _post_init_receiver(sender, instance, **kwargs):
         ImageSpecField._update_source_hashes(instance)
-
-
-class _ImageSpecFieldDescriptor(object):
-    def __init__(self, field, attname):
-        self.attname = attname
-        self.field = field
-
-    def __get__(self, instance, owner):
-        if instance is None:
-            return self.field
-        else:
-            img_spec_file = ImageSpecFieldFile(instance, self.field,
-                    self.attname)
-            setattr(instance, self.attname, img_spec_file)
-            return img_spec_file
 
 
 class ProcessedImageField(models.ImageField):
