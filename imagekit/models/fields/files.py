@@ -1,7 +1,7 @@
 import os
 import datetime
 
-from django.db.models.fields.files import ImageFieldFile
+from django.db.models.fields.files import ImageField, ImageFieldFile
 from django.utils.encoding import force_unicode, smart_str
 
 
@@ -19,7 +19,7 @@ class ImageSpecFieldFile(ImageFieldFile):
         else:
             image_fields = [getattr(self.instance, f.attname) for f in \
                     self.instance.__class__._meta.fields if \
-                    isinstance(f, models.ImageField)]
+                    isinstance(f, ImageField)]
             if len(image_fields) == 0:
                 raise Exception('%s does not define any ImageFields, so your' \
                         ' %s ImageSpecField has no image to act on.' % \
