@@ -1,55 +1,9 @@
 import os
 
-from django.core.files.images import ImageFile
 from django.db.models.fields.files import ImageFieldFile
 
-from .imagecache import get_default_image_cache_backend
 from .generators import SpecFileGenerator
-from .processors import ProcessorPipeline, AutoConvert
-
-
-def autodiscover():
-    """
-    Auto-discover INSTALLED_APPS imagespecs.py modules and fail silently when
-    not present. This forces an import on them to register any admin bits they
-    may want.
-
-    Copied from django.contrib.admin
-    """
-
-    import copy
-    from django.conf import settings
-    from django.utils.importlib import import_module
-    from django.utils.module_loading import module_has_submodule
-    from .templatetags import imagekit_tags
-
-    for app in settings.INSTALLED_APPS:
-        mod = import_module(app)
-        # Attempt to import the app's admin module.
-        try:
-            import_module('%s.imagespecs' % app)
-        except:
-            # Decide whether to bubble up this error. If the app just
-            # doesn't have an admin module, we can ignore the error
-            # attempting to import it, otherwise we want it to bubble up.
-            if module_has_submodule(mod, 'imagespecs'):
-                raise
-
-
-class SpecWrapper(object):
-    """
-    Wraps a user-defined spec object so we can access properties that don't
-    exist without errors.
-
-    """
-    def __init__(self, spec):
-        self.processors = getattr(spec, 'processors', None)
-        self.format = getattr(spec, 'format', None)
-        self.options = getattr(spec, 'options', None)
-        self.autoconvert = getattr(spec, 'autoconvert', True)
-        self.storage = getattr(spec, 'storage', None)
-        self.image_cache_backend = getattr(spec, 'image_cache_backend', None) \
-                or get_default_image_cache_backend()
+from .utils import SpecWrapper
 
 
 class ImageSpecFile(ImageFieldFile):

@@ -1,6 +1,7 @@
 import os
 from django import template
-from .. import ImageSpecFile
+
+from ..files import ImageSpecFile
 
 
 register = template.Library()
