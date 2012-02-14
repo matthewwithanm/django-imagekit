@@ -59,6 +59,8 @@ class SpecNode(template.Node):
         return os.path.join(os.path.join('cache', filepath), new_name)
 
     def render(self, context):
+        from ..utils import autodiscover
+        autodiscover()
         source_image = self.source_image.resolve(context)
         variable_name = str(self.variable_name)
         spec_id = self.spec_id.resolve(context)
