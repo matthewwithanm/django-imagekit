@@ -74,7 +74,7 @@ def get_default_image_cache_backend():
         except ValueError:
             raise ImproperlyConfigured("%s isn't an image cache backend module." % \
                     import_path)
-        module, classname = import_path[:dot], import_path[dot+1:]
+        module, classname = import_path[:dot], import_path[dot + 1:]
         try:
             mod = import_module(module)
         except ImportError, e:
