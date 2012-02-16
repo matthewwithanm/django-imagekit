@@ -1,6 +1,7 @@
 from imagekit.lib import Image
 from . import crop
 import warnings
+from . import Anchor
 
 
 class BasicResize(object):
@@ -47,36 +48,16 @@ class Cover(object):
 
 class Fill(object):
     """
-    Resizes an image , cropping it to the exact specified width and height.
+    Resizes an image, cropping it to the exact specified width and height.
 
     """
-    TOP_LEFT = crop.Crop.TOP_LEFT
-    TOP = crop.Crop.TOP
-    TOP_RIGHT = crop.Crop.TOP_RIGHT
-    BOTTOM_LEFT = crop.Crop.BOTTOM_LEFT
-    BOTTOM = crop.Crop.BOTTOM
-    BOTTOM_RIGHT = crop.Crop.BOTTOM_RIGHT
-    CENTER = crop.Crop.CENTER
-    LEFT = crop.Crop.LEFT
-    RIGHT = crop.Crop.RIGHT
 
     def __init__(self, width=None, height=None, anchor=None):
         """
         :param width: The target width, in pixels.
         :param height: The target height, in pixels.
         :param anchor: Specifies which part of the image should be retained
-            when cropping. Valid values are:
-
-            - Fill.TOP_LEFT
-            - Fill.TOP
-            - Fill.TOP_RIGHT
-            - Fill.LEFT
-            - Fill.CENTER
-            - Fill.RIGHT
-            - Fill.BOTTOM_LEFT
-            - Fill.BOTTOM
-            - Fill.BOTTOM_RIGHT
-
+            when cropping.
         """
         self.width = width
         self.height = height
@@ -94,7 +75,6 @@ class SmartFill(object):
     entropy to crop the image instead of a user-specified anchor point.
     Internally, it simply runs the ``resize.Cover`` and ``crop.SmartCrop``
     processors in series.
-
     """
     def __init__(self, width, height):
         """
@@ -116,18 +96,59 @@ class Crop(Fill):
         super(Crop, self).__init__(*args, **kwargs)
 
 
-class Mat(object):
-    def __init__(self, width, height, color=(0, 0, 0, 0), anchor=(0.5, 0.5)):
-        """Anchor behaves like Crop's anchor argument"""
+class ResizeCanvas(object):
+    """
+    Takes an image an resizes the canvas, using a specific background color
+    if the new size is larger than the current image.
+
+    """
+    def __init__(self, width, height, color=None, top=None, left=None, anchor=None):
+        """
+        :param width: The target width, in pixels.
+        :param height: The target height, in pixels.
+        :param color: The background color to use for padding.
+        :param anchor: Specifies the relative position of the original image.
+
+        """
+        if (anchor and not (top is None and left is None)) \
+        or (anchor is None and top is None and left is None):
+            raise Exception('You provide either an anchor or x and y position, but not both or none.')
         self.width = width
         self.height = height
         self.color = color
+        self.top = top
+        self.left = left
         self.anchor = anchor
 
     def process(self, img):
-        new_img = Image.new('RGBA', (self.width, self.height),  self.color)
-        new_img.paste(img, ((self.width - img.size[0]) / 2, (self.height - img.size[1]) / 2))
+        new_img = Image.new('RGBA', (self.width, self.height), self.color)
+        if self.anchor:
+            self.top = int(abs(self.width - img.size[0]) * Anchor._ANCHOR_PTS[self.anchor][0])
+            self.left = int(abs(self.height - img.size[1]) * Anchor._ANCHOR_PTS[self.anchor][1])
+        new_img.paste(img, (self.top, self.left))
         return new_img
+
+
+class AddBorder(object):
+    """
+    Add a border of specific color and size to an image.
+
+    """
+    def __init__(self, color, thickness):
+        """
+        :param color: Color to use for the border
+        :param thickness: Thickness of the border which is either an int or a 4-tuple of ints.
+        """
+        self.color = color
+        if isinstance(thickness, int):
+            self.top = self.right = self.bottom = self.left = thickness
+        else:
+            self.top, self.right, self.bottom, self.left = thickness
+
+    def process(self, img):
+        new_width = img.size[0] + self.left + self.right
+        new_height = img.size[1] + self.top + self.bottom
+        return ResizeCanvas(new_width, new_height, self.color, self.top, self.left).process(img)
 
 
 class Fit(object):
@@ -135,7 +156,8 @@ class Fit(object):
     Resizes an image to fit within the specified dimensions.
 
     """
-    def __init__(self, width=None, height=None, upscale=None, mat_color=None):
+
+    def __init__(self, width=None, height=None, upscale=None, mat_color=None, anchor=Anchor.CENTER):
         """
         :param width: The maximum width of the desired image.
         :param height: The maximum height of the desired image.
@@ -150,6 +172,7 @@ class Fit(object):
         self.height = height
         self.upscale = upscale
         self.mat_color = mat_color
+        self.anchor = anchor
 
     def process(self, img):
         cur_width, cur_height = img.size
@@ -168,7 +191,7 @@ class Fit(object):
                 img = BasicResize(new_dimensions[0],
                         new_dimensions[1]).process(img)
         if self.mat_color:
-            img = Mat(self.width, self.height, self.mat_color).process(img)
+            img = ResizeCanvas(self.width, self.height, self.mat_color, anchor=self.anchor).process(img)
         return img
 
 
