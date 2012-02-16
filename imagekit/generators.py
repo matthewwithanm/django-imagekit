@@ -97,4 +97,4 @@ class SpecFileGenerator(object):
                 storage = self.storage or source_file.storage
                 storage.save(filename, content)
 
-        return content
+            return content
