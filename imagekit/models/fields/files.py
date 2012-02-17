@@ -7,7 +7,7 @@ from django.utils.encoding import force_unicode, smart_str
 
 class ImageSpecFieldFile(ImageFieldFile):
     def __init__(self, instance, field, attname):
-        ImageFieldFile.__init__(self, instance, field, None)
+        super(ImageSpecFieldFile, self).__init__(instance, field, None)
         self.attname = attname
         self.storage = self.field.storage or self.source_file.storage
 
