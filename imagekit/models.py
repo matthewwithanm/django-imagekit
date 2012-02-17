@@ -265,7 +265,7 @@ class ImageSpecFile(_ImageSpecFileMixin, ImageFieldFile):
         """
         filepath, basename = os.path.split(path)
         filename = os.path.splitext(basename)[0]
-        new_name = '{0}_{1}{2}'.format(filename, specname, extension)
+        new_name = u'{0}_{1}{2}'.format(filename, specname, extension)
         return os.path.join(os.path.join('cache', filepath), new_name)
 
     @property
@@ -378,7 +378,7 @@ class ProcessedImageField(models.ImageField, _ImageSpecMixin):
         filename = os.path.normpath(self.storage.get_valid_name(os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
         ext = _get_suggested_extension(filename, self.format)
-        return '{0}{1}'.format(name, ext)
+        return u'{0}{1}'.format(name, ext)
 
 
 try:
