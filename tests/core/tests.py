@@ -15,6 +15,33 @@ from imagekit.processors.resize import Fill
 from imagekit.processors.crop import SmartCrop
 
 
+def generate_lenna():
+    """
+    See also:
+
+    http://en.wikipedia.org/wiki/Lenna
+    http://sipi.usc.edu/database/database.php?volume=misc&image=12
+
+    """
+    tmp = tempfile.TemporaryFile()
+    lennapath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'lenna-800x600-white-border.jpg')
+    with open(lennapath, "r+b") as lennafile:
+        Image.open(lennafile).save(tmp, 'JPEG')
+    tmp.seek(0)
+    return tmp
+
+
+def create_photo(name):
+    photo = Photo()
+    img = generate_lenna()
+    file = ContentFile(img.read())
+    photo.original_image = file
+    photo.original_image.save(name, file)
+    photo.save()
+    img.close()
+    return photo
+
+
 class Photo(models.Model):
     original_image = models.ImageField(upload_to='photos')
 
@@ -34,33 +61,8 @@ class IKTest(TestCase):
         tmp.seek(0)
         return tmp
 
-    def generate_lenna(self):
-        """
-        See also:
-
-        http://en.wikipedia.org/wiki/Lenna
-        http://sipi.usc.edu/database/database.php?volume=misc&image=12
-
-        """
-        tmp = tempfile.TemporaryFile()
-        lennapath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'lenna-800x600-white-border.jpg')
-        with open(lennapath, "r+b") as lennafile:
-            Image.open(lennafile).save(tmp, 'JPEG')
-        tmp.seek(0)
-        return tmp
-
-    def create_photo(self, name):
-        photo = Photo()
-        img = self.generate_lenna()
-        file = ContentFile(img.read())
-        photo.original_image = file
-        photo.original_image.save(name, file)
-        photo.save()
-        img.close()
-        return photo
-
     def setUp(self):
-        self.photo = self.create_photo('test.jpg')
+        self.photo = create_photo('test.jpg')
 
     def test_nodelete(self):
         """Don't delete the spec file when the source image hasn't changed.
