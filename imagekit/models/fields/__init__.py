@@ -6,7 +6,7 @@ from django.db.models.signals import post_init, post_save, post_delete
 from ...imagecache import get_default_image_cache_backend
 from ...generators import SpecFileGenerator
 from .files import ImageSpecFieldFile, ProcessedImageFieldFile
-from .utils import ImageSpecFieldDescriptor, ImageKitMeta, BoundImageKitMeta
+from .utils import ImageSpecFileDescriptor, ImageKitMeta, BoundImageKitMeta
 
 
 class ImageSpecField(object):
@@ -75,7 +75,7 @@ class ImageSpecField(object):
                 get_default_image_cache_backend()
 
     def contribute_to_class(self, cls, name):
-        setattr(cls, name, ImageSpecFieldDescriptor(self, name))
+        setattr(cls, name, ImageSpecFileDescriptor(self, name))
         try:
             ik = getattr(cls, '_ik')
         except AttributeError:

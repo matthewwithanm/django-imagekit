@@ -24,7 +24,7 @@ class ImageKitMeta(object):
             return ik
 
 
-class ImageSpecFieldDescriptor(object):
+class ImageSpecFileDescriptor(object):
     def __init__(self, field, attname):
         self.attname = attname
         self.field = field
