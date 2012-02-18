@@ -126,12 +126,18 @@ class ResizeCanvas(object):
         self.color = color or (255, 255, 255, 0)
 
     def process(self, img):
-        new_img = Image.new('RGBA', (self.width, self.height), self.color)
+        original_width, original_height = img.size
+
         if self.anchor:
-            x = int((self.width - img.size[0]) * Anchor._ANCHOR_PTS[self.anchor][0])
-            y = int((self.height - img.size[1]) * Anchor._ANCHOR_PTS[self.anchor][1])
+            anchor = Anchor.get_tuple(self.anchor)
+            trim_x, trim_y = self.width - original_width, \
+                    self.height - original_height
+            x = int(float(trim_x) * float(anchor[0]))
+            y = int(float(trim_y) * float(anchor[1]))
         else:
             x, y = self.x, self.y
+
+        new_img = Image.new('RGBA', (self.width, self.height), self.color)
         new_img.paste(img, (x, y))
         return new_img
 

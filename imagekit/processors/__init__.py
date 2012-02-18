@@ -292,3 +292,14 @@ class Anchor(object):
         BOTTOM: (0.5, 1),
         BOTTOM_RIGHT: (1, 1),
     }
+
+    @staticmethod
+    def get_tuple(anchor):
+        """Normalizes anchor values (strings or tuples) to tuples.
+
+        """
+        # If the user passed in one of the string values, convert it to a
+        # percentage tuple.
+        if anchor in Anchor._ANCHOR_PTS.keys():
+            anchor = Anchor._ANCHOR_PTS[anchor]
+        return anchor
