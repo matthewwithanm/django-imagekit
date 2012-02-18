@@ -1,6 +1,6 @@
-from ..lib import Image, ImageChops, ImageDraw, ImageStat
-from .utils import histogram_entropy
 from . import Anchor
+from .utils import histogram_entropy
+from ..lib import Image, ImageChops, ImageDraw, ImageStat
 
 
 class Side(object):
@@ -72,80 +72,31 @@ class TrimBorderColor(object):
         return img
 
 
-class BasicCrop(object):
-    """Crops an image to the specified rectangular region.
-
-    """
-    def __init__(self, x, y, width, height):
-        """
-        :param x: The x position of the clipping box, in pixels.
-        :param y: The y position of the clipping box, in pixels.
-        :param width: The width position of the clipping box, in pixels.
-        :param height: The height position of the clipping box, in pixels.
-
-        """
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-
-    def process(self, img):
-        box = (self.x, self.y, self.x + self.width, self.y + self.height)
-        return img.crop(box)
-
-
 class Crop(object):
     """
-    Crops an image , cropping it to the specified width and height
-    relative to the anchor.
+    Crops an image, cropping it to the specified width and height. You may
+    optionally provide either an anchor or x and y coordinates. This processor
+    functions exactly the same as ``ResizeCanvas`` except that it will never
+    enlarge the image.
 
     """
 
-    def __init__(self, width=None, height=None, anchor=None):
-        """
-        :param width: The target width, in pixels.
-        :param height: The target height, in pixels.
-        :param anchor: Specifies which part of the image should be retained
-            when cropping. Valid values are:
-
-            - Crop.TOP_LEFT
-            - Crop.TOP
-            - Crop.TOP_RIGHT
-            - Crop.LEFT
-            - Crop.CENTER
-            - Crop.RIGHT
-            - Crop.BOTTOM_LEFT
-            - Crop.BOTTOM
-            - Crop.BOTTOM_RIGHT
-
-            You may also pass a tuple that indicates the percentages of excess
-            to be trimmed from each dimension. For example, ``(0, 0)``
-            corresponds to "top left", ``(0.5, 0.5)`` to "center" and ``(1, 1)``
-            to "bottom right". This is basically the same as using percentages
-            in CSS background positions.
-
-        """
+    def __init__(self, width=None, height=None, anchor=None, x=None, y=None):
         self.width = width
         self.height = height
         self.anchor = anchor
+        self.x = x
+        self.y = y
 
     def process(self, img):
+        from .resize import ResizeCanvas
+
         original_width, original_height = img.size
         new_width, new_height = min(original_width, self.width), \
                 min(original_height, self.height)
-        trim_x, trim_y = original_width - new_width, \
-                original_height - new_height
 
-        # If the user passed in one of the string values, convert it to a
-        # percentage tuple.
-        anchor = self.anchor or Anchor.CENTER
-        if anchor in Anchor._ANCHOR_PTS.keys():
-            anchor = Anchor._ANCHOR_PTS[anchor]
-
-        x = int(float(trim_x) * float(anchor[0]))
-        y = int(float(trim_y) * float(anchor[1]))
-
-        return BasicCrop(x, y, new_width, new_height).process(img)
+        return ResizeCanvas(new_width, new_height, anchor=self.anchor,
+                x=self.x, y=self.y).process(img)
 
 
 class SmartCrop(object):

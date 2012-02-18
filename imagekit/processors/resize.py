@@ -107,7 +107,23 @@ class ResizeCanvas(object):
         :param width: The target width, in pixels.
         :param height: The target height, in pixels.
         :param color: The background color to use for padding.
-        :param anchor: Specifies the relative position of the original image.
+        :param anchor: Specifies the position of the original image on the new
+            canvas. Valid values are:
+
+            - Anchor.TOP_LEFT
+            - Anchor.TOP
+            - Anchor.TOP_RIGHT
+            - Anchor.LEFT
+            - Anchor.CENTER
+            - Anchor.RIGHT
+            - Anchor.BOTTOM_LEFT
+            - Anchor.BOTTOM
+            - Anchor.BOTTOM_RIGHT
+
+            You may also pass a tuple that indicates the position in
+            percentages. For example, ``(0, 0)`` corresponds to "top left",
+            ``(0.5, 0.5)`` to "center" and ``(1, 1)`` to "bottom right". This is
+            basically the same as using percentages in CSS background positions.
 
         """
         if x is not None or y is not None:
