@@ -120,3 +120,17 @@ AdminThumbnail can even use a custom template. For more information, see
 ``imagekit.admin.AdminThumbnail``.
 
 .. _`Django admin change list`: https://docs.djangoproject.com/en/dev/intro/tutorial02/#customize-the-admin-change-list
+
+
+Contributing
+------------
+
+We love contributions! And you don't have to be an expert with the library—or
+even Django—to contribute either: ImageKit's processors are standalone classes
+that are completely separate from the more intimidating internals of Django's
+ORM. If you've written a processor that you think might be useful to other
+people, open a pull request so we can take a look!
+
+ImageKit's image cache backends are also fairly isolated from the ImageKit guts.
+If you've fine-tuned one to work perfectly for a popular file storage backend,
+let us take a look! Maybe other people could use it.
