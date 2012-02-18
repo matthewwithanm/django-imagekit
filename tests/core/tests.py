@@ -60,6 +60,22 @@ class Photo(models.Model):
             format='JPEG', options={'quality': 90})
 
 
+class AbstractImageModel(models.Model):
+    original_image = models.ImageField(upload_to='photos')
+    abstract_class_spec = ImageSpecField()
+
+    class Meta:
+        abstract = True
+
+
+class ConcreteImageModel1(AbstractImageModel):
+    first_spec = ImageSpecField()
+
+
+class ConcreteImageModel2(AbstractImageModel):
+    second_spec = ImageSpecField()
+
+
 class IKTest(TestCase):
     def generate_image(self):
         tmp = tempfile.TemporaryFile()
@@ -129,3 +145,13 @@ class PickleTest(TestCase):
 
         # This isn't supposed to error.
         unpickled_model.thumbnail.source_file
+
+
+class InheritanceTest(TestCase):
+    def test_abstract_base(self):
+        self.assertEqual(set(AbstractImageModel._ik.spec_fields),
+                set(['abstract_class_spec']))
+        self.assertEqual(set(ConcreteImageModel1._ik.spec_fields),
+                set(['abstract_class_spec', 'first_spec']))
+        self.assertEqual(set(ConcreteImageModel2._ik.spec_fields),
+                set(['abstract_class_spec', 'second_spec']))
