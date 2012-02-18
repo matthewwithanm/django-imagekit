@@ -98,11 +98,11 @@ class Crop(Fill):
 
 class ResizeCanvas(object):
     """
-    Takes an image an resizes the canvas, using a specific background color
-    if the new size is larger than the current image.
+    Resizes the canvas, using the provided background color if the new size is
+    larger than the current image.
 
     """
-    def __init__(self, width, height, color=None, top=None, left=None, anchor=None):
+    def __init__(self, width, height, color=None, anchor=None, x=None, y=None):
         """
         :param width: The target width, in pixels.
         :param height: The target height, in pixels.
@@ -110,22 +110,29 @@ class ResizeCanvas(object):
         :param anchor: Specifies the relative position of the original image.
 
         """
-        if (anchor and not (top is None and left is None)) \
-        or (anchor is None and top is None and left is None):
-            raise Exception('You provide either an anchor or x and y position, but not both or none.')
+        if x is not None or y is not None:
+            if anchor:
+                raise Exception('You may provide either an anchor or x and y'
+                        ' coordinate, but not both.')
+            else:
+                self.x, self.y = x or 0, y or 0
+                self.anchor = None
+        else:
+            self.anchor = anchor or Anchor.CENTER
+            self.x = self.y = None
+
         self.width = width
         self.height = height
         self.color = color
-        self.top = top
-        self.left = left
-        self.anchor = anchor
 
     def process(self, img):
         new_img = Image.new('RGBA', (self.width, self.height), self.color)
         if self.anchor:
-            self.top = int(abs(self.width - img.size[0]) * Anchor._ANCHOR_PTS[self.anchor][0])
-            self.left = int(abs(self.height - img.size[1]) * Anchor._ANCHOR_PTS[self.anchor][1])
-        new_img.paste(img, (self.top, self.left))
+            x = int(abs(self.width - img.size[0]) * Anchor._ANCHOR_PTS[self.anchor][0])
+            y = int(abs(self.height - img.size[1]) * Anchor._ANCHOR_PTS[self.anchor][1])
+        else:
+            x, y = self.x, self.y
+        new_img.paste(img, (x, y))
         return new_img
 
 
@@ -148,7 +155,8 @@ class AddBorder(object):
     def process(self, img):
         new_width = img.size[0] + self.left + self.right
         new_height = img.size[1] + self.top + self.bottom
-        return ResizeCanvas(new_width, new_height, self.color, self.top, self.left).process(img)
+        return ResizeCanvas(new_width, new_height, color=self.color,
+                x=self.left, y=self.top).process(img)
 
 
 class Fit(object):
