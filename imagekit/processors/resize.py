@@ -123,7 +123,7 @@ class ResizeCanvas(object):
 
         self.width = width
         self.height = height
-        self.color = color
+        self.color = color or (255, 255, 255, 0)
 
     def process(self, img):
         new_img = Image.new('RGBA', (self.width, self.height), self.color)
