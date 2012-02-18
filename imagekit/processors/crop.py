@@ -1,4 +1,4 @@
-from . import Anchor
+from .base import Anchor
 from .utils import histogram_entropy
 from ..lib import Image, ImageChops, ImageDraw, ImageStat
 

@@ -1,7 +1,6 @@
 from imagekit.lib import Image
-from . import crop
 import warnings
-from . import Anchor
+from .base import Anchor
 
 
 class Resize(object):
@@ -26,7 +25,7 @@ class Cover(object):
     """
     Resizes the image to the smallest possible size that will entirely cover the
     provided dimensions. You probably won't be using this processor directly,
-    but it's used internally by ``Fill`` and ``SmartFill``.
+    but it's used internally by ``ResizeToFill`` and ``SmartResize``.
 
     """
     def __init__(self, width, height):
@@ -46,7 +45,7 @@ class Cover(object):
         return Resize(new_width, new_height).process(img)
 
 
-class Fill(object):
+class ResizeToFill(object):
     """
     Resizes an image, cropping it to the exact specified width and height.
 
@@ -64,16 +63,17 @@ class Fill(object):
         self.anchor = anchor
 
     def process(self, img):
+        from .crop import Crop
         img = Cover(self.width, self.height).process(img)
-        return crop.Crop(self.width, self.height,
+        return Crop(self.width, self.height,
                 anchor=self.anchor).process(img)
 
 
-class SmartFill(object):
+class SmartResize(object):
     """
-    The ``SmartFill`` processor is identical to ``Fill``, except that it uses
-    entropy to crop the image instead of a user-specified anchor point.
-    Internally, it simply runs the ``resize.Cover`` and ``crop.SmartCrop``
+    The ``SmartResize`` processor is identical to ``ResizeToFill``, except that
+    it uses entropy to crop the image instead of a user-specified anchor point.
+    Internally, it simply runs the ``ResizeToCover`` and ``SmartCrop``
     processors in series.
     """
     def __init__(self, width, height):
@@ -85,8 +85,9 @@ class SmartFill(object):
         self.width, self.height = width, height
 
     def process(self, img):
+        from .crop import SmartCrop
         img = Cover(self.width, self.height).process(img)
-        return crop.SmartCrop(self.width, self.height).process(img)
+        return SmartCrop(self.width, self.height).process(img)
 
 
 class ResizeCanvas(object):
@@ -217,11 +218,3 @@ class ResizeToFit(object):
         if self.mat_color:
             img = ResizeCanvas(self.width, self.height, self.mat_color, anchor=self.anchor).process(img)
         return img
-
-
-class SmartCrop(crop.SmartCrop):
-    def __init__(self, *args, **kwargs):
-        warnings.warn('The SmartCrop processor has been moved to'
-                ' `imagekit.processors.crop.SmartCrop`, where it belongs.',
-                DeprecationWarning)
-        super(SmartCrop, self).__init__(*args, **kwargs)
