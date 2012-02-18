@@ -141,10 +141,11 @@ class AddBorder(object):
     Add a border of specific color and size to an image.
 
     """
-    def __init__(self, color, thickness):
+    def __init__(self, thickness, color=None):
         """
         :param color: Color to use for the border
-        :param thickness: Thickness of the border which is either an int or a 4-tuple of ints.
+        :param thickness: Thickness of the border. Can be either an int or
+            a 4-tuple of ints of the form (top, right, bottom, left).
         """
         self.color = color
         if isinstance(thickness, int):
