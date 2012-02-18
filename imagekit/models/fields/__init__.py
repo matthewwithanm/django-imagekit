@@ -77,9 +77,16 @@ class ImageSpecField(object):
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
         try:
-            ik = getattr(cls, '_ik')
-        except AttributeError:
-            ik = ImageKitMeta()
+            # Make sure we don't modify an inherited ImageKitMeta instance
+            ik = cls.__dict__['ik']
+        except KeyError:
+            try:
+                base = getattr(cls, '_ik')
+            except AttributeError:
+                ik = ImageKitMeta()
+            else:
+                # Inherit all the spec fields.
+                ik = ImageKitMeta(base.spec_fields)
             setattr(cls, '_ik', ik)
         ik.spec_fields.append(name)
 

@@ -13,7 +13,7 @@ class BoundImageKitMeta(object):
 
 class ImageKitMeta(object):
     def __init__(self, spec_fields=None):
-        self.spec_fields = spec_fields or []
+        self.spec_fields = list(spec_fields) if spec_fields else []
 
     def __get__(self, instance, owner):
         if instance is None:
