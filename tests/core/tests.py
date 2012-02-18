@@ -3,77 +3,13 @@ from __future__ import with_statement
 import os
 import pickle
 from StringIO import StringIO
-import tempfile
 
-from django.core.files.base import ContentFile
-from django.db import models
 from django.test import TestCase
 
 from imagekit import utils
-from imagekit.lib import Image
-from imagekit.models.fields import ImageSpecField
-from imagekit.processors import Adjust
-from imagekit.processors import ResizeToFill
-from imagekit.processors import SmartCrop
-
-
-def generate_lenna():
-    """
-    See also:
-
-    http://en.wikipedia.org/wiki/Lenna
-    http://sipi.usc.edu/database/database.php?volume=misc&image=12
-
-    """
-    tmp = tempfile.TemporaryFile()
-    lennapath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'lenna-800x600-white-border.jpg')
-    with open(lennapath, "r+b") as lennafile:
-        Image.open(lennafile).save(tmp, 'JPEG')
-    tmp.seek(0)
-    return tmp
-
-
-def create_instance(model_class, image_name):
-    instance = model_class()
-    img = generate_lenna()
-    file = ContentFile(img.read())
-    instance.original_image = file
-    instance.original_image.save(image_name, file)
-    instance.save()
-    img.close()
-    return instance
-
-
-def create_photo(name):
-    return create_instance(Photo, name)
-
-
-class Photo(models.Model):
-    original_image = models.ImageField(upload_to='photos')
-
-    thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            ResizeToFill(50, 50)], image_field='original_image', format='JPEG',
-            options={'quality': 90})
-
-    smartcropped_thumbnail = ImageSpecField([Adjust(contrast=1.2,
-            sharpness=1.1), SmartCrop(50, 50)], image_field='original_image',
-            format='JPEG', options={'quality': 90})
-
-
-class AbstractImageModel(models.Model):
-    original_image = models.ImageField(upload_to='photos')
-    abstract_class_spec = ImageSpecField()
-
-    class Meta:
-        abstract = True
-
-
-class ConcreteImageModel1(AbstractImageModel):
-    first_spec = ImageSpecField()
-
-
-class ConcreteImageModel2(AbstractImageModel):
-    second_spec = ImageSpecField()
+from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
+        ConcreteImageModel2)
+from .testutils import generate_lenna, create_photo
 
 
 class IKTest(TestCase):
