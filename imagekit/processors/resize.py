@@ -4,7 +4,7 @@ import warnings
 from . import Anchor
 
 
-class BasicResize(object):
+class Resize(object):
     """
     Resizes an image to the specified width and height.
 
@@ -43,7 +43,7 @@ class Cover(object):
                 float(self.height) / original_height)
         new_width, new_height = (int(original_width * ratio),
                 int(original_height * ratio))
-        return BasicResize(new_width, new_height).process(img)
+        return Resize(new_width, new_height).process(img)
 
 
 class Fill(object):
@@ -212,7 +212,7 @@ class Fit(object):
                           int(round(cur_height * ratio)))
         if (cur_width > new_dimensions[0] or cur_height > new_dimensions[1]) or \
             self.upscale:
-                img = BasicResize(new_dimensions[0],
+                img = Resize(new_dimensions[0],
                         new_dimensions[1]).process(img)
         if self.mat_color:
             img = ResizeCanvas(self.width, self.height, self.mat_color, anchor=self.anchor).process(img)
