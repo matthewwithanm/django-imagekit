@@ -175,7 +175,7 @@ class AddBorder(object):
                 x=self.left, y=self.top).process(img)
 
 
-class Fit(object):
+class ResizeToFit(object):
     """
     Resizes an image to fit within the specified dimensions.
 
