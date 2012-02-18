@@ -89,13 +89,6 @@ class SmartFill(object):
         return crop.SmartCrop(self.width, self.height).process(img)
 
 
-class Crop(Fill):
-    def __init__(self, *args, **kwargs):
-        warnings.warn('`imagekit.processors.resize.Crop` has been renamed to'
-                '`imagekit.processors.resize.Fill`.', DeprecationWarning)
-        super(Crop, self).__init__(*args, **kwargs)
-
-
 class ResizeCanvas(object):
     """
     Resizes the canvas, using the provided background color if the new size is
