@@ -1,6 +1,8 @@
 from __future__ import with_statement
 
 import os
+import pickle
+from StringIO import StringIO
 import tempfile
 
 from django.core.files.base import ContentFile
@@ -111,3 +113,15 @@ class IKUtilsTest(TestCase):
 
         with self.assertRaises(utils.UnknownFormatError):
             utils.format_to_extension('TXT')
+
+
+class PickleTest(TestCase):
+    def test_source_file(self):
+        ph = create_photo('pickletest.jpg')
+        pickled_model = StringIO()
+        pickle.dump(ph, pickled_model)
+        pickled_model.seek(0)
+        unpickled_model = pickle.load(pickled_model)
+
+        # This isn't supposed to error.
+        unpickled_model.thumbnail.source_file
