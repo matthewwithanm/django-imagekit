@@ -35,5 +35,8 @@ class ImageSpecFileDescriptor(object):
         else:
             img_spec_file = ImageSpecFieldFile(instance, self.field,
                     self.attname)
-            setattr(instance, self.attname, img_spec_file)
+            instance.__dict__[self.attname] = img_spec_file
             return img_spec_file
+
+    def __set__(self, instance, value):
+        instance.__dict__[self.attname] = value
