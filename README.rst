@@ -61,12 +61,12 @@ your spec, you can expose different versions of the original image::
 
     from django.db import models
     from imagekit.models.fields import ImageSpecField
-    from imagekit.processors import resize, Adjust
+    from imagekit.processors import ResizeToFill, Adjust
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
         thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-                resize.Fill(50, 50)], image_field='original_image',
+                ResizeToFill(50, 50)], image_field='original_image',
                 format='JPEG', options={'quality': 90})
 
 The ``thumbnail`` property will now return a cropped image::
@@ -77,7 +77,7 @@ The ``thumbnail`` property will now return a cropped image::
     photo.original_image.width # > 1000
 
 The original image is not modified; ``thumbnail`` is a new file that is the
-result of running the ``imagekit.processors.resize.Fill`` processor on the
+result of running the ``imagekit.processors.ResizeToFill`` processor on the
 original.
 
 The ``imagekit.processors`` module contains processors for many common

@@ -13,8 +13,8 @@ from imagekit import utils
 from imagekit.lib import Image
 from imagekit.models.fields import ImageSpecField
 from imagekit.processors import Adjust
-from imagekit.processors.resize import Fill
-from imagekit.processors.crop import SmartCrop
+from imagekit.processors import ResizeToFill
+from imagekit.processors import SmartCrop
 
 
 def generate_lenna():
@@ -52,7 +52,7 @@ class Photo(models.Model):
     original_image = models.ImageField(upload_to='photos')
 
     thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            Fill(50, 50)], image_field='original_image', format='JPEG',
+            ResizeToFill(50, 50)], image_field='original_image', format='JPEG',
             options={'quality': 90})
 
     smartcropped_thumbnail = ImageSpecField([Adjust(contrast=1.2,
