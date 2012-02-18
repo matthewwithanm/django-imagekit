@@ -33,15 +33,19 @@ def generate_lenna():
     return tmp
 
 
-def create_photo(name):
-    photo = Photo()
+def create_instance(model_class, image_name):
+    instance = model_class()
     img = generate_lenna()
     file = ContentFile(img.read())
-    photo.original_image = file
-    photo.original_image.save(name, file)
-    photo.save()
+    instance.original_image = file
+    instance.original_image.save(image_name, file)
+    instance.save()
     img.close()
-    return photo
+    return instance
+
+
+def create_photo(name):
+    return create_instance(Photo, name)
 
 
 class Photo(models.Model):
