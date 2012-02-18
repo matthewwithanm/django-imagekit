@@ -1,5 +1,6 @@
 from ..lib import Image, ImageChops, ImageDraw, ImageStat
 from .utils import histogram_entropy
+from . import Anchor
 
 
 class Side(object):
@@ -99,27 +100,6 @@ class Crop(object):
     relative to the anchor.
 
     """
-    TOP_LEFT = 'tl'
-    TOP = 't'
-    TOP_RIGHT = 'tr'
-    BOTTOM_LEFT = 'bl'
-    BOTTOM = 'b'
-    BOTTOM_RIGHT = 'br'
-    CENTER = 'c'
-    LEFT = 'l'
-    RIGHT = 'r'
-
-    _ANCHOR_PTS = {
-        TOP_LEFT: (0, 0),
-        TOP: (0.5, 0),
-        TOP_RIGHT: (1, 0),
-        LEFT: (0, 0.5),
-        CENTER: (0.5, 0.5),
-        RIGHT: (1, 0.5),
-        BOTTOM_LEFT: (0, 1),
-        BOTTOM: (0.5, 1),
-        BOTTOM_RIGHT: (1, 1),
-    }
 
     def __init__(self, width=None, height=None, anchor=None):
         """
@@ -158,9 +138,9 @@ class Crop(object):
 
         # If the user passed in one of the string values, convert it to a
         # percentage tuple.
-        anchor = self.anchor or Crop.CENTER
-        if anchor in Crop._ANCHOR_PTS.keys():
-            anchor = Crop._ANCHOR_PTS[anchor]
+        anchor = self.anchor or Anchor.CENTER
+        if anchor in Anchor._ANCHOR_PTS.keys():
+            anchor = Anchor._ANCHOR_PTS[anchor]
 
         x = int(float(trim_x) * float(anchor[0]))
         y = int(float(trim_y) * float(anchor[1]))

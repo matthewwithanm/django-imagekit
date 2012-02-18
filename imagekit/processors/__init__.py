@@ -8,7 +8,6 @@ from both the filesystem and the ORM.
 
 """
 from imagekit.lib import Image, ImageColor, ImageEnhance
-from imagekit.processors import resize, crop
 
 
 RGBA_TRANSPARENCY_FORMATS = ['PNG']
@@ -198,7 +197,8 @@ class AutoConvert(object):
     def process(self, img):
         matte = False
         self.save_kwargs = {}
-        if img.mode == 'RGBA':
+        self.rgba_ = img.mode == 'RGBA'
+        if self.rgba_:
             if self.format in RGBA_TRANSPARENCY_FORMATS:
                 pass
             elif self.format in PALETTE_TRANSPARENCY_FORMATS:
@@ -264,3 +264,31 @@ class AutoConvert(object):
             self.save_kwargs['optimize'] = True
 
         return img
+
+
+class Anchor(object):
+    """
+    Defines all the anchor points needed by the various processor classes.
+
+    """
+    TOP_LEFT = 'tl'
+    TOP = 't'
+    TOP_RIGHT = 'tr'
+    BOTTOM_LEFT = 'bl'
+    BOTTOM = 'b'
+    BOTTOM_RIGHT = 'br'
+    CENTER = 'c'
+    LEFT = 'l'
+    RIGHT = 'r'
+
+    _ANCHOR_PTS = {
+        TOP_LEFT: (0, 0),
+        TOP: (0.5, 0),
+        TOP_RIGHT: (1, 0),
+        LEFT: (0, 0.5),
+        CENTER: (0.5, 0.5),
+        RIGHT: (1, 0.5),
+        BOTTOM_LEFT: (0, 1),
+        BOTTOM: (0.5, 1),
+        BOTTOM_RIGHT: (1, 1),
+    }
