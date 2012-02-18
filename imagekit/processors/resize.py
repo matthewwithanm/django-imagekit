@@ -21,7 +21,7 @@ class Resize(object):
         return img.resize((self.width, self.height), Image.ANTIALIAS)
 
 
-class Cover(object):
+class ResizeToCover(object):
     """
     Resizes the image to the smallest possible size that will entirely cover the
     provided dimensions. You probably won't be using this processor directly,
@@ -64,7 +64,7 @@ class ResizeToFill(object):
 
     def process(self, img):
         from .crop import Crop
-        img = Cover(self.width, self.height).process(img)
+        img = ResizeToCover(self.width, self.height).process(img)
         return Crop(self.width, self.height,
                 anchor=self.anchor).process(img)
 
@@ -86,7 +86,7 @@ class SmartResize(object):
 
     def process(self, img):
         from .crop import SmartCrop
-        img = Cover(self.width, self.height).process(img)
+        img = ResizeToCover(self.width, self.height).process(img)
         return SmartCrop(self.width, self.height).process(img)
 
 
