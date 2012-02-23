@@ -36,12 +36,8 @@ class ImageSpecFieldFile(ImageFieldFile):
     def _require_file(self):
         if not self.source_file:
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
-
-    def _get_file(self):
-        self.validate()
-        return super(ImageFieldFile, self).file
-
-    file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
+        else:
+            self.validate()
 
     def clear(self):
         return self.field.image_cache_backend.clear(self)
@@ -60,11 +56,6 @@ class ImageSpecFieldFile(ImageFieldFile):
         """
         return self.field.generator.generate_file(self.name, self.source_file,
                 save)
-
-    @property
-    def url(self):
-        self.validate()
-        return super(ImageFieldFile, self).url
 
     def delete(self, save=False):
         """
