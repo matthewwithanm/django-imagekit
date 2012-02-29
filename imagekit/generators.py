@@ -1,4 +1,6 @@
+import mimetypes
 import os
+
 from StringIO import StringIO
 
 from django.core.files.base import ContentFile
@@ -7,6 +9,23 @@ from .processors import ProcessorPipeline, AutoConvert
 from .utils import img_to_fobj, open_image, \
         format_to_extension, extension_to_format, UnknownFormatError, \
         UnknownExtensionError
+
+
+class SpecFile(ContentFile):
+    """
+    Wraps a ContentFile in a file-like object with a filename
+    and a content_type.
+    """
+    def __init__(self, filename, content):
+        self.file = ContentFile(content)
+        self.file.name = filename
+        try:
+            self.file.content_type = mimetypes.guess_type(filename)[0]
+        except IndexError:
+            self.file.content_type = None
+
+    def __str__(self):
+        return self.file.name
 
 
 class SpecFileGenerator(object):
@@ -50,7 +69,7 @@ class SpecFileGenerator(object):
                     options.items())
 
         imgfile = img_to_fobj(img, format, **options)
-        content = ContentFile(imgfile.read())
+        content = SpecFile(filename, imgfile.read())
         return img, content
 
     def suggest_extension(self, name):
