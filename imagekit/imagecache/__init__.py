@@ -1,6 +1,8 @@
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.importlib import import_module
 
+from imagekit.imagecache.base import PessimisticImageCacheBackend, NonValidatingImageCacheBackend
+
 _default_image_cache_backend = None
 
 
