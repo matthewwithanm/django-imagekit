@@ -1,3 +1,10 @@
+from django.core.exceptions import ImproperlyConfigured
+
+
+class InvalidImageCacheBackendError(ImproperlyConfigured):
+    pass
+
+
 class PessimisticImageCacheBackend(object):
     """
     A very safe image cache backend. Guarantees that files will always be
