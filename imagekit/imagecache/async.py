@@ -14,7 +14,7 @@ def generate(model, pk, attr):
         getattr(instance, attr).generate(save=True)
 
 
-class CeleryCacheStateBackend(PessimisticImageCacheBackend):
+class CeleryImageCacheBackend(PessimisticImageCacheBackend):
     """
     A pessimistic cache state backend that uses celery to generate its spec
     images. Like PessimisticCacheStateBackend, this one checks to see if the
