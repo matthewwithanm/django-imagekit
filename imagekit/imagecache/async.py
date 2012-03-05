@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from celery.task import task
 
-from imagekit.imagecache.base import PessimisticImageCacheBackend
+from imagekit.imagecache import PessimisticImageCacheBackend
 
 
 @task
