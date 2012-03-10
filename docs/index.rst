@@ -7,7 +7,9 @@ Getting Started
 Commands
 --------
 
-.. automodule:: imagekit.management.commands.ikflush
+.. automodule:: imagekit.management.commands.ikcacheinvalidate
+
+.. automodule:: imagekit.management.commands.ikcachevalidate
 
 
 Authors
