@@ -4,6 +4,15 @@ from __future__ import absolute_import
 from imagekit.imagecache import PessimisticImageCacheBackend, InvalidImageCacheBackendError
 
 
+def generate(model, pk, attr):
+    try:
+        instance = model._default_manager.get(pk=pk)
+    except model.DoesNotExist:
+        pass  # The model was deleted since the task was scheduled. NEVER MIND!
+    else:
+        getattr(instance, attr).generate(save=True)
+
+
 class CeleryImageCacheBackend(PessimisticImageCacheBackend):
     """
     A pessimistic cache state backend that uses celery to generate its spec
@@ -19,23 +28,11 @@ class CeleryImageCacheBackend(PessimisticImageCacheBackend):
     """
     def __init__(self):
         try:
-            import celery
+            from celery.task import task
         except:
             raise InvalidImageCacheBackendError("Celery image cache backend requires either the 'celery' library")
-
-    @property
-    def _task(self):
-        from celery.task import task
-
-        @task
-        def generate(model, pk, attr):
-            try:
-                instance = model._default_manager.get(pk=pk)
-            except model.DoesNotExist:
-                pass  # The model was deleted since the task was scheduled. NEVER MIND!
-            else:
-                getattr(instance, attr).generate(save=True)
-        return generate
+        if not getattr(CeleryImageCacheBackend, '_task', None):
+            CeleryImageCacheBackend._task = task(generate)
 
     def invalidate(self, file):
         self._task.delay(file.instance.__class__, file.instance.pk, file.attname)
