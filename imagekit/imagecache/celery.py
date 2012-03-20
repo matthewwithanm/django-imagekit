@@ -30,7 +30,7 @@ class CeleryImageCacheBackend(PessimisticImageCacheBackend):
         try:
             from celery.task import task
         except:
-            raise InvalidImageCacheBackendError("Celery image cache backend requires either the 'celery' library")
+            raise InvalidImageCacheBackendError("Celery image cache backend requires the 'celery' library")
         if not getattr(CeleryImageCacheBackend, '_task', None):
             CeleryImageCacheBackend._task = task(generate)
 
