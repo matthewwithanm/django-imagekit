@@ -37,7 +37,4 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Topic :: Utilities'
     ],
-    setup_requires=[
-        'versiontools >= 1.8',
-    ],
 )
