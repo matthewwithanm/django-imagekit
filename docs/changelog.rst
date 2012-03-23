@@ -31,7 +31,7 @@ v2.0.0
     get a stale spec image. The tradeoff is that calling `invalidate()`
     won't block to interact with file storage.
 
-- ``resize.Crop`` has been renamed to ``reszie.Fill``. Using ``resize.Crop``
+- ``resize.Crop`` has been renamed to ``resize.Fill``. Using ``resize.Crop``
   will throw a ``DeprecationWarning``.
 
 - New processors have been added:
