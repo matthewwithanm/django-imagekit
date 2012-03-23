@@ -10,7 +10,9 @@ def generate(model, pk, attr):
     except model.DoesNotExist:
         pass  # The model was deleted since the task was scheduled. NEVER MIND!
     else:
-        getattr(instance, attr).generate(save=True)
+        field_file = getattr(instance, attr)
+        field_file.delete(save=False)
+        field_file.generate(save=True)
 
 
 class CeleryImageCacheBackend(PessimisticImageCacheBackend):
