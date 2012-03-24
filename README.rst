@@ -51,6 +51,17 @@ an ImageFile-like object (just like with a normal
 
 Check out ``imagekit.models.fields.ImageSpecField`` for more information.
 
+If you only want to save the processed image (without maintaining the original),
+you can use a ``ProcessedImageField``::
+
+    from django.db import models
+    from imagekit.models.fields import ProcessedImageField
+
+    class Photo(models.Model):
+        processed_image = ImageSpecField(format='JPEG', options={'quality': 90})
+
+See the class documentation for details.
+
 
 Processors
 ----------
@@ -78,7 +89,8 @@ The ``thumbnail`` property will now return a cropped image::
 
 The original image is not modified; ``thumbnail`` is a new file that is the
 result of running the ``imagekit.processors.ResizeToFill`` processor on the
-original.
+original. (If you only need to save the processed image, and not the original,
+pass processors to a ``ProcessedImageField`` instead of an ``ImageSpecField``.)
 
 The ``imagekit.processors`` module contains processors for many common
 image manipulations, like resizing, rotating, and color adjustments. However,
@@ -120,6 +132,36 @@ AdminThumbnail can even use a custom template. For more information, see
 ``imagekit.admin.AdminThumbnail``.
 
 .. _`Django admin change list`: https://docs.djangoproject.com/en/dev/intro/tutorial02/#customize-the-admin-change-list
+
+
+Image Cache Backends
+--------------------
+
+Whenever you access properties like ``url``, ``width`` and ``height`` of an
+``ImageSpecField``, its cached image is validated; whenever you save a new image
+to the ``ImageField`` your spec uses as a source, the spec image is invalidated.
+The default way to validate a cache image is to check to see if the file exists
+and, if not, generate a new one; the default way to invalidate the cache is to
+delete the image. This is a very simple and straightforward way to handle cache
+validation, but it has its drawbacks—for example, checking to see if the image
+exists means frequently hitting the storage backend.
+
+Because of this, ImageKit allows you to define custom image cache backends. To
+be a valid image cache backend, a class must implement three methods:
+``validate``, ``invalidate``, and ``clear`` (which is called when the image is
+no longer needed in any form, i.e. the model is deleted). Each of these methods
+must accept a file object, but the internals are up to you. For example, you
+could store the state (valid, invalid) of the cache in a database to avoid
+filesystem access. You can then specify your image cache backend on a per-field
+basis::
+
+    class Photo(models.Model):
+        ...
+        thumbnail = ImageSpecField(..., image_cache_backend=MyImageCacheBackend())
+
+Or in your ``settings.py`` file if you want to use it as the default::
+
+    IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'path.to.MyImageCacheBackend'
 
 
 Contributing
