@@ -4,58 +4,60 @@ Changelog
 v2.0.0
 ------
 
-- Added the concept of cache state backends. Cache state backends assume
-  control of an image's CRUD actions from `ImageSpec` in versions past. The
-  default backend maintins the current behavior: invalidating an image and
-  deleting it, then validating that it creates the file if it doesn't already
-  exist. One can create custom cache state backends to control how their
-  images are cached (e.g., Celery, etc.).
+- Added the concept of image cache backends. Image cache backends assume
+  control of validating and invalidating the cached images from `ImageSpec` in
+  versions past. The default backend maintins the current behavior: invalidating
+  an image deletes it, while validating checks whether the file exists and
+  creates the file if it doesn't. One can create custom image cache backends to
+  control how their images are cached (e.g., Celery, etc.).
 
   ImageKit ships with three built-in backends:
 
-  - ``imagecache.base.PessimisticImageCacheBackend`` - A very safe image cache
-    backend. Guarantees that files will always be available, but at the cost
-    of hitting the storage backend.
-  - ``imagecache.base.NonValidatingImageCacheBackend`` - A backend that is
+  - ``imagekit.imagecache.PessimisticImageCacheBackend`` - A very safe image
+    cache backend. Guarantees that files will always be available, but at the
+    cost of hitting the storage backend.
+  - ``imagekit.imagecache.NonValidatingImageCacheBackend`` - A backend that is
     super optimistic about the existence of spec files. It will hit your file
     storage much less frequently than the pessimistic backend, but it is
     technically possible for a cache file to be missing after validation.
-  - ``imagecache.celery.CeleryImageCacheBackend`` - A pessimistic cache state
-    backend that uses celery to generate its spec images. Like
+  - ``imagekit.imagecache.celery.CeleryImageCacheBackend`` - A pessimistic cache
+    state backend that uses celery to generate its spec images. Like
     ``PessimisticCacheStateBackend``, this one checks to see if the file
     exists on validation, so the storage is hit fairly frequently, but an
     image is guaranteed to exist. However, while validation guarantees the
     existence of *an* image, it does not necessarily guarantee that you will
     get the correct image, as the spec may be pending regeneration. In other
-    words, while there are `generate` tasks in the queue, it is possible to
-    get a stale spec image. The tradeoff is that calling `invalidate()`
+    words, while there are ``generate`` tasks in the queue, it is possible to
+    get a stale spec image. The tradeoff is that calling ``invalidate()``
     won't block to interact with file storage.
 
-- ``resize.Crop`` has been renamed to ``resize.Fill``. Using ``resize.Crop``
-  will throw a ``DeprecationWarning``.
+- Some of the processors have been renamed and several new ones have been added:
 
-- New processors have been added:
-
-  - ``crop.BasicCrop`` - Crop using provided box.
-  - ``crop.SmartCrop`` - Crop to provided size, trimming based on entropy.
-  - ``crop.TrimBorderColor`` - Trim the specified color from the specified
-    sides.
-  - ``resize.AddBorder`` - Add a border of specific color and size to an
+  - ``imagekit.processors.ResizeToFill`` - (previously
+    ``imagekit.processors.resize.Crop``) Scales the image to fill the provided
+    dimensions and then trims away the excess.
+  - ``imagekit.processors.ResizeToFit`` - (previously
+    ``imagekit.processors.resize.Fit``) Scale to fit the provided dimensions.
+  - ``imagekit.processors.SmartResize`` - Like ``ResizeToFill``, but crops using
+    entroy (``SmartCrop``) instead of an anchor argument.
+  - ``imagekit.processors.BasicCrop`` - Crop using provided box.
+  - ``imagekit.processors.SmartCrop`` - (previously
+    ``imagekit.processors.resize.SmartCrop``) Crop to provided size, trimming
+    based on entropy.
+  - ``imagekit.processors.TrimBorderColor`` - Trim the specified color from the
+    specified sides.
+  - ``imagekit.processors.AddBorder`` - Add a border of specific color and
+    thickness to an image.
+  - ``imagekit.processors.Resize`` - Scale to the provided dimensions (can distort).
+  - ``imagekit.processors.ResizeToCover`` - Scale to the smallest size that will
+    cover the specified dimensions. Used internally by ``Fill`` and
+    ``SmartFill``.
+  - ``imagekit.processors.ResizeCanvas`` - Takes an image an resizes the canvas,
+    using a specific background color if the new size is larger than the current
     image.
-  - ``resize.Resize`` - Scale to the provided dimensions (can distort).
-  - ``resize.ResizeToCover`` - Scale to the smallest size that will cover
-    the specified dimensions. Used internally by ``Fill`` and ``SmartFill``.
-  - ``resize.ResizeToFill`` - Scale to fill the provided dimensions,
-    trimming away excess using ``Crop``.
-  - ``resize.ResizeToFit`` - Scale to fit the provided dimensions.
-  - ``resize.ResizeCanvas`` - Takes an image an resizes the canvas, using a
-    specific background color if the new size is larger than the current
-    image.
-  - ``resize.SmartFill`` - Scale to fill the provided dimensions, trimming
-    away excess using ``SmartCrop``.
 
-- ``mat_color`` has been added as an arguemnt to the ``ResizeProcessor``. If
-  set, the target image size will be enforced and the specified color will be
+- ``mat_color`` has been added as an arguemnt to ``ResizeToFit``. If set, the
+  the target image size will be enforced and the specified color will be
   used as background color to pad the image.
 
 - We now use `Tox`_ to automate testing.
