@@ -4,6 +4,7 @@ import os
 from StringIO import StringIO
 
 from django.core.files.base import ContentFile
+from django.utils.encoding import smart_str, smart_unicode
 
 from .processors import ProcessorPipeline, AutoConvert
 from .utils import img_to_fobj, open_image, \
@@ -25,7 +26,10 @@ class SpecFile(ContentFile):
             self.file.content_type = None
 
     def __str__(self):
-        return self.file.name
+        return smart_str(self.file.name or '')
+
+    def __unicode__(self):
+        return smart_unicode(self.file.name or u'')
 
 
 class SpecFileGenerator(object):
