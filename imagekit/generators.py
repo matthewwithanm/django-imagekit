@@ -33,11 +33,11 @@ class SpecFile(ContentFile):
 
 
 class SpecFileGenerator(object):
-    def __init__(self, processors=None, format=None, options={},
+    def __init__(self, processors=None, format=None, options=None,
             autoconvert=True, storage=None):
         self.processors = processors
         self.format = format
-        self.options = options
+        self.options = options or {}
         self.autoconvert = autoconvert
         self.storage = storage
 

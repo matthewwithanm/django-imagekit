@@ -15,7 +15,7 @@ class ImageSpecField(object):
     variants of uploaded images to your models.
 
     """
-    def __init__(self, processors=None, format=None, options={},
+    def __init__(self, processors=None, format=None, options=None,
         image_field=None, pre_cache=None, storage=None, cache_to=None,
         autoconvert=True, image_cache_backend=None):
         """
@@ -146,7 +146,7 @@ class ProcessedImageField(models.ImageField):
     """
     attr_class = ProcessedImageFieldFile
 
-    def __init__(self, processors=None, format=None, options={},
+    def __init__(self, processors=None, format=None, options=None,
         verbose_name=None, name=None, width_field=None, height_field=None,
         autoconvert=True, **kwargs):
         """
