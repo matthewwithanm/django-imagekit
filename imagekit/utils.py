@@ -1,6 +1,6 @@
 import os
 import mimetypes
-import tempfile
+from StringIO import StringIO
 import types
 
 from django.core.files.base import ContentFile
@@ -33,7 +33,7 @@ class IKContentFile(ContentFile):
 
 
 def img_to_fobj(img, format, autoconvert=True, **options):
-    return save_image(img, tempfile.TemporaryFile(), format, options, autoconvert)
+    return save_image(img, StringIO(), format, options, autoconvert)
 
 
 def get_spec_files(instance):
