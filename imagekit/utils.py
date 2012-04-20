@@ -1,11 +1,34 @@
 import os
+import mimetypes
 import tempfile
 import types
 
+from django.core.files.base import ContentFile
 from django.db.models.loading import cache
 from django.utils.functional import wraps
+from django.utils.encoding import smart_str, smart_unicode
 
 from imagekit.lib import Image, ImageFile
+
+
+class IKContentFile(ContentFile):
+    """
+    Wraps a ContentFile in a file-like object with a filename
+    and a content_type.
+    """
+    def __init__(self, filename, content):
+        self.file = ContentFile(content)
+        self.file.name = filename
+        try:
+            self.file.content_type = mimetypes.guess_type(filename)[0]
+        except IndexError:
+            self.file.content_type = None
+
+    def __str__(self):
+        return smart_str(self.file.name or '')
+
+    def __unicode__(self):
+        return smart_unicode(self.file.name or u'')
 
 
 def img_to_fobj(img, format, **kwargs):

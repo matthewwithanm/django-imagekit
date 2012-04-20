@@ -1,34 +1,10 @@
-import mimetypes
 import os
 
 from StringIO import StringIO
 
-from django.core.files.base import ContentFile
-from django.utils.encoding import smart_str, smart_unicode
-
 from .processors import ProcessorPipeline, AutoConvert
-from .utils import (img_to_fobj, open_image, extension_to_format,
+from .utils import (img_to_fobj, open_image, IKContentFile, extension_to_format,
         UnknownExtensionError)
-
-
-class SpecFile(ContentFile):
-    """
-    Wraps a ContentFile in a file-like object with a filename
-    and a content_type.
-    """
-    def __init__(self, filename, content):
-        self.file = ContentFile(content)
-        self.file.name = filename
-        try:
-            self.file.content_type = mimetypes.guess_type(filename)[0]
-        except IndexError:
-            self.file.content_type = None
-
-    def __str__(self):
-        return smart_str(self.file.name or '')
-
-    def __unicode__(self):
-        return smart_unicode(self.file.name or u'')
 
 
 class SpecFileGenerator(object):
@@ -72,7 +48,7 @@ class SpecFileGenerator(object):
                     options.items())
 
         imgfile = img_to_fobj(img, format, **options)
-        content = SpecFile(filename, imgfile.read())
+        content = IKContentFile(filename, imgfile.read())
         return img, content
 
     def generate_file(self, filename, source_file, save=True):
