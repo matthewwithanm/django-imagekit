@@ -1,6 +1,7 @@
 import os
 import mimetypes
 from StringIO import StringIO
+import sys
 import types
 
 from django.core.files.base import ContentFile
@@ -217,7 +218,8 @@ def save_image(img, outfile, format, options=None, autoconvert=True):
         pass
 
     try:
-        img.save(outfile, format, **options)
+        with quiet():
+            img.save(outfile, format, **options)
     except IOError:
         # PIL can have problems saving large JPEGs if MAXBLOCK isn't big enough,
         # So if we have a problem saving, we temporarily increase it. See
@@ -235,3 +237,20 @@ def save_image(img, outfile, format, options=None, autoconvert=True):
         pass
 
     return outfile
+
+
+class quiet(object):
+    """
+    A context manager for suppressing the stderr activity of PIL's C libraries.
+    Based on http://stackoverflow.com/a/978264/155370
+
+    """
+    def __enter__(self):
+        self.stderr_fd = sys.__stderr__.fileno()
+        self.null_fd = os.open(os.devnull, os.O_RDWR)
+        self.old = os.dup(self.stderr_fd)
+        os.dup2(self.null_fd, self.stderr_fd)
+
+    def __exit__(self, *args, **kwargs):
+        os.dup2(self.old, self.stderr_fd)
+        os.close(self.null_fd)
