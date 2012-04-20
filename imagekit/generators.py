@@ -1,8 +1,7 @@
 import os
-
 from StringIO import StringIO
 
-from .processors import ProcessorPipeline, AutoConvert
+from .processors import ProcessorPipeline
 from .utils import (img_to_fobj, open_image, IKContentFile, extension_to_format,
         UnknownExtensionError)
 
@@ -38,14 +37,7 @@ class SpecFileGenerator(object):
                     format = extension_to_format(extension)
                 except UnknownExtensionError:
                     pass
-        format = format or img.format or original_format or 'JPEG'
-
-        # Run the AutoConvert processor
-        if self.autoconvert:
-            autoconvert_processor = AutoConvert(format)
-            img = autoconvert_processor.process(img)
-            options = dict(autoconvert_processor.save_kwargs.items() + \
-                    options.items())
+            format = format or img.format or original_format or 'JPEG'
 
         imgfile = img_to_fobj(img, format, **options)
         content = IKContentFile(filename, imgfile.read())

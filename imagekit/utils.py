@@ -8,7 +8,8 @@ from django.db.models.loading import cache
 from django.utils.functional import wraps
 from django.utils.encoding import smart_str, smart_unicode
 
-from imagekit.lib import Image, ImageFile
+from .lib import Image, ImageFile
+from .processors import AutoConvert
 
 
 class IKContentFile(ContentFile):
@@ -31,22 +32,8 @@ class IKContentFile(ContentFile):
         return smart_unicode(self.file.name or u'')
 
 
-def img_to_fobj(img, format, **kwargs):
-    tmp = tempfile.TemporaryFile()
-    try:
-        img.save(tmp, format, **kwargs)
-    except IOError:
-        # PIL can have problems saving large JPEGs if MAXBLOCK isn't big enough,
-        # So if we have a problem saving, we temporarily increase it. See
-        # http://github.com/jdriscoll/django-imagekit/issues/50
-        old_maxblock = ImageFile.MAXBLOCK
-        ImageFile.MAXBLOCK = img.size[0] * img.size[1]
-        try:
-            img.save(tmp, format, **kwargs)
-        finally:
-            ImageFile.MAXBLOCK = old_maxblock
-    tmp.seek(0)
-    return tmp
+def img_to_fobj(img, format, autoconvert=True, **options):
+    return save_image(img, tempfile.TemporaryFile(), format, options, autoconvert)
 
 
 def get_spec_files(instance):
@@ -212,3 +199,39 @@ def suggest_extension(name, format):
                 else:
                     extension = suggested_extension
     return extension
+
+
+def save_image(img, outfile, format, options=None, autoconvert=True):
+    options = options or {}
+
+    if autoconvert:
+        autoconvert_processor = AutoConvert(format)
+        img = autoconvert_processor.process(img)
+        options = dict(autoconvert_processor.save_kwargs.items() +
+                options.items())
+
+    # Attempt to reset the file pointer.
+    try:
+        outfile.seek(0)
+    except AttributeError:
+        pass
+
+    try:
+        img.save(outfile, format, **options)
+    except IOError:
+        # PIL can have problems saving large JPEGs if MAXBLOCK isn't big enough,
+        # So if we have a problem saving, we temporarily increase it. See
+        # http://github.com/jdriscoll/django-imagekit/issues/50
+        old_maxblock = ImageFile.MAXBLOCK
+        ImageFile.MAXBLOCK = img.size[0] * img.size[1]
+        try:
+            img.save(outfile, format, **options)
+        finally:
+            ImageFile.MAXBLOCK = old_maxblock
+
+    try:
+        outfile.seek(0)
+    except AttributeError:
+        pass
+
+    return outfile
