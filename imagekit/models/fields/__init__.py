@@ -7,6 +7,7 @@ from ...imagecache import get_default_image_cache_backend
 from ...generators import SpecFileGenerator
 from .files import ImageSpecFieldFile, ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor, ImageKitMeta, BoundImageKitMeta
+from ...utils import suggest_extension
 
 
 class ImageSpecField(object):
@@ -169,7 +170,7 @@ class ProcessedImageField(models.ImageField):
         filename = os.path.normpath(self.storage.get_valid_name(
                 os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
-        ext = self.generator.suggest_extension(filename)
+        ext = suggest_extension(filename, self.generator.format)
         return u'%s%s' % (name, ext)
 
 

@@ -7,9 +7,8 @@ from django.core.files.base import ContentFile
 from django.utils.encoding import smart_str, smart_unicode
 
 from .processors import ProcessorPipeline, AutoConvert
-from .utils import img_to_fobj, open_image, \
-        format_to_extension, extension_to_format, UnknownFormatError, \
-        UnknownExtensionError
+from .utils import (img_to_fobj, open_image, extension_to_format,
+        UnknownExtensionError)
 
 
 class SpecFile(ContentFile):
@@ -75,28 +74,6 @@ class SpecFileGenerator(object):
         imgfile = img_to_fobj(img, format, **options)
         content = SpecFile(filename, imgfile.read())
         return img, content
-
-    def suggest_extension(self, name):
-        original_extension = os.path.splitext(name)[1]
-        try:
-            suggested_extension = format_to_extension(self.format)
-        except UnknownFormatError:
-            extension = original_extension
-        else:
-            if suggested_extension.lower() == original_extension.lower():
-                extension = original_extension
-            else:
-                try:
-                    original_format = extension_to_format(original_extension)
-                except UnknownExtensionError:
-                    extension = suggested_extension
-                else:
-                    # If the formats match, give precedence to the original extension.
-                    if self.format.lower() == original_format.lower():
-                        extension = original_extension
-                    else:
-                        extension = suggested_extension
-        return extension
 
     def generate_file(self, filename, source_file, save=True):
         """

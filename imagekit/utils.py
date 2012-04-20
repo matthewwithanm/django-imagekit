@@ -1,3 +1,4 @@
+import os
 import tempfile
 import types
 
@@ -165,3 +166,26 @@ def validate_app_cache(apps, force_revalidation=False):
                 if force_revalidation:
                     f.invalidate()
                 f.validate()
+
+
+def suggest_extension(name, format):
+    original_extension = os.path.splitext(name)[1]
+    try:
+        suggested_extension = format_to_extension(format)
+    except UnknownFormatError:
+        extension = original_extension
+    else:
+        if suggested_extension.lower() == original_extension.lower():
+            extension = original_extension
+        else:
+            try:
+                original_format = extension_to_format(original_extension)
+            except UnknownExtensionError:
+                extension = suggested_extension
+            else:
+                # If the formats match, give precedence to the original extension.
+                if format.lower() == original_format.lower():
+                    extension = original_extension
+                else:
+                    extension = suggested_extension
+    return extension
