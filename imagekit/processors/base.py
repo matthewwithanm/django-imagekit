@@ -208,6 +208,11 @@ class AutoConvert(object):
                 # In other words, a P-format image converted to an
                 # RGBA-formatted image by a processor and then saved as a
                 # P-format image will give the expected results.
+
+                # Work around a bug in PIL: split() doesn't check to see if
+                # img is loaded.
+                img.load()
+
                 alpha = img.split()[-1]
                 mask = Image.eval(alpha, lambda a: 255 if a <= 128 else 0)
                 img = img.convert('RGB').convert('P', palette=Image.ADAPTIVE,
