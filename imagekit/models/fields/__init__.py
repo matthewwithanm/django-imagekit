@@ -48,8 +48,8 @@ class ImageSpecField(object):
                     based on that format. if not, the extension of the
                     original file will be passed. You do not have to use
                     this extension, it's only a recommendation.
-        :param autoconvert: Specifies whether the AutoConvert processor
-            should be run before saving.
+        :param autoconvert: Specifies whether automatic conversion using
+            ``prepare_image()`` should be performed prior to saving.
         :param image_cache_backend: An object responsible for managing the state
             of cached files. Defaults to an instance of
             IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
