@@ -154,7 +154,7 @@ class ProcessedImageField(models.ImageField):
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
         as the ``processors``, ``format``, and ``options`` arguments of
-        :class:`imagekit.models.fields.ImageSpecField`.
+        :class:`imagekit.models.ImageSpecField`.
 
         """
         if 'quality' in kwargs:
