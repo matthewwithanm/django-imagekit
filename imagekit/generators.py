@@ -29,7 +29,7 @@ class SpecFileGenerator(object):
 
         # Determine the format.
         format = self.format
-        if not format:
+        if filename and not format:
             # Try to guess the format from the extension.
             extension = os.path.splitext(filename)[1].lower()
             if extension:
@@ -37,7 +37,7 @@ class SpecFileGenerator(object):
                     format = extension_to_format(extension)
                 except UnknownExtensionError:
                     pass
-            format = format or img.format or original_format or 'JPEG'
+        format = format or img.format or original_format or 'JPEG'
 
         imgfile = img_to_fobj(img, format, **options)
         content = IKContentFile(filename, imgfile.read())
