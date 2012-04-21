@@ -122,6 +122,19 @@ def _format_to_extension(format):
     return None
 
 
+def extension_to_mimetype(ext):
+    try:
+        filename = 'a%s' % (ext or '')  # guess_type requires a full filename, not just an extension
+        mimetype = mimetypes.guess_type(filename)[0]
+    except IndexError:
+        mimetype = None
+    return mimetype
+
+
+def format_to_mimetype(format):
+    return extension_to_mimetype(format_to_extension(format))
+
+
 def extension_to_format(extension):
     """Returns the format that corresponds to the provided extension.
 
