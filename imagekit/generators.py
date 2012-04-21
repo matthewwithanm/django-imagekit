@@ -40,7 +40,7 @@ class SpecFileGenerator(object):
         format = format or img.format or original_format or 'JPEG'
 
         imgfile = img_to_fobj(img, format, **options)
-        content = IKContentFile(filename, imgfile.read())
+        content = IKContentFile(filename, imgfile.read(), format=format)
         return img, content
 
     def generate_file(self, filename, source_file, save=True):
