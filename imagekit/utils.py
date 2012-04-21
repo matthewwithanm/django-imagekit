@@ -203,6 +203,15 @@ def suggest_extension(name, format):
 
 
 def save_image(img, outfile, format, options=None, autoconvert=True):
+    """
+    Wraps PIL's ``Image.save()`` method. There are two main benefits of using
+    this function over PIL's:
+
+    1. It gracefully handles the infamous "Suspension not allowed here" errors.
+    2. It incorporates the AutoConvert processor, which will do some
+        common-sense processing given the target format.
+
+    """
     options = options or {}
 
     if autoconvert:
