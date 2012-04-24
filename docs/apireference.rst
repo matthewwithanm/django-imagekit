@@ -13,13 +13,13 @@ API Reference
 ------------------------
 
 .. automodule:: imagekit.processors
-   :members:
+    :members:
 
 .. automodule:: imagekit.processors.resize
-  :members:
+    :members:
 
 .. automodule:: imagekit.processors.crop
-:members:
+    :members:
 
 
 :mod:`admin` Module
