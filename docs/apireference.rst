@@ -5,7 +5,7 @@ API Reference
 :mod:`models` Module
 --------------------
 
-.. automodule:: imagekit.models.fields
+.. automodule:: imagekit.models
    :members:
 
 

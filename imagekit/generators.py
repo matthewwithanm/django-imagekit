@@ -1,39 +1,17 @@
-import mimetypes
 import os
-
 from StringIO import StringIO
 
-from django.core.files.base import ContentFile
-
-from .processors import ProcessorPipeline, AutoConvert
-from .utils import img_to_fobj, open_image, \
-        format_to_extension, extension_to_format, UnknownFormatError, \
-        UnknownExtensionError
-
-
-class SpecFile(ContentFile):
-    """
-    Wraps a ContentFile in a file-like object with a filename
-    and a content_type.
-    """
-    def __init__(self, filename, content):
-        self.file = ContentFile(content)
-        self.file.name = filename
-        try:
-            self.file.content_type = mimetypes.guess_type(filename)[0]
-        except IndexError:
-            self.file.content_type = None
-
-    def __str__(self):
-        return self.file.name
+from .processors import ProcessorPipeline
+from .utils import (img_to_fobj, open_image, IKContentFile, extension_to_format,
+        UnknownExtensionError)
 
 
 class SpecFileGenerator(object):
-    def __init__(self, processors=None, format=None, options={},
+    def __init__(self, processors=None, format=None, options=None,
             autoconvert=True, storage=None):
         self.processors = processors
         self.format = format
-        self.options = options
+        self.options = options or {}
         self.autoconvert = autoconvert
         self.storage = storage
 
@@ -51,7 +29,7 @@ class SpecFileGenerator(object):
 
         # Determine the format.
         format = self.format
-        if not format:
+        if filename and not format:
             # Try to guess the format from the extension.
             extension = os.path.splitext(filename)[1].lower()
             if extension:
@@ -61,38 +39,9 @@ class SpecFileGenerator(object):
                     pass
         format = format or img.format or original_format or 'JPEG'
 
-        # Run the AutoConvert processor
-        if self.autoconvert:
-            autoconvert_processor = AutoConvert(format)
-            img = autoconvert_processor.process(img)
-            options = dict(autoconvert_processor.save_kwargs.items() + \
-                    options.items())
-
         imgfile = img_to_fobj(img, format, **options)
-        content = SpecFile(filename, imgfile.read())
+        content = IKContentFile(filename, imgfile.read(), format=format)
         return img, content
-
-    def suggest_extension(self, name):
-        original_extension = os.path.splitext(name)[1]
-        try:
-            suggested_extension = format_to_extension(self.format)
-        except UnknownFormatError:
-            extension = original_extension
-        else:
-            if suggested_extension.lower() == original_extension.lower():
-                extension = original_extension
-            else:
-                try:
-                    original_format = extension_to_format(original_extension)
-                except UnknownExtensionError:
-                    extension = suggested_extension
-                else:
-                    # If the formats match, give precedence to the original extension.
-                    if self.format.lower() == original_format.lower():
-                        extension = original_extension
-                    else:
-                        extension = suggested_extension
-        return extension
 
     def generate_file(self, filename, source_file, save=True):
         """

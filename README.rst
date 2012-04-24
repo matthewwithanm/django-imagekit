@@ -34,7 +34,7 @@ Much like ``django.db.models.ImageField``, Specs are defined as properties
 of a model class::
 
     from django.db import models
-    from imagekit.models.fields import ImageSpecField
+    from imagekit.models import ImageSpecField
 
     class Photo(models.Model):
         original_image = models.ImageField(upload_to='photos')
@@ -49,7 +49,7 @@ an ImageFile-like object (just like with a normal
     photo.original_image.url # > '/media/photos/birthday.tiff'
     photo.formatted_image.url # > '/media/cache/photos/birthday_formatted_image.jpeg'
 
-Check out ``imagekit.models.fields.ImageSpecField`` for more information.
+Check out ``imagekit.models.ImageSpecField`` for more information.
 
 If you only want to save the processed image (without maintaining the original),
 you can use a ``ProcessedImageField``::
@@ -71,7 +71,7 @@ something to it, and return the result. By providing a list of processors to
 your spec, you can expose different versions of the original image::
 
     from django.db import models
-    from imagekit.models.fields import ImageSpecField
+    from imagekit.models import ImageSpecField
     from imagekit.processors import ResizeToFill, Adjust
 
     class Photo(models.Model):

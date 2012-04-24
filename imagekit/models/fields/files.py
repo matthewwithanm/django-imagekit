@@ -4,6 +4,8 @@ import datetime
 from django.db.models.fields.files import ImageField, ImageFieldFile
 from django.utils.encoding import force_unicode, smart_str
 
+from ...utils import suggest_extension
+
 
 class ImageSpecFieldFile(ImageFieldFile):
     def __init__(self, instance, field, attname):
@@ -118,9 +120,8 @@ class ImageSpecFieldFile(ImageFieldFile):
                     raise Exception('No cache_to or default_cache_to value'
                             ' specified')
                 if callable(cache_to):
-                    suggested_extension = \
-                            self.field.generator.suggest_extension(
-                            self.source_file.name)
+                    suggested_extension = suggest_extension(
+                            self.source_file.name, self.field.generator.format)
                     new_filename = force_unicode(
                             datetime.datetime.now().strftime(
                             smart_str(cache_to(self.instance,
