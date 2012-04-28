@@ -282,6 +282,7 @@ class quiet(object):
     def __exit__(self, *args, **kwargs):
         os.dup2(self.old, self.stderr_fd)
         os.close(self.null_fd)
+        os.close(self.old)
 
 
 def prepare_image(img, format):
