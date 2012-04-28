@@ -4,9 +4,10 @@ to your models. These variations are called "specs" and can include things
 like different sizes (e.g. thumbnails) and black and white versions.
 
 **For the complete documentation on the latest stable version of ImageKit, see**
-`ImageKit on RTD`_.
+`ImageKit on RTD`_. Our `changelog is also available`_.
 
 .. _`ImageKit on RTD`: http://django-imagekit.readthedocs.org
+.. _`changelog is also available`: http://django-imagekit.readthedocs.org/en/latest/changelog.html
 
 
 Installation
