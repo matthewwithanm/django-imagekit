@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v2.0.1
+------
+
+- Fixed a file descriptor leak in the `utils.quiet()` context manager.
+
+
 v2.0.0
 ------
 
