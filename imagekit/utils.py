@@ -1,6 +1,6 @@
 import os
 import mimetypes
-from StringIO import StringIO
+from cStringIO import StringIO
 import sys
 import types
 
