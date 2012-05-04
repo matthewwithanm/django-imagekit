@@ -20,7 +20,7 @@ class ImageKitMeta(object):
             return self
         else:
             ik = BoundImageKitMeta(instance, self.spec_fields)
-            setattr(instance, '_ik', ik)
+            instance.__dict__['_ik'] = ik
             return ik
 
 
