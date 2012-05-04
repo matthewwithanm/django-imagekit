@@ -11,3 +11,4 @@ from both the filesystem and the ORM.
 from .base import *
 from .crop import *
 from .resize import *
+from .image import *
