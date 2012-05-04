@@ -100,7 +100,7 @@ class ImageSpecFieldFile(ImageFieldFile):
         filepath, basename = os.path.split(path)
         filename = os.path.splitext(basename)[0]
         new_name = '%s_%s%s' % (filename, specname, extension)
-        return os.path.join(os.path.join('cache', filepath), new_name)
+        return os.path.join('cache', filepath, new_name)
 
     @property
     def name(self):
