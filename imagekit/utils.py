@@ -1,6 +1,5 @@
 import os
 import mimetypes
-from StringIO import StringIO
 import sys
 import types
 
@@ -9,7 +8,7 @@ from django.db.models.loading import cache
 from django.utils.functional import wraps
 from django.utils.encoding import smart_str, smart_unicode
 
-from .lib import Image, ImageFile
+from .lib import Image, ImageFile, StringIO
 
 
 RGBA_TRANSPARENCY_FORMATS = ['PNG']

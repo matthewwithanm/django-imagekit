@@ -2,11 +2,11 @@ from __future__ import with_statement
 
 import os
 import pickle
-from StringIO import StringIO
 
 from django.test import TestCase
 
 from imagekit import utils
+from imagekit.lib import StringIO
 from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
         ConcreteImageModel2)
 from .testutils import generate_lenna, create_photo
