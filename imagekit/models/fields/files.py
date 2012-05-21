@@ -145,6 +145,22 @@ class ImageSpecFieldFile(ImageFieldFile):
         # it at least that one time.
         pass
 
+    @property
+    def width(self):
+        if self.field.guess_size:
+            for processor in self.field.processors:
+                if hasattr(processor, 'width') and processor.width:
+                    return processor.width
+        return super(ImageFieldFile, self).width
+
+    @property
+    def height(self):
+        if self.field.guess_size:
+            for processor in self.field.processors:
+                if hasattr(processor, 'height') and processor.height:
+                    return processor.height
+        return super(ImageFieldFile, self).height
+
 
 class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):

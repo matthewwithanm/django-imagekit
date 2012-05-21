@@ -18,7 +18,7 @@ class ImageSpecField(object):
     """
     def __init__(self, processors=None, format=None, options=None,
         image_field=None, pre_cache=None, storage=None, cache_to=None,
-        autoconvert=True, image_cache_backend=None):
+        autoconvert=True, image_cache_backend=None, guess_size=False):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -67,6 +67,7 @@ class ImageSpecField(object):
         p = lambda file: processors(instance=file.instance, file=file) if \
                 callable(processors) else processors
 
+        self.processors = [processors] if callable(processors) else processors
         self.generator = SpecFileGenerator(p, format=format, options=options,
                 autoconvert=autoconvert, storage=storage)
         self.image_field = image_field
@@ -74,6 +75,7 @@ class ImageSpecField(object):
         self.cache_to = cache_to
         self.image_cache_backend = image_cache_backend or \
                 get_default_image_cache_backend()
+        self.guess_size = guess_size
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
