@@ -164,6 +164,12 @@ Or in your ``settings.py`` file if you want to use it as the default::
 
     IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'path.to.MyImageCacheBackend'
 
+Community
+---------
+
+The official Freenode channel for ImageKit is `#imagekit <irc://irc.freenode.net/imagekit>`_.
+You should always find some fine people to answer your questions
+about ImageKit there.
 
 Contributing
 ------------
