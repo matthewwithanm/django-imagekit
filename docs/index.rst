@@ -18,6 +18,14 @@ Authors
 .. include:: ../AUTHORS
 
 
+Community
+---------
+
+The official Freenode channel for ImageKit is `#imagekit <irc://irc.freenode.net/imagekit>`_.
+You should always find some fine people to answer your questions
+about ImageKit there.
+
+
 Digging Deeper
 --------------
 
