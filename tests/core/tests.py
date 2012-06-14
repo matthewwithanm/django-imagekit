@@ -4,9 +4,11 @@ import os
 import pickle
 from StringIO import StringIO
 
+from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 
 from imagekit import utils
+from .forms import TestForm
 from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
         ConcreteImageModel2)
 from .testutils import generate_lenna, create_photo
@@ -91,3 +93,13 @@ class InheritanceTest(TestCase):
                 set(['abstract_class_spec', 'first_spec']))
         self.assertEqual(set(ConcreteImageModel2._ik.spec_fields),
                 set(['abstract_class_spec', 'second_spec']))
+
+
+class FormTest(TestCase):
+
+    def test_image_processing_field(self):
+        file_ = generate_lenna()
+        form = TestForm({}, {'original_image': SimpleUploadedFile(file_.name, file_.read())})
+        model = form.save()
+        self.assertEqual(model.original_image.width, 100)
+        self.assertEqual(model.original_image.height, 100)
