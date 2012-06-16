@@ -50,6 +50,9 @@ class ImageSpecFieldFile(ImageFieldFile):
     def validate(self):
         return self.field.image_cache_backend.validate(self)
 
+    def is_valid(self):
+        return self.field.image_cache_backend.is_valid(self)
+
     def generate(self, save=True):
         """
         Generates a new image file by processing the source file and returns

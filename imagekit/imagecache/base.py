@@ -12,18 +12,18 @@ class PessimisticImageCacheBackend(object):
 
     """
 
-    def is_invalid(self, file):
-        if not getattr(file, '_file', None):
-            # No file on object. Have to check storage.
-            return not file.storage.exists(file.name)
-        return False
+    def is_valid(self, file):
+        if getattr(file, '_file', None):
+            return True
+        # No file on object. Have to check storage.
+        return file.storage.exists(file.name)
 
     def validate(self, file):
         """
         Generates a new image by running the processors on the source file.
 
         """
-        if self.is_invalid(file):
+        if not self.is_valid(file):
             file.generate(save=True)
 
     def invalidate(self, file):
@@ -41,6 +41,12 @@ class NonValidatingImageCacheBackend(object):
     after validation.
 
     """
+
+    def is_valid(self, file):
+        if getattr(file, '_file', None):
+            return True
+        # No file on object. Have to check storage.
+        return file.storage.exists(file.name)
 
     def validate(self, file):
         """

@@ -149,12 +149,12 @@ exists means frequently hitting the storage backend.
 
 Because of this, ImageKit allows you to define custom image cache backends. To
 be a valid image cache backend, a class must implement three methods:
-``validate``, ``invalidate``, and ``clear`` (which is called when the image is
-no longer needed in any form, i.e. the model is deleted). Each of these methods
-must accept a file object, but the internals are up to you. For example, you
-could store the state (valid, invalid) of the cache in a database to avoid
-filesystem access. You can then specify your image cache backend on a per-field
-basis::
+``validate``, ``invalidate``, ``is_valid`` and ``clear`` (which is called when
+the image is no longer needed in any form, i.e. the model is deleted). Each of
+these methods must accept a file object, but the internals are up to you. For
+example, you could store the state (valid, invalid) of the cache in a database
+to avoid filesystem access. You can then specify your image cache backend on a
+per-field basis::
 
     class Photo(models.Model):
         ...
