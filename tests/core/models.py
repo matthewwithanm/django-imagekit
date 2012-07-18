@@ -13,6 +13,10 @@ class Photo(models.Model):
             ResizeToFill(50, 50)], image_field='original_image', format='JPEG',
             options={'quality': 90})
 
+    thumbnail_guess_size = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
+            ResizeToFill(50, 50)], image_field='original_image', format='JPEG',
+            options={'quality': 90}, guess_size=True)
+
     smartcropped_thumbnail = ImageSpecField([Adjust(contrast=1.2,
             sharpness=1.1), SmartCrop(50, 50)], image_field='original_image',
             format='JPEG', options={'quality': 90})

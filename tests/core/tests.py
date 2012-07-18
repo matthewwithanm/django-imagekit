@@ -2,6 +2,8 @@ from __future__ import with_statement
 
 import os
 
+from mock import Mock
+
 from django.test import TestCase
 
 from imagekit import utils
@@ -45,6 +47,15 @@ class IKTest(TestCase):
     def test_thumbnail_source_file(self):
         self.assertEqual(
             self.photo.thumbnail.source_file, self.photo.original_image)
+
+    def test_guess_size(self):
+        _tmp_photo_thumbnail = self.photo.thumbnail_guess_size
+        _tmp_photo_thumbnail._get_image_dimensions = Mock()
+
+        self.assertEqual(_tmp_photo_thumbnail.width, 50)
+        self.assertEqual(_tmp_photo_thumbnail.height, 50)
+
+        assert not _tmp_photo_thumbnail._get_image_dimensions.called
 
 
 class IKUtilsTest(TestCase):
