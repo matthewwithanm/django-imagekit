@@ -9,15 +9,10 @@ from imagekit import utils
 from imagekit.lib import StringIO
 from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
         ConcreteImageModel2)
-from .testutils import generate_lenna, create_photo
+from .testutils import create_photo
 
 
 class IKTest(TestCase):
-    def generate_image(self):
-        tmp = tempfile.TemporaryFile()
-        Image.new('RGB', (800, 600)).save(tmp, 'JPEG')
-        tmp.seek(0)
-        return tmp
 
     def setUp(self):
         self.photo = create_photo('test.jpg')
@@ -27,7 +22,6 @@ class IKTest(TestCase):
 
         """
         filename = self.photo.thumbnail.file.name
-        thumbnail_timestamp = os.path.getmtime(filename)
         self.photo.save()
         self.assertTrue(self.photo.thumbnail.storage.exists(filename))
 
