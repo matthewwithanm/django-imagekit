@@ -1,15 +1,13 @@
 from __future__ import with_statement
 
 import os
-import pickle
 
 from django.test import TestCase
 
 from imagekit import utils
-from imagekit.lib import StringIO
 from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
         ConcreteImageModel2)
-from .testutils import create_photo
+from .testutils import create_photo, pickleback
 
 
 class IKTest(TestCase):
@@ -66,15 +64,17 @@ class IKUtilsTest(TestCase):
 
 
 class PickleTest(TestCase):
-    def test_source_file(self):
-        ph = create_photo('pickletest.jpg')
-        pickled_model = StringIO()
-        pickle.dump(ph, pickled_model)
-        pickled_model.seek(0)
-        unpickled_model = pickle.load(pickled_model)
+    def test_model(self):
+        ph = pickleback(create_photo('pickletest.jpg'))
 
         # This isn't supposed to error.
-        unpickled_model.thumbnail.source_file
+        ph.thumbnail.source_file
+
+    def test_field(self):
+        thumbnail = pickleback(create_photo('pickletest2.jpg').thumbnail)
+
+        # This isn't supposed to error.
+        thumbnail.source_file
 
 
 class InheritanceTest(TestCase):

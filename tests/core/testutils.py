@@ -3,8 +3,9 @@ import tempfile
 
 from django.core.files.base import ContentFile
 
-from imagekit.lib import Image
+from imagekit.lib import Image, StringIO
 from .models import Photo
+import pickle
 
 
 def generate_lenna():
@@ -36,3 +37,10 @@ def create_instance(model_class, image_name):
 
 def create_photo(name):
     return create_instance(Photo, name)
+
+
+def pickleback(obj):
+    pickled = StringIO()
+    pickle.dump(obj, pickled)
+    pickled.seek(0)
+    return pickle.load(pickled)
