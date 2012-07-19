@@ -11,7 +11,6 @@ class ImageSpecFieldFile(ImageFieldFile):
     def __init__(self, instance, field, attname):
         super(ImageSpecFieldFile, self).__init__(instance, field, None)
         self.attname = attname
-        self.storage = self.field.storage or self.source_file.storage
 
     @property
     def source_file(self):
@@ -144,6 +143,25 @@ class ImageSpecFieldFile(ImageFieldFile):
         # called by ``ImageSpecFieldFile.__init__``) does, so we have to allow
         # it at least that one time.
         pass
+
+    @property
+    def storage(self):
+        return getattr(self, '_storage', None) or self.field.storage or self.source_file.storage
+
+    @storage.setter
+    def storage(self, storage):
+        self._storage = storage
+
+    def __getstate__(self):
+        return dict(
+            attname=self.attname,
+            instance=self.instance,
+        )
+
+    def __setstate__(self, state):
+        self.attname = state['attname']
+        self.instance = state['instance']
+        self.field = getattr(self.instance.__class__, self.attname)
 
 
 class ProcessedImageFieldFile(ImageFieldFile):
