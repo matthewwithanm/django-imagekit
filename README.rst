@@ -32,7 +32,7 @@ Adding Specs to a Model
 -----------------------
 
 Much like ``django.db.models.ImageField``, Specs are defined as properties
-of a model class::
+of a model class:
 
 .. code-block:: python
 
@@ -46,7 +46,7 @@ of a model class::
 
 Accessing the spec through a model instance will create the image and return
 an ImageFile-like object (just like with a normal
-``django.db.models.ImageField``)::
+``django.db.models.ImageField``):
 
 .. code-block:: python
 
@@ -57,7 +57,7 @@ an ImageFile-like object (just like with a normal
 Check out ``imagekit.models.ImageSpecField`` for more information.
 
 If you only want to save the processed image (without maintaining the original),
-you can use a ``ProcessedImageField``::
+you can use a ``ProcessedImageField``:
 
 .. code-block:: python
 
@@ -75,7 +75,7 @@ Processors
 
 The real power of ImageKit comes from processors. Processors take an image, do
 something to it, and return the result. By providing a list of processors to
-your spec, you can expose different versions of the original image::
+your spec, you can expose different versions of the original image:
 
 .. code-block:: python
 
@@ -89,7 +89,7 @@ your spec, you can expose different versions of the original image::
                 ResizeToFill(50, 50)], image_field='original_image',
                 format='JPEG', options={'quality': 90})
 
-The ``thumbnail`` property will now return a cropped image::
+The ``thumbnail`` property will now return a cropped image:
 
 .. code-block:: python
 
@@ -106,7 +106,7 @@ pass processors to a ``ProcessedImageField`` instead of an ``ImageSpecField``.)
 The ``imagekit.processors`` module contains processors for many common
 image manipulations, like resizing, rotating, and color adjustments. However,
 if they aren't up to the task, you can create your own. All you have to do is
-implement a ``process()`` method::
+implement a ``process()`` method:
 
 .. code-block:: python
 
@@ -127,7 +127,7 @@ Admin
 ImageKit also contains a class named ``imagekit.admin.AdminThumbnail``
 for displaying specs (or even regular ImageFields) in the
 `Django admin change list`_. AdminThumbnail is used as a property on
-Django admin classes::
+Django admin classes:
 
 .. code-block:: python
 
@@ -168,7 +168,7 @@ no longer needed in any form, i.e. the model is deleted). Each of these methods
 must accept a file object, but the internals are up to you. For example, you
 could store the state (valid, invalid) of the cache in a database to avoid
 filesystem access. You can then specify your image cache backend on a per-field
-basis::
+basis:
 
 .. code-block:: python
 
@@ -176,7 +176,7 @@ basis::
         ...
         thumbnail = ImageSpecField(..., image_cache_backend=MyImageCacheBackend())
 
-Or in your ``settings.py`` file if you want to use it as the default::
+Or in your ``settings.py`` file if you want to use it as the default:
 
 .. code-block:: python
 
