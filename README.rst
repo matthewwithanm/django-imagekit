@@ -34,6 +34,8 @@ Adding Specs to a Model
 Much like ``django.db.models.ImageField``, Specs are defined as properties
 of a model class::
 
+.. code-block:: python
+
     from django.db import models
     from imagekit.models import ImageSpecField
 
@@ -46,6 +48,8 @@ Accessing the spec through a model instance will create the image and return
 an ImageFile-like object (just like with a normal
 ``django.db.models.ImageField``)::
 
+.. code-block:: python
+
     photo = Photo.objects.all()[0]
     photo.original_image.url # > '/media/photos/birthday.tiff'
     photo.formatted_image.url # > '/media/cache/photos/birthday_formatted_image.jpeg'
@@ -54,6 +58,8 @@ Check out ``imagekit.models.ImageSpecField`` for more information.
 
 If you only want to save the processed image (without maintaining the original),
 you can use a ``ProcessedImageField``::
+
+.. code-block:: python
 
     from django.db import models
     from imagekit.models.fields import ProcessedImageField
@@ -71,6 +77,8 @@ The real power of ImageKit comes from processors. Processors take an image, do
 something to it, and return the result. By providing a list of processors to
 your spec, you can expose different versions of the original image::
 
+.. code-block:: python
+
     from django.db import models
     from imagekit.models import ImageSpecField
     from imagekit.processors import ResizeToFill, Adjust
@@ -82,6 +90,8 @@ your spec, you can expose different versions of the original image::
                 format='JPEG', options={'quality': 90})
 
 The ``thumbnail`` property will now return a cropped image::
+
+.. code-block:: python
 
     photo = Photo.objects.all()[0]
     photo.thumbnail.url # > '/media/cache/photos/birthday_thumbnail.jpeg'
@@ -97,6 +107,8 @@ The ``imagekit.processors`` module contains processors for many common
 image manipulations, like resizing, rotating, and color adjustments. However,
 if they aren't up to the task, you can create your own. All you have to do is
 implement a ``process()`` method::
+
+.. code-block:: python
 
     class Watermark(object):
         def process(self, image):
@@ -116,6 +128,8 @@ ImageKit also contains a class named ``imagekit.admin.AdminThumbnail``
 for displaying specs (or even regular ImageFields) in the
 `Django admin change list`_. AdminThumbnail is used as a property on
 Django admin classes::
+
+.. code-block:: python
 
     from django.contrib import admin
     from imagekit.admin import AdminThumbnail
@@ -156,11 +170,15 @@ could store the state (valid, invalid) of the cache in a database to avoid
 filesystem access. You can then specify your image cache backend on a per-field
 basis::
 
+.. code-block:: python
+
     class Photo(models.Model):
         ...
         thumbnail = ImageSpecField(..., image_cache_backend=MyImageCacheBackend())
 
 Or in your ``settings.py`` file if you want to use it as the default::
+
+.. code-block:: python
 
     IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'path.to.MyImageCacheBackend'
 
