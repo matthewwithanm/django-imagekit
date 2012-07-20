@@ -17,8 +17,8 @@ class ImageSpecField(object):
 
     """
     def __init__(self, processors=None, format=None, options=None,
-        image_field=None, pre_cache=None, storage=None, cache_to=None,
-        autoconvert=True, image_cache_backend=None):
+        image_field=None, pre_cache=None, storage=None, autoconvert=True,
+        image_cache_backend=None):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -33,21 +33,6 @@ class ImageSpecField(object):
             original image.
         :param storage: A Django storage system to use to save the generated
             image.
-        :param cache_to: Specifies the filename to use when saving the image
-            cache file. This is modeled after ImageField's ``upload_to`` and
-            can be either a string (that specifies a directory) or a
-            callable (that returns a filepath). Callable values should
-            accept the following arguments:
-
-                - instance -- The model instance this spec belongs to
-                - path -- The path of the original image
-                - specname -- the property name that the spec is bound to on
-                    the model instance
-                - extension -- A recommended extension. If the format of the
-                    spec is set explicitly, this suggestion will be
-                    based on that format. if not, the extension of the
-                    original file will be passed. You do not have to use
-                    this extension, it's only a recommendation.
         :param autoconvert: Specifies whether automatic conversion using
             ``prepare_image()`` should be performed prior to saving.
         :param image_cache_backend: An object responsible for managing the state
@@ -71,7 +56,6 @@ class ImageSpecField(object):
                 autoconvert=autoconvert, storage=storage)
         self.image_field = image_field
         self.storage = storage
-        self.cache_to = cache_to
         self.image_cache_backend = image_cache_backend or \
                 get_default_image_cache_backend()
 

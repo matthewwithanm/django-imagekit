@@ -1,10 +1,4 @@
-import os
-import datetime
-
 from django.db.models.fields.files import ImageField, ImageFieldFile
-from django.utils.encoding import force_unicode, smart_str
-
-from ...utils import suggest_extension
 
 
 class ImageSpecFieldFile(ImageFieldFile):
@@ -89,52 +83,13 @@ class ImageSpecFieldFile(ImageFieldFile):
         if save:
             self.instance.save()
 
-    def _default_cache_to(self, instance, path, specname, extension):
-        """
-        Determines the filename to use for the transformed image. Can be
-        overridden on a per-spec basis by setting the cache_to property on
-        the spec.
-
-        """
-        filepath, basename = os.path.split(path)
-        filename = os.path.splitext(basename)[0]
-        new_name = '%s_%s%s' % (filename, specname, extension)
-        return os.path.join('cache', filepath, new_name)
-
     @property
     def name(self):
         """
-        Specifies the filename that the cached image will use. The user can
-        control this by providing a `cache_to` method to the ImageSpecField.
+        Specifies the filename that the cached image will use.
 
         """
-        name = getattr(self, '_name', None)
-        if not name:
-            filename = self.source_file.name
-            new_filename = None
-            if filename:
-                cache_to = self.field.cache_to or self._default_cache_to
-
-                if not cache_to:
-                    raise Exception('No cache_to or default_cache_to value'
-                            ' specified')
-                if callable(cache_to):
-                    suggested_extension = suggest_extension(
-                            self.source_file.name, self.field.generator.format)
-                    new_filename = force_unicode(
-                            datetime.datetime.now().strftime(
-                            smart_str(cache_to(self.instance,
-                            self.source_file.name, self.attname,
-                            suggested_extension))))
-                else:
-                    dir_name = os.path.normpath(
-                            force_unicode(datetime.datetime.now().strftime(
-                            smart_str(cache_to))))
-                    filename = os.path.normpath(os.path.basename(filename))
-                    new_filename = os.path.join(dir_name, filename)
-
-            self._name = new_filename
-        return self._name
+        return self.field.generator.generate_filename(self.source_file)
 
     @name.setter
     def name(self, value):
