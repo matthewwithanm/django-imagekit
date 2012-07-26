@@ -371,3 +371,11 @@ def prepare_image(img, format):
         save_kwargs['optimize'] = True
 
     return img, save_kwargs
+
+
+def ik_model_receiver(fn):
+    @wraps(fn)
+    def receiver(sender, **kwargs):
+        if getattr(sender, '_ik', None):
+            fn(sender, **kwargs)
+    return receiver
