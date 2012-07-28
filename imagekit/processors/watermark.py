@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
-from imagekit.lib import Image
-#import warnings
-from abc import abstractmethod, ABCMeta
+#
+# watermark processors for django-imagekit
+# some inspiration from http://code.activestate.com/recipes/362879-watermark-with-pil/
+#
 
+from abc import abstractmethod, ABCMeta
+from imagekit.lib import Image
 from imagekit.lib import ImageDraw, ImageFont, ImageColor, ImageEnhance
+import warnings
+import weakref
+
+__all__ = ('ImageWatermark', 'TextWatermark', 'ReverseWatermark')
+
 
 def _process_coords(img_size, wm_size, coord_spec):
     """
@@ -15,8 +23,11 @@ def _process_coords(img_size, wm_size, coord_spec):
     "30%"), or keywords such as top, bottom, center, left and right.
     """
     (sh, sv) = coord_spec
+    if sh in ('top','bottom') or sv in ('left','right'):
+        # coords were written in wrong order, but there's an easy fix
+        (sv, sh) = coord_spec
 
-    if '%' in sh:
+    if isinstance(sh, basestring) and '%' in sh:
         sh = int(img_size[0] * float(sh.rstrip("%")) / 100)
 
     if isinstance(sh, int) and sh < 0:
@@ -30,7 +41,7 @@ def _process_coords(img_size, wm_size, coord_spec):
         sh = img_size[0] - wm_size[0]
 
     
-    if '%' in sv:
+    if isinstance(sv, basestring) and '%' in sv:
         sv = int(img_size[1] * float(sv.rstrip("%")) / 100)
 
     if isinstance(sv, int) and sv < 0:
@@ -45,34 +56,88 @@ def _process_coords(img_size, wm_size, coord_spec):
 
     return (sh, sv)
 
+
 class AbstractWatermark(object):
     """
-    Base class for ImageWatermark and TextWatermark
+    Base class for ``ImageWatermark`` and ``TextWatermark``.
+
+    Some properties that are used in processors based on this class are:
+
+    ``opacity`` may be specified as a float ranging from 0.0 to 1.0.
+
+    ``position`` is a tuple containing coordinates for horizontal and
+    vertical axis. Instead of coordinates you may use strings such as "left",
+    "center", "right", "top" or "bottom". You may also specify percentage
+    values such as "70%". Negative values will count from the opposite
+    margin. As such, `('66%', 'bottom')` and `('-33%', 'bottom')` are
+    equivalent.
+
+    ``scale`` can be a numeric scale factor or ``True``, in which case the
+    watermark will be scaled to fit the base image, using the mechanics from
+    ``ResizeToFit``.
+
+    ``repeat`` specifies if the watermark should be repeated throughout the
+    base image. The repeat pattern will be influenced by both ``scale`` and
+    ``position``.
+
+    ``cache_mark`` specifies if the watermark layer that is merged into the
+    images should be cached rather than calculated every time a processing
+    runs, allowing a trade of CPU time for memory usage *(this option is
+    currently not implemented)*.
     """
 
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def get_watermark_size(self):
-        return
-
-    @abstractmethod
     def get_watermark(self):
         return
 
+    def _get_watermark(self):
+        if not self.cache_mark:
+            return self.get_watermark()
+        else:
+            # cache watermark and use it
+            if self.cache_get_wm is None:
+                wm = None
+            else:
+                wm = self.cache_get_wm()
+
+            if wm is None:
+                wm = self.get_watermark()
+                self.cache_get_wm = weakref.ref(wm)
+                return wm
+
+
+
     def _fill_options(self, opacity=1.0, position=('center','center'),
-            repeat=True, scale=None):
+            repeat=False, scale=None, cache_mark=True):
+        """Store common properties"""
 
         self.opacity = opacity
         self.position = position
         self.repeat = repeat
         self.scale = scale
+        self.cache_mark = cache_mark
+        if cache_mark:
+            self.cache_get_wm = None
 
     def process(self, img):
 
         # get watermark
-        wm = self.get_watermark()
-        wm_size = self.get_watermark_size()
+        wm = self._get_watermark()
+        wm_size = wm.size
+
+        if self.scale:
+            if isinstance(self.scale, (int, float)) and self.scale != 1:
+                wm_size[0] *= self.scale
+                wm_size[1] *= self.scale
+                wm = wm.scale(wm_size)
+            elif self.scale == True:
+                from .resize import ResizeToFit
+                wm = ResizeToFit(width=img.size[0], height=img.size[1],
+                        upscale=True).process(wm)
+                wm_size = wm.size
+
 
         # prepare image for overlaying (ensure alpha channel)
         if img.mode != 'RGBA':
@@ -83,8 +148,10 @@ class AbstractWatermark(object):
         coords = _process_coords(img.size, wm_size, self.position)
 
         if self.repeat:
-            for x in range(0, img.size[0], wm_size[0]):
-                for y in range(0, img.size[1], wm_size[1]):
+            sx = coords[0] % wm_size[0] - wm_size[0]
+            sy = coords[1] % wm_size[1] - wm_size[1]
+            for x in range(sx, img.size[0], wm_size[0]):
+                for y in range(sy, img.size[1], wm_size[1]):
                     layer.paste(wm, (x,y))
         else:
             layer.paste(wm, coords)
@@ -101,10 +168,12 @@ class AbstractWatermark(object):
         return img
 
 
-
 class ImageWatermark(AbstractWatermark):
     """
-    Creates a watermark using an image
+    Creates a watermark using an image.
+
+    ``watermark`` is the path to the image to be overlaid on the processed
+    image, or a storage (File-like) object that allows accessing the image.
     """
 
     def get_watermark(self):
@@ -140,31 +209,44 @@ class ImageWatermark(AbstractWatermark):
             raise TypeError("watermark must be a PIL Image, file-like object or "
                     "a path")
 
-        self.opacity = opacity
-        self.position = position
 
-    def get_watermark_size(self):
-        return self.get_watermark().size
+class ReverseWatermark(ImageWatermark):
+    """
+    Same as ImageWatermark but instead of putting the watermark in the image
+    being processed, puts the image being processed on the watermark.
+    """
+
+    def __init__(self, *args, **kwargs):
+        super(ReverseWatermark, self).__init__(*args, **kwargs)
+
+    def get_watermark(self):
+        return self._img
+
+    def process(self, img):
+        # we invoke the base process() method, but before we do,
+        # we switch get_watermark() and the `img` argument
+        self._img = img
+        watermark = super(ReverseWatermark, self).get_watermark()
+        final = super(ReverseWatermark, self).process(watermark)
+        del self._img
+        return final
 
 
 class TextWatermark(AbstractWatermark):
     """
     Adds a watermark to the image with the specified text.
 
-    You may also adjust the font, color and position.
+    You may adjust the font, color and position.
 
     ``text_color`` may be a string in a format supported by PIL's
     ``ImageColor``, as described in the handbook [1] or a tuple containing
     values in the 0-255 range for (R, G, B).
 
-    ``opacity`` may be specified as a float ranging from 0.0 to 1.0.
+    ``font`` can be specified as a path to a `TrueType` font or a tuple in
+    the form of (path, size).
 
-    ``position`` is a tuple containing coordinates for horizontal and
-    vertical axis. Instead of coordinates you may use strings such as "left",
-    "center", "right", "top" or "bottom". You may also specify percentage
-    values such as "70%". Negative values will count from the opposite
-    margin. As such, `('66%', 'bottom')` and `('-33%', 'bottom')` are
-    equivalent.
+    For details on ``scale``, ``position`` and ``repeat``, check the
+    documentation on ``AbstractWatermark``.
 
     [1]: http://www.pythonware.com/library/pil/handbook/imagecolor.htm
     """
@@ -177,13 +259,46 @@ class TextWatermark(AbstractWatermark):
 
         # fill in specific settings
         self.text = text
-        self.font = (font or ImageFont.load_default())
+
+        if isinstance(font, basestring):
+            # `font` is a path to a font
+            fontpath = font
+            fontsize = 16
+
+        elif isinstance(font, tuple):
+            # `font` is a (path, size) tuple
+            fontpath = font[0]
+            fontsize = font[1]
+
+        elif font is not None:
+            raise TypeError("Expected 'font' to be a path to a font file "
+                    "or a tuple containing (path, size).")
+
+        try:
+            if fontpath.endswith(".pil"):
+                # bitmap font (size doesn't matter)
+                self.font = ImageFont.load(fontpath)
+            else:
+                # truetype font (size matters)
+                self.font = ImageFont.truetype(fontpath, fontsize)
+        except:
+            warnings.warn("The specified font '%s' could not be loaded" %
+                    (font,), RuntimeWarning)
+            font = None
+
+        if not font:
+            self.font = ImageFont.load_default()
 
         if text_color is None:
+            # fallback to default
             self.text_color = (255,255,255)
         elif isinstance(text_color, basestring):
+            # string in a form ImageColor module can process
             self.text_color = ImageColor.getrgb(text_color)
         elif isinstance(text_color, tuple):
+            # tuple with (R,G,B)
+            # if it has (R,G,B,A), the alpha component seems to be ignored by PIL
+            # when rendering text
             self.text_color = text_color
         else:
             raise TypeError("Expected `text_color` to be tuple or string.")
@@ -198,22 +313,3 @@ class TextWatermark(AbstractWatermark):
                 fill=self.text_color)
         return wm
 
-
-    def get_watermark_size(self):
-        return self.font_size
-
-def testme2():
-    bgo = Image.open("../outroolhar.png")
-    bg = Image.open("../bg.png")
-    iw = ImageWatermark(Image.open("../outroolhar.png"), opacity=0.5,
-            position=('-46%', 'top'))
-    iw.process(bg).save('../bg2.png')
-
-def testme():
-    bgo = Image.open("../outroolhar.png")
-    bg = Image.open("../bg.png")
-    tw = TextWatermark("awesome", text_color="black", opacity=0.5,
-            font=ImageFont.truetype("/Library/Fonts/Arial Bold.ttf", 24),
-            position=('-66%', 'bottom'))
-    tw.process(bg).save('../bg2.png')
-    
