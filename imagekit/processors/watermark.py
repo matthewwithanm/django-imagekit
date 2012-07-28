@@ -82,8 +82,7 @@ class AbstractWatermark(object):
 
     ``cache_mark`` specifies if the watermark layer that is merged into the
     images should be cached rather than calculated every time a processing
-    runs, allowing a trade of CPU time for memory usage *(this option is
-    currently not implemented)*.
+    runs, allowing a trade of CPU time for memory usage.
     """
 
     __metaclass__ = ABCMeta
@@ -217,6 +216,7 @@ class ReverseWatermark(ImageWatermark):
     """
 
     def __init__(self, *args, **kwargs):
+        kwargs.update({'cache_mark': False})
         super(ReverseWatermark, self).__init__(*args, **kwargs)
 
     def get_watermark(self):
