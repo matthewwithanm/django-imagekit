@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from imagekit.lib import Image
 #import warnings
+from abc import abstractmethod, ABCMeta
 
 from imagekit.lib import ImageDraw, ImageFont, ImageColor, ImageEnhance
 
@@ -44,12 +45,70 @@ def _process_coords(img_size, wm_size, coord_spec):
 
     return (sh, sv)
 
-class ImageWatermark(object):
+class AbstractWatermark(object):
+    """
+    Base class for ImageWatermark and TextWatermark
+    """
+
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def get_watermark_size(self):
+        return
+
+    @abstractmethod
+    def get_watermark(self):
+        return
+
+    def _fill_options(self, opacity=1.0, position=('center','center'),
+            repeat=True, scale=None):
+
+        self.opacity = opacity
+        self.position = position
+        self.repeat = repeat
+        self.scale = scale
+
+    def process(self, img):
+
+        # get watermark
+        wm = self.get_watermark()
+        wm_size = self.get_watermark_size()
+
+        # prepare image for overlaying (ensure alpha channel)
+        if img.mode != 'RGBA':
+            img = img.convert('RGBA')
+
+        # create a layer to place the watermark
+        layer = Image.new('RGBA', img.size, (0,0,0,0))
+        coords = _process_coords(img.size, wm_size, self.position)
+
+        if self.repeat:
+            for x in range(0, img.size[0], wm_size[0]):
+                for y in range(0, img.size[1], wm_size[1]):
+                    layer.paste(wm, (x,y))
+        else:
+            layer.paste(wm, coords)
+
+
+        if self.opacity < 1:
+            alpha = layer.split()[3]
+            alpha = ImageEnhance.Brightness(alpha).enhance(self.opacity)
+            layer.putalpha(alpha)
+
+        # merge watermark layer
+        img = Image.composite(layer, img, layer)
+
+        return img
+
+
+
+class ImageWatermark(AbstractWatermark):
     """
     Creates a watermark using an image
     """
 
     def get_watermark(self):
+        # open the image despite the format that the user provided for it
         if self.watermark:
             return self.watermark
         if self.watermark_image:
@@ -60,14 +119,20 @@ class ImageWatermark(object):
         if self.watermark_path:
             return Image.open(self.watermark_path)
 
-    def __init__(self, watermark, opacity=1.0, position=('center','center')):
+    def __init__(self, watermark, **kwargs):
+        # fill in base defaults
+        defaults = dict(opacity=1.0)
+        defaults.update(kwargs)
+        self._fill_options(**defaults)
 
+        # fill in specific settings
         self.watermark = None
         self.watermark_image = self.watermark_file = self.watermark_path = None
 
+        # we accept PIL Image objects, file-like objects or file paths 
         if isinstance(watermark, Image.Image):
             self.watermark_image = watermark
-        elif hasattr(watermark, "open") and callable(watermark.open):
+        elif hasattr(watermark, "read") and callable(watermark.open):
             self.watermark_file = watermark
         elif isinstance(watermark, basestring):
             self.watermark_path = watermark
@@ -78,26 +143,11 @@ class ImageWatermark(object):
         self.opacity = opacity
         self.position = position
 
-    def process(self, img):
+    def get_watermark_size(self):
+        return self.get_watermark().size
 
-        if img.mode != 'RGBA':
-            img = img.convert('RGBA')
 
-        layer = Image.new('RGBA', img.size, (0,0,0,0))
-        wm = self.get_watermark()
-        
-        coords = _process_coords(img.size, wm.size, self.position)
-        layer.paste(wm, coords)
-
-        alpha = layer.split()[3]
-        alpha = ImageEnhance.Brightness(alpha).enhance(self.opacity)
-        layer.putalpha(alpha)
-
-        img = Image.composite(layer, img, layer)
-
-        return img
-
-class TextWatermark(object):
+class TextWatermark(AbstractWatermark):
     """
     Adds a watermark to the image with the specified text.
 
@@ -119,11 +169,15 @@ class TextWatermark(object):
     [1]: http://www.pythonware.com/library/pil/handbook/imagecolor.htm
     """
 
-    def __init__(self, text, font=None, text_color=None, opacity=0.5,
-            position=('center','center')):
+    def __init__(self, text, font=None, text_color=None, **kwargs):
+        # fill in base defaults
+        defaults = dict(opacity=0.5)
+        defaults.update(kwargs)
+        self._fill_options(**defaults)
+
+        # fill in specific settings
         self.text = text
         self.font = (font or ImageFont.load_default())
-        self.opacity = opacity
 
         if text_color is None:
             self.text_color = (255,255,255)
@@ -135,34 +189,24 @@ class TextWatermark(object):
             raise TypeError("Expected `text_color` to be tuple or string.")
 
         self.font_size = self.font.getsize(text)
-        self.position = position
 
 
-    def process(self, img):
-
-        if img.mode != 'RGBA':
-            img = img.convert('RGBA')
-
-        layer = Image.new('RGBA', img.size, (0,0,0,0))
-        draw = ImageDraw.Draw(layer, "RGBA")
-
-        coords = _process_coords(img.size, self.font_size, self.position)
-        draw.text( coords, self.text, font=self.font,
+    def get_watermark(self):
+        wm = Image.new("RGBA", self.font_size, (0,0,0,0))
+        draw = ImageDraw.Draw(wm, "RGBA")
+        draw.text((0,0), self.text, font=self.font,
                 fill=self.text_color)
+        return wm
 
-        alpha = layer.split()[3]
-        alpha = ImageEnhance.Brightness(alpha).enhance(self.opacity)
-        layer.putalpha(alpha)
 
-        img = Image.composite(layer, img, layer)
-        return img
-        
+    def get_watermark_size(self):
+        return self.font_size
 
 def testme2():
     bgo = Image.open("../outroolhar.png")
     bg = Image.open("../bg.png")
-    iw = ImageWatermark("../outroolhar.png", opacity=0.5,
-            position=('-66%', 'bottom'))
+    iw = ImageWatermark(Image.open("../outroolhar.png"), opacity=0.5,
+            position=('-46%', 'top'))
     iw.process(bg).save('../bg2.png')
 
 def testme():
