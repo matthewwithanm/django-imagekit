@@ -64,7 +64,7 @@ you can use a ``ProcessedImageField``:
     from imagekit.models.fields import ProcessedImageField
 
     class Photo(models.Model):
-        processed_image = ImageSpecField(format='JPEG', options={'quality': 90})
+        processed_image = ProcessedImageField(format='JPEG', options={'quality': 90})
 
 See the class documentation for details.
 
