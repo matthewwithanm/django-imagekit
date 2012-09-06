@@ -1,5 +1,6 @@
 import os
 
+from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_init, post_save, post_delete
 
@@ -18,7 +19,7 @@ class ImageSpecField(object):
     """
     def __init__(self, processors=None, format=None, options=None,
         image_field=None, pre_cache=None, storage=None, autoconvert=True,
-        image_cache_backend=None):
+        image_cache_backend=None, validate_on_access=None):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -38,6 +39,8 @@ class ImageSpecField(object):
         :param image_cache_backend: An object responsible for managing the state
             of cached files. Defaults to an instance of
             IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
+        :param validate_on_access: Should the image cache be validated when it's
+            accessed?
 
         """
 
@@ -58,6 +61,8 @@ class ImageSpecField(object):
         self.storage = storage
         self.image_cache_backend = image_cache_backend or \
                 get_default_image_cache_backend()
+        self.validate_on_access = settings.IMAGEKIT_VALIDATE_ON_ACCESS if \
+                validate_on_access is None else validate_on_access
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))

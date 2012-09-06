@@ -31,7 +31,7 @@ class ImageSpecFieldFile(ImageFieldFile):
     def _require_file(self):
         if not self.source_file:
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
-        else:
+        elif self.field.validate_on_access:
             self.validate()
 
     def clear(self):
