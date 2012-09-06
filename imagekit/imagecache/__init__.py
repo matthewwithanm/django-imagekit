@@ -1,5 +1,5 @@
 from ..utils import get_singleton
-from .base import InvalidImageCacheBackendError, PessimisticImageCacheBackend, NonValidatingImageCacheBackend
+from .base import InvalidImageCacheBackendError, PessimisticImageCacheBackend
 
 
 def get_default_image_cache_backend():
@@ -9,4 +9,4 @@ def get_default_image_cache_backend():
     """
     from django.conf import settings
     return get_singleton(settings.IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND,
-            'validation backend')
+            'image cache backend')
