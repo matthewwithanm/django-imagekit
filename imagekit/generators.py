@@ -1,8 +1,11 @@
+from django.conf import settings
+from hashlib import md5
 import os
+import pickle
 from .lib import StringIO
 from .processors import ProcessorPipeline
 from .utils import (img_to_fobj, open_image, IKContentFile, extension_to_format,
-        UnknownExtensionError)
+        suggest_extension, UnknownExtensionError)
 
 
 class SpecFileGenerator(object):
@@ -14,14 +17,18 @@ class SpecFileGenerator(object):
         self.autoconvert = autoconvert
         self.storage = storage
 
+    def get_processors(self, source_file):
+        processors = self.processors
+        if callable(processors):
+            processors = processors(source_file)
+        return processors
+
     def process_content(self, content, filename=None, source_file=None):
         img = open_image(content)
         original_format = img.format
 
         # Run the processors
-        processors = self.processors
-        if callable(processors):
-            processors = processors(source_file)
+        processors = self.get_processors(source_file)
         img = ProcessorPipeline(processors or []).process(img)
 
         options = dict(self.options or {})
@@ -41,6 +48,25 @@ class SpecFileGenerator(object):
         imgfile = img_to_fobj(img, format, **options)
         content = IKContentFile(filename, imgfile.read(), format=format)
         return img, content
+
+    def generate_filename(self, source_file):
+        source_filename = source_file.name
+        filename = None
+        if source_filename:
+            hash = md5(''.join([
+                pickle.dumps(self.get_processors(source_file)),
+                self.format,
+                pickle.dumps(self.options),
+                str(self.autoconvert),
+            ])).hexdigest()
+            extension = suggest_extension(source_filename, self.format)
+
+            filename = os.path.normpath(os.path.join(
+                    settings.IMAGEKIT_CACHE_DIR,
+                    os.path.splitext(source_filename)[0],
+                    '%s%s' % (hash, extension)))
+
+        return filename
 
     def generate_file(self, filename, source_file, save=True):
         """
