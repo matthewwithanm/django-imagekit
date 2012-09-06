@@ -1,14 +1,26 @@
+from ...utils import get_singleton
 from django.core.exceptions import ImproperlyConfigured
+
+
+def get_default_image_cache_backend():
+    """
+    Get the default image cache backend.
+
+    """
+    from django.conf import settings
+    return get_singleton(settings.IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND,
+            'image cache backend')
 
 
 class InvalidImageCacheBackendError(ImproperlyConfigured):
     pass
 
 
-class PessimisticImageCacheBackend(object):
+class Simple(object):
     """
-    A very safe image cache backend. Guarantees that files will always be
-    available, but at the cost of hitting the storage backend.
+    The most basic image cache backend. Files are considered valid if they
+    exist. To invalidate a file, it's deleted; to validate one, it's generated
+    immediately.
 
     """
 
