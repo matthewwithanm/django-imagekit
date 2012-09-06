@@ -1,10 +1,16 @@
+import os
+
 from django.db import models
-from django.db.models.signals import post_init, post_save, post_delete
 
 from ...imagecache import get_default_image_cache_backend
 from ...generators import SpecFileGenerator
 from .files import ImageSpecFieldFile, ProcessedImageFieldFile
-from .utils import ImageSpecFieldDescriptor, ImageKitMeta, BoundImageKitMeta
+from ..receivers import configure_receivers
+from .utils import ImageSpecFileDescriptor, ImageKitMeta, BoundImageKitMeta
+from ...utils import suggest_extension
+
+
+configure_receivers()
 
 
 class ImageSpecField(object):
@@ -13,7 +19,7 @@ class ImageSpecField(object):
     variants of uploaded images to your models.
 
     """
-    def __init__(self, processors=None, format=None, options={},
+    def __init__(self, processors=None, format=None, options=None,
         image_field=None, pre_cache=None, storage=None, cache_to=None,
         autoconvert=True, image_cache_backend=None):
         """
@@ -45,8 +51,8 @@ class ImageSpecField(object):
                     based on that format. if not, the extension of the
                     original file will be passed. You do not have to use
                     this extension, it's only a recommendation.
-        :param autoconvert: Specifies whether the AutoConvert processor
-            should be run before saving.
+        :param autoconvert: Specifies whether automatic conversion using
+            ``prepare_image()`` should be performed prior to saving.
         :param image_cache_backend: An object responsible for managing the state
             of cached files. Defaults to an instance of
             IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
@@ -73,58 +79,26 @@ class ImageSpecField(object):
                 get_default_image_cache_backend()
 
     def contribute_to_class(self, cls, name):
-        setattr(cls, name, ImageSpecFieldDescriptor(self, name))
+        setattr(cls, name, ImageSpecFileDescriptor(self, name))
         try:
-            ik = getattr(cls, '_ik')
-        except AttributeError:
-            ik = ImageKitMeta()
+            # Make sure we don't modify an inherited ImageKitMeta instance
+            ik = cls.__dict__['ik']
+        except KeyError:
+            try:
+                base = getattr(cls, '_ik')
+            except AttributeError:
+                ik = ImageKitMeta()
+            else:
+                # Inherit all the spec fields.
+                ik = ImageKitMeta(base.spec_fields)
             setattr(cls, '_ik', ik)
         ik.spec_fields.append(name)
-
-        # Connect to the signals only once for this class.
-        uid = '%s.%s' % (cls.__module__, cls.__name__)
-        post_init.connect(ImageSpecField._post_init_receiver, sender=cls,
-                dispatch_uid=uid)
-        post_save.connect(ImageSpecField._post_save_receiver, sender=cls,
-                dispatch_uid=uid)
-        post_delete.connect(ImageSpecField._post_delete_receiver, sender=cls,
-                dispatch_uid=uid)
 
         # Register the field with the image_cache_backend
         try:
             self.image_cache_backend.register_field(cls, self, name)
         except AttributeError:
             pass
-
-    @staticmethod
-    def _post_save_receiver(sender, instance=None, created=False, raw=False, **kwargs):
-        if not raw:
-            old_hashes = instance._ik._source_hashes.copy()
-            new_hashes = ImageSpecField._update_source_hashes(instance)
-            for attname in instance._ik.spec_fields:
-                if old_hashes[attname] != new_hashes[attname]:
-                    getattr(instance, attname).invalidate()
-
-    @staticmethod
-    def _update_source_hashes(instance):
-        """
-        Stores hashes of the source image files so that they can be compared
-        later to see whether the source image has changed (and therefore whether
-        the spec file needs to be regenerated).
-
-        """
-        instance._ik._source_hashes = dict((f.attname, hash(f.source_file)) \
-                for f in instance._ik.spec_files)
-        return instance._ik._source_hashes
-
-    @staticmethod
-    def _post_delete_receiver(sender, instance=None, **kwargs):
-        for spec_file in instance._ik.spec_files:
-            spec_file.clear()
-
-    @staticmethod
-    def _post_init_receiver(sender, instance, **kwargs):
-        ImageSpecField._update_source_hashes(instance)
 
 
 class ProcessedImageField(models.ImageField):
@@ -137,14 +111,14 @@ class ProcessedImageField(models.ImageField):
     """
     attr_class = ProcessedImageFieldFile
 
-    def __init__(self, processors=None, format=None, options={},
+    def __init__(self, processors=None, format=None, options=None,
         verbose_name=None, name=None, width_field=None, height_field=None,
         autoconvert=True, **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
         as the ``processors``, ``format``, and ``options`` arguments of
-        :class:`imagekit.models.fields.ImageSpecField`.
+        :class:`imagekit.models.ImageSpecField`.
 
         """
         if 'quality' in kwargs:
@@ -160,8 +134,8 @@ class ProcessedImageField(models.ImageField):
         filename = os.path.normpath(self.storage.get_valid_name(
                 os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
-        ext = self.generator.suggest_extension(filename)
-        return '%s%s' % (name, ext)
+        ext = suggest_extension(filename, self.generator.format)
+        return u'%s%s' % (name, ext)
 
 
 try:

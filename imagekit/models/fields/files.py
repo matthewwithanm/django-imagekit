@@ -1,15 +1,16 @@
 import os
 import datetime
 
-from django.db.models.fields.files import ImageFieldFile
+from django.db.models.fields.files import ImageField, ImageFieldFile
 from django.utils.encoding import force_unicode, smart_str
+
+from ...utils import suggest_extension
 
 
 class ImageSpecFieldFile(ImageFieldFile):
     def __init__(self, instance, field, attname):
-        ImageFieldFile.__init__(self, instance, field, None)
+        super(ImageSpecFieldFile, self).__init__(instance, field, None)
         self.attname = attname
-        self.storage = self.field.storage or self.source_file.storage
 
     @property
     def source_file(self):
@@ -19,7 +20,7 @@ class ImageSpecFieldFile(ImageFieldFile):
         else:
             image_fields = [getattr(self.instance, f.attname) for f in \
                     self.instance.__class__._meta.fields if \
-                    isinstance(f, models.ImageField)]
+                    isinstance(f, ImageField)]
             if len(image_fields) == 0:
                 raise Exception('%s does not define any ImageFields, so your' \
                         ' %s ImageSpecField has no image to act on.' % \
@@ -36,12 +37,8 @@ class ImageSpecFieldFile(ImageFieldFile):
     def _require_file(self):
         if not self.source_file:
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
-
-    def _get_file(self):
-        self.validate()
-        return super(ImageFieldFile, self).file
-
-    file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
+        else:
+            self.validate()
 
     def clear(self):
         return self.field.image_cache_backend.clear(self)
@@ -60,11 +57,6 @@ class ImageSpecFieldFile(ImageFieldFile):
         """
         return self.field.generator.generate_file(self.name, self.source_file,
                 save)
-
-    @property
-    def url(self):
-        self.validate()
-        return super(ImageFieldFile, self).url
 
     def delete(self, save=False):
         """
@@ -107,7 +99,7 @@ class ImageSpecFieldFile(ImageFieldFile):
         filepath, basename = os.path.split(path)
         filename = os.path.splitext(basename)[0]
         new_name = '%s_%s%s' % (filename, specname, extension)
-        return os.path.join(os.path.join('cache', filepath), new_name)
+        return os.path.join('cache', filepath, new_name)
 
     @property
     def name(self):
@@ -127,9 +119,8 @@ class ImageSpecFieldFile(ImageFieldFile):
                     raise Exception('No cache_to or default_cache_to value'
                             ' specified')
                 if callable(cache_to):
-                    suggested_extension = \
-                            self.field.generator.suggest_extension(
-                            self.source_file.name)
+                    suggested_extension = suggest_extension(
+                            self.source_file.name, self.field.generator.format)
                     new_filename = force_unicode(
                             datetime.datetime.now().strftime(
                             smart_str(cache_to(self.instance,
@@ -152,6 +143,25 @@ class ImageSpecFieldFile(ImageFieldFile):
         # called by ``ImageSpecFieldFile.__init__``) does, so we have to allow
         # it at least that one time.
         pass
+
+    @property
+    def storage(self):
+        return getattr(self, '_storage', None) or self.field.storage or self.source_file.storage
+
+    @storage.setter
+    def storage(self, storage):
+        self._storage = storage
+
+    def __getstate__(self):
+        return dict(
+            attname=self.attname,
+            instance=self.instance,
+        )
+
+    def __setstate__(self, state):
+        self.attname = state['attname']
+        self.instance = state['instance']
+        self.field = getattr(self.instance.__class__, self.attname)
 
 
 class ProcessedImageFieldFile(ImageFieldFile):

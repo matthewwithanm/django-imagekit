@@ -11,9 +11,12 @@ if 'publish' in sys.argv:
 
 read = lambda filepath: codecs.open(filepath, 'r', 'utf-8').read()
 
+# Dynamically calculate the version based on imagekit.VERSION.
+version = __import__('imagekit').get_version()
+
 setup(
     name='django-imagekit',
-    version=':versiontools:imagekit:',
+    version=version,
     description='Automated image processing for Django models.',
     long_description=read(os.path.join(os.path.dirname(__file__), 'README.rst')),
     author='Justin Driscoll',
@@ -25,8 +28,11 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
+    install_requires=[
+        'django-appconf>=0.5',
+    ],
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
@@ -36,8 +42,5 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Topic :: Utilities'
-    ],
-    setup_requires=[
-        'versiontools >= 1.8',
     ],
 )

@@ -1,73 +1,25 @@
 from __future__ import with_statement
 
 import os
-import tempfile
 
-from django.core.files.base import ContentFile
-from django.db import models
 from django.test import TestCase
 
 from imagekit import utils
-from imagekit.lib import Image
-from imagekit.models.fields import ImageSpecField
-from imagekit.processors import Adjust
-from imagekit.processors.resize import Fill
-from imagekit.processors.crop import SmartCrop
-
-
-class Photo(models.Model):
-    original_image = models.ImageField(upload_to='photos')
-
-    thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            Fill(50, 50)], image_field='original_image', format='JPEG',
-            options={'quality': 90})
-
-    smartcropped_thumbnail = ImageSpecField([Adjust(contrast=1.2,
-            sharpness=1.1), SmartCrop(50, 50)], image_field='original_image',
-            format='JPEG', options={'quality': 90})
+from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
+        ConcreteImageModel2)
+from .testutils import create_photo, pickleback
 
 
 class IKTest(TestCase):
-    def generate_image(self):
-        tmp = tempfile.TemporaryFile()
-        Image.new('RGB', (800, 600)).save(tmp, 'JPEG')
-        tmp.seek(0)
-        return tmp
-
-    def generate_lenna(self):
-        """
-        See also:
-
-        http://en.wikipedia.org/wiki/Lenna
-        http://sipi.usc.edu/database/database.php?volume=misc&image=12
-
-        """
-        tmp = tempfile.TemporaryFile()
-        lennapath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'lenna-800x600-white-border.jpg')
-        with open(lennapath, "r+b") as lennafile:
-            Image.open(lennafile).save(tmp, 'JPEG')
-        tmp.seek(0)
-        return tmp
-
-    def create_photo(self, name):
-        photo = Photo()
-        img = self.generate_lenna()
-        file = ContentFile(img.read())
-        photo.original_image = file
-        photo.original_image.save(name, file)
-        photo.save()
-        img.close()
-        return photo
 
     def setUp(self):
-        self.photo = self.create_photo('test.jpg')
+        self.photo = create_photo('test.jpg')
 
     def test_nodelete(self):
         """Don't delete the spec file when the source image hasn't changed.
 
         """
         filename = self.photo.thumbnail.file.name
-        thumbnail_timestamp = os.path.getmtime(filename)
         self.photo.save()
         self.assertTrue(self.photo.thumbnail.storage.exists(filename))
 
@@ -109,3 +61,27 @@ class IKUtilsTest(TestCase):
 
         with self.assertRaises(utils.UnknownFormatError):
             utils.format_to_extension('TXT')
+
+
+class PickleTest(TestCase):
+    def test_model(self):
+        ph = pickleback(create_photo('pickletest.jpg'))
+
+        # This isn't supposed to error.
+        ph.thumbnail.source_file
+
+    def test_field(self):
+        thumbnail = pickleback(create_photo('pickletest2.jpg').thumbnail)
+
+        # This isn't supposed to error.
+        thumbnail.source_file
+
+
+class InheritanceTest(TestCase):
+    def test_abstract_base(self):
+        self.assertEqual(set(AbstractImageModel._ik.spec_fields),
+                set(['abstract_class_spec']))
+        self.assertEqual(set(ConcreteImageModel1._ik.spec_fields),
+                set(['abstract_class_spec', 'first_spec']))
+        self.assertEqual(set(ConcreteImageModel2._ik.spec_fields),
+                set(['abstract_class_spec', 'second_spec']))

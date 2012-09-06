@@ -13,7 +13,7 @@ class BoundImageKitMeta(object):
 
 class ImageKitMeta(object):
     def __init__(self, spec_fields=None):
-        self.spec_fields = spec_fields or []
+        self.spec_fields = list(spec_fields) if spec_fields else []
 
     def __get__(self, instance, owner):
         if instance is None:
@@ -24,7 +24,7 @@ class ImageKitMeta(object):
             return ik
 
 
-class ImageSpecFieldDescriptor(object):
+class ImageSpecFileDescriptor(object):
     def __init__(self, field, attname):
         self.attname = attname
         self.field = field
@@ -35,5 +35,8 @@ class ImageSpecFieldDescriptor(object):
         else:
             img_spec_file = ImageSpecFieldFile(instance, self.field,
                     self.attname)
-            setattr(instance, self.attname, img_spec_file)
+            instance.__dict__[self.attname] = img_spec_file
             return img_spec_file
+
+    def __set__(self, instance, value):
+        instance.__dict__[self.attname] = value

@@ -1,0 +1,7 @@
+language: python
+python:
+  - 2.7
+install: pip install tox --use-mirrors
+script: tox -e py27-django13,py27-django12,py26-django13,py27-django12
+notifications:
+  irc: "irc.freenode.org#imagekit"
