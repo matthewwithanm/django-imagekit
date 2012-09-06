@@ -6,6 +6,9 @@ class ImageSpecFieldFile(ImageFieldFile):
         super(ImageSpecFieldFile, self).__init__(instance, field, None)
         self.attname = attname
 
+    def get_hash(self):
+        return self.field.generator.get_hash(self.source_file)
+
     @property
     def source_file(self):
         field_name = getattr(self.field, 'image_field', None)
