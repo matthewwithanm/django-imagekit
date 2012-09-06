@@ -3,7 +3,7 @@ import os
 from django.db.models.fields.files import ImageFieldFile
 
 from .generators import SpecFileGenerator
-from .utils import SpecWrapper
+from .utils import SpecWrapper, suggest_extension
 
 
 class ImageSpecFile(ImageFieldFile):
@@ -44,7 +44,7 @@ class ImageSpecFile(ImageFieldFile):
         source_filename = self.source_file.name
         filepath, basename = os.path.split(source_filename)
         filename = os.path.splitext(basename)[0]
-        extension = self.generator.suggest_extension(source_filename)
+        extension = suggest_extension(source_filename, self.generator.format)
         new_name = '%s%s' % (filename, extension)
         cache_filename = ['cache', 'iktt'] + self.spec_id.split(':') + \
                 [filepath, new_name]
