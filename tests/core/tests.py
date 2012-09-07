@@ -52,15 +52,15 @@ class IKUtilsTest(TestCase):
         self.assertEqual(utils.extension_to_format('.jpeg'), 'JPEG')
         self.assertEqual(utils.extension_to_format('.rgba'), 'SGI')
 
-        with self.assertRaises(utils.UnknownExtensionError):
-            utils.extension_to_format('.txt')
+        self.assertRaises(utils.UnknownExtensionError,
+                lambda: utils.extension_to_format('.txt'))
 
     def test_format_to_extension_no_init(self):
         self.assertEqual(utils.format_to_extension('PNG'), '.png')
         self.assertEqual(utils.format_to_extension('ICO'), '.ico')
 
-        with self.assertRaises(utils.UnknownFormatError):
-            utils.format_to_extension('TXT')
+        self.assertRaises(utils.UnknownFormatError,
+                lambda: utils.format_to_extension('TXT'))
 
 
 class PickleTest(TestCase):
