@@ -1,23 +1,16 @@
 from __future__ import with_statement
 
 import os
-import pickle
-from StringIO import StringIO
 
 from django.test import TestCase
 
 from imagekit import utils
 from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
         ConcreteImageModel2)
-from .testutils import generate_lenna, create_photo
+from .testutils import create_photo, pickleback
 
 
 class IKTest(TestCase):
-    def generate_image(self):
-        tmp = tempfile.TemporaryFile()
-        Image.new('RGB', (800, 600)).save(tmp, 'JPEG')
-        tmp.seek(0)
-        return tmp
 
     def setUp(self):
         self.photo = create_photo('test.jpg')
@@ -27,7 +20,6 @@ class IKTest(TestCase):
 
         """
         filename = self.photo.thumbnail.file.name
-        thumbnail_timestamp = os.path.getmtime(filename)
         self.photo.save()
         self.assertTrue(self.photo.thumbnail.storage.exists(filename))
 
@@ -60,27 +52,29 @@ class IKUtilsTest(TestCase):
         self.assertEqual(utils.extension_to_format('.jpeg'), 'JPEG')
         self.assertEqual(utils.extension_to_format('.rgba'), 'SGI')
 
-        with self.assertRaises(utils.UnknownExtensionError):
-            utils.extension_to_format('.txt')
+        self.assertRaises(utils.UnknownExtensionError,
+                lambda: utils.extension_to_format('.txt'))
 
     def test_format_to_extension_no_init(self):
         self.assertEqual(utils.format_to_extension('PNG'), '.png')
         self.assertEqual(utils.format_to_extension('ICO'), '.ico')
 
-        with self.assertRaises(utils.UnknownFormatError):
-            utils.format_to_extension('TXT')
+        self.assertRaises(utils.UnknownFormatError,
+                lambda: utils.format_to_extension('TXT'))
 
 
 class PickleTest(TestCase):
-    def test_source_file(self):
-        ph = create_photo('pickletest.jpg')
-        pickled_model = StringIO()
-        pickle.dump(ph, pickled_model)
-        pickled_model.seek(0)
-        unpickled_model = pickle.load(pickled_model)
+    def test_model(self):
+        ph = pickleback(create_photo('pickletest.jpg'))
 
         # This isn't supposed to error.
-        unpickled_model.thumbnail.source_file
+        ph.thumbnail.source_file
+
+    def test_field(self):
+        thumbnail = pickleback(create_photo('pickletest2.jpg').thumbnail)
+
+        # This isn't supposed to error.
+        thumbnail.source_file
 
 
 class InheritanceTest(TestCase):

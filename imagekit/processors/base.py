@@ -69,19 +69,20 @@ class Reflection(object):
     Creates an image with a reflection.
 
     """
-    background_color = '#FFFFFF'
-    size = 0.0
-    opacity = 0.6
+    def __init__(self, background_color='#FFFFFF', size=0.0, opacity=0.6):
+        self.background_color = background_color
+        self.size = size
+        self.opacity = opacity
 
     def process(self, img):
         # Convert bgcolor string to RGB value.
         background_color = ImageColor.getrgb(self.background_color)
         # Handle palleted images.
-        img = img.convert('RGB')
+        img = img.convert('RGBA')
         # Copy orignial image and flip the orientation.
         reflection = img.copy().transpose(Image.FLIP_TOP_BOTTOM)
         # Create a new image filled with the bgcolor the same size.
-        background = Image.new("RGB", img.size, background_color)
+        background = Image.new("RGBA", img.size, background_color)
         # Calculate our alpha mask.
         start = int(255 - (255 * self.opacity))  # The start of our gradient.
         steps = int(255 * self.size)  # The number of intermedite values.
@@ -101,7 +102,7 @@ class Reflection(object):
         reflection = reflection.crop((0, 0, img.size[0], reflection_height))
         # Create new image sized to hold both the original image and
         # the reflection.
-        composite = Image.new("RGB", (img.size[0], img.size[1] + reflection_height), background_color)
+        composite = Image.new("RGBA", (img.size[0], img.size[1] + reflection_height), background_color)
         # Paste the orignal image and the reflection into the composite image.
         composite.paste(img, (0, 0))
         composite.paste(reflection, (0, img.size[1]))

@@ -28,6 +28,9 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
+    install_requires=[
+        'django-appconf>=0.5',
+    ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',

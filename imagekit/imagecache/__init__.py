@@ -14,7 +14,8 @@ def get_default_image_cache_backend():
     """
     global _default_image_cache_backend
     if not _default_image_cache_backend:
-        from ..settings import DEFAULT_IMAGE_CACHE_BACKEND as import_path
+        from django.conf import settings
+        import_path = settings.IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
         try:
             dot = import_path.rindex('.')
         except ValueError:

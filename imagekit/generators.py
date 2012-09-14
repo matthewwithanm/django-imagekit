@@ -1,6 +1,5 @@
 import os
-from StringIO import StringIO
-
+from .lib import StringIO
 from .processors import ProcessorPipeline
 from .utils import (img_to_fobj, open_image, IKContentFile, extension_to_format,
         UnknownExtensionError)
