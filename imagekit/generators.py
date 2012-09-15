@@ -51,6 +51,7 @@ class SpecFileGenerator(object):
 
     def get_hash(self, source_file):
         return md5(''.join([
+            source_file.name,
             pickle.dumps(self.get_processors(source_file)),
             self.format,
             pickle.dumps(self.options),
