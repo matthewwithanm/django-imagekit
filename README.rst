@@ -1,4 +1,3 @@
-
 ImageKit is a Django app that helps you to add variations of uploaded images
 to your models. These variations are called "specs" and can include things
 like different sizes (e.g. thumbnails) and black and white versions.
@@ -65,7 +64,7 @@ you can use a ``ProcessedImageField``:
     from imagekit.models.fields import ProcessedImageField
 
     class Photo(models.Model):
-        processed_image = ImageSpecField(format='JPEG', options={'quality': 90})
+        processed_image = ProcessedImageField(format='JPEG', options={'quality': 90})
 
 See the class documentation for details.
 
@@ -182,12 +181,15 @@ Or in your ``settings.py`` file if you want to use it as the default:
 
     IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'path.to.MyImageCacheBackend'
 
+
 Community
 ---------
 
-The official Freenode channel for ImageKit is `#imagekit <irc://irc.freenode.net/imagekit>`_.
-You should always find some fine people to answer your questions
-about ImageKit there.
+Please use `the GitHub issue tracker <https://github.com/jdriscoll/django-imagekit/issues>`_
+to report bugs with django-imagekit. `A mailing list <https://groups.google.com/forum/#!forum/django-imagekit>`_
+also exists to discuss the project and ask questions, as well as the official
+`#imagekit <irc://irc.freenode.net/imagekit>`_ channel on Freenode.
+
 
 Contributing
 ------------

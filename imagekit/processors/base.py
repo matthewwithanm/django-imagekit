@@ -69,9 +69,10 @@ class Reflection(object):
     Creates an image with a reflection.
 
     """
-    background_color = '#FFFFFF'
-    size = 0.0
-    opacity = 0.6
+    def __init__(self, background_color='#FFFFFF', size=0.0, opacity=0.6):
+        self.background_color = background_color
+        self.size = size
+        self.opacity = opacity
 
     def process(self, img):
         # Convert bgcolor string to RGB value.
