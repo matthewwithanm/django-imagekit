@@ -1,16 +1,15 @@
 import os
 
+from django.conf import settings
 from django.db import models
+from django.db.models.signals import post_init, post_save, post_delete
 
-from ...imagecache import get_default_image_cache_backend
+from ...imagecache.backends import get_default_image_cache_backend
+from ...imagecache.strategies import StrategyWrapper
 from ...generators import SpecFileGenerator
 from .files import ImageSpecFieldFile, ProcessedImageFieldFile
-from ..receivers import configure_receivers
 from .utils import ImageSpecFileDescriptor, ImageKitMeta, BoundImageKitMeta
 from ...utils import suggest_extension
-
-
-configure_receivers()
 
 
 class ImageSpecField(object):
@@ -21,7 +20,7 @@ class ImageSpecField(object):
     """
     def __init__(self, processors=None, format=None, options=None,
         image_field=None, pre_cache=None, storage=None, autoconvert=True,
-        image_cache_backend=None):
+        image_cache_backend=None, image_cache_strategy=None):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -40,7 +39,10 @@ class ImageSpecField(object):
             ``prepare_image()`` should be performed prior to saving.
         :param image_cache_backend: An object responsible for managing the state
             of cached files. Defaults to an instance of
-            IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
+            ``IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND``
+        :param image_cache_strategy: A dictionary containing callbacks that
+            allow you to customize how and when the image cache is validated.
+            Defaults to ``IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY``
 
         """
 
@@ -61,6 +63,9 @@ class ImageSpecField(object):
         self.storage = storage
         self.image_cache_backend = image_cache_backend or \
                 get_default_image_cache_backend()
+        if image_cache_strategy is None:
+            image_cache_strategy = settings.IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY
+        self.image_cache_strategy = StrategyWrapper(image_cache_strategy)
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
@@ -78,11 +83,53 @@ class ImageSpecField(object):
             setattr(cls, '_ik', ik)
         ik.spec_fields.append(name)
 
+        # Connect to the signals only once for this class.
+        uid = '%s.%s' % (cls.__module__, cls.__name__)
+        post_init.connect(ImageSpecField._post_init_receiver, sender=cls,
+                dispatch_uid=uid)
+        post_save.connect(ImageSpecField._post_save_receiver, sender=cls,
+                dispatch_uid=uid)
+        post_delete.connect(ImageSpecField._post_delete_receiver, sender=cls,
+                dispatch_uid=uid)
+
         # Register the field with the image_cache_backend
         try:
             self.image_cache_backend.register_field(cls, self, name)
         except AttributeError:
             pass
+
+    @staticmethod
+    def _post_save_receiver(sender, instance=None, created=False, raw=False, **kwargs):
+        if not raw:
+            old_hashes = instance._ik._source_hashes.copy()
+            new_hashes = ImageSpecField._update_source_hashes(instance)
+            for attname in instance._ik.spec_fields:
+                file = getattr(instance, attname)
+                if created:
+                    file.field.image_cache_strategy.invoke_callback('source_create', file)
+                elif old_hashes[attname] != new_hashes[attname]:
+                    file.field.image_cache_strategy.invoke_callback('source_change', file)
+
+    @staticmethod
+    def _update_source_hashes(instance):
+        """
+        Stores hashes of the source image files so that they can be compared
+        later to see whether the source image has changed (and therefore whether
+        the spec file needs to be regenerated).
+
+        """
+        instance._ik._source_hashes = dict((f.attname, hash(f.source_file)) \
+                for f in instance._ik.spec_files)
+        return instance._ik._source_hashes
+
+    @staticmethod
+    def _post_delete_receiver(sender, instance=None, **kwargs):
+        for spec_file in instance._ik.spec_files:
+            spec_file.field.image_cache_strategy.invoke_callback('source_delete', spec_file)
+
+    @staticmethod
+    def _post_init_receiver(sender, instance, **kwargs):
+        ImageSpecField._update_source_hashes(instance)
 
 
 class ProcessedImageField(models.ImageField):

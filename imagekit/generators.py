@@ -49,18 +49,21 @@ class SpecFileGenerator(object):
         content = IKContentFile(filename, imgfile.read(), format=format)
         return img, content
 
+    def get_hash(self, source_file):
+        return md5(''.join([
+            source_file.name,
+            pickle.dumps(self.get_processors(source_file)),
+            self.format,
+            pickle.dumps(self.options),
+            str(self.autoconvert),
+        ]).encode('utf-8')).hexdigest()
+
     def generate_filename(self, source_file):
         source_filename = source_file.name
         filename = None
         if source_filename:
-            hash = md5(''.join([
-                pickle.dumps(self.get_processors(source_file)),
-                self.format,
-                pickle.dumps(self.options),
-                str(self.autoconvert),
-            ])).hexdigest()
+            hash = self.get_hash(source_file)
             extension = suggest_extension(source_filename, self.format)
-
             filename = os.path.normpath(os.path.join(
                     settings.IMAGEKIT_CACHE_DIR,
                     os.path.splitext(source_filename)[0],

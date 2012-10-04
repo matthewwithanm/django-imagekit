@@ -6,6 +6,9 @@ class ImageSpecFieldFile(ImageFieldFile):
         super(ImageSpecFieldFile, self).__init__(instance, field, None)
         self.attname = attname
 
+    def get_hash(self):
+        return self.field.generator.get_hash(self.source_file)
+
     @property
     def source_file(self):
         field_name = getattr(self.field, 'image_field', None)
@@ -31,8 +34,7 @@ class ImageSpecFieldFile(ImageFieldFile):
     def _require_file(self):
         if not self.source_file:
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
-        else:
-            self.validate()
+        self.field.image_cache_strategy.invoke_callback('access', self)
 
     def clear(self):
         return self.field.image_cache_backend.clear(self)

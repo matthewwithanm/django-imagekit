@@ -3,13 +3,13 @@ import mimetypes
 import sys
 import types
 
+from django.core.exceptions import ImproperlyConfigured
 from django.core.files.base import ContentFile
 from django.db.models.loading import cache
-from django.utils.functional import wraps
 from django.utils.encoding import smart_str, smart_unicode
+from django.utils.functional import wraps
+from django.utils.importlib import import_module
 
-from .imagecache import get_default_image_cache_backend
-from .lib import Image, ImageFile
 from .lib import Image, ImageFile, StringIO
 
 
@@ -373,6 +373,37 @@ def prepare_image(img, format):
         save_kwargs['optimize'] = True
 
     return img, save_kwargs
+
+
+def get_class(path, desc):
+    try:
+        dot = path.rindex('.')
+    except ValueError:
+        raise ImproperlyConfigured("%s isn't a %s module." % (path, desc))
+    module, classname = path[:dot], path[dot + 1:]
+    try:
+        mod = import_module(module)
+    except ImportError, e:
+        raise ImproperlyConfigured('Error importing %s module %s: "%s"' %
+                (desc, module, e))
+    try:
+        cls = getattr(mod, classname)
+        return cls
+    except AttributeError:
+        raise ImproperlyConfigured('%s module "%s" does not define a "%s"'
+                ' class.' % (desc[0].upper() + desc[1:], module, classname))
+
+
+_singletons = {}
+
+
+def get_singleton(class_path, desc):
+    global _singletons
+    cls = get_class(class_path, desc)
+    instance = _singletons.get(cls)
+    if not instance:
+        instance = _singletons[cls] = cls()
+    return instance
 
 
 def ik_model_receiver(fn):
