@@ -1,5 +1,4 @@
 def validate_now(file):
-    print 'validate now!'
     file.validate()
 
 
