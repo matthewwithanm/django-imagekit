@@ -56,7 +56,7 @@ class SpecFileGenerator(object):
             self.format,
             pickle.dumps(self.options),
             str(self.autoconvert),
-        ])).hexdigest()
+        ]).encode('utf-8')).hexdigest()
 
     def generate_filename(self, source_file):
         source_filename = source_file.name

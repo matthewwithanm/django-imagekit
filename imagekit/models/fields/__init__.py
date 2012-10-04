@@ -5,6 +5,7 @@ from django.db import models
 from django.db.models.signals import post_init, post_save, post_delete
 
 from ...imagecache.backends import get_default_image_cache_backend
+from ...imagecache.strategies import StrategyWrapper
 from ...generators import SpecFileGenerator
 from .files import ImageSpecFieldFile, ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor, ImageKitMeta, BoundImageKitMeta
@@ -19,7 +20,7 @@ class ImageSpecField(object):
     """
     def __init__(self, processors=None, format=None, options=None,
         image_field=None, pre_cache=None, storage=None, autoconvert=True,
-        image_cache_backend=None, validate_on_access=None):
+        image_cache_backend=None, image_cache_strategy=None):
         """
         :param processors: A list of processors to run on the original image.
         :param format: The format of the output file. If not provided,
@@ -38,9 +39,10 @@ class ImageSpecField(object):
             ``prepare_image()`` should be performed prior to saving.
         :param image_cache_backend: An object responsible for managing the state
             of cached files. Defaults to an instance of
-            IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
-        :param validate_on_access: Should the image cache be validated when it's
-            accessed?
+            ``IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND``
+        :param image_cache_strategy: A dictionary containing callbacks that
+            allow you to customize how and when the image cache is validated.
+            Defaults to ``IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY``
 
         """
 
@@ -61,8 +63,9 @@ class ImageSpecField(object):
         self.storage = storage
         self.image_cache_backend = image_cache_backend or \
                 get_default_image_cache_backend()
-        self.validate_on_access = settings.IMAGEKIT_VALIDATE_ON_ACCESS if \
-                validate_on_access is None else validate_on_access
+        if image_cache_strategy is None:
+            image_cache_strategy = settings.IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY
+        self.image_cache_strategy = StrategyWrapper(image_cache_strategy)
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
@@ -101,8 +104,11 @@ class ImageSpecField(object):
             old_hashes = instance._ik._source_hashes.copy()
             new_hashes = ImageSpecField._update_source_hashes(instance)
             for attname in instance._ik.spec_fields:
-                if old_hashes[attname] != new_hashes[attname]:
-                    getattr(instance, attname).invalidate()
+                file = getattr(instance, attname)
+                if created:
+                    file.field.image_cache_strategy.invoke_callback('source_create', file)
+                elif old_hashes[attname] != new_hashes[attname]:
+                    file.field.image_cache_strategy.invoke_callback('source_change', file)
 
     @staticmethod
     def _update_source_hashes(instance):
@@ -119,7 +125,7 @@ class ImageSpecField(object):
     @staticmethod
     def _post_delete_receiver(sender, instance=None, **kwargs):
         for spec_file in instance._ik.spec_files:
-            spec_file.clear()
+            spec_file.field.image_cache_strategy.invoke_callback('source_delete', spec_file)
 
     @staticmethod
     def _post_init_receiver(sender, instance, **kwargs):

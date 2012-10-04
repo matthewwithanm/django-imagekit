@@ -1,4 +1,4 @@
-from ...utils import get_singleton
+from ..utils import get_singleton
 from django.core.cache import get_cache
 from django.core.cache.backends.dummy import DummyCache
 from django.core.exceptions import ImproperlyConfigured
