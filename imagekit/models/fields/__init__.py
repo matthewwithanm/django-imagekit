@@ -30,7 +30,8 @@ class ImageSpecField(SpecHost):
         SpecHost.__init__(self, processors=p, format=format,
                 options=options, storage=storage, autoconvert=autoconvert,
                 image_cache_backend=image_cache_backend,
-                image_cache_strategy=image_cache_strategy, spec=spec, id=id)
+                image_cache_strategy=image_cache_strategy, spec=spec,
+                spec_id=id)
 
         self.image_field = image_field
 
@@ -71,7 +72,7 @@ class ImageSpecField(SpecHost):
             pass
 
 
-class ProcessedImageField(models.ImageField):
+class ProcessedImageField(models.ImageField, SpecHost):
     """
     ProcessedImageField is an ImageField that runs processors on the uploaded
     image *before* saving it to storage. This is in contrast to specs, which
@@ -83,7 +84,7 @@ class ProcessedImageField(models.ImageField):
 
     def __init__(self, processors=None, format=None, options=None,
         verbose_name=None, name=None, width_field=None, height_field=None,
-        autoconvert=True, **kwargs):
+        autoconvert=True, spec=None, spec_id=None, **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
@@ -91,10 +92,11 @@ class ProcessedImageField(models.ImageField):
         :class:`imagekit.models.ImageSpecField`.
 
         """
+        SpecHost.__init__(self, processors=processors, format=format,
+                options=options, autoconvert=autoconvert, spec=spec,
+                spec_id=spec_id)
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
-        self.spec = ImageSpec(processors, format=format, options=options,
-                autoconvert=autoconvert)
 
     def get_filename(self, filename):
         filename = os.path.normpath(self.storage.get_valid_name(

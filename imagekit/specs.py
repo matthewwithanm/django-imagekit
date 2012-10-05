@@ -174,7 +174,7 @@ class SpecHost(object):
     """
     def __init__(self, processors=None, format=None, options=None,
             storage=None, autoconvert=None, image_cache_backend=None,
-            image_cache_strategy=None, spec=None, id=None):
+            image_cache_strategy=None, spec=None, spec_id=None):
 
         if spec:
             if any([processors, format, options, storage, autoconvert,
@@ -195,9 +195,9 @@ class SpecHost(object):
         self._original_spec = spec
         self.spec_id = None
 
-        if id:
+        if spec_id:
             # If an id is given, register the spec immediately.
-            self.register_spec(id)
+            self.register_spec(spec_id)
 
     def register_spec(self, id):
         """
