@@ -65,12 +65,6 @@ class ImageSpecField(SpecHost):
             # later, from outside of the model definition.
             self.set_spec_id(self.spec_id)
 
-        # Register the field with the image_cache_backend
-        try:
-            self.spec.image_cache_backend.register_field(cls, self, name)
-        except AttributeError:
-            pass
-
 
 class ProcessedImageField(models.ImageField, SpecHost):
     """
