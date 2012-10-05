@@ -1,37 +1,10 @@
-import os
 from django import template
 from django.utils.safestring import mark_safe
-
-from ..exceptions import AlreadyRegistered, NotRegistered
 from ..files import ImageSpecFile
+from ..specs import spec_registry
 
 
 register = template.Library()
-
-
-class SpecRegistry(object):
-    def __init__(self):
-        self._specs = {}
-
-    def register(self, id, spec):
-        if id in self._specs:
-            raise AlreadyRegistered('The spec with id %s is already registered' % id)
-        self._specs[id] = spec
-
-    def unregister(self, id, spec):
-        try:
-            del self._specs[id]
-        except KeyError:
-            raise NotRegistered('The spec with id %s is not registered' % id)
-
-    def get_spec(self, id):
-        try:
-            return self._specs[id]
-        except KeyError:
-            raise NotRegistered('The spec with id %s is not registered' % id)
-
-
-spec_registry = SpecRegistry()
 
 
 class ImageSpecFileHtmlWrapper(object):

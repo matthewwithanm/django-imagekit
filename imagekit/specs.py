@@ -2,13 +2,38 @@ from django.conf import settings
 from hashlib import md5
 import os
 import pickle
-from .exceptions import UnknownExtensionError
+from .exceptions import UnknownExtensionError, AlreadyRegistered, NotRegistered
 from .imagecache.backends import get_default_image_cache_backend
 from .imagecache.strategies import StrategyWrapper
 from .lib import StringIO
 from .processors import ProcessorPipeline
 from .utils import (open_image, extension_to_format, IKContentFile, img_to_fobj,
     suggest_extension)
+
+
+class SpecRegistry(object):
+    def __init__(self):
+        self._specs = {}
+
+    def register(self, id, spec):
+        if id in self._specs:
+            raise AlreadyRegistered('The spec with id %s is already registered' % id)
+        self._specs[id] = spec
+
+    def unregister(self, id, spec):
+        try:
+            del self._specs[id]
+        except KeyError:
+            raise NotRegistered('The spec with id %s is not registered' % id)
+
+    def get_spec(self, id):
+        try:
+            return self._specs[id]
+        except KeyError:
+            raise NotRegistered('The spec with id %s is not registered' % id)
+
+
+spec_registry = SpecRegistry()
 
 
 class BaseImageSpec(object):
