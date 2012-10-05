@@ -176,21 +176,22 @@ class SpecHost(object):
             storage=None, autoconvert=None, image_cache_backend=None,
             image_cache_strategy=None, spec=None, spec_id=None):
 
-        if spec:
-            if any([processors, format, options, storage, autoconvert,
-                    image_cache_backend, image_cache_strategy]):
+        spec_args = dict(
+            processors=processors,
+            format=format,
+            options=options,
+            storage=storage,
+            autoconvert=autoconvert,
+            image_cache_backend=image_cache_backend,
+            image_cache_strategy=image_cache_strategy,
+        )
+
+        if any(v is not None for v in spec_args.values()):
+            if spec:
                 raise TypeError('You can provide either an image spec or'
                     ' arguments for the ImageSpec constructor, but not both.')
-        else:
-            spec = ImageSpec(
-                processors=processors,
-                format=format,
-                options=options,
-                storage=storage,
-                autoconvert=autoconvert,
-                image_cache_backend=image_cache_backend,
-                image_cache_strategy=image_cache_strategy,
-            )
+            else:
+                spec = ImageSpec(**spec_args)
 
         self._original_spec = spec
 
