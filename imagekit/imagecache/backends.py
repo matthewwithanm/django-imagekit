@@ -1,6 +1,5 @@
 from ..utils import get_singleton
 from django.core.cache import get_cache
-from django.core.cache.backends.dummy import DummyCache
 from django.core.exceptions import ImproperlyConfigured
 
 
@@ -23,8 +22,7 @@ class CachedValidationBackend(object):
     def cache(self):
         if not getattr(self, '_cache', None):
             from django.conf import settings
-            alias = settings.IMAGEKIT_CACHE_BACKEND
-            self._cache = get_cache(alias) if alias else DummyCache(None, {})
+            self._cache = get_cache(settings.IMAGEKIT_CACHE_BACKEND)
         return self._cache
 
     def get_key(self, file):
