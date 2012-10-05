@@ -164,3 +164,61 @@ class ImageSpec(BaseImageSpec):
                 storage.save(filename, content)
 
             return content
+
+
+class SpecHost(object):
+    """
+    An object that ostensibly has a spec attribute but really delegates to the
+    spec registry.
+
+    """
+    def __init__(self, processors=None, format=None, options=None,
+            storage=None, autoconvert=None, image_cache_backend=None,
+            image_cache_strategy=None, spec=None, id=None):
+
+        if spec:
+            if any([processors, format, options, storage, autoconvert,
+                    image_cache_backend, image_cache_strategy]):
+                raise TypeError('You can provide either an image spec or'
+                    ' arguments for the ImageSpec constructor, but not both.')
+        else:
+            spec = ImageSpec(
+                processors=processors,
+                format=format,
+                options=options,
+                storage=storage,
+                autoconvert=autoconvert,
+                image_cache_backend=image_cache_backend,
+                image_cache_strategy=image_cache_strategy,
+            )
+
+        self._original_spec = spec
+        self.spec_id = None
+
+        if id:
+            # If an id is given, register the spec immediately.
+            self.register_spec(id)
+
+    def register_spec(self, id):
+        """
+        Registers the spec with the specified id. Useful for when the id isn't
+        known when the instance is constructed (e.g. for ImageSpecFields whose
+        generated `spec_id`s are only known when they are contributed to a
+        class)
+
+        """
+        self.spec_id = id
+        spec_registry.register(id, self._original_spec)
+
+    @property
+    def spec(self):
+        """
+        Look up the spec by the spec id. We do this (instead of storing the
+        spec as an attribute) so that users can override apps' specs--without
+        having to edit model definitions--simply by registering another spec
+        with the same id.
+
+        """
+        if not getattr(self, 'spec_id', None):
+            raise Exception('Object %s has no spec id.' % self)
+        return spec_registry.get_spec(self.spec_id)
