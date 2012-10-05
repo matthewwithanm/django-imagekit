@@ -1,6 +1,5 @@
 from appconf import AppConf
 from django.conf import settings
-from .imagecache.actions import validate_now, clear_now
 
 
 class ImageKitConf(AppConf):

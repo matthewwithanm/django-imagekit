@@ -4,7 +4,6 @@ from django.db import models
 from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor, ImageKitMeta
 from ..receivers import configure_receivers
-from ...base import ImageSpec
 from ...utils import suggest_extension
 from ...specs import SpecHost
 
