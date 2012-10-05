@@ -1,5 +1,5 @@
 from . import conf
-from .base import ImageSpec
+from .specs import ImageSpec
 
 
 __title__ = 'django-imagekit'
