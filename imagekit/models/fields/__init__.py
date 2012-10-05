@@ -1,8 +1,6 @@
 import os
 
 from django.db import models
-from django.db.models.signals import post_init, post_save, post_delete
-
 from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor, ImageKitMeta
 from ..receivers import configure_receivers
