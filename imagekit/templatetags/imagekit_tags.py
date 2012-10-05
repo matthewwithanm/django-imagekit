@@ -2,18 +2,11 @@ import os
 from django import template
 from django.utils.safestring import mark_safe
 
+from ..exceptions import AlreadyRegistered, NotRegistered
 from ..files import ImageSpecFile
 
 
 register = template.Library()
-
-
-class AlreadyRegistered(Exception):
-    pass
-
-
-class NotRegistered(Exception):
-    pass
 
 
 class SpecRegistry(object):
