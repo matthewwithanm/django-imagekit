@@ -5,6 +5,7 @@ from django.db.models.signals import post_init, post_save, post_delete
 
 from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor, ImageKitMeta
+from ..receivers import configure_receivers
 from ...base import ImageSpec
 from ...utils import suggest_extension
 
@@ -58,53 +59,11 @@ class ImageSpecField(object):
             setattr(cls, '_ik', ik)
         ik.spec_fields.append(name)
 
-        # Connect to the signals only once for this class.
-        uid = '%s.%s' % (cls.__module__, cls.__name__)
-        post_init.connect(ImageSpecField._post_init_receiver, sender=cls,
-                dispatch_uid=uid)
-        post_save.connect(ImageSpecField._post_save_receiver, sender=cls,
-                dispatch_uid=uid)
-        post_delete.connect(ImageSpecField._post_delete_receiver, sender=cls,
-                dispatch_uid=uid)
-
         # Register the field with the image_cache_backend
         try:
             self.spec.image_cache_backend.register_field(cls, self, name)
         except AttributeError:
             pass
-
-    @staticmethod
-    def _post_save_receiver(sender, instance=None, created=False, raw=False, **kwargs):
-        if not raw:
-            old_hashes = instance._ik._source_hashes.copy()
-            new_hashes = ImageSpecField._update_source_hashes(instance)
-            for attname in instance._ik.spec_fields:
-                file = getattr(instance, attname)
-                if created:
-                    file.field.spec.image_cache_strategy.invoke_callback('source_create', file)
-                elif old_hashes[attname] != new_hashes[attname]:
-                    file.field.spec.image_cache_strategy.invoke_callback('source_change', file)
-
-    @staticmethod
-    def _update_source_hashes(instance):
-        """
-        Stores hashes of the source image files so that they can be compared
-        later to see whether the source image has changed (and therefore whether
-        the spec file needs to be regenerated).
-
-        """
-        instance._ik._source_hashes = dict((f.attname, hash(f.source_file)) \
-                for f in instance._ik.spec_files)
-        return instance._ik._source_hashes
-
-    @staticmethod
-    def _post_delete_receiver(sender, instance=None, **kwargs):
-        for spec_file in instance._ik.spec_files:
-            spec_file.field.spec.image_cache_strategy.invoke_callback('source_delete', spec_file)
-
-    @staticmethod
-    def _post_init_receiver(sender, instance, **kwargs):
-        ImageSpecField._update_source_hashes(instance)
 
 
 class ProcessedImageField(models.ImageField):
@@ -146,3 +105,6 @@ except ImportError:
     pass
 else:
     add_introspection_rules([], [r'^imagekit\.models\.fields\.ProcessedImageField$'])
+
+
+configure_receivers()

@@ -20,14 +20,17 @@ def post_save_receiver(sender, instance=None, created=False, raw=False, **kwargs
         old_hashes = instance._ik._source_hashes.copy()
         new_hashes = update_source_hashes(instance)
         for attname in instance._ik.spec_fields:
-            if old_hashes[attname] != new_hashes[attname]:
-                getattr(instance, attname).invalidate()
+            file = getattr(instance, attname)
+            if created:
+                file.field.spec.image_cache_strategy.invoke_callback('source_create', file)
+            elif old_hashes[attname] != new_hashes[attname]:
+                file.field.spec.image_cache_strategy.invoke_callback('source_change', file)
 
 
 @ik_model_receiver
 def post_delete_receiver(sender, instance=None, **kwargs):
     for spec_file in instance._ik.spec_files:
-        spec_file.clear()
+        spec_file.field.spec.image_cache_strategy.invoke_callback('source_delete', spec_file)
 
 
 @ik_model_receiver
