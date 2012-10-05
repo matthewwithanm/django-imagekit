@@ -7,4 +7,4 @@ class ImageKitConf(AppConf):
     CACHE_BACKEND = None
     CACHE_DIR = 'CACHE/images'
     CACHE_PREFIX = 'ik-'
-    DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY = 'imagekit.imagecache.strategies.Pessimistic'
+    DEFAULT_IMAGE_CACHE_STRATEGY = 'imagekit.imagecache.strategies.Pessimistic'

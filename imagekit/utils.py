@@ -10,6 +10,7 @@ from django.utils.encoding import smart_str, smart_unicode
 from django.utils.functional import wraps
 from django.utils.importlib import import_module
 
+from .exceptions import UnknownExtensionError, UnknownFormatError
 from .lib import Image, ImageFile, StringIO
 
 
@@ -74,14 +75,6 @@ def _wrap_copy(f):
             pass
         return img
     return copy
-
-
-class UnknownExtensionError(Exception):
-    pass
-
-
-class UnknownFormatError(Exception):
-    pass
 
 
 _pil_init = 0

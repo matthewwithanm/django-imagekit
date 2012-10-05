@@ -2,7 +2,6 @@ import os
 
 from django.db.models.fields.files import ImageFieldFile
 
-from .generators import SpecFileGenerator
 from .utils import SpecWrapper, suggest_extension
 
 
@@ -11,9 +10,6 @@ class ImageSpecFile(ImageFieldFile):
         spec = SpecWrapper(spec)
 
         self.storage = spec.storage or source_file.storage
-        self.generator = SpecFileGenerator(processors=spec.processors,
-                format=spec.format, options=spec.options,
-                autoconvert=spec.autoconvert, storage=self.storage)
 
         self.spec = spec
         self.source_file = source_file
@@ -44,11 +40,11 @@ class ImageSpecFile(ImageFieldFile):
         source_filename = self.source_file.name
         filepath, basename = os.path.split(source_filename)
         filename = os.path.splitext(basename)[0]
-        extension = suggest_extension(source_filename, self.generator.format)
+        extension = suggest_extension(source_filename, self.spec.format)
         new_name = '%s%s' % (filename, extension)
         cache_filename = ['cache', 'iktt'] + self.spec_id.split(':') + \
                 [filepath, new_name]
         return os.path.join(*cache_filename)
 
     def generate(self, save=True):
-        return self.generator.generate_file(self.name, self.source_file, save)
+        return self.spec.generate_file(self.name, self.source_file, save)

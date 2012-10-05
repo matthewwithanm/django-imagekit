@@ -1,14 +1,11 @@
 import os
 
-from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_init, post_save, post_delete
 
-from ...imagecache.backends import get_default_image_cache_backend
-from ...imagecache.strategies import StrategyWrapper
-from ...generators import SpecFileGenerator
-from .files import ImageSpecFieldFile, ProcessedImageFieldFile
-from .utils import ImageSpecFileDescriptor, ImageKitMeta, BoundImageKitMeta
+from .files import ProcessedImageFieldFile
+from .utils import ImageSpecFileDescriptor, ImageKitMeta
+from ...base import ImageSpec
 from ...utils import suggest_extension
 
 
@@ -19,53 +16,31 @@ class ImageSpecField(object):
 
     """
     def __init__(self, processors=None, format=None, options=None,
-        image_field=None, pre_cache=None, storage=None, autoconvert=True,
+        image_field=None, storage=None, autoconvert=True,
         image_cache_backend=None, image_cache_strategy=None):
-        """
-        :param processors: A list of processors to run on the original image.
-        :param format: The format of the output file. If not provided,
-            ImageSpecField will try to guess the appropriate format based on the
-            extension of the filename and the format of the input image.
-        :param options: A dictionary that will be passed to PIL's
-            ``Image.save()`` method as keyword arguments. Valid options vary
-            between formats, but some examples include ``quality``,
-            ``optimize``, and ``progressive`` for JPEGs. See the PIL
-            documentation for others.
-        :param image_field: The name of the model property that contains the
-            original image.
-        :param storage: A Django storage system to use to save the generated
-            image.
-        :param autoconvert: Specifies whether automatic conversion using
-            ``prepare_image()`` should be performed prior to saving.
-        :param image_cache_backend: An object responsible for managing the state
-            of cached files. Defaults to an instance of
-            ``IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND``
-        :param image_cache_strategy: A dictionary containing callbacks that
-            allow you to customize how and when the image cache is validated.
-            Defaults to ``IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY``
 
-        """
-
-        if pre_cache is not None:
-            raise Exception('The pre_cache argument has been removed in favor'
-                    ' of cache state backends.')
-
-        # The generator accepts a callable value for processors, but it
+        # The spec accepts a callable value for processors, but it
         # takes different arguments than the callable that ImageSpecField
         # expects, so we create a partial application and pass that instead.
         # TODO: Should we change the signatures to match? Even if `instance` is not part of the signature, it's accessible through the source file object's instance property.
         p = lambda file: processors(instance=file.instance, file=file) if \
                 callable(processors) else processors
 
-        self.generator = SpecFileGenerator(p, format=format, options=options,
-                autoconvert=autoconvert, storage=storage)
+        self.spec = ImageSpec(
+            processors=p,
+            format=format,
+            options=options,
+            storage=storage,
+            autoconvert=autoconvert,
+            image_cache_backend=image_cache_backend,
+            image_cache_strategy=image_cache_strategy,
+        )
+
         self.image_field = image_field
-        self.storage = storage
-        self.image_cache_backend = image_cache_backend or \
-                get_default_image_cache_backend()
-        if image_cache_strategy is None:
-            image_cache_strategy = settings.IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY
-        self.image_cache_strategy = StrategyWrapper(image_cache_strategy)
+
+    @property
+    def storage(self):
+        return self.spec.storage
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
@@ -94,7 +69,7 @@ class ImageSpecField(object):
 
         # Register the field with the image_cache_backend
         try:
-            self.image_cache_backend.register_field(cls, self, name)
+            self.spec.image_cache_backend.register_field(cls, self, name)
         except AttributeError:
             pass
 
@@ -106,9 +81,9 @@ class ImageSpecField(object):
             for attname in instance._ik.spec_fields:
                 file = getattr(instance, attname)
                 if created:
-                    file.field.image_cache_strategy.invoke_callback('source_create', file)
+                    file.field.spec.image_cache_strategy.invoke_callback('source_create', file)
                 elif old_hashes[attname] != new_hashes[attname]:
-                    file.field.image_cache_strategy.invoke_callback('source_change', file)
+                    file.field.spec.image_cache_strategy.invoke_callback('source_change', file)
 
     @staticmethod
     def _update_source_hashes(instance):
@@ -125,7 +100,7 @@ class ImageSpecField(object):
     @staticmethod
     def _post_delete_receiver(sender, instance=None, **kwargs):
         for spec_file in instance._ik.spec_files:
-            spec_file.field.image_cache_strategy.invoke_callback('source_delete', spec_file)
+            spec_file.field.spec.image_cache_strategy.invoke_callback('source_delete', spec_file)
 
     @staticmethod
     def _post_init_receiver(sender, instance, **kwargs):
@@ -152,20 +127,16 @@ class ProcessedImageField(models.ImageField):
         :class:`imagekit.models.ImageSpecField`.
 
         """
-        if 'quality' in kwargs:
-            raise Exception('The "quality" keyword argument has been'
-                    """ deprecated. Use `options={'quality': %s}` instead.""" \
-                    % kwargs['quality'])
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
-        self.generator = SpecFileGenerator(processors, format=format,
-                options=options, autoconvert=autoconvert)
+        self.spec = ImageSpec(processors, format=format, options=options,
+                autoconvert=autoconvert)
 
     def get_filename(self, filename):
         filename = os.path.normpath(self.storage.get_valid_name(
                 os.path.basename(filename)))
         name, ext = os.path.splitext(filename)
-        ext = suggest_extension(filename, self.generator.format)
+        ext = suggest_extension(filename, self.spec.format)
         return u'%s%s' % (name, ext)
 
 

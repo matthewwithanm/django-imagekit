@@ -5,6 +5,7 @@ import os
 from django.test import TestCase
 
 from imagekit import utils
+from imagekit.exceptions import UnknownFormatError
 from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
         ConcreteImageModel2)
 from .testutils import create_photo, pickleback
@@ -59,7 +60,7 @@ class IKUtilsTest(TestCase):
         self.assertEqual(utils.format_to_extension('PNG'), '.png')
         self.assertEqual(utils.format_to_extension('ICO'), '.ico')
 
-        with self.assertRaises(utils.UnknownFormatError):
+        with self.assertRaises(UnknownFormatError):
             utils.format_to_extension('TXT')
 
 

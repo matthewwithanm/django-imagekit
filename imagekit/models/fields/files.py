@@ -7,7 +7,7 @@ class ImageSpecFieldFile(ImageFieldFile):
         self.attname = attname
 
     def get_hash(self):
-        return self.field.generator.get_hash(self.source_file)
+        return self.field.spec.get_hash(self.source_file)
 
     @property
     def source_file(self):
@@ -34,16 +34,16 @@ class ImageSpecFieldFile(ImageFieldFile):
     def _require_file(self):
         if not self.source_file:
             raise ValueError("The '%s' attribute's image_field has no file associated with it." % self.attname)
-        self.field.image_cache_strategy.invoke_callback('access', self)
+        self.field.spec.image_cache_strategy.invoke_callback('access', self)
 
     def clear(self):
-        return self.field.image_cache_backend.clear(self)
+        return self.field.spec.image_cache_backend.clear(self)
 
     def invalidate(self):
-        return self.field.image_cache_backend.invalidate(self)
+        return self.field.spec.image_cache_backend.invalidate(self)
 
     def validate(self):
-        return self.field.image_cache_backend.validate(self)
+        return self.field.spec.image_cache_backend.validate(self)
 
     def generate(self, save=True):
         """
@@ -51,7 +51,7 @@ class ImageSpecFieldFile(ImageFieldFile):
         the content of the result, ready for saving.
 
         """
-        return self.field.generator.generate_file(self.name, self.source_file,
+        return self.field.spec.generate_file(self.name, self.source_file,
                 save)
 
     def delete(self, save=False):
@@ -91,7 +91,7 @@ class ImageSpecFieldFile(ImageFieldFile):
         Specifies the filename that the cached image will use.
 
         """
-        return self.field.generator.generate_filename(self.source_file)
+        return self.field.spec.generate_filename(self.source_file)
 
     @name.setter
     def name(self, value):
@@ -123,7 +123,7 @@ class ImageSpecFieldFile(ImageFieldFile):
 
 class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
-        new_filename = self.field.generate_filename(self.instance, name)
-        img, content = self.field.generator.process_content(content,
+        new_filename = self.field.spec.generate_filename(self.instance, name)
+        img, content = self.field.spec.process_content(content,
                 new_filename, self)
         return super(ProcessedImageFieldFile, self).save(name, content, save)
