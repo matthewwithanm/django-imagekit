@@ -193,18 +193,17 @@ class SpecHost(object):
             )
 
         self._original_spec = spec
-        self.spec_id = None
 
         if spec_id:
-            # If an id is given, register the spec immediately.
-            self.register_spec(spec_id)
+            self.set_spec_id(spec_id)
 
-    def register_spec(self, id):
+    def set_spec_id(self, id):
         """
-        Registers the spec with the specified id. Useful for when the id isn't
+        Sets the spec id for this object. Useful for when the id isn't
         known when the instance is constructed (e.g. for ImageSpecFields whose
         generated `spec_id`s are only known when they are contributed to a
-        class)
+        class). If the object was initialized with a spec, it will be registered
+        under the provided id.
 
         """
         self.spec_id = id

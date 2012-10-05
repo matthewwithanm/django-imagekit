@@ -57,13 +57,13 @@ class ImageSpecField(SpecHost):
 
         # Generate a spec_id to register the spec with. The default spec id is
         # "<app>:<model>_<field>"
-        if not self.spec_id:
+        if not getattr(self, 'spec_id', None):
             self.spec_id = (u'%s:%s_%s' % (cls._meta.app_label,
                     cls._meta.object_name, name)).lower()
 
-        # Register the spec with the id. This allows specs to be overridden
-        # later, from outside of the model definition.
-        self.register_spec(self.spec_id)
+            # Register the spec with the id. This allows specs to be overridden
+            # later, from outside of the model definition.
+            self.set_spec_id(self.spec_id)
 
         # Register the field with the image_cache_backend
         try:
