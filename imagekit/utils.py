@@ -399,14 +399,6 @@ def get_singleton(class_path, desc):
     return instance
 
 
-def ik_model_receiver(fn):
-    @wraps(fn)
-    def receiver(sender, **kwargs):
-        if getattr(sender, '_ik', None):
-            fn(sender, **kwargs)
-    return receiver
-
-
 def autodiscover():
     """
     Auto-discover INSTALLED_APPS imagespecs.py modules and fail silently when

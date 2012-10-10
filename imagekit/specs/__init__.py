@@ -1,3 +1,4 @@
+from collections import defaultdict
 from django.conf import settings
 from hashlib import md5
 import os
@@ -7,6 +8,7 @@ from .imagecache.backends import get_default_image_cache_backend
 from .imagecache.strategies import StrategyWrapper
 from .lib import StringIO
 from .processors import ProcessorPipeline
+from .signals import source_created, source_changed, source_deleted
 from .utils import (open_image, extension_to_format, IKContentFile, img_to_fobj,
     suggest_extension)
 
@@ -14,11 +16,28 @@ from .utils import (open_image, extension_to_format, IKContentFile, img_to_fobj,
 class SpecRegistry(object):
     def __init__(self):
         self._specs = {}
+        self._sources = defaultdict(list)
 
     def register(self, id, spec):
         if id in self._specs:
             raise AlreadyRegistered('The spec with id %s is already registered' % id)
         self._specs[id] = spec
+
+    def add_source(self, id, source):
+        self._sources[id].append(source)
+        source_created.connect(receiver, sender, weak, dispatch_uid)
+        source_changed.connect(receiver, sender, weak, dispatch_uid)
+        source_deleted.connect(receiver, sender, weak, dispatch_uid)
+
+    def source_receiver(self, source, source_file):
+        # Get a list of specs that use this source.
+        ids = (k for k, v in self._sources.items() if source in v)
+        specs = (self.get_spec(id) for id in ids)
+        for spec in specs:
+            spec.image_cache_strategy.invoke_callback(..., source_file)
+
+    def get_sources(self, id):
+        return self._sources[id]
 
     def unregister(self, id, spec):
         try:

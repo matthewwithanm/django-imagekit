@@ -1,11 +1,12 @@
 import os
 
 from django.db import models
-from .files import ProcessedImageFieldFile
-from .utils import ImageSpecFileDescriptor, ImageKitMeta
+from ..files import ProcessedImageFieldFile
+from .utils import ImageSpecFileDescriptor
 from ..receivers import configure_receivers
 from ...utils import suggest_extension
-from ...specs import SpecHost
+from ...specs import SpecHost, spec_registry
+from ...specs.sources import ImageFieldSpecSource
 
 
 class ImageSpecField(SpecHost):
@@ -40,19 +41,6 @@ class ImageSpecField(SpecHost):
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
-        try:
-            # Make sure we don't modify an inherited ImageKitMeta instance
-            ik = cls.__dict__['ik']
-        except KeyError:
-            try:
-                base = getattr(cls, '_ik')
-            except AttributeError:
-                ik = ImageKitMeta()
-            else:
-                # Inherit all the spec fields.
-                ik = ImageKitMeta(base.spec_fields)
-            setattr(cls, '_ik', ik)
-        ik.spec_fields.append(name)
 
         # Generate a spec_id to register the spec with. The default spec id is
         # "<app>:<model>_<field>"
@@ -63,6 +51,10 @@ class ImageSpecField(SpecHost):
             # Register the spec with the id. This allows specs to be overridden
             # later, from outside of the model definition.
             self.set_spec_id(self.spec_id)
+
+        # Register the model and field as a source for this spec id
+        spec_registry.add_source(self.spec_id,
+                                 ImageFieldSpecSource(cls, self.image_field))
 
 
 class ProcessedImageField(models.ImageField, SpecHost):
