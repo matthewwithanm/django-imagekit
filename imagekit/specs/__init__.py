@@ -23,7 +23,7 @@ class SpecRegistry(object):
         self._specs = {}
         self._sources = {}
         for signal in self.signals.keys():
-            signal.connect(lambda *a, **k: self.source_receiver(signal, *a, **k))
+            signal.connect(self.source_receiver)
 
     def register(self, id, spec):
         if id in self._specs:
@@ -51,11 +51,12 @@ class SpecRegistry(object):
             self._sources[source] = set()
         self._sources[source].add(spec_id)
 
-    def source_receiver(self, signal, source, source_file):
+    def source_receiver(self, sender, source_file, signal, **kwargs):
+        source = sender
         if source not in self._sources:
             return
 
-        callback_name = self._signals[signal]
+        callback_name = self.signals[signal]
         for spec in (self.get_spec(id) for id in self._sources[source]):
             spec.image_cache_strategy.invoke_callback(callback_name, source_file)
 

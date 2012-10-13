@@ -65,20 +65,20 @@ class ModelSignalRouter(object):
             new_hashes = self.update_source_hashes(instance)
             for attname, file in self.get_field_dict(instance).items():
                 if created:
-                    self.dispatch_signal(source_created, sender, file)
+                    self.dispatch_signal(source_created, file, sender)
                 elif old_hashes[attname] != new_hashes[attname]:
-                    self.dispatch_signal(source_changed, sender, file)
+                    self.dispatch_signal(source_changed, file, sender)
 
     @ik_model_receiver
     def post_delete_receiver(self, sender, instance=None, **kwargs):
         for attname, file in self.get_field_dict(instance):
-            self.dispatch_signal(source_deleted, sender, file)
+            self.dispatch_signal(source_deleted, file, sender)
 
     @ik_model_receiver
     def post_init_receiver(self, sender, instance=None, **kwargs):
         self.update_source_hashes(instance)
 
-    def dispatch_signal(self, signal, model_class, file):
+    def dispatch_signal(self, signal, file, model_class):
         """
         Dispatch the signal for each of the matching sources. Note that more
         than one source can have the same model and image_field; it's important
@@ -86,7 +86,8 @@ class ModelSignalRouter(object):
 
         """
         for source in self._sources:
-            if source.model_class is model_class and source.image_field == file.attname:
+            # TODO: Is it okay to require a field attribute on our file?
+            if source.model_class is model_class and source.image_field == file.field.attname:
                 signal.send(sender=source, source_file=file)
 
 
