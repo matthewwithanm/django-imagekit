@@ -12,7 +12,7 @@ def ik_model_receiver(fn):
     @wraps(fn)
     def receiver(self, sender, **kwargs):
         if sender in (src.model_class for src in self._sources):
-            fn(sender, **kwargs)
+            fn(self, sender=sender, **kwargs)
     return receiver
 
 
@@ -38,8 +38,8 @@ class ModelSignalRouter(object):
 
         """
         self.init_instance(instance)
-        instance._ik['source_hashes'] = dict((k, hash(v.source_file))
-                for k, v in self.get_field_dict(instance).items())
+        instance._ik['source_hashes'] = dict((attname, hash(file_field))
+                for attname, file_field in self.get_field_dict(instance).items())
         return instance._ik['source_hashes']
 
     def get_field_dict(self, instance):
@@ -68,9 +68,8 @@ class ModelSignalRouter(object):
         for attname, file in self.get_field_dict(instance):
             self.dispatch_signal(source_deleted, sender, file)
 
-    @classmethod
     @ik_model_receiver
-    def post_init_receiver(self, sender, instance, **kwargs):
+    def post_init_receiver(self, sender, instance=None, **kwargs):
         self.update_source_hashes(instance)
 
     def dispatch_signal(self, signal, model_class, file):

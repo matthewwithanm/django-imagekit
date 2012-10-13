@@ -1,11 +1,11 @@
 import os
 
 from django.db import models
-from ..files import ProcessedImageFieldFile
+from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor
-from ..receivers import configure_receivers
+from ... import specs
 from ...utils import suggest_extension
-from ...specs import SpecHost, spec_registry
+from ...specs import SpecHost
 from ...specs.sources import ImageFieldSpecSource
 
 
@@ -52,9 +52,9 @@ class ImageSpecField(SpecHost):
             # later, from outside of the model definition.
             self.set_spec_id(self.spec_id)
 
-        # Register the model and field as a source for this spec id
-        spec_registry.add_source(self.spec_id,
-                                 ImageFieldSpecSource(cls, self.image_field))
+        # Add the model and field as a source for this spec id
+        specs.registry.add_source(ImageFieldSpecSource(cls, self.image_field),
+                                 self.spec_id)
 
 
 class ProcessedImageField(models.ImageField, SpecHost):
@@ -97,6 +97,3 @@ except ImportError:
     pass
 else:
     add_introspection_rules([], [r'^imagekit\.models\.fields\.ProcessedImageField$'])
-
-
-configure_receivers()
