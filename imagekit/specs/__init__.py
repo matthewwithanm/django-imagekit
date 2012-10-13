@@ -13,6 +13,16 @@ from ..utils import (open_image, extension_to_format, IKContentFile,
 
 
 class SpecRegistry(object):
+    """
+    An object for registering specs and sources. The two are associated with
+    eachother via a string id. We do this (as opposed to associating them
+    directly by, for example, putting a ``sources`` attribute on specs) so that
+    specs can be overridden without losing the associated sources. That way,
+    a distributable app can define its own specs without locking the users of
+    the app into it.
+
+    """
+
     signals = {
         source_created: 'source_created',
         source_changed: 'source_changed',
