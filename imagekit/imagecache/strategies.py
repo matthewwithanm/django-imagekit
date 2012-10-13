@@ -8,13 +8,13 @@ class Pessimistic(object):
 
     """
 
-    def on_access(self, file):
+    def on_accessed(self, file):
         validate_now(file)
 
-    def on_source_delete(self, file):
+    def on_source_deleted(self, file):
         clear_now(file)
 
-    def on_source_change(self, file):
+    def on_source_changed(self, file):
         validate_now(file)
 
 
@@ -25,13 +25,13 @@ class Optimistic(object):
 
     """
 
-    def on_source_create(self, file):
+    def on_source_created(self, file):
         validate_now(file)
 
-    def on_source_delete(self, file):
+    def on_source_deleted(self, file):
         clear_now(file)
 
-    def on_source_change(self, file):
+    def on_source_changed(self, file):
         validate_now(file)
 
 
@@ -52,6 +52,6 @@ class StrategyWrapper(object):
         self._wrapped = strategy
 
     def invoke_callback(self, name, *args, **kwargs):
-        func = getattr(self._wrapped, 'on_%s' % name, None)
+        func = getattr(self._wrapped, name, None)
         if func:
             func(*args, **kwargs)

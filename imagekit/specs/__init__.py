@@ -4,6 +4,7 @@ import os
 import pickle
 from .signals import source_created, source_changed, source_deleted
 from ..exceptions import UnknownExtensionError, AlreadyRegistered, NotRegistered
+from ..files import ImageSpecFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..lib import StringIO
@@ -23,16 +24,16 @@ class SpecRegistry(object):
 
     """
 
-    signals = {
-        source_created: 'source_created',
-        source_changed: 'source_changed',
-        source_deleted: 'source_deleted',
-    }
+    _source_signals = [
+        source_created,
+        source_changed,
+        source_deleted,
+    ]
 
     def __init__(self):
         self._specs = {}
         self._sources = {}
-        for signal in self.signals.keys():
+        for signal in self._source_signals:
             signal.connect(self.source_receiver)
 
     def register(self, id, spec):
@@ -62,13 +63,21 @@ class SpecRegistry(object):
         self._sources[source].add(spec_id)
 
     def source_receiver(self, sender, source_file, signal, **kwargs):
+        """
+        Redirects signals dispatched on sources to the appropriate specs.
+
+        """
         source = sender
         if source not in self._sources:
             return
 
-        callback_name = self.signals[signal]
         for spec in (self.get_spec(id) for id in self._sources[source]):
-            spec.image_cache_strategy.invoke_callback(callback_name, source_file)
+            event_name = {
+                source_created: 'source_created',
+                source_changed: 'source_changed',
+                source_deleted: 'source_deleted',
+            }
+            spec._handle_source_event(event_name, source_file)
 
 
 class BaseImageSpec(object):
@@ -175,6 +184,20 @@ class ImageSpec(BaseImageSpec):
         self.storage = storage or self.storage
         self.image_cache_backend = image_cache_backend or self.image_cache_backend or get_default_image_cache_backend()
         self.image_cache_strategy = StrategyWrapper(image_cache_strategy or self.image_cache_strategy)
+
+    # TODO: Can we come up with a better name for this? "process" may cause confusion with processors' process()
+    def apply(self, source_file):
+        """
+        Creates a file object that represents the combination of a spec and
+        source file.
+
+        """
+        return ImageSpecFile(self, source_file)
+
+    # TODO: I don't like this interface. Is there a standard Python one? pubsub?
+    def _handle_source_event(self, event_name, source_file):
+        file = self.apply(source_file)
+        self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
 
     def generate_file(self, filename, source_file, save=True):
         """
