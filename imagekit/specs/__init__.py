@@ -2,18 +2,38 @@ from django.conf import settings
 from hashlib import md5
 import os
 import pickle
-from .exceptions import UnknownExtensionError, AlreadyRegistered, NotRegistered
-from .imagecache.backends import get_default_image_cache_backend
-from .imagecache.strategies import StrategyWrapper
-from .lib import StringIO
-from .processors import ProcessorPipeline
-from .utils import (open_image, extension_to_format, IKContentFile, img_to_fobj,
-    suggest_extension)
+from .signals import source_created, source_changed, source_deleted
+from ..exceptions import UnknownExtensionError, AlreadyRegistered, NotRegistered
+from ..imagecache.backends import get_default_image_cache_backend
+from ..imagecache.strategies import StrategyWrapper
+from ..lib import StringIO
+from ..processors import ProcessorPipeline
+from ..utils import (open_image, extension_to_format, IKContentFile,
+    img_to_fobj, suggest_extension)
 
 
 class SpecRegistry(object):
+    """
+    An object for registering specs and sources. The two are associated with
+    eachother via a string id. We do this (as opposed to associating them
+    directly by, for example, putting a ``sources`` attribute on specs) so that
+    specs can be overridden without losing the associated sources. That way,
+    a distributable app can define its own specs without locking the users of
+    the app into it.
+
+    """
+
+    signals = {
+        source_created: 'source_created',
+        source_changed: 'source_changed',
+        source_deleted: 'source_deleted',
+    }
+
     def __init__(self):
         self._specs = {}
+        self._sources = {}
+        for signal in self.signals.keys():
+            signal.connect(self.source_receiver)
 
     def register(self, id, spec):
         if id in self._specs:
@@ -32,8 +52,23 @@ class SpecRegistry(object):
         except KeyError:
             raise NotRegistered('The spec with id %s is not registered' % id)
 
+    def add_source(self, source, spec_id):
+        """
+        Associates a source with a spec id
 
-spec_registry = SpecRegistry()
+        """
+        if source not in self._sources:
+            self._sources[source] = set()
+        self._sources[source].add(spec_id)
+
+    def source_receiver(self, sender, source_file, signal, **kwargs):
+        source = sender
+        if source not in self._sources:
+            return
+
+        callback_name = self.signals[signal]
+        for spec in (self.get_spec(id) for id in self._sources[source]):
+            spec.image_cache_strategy.invoke_callback(callback_name, source_file)
 
 
 class BaseImageSpec(object):
@@ -208,7 +243,7 @@ class SpecHost(object):
 
         """
         self.spec_id = id
-        spec_registry.register(id, self._original_spec)
+        registry.register(id, self._original_spec)
 
     @property
     def spec(self):
@@ -221,4 +256,7 @@ class SpecHost(object):
         """
         if not getattr(self, 'spec_id', None):
             raise Exception('Object %s has no spec id.' % self)
-        return spec_registry.get_spec(self.spec_id)
+        return registry.get_spec(self.spec_id)
+
+
+registry = SpecRegistry()
