@@ -17,6 +17,12 @@ def ik_model_receiver(fn):
 
 
 class ModelSignalRouter(object):
+    """
+    Handles signals dispatched by models and relays them to the spec sources
+    that represent those models.
+
+    """
+
     def __init__(self):
         self._sources = []
         uid = 'ik_spec_field_receivers'
