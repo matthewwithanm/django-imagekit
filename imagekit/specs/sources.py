@@ -65,20 +65,22 @@ class ModelSignalRouter(object):
             new_hashes = self.update_source_hashes(instance)
             for attname, file in self.get_field_dict(instance).items():
                 if created:
-                    self.dispatch_signal(source_created, file, sender, attname)
+                    self.dispatch_signal(source_created, file, sender, instance,
+                                         attname)
                 elif old_hashes[attname] != new_hashes[attname]:
-                    self.dispatch_signal(source_changed, file, sender, attname)
+                    self.dispatch_signal(source_changed, file, sender, instance,
+                                         attname)
 
     @ik_model_receiver
     def post_delete_receiver(self, sender, instance=None, **kwargs):
         for attname, file in self.get_field_dict(instance):
-            self.dispatch_signal(source_deleted, file, sender, attname)
+            self.dispatch_signal(source_deleted, file, sender, instance, attname)
 
     @ik_model_receiver
     def post_init_receiver(self, sender, instance=None, **kwargs):
         self.update_source_hashes(instance)
 
-    def dispatch_signal(self, signal, file, model_class, attname):
+    def dispatch_signal(self, signal, file, model_class, instance, attname):
         """
         Dispatch the signal for each of the matching sources. Note that more
         than one source can have the same model and image_field; it's important
@@ -87,7 +89,12 @@ class ModelSignalRouter(object):
         """
         for source in self._sources:
             if source.model_class is model_class and source.image_field == attname:
-                signal.send(sender=source, source_file=file)
+                info = dict(
+                    source=source,
+                    instance=instance,
+                    field_name=attname,
+                )
+                signal.send(sender=source, source_file=file, info=info)
 
 
 class ImageFieldSpecSource(object):

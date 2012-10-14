@@ -62,7 +62,7 @@ class SpecRegistry(object):
             self._sources[source] = set()
         self._sources[source].add(spec_id)
 
-    def source_receiver(self, sender, source_file, signal, **kwargs):
+    def source_receiver(self, sender, source_file, signal, info, **kwargs):
         """
         Redirects signals dispatched on sources to the appropriate specs.
 
