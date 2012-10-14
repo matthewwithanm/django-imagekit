@@ -92,16 +92,10 @@ class BaseImageSpec(object):
         self.options = options or self.options
         self.autoconvert = self.autoconvert if autoconvert is None else autoconvert
 
-    def get_processors(self, source_file):
-        processors = self.processors
-        if callable(processors):
-            processors = processors(source_file)
-        return processors
-
     def get_hash(self, source_file):
         return md5(''.join([
             source_file.name,
-            pickle.dumps(self.get_processors(source_file)),
+            pickle.dumps(self.processors),
             self.format,
             pickle.dumps(self.options),
             str(self.autoconvert),
@@ -125,7 +119,7 @@ class BaseImageSpec(object):
         original_format = img.format
 
         # Run the processors
-        processors = self.get_processors(source_file)
+        processors = self.processors
         img = ProcessorPipeline(processors or []).process(img)
 
         options = dict(self.options or {})

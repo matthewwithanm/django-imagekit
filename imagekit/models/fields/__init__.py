@@ -20,14 +20,7 @@ class ImageSpecField(SpecHost):
         image_cache_backend=None, image_cache_strategy=None, spec=None,
         id=None):
 
-        # The spec accepts a callable value for processors, but it
-        # takes different arguments than the callable that ImageSpecField
-        # expects, so we create a partial application and pass that instead.
-        # TODO: Should we change the signatures to match? Even if `instance` is not part of the signature, it's accessible through the source file object's instance property.
-        p = lambda file: processors(instance=file.instance,
-                file=file) if callable(processors) else processors
-
-        SpecHost.__init__(self, processors=p, format=format,
+        SpecHost.__init__(self, processors=processors, format=format,
                 options=options, storage=storage, autoconvert=autoconvert,
                 image_cache_backend=image_cache_backend,
                 image_cache_strategy=image_cache_strategy, spec=spec,
