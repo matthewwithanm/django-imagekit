@@ -47,11 +47,15 @@ class SpecRegistry(object):
         except KeyError:
             raise NotRegistered('The spec with id %s is not registered' % id)
 
-    def get_spec(self, id):
+    def get_spec(self, id, **kwargs):
         try:
-            return self._specs[id]
+            spec = self._specs[id]
         except KeyError:
             raise NotRegistered('The spec with id %s is not registered' % id)
+        if callable(spec):
+            return spec(**kwargs)
+        else:
+            return spec
 
     def add_source(self, source, spec_id):
         """
@@ -71,7 +75,8 @@ class SpecRegistry(object):
         if source not in self._sources:
             return
 
-        for spec in (self.get_spec(id) for id in self._sources[source]):
+        for spec in (self.get_spec(id, source_file=source_file, **info)
+                     for id in self._sources[source]):
             event_name = {
                 source_created: 'source_created',
                 source_changed: 'source_changed',
