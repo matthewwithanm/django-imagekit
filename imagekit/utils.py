@@ -439,5 +439,8 @@ class SpecWrapper(object):
         self.options = getattr(spec, 'options', None)
         self.autoconvert = getattr(spec, 'autoconvert', True)
         self.storage = getattr(spec, 'storage', None)
-        self.image_cache_backend = getattr(spec, 'image_cache_backend', None) \
-                or get_default_image_cache_backend()
+        self.image_cache_backend = getattr(spec, 'image_cache_backend', None)
+
+        if not self.image_cache_backend:
+            from .imagecache.backends import get_default_image_cache_backend
+            self.image_cache_backend = get_default_image_cache_backend()
