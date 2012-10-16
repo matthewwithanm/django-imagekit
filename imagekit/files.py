@@ -15,6 +15,9 @@ class ImageSpecFile(ImageFieldFile):
         self.source_file = source_file
         self.spec_id = spec_id
 
+    def get_hash(self):
+        return self.spec.get_hash(self.source_file)
+
     @property
     def url(self):
         self.validate()
@@ -37,14 +40,18 @@ class ImageSpecFile(ImageFieldFile):
 
     @property
     def name(self):
-        source_filename = self.source_file.name
-        filepath, basename = os.path.split(source_filename)
-        filename = os.path.splitext(basename)[0]
-        extension = suggest_extension(source_filename, self.spec.format)
-        new_name = '%s%s' % (filename, extension)
-        cache_filename = ['cache', 'iktt'] + self.spec_id.split(':') + \
-                [filepath, new_name]
-        return os.path.join(*cache_filename)
+        name = self.spec.generate_filename(self.source_file)
+        if name is not None:
+            return name
+        else:
+            source_filename = self.source_file.name
+            filepath, basename = os.path.split(source_filename)
+            filename = os.path.splitext(basename)[0]
+            extension = suggest_extension(source_filename, self.spec.format)
+            new_name = '%s%s' % (filename, extension)
+            cache_filename = ['cache', 'iktt'] + self.spec_id.split(':') + \
+                    [filepath, new_name]
+            return os.path.join(*cache_filename)
 
     def generate(self, save=True):
         return self.spec.generate_file(self.name, self.source_file, save)

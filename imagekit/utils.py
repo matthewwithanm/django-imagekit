@@ -440,6 +440,12 @@ class SpecWrapper(object):
         self.autoconvert = getattr(spec, 'autoconvert', True)
         self.storage = getattr(spec, 'storage', None)
         self.image_cache_backend = getattr(spec, 'image_cache_backend', None)
+        # TODO: get_hash default return value.
+        self.get_hash = getattr(spec, 'get_hash', lambda f: None)
+        # TODO: generate_filename default return value.
+        self.generate_filename = getattr(spec, 'generate_filename', lambda f: None)
+        # TODO: generate_file default return value.
+        self.generate_file = getattr(spec, 'generate_file', lambda f: None)
 
         if not self.image_cache_backend:
             from .imagecache.backends import get_default_image_cache_backend
