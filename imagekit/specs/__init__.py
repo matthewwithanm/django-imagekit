@@ -6,7 +6,6 @@ from ..exceptions import UnknownExtensionError, AlreadyRegistered, NotRegistered
 from ..files import ImageSpecCacheFile, IKContentFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
-from ..lib import StringIO
 from ..processors import ProcessorPipeline
 from ..signals import (before_access, source_created, source_changed,
                        source_deleted)
