@@ -4,13 +4,13 @@ import os
 import pickle
 from .signals import source_created, source_changed, source_deleted
 from ..exceptions import UnknownExtensionError, AlreadyRegistered, NotRegistered
-from ..files import ImageSpecFile
+from ..files import ImageSpecFile, IKContentFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..lib import StringIO
 from ..processors import ProcessorPipeline
-from ..utils import (open_image, extension_to_format, IKContentFile,
-    img_to_fobj, suggest_extension)
+from ..utils import (open_image, extension_to_format, img_to_fobj,
+                     suggest_extension)
 
 
 class SpecRegistry(object):

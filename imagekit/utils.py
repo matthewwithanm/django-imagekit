@@ -4,9 +4,7 @@ import sys
 import types
 
 from django.core.exceptions import ImproperlyConfigured
-from django.core.files.base import ContentFile
 from django.db.models.loading import cache
-from django.utils.encoding import smart_str, smart_unicode
 from django.utils.functional import wraps
 from django.utils.importlib import import_module
 
@@ -16,31 +14,6 @@ from .lib import Image, ImageFile, StringIO
 
 RGBA_TRANSPARENCY_FORMATS = ['PNG']
 PALETTE_TRANSPARENCY_FORMATS = ['PNG', 'GIF']
-
-
-class IKContentFile(ContentFile):
-    """
-    Wraps a ContentFile in a file-like object with a filename and a
-    content_type. A PIL image format can be optionally be provided as a content
-    type hint.
-
-    """
-    def __init__(self, filename, content, format=None):
-        self.file = ContentFile(content)
-        self.file.name = filename
-        mimetype = getattr(self.file, 'content_type', None)
-        if format and not mimetype:
-            mimetype = format_to_mimetype(format)
-        if not mimetype:
-            ext = os.path.splitext(filename or '')[1]
-            mimetype = extension_to_mimetype(ext)
-        self.file.content_type = mimetype
-
-    def __str__(self):
-        return smart_str(self.file.name or '')
-
-    def __unicode__(self):
-        return smart_unicode(self.file.name or u'')
 
 
 def img_to_fobj(img, format, autoconvert=True, **options):
