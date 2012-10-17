@@ -1,6 +1,6 @@
 from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
-from .signals import source_created, source_changed, source_deleted
+from ..signals import source_created, source_changed, source_deleted
 
 
 def ik_model_receiver(fn):
