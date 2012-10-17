@@ -17,8 +17,8 @@ class BaseIKFile(File):
 
     """
 
-    def __init__(self):
-        pass
+    def __init__(self, storage):
+        self.storage = storage
 
     def _require_file(self):
         if not self:
@@ -70,9 +70,10 @@ class BaseIKFile(File):
             file.close()
 
 
-class ImageSpecCacheFile(ImageFile, BaseIKFile):
+class ImageSpecCacheFile(BaseIKFile, ImageFile):
     def __init__(self, spec, source_file):
-        self.storage = spec.storage or source_file.storage
+        storage = spec.storage or source_file.storage
+        super(ImageSpecCacheFile, self).__init__(storage=storage)
         self.spec = spec
         self.source_file = source_file
 
