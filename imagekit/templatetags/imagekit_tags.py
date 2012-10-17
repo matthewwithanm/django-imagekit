@@ -38,7 +38,7 @@ def spec(parser, token):
 
     By default::
 
-        {% spec 'myapp:thumbnail', mymodel.profile_image %}
+        {% spec 'myapp:thumbnail' mymodel.profile_image %}
 
     Generates an ``<img>``::
 
