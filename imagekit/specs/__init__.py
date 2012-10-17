@@ -10,8 +10,7 @@ from ..lib import StringIO
 from ..processors import ProcessorPipeline
 from ..signals import (before_access, source_created, source_changed,
                        source_deleted)
-from ..utils import (open_image, extension_to_format, img_to_fobj,
-                     suggest_extension)
+from ..utils import open_image, extension_to_format, img_to_fobj
 
 
 class SpecRegistry(object):
