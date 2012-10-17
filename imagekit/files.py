@@ -2,6 +2,7 @@ from django.conf import settings
 from django.core.files.base import ContentFile, File
 from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
+import logging
 import os
 from .signals import before_access
 from .utils import (suggest_extension, format_to_mimetype,
@@ -111,7 +112,18 @@ class ImageSpecCacheFile(BaseIKFile, ImageFile):
         if self.source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file.
             content = self.spec.apply(self.source_file)
-            self.storage.save(self.name, content)
+            actual_name = self.storage.save(self.name, content)
+
+            if actual_name != self.name:
+                # TODO: Use named logger?
+                logging.warning('The storage backend %s did not save the file'
+                        ' with the requested name ("%s") and instead used'
+                        ' "%s". This may be because a file already existed with'
+                        ' the requested name. If so, you may have meant to call'
+                        ' validate() instead of generate(), or there may be a'
+                        ' race condition in the image cache backend %s. The'
+                        ' saved file will not be used.' % (self.storage,
+                        self.name, actual_name, self.spec.image_cache_backend))
 
 
 class IKContentFile(ContentFile):
