@@ -8,7 +8,7 @@ class JustInTime(object):
 
     """
 
-    def on_accessed(self, file):
+    def before_access(self, file):
         validate_now(file)
 
 
@@ -50,3 +50,10 @@ class StrategyWrapper(object):
         func = getattr(self._wrapped, name, None)
         if func:
             func(*args, **kwargs)
+
+    def __unicode__(self):
+        return unicode(self._wrapped)
+
+
+    def __str__(self):
+        return str(self._wrapped)

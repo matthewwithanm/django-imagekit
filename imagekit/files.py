@@ -2,6 +2,7 @@ from django.core.files.base import ContentFile
 from django.db.models.fields.files import ImageFieldFile
 from django.utils.encoding import smart_str, smart_unicode
 import os
+from .signals import before_access
 from .utils import (suggest_extension, format_to_mimetype,
                     extension_to_mimetype)
 
@@ -18,11 +19,11 @@ class ImageSpecFile(ImageFieldFile):
 
     @property
     def url(self):
-        self.validate()
+        before_access.send(sender=self, spec=self.spec, file=self)
         return super(ImageFieldFile, self).url
 
     def _get_file(self):
-        self.validate()
+        before_access.send(sender=self, spec=self.spec, file=self)
         return super(ImageFieldFile, self).file
 
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)

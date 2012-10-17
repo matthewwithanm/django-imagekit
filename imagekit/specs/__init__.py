@@ -8,7 +8,8 @@ from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..lib import StringIO
 from ..processors import ProcessorPipeline
-from ..signals import source_created, source_changed, source_deleted
+from ..signals import (before_access, source_created, source_changed,
+                       source_deleted)
 from ..utils import (open_image, extension_to_format, img_to_fobj,
                      suggest_extension)
 
@@ -35,6 +36,7 @@ class SpecRegistry(object):
         self._sources = {}
         for signal in self._source_signals:
             signal.connect(self.source_receiver)
+        before_access.connect(self.before_access_receiver)
 
     def register(self, id, spec):
         if id in self._specs:
@@ -65,6 +67,9 @@ class SpecRegistry(object):
         if source not in self._sources:
             self._sources[source] = set()
         self._sources[source].add(spec_id)
+
+    def before_access_receiver(self, sender, spec, file, **kwargs):
+        spec.image_cache_strategy.invoke_callback('before_access', file)
 
     def source_receiver(self, sender, source_file, signal, info, **kwargs):
         """
