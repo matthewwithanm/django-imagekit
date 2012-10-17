@@ -1,10 +1,7 @@
-import os
-
 from django.db import models
 from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor
 from ... import specs
-from ...utils import suggest_extension
 from ...specs import SpecHost
 from ...specs.sources import ImageFieldSpecSource
 
