@@ -94,7 +94,7 @@ Output:
 
 .. code-block:: html
 
-    <img src="/static/CACHE/ik/982d5af84cddddfd0fbf70892b4431e4.jpg" width="100" height="50" alt="A picture of me" />
+    <img src="/media/CACHE/ik/982d5af84cddddfd0fbf70892b4431e4.jpg" width="100" height="50" alt="A picture of me" />
 
 Not generating HTML image tags? No problem. The tag also functions as an
 assignment tag, providing access to the underlying file object:
@@ -123,7 +123,7 @@ of applying a spec to another one of your model's fields:
         avatar_thumbnail = ImageSpecField(id='myapp:fancy_thumbnail', image_field='avatar')
 
     photo = Photo.objects.all()[0]
-    print photo.avatar_thumbnail.url    # > /static/CACHE/ik/982d5af84cddddfd0fbf70892b4431e4.jpg
+    print photo.avatar_thumbnail.url    # > /media/CACHE/ik/982d5af84cddddfd0fbf70892b4431e4.jpg
     print photo.avatar_thumbnail.width  # > 100
 
 Since defining a spec, registering it, and using it in a single model field is
@@ -144,7 +144,7 @@ writing a subclass of ``ImageSpec``:
                                           image_field='avatar')
 
     photo = Photo.objects.all()[0]
-    print photo.avatar_thumbnail.url    # > /static/CACHE/ik/982d5af84cddddfd0fbf70892b4431e4.jpg
+    print photo.avatar_thumbnail.url    # > /media/CACHE/ik/982d5af84cddddfd0fbf70892b4431e4.jpg
     print photo.avatar_thumbnail.width  # > 100
 
 This has the exact same behavior as before, but the spec definition is inlined.
@@ -164,7 +164,7 @@ a user-provided image without saving the original:
                                                upload_to='avatars')
 
     photo = Photo.objects.all()[0]
-    print photo.avatar_thumbnail.url    # > /static/avatars/MY-avatar_3.jpg
+    print photo.avatar_thumbnail.url    # > /media/avatars/MY-avatar_3.jpg
     print photo.avatar_thumbnail.width  # > 100
 
 Like with ``ImageSpecField``, the ``ProcessedImageField`` constructor also
