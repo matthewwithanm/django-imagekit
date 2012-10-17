@@ -1,5 +1,5 @@
-from django.core.files.base import ContentFile
-from django.db.models.fields.files import ImageFieldFile
+from django.core.files.base import ContentFile, File
+from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
 import os
 from .signals import before_access
@@ -7,7 +7,69 @@ from .utils import (suggest_extension, format_to_mimetype,
                     extension_to_mimetype)
 
 
-class ImageSpecFile(ImageFieldFile):
+class BaseImageSpecFile(File):
+    """
+    This class contains all of the methods we need from
+    django.db.models.fields.files.FieldFile, but with the model stuff ripped
+    out. It's only extended by one class, but we keep it separate for
+    organizational reasons.
+
+    """
+
+    def __init__(self):
+        pass
+
+    def _require_file(self):
+        if not self:
+            raise ValueError()
+
+    def _get_file(self):
+        self._require_file()
+        if not hasattr(self, '_file') or self._file is None:
+            self._file = self.storage.open(self.name, 'rb')
+        return self._file
+
+    def _set_file(self, file):
+        self._file = file
+
+    def _del_file(self):
+        del self._file
+
+    file = property(_get_file, _set_file, _del_file)
+
+    def _get_path(self):
+        self._require_file()
+        return self.storage.path(self.name)
+    path = property(_get_path)
+
+    def _get_url(self):
+        self._require_file()
+        return self.storage.url(self.name)
+    url = property(_get_url)
+
+    def _get_size(self):
+        self._require_file()
+        if not self._committed:
+            return self.file.size
+        return self.storage.size(self.name)
+    size = property(_get_size)
+
+    def open(self, mode='rb'):
+        self._require_file()
+        self.file.open(mode)
+
+    def _get_closed(self):
+        file = getattr(self, '_file', None)
+        return file is None or file.closed
+    closed = property(_get_closed)
+
+    def close(self):
+        file = getattr(self, '_file', None)
+        if file is not None:
+            file.close()
+
+
+class ImageSpecFile(ImageFile, BaseImageSpecFile):
     def __init__(self, spec, source_file, spec_id):
         self.storage = spec.storage or source_file.storage
         self.spec = spec
@@ -17,16 +79,9 @@ class ImageSpecFile(ImageFieldFile):
     def get_hash(self):
         return self.spec.get_hash(self.source_file)
 
-    @property
-    def url(self):
+    def _require_file(self):
         before_access.send(sender=self, spec=self.spec, file=self)
-        return super(ImageFieldFile, self).url
-
-    def _get_file(self):
-        before_access.send(sender=self, spec=self.spec, file=self)
-        return super(ImageFieldFile, self).file
-
-    file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
+        return super(ImageSpecFile, self)._require_file()
 
     @property
     def name(self):
