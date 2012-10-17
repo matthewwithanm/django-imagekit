@@ -69,20 +69,3 @@ def spec(parser, token):
 
 
 spec = spec_tag = register.tag(spec)
-
-
-def _register_spec(id, spec=None):
-    if not spec:
-        def decorator(cls):
-            spec_registry.register(id, cls)
-            return cls
-        return decorator
-    spec_registry.register(id, spec)
-
-
-def _unregister_spec(id, spec):
-    spec_registry.unregister(id, spec)
-
-
-spec_tag.register = _register_spec
-spec_tag.unregister = _unregister_spec

@@ -265,3 +265,16 @@ class SpecHost(object):
 
 
 registry = SpecRegistry()
+
+
+def register(id, spec=None):
+    if not spec:
+        def decorator(cls):
+            registry.register(id, cls)
+            return cls
+        return decorator
+    registry.register(id, spec)
+
+
+def unregister(id, spec):
+    registry.unregister(id, spec)
