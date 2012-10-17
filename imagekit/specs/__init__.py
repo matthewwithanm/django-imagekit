@@ -184,18 +184,9 @@ class ImageSpec(BaseImageSpec):
         self.image_cache_backend = image_cache_backend or self.image_cache_backend or get_default_image_cache_backend()
         self.image_cache_strategy = StrategyWrapper(image_cache_strategy or self.image_cache_strategy)
 
-    # TODO: Can we come up with a better name for this? "process" may cause confusion with processors' process()
-    def apply(self, source_file):
-        """
-        Creates a file object that represents the combination of a spec and
-        source file.
-
-        """
-        return ImageSpecFile(self, source_file)
-
     # TODO: I don't like this interface. Is there a standard Python one? pubsub?
     def _handle_source_event(self, event_name, source_file):
-        file = self.apply(source_file)
+        file = ImageSpecFile(self, source_file)
         self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
 
     def generate_file(self, filename, source_file, save=True):
