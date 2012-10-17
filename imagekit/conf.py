@@ -6,7 +6,7 @@ class ImageKitConf(AppConf):
     DEFAULT_IMAGE_CACHE_BACKEND = 'imagekit.imagecache.backends.Simple'
     CACHE_BACKEND = None
     CACHE_DIR = 'CACHE/images'
-    CACHE_PREFIX = 'ik-'
+    CACHE_PREFIX = 'imagekit:'
     DEFAULT_IMAGE_CACHE_STRATEGY = 'imagekit.imagecache.strategies.Pessimistic'
 
     def configure_cache_backend(self, value):
