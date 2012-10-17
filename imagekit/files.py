@@ -107,7 +107,7 @@ class ImageSpecCacheFile(BaseIKFile, ImageFile):
     def validate(self):
         return self.spec.image_cache_backend.validate(self)
 
-    def generate(self, save=True):
+    def generate(self):
         if self.source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file.
             content = self.spec.apply(self.source_file)

@@ -67,7 +67,7 @@ class Simple(CachedValidationBackend):
         Generates a new image by running the processors on the source file.
 
         """
-        file.generate(save=True)
+        file.generate()
 
     def invalidate(self, file):
         """
