@@ -1,6 +1,6 @@
 from django import template
 from django.utils.safestring import mark_safe
-from ..files import ImageSpecFile
+from ..files import ImageSpecCacheFile
 from ..specs import spec_registry
 
 
@@ -32,13 +32,13 @@ class SpecNode(template.Node):
         spec = spec_registry.get_spec(spec_id)
         if callable(spec):
             spec = spec()
-        spec_file = ImageSpecFileHtmlWrapper(ImageSpecFile(spec, source_image, spec_id))
+        file = ImageSpecFileHtmlWrapper(ImageSpecCacheFile(spec, source_image, spec_id))
         if self.variable_name is not None:
             variable_name = str(self.variable_name)
-            context[variable_name] = spec_file
+            context[variable_name] = file
             return ''
 
-        return spec_file
+        return file
 
 
 #@register.tag

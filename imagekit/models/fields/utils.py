@@ -1,4 +1,4 @@
-from ...files import ImageSpecFile
+from ...files import ImageSpecCacheFile
 from django.db.models.fields.files import ImageField
 
 
@@ -29,9 +29,9 @@ class ImageSpecFileDescriptor(object):
                             self.attname))
                 else:
                     source_file = image_fields[0]
-            img_spec_file = ImageSpecFile(self.field.spec, source_file)
-            instance.__dict__[self.attname] = img_spec_file
-            return img_spec_file
+            file = ImageSpecCacheFile(self.field.spec, source_file)
+            instance.__dict__[self.attname] = file
+            return file
 
     def __set__(self, instance, value):
         instance.__dict__[self.attname] = value

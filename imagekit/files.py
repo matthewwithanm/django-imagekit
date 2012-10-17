@@ -8,7 +8,7 @@ from .utils import (suggest_extension, format_to_mimetype,
                     extension_to_mimetype)
 
 
-class BaseImageSpecFile(File):
+class BaseIKFile(File):
     """
     This class contains all of the methods we need from
     django.db.models.fields.files.FieldFile, but with the model stuff ripped
@@ -70,7 +70,7 @@ class BaseImageSpecFile(File):
             file.close()
 
 
-class ImageSpecFile(ImageFile, BaseImageSpecFile):
+class ImageSpecCacheFile(ImageFile, BaseIKFile):
     def __init__(self, spec, source_file):
         self.storage = spec.storage or source_file.storage
         self.spec = spec
@@ -81,7 +81,7 @@ class ImageSpecFile(ImageFile, BaseImageSpecFile):
 
     def _require_file(self):
         before_access.send(sender=self, spec=self.spec, file=self)
-        return super(ImageSpecFile, self)._require_file()
+        return super(ImageSpecCacheFile, self)._require_file()
 
     @property
     def name(self):
