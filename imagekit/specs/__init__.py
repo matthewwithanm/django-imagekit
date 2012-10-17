@@ -124,7 +124,7 @@ class BaseImageSpec(object):
 
         return filename
 
-    def process_content(self, content, filename=None):
+    def apply(self, content, filename=None):
         img = open_image(content)
         original_format = img.format
 
@@ -148,7 +148,7 @@ class BaseImageSpec(object):
 
         imgfile = img_to_fobj(img, format, **options)
         content = IKContentFile(filename, imgfile.read(), format=format)
-        return img, content
+        return content
 
 
 class ImageSpec(BaseImageSpec):
@@ -210,7 +210,7 @@ class ImageSpec(BaseImageSpec):
             fp.seek(0)
             fp = StringIO(fp.read())
 
-            img, content = self.process_content(fp, filename)
+            content = self.apply(fp, filename)
 
             if save:
                 storage = self.storage or source_file.storage
