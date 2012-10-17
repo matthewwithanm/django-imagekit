@@ -180,30 +180,6 @@ class ImageSpec(BaseImageSpec):
         file = ImageSpecCacheFile(self, source_file)
         self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
 
-    def generate_file(self, filename, source_file, save=True):
-        """
-        Generates a new image file by processing the source file and returns
-        the content of the result, ready for saving.
-
-        """
-        if source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
-            # Process the original image file.
-
-            try:
-                fp = source_file.storage.open(source_file.name)
-            except IOError:
-                return
-            fp.seek(0)
-            fp = StringIO(fp.read())
-
-            content = self.apply(fp, filename)
-
-            if save:
-                storage = self.storage or source_file.storage
-                storage.save(filename, content)
-
-            return content
-
 
 class SpecHost(object):
     """
