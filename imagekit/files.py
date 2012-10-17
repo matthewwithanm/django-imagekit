@@ -28,15 +28,6 @@ class ImageSpecFile(ImageFieldFile):
 
     file = property(_get_file, ImageFieldFile._set_file, ImageFieldFile._del_file)
 
-    def clear(self):
-        return self.spec.image_cache_backend.clear(self)
-
-    def invalidate(self):
-        return self.spec.image_cache_backend.invalidate(self)
-
-    def validate(self):
-        return self.spec.image_cache_backend.validate(self)
-
     @property
     def name(self):
         name = self.spec.generate_filename(self.source_file)
@@ -51,6 +42,15 @@ class ImageSpecFile(ImageFieldFile):
             cache_filename = ['cache', 'iktt'] + self.spec_id.split(':') + \
                     [filepath, new_name]
             return os.path.join(*cache_filename)
+
+    def clear(self):
+        return self.spec.image_cache_backend.clear(self)
+
+    def invalidate(self):
+        return self.spec.image_cache_backend.invalidate(self)
+
+    def validate(self):
+        return self.spec.image_cache_backend.validate(self)
 
     def generate(self, save=True):
         return self.spec.generate_file(self.name, self.source_file, save)
