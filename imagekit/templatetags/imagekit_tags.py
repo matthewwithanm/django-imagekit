@@ -7,17 +7,6 @@ from ..specs import spec_registry
 register = template.Library()
 
 
-class ImageSpecFileHtmlWrapper(object):
-    def __init__(self, image_spec_file):
-        self._image_spec_file = image_spec_file
-
-    def __getattr__(self, name):
-        return getattr(self._image_spec_file, name)
-
-    def __unicode__(self):
-        return mark_safe(u'<img src="%s" />' % self.url)
-
-
 class SpecNode(template.Node):
     def __init__(self, spec_id, source_image, variable_name=None):
         self.spec_id = spec_id
@@ -32,13 +21,13 @@ class SpecNode(template.Node):
         spec = spec_registry.get_spec(spec_id)
         if callable(spec):
             spec = spec()
-        file = ImageSpecFileHtmlWrapper(ImageSpecCacheFile(spec, source_image))
+        file = ImageSpecCacheFile(spec, source_image)
         if self.variable_name is not None:
             variable_name = str(self.variable_name)
             context[variable_name] = file
             return ''
 
-        return file
+        return mark_safe(u'<img src="%s" />' % file.url)
 
 
 #@register.tag
