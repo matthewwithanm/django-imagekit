@@ -2,26 +2,21 @@ from .actions import validate_now, clear_now
 from ..utils import get_singleton
 
 
-class Pessimistic(object):
+class JustInTime(object):
     """
-    A caching strategy that validates the file every time it's accessed.
+    A caching strategy that validates the file right before it's needed.
 
     """
 
     def on_accessed(self, file):
         validate_now(file)
 
-    def on_source_deleted(self, file):
-        clear_now(file)
-
-    def on_source_changed(self, file):
-        validate_now(file)
-
 
 class Optimistic(object):
     """
-    A caching strategy that validates when the source file changes and assumes
-    that the cached file will persist.
+    A caching strategy that acts immediately when the source file chages and
+    assumes that the cache files will not be removed (i.e. doesn't revalidate
+    on access).
 
     """
 
