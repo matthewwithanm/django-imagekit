@@ -111,19 +111,6 @@ class BaseImageSpec(object):
             str(self.autoconvert),
         ]).encode('utf-8')).hexdigest()
 
-    def generate_filename(self, source_file):
-        source_filename = source_file.name
-        filename = None
-        if source_filename:
-            hash = self.get_hash(source_file)
-            extension = suggest_extension(source_filename, self.format)
-            filename = os.path.normpath(os.path.join(
-                    settings.IMAGEKIT_CACHE_DIR,
-                    os.path.splitext(source_filename)[0],
-                    '%s%s' % (hash, extension)))
-
-        return filename
-
     def apply(self, content, filename=None):
         img = open_image(content)
         original_format = img.format

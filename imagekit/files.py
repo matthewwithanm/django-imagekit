@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.files.base import ContentFile, File
 from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
@@ -70,11 +71,10 @@ class BaseImageSpecFile(File):
 
 
 class ImageSpecFile(ImageFile, BaseImageSpecFile):
-    def __init__(self, spec, source_file, spec_id):
+    def __init__(self, spec, source_file):
         self.storage = spec.storage or source_file.storage
         self.spec = spec
         self.source_file = source_file
-        self.spec_id = spec_id
 
     def get_hash(self):
         return self.spec.get_hash(self.source_file)
@@ -85,18 +85,17 @@ class ImageSpecFile(ImageFile, BaseImageSpecFile):
 
     @property
     def name(self):
-        name = self.spec.generate_filename(self.source_file)
-        if name is not None:
-            return name
-        else:
-            source_filename = self.source_file.name
-            filepath, basename = os.path.split(source_filename)
-            filename = os.path.splitext(basename)[0]
-            extension = suggest_extension(source_filename, self.spec.format)
-            new_name = '%s%s' % (filename, extension)
-            cache_filename = ['cache', 'iktt'] + self.spec_id.split(':') + \
-                    [filepath, new_name]
-            return os.path.join(*cache_filename)
+        source_filename = self.source_file.name
+        filename = None
+        if source_filename:
+            hash = self.spec.get_hash(self.source_file)
+            ext = suggest_extension(source_filename, self.spec.format)
+            filename = os.path.normpath(os.path.join(
+                    settings.IMAGEKIT_CACHE_DIR,
+                    os.path.splitext(source_filename)[0],
+                    '%s%s' % (hash, ext)))
+
+        return filename
 
     def clear(self):
         return self.spec.image_cache_backend.clear(self)

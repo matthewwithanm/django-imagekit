@@ -29,8 +29,7 @@ class ImageSpecFileDescriptor(object):
                             self.attname))
                 else:
                     source_file = image_fields[0]
-            img_spec_file = ImageSpecFile(self.field.spec, source_file,
-                                          self.attname)
+            img_spec_file = ImageSpecFile(self.field.spec, source_file)
             instance.__dict__[self.attname] = img_spec_file
             return img_spec_file
 

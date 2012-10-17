@@ -1,8 +1,12 @@
 from django.db.models.fields.files import ImageFieldFile
+import os
+from ...utils import suggest_extension
 
 
 class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
-        new_filename = self.field.spec.generate_filename(self.instance, name)
-        content = self.field.spec.apply(content, new_filename)
-        return super(ProcessedImageFieldFile, self).save(name, content, save)
+        filename, ext = os.path.splitext(name)
+        ext = suggest_extension(name, self.field.spec.format)
+        new_name = '%s%s' % (filename, ext)
+        content = self.field.spec.apply(content, new_name)
+        return super(ProcessedImageFieldFile, self).save(new_name, content, save)

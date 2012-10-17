@@ -9,7 +9,20 @@ from ...specs import SpecHost
 from ...specs.sources import ImageFieldSpecSource
 
 
-class ImageSpecField(SpecHost):
+class SpecHostField(SpecHost):
+    def set_spec_id(self, cls, name):
+        # Generate a spec_id to register the spec with. The default spec id is
+        # "<app>:<model>_<field>"
+        if not getattr(self, 'spec_id', None):
+            spec_id = (u'%s:%s_%s' % (cls._meta.app_label,
+                            cls._meta.object_name, name)).lower()
+
+            # Register the spec with the id. This allows specs to be overridden
+            # later, from outside of the model definition.
+            super(SpecHostField, self).set_spec_id(spec_id)
+
+
+class ImageSpecField(SpecHostField):
     """
     The heart and soul of the ImageKit library, ImageSpecField allows you to add
     variants of uploaded images to your models.
@@ -34,23 +47,14 @@ class ImageSpecField(SpecHost):
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
-
-        # Generate a spec_id to register the spec with. The default spec id is
-        # "<app>:<model>_<field>"
-        if not getattr(self, 'spec_id', None):
-            self.spec_id = (u'%s:%s_%s' % (cls._meta.app_label,
-                    cls._meta.object_name, name)).lower()
-
-            # Register the spec with the id. This allows specs to be overridden
-            # later, from outside of the model definition.
-            self.set_spec_id(self.spec_id)
+        self.set_spec_id(cls, name)
 
         # Add the model and field as a source for this spec id
         specs.registry.add_source(ImageFieldSpecSource(cls, self.image_field),
                                  self.spec_id)
 
 
-class ProcessedImageField(models.ImageField, SpecHost):
+class ProcessedImageField(models.ImageField, SpecHostField):
     """
     ProcessedImageField is an ImageField that runs processors on the uploaded
     image *before* saving it to storage. This is in contrast to specs, which
@@ -76,12 +80,9 @@ class ProcessedImageField(models.ImageField, SpecHost):
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
 
-    def get_filename(self, filename):
-        filename = os.path.normpath(self.storage.get_valid_name(
-                os.path.basename(filename)))
-        name, ext = os.path.splitext(filename)
-        ext = suggest_extension(filename, self.spec.format)
-        return u'%s%s' % (name, ext)
+    def contribute_to_class(self, cls, name):
+        self.set_spec_id(cls, name)
+        return super(ProcessedImageField, self).contribute_to_class(cls, name)
 
 
 try:
