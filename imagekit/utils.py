@@ -398,28 +398,3 @@ def autodiscover():
             # attempting to import it, otherwise we want it to bubble up.
             if module_has_submodule(mod, 'imagespecs'):
                 raise
-
-
-class SpecWrapper(object):
-    """
-    Wraps a user-defined spec object so we can access properties that don't
-    exist without errors.
-
-    """
-    def __init__(self, spec):
-        self.processors = getattr(spec, 'processors', None)
-        self.format = getattr(spec, 'format', None)
-        self.options = getattr(spec, 'options', None)
-        self.autoconvert = getattr(spec, 'autoconvert', True)
-        self.storage = getattr(spec, 'storage', None)
-        self.image_cache_backend = getattr(spec, 'image_cache_backend', None)
-        # TODO: get_hash default return value.
-        self.get_hash = getattr(spec, 'get_hash', lambda f: None)
-        # TODO: generate_filename default return value.
-        self.generate_filename = getattr(spec, 'generate_filename', lambda f: None)
-        # TODO: generate_file default return value.
-        self.generate_file = getattr(spec, 'generate_file', lambda f: None)
-
-        if not self.image_cache_backend:
-            from .imagecache.backends import get_default_image_cache_backend
-            self.image_cache_backend = get_default_image_cache_backend()

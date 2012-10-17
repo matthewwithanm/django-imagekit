@@ -2,16 +2,13 @@ from django.core.files.base import ContentFile
 from django.db.models.fields.files import ImageFieldFile
 from django.utils.encoding import smart_str, smart_unicode
 import os
-from .utils import (SpecWrapper, suggest_extension, format_to_mimetype,
+from .utils import (suggest_extension, format_to_mimetype,
                     extension_to_mimetype)
 
 
 class ImageSpecFile(ImageFieldFile):
     def __init__(self, spec, source_file, spec_id):
-        spec = SpecWrapper(spec)
-
         self.storage = spec.storage or source_file.storage
-
         self.spec = spec
         self.source_file = source_file
         self.spec_id = spec_id
