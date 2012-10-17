@@ -2,7 +2,7 @@ import os
 from .lib import StringIO
 from .processors import ProcessorPipeline
 from .utils import (img_to_fobj, open_image, IKContentFile, extension_to_format,
-        UnknownExtensionError)
+        UnknownExtensionError, get_default_file_storage)
 
 
 class SpecFileGenerator(object):
@@ -61,7 +61,7 @@ class SpecFileGenerator(object):
             img, content = self.process_content(fp, filename, source_file)
 
             if save:
-                storage = self.storage or source_file.storage
+                storage = self.storage or get_default_file_storage() or source_file.storage
                 storage.save(filename, content)
 
             return content

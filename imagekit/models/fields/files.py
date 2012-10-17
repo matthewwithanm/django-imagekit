@@ -4,7 +4,7 @@ import datetime
 from django.db.models.fields.files import ImageField, ImageFieldFile
 from django.utils.encoding import force_unicode, smart_str
 
-from ...utils import suggest_extension
+from ...utils import suggest_extension, get_default_file_storage
 
 
 class ImageSpecFieldFile(ImageFieldFile):
@@ -146,7 +146,9 @@ class ImageSpecFieldFile(ImageFieldFile):
 
     @property
     def storage(self):
-        return getattr(self, '_storage', None) or self.field.storage or self.source_file.storage
+        if not getattr(self, '_storage', None):
+            self._storage = self.field.storage or get_default_file_storage() or self.source_file.storage
+        return self._storage
 
     @storage.setter
     def storage(self, storage):

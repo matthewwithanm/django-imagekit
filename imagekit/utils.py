@@ -3,10 +3,12 @@ import mimetypes
 import sys
 import types
 
+from django.core.exceptions import ImproperlyConfigured
 from django.core.files.base import ContentFile
 from django.db.models.loading import cache
 from django.utils.functional import wraps
 from django.utils.encoding import smart_str, smart_unicode
+from django.utils.importlib import import_module
 
 from .lib import Image, ImageFile, StringIO
 
@@ -379,3 +381,39 @@ def ik_model_receiver(fn):
         if getattr(sender, '_ik', None):
             fn(sender, **kwargs)
     return receiver
+
+
+_default_file_storage = None
+
+
+# Nasty duplication of get_default_image_cache_backend. Cleaned up in ik3
+def get_default_file_storage():
+    """
+    Get the default storage. Uses the same method as
+    django.core.file.storage.get_storage_class
+
+    """
+    global _default_file_storage
+    if not _default_file_storage:
+        from django.conf import settings
+        import_path = settings.IMAGEKIT_DEFAULT_FILE_STORAGE
+
+        if not import_path:
+            return None
+
+        try:
+            dot = import_path.rindex('.')
+        except ValueError:
+            raise ImproperlyConfigured("%s isn't an storage module." % \
+                    import_path)
+        module, classname = import_path[:dot], import_path[dot + 1:]
+        try:
+            mod = import_module(module)
+        except ImportError, e:
+            raise ImproperlyConfigured('Error importing storage module %s: "%s"' % (module, e))
+        try:
+            cls = getattr(mod, classname)
+            _default_file_storage = cls()
+        except AttributeError:
+            raise ImproperlyConfigured('Storage module "%s" does not define a "%s" class.' % (module, classname))
+    return _default_file_storage
