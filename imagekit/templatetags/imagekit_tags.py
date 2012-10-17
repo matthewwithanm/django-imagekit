@@ -32,7 +32,7 @@ class SpecNode(template.Node):
         spec = spec_registry.get_spec(spec_id)
         if callable(spec):
             spec = spec()
-        file = ImageSpecFileHtmlWrapper(ImageSpecCacheFile(spec, source_image, spec_id))
+        file = ImageSpecFileHtmlWrapper(ImageSpecCacheFile(spec, source_image))
         if self.variable_name is not None:
             variable_name = str(self.variable_name)
             context[variable_name] = file
