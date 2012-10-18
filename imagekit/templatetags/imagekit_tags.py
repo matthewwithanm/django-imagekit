@@ -1,7 +1,7 @@
 from django import template
 from django.utils.safestring import mark_safe
 from ..files import ImageSpecCacheFile
-from ..specs import spec_registry
+from .. import specs
 
 
 register = template.Library()
@@ -18,7 +18,7 @@ class SpecNode(template.Node):
         autodiscover()
         source_image = self.source_image.resolve(context)
         spec_id = self.spec_id.resolve(context)
-        spec = spec_registry.get_spec(spec_id)
+        spec = specs.registry.get_spec(spec_id)
         if callable(spec):
             spec = spec()
         file = ImageSpecCacheFile(spec, source_image)
