@@ -104,7 +104,7 @@ class BaseImageSpec(object):
         return md5(''.join([
             source_file.name,
             pickle.dumps(self.processors),
-            self.format,
+            str(self.format),
             pickle.dumps(self.options),
             str(self.autoconvert),
         ]).encode('utf-8')).hexdigest()
