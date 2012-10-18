@@ -73,7 +73,7 @@ class ModelSignalRouter(object):
 
     @ik_model_receiver
     def post_delete_receiver(self, sender, instance=None, **kwargs):
-        for attname, file in self.get_field_dict(instance):
+        for attname, file in self.get_field_dict(instance).items():
             self.dispatch_signal(source_deleted, file, sender, instance, attname)
 
     @ik_model_receiver
