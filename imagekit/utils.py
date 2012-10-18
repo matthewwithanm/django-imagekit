@@ -1,3 +1,4 @@
+import logging
 import os
 import mimetypes
 import sys
@@ -398,3 +399,10 @@ def autodiscover():
             # attempting to import it, otherwise we want it to bubble up.
             if module_has_submodule(mod, 'imagespecs'):
                 raise
+
+
+def get_logger(logger_name='imagekit', add_null_handler=True):
+    logger = logging.getLogger(logger_name)
+    if add_null_handler:
+        logger.addHandler(logging.NullHandler())
+    return logger

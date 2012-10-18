@@ -2,11 +2,10 @@ from django.conf import settings
 from django.core.files.base import ContentFile, File
 from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
-import logging
 import os
 from .signals import before_access
 from .utils import (suggest_extension, format_to_mimetype,
-                    extension_to_mimetype)
+                    extension_to_mimetype, get_logger)
 
 
 class BaseIKFile(File):
@@ -115,8 +114,7 @@ class ImageSpecCacheFile(BaseIKFile, ImageFile):
             actual_name = self.storage.save(self.name, content)
 
             if actual_name != self.name:
-                # TODO: Use named logger?
-                logging.warning('The storage backend %s did not save the file'
+                get_logger().warning('The storage backend %s did not save the file'
                         ' with the requested name ("%s") and instead used'
                         ' "%s". This may be because a file already existed with'
                         ' the requested name. If so, you may have meant to call'
