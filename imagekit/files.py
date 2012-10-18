@@ -5,7 +5,7 @@ from django.utils.encoding import smart_str, smart_unicode
 import os
 from .signals import before_access
 from .utils import (suggest_extension, format_to_mimetype,
-                    extension_to_mimetype, get_logger)
+                    extension_to_mimetype, get_logger, get_singleton)
 
 
 class BaseIKFile(File):
@@ -72,7 +72,9 @@ class BaseIKFile(File):
 
 class ImageSpecCacheFile(BaseIKFile, ImageFile):
     def __init__(self, spec, source_file):
-        storage = spec.storage or source_file.storage
+        storage = (spec.storage or
+            get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE, 'file storage backend') if settings.IMAGEKIT_DEFAULT_FILE_STORAGE
+            else source_file.storage)
         super(ImageSpecCacheFile, self).__init__(storage=storage)
         self.spec = spec
         self.source_file = source_file
