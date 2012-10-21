@@ -59,7 +59,8 @@ might be useful, for example, in view code, or in scripts:
 
 .. code-block:: python
 
-    ????????
+    spec = Thumbnail()
+    new_file = spec.apply(source_file)
 
 More often, however, you'll want to register your spec with ImageKit:
 
