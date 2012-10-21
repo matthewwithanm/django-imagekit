@@ -38,10 +38,6 @@ class ImageSpecField(SpecHostField):
 
         self.image_field = image_field
 
-    @property
-    def storage(self):
-        return self.spec.storage
-
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
         self.set_spec_id(cls, name)

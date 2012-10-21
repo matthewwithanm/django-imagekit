@@ -6,7 +6,8 @@ from ...utils import suggest_extension
 class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
         filename, ext = os.path.splitext(name)
-        ext = suggest_extension(name, self.field.spec.format)
+        spec = self.field.get_spec()  # TODO: What "hints"?
+        ext = suggest_extension(name, spec.format)
         new_name = '%s%s' % (filename, ext)
-        content = self.field.spec.apply(content, new_name)
+        content = spec.apply(content, new_name)
         return super(ProcessedImageFieldFile, self).save(new_name, content, save)

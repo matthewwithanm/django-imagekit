@@ -230,8 +230,7 @@ class SpecHost(object):
         self.spec_id = id
         registry.register(id, self._original_spec)
 
-    @property
-    def spec(self):
+    def get_spec(self, **kwargs):
         """
         Look up the spec by the spec id. We do this (instead of storing the
         spec as an attribute) so that users can override apps' specs--without
@@ -241,7 +240,7 @@ class SpecHost(object):
         """
         if not getattr(self, 'spec_id', None):
             raise Exception('Object %s has no spec id.' % self)
-        return registry.get_spec(self.spec_id)
+        return registry.get_spec(self.spec_id, **kwargs)
 
 
 registry = SpecRegistry()
