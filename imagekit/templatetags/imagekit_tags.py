@@ -35,8 +35,6 @@ class SpecResultNodeMixin(object):
         autodiscover()
         spec_id = self._spec_id.resolve(context)
         spec = specs.registry.get_spec(spec_id)  # TODO: What "hints" here?
-        if callable(spec):
-            spec = spec()
         return spec
 
     def get_source_file(self, context):
