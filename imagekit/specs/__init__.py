@@ -89,16 +89,36 @@ class SpecRegistry(object):
 
 
 class BaseImageSpec(object):
-    processors = None
-    format = None
-    options = None
-    autoconvert = True
 
-    def __init__(self, processors=None, format=None, options=None, autoconvert=None):
-        self.processors = processors or self.processors or []
-        self.format = format or self.format
-        self.options = options or self.options
-        self.autoconvert = self.autoconvert if autoconvert is None else autoconvert
+    processors = None
+    """A list of processors to run on the original image."""
+
+    format = None
+    """
+    The format of the output file. If not provided, ImageSpecField will try to
+    guess the appropriate format based on the extension of the filename and the
+    format of the input image.
+
+    """
+
+    options = None
+    """
+    A dictionary that will be passed to PIL's ``Image.save()`` method as keyword
+    arguments. Valid options vary between formats, but some examples include
+    ``quality``, ``optimize``, and ``progressive`` for JPEGs. See the PIL
+    documentation for others.
+
+    """
+
+    autoconvert = True
+    """
+    Specifies whether automatic conversion using ``prepare_image()`` should be
+    performed prior to saving.
+
+    """
+
+    def __init__(self):
+        self.processors = self.processors or []
 
     def get_hash(self, source_file):
         return md5(''.join([
@@ -137,42 +157,29 @@ class BaseImageSpec(object):
 
 
 class ImageSpec(BaseImageSpec):
+
     storage = None
+    """A Django storage system to use to save the generated image."""
+
     image_cache_backend = None
+    """
+    An object responsible for managing the state of cached files. Defaults to an
+    instance of ``IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND``
+
+    """
+
     image_cache_strategy = settings.IMAGEKIT_DEFAULT_IMAGE_CACHE_STRATEGY
+    """
+    A dictionary containing callbacks that allow you to customize how and when
+    the image cache is validated. Defaults to
+    ``IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY``.
 
-    def __init__(self, processors=None, format=None, options=None,
-        storage=None, autoconvert=None, image_cache_backend=None,
-        image_cache_strategy=None):
-        """
-        :param processors: A list of processors to run on the original image.
-        :param format: The format of the output file. If not provided,
-            ImageSpecField will try to guess the appropriate format based on the
-            extension of the filename and the format of the input image.
-        :param options: A dictionary that will be passed to PIL's
-            ``Image.save()`` method as keyword arguments. Valid options vary
-            between formats, but some examples include ``quality``,
-            ``optimize``, and ``progressive`` for JPEGs. See the PIL
-            documentation for others.
-        :param autoconvert: Specifies whether automatic conversion using
-            ``prepare_image()`` should be performed prior to saving.
-        :param image_field: The name of the model property that contains the
-            original image.
-        :param storage: A Django storage system to use to save the generated
-            image.
-        :param image_cache_backend: An object responsible for managing the state
-            of cached files. Defaults to an instance of
-            ``IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND``
-        :param image_cache_strategy: A dictionary containing callbacks that
-            allow you to customize how and when the image cache is validated.
-            Defaults to ``IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY``
+    """
 
-        """
-        super(ImageSpec, self).__init__(processors=processors, format=format,
-                options=options, autoconvert=autoconvert)
-        self.storage = storage or self.storage
-        self.image_cache_backend = image_cache_backend or self.image_cache_backend or get_default_image_cache_backend()
-        self.image_cache_strategy = StrategyWrapper(image_cache_strategy or self.image_cache_strategy)
+    def __init__(self, **kwargs):
+        super(ImageSpec, self).__init__()
+        self.image_cache_backend = self.image_cache_backend or get_default_image_cache_backend()
+        self.image_cache_strategy = StrategyWrapper(self.image_cache_strategy)
 
     # TODO: I don't like this interface. Is there a standard Python one? pubsub?
     def _handle_source_event(self, event_name, source_file):
@@ -205,7 +212,7 @@ class SpecHost(object):
                 raise TypeError('You can provide either an image spec or'
                     ' arguments for the ImageSpec constructor, but not both.')
             else:
-                spec = ImageSpec(**spec_args)
+                spec = type('Spec', (ImageSpec,), spec_args)  # TODO: Base class name on spec id?
 
         self._original_spec = spec
 
