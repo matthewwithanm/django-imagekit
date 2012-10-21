@@ -382,11 +382,9 @@ def autodiscover():
     Copied from django.contrib.admin
     """
 
-    import copy
     from django.conf import settings
     from django.utils.importlib import import_module
     from django.utils.module_loading import module_has_submodule
-    from .templatetags import imagekit_tags
 
     for app in settings.INSTALLED_APPS:
         mod = import_module(app)
