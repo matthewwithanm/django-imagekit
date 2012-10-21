@@ -2,7 +2,7 @@
 # depending on the installation method used.
 try:
     from PIL import Image, ImageColor, ImageChops, ImageEnhance, ImageFile, \
-            ImageFilter, ImageDraw, ImageStat
+            ImageFilter, ImageDraw, ImageStat, ImageOps, ImageFont
 except ImportError:
     try:
         import Image
@@ -13,6 +13,8 @@ except ImportError:
         import ImageFilter
         import ImageDraw
         import ImageStat
+        import ImageOps
+        import ImageFont
     except ImportError:
         raise ImportError('ImageKit was unable to import the Python Imaging Library. Please confirm it`s installed and available on your current Python path.')
 
