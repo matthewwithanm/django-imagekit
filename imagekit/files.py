@@ -2,6 +2,7 @@ from django.conf import settings
 from django.core.files.base import ContentFile, File
 from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
+from hashlib import md5
 import os
 from .signals import before_access
 from .utils import (suggest_extension, format_to_mimetype,
@@ -80,7 +81,10 @@ class ImageSpecCacheFile(BaseIKFile, ImageFile):
         self.source_file = source_file
 
     def get_hash(self):
-        return self.spec.get_hash(self.source_file)
+        return md5(''.join([
+            self.source_file.name,
+            self.spec.get_hash(),
+        ]).encode('utf-8')).hexdigest()
 
     def _require_file(self):
         before_access.send(sender=self, spec=self.spec, file=self)
@@ -91,7 +95,7 @@ class ImageSpecCacheFile(BaseIKFile, ImageFile):
         source_filename = self.source_file.name
         filename = None
         if source_filename:
-            hash = self.spec.get_hash(self.source_file)
+            hash = self.get_hash()
             ext = suggest_extension(source_filename, self.spec.format)
             filename = os.path.normpath(os.path.join(
                     settings.IMAGEKIT_CACHE_DIR,

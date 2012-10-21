@@ -120,9 +120,8 @@ class BaseImageSpec(object):
     def __init__(self):
         self.processors = self.processors or []
 
-    def get_hash(self, source_file):
+    def get_hash(self):
         return md5(''.join([
-            source_file.name,
             pickle.dumps(self.processors),
             str(self.format),
             pickle.dumps(self.options),
