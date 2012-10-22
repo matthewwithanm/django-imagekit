@@ -31,6 +31,7 @@ Digging Deeper
 
 .. toctree::
 
+    configuration
     apireference
     changelog
 
