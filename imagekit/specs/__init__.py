@@ -36,7 +36,7 @@ class SpecRegistry(object):
             signal.connect(self.source_receiver)
         before_access.connect(self.before_access_receiver)
 
-    def register(self, id, spec):
+    def register(self, spec, id):
         if id in self._specs:
             raise AlreadyRegistered('The spec with id %s is already registered' % id)
         self._specs[id] = spec
@@ -228,7 +228,7 @@ class SpecHost(object):
 
         """
         self.spec_id = id
-        registry.register(id, self._original_spec)
+        registry.register(self._original_spec, id)
 
     def get_spec(self, **kwargs):
         """
@@ -244,15 +244,7 @@ class SpecHost(object):
 
 
 registry = SpecRegistry()
-
-
-def register(id, spec=None):
-    if not spec:
-        def decorator(cls):
-            registry.register(id, cls)
-            return cls
-        return decorator
-    registry.register(id, spec)
+register = registry.register
 
 
 def unregister(id, spec):

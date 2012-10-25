@@ -67,7 +67,7 @@ More often, however, you'll want to register your spec with ImageKit:
 .. code-block:: python
 
     from imagekit import specs
-    specs.register('myapp:fancy_thumbnail', Thumbnail)
+    specs.register(Thumbnail, 'myapp:fancy_thumbnail')
 
 Once a spec is registered with a unique name, you can start to take advantage of
 ImageKit's powerful utilities to automatically generate images for you...
