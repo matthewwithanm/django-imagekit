@@ -53,8 +53,8 @@ class SpecRegistry(object):
             raise AlreadyRegistered('The spec with id %s is already registered' % id)
         self._specs[id] = spec
 
-        for source in getattr(config, 'sources', None) or []:
-            self.add_source(source, id)
+        sources = getattr(config, 'sources', None) or []
+        self.add_sources(id, sources)
 
     def unregister(self, id, spec):
         try:
@@ -72,14 +72,15 @@ class SpecRegistry(object):
         else:
             return spec
 
-    def add_source(self, source, spec_id):
+    def add_sources(self, spec_id, sources):
         """
-        Associates a source with a spec id
+        Associates sources with a spec id
 
         """
-        if source not in self._sources:
-            self._sources[source] = set()
-        self._sources[source].add(spec_id)
+        for source in sources:
+            if source not in self._sources:
+                self._sources[source] = set()
+            self._sources[source].add(spec_id)
 
     def before_access_receiver(self, sender, spec, file, **kwargs):
         spec.image_cache_strategy.invoke_callback('before_access', file)

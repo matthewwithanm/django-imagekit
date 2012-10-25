@@ -43,8 +43,8 @@ class ImageSpecField(SpecHostField):
         self.set_spec_id(cls, name)
 
         # Add the model and field as a source for this spec id
-        specs.registry.add_source(ImageFieldSpecSource(cls, self.image_field),
-                                 self.spec_id)
+        specs.registry.add_sources(self.spec_id,
+                [ImageFieldSpecSource(cls, self.image_field)])
 
 
 class ProcessedImageField(models.ImageField, SpecHostField):
