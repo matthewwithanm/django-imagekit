@@ -115,5 +115,9 @@ class ImageFieldSpecSource(object):
         self.image_field = image_field
         signal_router.add(self)
 
+    def files(self):
+        for instance in self.model_class.objects.all():
+            yield getattr(instance, self.image_field)
+
 
 signal_router = ModelSignalRouter()
