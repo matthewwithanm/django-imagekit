@@ -12,3 +12,7 @@ class UnknownExtensionError(Exception):
 
 class UnknownFormatError(Exception):
     pass
+
+
+class MissingSpecId(Exception):
+    pass

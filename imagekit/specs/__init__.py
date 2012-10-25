@@ -2,7 +2,8 @@ from django.conf import settings
 from hashlib import md5
 import os
 import pickle
-from ..exceptions import UnknownExtensionError, AlreadyRegistered, NotRegistered
+from ..exceptions import (UnknownExtensionError, AlreadyRegistered,
+                          NotRegistered, MissingSpecId)
 from ..files import ImageSpecCacheFile, IKContentFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
@@ -36,10 +37,24 @@ class SpecRegistry(object):
             signal.connect(self.source_receiver)
         before_access.connect(self.before_access_receiver)
 
-    def register(self, spec, id):
+    def register(self, spec, id=None):
+        config = getattr(spec, 'Config', None)
+
+        if id is None:
+            id = getattr(config, 'id', None)
+
+        if id is None:
+            raise MissingSpecId('No id provided for %s. You must either pass an'
+                                ' id to the register function, or add an id'
+                                ' attribute to the inner Config class of your'
+                                ' spec.' % spec)
+
         if id in self._specs:
             raise AlreadyRegistered('The spec with id %s is already registered' % id)
         self._specs[id] = spec
+
+        for source in getattr(config, 'sources', None) or []:
+            self.add_source(source, id)
 
     def unregister(self, id, spec):
         try:
