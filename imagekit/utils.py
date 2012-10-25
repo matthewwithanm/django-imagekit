@@ -146,28 +146,6 @@ def _get_models(apps):
     return models
 
 
-def invalidate_app_cache(apps):
-    for model in _get_models(apps):
-        print 'Invalidating cache for "%s.%s"' % (model._meta.app_label, model.__name__)
-        for obj in model._default_manager.order_by('-pk'):
-            for f in get_spec_files(obj):
-                f.invalidate()
-
-
-def validate_app_cache(apps, force_revalidation=False):
-    for model in _get_models(apps):
-        for obj in model._default_manager.order_by('-pk'):
-            model_name = '%s.%s' % (model._meta.app_label, model.__name__)
-            if force_revalidation:
-                print 'Invalidating & validating cache for "%s"' % model_name
-            else:
-                print 'Validating cache for "%s"' % model_name
-            for f in get_spec_files(obj):
-                if force_revalidation:
-                    f.invalidate()
-                f.validate()
-
-
 def suggest_extension(name, format):
     original_extension = os.path.splitext(name)[1]
     try:

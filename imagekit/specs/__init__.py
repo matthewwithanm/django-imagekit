@@ -72,6 +72,9 @@ class SpecRegistry(object):
         else:
             return spec
 
+    def get_spec_ids(self):
+        return self._specs.keys()
+
     def add_sources(self, spec_id, sources):
         """
         Associates sources with a spec id
@@ -81,6 +84,9 @@ class SpecRegistry(object):
             if source not in self._sources:
                 self._sources[source] = set()
             self._sources[source].add(spec_id)
+
+    def get_sources(self, spec_id):
+        return [source for source in self._sources if spec_id in self._sources[source]]
 
     def before_access_receiver(self, sender, spec, file, **kwargs):
         spec.image_cache_strategy.invoke_callback('before_access', file)
