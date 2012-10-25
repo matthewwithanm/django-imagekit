@@ -28,6 +28,11 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
+    tests_require=[
+        'nose==1.2.1',
+        'nose-progressive==1.3',
+        'django-nose==1.1',
+    ],
     install_requires=[
         'django-appconf>=0.5',
     ],
