@@ -214,26 +214,16 @@ class SpecHost(object):
     spec registry.
 
     """
-    def __init__(self, processors=None, format=None, options=None,
-            storage=None, autoconvert=None, image_cache_backend=None,
-            image_cache_strategy=None, spec=None, spec_id=None):
+    def __init__(self, spec=None, spec_id=None, **kwargs):
 
-        spec_args = dict(
-            processors=processors,
-            format=format,
-            options=options,
-            storage=storage,
-            autoconvert=autoconvert,
-            image_cache_backend=image_cache_backend,
-            image_cache_strategy=image_cache_strategy,
-        )
+        spec_args = dict((k, v) for k, v in kwargs.items() if v is not None)
 
-        if any(v is not None for v in spec_args.values()):
+        if spec_args:
             if spec:
                 raise TypeError('You can provide either an image spec or'
                     ' arguments for the ImageSpec constructor, but not both.')
             else:
-                spec = type('Spec', (ImageSpec,), dict((k, v) for k, v in spec_args.items() if v is not None))  # TODO: Base class name on spec id?
+                spec = type('Spec', (ImageSpec,), spec_args)  # TODO: Base class name on spec id?
 
         self._original_spec = spec
 
