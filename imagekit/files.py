@@ -148,6 +148,10 @@ class IKContentFile(ContentFile):
             mimetype = extension_to_mimetype(ext)
         self.file.content_type = mimetype
 
+    @property
+    def name(self):
+        return self.file.name
+
     def __str__(self):
         return smart_str(self.file.name or '')
 
