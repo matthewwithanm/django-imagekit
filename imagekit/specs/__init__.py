@@ -233,7 +233,7 @@ class SpecHost(object):
                 raise TypeError('You can provide either an image spec or'
                     ' arguments for the ImageSpec constructor, but not both.')
             else:
-                spec = type('Spec', (ImageSpec,), spec_args)  # TODO: Base class name on spec id?
+                spec = type('Spec', (ImageSpec,), dict((k, v) for k, v in spec_args.items() if v is not None))  # TODO: Base class name on spec id?
 
         self._original_spec = spec
 
