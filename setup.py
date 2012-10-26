@@ -11,12 +11,14 @@ if 'publish' in sys.argv:
 
 read = lambda filepath: codecs.open(filepath, 'r', 'utf-8').read()
 
-# Dynamically calculate the version based on imagekit.VERSION.
-version = __import__('imagekit').get_version()
+# Load package meta from the pkgmeta module without loading imagekit.
+pkgmeta = {}
+execfile(os.path.join(os.path.dirname(__file__),
+         'imagekit', 'pkgmeta.py'), pkgmeta)
 
 setup(
     name='django-imagekit',
-    version=version,
+    version=pkgmeta['__version__'],
     description='Automated image processing for Django models.',
     long_description=read(os.path.join(os.path.dirname(__file__), 'README.rst')),
     author='Justin Driscoll',
