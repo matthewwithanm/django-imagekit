@@ -26,7 +26,7 @@ class IKContentFile(ContentFile):
     """
     def __init__(self, filename, content, format=None):
         self.file = ContentFile(content)
-        self.file.name = filename
+        self.name = self.file.name = filename
         mimetype = getattr(self.file, 'content_type', None)
         if format and not mimetype:
             mimetype = format_to_mimetype(format)
