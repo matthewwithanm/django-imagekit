@@ -27,7 +27,7 @@ class CachedValidationBackend(object):
 
     def get_key(self, file):
         from django.conf import settings
-        return '%s%s-valid' % (settings.IMAGEKIT_CACHE_PREFIX, file.get_hash())
+        return '%s%s-valid' % (settings.IMAGEKIT_CACHE_PREFIX, file.name)
 
     def is_invalid(self, file):
         key = self.get_key(file)

@@ -88,8 +88,8 @@ class SpecRegistry(object):
     def get_sources(self, spec_id):
         return [source for source in self._sources if spec_id in self._sources[source]]
 
-    def before_access_receiver(self, sender, spec, file, **kwargs):
-        spec.image_cache_strategy.invoke_callback('before_access', file)
+    def before_access_receiver(self, sender, generator, file, **kwargs):
+        generator.image_cache_strategy.invoke_callback('before_access', file)
 
     def source_receiver(self, sender, source_file, signal, info, **kwargs):
         """
@@ -150,8 +150,8 @@ class BaseImageSpec(object):
             str(self.autoconvert),
         ]).encode('utf-8')).hexdigest()
 
-    def apply(self, content, filename=None):
-        img = open_image(content)
+    def generate(self, source_file, filename=None):
+        img = open_image(source_file)
         original_format = img.format
 
         # Run the processors

@@ -4,8 +4,9 @@ from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
 from hashlib import md5
 import os
+import pickle
 from .signals import before_access
-from .utils import (suggest_extension, format_to_mimetype,
+from .utils import (suggest_extension, format_to_mimetype, format_to_extension,
                     extension_to_mimetype, get_logger, get_singleton)
 
 
@@ -71,63 +72,95 @@ class BaseIKFile(File):
             file.close()
 
 
-class ImageSpecCacheFile(BaseIKFile, ImageFile):
-    def __init__(self, spec, source_file):
-        storage = (spec.storage or
-            get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE, 'file storage backend') if settings.IMAGEKIT_DEFAULT_FILE_STORAGE
-            else source_file.storage)
-        super(ImageSpecCacheFile, self).__init__(storage=storage)
-        self.spec = spec
-        self.source_file = source_file
+class GeneratedImageCacheFile(BaseIKFile, ImageFile):
+    """
+    A cache file that represents the result of a generator. Creating an instance
+    of this class is not enough to trigger the creation of the cache file. In
+    fact, one of the main points of this class is to allow the creation of the
+    file to be deferred until the time that the image cache strategy requires
+    it.
 
-    def get_hash(self):
-        return md5(''.join([
-            self.source_file.name,
-            self.spec.get_hash(),
-        ]).encode('utf-8')).hexdigest()
+    """
+    def __init__(self, generator, *args, **kwargs):
+        """
+        :param generator: The object responsible for generating a new image.
+        :param args: Positional arguments that will be passed to the generator's
+            ``generate()`` method when the generation is called for.
+        :param kwargs: Keyword arguments that will be apssed to the generator's
+            ``generate()`` method when the generation is called for.
 
-    def _require_file(self):
-        before_access.send(sender=self, spec=self.spec, file=self)
-        return super(ImageSpecCacheFile, self)._require_file()
+        """
+        self.generator = generator
+        self.args = args
+        self.kwargs = kwargs
+        storage = getattr(generator, 'storage', None)
+        if not storage and settings.IMAGEKIT_DEFAULT_FILE_STORAGE:
+            storage = get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
+                                    'file storage backend')
+        super(GeneratedImageCacheFile, self).__init__(storage=storage)
 
     @property
     def name(self):
-        source_filename = self.source_file.name
-        filename = None
-        if source_filename:
-            hash = self.get_hash()
-            ext = suggest_extension(source_filename, self.spec.format)
-            filename = os.path.normpath(os.path.join(
-                    settings.IMAGEKIT_CACHE_DIR,
-                    os.path.splitext(source_filename)[0],
-                    '%s%s' % (hash, ext)))
+        # FIXME: This won't work if args or kwargs contain a file object. It probably won't work in many other cases as well. Better option?
+        hash = md5(''.join([
+            pickle.dumps(self.args),
+            pickle.dumps(self.kwargs),
+            self.generator.get_hash(),
+        ]).encode('utf-8')).hexdigest()
+        ext = format_to_extension(self.generator.format)
+        return os.path.join(settings.IMAGEKIT_CACHE_DIR,
+                            '%s%s' % (hash, ext))
 
-        return filename
+    def _require_file(self):
+        before_access.send(sender=self, generator=self.generator, file=self)
+        return super(GeneratedImageCacheFile, self)._require_file()
 
     def clear(self):
-        return self.spec.image_cache_backend.clear(self)
+        return self.generator.image_cache_backend.clear(self)
 
     def invalidate(self):
-        return self.spec.image_cache_backend.invalidate(self)
+        return self.generator.image_cache_backend.invalidate(self)
 
     def validate(self):
-        return self.spec.image_cache_backend.validate(self)
+        return self.generator.image_cache_backend.validate(self)
 
     def generate(self):
-        if self.source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
-            # Process the original image file.
-            content = self.spec.apply(self.source_file)
-            actual_name = self.storage.save(self.name, content)
+        # Generate the file
+        content = self.generator.generate(*self.args, **self.kwargs)
+        actual_name = self.storage.save(self.name, content)
 
-            if actual_name != self.name:
-                get_logger().warning('The storage backend %s did not save the file'
-                        ' with the requested name ("%s") and instead used'
-                        ' "%s". This may be because a file already existed with'
-                        ' the requested name. If so, you may have meant to call'
-                        ' validate() instead of generate(), or there may be a'
-                        ' race condition in the image cache backend %s. The'
-                        ' saved file will not be used.' % (self.storage,
-                        self.name, actual_name, self.spec.image_cache_backend))
+        if actual_name != self.name:
+            get_logger().warning('The storage backend %s did not save the file'
+                    ' with the requested name ("%s") and instead used'
+                    ' "%s". This may be because a file already existed with'
+                    ' the requested name. If so, you may have meant to call'
+                    ' validate() instead of generate(), or there may be a'
+                    ' race condition in the image cache backend %s. The'
+                    ' saved file will not be used.' % (self.storage,
+                    self.name, actual_name,
+                    self.generator.image_cache_backend))
+
+
+class ImageSpecCacheFile(GeneratedImageCacheFile):
+    def __init__(self, generator, source_file):
+        super(ImageSpecCacheFile, self).__init__(generator,
+                source_file=source_file)
+        if not self.storage:
+            self.storage = source_file.storage
+
+    @property
+    def name(self):
+        source_filename = self.kwargs['source_file'].name
+        hash = md5(''.join([
+            source_filename,
+            self.generator.get_hash(),
+        ]).encode('utf-8')).hexdigest()
+        # TODO: Since specs can now be dynamically generated using hints, can we move this into the spec constructor? i.e. set self.format if not defined. This would get us closer to making ImageSpecCacheFile == GeneratedImageCacheFile
+        ext = suggest_extension(source_filename, self.generator.format)
+        return os.path.normpath(os.path.join(
+                settings.IMAGEKIT_CACHE_DIR,
+                os.path.splitext(source_filename)[0],
+                '%s%s' % (hash, ext)))
 
 
 class IKContentFile(ContentFile):
