@@ -111,6 +111,52 @@ class SpecRegistry(object):
 
 
 class BaseImageSpec(object):
+    """
+    An object that defines how an new image should be generated from a source
+    image.
+
+    """
+
+    storage = None
+    """A Django storage system to use to save the generated image."""
+
+    image_cache_backend = None
+    """
+    An object responsible for managing the state of cached files. Defaults to an
+    instance of ``IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND``
+
+    """
+
+    image_cache_strategy = settings.IMAGEKIT_DEFAULT_IMAGE_CACHE_STRATEGY
+    """
+    A dictionary containing callbacks that allow you to customize how and when
+    the image cache is validated. Defaults to
+    ``IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY``.
+
+    """
+
+    def __init__(self, **kwargs):
+        self.image_cache_backend = self.image_cache_backend or get_default_image_cache_backend()
+        self.image_cache_strategy = StrategyWrapper(self.image_cache_strategy)
+
+    def get_hash(self):
+        raise NotImplementedError
+
+    def generate(self, source_file, filename=None):
+        raise NotImplementedError
+
+    # TODO: I don't like this interface. Is there a standard Python one? pubsub?
+    def _handle_source_event(self, event_name, source_file):
+        file = ImageSpecCacheFile(self, source_file)
+        self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
+
+
+class ImageSpec(BaseImageSpec):
+    """
+    An object that defines how to generate a new image from a source file using
+    PIL-based processors. (See :mod:`imagekit.processors`)
+
+    """
 
     processors = None
     """A list of processors to run on the original image."""
@@ -139,8 +185,9 @@ class BaseImageSpec(object):
 
     """
 
-    def __init__(self):
+    def __init__(self, **kwargs):
         self.processors = self.processors or []
+        super(ImageSpec, self).__init__()
 
     def get_hash(self):
         return md5(''.join([
@@ -175,37 +222,6 @@ class BaseImageSpec(object):
         imgfile = img_to_fobj(img, format, **options)
         content = IKContentFile(filename, imgfile.read(), format=format)
         return content
-
-
-class ImageSpec(BaseImageSpec):
-
-    storage = None
-    """A Django storage system to use to save the generated image."""
-
-    image_cache_backend = None
-    """
-    An object responsible for managing the state of cached files. Defaults to an
-    instance of ``IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND``
-
-    """
-
-    image_cache_strategy = settings.IMAGEKIT_DEFAULT_IMAGE_CACHE_STRATEGY
-    """
-    A dictionary containing callbacks that allow you to customize how and when
-    the image cache is validated. Defaults to
-    ``IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY``.
-
-    """
-
-    def __init__(self, **kwargs):
-        super(ImageSpec, self).__init__()
-        self.image_cache_backend = self.image_cache_backend or get_default_image_cache_backend()
-        self.image_cache_strategy = StrategyWrapper(self.image_cache_strategy)
-
-    # TODO: I don't like this interface. Is there a standard Python one? pubsub?
-    def _handle_source_event(self, event_name, source_file):
-        file = ImageSpecCacheFile(self, source_file)
-        self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
 
 
 class SpecHost(object):
