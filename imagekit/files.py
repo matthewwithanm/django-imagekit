@@ -81,7 +81,7 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
     it.
 
     """
-    def __init__(self, generator, *args, **kwargs):
+    def __init__(self, generator, name=None, *args, **kwargs):
         """
         :param generator: The object responsible for generating a new image.
         :param args: Positional arguments that will be passed to the generator's
@@ -90,6 +90,7 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
             ``generate()`` method when the generation is called for.
 
         """
+        self._name = name
         self.generator = generator
         self.args = args
         self.kwargs = kwargs
@@ -99,8 +100,7 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
                                     'file storage backend')
         super(GeneratedImageCacheFile, self).__init__(storage=storage)
 
-    @property
-    def name(self):
+    def get_default_filename(self):
         # FIXME: This won't work if args or kwargs contain a file object. It probably won't work in many other cases as well. Better option?
         hash = md5(''.join([
             pickle.dumps(self.args),
@@ -110,6 +110,14 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
         ext = format_to_extension(self.generator.format)
         return os.path.join(settings.IMAGEKIT_CACHE_DIR,
                             '%s%s' % (hash, ext))
+
+    def _get_name(self):
+        return self._name or self.get_default_filename()
+
+    def _set_name(self, value):
+        self._name = value
+
+    name = property(_get_name, _set_name)
 
     def _require_file(self):
         before_access.send(sender=self, generator=self.generator, file=self)
@@ -148,8 +156,7 @@ class ImageSpecCacheFile(GeneratedImageCacheFile):
         if not self.storage:
             self.storage = source_file.storage
 
-    @property
-    def name(self):
+    def get_default_filename(self):
         source_filename = self.kwargs['source_file'].name
         hash = md5(''.join([
             source_filename,
