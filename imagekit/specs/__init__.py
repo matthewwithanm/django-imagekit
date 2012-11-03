@@ -220,6 +220,7 @@ class ImageSpec(BaseImageSpec):
         format = format or img.format or original_format or 'JPEG'
 
         imgfile = img_to_fobj(img, format, **options)
+        # TODO: Is this the right place to wrap the file? Can we use a mixin instead? Is it even still having the desired effect? Re: #111
         content = IKContentFile(filename, imgfile.read(), format=format)
         return content
 
