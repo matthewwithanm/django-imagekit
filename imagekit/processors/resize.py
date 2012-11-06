@@ -215,6 +215,6 @@ class ResizeToFit(object):
             self.upscale:
                 img = Resize(new_dimensions[0],
                         new_dimensions[1]).process(img)
-        if self.mat_color:
+        if self.mat_color is not None:
             img = ResizeCanvas(self.width, self.height, self.mat_color, anchor=self.anchor).process(img)
         return img
