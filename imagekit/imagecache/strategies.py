@@ -54,6 +54,5 @@ class StrategyWrapper(object):
     def __unicode__(self):
         return unicode(self._wrapped)
 
-
     def __str__(self):
         return str(self._wrapped)

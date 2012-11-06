@@ -12,7 +12,7 @@ else:
 
 def deferred_validate(file):
     try:
-        import celery
+        import celery  # NOQA
     except:
         raise ImportError("Deferred validation requires the the 'celery' library")
     validate_now_task.delay(file)

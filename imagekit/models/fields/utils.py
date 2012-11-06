@@ -15,16 +15,16 @@ class ImageSpecFileDescriptor(object):
             if field_name:
                 source_file = getattr(instance, field_name)
             else:
-                image_fields = [getattr(instance, f.attname) for f in \
-                        instance.__class__._meta.fields if \
+                image_fields = [getattr(instance, f.attname) for f in
+                        instance.__class__._meta.fields if
                         isinstance(f, ImageField)]
                 if len(image_fields) == 0:
-                    raise Exception('%s does not define any ImageFields, so your' \
-                            ' %s ImageSpecField has no image to act on.' % \
+                    raise Exception('%s does not define any ImageFields, so your'
+                            ' %s ImageSpecField has no image to act on.' %
                             (instance.__class__.__name__, self.attname))
                 elif len(image_fields) > 1:
-                    raise Exception('%s defines multiple ImageFields, but you' \
-                            ' have not specified an image_field for your %s' \
+                    raise Exception('%s defines multiple ImageFields, but you'
+                            ' have not specified an image_field for your %s'
                             ' ImageSpecField.' % (instance.__class__.__name__,
                             self.attname))
                 else:

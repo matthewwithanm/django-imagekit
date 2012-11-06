@@ -1,4 +1,3 @@
-from optparse import make_option
 from django.core.management.base import BaseCommand
 import re
 from ...files import ImageSpecCacheFile

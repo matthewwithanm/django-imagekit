@@ -110,7 +110,7 @@ def spec(parser, token):
     """
 
     bits = token.split_contents()
-    tag_name = bits.pop(0)
+    tag_name = bits.pop(0)  # noqa
 
     if len(bits) == 4 and bits[2] == 'as':
         return SpecResultAssignmentNode(

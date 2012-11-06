@@ -26,9 +26,9 @@ class ImageSpecField(SpecHostField):
 
     """
     def __init__(self, processors=None, format=None, options=None,
-        image_field=None, storage=None, autoconvert=None,
-        image_cache_backend=None, image_cache_strategy=None, spec=None,
-        id=None):
+            image_field=None, storage=None, autoconvert=None,
+            image_cache_backend=None, image_cache_strategy=None, spec=None,
+            id=None):
 
         SpecHost.__init__(self, processors=processors, format=format,
                 options=options, storage=storage, autoconvert=autoconvert,
@@ -58,8 +58,8 @@ class ProcessedImageField(models.ImageField, SpecHostField):
     attr_class = ProcessedImageFieldFile
 
     def __init__(self, processors=None, format=None, options=None,
-        verbose_name=None, name=None, width_field=None, height_field=None,
-        autoconvert=True, spec=None, spec_id=None, **kwargs):
+            verbose_name=None, name=None, width_field=None, height_field=None,
+            autoconvert=True, spec=None, spec_id=None, **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well

@@ -1,5 +1,4 @@
 from imagekit.lib import Image
-import warnings
 from .base import Anchor
 
 
@@ -211,10 +210,8 @@ class ResizeToFit(object):
                 ratio = float(self.width) / cur_width
         new_dimensions = (int(round(cur_width * ratio)),
                           int(round(cur_height * ratio)))
-        if (cur_width > new_dimensions[0] or cur_height > new_dimensions[1]) or \
-            self.upscale:
-                img = Resize(new_dimensions[0],
-                        new_dimensions[1]).process(img)
+        if (cur_width > new_dimensions[0] or cur_height > new_dimensions[1]) or self.upscale:
+            img = Resize(new_dimensions[0], new_dimensions[1]).process(img)
         if self.mat_color is not None:
             img = ResizeCanvas(self.width, self.height, self.mat_color, anchor=self.anchor).process(img)
         return img
