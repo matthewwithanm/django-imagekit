@@ -8,7 +8,7 @@ from imagekit import utils
 from imagekit.exceptions import UnknownFormatError
 from .models import (Photo, AbstractImageModel, ConcreteImageModel1,
         ConcreteImageModel2)
-from .testutils import create_photo, pickleback
+from .utils import create_photo, pickleback
 
 
 class IKTest(TestCase):

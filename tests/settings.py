@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'imagekit',
-    'core',
+    'tests',
     'django_nose',
 ]
 
