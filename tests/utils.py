@@ -1,5 +1,4 @@
 import os
-import tempfile
 
 from django.core.files.base import ContentFile
 
@@ -8,7 +7,7 @@ from .models import Photo
 import pickle
 
 
-def generate_lenna():
+def get_image_file():
     """
     See also:
 
@@ -16,17 +15,20 @@ def generate_lenna():
     http://sipi.usc.edu/database/database.php?volume=misc&image=12
 
     """
-    tmp = tempfile.TemporaryFile()
-    lennapath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'lenna-800x600-white-border.jpg')
-    with open(lennapath, "r+b") as lennafile:
-        Image.open(lennafile).save(tmp, 'JPEG')
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'lenna-800x600-white-border.jpg')
+    tmp = StringIO()
+    tmp.write(open(path, 'r+b').read())
     tmp.seek(0)
     return tmp
 
 
+def create_image():
+    return Image.open(get_image_file())
+
+
 def create_instance(model_class, image_name):
     instance = model_class()
-    img = generate_lenna()
+    img = get_image_file()
     file = ContentFile(img.read())
     instance.original_image = file
     instance.original_image.save(image_name, file)
