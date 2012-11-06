@@ -295,3 +295,13 @@ even Django—to contribute either: ImageKit's processors are standalone classes
 that are completely separate from the more intimidating internals of Django's
 ORM. If you've written a processor that you think might be useful to other
 people, open a pull request so we can take a look!
+
+You can also check out our list of `open, contributor-friendly issues`__ for
+ideas.
+
+Check out our `contributing guidelines`__ for more information about pitching in
+with ImageKit.
+
+
+__ https://github.com/jdriscoll/django-imagekit/issues?labels=contributor-friendly&state=open
+__ https://github.com/jdriscoll/django-imagekit/blob/master/CONTRIBUTING.rst
