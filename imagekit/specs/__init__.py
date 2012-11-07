@@ -233,14 +233,14 @@ class SpecHost(object):
     """
     def __init__(self, spec=None, spec_id=None, **kwargs):
 
-        spec_args = dict((k, v) for k, v in kwargs.items() if v is not None)
+        spec_attrs = dict((k, v) for k, v in kwargs.items() if v is not None)
 
-        if spec_args:
+        if spec_attrs:
             if spec:
                 raise TypeError('You can provide either an image spec or'
                     ' arguments for the ImageSpec constructor, but not both.')
             else:
-                spec = type('Spec', (ImageSpec,), spec_args)  # TODO: Base class name on spec id?
+                spec = type('Spec', (ImageSpec,), spec_attrs)  # TODO: Base class name on spec id?
 
         self._original_spec = spec
 
