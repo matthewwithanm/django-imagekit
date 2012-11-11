@@ -3,6 +3,7 @@ from .lib import StringIO
 from .processors import ProcessorPipeline
 from .utils import (img_to_fobj, open_image, IKContentFile, extension_to_format,
         UnknownExtensionError, get_default_file_storage)
+from django.conf import settings
 
 
 class SpecFileGenerator(object):
@@ -54,6 +55,8 @@ class SpecFileGenerator(object):
             try:
                 fp = source_file.storage.open(source_file.name)
             except IOError:
+                if getattr(settings, 'IMAGEKIT_ERROR_ON_GENERATE', False):
+                    raise
                 return
             fp.seek(0)
             fp = StringIO(fp.read())
