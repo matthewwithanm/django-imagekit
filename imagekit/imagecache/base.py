@@ -24,7 +24,10 @@ class PessimisticImageCacheBackend(object):
 
         """
         if self.is_invalid(file):
-            file.generate(save=True)
+            try:
+                file.generate(save=True)
+            except IOError:
+                pass
 
     def invalidate(self, file):
         file.delete(save=False)
@@ -54,7 +57,10 @@ class NonValidatingImageCacheBackend(object):
         Immediately generate a new spec file upon invalidation.
 
         """
-        file.generate(save=True)
+        try:
+            file.generate(save=True)
+        except IOError:
+            pass
 
     def clear(self, file):
         file.delete(save=False)

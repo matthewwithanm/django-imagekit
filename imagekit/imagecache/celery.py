@@ -12,7 +12,10 @@ def generate(model, pk, attr):
     else:
         field_file = getattr(instance, attr)
         field_file.delete(save=False)
-        field_file.generate(save=True)
+        try:
+            field_file.generate(save=True)
+        except IOError:
+            pass
 
 
 class CeleryImageCacheBackend(PessimisticImageCacheBackend):
