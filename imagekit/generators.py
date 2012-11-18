@@ -61,3 +61,5 @@ class SpecFileGenerator(object):
                 storage.save(filename, content)
 
             return content
+
+        raise IOError("Source file is missing")
