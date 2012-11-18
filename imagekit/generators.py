@@ -50,11 +50,7 @@ class SpecFileGenerator(object):
         """
         if source_file:  # TODO: Should we error here or something if the source_file doesn't exist?
             # Process the original image file.
-
-            try:
-                fp = source_file.storage.open(source_file.name)
-            except IOError:
-                return
+            fp = source_file.storage.open(source_file.name)
             fp.seek(0)
             fp = StringIO(fp.read())
 
@@ -65,3 +61,5 @@ class SpecFileGenerator(object):
                 storage.save(filename, content)
 
             return content
+
+        raise IOError("Source file is missing")
