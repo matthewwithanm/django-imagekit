@@ -5,10 +5,13 @@ from ..specs import SpecHost
 class ProcessedImageField(ImageField, SpecHost):
 
     def __init__(self, processors=None, format=None, options=None,
-                 autoconvert=True, spec=None, spec_id=None, *args, **kwargs):
+                 autoconvert=True, spec_id=None, spec=None, *args, **kwargs):
 
         if spec_id is None:
-            spec_id = '??????'  # FIXME: Wher should we get this?
+            # Unlike model fields, form fields are never told their field name.
+            # (Model fields are done so via `contribute_to_class()`.) Therefore
+            # we can't really generate a good spec id automatically.
+            raise TypeError('You must provide a spec_id')
 
         SpecHost.__init__(self, processors=processors, format=format,
                           options=options, autoconvert=autoconvert, spec=spec,
