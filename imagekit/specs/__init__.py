@@ -225,6 +225,17 @@ class ImageSpec(BaseImageSpec):
         return content
 
 
+class DynamicSpec(ImageSpec):
+    def __reduce__(self):
+        return (create_spec_class, (self._spec_attrs,))
+
+
+def create_spec_class(spec_attrs):
+    cls = type('Spec', (DynamicSpec,), spec_attrs)
+    cls._spec_attrs = spec_attrs
+    return cls
+
+
 class SpecHost(object):
     """
     An object that ostensibly has a spec attribute but really delegates to the
@@ -240,7 +251,8 @@ class SpecHost(object):
                 raise TypeError('You can provide either an image spec or'
                     ' arguments for the ImageSpec constructor, but not both.')
             else:
-                spec = type('Spec', (ImageSpec,), spec_attrs)  # TODO: Base class name on spec id?
+                # spec = type('Spec', (ImageSpec,), spec_attrs)  # TODO: Base class name on spec id?
+                spec = create_spec_class(spec_attrs)
 
         self._original_spec = spec
 
