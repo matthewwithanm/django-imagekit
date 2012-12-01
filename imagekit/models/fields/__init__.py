@@ -26,7 +26,7 @@ class ImageSpecField(SpecHostField):
 
     """
     def __init__(self, processors=None, format=None, options=None,
-            image_field=None, storage=None, autoconvert=None,
+            source=None, storage=None, autoconvert=None,
             image_cache_backend=None, image_cache_strategy=None, spec=None,
             id=None):
 
@@ -36,7 +36,8 @@ class ImageSpecField(SpecHostField):
                 image_cache_strategy=image_cache_strategy, spec=spec,
                 spec_id=id)
 
-        self.image_field = image_field
+        # TODO: Allow callable for source. See https://github.com/jdriscoll/django-imagekit/issues/158#issuecomment-10921664
+        self.source = source
 
     def contribute_to_class(self, cls, name):
         setattr(cls, name, ImageSpecFileDescriptor(self, name))
@@ -44,7 +45,7 @@ class ImageSpecField(SpecHostField):
 
         # Add the model and field as a source for this spec id
         specs.registry.add_sources(self.spec_id,
-                [ImageFieldSourceGroup(cls, self.image_field)])
+                [ImageFieldSourceGroup(cls, self.source)])
 
 
 class ProcessedImageField(models.ImageField, SpecHostField):

@@ -11,7 +11,7 @@ class ImageSpecFileDescriptor(object):
         if instance is None:
             return self.field
         else:
-            field_name = getattr(self.field, 'image_field', None)
+            field_name = getattr(self.field, 'source', None)
             if field_name:
                 source_file = getattr(instance, field_name)
             else:
@@ -24,7 +24,7 @@ class ImageSpecFileDescriptor(object):
                             (instance.__class__.__name__, self.attname))
                 elif len(image_fields) > 1:
                     raise Exception('%s defines multiple ImageFields, but you'
-                            ' have not specified an image_field for your %s'
+                            ' have not specified a source for your %s'
                             ' ImageSpecField.' % (instance.__class__.__name__,
                             self.attname))
                 else:

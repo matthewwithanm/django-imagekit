@@ -121,7 +121,7 @@ of applying a spec to another one of your model's fields:
 
     class Photo(models.Model):
         avatar = models.ImageField(upload_to='avatars')
-        avatar_thumbnail = ImageSpecField(id='myapp:fancy_thumbnail', image_field='avatar')
+        avatar_thumbnail = ImageSpecField(id='myapp:fancy_thumbnail', source='avatar')
 
     photo = Photo.objects.all()[0]
     print photo.avatar_thumbnail.url    # > /media/CACHE/ik/982d5af84cddddfd0fbf70892b4431e4.jpg
@@ -142,7 +142,7 @@ writing a subclass of ``ImageSpec``:
         avatar_thumbnail = ImageSpecField(processors=[ResizeToFill(100, 50)],
                                           format='JPEG',
                                           options={'quality': 60},
-                                          image_field='avatar')
+                                          source='avatar')
 
     photo = Photo.objects.all()[0]
     print photo.avatar_thumbnail.url    # > /media/CACHE/ik/982d5af84cddddfd0fbf70892b4431e4.jpg
