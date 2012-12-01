@@ -38,6 +38,7 @@ class SpecRegistry(object):
         before_access.connect(self.before_access_receiver)
 
     def register(self, spec, id=None):
+        # TODO: Should we really allow a nested Config class, since it's not necessarily associated with its container?
         config = getattr(spec, 'Config', None)
 
         if id is None:
