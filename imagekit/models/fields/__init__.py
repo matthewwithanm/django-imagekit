@@ -1,9 +1,9 @@
 from django.db import models
 from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor
-from ... import specs
 from ...specs import SpecHost
 from ...specs.sourcegroups import ImageFieldSourceGroup
+from ...registry import register
 
 
 class SpecHostField(SpecHost):
@@ -44,7 +44,7 @@ class ImageSpecField(SpecHostField):
         self.set_spec_id(cls, name)
 
         # Add the model and field as a source for this spec id
-        specs.registry.add_sources(self.spec_id,
+        register.sources(self.spec_id,
                 [ImageFieldSourceGroup(cls, self.source)])
 
 

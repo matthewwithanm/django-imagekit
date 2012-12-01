@@ -2,113 +2,13 @@ from django.conf import settings
 from hashlib import md5
 import os
 import pickle
-from ..exceptions import (UnknownExtensionError, AlreadyRegistered,
-                          NotRegistered, MissingSpecId)
+from ..exceptions import UnknownExtensionError
 from ..files import ImageSpecCacheFile, IKContentFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
-from ..signals import (before_access, source_created, source_changed,
-                       source_deleted)
 from ..utils import open_image, extension_to_format, img_to_fobj
-
-
-class SpecRegistry(object):
-    """
-    An object for registering specs and sources. The two are associated with
-    eachother via a string id. We do this (as opposed to associating them
-    directly by, for example, putting a ``sources`` attribute on specs) so that
-    specs can be overridden without losing the associated sources. That way,
-    a distributable app can define its own specs without locking the users of
-    the app into it.
-
-    """
-
-    _source_signals = [
-        source_created,
-        source_changed,
-        source_deleted,
-    ]
-
-    def __init__(self):
-        self._specs = {}
-        self._sources = {}
-        for signal in self._source_signals:
-            signal.connect(self.source_receiver)
-        before_access.connect(self.before_access_receiver)
-
-    def register(self, spec, id=None):
-        # TODO: Should we really allow a nested Config class, since it's not necessarily associated with its container?
-        config = getattr(spec, 'Config', None)
-
-        if id is None:
-            id = getattr(config, 'id', None)
-
-        if id is None:
-            raise MissingSpecId('No id provided for %s. You must either pass an'
-                                ' id to the register function, or add an id'
-                                ' attribute to the inner Config class of your'
-                                ' spec.' % spec)
-
-        if id in self._specs:
-            raise AlreadyRegistered('The spec with id %s is already registered' % id)
-        self._specs[id] = spec
-
-        sources = getattr(config, 'source_groups', None) or []
-        self.add_sources(id, sources)
-
-    def unregister(self, id, spec):
-        try:
-            del self._specs[id]
-        except KeyError:
-            raise NotRegistered('The spec with id %s is not registered' % id)
-
-    def get_spec(self, id, **kwargs):
-        try:
-            spec = self._specs[id]
-        except KeyError:
-            raise NotRegistered('The spec with id %s is not registered' % id)
-        if callable(spec):
-            return spec(**kwargs)
-        else:
-            return spec
-
-    def get_spec_ids(self):
-        return self._specs.keys()
-
-    def add_sources(self, spec_id, sources):
-        """
-        Associates sources with a spec id
-
-        """
-        for source in sources:
-            if source not in self._sources:
-                self._sources[source] = set()
-            self._sources[source].add(spec_id)
-
-    def get_sources(self, spec_id):
-        return [source for source in self._sources if spec_id in self._sources[source]]
-
-    def before_access_receiver(self, sender, generator, file, **kwargs):
-        generator.image_cache_strategy.invoke_callback('before_access', file)
-
-    def source_receiver(self, sender, source_file, signal, info, **kwargs):
-        """
-        Redirects signals dispatched on sources to the appropriate specs.
-
-        """
-        source = sender
-        if source not in self._sources:
-            return
-
-        for spec in (self.get_spec(id, source_file=source_file, **info)
-                     for id in self._sources[source]):
-            event_name = {
-                source_created: 'source_created',
-                source_changed: 'source_changed',
-                source_deleted: 'source_deleted',
-            }
-            spec._handle_source_event(event_name, source_file)
+from ..registry import generator_registry, register
 
 
 class BaseImageSpec(object):
@@ -270,7 +170,7 @@ class SpecHost(object):
 
         """
         self.spec_id = id
-        registry.register(self._original_spec, id)
+        register.spec(self._original_spec, id)
 
     def get_spec(self, **kwargs):
         """
@@ -282,12 +182,4 @@ class SpecHost(object):
         """
         if not getattr(self, 'spec_id', None):
             raise Exception('Object %s has no spec id.' % self)
-        return registry.get_spec(self.spec_id, **kwargs)
-
-
-registry = SpecRegistry()
-register = registry.register
-
-
-def unregister(id, spec):
-    registry.unregister(id, spec)
+        return generator_registry.get(self.spec_id, **kwargs)

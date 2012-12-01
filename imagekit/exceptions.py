@@ -14,5 +14,5 @@ class UnknownFormatError(Exception):
     pass
 
 
-class MissingSpecId(Exception):
+class MissingGeneratorId(Exception):
     pass

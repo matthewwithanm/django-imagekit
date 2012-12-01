@@ -2,7 +2,7 @@ from django import template
 from django.utils.safestring import mark_safe
 import re
 from ..files import ImageSpecCacheFile
-from .. import specs
+from ..registry import generator_registry
 
 
 register = template.Library()
@@ -34,7 +34,7 @@ class SpecResultNodeMixin(object):
         from ..utils import autodiscover
         autodiscover()
         spec_id = self._spec_id.resolve(context)
-        spec = specs.registry.get_spec(spec_id)  # TODO: What "hints" here?
+        spec = generator_registry.get(spec_id)  # TODO: What "hints" here?
         return spec
 
     def get_source_file(self, context):

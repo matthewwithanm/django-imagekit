@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 import re
 from ...files import ImageSpecCacheFile
-from ...specs import registry
+from ...registry import generator_registry, source_group_registry
 
 
 class Command(BaseCommand):
@@ -11,7 +11,7 @@ class Command(BaseCommand):
     args = '[spec_ids]'
 
     def handle(self, *args, **options):
-        specs = registry.get_spec_ids()
+        specs = generator_registry.get_ids()
 
         if args:
             patterns = self.compile_patterns(args)
@@ -19,8 +19,8 @@ class Command(BaseCommand):
 
         for spec_id in specs:
             self.stdout.write('Validating spec: %s\n' % spec_id)
-            spec = registry.get_spec(spec_id)  # TODO: HINTS! (Probably based on source, so this will need to be moved into loop below.)
-            for source in registry.get_sources(spec_id):
+            spec = generator_registry.get(spec_id)  # TODO: HINTS! (Probably based on source, so this will need to be moved into loop below.)
+            for source in source_group_registry.get(spec_id):
                 for source_file in source.files():
                     if source_file:
                         self.stdout.write('  %s\n' % source_file)
