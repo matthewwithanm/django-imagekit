@@ -3,7 +3,7 @@ from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor
 from ... import specs
 from ...specs import SpecHost
-from ...specs.sources import ImageFieldSpecSource
+from ...specs.sourcegroups import ImageFieldSourceGroup
 
 
 class SpecHostField(SpecHost):
@@ -44,7 +44,7 @@ class ImageSpecField(SpecHostField):
 
         # Add the model and field as a source for this spec id
         specs.registry.add_sources(self.spec_id,
-                [ImageFieldSpecSource(cls, self.image_field)])
+                [ImageFieldSourceGroup(cls, self.image_field)])
 
 
 class ProcessedImageField(models.ImageField, SpecHostField):

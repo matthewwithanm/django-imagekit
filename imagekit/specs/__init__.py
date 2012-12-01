@@ -53,7 +53,7 @@ class SpecRegistry(object):
             raise AlreadyRegistered('The spec with id %s is already registered' % id)
         self._specs[id] = spec
 
-        sources = getattr(config, 'sources', None) or []
+        sources = getattr(config, 'source_groups', None) or []
         self.add_sources(id, sources)
 
     def unregister(self, id, spec):

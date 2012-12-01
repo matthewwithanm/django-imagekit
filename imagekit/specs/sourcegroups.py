@@ -6,7 +6,7 @@ from ..signals import source_created, source_changed, source_deleted
 def ik_model_receiver(fn):
     """
     A method decorator that filters out signals coming from models that don't
-    have fields that function as ImageFieldSpecSources
+    have fields that function as ImageFieldSourceGroup
 
     """
     @wraps(fn)
@@ -97,7 +97,7 @@ class ModelSignalRouter(object):
                 signal.send(sender=source, source_file=file, info=info)
 
 
-class ImageFieldSpecSource(object):
+class ImageFieldSourceGroup(object):
     def __init__(self, model_class, image_field):
         """
         Good design would dictate that this instance would be responsible for
