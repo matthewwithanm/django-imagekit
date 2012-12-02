@@ -4,8 +4,8 @@ from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
 import os
 from .signals import before_access
-from .utils import (format_to_mimetype, format_to_extension,
-                    extension_to_mimetype, get_logger, get_singleton)
+from .utils import (format_to_mimetype, extension_to_mimetype, get_logger,
+    get_singleton)
 
 
 class BaseIKFile(File):
@@ -92,14 +92,8 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
                                     'file storage backend')
         super(GeneratedImageCacheFile, self).__init__(storage=storage)
 
-    def get_default_filename(self):
-        hash = self.generator.get_hash()
-        ext = format_to_extension(self.generator.format)
-        return os.path.join(settings.IMAGEKIT_CACHE_DIR,
-                            '%s%s' % (hash, ext))
-
     def _get_name(self):
-        return self._name or self.get_default_filename()
+        return self._name or self.generator.get_filename()
 
     def _set_name(self, value):
         self._name = value

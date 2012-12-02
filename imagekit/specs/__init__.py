@@ -7,7 +7,8 @@ from ..files import GeneratedImageCacheFile, IKContentFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
-from ..utils import open_image, extension_to_format, img_to_fobj
+from ..utils import (open_image, extension_to_format, img_to_fobj,
+    suggest_extension)
 from ..registry import generator_registry, register
 
 
@@ -39,9 +40,6 @@ class BaseImageSpec(object):
     def __init__(self, **kwargs):
         self.image_cache_backend = self.image_cache_backend or get_default_image_cache_backend()
         self.image_cache_strategy = StrategyWrapper(self.image_cache_strategy)
-
-    def get_hash(self):
-        raise NotImplementedError
 
     def generate(self, source_file, filename=None):
         raise NotImplementedError
@@ -90,6 +88,17 @@ class ImageSpec(BaseImageSpec):
         self.processors = self.processors or []
         self.kwargs = kwargs
         super(ImageSpec, self).__init__()
+
+    def get_filename(self):
+        source_filename = self.kwargs['source_file'].name
+        ext = suggest_extension(source_filename, self.format)
+        return os.path.normpath(os.path.join(
+                settings.IMAGEKIT_CACHE_DIR,
+                os.path.splitext(source_filename)[0],
+                '%s%s' % (self.get_hash(), ext)))
+
+        return os.path.join(settings.IMAGEKIT_CACHE_DIR,
+                            '%s%s' % (hash, ext))
 
     def get_hash(self):
         return md5(''.join([
