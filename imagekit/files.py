@@ -95,7 +95,7 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
         self.args = args
         self.kwargs = kwargs
         storage = getattr(generator, 'storage', None)
-        if not storage and settings.IMAGEKIT_DEFAULT_FILE_STORAGE:
+        if not storage:
             storage = get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
                                     'file storage backend')
         super(GeneratedImageCacheFile, self).__init__(storage=storage)

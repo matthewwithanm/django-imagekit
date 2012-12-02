@@ -371,7 +371,7 @@ def autodiscover():
             import_module('%s.imagespecs' % app)
         except:
             # Decide whether to bubble up this error. If the app just
-            # doesn't have an admin module, we can ignore the error
+            # doesn't have an imagespecs module, we can ignore the error
             # attempting to import it, otherwise we want it to bubble up.
             if module_has_submodule(mod, 'imagespecs'):
                 raise

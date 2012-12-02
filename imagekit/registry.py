@@ -132,7 +132,7 @@ class Register(object):
 
     """
     def spec(self, id, spec):
-        generator_registry.register(id, spec)
+        generator_registry.register(spec, id)
 
     def sources(self, spec_id, sources):
         source_group_registry.register(spec_id, sources)
