@@ -6,7 +6,7 @@ from hashlib import md5
 import os
 import pickle
 from .signals import before_access
-from .utils import (suggest_extension, format_to_mimetype, format_to_extension,
+from .utils import (format_to_mimetype, format_to_extension,
                     extension_to_mimetype, get_logger, get_singleton)
 
 
