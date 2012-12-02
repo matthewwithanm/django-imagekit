@@ -8,7 +8,7 @@ class ImageKitConf(AppConf):
     CACHE_DIR = 'CACHE/images'
     CACHE_PREFIX = 'imagekit:'
     DEFAULT_IMAGE_CACHE_STRATEGY = 'imagekit.imagecache.strategies.JustInTime'
-    DEFAULT_FILE_STORAGE = None  # Indicates that the source storage should be used
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
     def configure_cache_backend(self, value):
         if value is None:

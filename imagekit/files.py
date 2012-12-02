@@ -2,12 +2,10 @@ from django.conf import settings
 from django.core.files.base import ContentFile, File
 from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
-from hashlib import md5
 import os
-import pickle
 from .signals import before_access
-from .utils import (suggest_extension, format_to_mimetype, format_to_extension,
-                    extension_to_mimetype, get_logger, get_singleton)
+from .utils import (format_to_mimetype, extension_to_mimetype, get_logger,
+    get_singleton)
 
 
 class BaseIKFile(File):
@@ -81,38 +79,21 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
     it.
 
     """
-    def __init__(self, generator, name=None, *args, **kwargs):
+    def __init__(self, generator, name=None):
         """
         :param generator: The object responsible for generating a new image.
-        :param args: Positional arguments that will be passed to the generator's
-            ``generate()`` method when the generation is called for.
-        :param kwargs: Keyword arguments that will be apssed to the generator's
-            ``generate()`` method when the generation is called for.
 
         """
         self._name = name
         self.generator = generator
-        self.args = args
-        self.kwargs = kwargs
         storage = getattr(generator, 'storage', None)
-        if not storage and settings.IMAGEKIT_DEFAULT_FILE_STORAGE:
+        if not storage:
             storage = get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
                                     'file storage backend')
         super(GeneratedImageCacheFile, self).__init__(storage=storage)
 
-    def get_default_filename(self):
-        # FIXME: This won't work if args or kwargs contain a file object. It probably won't work in many other cases as well. Better option?
-        hash = md5(''.join([
-            pickle.dumps(self.args),
-            pickle.dumps(self.kwargs),
-            self.generator.get_hash(),
-        ]).encode('utf-8')).hexdigest()
-        ext = format_to_extension(self.generator.format)
-        return os.path.join(settings.IMAGEKIT_CACHE_DIR,
-                            '%s%s' % (hash, ext))
-
     def _get_name(self):
-        return self._name or self.get_default_filename()
+        return self._name or self.generator.get_filename()
 
     def _set_name(self, value):
         self._name = value
@@ -134,7 +115,7 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
 
     def generate(self):
         # Generate the file
-        content = self.generator.generate(*self.args, **self.kwargs)
+        content = self.generator.generate()
         actual_name = self.storage.save(self.name, content)
 
         if actual_name != self.name:
@@ -147,27 +128,6 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
                     ' saved file will not be used.' % (self.storage,
                     self.name, actual_name,
                     self.generator.image_cache_backend))
-
-
-class ImageSpecCacheFile(GeneratedImageCacheFile):
-    def __init__(self, generator, source_file):
-        super(ImageSpecCacheFile, self).__init__(generator,
-                source_file=source_file)
-        if not self.storage:
-            self.storage = source_file.storage
-
-    def get_default_filename(self):
-        source_filename = self.kwargs['source_file'].name
-        hash = md5(''.join([
-            source_filename,
-            self.generator.get_hash(),
-        ]).encode('utf-8')).hexdigest()
-        # TODO: Since specs can now be dynamically generated using hints, can we move this into the spec constructor? i.e. set self.format if not defined. This would get us closer to making ImageSpecCacheFile == GeneratedImageCacheFile
-        ext = suggest_extension(source_filename, self.generator.format)
-        return os.path.normpath(os.path.join(
-                settings.IMAGEKIT_CACHE_DIR,
-                os.path.splitext(source_filename)[0],
-                '%s%s' % (hash, ext)))
 
 
 class IKContentFile(ContentFile):

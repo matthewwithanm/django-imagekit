@@ -131,8 +131,8 @@ class Register(object):
     Register specs and sources.
 
     """
-    def spec(self, id, spec):
-        generator_registry.register(id, spec)
+    def spec(self, spec, id=None):
+        generator_registry.register(spec, id)
 
     def sources(self, spec_id, sources):
         source_group_registry.register(spec_id, sources)
