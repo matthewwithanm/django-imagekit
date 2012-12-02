@@ -110,6 +110,8 @@ class ImageSpec(BaseImageSpec):
         ]).encode('utf-8')).hexdigest()
 
     def generate(self):
+        # TODO: Move into a generator base class
+        # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
         source_file = self.kwargs['source_file']
         filename = self.kwargs.get('filename')
         img = open_image(source_file)
