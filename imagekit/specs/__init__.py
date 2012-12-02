@@ -41,7 +41,7 @@ class BaseImageSpec(object):
         self.image_cache_backend = self.image_cache_backend or get_default_image_cache_backend()
         self.image_cache_strategy = StrategyWrapper(self.image_cache_strategy)
 
-    def generate(self, source_file, filename=None):
+    def generate(self):
         raise NotImplementedError
 
     # TODO: I don't like this interface. Is there a standard Python one? pubsub?
