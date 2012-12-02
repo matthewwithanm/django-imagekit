@@ -48,7 +48,7 @@ class BaseImageSpec(object):
 
     # TODO: I don't like this interface. Is there a standard Python one? pubsub?
     def _handle_source_event(self, event_name, source_file):
-        file = GeneratedImageCacheFile(self, source_file=source_file)
+        file = GeneratedImageCacheFile(self)
         self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
 
 
@@ -88,17 +88,21 @@ class ImageSpec(BaseImageSpec):
 
     def __init__(self, **kwargs):
         self.processors = self.processors or []
+        self.kwargs = kwargs
         super(ImageSpec, self).__init__()
 
     def get_hash(self):
         return md5(''.join([
+            pickle.dumps(self.kwargs),
             pickle.dumps(self.processors),
             str(self.format),
             pickle.dumps(self.options),
             str(self.autoconvert),
         ]).encode('utf-8')).hexdigest()
 
-    def generate(self, source_file, filename=None):
+    def generate(self):
+        source_file = self.kwargs['source_file']
+        filename = self.kwargs.get('filename')
         img = open_image(source_file)
         original_format = img.format
 

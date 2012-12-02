@@ -19,14 +19,14 @@ class Command(BaseCommand):
 
         for spec_id in specs:
             self.stdout.write('Validating spec: %s\n' % spec_id)
-            spec = generator_registry.get(spec_id)  # TODO: HINTS! (Probably based on source, so this will need to be moved into loop below.)
             for source in source_group_registry.get(spec_id):
                 for source_file in source.files():
                     if source_file:
+                        spec = generator_registry.get(spec_id, source_file=source_file)  # TODO: HINTS! (Probably based on source, so this will need to be moved into loop below.)
                         self.stdout.write('  %s\n' % source_file)
                         try:
                             # TODO: Allow other validation actions through command option
-                            GeneratedImageCacheFile(spec, source_file=source_file).validate()
+                            GeneratedImageCacheFile(spec).validate()
                         except Exception, err:
                             # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
                             self.stdout.write('    FAILED: %s\n' % err)

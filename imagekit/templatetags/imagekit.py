@@ -31,8 +31,8 @@ class GenerateImageAssignmentNode(template.Node):
         variable_name = self.get_variable_name(context)
         generator_id = self.generator_id.resolve(context)
         kwargs = self.get_kwargs(context)
-        generator = generator_registry.get(generator_id)
-        context[variable_name] = GeneratedImageCacheFile(generator, **kwargs)
+        generator = generator_registry.get(generator_id, **kwargs)
+        context[variable_name] = GeneratedImageCacheFile(generator)
         return ''
 
 
