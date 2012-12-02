@@ -149,27 +149,6 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
                     self.generator.image_cache_backend))
 
 
-class ImageSpecCacheFile(GeneratedImageCacheFile):
-    def __init__(self, generator, source_file):
-        super(ImageSpecCacheFile, self).__init__(generator,
-                source_file=source_file)
-        if not self.storage:
-            self.storage = source_file.storage
-
-    def get_default_filename(self):
-        source_filename = self.kwargs['source_file'].name
-        hash = md5(''.join([
-            source_filename,
-            self.generator.get_hash(),
-        ]).encode('utf-8')).hexdigest()
-        # TODO: Since specs can now be dynamically generated using hints, can we move this into the spec constructor? i.e. set self.format if not defined. This would get us closer to making ImageSpecCacheFile == GeneratedImageCacheFile
-        ext = suggest_extension(source_filename, self.generator.format)
-        return os.path.normpath(os.path.join(
-                settings.IMAGEKIT_CACHE_DIR,
-                os.path.splitext(source_filename)[0],
-                '%s%s' % (hash, ext)))
-
-
 class IKContentFile(ContentFile):
     """
     Wraps a ContentFile in a file-like object with a filename and a

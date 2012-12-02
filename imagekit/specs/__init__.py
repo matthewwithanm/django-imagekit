@@ -3,7 +3,7 @@ from hashlib import md5
 import os
 import pickle
 from ..exceptions import UnknownExtensionError
-from ..files import ImageSpecCacheFile, IKContentFile
+from ..files import GeneratedImageCacheFile, IKContentFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
@@ -48,7 +48,7 @@ class BaseImageSpec(object):
 
     # TODO: I don't like this interface. Is there a standard Python one? pubsub?
     def _handle_source_event(self, event_name, source_file):
-        file = ImageSpecCacheFile(self, source_file)
+        file = GeneratedImageCacheFile(self, source_file=source_file)
         self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
 
 

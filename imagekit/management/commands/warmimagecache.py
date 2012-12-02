@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 import re
-from ...files import ImageSpecCacheFile
+from ...files import GeneratedImageCacheFile
 from ...registry import generator_registry, source_group_registry
 
 
@@ -26,7 +26,7 @@ class Command(BaseCommand):
                         self.stdout.write('  %s\n' % source_file)
                         try:
                             # TODO: Allow other validation actions through command option
-                            ImageSpecCacheFile(spec, source_file).validate()
+                            GeneratedImageCacheFile(spec, source_file=source_file).validate()
                         except Exception, err:
                             # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
                             self.stdout.write('    FAILED: %s\n' % err)
