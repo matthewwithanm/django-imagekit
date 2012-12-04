@@ -185,7 +185,7 @@ class SpecHost(object):
 
         """
         self.spec_id = id
-        register.spec(self._original_spec, id)
+        register.spec(id, self._original_spec)
 
     def get_spec(self, **kwargs):
         """

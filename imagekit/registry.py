@@ -13,7 +13,7 @@ class GeneratorRegistry(object):
     def __init__(self):
         self._generators = {}
 
-    def register(self, generator, id):
+    def register(self, id, generator):
         if id in self._generators:
             raise AlreadyRegistered('The spec or generator with id %s is'
                                     ' already registered' % id)
@@ -116,8 +116,8 @@ class Register(object):
     Register specs and sources.
 
     """
-    def spec(self, spec, id=None):
-        generator_registry.register(spec, id)
+    def spec(self, id, spec):
+        generator_registry.register(id, spec)
 
     def sources(self, spec_id, sources):
         source_group_registry.register(spec_id, sources)
