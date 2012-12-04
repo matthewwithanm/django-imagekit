@@ -1,4 +1,4 @@
-from .exceptions import AlreadyRegistered, NotRegistered, MissingGeneratorId
+from .exceptions import AlreadyRegistered, NotRegistered
 from .signals import (before_access, source_created, source_changed,
                        source_deleted)
 
@@ -13,26 +13,11 @@ class GeneratorRegistry(object):
     def __init__(self):
         self._generators = {}
 
-    def register(self, generator, id=None):
-        # TODO: Should we really allow a nested Config class, since it's not necessarily associated with its container?
-        config = getattr(generator, 'Config', None)
-
-        if id is None:
-            id = getattr(config, 'id', None)
-
-        if id is None:
-            raise MissingGeneratorId('No id provided for %s. You must either'
-                                ' pass an id to the register function, or add'
-                                ' an id attribute to the inner Config class of'
-                                ' your spec or generator.' % generator)
-
+    def register(self, generator, id):
         if id in self._generators:
             raise AlreadyRegistered('The spec or generator with id %s is'
                                     ' already registered' % id)
         self._generators[id] = generator
-
-        source_groups = getattr(config, 'source_groups', None) or []
-        source_group_registry.register(id, source_groups)
 
     def unregister(self, id, generator):
         try:
