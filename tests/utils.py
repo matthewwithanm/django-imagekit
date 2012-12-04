@@ -3,11 +3,12 @@ import os
 from django.core.files.base import ContentFile
 
 from imagekit.lib import Image, StringIO
+from tempfile import NamedTemporaryFile
 from .models import Photo
 import pickle
 
 
-def get_image_file():
+def _get_image_file(file_factory):
     """
     See also:
 
@@ -16,10 +17,18 @@ def get_image_file():
 
     """
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'lenna-800x600-white-border.jpg')
-    tmp = StringIO()
+    tmp = file_factory()
     tmp.write(open(path, 'r+b').read())
     tmp.seek(0)
     return tmp
+
+
+def get_image_file():
+    return _get_image_file(StringIO)
+
+
+def get_named_image_file():
+    return _get_image_file(NamedTemporaryFile)
 
 
 def create_image():
