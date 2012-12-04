@@ -78,6 +78,28 @@ def generateimage(parser, token):
     """
     Creates an image based on the provided arguments.
 
+    By default::
+
+        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image %}
+
+    generates an ``<img>`` tag::
+
+        <img src="/path/to/34d944f200dd794bf1e6a7f37849f72b.jpg" width="100" height="100" />
+
+    You can add additional attributes to the tag using "with". For example,
+    this::
+
+        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image with alt="Hello!" %}
+
+    will result in the following markup::
+
+        <img src="/path/to/34d944f200dd794bf1e6a7f37849f72b.jpg" width="100" height="100" alt="Hello!" />
+
+    For more flexibility, ``generateimage`` also works as an assignment tag::
+
+        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image as th %}
+        <img src="{{ th.url }}" width="{{ th.width }}" height="{{ th.height }}" />
+
     """
 
     varname = None
