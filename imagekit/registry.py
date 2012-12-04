@@ -116,7 +116,14 @@ class Register(object):
     Register specs and sources.
 
     """
-    def spec(self, id, spec):
+    def spec(self, id, spec=None):
+        if spec is None:
+            # Return a decorator
+            def decorator(cls):
+                self.spec(id, cls)
+                return cls
+            return decorator
+
         generator_registry.register(id, spec)
 
     def sources(self, spec_id, sources):
