@@ -84,13 +84,14 @@ class ImageSpec(BaseImageSpec):
 
     """
 
-    def __init__(self, **kwargs):
+    def __init__(self, source_file, **kwargs):
+        self.source_file = source_file
         self.processors = self.processors or []
         self.kwargs = kwargs
         super(ImageSpec, self).__init__()
 
     def get_filename(self):
-        source_filename = self.kwargs['source_file'].name
+        source_filename = self.source_file.name
         ext = suggest_extension(source_filename, self.format)
         return os.path.normpath(os.path.join(
                 settings.IMAGEKIT_CACHE_DIR,
@@ -102,6 +103,7 @@ class ImageSpec(BaseImageSpec):
 
     def get_hash(self):
         return md5(''.join([
+            self.source_file.name,
             pickle.dumps(self.kwargs),
             pickle.dumps(self.processors),
             str(self.format),
@@ -112,7 +114,7 @@ class ImageSpec(BaseImageSpec):
     def generate(self):
         # TODO: Move into a generator base class
         # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
-        source_file = self.kwargs['source_file']
+        source_file = self.source_file
         filename = self.kwargs.get('filename')
         img = open_image(source_file)
         original_format = img.format
