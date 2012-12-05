@@ -10,4 +10,4 @@ from .utils import create_photo, pickleback
 def test_imagespecfield():
     instance = create_photo('pickletest2.jpg')
     thumbnail = pickleback(instance.thumbnail)
-    thumbnail.source_file
+    thumbnail.generate()
