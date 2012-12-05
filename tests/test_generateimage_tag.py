@@ -2,12 +2,11 @@ from bs4 import BeautifulSoup
 from django.template import Context, Template, TemplateSyntaxError
 from nose.tools import eq_, assert_not_in, raises, assert_not_equal
 from . import imagespecs
-from .utils import get_named_image_file
+from .utils import get_image_file
 
 
 def render_tag(ttag):
-    img = get_named_image_file()
-    img.name = 'tmp'  # FIXME: If we don't do this, we get a SuspiciousOperation
+    img = get_image_file()
     template = Template('{%% load imagekit %%}%s' % ttag)
     context = Context({'img': img})
     return template.render(context)

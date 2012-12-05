@@ -1,14 +1,12 @@
 import os
-
+from django.conf import settings
 from django.core.files.base import ContentFile
-
 from imagekit.lib import Image, StringIO
-from tempfile import NamedTemporaryFile
-from .models import Photo
 import pickle
+from .models import Photo
 
 
-def _get_image_file(file_factory):
+def get_image_file():
     """
     See also:
 
@@ -16,19 +14,8 @@ def _get_image_file(file_factory):
     http://sipi.usc.edu/database/database.php?volume=misc&image=12
 
     """
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'lenna-800x600-white-border.jpg')
-    tmp = file_factory()
-    tmp.write(open(path, 'r+b').read())
-    tmp.seek(0)
-    return tmp
-
-
-def get_image_file():
-    return _get_image_file(StringIO)
-
-
-def get_named_image_file():
-    return _get_image_file(NamedTemporaryFile)
+    path = os.path.join(settings.MEDIA_ROOT, 'lenna.png')
+    return open(path, 'r+b')
 
 
 def create_image():
