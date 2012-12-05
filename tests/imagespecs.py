@@ -5,4 +5,4 @@ class TestSpec(ImageSpec):
     pass
 
 
-register.spec(TestSpec, 'testspec')
+register.spec('testspec', TestSpec)
