@@ -143,15 +143,22 @@ class ImageSpec(BaseImageSpec):
         return content
 
 
+def create_spec_class(class_attrs):
+    cls = type('Spec', (DynamicSpec,), class_attrs)
+    cls._spec_attrs = class_attrs
+    return cls
+
+
+def create_spec(class_attrs, kwargs):
+    cls = create_spec_class(class_attrs)
+    return cls(**kwargs)
+
+
 class DynamicSpec(ImageSpec):
     def __reduce__(self):
-        return (create_spec_class, (self._spec_attrs,))
-
-
-def create_spec_class(spec_attrs):
-    cls = type('Spec', (DynamicSpec,), spec_attrs)
-    cls._spec_attrs = spec_attrs
-    return cls
+        kwargs = dict(self.kwargs)
+        kwargs['source_file'] = self.source_file
+        return (create_spec, (self._spec_attrs, kwargs))
 
 
 class SpecHost(object):
@@ -169,7 +176,6 @@ class SpecHost(object):
                 raise TypeError('You can provide either an image spec or'
                     ' arguments for the ImageSpec constructor, but not both.')
             else:
-                # spec = type('Spec', (ImageSpec,), spec_attrs)  # TODO: Base class name on spec id?
                 spec = create_spec_class(spec_attrs)
 
         self._original_spec = spec
