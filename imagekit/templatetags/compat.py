@@ -1,3 +1,4 @@
+# flake8: noqa
 """
 This module contains code from django.template.base
 (sha 90d3af380e8efec0301dd91600c6686232de3943). Bundling this code allows us to
