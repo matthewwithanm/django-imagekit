@@ -102,14 +102,14 @@ class ImageSpec(BaseImageSpec):
                             '%s%s' % (hash, ext))
 
     def get_hash(self):
-        return md5(''.join([
-            self.source_file.name,
-            pickle.dumps(self.kwargs),
-            pickle.dumps(self.processors),
-            str(self.format),
-            pickle.dumps(self.options),
-            str(self.autoconvert),
-        ]).encode('utf-8')).hexdigest()
+        return md5(pickle.dumps([
+            self.source_file,
+            self.kwargs,
+            self.processors,
+            self.format,
+            self.options,
+            self.autoconvert,
+        ])).hexdigest()
 
     def generate(self):
         # TODO: Move into a generator base class
