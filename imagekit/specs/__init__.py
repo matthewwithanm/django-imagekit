@@ -144,21 +144,19 @@ class ImageSpec(BaseImageSpec):
 
 
 def create_spec_class(class_attrs):
-    cls = type('Spec', (DynamicSpec,), class_attrs)
-    cls._spec_attrs = class_attrs
-    return cls
+
+    class DynamicSpecBase(ImageSpec):
+        def __reduce__(self):
+            kwargs = dict(self.kwargs)
+            kwargs['source_file'] = self.source_file
+            return (create_spec, (class_attrs, kwargs))
+
+    return type('DynamicSpec', (DynamicSpecBase,), class_attrs)
 
 
 def create_spec(class_attrs, kwargs):
     cls = create_spec_class(class_attrs)
     return cls(**kwargs)
-
-
-class DynamicSpec(ImageSpec):
-    def __reduce__(self):
-        kwargs = dict(self.kwargs)
-        kwargs['source_file'] = self.source_file
-        return (create_spec, (self._spec_attrs, kwargs))
 
 
 class SpecHost(object):
