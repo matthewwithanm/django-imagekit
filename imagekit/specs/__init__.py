@@ -147,16 +147,27 @@ def create_spec_class(class_attrs):
 
     class DynamicSpecBase(ImageSpec):
         def __reduce__(self):
-            kwargs = dict(self.kwargs)
-            kwargs['source_file'] = self.source_file
-            return (create_spec, (class_attrs, kwargs))
+            try:
+                getstate = self.__getstate__
+            except AttributeError:
+                state = self.__dict__
+            else:
+                state = getstate()
+            return (create_spec, (class_attrs, state))
 
     return type('DynamicSpec', (DynamicSpecBase,), class_attrs)
 
 
-def create_spec(class_attrs, kwargs):
+def create_spec(class_attrs, state):
     cls = create_spec_class(class_attrs)
-    return cls(**kwargs)
+    instance = cls.__new__(cls)  # Create an instance without calling the __init__ (which may have required args).
+    try:
+        setstate = instance.__setstate__
+    except AttributeError:
+        instance.__dict__ = state
+    else:
+        setstate(state)
+    return instance
 
 
 class SpecHost(object):
