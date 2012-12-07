@@ -19,8 +19,8 @@ class BaseImageSpec(object):
 
     """
 
-    storage = None
-    """A Django storage system to use to save the generated image."""
+    cache_file_storage = None
+    """A Django storage system to use to save a generated cache file."""
 
     image_cache_backend = None
     """
@@ -90,7 +90,8 @@ class ImageSpec(BaseImageSpec):
         self.kwargs = kwargs
         super(ImageSpec, self).__init__()
 
-    def get_filename(self):
+    @property
+    def cache_file_name(self):
         source_filename = self.source_file.name
         ext = suggest_extension(source_filename, self.format)
         return os.path.normpath(os.path.join(

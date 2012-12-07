@@ -79,39 +79,39 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
     it.
 
     """
-    def __init__(self, generator, name=None):
+    def __init__(self, generator, name=None, storage=None, image_cache_backend=None):
         """
         :param generator: The object responsible for generating a new image.
+        :param name: The filename
+        :param storage: A Django storage object that will be used to save the
+            file.
+        :param image_cache_backend: The object responsible for managing the
+            state of the cache file.
 
         """
-        self._name = name
         self.generator = generator
-        storage = getattr(generator, 'storage', None)
-        if not storage:
-            storage = get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
-                                    'file storage backend')
+
+        self.name = name or getattr(generator, 'cache_file_name', None)
+        storage = storage or getattr(generator, 'cache_file_storage',
+            None) or get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
+            'file storage backend')
+        self.image_cache_backend = image_cache_backend or getattr(generator,
+            'image_cache_backend', None)
+
         super(GeneratedImageCacheFile, self).__init__(storage=storage)
-
-    def _get_name(self):
-        return self._name or self.generator.get_filename()
-
-    def _set_name(self, value):
-        self._name = value
-
-    name = property(_get_name, _set_name)
 
     def _require_file(self):
         before_access.send(sender=self, generator=self.generator, file=self)
         return super(GeneratedImageCacheFile, self)._require_file()
 
     def clear(self):
-        return self.generator.image_cache_backend.clear(self)
+        return self.image_cache_backend.clear(self)
 
     def invalidate(self):
-        return self.generator.image_cache_backend.invalidate(self)
+        return self.image_cache_backend.invalidate(self)
 
     def validate(self):
-        return self.generator.image_cache_backend.validate(self)
+        return self.image_cache_backend.validate(self)
 
     def generate(self):
         # Generate the file
@@ -127,7 +127,7 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
                     ' race condition in the image cache backend %s. The'
                     ' saved file will not be used.' % (self.storage,
                     self.name, actual_name,
-                    self.generator.image_cache_backend))
+                    self.image_cache_backend))
 
 
 class IKContentFile(ContentFile):

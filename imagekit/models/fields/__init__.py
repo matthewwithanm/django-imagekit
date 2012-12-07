@@ -26,12 +26,13 @@ class ImageSpecField(SpecHostField):
 
     """
     def __init__(self, processors=None, format=None, options=None,
-            source=None, storage=None, autoconvert=None,
+            source=None, cache_file_storage=None, autoconvert=None,
             image_cache_backend=None, image_cache_strategy=None, spec=None,
             id=None):
 
         SpecHost.__init__(self, processors=processors, format=format,
-                options=options, storage=storage, autoconvert=autoconvert,
+                options=options, cache_file_storage=cache_file_storage,
+                autoconvert=autoconvert,
                 image_cache_backend=image_cache_backend,
                 image_cache_strategy=image_cache_strategy, spec=spec,
                 spec_id=id)
