@@ -73,38 +73,9 @@ class GenerateImageTagNode(template.Node):
         return mark_safe(u'<img %s />' % attr_str)
 
 
-#@register.tag
-def generateimage(parser, token):
-    """
-    Creates an image based on the provided arguments.
-
-    By default::
-
-        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image %}
-
-    generates an ``<img>`` tag::
-
-        <img src="/path/to/34d944f200dd794bf1e6a7f37849f72b.jpg" width="100" height="100" />
-
-    You can add additional attributes to the tag using "with". For example,
-    this::
-
-        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image with alt="Hello!" %}
-
-    will result in the following markup::
-
-        <img src="/path/to/34d944f200dd794bf1e6a7f37849f72b.jpg" width="100" height="100" alt="Hello!" />
-
-    For more flexibility, ``generateimage`` also works as an assignment tag::
-
-        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image as th %}
-        <img src="{{ th.url }}" width="{{ th.width }}" height="{{ th.height }}" />
-
-    """
-
+def _generateimage(parser, bits):
     varname = None
     html_bits = []
-    bits = token.split_contents()
     tag_name = bits.pop(0)
 
     if bits[-2] == ASSIGNMENT_DELIMETER:
@@ -140,4 +111,75 @@ def generateimage(parser, token):
         return GenerateImageTagNode(generator_id, kwargs, html_kwargs)
 
 
+#@register.tag
+def generateimage(parser, token):
+    """
+    Creates an image based on the provided arguments.
+
+    By default::
+
+        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image %}
+
+    generates an ``<img>`` tag::
+
+        <img src="/path/to/34d944f200dd794bf1e6a7f37849f72b.jpg" width="100" height="100" />
+
+    You can add additional attributes to the tag using "with". For example,
+    this::
+
+        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image with alt="Hello!" %}
+
+    will result in the following markup::
+
+        <img src="/path/to/34d944f200dd794bf1e6a7f37849f72b.jpg" width="100" height="100" alt="Hello!" />
+
+    For more flexibility, ``generateimage`` also works as an assignment tag::
+
+        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image as th %}
+        <img src="{{ th.url }}" width="{{ th.width }}" height="{{ th.height }}" />
+
+    """
+    bits = token.split_contents()
+    return _generateimage(parser, bits)
+
+
+#@register.tag
+def thumbnail(parser, token):
+    """
+    A convenient alias for the ``generateimage`` tag with the generator id
+    ``'ik:thumbnail'``. The following::
+
+        {% thumbnail from=mymodel.profile_image width=100 height=100 %}
+
+    is equivalent to::
+
+        {% generateimage 'ik:thumbnail' from=mymodel.profile_image width=100 height=100 %}
+
+    The thumbnail tag supports the "with" and "as" bits for adding html
+    attributes and assigning to a variable, respectively. It also accepts the
+    kwargs "width", "height", "anchor", and "crop".
+
+    To use "smart cropping" (the ``SmartResize`` processor)::
+
+        {% thumbnail from=mymodel.profile_image width=100 height=100 %}
+
+    To crop, anchoring the image to the top right (the ``ResizeToFill``
+    processor)::
+
+        {% thumbnail from=mymodel.profile_image width=100 height=100 anchor='tr' %}
+
+    To resize without cropping (using the ``ResizeToFit`` processor)::
+
+        {% thumbnail from=mymodel.profile_image width=100 height=100 crop=0 %}
+
+    """
+    # TODO: Support positional arguments for this tag for "from", "width" and "height".
+    # Example:
+    #     {% thumbnail mymodel.profile_image 100 100 anchor='tl' %}
+    bits = token.split_contents()
+    bits.insert(1, "'ik:thumbnail'")
+    return _generateimage(parser, bits)
+
+
 generateimage = register.tag(generateimage)
+thumbnail = register.tag(thumbnail)
