@@ -215,3 +215,30 @@ class ResizeToFit(object):
         if self.mat_color is not None:
             img = ResizeCanvas(self.width, self.height, self.mat_color, anchor=self.anchor).process(img)
         return img
+
+
+class Thumbnail(object):
+    """
+    Resize the image for use as a thumbnail. Wraps ``ResizeToFill``,
+    ``ResizeToFit``, and ``SmartResize``.
+
+    Note: while it doesn't currently, in the future this processor may also
+    sharpen based on the amount of reduction.
+
+    """
+
+    def __init__(self, width=None, height=None, anchor='auto', crop=True):
+        self.width = width
+        self.height = height
+        self.anchor = anchor
+        self.crop = crop
+
+    def process(self, img):
+        if self.crop:
+            if self.anchor == 'auto':
+                processor = SmartResize(self.width, self.height)
+            else:
+                processor = ResizeToFill(self.width, self.height, self.anchor)
+        else:
+            processor = ResizeToFit(self.width, self.height)
+        return processor.process(img)
