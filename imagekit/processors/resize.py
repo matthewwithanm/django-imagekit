@@ -235,6 +235,9 @@ class Thumbnail(object):
 
     def process(self, img):
         if self.crop:
+            if not self.width or not self.height:
+                raise Exception('You must provide both a width and height when'
+                    ' cropping.')
             if self.anchor == 'auto':
                 processor = SmartResize(self.width, self.height)
             else:
