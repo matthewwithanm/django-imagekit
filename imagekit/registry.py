@@ -20,6 +20,7 @@ class GeneratorRegistry(object):
         self._generators[id] = generator
 
     def unregister(self, id, generator):
+        # TODO: Either don't require the generator, or--if we do--assert that it's registered with the provided id
         try:
             del self._generators[id]
         except KeyError:
