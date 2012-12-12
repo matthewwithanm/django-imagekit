@@ -14,7 +14,7 @@ HTML_ATTRS_DELIMITER = 'with'
 
 
 _kwarg_map = {
-    'from': 'source_file',
+    'from': 'source',
 }
 
 

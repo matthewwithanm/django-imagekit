@@ -45,7 +45,7 @@ class BaseImageSpec(object):
         raise NotImplementedError
 
     # TODO: I don't like this interface. Is there a standard Python one? pubsub?
-    def _handle_source_event(self, event_name, source_file):
+    def _handle_source_event(self, event_name, source):
         file = GeneratedImageCacheFile(self)
         self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
 
@@ -84,15 +84,15 @@ class ImageSpec(BaseImageSpec):
 
     """
 
-    def __init__(self, source_file, **kwargs):
-        self.source_file = source_file
+    def __init__(self, source, **kwargs):
+        self.source = source
         self.processors = self.processors or []
         self.kwargs = kwargs
         super(ImageSpec, self).__init__()
 
     @property
     def cache_file_name(self):
-        source_filename = self.source_file.name
+        source_filename = self.source.name
         ext = suggest_extension(source_filename, self.format)
         return os.path.normpath(os.path.join(
                 settings.IMAGEKIT_CACHE_DIR,
@@ -104,7 +104,7 @@ class ImageSpec(BaseImageSpec):
 
     def get_hash(self):
         return md5(pickle.dumps([
-            self.source_file,
+            self.source,
             self.kwargs,
             self.processors,
             self.format,
@@ -115,9 +115,9 @@ class ImageSpec(BaseImageSpec):
     def generate(self):
         # TODO: Move into a generator base class
         # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
-        source_file = self.source_file
+        source = self.source
         filename = self.kwargs.get('filename')
-        img = open_image(source_file)
+        img = open_image(source)
         original_format = img.format
 
         # Run the processors

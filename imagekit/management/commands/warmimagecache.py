@@ -20,10 +20,10 @@ class Command(BaseCommand):
         for spec_id in specs:
             self.stdout.write('Validating spec: %s\n' % spec_id)
             for source_group in source_group_registry.get(spec_id):
-                for source_file in source_group.files():
-                    if source_file:
-                        spec = generator_registry.get(spec_id, source_file=source_file)  # TODO: HINTS! (Probably based on source, so this will need to be moved into loop below.)
-                        self.stdout.write('  %s\n' % source_file)
+                for source in source_group.files():
+                    if source:
+                        spec = generator_registry.get(spec_id, source=source)  # TODO: HINTS! (Probably based on source, so this will need to be moved into loop below.)
+                        self.stdout.write('  %s\n' % source)
                         try:
                             # TODO: Allow other validation actions through command option
                             GeneratedImageCacheFile(spec).validate()

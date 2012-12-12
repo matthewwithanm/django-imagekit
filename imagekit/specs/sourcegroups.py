@@ -94,7 +94,7 @@ class ModelSignalRouter(object):
                     instance=instance,
                     field_name=attname,
                 )
-                signal.send(sender=source_group, source_file=file, info=info)
+                signal.send(sender=source_group, source=file, info=info)
 
 
 class ImageFieldSourceGroup(object):

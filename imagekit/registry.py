@@ -93,7 +93,7 @@ class SourceGroupRegistry(object):
     def before_access_receiver(self, sender, generator, file, **kwargs):
         generator.image_cache_strategy.invoke_callback('before_access', file)
 
-    def source_group_receiver(self, sender, source_file, signal, info, **kwargs):
+    def source_group_receiver(self, sender, source, signal, info, **kwargs):
         """
         Redirects signals dispatched on sources to the appropriate specs.
 
@@ -102,14 +102,14 @@ class SourceGroupRegistry(object):
         if source_group not in self._source_groups:
             return
 
-        for spec in (generator_registry.get(id, source_file=source_file, **info)
+        for spec in (generator_registry.get(id, source=source, **info)
                      for id in self._sources_groups[source_group]):
             event_name = {
                 source_created: 'source_created',
                 source_changed: 'source_changed',
                 source_deleted: 'source_deleted',
             }
-            spec._handle_source_event(event_name, source_file)
+            spec._handle_source_event(event_name, source)
 
 
 class Register(object):

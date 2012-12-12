@@ -13,7 +13,7 @@ class ImageSpecFileDescriptor(object):
         else:
             field_name = getattr(self.field, 'source', None)
             if field_name:
-                source_file = getattr(instance, field_name)
+                source = getattr(instance, field_name)
             else:
                 image_fields = [getattr(instance, f.attname) for f in
                         instance.__class__._meta.fields if
@@ -28,8 +28,8 @@ class ImageSpecFileDescriptor(object):
                             ' ImageSpecField.' % (instance.__class__.__name__,
                             self.attname))
                 else:
-                    source_file = image_fields[0]
-            spec = self.field.get_spec(source_file=source_file)  # TODO: What "hints" should we pass here?
+                    source = image_fields[0]
+            spec = self.field.get_spec(source=source)  # TODO: What "hints" should we pass here?
             file = GeneratedImageCacheFile(spec)
             instance.__dict__[self.attname] = file
             return file

@@ -30,7 +30,7 @@ class AdminThumbnail(object):
                 raise Exception('The property %s is not defined on %s.' %
                         (self.image_field, obj.__class__.__name__))
 
-        original_image = getattr(thumbnail, 'source_file', None) or thumbnail
+        original_image = getattr(thumbnail, 'source', None) or thumbnail
         template = self.template or 'imagekit/admin/thumbnail.html'
 
         return render_to_string(template, {
