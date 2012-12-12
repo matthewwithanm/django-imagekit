@@ -11,27 +11,27 @@ def ik_model_receiver(fn):
     """
     @wraps(fn)
     def receiver(self, sender, **kwargs):
-        if sender in (src.model_class for src in self._sources):
+        if sender in (src.model_class for src in self._source_groups):
             fn(self, sender=sender, **kwargs)
     return receiver
 
 
 class ModelSignalRouter(object):
     """
-    Handles signals dispatched by models and relays them to the spec sources
-    that represent those models.
+    Handles signals dispatched by models and relays them to the spec source
+    groups that represent those models.
 
     """
 
     def __init__(self):
-        self._sources = []
+        self._source_groups = []
         uid = 'ik_spec_field_receivers'
         post_init.connect(self.post_init_receiver, dispatch_uid=uid)
         post_save.connect(self.post_save_receiver, dispatch_uid=uid)
         post_delete.connect(self.post_delete_receiver, dispatch_uid=uid)
 
-    def add(self, source):
-        self._sources.append(source)
+    def add(self, source_group):
+        self._source_groups.append(source_group)
 
     def init_instance(self, instance):
         instance._ik = getattr(instance, '_ik', {})
@@ -55,7 +55,7 @@ class ModelSignalRouter(object):
 
         """
         return dict((src.image_field, getattr(instance, src.image_field)) for
-                src in self._sources if src.model_class is instance.__class__)
+                src in self._source_groups if src.model_class is instance.__class__)
 
     @ik_model_receiver
     def post_save_receiver(self, sender, instance=None, created=False, raw=False, **kwargs):
@@ -82,19 +82,19 @@ class ModelSignalRouter(object):
 
     def dispatch_signal(self, signal, file, model_class, instance, attname):
         """
-        Dispatch the signal for each of the matching sources. Note that more
-        than one source can have the same model and image_field; it's important
-        that we dispatch the signal for each.
+        Dispatch the signal for each of the matching source groups. Note that
+        more than one source can have the same model and image_field; it's
+        important that we dispatch the signal for each.
 
         """
-        for source in self._sources:
-            if source.model_class is model_class and source.image_field == attname:
+        for source_group in self._source_groups:
+            if source_group.model_class is model_class and source_group.image_field == attname:
                 info = dict(
-                    source=source,
+                    source_group=source_group,
                     instance=instance,
                     field_name=attname,
                 )
-                signal.send(sender=source, source_file=file, info=info)
+                signal.send(sender=source_group, source_file=file, info=info)
 
 
 class ImageFieldSourceGroup(object):

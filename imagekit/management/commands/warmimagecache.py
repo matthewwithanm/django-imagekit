@@ -19,8 +19,8 @@ class Command(BaseCommand):
 
         for spec_id in specs:
             self.stdout.write('Validating spec: %s\n' % spec_id)
-            for source in source_group_registry.get(spec_id):
-                for source_file in source.files():
+            for source_group in source_group_registry.get(spec_id):
+                for source_file in source_group.files():
                     if source_file:
                         spec = generator_registry.get(spec_id, source_file=source_file)  # TODO: HINTS! (Probably based on source, so this will need to be moved into loop below.)
                         self.stdout.write('  %s\n' % source_file)

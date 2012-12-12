@@ -53,57 +53,57 @@ class SourceGroupRegistry(object):
 
     """
 
-    _source_signals = [
+    _signals = [
         source_created,
         source_changed,
         source_deleted,
     ]
 
     def __init__(self):
-        self._sources = {}
-        for signal in self._source_signals:
-            signal.connect(self.source_receiver)
+        self._source_groups = {}
+        for signal in self._signals:
+            signal.connect(self.source_group_receiver)
         before_access.connect(self.before_access_receiver)
 
-    def register(self, spec_id, sources):
+    def register(self, spec_id, source_groups):
         """
-        Associates sources with a spec id
+        Associates source groups with a spec id
 
         """
-        for source in sources:
-            if source not in self._sources:
-                self._sources[source] = set()
-            self._sources[source].add(spec_id)
+        for source_group in source_groups:
+            if source_group not in self._source_groups:
+                self._source_groups[source_group] = set()
+            self._source_groups[source_group].add(spec_id)
 
-    def unregister(self, spec_id, sources):
+    def unregister(self, spec_id, source_groups):
         """
         Disassociates sources with a spec id
 
         """
-        for source in sources:
+        for source_group in source_groups:
             try:
-                self._sources[source].remove(spec_id)
+                self._source_groups[source_group].remove(spec_id)
             except KeyError:
                 continue
 
     def get(self, spec_id):
-        return [source for source in self._sources
-                if spec_id in self._sources[source]]
+        return [source_group for source_group in self._source_groups
+                if spec_id in self._source_groups[source_group]]
 
     def before_access_receiver(self, sender, generator, file, **kwargs):
         generator.image_cache_strategy.invoke_callback('before_access', file)
 
-    def source_receiver(self, sender, source_file, signal, info, **kwargs):
+    def source_group_receiver(self, sender, source_file, signal, info, **kwargs):
         """
         Redirects signals dispatched on sources to the appropriate specs.
 
         """
-        source = sender
-        if source not in self._sources:
+        source_group = sender
+        if source_group not in self._source_groups:
             return
 
         for spec in (generator_registry.get(id, source_file=source_file, **info)
-                     for id in self._sources[source]):
+                     for id in self._sources_groups[source_group]):
             event_name = {
                 source_created: 'source_created',
                 source_changed: 'source_changed',
