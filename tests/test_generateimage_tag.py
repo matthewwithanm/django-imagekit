@@ -1,19 +1,7 @@
-from bs4 import BeautifulSoup
-from django.template import Context, Template, TemplateSyntaxError
+from django.template import TemplateSyntaxError
 from nose.tools import eq_, assert_not_in, raises, assert_not_equal
 from . import imagespecs  # noqa
-from .utils import get_image_file
-
-
-def render_tag(ttag):
-    img = get_image_file()
-    template = Template('{%% load imagekit %%}%s' % ttag)
-    context = Context({'img': img})
-    return template.render(context)
-
-
-def get_html_attrs(ttag):
-    return BeautifulSoup(render_tag(ttag)).img.attrs
+from .utils import render_tag, get_html_attrs
 
 
 def test_img_tag():

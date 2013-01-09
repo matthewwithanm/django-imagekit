@@ -1,6 +1,8 @@
+from bs4 import BeautifulSoup
 import os
 from django.conf import settings
 from django.core.files.base import ContentFile
+from django.template import Context, Template
 from imagekit.lib import Image, StringIO
 import pickle
 from .models import Photo
@@ -42,3 +44,14 @@ def pickleback(obj):
     pickle.dump(obj, pickled)
     pickled.seek(0)
     return pickle.load(pickled)
+
+
+def render_tag(ttag):
+    img = get_image_file()
+    template = Template('{%% load imagekit %%}%s' % ttag)
+    context = Context({'img': img})
+    return template.render(context)
+
+
+def get_html_attrs(ttag):
+    return BeautifulSoup(render_tag(ttag)).img.attrs
