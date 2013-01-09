@@ -227,11 +227,24 @@ class Thumbnail(object):
 
     """
 
-    def __init__(self, width=None, height=None, anchor='auto', crop=True):
+    def __init__(self, width=None, height=None, anchor=None, crop=None):
         self.width = width
         self.height = height
-        self.anchor = anchor
+        if anchor:
+            if crop is False:
+                raise Exception("You can't specify an anchor point if crop is False.")
+            else:
+                crop = True
+        elif crop is None:
+            # Assume we are cropping if both a width and height are provided. If
+            # only one is, we must be resizing to fit.
+            crop = width is not None and height is not None
+
+            # A default anchor if cropping.
+            if crop and anchor is None:
+                anchor = 'auto'
         self.crop = crop
+        self.anchor = anchor
 
     def process(self, img):
         if self.crop:
