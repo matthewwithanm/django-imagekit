@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
 import os
 import pickle
@@ -101,6 +102,25 @@ class ImageSpec(BaseImageSpec):
 
         return os.path.join(settings.IMAGEKIT_CACHE_DIR,
                             '%s%s' % (hash, ext))
+
+    def __getstate__(self):
+        state = self.__dict__
+
+        # Unpickled ImageFieldFiles won't work (they're missing a storage
+        # object). Since they're such a common use case, we special case them.
+        if isinstance(self.source, ImageFieldFile):
+            field = getattr(self.source, 'field')
+            state['_field_data'] = {
+                'instance': getattr(self.source, 'instance', None),
+                'attname': getattr(field, 'name', None),
+            }
+        return state
+
+    def __setstate__(self, state):
+        field_data = state.pop('_field_data', None)
+        self.__dict__ = state
+        if field_data:
+            self.source = getattr(field_data['instance'], field_data['attname'])
 
     def get_hash(self):
         return md5(pickle.dumps([
