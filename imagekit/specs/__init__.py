@@ -104,7 +104,7 @@ class ImageSpec(BaseImageSpec):
 
     def get_hash(self):
         return md5(pickle.dumps([
-            self.source,
+            self.source.name,
             self.kwargs,
             self.processors,
             self.format,
