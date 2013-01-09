@@ -73,9 +73,15 @@ class GenerateImageTagNode(template.Node):
         return mark_safe(u'<img %s />' % attr_str)
 
 
-def _generateimage(parser, bits):
+def parse_ik_tag_bits(parser, bits):
+    """
+    Parses the tag name, html attributes and variable name (for assignment tags)
+    from the provided bits. The preceding bits may vary and are left to be
+    parsed by specific tags.
+
+    """
     varname = None
-    html_bits = []
+    html_attrs = {}
     tag_name = bits.pop(0)
 
     if bits[-2] == ASSIGNMENT_DELIMETER:
@@ -90,6 +96,19 @@ def _generateimage(parser, bits):
             raise template.TemplateSyntaxError('Don\'t use "%s" unless you\'re'
                 ' setting html attributes.' % HTML_ATTRS_DELIMITER)
 
+        args, html_attrs = parse_bits(parser, html_bits, [], 'args',
+                'kwargs', None, False, tag_name)
+        if len(args):
+            raise template.TemplateSyntaxError('All "%s" tag arguments after'
+                    ' the "%s" token must be named.' % (tag_name,
+                    HTML_ATTRS_DELIMITER))
+
+    return (tag_name, bits, html_attrs, varname)
+
+
+def _generateimage(parser, bits):
+    tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
+
     args, kwargs = parse_bits(parser, bits, ['generator_id'], 'args', 'kwargs',
             None, False, tag_name)
 
@@ -102,13 +121,7 @@ def _generateimage(parser, bits):
     if varname:
         return GenerateImageAssignmentNode(varname, generator_id, kwargs)
     else:
-        html_args, html_kwargs = parse_bits(parser, html_bits, [], 'args',
-                'kwargs', None, False, tag_name)
-        if len(html_args):
-            raise template.TemplateSyntaxError('All "%s" tag arguments after'
-                    ' the "%s" token must be named.' % (tag_name,
-                    HTML_ATTRS_DELIMITER))
-        return GenerateImageTagNode(generator_id, kwargs, html_kwargs)
+        return GenerateImageTagNode(generator_id, kwargs, html_attrs)
 
 
 #@register.tag
