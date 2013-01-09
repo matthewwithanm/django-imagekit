@@ -192,24 +192,6 @@ def parse_ik_tag_bits(parser, bits):
     return (tag_name, bits, html_attrs, varname)
 
 
-def _generateimage(parser, bits):
-    tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
-
-    args, kwargs = parse_bits(parser, bits, ['generator_id'], 'args', 'kwargs',
-            None, False, tag_name)
-
-    if len(args) != 1:
-        raise template.TemplateSyntaxError('The "%s" tag requires exactly one'
-                ' unnamed argument (the generator id).' % tag_name)
-
-    generator_id = args[0]
-
-    if varname:
-        return GenerateImageAssignmentNode(varname, generator_id, kwargs)
-    else:
-        return GenerateImageTagNode(generator_id, kwargs, html_attrs)
-
-
 #@register.tag
 def generateimage(parser, token):
     """
@@ -239,7 +221,22 @@ def generateimage(parser, token):
 
     """
     bits = token.split_contents()
-    return _generateimage(parser, bits)
+
+    tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
+
+    args, kwargs = parse_bits(parser, bits, ['generator_id'], 'args', 'kwargs',
+            None, False, tag_name)
+
+    if len(args) != 1:
+        raise template.TemplateSyntaxError('The "%s" tag requires exactly one'
+                ' unnamed argument (the generator id).' % tag_name)
+
+    generator_id = args[0]
+
+    if varname:
+        return GenerateImageAssignmentNode(varname, generator_id, kwargs)
+    else:
+        return GenerateImageTagNode(generator_id, kwargs, html_attrs)
 
 
 #@register.tag
