@@ -93,15 +93,20 @@ class ImageSpec(BaseImageSpec):
 
     @property
     def cache_file_name(self):
-        source_filename = self.source.name
-        ext = suggest_extension(source_filename, self.format)
-        return os.path.normpath(os.path.join(
-                settings.IMAGEKIT_CACHE_DIR,
-                os.path.splitext(source_filename)[0],
-                '%s%s' % (self.get_hash(), ext)))
+        source_filename = getattr(self.source, 'name', None)
 
-        return os.path.join(settings.IMAGEKIT_CACHE_DIR,
-                            '%s%s' % (hash, ext))
+        if source_filename is None or os.path.isabs(source_filename):
+            # Generally, we put the file right in the cache directory.
+            dir = settings.IMAGEKIT_CACHE_DIR
+        else:
+            # For source files with relative names (like Django media files),
+            # use the source's name to create the new filename.
+            dir = os.path.join(settings.IMAGEKIT_CACHE_DIR,
+                               os.path.splitext(source_filename)[0])
+
+        ext = suggest_extension(source_filename or '', self.format)
+        return os.path.normpath(os.path.join(dir,
+                                             '%s%s' % (self.get_hash(), ext)))
 
     def __getstate__(self):
         state = self.__dict__
