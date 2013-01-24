@@ -117,11 +117,8 @@ class ImageFieldSourceGroup(object):
         self.image_field = image_field
         signal_router.add(self)
 
-    def files(self):
-        for instance in self.model_class.objects.all():
-            yield getattr(instance, self.image_field)
-
     def __call__(self):
-        return self.files()
+        for instance in self.model_class.objects.all():
+            yield {'source': getattr(instance, self.image_field)}
 
 signal_router = ModelSignalRouter()

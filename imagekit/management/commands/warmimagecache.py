@@ -19,17 +19,16 @@ class Command(BaseCommand):
 
         for generator_id in generators:
             self.stdout.write('Validating generator: %s\n' % generator_id)
-            for cacheables in cacheable_registry.get(generator_id):
-                for cacheable in cacheables.files():
-                    if cacheable:
-                        generator = generator_registry.get(generator_id, cacheable=cacheable)  # TODO: HINTS! (Probably based on cacheable, so this will need to be moved into loop below.)
-                        self.stdout.write('  %s\n' % cacheable)
-                        try:
-                            # TODO: Allow other validation actions through command option
-                            GeneratedImageCacheFile(generator).validate()
-                        except Exception, err:
-                            # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
-                            self.stdout.write('    FAILED: %s\n' % err)
+            for kwargs in cacheable_registry.get(generator_id):
+                if kwargs:
+                    generator = generator_registry.get(generator_id, **kwargs)  # TODO: HINTS! (Probably based on cacheable, so this will need to be moved into loop below.)
+                    self.stdout.write('  %s\n' % generator)
+                    try:
+                        # TODO: Allow other validation actions through command option
+                        GeneratedImageCacheFile(generator).validate()
+                    except Exception, err:
+                        # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
+                        self.stdout.write('    FAILED: %s\n' % err)
 
     def compile_patterns(self, generator_ids):
         return [re.compile('%s$' % '.*'.join(re.escape(part) for part in id.split('*'))) for id in generator_ids]

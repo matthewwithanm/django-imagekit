@@ -70,25 +70,25 @@ class CacheableRegistry(object):
         Associates cacheables with a generator id
 
         """
-        for cacheable in cacheables:
-            if cacheable not in self._cacheables:
-                self._cacheables[cacheable] = set()
-            self._cacheables[cacheable].add(generator_id)
+        if cacheables not in self._cacheables:
+            self._cacheables[cacheables] = set()
+        self._cacheables[cacheables].add(generator_id)
 
     def unregister(self, generator_id, cacheables):
         """
         Disassociates cacheables with a generator id
 
         """
-        for cacheable in cacheables:
-            try:
-                self._cacheables[cacheable].remove(generator_id)
-            except KeyError:
-                continue
+        try:
+            self._cacheables[cacheables].remove(generator_id)
+        except KeyError:
+            pass
 
     def get(self, generator_id):
-        return [cacheable for cacheable in self._cacheables
-                if generator_id in self._cacheables[cacheable]]
+        for k, v in self._cacheables.items():
+            if generator_id in v:
+                for cacheable in k():
+                    yield cacheable
 
     def before_access_receiver(self, sender, generator, cacheable, **kwargs):
         generator.image_cache_strategy.invoke_callback('before_access', cacheable)
@@ -130,8 +130,6 @@ class Register(object):
 
     # iterable that returns kwargs or callable that returns iterable of kwargs
     def cacheables(self, generator_id, cacheables):
-        if callable(cacheables):
-            cacheables = cacheables()
         cacheable_registry.register(generator_id, cacheables)
 
 
@@ -144,8 +142,6 @@ class Unregister(object):
         generator_registry.unregister(id, generator)
 
     def cacheables(self, generator_id, cacheables):
-        if callable(cacheables):
-            cacheables = cacheables()
         cacheable_registry.unregister(generator_id, cacheables)
 
 
