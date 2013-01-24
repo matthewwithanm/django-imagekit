@@ -1,15 +1,14 @@
 from django.conf import settings
+from django.core.files import File
 from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
 import os
 import pickle
-from ..exceptions import UnknownExtensionError
-from ..files import GeneratedImageCacheFile, IKContentFile
+from ..files import GeneratedImageCacheFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
-from ..utils import (open_image, extension_to_format, img_to_fobj,
-    suggest_extension)
+from ..utils import open_image, img_to_fobj, suggest_extension
 from ..registry import generator_registry, register
 
 
@@ -140,9 +139,7 @@ class ImageSpec(BaseImageSpec):
     def generate(self):
         # TODO: Move into a generator base class
         # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
-        source = self.source
-        filename = self.kwargs.get('filename')
-        img = open_image(source)
+        img = open_image(self.source)
         original_format = img.format
 
         # Run the processors
@@ -150,22 +147,8 @@ class ImageSpec(BaseImageSpec):
         img = ProcessorPipeline(processors or []).process(img)
 
         options = dict(self.options or {})
-
-        # Determine the format.
-        format = self.format
-        if filename and not format:
-            # Try to guess the format from the extension.
-            extension = os.path.splitext(filename)[1].lower()
-            if extension:
-                try:
-                    format = extension_to_format(extension)
-                except UnknownExtensionError:
-                    pass
-        format = format or img.format or original_format or 'JPEG'
-
-        imgfile = img_to_fobj(img, format, **options)
-        # TODO: Is this the right place to wrap the file? Can we use a mixin instead? Is it even still having the desired effect? Re: #111
-        content = IKContentFile(filename, imgfile.read(), format=format)
+        format = self.format or img.format or original_format or 'JPEG'
+        content = img_to_fobj(img, format, **options)
         return content
 
 
