@@ -14,19 +14,19 @@ class JustInTime(object):
 
 class Optimistic(object):
     """
-    A caching strategy that acts immediately when the source file chages and
-    assumes that the cache files will not be removed (i.e. doesn't revalidate
-    on access).
+    A caching strategy that acts immediately when the cacheable file changes
+    and assumes that the cache files will not be removed (i.e. doesn't
+    revalidate on access).
 
     """
 
-    def on_source_created(self, file):
+    def on_cacheable_created(self, file):
         validate_now(file)
 
-    def on_source_deleted(self, file):
+    def on_cacheable_deleted(self, file):
         clear_now(file)
 
-    def on_source_changed(self, file):
+    def on_cacheable_changed(self, file):
         validate_now(file)
 
 

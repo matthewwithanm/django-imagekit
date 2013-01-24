@@ -12,5 +12,5 @@ class ResizeTo1PixelSquare(ImageSpec):
         super(ResizeTo1PixelSquare, self).__init__(**kwargs)
 
 
-register.spec('testspec', TestSpec)
-register.spec('1pxsq', ResizeTo1PixelSquare)
+register.generator('testspec', TestSpec)
+register.generator('1pxsq', ResizeTo1PixelSquare)

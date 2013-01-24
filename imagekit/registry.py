@@ -1,11 +1,11 @@
 from .exceptions import AlreadyRegistered, NotRegistered
-from .signals import (before_access, source_created, source_changed,
-                       source_deleted)
+from .signals import (before_access, cacheable_created, cacheable_changed,
+                       cacheable_deleted)
 
 
 class GeneratorRegistry(object):
     """
-    An object for registering generators (specs). This registry provides
+    An object for registering generators. This registry provides
     a convenient way for a distributable app to define default generators
     without locking the users of the app into it.
 
@@ -15,7 +15,7 @@ class GeneratorRegistry(object):
 
     def register(self, id, generator):
         if id in self._generators:
-            raise AlreadyRegistered('The spec or generator with id %s is'
+            raise AlreadyRegistered('The generator with id %s is'
                                     ' already registered' % id)
         self._generators[id] = generator
 
@@ -24,14 +24,14 @@ class GeneratorRegistry(object):
         try:
             del self._generators[id]
         except KeyError:
-            raise NotRegistered('The spec or generator with id %s is not'
+            raise NotRegistered('The generator with id %s is not'
                                 ' registered' % id)
 
     def get(self, id, **kwargs):
         try:
             generator = self._generators[id]
         except KeyError:
-            raise NotRegistered('The spec or generator with id %s is not'
+            raise NotRegistered('The generator with id %s is not'
                                 ' registered' % id)
         if callable(generator):
             return generator(**kwargs)
@@ -42,108 +42,114 @@ class GeneratorRegistry(object):
         return self._generators.keys()
 
 
-class SourceGroupRegistry(object):
+class CacheableRegistry(object):
     """
-    An object for registering source groups with specs. The two are
+    An object for registering cacheables with generators. The two are
     associated with each other via a string id. We do this (as opposed to
-    associating them directly by, for example, putting a ``source_groups``
-    attribute on specs) so that specs can be overridden without losing the
-    associated sources. That way, a distributable app can define its own
-    specs without locking the users of the app into it.
+    associating them directly by, for example, putting a ``cacheables``
+    attribute on generators) so that generators can be overridden without
+    losing the associated cacheables. That way, a distributable app can define
+    its own generators without locking the users of the app into it.
 
     """
 
     _signals = [
-        source_created,
-        source_changed,
-        source_deleted,
+        cacheable_created,
+        cacheable_changed,
+        cacheable_deleted,
     ]
 
     def __init__(self):
-        self._source_groups = {}
+        self._cacheables = {}
         for signal in self._signals:
-            signal.connect(self.source_group_receiver)
+            signal.connect(self.cacheable_receiver)
         before_access.connect(self.before_access_receiver)
 
-    def register(self, spec_id, source_groups):
+    def register(self, generator_id, cacheables):
         """
-        Associates source groups with a spec id
+        Associates cacheables with a generator id
 
         """
-        for source_group in source_groups:
-            if source_group not in self._source_groups:
-                self._source_groups[source_group] = set()
-            self._source_groups[source_group].add(spec_id)
+        for cacheable in cacheables:
+            if cacheable not in self._cacheables:
+                self._cacheables[cacheable] = set()
+            self._cacheables[cacheable].add(generator_id)
 
-    def unregister(self, spec_id, source_groups):
+    def unregister(self, generator_id, cacheables):
         """
-        Disassociates sources with a spec id
+        Disassociates cacheables with a generator id
 
         """
-        for source_group in source_groups:
+        for cacheable in cacheables:
             try:
-                self._source_groups[source_group].remove(spec_id)
+                self._cacheables[cacheable].remove(generator_id)
             except KeyError:
                 continue
 
-    def get(self, spec_id):
-        return [source_group for source_group in self._source_groups
-                if spec_id in self._source_groups[source_group]]
+    def get(self, generator_id):
+        return [cacheable for cacheable in self._cacheables
+                if generator_id in self._cacheables[cacheable]]
 
-    def before_access_receiver(self, sender, generator, file, **kwargs):
-        generator.image_cache_strategy.invoke_callback('before_access', file)
+    def before_access_receiver(self, sender, generator, cacheable, **kwargs):
+        generator.image_cache_strategy.invoke_callback('before_access', cacheable)
 
-    def source_group_receiver(self, sender, source, signal, info, **kwargs):
+    def cacheable_receiver(self, sender, cacheable, signal, info, **kwargs):
         """
-        Redirects signals dispatched on sources to the appropriate specs.
+        Redirects signals dispatched on cacheables
+        to the appropriate generators.
 
         """
-        source_group = sender
-        if source_group not in self._source_groups:
+        cacheable = sender
+        if cacheable not in self._cacheables:
             return
 
-        for spec in (generator_registry.get(id, source=source, **info)
-                     for id in self._source_groups[source_group]):
+        for generator in (generator_registry.get(id, cacheable=cacheable, **info)
+                     for id in self._cacheables[cacheable]):
             event_name = {
-                source_created: 'source_created',
-                source_changed: 'source_changed',
-                source_deleted: 'source_deleted',
+                cacheable_created: 'cacheable_created',
+                cacheable_changed: 'cacheable_changed',
+                cacheable_deleted: 'cacheable_deleted',
             }
-            spec._handle_source_event(event_name, source)
+            generator._handle_cacheable_event(event_name, cacheable)
 
 
 class Register(object):
     """
-    Register specs and sources.
+    Register generators and cacheables.
 
     """
-    def spec(self, id, spec=None):
-        if spec is None:
+    def generator(self, id, generator=None):
+        if generator is None:
             # Return a decorator
             def decorator(cls):
-                self.spec(id, cls)
+                self.generator(id, cls)
                 return cls
             return decorator
 
-        generator_registry.register(id, spec)
+        generator_registry.register(id, generator)
 
-    def sources(self, spec_id, sources):
-        source_group_registry.register(spec_id, sources)
+    # iterable that returns kwargs or callable that returns iterable of kwargs
+    def cacheables(self, generator_id, cacheables):
+        if callable(cacheables):
+            cacheables = cacheables()
+        cacheable_registry.register(generator_id, cacheables)
 
 
 class Unregister(object):
     """
-    Unregister specs and sources.
+    Unregister generators and cacheables.
 
     """
-    def spec(self, id, spec):
-        generator_registry.unregister(id, spec)
+    def generator(self, id, generator):
+        generator_registry.unregister(id, generator)
 
-    def sources(self, spec_id, sources):
-        source_group_registry.unregister(spec_id, sources)
+    def cacheables(self, generator_id, cacheables):
+        if callable(cacheables):
+            cacheables = cacheables()
+        cacheable_registry.unregister(generator_id, cacheables)
 
 
 generator_registry = GeneratorRegistry()
-source_group_registry = SourceGroupRegistry()
+cacheable_registry = CacheableRegistry()
 register = Register()
 unregister = Unregister()

@@ -1,6 +1,6 @@
 from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
-from ..signals import source_created, source_changed, source_deleted
+from ..signals import cacheable_created, cacheable_changed, cacheable_deleted
 
 
 def ik_model_receiver(fn):
@@ -58,23 +58,25 @@ class ModelSignalRouter(object):
                 src in self._source_groups if src.model_class is instance.__class__)
 
     @ik_model_receiver
-    def post_save_receiver(self, sender, instance=None, created=False, raw=False, **kwargs):
+    def post_save_receiver(self, sender, instance=None, created=False,
+                           raw=False, **kwargs):
         if not raw:
             self.init_instance(instance)
             old_hashes = instance._ik.get('source_hashes', {}).copy()
             new_hashes = self.update_source_hashes(instance)
             for attname, file in self.get_field_dict(instance).items():
                 if created:
-                    self.dispatch_signal(source_created, file, sender, instance,
-                                         attname)
+                    self.dispatch_signal(cacheable_created, file, sender,
+                                         instance, attname)
                 elif old_hashes[attname] != new_hashes[attname]:
-                    self.dispatch_signal(source_changed, file, sender, instance,
-                                         attname)
+                    self.dispatch_signal(cacheable_changed, file, sender,
+                                         instance, attname)
 
     @ik_model_receiver
     def post_delete_receiver(self, sender, instance=None, **kwargs):
         for attname, file in self.get_field_dict(instance).items():
-            self.dispatch_signal(source_deleted, file, sender, instance, attname)
+            self.dispatch_signal(cacheable_deleted, file, sender, instance,
+                                 attname)
 
     @ik_model_receiver
     def post_init_receiver(self, sender, instance=None, **kwargs):
@@ -119,5 +121,7 @@ class ImageFieldSourceGroup(object):
         for instance in self.model_class.objects.all():
             yield getattr(instance, self.image_field)
 
+    def __call__(self):
+        return self.files()
 
 signal_router = ModelSignalRouter()

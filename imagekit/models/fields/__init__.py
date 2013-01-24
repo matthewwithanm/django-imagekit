@@ -45,8 +45,8 @@ class ImageSpecField(SpecHostField):
         self.set_spec_id(cls, name)
 
         # Add the model and field as a source for this spec id
-        register.sources(self.spec_id,
-                [ImageFieldSourceGroup(cls, self.source)])
+        register.cacheables(self.spec_id,
+                            ImageFieldSourceGroup(cls, self.source))
 
 
 class ProcessedImageField(models.ImageField, SpecHostField):
