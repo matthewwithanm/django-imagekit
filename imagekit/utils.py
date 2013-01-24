@@ -382,3 +382,22 @@ def get_logger(logger_name='imagekit', add_null_handler=True):
     if add_null_handler:
         logger.addHandler(logging.NullHandler())
     return logger
+
+
+def get_field_info(field_file):
+    """
+    A utility for easily extracting information about the host model from a
+    Django FileField (or subclass). This is especially useful for when you want
+    to alter processors based on a property of the source model. For example::
+
+        class MySpec(ImageSpec):
+            def __init__(self, source):
+                instance, attname = get_field_info(source)
+                self.processors = [SmartResize(instance.thumbnail_width,
+                                               instance.thumbnail_height)]
+
+    """
+    return (
+        getattr(field_file, 'instance', None),
+        getattr(getattr(field_file, 'field', None), 'attname', None),
+    )
