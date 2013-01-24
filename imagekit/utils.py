@@ -2,9 +2,11 @@ import logging
 import os
 import mimetypes
 import sys
+from tempfile import NamedTemporaryFile
 import types
 
 from django.core.exceptions import ImproperlyConfigured
+from django.core.files import File
 from django.db.models.loading import cache
 from django.utils.functional import wraps
 from django.utils.importlib import import_module
@@ -401,3 +403,22 @@ def get_field_info(field_file):
         getattr(field_file, 'instance', None),
         getattr(getattr(field_file, 'field', None), 'attname', None),
     )
+
+
+def generate(generator):
+    """
+    Calls the ``generate()`` method of a generator instance, and then wraps the
+    result in a Django File object so Django knows how to save it.
+
+    """
+    content = generator.generate()
+
+    # If the file doesn't have a name, Django will raise an Exception while
+    # trying to save it, so we create a named temporary file.
+    if not getattr(content, 'name', None):
+        f = NamedTemporaryFile()
+        f.write(content.read())
+        f.seek(0)
+        content = f
+
+    return File(content)
