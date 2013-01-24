@@ -1,5 +1,6 @@
 from django.db import models
 
+from imagekit.models import ProcessedImageField
 from imagekit.models import ImageSpecField
 from imagekit.processors import Adjust, ResizeToFill, SmartCrop
 
@@ -14,6 +15,11 @@ class Photo(models.Model):
     smartcropped_thumbnail = ImageSpecField([Adjust(contrast=1.2,
             sharpness=1.1), SmartCrop(50, 50)], source='original_image',
             format='JPEG', options={'quality': 90})
+
+
+class ProcessedImageFieldModel(models.Model):
+    processed = ProcessedImageField([SmartCrop(50, 50)], format='JPEG',
+            options={'quality': 90}, upload_to='p')
 
 
 class AbstractImageModel(models.Model):
