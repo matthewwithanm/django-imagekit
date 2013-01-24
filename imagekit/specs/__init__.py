@@ -36,7 +36,7 @@ class BaseImageSpec(object):
 
     """
 
-    def __init__(self, **kwargs):
+    def __init__(self):
         self.image_cache_backend = self.image_cache_backend or get_default_image_cache_backend()
         self.image_cache_strategy = StrategyWrapper(self.image_cache_strategy)
 
@@ -83,10 +83,9 @@ class ImageSpec(BaseImageSpec):
 
     """
 
-    def __init__(self, source, **kwargs):
+    def __init__(self, source):
         self.source = source
         self.processors = self.processors or []
-        self.kwargs = kwargs
         super(ImageSpec, self).__init__()
 
     @property
@@ -128,7 +127,6 @@ class ImageSpec(BaseImageSpec):
     def get_hash(self):
         return md5(pickle.dumps([
             self.source.name,
-            self.kwargs,
             self.processors,
             self.format,
             self.options,
@@ -212,7 +210,7 @@ class SpecHost(object):
         self.spec_id = id
         register.spec(id, self._original_spec)
 
-    def get_spec(self, **kwargs):
+    def get_spec(self, source):
         """
         Look up the spec by the spec id. We do this (instead of storing the
         spec as an attribute) so that users can override apps' specs--without
@@ -222,4 +220,4 @@ class SpecHost(object):
         """
         if not getattr(self, 'spec_id', None):
             raise Exception('Object %s has no spec id.' % self)
-        return generator_registry.get(self.spec_id, **kwargs)
+        return generator_registry.get(self.spec_id, source=source)

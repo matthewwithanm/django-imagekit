@@ -22,7 +22,7 @@ class Command(BaseCommand):
             for source_group in source_group_registry.get(spec_id):
                 for source in source_group.files():
                     if source:
-                        spec = generator_registry.get(spec_id, source=source)  # TODO: HINTS! (Probably based on source, so this will need to be moved into loop below.)
+                        spec = generator_registry.get(spec_id, source=source)
                         self.stdout.write('  %s\n' % source)
                         try:
                             # TODO: Allow other validation actions through command option

@@ -102,7 +102,7 @@ class SourceGroupRegistry(object):
         if source_group not in self._source_groups:
             return
 
-        for spec in (generator_registry.get(id, source=source, **info)
+        for spec in (generator_registry.get(id, source=source)
                      for id in self._source_groups[source_group]):
             event_name = {
                 source_created: 'source_created',
