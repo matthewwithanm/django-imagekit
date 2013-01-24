@@ -3,6 +3,7 @@ from django.core.files.base import ContentFile, File
 from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
 import os
+from tempfile import NamedTemporaryFile
 from .signals import before_access
 from .utils import (format_to_mimetype, extension_to_mimetype, get_logger,
     get_singleton)
@@ -116,7 +117,16 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
     def generate(self):
         # Generate the file
         content = self.generator.generate()
-        actual_name = self.storage.save(self.name, content)
+
+        # If the file doesn't have a name, Django will raise an Exception while
+        # trying to save it, so we create a named temporary file.
+        if not getattr(content, 'name', None):
+            f = NamedTemporaryFile()
+            f.write(content.read())
+            f.seek(0)
+            content = f
+
+        actual_name = self.storage.save(self.name, File(content))
 
         if actual_name != self.name:
             get_logger().warning('The storage backend %s did not save the file'
