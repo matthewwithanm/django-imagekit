@@ -5,6 +5,10 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import Adjust, ResizeToFill, SmartCrop
 
 
+class ImageModel(models.Model):
+    image = models.ImageField(upload_to='b')
+
+
 class Photo(models.Model):
     original_image = models.ImageField(upload_to='photos')
 
