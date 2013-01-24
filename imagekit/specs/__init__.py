@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.core.files import File
 from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
 import os
