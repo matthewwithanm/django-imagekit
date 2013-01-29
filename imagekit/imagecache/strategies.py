@@ -46,11 +46,6 @@ class StrategyWrapper(object):
             strategy = strategy()
         self._wrapped = strategy
 
-    def invoke_callback(self, name, *args, **kwargs):
-        func = getattr(self._wrapped, name, None)
-        if func:
-            func(*args, **kwargs)
-
     def __unicode__(self):
         return unicode(self._wrapped)
 

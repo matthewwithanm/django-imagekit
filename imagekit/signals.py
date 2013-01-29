@@ -1,6 +1,10 @@
 from django.dispatch import Signal
 
+
+# "Cacheables" (cache file) signals
 before_access = Signal()
-source_created = Signal(providing_args=[])
+
+# Source group signals
+source_created = Signal()
 source_changed = Signal()
 source_deleted = Signal()

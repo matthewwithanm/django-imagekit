@@ -103,7 +103,7 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
         super(GeneratedImageCacheFile, self).__init__(storage=storage)
 
     def _require_file(self):
-        before_access.send(sender=self, generator=self.generator, file=self)
+        before_access.send(sender=self, file=self)
         return super(GeneratedImageCacheFile, self)._require_file()
 
     def clear(self):

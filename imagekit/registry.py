@@ -1,6 +1,6 @@
 from .exceptions import AlreadyRegistered, NotRegistered
-from .signals import (before_access, source_created, source_changed,
-                       source_deleted)
+from .signals import before_access, source_created, source_changed, source_deleted
+from .utils import call_strategy_method
 
 
 class GeneratorRegistry(object):
@@ -12,6 +12,7 @@ class GeneratorRegistry(object):
     """
     def __init__(self):
         self._generators = {}
+        before_access.connect(self.before_access_receiver)
 
     def register(self, id, generator):
         if id in self._generators:
@@ -41,6 +42,67 @@ class GeneratorRegistry(object):
     def get_ids(self):
         return self._generators.keys()
 
+    def before_access_receiver(self, sender, file, **kwargs):
+        generator = file.generator
+        if generator in self._generators.values():
+            # Only invoke the strategy method for registered generators.
+            call_strategy_method(generator, 'before_access', file=file)
+
+
+class SourceGroupRegistry(object):
+    """
+    The source group registry is responsible for listening to source_* signals
+    on source groups, and relaying them to the image cache strategies of the
+    appropriate generators.
+
+    In addition, registering a new source group also registers its cacheables
+    generator with the cacheable registry.
+
+    """
+    _signals = {
+        source_created: 'on_source_created',
+        source_changed: 'on_source_changed',
+        source_deleted: 'on_source_deleted',
+    }
+
+    def __init__(self):
+        self._source_groups = {}
+        for signal in self._signals.keys():
+            signal.connect(self.source_group_receiver)
+
+    def register(self, generator_id, source_group):
+        from .specs.sourcegroups import SourceGroupCacheablesGenerator
+        generator_ids = self._source_groups.setdefault(source_group, set())
+        generator_ids.add(generator_id)
+        cacheable_registry.register(generator_id,
+                SourceGroupCacheablesGenerator(source_group, generator_id))
+
+    def unregister(self, generator_id, source_group):
+        from .specs.sourcegroups import SourceGroupCacheablesGenerator
+        generator_ids = self._source_groups.setdefault(source_group, set())
+        if generator_id in generator_ids:
+            generator_ids.remove(generator_id)
+            cacheable_registry.unregister(generator_id,
+                    SourceGroupCacheablesGenerator(source_group, generator_id))
+
+    def source_group_receiver(self, sender, source, signal, **kwargs):
+        """
+        Relay source group signals to the appropriate spec strategy.
+
+        """
+        source_group = sender
+
+        # Ignore signals from unregistered groups.
+        if source_group not in self._source_groups:
+            return
+
+        specs = [generator_registry.get(id, source=source) for id in
+                self._source_groups[source_group]]
+        callback_name = self._signals[signal]
+
+        for spec in specs:
+            call_strategy_method(spec, callback_name, file=source)
+
 
 class CacheableRegistry(object):
     """
@@ -53,17 +115,8 @@ class CacheableRegistry(object):
 
     """
 
-    _signals = [
-        source_created,
-        source_changed,
-        source_deleted,
-    ]
-
     def __init__(self):
         self._cacheables = {}
-        for signal in self._signals:
-            signal.connect(self.cacheable_receiver)
-        before_access.connect(self.before_access_receiver)
 
     def register(self, generator_id, cacheables):
         """
@@ -90,28 +143,6 @@ class CacheableRegistry(object):
                 for cacheable in k():
                     yield cacheable
 
-    def before_access_receiver(self, sender, generator, cacheable, **kwargs):
-        generator.image_cache_strategy.invoke_callback('before_access', cacheable)
-
-    def cacheable_receiver(self, sender, cacheable, signal, info, **kwargs):
-        """
-        Redirects signals dispatched on cacheables
-        to the appropriate generators.
-
-        """
-        cacheable = sender
-        if cacheable not in self._cacheables:
-            return
-
-        for generator in (generator_registry.get(id, cacheable=cacheable, **info)
-                     for id in self._cacheables[cacheable]):
-            event_name = {
-                source_created: 'source_created',
-                source_changed: 'source_changed',
-                source_deleted: 'source_deleted',
-            }
-            generator._handle_cacheable_event(event_name, cacheable)
-
 
 class Register(object):
     """
@@ -132,6 +163,9 @@ class Register(object):
     def cacheables(self, generator_id, cacheables):
         cacheable_registry.register(generator_id, cacheables)
 
+    def source_group(self, generator_id, source_group):
+        source_group_registry.register(generator_id, source_group)
+
 
 class Unregister(object):
     """
@@ -144,8 +178,12 @@ class Unregister(object):
     def cacheables(self, generator_id, cacheables):
         cacheable_registry.unregister(generator_id, cacheables)
 
+    def source_group(self, generator_id, source_group):
+        source_group_registry.unregister(generator_id, source_group)
+
 
 generator_registry = GeneratorRegistry()
 cacheable_registry = CacheableRegistry()
+source_group_registry = SourceGroupRegistry()
 register = Register()
 unregister = Unregister()
