@@ -4,9 +4,12 @@ from ...registry import generator_registry, cacheable_registry
 
 
 class Command(BaseCommand):
-    help = ('Warm the image cache for the specified generators'
-            ' (or all generators if none was provided).'
-            ' Simple wildcard matching (using asterisks) is supported.')
+    help = ("""Warm the image cache for the specified generators (or all generators if
+none was provided). Simple, fnmatch-like wildcards are allowed, with *
+matching all characters within a segment, and ** matching across segments.
+(Segments are separated with colons.) So, for example, "a:*:c" will match
+"a:b:c", but not "a:b:x:c", whereas "a:**:c" will match both. Subsegments
+are always matched, so "a" will match "a" as well as "a:b" and "a:b:c".""")
     args = '[generator_ids]'
 
     def handle(self, *args, **options):
@@ -28,4 +31,16 @@ class Command(BaseCommand):
                     self.stdout.write('    FAILED: %s\n' % err)
 
     def compile_patterns(self, generator_ids):
-        return [re.compile('%s$' % '.*'.join(re.escape(part) for part in id.split('*'))) for id in generator_ids]
+        return [self.compile_pattern(id) for id in generator_ids]
+
+    def compile_pattern(self, generator_id):
+        parts = re.split(r'(\*{1,2})', generator_id)
+        pattern = ''
+        for part in parts:
+            if part == '*':
+                pattern += '[^:]*'
+            elif part == '**':
+                pattern += '.*'
+            else:
+                pattern += re.escape(part)
+        return re.compile('^%s(:.*)?$' % pattern)
