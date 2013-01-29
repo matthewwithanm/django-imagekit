@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand
 import re
-from ...files import GeneratedImageCacheFile
 from ...registry import generator_registry, cacheable_registry
 
 
@@ -19,16 +18,14 @@ class Command(BaseCommand):
 
         for generator_id in generators:
             self.stdout.write('Validating generator: %s\n' % generator_id)
-            for kwargs in cacheable_registry.get(generator_id):
-                if kwargs:
-                    generator = generator_registry.get(generator_id, **kwargs)  # TODO: HINTS! (Probably based on cacheable, so this will need to be moved into loop below.)
-                    self.stdout.write('  %s\n' % generator)
-                    try:
-                        # TODO: Allow other validation actions through command option
-                        GeneratedImageCacheFile(generator).validate()
-                    except Exception, err:
-                        # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
-                        self.stdout.write('    FAILED: %s\n' % err)
+            for cacheable in cacheable_registry.get(generator_id):
+                self.stdout.write('  %s\n' % cacheable)
+                try:
+                    # TODO: Allow other validation actions through command option
+                    cacheable.validate()
+                except Exception, err:
+                    # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
+                    self.stdout.write('    FAILED: %s\n' % err)
 
     def compile_patterns(self, generator_ids):
         return [re.compile('%s$' % '.*'.join(re.escape(part) for part in id.split('*'))) for id in generator_ids]
