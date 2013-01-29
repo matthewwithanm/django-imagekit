@@ -47,6 +47,12 @@ class StrategyWrapper(LazyObject):
             strategy = strategy()
         self._wrapped = strategy
 
+    def __getstate__(self):
+        return {'_wrapped': self._wrapped}
+
+    def __setstate__(self, state):
+        self._wrapped = state['_wrapped']
+
     def __unicode__(self):
         return unicode(self._wrapped)
 
