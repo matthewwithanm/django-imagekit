@@ -3,13 +3,11 @@ from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
 import os
 import pickle
-from ..exceptions import UnknownExtensionError
-from ..files import GeneratedImageCacheFile, IKContentFile
+from ..files import GeneratedImageCacheFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
-from ..utils import (open_image, extension_to_format, img_to_fobj,
-    suggest_extension)
+from ..utils import open_image, img_to_fobj, suggest_extension
 from ..registry import generator_registry, register
 
 
@@ -38,7 +36,7 @@ class BaseImageSpec(object):
 
     """
 
-    def __init__(self, **kwargs):
+    def __init__(self):
         self.image_cache_backend = self.image_cache_backend or get_default_image_cache_backend()
         self.image_cache_strategy = StrategyWrapper(self.image_cache_strategy)
 
@@ -85,10 +83,9 @@ class ImageSpec(BaseImageSpec):
 
     """
 
-    def __init__(self, source, **kwargs):
+    def __init__(self, source):
         self.source = source
         self.processors = self.processors or []
-        self.kwargs = kwargs
         super(ImageSpec, self).__init__()
 
     @property
@@ -130,7 +127,6 @@ class ImageSpec(BaseImageSpec):
     def get_hash(self):
         return md5(pickle.dumps([
             self.source.name,
-            self.kwargs,
             self.processors,
             self.format,
             self.options,
@@ -140,9 +136,7 @@ class ImageSpec(BaseImageSpec):
     def generate(self):
         # TODO: Move into a generator base class
         # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
-        source = self.source
-        filename = self.kwargs.get('filename')
-        img = open_image(source)
+        img = open_image(self.source)
         original_format = img.format
 
         # Run the processors
@@ -150,22 +144,8 @@ class ImageSpec(BaseImageSpec):
         img = ProcessorPipeline(processors or []).process(img)
 
         options = dict(self.options or {})
-
-        # Determine the format.
-        format = self.format
-        if filename and not format:
-            # Try to guess the format from the extension.
-            extension = os.path.splitext(filename)[1].lower()
-            if extension:
-                try:
-                    format = extension_to_format(extension)
-                except UnknownExtensionError:
-                    pass
-        format = format or img.format or original_format or 'JPEG'
-
-        imgfile = img_to_fobj(img, format, **options)
-        # TODO: Is this the right place to wrap the file? Can we use a mixin instead? Is it even still having the desired effect? Re: #111
-        content = IKContentFile(filename, imgfile.read(), format=format)
+        format = self.format or img.format or original_format or 'JPEG'
+        content = img_to_fobj(img, format, **options)
         return content
 
 
@@ -230,7 +210,7 @@ class SpecHost(object):
         self.spec_id = id
         register.generator(id, self._original_spec)
 
-    def get_spec(self, **kwargs):
+    def get_spec(self, source):
         """
         Look up the spec by the spec id. We do this (instead of storing the
         spec as an attribute) so that users can override apps' specs--without
@@ -240,4 +220,4 @@ class SpecHost(object):
         """
         if not getattr(self, 'spec_id', None):
             raise Exception('Object %s has no spec id.' % self)
-        return generator_registry.get(self.spec_id, **kwargs)
+        return generator_registry.get(self.spec_id, source=source)

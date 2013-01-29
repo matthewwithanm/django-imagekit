@@ -1,5 +1,6 @@
 from django.forms import ImageField
 from ..specs import SpecHost
+from ..utils import generate
 
 
 class ProcessedImageField(ImageField, SpecHost):
@@ -22,7 +23,7 @@ class ProcessedImageField(ImageField, SpecHost):
         data = super(ProcessedImageField, self).clean(data, initial)
 
         if data:
-            spec = self.get_spec()  # HINTS?!?!?!?!?!
-            data = spec.apply(data, data.name)
+            spec = self.get_spec(source=data)
+            data = generate(spec)
 
         return data

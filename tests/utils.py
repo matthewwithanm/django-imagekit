@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import os
 from django.conf import settings
-from django.core.files.base import ContentFile
+from django.core.files import File
 from django.template import Context, Template
 from imagekit.lib import Image, StringIO
 import pickle
@@ -26,10 +26,8 @@ def create_image():
 
 def create_instance(model_class, image_name):
     instance = model_class()
-    img = get_image_file()
-    file = ContentFile(img.read())
-    instance.original_image = file
-    instance.original_image.save(image_name, file)
+    img = File(get_image_file())
+    instance.original_image.save(image_name, img)
     instance.save()
     img.close()
     return instance

@@ -29,7 +29,7 @@ class ImageSpecFileDescriptor(object):
                             self.attname))
                 else:
                     source = image_fields[0]
-            spec = self.field.get_spec(source=source)  # TODO: What "hints" should we pass here?
+            spec = self.field.get_spec(source=source)
             file = GeneratedImageCacheFile(spec)
             instance.__dict__[self.attname] = file
             return file

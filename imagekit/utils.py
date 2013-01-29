@@ -2,9 +2,11 @@ import logging
 import os
 import mimetypes
 import sys
+from tempfile import NamedTemporaryFile
 import types
 
 from django.core.exceptions import ImproperlyConfigured
+from django.core.files import File
 from django.db.models.loading import cache
 from django.utils.functional import wraps
 from django.utils.importlib import import_module
@@ -382,3 +384,41 @@ def get_logger(logger_name='imagekit', add_null_handler=True):
     if add_null_handler:
         logger.addHandler(logging.NullHandler())
     return logger
+
+
+def get_field_info(field_file):
+    """
+    A utility for easily extracting information about the host model from a
+    Django FileField (or subclass). This is especially useful for when you want
+    to alter processors based on a property of the source model. For example::
+
+        class MySpec(ImageSpec):
+            def __init__(self, source):
+                instance, attname = get_field_info(source)
+                self.processors = [SmartResize(instance.thumbnail_width,
+                                               instance.thumbnail_height)]
+
+    """
+    return (
+        getattr(field_file, 'instance', None),
+        getattr(getattr(field_file, 'field', None), 'attname', None),
+    )
+
+
+def generate(generator):
+    """
+    Calls the ``generate()`` method of a generator instance, and then wraps the
+    result in a Django File object so Django knows how to save it.
+
+    """
+    content = generator.generate()
+
+    # If the file doesn't have a name, Django will raise an Exception while
+    # trying to save it, so we create a named temporary file.
+    if not getattr(content, 'name', None):
+        f = NamedTemporaryFile()
+        f.write(content.read())
+        f.seek(0)
+        content = f
+
+    return File(content)

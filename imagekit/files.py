@@ -5,7 +5,7 @@ from django.utils.encoding import smart_str, smart_unicode
 import os
 from .signals import before_access
 from .utils import (format_to_mimetype, extension_to_mimetype, get_logger,
-    get_singleton)
+    get_singleton, generate)
 
 
 class BaseIKFile(File):
@@ -115,7 +115,8 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
 
     def generate(self):
         # Generate the file
-        content = self.generator.generate()
+        content = generate(self.generator)
+
         actual_name = self.storage.save(self.name, content)
 
         if actual_name != self.name:
