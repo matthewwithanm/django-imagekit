@@ -2,7 +2,9 @@ from django.conf import settings
 from django.core.files.base import ContentFile, File
 from django.core.files.images import ImageFile
 from django.utils.encoding import smart_str, smart_unicode
+from django.utils.functional import LazyObject
 import os
+from .registry import generator_registry
 from .signals import before_access
 from .utils import (format_to_mimetype, extension_to_mimetype, get_logger,
     get_singleton, generate)
@@ -158,3 +160,14 @@ class IKContentFile(ContentFile):
 
     def __unicode__(self):
         return smart_unicode(self.file.name or u'')
+
+
+class LazyGeneratedImageCacheFile(LazyObject):
+    def __init__(self, generator_id, *args, **kwargs):
+        super(LazyGeneratedImageCacheFile, self).__init__()
+
+        def setup():
+            generator = generator_registry.get(generator_id, *args, **kwargs)
+            self._wrapped = GeneratedImageCacheFile(generator)
+
+        self.__dict__['_setup'] = setup
