@@ -90,6 +90,7 @@ class SourceGroupRegistry(object):
         Relay source group signals to the appropriate spec strategy.
 
         """
+        from .files import GeneratedImageCacheFile
         source_group = sender
 
         # Ignore signals from unregistered groups.
@@ -101,7 +102,8 @@ class SourceGroupRegistry(object):
         callback_name = self._signals[signal]
 
         for spec in specs:
-            call_strategy_method(spec, callback_name, file=source)
+            file = GeneratedImageCacheFile(spec)
+            call_strategy_method(spec, callback_name, file=file)
 
 
 class CacheableRegistry(object):

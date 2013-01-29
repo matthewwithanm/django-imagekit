@@ -1,3 +1,4 @@
+from django.utils.functional import LazyObject
 from .actions import validate_now, clear_now
 from ..utils import get_singleton
 
@@ -36,7 +37,7 @@ class DictStrategy(object):
             setattr(self, k, v)
 
 
-class StrategyWrapper(object):
+class StrategyWrapper(LazyObject):
     def __init__(self, strategy):
         if isinstance(strategy, basestring):
             strategy = get_singleton(strategy, 'image cache strategy')
