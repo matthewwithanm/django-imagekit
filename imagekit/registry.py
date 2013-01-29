@@ -1,6 +1,6 @@
 from .exceptions import AlreadyRegistered, NotRegistered
-from .signals import (before_access, cacheable_created, cacheable_changed,
-                       cacheable_deleted)
+from .signals import (before_access, source_created, source_changed,
+                       source_deleted)
 
 
 class GeneratorRegistry(object):
@@ -54,9 +54,9 @@ class CacheableRegistry(object):
     """
 
     _signals = [
-        cacheable_created,
-        cacheable_changed,
-        cacheable_deleted,
+        source_created,
+        source_changed,
+        source_deleted,
     ]
 
     def __init__(self):
@@ -106,9 +106,9 @@ class CacheableRegistry(object):
         for generator in (generator_registry.get(id, cacheable=cacheable, **info)
                      for id in self._cacheables[cacheable]):
             event_name = {
-                cacheable_created: 'cacheable_created',
-                cacheable_changed: 'cacheable_changed',
-                cacheable_deleted: 'cacheable_deleted',
+                source_created: 'source_created',
+                source_changed: 'source_changed',
+                source_deleted: 'source_deleted',
             }
             generator._handle_cacheable_event(event_name, cacheable)
 

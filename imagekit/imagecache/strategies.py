@@ -20,13 +20,13 @@ class Optimistic(object):
 
     """
 
-    def on_cacheable_created(self, file):
+    def on_source_created(self, file):
         validate_now(file)
 
-    def on_cacheable_deleted(self, file):
+    def on_source_deleted(self, file):
         clear_now(file)
 
-    def on_cacheable_changed(self, file):
+    def on_source_changed(self, file):
         validate_now(file)
 
 
