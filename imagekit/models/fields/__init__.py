@@ -11,7 +11,7 @@ class SpecHostField(SpecHost):
         # Generate a spec_id to register the spec with. The default spec id is
         # "<app>:<model>_<field>"
         if not getattr(self, 'spec_id', None):
-            spec_id = (u'%s:%s_%s' % (cls._meta.app_label,
+            spec_id = (u'%s:%s:%s' % (cls._meta.app_label,
                             cls._meta.object_name, name)).lower()
 
             # Register the spec with the id. This allows specs to be overridden
@@ -45,8 +45,8 @@ class ImageSpecField(SpecHostField):
         self.set_spec_id(cls, name)
 
         # Add the model and field as a source for this spec id
-        register.sources(self.spec_id,
-                [ImageFieldSourceGroup(cls, self.source)])
+        register.source_group(self.spec_id,
+                ImageFieldSourceGroup(cls, self.source))
 
 
 class ProcessedImageField(models.ImageField, SpecHostField):

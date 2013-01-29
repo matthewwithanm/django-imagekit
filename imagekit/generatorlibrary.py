@@ -10,4 +10,4 @@ class Thumbnail(ImageSpec):
         super(Thumbnail, self).__init__(**kwargs)
 
 
-register.spec('ik:thumbnail', Thumbnail)
+register.generator('ik:thumbnail', Thumbnail)

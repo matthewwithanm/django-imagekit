@@ -3,7 +3,6 @@ from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
 import os
 import pickle
-from ..files import GeneratedImageCacheFile
 from ..imagecache.backends import get_default_image_cache_backend
 from ..imagecache.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
@@ -42,11 +41,6 @@ class BaseImageSpec(object):
 
     def generate(self):
         raise NotImplementedError
-
-    # TODO: I don't like this interface. Is there a standard Python one? pubsub?
-    def _handle_source_event(self, event_name, source):
-        file = GeneratedImageCacheFile(self)
-        self.image_cache_strategy.invoke_callback('on_%s' % event_name, file)
 
 
 class ImageSpec(BaseImageSpec):
@@ -208,7 +202,7 @@ class SpecHost(object):
 
         """
         self.spec_id = id
-        register.spec(id, self._original_spec)
+        register.generator(id, self._original_spec)
 
     def get_spec(self, source):
         """

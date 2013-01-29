@@ -1,12 +1,26 @@
+"""
+Source groups are the means by which image spec sources are identified. They
+have two responsibilities:
+
+1. To dispatch ``source_created``, ``source_changed``, and ``source_deleted``
+   signals. (These will be relayed to the corresponding specs' image cache
+   strategies.)
+2. To provide the source files that they represent, via a generator method named
+   ``files()``. (This is used by the warmimagecache management command for
+   "pre-caching" image files.)
+
+"""
+
 from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
+from ..files import LazyGeneratedImageCacheFile
 from ..signals import source_created, source_changed, source_deleted
 
 
 def ik_model_receiver(fn):
     """
     A method decorator that filters out signals coming from models that don't
-    have fields that function as ImageFieldSourceGroup
+    have fields that function as ImageFieldSourceGroup sources.
 
     """
     @wraps(fn)
@@ -18,8 +32,15 @@ def ik_model_receiver(fn):
 
 class ModelSignalRouter(object):
     """
-    Handles signals dispatched by models and relays them to the spec source
-    groups that represent those models.
+    Normally, ``ImageFieldSourceGroup`` would be directly responsible for
+    watching for changes on the model field it represents. However, Django does
+    not dispatch events for abstract base classes. Therefore, we must listen for
+    the signals on all models and filter out those that aren't represented by
+    ``ImageFieldSourceGroup``s. This class encapsulates that functionality.
+
+    Related:
+        https://github.com/jdriscoll/django-imagekit/issues/126
+        https://code.djangoproject.com/ticket/9318
 
     """
 
@@ -89,35 +110,55 @@ class ModelSignalRouter(object):
         """
         for source_group in self._source_groups:
             if source_group.model_class is model_class and source_group.image_field == attname:
-                info = dict(
-                    source_group=source_group,
-                    instance=instance,
-                    field_name=attname,
-                )
-                signal.send(sender=source_group, source=file, info=info)
+                signal.send(sender=source_group, source=file)
 
 
 class ImageFieldSourceGroup(object):
+    """
+    A source group that repesents a particular field across all instances of a
+    model.
+
+    """
     def __init__(self, model_class, image_field):
-        """
-        Good design would dictate that this instance would be responsible for
-        watching for changes for the provided field. However, due to a bug in
-        Django, we can't do that without leaving abstract base models (which
-        don't trigger signals) in the lurch. So instead, we do all signal
-        handling through the signal router.
-
-        Related:
-            https://github.com/jdriscoll/django-imagekit/issues/126
-            https://code.djangoproject.com/ticket/9318
-
-        """
         self.model_class = model_class
         self.image_field = image_field
         signal_router.add(self)
 
     def files(self):
+        """
+        A generator that returns the source files that this source group
+        represents; in this case, a particular field of every instance of a
+        particular model.
+
+        """
         for instance in self.model_class.objects.all():
             yield getattr(instance, self.image_field)
+
+
+class SourceGroupCacheablesGenerator(object):
+    """
+    A cacheables generator for source groups. The purpose of this class is to
+    generate cacheables (cache files) from a source group.
+
+    """
+    def __init__(self, source_group, generator_id):
+        self.source_group = source_group
+        self.generator_id = generator_id
+
+    def __eq__(self, other):
+        return (isinstance(other, self.__class__)
+            and self.__dict__ == other.__dict__)
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __hash__(self):
+        return hash((self.source_group, self.generator_id))
+
+    def __call__(self):
+        for source_file in self.source_group.files():
+            yield LazyGeneratedImageCacheFile(self.generator_id,
+                                              source=source_file)
 
 
 signal_router = ModelSignalRouter()
