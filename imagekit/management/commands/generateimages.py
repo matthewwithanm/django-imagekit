@@ -1,15 +1,16 @@
 from django.core.management.base import BaseCommand
 import re
-from ...registry import generator_registry, cacheable_registry
+from ...registry import generator_registry, generatedfile_registry
 
 
 class Command(BaseCommand):
-    help = ("""Warm the image cache for the specified generators (or all generators if
-none was provided). Simple, fnmatch-like wildcards are allowed, with *
-matching all characters within a segment, and ** matching across segments.
-(Segments are separated with colons.) So, for example, "a:*:c" will match
-"a:b:c", but not "a:b:x:c", whereas "a:**:c" will match both. Subsegments
-are always matched, so "a" will match "a" as well as "a:b" and "a:b:c".""")
+    help = ("""Generate files for the specified image generators (or all of them if
+none was provided). Simple, glob-like wildcards are allowed, with *
+matching all characters within a segment, and ** matching across
+segments. (Segments are separated with colons.) So, for example,
+"a:*:c" will match "a:b:c", but not "a:b:x:c", whereas "a:**:c" will
+match both. Subsegments are always matched, so "a" will match "a" as
+well as "a:b" and "a:b:c".""")
     args = '[generator_ids]'
 
     def handle(self, *args, **options):
@@ -21,11 +22,11 @@ are always matched, so "a" will match "a" as well as "a:b" and "a:b:c".""")
 
         for generator_id in generators:
             self.stdout.write('Validating generator: %s\n' % generator_id)
-            for cacheable in cacheable_registry.get(generator_id):
-                self.stdout.write('  %s\n' % cacheable)
+            for file in generatedfile_registry.get(generator_id):
+                self.stdout.write('  %s\n' % file)
                 try:
                     # TODO: Allow other validation actions through command option
-                    cacheable.validate()
+                    file.ensure_exists()
                 except Exception, err:
                     # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
                     self.stdout.write('    FAILED: %s\n' % err)

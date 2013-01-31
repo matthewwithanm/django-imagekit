@@ -52,11 +52,11 @@ class GeneratorRegistry(object):
 class SourceGroupRegistry(object):
     """
     The source group registry is responsible for listening to source_* signals
-    on source groups, and relaying them to the image cache strategies of the
+    on source groups, and relaying them to the image generator strategies of the
     appropriate generators.
 
-    In addition, registering a new source group also registers its cacheables
-    generator with the cacheable registry.
+    In addition, registering a new source group also registers its generated
+    files with that registry.
 
     """
     _signals = {
@@ -71,26 +71,26 @@ class SourceGroupRegistry(object):
             signal.connect(self.source_group_receiver)
 
     def register(self, generator_id, source_group):
-        from .specs.sourcegroups import SourceGroupCacheablesGenerator
+        from .specs.sourcegroups import SourceGroupFilesGenerator
         generator_ids = self._source_groups.setdefault(source_group, set())
         generator_ids.add(generator_id)
-        cacheable_registry.register(generator_id,
-                SourceGroupCacheablesGenerator(source_group, generator_id))
+        generatedfile_registry.register(generator_id,
+                SourceGroupFilesGenerator(source_group, generator_id))
 
     def unregister(self, generator_id, source_group):
-        from .specs.sourcegroups import SourceGroupCacheablesGenerator
+        from .specs.sourcegroups import SourceGroupFilesGenerator
         generator_ids = self._source_groups.setdefault(source_group, set())
         if generator_id in generator_ids:
             generator_ids.remove(generator_id)
-            cacheable_registry.unregister(generator_id,
-                    SourceGroupCacheablesGenerator(source_group, generator_id))
+            generatedfile_registry.unregister(generator_id,
+                    SourceGroupFilesGenerator(source_group, generator_id))
 
     def source_group_receiver(self, sender, source, signal, **kwargs):
         """
         Relay source group signals to the appropriate spec strategy.
 
         """
-        from .files import GeneratedImageCacheFile
+        from .files import GeneratedImageFile
         source_group = sender
 
         # Ignore signals from unregistered groups.
@@ -102,53 +102,53 @@ class SourceGroupRegistry(object):
         callback_name = self._signals[signal]
 
         for spec in specs:
-            file = GeneratedImageCacheFile(spec)
+            file = GeneratedImageFile(spec)
             call_strategy_method(spec, callback_name, file=file)
 
 
-class CacheableRegistry(object):
+class GeneratedFileRegistry(object):
     """
-    An object for registering cacheables with generators. The two are
+    An object for registering generated files with image generators. The two are
     associated with each other via a string id. We do this (as opposed to
-    associating them directly by, for example, putting a ``cacheables``
-    attribute on generators) so that generators can be overridden without
-    losing the associated cacheables. That way, a distributable app can define
-    its own generators without locking the users of the app into it.
+    associating them directly by, for example, putting a ``generatedfiles``
+    attribute on image generators) so that image generators can be overridden
+    without losing the associated files. That way, a distributable app can
+    define its own generators without locking the users of the app into it.
 
     """
 
     def __init__(self):
-        self._cacheables = {}
+        self._generatedfiles = {}
 
-    def register(self, generator_id, cacheables):
+    def register(self, generator_id, generatedfiles):
         """
-        Associates cacheables with a generator id
+        Associates generated files with a generator id
 
         """
-        if cacheables not in self._cacheables:
-            self._cacheables[cacheables] = set()
-        self._cacheables[cacheables].add(generator_id)
+        if generatedfiles not in self._generatedfiles:
+            self._generatedfiles[generatedfiles] = set()
+        self._generatedfiles[generatedfiles].add(generator_id)
 
-    def unregister(self, generator_id, cacheables):
+    def unregister(self, generator_id, generatedfiles):
         """
-        Disassociates cacheables with a generator id
+        Disassociates generated files with a generator id
 
         """
         try:
-            self._cacheables[cacheables].remove(generator_id)
+            self._generatedfiles[generatedfiles].remove(generator_id)
         except KeyError:
             pass
 
     def get(self, generator_id):
-        for k, v in self._cacheables.items():
+        for k, v in self._generatedfiles.items():
             if generator_id in v:
-                for cacheable in k():
-                    yield cacheable
+                for file in k():
+                    yield file
 
 
 class Register(object):
     """
-    Register generators and cacheables.
+    Register generators and generated files.
 
     """
     def generator(self, id, generator=None):
@@ -162,8 +162,8 @@ class Register(object):
         generator_registry.register(id, generator)
 
     # iterable that returns kwargs or callable that returns iterable of kwargs
-    def cacheables(self, generator_id, cacheables):
-        cacheable_registry.register(generator_id, cacheables)
+    def generatedfiles(self, generator_id, generatedfiles):
+        generatedfile_registry.register(generator_id, generatedfiles)
 
     def source_group(self, generator_id, source_group):
         source_group_registry.register(generator_id, source_group)
@@ -171,21 +171,21 @@ class Register(object):
 
 class Unregister(object):
     """
-    Unregister generators and cacheables.
+    Unregister generators and generated files.
 
     """
     def generator(self, id, generator):
         generator_registry.unregister(id, generator)
 
-    def cacheables(self, generator_id, cacheables):
-        cacheable_registry.unregister(generator_id, cacheables)
+    def generatedfiles(self, generator_id, generatedfiles):
+        generatedfile_registry.unregister(generator_id, generatedfiles)
 
     def source_group(self, generator_id, source_group):
         source_group_registry.unregister(generator_id, source_group)
 
 
 generator_registry = GeneratorRegistry()
-cacheable_registry = CacheableRegistry()
+generatedfile_registry = GeneratedFileRegistry()
 source_group_registry = SourceGroupRegistry()
 register = Register()
 unregister = Unregister()

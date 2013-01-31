@@ -1,4 +1,4 @@
-from ...files import GeneratedImageCacheFile
+from ...files import GeneratedImageFile
 from django.db.models.fields.files import ImageField
 
 
@@ -30,7 +30,7 @@ class ImageSpecFileDescriptor(object):
                 else:
                     source = image_fields[0]
             spec = self.field.get_spec(source=source)
-            file = GeneratedImageCacheFile(spec)
+            file = GeneratedImageFile(spec)
             instance.__dict__[self.attname] = file
             return file
 

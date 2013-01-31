@@ -72,48 +72,41 @@ class BaseIKFile(File):
             file.close()
 
 
-class GeneratedImageCacheFile(BaseIKFile, ImageFile):
+class GeneratedImageFile(BaseIKFile, ImageFile):
     """
-    A cache file that represents the result of a generator. Creating an instance
-    of this class is not enough to trigger the creation of the cache file. In
-    fact, one of the main points of this class is to allow the creation of the
-    file to be deferred until the time that the image cache strategy requires
-    it.
+    A file that represents the result of a generator. Creating an instance of
+    this class is not enough to trigger the generation of the file. In fact,
+    one of the main points of this class is to allow the creation of the file
+    to be deferred until the time that the image generator strategy requires it.
 
     """
-    def __init__(self, generator, name=None, storage=None, image_cache_backend=None):
+    def __init__(self, generator, name=None, storage=None, generatedfile_backend=None):
         """
         :param generator: The object responsible for generating a new image.
         :param name: The filename
         :param storage: A Django storage object that will be used to save the
             file.
-        :param image_cache_backend: The object responsible for managing the
-            state of the cache file.
+        :param generatedfile_backend: The object responsible for managing the
+            state of the file.
 
         """
         self.generator = generator
 
-        self.name = name or getattr(generator, 'cache_file_name', None)
-        storage = storage or getattr(generator, 'cache_file_storage',
+        self.name = name or getattr(generator, 'generatedfile_name', None)
+        storage = storage or getattr(generator, 'generatedfile_storage',
             None) or get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
             'file storage backend')
-        self.image_cache_backend = image_cache_backend or getattr(generator,
-            'image_cache_backend', None)
+        self.generatedfile_backend = generatedfile_backend or getattr(generator,
+            'generatedfile_backend', None)
 
-        super(GeneratedImageCacheFile, self).__init__(storage=storage)
+        super(GeneratedImageFile, self).__init__(storage=storage)
 
     def _require_file(self):
         before_access.send(sender=self, file=self)
-        return super(GeneratedImageCacheFile, self)._require_file()
+        return super(GeneratedImageFile, self)._require_file()
 
-    def clear(self):
-        return self.image_cache_backend.clear(self)
-
-    def invalidate(self):
-        return self.image_cache_backend.invalidate(self)
-
-    def validate(self):
-        return self.image_cache_backend.validate(self)
+    def ensure_exists(self):
+        return self.generatedfile_backend.ensure_exists(self)
 
     def generate(self):
         # Generate the file
@@ -126,11 +119,11 @@ class GeneratedImageCacheFile(BaseIKFile, ImageFile):
                     ' with the requested name ("%s") and instead used'
                     ' "%s". This may be because a file already existed with'
                     ' the requested name. If so, you may have meant to call'
-                    ' validate() instead of generate(), or there may be a'
-                    ' race condition in the image cache backend %s. The'
-                    ' saved file will not be used.' % (self.storage,
+                    ' ensure_exists() instead of generate(), or there may be a'
+                    ' race condition in the file backend %s. The saved file'
+                    ' will not be used.' % (self.storage,
                     self.name, actual_name,
-                    self.image_cache_backend))
+                    self.generatedfile_backend))
 
 
 class IKContentFile(ContentFile):
@@ -162,12 +155,12 @@ class IKContentFile(ContentFile):
         return smart_unicode(self.file.name or u'')
 
 
-class LazyGeneratedImageCacheFile(LazyObject):
+class LazyGeneratedImageFile(LazyObject):
     def __init__(self, generator_id, *args, **kwargs):
-        super(LazyGeneratedImageCacheFile, self).__init__()
+        super(LazyGeneratedImageFile, self).__init__()
 
         def setup():
             generator = generator_registry.get(generator_id, *args, **kwargs)
-            self._wrapped = GeneratedImageCacheFile(generator)
+            self._wrapped = GeneratedImageFile(generator)
 
         self.__dict__['_setup'] = setup

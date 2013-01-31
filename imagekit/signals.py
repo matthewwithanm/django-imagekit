@@ -1,7 +1,7 @@
 from django.dispatch import Signal
 
 
-# "Cacheables" (cache file) signals
+# Generated file signals
 before_access = Signal()
 
 # Source group signals

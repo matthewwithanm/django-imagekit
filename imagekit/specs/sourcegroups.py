@@ -3,17 +3,17 @@ Source groups are the means by which image spec sources are identified. They
 have two responsibilities:
 
 1. To dispatch ``source_created``, ``source_changed``, and ``source_deleted``
-   signals. (These will be relayed to the corresponding specs' image cache
+   signals. (These will be relayed to the corresponding specs' generator
    strategies.)
 2. To provide the source files that they represent, via a generator method named
-   ``files()``. (This is used by the warmimagecache management command for
+   ``files()``. (This is used by the generateimages management command for
    "pre-caching" image files.)
 
 """
 
 from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
-from ..files import LazyGeneratedImageCacheFile
+from ..files import LazyGeneratedImageFile
 from ..signals import source_created, source_changed, source_deleted
 
 
@@ -135,10 +135,9 @@ class ImageFieldSourceGroup(object):
             yield getattr(instance, self.image_field)
 
 
-class SourceGroupCacheablesGenerator(object):
+class SourceGroupFilesGenerator(object):
     """
-    A cacheables generator for source groups. The purpose of this class is to
-    generate cacheables (cache files) from a source group.
+    A Python generator that yields generated file objects for source groups.
 
     """
     def __init__(self, source_group, generator_id):
@@ -157,7 +156,7 @@ class SourceGroupCacheablesGenerator(object):
 
     def __call__(self):
         for source_file in self.source_group.files():
-            yield LazyGeneratedImageCacheFile(self.generator_id,
+            yield LazyGeneratedImageFile(self.generator_id,
                                               source=source_file)
 
 

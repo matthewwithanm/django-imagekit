@@ -2,7 +2,7 @@ from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 from .compat import parse_bits
-from ..files import GeneratedImageCacheFile
+from ..files import GeneratedImageFile
 from ..registry import generator_registry
 
 
@@ -19,12 +19,12 @@ _kwarg_map = {
 }
 
 
-def get_cache_file(context, generator_id, generator_kwargs, source=None):
+def get_generatedfile(context, generator_id, generator_kwargs, source=None):
     generator_id = generator_id.resolve(context)
     kwargs = dict((_kwarg_map.get(k, k), v.resolve(context)) for k,
          v in generator_kwargs.items())
     generator = generator_registry.get(generator_id, **kwargs)
-    return GeneratedImageCacheFile(generator)
+    return GeneratedImageFile(generator)
 
 
 def parse_dimensions(dimensions):
@@ -53,7 +53,7 @@ class GenerateImageAssignmentNode(template.Node):
         autodiscover()
 
         variable_name = self.get_variable_name(context)
-        context[variable_name] = get_cache_file(context, self._generator_id,
+        context[variable_name] = get_generatedfile(context, self._generator_id,
                 self._generator_kwargs)
         return ''
 
@@ -69,7 +69,7 @@ class GenerateImageTagNode(template.Node):
         from ..utils import autodiscover
         autodiscover()
 
-        file = get_cache_file(context, self._generator_id,
+        file = get_generatedfile(context, self._generator_id,
                 self._generator_kwargs)
         attrs = dict((k, v.resolve(context)) for k, v in
                 self._html_attrs.items())
@@ -110,7 +110,7 @@ class ThumbnailAssignmentNode(template.Node):
         kwargs.update(parse_dimensions(self._dimensions.resolve(context)))
         generator = generator_registry.get(generator_id, **kwargs)
 
-        context[variable_name] = GeneratedImageCacheFile(generator)
+        context[variable_name] = GeneratedImageFile(generator)
 
         return ''
 
@@ -136,7 +136,7 @@ class ThumbnailImageTagNode(template.Node):
         kwargs.update(dimensions)
         generator = generator_registry.get(generator_id, **kwargs)
 
-        file = GeneratedImageCacheFile(generator)
+        file = GeneratedImageFile(generator)
 
         attrs = dict((k, v.resolve(context)) for k, v in
                 self._html_attrs.items())

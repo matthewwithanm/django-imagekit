@@ -1,34 +1,33 @@
 from django.utils.functional import LazyObject
-from .actions import validate_now, clear_now
 from ..utils import get_singleton
 
 
 class JustInTime(object):
     """
-    A caching strategy that validates the file right before it's needed.
+    A strategy that ensures the file exists right before it's needed.
 
     """
 
     def before_access(self, file):
-        validate_now(file)
+        file.ensure_exists()
 
 
 class Optimistic(object):
     """
-    A caching strategy that acts immediately when the cacheable file changes
-    and assumes that the cache files will not be removed (i.e. doesn't
-    revalidate on access).
+    A strategy that acts immediately when the source file changes and assumes
+    that the generated files will not be removed (i.e. it doesn't ensure the
+    generated file exists when it's accessed).
 
     """
 
     def on_source_created(self, file):
-        validate_now(file)
+        file.ensure_exists()
 
     def on_source_deleted(self, file):
-        clear_now(file)
+        file.delete()
 
     def on_source_changed(self, file):
-        validate_now(file)
+        file.ensure_exists()
 
 
 class DictStrategy(object):
@@ -40,7 +39,7 @@ class DictStrategy(object):
 class StrategyWrapper(LazyObject):
     def __init__(self, strategy):
         if isinstance(strategy, basestring):
-            strategy = get_singleton(strategy, 'image cache strategy')
+            strategy = get_singleton(strategy, 'generator strategy')
         elif isinstance(strategy, dict):
             strategy = DictStrategy(strategy)
         elif callable(strategy):
