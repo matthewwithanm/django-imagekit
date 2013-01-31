@@ -3,8 +3,8 @@ from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
 import os
 import pickle
-from ..generators.filebackends import get_default_generatedfile_backend
-from ..generators.strategies import StrategyWrapper
+from ..generatedfiles.backends import get_default_generatedfile_backend
+from ..generatedfiles.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
 from ..utils import open_image, img_to_fobj, suggest_extension
 from ..registry import generator_registry, register
@@ -27,17 +27,17 @@ class BaseImageSpec(object):
 
     """
 
-    generator_strategy = settings.IMAGEKIT_DEFAULT_IMAGE_GENERATOR_STRATEGY
+    generatedfile_strategy = settings.IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY
     """
     A dictionary containing callbacks that allow you to customize how and when
     the image file is created. Defaults to
-    ``IMAGEKIT_DEFAULT_IMAGE_GENERATOR_STRATEGY``.
+    ``IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY``.
 
     """
 
     def __init__(self):
         self.generatedfile_backend = self.generatedfile_backend or get_default_generatedfile_backend()
-        self.generator_strategy = StrategyWrapper(self.generator_strategy)
+        self.generatedfile_strategy = StrategyWrapper(self.generatedfile_strategy)
 
     def generate(self):
         raise NotImplementedError

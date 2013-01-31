@@ -27,14 +27,14 @@ class ImageSpecField(SpecHostField):
     """
     def __init__(self, processors=None, format=None, options=None,
             source=None, generatedfile_storage=None, autoconvert=None,
-            generatedfile_backend=None, generator_strategy=None, spec=None,
+            generatedfile_backend=None, generatedfile_strategy=None, spec=None,
             id=None):
 
         SpecHost.__init__(self, processors=processors, format=format,
                 options=options, generatedfile_storage=generatedfile_storage,
                 autoconvert=autoconvert,
                 generatedfile_backend=generatedfile_backend,
-                generator_strategy=generator_strategy, spec=spec,
+                generatedfile_strategy=generatedfile_strategy, spec=spec,
                 spec_id=id)
 
         # TODO: Allow callable for source. See https://github.com/jdriscoll/django-imagekit/issues/158#issuecomment-10921664

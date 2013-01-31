@@ -54,8 +54,8 @@ class GeneratorRegistry(object):
 class SourceGroupRegistry(object):
     """
     The source group registry is responsible for listening to source_* signals
-    on source groups, and relaying them to the image generator strategies of the
-    appropriate generators.
+    on source groups, and relaying them to the image generated file strategies
+    of the appropriate generators.
 
     In addition, registering a new source group also registers its generated
     files with that registry.
@@ -92,7 +92,7 @@ class SourceGroupRegistry(object):
         Relay source group signals to the appropriate spec strategy.
 
         """
-        from .files import GeneratedImageFile
+        from .generatedfiles import GeneratedImageFile
         source_group = sender
 
         # Ignore signals from unregistered groups.

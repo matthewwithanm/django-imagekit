@@ -3,11 +3,11 @@ from django.conf import settings
 
 
 class ImageKitConf(AppConf):
-    DEFAULT_GENERATEDFILE_BACKEND = 'imagekit.generators.filebackends.Simple'
+    DEFAULT_GENERATEDFILE_BACKEND = 'imagekit.generatedfiles.backends.Simple'
     CACHE_BACKEND = None
     GENERATED_FILE_DIR = 'generated/images'
     CACHE_PREFIX = 'imagekit:'
-    DEFAULT_IMAGE_GENERATOR_STRATEGY = 'imagekit.generators.strategies.JustInTime'
+    DEFAULT_GENERATEDFILE_STRATEGY = 'imagekit.generatedfiles.strategies.JustInTime'
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
     def configure_cache_backend(self, value):

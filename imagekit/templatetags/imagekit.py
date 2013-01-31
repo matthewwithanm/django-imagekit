@@ -2,7 +2,7 @@ from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 from .compat import parse_bits
-from ..files import GeneratedImageFile
+from ..generatedfiles import GeneratedImageFile
 from ..registry import generator_registry
 
 

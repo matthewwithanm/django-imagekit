@@ -39,7 +39,7 @@ class DictStrategy(object):
 class StrategyWrapper(LazyObject):
     def __init__(self, strategy):
         if isinstance(strategy, basestring):
-            strategy = get_singleton(strategy, 'generator strategy')
+            strategy = get_singleton(strategy, 'generated file strategy')
         elif isinstance(strategy, dict):
             strategy = DictStrategy(strategy)
         elif callable(strategy):
