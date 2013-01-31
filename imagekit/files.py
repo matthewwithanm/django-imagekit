@@ -105,10 +105,13 @@ class GeneratedImageFile(BaseIKFile, ImageFile):
         before_access.send(sender=self, file=self)
         return super(GeneratedImageFile, self)._require_file()
 
-    def ensure_exists(self):
-        return self.generatedfile_backend.ensure_exists(self)
+    def generate(self, force=False):
+        if force:
+            self._generate()
+        else:
+            self.generatedfile_backend.ensure_exists(self)
 
-    def generate(self):
+    def _generate(self):
         # Generate the file
         content = generate(self.generator)
 

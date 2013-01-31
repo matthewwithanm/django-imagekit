@@ -9,7 +9,7 @@ class JustInTime(object):
     """
 
     def before_access(self, file):
-        file.ensure_exists()
+        file.generate()
 
 
 class Optimistic(object):
@@ -21,13 +21,13 @@ class Optimistic(object):
     """
 
     def on_source_created(self, file):
-        file.ensure_exists()
+        file.generate()
 
     def on_source_deleted(self, file):
         file.delete()
 
     def on_source_changed(self, file):
-        file.ensure_exists()
+        file.generate()
 
 
 class DictStrategy(object):

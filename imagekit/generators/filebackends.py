@@ -61,4 +61,4 @@ class Simple(CachedFileBackend):
         Generates a new image by running the processors on the source file.
 
         """
-        file.generate()
+        file.generate(force=True)

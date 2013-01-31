@@ -26,7 +26,7 @@ well as "a:b" and "a:b:c".""")
                 self.stdout.write('  %s\n' % file)
                 try:
                     # TODO: Allow other validation actions through command option
-                    file.ensure_exists()
+                    file.generate()
                 except Exception, err:
                     # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
                     self.stdout.write('    FAILED: %s\n' % err)
