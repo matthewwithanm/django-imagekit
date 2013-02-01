@@ -10,7 +10,7 @@ register = template.Library()
 
 
 ASSIGNMENT_DELIMETER = 'as'
-HTML_ATTRS_DELIMITER = 'with'
+HTML_ATTRS_DELIMITER = '--'
 DEFAULT_THUMBNAIL_GENERATOR = 'ik:thumbnail'
 
 
@@ -205,10 +205,10 @@ def generateimage(parser, token):
 
         <img src="/path/to/34d944f200dd794bf1e6a7f37849f72b.jpg" width="100" height="100" />
 
-    You can add additional attributes to the tag using "with". For example,
+    You can add additional attributes to the tag using "--". For example,
     this::
 
-        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image with alt="Hello!" %}
+        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image -- alt="Hello!" %}
 
     will result in the following markup::
 
@@ -250,7 +250,7 @@ def thumbnail(parser, token):
 
         {% generateimage 'ik:thumbnail' from=mymodel.profile_image width=100 height=100 %}
 
-    The thumbnail tag supports the "with" and "as" bits for adding html
+    The thumbnail tag supports the "--" and "as" bits for adding html
     attributes and assigning to a variable, respectively. It also accepts the
     kwargs "anchor", and "crop".
 

@@ -14,25 +14,25 @@ def test_img_tag():
 
 
 def test_img_tag_attrs():
-    ttag = r"""{% generateimage 'testspec' from=img with alt="Hello" %}"""
+    ttag = r"""{% generateimage 'testspec' from=img -- alt="Hello" %}"""
     attrs = get_html_attrs(ttag)
     eq_(attrs.get('alt'), 'Hello')
 
 
 @raises(TemplateSyntaxError)
-def test_dangling_with():
-    ttag = r"""{% generateimage 'testspec' from=img with %}"""
+def test_dangling_html_attrs_delimiter():
+    ttag = r"""{% generateimage 'testspec' from=img -- %}"""
     render_tag(ttag)
 
 
 @raises(TemplateSyntaxError)
-def test_with_assignment():
+def test_html_attrs_assignment():
     """
     You can either use generateimage as an assigment tag or specify html attrs,
     but not both.
 
     """
-    ttag = r"""{% generateimage 'testspec' from=img with alt="Hello" as th %}"""
+    ttag = r"""{% generateimage 'testspec' from=img -- alt="Hello" as th %}"""
     render_tag(ttag)
 
 
@@ -41,7 +41,7 @@ def test_single_dimension_attr():
     If you only provide one of width or height, the other should not be added.
 
     """
-    ttag = r"""{% generateimage 'testspec' from=img with width="50" %}"""
+    ttag = r"""{% generateimage 'testspec' from=img -- width="50" %}"""
     attrs = get_html_attrs(ttag)
     assert_not_in('height', attrs)
 

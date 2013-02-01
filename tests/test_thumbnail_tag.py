@@ -14,14 +14,14 @@ def test_img_tag():
 
 
 def test_img_tag_attrs():
-    ttag = r"""{% thumbnail '100x100' img with alt="Hello" %}"""
+    ttag = r"""{% thumbnail '100x100' img -- alt="Hello" %}"""
     attrs = get_html_attrs(ttag)
     eq_(attrs.get('alt'), 'Hello')
 
 
 @raises(TemplateSyntaxError)
-def test_dangling_with():
-    ttag = r"""{% thumbnail '100x100' img with %}"""
+def test_dangling_html_attrs_delimiter():
+    ttag = r"""{% thumbnail '100x100' img -- %}"""
     render_tag(ttag)
 
 
@@ -38,13 +38,13 @@ def test_too_many_args():
 
 
 @raises(TemplateSyntaxError)
-def test_with_assignment():
+def test_html_attrs_assignment():
     """
     You can either use thumbnail as an assigment tag or specify html attrs,
     but not both.
 
     """
-    ttag = r"""{% thumbnail '100x100' img with alt="Hello" as th %}"""
+    ttag = r"""{% thumbnail '100x100' img -- alt="Hello" as th %}"""
     render_tag(ttag)
 
 
