@@ -7,7 +7,7 @@ class ImageKitConf(AppConf):
     CACHE_BACKEND = None
     GENERATEDFILE_NAMER = 'imagekit.generatedfiles.namers.hash'
     SPEC_GENERATEDFILE_NAMER = 'imagekit.generatedfiles.namers.source_name_as_path'
-    GENERATED_FILE_DIR = 'generated/images'
+    GENERATEDFILE_DIR = 'generated/images'
     CACHE_PREFIX = 'imagekit:'
     DEFAULT_GENERATEDFILE_STRATEGY = 'imagekit.generatedfiles.strategies.JustInTime'
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
