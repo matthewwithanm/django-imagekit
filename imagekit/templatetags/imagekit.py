@@ -14,15 +14,9 @@ HTML_ATTRS_DELIMITER = '--'
 DEFAULT_THUMBNAIL_GENERATOR = 'ik:thumbnail'
 
 
-_kwarg_map = {
-    'from': 'source',
-}
-
-
 def get_generatedfile(context, generator_id, generator_kwargs, source=None):
     generator_id = generator_id.resolve(context)
-    kwargs = dict((_kwarg_map.get(k, k), v.resolve(context)) for k,
-         v in generator_kwargs.items())
+    kwargs = dict((k, v.resolve(context)) for k, v in generator_kwargs.items())
     generator = generator_registry.get(generator_id, **kwargs)
     return GeneratedImageFile(generator)
 
@@ -104,8 +98,8 @@ class ThumbnailAssignmentNode(template.Node):
         variable_name = self.get_variable_name(context)
 
         generator_id = self._generator_id.resolve(context) if self._generator_id else DEFAULT_THUMBNAIL_GENERATOR
-        kwargs = dict((_kwarg_map.get(k, k), v.resolve(context)) for k,
-            v in self._generator_kwargs.items())
+        kwargs = dict((k, v.resolve(context)) for k, v in
+                self._generator_kwargs.items())
         kwargs['source'] = self._source.resolve(context)
         kwargs.update(parse_dimensions(self._dimensions.resolve(context)))
         generator = generator_registry.get(generator_id, **kwargs)
@@ -130,8 +124,8 @@ class ThumbnailImageTagNode(template.Node):
 
         generator_id = self._generator_id.resolve(context) if self._generator_id else DEFAULT_THUMBNAIL_GENERATOR
         dimensions = parse_dimensions(self._dimensions.resolve(context))
-        kwargs = dict((_kwarg_map.get(k, k), v.resolve(context)) for k,
-            v in self._generator_kwargs.items())
+        kwargs = dict((k, v.resolve(context)) for k, v in
+                self._generator_kwargs.items())
         kwargs['source'] = self._source.resolve(context)
         kwargs.update(dimensions)
         generator = generator_registry.get(generator_id, **kwargs)
@@ -199,7 +193,7 @@ def generateimage(parser, token):
 
     By default::
 
-        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image %}
+        {% generateimage 'myapp:thumbnail' source=mymodel.profile_image %}
 
     generates an ``<img>`` tag::
 
@@ -208,7 +202,7 @@ def generateimage(parser, token):
     You can add additional attributes to the tag using "--". For example,
     this::
 
-        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image -- alt="Hello!" %}
+        {% generateimage 'myapp:thumbnail' source=mymodel.profile_image -- alt="Hello!" %}
 
     will result in the following markup::
 
@@ -216,7 +210,7 @@ def generateimage(parser, token):
 
     For more flexibility, ``generateimage`` also works as an assignment tag::
 
-        {% generateimage 'myapp:thumbnail' from=mymodel.profile_image as th %}
+        {% generateimage 'myapp:thumbnail' source=mymodel.profile_image as th %}
         <img src="{{ th.url }}" width="{{ th.width }}" height="{{ th.height }}" />
 
     """
@@ -248,7 +242,7 @@ def thumbnail(parser, token):
 
     is equivalent to::
 
-        {% generateimage 'ik:thumbnail' from=mymodel.profile_image width=100 height=100 %}
+        {% generateimage 'ik:thumbnail' source=mymodel.profile_image width=100 height=100 %}
 
     The thumbnail tag supports the "--" and "as" bits for adding html
     attributes and assigning to a variable, respectively. It also accepts the

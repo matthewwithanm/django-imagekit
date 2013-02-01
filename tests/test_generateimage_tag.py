@@ -5,7 +5,7 @@ from .utils import render_tag, get_html_attrs
 
 
 def test_img_tag():
-    ttag = r"""{% generateimage 'testspec' from=img %}"""
+    ttag = r"""{% generateimage 'testspec' source=img %}"""
     attrs = get_html_attrs(ttag)
     expected_attrs = set(['src', 'width', 'height'])
     eq_(set(attrs.keys()), expected_attrs)
@@ -14,14 +14,14 @@ def test_img_tag():
 
 
 def test_img_tag_attrs():
-    ttag = r"""{% generateimage 'testspec' from=img -- alt="Hello" %}"""
+    ttag = r"""{% generateimage 'testspec' source=img -- alt="Hello" %}"""
     attrs = get_html_attrs(ttag)
     eq_(attrs.get('alt'), 'Hello')
 
 
 @raises(TemplateSyntaxError)
 def test_dangling_html_attrs_delimiter():
-    ttag = r"""{% generateimage 'testspec' from=img -- %}"""
+    ttag = r"""{% generateimage 'testspec' source=img -- %}"""
     render_tag(ttag)
 
 
@@ -32,7 +32,7 @@ def test_html_attrs_assignment():
     but not both.
 
     """
-    ttag = r"""{% generateimage 'testspec' from=img -- alt="Hello" as th %}"""
+    ttag = r"""{% generateimage 'testspec' source=img -- alt="Hello" as th %}"""
     render_tag(ttag)
 
 
@@ -41,12 +41,12 @@ def test_single_dimension_attr():
     If you only provide one of width or height, the other should not be added.
 
     """
-    ttag = r"""{% generateimage 'testspec' from=img -- width="50" %}"""
+    ttag = r"""{% generateimage 'testspec' source=img -- width="50" %}"""
     attrs = get_html_attrs(ttag)
     assert_not_in('height', attrs)
 
 
 def test_assignment_tag():
-    ttag = r"""{% generateimage 'testspec' from=img as th %}{{ th.url }}"""
+    ttag = r"""{% generateimage 'testspec' source=img as th %}{{ th.url }}"""
     html = render_tag(ttag)
     assert_not_equal(html.strip(), '')
