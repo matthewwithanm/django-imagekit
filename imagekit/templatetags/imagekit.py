@@ -11,7 +11,7 @@ register = template.Library()
 
 ASSIGNMENT_DELIMETER = 'as'
 HTML_ATTRS_DELIMITER = '--'
-DEFAULT_THUMBNAIL_GENERATOR = 'ik:thumbnail'
+DEFAULT_THUMBNAIL_GENERATOR = 'imagekit:thumbnail'
 
 
 def get_generatedfile(context, generator_id, generator_kwargs, source=None):
@@ -242,7 +242,7 @@ def thumbnail(parser, token):
 
     is equivalent to::
 
-        {% generateimage 'ik:thumbnail' source=mymodel.profile_image width=100 height=100 %}
+        {% generateimage 'imagekit:thumbnail' source=mymodel.profile_image width=100 height=100 %}
 
     The thumbnail tag supports the "--" and "as" bits for adding html
     attributes and assigning to a variable, respectively. It also accepts the
