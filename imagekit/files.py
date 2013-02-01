@@ -1,13 +1,7 @@
-from django.conf import settings
-from django.core.files.base import ContentFile, File
-from django.core.files.images import ImageFile
+from django.core.files.base import File, ContentFile
 from django.utils.encoding import smart_str, smart_unicode
-from django.utils.functional import LazyObject
 import os
-from .registry import generator_registry
-from .signals import before_access
-from .utils import (format_to_mimetype, extension_to_mimetype, get_logger,
-    get_singleton, generate)
+from .utils import format_to_mimetype, extension_to_mimetype
 
 
 class BaseIKFile(File):
@@ -72,67 +66,6 @@ class BaseIKFile(File):
             file.close()
 
 
-class GeneratedImageCacheFile(BaseIKFile, ImageFile):
-    """
-    A cache file that represents the result of a generator. Creating an instance
-    of this class is not enough to trigger the creation of the cache file. In
-    fact, one of the main points of this class is to allow the creation of the
-    file to be deferred until the time that the image cache strategy requires
-    it.
-
-    """
-    def __init__(self, generator, name=None, storage=None, image_cache_backend=None):
-        """
-        :param generator: The object responsible for generating a new image.
-        :param name: The filename
-        :param storage: A Django storage object that will be used to save the
-            file.
-        :param image_cache_backend: The object responsible for managing the
-            state of the cache file.
-
-        """
-        self.generator = generator
-
-        self.name = name or getattr(generator, 'cache_file_name', None)
-        storage = storage or getattr(generator, 'cache_file_storage',
-            None) or get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
-            'file storage backend')
-        self.image_cache_backend = image_cache_backend or getattr(generator,
-            'image_cache_backend', None)
-
-        super(GeneratedImageCacheFile, self).__init__(storage=storage)
-
-    def _require_file(self):
-        before_access.send(sender=self, file=self)
-        return super(GeneratedImageCacheFile, self)._require_file()
-
-    def clear(self):
-        return self.image_cache_backend.clear(self)
-
-    def invalidate(self):
-        return self.image_cache_backend.invalidate(self)
-
-    def validate(self):
-        return self.image_cache_backend.validate(self)
-
-    def generate(self):
-        # Generate the file
-        content = generate(self.generator)
-
-        actual_name = self.storage.save(self.name, content)
-
-        if actual_name != self.name:
-            get_logger().warning('The storage backend %s did not save the file'
-                    ' with the requested name ("%s") and instead used'
-                    ' "%s". This may be because a file already existed with'
-                    ' the requested name. If so, you may have meant to call'
-                    ' validate() instead of generate(), or there may be a'
-                    ' race condition in the image cache backend %s. The'
-                    ' saved file will not be used.' % (self.storage,
-                    self.name, actual_name,
-                    self.image_cache_backend))
-
-
 class IKContentFile(ContentFile):
     """
     Wraps a ContentFile in a file-like object with a filename and a
@@ -160,14 +93,3 @@ class IKContentFile(ContentFile):
 
     def __unicode__(self):
         return smart_unicode(self.file.name or u'')
-
-
-class LazyGeneratedImageCacheFile(LazyObject):
-    def __init__(self, generator_id, *args, **kwargs):
-        super(LazyGeneratedImageCacheFile, self).__init__()
-
-        def setup():
-            generator = generator_registry.get(generator_id, *args, **kwargs)
-            self._wrapped = GeneratedImageCacheFile(generator)
-
-        self.__dict__['_setup'] = setup

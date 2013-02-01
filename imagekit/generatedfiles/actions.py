@@ -1,5 +1,5 @@
-def validate_now(file):
-    file.validate()
+def generate(file):
+    file.generate()
 
 
 try:
@@ -7,15 +7,15 @@ try:
 except ImportError:
     pass
 else:
-    validate_now_task = task(validate_now)
+    generate_task = task(generate)
 
 
-def deferred_validate(file):
+def generate_deferred(file):
     try:
         import celery  # NOQA
     except:
         raise ImportError("Deferred validation requires the the 'celery' library")
-    validate_now_task.delay(file)
+    generate_task.delay(file)
 
 
 def clear_now(file):

@@ -3,8 +3,8 @@ from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
 import os
 import pickle
-from ..imagecache.backends import get_default_image_cache_backend
-from ..imagecache.strategies import StrategyWrapper
+from ..generatedfiles.backends import get_default_generatedfile_backend
+from ..generatedfiles.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
 from ..utils import open_image, img_to_fobj, suggest_extension
 from ..registry import generator_registry, register
@@ -17,27 +17,27 @@ class BaseImageSpec(object):
 
     """
 
-    cache_file_storage = None
-    """A Django storage system to use to save a generated cache file."""
+    generatedfile_storage = None
+    """A Django storage system to use to save a generated file."""
 
-    image_cache_backend = None
+    generatedfile_backend = None
     """
-    An object responsible for managing the state of cached files. Defaults to an
-    instance of ``IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND``
+    An object responsible for managing the state of generated files. Defaults to
+    an instance of ``IMAGEKIT_DEFAULT_GENERATEDFILE_BACKEND``
 
     """
 
-    image_cache_strategy = settings.IMAGEKIT_DEFAULT_IMAGE_CACHE_STRATEGY
+    generatedfile_strategy = settings.IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY
     """
     A dictionary containing callbacks that allow you to customize how and when
-    the image cache is validated. Defaults to
-    ``IMAGEKIT_DEFAULT_SPEC_FIELD_IMAGE_CACHE_STRATEGY``.
+    the image file is created. Defaults to
+    ``IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY``.
 
     """
 
     def __init__(self):
-        self.image_cache_backend = self.image_cache_backend or get_default_image_cache_backend()
-        self.image_cache_strategy = StrategyWrapper(self.image_cache_strategy)
+        self.generatedfile_backend = self.generatedfile_backend or get_default_generatedfile_backend()
+        self.generatedfile_strategy = StrategyWrapper(self.generatedfile_strategy)
 
     def generate(self):
         raise NotImplementedError
@@ -83,16 +83,16 @@ class ImageSpec(BaseImageSpec):
         super(ImageSpec, self).__init__()
 
     @property
-    def cache_file_name(self):
+    def generatedfile_name(self):
         source_filename = getattr(self.source, 'name', None)
 
         if source_filename is None or os.path.isabs(source_filename):
-            # Generally, we put the file right in the cache directory.
-            dir = settings.IMAGEKIT_CACHE_DIR
+            # Generally, we put the file right in the generated file directory.
+            dir = settings.IMAGEKIT_GENERATED_FILE_DIR
         else:
             # For source files with relative names (like Django media files),
             # use the source's name to create the new filename.
-            dir = os.path.join(settings.IMAGEKIT_CACHE_DIR,
+            dir = os.path.join(settings.IMAGEKIT_GENERATED_FILE_DIR,
                                os.path.splitext(source_filename)[0])
 
         ext = suggest_extension(source_filename or '', self.format)
