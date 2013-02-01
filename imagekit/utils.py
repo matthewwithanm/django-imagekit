@@ -322,23 +322,23 @@ def prepare_image(img, format):
     return img, save_kwargs
 
 
-def get_class(path, desc):
+def get_by_qname(path, desc):
     try:
         dot = path.rindex('.')
     except ValueError:
         raise ImproperlyConfigured("%s isn't a %s module." % (path, desc))
-    module, classname = path[:dot], path[dot + 1:]
+    module, objname = path[:dot], path[dot + 1:]
     try:
         mod = import_module(module)
     except ImportError, e:
         raise ImproperlyConfigured('Error importing %s module %s: "%s"' %
                 (desc, module, e))
     try:
-        cls = getattr(mod, classname)
-        return cls
+        obj = getattr(mod, objname)
+        return obj
     except AttributeError:
-        raise ImproperlyConfigured('%s module "%s" does not define a "%s"'
-                ' class.' % (desc[0].upper() + desc[1:], module, classname))
+        raise ImproperlyConfigured('%s module "%s" does not define "%s"'
+                % (desc[0].upper() + desc[1:], module, objname))
 
 
 _singletons = {}
@@ -346,7 +346,7 @@ _singletons = {}
 
 def get_singleton(class_path, desc):
     global _singletons
-    cls = get_class(class_path, desc)
+    cls = get_by_qname(class_path, desc)
     instance = _singletons.get(cls)
     if not instance:
         instance = _singletons[cls] = cls()
