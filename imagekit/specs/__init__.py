@@ -1,12 +1,11 @@
 from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
-import os
 import pickle
 from ..generatedfiles.backends import get_default_generatedfile_backend
 from ..generatedfiles.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
-from ..utils import open_image, img_to_fobj, suggest_extension
+from ..utils import open_image, img_to_fobj, get_by_qname
 from ..registry import generator_registry, register
 
 
@@ -84,20 +83,8 @@ class ImageSpec(BaseImageSpec):
 
     @property
     def generatedfile_name(self):
-        source_filename = getattr(self.source, 'name', None)
-
-        if source_filename is None or os.path.isabs(source_filename):
-            # Generally, we put the file right in the generated file directory.
-            dir = settings.IMAGEKIT_GENERATED_FILE_DIR
-        else:
-            # For source files with relative names (like Django media files),
-            # use the source's name to create the new filename.
-            dir = os.path.join(settings.IMAGEKIT_GENERATED_FILE_DIR,
-                               os.path.splitext(source_filename)[0])
-
-        ext = suggest_extension(source_filename or '', self.format)
-        return os.path.normpath(os.path.join(dir,
-                                             '%s%s' % (self.get_hash(), ext)))
+        fn = get_by_qname(settings.IMAGEKIT_SPEC_GENERATEDFILE_NAMER, 'namer')
+        return fn(self)
 
     def __getstate__(self):
         state = self.__dict__

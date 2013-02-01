@@ -4,7 +4,7 @@ from django.utils.functional import LazyObject
 from ..files import BaseIKFile
 from ..registry import generator_registry
 from ..signals import before_access
-from ..utils import get_logger, get_singleton, generate
+from ..utils import get_logger, get_singleton, generate, get_by_qname
 
 
 class GeneratedImageFile(BaseIKFile, ImageFile):
@@ -27,7 +27,12 @@ class GeneratedImageFile(BaseIKFile, ImageFile):
         """
         self.generator = generator
 
-        self.name = name or getattr(generator, 'generatedfile_name', None)
+        name = name or getattr(generator, 'generatedfile_name', None)
+        if not name:
+            fn = get_by_qname(settings.IMAGEKIT_GENERATEDFILE_NAMER, 'namer')
+            name = fn(generator)
+        self.name = name
+
         storage = storage or getattr(generator, 'generatedfile_storage',
             None) or get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
             'file storage backend')
