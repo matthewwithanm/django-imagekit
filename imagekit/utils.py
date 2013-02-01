@@ -355,9 +355,9 @@ def get_singleton(class_path, desc):
 
 def autodiscover():
     """
-    Auto-discover INSTALLED_APPS imagespecs.py modules and fail silently when
-    not present. This forces an import on them to register any admin bits they
-    may want.
+    Auto-discover INSTALLED_APPS imagegenerators.py modules and fail silently
+    when not present. This forces an import on them to register any admin bits
+    they may want.
 
     Copied from django.contrib.admin
     """
@@ -370,12 +370,12 @@ def autodiscover():
         mod = import_module(app)
         # Attempt to import the app's admin module.
         try:
-            import_module('%s.imagespecs' % app)
+            import_module('%s.imagegenerators' % app)
         except:
             # Decide whether to bubble up this error. If the app just
-            # doesn't have an imagespecs module, we can ignore the error
+            # doesn't have an imagegenerators module, we can ignore the error
             # attempting to import it, otherwise we want it to bubble up.
-            if module_has_submodule(mod, 'imagespecs'):
+            if module_has_submodule(mod, 'imagegenerators'):
                 raise
 
 

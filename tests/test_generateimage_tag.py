@@ -1,6 +1,6 @@
 from django.template import TemplateSyntaxError
 from nose.tools import eq_, assert_not_in, raises, assert_not_equal
-from . import imagespecs  # noqa
+from . import imagegenerators  # noqa
 from .utils import render_tag, get_html_attrs
 
 

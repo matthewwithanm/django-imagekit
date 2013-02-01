@@ -4,7 +4,7 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from imagekit import forms as ikforms
 from imagekit.processors import SmartCrop
 from nose.tools import eq_
-from . import imagespecs  # noqa
+from . import imagegenerators  # noqa
 from .models import ProcessedImageFieldModel, ImageModel
 from .utils import get_image_file
 
