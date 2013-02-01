@@ -73,3 +73,18 @@ class LazyGeneratedImageFile(LazyObject):
             self._wrapped = GeneratedImageFile(generator)
 
         self.__dict__['_setup'] = setup
+
+    def __repr__(self):
+        if self._wrapped is None:
+            self._setup()
+        return '<%s: %s>' % (self.__class__.__name__, self or 'None')
+
+    def __str__(self):
+        if self._wrapped is None:
+            self._setup()
+        return str(self._wrapped)
+
+    def __unicode__(self):
+        if self._wrapped is None:
+            self._setup()
+        return unicode(self._wrapped)
