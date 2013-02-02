@@ -247,7 +247,7 @@ thumbnail
 """""""""
 
 Because it's such a common use case, ImageKit also provides a "thumbnail"
-template tag.
+template tag:
 
 .. code-block:: html
 
@@ -255,30 +255,38 @@ template tag.
 
     {% thumbnail '100x50' source_image %}
 
-.. note::
+Like the generateimage tag, the thumbnail tag outputs an <img> tag:
 
-    Comparing this syntax to the generateimage tag above, you'll notice a few
-    differences.
+.. code-block:: html
 
-    First, we didn't have to specify an image generator id; unless we tell it
-    otherwise, thumbnail tag uses the generator registered with the id
-    "imagekit:thumbnail". (A custom id can be specified by passing an argument
-    before the dimensions.) **It's important to note that this tag is *not*
-    using the Thumbnail spec class we defined earlier**; it's using the
-    generator registered with the id "imagekit:thumbnail" which, by default, is
-    ``imagekit.generatorlibrary.Thumbnail``.
+    <img src="/media/generated/iimages/982d5af84cddddfd0fbf70892b4431e4.jpg" width="100" height="50" />
 
-    Second, we're passing two positional arguments (the dimensions and the
-    source image) as opposed to the keyword arguments we used with the
-    generateimage tag. Interally, however, the tag is parsing our positional
-    arguments and passing them as keyword arguments to our generator class.
+Comparing this syntax to the generateimage tag above, you'll notice a few
+differences.
+
+First, we didn't have to specify an image generator id; unless we tell it
+otherwise, thumbnail tag uses the generator registered with the id
+"imagekit:thumbnail". **It's important to note that this tag is *not* using the
+Thumbnail spec class we defined earlier**; it's using the generator registered
+with the id "imagekit:thumbnail" which, by default, is
+``imagekit.generatorlibrary.Thumbnail``.
+
+Second, we're passing two positional arguments (the dimensions and the source
+image) as opposed to the keyword arguments we used with the generateimage tag.
+
+Like with the generatethumbnail tag, you can also specify additional HTML
+attributes for the thumbnail tag, or use it as an assignment tag:
+
+.. code-block:: html
+
+    {% load imagekit %}
+
+    {% thumbnail '100x50' source_image -- alt="A picture of Me" id="mypicture" %}
+    {% thumbnail '100x50' source_image as th %}
 
 
-
-
-
-In Forms
-^^^^^^^^
+Using Specs in Forms
+^^^^^^^^^^^^^^^^^^^^
 
 In addition to the model field above, there's also a form field version of the
 ``ProcessedImageField`` class. The functionality is basically the same (it
@@ -288,18 +296,19 @@ processes an image once and saves the result), but it's used in a form class:
 
     from django import forms
     from imagekit.forms import ProcessedImageField
+    from imagekit.processors import ResizeToFill
 
-    class AvatarForm(forms.Form):
-        avatar_thumbnail = ProcessedImageField(spec_id='myapp:fancy_thumbnail')
+    class ProfileForm(forms.Form):
+        avatar_thumbnail = ProcessedImageField(spec_id='myapp:profile:avatar_thumbnail',
+                                               processors=[ResizeToFill(100, 50)],
+                                               format='JPEG',
+                                               options={'quality': 60})
 
 The benefit of using ``imagekit.forms.ProcessedImageField`` (as opposed to
 ``imagekit.models.ProcessedImageField`` above) is that it keeps the logic for
-creating the image outside of your model (in which you would use a normal
-Django ``ImageField``). You can even create multiple forms, each with their own
-``ProcessedImageField``, that all store their results in the same image field.
-
-As with the model field classes, ``imagekit.forms.ProcessedImageField`` also
-has a shortcut version that allows you to inline spec definitions.
+creating the image outside of your model (in which you would use a normal Django
+ImageField). You can even create multiple forms, each with their own
+ProcessedImageField, that all store their results in the same image field.
 
 
 Processors
