@@ -49,7 +49,7 @@ class ImageSpec(BaseImageSpec):
 
     """
 
-    processors = None
+    processors = []
     """A list of processors to run on the original image."""
 
     format = None
@@ -78,7 +78,6 @@ class ImageSpec(BaseImageSpec):
 
     def __init__(self, source):
         self.source = source
-        self.processors = self.processors or []
         super(ImageSpec, self).__init__()
 
     @property
