@@ -23,9 +23,6 @@ class Optimistic(object):
     def on_source_created(self, file):
         file.generate()
 
-    def on_source_deleted(self, file):
-        file.delete()
-
     def on_source_changed(self, file):
         file.generate()
 
