@@ -90,7 +90,10 @@ that spec from that source. Typically, this situation would arise when using the
 template tags. Unlike ImageSpecFields, which automatically register all the
 possible source images with the spec you define, the template tags
 ("generateimage" and "thumbnail") let you use any spec with any source.
-
+Therefore, in order to generate the appropriate files using the
+``generateimages`` management command, you'll need to first register a source
+group that represents all of the sources you wish to use with the corresponding
+specs. See :ref:`source-groups` for more information.
 
 
 __ https://docs.djangoproject.com/en/dev/ref/files/storage/
