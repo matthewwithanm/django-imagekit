@@ -41,8 +41,58 @@ called *generated file strategies*. The default strategy can be set using the
 ``IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY`` setting, and its default value is
 `'imagekit.generatedfiles.strategies.JustInTime'`. As we've already seen above,
 the "just in time" strategy determines whether a file needs to be generated each
-time it's accessed and, if it does, generates it synchronously.
+time it's accessed and, if it does, generates it synchronously (that is, as part
+of the request-response cycle).
+
+Another strategy is to simply assume the file exists. This requires the fewest
+number of checks (zero!), so we don't have to worry about expensive IO. The
+strategy that takes this approach is
+``imagekit.generatedfiles.strategies.Optimistic``. In order to use this
+strategy, either set the ``IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY`` setting or,
+to use it on a per-generator basis, set the ``generatedfile_strategy`` attribute
+of your spec or generator. Avoiding checking for file existence can be a real
+boon to performance, but it also means that ImageKit has no way to know when a
+file needs to be generated—well, at least not all the time.
+
+With image specs, we can know at least some of the times that a new file needs
+to be generated: whenever the source image is created or changed. For this
+reason, the optimistic strategy defines callbacks for these events. Every
+`source registered with ImageKit`__ will automatically cause its specs' files to
+be generated when it is created or changed.
+
+.. note::
+
+    In order to understand source registration, read :ref:`source-groups`
+
+If you have specs that `change based on attributes of the source`__, that's not
+going to cut it, though; the file will also need to be generated when those
+attributes change. Likewise, image generators that don't have sources (i.e.
+generators that aren't specs) won't cause files to be generated automatically
+when using the optimistic strategy. (ImageKit can't know when those need to be
+generated, if not on access.) In both cases, you'll have to trigger the file
+generation yourself—either by generating the file in code when necessary, or by
+periodically running the ``generateimages`` management command. Luckily,
+ImageKit makes this pretty easy:
+
+.. code-block:: python
+
+    from imagekit.generatedfiles import LazyGeneratedImageFile
+
+    file = LazyGeneratedImageFile('myapp:profile:avatar_thumbnail', source=source_file)
+    file.generate()
+
+One final situation in which images won't be generated automatically when using
+the optimistic strategy is when you use a spec with a source that hasn't been
+registered with it. Unlike the previous two examples, this situation cannot be
+rectified by running the ``generateimages`` management command, for the simple
+reason that the command has no way of knowing it needs to generate a file for
+that spec from that source. Typically, this situation would arise when using the
+template tags. Unlike ImageSpecFields, which automatically register all the
+possible source images with the spec you define, the template tags
+("generateimage" and "thumbnail") let you use any spec with any source.
 
 
 
 __ https://docs.djangoproject.com/en/dev/ref/files/storage/
+__
+__
