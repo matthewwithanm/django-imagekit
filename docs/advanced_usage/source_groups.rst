@@ -13,7 +13,7 @@ responsible for two things:
 2. They expose a generator method that enumerates source files.
 
 When these objects are registered (using ``imagekit.register.source_group()``),
-their signals will trigger callbacks on the generated file strategies associated
+their signals will trigger callbacks on the cache file strategies associated
 with image specs that use the source. (So, for example, you can chose to
 generate a file every time the source image changes.) In addition, the generator
 method is used (indirectly) to create the list of files to generate with the
@@ -30,7 +30,7 @@ generator method that iterates over every Profile's "avatar" image.
 Chances are, this is the only source group you will ever need to use, however,
 ImageKit lets you define and register custom source groups easily. This may be
 useful, for example, if you're using the template tags "generateimage" and
-"thumbnail" and the optimistic generated file strategy. Again, the purpose is
+"thumbnail" and the optimistic cache file strategy. Again, the purpose is
 to tell ImageKit which specs are used with which sources (so the
 "generateimages" management command can generate those files) and when the
 source image has been created or changed (so that the strategy has the
@@ -65,5 +65,5 @@ generated (using the "myapp:profile:avatar_thumbnail" spec) for each of the
 JPEGs in `/path/to/some/pics`.
 
 Note that, since this source group doesnt send the `source_created` or
-`source_changed` signals, the corresponding generated file strategy callbacks
+`source_changed` signals, the corresponding cache file strategy callbacks
 would not be called for them.

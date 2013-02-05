@@ -54,16 +54,16 @@ by providing an ``image_cache_backend``:
 This gave you great control over *how* your images are generated and stored,
 but it could be difficult to control *when* they were generated and stored.
 
-IK3 retains the image cache backend concept (now called generated file backends),
-but separates the 'when' control out to generated file strategies:
+IK3 retains the image cache backend concept (now called cache file backends),
+but separates the 'when' control out to cache file strategies:
 
 .. code-block:: python
 
     class Photo(models.Model):
         ...
         thumbnail = ImageSpecField(...,
-                                   generatedfile_backend=MyGeneratedFileBackend(),
-                                   generatedfile_strategy=MyGeneratedFileStrategy())
+                                   cachefile_backend=MyCacheFileBackend(),
+                                   cachefile_strategy=MyCacheFileStrategy())
 
 If you are using the IK2 default image cache backend setting:
 
@@ -71,18 +71,18 @@ If you are using the IK2 default image cache backend setting:
 
     IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND = 'path.to.MyImageCacheBackend'
 
-IK3 provides analogous settings for generated file backends and strategies:
+IK3 provides analogous settings for cache file backends and strategies:
 
 .. code-block:: python
 
-    IMAGEKIT_DEFAULT_GENERATEDFILE_BACKEND = 'path.to.MyGeneratedFileBackend'
-    IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY = 'path.to.MyGeneratedFileStrategy'
+    IMAGEKIT_DEFAULT_CACHEFILE_BACKEND = 'path.to.MyCacheFileBackend'
+    IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY = 'path.to.MyCacheFileStrategy'
 
-See the documentation on `generated file backends`_ and `generated file strategies`_
+See the documentation on `cache file backends`_ and `cache file strategies`_
 for more details.
 
-.. _`generated file backends`:
-.. _`generated file strategies`:
+.. _`cache file backends`:
+.. _`cache file strategies`:
 
 
 Conditional model ``processors``
@@ -100,12 +100,12 @@ solution: the custom ``spec``. See the `advanced usage`_ documentation for more.
 Conditonal ``cache_to`` file names
 ----------------------------------
 
-IK2 provided a means of specifying custom generated file names for your
+IK2 provided a means of specifying custom cache file names for your
 image specs by passing a ``cache_to`` callable to an ``ImageSpecField``.
 IK3 does away with this feature, again, for consistency.
 
 There is a way to achieve custom file names by overriding your spec's
-``generatedfile_name``, but it is not recommended, as the spec's default
+``cachefile_name``, but it is not recommended, as the spec's default
 behavior is to hash the combination of ``source``, ``processors``, ``format``,
 and other spec options to ensure that changes to the spec always result in
 unique file names. See the documentation on `specs`_ for more.

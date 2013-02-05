@@ -21,18 +21,18 @@ def source_name_as_path(generator):
         /path/to/generated/images/photos/thumbnails/bulldog/5ff3233527c5ac3e4b596343b440ff67.jpg
 
     where "/path/to/generated/images/" is the value specified by the
-    ``IMAGEKIT_GENERATEDFILE_DIR`` setting.
+    ``IMAGEKIT_CACHEFILE_DIR`` setting.
 
     """
     source_filename = getattr(generator.source, 'name', None)
 
     if source_filename is None or os.path.isabs(source_filename):
-        # Generally, we put the file right in the generated file directory.
-        dir = settings.IMAGEKIT_GENERATEDFILE_DIR
+        # Generally, we put the file right in the cache file directory.
+        dir = settings.IMAGEKIT_CACHEFILE_DIR
     else:
         # For source files with relative names (like Django media files),
         # use the source's name to create the new filename.
-        dir = os.path.join(settings.IMAGEKIT_GENERATEDFILE_DIR,
+        dir = os.path.join(settings.IMAGEKIT_CACHEFILE_DIR,
                            os.path.splitext(source_filename)[0])
 
     ext = suggest_extension(source_filename or '', generator.format)
@@ -51,18 +51,18 @@ def source_name_dot_hash(generator):
         /path/to/generated/images/photos/thumbnails/bulldog.5ff3233527c5.jpg
 
     where "/path/to/generated/images/" is the value specified by the
-    ``IMAGEKIT_GENERATEDFILE_DIR`` setting.
+    ``IMAGEKIT_CACHEFILE_DIR`` setting.
 
     """
     source_filename = getattr(generator.source, 'name', None)
 
     if source_filename is None or os.path.isabs(source_filename):
-        # Generally, we put the file right in the generated file directory.
-        dir = settings.IMAGEKIT_GENERATEDFILE_DIR
+        # Generally, we put the file right in the cache file directory.
+        dir = settings.IMAGEKIT_CACHEFILE_DIR
     else:
         # For source files with relative names (like Django media files),
         # use the source's name to create the new filename.
-        dir = os.path.join(settings.IMAGEKIT_GENERATEDFILE_DIR,
+        dir = os.path.join(settings.IMAGEKIT_CACHEFILE_DIR,
                            os.path.dirname(source_filename))
 
     ext = suggest_extension(source_filename or '', generator.format)
@@ -82,10 +82,10 @@ def hash(generator):
         /path/to/generated/images/5ff3233527c5ac3e4b596343b440ff67.jpg
 
     where "/path/to/generated/images/" is the value specified by the
-    ``IMAGEKIT_GENERATEDFILE_DIR`` setting.
+    ``IMAGEKIT_CACHEFILE_DIR`` setting.
 
     """
     format = getattr(generator, 'format', None)
     ext = format_to_extension(format) if format else ''
-    return os.path.normpath(os.path.join(settings.IMAGEKIT_GENERATEDFILE_DIR,
+    return os.path.normpath(os.path.join(settings.IMAGEKIT_CACHEFILE_DIR,
                                          '%s%s' % (generator.get_hash(), ext)))

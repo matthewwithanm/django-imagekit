@@ -76,7 +76,7 @@ class SourceGroupRegistry(object):
         from .specs.sourcegroups import SourceGroupFilesGenerator
         generator_ids = self._source_groups.setdefault(source_group, set())
         generator_ids.add(generator_id)
-        generatedfile_registry.register(generator_id,
+        cachefile_registry.register(generator_id,
                 SourceGroupFilesGenerator(source_group, generator_id))
 
     def unregister(self, generator_id, source_group):
@@ -84,7 +84,7 @@ class SourceGroupRegistry(object):
         generator_ids = self._source_groups.setdefault(source_group, set())
         if generator_id in generator_ids:
             generator_ids.remove(generator_id)
-            generatedfile_registry.unregister(generator_id,
+            cachefile_registry.unregister(generator_id,
                     SourceGroupFilesGenerator(source_group, generator_id))
 
     def source_group_receiver(self, sender, source, signal, **kwargs):
@@ -92,7 +92,7 @@ class SourceGroupRegistry(object):
         Relay source group signals to the appropriate spec strategy.
 
         """
-        from .generatedfiles import GeneratedImageFile
+        from .cachefiles import GeneratedImageFile
         source_group = sender
 
         # Ignore signals from unregistered groups.
@@ -108,11 +108,11 @@ class SourceGroupRegistry(object):
             call_strategy_method(spec, callback_name, file=file)
 
 
-class GeneratedFileRegistry(object):
+class CacheFileRegistry(object):
     """
     An object for registering generated files with image generators. The two are
     associated with each other via a string id. We do this (as opposed to
-    associating them directly by, for example, putting a ``generatedfiles``
+    associating them directly by, for example, putting a ``cachefiles``
     attribute on image generators) so that image generators can be overridden
     without losing the associated files. That way, a distributable app can
     define its own generators without locking the users of the app into it.
@@ -120,29 +120,29 @@ class GeneratedFileRegistry(object):
     """
 
     def __init__(self):
-        self._generatedfiles = {}
+        self._cachefiles = {}
 
-    def register(self, generator_id, generatedfiles):
+    def register(self, generator_id, cachefiles):
         """
         Associates generated files with a generator id
 
         """
-        if generatedfiles not in self._generatedfiles:
-            self._generatedfiles[generatedfiles] = set()
-        self._generatedfiles[generatedfiles].add(generator_id)
+        if cachefiles not in self._cachefiles:
+            self._cachefiles[cachefiles] = set()
+        self._cachefiles[cachefiles].add(generator_id)
 
-    def unregister(self, generator_id, generatedfiles):
+    def unregister(self, generator_id, cachefiles):
         """
         Disassociates generated files with a generator id
 
         """
         try:
-            self._generatedfiles[generatedfiles].remove(generator_id)
+            self._cachefiles[cachefiles].remove(generator_id)
         except KeyError:
             pass
 
     def get(self, generator_id):
-        for k, v in self._generatedfiles.items():
+        for k, v in self._cachefiles.items():
             if generator_id in v:
                 for file in k():
                     yield file
@@ -164,8 +164,8 @@ class Register(object):
         generator_registry.register(id, generator)
 
     # iterable that returns kwargs or callable that returns iterable of kwargs
-    def generatedfiles(self, generator_id, generatedfiles):
-        generatedfile_registry.register(generator_id, generatedfiles)
+    def cachefiles(self, generator_id, cachefiles):
+        cachefile_registry.register(generator_id, cachefiles)
 
     def source_group(self, generator_id, source_group):
         source_group_registry.register(generator_id, source_group)
@@ -179,15 +179,15 @@ class Unregister(object):
     def generator(self, id, generator):
         generator_registry.unregister(id, generator)
 
-    def generatedfiles(self, generator_id, generatedfiles):
-        generatedfile_registry.unregister(generator_id, generatedfiles)
+    def cachefiles(self, generator_id, cachefiles):
+        cachefile_registry.unregister(generator_id, cachefiles)
 
     def source_group(self, generator_id, source_group):
         source_group_registry.unregister(generator_id, source_group)
 
 
 generator_registry = GeneratorRegistry()
-generatedfile_registry = GeneratedFileRegistry()
+cachefile_registry = CacheFileRegistry()
 source_group_registry = SourceGroupRegistry()
 register = Register()
 unregister = Unregister()

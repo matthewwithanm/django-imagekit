@@ -2,7 +2,7 @@ from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 from .compat import parse_bits
-from ..generatedfiles import GeneratedImageFile
+from ..cachefiles import GeneratedImageFile
 from ..registry import generator_registry
 
 
@@ -14,7 +14,7 @@ HTML_ATTRS_DELIMITER = '--'
 DEFAULT_THUMBNAIL_GENERATOR = 'imagekit:thumbnail'
 
 
-def get_generatedfile(context, generator_id, generator_kwargs, source=None):
+def get_cachefile(context, generator_id, generator_kwargs, source=None):
     generator_id = generator_id.resolve(context)
     kwargs = dict((k, v.resolve(context)) for k, v in generator_kwargs.items())
     generator = generator_registry.get(generator_id, **kwargs)
@@ -47,7 +47,7 @@ class GenerateImageAssignmentNode(template.Node):
         autodiscover()
 
         variable_name = self.get_variable_name(context)
-        context[variable_name] = get_generatedfile(context, self._generator_id,
+        context[variable_name] = get_cachefile(context, self._generator_id,
                 self._generator_kwargs)
         return ''
 
@@ -63,7 +63,7 @@ class GenerateImageTagNode(template.Node):
         from ..utils import autodiscover
         autodiscover()
 
-        file = get_generatedfile(context, self._generator_id,
+        file = get_cachefile(context, self._generator_id,
                 self._generator_kwargs)
         attrs = dict((k, v.resolve(context)) for k, v in
                 self._html_attrs.items())

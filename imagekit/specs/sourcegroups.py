@@ -3,7 +3,7 @@ Source groups are the means by which image spec sources are identified. They
 have two responsibilities:
 
 1. To dispatch ``source_created``, ``source_changed``, and ``source_deleted``
-   signals. (These will be relayed to the corresponding specs' generated file
+   signals. (These will be relayed to the corresponding specs' cache file
    strategies.)
 2. To provide the source files that they represent, via a generator method named
    ``files()``. (This is used by the generateimages management command for
@@ -13,7 +13,7 @@ have two responsibilities:
 
 from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
-from ..generatedfiles import LazyGeneratedImageFile
+from ..cachefiles import LazyGeneratedImageFile
 from ..signals import source_created, source_changed, source_deleted
 
 
@@ -137,7 +137,7 @@ class ImageFieldSourceGroup(object):
 
 class SourceGroupFilesGenerator(object):
     """
-    A Python generator that yields generated file objects for source groups.
+    A Python generator that yields cache file objects for source groups.
 
     """
     def __init__(self, source_group, generator_id):

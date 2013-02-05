@@ -3,13 +3,13 @@ from django.core.cache import get_cache
 from django.core.exceptions import ImproperlyConfigured
 
 
-def get_default_generatedfile_backend():
+def get_default_cachefile_backend():
     """
     Get the default file backend.
 
     """
     from django.conf import settings
-    return get_singleton(settings.IMAGEKIT_DEFAULT_GENERATEDFILE_BACKEND,
+    return get_singleton(settings.IMAGEKIT_DEFAULT_CACHEFILE_BACKEND,
             'file backend')
 
 

@@ -15,8 +15,8 @@ class JustInTime(object):
 class Optimistic(object):
     """
     A strategy that acts immediately when the source file changes and assumes
-    that the generated files will not be removed (i.e. it doesn't ensure the
-    generated file exists when it's accessed).
+    that the cache files will not be removed (i.e. it doesn't ensure the
+    cache file exists when it's accessed).
 
     """
 
@@ -36,7 +36,7 @@ class DictStrategy(object):
 class StrategyWrapper(LazyObject):
     def __init__(self, strategy):
         if isinstance(strategy, basestring):
-            strategy = get_singleton(strategy, 'generated file strategy')
+            strategy = get_singleton(strategy, 'cache file strategy')
         elif isinstance(strategy, dict):
             strategy = DictStrategy(strategy)
         elif callable(strategy):

@@ -425,7 +425,7 @@ def generate(generator):
 
 
 def call_strategy_method(generator, method_name, *args, **kwargs):
-    strategy = getattr(generator, 'generatedfile_strategy', None)
+    strategy = getattr(generator, 'cachefile_strategy', None)
     fn = getattr(strategy, method_name, None)
     if fn is not None:
         fn(*args, **kwargs)

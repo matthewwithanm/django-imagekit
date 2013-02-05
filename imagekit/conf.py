@@ -3,11 +3,11 @@ from django.conf import settings
 
 
 class ImageKitConf(AppConf):
-    GENERATEDFILE_NAMER = 'imagekit.generatedfiles.namers.hash'
-    SPEC_GENERATEDFILE_NAMER = 'imagekit.generatedfiles.namers.source_name_as_path'
-    GENERATEDFILE_DIR = 'generated/images'
-    DEFAULT_GENERATEDFILE_BACKEND = 'imagekit.generatedfiles.backends.Simple'
-    DEFAULT_GENERATEDFILE_STRATEGY = 'imagekit.generatedfiles.strategies.JustInTime'
+    CACHEFILE_NAMER = 'imagekit.cachefiles.namers.hash'
+    SPEC_CACHEFILE_NAMER = 'imagekit.cachefiles.namers.source_name_as_path'
+    CACHEFILE_DIR = 'CACHE/images'
+    DEFAULT_CACHEFILE_BACKEND = 'imagekit.cachefiles.backends.Simple'
+    DEFAULT_CACHEFILE_STRATEGY = 'imagekit.cachefiles.strategies.JustInTime'
 
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 

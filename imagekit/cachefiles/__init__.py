@@ -12,32 +12,32 @@ class GeneratedImageFile(BaseIKFile, ImageFile):
     A file that represents the result of a generator. Creating an instance of
     this class is not enough to trigger the generation of the file. In fact,
     one of the main points of this class is to allow the creation of the file
-    to be deferred until the time that the generated file strategy requires it.
+    to be deferred until the time that the cache file strategy requires it.
 
     """
-    def __init__(self, generator, name=None, storage=None, generatedfile_backend=None):
+    def __init__(self, generator, name=None, storage=None, cachefile_backend=None):
         """
         :param generator: The object responsible for generating a new image.
         :param name: The filename
         :param storage: A Django storage object that will be used to save the
             file.
-        :param generatedfile_backend: The object responsible for managing the
+        :param cachefile_backend: The object responsible for managing the
             state of the file.
 
         """
         self.generator = generator
 
-        name = name or getattr(generator, 'generatedfile_name', None)
+        name = name or getattr(generator, 'cachefile_name', None)
         if not name:
-            fn = get_by_qname(settings.IMAGEKIT_GENERATEDFILE_NAMER, 'namer')
+            fn = get_by_qname(settings.IMAGEKIT_CACHEFILE_NAMER, 'namer')
             name = fn(generator)
         self.name = name
 
-        storage = storage or getattr(generator, 'generatedfile_storage',
+        storage = storage or getattr(generator, 'cachefile_storage',
             None) or get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
             'file storage backend')
-        self.generatedfile_backend = generatedfile_backend or getattr(generator,
-            'generatedfile_backend', None)
+        self.cachefile_backend = cachefile_backend or getattr(generator,
+            'cachefile_backend', None)
 
         super(GeneratedImageFile, self).__init__(storage=storage)
 
@@ -49,7 +49,7 @@ class GeneratedImageFile(BaseIKFile, ImageFile):
         if force:
             self._generate()
         else:
-            self.generatedfile_backend.ensure_exists(self)
+            self.cachefile_backend.ensure_exists(self)
 
     def _generate(self):
         # Generate the file
@@ -66,7 +66,7 @@ class GeneratedImageFile(BaseIKFile, ImageFile):
                     ' race condition in the file backend %s. The saved file'
                     ' will not be used.' % (self.storage,
                     self.name, actual_name,
-                    self.generatedfile_backend))
+                    self.cachefile_backend))
 
 
 class LazyGeneratedImageFile(LazyObject):

@@ -2,8 +2,8 @@ from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
 from hashlib import md5
 import pickle
-from ..generatedfiles.backends import get_default_generatedfile_backend
-from ..generatedfiles.strategies import StrategyWrapper
+from ..cachefiles.backends import get_default_cachefile_backend
+from ..cachefiles.strategies import StrategyWrapper
 from ..processors import ProcessorPipeline
 from ..utils import open_image, img_to_fobj, get_by_qname
 from ..registry import generator_registry, register
@@ -16,27 +16,27 @@ class BaseImageSpec(object):
 
     """
 
-    generatedfile_storage = None
-    """A Django storage system to use to save a generated file."""
+    cachefile_storage = None
+    """A Django storage system to use to save a cache file."""
 
-    generatedfile_backend = None
+    cachefile_backend = None
     """
-    An object responsible for managing the state of generated files. Defaults to
-    an instance of ``IMAGEKIT_DEFAULT_GENERATEDFILE_BACKEND``
+    An object responsible for managing the state of cache files. Defaults to
+    an instance of ``IMAGEKIT_DEFAULT_CACHEFILE_BACKEND``
 
     """
 
-    generatedfile_strategy = settings.IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY
+    cachefile_strategy = settings.IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY
     """
     A dictionary containing callbacks that allow you to customize how and when
     the image file is created. Defaults to
-    ``IMAGEKIT_DEFAULT_GENERATEDFILE_STRATEGY``.
+    ``IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY``.
 
     """
 
     def __init__(self):
-        self.generatedfile_backend = self.generatedfile_backend or get_default_generatedfile_backend()
-        self.generatedfile_strategy = StrategyWrapper(self.generatedfile_strategy)
+        self.cachefile_backend = self.cachefile_backend or get_default_cachefile_backend()
+        self.cachefile_strategy = StrategyWrapper(self.cachefile_strategy)
 
     def generate(self):
         raise NotImplementedError
@@ -81,8 +81,8 @@ class ImageSpec(BaseImageSpec):
         super(ImageSpec, self).__init__()
 
     @property
-    def generatedfile_name(self):
-        fn = get_by_qname(settings.IMAGEKIT_SPEC_GENERATEDFILE_NAMER, 'namer')
+    def cachefile_name(self):
+        fn = get_by_qname(settings.IMAGEKIT_SPEC_CACHEFILE_NAMER, 'namer')
         return fn(self)
 
     def __getstate__(self):

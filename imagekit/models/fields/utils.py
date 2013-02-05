@@ -1,4 +1,4 @@
-from ...generatedfiles import GeneratedImageFile
+from ...cachefiles import GeneratedImageFile
 from django.db.models.fields.files import ImageField
 
 
