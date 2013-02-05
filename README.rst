@@ -221,7 +221,7 @@ This will output the following HTML:
 
 .. code-block:: html
 
-    <img src="/media/CACHE/iimages/982d5af84cddddfd0fbf70892b4431e4.jpg" width="100" height="50" />
+    <img src="/media/CACHE/images/982d5af84cddddfd0fbf70892b4431e4.jpg" width="100" height="50" />
 
 You can also add additional HTML attributes; just separate them from your
 keyword args using two dashes:
@@ -259,7 +259,7 @@ Like the generateimage tag, the thumbnail tag outputs an <img> tag:
 
 .. code-block:: html
 
-    <img src="/media/CACHE/iimages/982d5af84cddddfd0fbf70892b4431e4.jpg" width="100" height="50" />
+    <img src="/media/CACHE/images/982d5af84cddddfd0fbf70892b4431e4.jpg" width="100" height="50" />
 
 Comparing this syntax to the generateimage tag above, you'll notice a few
 differences.
