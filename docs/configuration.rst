@@ -10,7 +10,7 @@ Settings
 .. currentmodule:: django.conf.settings
 
 
-.. attribute:: IMAGEKIT_CACHE_DIR
+.. attribute:: IMAGEKIT_CACHEFILE_DIR
 
     :default: ``'CACHE/images'``
 
@@ -27,16 +27,16 @@ Settings
     will be used.
 
 
-.. attribute:: IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
+.. attribute:: IMAGEKIT_DEFAULT_CACHEFILE_BACKEND
 
-    :default: ``'imagekit.imagecache.backends.Simple'``
+    :default: ``'imagekit.cachefiles.backends.Simple'``
 
     Specifies the class that will be used to validate cached image files.
 
 
-.. attribute:: IMAGEKIT_DEFAULT_IMAGE_CACHE_STRATEGY
+.. attribute:: IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY
 
-    :default: ``'imagekit.imagecache.strategies.JustInTime'``
+    :default: ``'imagekit.cachefiles.strategies.JustInTime'``
 
     The class responsible for specifying how and when cache files are
     generated.
@@ -58,80 +58,17 @@ Settings
     A cache prefix to be used when values are stored in ``IMAGEKIT_CACHE_BACKEND``
 
 
-Optimization
-------------
+.. attribute:: IMAGEKIT_CACHEFILE_NAMER
 
-Not surprisingly, the trick to getting the most out of ImageKit is to reduce the
-number of I/O operations. This can be especially important if your source files
-aren't stored on the same server as the application.
+    :default: ``'imagekit.cachefiles.namers.hash'``
 
-
-Image Cache Strategies
-^^^^^^^^^^^^^^^^^^^^^^
-
-An important way of reducing the number of I/O operations that ImageKit makes is
-by controlling when cached images are validated. This is done through "image
-cache strategies"—objects that associate signals dispatched on the source file
-with file actions. The default image cache strategy is
-``'imagekit.imagecache.strategies.JustInTime'``; it looks like this:
-
-.. code-block:: python
-
-    class JustInTime(object):
-        def before_access(self, file):
-            validate_now(file)
-
-When this strategy is used, the cache file is validated only immediately before
-it's required—for example, when you access its url, path, or contents. This
-strategy is exceedingly safe: by guaranteeing the presence of the file before
-accessing it, you run no risk of it not being there. However, this strategy can
-also be costly: verifying the existence of the cache file every time you access
-it can be slow—particularly if the file is on another server. For this reason,
-ImageKit provides another strategy: ``imagekit.imagecache.strategies.Optimistic``.
-Unlike the just-in-time strategy, it does not validate the cache file when it's
-accessed, but rather only when the soure file is created or changed. Later, when
-the cache file is accessed, it is presumed to still be present.
-
-If neither of these strategies suits your application, you can create your own
-strategy class. For example, you may wish to validate the file immediately when
-it's accessed, but schedule validation using Celery when the source file is
-saved or changed:
-
-.. code-block:: python
-
-    from imagekit.imagecache.actions import validate_now, deferred_validate
-
-    class CustomImageCacheStrategy(object):
-
-        def before_access(self, file):
-            validate_now(file)
-
-        def on_source_created(self, file):
-            deferred_validate(file)
-
-        def on_source_changed(self, file):
-            deferred_validate(file)
-
-To use this cache strategy, you need only set the ``IMAGEKIT_DEFAULT_IMAGE_CACHE_STRATEGY``
-setting, or set the ``image_cache_strategy`` attribute of your image spec.
+    A function responsible for generating file names for non-spec cache files.
 
 
-Django Cache Backends
-^^^^^^^^^^^^^^^^^^^^^
+.. attribute:: IMAGEKIT_SPEC_CACHEFILE_NAMER
 
-In the "Image Cache Strategies" section above, we said that the just-in-time
-strategy verifies the existence of the cache file every time you access
-it, however, that's not exactly true. Cache files are actually validated using
-image cache backends, and the default (``imagekit.imagecache.backends.Simple``)
-memoizes the cache state (valid or invalid) using Django's cache framework. By
-default, ImageKit will use a dummy cache backend when your project is in debug
-mode (``DEBUG = True``), and the "default" cache (from your ``CACHES`` setting)
-when ``DEBUG`` is ``False``. Since other parts of your project may have
-different cacheing needs, though, ImageKit has an ``IMAGEKIT_CACHE_BACKEND``
-setting, which allows you to specify a different cache.
+    :default: ``'imagekit.cachefiles.namers.source_name_as_path'``
 
-In most cases, you won't be deleting you cached files once they're created, so
-using a cache with a large timeout is a great way to optimize your site. Using
-a cache that never expires would essentially negate the cost of the just-in-time
-strategy, giving you the benefit of generating images on demand without the cost
-of unnecessary future filesystem checks.
+    A function responsible for generating file names for cache files that
+    correspond to image specs. Since you will likely want to base the name of
+    your cache files on the name of the source, this extra setting is provided.

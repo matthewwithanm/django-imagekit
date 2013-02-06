@@ -94,7 +94,7 @@ class:
 This is pretty similar to our previous example. We don't need to specify a
 "source" any more since we're not processing another image field, but we do need
 to pass an "upload_to" argument. This behaves exactly as it does for Django
-``ImageField``s.
+ImageFields.
 
 .. note::
 
@@ -393,7 +393,7 @@ AdminThumbnail can even use a custom template. For more information, see
 
 
 Community
----------
+=========
 
 Please use `the GitHub issue tracker <https://github.com/jdriscoll/django-imagekit/issues>`_
 to report bugs with django-imagekit. `A mailing list <https://groups.google.com/forum/#!forum/django-imagekit>`_
@@ -402,7 +402,7 @@ also exists to discuss the project and ask questions, as well as the official
 
 
 Contributing
-------------
+============
 
 We love contributions! And you don't have to be an expert with the library—or
 even Django—to contribute either: ImageKit's processors are standalone classes
