@@ -392,6 +392,14 @@ AdminThumbnail can even use a custom template. For more information, see
 .. _`Django admin change list`: https://docs.djangoproject.com/en/dev/intro/tutorial02/#customize-the-admin-change-list
 
 
+Managment Commands
+------------------
+
+ImageKit has one management command—`generateimages`—which will generate cache
+files for all of your registered image generators. You can also pass it a list
+of generator ids in order to generate images selectively.
+
+
 Community
 =========
 
