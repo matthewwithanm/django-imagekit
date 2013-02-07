@@ -1,5 +1,4 @@
 from imagekit.lib import Image
-import warnings
 from .base import Anchor
 
 
@@ -211,10 +210,51 @@ class ResizeToFit(object):
                 ratio = float(self.width) / cur_width
         new_dimensions = (int(round(cur_width * ratio)),
                           int(round(cur_height * ratio)))
-        if (cur_width > new_dimensions[0] or cur_height > new_dimensions[1]) or \
-            self.upscale:
-                img = Resize(new_dimensions[0],
-                        new_dimensions[1]).process(img)
-        if self.mat_color:
+        if (cur_width > new_dimensions[0] or cur_height > new_dimensions[1]) or self.upscale:
+            img = Resize(new_dimensions[0], new_dimensions[1]).process(img)
+        if self.mat_color is not None:
             img = ResizeCanvas(self.width, self.height, self.mat_color, anchor=self.anchor).process(img)
         return img
+
+
+class Thumbnail(object):
+    """
+    Resize the image for use as a thumbnail. Wraps ``ResizeToFill``,
+    ``ResizeToFit``, and ``SmartResize``.
+
+    Note: while it doesn't currently, in the future this processor may also
+    sharpen based on the amount of reduction.
+
+    """
+
+    def __init__(self, width=None, height=None, anchor=None, crop=None):
+        self.width = width
+        self.height = height
+        if anchor:
+            if crop is False:
+                raise Exception("You can't specify an anchor point if crop is False.")
+            else:
+                crop = True
+        elif crop is None:
+            # Assume we are cropping if both a width and height are provided. If
+            # only one is, we must be resizing to fit.
+            crop = width is not None and height is not None
+
+            # A default anchor if cropping.
+            if crop and anchor is None:
+                anchor = 'auto'
+        self.crop = crop
+        self.anchor = anchor
+
+    def process(self, img):
+        if self.crop:
+            if not self.width or not self.height:
+                raise Exception('You must provide both a width and height when'
+                    ' cropping.')
+            if self.anchor == 'auto':
+                processor = SmartResize(self.width, self.height)
+            else:
+                processor = ResizeToFill(self.width, self.height, self.anchor)
+        else:
+            processor = ResizeToFit(self.width, self.height)
+        return processor.process(img)
