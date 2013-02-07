@@ -1,0 +1,74 @@
+.. _settings:
+
+Configuration
+=============
+
+
+Settings
+--------
+
+.. currentmodule:: django.conf.settings
+
+
+.. attribute:: IMAGEKIT_CACHEFILE_DIR
+
+    :default: ``'CACHE/images'``
+
+    The directory to which image files will be cached.
+
+
+.. attribute:: IMAGEKIT_DEFAULT_FILE_STORAGE
+
+    :default: ``None``
+
+    The qualified class name of a Django storage backend to use to save the
+    cached images. If no value is provided for ``IMAGEKIT_DEFAULT_FILE_STORAGE``,
+    and none is specified by the spec definition, the storage of the source file
+    will be used.
+
+
+.. attribute:: IMAGEKIT_DEFAULT_CACHEFILE_BACKEND
+
+    :default: ``'imagekit.cachefiles.backends.Simple'``
+
+    Specifies the class that will be used to validate cached image files.
+
+
+.. attribute:: IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY
+
+    :default: ``'imagekit.cachefiles.strategies.JustInTime'``
+
+    The class responsible for specifying how and when cache files are
+    generated.
+
+
+.. attribute:: IMAGEKIT_CACHE_BACKEND
+
+    :default: If ``DEBUG`` is ``True``, ``'django.core.cache.backends.dummy.DummyCache'``.
+    Otherwise, ``'default'``.
+
+    The Django cache backend to be used to store information like the state of
+    cached images (i.e. validated or not).
+
+
+.. attribute:: IMAGEKIT_CACHE_PREFIX
+
+    :default: ``'imagekit:'``
+
+    A cache prefix to be used when values are stored in ``IMAGEKIT_CACHE_BACKEND``
+
+
+.. attribute:: IMAGEKIT_CACHEFILE_NAMER
+
+    :default: ``'imagekit.cachefiles.namers.hash'``
+
+    A function responsible for generating file names for non-spec cache files.
+
+
+.. attribute:: IMAGEKIT_SPEC_CACHEFILE_NAMER
+
+    :default: ``'imagekit.cachefiles.namers.source_name_as_path'``
+
+    A function responsible for generating file names for cache files that
+    correspond to image specs. Since you will likely want to base the name of
+    your cache files on the name of the source, this extra setting is provided.

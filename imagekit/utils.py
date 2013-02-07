@@ -1,45 +1,22 @@
+import logging
 import os
 import mimetypes
 import sys
+from tempfile import NamedTemporaryFile
 import types
 
 from django.core.exceptions import ImproperlyConfigured
-from django.core.files.base import ContentFile
+from django.core.files import File
 from django.db.models.loading import cache
 from django.utils.functional import wraps
-from django.utils.encoding import smart_str, smart_unicode
 from django.utils.importlib import import_module
 
+from .exceptions import UnknownExtensionError, UnknownFormatError
 from .lib import Image, ImageFile, StringIO
 
 
 RGBA_TRANSPARENCY_FORMATS = ['PNG']
 PALETTE_TRANSPARENCY_FORMATS = ['PNG', 'GIF']
-
-
-class IKContentFile(ContentFile):
-    """
-    Wraps a ContentFile in a file-like object with a filename and a
-    content_type. A PIL image format can be optionally be provided as a content
-    type hint.
-
-    """
-    def __init__(self, filename, content, format=None):
-        self.file = ContentFile(content)
-        self.file.name = filename
-        mimetype = getattr(self.file, 'content_type', None)
-        if format and not mimetype:
-            mimetype = format_to_mimetype(format)
-        if not mimetype:
-            ext = os.path.splitext(filename or '')[1]
-            mimetype = extension_to_mimetype(ext)
-        self.file.content_type = mimetype
-
-    def __str__(self):
-        return smart_str(self.file.name or '')
-
-    def __unicode__(self):
-        return smart_unicode(self.file.name or u'')
 
 
 def img_to_fobj(img, format, autoconvert=True, **options):
@@ -74,14 +51,6 @@ def _wrap_copy(f):
             pass
         return img
     return copy
-
-
-class UnknownExtensionError(Exception):
-    pass
-
-
-class UnknownFormatError(Exception):
-    pass
 
 
 _pil_init = 0
@@ -177,28 +146,6 @@ def _get_models(apps):
         app = cache.get_app(app_label)
         models += [m for m in cache.get_models(app)]
     return models
-
-
-def invalidate_app_cache(apps):
-    for model in _get_models(apps):
-        print 'Invalidating cache for "%s.%s"' % (model._meta.app_label, model.__name__)
-        for obj in model._default_manager.order_by('-pk'):
-            for f in get_spec_files(obj):
-                f.invalidate()
-
-
-def validate_app_cache(apps, force_revalidation=False):
-    for model in _get_models(apps):
-        for obj in model._default_manager.order_by('-pk'):
-            model_name = '%s.%s' % (model._meta.app_label, model.__name__)
-            if force_revalidation:
-                print 'Invalidating & validating cache for "%s"' % model_name
-            else:
-                print 'Validating cache for "%s"' % model_name
-            for f in get_spec_files(obj):
-                if force_revalidation:
-                    f.invalidate()
-                f.validate()
 
 
 def suggest_extension(name, format):
@@ -375,45 +322,110 @@ def prepare_image(img, format):
     return img, save_kwargs
 
 
-def ik_model_receiver(fn):
-    @wraps(fn)
-    def receiver(sender, **kwargs):
-        if getattr(sender, '_ik', None):
-            fn(sender, **kwargs)
-    return receiver
+def get_by_qname(path, desc):
+    try:
+        dot = path.rindex('.')
+    except ValueError:
+        raise ImproperlyConfigured("%s isn't a %s module." % (path, desc))
+    module, objname = path[:dot], path[dot + 1:]
+    try:
+        mod = import_module(module)
+    except ImportError, e:
+        raise ImproperlyConfigured('Error importing %s module %s: "%s"' %
+                (desc, module, e))
+    try:
+        obj = getattr(mod, objname)
+        return obj
+    except AttributeError:
+        raise ImproperlyConfigured('%s module "%s" does not define "%s"'
+                % (desc[0].upper() + desc[1:], module, objname))
 
 
-_default_file_storage = None
+_singletons = {}
 
 
-# Nasty duplication of get_default_image_cache_backend. Cleaned up in ik3
-def get_default_file_storage():
+def get_singleton(class_path, desc):
+    global _singletons
+    cls = get_by_qname(class_path, desc)
+    instance = _singletons.get(cls)
+    if not instance:
+        instance = _singletons[cls] = cls()
+    return instance
+
+
+def autodiscover():
     """
-    Get the default storage. Uses the same method as
-    django.core.file.storage.get_storage_class
+    Auto-discover INSTALLED_APPS imagegenerators.py modules and fail silently
+    when not present. This forces an import on them to register any admin bits
+    they may want.
+
+    Copied from django.contrib.admin
+    """
+
+    from django.conf import settings
+    from django.utils.importlib import import_module
+    from django.utils.module_loading import module_has_submodule
+
+    for app in settings.INSTALLED_APPS:
+        mod = import_module(app)
+        # Attempt to import the app's admin module.
+        try:
+            import_module('%s.imagegenerators' % app)
+        except:
+            # Decide whether to bubble up this error. If the app just
+            # doesn't have an imagegenerators module, we can ignore the error
+            # attempting to import it, otherwise we want it to bubble up.
+            if module_has_submodule(mod, 'imagegenerators'):
+                raise
+
+
+def get_logger(logger_name='imagekit', add_null_handler=True):
+    logger = logging.getLogger(logger_name)
+    if add_null_handler:
+        logger.addHandler(logging.NullHandler())
+    return logger
+
+
+def get_field_info(field_file):
+    """
+    A utility for easily extracting information about the host model from a
+    Django FileField (or subclass). This is especially useful for when you want
+    to alter processors based on a property of the source model. For example::
+
+        class MySpec(ImageSpec):
+            def __init__(self, source):
+                instance, attname = get_field_info(source)
+                self.processors = [SmartResize(instance.thumbnail_width,
+                                               instance.thumbnail_height)]
 
     """
-    global _default_file_storage
-    if not _default_file_storage:
-        from django.conf import settings
-        import_path = settings.IMAGEKIT_DEFAULT_FILE_STORAGE
+    return (
+        getattr(field_file, 'instance', None),
+        getattr(getattr(field_file, 'field', None), 'attname', None),
+    )
 
-        if not import_path:
-            return None
 
-        try:
-            dot = import_path.rindex('.')
-        except ValueError:
-            raise ImproperlyConfigured("%s isn't an storage module." % \
-                    import_path)
-        module, classname = import_path[:dot], import_path[dot + 1:]
-        try:
-            mod = import_module(module)
-        except ImportError, e:
-            raise ImproperlyConfigured('Error importing storage module %s: "%s"' % (module, e))
-        try:
-            cls = getattr(mod, classname)
-            _default_file_storage = cls()
-        except AttributeError:
-            raise ImproperlyConfigured('Storage module "%s" does not define a "%s" class.' % (module, classname))
-    return _default_file_storage
+def generate(generator):
+    """
+    Calls the ``generate()`` method of a generator instance, and then wraps the
+    result in a Django File object so Django knows how to save it.
+
+    """
+    content = generator.generate()
+
+    # If the file doesn't have a name, Django will raise an Exception while
+    # trying to save it, so we create a named temporary file.
+    if not getattr(content, 'name', None):
+        f = NamedTemporaryFile()
+        f.write(content.read())
+        f.seek(0)
+        content = f
+
+    return File(content)
+
+
+def call_strategy_method(generator, method_name, *args, **kwargs):
+    strategy = getattr(generator, 'cachefile_strategy', None)
+    fn = getattr(strategy, method_name, None)
+    if fn is not None:
+        fn(*args, **kwargs)

@@ -1,27 +1,5 @@
-from .files import ImageSpecFieldFile
-
-
-class BoundImageKitMeta(object):
-    def __init__(self, instance, spec_fields):
-        self.instance = instance
-        self.spec_fields = spec_fields
-
-    @property
-    def spec_files(self):
-        return [getattr(self.instance, n) for n in self.spec_fields]
-
-
-class ImageKitMeta(object):
-    def __init__(self, spec_fields=None):
-        self.spec_fields = list(spec_fields) if spec_fields else []
-
-    def __get__(self, instance, owner):
-        if instance is None:
-            return self
-        else:
-            ik = BoundImageKitMeta(instance, self.spec_fields)
-            setattr(instance, '_ik', ik)
-            return ik
+from ...cachefiles import GeneratedImageFile
+from django.db.models.fields.files import ImageField
 
 
 class ImageSpecFileDescriptor(object):
@@ -33,10 +11,28 @@ class ImageSpecFileDescriptor(object):
         if instance is None:
             return self.field
         else:
-            img_spec_file = ImageSpecFieldFile(instance, self.field,
-                    self.attname)
-            instance.__dict__[self.attname] = img_spec_file
-            return img_spec_file
+            field_name = getattr(self.field, 'source', None)
+            if field_name:
+                source = getattr(instance, field_name)
+            else:
+                image_fields = [getattr(instance, f.attname) for f in
+                        instance.__class__._meta.fields if
+                        isinstance(f, ImageField)]
+                if len(image_fields) == 0:
+                    raise Exception('%s does not define any ImageFields, so your'
+                            ' %s ImageSpecField has no image to act on.' %
+                            (instance.__class__.__name__, self.attname))
+                elif len(image_fields) > 1:
+                    raise Exception('%s defines multiple ImageFields, but you'
+                            ' have not specified a source for your %s'
+                            ' ImageSpecField.' % (instance.__class__.__name__,
+                            self.attname))
+                else:
+                    source = image_fields[0]
+            spec = self.field.get_spec(source=source)
+            file = GeneratedImageFile(spec)
+            instance.__dict__[self.attname] = file
+            return file
 
     def __set__(self, instance, value):
         instance.__dict__[self.attname] = value

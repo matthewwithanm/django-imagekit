@@ -1,3 +1,5 @@
+# flake8: noqa
+
 """
 Imagekit image processors.
 
