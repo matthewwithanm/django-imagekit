@@ -1,5 +1,5 @@
 from django.template import TemplateSyntaxError
-from nose.tools import eq_, assert_not_in, raises, assert_not_equal
+from nose.tools import eq_, assert_false, raises, assert_not_equal
 from . import imagegenerators  # noqa
 from .utils import render_tag, get_html_attrs
 
@@ -43,7 +43,7 @@ def test_single_dimension_attr():
     """
     ttag = r"""{% generateimage 'testspec' source=img -- width="50" %}"""
     attrs = get_html_attrs(ttag)
-    assert_not_in('height', attrs)
+    assert_false('height' in attrs)
 
 
 def test_assignment_tag():
