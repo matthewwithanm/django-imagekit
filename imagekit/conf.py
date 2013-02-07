@@ -16,5 +16,8 @@ class ImageKitConf(AppConf):
 
     def configure_cache_backend(self, value):
         if value is None:
-            value = 'django.core.cache.backends.dummy.DummyCache' if settings.DEBUG else 'default'
+            if getattr(settings, 'CACHES', None):
+                value = 'django.core.cache.backends.dummy.DummyCache' if settings.DEBUG else 'default'
+            else:
+                value = 'dummy://' if settings.DEBUG else settings.CACHE_BACKEND
         return value
