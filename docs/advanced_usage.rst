@@ -190,9 +190,9 @@ command. Luckily, ImageKit makes this pretty easy:
 
 .. code-block:: python
 
-    from imagekit.cachefiles import LazyGeneratedImageFile
+    from imagekit.cachefiles import LazyImageCacheFile
 
-    file = LazyGeneratedImageFile('myapp:profile:avatar_thumbnail', source=source_file)
+    file = LazyImageCacheFile('myapp:profile:avatar_thumbnail', source=source_file)
     file.generate()
 
 One final situation in which images won't be generated automatically when using

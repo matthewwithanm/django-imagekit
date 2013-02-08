@@ -13,7 +13,7 @@ have two responsibilities:
 
 from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
-from ..cachefiles import LazyGeneratedImageFile
+from ..cachefiles import LazyImageCacheFile
 from ..signals import source_created, source_changed, source_deleted
 
 
@@ -156,7 +156,7 @@ class SourceGroupFilesGenerator(object):
 
     def __call__(self):
         for source_file in self.source_group.files():
-            yield LazyGeneratedImageFile(self.generator_id,
+            yield LazyImageCacheFile(self.generator_id,
                                               source=source_file)
 
 

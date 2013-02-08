@@ -7,7 +7,7 @@ from ..signals import before_access
 from ..utils import get_logger, get_singleton, generate, get_by_qname
 
 
-class GeneratedImageFile(BaseIKFile, ImageFile):
+class ImageCacheFile(BaseIKFile, ImageFile):
     """
     A file that represents the result of a generator. Creating an instance of
     this class is not enough to trigger the generation of the file. In fact,
@@ -39,11 +39,11 @@ class GeneratedImageFile(BaseIKFile, ImageFile):
         self.cachefile_backend = cachefile_backend or getattr(generator,
             'cachefile_backend', None)
 
-        super(GeneratedImageFile, self).__init__(storage=storage)
+        super(ImageCacheFile, self).__init__(storage=storage)
 
     def _require_file(self):
         before_access.send(sender=self, file=self)
-        return super(GeneratedImageFile, self)._require_file()
+        return super(ImageCacheFile, self)._require_file()
 
     def generate(self, force=False):
         if force:
@@ -69,13 +69,13 @@ class GeneratedImageFile(BaseIKFile, ImageFile):
                     self.cachefile_backend))
 
 
-class LazyGeneratedImageFile(LazyObject):
+class LazyImageCacheFile(LazyObject):
     def __init__(self, generator_id, *args, **kwargs):
-        super(LazyGeneratedImageFile, self).__init__()
+        super(LazyImageCacheFile, self).__init__()
 
         def setup():
             generator = generator_registry.get(generator_id, *args, **kwargs)
-            self._wrapped = GeneratedImageFile(generator)
+            self._wrapped = ImageCacheFile(generator)
 
         self.__dict__['_setup'] = setup
 

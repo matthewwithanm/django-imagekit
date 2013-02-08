@@ -2,7 +2,7 @@ from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 from .compat import parse_bits
-from ..cachefiles import GeneratedImageFile
+from ..cachefiles import ImageCacheFile
 from ..registry import generator_registry
 
 
@@ -18,7 +18,7 @@ def get_cachefile(context, generator_id, generator_kwargs, source=None):
     generator_id = generator_id.resolve(context)
     kwargs = dict((k, v.resolve(context)) for k, v in generator_kwargs.items())
     generator = generator_registry.get(generator_id, **kwargs)
-    return GeneratedImageFile(generator)
+    return ImageCacheFile(generator)
 
 
 def parse_dimensions(dimensions):
@@ -104,7 +104,7 @@ class ThumbnailAssignmentNode(template.Node):
         kwargs.update(parse_dimensions(self._dimensions.resolve(context)))
         generator = generator_registry.get(generator_id, **kwargs)
 
-        context[variable_name] = GeneratedImageFile(generator)
+        context[variable_name] = ImageCacheFile(generator)
 
         return ''
 
@@ -130,7 +130,7 @@ class ThumbnailImageTagNode(template.Node):
         kwargs.update(dimensions)
         generator = generator_registry.get(generator_id, **kwargs)
 
-        file = GeneratedImageFile(generator)
+        file = ImageCacheFile(generator)
 
         attrs = dict((k, v.resolve(context)) for k, v in
                 self._html_attrs.items())
