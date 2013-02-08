@@ -50,6 +50,7 @@ setup(
     test_suite='testrunner.run_tests',
     install_requires=[
         'django-appconf>=0.5',
+        'pilkit',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
