@@ -15,6 +15,7 @@ from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
 from ..cachefiles import LazyImageCacheFile
 from ..signals import source_created, source_changed, source_deleted
+from ..utils import get_nonabstract_descendants
 
 
 def ik_model_receiver(fn):
@@ -131,8 +132,9 @@ class ImageFieldSourceGroup(object):
         particular model.
 
         """
-        for instance in self.model_class.objects.all():
-            yield getattr(instance, self.image_field)
+        for model in get_nonabstract_descendants(self.model_class):
+            for instance in model.objects.all().iterator():
+                yield getattr(instance, self.image_field)
 
 
 class SourceGroupFilesGenerator(object):

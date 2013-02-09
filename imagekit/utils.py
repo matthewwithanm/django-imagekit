@@ -23,6 +23,17 @@ def _get_models(apps):
     return models
 
 
+def get_nonabstract_descendants(model):
+    """ Returns all non-abstract descendants of the model. """
+    if model._meta.abstract:
+        descendants = []
+        for m in model.__subclasses__():
+            descendants += get_nonabstract_descendants(m)
+        return descendants
+    else:
+        return [model]
+
+
 def get_by_qname(path, desc):
     try:
         dot = path.rindex('.')
