@@ -54,3 +54,7 @@ class AbstractImageModel(models.Model):
 
 class ConcreteImageModel(AbstractImageModel):
     pass
+
+
+class ConcreteImageModelSubclass(ConcreteImageModel):
+    pass
