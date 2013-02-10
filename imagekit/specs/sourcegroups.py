@@ -125,7 +125,7 @@ class ModelSignalRouter(object):
 class ImageFieldSourceGroup(object):
     """
     A source group that repesents a particular field across all instances of a
-    model.
+    model and its subclasses.
 
     """
     def __init__(self, model_class, image_field):
@@ -137,7 +137,7 @@ class ImageFieldSourceGroup(object):
         """
         A generator that returns the source files that this source group
         represents; in this case, a particular field of every instance of a
-        particular model.
+        particular model and its subclasses.
 
         """
         for model in get_nonabstract_descendants(self.model_class):
