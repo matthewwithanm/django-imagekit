@@ -26,17 +26,35 @@ class ProcessedImageFieldModel(models.Model):
             options={'quality': 90}, upload_to='p')
 
 
+class CountingCacheFileStrategy(object):
+    def __init__(self):
+        self.before_access_count = 0
+        self.on_source_changed_count = 0
+        self.on_source_created_count = 0
+
+    def before_access(self, file):
+        self.before_access_count += 1
+
+    def on_source_changed(self, file):
+        self.on_source_changed_count += 1
+
+    def on_source_created(self, file):
+        self.on_source_created_count += 1
+
+
 class AbstractImageModel(models.Model):
     original_image = models.ImageField(upload_to='photos')
-    abstract_class_spec = ImageSpecField()
+    abstract_class_spec = ImageSpecField(source='original_image',
+                                         format='JPEG',
+                                         cachefile_strategy=CountingCacheFileStrategy())
 
     class Meta:
         abstract = True
 
 
-class ConcreteImageModel1(AbstractImageModel):
-    first_spec = ImageSpecField()
+class ConcreteImageModel(AbstractImageModel):
+    pass
 
 
-class ConcreteImageModel2(AbstractImageModel):
-    second_spec = ImageSpecField()
+class ConcreteImageModelSubclass(ConcreteImageModel):
+    pass
