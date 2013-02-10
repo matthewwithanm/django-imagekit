@@ -13,6 +13,7 @@ have two responsibilities:
 
 from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
+import inspect
 from ..cachefiles import LazyImageCacheFile
 from ..signals import source_created, source_changed, source_deleted
 from ..utils import get_nonabstract_descendants
@@ -26,8 +27,15 @@ def ik_model_receiver(fn):
     """
     @wraps(fn)
     def receiver(self, sender, **kwargs):
-        if sender in (src.model_class for src in self._source_groups):
-            fn(self, sender=sender, **kwargs)
+        if not inspect.isclass(sender):
+            return
+        for src in self._source_groups:
+            if issubclass(sender, src.model_class):
+                fn(self, sender=sender, **kwargs)
+
+                # If we find a match, return. We don't want to handle the signal
+                # more than once.
+                return
     return receiver
 
 
@@ -77,7 +85,7 @@ class ModelSignalRouter(object):
 
         """
         return dict((src.image_field, getattr(instance, src.image_field)) for
-                src in self._source_groups if src.model_class is instance.__class__)
+                src in self._source_groups if isinstance(instance, src.model_class))
 
     @ik_model_receiver
     def post_save_receiver(self, sender, instance=None, created=False, raw=False, **kwargs):
@@ -110,7 +118,7 @@ class ModelSignalRouter(object):
 
         """
         for source_group in self._source_groups:
-            if source_group.model_class is model_class and source_group.image_field == attname:
+            if issubclass(model_class, source_group.model_class) and source_group.image_field == attname:
                 signal.send(sender=source_group, source=file)
 
 
