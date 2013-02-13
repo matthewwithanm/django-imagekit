@@ -8,13 +8,6 @@ from django.utils.importlib import import_module
 from pilkit.utils import *
 
 
-def get_spec_files(instance):
-    try:
-        return instance._ik.spec_files
-    except AttributeError:
-        return []
-
-
 def _get_models(apps):
     models = []
     for app_label in apps or []:
