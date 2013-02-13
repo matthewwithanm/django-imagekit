@@ -3,17 +3,8 @@ from tempfile import NamedTemporaryFile
 
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
-from django.db.models.loading import cache
 from django.utils.importlib import import_module
 from pilkit.utils import *
-
-
-def _get_models(apps):
-    models = []
-    for app_label in apps or []:
-        app = cache.get_app(app_label)
-        models += [m for m in cache.get_models(app)]
-    return models
 
 
 def get_nonabstract_descendants(model):
