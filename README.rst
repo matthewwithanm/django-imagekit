@@ -24,6 +24,8 @@ Installation
    setuptools. As such, it shares the same namespace as PIL does and is a
    drop-in replacement.
 
+.. note2:: Using Ubuntu, if you want to have jpeg support or have some crash regarding jpeg, you should see this http://stackoverflow.com/a/10109941/912450
+
 .. _`PIL`: http://pypi.python.org/pypi/PIL
 .. _`Pillow`: http://pypi.python.org/pypi/Pillow
 
