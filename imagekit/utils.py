@@ -252,7 +252,7 @@ def save_image(img, outfile, format, options=None, autoconvert=True):
         # So if we have a problem saving, we temporarily increase it. See
         # http://github.com/jdriscoll/django-imagekit/issues/50
         old_maxblock = ImageFile.MAXBLOCK
-        ImageFile.MAXBLOCK = img.size[0] * img.size[1]
+        ImageFile.MAXBLOCK = max(img.size) ** 2
         try:
             img.save(outfile, format, **options)
         finally:
