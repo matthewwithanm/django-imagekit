@@ -4,6 +4,7 @@ from hashlib import md5
 import pickle
 from ..cachefiles.backends import get_default_cachefile_backend
 from ..cachefiles.strategies import StrategyWrapper
+from ..exceptions import MissingSource
 from ..processors import ProcessorPipeline
 from ..utils import open_image, img_to_fobj, get_by_qname
 from ..registry import generator_registry, register
@@ -40,6 +41,13 @@ class BaseImageSpec(object):
 
     def generate(self):
         raise NotImplementedError
+
+    MissingSource = MissingSource
+    """
+    Raised when an operation requiring a source is attempted on a spec that has
+    no source.
+
+    """
 
 
 class ImageSpec(BaseImageSpec):
@@ -116,6 +124,10 @@ class ImageSpec(BaseImageSpec):
         ])).hexdigest()
 
     def generate(self):
+        if not self.source:
+            raise MissingSource("The spec '%s' has no source file associated"
+                                " with it." % self)
+
         # TODO: Move into a generator base class
         # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
         img = open_image(self.source)
