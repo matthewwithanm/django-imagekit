@@ -82,6 +82,8 @@ class ImageSpec(BaseImageSpec):
 
     @property
     def cachefile_name(self):
+        if not self.source:
+            return None
         fn = get_by_qname(settings.IMAGEKIT_SPEC_CACHEFILE_NAMER, 'namer')
         return fn(self)
 

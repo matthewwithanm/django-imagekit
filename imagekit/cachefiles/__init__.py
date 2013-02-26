@@ -27,10 +27,12 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         """
         self.generator = generator
 
-        name = name or getattr(generator, 'cachefile_name', None)
         if not name:
-            fn = get_by_qname(settings.IMAGEKIT_CACHEFILE_NAMER, 'namer')
-            name = fn(generator)
+            try:
+                name = generator.cachefile_name
+            except AttributeError:
+                fn = get_by_qname(settings.IMAGEKIT_CACHEFILE_NAMER, 'namer')
+                name = fn(generator)
         self.name = name
 
         storage = storage or getattr(generator, 'cachefile_storage',
