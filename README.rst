@@ -56,7 +56,7 @@ your model class:
 
     class Profile(models.Model):
         avatar = models.ImageField(upload_to='avatars')
-        avatar_thumbnail = ImageSpecField(source='avatar',
+        avatar_thumbnail = ImageSpecField(image_field='avatar',
                                           processors=[ResizeToFill(100, 50)],
                                           format='JPEG',
                                           options={'quality': 60})
