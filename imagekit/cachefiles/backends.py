@@ -29,16 +29,16 @@ class CachedFileBackend(object):
         from django.conf import settings
         return '%s%s-exists' % (settings.IMAGEKIT_CACHE_PREFIX, file.name)
 
-    def file_exists(self, file):
+    def exists(self, file):
         key = self.get_key(file)
         exists = self.cache.get(key)
         if exists is None:
-            exists = self._file_exists(file)
+            exists = self._exists(file)
             self.cache.set(key, exists)
         return exists
 
     def ensure_exists(self, file):
-        if self.file_exists(file):
+        if self.exists(file):
             self.create(file)
             self.cache.set(self.get_key(file), True)
 
@@ -50,7 +50,7 @@ class Simple(CachedFileBackend):
 
     """
 
-    def _file_exists(self, file):
+    def _exists(self, file):
         if not getattr(file, '_file', None):
             # No file on object. Have to check storage.
             return not file.storage.exists(file.name)
