@@ -68,6 +68,7 @@ class CachedFileBackend(object):
     def generate(self, file, force=False):
         if force:
             file._generate()
+            self.set_state(file, CacheFileState.EXISTS)
         elif self.get_state(file) is CacheFileState.DOES_NOT_EXIST:
             # Don't generate if the file exists or is pending.
             self._generate(file)
