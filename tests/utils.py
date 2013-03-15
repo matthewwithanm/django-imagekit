@@ -3,9 +3,11 @@ import os
 from django.conf import settings
 from django.core.files import File
 from django.template import Context, Template
+from imagekit.cachefiles.backends import Simple, CacheFileState
 from imagekit.lib import Image, StringIO
 from nose.tools import assert_true, assert_false
 import pickle
+from tempfile import NamedTemporaryFile
 from .models import Photo
 
 
@@ -19,6 +21,12 @@ def get_image_file():
     """
     path = os.path.join(settings.MEDIA_ROOT, 'lenna.png')
     return open(path, 'r+b')
+
+
+def get_unique_image_file():
+    file = NamedTemporaryFile()
+    file.write(get_image_file().read())
+    return file
 
 
 def create_image():
@@ -62,3 +70,13 @@ def assert_file_is_falsy(file):
 
 def assert_file_is_truthy(file):
     assert_true(bool(file), 'File is not truthy')
+
+
+class DummyAsyncCacheFileBackend(Simple):
+    """
+    A cache file backend meant to simulate async generation (by marking the
+    file as pending but never actually creating it).
+
+    """
+    def _generate(self, file):
+        self.set_state(file, CacheFileState.PENDING)
