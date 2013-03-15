@@ -4,6 +4,7 @@ from django.conf import settings
 from django.core.files import File
 from django.template import Context, Template
 from imagekit.lib import Image, StringIO
+from nose.tools import assert_true, assert_false
 import pickle
 from .models import Photo
 
@@ -53,3 +54,11 @@ def render_tag(ttag):
 
 def get_html_attrs(ttag):
     return BeautifulSoup(render_tag(ttag)).img.attrs
+
+
+def assert_file_is_falsy(file):
+    assert_false(bool(file), 'File is not falsy')
+
+
+def assert_file_is_truthy(file):
+    assert_true(bool(file), 'File is not truthy')

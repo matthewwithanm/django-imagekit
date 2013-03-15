@@ -1,6 +1,7 @@
 from imagekit.cachefiles import ImageCacheFile
-from nose.tools import assert_false, raises
+from nose.tools import raises
 from .imagegenerators import TestSpec
+from .utils import assert_file_is_falsy
 
 
 def test_no_source():
@@ -9,7 +10,7 @@ def test_no_source():
     """
     spec = TestSpec(source=None)
     file = ImageCacheFile(spec)
-    assert_false(bool(file))
+    assert_file_is_falsy(file)
 
 
 @raises(TestSpec.MissingSource)
