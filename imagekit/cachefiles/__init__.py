@@ -75,6 +75,15 @@ class ImageCacheFile(BaseIKFile, ImageFile):
                 )
             )
 
+    def __nonzero__(self):
+        if not self.name:
+            return False
+
+        # Dispatch the before_access signal before checking to see if the file
+        # exists. This gives the strategy a chance to create the file.
+        before_access.send(sender=self, file=self)
+        return self.cachefile_backend.exists(self)
+
 
 class LazyImageCacheFile(LazyObject):
     def __init__(self, generator_id, *args, **kwargs):
