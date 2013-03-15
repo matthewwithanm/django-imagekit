@@ -38,6 +38,16 @@ class AbstractCacheFileBackend(object):
 
 
 class CachedFileBackend(object):
+    existence_check_timeout = 5
+    """
+    The number of seconds to wait before rechecking to see if the file exists.
+    If the image is found to exist, that information will be cached using the
+    timeout specified in your CACHES setting (which should be very high).
+    However, when the file does not exist, you probably want to check again
+    in a relatively short amount of time. This attribute allows you to do that.
+
+    """
+
     @property
     def cache(self):
         if not getattr(self, '_cache', None):
@@ -60,7 +70,10 @@ class CachedFileBackend(object):
 
     def set_state(self, file, state):
         key = self.get_key(file)
-        self.cache.set(key, state)
+        if state is CacheFileState.DOES_NOT_EXIST:
+            self.cache.set(key, state, self.existence_check_timeout)
+        else:
+            self.cache.set(key, state)
 
     def exists(self, file):
         return self.get_state(file) is CacheFileState.EXISTS
