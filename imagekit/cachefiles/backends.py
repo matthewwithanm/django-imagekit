@@ -86,4 +86,5 @@ class Simple(CachedFileBackend):
         self.set_state(file, CacheFileState.EXISTS)
 
     def _exists(self, file):
-        return getattr(file, '_file', None) or file.storage.exists(file.name)
+        return bool(getattr(file, '_file', None)
+                    or file.storage.exists(file.name))
