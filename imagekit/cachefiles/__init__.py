@@ -60,15 +60,18 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         actual_name = self.storage.save(self.name, content)
 
         if actual_name != self.name:
-            get_logger().warning('The storage backend %s did not save the file'
-                    ' with the requested name ("%s") and instead used'
-                    ' "%s". This may be because a file already existed with'
-                    ' the requested name. If so, you may have meant to call'
-                    ' ensure_exists() instead of generate(), or there may be a'
-                    ' race condition in the file backend %s. The saved file'
-                    ' will not be used.' % (self.storage,
+            get_logger().warning(
+                'The storage backend %s did not save the file with the'
+                ' requested name ("%s") and instead used "%s". This may be'
+                ' because a file already existed with the requested name. If'
+                ' so, you may have meant to call generate() instead of'
+                ' generate(force=True), or there may be a race condition in the'
+                ' file backend %s. The saved file will not be used.' % (
+                    self.storage,
                     self.name, actual_name,
-                    self.cachefile_backend))
+                    self.cachefile_backend
+                )
+            )
 
 
 class LazyImageCacheFile(LazyObject):
