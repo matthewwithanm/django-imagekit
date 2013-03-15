@@ -23,6 +23,20 @@ class InvalidFileBackendError(ImproperlyConfigured):
     pass
 
 
+class AbstractCacheFileBackend(object):
+    """
+    An abstract cache file backend. This isn't used by any internal classes and
+    is included simply to illustrate the minimum interface of a cache file
+    backend for users who wish to implement their own.
+
+    """
+    def generate(self, file, force=False):
+        raise NotImplementedError
+
+    def exists(self, file):
+        raise NotImplementedError
+
+
 class CachedFileBackend(object):
     @property
     def cache(self):
