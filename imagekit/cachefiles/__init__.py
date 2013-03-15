@@ -48,10 +48,12 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         return super(ImageCacheFile, self)._require_file()
 
     def generate(self, force=False):
-        if force:
-            self._generate()
-        else:
-            self.cachefile_backend.ensure_exists(self)
+        """
+        Generate the file. If ``force`` is ``True``, the file will be generated
+        immediately, whether the file already exists or not.
+
+        """
+        self.cachefile_backend.generate(self, force)
 
     def _generate(self):
         # Generate the file

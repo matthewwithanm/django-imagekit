@@ -3,6 +3,12 @@ from django.core.cache import get_cache
 from django.core.exceptions import ImproperlyConfigured
 
 
+class CacheFileState(object):
+    EXISTS = 'exists'
+    PENDING = 'pending'
+    DOES_NOT_EXIST = 'does_not_exist'
+
+
 def get_default_cachefile_backend():
     """
     Get the default file backend.
@@ -27,35 +33,42 @@ class CachedFileBackend(object):
 
     def get_key(self, file):
         from django.conf import settings
-        return '%s%s-exists' % (settings.IMAGEKIT_CACHE_PREFIX, file.name)
+        return '%s%s-state' % (settings.IMAGEKIT_CACHE_PREFIX, file.name)
+
+    def get_state(self, file):
+        key = self.get_key(file)
+        state = self.cache.get(key)
+        if state is None:
+            exists = self._exists(file)
+            state = CacheFileState.EXISTS if exists else CacheFileState.DOES_NOT_EXIST
+            self.set_state(file, state)
+        return state
+
+    def set_state(self, file, state):
+        key = self.get_key(file)
+        self.cache.set(key, state)
 
     def exists(self, file):
-        key = self.get_key(file)
-        exists = self.cache.get(key)
-        if exists is None:
-            exists = self._exists(file)
-            self.cache.set(key, exists)
-        return exists
+        return self.get_state(file) is CacheFileState.EXISTS
 
-    def ensure_exists(self, file):
-        if not self.exists(file):
-            self.create(file)
-            self.cache.set(self.get_key(file), True)
+    def generate(self, file, force=False):
+        if force:
+            file._generate()
+        elif self.get_state(file) is CacheFileState.DOES_NOT_EXIST:
+            # Don't generate if the file exists or is pending.
+            self._generate(file)
 
 
 class Simple(CachedFileBackend):
     """
     The most basic file backend. The storage is consulted to see if the file
-    exists.
+    exists. Files are generated synchronously.
 
     """
 
+    def _generate(self, file):
+        file._generate()
+        self.set_state(file, CacheFileState.EXISTS)
+
     def _exists(self, file):
         return getattr(file, '_file', None) or file.storage.exists(file.name)
-
-    def create(self, file):
-        """
-        Generates a new image by running the processors on the source file.
-
-        """
-        file.generate(force=True)
