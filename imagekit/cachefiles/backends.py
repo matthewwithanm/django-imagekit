@@ -38,7 +38,7 @@ class CachedFileBackend(object):
         return exists
 
     def ensure_exists(self, file):
-        if self.exists(file):
+        if not self.exists(file):
             self.create(file)
             self.cache.set(self.get_key(file), True)
 
@@ -51,10 +51,7 @@ class Simple(CachedFileBackend):
     """
 
     def _exists(self, file):
-        if not getattr(file, '_file', None):
-            # No file on object. Have to check storage.
-            return not file.storage.exists(file.name)
-        return False
+        return getattr(file, '_file', None) or file.storage.exists(file.name)
 
     def create(self, file):
         """
