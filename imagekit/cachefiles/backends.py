@@ -79,10 +79,7 @@ class CachedFileBackend(object):
         return self.get_state(file) is CacheFileState.EXISTS
 
     def generate(self, file, force=False):
-        if force:
-            self.generate_now(file, force)
-        else:
-            self._generate(file)
+        raise NotImplementedError
 
     def generate_now(self, file, force=False):
         if force or self.get_state(file) is CacheFileState.DOES_NOT_EXIST:
@@ -97,16 +94,16 @@ class Simple(CachedFileBackend):
 
     """
 
-    def _generate(self, file):
-        self.generate_now(file)
+    def generate(self, file, force=False):
+        self.generate_now(file, force=force)
 
     def _exists(self, file):
         return bool(getattr(file, '_file', None)
                     or file.storage.exists(file.name))
 
 
-def _generate_file(backend, file):
-    backend.generate_now(file)
+def _generate_file(backend, file, force=False):
+    backend.generate_now(file, force=force)
 
 
 try:
@@ -130,6 +127,6 @@ class Async(Simple):
                                        ' imagekit.cachefiles.backend.Async.')
         super(Async, self).__init__(*args, **kwargs)
 
-    def _generate(self, file):
+    def generate(self, file, force=False):
         self.set_state(file, CacheFileState.PENDING)
-        _generate_file.delay(self, file)
+        _generate_file.delay(self, file, force=force)
