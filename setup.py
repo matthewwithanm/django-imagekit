@@ -52,6 +52,9 @@ setup(
         'django-appconf>=0.5',
         'pilkit',
     ],
+    extras_require={
+        'async': ['django-celery>=3.0'],
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',

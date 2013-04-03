@@ -101,3 +101,34 @@ class Simple(CachedFileBackend):
     def _exists(self, file):
         return bool(getattr(file, '_file', None)
                     or file.storage.exists(file.name))
+
+
+def _generate_file(backend, file):
+    file._generate()
+    backend.set_state(file, CacheFileState.EXISTS)
+
+
+try:
+    import celery
+except ImportError:
+    pass
+else:
+    _generate_file = celery.task(ignore_result=True)(_generate_file)
+
+
+class Async(Simple):
+    """
+    A backend that uses Celery to generate the images.
+    """
+
+    def __init__(self, *args, **kwargs):
+        try:
+            import celery
+        except ImportError:
+            raise ImproperlyConfigured('You must install celery to use'
+                                       ' imagekit.cachefiles.backend.Async.')
+        super(Async, self).__init__(*args, **kwargs)
+
+    def _generate(self, file):
+        self.set_state(file, CacheFileState.PENDING)
+        _generate_file.delay(self, file)

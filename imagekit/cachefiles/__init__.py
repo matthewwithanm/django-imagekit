@@ -45,7 +45,6 @@ class ImageCacheFile(BaseIKFile, ImageFile):
 
     def _require_file(self):
         before_access.send(sender=self, file=self)
-        return super(ImageCacheFile, self)._require_file()
 
     def generate(self, force=False):
         """
