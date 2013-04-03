@@ -115,8 +115,11 @@ Optimizing
 Unlike Django's ImageFields, ImageKit's ImageSpecFields and template tags don't
 persist any data in the database. Therefore, in order to know whether an image
 file needs to be generated, ImageKit needs to check if the file already exists
-(using the appropriate file storage object`__). The object responsible for
+(using the appropriate `file storage object`__). The object responsible for
 performing these checks is called a *cache file backend*.
+
+
+__ https://docs.djangoproject.com/en/dev/topics/files/#file-storage
 
 
 Cache!
@@ -140,6 +143,47 @@ In normal operation, your cache files will never be deleted; once they're
 created, they'll stay created. So the simplest optimization you can make is to
 set your ``IMAGEKIT_CACHE_BACKEND`` to a cache with a very long, or infinite,
 timeout.
+
+
+Deferring Image Generation
+--------------------------
+
+As mentioned above, image generation is normally done synchronously. However,
+you can also take advantage of deferred generation. In order to do this, you'll
+need to do two things: 1) install `django-celery`__ and 2) tell ImageKit to use
+the async cachefile backend. You can do this either on a per-spec basis (by
+setting the ``cachefile_backend`` attribute), or for your project by setting
+``IMAGEKIT_DEFAULT_CACHEFILE_BACKEND`` in your settings.py:
+
+.. code-block:: python
+
+    IMAGEKIT_DEFAULT_CACHEFILE_BACKEND = 'imagekit.cachefiles.backends.Async'
+
+Images will now be generated asynchronously. But watch out! Asynchrounous
+generation means you'll have to account for images that haven't been generated
+yet. You can do this by checking the truthiness of your files; if an image
+hasn't been generated, it will be falsy:
+
+.. code-block:: html
+
+    {% if not profile.avatar_thumbnail %}
+        <img src="/path/to/placeholder.jpg" />
+    {% else %}
+        <img src="{{ profile.avatar_thumbnail.url }}" />
+    {% endif %}
+
+Or, in Python:
+
+.. code-block:: python
+
+    profile = Profile.objects.all()[0]
+    if profile.avatar_thumbnail:
+        url = profile.avatar_thumbnail.url
+    else:
+        url = '/path/to/placeholder.jpg'
+
+
+__ https://pypi.python.org/pypi/django-celery
 
 
 Even More Advanced
