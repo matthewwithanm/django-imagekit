@@ -12,9 +12,10 @@ class ImageModel(models.Model):
 class Photo(models.Model):
     original_image = models.ImageField(upload_to='photos')
 
+    # Implicit source field
     thumbnail = ImageSpecField([Adjust(contrast=1.2, sharpness=1.1),
-            ResizeToFill(50, 50)], source='original_image', format='JPEG',
-            options={'quality': 90})
+                               ResizeToFill(50, 50)], format='JPEG',
+                               options={'quality': 90})
 
     smartcropped_thumbnail = ImageSpecField([Adjust(contrast=1.2,
             sharpness=1.1), SmartCrop(50, 50)], source='original_image',

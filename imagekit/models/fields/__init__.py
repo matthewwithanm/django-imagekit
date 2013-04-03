@@ -41,12 +41,28 @@ class ImageSpecField(SpecHostField):
         self.source = source
 
     def contribute_to_class(self, cls, name):
-        setattr(cls, name, ImageSpecFileDescriptor(self, name))
+        # If the source field name isn't defined, figure it out.
+        source = self.source
+        if not source:
+            image_fields = [f.attname for f in cls._meta.fields if
+                            isinstance(f, models.ImageField)]
+            if len(image_fields) == 0:
+                raise Exception(
+                    '%s does not define any ImageFields, so your %s'
+                    ' ImageSpecField has no image to act on.' %
+                    (cls.__name__, name))
+            elif len(image_fields) > 1:
+                raise Exception(
+                    '%s defines multiple ImageFields, but you have not'
+                    ' specified a source for your %s ImageSpecField.' %
+                    (cls.__name__, name))
+            source = image_fields[0]
+
+        setattr(cls, name, ImageSpecFileDescriptor(self, name, source))
         self.set_spec_id(cls, name)
 
         # Add the model and field as a source for this spec id
-        register.source_group(self.spec_id,
-                ImageFieldSourceGroup(cls, self.source))
+        register.source_group(self.spec_id, ImageFieldSourceGroup(cls, source))
 
 
 class ProcessedImageField(models.ImageField, SpecHostField):
