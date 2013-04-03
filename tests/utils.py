@@ -78,5 +78,5 @@ class DummyAsyncCacheFileBackend(Simple):
     file as pending but never actually creating it).
 
     """
-    def _generate(self, file):
+    def generate(self, file, force=False):
         self.set_state(file, CacheFileState.PENDING)
