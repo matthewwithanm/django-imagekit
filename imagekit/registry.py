@@ -21,8 +21,7 @@ class GeneratorRegistry(object):
                                     ' already registered' % id)
         self._generators[id] = generator
 
-    def unregister(self, id, generator):
-        # TODO: Either don't require the generator, or--if we do--assert that it's registered with the provided id
+    def unregister(self, id):
         try:
             del self._generators[id]
         except KeyError:
@@ -177,8 +176,8 @@ class Unregister(object):
     Unregister generators and generated files.
 
     """
-    def generator(self, id, generator):
-        generator_registry.unregister(id, generator)
+    def generator(self, id):
+        generator_registry.unregister(id)
 
     def cachefiles(self, generator_id, cachefiles):
         cachefile_registry.unregister(generator_id, cachefiles)
