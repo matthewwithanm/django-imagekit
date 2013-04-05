@@ -15,7 +15,8 @@ class GeneratorRegistry(object):
         before_access.connect(self.before_access_receiver)
 
     def register(self, id, generator):
-        if id in self._generators:
+        registered_generator = self._generators.get(id)
+        if registered_generator and generator != self._generators[id]:
             raise AlreadyRegistered('The generator with id %s is'
                                     ' already registered' % id)
         self._generators[id] = generator
