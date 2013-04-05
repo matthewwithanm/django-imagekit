@@ -4,7 +4,7 @@ from hashlib import md5
 import pickle
 from ..cachefiles.backends import get_default_cachefile_backend
 from ..cachefiles.strategies import StrategyWrapper
-from ..exceptions import MissingSource
+from ..exceptions import AlreadyRegistered, MissingSource
 from ..processors import ProcessorPipeline
 from ..utils import open_image, img_to_fobj, get_by_qname
 from ..registry import generator_registry, register
@@ -204,7 +204,15 @@ class SpecHost(object):
         self.spec_id = id
 
         if self._original_spec:
-            register.generator(id, self._original_spec)
+            try:
+                register.generator(id, self._original_spec)
+            except AlreadyRegistered:
+                # Fields should not cause AlreadyRegistered exceptions. If a
+                # spec is already registered, that should be used. It is
+                # especially important that an error is not thrown here because
+                # of South, which will create duplicate models as part of its
+                # "fake orm," therefore re-registering specs.
+                pass
 
     def get_spec(self, source):
         """
