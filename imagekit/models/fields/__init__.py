@@ -7,16 +7,18 @@ from ...registry import register
 
 
 class SpecHostField(SpecHost):
-    def set_spec_id(self, cls, name):
+    def _set_spec_id(self, cls, name):
+        spec_id = getattr(self, 'spec_id', None)
+
         # Generate a spec_id to register the spec with. The default spec id is
         # "<app>:<model>_<field>"
-        if not getattr(self, 'spec_id', None):
+        if not spec_id:
             spec_id = (u'%s:%s:%s' % (cls._meta.app_label,
                             cls._meta.object_name, name)).lower()
 
-            # Register the spec with the id. This allows specs to be overridden
-            # later, from outside of the model definition.
-            super(SpecHostField, self).set_spec_id(spec_id)
+        # Register the spec with the id. This allows specs to be overridden
+        # later, from outside of the model definition.
+        super(SpecHostField, self).set_spec_id(spec_id)
 
 
 class ImageSpecField(SpecHostField):
@@ -59,7 +61,7 @@ class ImageSpecField(SpecHostField):
             source = image_fields[0]
 
         setattr(cls, name, ImageSpecFileDescriptor(self, name, source))
-        self.set_spec_id(cls, name)
+        self._set_spec_id(cls, name)
 
         # Add the model and field as a source for this spec id
         register.source_group(self.spec_id, ImageFieldSourceGroup(cls, source))
@@ -92,7 +94,7 @@ class ProcessedImageField(models.ImageField, SpecHostField):
                 height_field, **kwargs)
 
     def contribute_to_class(self, cls, name):
-        self.set_spec_id(cls, name)
+        self._set_spec_id(cls, name)
         return super(ProcessedImageField, self).contribute_to_class(cls, name)
 
 
