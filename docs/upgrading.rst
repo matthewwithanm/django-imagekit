@@ -112,3 +112,13 @@ and other spec options to ensure that changes to the spec always result in
 unique file names. See the documentation on `specs`_ for more.
 
 .. _`specs`:
+
+
+Processors have moved to PILKit
+-------------------------------
+
+Processors have moved to a separate project: `PILKit`_. You should not have to
+make any changes to an IK2 project to use PILKit--it should be installed with
+IK3, and importing from ``imagekit.processors`` will still work.
+
+.. _`PILKit`: https://github.com/matthewwithanm/pilkit
