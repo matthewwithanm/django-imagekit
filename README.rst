@@ -365,6 +365,12 @@ it in your spec's ``processors`` list:
         format = 'JPEG'
         options = {'quality': 60}
 
+Note that when you import a processor from ``imagekit.processors``, imagekit
+in turn imports the processor from `PILKit`_. So if you are looking for 
+available processors, look at PILKit.
+
+.. _`PILKit`: https://github.com/matthewwithanm/pilkit
+
 
 Admin
 -----
