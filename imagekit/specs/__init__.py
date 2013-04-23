@@ -130,7 +130,14 @@ class ImageSpec(BaseImageSpec):
 
         # TODO: Move into a generator base class
         # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
-        img = open_image(self.source)
+        try:
+            img = open_image(self.source)
+        except ValueError:
+
+            # Re-open the file -- https://code.djangoproject.com/ticket/13750
+            self.source.open()
+            img = open_image(self.source)
+
         original_format = img.format
 
         # Run the processors
