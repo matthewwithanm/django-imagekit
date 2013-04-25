@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jdriscoll/django-imagekit.png?branch=develop)](https://travis-ci.org/jdriscoll/django-imagekit)
+
 ImageKit is a Django app for processing images. Need a thumbnail? A
 black-and-white version of a user-uploaded image? ImageKit will make them for
 you. If you need to programatically generate one image from another, you need
