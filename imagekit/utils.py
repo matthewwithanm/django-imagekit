@@ -10,7 +10,7 @@ from pilkit.utils import *
 import re
 
 
-bad_memcached_key_chars = re.compile(ur'[\u0000-\u0031\s]+')
+bad_memcached_key_chars = re.compile(ur'[\u0000-\u001f\s]+')
 
 
 def get_nonabstract_descendants(model):
