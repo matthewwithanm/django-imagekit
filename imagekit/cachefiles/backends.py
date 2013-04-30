@@ -1,4 +1,4 @@
-from ..utils import get_singleton
+from ..utils import get_singleton, sanitize_cache_key
 from django.core.cache import get_cache
 from django.core.exceptions import ImproperlyConfigured
 
@@ -57,7 +57,8 @@ class CachedFileBackend(object):
 
     def get_key(self, file):
         from django.conf import settings
-        return '%s%s-state' % (settings.IMAGEKIT_CACHE_PREFIX, file.name)
+        return sanitize_cache_key('%s%s-state' %
+                                  (settings.IMAGEKIT_CACHE_PREFIX, file.name))
 
     def get_state(self, file):
         key = self.get_key(file)

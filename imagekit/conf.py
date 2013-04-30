@@ -13,6 +13,7 @@ class ImageKitConf(AppConf):
 
     CACHE_BACKEND = None
     CACHE_PREFIX = 'imagekit:'
+    USE_MEMCACHED_SAFE_CACHE_KEY = True
 
     def configure_cache_backend(self, value):
         if value is None:

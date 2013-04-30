@@ -1,10 +1,16 @@
 import logging
 from tempfile import NamedTemporaryFile
 
+from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
 from django.utils.importlib import import_module
+from hashlib import md5
 from pilkit.utils import *
+import re
+
+
+bad_memcached_key_chars = re.compile(ur'[\u0000-\u0031\s]+')
 
 
 def get_nonabstract_descendants(model):
@@ -123,3 +129,17 @@ def call_strategy_method(generator, method_name, *args, **kwargs):
     fn = getattr(strategy, method_name, None)
     if fn is not None:
         fn(*args, **kwargs)
+
+
+def sanitize_cache_key(key):
+    if settings.IMAGEKIT_USE_MEMCACHED_SAFE_CACHE_KEY:
+        # Memcached keys can't contain whitespace or control characters.
+        new_key = bad_memcached_key_chars.sub('', key)
+
+        # The also can't be > 250 chars long. Since we don't know what the
+        # user's cache ``KEY_FUNCTION`` setting is like, we'll limit it to 200.
+        if len(new_key) >= 200:
+            new_key = '%s:%s' % (new_key[:200-33], md5(key).hexdigest())
+
+        key = new_key
+    return key
