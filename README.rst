@@ -1,6 +1,6 @@
 |Build Status|_
 
-.. |Build Status| image:: https://travis-ci.org/jdriscoll/django-imagekit.png?branch=canon-pickle
+.. |Build Status| image:: https://travis-ci.org/jdriscoll/django-imagekit.png?branch=develop
 .. _Build Status: https://travis-ci.org/jdriscoll/django-imagekit
 
 ImageKit is a Django app for processing images. Need a thumbnail? A
