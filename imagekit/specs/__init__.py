@@ -1,9 +1,8 @@
 from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
-from hashlib import md5
-import pickle
 from ..cachefiles.backends import get_default_cachefile_backend
 from ..cachefiles.strategies import StrategyWrapper
+from .. import hashers
 from ..exceptions import AlreadyRegistered, MissingSource
 from ..processors import ProcessorPipeline
 from ..utils import open_image, img_to_fobj, get_by_qname
@@ -115,13 +114,13 @@ class ImageSpec(BaseImageSpec):
             self.source = getattr(field_data['instance'], field_data['attname'])
 
     def get_hash(self):
-        return md5(pickle.dumps([
+        return hashers.pickle([
             self.source.name,
             self.processors,
             self.format,
             self.options,
             self.autoconvert,
-        ])).hexdigest()
+        ])
 
     def generate(self):
         if not self.source:
