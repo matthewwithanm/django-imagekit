@@ -1,7 +1,10 @@
 |Build Status|_
+|Code Coverage|_
 
 .. |Build Status| image:: https://travis-ci.org/jdriscoll/django-imagekit.png?branch=develop
 .. _Build Status: https://travis-ci.org/jdriscoll/django-imagekit
+.. |Code Coverage| image:: https://coveralls.io/repos/sjdriscoll/django-imagekit/badge.png?branch=develop
+.. _Code Coverage: https://coveralls.io/r/sjdriscoll/django-imagekit
 
 ImageKit is a Django app for processing images. Need a thumbnail? A
 black-and-white version of a user-uploaded image? ImageKit will make them for
