@@ -8,7 +8,7 @@ contributions merged as quickly as possible:
 2. If you want to add a new feature, talk to us on the `mailing list`__ or
    `IRC`__ first. We might already have plans, or be able to offer some advice.
 3. Make sure your code passes the tests that ImageKit already has. To run the
-   tests, use ``make test``. This will let you know about any errors or style
+   tests, use ``python setup.py test``. This will let you know about any errors or style
    issues.
 4. While we're talking about tests, creating new ones for your code makes it
    much easier for us to merge your code quickly. ImageKit uses nose_, so
