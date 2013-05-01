@@ -1,33 +1,39 @@
 Caching
 *******
 
+
 Default Backend Workflow
 ================
+
 
 ``ImageSpec``
 -------------
 
-At the heart of ImageKit are image generators. These are callables which return
-a modified image. An image spec is a type of image generator. The thing that
-makes specs special is that they accept a source image. So an image spec is
-just an image generator that makes an image from some other image.
+At the heart of ImageKit are image generators. These are classes with a
+``generate()`` method which returns an image file. An image spec is a type of
+image generator. The thing that makes specs special is that they accept a source
+image. So an image spec is just an image generator that makes an image from some
+other image.
+
 
 ``ImageCacheFile``
 ------------------
 
 However, an image spec by itself would be vastly inefficient. Every time an
-an image was accessed in some way, it would have be regenerated at saved.
+an image was accessed in some way, it would have be regenerated and saved.
 Most of the time, you want to re-use a previously generated image, based on the
-inpurt image and spec, instead generating a new one. That's where
+input image and spec, instead of generating a new one. That's where
 ``ImageCacheFile`` comes in. ``ImageCacheFile`` is a File-like object that
-is returned from an image generator. They look and feel just like regular file
+wraps an image generator. They look and feel just like regular file
 objects, but they've got a little trick up their sleeve: they represent files
 that may not actually exist!
 
+
 Cache File Strategy
 -------------------
+
 Each ``ImageCacheFile`` has a cache file strategy, which abstracts away when
-image is actually generated. It implenents four methods.
+image is actually generated. It can implement the following four methods:
 
 * ``before_access`` - called by ``ImageCacheFile`` when you access its url,
   width, or height attribute.
@@ -46,6 +52,7 @@ The default strategy only defines the first of these, as follows:
 
 Cache File Backend
 ------------------
+
 The ``generate`` method on the ``ImageCacheFile`` is further delegated to the
 cache file backend, which abstracts away how an image is generated.
 
@@ -65,19 +72,57 @@ If file doesn't exsit, generates it immediately and synchronously
 That pretty much covers the architecture of the caching layer, and its default
 behavior. I like the default behavior. When will an image be regenerated?
 Whenever it needs to be! When will your storage backend get hit? Depending on
-our IMAGEKIT_CACHE_BACKEND settings, as little as twice per file (once for the
-existence check and once to save the generated file).
-(Actually, like regular Django ImageFields, IK never caches width and height
-so those will always result in a read. That will probably change soon though.)
-What if you want to change a spec? The generated file name (which is used as
-part of the cache keys) vary with the source file name and spec attributes,
-so if you change any of those, a new file will be generated. The default
-behavior is easy!
+your ``IMAGEKIT_CACHE_BACKEND`` settings, as little as twice per file (once for the
+existence check and once to save the generated file). What if you want to change
+a spec? The generated file name (which is used as part of the cache keys) vary
+with the source file name and spec attributes, so if you change any of those, a
+new file will be generated. The default behavior is easy!
 
+.. note::
+
+    Like regular Django ImageFields, IK doesn't currently cache width and height
+    values, so accessing those will always result in a read. That will probably
+    change soon though.
+
+
+Optimizing
+==========
+
+There are several ways to improve the performance (reduce I/O operations) of
+ImageKit. Each has its own pros and cons.
+
+
+Caching Data About Generated Files
+----------------------------------
+
+The easiest, and most significant improvement you can make to improve the
+performance of your site is to have ImageKit cache the state of your generated
+files. The default cache file backend will already do this (if ``DEBUG`` is
+``True``), using your default Django cache backend, but you can make it way
+better by setting ``IMAGEKIT_CACHE_BACKEND``. Generally, once a file is
+generated, you will never be removing it; therefore, if you can, you should set
+``IMAGEKIT_CACHE_BACKEND`` to a cache backend that will cache forever.
+
+
+Pre-Generating Images
+---------------------
+
+The default cache file backend generates images immediately and synchronously.
+If you don't do anything special, that will be when they are first requested—as
+part of request-response cycle. This means that the first visitor to your page
+will have to wait for the file to be created before they see any HTML.
+
+This can be mitigated, though, by simply generating the images ahead of time, by
+running the ``generateimages`` management command.
+
+.. note::
+
+    If using with template tags, be sure to read :ref:`source-groups`.
 
 
 Deferring Image Generation
-==========================
+--------------------------
+
 As mentioned above, image generation is normally done synchronously. through
 the default cache file backend. However, you can also take advantage of
 deferred generation. In order to do this, you'll need to do two things:
@@ -118,30 +163,25 @@ Or, in Python:
 __ https://pypi.python.org/pypi/django-celery
 
 
-Pre-Generating Images
-=====================
+Removing Safeguards
+-------------------
 
-The default behavior generates images "immediately and synchronously". They are
-generated as part of the request-response cycle, which slows down the request.
+Even with pre-generating images, ImageKit will still try to ensure that your
+image exists when you access it by default. This is for your benefit: if you
+forget to generate your images, ImageKit will see that and generate it for you.
+If the state of the file is cached (see above), this is a pretty cheap
+operation. However, if the state isn't cached, ImageKit will need to query the
+storage backend.
 
-This can be mitigated by generating the images generating the images outside of
-a request. This can be done by running the ``generateimages``
-
-.. note::
-
-    If using with template tags, be sure to read :ref:`source-groups`.
-
-
-Minimizing Storage Backend Access
-=================================
-However even with pre-generating images, the storage backend still has to be
-queried to see if the file exists every time it is accessed. If you never
-want ImageKit to generate images in the request-responce cycle, then it never
-has to check if the image exists. The other cache file strategy only generates
-a new image when their source image is created or changed.
+For those who aren't willing to accept that cost (and who never want ImageKit
+to generate images in the request-responce cycle), there's the "optimistic"
+cache file strategy. This strategy only generates a new image when a spec's
+source image is created or changed. Unlike with the "just in time" strategy,
+accessing the file won't cause it to be generated, ImageKit will just assume
+that it already exists.
 
 To use this cache file strategy for all specs, set the
-``IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY`` in your settings
+``IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY`` in your settings:
 
 .. code-block:: python
 
