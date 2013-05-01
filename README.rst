@@ -437,4 +437,4 @@ with ImageKit.
 
 
 __ https://github.com/jdriscoll/django-imagekit/issues?labels=contributor-friendly&state=open
-__ https://github.com/jdriscoll/django-imagekit/blob/master/CONTRIBUTING.rst
+__ https://github.com/jdriscoll/django-imagekit/blob/develop/CONTRIBUTING.rst
