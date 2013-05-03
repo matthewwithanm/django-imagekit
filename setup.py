@@ -45,8 +45,7 @@ setup(
         'nose==1.2.1',
         'nose-progressive==1.3',
         'django-nose==1.1',
-        'Pillow<3.0',
-        'coveralls==0.1.1',
+        'Pillow<3.0'
     ],
     test_suite='testrunner.run_tests',
     install_requires=[
