@@ -4,6 +4,7 @@ python:
 install: pip install tox coveralls --use-mirrors
 script:
   - tox
+after_success:
   - coveralls
 notifications:
   irc: "irc.freenode.org#imagekit"
