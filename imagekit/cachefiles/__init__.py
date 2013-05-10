@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.files import File
 from django.core.files.images import ImageFile
 from django.utils.functional import LazyObject
 from ..files import BaseIKFile
@@ -70,6 +71,12 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         content = generate(self.generator)
 
         actual_name = self.storage.save(self.name, content)
+
+        # Store the generated file. If we don't do this, the next time the
+        # "file" attribute is accessed, it will result in a call to the storage
+        # backend (in ``BaseIKFile._get_file``). Since we already have the
+        # contents of the file, what would the point of that be?
+        self.file = File(content)
 
         if actual_name != self.name:
             get_logger().warning(
