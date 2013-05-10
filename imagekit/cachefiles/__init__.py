@@ -56,7 +56,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         super(ImageCacheFile, self).__init__(storage=storage)
 
     def _require_file(self):
-        if not getattr(self, '_file', None):
+        if getattr(self, '_file', None) is None:
             content_required.send(sender=self, file=self)
             self._file = self.storage.open(self.name, 'rb')
 
@@ -69,7 +69,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
     # available when its contents are required.
 
     def _storage_attr(self, attr):
-        if not getattr(self, '_file', None):
+        if getattr(self, '_file', None) is None:
             existence_required.send(sender=self, file=self)
         fn = getattr(self.storage, attr)
         return fn(self.name)
@@ -88,7 +88,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         whether the file already exists or not.
 
         """
-        if force or not getattr(self, '_file', None):
+        if force or getattr(self, '_file', None) is None:
             self.cachefile_backend.generate(self, force)
 
     def _generate(self):
