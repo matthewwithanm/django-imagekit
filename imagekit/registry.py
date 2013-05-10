@@ -1,5 +1,6 @@
 from .exceptions import AlreadyRegistered, NotRegistered
-from .signals import before_access, source_created, source_changed, source_deleted
+from .signals import (content_required, existence_required, source_created,
+                      source_changed, source_deleted)
 from .utils import call_strategy_method
 
 
@@ -12,7 +13,8 @@ class GeneratorRegistry(object):
     """
     def __init__(self):
         self._generators = {}
-        before_access.connect(self.before_access_receiver)
+        content_required.connect(self.content_required_receiver)
+        existence_required.connect(self.existence_required_receiver)
 
     def register(self, id, generator):
         registered_generator = self._generators.get(id)
@@ -42,13 +44,19 @@ class GeneratorRegistry(object):
     def get_ids(self):
         return self._generators.keys()
 
-    def before_access_receiver(self, sender, file, **kwargs):
+    def content_required_receiver(self, sender, file, **kwargs):
+        self._receive(file, 'on_content_required')
+
+    def existence_required_receiver(self, sender, file, **kwargs):
+        self._receive(file, 'on_existence_required')
+
+    def _receive(self, file, callback):
         generator = file.generator
 
         # FIXME: I guess this means you can't register functions?
         if generator.__class__ in self._generators.values():
             # Only invoke the strategy method for registered generators.
-            call_strategy_method(file, 'before_access')
+            call_strategy_method(file, callback)
 
 
 class SourceGroupRegistry(object):

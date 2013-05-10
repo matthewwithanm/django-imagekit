@@ -2,7 +2,8 @@ from django.dispatch import Signal
 
 
 # Generated file signals
-before_access = Signal()
+content_required = Signal()
+existence_required = Signal()
 
 # Source group signals
 source_created = Signal()

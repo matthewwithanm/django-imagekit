@@ -35,18 +35,25 @@ Cache File Strategy
 Each ``ImageCacheFile`` has a cache file strategy, which abstracts away when
 image is actually generated. It can implement the following four methods:
 
-* ``before_access`` - called by ``ImageCacheFile`` when you access its url,
-  width, or height attribute.
+* ``on_content_required`` - called by ``ImageCacheFile`` when it requires the
+  contents of the generated image. For example, when you call ``read()`` or
+  try to access information contained in the file.
+* ``on_existence_required`` - called by ``ImageCacheFile`` when it requires the
+  generated image to exist but may not be concerned with its contents. For
+  example, when you access its ``url`` or ``path`` attribute.
 * ``on_source_created`` - called when the source of a spec is created
 * ``on_source_changed`` - called when the source of a spec is changed
 * ``on_source_deleted`` - called when the source of a spec is deleted
 
-The default strategy only defines the first of these, as follows:
+The default strategy only defines the first two of these, as follows:
 
 .. code-block:: python
 
     class JustInTime(object):
-        def before_access(self, file):
+        def on_content_required(self, file):
+            file.generate()
+
+        def on_existence_required(self, file):
             file.generate()
 
 

@@ -29,12 +29,16 @@ class ProcessedImageFieldModel(models.Model):
 
 class CountingCacheFileStrategy(object):
     def __init__(self):
-        self.before_access_count = 0
+        self.on_existence_required_count = 0
+        self.on_content_required_count = 0
         self.on_source_changed_count = 0
         self.on_source_created_count = 0
 
-    def before_access(self, file):
-        self.before_access_count += 1
+    def on_existence_required(self, file):
+        self.on_existence_required_count += 1
+
+    def on_content_required(self, file):
+        self.on_content_required_count += 1
 
     def on_source_changed(self, file):
         self.on_source_changed_count += 1

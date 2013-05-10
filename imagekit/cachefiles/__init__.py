@@ -4,7 +4,7 @@ from django.core.files.images import ImageFile
 from django.utils.functional import LazyObject
 from ..files import BaseIKFile
 from ..registry import generator_registry
-from ..signals import before_access
+from ..signals import content_required, existence_required
 from ..utils import get_logger, get_singleton, generate, get_by_qname
 
 
@@ -57,7 +57,30 @@ class ImageCacheFile(BaseIKFile, ImageFile):
 
     def _require_file(self):
         if not getattr(self, '_file', None):
-            before_access.send(sender=self, file=self)
+            content_required.send(sender=self, file=self)
+            self._file = self.storage.open(self.name, 'rb')
+
+    # The ``path`` and ``url`` properties are overridden so as to not call
+    # ``_require_file``, which is only meant to be called when the file object
+    # will be directly interacted with (e.g. when using ``read()``). These only
+    # require the file to exist; they do not need its contents to work. This
+    # distinction gives the user the flexibility to create a cache file
+    # strategy that assumes the existence of a file, but can still make the file
+    # available when its contents are required.
+
+    def _storage_attr(self, attr):
+        if not getattr(self, '_file', None):
+            existence_required.send(sender=self, file=self)
+        fn = getattr(self.storage, attr)
+        return fn(self.name)
+
+    @property
+    def path(self):
+        return self._storage_attr('path')
+
+    @property
+    def url(self):
+        return self._storage_attr('url')
 
     def generate(self, force=False):
         """
@@ -101,9 +124,9 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         if not self.name:
             return False
 
-        # Dispatch the before_access signal before checking to see if the file
-        # exists. This gives the strategy a chance to create the file.
-        before_access.send(sender=self, file=self)
+        # Dispatch the existence_required signal before checking to see if the
+        # file exists. This gives the strategy a chance to create the file.
+        existence_required.send(sender=self, file=self)
         return self.cachefile_backend.exists(self)
 
 
