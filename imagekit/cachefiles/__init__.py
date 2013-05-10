@@ -15,7 +15,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
     to be deferred until the time that the cache file strategy requires it.
 
     """
-    def __init__(self, generator, name=None, storage=None, cachefile_backend=None):
+    def __init__(self, generator, name=None, storage=None, cachefile_backend=None, cachefile_strategy=None):
         """
         :param generator: The object responsible for generating a new image.
         :param name: The filename
@@ -23,6 +23,8 @@ class ImageCacheFile(BaseIKFile, ImageFile):
             file.
         :param cachefile_backend: The object responsible for managing the
             state of the file.
+        :param cachefile_strategy: The object responsible for handling events
+            for this file.
 
         """
         self.generator = generator
@@ -43,6 +45,12 @@ class ImageCacheFile(BaseIKFile, ImageFile):
             or getattr(generator, 'cachefile_backend', None)
             or get_singleton(settings.IMAGEKIT_DEFAULT_CACHEFILE_BACKEND,
                              'cache file backend'))
+        self.cachefile_strategy = (
+            cachefile_strategy
+            or getattr(generator, 'cachefile_strategy', None)
+            or get_singleton(settings.IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY,
+                             'cache file strategy')
+        )
 
         super(ImageCacheFile, self).__init__(storage=storage)
 

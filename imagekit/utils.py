@@ -124,11 +124,11 @@ def generate(generator):
     return File(content)
 
 
-def call_strategy_method(generator, method_name, *args, **kwargs):
-    strategy = getattr(generator, 'cachefile_strategy', None)
+def call_strategy_method(file, method_name):
+    strategy = getattr(file, 'cachefile_strategy', None)
     fn = getattr(strategy, method_name, None)
     if fn is not None:
-        fn(*args, **kwargs)
+        fn(file)
 
 
 def sanitize_cache_key(key):

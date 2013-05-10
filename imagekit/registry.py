@@ -48,7 +48,7 @@ class GeneratorRegistry(object):
         # FIXME: I guess this means you can't register functions?
         if generator.__class__ in self._generators.values():
             # Only invoke the strategy method for registered generators.
-            call_strategy_method(generator, 'before_access', file=file)
+            call_strategy_method(file, 'before_access')
 
 
 class SourceGroupRegistry(object):
@@ -105,7 +105,7 @@ class SourceGroupRegistry(object):
 
         for spec in specs:
             file = ImageCacheFile(spec)
-            call_strategy_method(spec, callback_name, file=file)
+            call_strategy_method(file, callback_name)
 
 
 class CacheFileRegistry(object):
