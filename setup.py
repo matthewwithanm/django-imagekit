@@ -50,7 +50,7 @@ setup(
     test_suite='testrunner.run_tests',
     install_requires=[
         'django-appconf>=0.5',
-        'pilkit',
+        'pilkit>=0.2.0',
     ],
     extras_require={
         'async': ['django-celery>=3.0'],
