@@ -56,7 +56,8 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         super(ImageCacheFile, self).__init__(storage=storage)
 
     def _require_file(self):
-        before_access.send(sender=self, file=self)
+        if not getattr(self, '_file', None):
+            before_access.send(sender=self, file=self)
 
     def generate(self, force=False):
         """
@@ -64,7 +65,8 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         whether the file already exists or not.
 
         """
-        self.cachefile_backend.generate(self, force)
+        if force or not getattr(self, '_file', None):
+            self.cachefile_backend.generate(self, force)
 
     def _generate(self):
         # Generate the file
