@@ -38,8 +38,11 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         storage = storage or getattr(generator, 'cachefile_storage',
             None) or get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
             'file storage backend')
-        self.cachefile_backend = cachefile_backend or getattr(generator,
-            'cachefile_backend', None)
+        self.cachefile_backend = (
+            cachefile_backend
+            or getattr(generator, 'cachefile_backend', None)
+            or get_singleton(settings.IMAGEKIT_DEFAULT_CACHEFILE_BACKEND,
+                             'cache file backend'))
 
         super(ImageCacheFile, self).__init__(storage=storage)
 
