@@ -1,7 +1,10 @@
 language: python
 python:
   - 2.7
-install: pip install tox --use-mirrors
-script: tox
+install: pip install tox coveralls --use-mirrors
+script:
+  - tox --with-coverage
+after_success:
+  - coveralls
 notifications:
   irc: "irc.freenode.org#imagekit"
