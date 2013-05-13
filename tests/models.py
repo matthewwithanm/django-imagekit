@@ -3,6 +3,7 @@ from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.models import ImageSpecField
 from imagekit.processors import Adjust, ResizeToFill, SmartCrop
+from imagekit.cachefiles.strategies import Optimistic
 
 
 class ImageModel(models.Model):
@@ -20,6 +21,22 @@ class Photo(models.Model):
     smartcropped_thumbnail = ImageSpecField([Adjust(contrast=1.2,
             sharpness=1.1), SmartCrop(50, 50)], source='original_image',
             format='JPEG', options={'quality': 90})
+
+
+class FalseOptimisticPhoto(models.Model):
+    original_image = models.ImageField(
+        upload_to='photos_none',
+        null=True,
+        blank=True
+    )
+
+    smartcropped_thumbnail = ImageSpecField(
+        [Adjust(contrast=1.2, sharpness=1.1), SmartCrop(50, 50)],
+        source='original_image',
+        format='JPEG',
+        options={'quality': 90},
+        cachefile_strategy=Optimistic
+    )
 
 
 class ProcessedImageFieldModel(models.Model):
