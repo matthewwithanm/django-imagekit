@@ -55,10 +55,16 @@ class CachedFileBackend(object):
             self._cache = get_cache(settings.IMAGEKIT_CACHE_BACKEND)
         return self._cache
 
+    @property
+    def cache_prefix(self):
+        from django.conf import settings
+        return settings.CACHE_MIDDLEWARE_KEY_PREFIX + \
+               settings.IMAGEKIT_CACHE_PREFIX
+
     def get_key(self, file):
         from django.conf import settings
         return sanitize_cache_key('%s%s-state' %
-                                  (settings.IMAGEKIT_CACHE_PREFIX, file.name))
+                                  (self.cache_prefix, file.name))
 
     def get_state(self, file):
         key = self.get_key(file)
