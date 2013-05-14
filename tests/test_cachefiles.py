@@ -3,8 +3,6 @@ from hashlib import md5
 from imagekit.cachefiles import ImageCacheFile
 from imagekit.cachefiles.backends import Simple
 from nose.tools import raises, eq_
-import random
-import string
 from .imagegenerators import TestSpec
 from .utils import (assert_file_is_truthy, assert_file_is_falsy,
                     DummyAsyncCacheFileBackend, get_unique_image_file)
