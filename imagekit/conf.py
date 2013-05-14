@@ -17,10 +17,21 @@ class ImageKitConf(AppConf):
 
     def configure_cache_backend(self, value):
         if value is None:
-            if getattr(settings, 'CACHES', None):
-                value = 'django.core.cache.backends.dummy.DummyCache' if settings.DEBUG else 'default'
+            try:
+                from django.core.cache.backends.dummy import DummyCache
+            except ImportError:
+                dummy_cache = 'dummy://'
             else:
-                value = 'dummy://' if settings.DEBUG else settings.CACHE_BACKEND
+                dummy_cache = 'django.core.cache.backends.dummy.DummyCache'
+
+            if settings.DEBUG:
+                value = dummy_cache
+            else:
+                value = (
+                    getattr(settings, 'CACHES', {}).get('default')
+                    or getattr(settings, 'CACHE_BACKEND', None)
+                    or dummy_cache
+                )
         return value
 
     def configure_default_file_storage(self, value):
