@@ -22,3 +22,12 @@ try:
     from cStringIO import StringIO
 except ImportError:
     from StringIO import StringIO
+
+try:
+    from logging import NullHandler
+except ImportError:
+    from logging import Handler
+
+    class NullHandler(Handler):
+        def emit(self, record):
+            pass
