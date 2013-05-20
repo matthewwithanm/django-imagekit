@@ -27,7 +27,7 @@ well as "a:b" and "a:b:c".""")
                 try:
                     # TODO: Allow other validation actions through command option
                     file.generate()
-                except Exception, err:
+                except Exception as err:
                     # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
                     self.stdout.write('    FAILED: %s\n' % err)
 
