@@ -60,29 +60,18 @@ def test_memcached_cache_key():
             self.name = name
 
     backend = Simple()
-    extra_char_count = len('state-') + len(backend.cache_prefix)
+    extra_char_count = len('state-') + len(settings.IMAGEKIT_CACHE_PREFIX)
 
     length = 199 - extra_char_count
     filename = '1' * length
     file = MockFile(filename)
     eq_(backend.get_key(file), '%s%s-state' %
-        (backend.cache_prefix, file.name))
+        (settings.IMAGEKIT_CACHE_PREFIX, file.name))
 
     length = 200 - extra_char_count
     filename = '1' * length
     file = MockFile(filename)
     eq_(backend.get_key(file), '%s%s:%s' % (
-        backend.cache_prefix,
-        '1' * (200 - len(':') - 32 - len(backend.cache_prefix)),
-        md5('%s%s-state' % (backend.cache_prefix, filename)).hexdigest()))
-
-
-def test_cache_prefix():
-    """
-    Ensure that the backend's cache_prefix contains both Django's
-    CACHE_MIDDLEWARE_KEY_PREFIX setting and Imagekit's IMAGEKIT_CACHE_PREFIX
-    """
-
-    backend = Simple()
-    eq_(backend.cache_prefix, settings.CACHE_MIDDLEWARE_KEY_PREFIX + \
-                              settings.IMAGEKIT_CACHE_PREFIX)
+        settings.IMAGEKIT_CACHE_PREFIX,
+        '1' * (200 - len(':') - 32 - len(settings.IMAGEKIT_CACHE_PREFIX)),
+        md5('%s%s-state' % (settings.IMAGEKIT_CACHE_PREFIX, filename)).hexdigest()))
