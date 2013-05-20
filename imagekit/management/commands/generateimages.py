@@ -23,13 +23,14 @@ well as "a:b" and "a:b:c".""")
         for generator_id in generators:
             self.stdout.write('Validating generator: %s\n' % generator_id)
             for file in cachefile_registry.get(generator_id):
-                self.stdout.write('  %s\n' % file)
                 try:
                     # TODO: Allow other validation actions through command option
                     file.generate()
                 except Exception as err:
                     # TODO: How should we handle failures? Don't want to error, but should call it out more than this.
                     self.stdout.write('    FAILED: %s\n' % err)
+                else:
+                    self.stdout.write('Generated %s\n' % file.name)
 
     def compile_patterns(self, generator_ids):
         return [self.compile_pattern(id) for id in generator_ids]
