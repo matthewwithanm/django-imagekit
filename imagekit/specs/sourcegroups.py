@@ -94,12 +94,32 @@ class ModelSignalRouter(object):
             old_hashes = instance._ik.get('source_hashes', {}).copy()
             new_hashes = self.update_source_hashes(instance)
             for attname, file in self.get_field_dict(instance).items():
-                if created:
-                    self.dispatch_signal(source_created, file, sender, instance,
-                                         attname)
-                elif old_hashes[attname] != new_hashes[attname]:
-                    self.dispatch_signal(source_changed, file, sender, instance,
-                                         attname)
+                if file:
+                    if created:
+                        self.dispatch_signal(
+                            source_created,
+                            file,
+                            sender,
+                            instance,
+                            attname
+                        )
+                    elif old_hashes[attname] != new_hashes[attname]:
+                        self.dispatch_signal(
+                            source_changed,
+                            file,
+                            sender,
+                            instance,
+                            attname
+                        )
+                else:
+                    self.dispatch_signal(
+                        source_deleted,
+                        file,
+                        sender,
+                        instance,
+                        attname
+                    )
+
 
     @ik_model_receiver
     def post_delete_receiver(self, sender, instance=None, **kwargs):
