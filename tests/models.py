@@ -31,8 +31,7 @@ class CountingCacheFileStrategy(object):
     def __init__(self):
         self.on_existence_required_count = 0
         self.on_content_required_count = 0
-        self.on_source_changed_count = 0
-        self.on_source_created_count = 0
+        self.on_source_saved_count = 0
 
     def on_existence_required(self, file):
         self.on_existence_required_count += 1
@@ -40,11 +39,8 @@ class CountingCacheFileStrategy(object):
     def on_content_required(self, file):
         self.on_content_required_count += 1
 
-    def on_source_changed(self, file):
-        self.on_source_changed_count += 1
-
-    def on_source_created(self, file):
-        self.on_source_created_count += 1
+    def on_source_saved(self, file):
+        self.on_source_saved_count += 1
 
 
 class AbstractImageModel(models.Model):

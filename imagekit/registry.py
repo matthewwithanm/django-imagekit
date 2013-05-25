@@ -1,6 +1,5 @@
 from .exceptions import AlreadyRegistered, NotRegistered
-from .signals import (content_required, existence_required, source_created,
-                      source_changed, source_deleted)
+from .signals import content_required, existence_required, source_saved
 from .utils import call_strategy_method
 
 
@@ -70,9 +69,7 @@ class SourceGroupRegistry(object):
 
     """
     _signals = {
-        source_created: 'on_source_created',
-        source_changed: 'on_source_changed',
-        source_deleted: 'on_source_deleted',
+        source_saved: 'on_source_saved',
     }
 
     def __init__(self):
