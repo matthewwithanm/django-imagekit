@@ -27,6 +27,21 @@ def test_source_saved_signal():
     eq_(receiver.count, 1)
 
 
+def test_no_source_saved_signal():
+    """
+    Creating a new instance without an image shouldn't cause the source_saved
+    signal to be dispatched.
+
+    https://github.com/jdriscoll/django-imagekit/issues/214
+
+    """
+    source_group = ImageFieldSourceGroup(ImageModel, 'image')
+    receiver = make_counting_receiver(source_group)
+    source_saved.connect(receiver)
+    ImageModel.objects.create()
+    eq_(receiver.count, 0)
+
+
 def test_abstract_model_signals():
     """
     Source groups created for abstract models must cause signals to be
