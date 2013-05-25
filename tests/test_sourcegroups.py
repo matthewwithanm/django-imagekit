@@ -23,7 +23,5 @@ def test_abstract_model_signals():
     source_group = ImageFieldSourceGroup(AbstractImageModel, 'original_image')
     receiver = make_counting_receiver(source_group)
     source_saved.connect(receiver)
-    instance = ConcreteImageModel()
-    img = File(get_image_file())
-    instance.original_image.save('test_source_saved_signal.jpg', img)
+    ConcreteImageModel.objects.create(original_image=File(get_image_file()))
     eq_(receiver.count, 1)
