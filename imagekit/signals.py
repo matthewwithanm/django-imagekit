@@ -7,4 +7,3 @@ existence_required = Signal()
 
 # Source group signals
 source_saved = Signal()
-source_deleted = Signal()

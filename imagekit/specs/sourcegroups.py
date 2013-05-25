@@ -2,19 +2,19 @@
 Source groups are the means by which image spec sources are identified. They
 have two responsibilities:
 
-1. To dispatch ``source_saved``, and ``source_deleted`` signals. (These will be
-   relayed to the corresponding specs' cache file strategies.)
+1. To dispatch ``source_saved`` signals. (These will be relayed to the
+   corresponding specs' cache file strategies.)
 2. To provide the source files that they represent, via a generator method named
    ``files()``. (This is used by the generateimages management command for
    "pre-caching" image files.)
 
 """
 
-from django.db.models.signals import post_init, post_save, post_delete
+from django.db.models.signals import post_init, post_save
 from django.utils.functional import wraps
 import inspect
 from ..cachefiles import LazyImageCacheFile
-from ..signals import source_saved, source_deleted
+from ..signals import source_saved
 from ..utils import get_nonabstract_descendants
 
 
@@ -57,7 +57,6 @@ class ModelSignalRouter(object):
         uid = 'ik_spec_field_receivers'
         post_init.connect(self.post_init_receiver, dispatch_uid=uid)
         post_save.connect(self.post_save_receiver, dispatch_uid=uid)
-        post_delete.connect(self.post_delete_receiver, dispatch_uid=uid)
 
     def add(self, source_group):
         self._source_groups.append(source_group)
@@ -96,11 +95,6 @@ class ModelSignalRouter(object):
                 if file and old_hashes[attname] != new_hashes[attname]:
                     self.dispatch_signal(source_saved, file, sender, instance,
                                          attname)
-
-    @ik_model_receiver
-    def post_delete_receiver(self, sender, instance=None, **kwargs):
-        for attname, file in self.get_field_dict(instance).items():
-            self.dispatch_signal(source_deleted, file, sender, instance, attname)
 
     @ik_model_receiver
     def post_init_receiver(self, sender, instance=None, **kwargs):

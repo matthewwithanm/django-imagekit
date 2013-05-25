@@ -33,7 +33,7 @@ Cache File Strategy
 -------------------
 
 Each ``ImageCacheFile`` has a cache file strategy, which abstracts away when
-image is actually generated. It can implement the following four methods:
+image is actually generated. It can implement the following three methods:
 
 * ``on_content_required`` - called by ``ImageCacheFile`` when it requires the
   contents of the generated image. For example, when you call ``read()`` or
@@ -42,7 +42,6 @@ image is actually generated. It can implement the following four methods:
   generated image to exist but may not be concerned with its contents. For
   example, when you access its ``url`` or ``path`` attribute.
 * ``on_source_saved`` - called when the source of a spec is saved
-* ``on_source_deleted`` - called when the source of a spec is deleted
 
 The default strategy only defines the first two of these, as follows:
 

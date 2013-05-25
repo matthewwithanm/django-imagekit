@@ -122,7 +122,7 @@ The answer is that, when you define an ImageSpecField, ImageKit automatically
 creates and registers an object called a *source group*. Source groups are
 responsible for two things:
 
-1. They dispatch signals when a source is created, changed, or deleted, and
+1. They dispatch signals when a source is saved, and
 2. They expose a generator method that enumerates source files.
 
 When these objects are registered (using ``imagekit.register.source_group()``),
