@@ -2,9 +2,8 @@
 Source groups are the means by which image spec sources are identified. They
 have two responsibilities:
 
-1. To dispatch ``source_created``, ``source_changed``, and ``source_deleted``
-   signals. (These will be relayed to the corresponding specs' cache file
-   strategies.)
+1. To dispatch ``source_saved``, and ``source_deleted`` signals. (These will be
+   relayed to the corresponding specs' cache file strategies.)
 2. To provide the source files that they represent, via a generator method named
    ``files()``. (This is used by the generateimages management command for
    "pre-caching" image files.)
@@ -15,7 +14,7 @@ from django.db.models.signals import post_init, post_save, post_delete
 from django.utils.functional import wraps
 import inspect
 from ..cachefiles import LazyImageCacheFile
-from ..signals import source_created, source_changed, source_deleted
+from ..signals import source_saved, source_deleted
 from ..utils import get_nonabstract_descendants
 
 
@@ -94,11 +93,8 @@ class ModelSignalRouter(object):
             old_hashes = instance._ik.get('source_hashes', {}).copy()
             new_hashes = self.update_source_hashes(instance)
             for attname, file in self.get_field_dict(instance).items():
-                if created:
-                    self.dispatch_signal(source_created, file, sender, instance,
-                                         attname)
-                elif old_hashes[attname] != new_hashes[attname]:
-                    self.dispatch_signal(source_changed, file, sender, instance,
+                if created or old_hashes[attname] != new_hashes[attname]:
+                    self.dispatch_signal(source_saved, file, sender, instance,
                                          attname)
 
     @ik_model_receiver

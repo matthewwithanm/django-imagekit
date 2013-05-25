@@ -41,8 +41,7 @@ image is actually generated. It can implement the following four methods:
 * ``on_existence_required`` - called by ``ImageCacheFile`` when it requires the
   generated image to exist but may not be concerned with its contents. For
   example, when you access its ``url`` or ``path`` attribute.
-* ``on_source_created`` - called when the source of a spec is created
-* ``on_source_changed`` - called when the source of a spec is changed
+* ``on_source_saved`` - called when the source of a spec is saved
 * ``on_source_deleted`` - called when the source of a spec is deleted
 
 The default strategy only defines the first two of these, as follows:

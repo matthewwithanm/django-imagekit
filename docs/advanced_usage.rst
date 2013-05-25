@@ -177,7 +177,6 @@ Running the "generateimages" management command would now cause thumbnails to be
 generated (using the "myapp:profile:avatar_thumbnail" spec) for each of the
 JPEGs in `/path/to/some/pics`.
 
-Note that, since this source group doesnt send the `source_created` or
-`source_changed` signals, the corresponding cache file strategy callbacks
-would not be called for them.
+Note that, since this source group doesnt send the `source_saved` signal, the
+corresponding cache file strategy callbacks would not be called for them.
 
