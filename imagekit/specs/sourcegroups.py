@@ -93,7 +93,7 @@ class ModelSignalRouter(object):
             old_hashes = instance._ik.get('source_hashes', {}).copy()
             new_hashes = self.update_source_hashes(instance)
             for attname, file in self.get_field_dict(instance).items():
-                if created or old_hashes[attname] != new_hashes[attname]:
+                if file and old_hashes[attname] != new_hashes[attname]:
                     self.dispatch_signal(source_saved, file, sender, instance,
                                          attname)
 
