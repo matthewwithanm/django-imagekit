@@ -1,107 +1,73 @@
-import os
-
 from django.db import models
-
-from ...imagecache import get_default_image_cache_backend
-from ...generators import SpecFileGenerator
-from .files import ImageSpecFieldFile, ProcessedImageFieldFile
-from ..receivers import configure_receivers
-from .utils import ImageSpecFileDescriptor, ImageKitMeta, BoundImageKitMeta
-from ...utils import suggest_extension
+from .files import ProcessedImageFieldFile
+from .utils import ImageSpecFileDescriptor
+from ...specs import SpecHost
+from ...specs.sourcegroups import ImageFieldSourceGroup
+from ...registry import register
 
 
-configure_receivers()
+class SpecHostField(SpecHost):
+    def _set_spec_id(self, cls, name):
+        spec_id = getattr(self, 'spec_id', None)
+
+        # Generate a spec_id to register the spec with. The default spec id is
+        # "<app>:<model>_<field>"
+        if not spec_id:
+            spec_id = (u'%s:%s:%s' % (cls._meta.app_label,
+                            cls._meta.object_name, name)).lower()
+
+        # Register the spec with the id. This allows specs to be overridden
+        # later, from outside of the model definition.
+        super(SpecHostField, self).set_spec_id(spec_id)
 
 
-class ImageSpecField(object):
+class ImageSpecField(SpecHostField):
     """
     The heart and soul of the ImageKit library, ImageSpecField allows you to add
     variants of uploaded images to your models.
 
     """
     def __init__(self, processors=None, format=None, options=None,
-        image_field=None, pre_cache=None, storage=None, cache_to=None,
-        autoconvert=True, image_cache_backend=None):
-        """
-        :param processors: A list of processors to run on the original image.
-        :param format: The format of the output file. If not provided,
-            ImageSpecField will try to guess the appropriate format based on the
-            extension of the filename and the format of the input image.
-        :param options: A dictionary that will be passed to PIL's
-            ``Image.save()`` method as keyword arguments. Valid options vary
-            between formats, but some examples include ``quality``,
-            ``optimize``, and ``progressive`` for JPEGs. See the PIL
-            documentation for others.
-        :param image_field: The name of the model property that contains the
-            original image.
-        :param storage: A Django storage system to use to save the generated
-            image.
-        :param cache_to: Specifies the filename to use when saving the image
-            cache file. This is modeled after ImageField's ``upload_to`` and
-            can be either a string (that specifies a directory) or a
-            callable (that returns a filepath). Callable values should
-            accept the following arguments:
+            source=None, cachefile_storage=None, autoconvert=None,
+            cachefile_backend=None, cachefile_strategy=None, spec=None,
+            id=None):
 
-                - instance -- The model instance this spec belongs to
-                - path -- The path of the original image
-                - specname -- the property name that the spec is bound to on
-                    the model instance
-                - extension -- A recommended extension. If the format of the
-                    spec is set explicitly, this suggestion will be
-                    based on that format. if not, the extension of the
-                    original file will be passed. You do not have to use
-                    this extension, it's only a recommendation.
-        :param autoconvert: Specifies whether automatic conversion using
-            ``prepare_image()`` should be performed prior to saving.
-        :param image_cache_backend: An object responsible for managing the state
-            of cached files. Defaults to an instance of
-            IMAGEKIT_DEFAULT_IMAGE_CACHE_BACKEND
+        SpecHost.__init__(self, processors=processors, format=format,
+                options=options, cachefile_storage=cachefile_storage,
+                autoconvert=autoconvert,
+                cachefile_backend=cachefile_backend,
+                cachefile_strategy=cachefile_strategy, spec=spec,
+                spec_id=id)
 
-        """
-
-        if pre_cache is not None:
-            raise Exception('The pre_cache argument has been removed in favor'
-                    ' of cache state backends.')
-
-        # The generator accepts a callable value for processors, but it
-        # takes different arguments than the callable that ImageSpecField
-        # expects, so we create a partial application and pass that instead.
-        # TODO: Should we change the signatures to match? Even if `instance` is not part of the signature, it's accessible through the source file object's instance property.
-        p = lambda file: processors(instance=file.instance, file=file) if \
-                callable(processors) else processors
-
-        self.generator = SpecFileGenerator(p, format=format, options=options,
-                autoconvert=autoconvert, storage=storage)
-        self.image_field = image_field
-        self.storage = storage
-        self.cache_to = cache_to
-        self.image_cache_backend = image_cache_backend or \
-                get_default_image_cache_backend()
+        # TODO: Allow callable for source. See https://github.com/jdriscoll/django-imagekit/issues/158#issuecomment-10921664
+        self.source = source
 
     def contribute_to_class(self, cls, name):
-        setattr(cls, name, ImageSpecFileDescriptor(self, name))
-        try:
-            # Make sure we don't modify an inherited ImageKitMeta instance
-            ik = cls.__dict__['ik']
-        except KeyError:
-            try:
-                base = getattr(cls, '_ik')
-            except AttributeError:
-                ik = ImageKitMeta()
-            else:
-                # Inherit all the spec fields.
-                ik = ImageKitMeta(base.spec_fields)
-            setattr(cls, '_ik', ik)
-        ik.spec_fields.append(name)
+        # If the source field name isn't defined, figure it out.
+        source = self.source
+        if not source:
+            image_fields = [f.attname for f in cls._meta.fields if
+                            isinstance(f, models.ImageField)]
+            if len(image_fields) == 0:
+                raise Exception(
+                    '%s does not define any ImageFields, so your %s'
+                    ' ImageSpecField has no image to act on.' %
+                    (cls.__name__, name))
+            elif len(image_fields) > 1:
+                raise Exception(
+                    '%s defines multiple ImageFields, but you have not'
+                    ' specified a source for your %s ImageSpecField.' %
+                    (cls.__name__, name))
+            source = image_fields[0]
 
-        # Register the field with the image_cache_backend
-        try:
-            self.image_cache_backend.register_field(cls, self, name)
-        except AttributeError:
-            pass
+        setattr(cls, name, ImageSpecFileDescriptor(self, name, source))
+        self._set_spec_id(cls, name)
+
+        # Add the model and field as a source for this spec id
+        register.source_group(self.spec_id, ImageFieldSourceGroup(cls, source))
 
 
-class ProcessedImageField(models.ImageField):
+class ProcessedImageField(models.ImageField, SpecHostField):
     """
     ProcessedImageField is an ImageField that runs processors on the uploaded
     image *before* saving it to storage. This is in contrast to specs, which
@@ -112,8 +78,8 @@ class ProcessedImageField(models.ImageField):
     attr_class = ProcessedImageFieldFile
 
     def __init__(self, processors=None, format=None, options=None,
-        verbose_name=None, name=None, width_field=None, height_field=None,
-        autoconvert=True, **kwargs):
+            verbose_name=None, name=None, width_field=None, height_field=None,
+            autoconvert=True, spec=None, spec_id=None, **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
@@ -121,21 +87,15 @@ class ProcessedImageField(models.ImageField):
         :class:`imagekit.models.ImageSpecField`.
 
         """
-        if 'quality' in kwargs:
-            raise Exception('The "quality" keyword argument has been'
-                    """ deprecated. Use `options={'quality': %s}` instead.""" \
-                    % kwargs['quality'])
+        SpecHost.__init__(self, processors=processors, format=format,
+                options=options, autoconvert=autoconvert, spec=spec,
+                spec_id=spec_id)
         models.ImageField.__init__(self, verbose_name, name, width_field,
                 height_field, **kwargs)
-        self.generator = SpecFileGenerator(processors, format=format,
-                options=options, autoconvert=autoconvert)
 
-    def get_filename(self, filename):
-        filename = os.path.normpath(self.storage.get_valid_name(
-                os.path.basename(filename)))
-        name, ext = os.path.splitext(filename)
-        ext = suggest_extension(filename, self.generator.format)
-        return u'%s%s' % (name, ext)
+    def contribute_to_class(self, cls, name):
+        self._set_spec_id(cls, name)
+        return super(ProcessedImageField, self).contribute_to_class(cls, name)
 
 
 try:

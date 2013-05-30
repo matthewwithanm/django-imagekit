@@ -1,3 +1,5 @@
+# flake8: noqa
+
 # Required PIL classes may or may not be available from the root namespace
 # depending on the installation method used.
 try:
@@ -20,3 +22,12 @@ try:
     from cStringIO import StringIO
 except ImportError:
     from StringIO import StringIO
+
+try:
+    from logging import NullHandler
+except ImportError:
+    from logging import Handler
+
+    class NullHandler(Handler):
+        def emit(self, record):
+            pass

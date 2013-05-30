@@ -1,9 +1,10 @@
 ImageKit was originally written by `Justin Driscoll`_.
 
-The field-based API was written by the bright minds at HZDG_.
+The field-based API and other post-1.0 stuff was written by the bright people at
+HZDG_.
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 * `Bryan Veloso`_
 * `Matthew Tretter`_
@@ -11,7 +12,7 @@ Maintainers
 * `Greg Newman`_
 
 Contributors
-~~~~~~~~~~~~
+------------
 
 * `Josh Ourisman`_
 * `Jonathan Slenders`_
@@ -25,6 +26,8 @@ Contributors
 * `Jan Sagemüller`_
 * `Clay McClure`_
 * `Jannis Leidel`_
+* `Sean Bell`_
+* `Saul Shanabrook`_
 
 .. _Justin Driscoll: http://github.com/jdriscoll
 .. _HZDG: http://hzdg.com
@@ -44,3 +47,5 @@ Contributors
 .. _Jan Sagemüller: https://github.com/version2
 .. _Clay McClure: https://github.com/claymation
 .. _Jannis Leidel: https://github.com/jezdez
+.. _Sean Bell: https://github.com/seanbell
+.. _Saul Shanabrook: https://github.com/saulshanabrook

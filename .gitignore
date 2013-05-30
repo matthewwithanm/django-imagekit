@@ -7,4 +7,7 @@
 MANIFEST
 build
 dist
-/tests/media
+/tests/media/*
+!/tests/media/lenna.png
+/venv
+/.env

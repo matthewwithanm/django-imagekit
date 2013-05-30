@@ -1,22 +1,34 @@
 #/usr/bin/env python
 import codecs
 import os
+from setuptools import setup, find_packages
 import sys
 
-from setuptools import setup, find_packages
+
+# Workaround for multiprocessing/nose issue. See http://bugs.python.org/msg170215
+try:
+    import multiprocessing
+except ImportError:
+    pass
+
 
 if 'publish' in sys.argv:
     os.system('python setup.py sdist upload')
     sys.exit()
 
+
 read = lambda filepath: codecs.open(filepath, 'r', 'utf-8').read()
 
-# Dynamically calculate the version based on imagekit.VERSION.
-version = __import__('imagekit').get_version()
+
+# Load package meta from the pkgmeta module without loading imagekit.
+pkgmeta = {}
+execfile(os.path.join(os.path.dirname(__file__),
+         'imagekit', 'pkgmeta.py'), pkgmeta)
+
 
 setup(
     name='django-imagekit',
-    version=version,
+    version=pkgmeta['__version__'],
     description='Automated image processing for Django models.',
     long_description=read(os.path.join(os.path.dirname(__file__), 'README.rst')),
     author='Justin Driscoll',
@@ -28,9 +40,21 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
+    tests_require=[
+        'beautifulsoup4==4.1.3',
+        'nose==1.2.1',
+        'nose-progressive==1.3',
+        'django-nose==1.1',
+        'Pillow<3.0',
+    ],
+    test_suite='testrunner.run_tests',
     install_requires=[
         'django-appconf>=0.5',
+        'pilkit>=0.2.0',
     ],
+    extras_require={
+        'async': ['django-celery>=3.0'],
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
