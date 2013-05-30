@@ -28,7 +28,7 @@ def parse_dimensions(dimensions):
     will be None for that value.
 
     """
-    width, height = [d.strip() or None for d in dimensions.split('x')]
+    width, height = [d.strip() and int(d) or None for d in dimensions.split('x')]
     return dict(width=width, height=height)
 
 
