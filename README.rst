@@ -177,7 +177,7 @@ to register it.
 
 .. code-block:: python
 
-    from imagekit import ImageSpec
+    from imagekit import ImageSpec, register
     from imagekit.processors import ResizeToFill
 
     class Thumbnail(ImageSpec):
