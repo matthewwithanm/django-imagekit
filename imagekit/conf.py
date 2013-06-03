@@ -17,12 +17,13 @@ class ImageKitConf(AppConf):
 
     def configure_cache_backend(self, value):
         if value is None:
+            # DummyCache doesn't exist in Django<=1.2
             try:
                 from django.core.cache.backends.dummy import DummyCache
             except ImportError:
                 dummy_cache = 'dummy://'
             else:
-                dummy_cache = 'django.core.cache.backends.dummy.DummyCache'
+                dummy_cache = '{0.__module__}.{0.__name__}'.format(DummyCache)
 
             if settings.DEBUG:
                 value = dummy_cache
