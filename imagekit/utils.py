@@ -8,6 +8,7 @@ from django.utils.importlib import import_module
 from hashlib import md5
 from pilkit.utils import *
 import re
+from .lib import NullHandler
 
 
 bad_memcached_key_chars = re.compile(ur'[\u0000-\u001f\s]+')
@@ -82,7 +83,7 @@ def autodiscover():
 def get_logger(logger_name='imagekit', add_null_handler=True):
     logger = logging.getLogger(logger_name)
     if add_null_handler:
-        logger.addHandler(logging.NullHandler())
+        logger.addHandler(NullHandler())
     return logger
 
 
