@@ -21,4 +21,4 @@ __ http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 __ https://groups.google.com/forum/#!forum/django-imagekit
 __ irc://irc.freenode.net/imagekit
 .. _nose: https://nose.readthedocs.org/en/latest/
-__ https://github.com/jdriscoll/django-imagekit/tree/develop/tests
+__ https://github.com/matthewwithanm/django-imagekit/tree/develop/tests

@@ -1,7 +1,7 @@
 |Build Status|_
 
-.. |Build Status| image:: https://travis-ci.org/jdriscoll/django-imagekit.png?branch=develop
-.. _Build Status: https://travis-ci.org/jdriscoll/django-imagekit
+.. |Build Status| image:: https://travis-ci.org/matthewwithanm/django-imagekit.png?branch=develop
+.. _Build Status: https://travis-ci.org/matthewwithanm/django-imagekit
 
 ImageKit is a Django app for processing images. Need a thumbnail? A
 black-and-white version of a user-uploaded image? ImageKit will make them for
@@ -371,7 +371,7 @@ it in your spec's ``processors`` list:
         options = {'quality': 60}
 
 Note that when you import a processor from ``imagekit.processors``, imagekit
-in turn imports the processor from `PILKit`_. So if you are looking for 
+in turn imports the processor from `PILKit`_. So if you are looking for
 available processors, look at PILKit.
 
 .. _`PILKit`: https://github.com/matthewwithanm/pilkit
@@ -414,7 +414,7 @@ of generator ids in order to generate images selectively.
 Community
 =========
 
-Please use `the GitHub issue tracker <https://github.com/jdriscoll/django-imagekit/issues>`_
+Please use `the GitHub issue tracker <https://github.com/matthewwithanm/django-imagekit/issues>`_
 to report bugs with django-imagekit. `A mailing list <https://groups.google.com/forum/#!forum/django-imagekit>`_
 also exists to discuss the project and ask questions, as well as the official
 `#imagekit <irc://irc.freenode.net/imagekit>`_ channel on Freenode.
@@ -436,5 +436,5 @@ Check out our `contributing guidelines`__ for more information about pitching in
 with ImageKit.
 
 
-__ https://github.com/jdriscoll/django-imagekit/issues?labels=contributor-friendly&state=open
-__ https://github.com/jdriscoll/django-imagekit/blob/develop/CONTRIBUTING.rst
+__ https://github.com/matthewwithanm/django-imagekit/issues?labels=contributor-friendly&state=open
+__ https://github.com/matthewwithanm/django-imagekit/blob/develop/CONTRIBUTING.rst

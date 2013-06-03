@@ -39,7 +39,7 @@ class ImageSpecField(SpecHostField):
                 cachefile_strategy=cachefile_strategy, spec=spec,
                 spec_id=id)
 
-        # TODO: Allow callable for source. See https://github.com/jdriscoll/django-imagekit/issues/158#issuecomment-10921664
+        # TODO: Allow callable for source. See https://github.com/matthewwithanm/django-imagekit/issues/158#issuecomment-10921664
         self.source = source
 
     def contribute_to_class(self, cls, name):

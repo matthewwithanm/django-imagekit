@@ -32,7 +32,7 @@ def test_no_source_saved_signal():
     Creating a new instance without an image shouldn't cause the source_saved
     signal to be dispatched.
 
-    https://github.com/jdriscoll/django-imagekit/issues/214
+    https://github.com/matthewwithanm/django-imagekit/issues/214
 
     """
     source_group = ImageFieldSourceGroup(ImageModel, 'image')

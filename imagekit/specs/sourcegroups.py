@@ -47,7 +47,7 @@ class ModelSignalRouter(object):
     ``ImageFieldSourceGroup``s. This class encapsulates that functionality.
 
     Related:
-        https://github.com/jdriscoll/django-imagekit/issues/126
+        https://github.com/matthewwithanm/django-imagekit/issues/126
         https://code.djangoproject.com/ticket/9318
 
     """
