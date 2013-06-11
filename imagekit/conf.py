@@ -24,14 +24,19 @@ class ImageKitConf(AppConf):
             else:
                 dummy_cache = 'django.core.cache.backends.dummy.DummyCache'
 
+            # DEFAULT_CACHE_ALIAS doesn't exist in Django<=1.2
+            try:
+                from django.core.cache import DEFAULT_CACHE_ALIAS as default_cache_alias
+            except ImportError:
+                default_cache_alias = 'default'
+
             if settings.DEBUG:
                 value = dummy_cache
+            elif default_cache_alias in getattr(settings, 'CACHES', {}):
+                value = default_cache_alias
             else:
-                value = (
-                    getattr(settings, 'CACHES', {}).get('default')
-                    or getattr(settings, 'CACHE_BACKEND', None)
-                    or dummy_cache
-                )
+                value = getattr(settings, 'CACHE_BACKEND', None) or dummy_cache
+
         return value
 
     def configure_default_file_storage(self, value):

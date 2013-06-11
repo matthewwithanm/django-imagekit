@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.files import File
 from django.core.files.images import ImageFile
-from django.utils.functional import LazyObject
+from django.utils.functional import SimpleLazyObject
 from ..files import BaseIKFile
 from ..registry import generator_registry
 from ..signals import content_required, existence_required
@@ -130,27 +130,12 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         return self.cachefile_backend.exists(self)
 
 
-class LazyImageCacheFile(LazyObject):
+class LazyImageCacheFile(SimpleLazyObject):
     def __init__(self, generator_id, *args, **kwargs):
-        super(LazyImageCacheFile, self).__init__()
-
         def setup():
             generator = generator_registry.get(generator_id, *args, **kwargs)
-            self._wrapped = ImageCacheFile(generator)
-
-        self.__dict__['_setup'] = setup
+            return ImageCacheFile(generator)
+        super(LazyImageCacheFile, self).__init__(setup)
 
     def __repr__(self):
-        if self._wrapped is None:
-            self._setup()
-        return '<%s: %s>' % (self.__class__.__name__, self or 'None')
-
-    def __str__(self):
-        if self._wrapped is None:
-            self._setup()
-        return str(self._wrapped)
-
-    def __unicode__(self):
-        if self._wrapped is None:
-            self._setup()
-        return unicode(self._wrapped)
+        return '<%s: %s>' % (self.__class__.__name__, str(self) or 'None')

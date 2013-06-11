@@ -1,7 +1,7 @@
 |Build Status|_
 
-.. |Build Status| image:: https://travis-ci.org/jdriscoll/django-imagekit.png?branch=develop
-.. _Build Status: https://travis-ci.org/jdriscoll/django-imagekit
+.. |Build Status| image:: https://travis-ci.org/matthewwithanm/django-imagekit.png?branch=develop
+.. _Build Status: https://travis-ci.org/matthewwithanm/django-imagekit
 
 ImageKit is a Django app for processing images. Need a thumbnail? A
 black-and-white version of a user-uploaded image? ImageKit will make them for
@@ -21,7 +21,6 @@ Installation
 1. Install `PIL`_ or `Pillow`_. (If you're using an ``ImageField`` in Django,
    you should have already done this.)
 2. ``pip install django-imagekit``
-   (or clone the source and put the imagekit module on your path)
 3. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's settings.py
 
 .. note:: If you've never seen Pillow before, it considers itself a
@@ -177,7 +176,7 @@ to register it.
 
 .. code-block:: python
 
-    from imagekit import ImageSpec
+    from imagekit import ImageSpec, register
     from imagekit.processors import ResizeToFill
 
     class Thumbnail(ImageSpec):
@@ -371,7 +370,7 @@ it in your spec's ``processors`` list:
         options = {'quality': 60}
 
 Note that when you import a processor from ``imagekit.processors``, imagekit
-in turn imports the processor from `PILKit`_. So if you are looking for 
+in turn imports the processor from `PILKit`_. So if you are looking for
 available processors, look at PILKit.
 
 .. _`PILKit`: https://github.com/matthewwithanm/pilkit
@@ -414,7 +413,7 @@ of generator ids in order to generate images selectively.
 Community
 =========
 
-Please use `the GitHub issue tracker <https://github.com/jdriscoll/django-imagekit/issues>`_
+Please use `the GitHub issue tracker <https://github.com/matthewwithanm/django-imagekit/issues>`_
 to report bugs with django-imagekit. `A mailing list <https://groups.google.com/forum/#!forum/django-imagekit>`_
 also exists to discuss the project and ask questions, as well as the official
 `#imagekit <irc://irc.freenode.net/imagekit>`_ channel on Freenode.
@@ -436,5 +435,5 @@ Check out our `contributing guidelines`__ for more information about pitching in
 with ImageKit.
 
 
-__ https://github.com/jdriscoll/django-imagekit/issues?labels=contributor-friendly&state=open
-__ https://github.com/jdriscoll/django-imagekit/blob/develop/CONTRIBUTING.rst
+__ https://github.com/matthewwithanm/django-imagekit/issues?labels=contributor-friendly&state=open
+__ https://github.com/matthewwithanm/django-imagekit/blob/develop/CONTRIBUTING.rst
