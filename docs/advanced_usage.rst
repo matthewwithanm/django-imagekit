@@ -47,7 +47,7 @@ for creating an ``ImageSpec``, registering it, and associating it with an
     class Profile(models.Model):
         avatar = models.ImageField(upload_to='avatars')
         avatar_thumbnail = ImageSpecField(source='avatar',
-                                          spec_id='myapp:profile:avatar_thumbnail')
+                                          id='myapp:profile:avatar_thumbnail')
 
 Obviously, the shorthand version is a lot, well…shorter. So why would you ever
 want to go through the trouble of using the long form? The answer is that the
@@ -97,7 +97,7 @@ for getting this information.
     class Profile(models.Model):
         avatar = models.ImageField(upload_to='avatars')
         avatar_thumbnail = ImageSpecField(source='avatar',
-                                          spec_id='myapp:profile:avatar_thumbnail')
+                                          id='myapp:profile:avatar_thumbnail')
         thumbnail_width = models.PositiveIntegerField()
         thumbnail_height = models.PositiveIntegerField()
 
