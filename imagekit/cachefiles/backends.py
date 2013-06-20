@@ -1,4 +1,5 @@
 from ..utils import get_singleton, sanitize_cache_key
+from copy import copy
 from django.core.cache import get_cache
 from django.core.exceptions import ImproperlyConfigured
 
@@ -75,6 +76,13 @@ class CachedFileBackend(object):
             self.cache.set(key, state, self.existence_check_timeout)
         else:
             self.cache.set(key, state)
+
+    def __getstate__(self):
+        state = copy(self.__dict__)
+        # Don't include the cache when pickling. It'll be reconstituted based
+        # on the settings.
+        state.pop('_cache', None)
+        return state
 
     def exists(self, file):
         return self.get_state(file) is CacheFileState.EXISTS
