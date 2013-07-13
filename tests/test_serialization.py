@@ -11,3 +11,15 @@ def test_imagespecfield():
     instance = create_photo('pickletest2.jpg')
     thumbnail = pickleback(instance.thumbnail)
     thumbnail.generate()
+
+
+def test_circular_ref():
+    """
+    A model instance with a spec field in its dict shouldn't raise a KeyError.
+
+    This corresponds to #234
+
+    """
+    instance = create_photo('pickletest3.jpg')
+    instance.thumbnail  # Cause thumbnail to be added to instance's __dict__
+    pickleback(instance)
