@@ -1,3 +1,4 @@
+from copy import copy
 from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
 from ..cachefiles.backends import get_default_cachefile_backend
@@ -108,7 +109,7 @@ class ImageSpec(BaseImageSpec):
         self._source = value
 
     def __getstate__(self):
-        state = self.__dict__
+        state = copy(self.__dict__)
 
         # Unpickled ImageFieldFiles won't work (they're missing a storage
         # object). Since they're such a common use case, we special case them.
