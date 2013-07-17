@@ -9,10 +9,9 @@ you. If you need to programatically generate one image from another, you need
 ImageKit.
 
 **For the complete documentation on the latest stable version of ImageKit, see**
-`ImageKit on RTD`_. Our `changelog is also available`_.
+`ImageKit on RTD`_.
 
 .. _`ImageKit on RTD`: http://django-imagekit.readthedocs.org
-.. _`changelog is also available`: http://django-imagekit.readthedocs.org/en/latest/changelog.html
 
 
 Installation
