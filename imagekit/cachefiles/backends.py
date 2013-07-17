@@ -72,7 +72,7 @@ class CachedFileBackend(object):
 
     def set_state(self, file, state):
         key = self.get_key(file)
-        if state is CacheFileState.DOES_NOT_EXIST:
+        if state == CacheFileState.DOES_NOT_EXIST:
             self.cache.set(key, state, self.existence_check_timeout)
         else:
             self.cache.set(key, state)
@@ -85,13 +85,13 @@ class CachedFileBackend(object):
         return state
 
     def exists(self, file):
-        return self.get_state(file) is CacheFileState.EXISTS
+        return self.get_state(file) == CacheFileState.EXISTS
 
     def generate(self, file, force=False):
         raise NotImplementedError
 
     def generate_now(self, file, force=False):
-        if force or self.get_state(file) is CacheFileState.DOES_NOT_EXIST:
+        if force or self.get_state(file) == CacheFileState.DOES_NOT_EXIST:
             file._generate()
             self.set_state(file, CacheFileState.EXISTS)
 
