@@ -21,5 +21,4 @@ Indices and tables
     configuration
     advanced_usage
     caching
-    changelog
     upgrading
