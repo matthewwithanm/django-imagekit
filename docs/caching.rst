@@ -103,7 +103,7 @@ Caching Data About Generated Files
 The easiest, and most significant improvement you can make to improve the
 performance of your site is to have ImageKit cache the state of your generated
 files. The default cache file backend will already do this (if ``DEBUG`` is
-``True``), using your default Django cache backend, but you can make it way
+``False``), using your default Django cache backend, but you can make it way
 better by setting ``IMAGEKIT_CACHE_BACKEND``. Generally, once a file is
 generated, you will never be removing it; therefore, if you can, you should set
 ``IMAGEKIT_CACHE_BACKEND`` to a cache backend that will cache forever.
