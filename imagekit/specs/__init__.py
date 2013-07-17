@@ -1,3 +1,4 @@
+from copy import copy
 from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
 from ..cachefiles.backends import get_default_cachefile_backend
@@ -93,24 +94,40 @@ class ImageSpec(BaseImageSpec):
         fn = get_by_qname(settings.IMAGEKIT_SPEC_CACHEFILE_NAMER, 'namer')
         return fn(self)
 
+    @property
+    def source(self):
+        src = getattr(self, '_source', None)
+        if not src:
+            field_data = getattr(self, '_field_data', None)
+            if field_data:
+                src = self._source = getattr(field_data['instance'], field_data['attname'])
+                del self._field_data
+        return src
+
+    @source.setter
+    def source(self, value):
+        self._source = value
+
     def __getstate__(self):
-        state = self.__dict__
+        state = copy(self.__dict__)
 
         # Unpickled ImageFieldFiles won't work (they're missing a storage
         # object). Since they're such a common use case, we special case them.
+        # Unfortunately, this also requires us to add the source getter to
+        # lazily retrieve the source on the reconstructed object; simply trying
+        # to look up the source in ``__setstate__`` would require us to get the
+        # model instance but, if ``__setstate__`` was called as part of
+        # deserializing that model, the model wouldn't be fully reconstructed
+        # yet, preventing us from accessing the source field.
+        # (This is issue #234.)
         if isinstance(self.source, ImageFieldFile):
             field = getattr(self.source, 'field')
             state['_field_data'] = {
                 'instance': getattr(self.source, 'instance', None),
                 'attname': getattr(field, 'name', None),
             }
+            state.pop('_source', None)
         return state
-
-    def __setstate__(self, state):
-        field_data = state.pop('_field_data', None)
-        self.__dict__ = state
-        if field_data:
-            self.source = getattr(field_data['instance'], field_data['attname'])
 
     def get_hash(self):
         return hashers.pickle([
