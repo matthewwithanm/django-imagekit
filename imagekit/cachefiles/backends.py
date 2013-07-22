@@ -6,7 +6,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 class CacheFileState(object):
     EXISTS = 'exists'
-    PENDING = 'pending'
+    GENERATING = 'generating'
     DOES_NOT_EXIST = 'does_not_exist'
 
 
@@ -61,10 +61,10 @@ class CachedFileBackend(object):
         return sanitize_cache_key('%s%s-state' %
                                   (settings.IMAGEKIT_CACHE_PREFIX, file.name))
 
-    def get_state(self, file):
+    def get_state(self, file, check_if_unknown=True):
         key = self.get_key(file)
         state = self.cache.get(key)
-        if state is None:
+        if state is None and check_if_unknown:
             exists = self._exists(file)
             state = CacheFileState.EXISTS if exists else CacheFileState.DOES_NOT_EXIST
             self.set_state(file, state)
@@ -91,7 +91,8 @@ class CachedFileBackend(object):
         raise NotImplementedError
 
     def generate_now(self, file, force=False):
-        if force or self.get_state(file) == CacheFileState.DOES_NOT_EXIST:
+        if force or self.get_state(file) not in (CacheFileState.GENERATING, CacheFileState.EXISTS):
+            self.set_state(file, CacheFileState.GENERATING)
             file._generate()
             self.set_state(file, CacheFileState.EXISTS)
 
@@ -137,5 +138,10 @@ class Async(Simple):
         super(Async, self).__init__(*args, **kwargs)
 
     def generate(self, file, force=False):
-        self.set_state(file, CacheFileState.PENDING)
-        _generate_file.delay(self, file, force=force)
+        # Schedule the file for generation, unless we know for sure we don't
+        # need to. If an already-generated file sneaks through, that's okay;
+        # ``generate_now`` will catch it. We just want to make sure we don't
+        # schedule anything we know is unnecessary--but we also don't want to
+        # force a costly existence check.
+        if self.get_state(file, check_if_unknown=False) not in (CacheFileState.GENERATING, CacheFileState.EXISTS):
+            _generate_file.delay(self, file, force=force)
