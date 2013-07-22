@@ -74,9 +74,8 @@ def assert_file_is_truthy(file):
 
 class DummyAsyncCacheFileBackend(Simple):
     """
-    A cache file backend meant to simulate async generation (by marking the
-    file as pending but never actually creating it).
+    A cache file backend meant to simulate async generation.
 
     """
     def generate(self, file, force=False):
-        self.set_state(file, CacheFileState.PENDING)
+        pass
