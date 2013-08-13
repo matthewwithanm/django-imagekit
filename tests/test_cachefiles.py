@@ -2,12 +2,13 @@ from django.conf import settings
 from hashlib import md5
 from imagekit.cachefiles import ImageCacheFile, LazyImageCacheFile
 from imagekit.cachefiles.backends import Simple
+from imagekit.registry import generator_registry
 from nose.tools import raises, eq_
-from .imagegenerators import TestSpec
 from .utils import (assert_file_is_truthy, assert_file_is_falsy,
                     DummyAsyncCacheFileBackend, get_unique_image_file,
                     get_image_file)
 
+TestSpec = generator_registry._generators['testspec']
 
 def test_no_source_falsiness():
     """

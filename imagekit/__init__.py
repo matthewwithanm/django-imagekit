@@ -5,3 +5,7 @@ from . import generatorlibrary
 from .specs import ImageSpec
 from .pkgmeta import *
 from .registry import register, unregister
+from .utils import autodiscover
+
+autodiscover()
+

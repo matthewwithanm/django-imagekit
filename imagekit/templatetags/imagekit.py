@@ -43,9 +43,6 @@ class GenerateImageAssignmentNode(template.Node):
         return unicode(self._variable_name)
 
     def render(self, context):
-        from ..utils import autodiscover
-        autodiscover()
-
         variable_name = self.get_variable_name(context)
         context[variable_name] = get_cachefile(context, self._generator_id,
                 self._generator_kwargs)
@@ -60,9 +57,6 @@ class GenerateImageTagNode(template.Node):
         self._html_attrs = html_attrs
 
     def render(self, context):
-        from ..utils import autodiscover
-        autodiscover()
-
         file = get_cachefile(context, self._generator_id,
                 self._generator_kwargs)
         attrs = dict((k, v.resolve(context)) for k, v in
@@ -92,9 +86,6 @@ class ThumbnailAssignmentNode(template.Node):
         return unicode(self._variable_name)
 
     def render(self, context):
-        from ..utils import autodiscover
-        autodiscover()
-
         variable_name = self.get_variable_name(context)
 
         generator_id = self._generator_id.resolve(context) if self._generator_id else DEFAULT_THUMBNAIL_GENERATOR
@@ -119,9 +110,6 @@ class ThumbnailImageTagNode(template.Node):
         self._html_attrs = html_attrs
 
     def render(self, context):
-        from ..utils import autodiscover
-        autodiscover()
-
         generator_id = self._generator_id.resolve(context) if self._generator_id else DEFAULT_THUMBNAIL_GENERATOR
         dimensions = parse_dimensions(self._dimensions.resolve(context))
         kwargs = dict((k, v.resolve(context)) for k, v in
