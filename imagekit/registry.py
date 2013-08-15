@@ -1,6 +1,6 @@
 from .exceptions import AlreadyRegistered, NotRegistered
 from .signals import content_required, existence_required, source_saved
-from .utils import call_strategy_method
+from .utils import autodiscover, call_strategy_method
 
 
 class GeneratorRegistry(object):
@@ -30,6 +30,8 @@ class GeneratorRegistry(object):
                                 ' registered' % id)
 
     def get(self, id, **kwargs):
+        autodiscover()
+
         try:
             generator = self._generators[id]
         except KeyError:
@@ -41,6 +43,7 @@ class GeneratorRegistry(object):
             return generator
 
     def get_ids(self):
+        autodiscover()
         return self._generators.keys()
 
     def content_required_receiver(self, sender, file, **kwargs):
