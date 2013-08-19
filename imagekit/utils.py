@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import logging
 from tempfile import NamedTemporaryFile
 
@@ -11,7 +12,7 @@ import re
 from .lib import NullHandler
 
 
-bad_memcached_key_chars = re.compile(ur'[\u0000-\u001f\s]+')
+bad_memcached_key_chars = re.compile(r'[\u0000-\u001f\s]+')
 
 _autodiscovered = False
 
@@ -32,7 +33,7 @@ def get_by_qname(path, desc):
     module, objname = path[:dot], path[dot + 1:]
     try:
         mod = import_module(module)
-    except ImportError, e:
+    except ImportError as e:
         raise ImproperlyConfigured('Error importing %s module %s: "%s"' %
                 (desc, module, e))
     try:

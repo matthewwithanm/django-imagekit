@@ -1,4 +1,7 @@
+import six
+
 from django.utils.functional import LazyObject
+from ..lib import force_text
 from ..utils import get_singleton
 
 
@@ -35,7 +38,7 @@ class DictStrategy(object):
 
 class StrategyWrapper(LazyObject):
     def __init__(self, strategy):
-        if isinstance(strategy, basestring):
+        if isinstance(strategy, six.string_types):
             strategy = get_singleton(strategy, 'cache file strategy')
         elif isinstance(strategy, dict):
             strategy = DictStrategy(strategy)
@@ -50,7 +53,7 @@ class StrategyWrapper(LazyObject):
         self._wrapped = state['_wrapped']
 
     def __unicode__(self):
-        return unicode(self._wrapped)
+        return force_text(self._wrapped)
 
     def __str__(self):
         return str(self._wrapped)

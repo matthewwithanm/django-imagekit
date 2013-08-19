@@ -120,7 +120,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
                 )
             )
 
-    def __nonzero__(self):
+    def __bool__(self):
         if not self.name:
             return False
 
@@ -128,6 +128,10 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         # file exists. This gives the strategy a chance to create the file.
         existence_required.send(sender=self, file=self)
         return self.cachefile_backend.exists(self)
+
+    def __nonzero__(self):
+        # Python 2 compatibility
+        return self.__bool__()
 
 
 class LazyImageCacheFile(SimpleLazyObject):
