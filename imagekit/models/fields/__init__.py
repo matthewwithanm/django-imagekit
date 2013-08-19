@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 from django.db import models
 from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor
@@ -13,7 +15,7 @@ class SpecHostField(SpecHost):
         # Generate a spec_id to register the spec with. The default spec id is
         # "<app>:<model>_<field>"
         if not spec_id:
-            spec_id = (u'%s:%s:%s' % (cls._meta.app_label,
+            spec_id = ('%s:%s:%s' % (cls._meta.app_label,
                             cls._meta.object_name, name)).lower()
 
         # Register the spec with the id. This allows specs to be overridden
