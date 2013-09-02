@@ -26,4 +26,4 @@ class ProcessorImporter(object):
         return import_module(new_name)
 
 
-sys.meta_path.append(ProcessorImporter())
+sys.meta_path.insert(0, ProcessorImporter())
