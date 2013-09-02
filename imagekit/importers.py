@@ -23,7 +23,9 @@ class ProcessorImporter(object):
 
         from django.utils.importlib import import_module
         new_name = self.pattern.sub(r'pilkit.processors\1', name)
-        return import_module(new_name)
+        mod = import_module(new_name)
+        sys.modules[name] = mod
+        return mod
 
 
 sys.meta_path.insert(0, ProcessorImporter())
