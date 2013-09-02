@@ -44,9 +44,9 @@ setup(
     include_package_data=True,
     tests_require=[
         'beautifulsoup4==4.1.3',
-        'nose==1.2.1',
-        'nose-progressive==1.3',
-        'django-nose==1.1',
+        'nose==1.3.0',
+        'nose-progressive==1.5',
+        'django-nose==1.2',
         'Pillow<3.0',
     ],
     test_suite='testrunner.run_tests',
