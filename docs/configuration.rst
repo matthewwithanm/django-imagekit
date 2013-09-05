@@ -23,7 +23,7 @@ Settings
 
     The qualified class name of a Django storage backend to use to save the
     cached images. If no value is provided for ``IMAGEKIT_DEFAULT_FILE_STORAGE``,
-    and none is specified by the spec definition, the storage of the source file
+    and none is specified by the spec definition, `your default file storage`__
     will be used.
 
 
@@ -72,3 +72,6 @@ Settings
     A function responsible for generating file names for cache files that
     correspond to image specs. Since you will likely want to base the name of
     your cache files on the name of the source, this extra setting is provided.
+
+
+__ https://docs.djangoproject.com/en/dev/ref/settings/#default-file-storage
