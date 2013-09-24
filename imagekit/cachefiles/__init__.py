@@ -1,3 +1,4 @@
+from copy import copy
 from django.conf import settings
 from django.core.files import File
 from django.core.files.images import ImageFile
@@ -128,6 +129,14 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         # file exists. This gives the strategy a chance to create the file.
         existence_required.send(sender=self, file=self)
         return self.cachefile_backend.exists(self)
+
+    def __getstate__(self):
+        state = copy(self.__dict__)
+
+        # file is hidden link to "file" attribute
+        state.pop('_file', None)
+
+        return state
 
 
 class LazyImageCacheFile(SimpleLazyObject):
