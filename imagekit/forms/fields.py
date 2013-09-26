@@ -22,7 +22,7 @@ class ProcessedImageField(ImageField, SpecHost):
     def clean(self, data, initial=None):
         data = super(ProcessedImageField, self).clean(data, initial)
 
-        if data:
+        if data and data != initial:
             spec = self.get_spec(source=data)
             data = generate(spec)
 

@@ -13,6 +13,7 @@ from .lib import NullHandler
 
 bad_memcached_key_chars = re.compile(ur'[\u0000-\u001f\s]+')
 
+_autodiscovered = False
 
 def get_nonabstract_descendants(model):
     """ Returns all non-abstract descendants of the model. """
@@ -62,10 +63,16 @@ def autodiscover():
 
     Copied from django.contrib.admin
     """
+    global _autodiscovered
+
+    if _autodiscovered:
+        return
 
     from django.conf import settings
     from django.utils.importlib import import_module
     from django.utils.module_loading import module_has_submodule
+
+    _autodiscovered = True
 
     for app in settings.INSTALLED_APPS:
         mod = import_module(app)
