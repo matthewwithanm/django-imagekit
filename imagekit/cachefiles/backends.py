@@ -142,7 +142,7 @@ except ImportError:
     pass
 
 
-class CeleryAsync(BaseAsync):
+class Celery(BaseAsync):
     """
     A backend that uses Celery to generate the images.
     """
@@ -151,8 +151,8 @@ class CeleryAsync(BaseAsync):
             import celery
         except ImportError:
             raise ImproperlyConfigured('You must install celery to use'
-                                       ' imagekit.cachefiles.backends.CeleryAsync.')
-        super(CeleryAsync, self).__init__(*args, **kwargs)
+                                       ' imagekit.cachefiles.backends.Celery.')
+        super(Celery, self).__init__(*args, **kwargs)
 
     def get_task(self):
         if not hasattr(self, '_task'):
@@ -163,7 +163,7 @@ class CeleryAsync(BaseAsync):
         self.get_task().delay(self, file, force=force)
 
 
-Async = CeleryAsync  # backwards compatibility
+Async = Celery  # backwards compatibility
 
 
 try:
@@ -172,7 +172,7 @@ except ImportError:
     pass
 
 
-class RQAsync(BaseAsync):
+class RQ(BaseAsync):
     """
     A backend that uses RQ to generate the images.
     """
@@ -183,8 +183,8 @@ class RQAsync(BaseAsync):
             import django_rq
         except ImportError:
             raise ImproperlyConfigured('You must install django_rq to use'
-                                       ' imagekit.cachefiles.backends.RQAsync.')
-        super(RQAsync, self).__init__(*args, **kwargs)
+                                       ' imagekit.cachefiles.backends.RQ.')
+        super(RQ, self).__init__(*args, **kwargs)
 
     def get_queue(self):
         # not caching property to avoid "can't pickle instancemethod objects",
