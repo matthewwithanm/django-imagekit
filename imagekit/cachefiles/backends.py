@@ -137,9 +137,11 @@ class BaseAsync(Simple):
 
 
 try:
-    import celery
+    from celery import task
 except ImportError:
     pass
+else:
+    _celery_task = task(ignore_result=True)(_generate_file)
 
 
 class Celery(BaseAsync):
@@ -154,13 +156,8 @@ class Celery(BaseAsync):
                                        ' imagekit.cachefiles.backends.Celery.')
         super(Celery, self).__init__(*args, **kwargs)
 
-    def get_task(self):
-        if not hasattr(self, '_task'):
-            self._task = celery.task(ignore_result=True)(_generate_file)
-        return self._task
-
     def schedule_generation(self, file, force=False):
-        self.get_task().delay(self, file, force=force)
+        _celery_task.delay(self, file, force=force)
 
 
 Async = Celery  # backwards compatibility
