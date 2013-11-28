@@ -17,7 +17,7 @@ def get_default_cachefile_backend():
     """
     from django.conf import settings
     return get_singleton(settings.IMAGEKIT_DEFAULT_CACHEFILE_BACKEND,
-            'file backend')
+                         'file backend')
 
 
 class InvalidFileBackendError(ImproperlyConfigured):
@@ -116,32 +116,81 @@ def _generate_file(backend, file, force=False):
     backend.generate_now(file, force=force)
 
 
-try:
-    import celery
-except ImportError:
-    pass
-else:
-    _generate_file = celery.task(ignore_result=True)(_generate_file)
-
-
-class Async(Simple):
+class BaseAsync(Simple):
     """
-    A backend that uses Celery to generate the images.
+    Base class for cache file backends that generate files asynchronously.
     """
-
-    def __init__(self, *args, **kwargs):
-        try:
-            import celery
-        except ImportError:
-            raise ImproperlyConfigured('You must install celery to use'
-                                       ' imagekit.cachefiles.backend.Async.')
-        super(Async, self).__init__(*args, **kwargs)
-
     def generate(self, file, force=False):
         # Schedule the file for generation, unless we know for sure we don't
         # need to. If an already-generated file sneaks through, that's okay;
         # ``generate_now`` will catch it. We just want to make sure we don't
         # schedule anything we know is unnecessary--but we also don't want to
         # force a costly existence check.
-        if self.get_state(file, check_if_unknown=False) not in (CacheFileState.GENERATING, CacheFileState.EXISTS):
-            _generate_file.delay(self, file, force=force)
+        state = self.get_state(file, check_if_unknown=False)
+        if state not in (CacheFileState.GENERATING, CacheFileState.EXISTS):
+            self.schedule_generation(file, force=force)
+
+    def schedule_generation(self, file, force=False):
+        # overwrite this to have the file generated in the background,
+        # e. g. in a worker queue.
+        raise NotImplementedError
+
+
+try:
+    import celery
+except ImportError:
+    pass
+
+
+class Celery(BaseAsync):
+    """
+    A backend that uses Celery to generate the images.
+    """
+    def __init__(self, *args, **kwargs):
+        try:
+            import celery
+        except ImportError:
+            raise ImproperlyConfigured('You must install celery to use'
+                                       ' imagekit.cachefiles.backends.Celery.')
+        super(Celery, self).__init__(*args, **kwargs)
+
+    def get_task(self):
+        if not hasattr(self, '_task'):
+            self._task = celery.task(ignore_result=True)(_generate_file)
+        return self._task
+
+    def schedule_generation(self, file, force=False):
+        self.get_task().delay(self, file, force=force)
+
+
+Async = Celery  # backwards compatibility
+
+
+try:
+    import django_rq
+except ImportError:
+    pass
+
+
+class RQ(BaseAsync):
+    """
+    A backend that uses RQ to generate the images.
+    """
+    queue_name = 'default'
+
+    def __init__(self, *args, **kwargs):
+        try:
+            import django_rq
+        except ImportError:
+            raise ImproperlyConfigured('You must install django_rq to use'
+                                       ' imagekit.cachefiles.backends.RQ.')
+        super(RQ, self).__init__(*args, **kwargs)
+
+    def get_queue(self):
+        # not caching property to avoid "can't pickle instancemethod objects",
+        # see https://github.com/nvie/rq/issues/189
+        return django_rq.get_queue(self.queue_name)
+
+    def schedule_generation(self, file, force=False):
+        self.get_queue().enqueue(_generate_file, args=(self, file),
+                                 kwargs=dict(force=force), result_ttl=0)
