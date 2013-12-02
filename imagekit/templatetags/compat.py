@@ -40,7 +40,7 @@ import re
 
 
 # Regex for token keyword arguments
-kwarg_re = re.compile(r"(?:(\w+)=)?(.+)")
+kwarg_re = re.compile(r"(?:([\w-]+)=)?(.+)")
 
 
 def token_kwargs(bits, parser, support_legacy=False):

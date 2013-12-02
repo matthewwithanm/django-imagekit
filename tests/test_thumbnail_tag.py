@@ -14,9 +14,10 @@ def test_img_tag():
 
 
 def test_img_tag_attrs():
-    ttag = r"""{% thumbnail '100x100' img -- alt="Hello" %}"""
+    ttag = r"""{% thumbnail '100x100' img -- alt="Hello" data-original-image=img.name %}"""
     attrs = get_html_attrs(ttag)
     eq_(attrs.get('alt'), 'Hello')
+    eq_(attrs.get('data-original-image')[-10:], '/lenna.png')
 
 
 @raises(TemplateSyntaxError)
