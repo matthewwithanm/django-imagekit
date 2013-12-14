@@ -1,11 +1,8 @@
 from django.conf import settings
-try:
-    from django.utils.encoding import force_bytes
-except ImportError:
-    from django.utils.encoding import smart_str as force_bytes
 from hashlib import md5
 from imagekit.cachefiles import ImageCacheFile, LazyImageCacheFile
 from imagekit.cachefiles.backends import Simple
+from imagekit.lib import force_bytes
 from nose.tools import raises, eq_
 from .imagegenerators import TestSpec
 from .utils import (assert_file_is_truthy, assert_file_is_falsy,
