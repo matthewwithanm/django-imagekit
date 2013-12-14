@@ -8,12 +8,8 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
 from django.utils.importlib import import_module
-try:
-    from django.utils.encoding import force_bytes
-except ImportError:
-    from django.utils.encoding import smart_str as force_bytes
 from pilkit.utils import *
-from .lib import NullHandler
+from .lib import NullHandler, force_bytes
 
 
 bad_memcached_key_chars = re.compile('[\u0000-\u001f\\s]+')

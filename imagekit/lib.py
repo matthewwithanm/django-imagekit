@@ -41,10 +41,13 @@ except ImportError:
 # It is used for compatibility between Python 2 and Python 3
 # NOTE: I'm not sure if this is the right place. Maybe this can be in `utils`.
 try:
-    from django.utils.encoding import force_text, smart_text
+    from django.utils.encoding import force_text, force_bytes, smart_text
 except ImportError:
     # Django < 1.5
-    from django.utils.encoding import force_unicode as force_text, smart_unicode as smart_text
+    from django.utils.encoding import (force_unicode as force_text,
+                                       smart_str as force_bytes,
+                                       smart_unicode as smart_text)
 
-__all__ = ['Image', 'ImageColor', 'ImageChops', 'ImageEnhance', 'ImageFile', 'ImageFilter',
-           'ImageDraw', 'ImageStat', 'StringIO', 'NullHandler', 'force_text', 'smart_text']
+__all__ = ['Image', 'ImageColor', 'ImageChops', 'ImageEnhance', 'ImageFile',
+           'ImageFilter', 'ImageDraw', 'ImageStat', 'StringIO', 'NullHandler',
+           'force_text', 'force_bytes', 'smart_text']
