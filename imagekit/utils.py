@@ -16,7 +16,7 @@ from pilkit.utils import *
 from .lib import NullHandler
 
 
-bad_memcached_key_chars = re.compile(r'[\u0000-\u001f\s]+')
+bad_memcached_key_chars = re.compile('[\u0000-\u001f\\s]+')
 
 _autodiscovered = False
 
