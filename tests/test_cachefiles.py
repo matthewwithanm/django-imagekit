@@ -1,4 +1,8 @@
 from django.conf import settings
+try:
+    from django.utils.encoding import force_bytes
+except ImportError:
+    from django.utils.encoding import smart_str as force_bytes
 from hashlib import md5
 from imagekit.cachefiles import ImageCacheFile, LazyImageCacheFile
 from imagekit.cachefiles.backends import Simple
@@ -73,7 +77,7 @@ def test_memcached_cache_key():
     eq_(backend.get_key(file), '%s%s:%s' % (
         settings.IMAGEKIT_CACHE_PREFIX,
         '1' * (200 - len(':') - 32 - len(settings.IMAGEKIT_CACHE_PREFIX)),
-        md5('%s%s-state' % (settings.IMAGEKIT_CACHE_PREFIX, filename)).hexdigest()))
+        md5(force_bytes('%s%s-state' % (settings.IMAGEKIT_CACHE_PREFIX, filename))).hexdigest()))
 
 
 def test_lazyfile_stringification():
