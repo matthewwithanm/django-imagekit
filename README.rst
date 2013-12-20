@@ -277,8 +277,8 @@ with the id "imagekit:thumbnail" which, by default, is
 Second, we're passing two positional arguments (the dimensions and the source
 image) as opposed to the keyword arguments we used with the generateimage tag.
 
-Like with the generatethumbnail tag, you can also specify additional HTML
-attributes for the thumbnail tag, or use it as an assignment tag:
+Like with the generateimage tag, you can also specify additional HTML attributes
+for the thumbnail tag, or use it as an assignment tag:
 
 .. code-block:: html
 
