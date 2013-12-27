@@ -1,4 +1,3 @@
-from django.utils.importlib import import_module
 import re
 import sys
 
@@ -22,8 +21,11 @@ class ProcessorImporter(object):
         if name in sys.modules:
             return sys.modules[name]
 
+        from django.utils.importlib import import_module
         new_name = self.pattern.sub(r'pilkit.processors\1', name)
-        return import_module(new_name)
+        mod = import_module(new_name)
+        sys.modules[name] = mod
+        return mod
 
 
-sys.meta_path.append(ProcessorImporter())
+sys.meta_path.insert(0, ProcessorImporter())

@@ -1,17 +1,18 @@
+from __future__ import unicode_literals
 import logging
+import re
 from tempfile import NamedTemporaryFile
+from hashlib import md5
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
 from django.utils.importlib import import_module
-from hashlib import md5
 from pilkit.utils import *
-import re
-from .lib import NullHandler
+from .lib import NullHandler, force_bytes
 
 
-bad_memcached_key_chars = re.compile(ur'[\u0000-\u001f\s]+')
+bad_memcached_key_chars = re.compile('[\u0000-\u001f\\s]+')
 
 _autodiscovered = False
 
@@ -32,7 +33,7 @@ def get_by_qname(path, desc):
     module, objname = path[:dot], path[dot + 1:]
     try:
         mod = import_module(module)
-    except ImportError, e:
+    except ImportError as e:
         raise ImproperlyConfigured('Error importing %s module %s: "%s"' %
                 (desc, module, e))
     try:
@@ -147,7 +148,7 @@ def sanitize_cache_key(key):
         # The also can't be > 250 chars long. Since we don't know what the
         # user's cache ``KEY_FUNCTION`` setting is like, we'll limit it to 200.
         if len(new_key) >= 200:
-            new_key = '%s:%s' % (new_key[:200-33], md5(key).hexdigest())
+            new_key = '%s:%s' % (new_key[:200-33], md5(force_bytes(key)).hexdigest())
 
         key = new_key
     return key

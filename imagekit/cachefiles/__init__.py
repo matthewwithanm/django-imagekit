@@ -121,7 +121,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
                 )
             )
 
-    def __nonzero__(self):
+    def __bool__(self):
         if not self.name:
             return False
 
@@ -137,6 +137,10 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         state.pop('_file', None)
 
         return state
+
+    def __nonzero__(self):
+        # Python 2 compatibility
+        return self.__bool__()
 
 
 class LazyImageCacheFile(SimpleLazyObject):
