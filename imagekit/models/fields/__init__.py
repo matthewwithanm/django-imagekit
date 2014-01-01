@@ -1,4 +1,7 @@
+from __future__ import unicode_literals
+
 from django.db import models
+from django.db.models.signals import class_prepared
 from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor
 from ...specs import SpecHost
@@ -13,7 +16,7 @@ class SpecHostField(SpecHost):
         # Generate a spec_id to register the spec with. The default spec id is
         # "<app>:<model>_<field>"
         if not spec_id:
-            spec_id = (u'%s:%s:%s' % (cls._meta.app_label,
+            spec_id = ('%s:%s:%s' % (cls._meta.app_label,
                             cls._meta.object_name, name)).lower()
 
         # Register the spec with the id. This allows specs to be overridden
@@ -44,27 +47,37 @@ class ImageSpecField(SpecHostField):
 
     def contribute_to_class(self, cls, name):
         # If the source field name isn't defined, figure it out.
-        source = self.source
-        if not source:
-            image_fields = [f.attname for f in cls._meta.fields if
-                            isinstance(f, models.ImageField)]
-            if len(image_fields) == 0:
-                raise Exception(
-                    '%s does not define any ImageFields, so your %s'
-                    ' ImageSpecField has no image to act on.' %
-                    (cls.__name__, name))
-            elif len(image_fields) > 1:
-                raise Exception(
-                    '%s defines multiple ImageFields, but you have not'
-                    ' specified a source for your %s ImageSpecField.' %
-                    (cls.__name__, name))
-            source = image_fields[0]
 
-        setattr(cls, name, ImageSpecFileDescriptor(self, name, source))
-        self._set_spec_id(cls, name)
+        def register_source_group(source):
+            setattr(cls, name, ImageSpecFileDescriptor(self, name, source))
+            self._set_spec_id(cls, name)
 
-        # Add the model and field as a source for this spec id
-        register.source_group(self.spec_id, ImageFieldSourceGroup(cls, source))
+            # Add the model and field as a source for this spec id
+            register.source_group(self.spec_id, ImageFieldSourceGroup(cls, source))
+
+        if self.source:
+            register_source_group(self.source)
+        else:
+            # The source argument is not defined
+            # Then we need to see if there is only one ImageField in that model
+            # But we need to do that after full model initialization
+            def handle_model_preparation(sender, **kwargs):
+
+                image_fields = [f.attname for f in cls._meta.fields if
+                                isinstance(f, models.ImageField)]
+                if len(image_fields) == 0:
+                    raise Exception(
+                        '%s does not define any ImageFields, so your %s'
+                        ' ImageSpecField has no image to act on.' %
+                        (cls.__name__, name))
+                elif len(image_fields) > 1:
+                    raise Exception(
+                        '%s defines multiple ImageFields, but you have not'
+                        ' specified a source for your %s ImageSpecField.' %
+                        (cls.__name__, name))
+                register_source_group(image_fields[0])
+
+            class_prepared.connect(handle_model_preparation, sender=cls, weak=False)
 
 
 class ProcessedImageField(models.ImageField, SpecHostField):
