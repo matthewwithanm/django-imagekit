@@ -2,7 +2,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.db.models.signals import class_prepared
-from django.dispatch import receiver
 from .files import ProcessedImageFieldFile
 from .utils import ImageSpecFileDescriptor
 from ...specs import SpecHost
@@ -62,8 +61,6 @@ class ImageSpecField(SpecHostField):
             # The source argument is not defined
             # Then we need to see if there is only one ImageField in that model
             # But we need to do that after full model initialization
-
-            @receiver(class_prepared, sender=cls, weak=False)
             def handle_model_preparation(sender, **kwargs):
 
                 image_fields = [f.attname for f in cls._meta.fields if
@@ -80,6 +77,7 @@ class ImageSpecField(SpecHostField):
                         (cls.__name__, name))
                 register_source_group(image_fields[0])
 
+            class_prepared.connect(handle_model_preparation, sender=cls, weak=False)
 
 
 class ProcessedImageField(models.ImageField, SpecHostField):
