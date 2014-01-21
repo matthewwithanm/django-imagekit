@@ -2,7 +2,7 @@ from copy import copy
 from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
 from ..cachefiles.backends import get_default_cachefile_backend
-from ..cachefiles.strategies import StrategyWrapper
+from ..cachefiles.strategies import load_strategy
 from .. import hashers
 from ..exceptions import AlreadyRegistered, MissingSource
 from ..utils import open_image, get_by_qname, process_image
@@ -36,7 +36,7 @@ class BaseImageSpec(object):
 
     def __init__(self):
         self.cachefile_backend = self.cachefile_backend or get_default_cachefile_backend()
-        self.cachefile_strategy = StrategyWrapper(self.cachefile_strategy)
+        self.cachefile_strategy = load_strategy(self.cachefile_strategy)
 
     def generate(self):
         raise NotImplementedError
