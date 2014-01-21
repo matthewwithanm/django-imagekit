@@ -98,14 +98,10 @@ class ImageCacheFile(BaseIKFile, ImageFile):
 
         actual_name = self.storage.save(self.name, content)
 
-        # We're going to reuse the generated file, so we need to reset the pointer.
-        content.seek(0)
-
         # Store the generated file. If we don't do this, the next time the
         # "file" attribute is accessed, it will result in a call to the storage
-        # backend (in ``BaseIKFile._get_file``). Since we already have the
-        # contents of the file, what would the point of that be?
-        self.file = File(content)
+        # backend (in ``BaseIKFile._get_file``).
+        self.file = File(open(self.path))
 
         if actual_name != self.name:
             get_logger().warning(
