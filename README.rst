@@ -8,10 +8,15 @@ black-and-white version of a user-uploaded image? ImageKit will make them for
 you. If you need to programatically generate one image from another, you need
 ImageKit.
 
+ImageKit comes with a bunch of image processors for common tasks like resizing
+and cropping, but you can also create your own. For an idea of what's possible,
+check out the `Instakit`__ project.
+
 **For the complete documentation on the latest stable version of ImageKit, see**
 `ImageKit on RTD`_.
 
 .. _`ImageKit on RTD`: http://django-imagekit.readthedocs.org
+__ https://github.com/fish2000/instakit
 
 
 Installation
