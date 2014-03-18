@@ -163,12 +163,6 @@ class Celery(BaseAsync):
 Async = Celery  # backwards compatibility
 
 
-try:
-    import django_rq
-except ImportError:
-    pass
-
-
 class RQ(BaseAsync):
     """
     A backend that uses RQ to generate the images.
