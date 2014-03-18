@@ -57,6 +57,7 @@ setup(
     ],
     extras_require={
         'async': ['django-celery>=3.0'],
+        'async_rq': ['django-rq>=0.6.0'],
     },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
