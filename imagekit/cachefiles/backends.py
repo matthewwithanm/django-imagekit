@@ -169,25 +169,25 @@ class Async(Celery):
         super(Async, self).__init__(*args, **kwargs)
 
 
+try:
+    from django_rq import job
+except ImportError:
+    pass
+else:
+    _rq_job = job('default', result_ttl=0)(_generate_file)
+
+
 class RQ(BaseAsync):
     """
     A backend that uses RQ to generate the images.
     """
-    queue_name = 'default'
-
     def __init__(self, *args, **kwargs):
         try:
             import django_rq
         except ImportError:
-            raise ImproperlyConfigured('You must install django_rq to use'
+            raise ImproperlyConfigured('You must install django-rq to use'
                                        ' imagekit.cachefiles.backends.RQ.')
         super(RQ, self).__init__(*args, **kwargs)
 
-    def get_queue(self):
-        # not caching property to avoid "can't pickle instancemethod objects",
-        # see https://github.com/nvie/rq/issues/189
-        return django_rq.get_queue(self.queue_name)
-
     def schedule_generation(self, file, force=False):
-        self.get_queue().enqueue(_generate_file, args=(self, file),
-                                 kwargs=dict(force=force), result_ttl=0)
+        _rq_job.delay(self, file, force=force)
