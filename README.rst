@@ -147,6 +147,11 @@ on, or what should be done with the result; that's up to you:
     image_generator = Thumbnail(source=source_file)
     result = image_generator.generate()
 
+.. note::
+
+    You don't have to use ``open``! You can use whatever File-like object you
+    want—including a model's ``ImageField``.
+
 The result of calling ``generate()`` on an image spec is a file-like object
 containing our resized image, with which you can do whatever you want. For
 example, if you wanted to save it to disk:
