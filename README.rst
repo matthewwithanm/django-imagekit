@@ -223,7 +223,7 @@ that's what we need to pass to use our thumbnail spec:
 
     {% load imagekit %}
 
-    {% generateimage 'myapp:thumbnail' source=source_image %}
+    {% generateimage 'myapp:thumbnail' source=source_file %}
 
 This will output the following HTML:
 
@@ -238,7 +238,7 @@ keyword args using two dashes:
 
     {% load imagekit %}
 
-    {% generateimage 'myapp:thumbnail' source=source_image -- alt="A picture of Me" id="mypicture" %}
+    {% generateimage 'myapp:thumbnail' source=source_file -- alt="A picture of Me" id="mypicture" %}
 
 Not generating HTML image tags? No problem. The tag also functions as an
 assignment tag, providing access to the underlying file object:
@@ -247,7 +247,7 @@ assignment tag, providing access to the underlying file object:
 
     {% load imagekit %}
 
-    {% generateimage 'myapp:thumbnail' source=source_image as th %}
+    {% generateimage 'myapp:thumbnail' source=source_file as th %}
     <a href="{{ th.url }}">Click to download a cool {{ th.width }} x {{ th.height }} image!</a>
 
 
@@ -261,7 +261,7 @@ template tag:
 
     {% load imagekit %}
 
-    {% thumbnail '100x50' source_image %}
+    {% thumbnail '100x50' source_file %}
 
 Like the generateimage tag, the thumbnail tag outputs an <img> tag:
 
@@ -289,8 +289,8 @@ for the thumbnail tag, or use it as an assignment tag:
 
     {% load imagekit %}
 
-    {% thumbnail '100x50' source_image -- alt="A picture of Me" id="mypicture" %}
-    {% thumbnail '100x50' source_image as th %}
+    {% thumbnail '100x50' source_file -- alt="A picture of Me" id="mypicture" %}
+    {% thumbnail '100x50' source_file as th %}
 
 
 Using Specs in Forms
