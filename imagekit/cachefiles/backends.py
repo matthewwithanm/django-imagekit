@@ -169,12 +169,6 @@ class Async(Celery):
         super(Async, self).__init__(*args, **kwargs)
 
 
-try:
-    import django_rq
-except ImportError:
-    pass
-
-
 class RQ(BaseAsync):
     """
     A backend that uses RQ to generate the images.
