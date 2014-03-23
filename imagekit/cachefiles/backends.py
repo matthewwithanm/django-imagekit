@@ -1,4 +1,5 @@
 from ..utils import get_singleton, sanitize_cache_key
+import warnings
 from copy import copy
 from django.core.cache import get_cache
 from django.core.exceptions import ImproperlyConfigured
@@ -160,7 +161,12 @@ class Celery(BaseAsync):
         _celery_task.delay(self, file, force=force)
 
 
-Async = Celery  # backwards compatibility
+# Stub class to preserve backwards compatibility and issue a warning
+class Async(Celery):
+    def __init__(self, *args, **kwargs):
+        message = '{path}.Async is deprecated. Use {path}.Celery instead.'
+        warnings.warn(message.format(path=__name__), DeprecationWarning)
+        super(Async, self).__init__(*args, **kwargs)
 
 
 try:
