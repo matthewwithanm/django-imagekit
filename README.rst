@@ -8,10 +8,15 @@ black-and-white version of a user-uploaded image? ImageKit will make them for
 you. If you need to programatically generate one image from another, you need
 ImageKit.
 
+ImageKit comes with a bunch of image processors for common tasks like resizing
+and cropping, but you can also create your own. For an idea of what's possible,
+check out the `Instakit`__ project.
+
 **For the complete documentation on the latest stable version of ImageKit, see**
 `ImageKit on RTD`_.
 
 .. _`ImageKit on RTD`: http://django-imagekit.readthedocs.org
+__ https://github.com/fish2000/instakit
 
 
 Installation
@@ -142,6 +147,11 @@ on, or what should be done with the result; that's up to you:
     image_generator = Thumbnail(source=source_file)
     result = image_generator.generate()
 
+.. note::
+
+    You don't have to use ``open``! You can use whatever File-like object you
+    want—including a model's ``ImageField``.
+
 The result of calling ``generate()`` on an image spec is a file-like object
 containing our resized image, with which you can do whatever you want. For
 example, if you wanted to save it to disk:
@@ -218,7 +228,7 @@ that's what we need to pass to use our thumbnail spec:
 
     {% load imagekit %}
 
-    {% generateimage 'myapp:thumbnail' source=source_image %}
+    {% generateimage 'myapp:thumbnail' source=source_file %}
 
 This will output the following HTML:
 
@@ -233,7 +243,7 @@ keyword args using two dashes:
 
     {% load imagekit %}
 
-    {% generateimage 'myapp:thumbnail' source=source_image -- alt="A picture of Me" id="mypicture" %}
+    {% generateimage 'myapp:thumbnail' source=source_file -- alt="A picture of Me" id="mypicture" %}
 
 Not generating HTML image tags? No problem. The tag also functions as an
 assignment tag, providing access to the underlying file object:
@@ -242,7 +252,7 @@ assignment tag, providing access to the underlying file object:
 
     {% load imagekit %}
 
-    {% generateimage 'myapp:thumbnail' source=source_image as th %}
+    {% generateimage 'myapp:thumbnail' source=source_file as th %}
     <a href="{{ th.url }}">Click to download a cool {{ th.width }} x {{ th.height }} image!</a>
 
 
@@ -256,7 +266,7 @@ template tag:
 
     {% load imagekit %}
 
-    {% thumbnail '100x50' source_image %}
+    {% thumbnail '100x50' source_file %}
 
 Like the generateimage tag, the thumbnail tag outputs an <img> tag:
 
@@ -284,8 +294,8 @@ for the thumbnail tag, or use it as an assignment tag:
 
     {% load imagekit %}
 
-    {% thumbnail '100x50' source_image -- alt="A picture of Me" id="mypicture" %}
-    {% thumbnail '100x50' source_image as th %}
+    {% thumbnail '100x50' source_file -- alt="A picture of Me" id="mypicture" %}
+    {% thumbnail '100x50' source_file as th %}
 
 
 Using Specs in Forms
