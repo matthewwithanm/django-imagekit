@@ -76,16 +76,21 @@ def autodiscover():
     _autodiscovered = True
 
     for app in settings.INSTALLED_APPS:
-        mod = import_module(app)
-        # Attempt to import the app's admin module.
+        # As of Django 1.7, settings.INSTALLED_APPS may contain classes instead of modules, hence the try/except
+        # See here: https://docs.djangoproject.com/en/dev/releases/1.7/#introspecting-applications
         try:
-            import_module('%s.imagegenerators' % app)
-        except:
-            # Decide whether to bubble up this error. If the app just
-            # doesn't have an imagegenerators module, we can ignore the error
-            # attempting to import it, otherwise we want it to bubble up.
-            if module_has_submodule(mod, 'imagegenerators'):
-                raise
+            mod = import_module(app)
+            # Attempt to import the app's admin module.
+            try:
+                import_module('%s.imagegenerators' % app)
+            except:
+                # Decide whether to bubble up this error. If the app just
+                # doesn't have an imagegenerators module, we can ignore the error
+                # attempting to import it, otherwise we want it to bubble up.
+                if module_has_submodule(mod, 'imagegenerators'):
+                    raise
+        except ImportError:
+            pass
 
 
 def get_logger(logger_name='imagekit', add_null_handler=True):
