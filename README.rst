@@ -136,7 +136,7 @@ particularly when the processing being done depends on user input.
         format = 'JPEG'
         options = {'quality': 60}
 
-It's probaby not surprising that this class is capable of processing an image
+It's probably not surprising that this class is capable of processing an image
 in the exact same way as our ImageSpecField above. However, unlike with the
 image spec model field, this class doesn't define what source the spec is acting
 on, or what should be done with the result; that's up to you:
