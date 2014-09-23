@@ -128,7 +128,14 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         # Dispatch the existence_required signal before checking to see if the
         # file exists. This gives the strategy a chance to create the file.
         existence_required.send(sender=self, file=self)
-        return self.cachefile_backend.exists(self)
+
+        try:
+            check = self.cachefile_strategy.should_verify_existence(self)
+        except AttributeError:
+            # All synchronous backends should have created the file as part of
+            # `existence_required` if they wanted to.
+            check = getattr(self.cachefile_backend, 'is_async', False)
+        return self.cachefile_backend.exists(self) if check else True
 
     def __getstate__(self):
         state = copy(self.__dict__)

@@ -29,6 +29,9 @@ class Optimistic(object):
     def on_source_saved(self, file):
         file.generate()
 
+    def should_verify_existence(self, file):
+        return False
+
 
 class DictStrategy(object):
     def __init__(self, callbacks):
