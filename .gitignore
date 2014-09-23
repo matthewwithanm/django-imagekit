@@ -10,4 +10,5 @@ dist
 /tests/media/*
 !/tests/media/lenna.png
 /venv
+/venv3
 /.env
