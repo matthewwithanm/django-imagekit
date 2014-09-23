@@ -35,3 +35,15 @@ def test_no_io_on_bool():
     bool(file)
     assert_false(file.storage.exists.called)
     assert_false(file.storage.open.called)
+
+
+def test_no_io_on_url():
+    """
+    When getting the URL of an ImageCacheFile, the storage shouldn't be
+    checked.
+
+    """
+    file = get_image_cache_file()
+    file.url
+    assert_false(file.storage.exists.called)
+    assert_false(file.storage.open.called)
