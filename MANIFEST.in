@@ -3,3 +3,4 @@ include LICENSE
 include README.rst
 recursive-include docs *
 recursive-include imagekit/templates *
+prune tests
