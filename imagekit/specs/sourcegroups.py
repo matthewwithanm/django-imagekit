@@ -72,18 +72,19 @@ class ModelSignalRouter(object):
 
         """
         self.init_instance(instance)
-        instance._ik['source_hashes'] = dict((attname, hash(file_field))
-                for attname, file_field in self.get_field_dict(instance).items())
+        instance._ik['source_hashes'] = dict(
+            (attname, hash(getattr(instance, attname)))
+            for attname in self.get_source_fields(instance))
         return instance._ik['source_hashes']
 
-    def get_field_dict(self, instance):
+    def get_source_fields(self, instance):
         """
-        Returns the source fields for the given instance, in a dictionary whose
-        keys are the field names and values are the fields themselves.
+        Returns a list of the source fields for the given instance.
 
         """
-        return dict((src.image_field, getattr(instance, src.image_field)) for
-                src in self._source_groups if isinstance(instance, src.model_class))
+        return set(src.image_field
+                   for src in self._source_groups
+                   if isinstance(instance, src.model_class))
 
     @ik_model_receiver
     def post_save_receiver(self, sender, instance=None, created=False, raw=False, **kwargs):
@@ -91,14 +92,22 @@ class ModelSignalRouter(object):
             self.init_instance(instance)
             old_hashes = instance._ik.get('source_hashes', {}).copy()
             new_hashes = self.update_source_hashes(instance)
-            for attname, file in self.get_field_dict(instance).items():
-                if file and old_hashes[attname] != new_hashes[attname]:
+            for attname in self.get_source_fields(instance):
+                file = getattr(instance, attname)
+                if file and old_hashes.get(attname) != new_hashes[attname]:
                     self.dispatch_signal(source_saved, file, sender, instance,
                                          attname)
 
     @ik_model_receiver
     def post_init_receiver(self, sender, instance=None, **kwargs):
-        self.update_source_hashes(instance)
+        self.init_instance(instance)
+        source_fields = self.get_source_fields(instance)
+        local_fields = dict((field.name, field)
+                            for field in instance._meta.local_fields
+                            if field.name in source_fields)
+        instance._ik['source_hashes'] = dict(
+            (attname, hash(file_field))
+            for attname, file_field in local_fields.items())
 
     def dispatch_signal(self, signal, file, model_class, instance, attname):
         """
