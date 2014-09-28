@@ -77,5 +77,7 @@ class DummyAsyncCacheFileBackend(Simple):
     A cache file backend meant to simulate async generation.
 
     """
+    is_async = True
+
     def generate(self, file, force=False):
         pass

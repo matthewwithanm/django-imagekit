@@ -121,6 +121,8 @@ class BaseAsync(Simple):
     """
     Base class for cache file backends that generate files asynchronously.
     """
+    is_async = True
+
     def generate(self, file, force=False):
         # Schedule the file for generation, unless we know for sure we don't
         # need to. If an already-generated file sneaks through, that's okay;
