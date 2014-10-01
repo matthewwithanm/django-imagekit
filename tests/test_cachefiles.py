@@ -1,9 +1,10 @@
 from django.conf import settings
 from hashlib import md5
 from imagekit.cachefiles import ImageCacheFile, LazyImageCacheFile
-from imagekit.cachefiles.backends import Simple
+from imagekit.cachefiles.backends import Simple, CacheFileState
 from imagekit.lib import force_bytes
-from nose.tools import raises, eq_
+from mock import Mock, patch
+from nose.tools import raises, eq_, assert_raises
 from .imagegenerators import TestSpec
 from .utils import (assert_file_is_truthy, assert_file_is_falsy,
                     DummyAsyncCacheFileBackend, get_unique_image_file,
@@ -87,3 +88,37 @@ def test_lazyfile_stringification():
     file.name = 'a.jpg'
     eq_(str(file), 'a.jpg')
     eq_(repr(file), '<ImageCacheFile: a.jpg>')
+
+
+def test_error_on_dne():
+    """
+    Trying to access one of the fields that requires the image should error if
+    the image does not exist.
+
+    """
+    file = LazyImageCacheFile('testspec', source=get_image_file())
+    get_state_mock = Mock(return_value=CacheFileState.DOES_NOT_EXIST)
+    noop = Mock()
+    with patch.object(file.cachefile_backend, 'get_state', get_state_mock):
+        with patch.object(file.cachefile_backend, 'generate', noop):
+            with assert_raises(Exception): # TODO: Use more specific type
+                file.url
+            with assert_raises(Exception): # TODO: Use more specific type
+                file.width
+
+
+def test_error_when_generating():
+    """
+    Trying to access one of the fields that requires the image should error if
+    the image is being generated.
+
+    """
+    file = LazyImageCacheFile('testspec', source=get_image_file())
+    get_state_mock = Mock(return_value=CacheFileState.GENERATING)
+    noop = Mock()
+    with patch.object(file.cachefile_backend, 'get_state', get_state_mock):
+        with patch.object(file.cachefile_backend, 'generate', noop):
+            with assert_raises(Exception): # TODO: Use more specific type
+                file.url
+            with assert_raises(Exception): # TODO: Use more specific type
+                file.width
