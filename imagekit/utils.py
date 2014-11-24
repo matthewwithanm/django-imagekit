@@ -56,6 +56,21 @@ def get_singleton(class_path, desc):
     return instance
 
 
+# polyfill for new django 1.6+ apps
+def deduce_app_name(app):
+    try:
+        app_array = app.split('.')
+        module_name = '.'.join(app_array[0:-1])
+        app_config_class = app_array[-1]
+        module = import_module(module_name)
+        # figure out the config
+        ImportedConfig = getattr(module, app_config_class)
+        return ImportedConfig.name
+    except ImportError:
+        return app
+
+    return app
+
 def autodiscover():
     """
     Auto-discover INSTALLED_APPS imagegenerators.py modules and fail silently
@@ -90,7 +105,8 @@ def autodiscover():
                 if module_has_submodule(mod, 'imagegenerators'):
                     raise
         except ImportError:
-            pass
+            app_name = deduce_app_name(app)
+            import_module('{}.imagegenerators'.format(app_name))
 
 
 def get_logger(logger_name='imagekit', add_null_handler=True):
