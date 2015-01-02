@@ -144,7 +144,7 @@ try:
 except ImportError:
     pass
 else:
-    _celery_task = task(ignore_result=True)(_generate_file)
+    _celery_task = task(ignore_result=True, serializer='pickle')(_generate_file)
 
 
 class Celery(BaseAsync):
@@ -153,7 +153,7 @@ class Celery(BaseAsync):
     """
     def __init__(self, *args, **kwargs):
         try:
-            import celery
+            import celery  # noqa
         except ImportError:
             raise ImproperlyConfigured('You must install celery to use'
                                        ' imagekit.cachefiles.backends.Celery.')
@@ -185,7 +185,7 @@ class RQ(BaseAsync):
     """
     def __init__(self, *args, **kwargs):
         try:
-            import django_rq
+            import django_rq  # noqa
         except ImportError:
             raise ImproperlyConfigured('You must install django-rq to use'
                                        ' imagekit.cachefiles.backends.RQ.')
