@@ -106,7 +106,11 @@ def autodiscover():
                     raise
         except ImportError:
             app_name = deduce_app_name(app)
-            import_module('{}.imagegenerators'.format(app_name))
+            try:
+                import_module('{}.imagegenerators'.format(app_name))
+            except:
+                # this doesn't have an imagegenerators
+                continue
 
 
 def get_logger(logger_name='imagekit', add_null_handler=True):
