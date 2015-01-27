@@ -71,7 +71,7 @@ The default works like this:
     * If not, caches that information for 5 seconds
     * If it does, caches that information in the ``IMAGEKIT_CACHE_BACKEND``
 
-If file doesn't exsit, generates it immediately and synchronously
+If file doesn't exist, generates it immediately and synchronously
 
 
 That pretty much covers the architecture of the caching layer, and its default
