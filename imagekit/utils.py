@@ -7,7 +7,10 @@ from hashlib import md5
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
-from django.utils.importlib import import_module
+try:
+    from importlib import import_module
+except ImportError:
+    from django.utils.importlib import import_module
 from pilkit.utils import *
 from .lib import NullHandler, force_bytes
 
@@ -70,7 +73,10 @@ def autodiscover():
         return
 
     from django.conf import settings
-    from django.utils.importlib import import_module
+    try:
+        from importlib import import_module
+    except ImportError:
+        from django.utils.importlib import import_module
     from django.utils.module_loading import module_has_submodule
 
     _autodiscovered = True
