@@ -71,7 +71,7 @@ The default works like this:
     * If not, caches that information for 5 seconds
     * If it does, caches that information in the ``IMAGEKIT_CACHE_BACKEND``
 
-If file doesn't exsit, generates it immediately and synchronously
+If file doesn't exist, generates it immediately and synchronously
 
 
 That pretty much covers the architecture of the caching layer, and its default
@@ -132,7 +132,7 @@ As mentioned above, image generation is normally done synchronously. through
 the default cache file backend. However, you can also take advantage of
 deferred generation. In order to do this, you'll need to do two things:
 
-1) install `django-celery`__
+1) install `celery`__ (or `django-celery`__ if you are bound to Celery<3.1)
 2) tell ImageKit to use the async cachefile backend.
    To do this for all specs, set the ``IMAGEKIT_DEFAULT_CACHEFILE_BACKEND`` in
    your settings
@@ -164,8 +164,23 @@ Or, in Python:
     else:
         url = '/path/to/placeholder.jpg'
 
+.. note::
+
+    If you are using an "async" backend in combination with the "optimistic"
+    cache file strategy (see `Removing Safeguards`_ below), checking for
+    thruthiness as described above will not work. The "optimistic" backend is
+    very optimistic so to say, and removes the check. Create and use the
+    following strategy to a) have images only created on save, and b) retain
+    the ability to check whether the images have already been created::
+
+        class ImagekitOnSaveStrategy(object):
+            def on_source_saved(self, file):
+                file.generate()
+
+
 
 __ https://pypi.python.org/pypi/django-celery
+__ http://www.celeryproject.org
 
 
 Removing Safeguards
