@@ -1,7 +1,6 @@
-from ..utils import get_singleton, sanitize_cache_key
+from ..utils import get_singleton, get_cache, sanitize_cache_key
 import warnings
 from copy import copy
-from django.core.cache import get_cache
 from django.core.exceptions import ImproperlyConfigured
 
 
