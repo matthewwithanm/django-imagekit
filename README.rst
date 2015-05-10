@@ -88,6 +88,7 @@ class:
 
     from django.db import models
     from imagekit.models import ProcessedImageField
+    from imagekit.processors import ResizeToFill
 
     class Profile(models.Model):
         avatar_thumbnail = ProcessedImageField(upload_to='avatars',
