@@ -34,7 +34,6 @@ INSTALLED_APPS = [
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '-s',
-    '--with-progressive',
 
     # When the tests are run --with-coverage, these args configure coverage
     # reporting (requires coverage to be installed).
@@ -44,6 +43,9 @@ NOSE_ARGS = [
     '--cover-package=imagekit',
     '--cover-html-dir=%s' % os.path.join(BASE_PATH, 'cover')
 ]
+
+if os.getenv('TERM'):
+    NOSE_ARGS.append('--with-progressive')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
