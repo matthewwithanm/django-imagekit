@@ -96,6 +96,7 @@ class CachedFileBackend(object):
             self.set_state(file, CacheFileState.GENERATING)
             file._generate()
             self.set_state(file, CacheFileState.EXISTS)
+            file.close()
 
 
 class Simple(CachedFileBackend):

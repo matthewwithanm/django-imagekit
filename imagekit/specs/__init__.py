@@ -153,9 +153,11 @@ class ImageSpec(BaseImageSpec):
             self.source.open()
             img = open_image(self.source)
 
-        return process_image(img, processors=self.processors,
-                             format=self.format, autoconvert=self.autoconvert,
-                             options=self.options)
+        new_image =  process_image(img, processors=self.processors,
+                                   format=self.format, autoconvert=self.autoconvert,
+                                   options=self.options)
+        self.source.close()
+        return new_image
 
 
 def create_spec_class(class_attrs):

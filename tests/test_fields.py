@@ -26,6 +26,7 @@ def test_form_processedimagefield():
 
         class Meta:
             model = ImageModel
+            fields = 'image',
 
     upload_file = get_image_file()
     file_dict = {'image': SimpleUploadedFile('abc.jpg', upload_file.read())}
