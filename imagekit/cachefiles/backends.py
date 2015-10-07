@@ -3,6 +3,7 @@ import warnings
 from copy import copy
 from django.core.cache import get_cache
 from django.core.exceptions import ImproperlyConfigured
+from django.conf import settings
 
 
 class CacheFileState(object):
@@ -139,12 +140,14 @@ class BaseAsync(Simple):
         raise NotImplementedError
 
 
+QUEUE_NAME = getattr(settings, 'IMAGEKIT_CACHEBACKEND_CELERY_QUEUE', 'celery')
+
 try:
     from celery import task
 except ImportError:
     pass
 else:
-    _celery_task = task(ignore_result=True, serializer='pickle')(_generate_file)
+    _celery_task = task(ignore_result=True, serializer='pickle', queue=QUEUE_NAME)(_generate_file)
 
 
 class Celery(BaseAsync):
