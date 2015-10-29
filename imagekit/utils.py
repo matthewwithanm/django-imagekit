@@ -151,6 +151,16 @@ def call_strategy_method(file, method_name):
         fn(file)
 
 
+def get_cache(backend, **kwargs):
+    try:
+        from django.core.cache import caches
+    except ImportError:
+        from django.core.cache import get_cache
+        return get_cache(backend, **kwargs)
+
+    return caches[backend]
+
+
 def sanitize_cache_key(key):
     if settings.IMAGEKIT_USE_MEMCACHED_SAFE_CACHE_KEY:
         # Memcached keys can't contain whitespace or control characters.
