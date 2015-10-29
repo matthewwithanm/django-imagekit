@@ -19,7 +19,8 @@ class ImageKitConf(AppConf):
         if value is None:
             # DEFAULT_CACHE_ALIAS doesn't exist in Django<=1.2
             try:
-                from django.core.cache import DEFAULT_CACHE_ALIAS as default_cache_alias
+                from django.core.cache import DEFAULT_CACHE_ALIAS
+                default_cache_alias = DEFAULT_CACHE_ALIAS or 'default'
             except ImportError:
                 default_cache_alias = 'default'
 
