@@ -17,25 +17,16 @@ class ImageKitConf(AppConf):
 
     def configure_cache_backend(self, value):
         if value is None:
-            try:
-                from django.core.cache.backends.dummy import DummyCache
-            except ImportError:
-                dummy_cache = 'dummy://'
-            else:
-                dummy_cache = 'django.core.cache.backends.dummy.DummyCache'
-
             # DEFAULT_CACHE_ALIAS doesn't exist in Django<=1.2
             try:
                 from django.core.cache import DEFAULT_CACHE_ALIAS as default_cache_alias
             except ImportError:
                 default_cache_alias = 'default'
 
-            if settings.DEBUG:
-                value = dummy_cache
-            elif default_cache_alias in getattr(settings, 'CACHES', {}):
+            if default_cache_alias in getattr(settings, 'CACHES', {}):
                 value = default_cache_alias
             else:
-                value = getattr(settings, 'CACHE_BACKEND', None) or dummy_cache
+                raise ValueError("The default cache alias '%s' is not available in CACHES" % value)
 
         return value
 
