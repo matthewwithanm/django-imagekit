@@ -44,11 +44,15 @@ Settings
 
 .. attribute:: IMAGEKIT_CACHE_BACKEND
 
-    :default: If ``DEBUG`` is ``True``, ``'django.core.cache.backends.dummy.DummyCache'``.
-    Otherwise, ``'default'``.
+    :default:  ``'default'``
 
-    The Django cache backend to be used to store information like the state of
-    cached images (i.e. validated or not).
+    The Django cache backend alias to retrieve the shared cache instance defined
+    in your settings, as described in the `Django cache section`_.
+
+    The cache is then used to store information like the state of cached
+    images (i.e. validated or not).
+
+.. _`Django cache section`: https://docs.djangoproject.com/en/1.8/topics/cache/#accessing-the-cache
 
 
 .. attribute:: IMAGEKIT_CACHE_PREFIX
