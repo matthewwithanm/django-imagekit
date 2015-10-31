@@ -1,6 +1,35 @@
 language: python
 python:
   - 2.7
+
+env:
+  - TOX_ENV=py26-django12
+  - TOX_ENV=py26-django13
+  - TOX_ENV=py26-django14
+  - TOX_ENV=py26-django15
+  - TOX_ENV=py26-django16
+  - TOX_ENV=py27-django12
+  - TOX_ENV=py27-django13
+  - TOX_ENV=py27-django14
+  - TOX_ENV=py27-django15
+  - TOX_ENV=py27-django16
+  - TOX_ENV=py27-django17
+  - TOX_ENV=py27-django18
+  - TOX_ENV=py27-django19
+  - TOX_ENV=py32-django15
+  - TOX_ENV=py32-django16
+  - TOX_ENV=py32-django17
+  - TOX_ENV=py32-django18
+  - TOX_ENV=py33-django15
+  - TOX_ENV=py33-django16
+  - TOX_ENV=py33-django17
+  - TOX_ENV=py33-django18
+  - TOX_ENV=py34-django16
+  - TOX_ENV=py34-django17
+  - TOX_ENV=py34-django18
+  - TOX_ENV=py34-django19
+  - TOX_ENV=py35-django19
+
 install: pip install tox --use-mirrors
 script: tox
 notifications:
