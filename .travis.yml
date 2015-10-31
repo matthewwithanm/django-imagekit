@@ -36,7 +36,11 @@ matrix:
   allow_failures:
     - env: TOX_ENV=py35-django19
 
-install: pip install tox --use-mirrors
-script: tox
+install:
+  - pip install tox --use-mirrors
+
+script:
+  - tox -e $TOX_ENV
+
 notifications:
   irc: "irc.freenode.org#imagekit"
