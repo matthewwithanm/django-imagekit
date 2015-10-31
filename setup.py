@@ -46,7 +46,7 @@ setup(
         'beautifulsoup4==4.1.3',
         'nose>=1.3.6,<1.4',
         'nose-progressive==1.5.1',
-        'django-nose>=1.2,<=1.4',
+        'django-nose>=1.2,<1.5',
         'Pillow<3.0',
         'mock==1.0.1',
     ],
