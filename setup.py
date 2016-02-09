@@ -43,12 +43,12 @@ setup(
     zip_safe=False,
     include_package_data=True,
     tests_require=[
-        'beautifulsoup4==4.4.0',
-        'nose>=1.3.6,<1.5',
-        'nose-progressive==1.5.1',
-        'django-nose>=1.2,<1.5',
-        'Pillow<3.0',
-        'mock==1.0.1',
+        'beautifulsoup4>=4.4.0',
+        'nose>=1.3.6',
+        'nose-progressive>=1.5.1',
+        'django-nose>=1.4',
+        'Pillow>=3',
+        'mock>=1.0.1',
     ],
     test_suite='testrunner.run_tests',
     install_requires=[
@@ -68,12 +68,10 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Topic :: Utilities'
     ],
 )
