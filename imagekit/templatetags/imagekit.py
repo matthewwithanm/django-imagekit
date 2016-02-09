@@ -4,7 +4,7 @@ from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
-from .compat import parse_bits
+from ..compat import parse_bits
 from ..cachefiles import ImageCacheFile
 from ..registry import generator_registry
 from ..lib import force_text
