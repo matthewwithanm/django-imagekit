@@ -39,7 +39,7 @@ setup(
     maintainer_email='bryan@revyver.com',
     license='BSD',
     url='http://github.com/matthewwithanm/django-imagekit/',
-    packages=find_packages(),
+    packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*', 'tests']),
     zip_safe=False,
     include_package_data=True,
     tests_require=[
