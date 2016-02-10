@@ -17,9 +17,10 @@ def get_image_file():
 
     http://en.wikipedia.org/wiki/Lenna
     http://sipi.usc.edu/database/database.php?volume=misc&image=12
-
+    https://lintian.debian.org/tags/license-problem-non-free-img-lenna.html
+    https://github.com/libav/libav/commit/8895bf7b78650c0c21c88cec0484e138ec511a4b
     """
-    path = os.path.join(settings.MEDIA_ROOT, 'lenna.png')
+    path = os.path.join(settings.MEDIA_ROOT, 'reference.png')
     return open(path, 'r+b')
 
 
