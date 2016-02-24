@@ -3,11 +3,6 @@ python: "2.7"
 sudo: false
 
 env:
-  - TOX_ENV=py26-django12
-  - TOX_ENV=py26-django13
-  - TOX_ENV=py26-django14
-  - TOX_ENV=py26-django15
-  - TOX_ENV=py26-django16
   - TOX_ENV=py27-django12
   - TOX_ENV=py27-django13
   - TOX_ENV=py27-django14
@@ -16,10 +11,6 @@ env:
   - TOX_ENV=py27-django17
   - TOX_ENV=py27-django18
   - TOX_ENV=py27-django19
-  - TOX_ENV=py32-django15
-  - TOX_ENV=py32-django16
-  - TOX_ENV=py32-django17
-  - TOX_ENV=py32-django18
   - TOX_ENV=py33-django15
   - TOX_ENV=py33-django16
   - TOX_ENV=py33-django17
@@ -28,13 +19,16 @@ env:
   - TOX_ENV=py34-django17
   - TOX_ENV=py34-django18
   - TOX_ENV=py34-django19
+  - TOX_ENV=py35-django18
   - TOX_ENV=py35-django19
 
 matrix:
-  # Python 3.5 not yet available on travis, watch this to see when it is.
   fast_finish: true
+  # Python 3.5 not yet available on travis, watch this to see when it is.
   allow_failures:
-    - env: TOX_ENV=py35-django19
+    - env:
+      - TOX_ENV=py35-django18
+      - TOX_ENV=py35-django19
 
 install:
   - pip install tox --use-mirrors
