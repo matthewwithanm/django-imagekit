@@ -1,6 +1,17 @@
 include AUTHORS
 include LICENSE
 include README.rst
-recursive-include docs *
-recursive-include imagekit/templates *
-prune tests
+include testrunner.py
+include tests/*.py
+include tests/assets/Lenna.png
+include tests/assets/lenna-*.jpg
+include tests/media/lenna.png
+prune tests/media/CACHE
+prune tests/media/b
+prune tests/media/photos
+include docs/Makefile
+include docs/conf.py
+include docs/make.bat
+include docs/*.rst
+recursive-include docs/_themes LICENSE README.rst flask_theme_support.py theme.conf *.css_t *.css *.html
+recursive-include imagekit/templates *.html
