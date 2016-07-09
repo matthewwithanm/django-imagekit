@@ -4,6 +4,7 @@
 *.pyc
 .DS_Store
 .tox
+.idea
 MANIFEST
 build
 dist
