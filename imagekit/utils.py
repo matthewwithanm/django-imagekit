@@ -132,16 +132,13 @@ def generate(generator):
 
     """
     content = generator.generate()
-
-    # If the file doesn't have a name, Django will raise an Exception while
-    # trying to save it, so we create a named temporary file.
-    if not getattr(content, 'name', None):
-        f = NamedTemporaryFile()
-        f.write(content.read())
-        f.seek(0)
-        content = f
-
-    return File(content)
+    f = File(content)
+    # The size of the File must be known or Django will try to open a file
+    # without a name and raise an Exception.
+    f.size = len(content.read())
+    # After getting the size reset the file pointer for future reads.
+    content.seek(0)
+    return f
 
 
 def call_strategy_method(file, method_name):
