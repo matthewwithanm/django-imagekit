@@ -52,8 +52,7 @@ class CachedFileBackend(object):
     @property
     def cache(self):
         if not getattr(self, '_cache', None):
-            from django.conf import settings
-            self._cache = get_cache(settings.IMAGEKIT_CACHE_BACKEND)
+            self._cache = get_cache()
         return self._cache
 
     def get_key(self, file):

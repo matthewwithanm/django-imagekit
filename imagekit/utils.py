@@ -148,12 +148,12 @@ def call_strategy_method(file, method_name):
         fn(file)
 
 
-def get_cache(backend, **kwargs):
+def get_cache(backend=settings.IMAGEKIT_CACHE_BACKEND):
     try:
         from django.core.cache import caches
     except ImportError:
         from django.core.cache import get_cache
-        return get_cache(backend, **kwargs)
+        return get_cache(backend)
 
     return caches[backend]
 
