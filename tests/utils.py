@@ -1,10 +1,12 @@
 from bs4 import BeautifulSoup
 import os
-from django.conf import settings
+import shutil
 from django.core.files import File
 from django.template import Context, Template
 from imagekit.cachefiles.backends import Simple, CacheFileState
+from imagekit.conf import settings
 from imagekit.lib import Image, StringIO
+from imagekit.utils import get_cache
 from nose.tools import assert_true, assert_false
 import pickle
 from tempfile import NamedTemporaryFile
@@ -82,3 +84,23 @@ class DummyAsyncCacheFileBackend(Simple):
 
     def generate(self, file, force=False):
         pass
+
+
+def clear_imagekit_cache():
+    cache = get_cache()
+    cache.clear()
+    # Clear IMAGEKIT_CACHEFILE_DIR
+    cache_dir = os.path.join(settings.MEDIA_ROOT, settings.IMAGEKIT_CACHEFILE_DIR)
+    if os.path.exists(cache_dir):
+        shutil.rmtree(cache_dir)
+
+
+def clear_imagekit_test_files():
+    clear_imagekit_cache()
+    for fname in os.listdir(settings.MEDIA_ROOT):
+        if fname != 'reference.png':
+            path = os.path.join(settings.MEDIA_ROOT, fname)
+            if os.path.isdir(path):
+                shutil.rmtree(path)
+            else:
+                os.remove(path)
