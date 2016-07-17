@@ -5,6 +5,7 @@
 .DS_Store
 .tox
 .idea
+.vscode
 MANIFEST
 build
 dist
