@@ -50,7 +50,7 @@ def test_single_dimension_attr():
 
 
 def test_assignment_tag():
-    ttag = r"""{% generateimage 'testspec' source=img as th %}{{ th.url }}"""
+    ttag = r"""{% generateimage 'testspec' source=img as th %}{{ th.url }}{{ th.height }}{{ th.width }}"""
     clear_imagekit_cache()
     html = render_tag(ttag)
     assert_not_equal(html.strip(), '')
