@@ -87,12 +87,15 @@ class ModelSignalRouter(object):
                    if isinstance(instance, src.model_class))
 
     @ik_model_receiver
-    def post_save_receiver(self, sender, instance=None, created=False, raw=False, **kwargs):
+    def post_save_receiver(self, sender, instance=None, created=False, update_fields=None, raw=False, **kwargs):
         if not raw:
             self.init_instance(instance)
             old_hashes = instance._ik.get('source_hashes', {}).copy()
             new_hashes = self.update_source_hashes(instance)
             for attname in self.get_source_fields(instance):
+                if update_fields and attname not in update_fields:
+                    continue
+
                 file = getattr(instance, attname)
                 if file and old_hashes.get(attname) != new_hashes[attname]:
                     self.dispatch_signal(source_saved, file, sender, instance,
