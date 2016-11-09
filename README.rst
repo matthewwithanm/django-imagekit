@@ -1,6 +1,6 @@
 |Build Status|_
 
-.. |Build Status| image:: https://travis-ci.org/matthewwithanm/django-imagekit.png?branch=develop
+.. |Build Status| image:: https://travis-ci.org/matthewwithanm/django-imagekit.svg?branch=develop
 .. _Build Status: https://travis-ci.org/matthewwithanm/django-imagekit
 
 ImageKit is a Django app for processing images. Need a thumbnail? A
