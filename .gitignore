@@ -5,6 +5,7 @@
 *.swp
 .DS_Store
 .tox
+.vagrant/
 MANIFEST
 build
 dist
