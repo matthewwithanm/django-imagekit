@@ -2,6 +2,7 @@
 *.egg*
 *.orig
 *.pyc
+*.swp
 .DS_Store
 .tox
 MANIFEST
