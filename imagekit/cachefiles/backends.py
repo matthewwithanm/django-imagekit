@@ -75,7 +75,7 @@ class CachedFileBackend(object):
             self.cache.set(key, state, self.existence_check_timeout)
         else:
             from django.conf import settings
-            if hasattr('IMAGEKIT_CACHE_TIMEOUT', settings):
+            if hasattr(settings, 'IMAGEKIT_CACHE_TIMEOUT'):
                 self.cache.set(key, state, settings.IMAGEKIT_CACHE_TIMEOUT)
             else:
                 self.cache.set(key, state)
