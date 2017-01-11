@@ -4,13 +4,15 @@
 *.pyc
 *.swp
 .DS_Store
+.idea
 .tox
 .vagrant/
+.vscode
 MANIFEST
 build
 dist
 /tests/media/*
-!/tests/media/lenna.png
+!/tests/media/reference.png
 /venv
 /venv3
 /.env
