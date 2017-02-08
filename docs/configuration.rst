@@ -55,6 +55,15 @@ Settings
 .. _`Django cache section`: https://docs.djangoproject.com/en/1.8/topics/cache/#accessing-the-cache
 
 
+.. attribute:: IMAGEKIT_CACHE_TIMEOUT
+
+    :default: ``None``
+
+    Use when you need to override the timeout used to cache file state.
+    By default it is "cache forever".
+    It's highly recommended that you use a very high timeout.
+
+
 .. attribute:: IMAGEKIT_CACHE_PREFIX
 
     :default: ``'imagekit:'``

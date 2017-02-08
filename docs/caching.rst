@@ -100,13 +100,21 @@ ImageKit. Each has its own pros and cons.
 Caching Data About Generated Files
 ----------------------------------
 
-The easiest, and most significant improvement you can make to improve the
-performance of your site is to have ImageKit cache the state of your generated
-files. The default cache file backend will already do this (if ``DEBUG`` is
-``False``), using your default Django cache backend, but you can make it way
-better by setting ``IMAGEKIT_CACHE_BACKEND``. Generally, once a file is
-generated, you will never be removing it; therefore, if you can, you should set
-``IMAGEKIT_CACHE_BACKEND`` to a cache backend that will cache forever.
+Generally, once a file is generated, you will never be removing it, so by
+default ImageKit will use default cache to cache the state of generated
+files "forever" (or only 5 minutes when ``DEBUG = True``).
+
+The time for which ImageKit will cache state is configured with
+``IMAGEKIT_CACHE_TIMEOUT``. If set to ``None`` this means "never expire"
+(default when ``DEBUG = False``). You can reduce this timeout if you want
+or set it to some numeric value in seconds if your cache backend behaves
+differently and for example do not cache values if timeout is ``None``.
+
+If you clear your cache durring deployment or some other reason probably
+you do not want to lose the cache for generated images especcialy if you
+are using some slow remote storage (like Amazon S3). Then you can configure
+seprate cache (for example redis) in your ``CACHES`` config and tell ImageKit
+to use it instead of the default cache by setting ``IMAGEKIT_CACHE_BACKEND``.
 
 
 Pre-Generating Images

@@ -14,6 +14,7 @@ class ImageKitConf(AppConf):
 
     CACHE_BACKEND = None
     CACHE_PREFIX = 'imagekit:'
+    CACHE_TIMEOUT = None
     USE_MEMCACHED_SAFE_CACHE_KEY = True
 
     def configure_cache_backend(self, value):
@@ -24,6 +25,13 @@ class ImageKitConf(AppConf):
         if value not in settings.CACHES:
             raise ImproperlyConfigured("{0} is not present in settings.CACHES".format(value))
 
+        return value
+
+    def configure_cache_timeout(self, value):
+        if value is None and settings.DEBUG:
+            # If value is not configured and is DEBUG set it to 5 minutes
+            return 300
+        # Otherwise leave it as is. If it is None then valies will never expire
         return value
 
     def configure_default_file_storage(self, value):
