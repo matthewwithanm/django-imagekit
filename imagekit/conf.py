@@ -1,5 +1,6 @@
 from appconf import AppConf
 from django.conf import settings
+from django.core.exceptions import ImproperlyConfigured
 
 
 class ImageKitConf(AppConf):
@@ -17,27 +18,11 @@ class ImageKitConf(AppConf):
 
     def configure_cache_backend(self, value):
         if value is None:
-            # DEFAULT_CACHE_ALIAS doesn't exist in Django<=1.2
-            try:
-                from django.core.cache import DEFAULT_CACHE_ALIAS as default_cache_alias
-            except ImportError:
-                default_cache_alias = 'default'
+            from django.core.cache import DEFAULT_CACHE_ALIAS
+            return DEFAULT_CACHE_ALIAS
 
-            caches = getattr(settings, 'CACHES', None)
-            if caches is None:
-                # Support Django<=1.2 there is no default `CACHES` setting
-                try:
-                    from django.core.cache.backends.dummy import DummyCache
-                except ImportError:
-                    dummy_cache = 'dummy://'
-                else:
-                    dummy_cache = 'django.core.cache.backends.dummy.DummyCache'
-                return dummy_cache
-
-            if default_cache_alias in caches:
-                value = default_cache_alias
-            else:
-                raise ValueError("The default cache alias '%s' is not available in CACHES" % default_cache_alias)
+        if value not in settings.CACHES:
+            raise ImproperlyConfigured("{0} is not present in settings.CACHES".format(value))
 
         return value
 
