@@ -62,6 +62,15 @@ Settings
     A cache prefix to be used when values are stored in ``IMAGEKIT_CACHE_BACKEND``
 
 
+.. attribute:: IMAGEKIT_CACHE_TIMEOUT
+
+    :default:  ``selected backend cache default timeout``
+
+    Use when you need to override the default timeout from the backend cache defined in
+    IMAGEKIT_CACHE_BACKEND attribute. It's highly recommended that you 
+    use a very high timeout.
+
+
 .. attribute:: IMAGEKIT_CACHEFILE_NAMER
 
     :default: ``'imagekit.cachefiles.namers.hash'``

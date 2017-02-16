@@ -74,7 +74,11 @@ class CachedFileBackend(object):
         if state == CacheFileState.DOES_NOT_EXIST:
             self.cache.set(key, state, self.existence_check_timeout)
         else:
-            self.cache.set(key, state)
+            from django.conf import settings
+            if hasattr(settings, 'IMAGEKIT_CACHE_TIMEOUT'):
+                self.cache.set(key, state, settings.IMAGEKIT_CACHE_TIMEOUT)
+            else:
+                self.cache.set(key, state)
 
     def __getstate__(self):
         state = copy(self.__dict__)
