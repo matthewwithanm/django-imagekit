@@ -148,14 +148,15 @@ def call_strategy_method(file, method_name):
         fn(file)
 
 
-def get_cache(backend=settings.IMAGEKIT_CACHE_BACKEND):
+def get_cache():
     try:
         from django.core.cache import caches
     except ImportError:
+        # Django < 1.7
         from django.core.cache import get_cache
-        return get_cache(backend)
+        return get_cache(settings.IMAGEKIT_CACHE_BACKEND)
 
-    return caches[backend]
+    return caches[settings.IMAGEKIT_CACHE_BACKEND]
 
 
 def sanitize_cache_key(key):
