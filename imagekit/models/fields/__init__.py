@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.db import models
 from django.db.models.signals import class_prepared
 from .files import ProcessedImageFieldFile
@@ -111,9 +112,11 @@ class ProcessedImageField(models.ImageField, SpecHostField):
         return super(ProcessedImageField, self).contribute_to_class(cls, name)
 
 
-try:
-    from south.modelsinspector import add_introspection_rules
-except ImportError:
-    pass
-else:
-    add_introspection_rules([], [r'^imagekit\.models\.fields\.ProcessedImageField$'])
+# If the project does not use south, then we will not try to add introspection
+if 'south' in settings.INSTALLED_APPS:
+    try:
+        from south.modelsinspector import add_introspection_rules
+    except ImportError:
+        pass
+    else:
+        add_introspection_rules([], [r'^imagekit\.models\.fields\.ProcessedImageField$'])
