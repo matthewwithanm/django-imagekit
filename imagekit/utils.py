@@ -72,6 +72,30 @@ def autodiscover():
     if _autodiscovered:
         return
 
+    try:
+        from django.utils.module_loading import autodiscover_modules
+    except ImportError:
+        # Django<1.7
+        _autodiscover_modules_fallback()
+    else:
+        autodiscover_modules('imagegenerators')
+
+
+def _autodiscover_modules_fallback():
+    """
+    Auto-discover INSTALLED_APPS imagegenerators.py modules and fail silently
+    when not present. This forces an import on them to register any admin bits
+    they may want.
+
+    Copied from django.contrib.admin
+
+    Used for Django versions < 1.7
+    """
+    global _autodiscovered
+
+    if _autodiscovered:
+        return
+
     from django.conf import settings
     try:
         from importlib import import_module
