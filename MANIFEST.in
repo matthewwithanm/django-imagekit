@@ -2,6 +2,7 @@ include AUTHORS
 include LICENSE
 include README.rst
 include testrunner.py
+include setup.cfg
 include tests/*.py
 include tests/assets/Lenna.png
 include tests/assets/lenna-*.jpg
