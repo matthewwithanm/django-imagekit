@@ -13,7 +13,7 @@ except ImportError:
 
 
 if 'publish' in sys.argv:
-    os.system('python setup.py sdist upload')
+    os.system('python setup.py sdist bdist_wheel upload')
     sys.exit()
 
 
