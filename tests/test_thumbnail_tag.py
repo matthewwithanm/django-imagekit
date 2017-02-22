@@ -1,11 +1,12 @@
 from django.template import TemplateSyntaxError
 from nose.tools import eq_, raises, assert_not_equal
 from . import imagegenerators  # noqa
-from .utils import render_tag, get_html_attrs
+from .utils import render_tag, get_html_attrs, clear_imagekit_cache
 
 
 def test_img_tag():
     ttag = r"""{% thumbnail '100x100' img %}"""
+    clear_imagekit_cache()
     attrs = get_html_attrs(ttag)
     expected_attrs = set(['src', 'width', 'height'])
     eq_(set(attrs.keys()), expected_attrs)
@@ -15,6 +16,7 @@ def test_img_tag():
 
 def test_img_tag_attrs():
     ttag = r"""{% thumbnail '100x100' img -- alt="Hello" %}"""
+    clear_imagekit_cache()
     attrs = get_html_attrs(ttag)
     eq_(attrs.get('alt'), 'Hello')
 
@@ -50,17 +52,20 @@ def test_html_attrs_assignment():
 
 def test_assignment_tag():
     ttag = r"""{% thumbnail '100x100' img as th %}{{ th.url }}"""
+    clear_imagekit_cache()
     html = render_tag(ttag)
     assert_not_equal(html, '')
 
 
 def test_single_dimension():
     ttag = r"""{% thumbnail '100x' img as th %}{{ th.width }}"""
+    clear_imagekit_cache()
     html = render_tag(ttag)
     eq_(html, '100')
 
 
 def test_alternate_generator():
     ttag = r"""{% thumbnail '1pxsq' '100x' img as th %}{{ th.width }}"""
+    clear_imagekit_cache()
     html = render_tag(ttag)
     eq_(html, '1')

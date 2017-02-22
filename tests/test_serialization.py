@@ -6,10 +6,11 @@ deserialized. This is important when using IK with Celery.
 
 from imagekit.cachefiles import ImageCacheFile
 from .imagegenerators import TestSpec
-from .utils import create_photo, pickleback, get_unique_image_file
+from .utils import create_photo, pickleback, get_unique_image_file, clear_imagekit_cache
 
 
 def test_imagespecfield():
+    clear_imagekit_cache()
     instance = create_photo('pickletest2.jpg')
     thumbnail = pickleback(instance.thumbnail)
     thumbnail.generate()
@@ -22,12 +23,14 @@ def test_circular_ref():
     This corresponds to #234
 
     """
+    clear_imagekit_cache()
     instance = create_photo('pickletest3.jpg')
     instance.thumbnail  # Cause thumbnail to be added to instance's __dict__
     pickleback(instance)
-	
+
 
 def test_cachefiles():
+    clear_imagekit_cache()
     spec = TestSpec(source=get_unique_image_file())
     file = ImageCacheFile(spec)
     file.url

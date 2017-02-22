@@ -143,6 +143,7 @@ class ImageSpec(BaseImageSpec):
             raise MissingSource("The spec '%s' has no source file associated"
                                 " with it." % self)
 
+        file_opened_locally = False
         # TODO: Move into a generator base class
         # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
         try:
@@ -151,12 +152,14 @@ class ImageSpec(BaseImageSpec):
 
             # Re-open the file -- https://code.djangoproject.com/ticket/13750
             self.source.open()
+            file_opened_locally = True
             img = open_image(self.source)
 
         new_image =  process_image(img, processors=self.processors,
                                    format=self.format, autoconvert=self.autoconvert,
                                    options=self.options)
-        self.source.close()
+        if file_opened_locally:
+            self.source.close()
         return new_image
 
 

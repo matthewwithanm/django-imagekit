@@ -72,6 +72,30 @@ def autodiscover():
     if _autodiscovered:
         return
 
+    try:
+        from django.utils.module_loading import autodiscover_modules
+    except ImportError:
+        # Django<1.7
+        _autodiscover_modules_fallback()
+    else:
+        autodiscover_modules('imagegenerators')
+
+
+def _autodiscover_modules_fallback():
+    """
+    Auto-discover INSTALLED_APPS imagegenerators.py modules and fail silently
+    when not present. This forces an import on them to register any admin bits
+    they may want.
+
+    Copied from django.contrib.admin
+
+    Used for Django versions < 1.7
+    """
+    global _autodiscovered
+
+    if _autodiscovered:
+        return
+
     from django.conf import settings
     try:
         from importlib import import_module
@@ -132,16 +156,13 @@ def generate(generator):
 
     """
     content = generator.generate()
-
-    # If the file doesn't have a name, Django will raise an Exception while
-    # trying to save it, so we create a named temporary file.
-    if not getattr(content, 'name', None):
-        f = NamedTemporaryFile()
-        f.write(content.read())
-        f.seek(0)
-        content = f
-
-    return File(content)
+    f = File(content)
+    # The size of the File must be known or Django will try to open a file
+    # without a name and raise an Exception.
+    f.size = len(content.read())
+    # After getting the size reset the file pointer for future reads.
+    content.seek(0)
+    return f
 
 
 def call_strategy_method(file, method_name):
@@ -151,14 +172,15 @@ def call_strategy_method(file, method_name):
         fn(file)
 
 
-def get_cache(backend, **kwargs):
+def get_cache():
     try:
         from django.core.cache import caches
     except ImportError:
+        # Django < 1.7
         from django.core.cache import get_cache
-        return get_cache(backend, **kwargs)
+        return get_cache(settings.IMAGEKIT_CACHE_BACKEND)
 
-    return caches[backend]
+    return caches[settings.IMAGEKIT_CACHE_BACKEND]
 
 
 def sanitize_cache_key(key):
