@@ -406,6 +406,37 @@ Django admin classes:
 
     admin.site.register(Photo, PhotoAdmin)
 
+To use specs defined outside of models:
+
+.. code-block:: python
+    
+    from django.contrib import admin
+    from imagekit.admin import AdminThumbnail
+    from imagekit import ImageSpec
+    from imagekit.processors import ResizeToFill
+    from imagekit.cachefiles import ImageCacheFile
+
+    from .models import Photo
+
+    class AdminThumbnailSpec(ImageSpec):
+        processors = [ResizeToFill(100, 30)]
+        format = 'JPEG'
+        options = {'quality': 60 }
+
+    def cached_admin_thumb(model):
+        # `image` is the name of the image field on the model
+        cached = ImageCacheFile(AdminThumbnailSpec(model.image))
+        # only generates the first time, subsequent calls use cache
+        cached.generate()
+        return cached
+
+    class PhotoAdmin(admin.ModelAdmin):
+        list_display = ('__str__', 'admin_thumbnail')
+        admin_thumbnail = AdminThumbnail(image_field=cached_admin_thumb)
+
+    admin.site.register(Photo, PhotoAdmin)
+
+ 
 AdminThumbnail can even use a custom template. For more information, see
 ``imagekit.admin.AdminThumbnail``.
 
