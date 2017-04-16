@@ -5,7 +5,7 @@ from ..cachefiles.backends import get_default_cachefile_backend
 from ..cachefiles.strategies import load_strategy
 from .. import hashers
 from ..exceptions import AlreadyRegistered, MissingSource
-from ..utils import open_image, get_by_qname, process_image
+from ..utils import open_image, get_by_qname, process_image, get_singleton
 from ..registry import generator_registry, register
 
 
@@ -148,7 +148,10 @@ class ImageSpec(BaseImageSpec):
         # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
         try:
             img = open_image(self.source)
-        except ValueError:
+        except (ValueError, AttributeError):
+            # set storage if needed -- https://code.djangoproject.com/ticket/21238
+            if not hasattr(self.source, "storage"):
+                self.source.storage = get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE, 'file storage backend')
 
             # Re-open the file -- https://code.djangoproject.com/ticket/13750
             self.source.open()
