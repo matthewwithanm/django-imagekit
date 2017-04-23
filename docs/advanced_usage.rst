@@ -90,7 +90,7 @@ for getting this information.
         @property
         def processors(self):
             model, field_name = get_field_info(self.source)
-            return [ResizeToFill(model.thumbnail_width, thumbnail.avatar_height)]
+            return [ResizeToFill(model.thumbnail_width, model.thumbnail_height)]
 
     register.generator('myapp:profile:avatar_thumbnail', AvatarThumbnail)
 
