@@ -423,9 +423,9 @@ To use specs defined outside of models:
         format = 'JPEG'
         options = {'quality': 60 }
 
-    def cached_admin_thumb(model):
+    def cached_admin_thumb(instance):
         # `image` is the name of the image field on the model
-        cached = ImageCacheFile(AdminThumbnailSpec(model.image))
+        cached = ImageCacheFile(AdminThumbnailSpec(instance.image))
         # only generates the first time, subsequent calls use cache
         cached.generate()
         return cached
