@@ -79,6 +79,7 @@ def autodiscover():
         _autodiscover_modules_fallback()
     else:
         autodiscover_modules('imagegenerators')
+        _autodiscovered = True
 
 
 def _autodiscover_modules_fallback():
