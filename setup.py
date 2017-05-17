@@ -1,4 +1,4 @@
-#/usr/bin/env python
+#!/usr/bin/env python
 import codecs
 import os
 from setuptools import setup, find_packages
@@ -7,7 +7,7 @@ import sys
 
 # Workaround for multiprocessing/nose issue. See http://bugs.python.org/msg170215
 try:
-    import multiprocessing
+    import multiprocessing  # NOQA
 except ImportError:
     pass
 
@@ -19,13 +19,15 @@ if 'publish' in sys.argv:
 
 read = lambda filepath: codecs.open(filepath, 'r', 'utf-8').read()
 
+
 def exec_file(filepath, globalz=None, localz=None):
         exec(read(filepath), globalz, localz)
+
 
 # Load package meta from the pkgmeta module without loading imagekit.
 pkgmeta = {}
 exec_file(os.path.join(os.path.dirname(__file__),
-         'imagekit', 'pkgmeta.py'), pkgmeta)
+          'imagekit', 'pkgmeta.py'), pkgmeta)
 
 
 setup(
