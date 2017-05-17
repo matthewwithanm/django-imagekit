@@ -79,6 +79,7 @@ def autodiscover():
         _autodiscover_modules_fallback()
     else:
         autodiscover_modules('imagegenerators')
+    _autodiscovered = True
 
 
 def _autodiscover_modules_fallback():
@@ -91,19 +92,12 @@ def _autodiscover_modules_fallback():
 
     Used for Django versions < 1.7
     """
-    global _autodiscovered
-
-    if _autodiscovered:
-        return
-
     from django.conf import settings
     try:
         from importlib import import_module
     except ImportError:
         from django.utils.importlib import import_module
     from django.utils.module_loading import module_has_submodule
-
-    _autodiscovered = True
 
     for app in settings.INSTALLED_APPS:
         # As of Django 1.7, settings.INSTALLED_APPS may contain classes instead of modules, hence the try/except
