@@ -93,7 +93,7 @@ class ProcessedImageField(models.ImageField, SpecHostField):
 
     def __init__(self, processors=None, format=None, options=None,
             verbose_name=None, name=None, width_field=None, height_field=None,
-            autoconvert=True, spec=None, spec_id=None, **kwargs):
+            autoconvert=None, spec=None, spec_id=None, **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
         the :class:`django.db.models.ImageField` constructor accepts, as well
@@ -101,6 +101,10 @@ class ProcessedImageField(models.ImageField, SpecHostField):
         :class:`imagekit.models.ImageSpecField`.
 
         """
+        # if spec is not provided then autoconvert will be True by default
+        if spec is None and autoconvert is None:
+            autoconvert = True
+
         SpecHost.__init__(self, processors=processors, format=format,
                 options=options, autoconvert=autoconvert, spec=spec,
                 spec_id=spec_id)
