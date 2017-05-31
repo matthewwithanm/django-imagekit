@@ -144,7 +144,7 @@ on, or what should be done with the result; that's up to you:
 
 .. code-block:: python
 
-    source_file = open('/path/to/myimage.jpg')
+    source_file = open('/path/to/myimage.jpg', 'rb')
     image_generator = Thumbnail(source=source_file)
     result = image_generator.generate()
 
@@ -159,7 +159,7 @@ example, if you wanted to save it to disk:
 
 .. code-block:: python
 
-    dest = open('/path/to/dest.jpg', 'w')
+    dest = open('/path/to/dest.jpg', 'wb')
     dest.write(result.read())
     dest.close()
 

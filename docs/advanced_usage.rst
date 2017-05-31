@@ -163,7 +163,7 @@ A simple example of a custom source group class is as follows:
         def files(self):
             os.chdir(self.dir)
             for name in glob.glob('*.jpg'):
-                yield open(name)
+                yield open(name, 'rb')
 
 Instances of this class could then be registered with one or more spec id:
 
