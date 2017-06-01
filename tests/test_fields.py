@@ -5,7 +5,9 @@ from imagekit import forms as ikforms
 from imagekit.processors import SmartCrop
 from nose.tools import eq_
 from . import imagegenerators  # noqa
-from .models import ProcessedImageFieldModel, ImageModel
+from .models import (ProcessedImageFieldModel,
+                     ProcessedImageFieldWithSpecModel,
+                     ImageModel)
 from .utils import get_image_file
 
 
@@ -17,6 +19,16 @@ def test_model_processedimagefield():
 
     eq_(instance.processed.width, 50)
     eq_(instance.processed.height, 50)
+
+
+def test_model_processedimagefield_with_spec():
+    instance = ProcessedImageFieldWithSpecModel()
+    file = File(get_image_file())
+    instance.processed.save('whatever.jpeg', file)
+    instance.save()
+
+    eq_(instance.processed.width, 100)
+    eq_(instance.processed.height, 60)
 
 
 def test_form_processedimagefield():
