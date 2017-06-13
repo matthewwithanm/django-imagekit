@@ -150,7 +150,7 @@ def generate(generator):
 
     """
     content = generator.generate()
-    f = File(content)
+    f = File(content, name=generator.source.name)
     # The size of the File must be known or Django will try to open a file
     # without a name and raise an Exception.
     f.size = len(content.read())
