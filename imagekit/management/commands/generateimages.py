@@ -12,13 +12,15 @@ segments. (Segments are separated with colons.) So, for example,
 "a:*:c" will match "a:b:c", but not "a:b:x:c", whereas "a:**:c" will
 match both. Subsegments are always matched, so "a" will match "a" as
 well as "a:b" and "a:b:c".""")
-    args = '[generator_ids]'
+
+    def add_arguments(self, parser):
+        parser.add_argument('generator_id', nargs='*', help='<app_name>:<model>:<field> for model specs')
 
     def handle(self, *args, **options):
         generators = generator_registry.get_ids()
 
-        if args:
-            patterns = self.compile_patterns(args)
+        if options['generator_id']:
+            patterns = self.compile_patterns(options['generator_id'])
             generators = (id for id in generators if any(p.match(id) for p in patterns))
 
         for generator_id in generators:
