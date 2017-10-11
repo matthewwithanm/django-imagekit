@@ -1,3 +1,4 @@
+import mock
 from django.conf import settings
 from hashlib import md5
 from imagekit.cachefiles import ImageCacheFile, LazyImageCacheFile
@@ -46,6 +47,31 @@ def test_no_source_error():
     spec = TestSpec(source=None)
     file = ImageCacheFile(spec)
     file.generate()
+
+
+def test_repr_does_not_send_existence_required():
+    """
+    Ensure that `__repr__` method does not send `existance_required` signal
+
+    Cachefile strategy may be configured to generate file on
+    `existance_required`.
+    To generate images, backend passes `ImageCacheFile` instance to worker.
+    Both celery and RQ calls `__repr__` method for each argument to enque call.
+    And if `__repr__` of object will send this signal, we will get endless
+    recursion
+
+    """
+    with mock.patch('imagekit.cachefiles.existence_required') as signal:
+        # import here to apply mock
+        from imagekit.cachefiles import ImageCacheFile
+
+        spec = TestSpec(source=get_unique_image_file())
+        file = ImageCacheFile(
+            spec,
+            cachefile_backend=DummyAsyncCacheFileBackend()
+        )
+        file.__repr__()
+        eq_(signal.send.called, False)
 
 
 def test_memcached_cache_key():
