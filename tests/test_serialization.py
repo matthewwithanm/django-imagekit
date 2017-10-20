@@ -37,4 +37,7 @@ def test_cachefiles():
     # remove link to file from spec source generator
     # test __getstate__ of ImageCacheFile
     file.generator.source = None
-    pickleback(file)
+    restored_file = pickleback(file)
+    assert file is not restored_file
+    # Assertion for #437 and #451
+    assert file.storage is restored_file.storage
