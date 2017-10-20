@@ -144,7 +144,23 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         # file is hidden link to "file" attribute
         state.pop('_file', None)
 
+        # remove storage from state as some non-FileSystemStorage can't be
+        # pickled
+        settings_storage = get_singleton(
+            settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
+            'file storage backend'
+        )
+        if state['storage'] == settings_storage:
+            state.pop('storage')
         return state
+
+    def __setstate__(self, state):
+        if 'storage' not in state:
+            state['storage'] = get_singleton(
+                settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
+                'file storage backend'
+            )
+        self.__dict__.update(state)
 
     def __nonzero__(self):
         # Python 2 compatibility
