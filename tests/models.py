@@ -1,8 +1,15 @@
 from django.db import models
 
+from imagekit import ImageSpec
 from imagekit.models import ProcessedImageField
 from imagekit.models import ImageSpecField
 from imagekit.processors import Adjust, ResizeToFill, SmartCrop
+
+
+class Thumbnail(ImageSpec):
+    processors = [ResizeToFill(100, 60)]
+    format = 'JPEG'
+    options = {'quality': 60}
 
 
 class ImageModel(models.Model):
@@ -25,6 +32,10 @@ class Photo(models.Model):
 class ProcessedImageFieldModel(models.Model):
     processed = ProcessedImageField([SmartCrop(50, 50)], format='JPEG',
             options={'quality': 90}, upload_to='p')
+
+
+class ProcessedImageFieldWithSpecModel(models.Model):
+    processed = ProcessedImageField(spec=Thumbnail, upload_to='p')
 
 
 class CountingCacheFileStrategy(object):

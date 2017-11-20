@@ -3,6 +3,7 @@ from django.conf import settings
 from django.core.files import File
 from django.core.files.images import ImageFile
 from django.utils.functional import SimpleLazyObject
+from django.utils.encoding import smart_str
 from ..files import BaseIKFile
 from ..registry import generator_registry
 from ..signals import content_required, existence_required
@@ -148,6 +149,11 @@ class ImageCacheFile(BaseIKFile, ImageFile):
     def __nonzero__(self):
         # Python 2 compatibility
         return self.__bool__()
+
+    def __repr__(self):
+        return smart_str("<%s: %s>" % (
+            self.__class__.__name__, self if self.name else "None")
+        )
 
 
 class LazyImageCacheFile(SimpleLazyObject):
