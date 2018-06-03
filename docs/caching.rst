@@ -185,6 +185,11 @@ Or, in Python:
             def on_source_saved(self, file):
                 file.generate()
 
+.. note::
+
+    If you use custom storage backend for some specs,
+    (storage passed to the field different than configured one)
+    it's required the storage to be pickleable
 
 
 __ https://pypi.python.org/pypi/django-celery
