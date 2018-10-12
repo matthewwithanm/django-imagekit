@@ -64,7 +64,7 @@ def render_tag(ttag):
 
 
 def get_html_attrs(ttag):
-    return BeautifulSoup(render_tag(ttag)).img.attrs
+    return BeautifulSoup(render_tag(ttag), features="html.parser").img.attrs
 
 
 def assert_file_is_falsy(file):
