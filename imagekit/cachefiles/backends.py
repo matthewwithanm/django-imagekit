@@ -110,7 +110,7 @@ class Simple(CachedFileBackend):
 
     def _exists(self, file):
         return bool(getattr(file, '_file', None)
-                    or file.storage.exists(file.name))
+                    or (file.name and file.storage.exists(file.name)))
 
 
 def _generate_file(backend, file, force=False):
