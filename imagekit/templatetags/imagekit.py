@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+import os
+
 from django import template
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
@@ -66,12 +68,14 @@ class GenerateImageTagNode(template.Node):
         attrs = dict((k, v.resolve(context)) for k, v in
                 self._html_attrs.items())
 
-        # Only add width and height if neither is specified (to allow for
-        # proportional in-browser scaling).
-        if not 'width' in attrs and not 'height' in attrs:
-            attrs.update(width=file.width, height=file.height)
-
-        attrs['src'] = file.url
+        if os.path.exists(file.url):
+            # Only add width and height if neither is specified (to allow for
+            # proportional in-browser scaling).
+            if not 'width' in attrs and not 'height' in attrs:
+                attrs.update(width=file.width, height=file.height)
+            attrs['src'] = file.url
+        else:
+            attrs['src'] = attrs.get('default', None)
         attr_str = ' '.join('%s="%s"' % (escape(k), escape(v)) for k, v in
                 attrs.items())
         return mark_safe('<img %s />' % attr_str)
