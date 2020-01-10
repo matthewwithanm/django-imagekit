@@ -97,6 +97,11 @@ class ThumbnailAssignmentNode(template.Node):
                 self._generator_kwargs.items())
         kwargs['source'] = self._source.resolve(context)
         kwargs.update(parse_dimensions(self._dimensions.resolve(context)))
+        if kwargs.get('anchor'):
+            # ImageKit uses pickle at protocol 0, which throws infinite recursion errors
+            # when anchor is set to a SafeString instance. This converts the SafeString
+            # into a str instance.
+            kwargs['anchor'] = repr(kwargs['anchor'])[1:-1]
         generator = generator_registry.get(generator_id, **kwargs)
 
         context[variable_name] = ImageCacheFile(generator)
@@ -120,6 +125,11 @@ class ThumbnailImageTagNode(template.Node):
                 self._generator_kwargs.items())
         kwargs['source'] = self._source.resolve(context)
         kwargs.update(dimensions)
+        if kwargs.get('anchor'):
+            # ImageKit uses pickle at protocol 0, which throws infinite recursion errors
+            # when anchor is set to a SafeString instance. This converts the SafeString
+            # into a str instance.
+            kwargs['anchor'] = repr(kwargs['anchor'])[1:-1]
         generator = generator_registry.get(generator_id, **kwargs)
 
         file = ImageCacheFile(generator)
