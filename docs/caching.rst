@@ -3,7 +3,7 @@ Caching
 
 
 Default Backend Workflow
-================
+========================
 
 
 ``ImageSpec``
@@ -28,6 +28,8 @@ wraps an image generator. They look and feel just like regular file
 objects, but they've got a little trick up their sleeve: they represent files
 that may not actually exist!
 
+
+.. _cache-file-strategy:
 
 Cache File Strategy
 -------------------
@@ -54,6 +56,8 @@ The default strategy only defines the first two of these, as follows:
         def on_existence_required(self, file):
             file.generate()
 
+
+.. _cache-file-backend:
 
 Cache File Backend
 ------------------
