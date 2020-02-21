@@ -79,11 +79,8 @@ IK3 provides analogous settings for cache file backends and strategies:
     IMAGEKIT_DEFAULT_CACHEFILE_BACKEND = 'path.to.MyCacheFileBackend'
     IMAGEKIT_DEFAULT_CACHEFILE_STRATEGY = 'path.to.MyCacheFileStrategy'
 
-See the documentation on `cache file backends`_ and `cache file strategies`_
+See the documentation on :ref:`cache file backends <cache-file-backend>` and :ref:`cache file strategies <cache-file-strategy>`
 for more details.
-
-.. _`cache file backends`:
-.. _`cache file strategies`:
 
 
 Conditional model ``processors``
@@ -93,9 +90,7 @@ In IK2, an ``ImageSpecField`` could take a ``processors`` callable instead of
 an iterable, which allowed processing decisions to made based on other
 properties of the model. IK3 does away with this feature for consistency's sake
 (if one kwarg could be callable, why not all?), but provides a much more robust
-solution: the custom ``spec``. See the `advanced usage`_ documentation for more.
-
-.. _`advanced usage`:
+solution: the custom ``spec``. See the :doc:`advanced usage <advanced_usage>` documentation for more.
 
 
 Conditonal ``cache_to`` file names
@@ -109,9 +104,7 @@ There is a way to achieve custom file names by overriding your spec's
 ``cachefile_name``, but it is not recommended, as the spec's default
 behavior is to hash the combination of ``source``, ``processors``, ``format``,
 and other spec options to ensure that changes to the spec always result in
-unique file names. See the documentation on `specs`_ for more.
-
-.. _`specs`:
+unique file names. See the documentation on :ref:`specs` for more.
 
 
 Processors have moved to PILKit

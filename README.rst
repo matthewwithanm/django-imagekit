@@ -39,6 +39,7 @@ Installation
 Usage Overview
 ==============
 
+.. _specs:
 
 Specs
 -----
