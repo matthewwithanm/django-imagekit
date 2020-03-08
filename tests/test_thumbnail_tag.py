@@ -42,7 +42,7 @@ def test_too_many_args():
 @raises(TemplateSyntaxError)
 def test_html_attrs_assignment():
     """
-    You can either use thumbnail as an assigment tag or specify html attrs,
+    You can either use thumbnail as an assignment tag or specify html attrs,
     but not both.
 
     """

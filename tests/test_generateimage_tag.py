@@ -30,7 +30,7 @@ def test_dangling_html_attrs_delimiter():
 @raises(TemplateSyntaxError)
 def test_html_attrs_assignment():
     """
-    You can either use generateimage as an assigment tag or specify html attrs,
+    You can either use generateimage as an assignment tag or specify html attrs,
     but not both.
 
     """
