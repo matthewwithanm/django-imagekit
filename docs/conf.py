@@ -54,7 +54,7 @@ execfile(os.path.join(os.path.dirname(__file__), '..', 'imagekit',
 # built documents.
 #
 # The short X.Y version.
-version = re.match('\d+\.\d+', pkgmeta['__version__']).group()
+version = re.match(r'\d+\.\d+', pkgmeta['__version__']).group()
 # The full version, including alpha/beta/rc tags.
 release = pkgmeta['__version__']
 
