@@ -1,4 +1,4 @@
-import mock
+from unittest import mock
 from django.conf import settings
 from hashlib import md5
 from imagekit.cachefiles import ImageCacheFile, LazyImageCacheFile

@@ -2,10 +2,15 @@ sudo: false
 
 language: python
 python:
+  - "3.8"
+  - "3.7"
   - "3.6"
   - "3.5"
 env:
   - DJANGO="master"
+  - DJANGO="30"
+  - DJANGO="22"
+  - DJANGO="21"
   - DJANGO="21"
   - DJANGO="20"
   - DJANGO="111"
@@ -16,31 +21,15 @@ install:
 script:
   - tox -e py$(python -c 'import sys;print("".join(map(str, sys.version_info[:2])))')-django${DJANGO}
 
-matrix:
+jobs:
   fast_finish: true
   allow_failures:
     - env: DJANGO="master"
-  include:
+  exclude:
     - python: "3.5"
-      env: DJANGO="18"
-
-    - python: "3.4"
-      env: DJANGO="20"
-    - python: "3.4"
-      env: DJANGO="111"
-    - python: "3.4"
-      env: DJANGO="18"
-    - python: "3.4"
-      env: DJANGO="16"
-    
-    - python: "2.7"
-      env: DJANGO="111"
-    - python: "2.7"
-      env: DJANGO="18"
-    - python: "2.7"
-      env: DJANGO="16"
-    - python: "2.7"
-      env: DJANGO="14"
+      env: DJANGO="30"
+    - python: "3.5"
+      env: DJANGO="master"
 
 notifications:
   irc: "irc.freenode.org#imagekit"

@@ -1,6 +1,6 @@
 from nose.tools import assert_true, assert_false
 from imagekit.cachefiles import ImageCacheFile
-from mock import Mock
+from unittest.mock import Mock
 from .utils import create_image
 from django.core.files.storage import FileSystemStorage
 from imagekit.cachefiles.backends import Simple as SimpleCFBackend
