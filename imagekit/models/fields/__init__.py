@@ -91,8 +91,8 @@ class ProcessedImageField(models.ImageField, SpecHostField):
     """
     attr_class = ProcessedImageFieldFile
 
-    def __init__(self, processors=None, format=None, options=None,
-            verbose_name=None, name=None, width_field=None, height_field=None,
+    def __init__(self, verbose_name=None, processors=None, format=None,
+            options=None, name=None, width_field=None, height_field=None,
             autoconvert=None, spec=None, spec_id=None, **kwargs):
         """
         The ProcessedImageField constructor accepts all of the arguments that
