@@ -22,8 +22,8 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         """
         :param generator: The object responsible for generating a new image.
         :param name: The filename
-        :param storage: A Django storage object that will be used to save the
-            file.
+        :param storage: A Django storage object, or a callable which returns a
+            storage object that will be used to save the file.
         :param cachefile_backend: The object responsible for managing the
             state of the file.
         :param cachefile_strategy: The object responsible for handling events
@@ -40,9 +40,9 @@ class ImageCacheFile(BaseIKFile, ImageFile):
                 name = fn(generator)
         self.name = name
 
-        storage = storage or getattr(generator, 'cachefile_storage',
-            None) or get_singleton(settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
-            'file storage backend')
+        storage = (callable(storage) and storage()) or storage or \
+            getattr(generator, 'cachefile_storage', None) or get_singleton(
+            settings.IMAGEKIT_DEFAULT_FILE_STORAGE, 'file storage backend')
         self.cachefile_backend = (
             cachefile_backend
             or getattr(generator, 'cachefile_backend', None)
