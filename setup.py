@@ -61,6 +61,7 @@ setup(
     extras_require={
         'async': ['django-celery>=3.0'],
         'async_rq': ['django-rq>=0.6.0'],
+        'async_dramatiq': ['django-dramatiq'],
     },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
