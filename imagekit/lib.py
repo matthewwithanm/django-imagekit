@@ -40,7 +40,9 @@ except ImportError:
 # If Django version is under 1.5 then use `force_unicde`
 # It is used for compatibility between Python 2 and Python 3
 try:
-    from django.utils.encoding import force_text, force_bytes, smart_text
+    from django.utils.encoding import (force_str as force_text,
+                                       force_bytes,
+                                       smart_str as smart_text)
 except ImportError:
     # Django < 1.5
     from django.utils.encoding import (force_unicode as force_text,
