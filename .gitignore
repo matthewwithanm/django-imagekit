@@ -2,9 +2,11 @@
 *.egg*
 *.orig
 *.pyc
+*.swp
 .DS_Store
-.tox
 .idea
+.tox
+.vagrant/
 .vscode
 MANIFEST
 build
