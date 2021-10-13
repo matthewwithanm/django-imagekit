@@ -23,7 +23,7 @@ def test_source_saved_signal():
     source_group = ImageFieldSourceGroup(ImageModel, 'image')
     receiver = make_counting_receiver(source_group)
     source_saved.connect(receiver)
-    ImageModel.objects.create(image=File(get_image_file()))
+    ImageModel.objects.create(image=File(get_image_file(), name='reference.png'))
     eq_(receiver.count, 1)
 
 
@@ -51,5 +51,5 @@ def test_abstract_model_signals():
     source_group = ImageFieldSourceGroup(AbstractImageModel, 'original_image')
     receiver = make_counting_receiver(source_group)
     source_saved.connect(receiver)
-    ConcreteImageModel.objects.create(original_image=File(get_image_file()))
+    ConcreteImageModel.objects.create(original_image=File(get_image_file(), name='reference.png'))
     eq_(receiver.count, 1)
