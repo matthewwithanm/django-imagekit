@@ -47,7 +47,6 @@ setup(
     tests_require=[
         'beautifulsoup4>=4.4.0',
         'nose>=1.3.6',
-        'nose-progressive>=1.5.1',
         'django-nose>=1.4',
         'Pillow',
         'mock>=1.0.1',
