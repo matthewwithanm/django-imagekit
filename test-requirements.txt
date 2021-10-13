@@ -1,0 +1,4 @@
+# Test requirements
+beautifulsoup4
+Pillow
+pytest-django

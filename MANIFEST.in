@@ -1,6 +1,8 @@
 include AUTHORS
 include LICENSE
 include README.rst
+include pytest.ini
+include test-requirements.txt
 include testrunner.py
 include setup.cfg
 include tests/*.py

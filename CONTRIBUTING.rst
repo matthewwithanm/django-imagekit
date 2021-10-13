@@ -11,7 +11,7 @@ contributions merged as quickly as possible:
    tests, first install tox, ``pip install tox``, then use ``tox``. This will let you know about any errors or style
    issues.
 4. While we're talking about tests, creating new ones for your code makes it
-   much easier for us to merge your code quickly. ImageKit uses nose_, so
+   much easier for us to merge your code quickly. ImageKit uses pytest_, so
    writing tests is painless. Check out `ours`__ for examples.
 5. It's a good idea to do your work in a branch; that way, you can work on more
    than one contribution at a time without making them interdependent.
@@ -20,5 +20,5 @@ contributions merged as quickly as possible:
 __ http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 __ https://groups.google.com/forum/#!forum/django-imagekit
 __ irc://irc.freenode.net/imagekit
-.. _nose: https://nose.readthedocs.org/en/latest/
+.. _pytest: https://docs.pytest.org/en/latest/
 __ https://github.com/matthewwithanm/django-imagekit/tree/develop/tests

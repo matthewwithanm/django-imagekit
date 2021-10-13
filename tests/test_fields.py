@@ -1,9 +1,10 @@
+import pytest
+
 from django import forms
 from django.core.files.base import File
 from django.core.files.uploadedfile import SimpleUploadedFile
 from imagekit import forms as ikforms
 from imagekit.processors import SmartCrop
-from nose.tools import eq_
 from . import imagegenerators  # noqa
 from .models import (ProcessedImageFieldModel,
                      ProcessedImageFieldWithSpecModel,
@@ -11,26 +12,29 @@ from .models import (ProcessedImageFieldModel,
 from .utils import get_image_file
 
 
+@pytest.mark.django_db(transaction=True)
 def test_model_processedimagefield():
     instance = ProcessedImageFieldModel()
     file = File(get_image_file())
     instance.processed.save('whatever.jpeg', file)
     instance.save()
 
-    eq_(instance.processed.width, 50)
-    eq_(instance.processed.height, 50)
+    assert instance.processed.width == 50
+    assert instance.processed.height == 50
 
 
+@pytest.mark.django_db(transaction=True)
 def test_model_processedimagefield_with_spec():
     instance = ProcessedImageFieldWithSpecModel()
     file = File(get_image_file())
     instance.processed.save('whatever.jpeg', file)
     instance.save()
 
-    eq_(instance.processed.width, 100)
-    eq_(instance.processed.height, 60)
+    assert instance.processed.width == 100
+    assert instance.processed.height == 60
 
 
+@pytest.mark.django_db(transaction=True)
 def test_form_processedimagefield():
     class TestForm(forms.ModelForm):
         image = ikforms.ProcessedImageField(spec_id='tests:testform_image',
@@ -45,5 +49,5 @@ def test_form_processedimagefield():
     form = TestForm({}, file_dict)
     instance = form.save()
 
-    eq_(instance.image.width, 50)
-    eq_(instance.image.height, 50)
+    assert instance.image.width == 50
+    assert instance.image.height == 50

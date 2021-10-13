@@ -7,7 +7,6 @@ from imagekit.cachefiles.backends import Simple, CacheFileState
 from imagekit.conf import settings
 from imagekit.lib import Image, StringIO
 from imagekit.utils import get_cache
-from nose.tools import assert_true, assert_false
 import pickle
 from tempfile import NamedTemporaryFile
 from .models import Photo
@@ -68,11 +67,11 @@ def get_html_attrs(ttag):
 
 
 def assert_file_is_falsy(file):
-    assert_false(bool(file), 'File is not falsy')
+    assert not bool(file), 'File is not falsy'
 
 
 def assert_file_is_truthy(file):
-    assert_true(bool(file), 'File is not truthy')
+    assert bool(file), 'File is not truthy'
 
 
 class DummyAsyncCacheFileBackend(Simple):
