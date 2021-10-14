@@ -112,13 +112,3 @@ class ProcessedImageField(models.ImageField, SpecHostField):
     def contribute_to_class(self, cls, name):
         self._set_spec_id(cls, name)
         return super(ProcessedImageField, self).contribute_to_class(cls, name)
-
-
-# If the project does not use south, then we will not try to add introspection
-if 'south' in settings.INSTALLED_APPS:
-    try:
-        from south.modelsinspector import add_introspection_rules
-    except ImportError:
-        pass
-    else:
-        add_introspection_rules([], [r'^imagekit\.models\.fields\.ProcessedImageField$'])
