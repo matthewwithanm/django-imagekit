@@ -203,7 +203,7 @@ class SpecHost:
     """
     def __init__(self, spec=None, spec_id=None, **kwargs):
 
-        spec_attrs = dict((k, v) for k, v in kwargs.items() if v is not None)
+        spec_attrs = {k: v for k, v in kwargs.items() if v is not None}
 
         if spec_attrs:
             if spec:

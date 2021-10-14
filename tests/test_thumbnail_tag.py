@@ -9,7 +9,7 @@ def test_img_tag():
     ttag = r"""{% thumbnail '100x100' img %}"""
     clear_imagekit_cache()
     attrs = get_html_attrs(ttag)
-    expected_attrs = set(['src', 'width', 'height'])
+    expected_attrs = {'src', 'width', 'height'}
     assert set(attrs.keys()) == expected_attrs
     for k in expected_attrs:
         assert attrs[k].strip() != ''

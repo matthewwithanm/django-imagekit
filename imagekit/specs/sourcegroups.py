@@ -74,9 +74,9 @@ class ModelSignalRouter:
 
         """
         self.init_instance(instance)
-        instance._ik['source_hashes'] = dict(
-            (attname, hash(getattr(instance, attname)))
-            for attname in self.get_source_fields(instance))
+        instance._ik['source_hashes'] = {
+            attname: hash(getattr(instance, attname))
+            for attname in self.get_source_fields(instance)}
         return instance._ik['source_hashes']
 
     def get_source_fields(self, instance):
@@ -84,9 +84,10 @@ class ModelSignalRouter:
         Returns a list of the source fields for the given instance.
 
         """
-        return set(src.image_field
-                   for src in self._source_groups
-                   if isinstance(instance, src.model_class))
+        return {
+            src.image_field
+            for src in self._source_groups
+            if isinstance(instance, src.model_class)}
 
     @ik_model_receiver
     def post_save_receiver(self, sender, instance=None, created=False, update_fields=None, raw=False, **kwargs):
@@ -107,12 +108,13 @@ class ModelSignalRouter:
     def post_init_receiver(self, sender, instance=None, **kwargs):
         self.init_instance(instance)
         source_fields = self.get_source_fields(instance)
-        local_fields = dict((field.name, field)
-                            for field in instance._meta.local_fields
-                            if field.name in source_fields)
-        instance._ik['source_hashes'] = dict(
-            (attname, hash(file_field))
-            for attname, file_field in local_fields.items())
+        local_fields = {
+            field.name: field
+            for field in instance._meta.local_fields
+            if field.name in source_fields}
+        instance._ik['source_hashes'] = {
+            attname: hash(file_field)
+            for attname, file_field in local_fields.items()}
 
     def dispatch_signal(self, signal, file, model_class, instance, attname):
         """

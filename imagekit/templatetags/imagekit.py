@@ -17,7 +17,7 @@ DEFAULT_THUMBNAIL_GENERATOR = 'imagekit:thumbnail'
 
 def get_cachefile(context, generator_id, generator_kwargs, source=None):
     generator_id = generator_id.resolve(context)
-    kwargs = dict((k, v.resolve(context)) for k, v in generator_kwargs.items())
+    kwargs = {k: v.resolve(context) for k, v in generator_kwargs.items()}
     generator = generator_registry.get(generator_id, **kwargs)
     return ImageCacheFile(generator)
 
@@ -30,7 +30,7 @@ def parse_dimensions(dimensions):
 
     """
     width, height = [d.strip() and int(d) or None for d in dimensions.split('x')]
-    return dict(width=width, height=height)
+    return {'width': width, 'height': height}
 
 
 class GenerateImageAssignmentNode(template.Node):
@@ -60,8 +60,7 @@ class GenerateImageTagNode(template.Node):
     def render(self, context):
         file = get_cachefile(context, self._generator_id,
                 self._generator_kwargs)
-        attrs = dict((k, v.resolve(context)) for k, v in
-                self._html_attrs.items())
+        attrs = {k: v.resolve(context) for k, v in self._html_attrs.items()}
 
         # Only add width and height if neither is specified (to allow for
         # proportional in-browser scaling).
@@ -90,8 +89,7 @@ class ThumbnailAssignmentNode(template.Node):
         variable_name = self.get_variable_name(context)
 
         generator_id = self._generator_id.resolve(context) if self._generator_id else DEFAULT_THUMBNAIL_GENERATOR
-        kwargs = dict((k, v.resolve(context)) for k, v in
-                self._generator_kwargs.items())
+        kwargs = {k: v.resolve(context) for k, v in self._generator_kwargs.items()}
         kwargs['source'] = self._source.resolve(context)
         kwargs.update(parse_dimensions(self._dimensions.resolve(context)))
         generator = generator_registry.get(generator_id, **kwargs)
@@ -113,16 +111,14 @@ class ThumbnailImageTagNode(template.Node):
     def render(self, context):
         generator_id = self._generator_id.resolve(context) if self._generator_id else DEFAULT_THUMBNAIL_GENERATOR
         dimensions = parse_dimensions(self._dimensions.resolve(context))
-        kwargs = dict((k, v.resolve(context)) for k, v in
-                self._generator_kwargs.items())
+        kwargs = {k: v.resolve(context) for k, v in self._generator_kwargs.items()}
         kwargs['source'] = self._source.resolve(context)
         kwargs.update(dimensions)
         generator = generator_registry.get(generator_id, **kwargs)
 
         file = ImageCacheFile(generator)
 
-        attrs = dict((k, v.resolve(context)) for k, v in
-                self._html_attrs.items())
+        attrs = {k: v.resolve(context) for k, v in self._html_attrs.items()}
 
         # Only add width and height if neither is specified (to allow for
         # proportional in-browser scaling).
