@@ -8,7 +8,6 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
 from pilkit.utils import *
-from .lib import NullHandler
 
 
 bad_memcached_key_chars = re.compile('[\u0000-\u001f\\s]+')
@@ -113,7 +112,7 @@ def _autodiscover_modules_fallback():
 def get_logger(logger_name='imagekit', add_null_handler=True):
     logger = logging.getLogger(logger_name)
     if add_null_handler:
-        logger.addHandler(NullHandler())
+        logger.addHandler(logging.NullHandler())
     return logger
 
 
