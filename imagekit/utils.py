@@ -3,14 +3,11 @@ import logging
 import re
 from tempfile import NamedTemporaryFile
 from hashlib import md5
+from importlib import import_module
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
-try:
-    from importlib import import_module
-except ImportError:
-    from django.utils.importlib import import_module
 from pilkit.utils import *
 from .lib import NullHandler, force_bytes
 
@@ -93,10 +90,7 @@ def _autodiscover_modules_fallback():
     Used for Django versions < 1.7
     """
     from django.conf import settings
-    try:
-        from importlib import import_module
-    except ImportError:
-        from django.utils.importlib import import_module
+    from importlib import import_module
     from django.utils.module_loading import module_has_submodule
 
     for app in settings.INSTALLED_APPS:
@@ -167,12 +161,7 @@ def call_strategy_method(file, method_name):
 
 
 def get_cache():
-    try:
-        from django.core.cache import caches
-    except ImportError:
-        # Django < 1.7
-        from django.core.cache import get_cache
-        return get_cache(settings.IMAGEKIT_CACHE_BACKEND)
+    from django.core.cache import caches
 
     return caches[settings.IMAGEKIT_CACHE_BACKEND]
 
