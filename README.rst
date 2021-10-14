@@ -22,17 +22,11 @@ __ https://github.com/fish2000/instakit
 Installation
 ============
 
-1. Install `PIL`_ or `Pillow`_. (If you're using an ``ImageField`` in Django,
+1. Install `Pillow`_. (If you're using an ``ImageField`` in Django,
    you should have already done this.)
 2. ``pip install django-imagekit``
-3. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's settings.py
+3. Add ``'imagekit'`` to your ``INSTALLED_APPS`` list in your project's ``settings.py``
 
-.. note:: If you've never seen Pillow before, it considers itself a
-   more-frequently updated "friendly" fork of PIL that's compatible with
-   setuptools. As such, it shares the same namespace as PIL does and is a
-   drop-in replacement.
-
-.. _`PIL`: http://pypi.python.org/pypi/PIL
 .. _`Pillow`: http://pypi.python.org/pypi/Pillow
 
 
