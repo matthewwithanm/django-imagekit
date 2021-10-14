@@ -1,9 +1,9 @@
 from django import template
+from django.template.library import parse_bits
 from django.utils.encoding import force_str
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
-from ..compat import parse_bits
 from ..cachefiles import ImageCacheFile
 from ..registry import generator_registry
 
@@ -167,7 +167,7 @@ def parse_ik_tag_bits(parser, bits):
                 ' setting html attributes.' % HTML_ATTRS_DELIMITER)
 
         args, html_attrs = parse_bits(parser, html_bits, [], 'args',
-                'kwargs', None, False, tag_name)
+                'kwargs', None, [], None, False, tag_name)
         if len(args):
             raise template.TemplateSyntaxError('All "%s" tag arguments after'
                     ' the "%s" token must be named.' % (tag_name,
@@ -209,7 +209,7 @@ def generateimage(parser, token):
     tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
 
     args, kwargs = parse_bits(parser, bits, ['generator_id'], 'args', 'kwargs',
-            None, False, tag_name)
+            None, [], None, False, tag_name)
 
     if len(args) != 1:
         raise template.TemplateSyntaxError('The "%s" tag requires exactly one'
@@ -257,7 +257,7 @@ def thumbnail(parser, token):
     tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
 
     args, kwargs = parse_bits(parser, bits, [], 'args', 'kwargs',
-            None, False, tag_name)
+            None, [], None, False, tag_name)
 
     if len(args) < 2:
         raise template.TemplateSyntaxError('The "%s" tag requires at least two'
