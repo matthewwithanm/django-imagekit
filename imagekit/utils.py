@@ -67,46 +67,9 @@ def autodiscover():
     if _autodiscovered:
         return
 
-    try:
-        from django.utils.module_loading import autodiscover_modules
-    except ImportError:
-        # Django<1.7
-        _autodiscover_modules_fallback()
-    else:
-        autodiscover_modules('imagegenerators')
+    from django.utils.module_loading import autodiscover_modules
+    autodiscover_modules('imagegenerators')
     _autodiscovered = True
-
-
-def _autodiscover_modules_fallback():
-    """
-    Auto-discover INSTALLED_APPS imagegenerators.py modules and fail silently
-    when not present. This forces an import on them to register any admin bits
-    they may want.
-
-    Copied from django.contrib.admin
-
-    Used for Django versions < 1.7
-    """
-    from django.conf import settings
-    from importlib import import_module
-    from django.utils.module_loading import module_has_submodule
-
-    for app in settings.INSTALLED_APPS:
-        # As of Django 1.7, settings.INSTALLED_APPS may contain classes instead of modules, hence the try/except
-        # See here: https://docs.djangoproject.com/en/dev/releases/1.7/#introspecting-applications
-        try:
-            mod = import_module(app)
-            # Attempt to import the app's admin module.
-            try:
-                import_module('%s.imagegenerators' % app)
-            except:
-                # Decide whether to bubble up this error. If the app just
-                # doesn't have an imagegenerators module, we can ignore the error
-                # attempting to import it, otherwise we want it to bubble up.
-                if module_has_submodule(mod, 'imagegenerators'):
-                    raise
-        except ImportError:
-            pass
 
 
 def get_logger(logger_name='imagekit', add_null_handler=True):
