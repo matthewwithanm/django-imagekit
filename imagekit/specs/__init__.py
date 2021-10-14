@@ -123,7 +123,7 @@ class ImageSpec(BaseImageSpec):
         # yet, preventing us from accessing the source field.
         # (This is issue #234.)
         if isinstance(self.source, ImageFieldFile):
-            field = getattr(self.source, 'field')
+            field = self.source.field
             state['_field_data'] = {
                 'instance': getattr(self.source, 'instance', None),
                 'attname': getattr(field, 'name', None),
