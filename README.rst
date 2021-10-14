@@ -1,7 +1,7 @@
 |Build Status|_
 
-.. |Build Status| image:: https://travis-ci.org/matthewwithanm/django-imagekit.svg?branch=develop
-.. _Build Status: https://travis-ci.org/matthewwithanm/django-imagekit
+.. |Build Status| image:: https://github.com/matthewwithanm/django-imagekit/actions/workflows/python.yml/badge.svg?branch=develop
+.. _Build Status: https://github.com/matthewwithanm/django-imagekit/actions/workflows/python.yml
 
 ImageKit is a Django app for processing images. Need a thumbnail? A
 black-and-white version of a user-uploaded image? ImageKit will make them for
