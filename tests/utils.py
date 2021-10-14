@@ -6,8 +6,8 @@ from django.core.files import File
 from django.template import Context, Template
 from imagekit.cachefiles.backends import Simple, CacheFileState
 from imagekit.conf import settings
-from imagekit.lib import Image
 from imagekit.utils import get_cache
+from PIL import Image
 import pickle
 from tempfile import NamedTemporaryFile
 from .models import Photo
