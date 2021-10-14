@@ -1,5 +1,3 @@
-import six
-
 from django.utils.functional import LazyObject
 from ..utils import get_singleton
 
@@ -39,7 +37,7 @@ class DictStrategy(object):
 
 
 def load_strategy(strategy):
-    if isinstance(strategy, six.string_types):
+    if isinstance(strategy, str):
         strategy = get_singleton(strategy, 'cache file strategy')
     elif isinstance(strategy, dict):
         strategy = DictStrategy(strategy)
