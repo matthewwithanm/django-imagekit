@@ -1,7 +1,6 @@
 import six
 
 from django.utils.functional import LazyObject
-from ..lib import force_text
 from ..utils import get_singleton
 
 

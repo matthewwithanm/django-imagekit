@@ -2,7 +2,6 @@ import os
 
 from django.core.files.base import File, ContentFile
 from django.utils.encoding import smart_str
-from .lib import smart_text
 from .utils import format_to_mimetype, extension_to_mimetype
 
 
@@ -102,8 +101,4 @@ class IKContentFile(ContentFile):
         return self.file.name
 
     def __str__(self):
-        return smart_str(self.file.name or '')
-
-    def __unicode__(self):
-        # Python 2
-        return smart_text(self.file.name or '')
+        return str(self.file.name or '')

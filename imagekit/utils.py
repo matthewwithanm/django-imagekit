@@ -8,7 +8,7 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
 from pilkit.utils import *
-from .lib import NullHandler, force_bytes
+from .lib import NullHandler
 
 
 bad_memcached_key_chars = re.compile('[\u0000-\u001f\\s]+')
@@ -173,7 +173,7 @@ def sanitize_cache_key(key):
         # The also can't be > 250 chars long. Since we don't know what the
         # user's cache ``KEY_FUNCTION`` setting is like, we'll limit it to 200.
         if len(new_key) >= 200:
-            new_key = '%s:%s' % (new_key[:200-33], md5(force_bytes(key)).hexdigest())
+            new_key = '%s:%s' % (new_key[:200-33], md5(key.encode('utf-8')).hexdigest())
 
         key = new_key
     return key

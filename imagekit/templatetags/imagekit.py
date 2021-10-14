@@ -1,11 +1,11 @@
 from django import template
+from django.utils.encoding import force_str
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
 from ..compat import parse_bits
 from ..cachefiles import ImageCacheFile
 from ..registry import generator_registry
-from ..lib import force_text
 
 
 register = template.Library()
@@ -42,7 +42,7 @@ class GenerateImageAssignmentNode(template.Node):
         self._variable_name = variable_name
 
     def get_variable_name(self, context):
-        return force_text(self._variable_name)
+        return force_str(self._variable_name)
 
     def render(self, context):
         variable_name = self.get_variable_name(context)
@@ -85,7 +85,7 @@ class ThumbnailAssignmentNode(template.Node):
         self._generator_kwargs = generator_kwargs
 
     def get_variable_name(self, context):
-        return force_text(self._variable_name)
+        return force_str(self._variable_name)
 
     def render(self, context):
         variable_name = self.get_variable_name(context)
