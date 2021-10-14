@@ -44,9 +44,9 @@ def test_async_backend_falsiness():
 
 
 def test_no_source_error():
+    spec = TestSpec(source=None)
+    file = ImageCacheFile(spec)
     with pytest.raises(TestSpec.MissingSource):
-        spec = TestSpec(source=None)
-        file = ImageCacheFile(spec)
         file.generate()
 
 

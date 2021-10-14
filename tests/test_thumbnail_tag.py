@@ -23,20 +23,20 @@ def test_img_tag_attrs():
 
 
 def test_dangling_html_attrs_delimiter():
+    ttag = r"""{% thumbnail '100x100' img -- %}"""
     with pytest.raises(TemplateSyntaxError):
-        ttag = r"""{% thumbnail '100x100' img -- %}"""
         render_tag(ttag)
 
 
 def test_not_enough_args():
+    ttag = r"""{% thumbnail '100x100' %}"""
     with pytest.raises(TemplateSyntaxError):
-        ttag = r"""{% thumbnail '100x100' %}"""
         render_tag(ttag)
 
 
 def test_too_many_args():
+    ttag = r"""{% thumbnail 'generator_id' '100x100' img 'extra' %}"""
     with pytest.raises(TemplateSyntaxError):
-        ttag = r"""{% thumbnail 'generator_id' '100x100' img 'extra' %}"""
         render_tag(ttag)
 
 
@@ -46,8 +46,8 @@ def test_html_attrs_assignment():
     but not both.
 
     """
+    ttag = r"""{% thumbnail '100x100' img -- alt="Hello" as th %}"""
     with pytest.raises(TemplateSyntaxError):
-        ttag = r"""{% thumbnail '100x100' img -- alt="Hello" as th %}"""
         render_tag(ttag)
 
 

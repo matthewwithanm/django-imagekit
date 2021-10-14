@@ -23,8 +23,8 @@ def test_img_tag_attrs():
 
 
 def test_dangling_html_attrs_delimiter():
+    ttag = r"""{% generateimage 'testspec' source=img -- %}"""
     with pytest.raises(TemplateSyntaxError):
-        ttag = r"""{% generateimage 'testspec' source=img -- %}"""
         render_tag(ttag)
 
 
@@ -34,8 +34,8 @@ def test_html_attrs_assignment():
     but not both.
 
     """
+    ttag = r"""{% generateimage 'testspec' source=img -- alt="Hello" as th %}"""
     with pytest.raises(TemplateSyntaxError):
-        ttag = r"""{% generateimage 'testspec' source=img -- alt="Hello" as th %}"""
         render_tag(ttag)
 
 
@@ -47,7 +47,7 @@ def test_single_dimension_attr():
     ttag = r"""{% generateimage 'testspec' source=img -- width="50" %}"""
     clear_imagekit_cache()
     attrs = get_html_attrs(ttag)
-    assert not 'height' in attrs
+    assert 'height' not in attrs
 
 
 def test_assignment_tag():
