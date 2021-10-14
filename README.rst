@@ -5,7 +5,7 @@
 
 ImageKit is a Django app for processing images. Need a thumbnail? A
 black-and-white version of a user-uploaded image? ImageKit will make them for
-you. If you need to programatically generate one image from another, you need
+you. If you need to programmatically generate one image from another, you need
 ImageKit.
 
 ImageKit comes with a bunch of image processors for common tasks like resizing
@@ -447,7 +447,7 @@ AdminThumbnail can even use a custom template. For more information, see
 Management Commands
 -------------------
 
-ImageKit has one management command—`generateimages`—which will generate cache
+ImageKit has one management command—``generateimages``—which will generate cache
 files for all of your registered image generators. You can also pass it a list
 of generator ids in order to generate images selectively.
 
@@ -473,9 +473,8 @@ people, open a pull request so we can take a look!
 You can also check out our list of `open, contributor-friendly issues`__ for
 ideas.
 
-Check out our `contributing guidelines`__ for more information about pitching in
+Check out our `contributing guidelines`_ for more information about pitching in
 with ImageKit.
 
-
 __ https://github.com/matthewwithanm/django-imagekit/issues?labels=contributor-friendly&state=open
-__ https://github.com/matthewwithanm/django-imagekit/blob/develop/CONTRIBUTING.rst
+.. _`contributing guidelines`: https://github.com/matthewwithanm/django-imagekit/blob/develop/CONTRIBUTING.rst
