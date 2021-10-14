@@ -1,11 +1,12 @@
 from bs4 import BeautifulSoup
 import os
 import shutil
+from io import BytesIO
 from django.core.files import File
 from django.template import Context, Template
 from imagekit.cachefiles.backends import Simple, CacheFileState
 from imagekit.conf import settings
-from imagekit.lib import Image, StringIO
+from imagekit.lib import Image
 from imagekit.utils import get_cache
 import pickle
 from tempfile import NamedTemporaryFile
@@ -49,7 +50,7 @@ def create_photo(name):
 
 
 def pickleback(obj):
-    pickled = StringIO()
+    pickled = BytesIO()
     pickle.dump(obj, pickled)
     pickled.seek(0)
     return pickle.load(pickled)
