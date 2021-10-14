@@ -1,4 +1,6 @@
 # Test requirements
 beautifulsoup4
 Pillow
+pytest
+pytest-cov
 pytest-django
