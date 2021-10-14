@@ -2,7 +2,7 @@ from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
 
 
-class AdminThumbnail(object):
+class AdminThumbnail:
     """
     A convenience utility for adding thumbnails to Django's admin change list.
 

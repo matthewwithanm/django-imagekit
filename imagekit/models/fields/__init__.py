@@ -20,7 +20,7 @@ class SpecHostField(SpecHost):
 
         # Register the spec with the id. This allows specs to be overridden
         # later, from outside of the model definition.
-        super(SpecHostField, self).set_spec_id(spec_id)
+        super().set_spec_id(spec_id)
 
 
 class ImageSpecField(SpecHostField):
@@ -111,4 +111,4 @@ class ProcessedImageField(models.ImageField, SpecHostField):
 
     def contribute_to_class(self, cls, name):
         self._set_spec_id(cls, name)
-        return super(ProcessedImageField, self).contribute_to_class(cls, name)
+        return super().contribute_to_class(cls, name)

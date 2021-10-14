@@ -40,7 +40,7 @@ def ik_model_receiver(fn):
     return receiver
 
 
-class ModelSignalRouter(object):
+class ModelSignalRouter:
     """
     Normally, ``ImageFieldSourceGroup`` would be directly responsible for
     watching for changes on the model field it represents. However, Django does
@@ -126,7 +126,7 @@ class ModelSignalRouter(object):
                 signal.send(sender=source_group, source=file)
 
 
-class ImageFieldSourceGroup(object):
+class ImageFieldSourceGroup:
     """
     A source group that repesents a particular field across all instances of a
     model and its subclasses.
@@ -149,7 +149,7 @@ class ImageFieldSourceGroup(object):
                 yield getattr(instance, self.image_field)
 
 
-class SourceGroupFilesGenerator(object):
+class SourceGroupFilesGenerator:
     """
     A Python generator that yields cache file objects for source groups.
 

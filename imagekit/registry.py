@@ -3,7 +3,7 @@ from .signals import content_required, existence_required, source_saved
 from .utils import autodiscover, call_strategy_method
 
 
-class GeneratorRegistry(object):
+class GeneratorRegistry:
     """
     An object for registering generators. This registry provides
     a convenient way for a distributable app to define default generators
@@ -61,7 +61,7 @@ class GeneratorRegistry(object):
             call_strategy_method(file, callback)
 
 
-class SourceGroupRegistry(object):
+class SourceGroupRegistry:
     """
     The source group registry is responsible for listening to source_* signals
     on source groups, and relaying them to the image generated file strategies
@@ -116,7 +116,7 @@ class SourceGroupRegistry(object):
             call_strategy_method(file, callback_name)
 
 
-class CacheFileRegistry(object):
+class CacheFileRegistry:
     """
     An object for registering generated files with image generators. The two are
     associated with each other via a string id. We do this (as opposed to
@@ -156,7 +156,7 @@ class CacheFileRegistry(object):
                     yield file
 
 
-class Register(object):
+class Register:
     """
     Register generators and generated files.
 
@@ -179,7 +179,7 @@ class Register(object):
         source_group_registry.register(generator_id, source_group)
 
 
-class Unregister(object):
+class Unregister:
     """
     Unregister generators and generated files.
 

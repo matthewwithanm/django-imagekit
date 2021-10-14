@@ -57,7 +57,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
                              'cache file strategy')
         )
 
-        super(ImageCacheFile, self).__init__(storage=storage)
+        super().__init__(storage=storage)
 
     def _require_file(self):
         if getattr(self, '_file', None) is None:
@@ -175,7 +175,7 @@ class LazyImageCacheFile(SimpleLazyObject):
         def setup():
             generator = generator_registry.get(generator_id, *args, **kwargs)
             return ImageCacheFile(generator)
-        super(LazyImageCacheFile, self).__init__(setup)
+        super().__init__(setup)
 
     def __repr__(self):
         return '<%s: %s>' % (self.__class__.__name__, str(self) or 'None')

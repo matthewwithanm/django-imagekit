@@ -9,7 +9,7 @@ from imagekit.cachefiles.strategies import Optimistic as OptimisticStrategy
 from .utils import create_image
 
 
-class ImageGenerator(object):
+class ImageGenerator:
     def generate(self):
         return create_image()
 

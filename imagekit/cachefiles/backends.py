@@ -7,7 +7,7 @@ from django.core.exceptions import ImproperlyConfigured
 from ..utils import get_cache, get_singleton, sanitize_cache_key
 
 
-class CacheFileState(object):
+class CacheFileState:
     EXISTS = 'exists'
     GENERATING = 'generating'
     DOES_NOT_EXIST = 'does_not_exist'
@@ -27,7 +27,7 @@ class InvalidFileBackendError(ImproperlyConfigured):
     pass
 
 
-class AbstractCacheFileBackend(object):
+class AbstractCacheFileBackend:
     """
     An abstract cache file backend. This isn't used by any internal classes and
     is included simply to illustrate the minimum interface of a cache file
@@ -41,7 +41,7 @@ class AbstractCacheFileBackend(object):
         raise NotImplementedError
 
 
-class CachedFileBackend(object):
+class CachedFileBackend:
     existence_check_timeout = 5
     """
     The number of seconds to wait before rechecking to see if the file exists.
@@ -159,7 +159,7 @@ class Celery(BaseAsync):
         except ImportError:
             raise ImproperlyConfigured('You must install celery to use'
                                        ' imagekit.cachefiles.backends.Celery.')
-        super(Celery, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def schedule_generation(self, file, force=False):
         _celery_task.delay(self, file, force=force)
@@ -170,7 +170,7 @@ class Async(Celery):
     def __init__(self, *args, **kwargs):
         message = '{path}.Async is deprecated. Use {path}.Celery instead.'
         warnings.warn(message.format(path=__name__), DeprecationWarning)
-        super(Async, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
 
 try:
@@ -191,7 +191,7 @@ class RQ(BaseAsync):
         except ImportError:
             raise ImproperlyConfigured('You must install django-rq to use'
                                        ' imagekit.cachefiles.backends.RQ.')
-        super(RQ, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def schedule_generation(self, file, force=False):
         _rq_job.delay(self, file, force=force)
@@ -215,7 +215,7 @@ class Dramatiq(BaseAsync):
         except ImportError:
             raise ImproperlyConfigured('You must install django-dramatiq to use'
                                         ' imagekit.cachefiles.backends.Dramatiq.')
-        super(Dramatiq, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def schedule_generation(self, file, force=False):
         _dramatiq_actor.send(self, file, force=force)

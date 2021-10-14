@@ -12,4 +12,4 @@ class ProcessedImageFieldFile(ImageFieldFile):
         ext = suggest_extension(name, spec.format)
         new_name = '%s%s' % (filename, ext)
         content = generate(spec)
-        return super(ProcessedImageFieldFile, self).save(new_name, content, save)
+        return super().save(new_name, content, save)

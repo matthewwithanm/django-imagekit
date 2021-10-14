@@ -11,7 +11,7 @@ from ..registry import generator_registry, register
 from ..utils import get_by_qname, open_image, process_image
 
 
-class BaseImageSpec(object):
+class BaseImageSpec:
     """
     An object that defines how an new image should be generated from a source
     image.
@@ -87,7 +87,7 @@ class ImageSpec(BaseImageSpec):
 
     def __init__(self, source):
         self.source = source
-        super(ImageSpec, self).__init__()
+        super().__init__()
 
     @property
     def cachefile_name(self):
@@ -195,7 +195,7 @@ def create_spec(class_attrs, state):
     return instance
 
 
-class SpecHost(object):
+class SpecHost:
     """
     An object that ostensibly has a spec attribute but really delegates to the
     spec registry.

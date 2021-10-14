@@ -37,7 +37,7 @@ class ProcessedImageFieldWithSpecModel(models.Model):
     processed = ProcessedImageField(spec=Thumbnail, upload_to='p')
 
 
-class CountingCacheFileStrategy(object):
+class CountingCacheFileStrategy:
     def __init__(self):
         self.on_existence_required_count = 0
         self.on_content_required_count = 0

@@ -83,7 +83,7 @@ def test_memcached_cache_key():
 
     """
 
-    class MockFile(object):
+    class MockFile:
         def __init__(self, name):
             self.name = name
 

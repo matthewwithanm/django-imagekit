@@ -1,7 +1,7 @@
 from ..utils import get_singleton
 
 
-class JustInTime(object):
+class JustInTime:
     """
     A strategy that ensures the file exists right before it's needed.
 
@@ -14,7 +14,7 @@ class JustInTime(object):
         file.generate()
 
 
-class Optimistic(object):
+class Optimistic:
     """
     A strategy that acts immediately when the source file changes and assumes
     that the cache files will not be removed (i.e. it doesn't ensure the
@@ -29,7 +29,7 @@ class Optimistic(object):
         return False
 
 
-class DictStrategy(object):
+class DictStrategy:
     def __init__(self, callbacks):
         for k, v in callbacks.items():
             setattr(self, k, v)
