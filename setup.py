@@ -44,14 +44,6 @@ setup(
     packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*', 'tests']),
     zip_safe=False,
     include_package_data=True,
-    tests_require=[
-        'beautifulsoup4>=4.4.0',
-        'nose>=1.3.6',
-        'django-nose>=1.4',
-        'Pillow',
-        'mock>=1.0.1',
-    ],
-    test_suite='testrunner.run_tests',
     install_requires=[
         'django-appconf>=0.5',
         'pilkit>=0.2.0',

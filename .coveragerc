@@ -1,0 +1,9 @@
+[run]
+branch = true
+parallel = true
+
+[report]
+show_missing = true
+skip_empty = true
+skip_covered = true
+precision = 2

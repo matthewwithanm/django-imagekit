@@ -3,7 +3,7 @@ from imagekit.processors import ResizeToFill
 
 
 class TestSpec(ImageSpec):
-    pass
+    __test__ = False
 
 
 class ResizeTo1PixelSquare(ImageSpec):

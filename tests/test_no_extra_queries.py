@@ -1,5 +1,4 @@
-from nose.tools import assert_false
-from mock import Mock, PropertyMock, patch
+from unittest.mock import Mock, PropertyMock, patch
 from .models import Photo
 
 
@@ -13,4 +12,4 @@ def test_dont_access_source():
     pmock.__get__ = Mock()
     with patch.object(Photo, 'original_image', pmock):
         photo = Photo()  # noqa
-        assert_false(pmock.__get__.called)
+        assert not pmock.__get__.called

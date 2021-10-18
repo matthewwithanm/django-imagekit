@@ -3,12 +3,14 @@ Make sure that the various IK classes can be successfully serialized and
 deserialized. This is important when using IK with Celery.
 
 """
+import pytest
 
 from imagekit.cachefiles import ImageCacheFile
 from .imagegenerators import TestSpec
 from .utils import create_photo, pickleback, get_unique_image_file, clear_imagekit_cache
 
 
+@pytest.mark.django_db(transaction=True)
 def test_imagespecfield():
     clear_imagekit_cache()
     instance = create_photo('pickletest2.jpg')
@@ -16,6 +18,7 @@ def test_imagespecfield():
     thumbnail.generate()
 
 
+@pytest.mark.django_db(transaction=True)
 def test_circular_ref():
     """
     A model instance with a spec field in its dict shouldn't raise a KeyError.

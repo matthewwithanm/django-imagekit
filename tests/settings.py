@@ -28,24 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'imagekit',
     'tests',
-    'django_nose',
 ]
-
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-NOSE_ARGS = [
-    '-s',
-
-    # When the tests are run --with-coverage, these args configure coverage
-    # reporting (requires coverage to be installed).
-    # Without the --with-coverage flag, they have no effect.
-    '--cover-tests',
-    '--cover-html',
-    '--cover-package=imagekit',
-    '--cover-html-dir=%s' % os.path.join(BASE_PATH, 'cover')
-]
-
-if os.getenv('TERM'):
-    NOSE_ARGS.append('--with-progressive')
 
 CACHE_BACKEND = 'locmem://'
 
