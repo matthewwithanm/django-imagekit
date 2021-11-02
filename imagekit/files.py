@@ -49,7 +49,7 @@ class BaseIKFile(File):
 
     def _get_size(self):
         self._require_file()
-        if not self._committed:
+        if not getattr(self, '_committed', False):
             return self.file.size
         return self.storage.size(self.name)
     size = property(_get_size)

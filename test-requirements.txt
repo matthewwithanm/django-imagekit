@@ -1,0 +1,7 @@
+# Test requirements
+mock; python_version<'3'
+beautifulsoup4
+Pillow
+pytest
+pytest-cov
+pytest-django

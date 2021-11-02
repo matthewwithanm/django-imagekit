@@ -44,23 +44,16 @@ setup(
     packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*', 'tests']),
     zip_safe=False,
     include_package_data=True,
-    tests_require=[
-        'beautifulsoup4>=4.4.0',
-        'nose>=1.3.6',
-        'nose-progressive>=1.5.1',
-        'django-nose>=1.4',
-        'Pillow',
-        'mock>=1.0.1',
-    ],
-    test_suite='testrunner.run_tests',
     install_requires=[
-        'django-appconf>=0.5',
+        "django-appconf>=0.5,<1.0.4; python_version<'3'",
+        "django-appconf; python_version>'3'",
         'pilkit>=0.2.0',
         'six',
     ],
     extras_require={
         'async': ['django-celery>=3.0'],
         'async_rq': ['django-rq>=0.6.0'],
+        'async_dramatiq': ['django-dramatiq>=0.4.0'],
     },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -75,6 +68,11 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Topic :: Utilities'
     ],
 )

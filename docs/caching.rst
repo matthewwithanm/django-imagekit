@@ -3,7 +3,7 @@ Caching
 
 
 Default Backend Workflow
-================
+========================
 
 
 ``ImageSpec``
@@ -28,6 +28,8 @@ wraps an image generator. They look and feel just like regular file
 objects, but they've got a little trick up their sleeve: they represent files
 that may not actually exist!
 
+
+.. _cache-file-strategy:
 
 Cache File Strategy
 -------------------
@@ -54,6 +56,8 @@ The default strategy only defines the first two of these, as follows:
         def on_existence_required(self, file):
             file.generate()
 
+
+.. _cache-file-backend:
 
 Cache File Backend
 ------------------
@@ -185,6 +189,11 @@ Or, in Python:
             def on_source_saved(self, file):
                 file.generate()
 
+.. note::
+
+    If you use custom storage backend for some specs,
+    (storage passed to the field different than configured one)
+    it's required the storage to be pickleable
 
 
 __ https://pypi.python.org/pypi/django-celery

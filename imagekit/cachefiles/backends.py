@@ -110,7 +110,7 @@ class Simple(CachedFileBackend):
 
     def _exists(self, file):
         return bool(getattr(file, '_file', None)
-                    or file.storage.exists(file.name))
+                    or (file.name and file.storage.exists(file.name)))
 
 
 def _generate_file(backend, file, force=False):
@@ -140,7 +140,7 @@ class BaseAsync(Simple):
 
 
 try:
-    from celery import task
+    from celery import shared_task as task
 except ImportError:
     pass
 else:
@@ -193,3 +193,27 @@ class RQ(BaseAsync):
 
     def schedule_generation(self, file, force=False):
         _rq_job.delay(self, file, force=force)
+
+
+try:
+    from dramatiq import actor
+except ImportError:
+    pass
+else:
+    _dramatiq_actor = actor()(_generate_file)
+
+
+class Dramatiq(BaseAsync):
+    """
+    A backend that uses Dramatiq to generate the images.
+    """
+    def __init__(self, *args, **kwargs):
+        try:
+            import dramatiq  # noqa
+        except ImportError:
+            raise ImproperlyConfigured('You must install django-dramatiq to use'
+                                        ' imagekit.cachefiles.backends.Dramatiq.')
+        super(Dramatiq, self).__init__(*args, **kwargs)
+
+    def schedule_generation(self, file, force=False):
+        _dramatiq_actor.send(self, file, force=force)

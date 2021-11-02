@@ -1,4 +1,5 @@
 # flake8: noqa
+import sys
 
 # Required PIL classes may or may not be available from the root namespace
 # depending on the installation method used.
@@ -39,13 +40,18 @@ except ImportError:
 # This function will replace `unicode` used in the code
 # If Django version is under 1.5 then use `force_unicde`
 # It is used for compatibility between Python 2 and Python 3
-try:
-    from django.utils.encoding import force_text, force_bytes, smart_text
-except ImportError:
-    # Django < 1.5
-    from django.utils.encoding import (force_unicode as force_text,
-                                       smart_str as force_bytes,
-                                       smart_unicode as smart_text)
+if sys.version_info >= (3, 0):
+    from django.utils.encoding import (force_bytes,
+                                      force_str as force_text,
+                                      smart_str as smart_text)
+else:
+    try:
+        from django.utils.encoding import force_text, force_bytes, smart_text
+    except ImportError:
+        # Django < 1.5
+        from django.utils.encoding import (force_unicode as force_text,
+                                        smart_str as force_bytes,
+                                        smart_unicode as smart_text)
 
 __all__ = ['Image', 'ImageColor', 'ImageChops', 'ImageEnhance', 'ImageFile',
            'ImageFilter', 'ImageDraw', 'ImageStat', 'StringIO', 'NullHandler',

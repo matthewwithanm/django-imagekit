@@ -1,6 +1,10 @@
-from nose.tools import assert_true, assert_false
 from imagekit.cachefiles import ImageCacheFile
-from mock import Mock
+
+try:
+    from unittest.mock import Mock
+except:
+    from mock import Mock
+
 from .utils import create_image
 from django.core.files.storage import FileSystemStorage
 from imagekit.cachefiles.backends import Simple as SimpleCFBackend
@@ -33,8 +37,8 @@ def test_no_io_on_bool():
     """
     file = get_image_cache_file()
     bool(file)
-    assert_false(file.storage.exists.called)
-    assert_false(file.storage.open.called)
+    assert not file.storage.exists.called
+    assert not file.storage.open.called
 
 
 def test_no_io_on_url():
@@ -45,5 +49,5 @@ def test_no_io_on_url():
     """
     file = get_image_cache_file()
     file.url
-    assert_false(file.storage.exists.called)
-    assert_false(file.storage.open.called)
+    assert not file.storage.exists.called
+    assert not file.storage.open.called
