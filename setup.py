@@ -45,7 +45,8 @@ setup(
     zip_safe=False,
     include_package_data=True,
     install_requires=[
-        'django-appconf>=0.5',
+        "django-appconf>=0.5,<1.0.4; python_version<'3'",
+        "django-appconf; python_version>'3'",
         'pilkit>=0.2.0',
         'six',
     ],

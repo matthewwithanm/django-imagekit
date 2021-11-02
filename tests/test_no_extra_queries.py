@@ -1,4 +1,8 @@
-from unittest.mock import Mock, PropertyMock, patch
+try:
+    from unittest.mock import Mock, PropertyMock, patch
+except:
+    from mock import Mock, PropertyMock, patch
+
 from .models import Photo
 
 
