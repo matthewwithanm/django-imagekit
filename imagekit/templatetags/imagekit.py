@@ -64,7 +64,7 @@ class GenerateImageTagNode(template.Node):
 
         # Only add width and height if neither is specified (to allow for
         # proportional in-browser scaling).
-        if not 'width' in attrs and not 'height' in attrs:
+        if 'width' not in attrs and 'height' not in attrs:
             attrs.update(width=file.width, height=file.height)
 
         attrs['src'] = file.url
@@ -122,7 +122,7 @@ class ThumbnailImageTagNode(template.Node):
 
         # Only add width and height if neither is specified (to allow for
         # proportional in-browser scaling).
-        if not 'width' in attrs and not 'height' in attrs:
+        if 'width' not in attrs and 'height' not in attrs:
             attrs.update(width=file.width, height=file.height)
 
         attrs['src'] = file.url
