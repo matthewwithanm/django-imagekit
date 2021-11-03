@@ -5,12 +5,6 @@ import sys
 
 from setuptools import find_packages, setup
 
-# Workaround for multiprocessing/nose issue. See http://bugs.python.org/msg170215
-try:
-    import multiprocessing  # NOQA
-except ImportError:
-    pass
-
 
 if 'publish' in sys.argv:
     os.system('python setup.py sdist bdist_wheel upload')
