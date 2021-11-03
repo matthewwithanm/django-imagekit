@@ -152,8 +152,7 @@ class CacheFileRegistry:
     def get(self, generator_id):
         for k, v in self._cachefiles.items():
             if generator_id in v:
-                for file in k():
-                    yield file
+                yield from k()
 
 
 class Register:

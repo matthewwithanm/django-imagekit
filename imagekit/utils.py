@@ -18,8 +18,7 @@ def get_nonabstract_descendants(model):
     if not model._meta.abstract:
         yield model
     for s in model.__subclasses__():
-        for m in get_nonabstract_descendants(s):
-            yield m
+        yield from get_nonabstract_descendants(s)
 
 
 def get_by_qname(path, desc):
