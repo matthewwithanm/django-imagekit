@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # ImageKit documentation build configuration file, created by
 # sphinx-quickstart on Sun Sep 25 17:05:55 2011.
@@ -44,8 +43,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ImageKit'
-copyright = u'2011, Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett & Matthew Tretter'
+project = 'ImageKit'
+copyright = '2011, Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett & Matthew Tretter'
 
 pkgmeta = {}
 execfile(os.path.join(os.path.dirname(__file__), '..', 'imagekit',
@@ -191,8 +190,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'ImageKit.tex', u'ImageKit Documentation',
-   u'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett \\& Matthew Tretter', 'manual'),
+  ('index', 'ImageKit.tex', 'ImageKit Documentation',
+   'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett \\& Matthew Tretter', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -221,8 +220,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'imagekit', u'ImageKit Documentation',
-     [u'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett & Matthew Tretter'], 1)
+    ('index', 'imagekit', 'ImageKit Documentation',
+     ['Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett & Matthew Tretter'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -235,7 +234,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ImageKit', u'ImageKit Documentation', u'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett & Matthew Tretter',
+  ('index', 'ImageKit', 'ImageKit Documentation', 'Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett & Matthew Tretter',
    'ImageKit', 'One line description of project.', 'Miscellaneous'),
 ]
 
