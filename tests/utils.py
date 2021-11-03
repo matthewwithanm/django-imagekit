@@ -1,15 +1,18 @@
-from bs4 import BeautifulSoup
 import os
+import pickle
 import shutil
 from io import BytesIO
+from tempfile import NamedTemporaryFile
+
+from bs4 import BeautifulSoup
 from django.core.files import File
 from django.template import Context, Template
-from imagekit.cachefiles.backends import Simple, CacheFileState
+from PIL import Image
+
+from imagekit.cachefiles.backends import Simple
 from imagekit.conf import settings
 from imagekit.utils import get_cache
-from PIL import Image
-import pickle
-from tempfile import NamedTemporaryFile
+
 from .models import Photo
 
 

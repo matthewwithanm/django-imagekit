@@ -1,6 +1,5 @@
 import logging
 import re
-from tempfile import NamedTemporaryFile
 from hashlib import md5
 from importlib import import_module
 
@@ -8,7 +7,6 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files import File
 from pilkit.utils import *
-
 
 bad_memcached_key_chars = re.compile('[\u0000-\u001f\\s]+')
 

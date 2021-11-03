@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import codecs
 import os
-from setuptools import setup, find_packages
 import sys
 
+from setuptools import find_packages, setup
 
 # Workaround for multiprocessing/nose issue. See http://bugs.python.org/msg170215
 try:

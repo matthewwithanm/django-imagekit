@@ -1,8 +1,7 @@
 from django.db import models
 
 from imagekit import ImageSpec
-from imagekit.models import ProcessedImageField
-from imagekit.models import ImageSpecField
+from imagekit.models import ImageSpecField, ProcessedImageField
 from imagekit.processors import Adjust, ResizeToFill, SmartCrop
 
 

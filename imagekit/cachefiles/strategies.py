@@ -1,4 +1,3 @@
-from django.utils.functional import LazyObject
 from ..utils import get_singleton
 
 

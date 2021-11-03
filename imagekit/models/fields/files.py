@@ -1,6 +1,8 @@
-from django.db.models.fields.files import ImageFieldFile
 import os
-from ...utils import suggest_extension, generate
+
+from django.db.models.fields.files import ImageFieldFile
+
+from ...utils import generate, suggest_extension
 
 
 class ProcessedImageFieldFile(ImageFieldFile):

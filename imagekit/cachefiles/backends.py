@@ -1,8 +1,10 @@
-from ..utils import get_singleton, get_cache, sanitize_cache_key
 import warnings
 from copy import copy
-from django.core.exceptions import ImproperlyConfigured
+
 from django.conf import settings
+from django.core.exceptions import ImproperlyConfigured
+
+from ..utils import get_cache, get_singleton, sanitize_cache_key
 
 
 class CacheFileState(object):

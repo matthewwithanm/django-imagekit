@@ -1,8 +1,8 @@
 import pytest
-
 from django.template import TemplateSyntaxError
+
 from . import imagegenerators  # noqa
-from .utils import render_tag, get_html_attrs, clear_imagekit_cache
+from .utils import clear_imagekit_cache, get_html_attrs, render_tag
 
 
 def test_img_tag():

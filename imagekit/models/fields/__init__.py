@@ -1,11 +1,11 @@
-from django.conf import settings
 from django.db import models
 from django.db.models.signals import class_prepared
-from .files import ProcessedImageFieldFile
-from .utils import ImageSpecFileDescriptor
+
+from ...registry import register
 from ...specs import SpecHost
 from ...specs.sourcegroups import ImageFieldSourceGroup
-from ...registry import register
+from .files import ProcessedImageFieldFile
+from .utils import ImageSpecFileDescriptor
 
 
 class SpecHostField(SpecHost):

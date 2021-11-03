@@ -1,5 +1,5 @@
-from .registry import register
 from .processors import Thumbnail as ThumbnailProcessor
+from .registry import register
 from .specs import ImageSpec
 
 

@@ -7,7 +7,6 @@ from django.utils.safestring import mark_safe
 from ..cachefiles import ImageCacheFile
 from ..registry import generator_registry
 
-
 register = template.Library()
 
 

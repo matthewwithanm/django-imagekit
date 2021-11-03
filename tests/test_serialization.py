@@ -6,8 +6,10 @@ deserialized. This is important when using IK with Celery.
 import pytest
 
 from imagekit.cachefiles import ImageCacheFile
+
 from .imagegenerators import TestSpec
-from .utils import create_photo, pickleback, get_unique_image_file, clear_imagekit_cache
+from .utils import (clear_imagekit_cache, create_photo, get_unique_image_file,
+                    pickleback)
 
 
 @pytest.mark.django_db(transaction=True)

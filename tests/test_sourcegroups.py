@@ -1,9 +1,10 @@
 import pytest
-
 from django.core.files import File
+
 from imagekit.signals import source_saved
 from imagekit.specs.sourcegroups import ImageFieldSourceGroup
-from . models import AbstractImageModel, ImageModel, ConcreteImageModel
+
+from .models import AbstractImageModel, ConcreteImageModel, ImageModel
 from .utils import get_image_file
 
 

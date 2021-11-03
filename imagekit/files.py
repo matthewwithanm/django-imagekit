@@ -1,8 +1,8 @@
 import os
 
-from django.core.files.base import File, ContentFile
-from django.utils.encoding import smart_str
-from .utils import format_to_mimetype, extension_to_mimetype
+from django.core.files.base import ContentFile, File
+
+from .utils import extension_to_mimetype, format_to_mimetype
 
 
 class BaseIKFile(File):

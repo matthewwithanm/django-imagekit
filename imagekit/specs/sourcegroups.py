@@ -10,9 +10,11 @@ have two responsibilities:
 
 """
 
+import inspect
+
 from django.db.models.signals import post_init, post_save
 from django.utils.functional import wraps
-import inspect
+
 from ..cachefiles import LazyImageCacheFile
 from ..signals import source_saved
 from ..utils import get_nonabstract_descendants

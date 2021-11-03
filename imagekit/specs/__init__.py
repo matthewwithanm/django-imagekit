@@ -1,12 +1,14 @@
 from copy import copy
+
 from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
+
+from .. import hashers
 from ..cachefiles.backends import get_default_cachefile_backend
 from ..cachefiles.strategies import load_strategy
-from .. import hashers
 from ..exceptions import AlreadyRegistered, MissingSource
-from ..utils import open_image, get_by_qname, process_image
 from ..registry import generator_registry, register
+from ..utils import get_by_qname, open_image, process_image
 
 
 class BaseImageSpec(object):
