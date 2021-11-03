@@ -12,6 +12,7 @@ bad_memcached_key_chars = re.compile('[\u0000-\u001f\\s]+')
 
 _autodiscovered = False
 
+
 def get_nonabstract_descendants(model):
     """ Returns all non-abstract descendants of the model. """
     if not model._meta.abstract:
@@ -133,7 +134,7 @@ def sanitize_cache_key(key):
         # The also can't be > 250 chars long. Since we don't know what the
         # user's cache ``KEY_FUNCTION`` setting is like, we'll limit it to 200.
         if len(new_key) >= 200:
-            new_key = '%s:%s' % (new_key[:200-33], md5(key.encode('utf-8')).hexdigest())
+            new_key = '%s:%s' % (new_key[:200 - 33], md5(key.encode('utf-8')).hexdigest())
 
         key = new_key
     return key

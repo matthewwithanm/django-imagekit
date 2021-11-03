@@ -146,7 +146,8 @@ class ImageSpec(BaseImageSpec):
                                 " with it." % self)
 
         # TODO: Move into a generator base class
-        # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
+        # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part.
+        #       (The tricky part is how to deal with original_format since generator base class won't have one.)
 
         closed = self.source.closed
         if closed:

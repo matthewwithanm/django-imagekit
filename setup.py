@@ -21,7 +21,7 @@ read = lambda filepath: codecs.open(filepath, 'r', 'utf-8').read()
 
 
 def exec_file(filepath, globalz=None, localz=None):
-        exec(read(filepath), globalz, localz)
+    exec(read(filepath), globalz, localz)
 
 
 # Load package meta from the pkgmeta module without loading imagekit.
