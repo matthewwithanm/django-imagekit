@@ -162,10 +162,6 @@ class ImageCacheFile(BaseIKFile, ImageFile):
             )
         self.__dict__.update(state)
 
-    def __nonzero__(self):
-        # Python 2 compatibility
-        return self.__bool__()
-
     def __repr__(self):
         return smart_str("<%s: %s>" % (
             self.__class__.__name__, self if self.name else "None")
