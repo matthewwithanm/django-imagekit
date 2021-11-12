@@ -1,15 +1,15 @@
 import pytest
-
 from django.template import TemplateSyntaxError
+
 from . import imagegenerators  # noqa
-from .utils import render_tag, get_html_attrs, clear_imagekit_cache
+from .utils import clear_imagekit_cache, get_html_attrs, render_tag
 
 
 def test_img_tag():
     ttag = r"""{% thumbnail '100x100' img %}"""
     clear_imagekit_cache()
     attrs = get_html_attrs(ttag)
-    expected_attrs = set(['src', 'width', 'height'])
+    expected_attrs = {'src', 'width', 'height'}
     assert set(attrs.keys()) == expected_attrs
     for k in expected_attrs:
         assert attrs[k].strip() != ''

@@ -1,15 +1,17 @@
 from copy import copy
+
 from django.conf import settings
 from django.db.models.fields.files import ImageFieldFile
+
+from .. import hashers
 from ..cachefiles.backends import get_default_cachefile_backend
 from ..cachefiles.strategies import load_strategy
-from .. import hashers
 from ..exceptions import AlreadyRegistered, MissingSource
-from ..utils import open_image, get_by_qname, process_image
 from ..registry import generator_registry, register
+from ..utils import get_by_qname, open_image, process_image
 
 
-class BaseImageSpec(object):
+class BaseImageSpec:
     """
     An object that defines how an new image should be generated from a source
     image.
@@ -85,7 +87,7 @@ class ImageSpec(BaseImageSpec):
 
     def __init__(self, source):
         self.source = source
-        super(ImageSpec, self).__init__()
+        super().__init__()
 
     @property
     def cachefile_name(self):
@@ -121,7 +123,7 @@ class ImageSpec(BaseImageSpec):
         # yet, preventing us from accessing the source field.
         # (This is issue #234.)
         if isinstance(self.source, ImageFieldFile):
-            field = getattr(self.source, 'field')
+            field = self.source.field
             state['_field_data'] = {
                 'instance': getattr(self.source, 'instance', None),
                 'attname': getattr(field, 'name', None),
@@ -144,7 +146,8 @@ class ImageSpec(BaseImageSpec):
                                 " with it." % self)
 
         # TODO: Move into a generator base class
-        # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part. (The tricky part is how to deal with original_format since generator base class won't have one.)
+        # TODO: Factor out a generate_image function so you can create a generator and only override the PIL.Image creating part.
+        #       (The tricky part is how to deal with original_format since generator base class won't have one.)
 
         closed = self.source.closed
         if closed:
@@ -193,7 +196,7 @@ def create_spec(class_attrs, state):
     return instance
 
 
-class SpecHost(object):
+class SpecHost:
     """
     An object that ostensibly has a spec attribute but really delegates to the
     spec registry.
@@ -201,7 +204,7 @@ class SpecHost(object):
     """
     def __init__(self, spec=None, spec_id=None, **kwargs):
 
-        spec_attrs = dict((k, v) for k, v in kwargs.items() if v is not None)
+        spec_attrs = {k: v for k, v in kwargs.items() if v is not None}
 
         if spec_attrs:
             if spec:

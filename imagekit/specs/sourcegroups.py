@@ -10,9 +10,11 @@ have two responsibilities:
 
 """
 
+import inspect
+
 from django.db.models.signals import post_init, post_save
 from django.utils.functional import wraps
-import inspect
+
 from ..cachefiles import LazyImageCacheFile
 from ..signals import source_saved
 from ..utils import get_nonabstract_descendants
@@ -38,7 +40,7 @@ def ik_model_receiver(fn):
     return receiver
 
 
-class ModelSignalRouter(object):
+class ModelSignalRouter:
     """
     Normally, ``ImageFieldSourceGroup`` would be directly responsible for
     watching for changes on the model field it represents. However, Django does
@@ -72,9 +74,9 @@ class ModelSignalRouter(object):
 
         """
         self.init_instance(instance)
-        instance._ik['source_hashes'] = dict(
-            (attname, hash(getattr(instance, attname)))
-            for attname in self.get_source_fields(instance))
+        instance._ik['source_hashes'] = {
+            attname: hash(getattr(instance, attname))
+            for attname in self.get_source_fields(instance)}
         return instance._ik['source_hashes']
 
     def get_source_fields(self, instance):
@@ -82,9 +84,10 @@ class ModelSignalRouter(object):
         Returns a list of the source fields for the given instance.
 
         """
-        return set(src.image_field
-                   for src in self._source_groups
-                   if isinstance(instance, src.model_class))
+        return {
+            src.image_field
+            for src in self._source_groups
+            if isinstance(instance, src.model_class)}
 
     @ik_model_receiver
     def post_save_receiver(self, sender, instance=None, created=False, update_fields=None, raw=False, **kwargs):
@@ -105,12 +108,13 @@ class ModelSignalRouter(object):
     def post_init_receiver(self, sender, instance=None, **kwargs):
         self.init_instance(instance)
         source_fields = self.get_source_fields(instance)
-        local_fields = dict((field.name, field)
-                            for field in instance._meta.local_fields
-                            if field.name in source_fields)
-        instance._ik['source_hashes'] = dict(
-            (attname, hash(file_field))
-            for attname, file_field in local_fields.items())
+        local_fields = {
+            field.name: field
+            for field in instance._meta.local_fields
+            if field.name in source_fields}
+        instance._ik['source_hashes'] = {
+            attname: hash(file_field)
+            for attname, file_field in local_fields.items()}
 
     def dispatch_signal(self, signal, file, model_class, instance, attname):
         """
@@ -124,7 +128,7 @@ class ModelSignalRouter(object):
                 signal.send(sender=source_group, source=file)
 
 
-class ImageFieldSourceGroup(object):
+class ImageFieldSourceGroup:
     """
     A source group that repesents a particular field across all instances of a
     model and its subclasses.
@@ -147,7 +151,7 @@ class ImageFieldSourceGroup(object):
                 yield getattr(instance, self.image_field)
 
 
-class SourceGroupFilesGenerator(object):
+class SourceGroupFilesGenerator:
     """
     A Python generator that yields cache file objects for source groups.
 

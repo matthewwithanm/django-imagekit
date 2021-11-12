@@ -1,13 +1,11 @@
-from __future__ import unicode_literals
-
-from django.conf import settings
 from django.db import models
 from django.db.models.signals import class_prepared
-from .files import ProcessedImageFieldFile
-from .utils import ImageSpecFileDescriptor
+
+from ...registry import register
 from ...specs import SpecHost
 from ...specs.sourcegroups import ImageFieldSourceGroup
-from ...registry import register
+from .files import ProcessedImageFieldFile
+from .utils import ImageSpecFileDescriptor
 
 
 class SpecHostField(SpecHost):
@@ -22,7 +20,7 @@ class SpecHostField(SpecHost):
 
         # Register the spec with the id. This allows specs to be overridden
         # later, from outside of the model definition.
-        super(SpecHostField, self).set_spec_id(spec_id)
+        super().set_spec_id(spec_id)
 
 
 class ImageSpecField(SpecHostField):
@@ -113,14 +111,4 @@ class ProcessedImageField(models.ImageField, SpecHostField):
 
     def contribute_to_class(self, cls, name):
         self._set_spec_id(cls, name)
-        return super(ProcessedImageField, self).contribute_to_class(cls, name)
-
-
-# If the project does not use south, then we will not try to add introspection
-if 'south' in settings.INSTALLED_APPS:
-    try:
-        from south.modelsinspector import add_introspection_rules
-    except ImportError:
-        pass
-    else:
-        add_introspection_rules([], [r'^imagekit\.models\.fields\.ProcessedImageField$'])
+        return super().contribute_to_class(cls, name)

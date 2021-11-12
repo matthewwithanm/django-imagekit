@@ -1,14 +1,8 @@
-from django import VERSION
-if VERSION[0] < 2:
-    # ugettext is an alias for gettext() since Django 2.0,
-    # and deprecated as of Django 3.0.
-    from django.utils.translation import ugettext_lazy as _
-else:
-    from django.utils.translation import gettext_lazy as _
 from django.template.loader import render_to_string
+from django.utils.translation import gettext_lazy as _
 
 
-class AdminThumbnail(object):
+class AdminThumbnail:
     """
     A convenience utility for adding thumbnails to Django's admin change list.
 

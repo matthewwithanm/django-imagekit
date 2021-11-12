@@ -1,17 +1,15 @@
-from imagekit.cachefiles import ImageCacheFile
+from unittest.mock import Mock
 
-try:
-    from unittest.mock import Mock
-except:
-    from mock import Mock
-
-from .utils import create_image
 from django.core.files.storage import FileSystemStorage
+
+from imagekit.cachefiles import ImageCacheFile
 from imagekit.cachefiles.backends import Simple as SimpleCFBackend
 from imagekit.cachefiles.strategies import Optimistic as OptimisticStrategy
 
+from .utils import create_image
 
-class ImageGenerator(object):
+
+class ImageGenerator:
     def generate(self):
         return create_image()
 

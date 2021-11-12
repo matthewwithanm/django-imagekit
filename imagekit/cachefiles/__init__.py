@@ -1,13 +1,15 @@
 from copy import copy
+
 from django.conf import settings
 from django.core.files import File
 from django.core.files.images import ImageFile
-from django.utils.functional import SimpleLazyObject
 from django.utils.encoding import smart_str
+from django.utils.functional import SimpleLazyObject
+
 from ..files import BaseIKFile
 from ..registry import generator_registry
 from ..signals import content_required, existence_required
-from ..utils import get_logger, get_singleton, generate, get_by_qname
+from ..utils import generate, get_by_qname, get_logger, get_singleton
 
 
 class ImageCacheFile(BaseIKFile, ImageFile):
@@ -55,7 +57,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
                              'cache file strategy')
         )
 
-        super(ImageCacheFile, self).__init__(storage=storage)
+        super().__init__(storage=storage)
 
     def _require_file(self):
         if getattr(self, '_file', None) is None:
@@ -162,10 +164,6 @@ class ImageCacheFile(BaseIKFile, ImageFile):
             )
         self.__dict__.update(state)
 
-    def __nonzero__(self):
-        # Python 2 compatibility
-        return self.__bool__()
-
     def __repr__(self):
         return smart_str("<%s: %s>" % (
             self.__class__.__name__, self if self.name else "None")
@@ -177,7 +175,7 @@ class LazyImageCacheFile(SimpleLazyObject):
         def setup():
             generator = generator_registry.get(generator_id, *args, **kwargs)
             return ImageCacheFile(generator)
-        super(LazyImageCacheFile, self).__init__(setup)
+        super().__init__(setup)
 
     def __repr__(self):
         return '<%s: %s>' % (self.__class__.__name__, str(self) or 'None')

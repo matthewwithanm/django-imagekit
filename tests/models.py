@@ -1,8 +1,7 @@
 from django.db import models
 
 from imagekit import ImageSpec
-from imagekit.models import ProcessedImageField
-from imagekit.models import ImageSpecField
+from imagekit.models import ImageSpecField, ProcessedImageField
 from imagekit.processors import Adjust, ResizeToFill, SmartCrop
 
 
@@ -38,7 +37,7 @@ class ProcessedImageFieldWithSpecModel(models.Model):
     processed = ProcessedImageField(spec=Thumbnail, upload_to='p')
 
 
-class CountingCacheFileStrategy(object):
+class CountingCacheFileStrategy:
     def __init__(self):
         self.on_existence_required_count = 0
         self.on_content_required_count = 0
