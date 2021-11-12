@@ -8,6 +8,8 @@ BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 
 MEDIA_ROOT = os.path.normpath(os.path.join(BASE_PATH, 'media'))
 
+USE_TZ = False
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -23,8 +25,6 @@ INSTALLED_APPS = [
     'imagekit',
     'tests',
 ]
-
-CACHE_BACKEND = 'locmem://'
 
 TEMPLATES = [
     {
