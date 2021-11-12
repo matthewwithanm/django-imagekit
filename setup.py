@@ -11,7 +11,9 @@ if 'publish' in sys.argv:
     sys.exit()
 
 
-read = lambda filepath: codecs.open(filepath, 'r', 'utf-8').read()
+def read(filepath):
+    with codecs.open(filepath, 'r', 'utf-8') as f:
+        return f.read()
 
 
 def exec_file(filepath, globalz=None, localz=None):
