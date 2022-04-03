@@ -1,3 +1,4 @@
+import os.path
 from copy import copy
 
 from django.conf import settings
@@ -110,7 +111,13 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         # contents of the file, what would the point of that be?
         self.file = File(content)
 
-        if actual_name != self.name:
+        # ``actual_name`` holds the output of ``self.storage.save()`` that
+        # by default returns filenames with forward slashes, even on windows.
+        # On the other hand, ``self.name`` holds OS-specific paths results
+        # from applying path normalizers like ``os.path.normpath()`` in the
+        # ``namer``. So, the filenames should be normalized before their
+        # equality checking.
+        if os.path.normpath(actual_name) != os.path.normpath(self.name):
             get_logger().warning(
                 'The storage backend %s did not save the file with the'
                 ' requested name ("%s") and instead used "%s". This may be'
