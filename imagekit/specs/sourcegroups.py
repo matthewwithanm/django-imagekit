@@ -130,7 +130,7 @@ class ModelSignalRouter:
 
 class ImageFieldSourceGroup:
     """
-    A source group that repesents a particular field across all instances of a
+    A source group that represents a particular field across all instances of a
     model and its subclasses.
 
     """
