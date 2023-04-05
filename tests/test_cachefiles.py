@@ -109,8 +109,8 @@ def test_lazyfile_stringification():
     assert str(file) == ''
     assert repr(file) == '<ImageCacheFile: None>'
 
-    source_file = get_image_file()
-    file = LazyImageCacheFile('testspec', source=source_file)
+    with get_image_file() as source_file:
+        file = LazyImageCacheFile('testspec', source=source_file)
     file.name = 'a.jpg'
     assert str(file) == 'a.jpg'
     assert repr(file) == '<ImageCacheFile: a.jpg>'

@@ -31,7 +31,8 @@ def get_image_file():
 
 def get_unique_image_file():
     file = NamedTemporaryFile()
-    file.write(get_image_file().read())
+    with get_image_file() as image:
+        file.write(image.read())
     return file
 
 
@@ -60,10 +61,10 @@ def pickleback(obj):
 
 
 def render_tag(ttag):
-    img = get_image_file()
-    template = Template('{%% load imagekit %%}%s' % ttag)
-    context = Context({'img': img})
-    return template.render(context)
+    with get_image_file() as img:
+        template = Template('{%% load imagekit %%}%s' % ttag)
+        context = Context({'img': img})
+        return template.render(context)
 
 
 def get_html_attrs(ttag):
