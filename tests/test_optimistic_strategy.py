@@ -30,7 +30,7 @@ def get_image_cache_file():
 def test_no_io_on_bool():
     """
     When checking the truthiness of an ImageCacheFile, the storage shouldn't
-    peform IO operations.
+    perform IO operations.
 
     """
     file = get_image_cache_file()

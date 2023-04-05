@@ -57,7 +57,7 @@ class BaseIKFile(File):
         try:
             self.file.open(mode)
         except ValueError:
-            # if the underlaying file can't be reopened
+            # if the underlying file can't be reopened
             # then we will use the storage to try to open it again
             if self.file.closed:
                 # clear cached file instance

@@ -117,7 +117,7 @@ differently and for example do not cache values if timeout is ``None``.
 If you clear your cache durring deployment or some other reason probably
 you do not want to lose the cache for generated images especcialy if you
 are using some slow remote storage (like Amazon S3). Then you can configure
-seprate cache (for example redis) in your ``CACHES`` config and tell ImageKit
+separate cache (for example redis) in your ``CACHES`` config and tell ImageKit
 to use it instead of the default cache by setting ``IMAGEKIT_CACHE_BACKEND``.
 
 
@@ -180,7 +180,7 @@ Or, in Python:
 
     If you are using an "async" backend in combination with the "optimistic"
     cache file strategy (see `Removing Safeguards`_ below), checking for
-    thruthiness as described above will not work. The "optimistic" backend is
+    truthiness as described above will not work. The "optimistic" backend is
     very optimistic so to say, and removes the check. Create and use the
     following strategy to a) have images only created on save, and b) retain
     the ability to check whether the images have already been created::
@@ -211,7 +211,7 @@ operation. However, if the state isn't cached, ImageKit will need to query the
 storage backend.
 
 For those who aren't willing to accept that cost (and who never want ImageKit
-to generate images in the request-responce cycle), there's the "optimistic"
+to generate images in the request-response cycle), there's the "optimistic"
 cache file strategy. This strategy only generates a new image when a spec's
 source image is created or changed. Unlike with the "just in time" strategy,
 accessing the file won't cause it to be generated, ImageKit will just assume
