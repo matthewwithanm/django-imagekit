@@ -6,6 +6,7 @@ from tempfile import NamedTemporaryFile
 
 from bs4 import BeautifulSoup
 from django.core.files import File
+from django.core.files.storage import FileSystemStorage
 from django.template import Context, Template
 from PIL import Image
 
@@ -77,6 +78,10 @@ def assert_file_is_falsy(file):
 
 def assert_file_is_truthy(file):
     assert bool(file), 'File is not truthy'
+
+
+class CustomStorage(FileSystemStorage):
+    pass
 
 
 class DummyAsyncCacheFileBackend(Simple):

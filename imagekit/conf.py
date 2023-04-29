@@ -36,5 +36,8 @@ class ImageKitConf(AppConf):
 
     def configure_default_file_storage(self, value):
         if value is None:
-            value = settings.DEFAULT_FILE_STORAGE
+            try:
+                value = settings.STORAGES["default"]["BACKEND"]
+            except AttributeError:
+                value = settings.DEFAULT_FILE_STORAGE
         return value
