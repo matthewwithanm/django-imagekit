@@ -125,6 +125,22 @@ def get_cache():
     return caches[settings.IMAGEKIT_CACHE_BACKEND]
 
 
+def get_storage():
+    try:
+        from django.core.files.storage import storages, InvalidStorageError
+    except ImportError:  # Django < 4.2
+        return get_singleton(
+            settings.IMAGEKIT_DEFAULT_FILE_STORAGE, 'file storage backend'
+        )
+    else:
+        try:
+            return storages[settings.IMAGEKIT_DEFAULT_FILE_STORAGE]
+        except InvalidStorageError:
+            return get_singleton(
+                settings.IMAGEKIT_DEFAULT_FILE_STORAGE, 'file storage backend'
+            )
+
+
 def sanitize_cache_key(key):
     if settings.IMAGEKIT_USE_MEMCACHED_SAFE_CACHE_KEY:
         # Memcached keys can't contain whitespace or control characters.

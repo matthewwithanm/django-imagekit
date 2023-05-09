@@ -37,7 +37,9 @@ class ImageKitConf(AppConf):
     def configure_default_file_storage(self, value):
         if value is None:
             try:
-                value = settings.STORAGES["default"]["BACKEND"]
-            except AttributeError:
-                value = settings.DEFAULT_FILE_STORAGE
+                from django.conf import DEFAULT_STORAGE_ALIAS
+            except ImportError:  # Django < 4.2
+                return settings.DEFAULT_FILE_STORAGE
+            else:
+                return DEFAULT_STORAGE_ALIAS
         return value
