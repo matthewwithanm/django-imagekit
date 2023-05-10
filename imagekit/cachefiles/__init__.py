@@ -10,7 +10,9 @@ from django.utils.functional import SimpleLazyObject
 from ..files import BaseIKFile
 from ..registry import generator_registry
 from ..signals import content_required, existence_required
-from ..utils import generate, get_by_qname, get_logger, get_singleton
+from ..utils import (
+    generate, get_by_qname, get_logger, get_singleton, get_storage
+)
 
 
 class ImageCacheFile(BaseIKFile, ImageFile):
@@ -44,8 +46,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         self.name = name
 
         storage = (callable(storage) and storage()) or storage or \
-            getattr(generator, 'cachefile_storage', None) or get_singleton(
-            settings.IMAGEKIT_DEFAULT_FILE_STORAGE, 'file storage backend')
+            getattr(generator, 'cachefile_storage', None) or get_storage()
         self.cachefile_backend = (
             cachefile_backend
             or getattr(generator, 'cachefile_backend', None)
@@ -156,20 +157,14 @@ class ImageCacheFile(BaseIKFile, ImageFile):
 
         # remove storage from state as some non-FileSystemStorage can't be
         # pickled
-        settings_storage = get_singleton(
-            settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
-            'file storage backend'
-        )
+        settings_storage = get_storage()
         if state['storage'] == settings_storage:
             state.pop('storage')
         return state
 
     def __setstate__(self, state):
         if 'storage' not in state:
-            state['storage'] = get_singleton(
-                settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
-                'file storage backend'
-            )
+            state['storage'] = get_storage()
         self.__dict__.update(state)
 
     def __repr__(self):
