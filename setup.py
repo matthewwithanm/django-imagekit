@@ -7,7 +7,8 @@ from setuptools import find_packages, setup
 
 
 if 'publish' in sys.argv:
-    os.system('python setup.py sdist bdist_wheel upload')
+    os.system('python3 -m build')
+    os.system('python3 -m twine upload --repository django_imagekit dist/*')
     sys.exit()
 
 
@@ -22,8 +23,10 @@ def exec_file(filepath, globalz=None, localz=None):
 
 # Load package meta from the pkgmeta module without loading imagekit.
 pkgmeta = {}
-exec_file(os.path.join(os.path.dirname(__file__),
-          'imagekit', 'pkgmeta.py'), pkgmeta)
+exec_file(
+    os.path.join(os.path.dirname(__file__), 'imagekit', 'pkgmeta.py'),
+    pkgmeta
+)
 
 
 setup(
@@ -33,8 +36,8 @@ setup(
     long_description=read(os.path.join(os.path.dirname(__file__), 'README.rst')),
     author='Matthew Tretter',
     author_email='m@tthewwithanm.com',
-    maintainer='Bryan Veloso',
-    maintainer_email='bryan@revyver.com',
+    maintainer='Venelin Stoykov',
+    maintainer_email='venelin.stoykov@industria.tech',
     license='BSD',
     url='http://github.com/matthewwithanm/django-imagekit/',
     packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*', 'tests']),
@@ -56,11 +59,15 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Utilities'
     ],
 )
