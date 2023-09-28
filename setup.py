@@ -1,33 +1,32 @@
 #!/usr/bin/env python
 import codecs
 import os
-from setuptools import setup, find_packages
 import sys
 
-
-# Workaround for multiprocessing/nose issue. See http://bugs.python.org/msg170215
-try:
-    import multiprocessing  # NOQA
-except ImportError:
-    pass
+from setuptools import find_packages, setup
 
 
 if 'publish' in sys.argv:
-    os.system('python setup.py sdist bdist_wheel upload')
+    os.system('python3 -m build')
+    os.system('python3 -m twine upload --repository django_imagekit dist/*')
     sys.exit()
 
 
-read = lambda filepath: codecs.open(filepath, 'r', 'utf-8').read()
+def read(filepath):
+    with codecs.open(filepath, 'r', 'utf-8') as f:
+        return f.read()
 
 
 def exec_file(filepath, globalz=None, localz=None):
-        exec(read(filepath), globalz, localz)
+    exec(read(filepath), globalz, localz)
 
 
 # Load package meta from the pkgmeta module without loading imagekit.
 pkgmeta = {}
-exec_file(os.path.join(os.path.dirname(__file__),
-          'imagekit', 'pkgmeta.py'), pkgmeta)
+exec_file(
+    os.path.join(os.path.dirname(__file__), 'imagekit', 'pkgmeta.py'),
+    pkgmeta
+)
 
 
 setup(
@@ -37,18 +36,16 @@ setup(
     long_description=read(os.path.join(os.path.dirname(__file__), 'README.rst')),
     author='Matthew Tretter',
     author_email='m@tthewwithanm.com',
-    maintainer='Bryan Veloso',
-    maintainer_email='bryan@revyver.com',
+    maintainer='Venelin Stoykov',
+    maintainer_email='venelin.stoykov@industria.tech',
     license='BSD',
     url='http://github.com/matthewwithanm/django-imagekit/',
     packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*', 'tests']),
     zip_safe=False,
     include_package_data=True,
     install_requires=[
-        "django-appconf>=0.5,<1.0.4; python_version<'3'",
-        "django-appconf; python_version>'3'",
-        'pilkit>=0.2.0',
-        'six',
+        'django-appconf',
+        'pilkit',
     ],
     extras_require={
         'async': ['django-celery>=3.0'],
@@ -62,17 +59,15 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Utilities'
     ],
 )

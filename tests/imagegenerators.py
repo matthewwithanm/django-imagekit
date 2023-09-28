@@ -9,7 +9,7 @@ class TestSpec(ImageSpec):
 class ResizeTo1PixelSquare(ImageSpec):
     def __init__(self, width=None, height=None, anchor=None, crop=None, **kwargs):
         self.processors = [ResizeToFill(1, 1)]
-        super(ResizeTo1PixelSquare, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
 
 register.generator('testspec', TestSpec)

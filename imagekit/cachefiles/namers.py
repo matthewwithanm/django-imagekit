@@ -5,8 +5,10 @@ choices.
 
 """
 
-from django.conf import settings
 import os
+
+from django.conf import settings
+
 from ..utils import format_to_extension, suggest_extension
 
 

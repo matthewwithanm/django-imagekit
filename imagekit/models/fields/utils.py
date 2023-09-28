@@ -1,7 +1,7 @@
 from ...cachefiles import ImageCacheFile
 
 
-class ImageSpecFileDescriptor(object):
+class ImageSpecFileDescriptor:
     def __init__(self, field, attname, source_field_name):
         self.attname = attname
         self.field = field

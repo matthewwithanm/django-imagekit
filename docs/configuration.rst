@@ -21,10 +21,21 @@ Settings
 
     :default: ``None``
 
+    Starting with Django 4.2, if you defined ``settings.STORAGES``: 
+    the Django storage backend alias to retrieve the storage instance defined
+    in your settings, as described in the `Django file storage documentation`_.
+    If no value is provided for ``IMAGEKIT_DEFAULT_FILE_STORAGE``, 
+    and none is specified by the spec definition, the ``default`` file storage 
+    will be used.
+
+    Before Django 4.2, or if ``settings.STORAGES`` is not defined: 
     The qualified class name of a Django storage backend to use to save the
     cached images. If no value is provided for ``IMAGEKIT_DEFAULT_FILE_STORAGE``,
     and none is specified by the spec definition, `your default file storage`__
     will be used.
+
+
+.. _`Django file storage documentation`: https://docs.djangoproject.com/en/dev/ref/files/storage/
 
 
 .. attribute:: IMAGEKIT_DEFAULT_CACHEFILE_BACKEND
@@ -52,7 +63,7 @@ Settings
     The cache is then used to store information like the state of cached
     images (i.e. validated or not).
 
-.. _`Django cache section`: https://docs.djangoproject.com/en/1.8/topics/cache/#accessing-the-cache
+.. _`Django cache section`: https://docs.djangoproject.com/en/dev/topics/cache/#accessing-the-cache
 
 
 .. attribute:: IMAGEKIT_CACHE_TIMEOUT

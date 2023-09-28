@@ -1,14 +1,11 @@
-from __future__ import unicode_literals
-
 from django import template
+from django.template.library import parse_bits
+from django.utils.encoding import force_str
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
-from ..compat import parse_bits
 from ..cachefiles import ImageCacheFile
 from ..registry import generator_registry
-from ..lib import force_text
-
 
 register = template.Library()
 
@@ -20,7 +17,7 @@ DEFAULT_THUMBNAIL_GENERATOR = 'imagekit:thumbnail'
 
 def get_cachefile(context, generator_id, generator_kwargs, source=None):
     generator_id = generator_id.resolve(context)
-    kwargs = dict((k, v.resolve(context)) for k, v in generator_kwargs.items())
+    kwargs = {k: v.resolve(context) for k, v in generator_kwargs.items()}
     generator = generator_registry.get(generator_id, **kwargs)
     return ImageCacheFile(generator)
 
@@ -33,7 +30,7 @@ def parse_dimensions(dimensions):
 
     """
     width, height = [d.strip() and int(d) or None for d in dimensions.split('x')]
-    return dict(width=width, height=height)
+    return {'width': width, 'height': height}
 
 
 class GenerateImageAssignmentNode(template.Node):
@@ -44,7 +41,7 @@ class GenerateImageAssignmentNode(template.Node):
         self._variable_name = variable_name
 
     def get_variable_name(self, context):
-        return force_text(self._variable_name)
+        return force_str(self._variable_name)
 
     def render(self, context):
         variable_name = self.get_variable_name(context)
@@ -63,12 +60,11 @@ class GenerateImageTagNode(template.Node):
     def render(self, context):
         file = get_cachefile(context, self._generator_id,
                 self._generator_kwargs)
-        attrs = dict((k, v.resolve(context)) for k, v in
-                self._html_attrs.items())
+        attrs = {k: v.resolve(context) for k, v in self._html_attrs.items()}
 
         # Only add width and height if neither is specified (to allow for
         # proportional in-browser scaling).
-        if not 'width' in attrs and not 'height' in attrs:
+        if 'width' not in attrs and 'height' not in attrs:
             attrs.update(width=file.width, height=file.height)
 
         attrs['src'] = file.url
@@ -87,16 +83,20 @@ class ThumbnailAssignmentNode(template.Node):
         self._generator_kwargs = generator_kwargs
 
     def get_variable_name(self, context):
-        return force_text(self._variable_name)
+        return force_str(self._variable_name)
 
     def render(self, context):
         variable_name = self.get_variable_name(context)
 
         generator_id = self._generator_id.resolve(context) if self._generator_id else DEFAULT_THUMBNAIL_GENERATOR
-        kwargs = dict((k, v.resolve(context)) for k, v in
-                self._generator_kwargs.items())
+        kwargs = {k: v.resolve(context) for k, v in self._generator_kwargs.items()}
         kwargs['source'] = self._source.resolve(context)
         kwargs.update(parse_dimensions(self._dimensions.resolve(context)))
+        if kwargs.get('anchor'):
+            # ImageKit uses pickle at protocol 0, which throws infinite
+            # recursion errors when anchor is set to a SafeString instance.
+            # This converts the SafeString into a str instance.
+            kwargs['anchor'] = kwargs['anchor'][:]
         generator = generator_registry.get(generator_id, **kwargs)
 
         context[variable_name] = ImageCacheFile(generator)
@@ -116,20 +116,23 @@ class ThumbnailImageTagNode(template.Node):
     def render(self, context):
         generator_id = self._generator_id.resolve(context) if self._generator_id else DEFAULT_THUMBNAIL_GENERATOR
         dimensions = parse_dimensions(self._dimensions.resolve(context))
-        kwargs = dict((k, v.resolve(context)) for k, v in
-                self._generator_kwargs.items())
+        kwargs = {k: v.resolve(context) for k, v in self._generator_kwargs.items()}
         kwargs['source'] = self._source.resolve(context)
         kwargs.update(dimensions)
+        if kwargs.get('anchor'):
+            # ImageKit uses pickle at protocol 0, which throws infinite
+            # recursion errors when anchor is set to a SafeString instance.
+            # This converts the SafeString into a str instance.
+            kwargs['anchor'] = kwargs['anchor'][:]
         generator = generator_registry.get(generator_id, **kwargs)
 
         file = ImageCacheFile(generator)
 
-        attrs = dict((k, v.resolve(context)) for k, v in
-                self._html_attrs.items())
+        attrs = {k: v.resolve(context) for k, v in self._html_attrs.items()}
 
         # Only add width and height if neither is specified (to allow for
         # proportional in-browser scaling).
-        if not 'width' in attrs and not 'height' in attrs:
+        if 'width' not in attrs and 'height' not in attrs:
             attrs.update(width=file.width, height=file.height)
 
         attrs['src'] = file.url
@@ -169,7 +172,7 @@ def parse_ik_tag_bits(parser, bits):
                 ' setting html attributes.' % HTML_ATTRS_DELIMITER)
 
         args, html_attrs = parse_bits(parser, html_bits, [], 'args',
-                'kwargs', None, False, tag_name)
+                'kwargs', None, [], None, False, tag_name)
         if len(args):
             raise template.TemplateSyntaxError('All "%s" tag arguments after'
                     ' the "%s" token must be named.' % (tag_name,
@@ -178,7 +181,7 @@ def parse_ik_tag_bits(parser, bits):
     return (tag_name, bits, html_attrs, varname)
 
 
-#@register.tag
+@register.tag
 def generateimage(parser, token):
     """
     Creates an image based on the provided arguments.
@@ -211,7 +214,7 @@ def generateimage(parser, token):
     tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
 
     args, kwargs = parse_bits(parser, bits, ['generator_id'], 'args', 'kwargs',
-            None, False, tag_name)
+            None, [], None, False, tag_name)
 
     if len(args) != 1:
         raise template.TemplateSyntaxError('The "%s" tag requires exactly one'
@@ -225,7 +228,7 @@ def generateimage(parser, token):
         return GenerateImageTagNode(generator_id, kwargs, html_attrs)
 
 
-#@register.tag
+@register.tag
 def thumbnail(parser, token):
     """
     A convenient shortcut syntax for generating a thumbnail. The following::
@@ -259,7 +262,7 @@ def thumbnail(parser, token):
     tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
 
     args, kwargs = parse_bits(parser, bits, [], 'args', 'kwargs',
-            None, False, tag_name)
+            None, [], None, False, tag_name)
 
     if len(args) < 2:
         raise template.TemplateSyntaxError('The "%s" tag requires at least two'
@@ -279,7 +282,3 @@ def thumbnail(parser, token):
     else:
         return ThumbnailImageTagNode(generator_id, dimensions, source, kwargs,
                 html_attrs)
-
-
-generateimage = register.tag(generateimage)
-thumbnail = register.tag(thumbnail)

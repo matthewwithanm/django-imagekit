@@ -1,13 +1,18 @@
+import os.path
 from copy import copy
+
 from django.conf import settings
 from django.core.files import File
 from django.core.files.images import ImageFile
-from django.utils.functional import SimpleLazyObject
 from django.utils.encoding import smart_str
+from django.utils.functional import SimpleLazyObject
+
 from ..files import BaseIKFile
 from ..registry import generator_registry
 from ..signals import content_required, existence_required
-from ..utils import get_logger, get_singleton, generate, get_by_qname
+from ..utils import (
+    generate, get_by_qname, get_logger, get_singleton, get_storage
+)
 
 
 class ImageCacheFile(BaseIKFile, ImageFile):
@@ -41,8 +46,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         self.name = name
 
         storage = (callable(storage) and storage()) or storage or \
-            getattr(generator, 'cachefile_storage', None) or get_singleton(
-            settings.IMAGEKIT_DEFAULT_FILE_STORAGE, 'file storage backend')
+            getattr(generator, 'cachefile_storage', None) or get_storage()
         self.cachefile_backend = (
             cachefile_backend
             or getattr(generator, 'cachefile_backend', None)
@@ -55,7 +59,7 @@ class ImageCacheFile(BaseIKFile, ImageFile):
                              'cache file strategy')
         )
 
-        super(ImageCacheFile, self).__init__(storage=storage)
+        super().__init__(storage=storage)
 
     def _require_file(self):
         if getattr(self, '_file', None) is None:
@@ -100,7 +104,8 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         actual_name = self.storage.save(self.name, content)
 
         # We're going to reuse the generated file, so we need to reset the pointer.
-        content.seek(0)
+        if not hasattr(content, "seekable") or content.seekable():
+            content.seek(0)
 
         # Store the generated file. If we don't do this, the next time the
         # "file" attribute is accessed, it will result in a call to the storage
@@ -108,7 +113,13 @@ class ImageCacheFile(BaseIKFile, ImageFile):
         # contents of the file, what would the point of that be?
         self.file = File(content)
 
-        if actual_name != self.name:
+        # ``actual_name`` holds the output of ``self.storage.save()`` that
+        # by default returns filenames with forward slashes, even on windows.
+        # On the other hand, ``self.name`` holds OS-specific paths results
+        # from applying path normalizers like ``os.path.normpath()`` in the
+        # ``namer``. So, the filenames should be normalized before their
+        # equality checking.
+        if os.path.normpath(actual_name) != os.path.normpath(self.name):
             get_logger().warning(
                 'The storage backend %s did not save the file with the'
                 ' requested name ("%s") and instead used "%s". This may be'
@@ -146,25 +157,15 @@ class ImageCacheFile(BaseIKFile, ImageFile):
 
         # remove storage from state as some non-FileSystemStorage can't be
         # pickled
-        settings_storage = get_singleton(
-            settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
-            'file storage backend'
-        )
+        settings_storage = get_storage()
         if state['storage'] == settings_storage:
             state.pop('storage')
         return state
 
     def __setstate__(self, state):
         if 'storage' not in state:
-            state['storage'] = get_singleton(
-                settings.IMAGEKIT_DEFAULT_FILE_STORAGE,
-                'file storage backend'
-            )
+            state['storage'] = get_storage()
         self.__dict__.update(state)
-
-    def __nonzero__(self):
-        # Python 2 compatibility
-        return self.__bool__()
 
     def __repr__(self):
         return smart_str("<%s: %s>" % (
@@ -177,7 +178,7 @@ class LazyImageCacheFile(SimpleLazyObject):
         def setup():
             generator = generator_registry.get(generator_id, *args, **kwargs)
             return ImageCacheFile(generator)
-        super(LazyImageCacheFile, self).__init__(setup)
+        super().__init__(setup)
 
     def __repr__(self):
         return '<%s: %s>' % (self.__class__.__name__, str(self) or 'None')

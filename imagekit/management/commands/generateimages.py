@@ -1,7 +1,9 @@
-from django.core.management.base import BaseCommand
 import re
-from ...registry import generator_registry, cachefile_registry
+
+from django.core.management.base import BaseCommand
+
 from ...exceptions import MissingSource
+from ...registry import cachefile_registry, generator_registry
 
 
 class Command(BaseCommand):

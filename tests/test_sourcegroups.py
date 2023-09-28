@@ -1,9 +1,10 @@
 import pytest
-
 from django.core.files import File
+
 from imagekit.signals import source_saved
 from imagekit.specs.sourcegroups import ImageFieldSourceGroup
-from . models import AbstractImageModel, ImageModel, ConcreteImageModel
+
+from .models import AbstractImageModel, ConcreteImageModel, ImageModel
 from .utils import get_image_file
 
 
@@ -25,7 +26,8 @@ def test_source_saved_signal():
     source_group = ImageFieldSourceGroup(ImageModel, 'image')
     receiver = make_counting_receiver(source_group)
     source_saved.connect(receiver)
-    ImageModel.objects.create(image=File(get_image_file(), name='reference.png'))
+    with File(get_image_file(), name='reference.png') as image:
+        ImageModel.objects.create(image=image)
     assert receiver.count == 1
 
 
@@ -55,5 +57,6 @@ def test_abstract_model_signals():
     source_group = ImageFieldSourceGroup(AbstractImageModel, 'original_image')
     receiver = make_counting_receiver(source_group)
     source_saved.connect(receiver)
-    ConcreteImageModel.objects.create(original_image=File(get_image_file(), name='reference.png'))
+    with File(get_image_file(), name='reference.png') as image:
+        ConcreteImageModel.objects.create(original_image=image)
     assert receiver.count == 1

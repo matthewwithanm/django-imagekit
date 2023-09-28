@@ -1,14 +1,19 @@
-from bs4 import BeautifulSoup
 import os
-import shutil
-from django.core.files import File
-from django.template import Context, Template
-from imagekit.cachefiles.backends import Simple, CacheFileState
-from imagekit.conf import settings
-from imagekit.lib import Image, StringIO
-from imagekit.utils import get_cache
 import pickle
+import shutil
+from io import BytesIO
 from tempfile import NamedTemporaryFile
+
+from bs4 import BeautifulSoup
+from django.core.files import File
+from django.core.files.storage import FileSystemStorage
+from django.template import Context, Template
+from PIL import Image
+
+from imagekit.cachefiles.backends import Simple
+from imagekit.conf import settings
+from imagekit.utils import get_cache
+
 from .models import Photo
 
 
@@ -27,7 +32,8 @@ def get_image_file():
 
 def get_unique_image_file():
     file = NamedTemporaryFile()
-    file.write(get_image_file().read())
+    with get_image_file() as image:
+        file.write(image.read())
     return file
 
 
@@ -49,17 +55,17 @@ def create_photo(name):
 
 
 def pickleback(obj):
-    pickled = StringIO()
+    pickled = BytesIO()
     pickle.dump(obj, pickled)
     pickled.seek(0)
     return pickle.load(pickled)
 
 
 def render_tag(ttag):
-    img = get_image_file()
-    template = Template('{%% load imagekit %%}%s' % ttag)
-    context = Context({'img': img})
-    return template.render(context)
+    with get_image_file() as img:
+        template = Template('{%% load imagekit %%}%s' % ttag)
+        context = Context({'img': img})
+        return template.render(context)
 
 
 def get_html_attrs(ttag):
@@ -72,6 +78,10 @@ def assert_file_is_falsy(file):
 
 def assert_file_is_truthy(file):
     assert bool(file), 'File is not truthy'
+
+
+class CustomStorage(FileSystemStorage):
+    pass
 
 
 class DummyAsyncCacheFileBackend(Simple):

@@ -1,10 +1,8 @@
-from __future__ import unicode_literals
 import os
 
-from django.core.files.base import File, ContentFile
-from django.utils.encoding import smart_str
-from .lib import smart_text
-from .utils import format_to_mimetype, extension_to_mimetype
+from django.core.files.base import ContentFile, File
+
+from .utils import extension_to_mimetype, format_to_mimetype
 
 
 class BaseIKFile(File):
@@ -59,7 +57,7 @@ class BaseIKFile(File):
         try:
             self.file.open(mode)
         except ValueError:
-            # if the underlaying file can't be reopened
+            # if the underlying file can't be reopened
             # then we will use the storage to try to open it again
             if self.file.closed:
                 # clear cached file instance
@@ -103,8 +101,4 @@ class IKContentFile(ContentFile):
         return self.file.name
 
     def __str__(self):
-        return smart_str(self.file.name or '')
-
-    def __unicode__(self):
-        # Python 2
-        return smart_text(self.file.name or '')
+        return str(self.file.name or '')
