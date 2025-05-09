@@ -1,5 +1,6 @@
 from hashlib import md5
 from unittest import mock
+import os
 
 import pytest
 from django.conf import settings
@@ -114,3 +115,20 @@ def test_lazyfile_stringification():
     file.name = 'a.jpg'
     assert str(file) == 'a.jpg'
     assert repr(file) == '<ImageCacheFile: a.jpg>'
+
+
+def test_generate_file_already_exists(caplog):
+    spec = TestSpec(source=get_unique_image_file())
+    file_1 = ImageCacheFile(spec)
+    file_1._generate()
+    # generate another cache image with the same name
+    file_2 = ImageCacheFile(spec, name=file_1.name)
+    file_2._generate()
+
+    assert len(caplog.records) == 1
+    storage, name, actual_name, cachefile_backend = caplog.records[0].args
+    assert storage == file_2.storage
+    assert name == file_2.name
+    assert actual_name != name
+    assert os.path.basename(actual_name) in storage.listdir(os.path.dirname(actual_name))[1]
+    assert cachefile_backend == file_2.cachefile_backend

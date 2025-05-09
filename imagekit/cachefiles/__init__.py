@@ -126,11 +126,11 @@ class ImageCacheFile(BaseIKFile, ImageFile):
                 ' because a file already existed with the requested name. If'
                 ' so, you may have meant to call generate() instead of'
                 ' generate(force=True), or there may be a race condition in the'
-                ' file backend %s. The saved file will not be used.' % (
-                    self.storage,
-                    self.name, actual_name,
-                    self.cachefile_backend
-                )
+                ' file backend %s. The saved file will not be used.',
+                self.storage,
+                self.name,
+                actual_name,
+                self.cachefile_backend
             )
 
     def __bool__(self):
