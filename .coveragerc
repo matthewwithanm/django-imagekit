@@ -7,3 +7,5 @@ show_missing = true
 skip_empty = true
 skip_covered = true
 precision = 2
+omit =
+    tests/*
