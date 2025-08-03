@@ -44,7 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'ImageKit'
-copyright = '2011, Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett & Matthew Tretter'
+copyright = '2011, Justin Driscoll, Bryan Veloso, Greg Newman, Chris Drackett, Matthew Tretter, Venelin Stoykov & contributors'
 
 pkgmeta = {}
 pkgmeta_file = os.path.join(os.path.dirname(__file__), '..', 'imagekit', 'pkgmeta.py')
