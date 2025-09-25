@@ -6,6 +6,9 @@
 .tox
 .idea
 .vscode
+.coverage
+.coverage.*
+.venv
 MANIFEST
 build
 dist

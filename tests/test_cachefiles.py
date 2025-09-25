@@ -30,9 +30,10 @@ def test_sync_backend_truthiness():
     is truthy.
 
     """
-    spec = TestSpec(source=get_unique_image_file())
-    file = ImageCacheFile(spec)
-    assert_file_is_truthy(file)
+    with get_unique_image_file() as source_file:
+        spec = TestSpec(source=source_file)
+        file = ImageCacheFile(spec)
+        assert_file_is_truthy(file)
 
 
 def test_async_backend_falsiness():
@@ -40,9 +41,10 @@ def test_async_backend_falsiness():
     Ensure that a cachefile with an asynchronous cache file backend is falsy.
 
     """
-    spec = TestSpec(source=get_unique_image_file())
-    file = ImageCacheFile(spec, cachefile_backend=DummyAsyncCacheFileBackend())
-    assert_file_is_falsy(file)
+    with get_unique_image_file() as source_file:
+        spec = TestSpec(source=source_file)
+        file = ImageCacheFile(spec, cachefile_backend=DummyAsyncCacheFileBackend())
+        assert_file_is_falsy(file)
 
 
 def test_no_source_error():
@@ -68,13 +70,14 @@ def test_repr_does_not_send_existence_required():
         # import here to apply mock
         from imagekit.cachefiles import ImageCacheFile
 
-        spec = TestSpec(source=get_unique_image_file())
-        file = ImageCacheFile(
-            spec,
-            cachefile_backend=DummyAsyncCacheFileBackend()
-        )
-        file.__repr__()
-        assert signal.send.called is False
+        with get_unique_image_file() as source_file:
+            spec = TestSpec(source=source_file)
+            file = ImageCacheFile(
+                spec,
+                cachefile_backend=DummyAsyncCacheFileBackend()
+            )
+            file.__repr__()
+            assert signal.send.called is False
 
 
 def test_memcached_cache_key():
@@ -118,12 +121,13 @@ def test_lazyfile_stringification():
 
 
 def test_generate_file_already_exists(caplog):
-    spec = TestSpec(source=get_unique_image_file())
-    file_1 = ImageCacheFile(spec)
-    file_1._generate()
-    # generate another cache image with the same name
-    file_2 = ImageCacheFile(spec, name=file_1.name)
-    file_2._generate()
+    with get_unique_image_file() as source_file:
+        spec = TestSpec(source=source_file)
+        file_1 = ImageCacheFile(spec)
+        file_1._generate()
+        # generate another cache image with the same name
+        file_2 = ImageCacheFile(spec, name=file_1.name)
+        file_2._generate()
 
     assert len(caplog.records) == 1
     storage, name, actual_name, cachefile_backend = caplog.records[0].args

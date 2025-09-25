@@ -36,13 +36,14 @@ def test_circular_ref():
 
 def test_cachefiles():
     clear_imagekit_cache()
-    spec = TestSpec(source=get_unique_image_file())
-    file = ImageCacheFile(spec)
-    file.url
-    # remove link to file from spec source generator
-    # test __getstate__ of ImageCacheFile
-    file.generator.source = None
-    restored_file = pickleback(file)
-    assert file is not restored_file
-    # Assertion for #437 and #451
-    assert file.storage is restored_file.storage
+    with get_unique_image_file() as source_file:
+        spec = TestSpec(source=source_file)
+        file = ImageCacheFile(spec)
+        file.url
+        # remove link to file from spec source generator
+        # test __getstate__ of ImageCacheFile
+        file.generator.source = None
+        restored_file = pickleback(file)
+        assert file is not restored_file
+        # Assertion for #437 and #451
+        assert file.storage is restored_file.storage
