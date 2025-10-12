@@ -1,3 +1,4 @@
+import sys
 from copy import copy
 from hashlib import md5
 from io import BytesIO
@@ -14,12 +15,20 @@ class CanonicalizingPickler(_Pickler):
 
     dispatch[set] = save_set
 
-    def save_dict(self, obj):
-        write = self.write
-        write(MARK + DICT)
+    if sys.version_info[:2] >= (3, 14):
+        def save_dict(self, obj):
+            write = self.write
+            write(MARK + DICT)
 
-        self.memoize(obj)
-        self._batch_setitems(sorted(obj.items()))
+            self.memoize(obj)
+            self._batch_setitems(sorted(obj.items()), obj)
+    else:
+        def save_dict(self, obj):
+            write = self.write
+            write(MARK + DICT)
+
+            self.memoize(obj)
+            self._batch_setitems(sorted(obj.items()))
 
     dispatch[dict] = save_dict
 

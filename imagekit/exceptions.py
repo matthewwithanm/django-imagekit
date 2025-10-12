@@ -14,7 +14,7 @@ class MissingGeneratorId(Exception):
 
 
 class MissingSource(ValueError):
-    pass
+    silent_variable_failure = True
 
 
 # Aliases for backwards compatibility

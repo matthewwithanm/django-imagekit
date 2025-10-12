@@ -3,6 +3,7 @@ from django.template.library import parse_bits
 from django.utils.encoding import force_str
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
+from django.conf import settings
 
 from ..cachefiles import ImageCacheFile
 from ..registry import generator_registry
@@ -13,6 +14,7 @@ register = template.Library()
 ASSIGNMENT_DELIMETER = 'as'
 HTML_ATTRS_DELIMITER = '--'
 DEFAULT_THUMBNAIL_GENERATOR = 'imagekit:thumbnail'
+default_thumbnail_srcset_scales = getattr(settings, 'IMAGEKIT_DEFAULT_THUMBNAIL_SRCSET_SCALES', None)
 
 
 def get_cachefile(context, generator_id, generator_kwargs, source=None):
@@ -97,6 +99,8 @@ class ThumbnailAssignmentNode(template.Node):
             # recursion errors when anchor is set to a SafeString instance.
             # This converts the SafeString into a str instance.
             kwargs['anchor'] = kwargs['anchor'][:]
+        if kwargs.get('format'):
+            kwargs['format'] = kwargs['format'][:]
         generator = generator_registry.get(generator_id, **kwargs)
 
         context[variable_name] = ImageCacheFile(generator)
@@ -124,9 +128,27 @@ class ThumbnailImageTagNode(template.Node):
             # recursion errors when anchor is set to a SafeString instance.
             # This converts the SafeString into a str instance.
             kwargs['anchor'] = kwargs['anchor'][:]
+        srcset_scales = default_thumbnail_srcset_scales
+        if "srcset" in kwargs:
+            if kwargs['srcset'] is not None:
+                srcset_scales = list(map(float, kwargs['srcset'].split()))
+            else:
+                srcset_scales = None
+            kwargs.pop("srcset")
+        if kwargs.get('format'):
+            kwargs['format'] = kwargs['format'][:]
         generator = generator_registry.get(generator_id, **kwargs)
 
         file = ImageCacheFile(generator)
+        srcset = []
+        if srcset_scales:
+            for scale in srcset_scales:
+                scaled_kwargs = dict(kwargs)
+                if scaled_kwargs.get("height"):
+                    scaled_kwargs["height"] = int(scaled_kwargs["height"] * scale)
+                if scaled_kwargs.get("width"):
+                    scaled_kwargs["width"] = int(scaled_kwargs["width"] * scale)
+                srcset.append(ImageCacheFile(generator_registry.get(generator_id, **scaled_kwargs)))
 
         attrs = {k: v.resolve(context) for k, v in self._html_attrs.items()}
 
@@ -136,6 +158,9 @@ class ThumbnailImageTagNode(template.Node):
             attrs.update(width=file.width, height=file.height)
 
         attrs['src'] = file.url
+        if len(srcset) > 0:
+            attrs['srcset'] = f'{file.url} 1x , ' + ' , '.join(
+                f'{entry[0].url} {entry[1]}x' for entry in zip(srcset, srcset_scales))
         attr_str = ' '.join('%s="%s"' % (escape(k), escape(v)) for k, v in
                 attrs.items())
         return mark_safe('<img %s />' % attr_str)
@@ -241,7 +266,11 @@ def thumbnail(parser, token):
 
     The thumbnail tag supports the "--" and "as" bits for adding html
     attributes and assigning to a variable, respectively. It also accepts the
-    kwargs "anchor", and "crop".
+    kwargs "format", "srcset", "anchor", and "crop".
+
+    To use "srcset" (generating multiple thumbnails for different pixel densities) list the scale factors::
+
+        {% thumbnail '100x100' mymodel.profile_image srcset='2 3' %}
 
     To use "smart cropping" (the ``SmartResize`` processor)::
 

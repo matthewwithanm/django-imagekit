@@ -33,10 +33,10 @@ def test_no_io_on_bool():
     perform IO operations.
 
     """
-    file = get_image_cache_file()
-    bool(file)
-    assert not file.storage.exists.called
-    assert not file.storage.open.called
+    with get_image_cache_file() as file:
+        bool(file)
+        assert not file.storage.exists.called
+        assert not file.storage.open.called
 
 
 def test_no_io_on_url():
@@ -45,7 +45,7 @@ def test_no_io_on_url():
     checked.
 
     """
-    file = get_image_cache_file()
-    file.url
-    assert not file.storage.exists.called
-    assert not file.storage.open.called
+    with get_image_cache_file() as file:
+        file.url
+        assert not file.storage.exists.called
+        assert not file.storage.open.called
