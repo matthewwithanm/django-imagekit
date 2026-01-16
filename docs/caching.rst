@@ -137,6 +137,45 @@ running the ``generateimages`` management command.
     If using with template tags, be sure to read :ref:`source-groups`.
 
 
+Reducing Cache Backend Round Trips
+----------------------------------
+
+When rendering pages with many images, ImageKit performs one cache lookup per image
+to check the cachefile state (so a page with 50 images can cause 50 cache round
+trips). This can become a major request latency problem, and is highly sensitive to
+the network latency to the cache.
+
+To reduce this overhead, ImageKit provides a set of APIs that can be used to prefetch
+cache states into a request-local state cache using a single ``cache.get_many()``
+call:
+
+.. code-block:: python
+
+    from imagekit.cachefiles.state import use_cachefile_state_cache, prefetch_cachefile_states
+
+    def gallery(request):
+        images = list(Image.objects.filter(...)[:50])
+
+        # Construct ImageCacheFile objects. (No cache request yet)
+        thumbs = [img.thumbnail for img in images]
+
+        # Create a request-local mapping and prefetch states
+        state_cache = {}
+        with use_cachefile_state_cache(state_cache):
+            prefetch_cachefile_states(thumbs, state_cache=state_cache)
+            return render(request, "gallery.html", {"images": images})
+
+How it works:
+
+1. ``use_cachefile_state_cache()`` activates a request-local in-memory cache
+   for the duration of the context (a plain dict is typically used).
+2. ``prefetch_cachefile_states()`` fetches all cache file states in a single
+   ``cache.get_many()`` call and stores them in the state cache.
+3. During template rendering, ``ImageCacheFile.url`` accesses check the state
+   cache first before calling ``cache.get()``, so prefetched keys incur no
+   additional cache round trips.
+
+
 Deferring Image Generation
 --------------------------
 
