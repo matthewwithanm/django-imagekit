@@ -4,6 +4,7 @@ from copy import copy
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
+from .state import get_active_state_cache
 from ..utils import get_cache, get_singleton, sanitize_cache_key
 
 
@@ -65,7 +66,17 @@ class CachedFileBackend:
 
     def get_state(self, file, check_if_unknown=True):
         key = self.get_key(file)
-        state = self.cache.get(key)
+
+        # Check request-local state cache first
+        state_cache = get_active_state_cache()
+        if state_cache is not None and key in state_cache:
+            state = state_cache[key]
+        else:
+            state = self.cache.get(key)
+            # Write-through to request-local cache if active
+            if state_cache is not None:
+                state_cache[key] = state
+
         if state is None and check_if_unknown:
             exists = self._exists(file)
             state = CacheFileState.EXISTS if exists else CacheFileState.DOES_NOT_EXIST
@@ -78,6 +89,11 @@ class CachedFileBackend:
             self.cache.set(key, state, self.existence_check_timeout)
         else:
             self.cache.set(key, state, settings.IMAGEKIT_CACHE_TIMEOUT)
+
+        # Write-through to request-local state cache if active
+        state_cache = get_active_state_cache()
+        if state_cache is not None:
+            state_cache[key] = state
 
     def __getstate__(self):
         state = copy(self.__dict__)
