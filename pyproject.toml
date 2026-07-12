@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-imagekit"
+dynamic = ["version"]
+description = "Automated image processing for Django models."
+readme = {file = "README.rst", content-type = "text/x-rst"}
+authors = [
+    {name = "Matthew Tretter", email = "m@tthewwithanm.com"},
+]
+maintainers = [
+    {name = "Venelin Stoykov", email = "venelin.stoykov@industria.tech"},
+]
+license = "BSD-3-Clause"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "django-appconf",
+    "pilkit",
+]
+
+[project.urls]
+Homepage = "http://github.com/matthewwithanm/django-imagekit/"
+
+[project.optional-dependencies]
+test = [
+    "beautifulsoup4",
+    "Pillow",
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+]
+async = ["django-celery>=3.0"]
+async_rq = ["django-rq>=0.6.0"]
+async_dramatiq = ["django-dramatiq>=0.4.0"]
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.packages.find]
+exclude = ["*.tests", "*.tests.*", "tests.*", "tests"]
+
+[tool.setuptools.dynamic]
+version = {attr = "imagekit.pkgmeta.__version__"}
+
+[tool.pytest.ini_options]
+django_find_project = false
+DJANGO_SETTINGS_MODULE = "tests.settings"
