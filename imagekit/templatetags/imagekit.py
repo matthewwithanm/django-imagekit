@@ -1,3 +1,4 @@
+from inspect import signature
 from django import template
 from django.template.library import parse_bits
 from django.utils.encoding import force_str
@@ -15,6 +16,14 @@ ASSIGNMENT_DELIMETER = 'as'
 HTML_ATTRS_DELIMITER = '--'
 DEFAULT_THUMBNAIL_GENERATOR = 'imagekit:thumbnail'
 default_thumbnail_srcset_scales = getattr(settings, 'IMAGEKIT_DEFAULT_THUMBNAIL_SRCSET_SCALES', None)
+
+# Django 6.1 removed the takes_context parameter from the undocumented parse_bits
+if 'takes_context' in signature(parse_bits).parameters:
+    def _parse_args_kwargs(parser, bits, params, tag_name):
+        return parse_bits(parser, bits, params, 'args', 'kwargs', None, [], None, False, tag_name)
+else:
+    def _parse_args_kwargs(parser, bits, params, tag_name):
+        return parse_bits(parser, bits, params, 'args', 'kwargs', None, [], None, tag_name)
 
 
 def get_cachefile(context, generator_id, generator_kwargs, source=None):
@@ -196,8 +205,7 @@ def parse_ik_tag_bits(parser, bits):
             raise template.TemplateSyntaxError('Don\'t use "%s" unless you\'re'
                 ' setting html attributes.' % HTML_ATTRS_DELIMITER)
 
-        args, html_attrs = parse_bits(parser, html_bits, [], 'args',
-                'kwargs', None, [], None, False, tag_name)
+        args, html_attrs = _parse_args_kwargs(parser, html_bits, [], tag_name)
         if len(args):
             raise template.TemplateSyntaxError('All "%s" tag arguments after'
                     ' the "%s" token must be named.' % (tag_name,
@@ -238,8 +246,7 @@ def generateimage(parser, token):
 
     tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
 
-    args, kwargs = parse_bits(parser, bits, ['generator_id'], 'args', 'kwargs',
-            None, [], None, False, tag_name)
+    args, kwargs = _parse_args_kwargs(parser, bits, ['generator_id'], tag_name)
 
     if len(args) != 1:
         raise template.TemplateSyntaxError('The "%s" tag requires exactly one'
@@ -290,8 +297,7 @@ def thumbnail(parser, token):
 
     tag_name, bits, html_attrs, varname = parse_ik_tag_bits(parser, bits)
 
-    args, kwargs = parse_bits(parser, bits, [], 'args', 'kwargs',
-            None, [], None, False, tag_name)
+    args, kwargs = _parse_args_kwargs(parser, bits, [], tag_name)
 
     if len(args) < 2:
         raise template.TemplateSyntaxError('The "%s" tag requires at least two'
