@@ -7,6 +7,7 @@ from ...utils import generate, suggest_extension
 
 class ProcessedImageFieldFile(ImageFieldFile):
     def save(self, name, content, save=True):
+        content.instance = self.instance
         filename, ext = os.path.splitext(name)
         spec = self.field.get_spec(source=content)
         ext = suggest_extension(name, spec.format)
