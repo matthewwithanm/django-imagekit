@@ -8,6 +8,7 @@ from imagekit.processors import SmartCrop
 
 from . import imagegenerators  # noqa
 from .models import (ImageModel, ProcessedImageFieldModel,
+                     ProcessedImageFieldWithDimensionsModel,
                      ProcessedImageFieldWithSpecModel)
 from .utils import get_image_file
 
@@ -55,3 +56,32 @@ def test_form_processedimagefield():
 
     assert instance.image.width == 50
     assert instance.image.height == 50
+
+
+@pytest.mark.django_db(transaction=True)
+@pytest.mark.parametrize('save', [True, False])
+def test_processedimagefield_populates_dimension_fields(save):
+    instance = ProcessedImageFieldWithDimensionsModel()
+    with File(get_image_file()) as file:
+        instance.processed.save('dimensions.jpeg', file, save=save)
+    assert (instance.width, instance.height) == (50, 30)
+    if not save:
+        instance.save()
+    instance.refresh_from_db()
+    assert (instance.width, instance.height) == (50, 30)
+    assert (instance.processed.width, instance.processed.height) == (50, 30)
+
+
+@pytest.mark.django_db(transaction=True)
+def test_processedimagefield_dimensions_after_assignment_and_replacement():
+    with get_image_file() as file:
+        instance = ProcessedImageFieldWithDimensionsModel.objects.create(
+            processed=SimpleUploadedFile('assigned.png', file.read()))
+    instance.refresh_from_db()
+    assert (instance.width, instance.height) == (50, 30)
+    instance.width, instance.height = 1, 2
+    with get_image_file() as file:
+        instance.processed = SimpleUploadedFile('replacement.png', file.read())
+        instance.save()
+    instance.refresh_from_db()
+    assert (instance.width, instance.height) == (50, 30)
