@@ -12,4 +12,6 @@ class ProcessedImageFieldFile(ImageFieldFile):
         ext = suggest_extension(name, spec.format)
         new_name = '%s%s' % (filename, ext)
         content = generate(spec)
+        # Django needs a named file to update the model's dimension fields.
+        content.name = new_name
         return super().save(new_name, content, save)
