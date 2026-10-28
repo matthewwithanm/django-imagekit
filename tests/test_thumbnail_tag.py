@@ -158,3 +158,25 @@ def test_processor_file_error_is_not_silenced():
     with patch('imagekit.specs.process_image', side_effect=FileNotFoundError('processor data')):
         with pytest.raises(FileNotFoundError, match='processor data'):
             render_tag("{% thumbnail '100x100' img %}")
+
+
+@pytest.mark.parametrize('request_cache', [False, True])
+def test_repeated_missing_source_and_recovery(tmp_path, request_cache):
+    from contextlib import nullcontext
+    from django.core.files.storage import FileSystemStorage
+    from django.db.models import ImageField
+    from django.template import Context, Template
+    from PIL import Image
+    from imagekit.cachefiles.state import use_cachefile_state_cache
+
+    clear_imagekit_cache()
+    field = ImageField(storage=FileSystemStorage(location=tmp_path))
+    source = field.attr_class(None, field, 'recoverable-source.png')
+    template = Template('{% load imagekit %}before'
+                        "{% thumbnail '100x100' img %}"
+                        "{% thumbnail '100x100' img %}after")
+    with use_cachefile_state_cache() if request_cache else nullcontext():
+        for _ in range(2):
+            assert template.render(Context({'img': source})) == 'beforeafter'
+        Image.new('RGB', (200, 100)).save(tmp_path / 'recoverable-source.png')
+        assert '<img ' in template.render(Context({'img': source}))
