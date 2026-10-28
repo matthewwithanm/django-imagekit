@@ -103,3 +103,80 @@ def test_alternate_format():
     clear_imagekit_cache()
     html = render_tag(ttag)
     assert html.endswith('webp')
+
+
+@pytest.mark.parametrize('suffix', ['', 'srcset="2"', '-- width="100"'])
+def test_missing_source_does_not_break_template(tmp_path, suffix):
+    from django.core.files.storage import FileSystemStorage
+    from django.db.models import ImageField
+    from django.template import Context, Template
+
+    clear_imagekit_cache()
+    field = ImageField(storage=FileSystemStorage(location=tmp_path))
+    source = field.attr_class(None, field, 'missing-source.png')
+    template = Template('{% load imagekit %}before'
+                        "{% thumbnail '100x100' img " + suffix + ' %}after')
+    assert template.render(Context({'img': source})) == 'beforeafter'
+
+
+def test_missing_assigned_thumbnail_dimensions_are_silent(tmp_path):
+    from django.core.files.storage import FileSystemStorage
+    from django.db.models import ImageField
+    from django.template import Context, Template
+
+    clear_imagekit_cache()
+    field = ImageField(storage=FileSystemStorage(location=tmp_path))
+    source = field.attr_class(None, field, 'missing-source.png')
+    template = Template('{% load imagekit %}before'
+                        "{% thumbnail '100x100' img as th %}{{ th.width }}after")
+    assert template.render(Context({'img': source})) == 'beforeafter'
+
+
+@pytest.mark.parametrize('exception', [PermissionError('denied'), OSError('unavailable')])
+def test_source_storage_errors_are_not_silenced(tmp_path, exception):
+    from django.core.files.storage import FileSystemStorage
+    from django.db.models import ImageField
+    from django.template import Context, Template
+
+    class FailingStorage(FileSystemStorage):
+        def _open(self, name, mode='rb'):
+            raise exception
+
+    clear_imagekit_cache()
+    field = ImageField(storage=FailingStorage(location=tmp_path))
+    source = field.attr_class(None, field, 'unavailable-source.png')
+    template = Template('{% load imagekit %}'
+                        "{% thumbnail '100x100' img %}")
+    with pytest.raises(type(exception), match=str(exception)):
+        template.render(Context({'img': source}))
+
+
+def test_processor_file_error_is_not_silenced():
+    from unittest.mock import patch
+
+    clear_imagekit_cache()
+    with patch('imagekit.specs.process_image', side_effect=FileNotFoundError('processor data')):
+        with pytest.raises(FileNotFoundError, match='processor data'):
+            render_tag("{% thumbnail '100x100' img %}")
+
+
+@pytest.mark.parametrize('request_cache', [False, True])
+def test_repeated_missing_source_and_recovery(tmp_path, request_cache):
+    from contextlib import nullcontext
+    from django.core.files.storage import FileSystemStorage
+    from django.db.models import ImageField
+    from django.template import Context, Template
+    from PIL import Image
+    from imagekit.cachefiles.state import use_cachefile_state_cache
+
+    clear_imagekit_cache()
+    field = ImageField(storage=FileSystemStorage(location=tmp_path))
+    source = field.attr_class(None, field, 'recoverable-source.png')
+    template = Template('{% load imagekit %}before'
+                        "{% thumbnail '100x100' img %}"
+                        "{% thumbnail '100x100' img %}after")
+    with use_cachefile_state_cache() if request_cache else nullcontext():
+        for _ in range(2):
+            assert template.render(Context({'img': source})) == 'beforeafter'
+        Image.new('RGB', (200, 100)).save(tmp_path / 'recoverable-source.png')
+        assert '<img ' in template.render(Context({'img': source}))

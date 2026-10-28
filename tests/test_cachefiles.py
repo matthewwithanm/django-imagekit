@@ -136,3 +136,28 @@ def test_generate_file_already_exists(caplog):
     assert actual_name != name
     assert os.path.basename(actual_name) in storage.listdir(os.path.dirname(actual_name))[1]
     assert cachefile_backend == file_2.cachefile_backend
+
+
+def test_missing_source_file_preserves_cause(tmp_path):
+    from django.core.files.storage import FileSystemStorage
+    from django.db.models import ImageField
+
+    field = ImageField(storage=FileSystemStorage(location=tmp_path))
+    source = field.attr_class(None, field, 'missing-source.png')
+    file = ImageCacheFile(TestSpec(source=source))
+    with pytest.raises(TestSpec.MissingSource) as error:
+        file.generate()
+    assert isinstance(error.value.__cause__, FileNotFoundError)
+
+
+def test_cache_storage_file_error_is_not_missing_source():
+    from django.core.files.storage import FileSystemStorage
+
+    class FailingStorage(FileSystemStorage):
+        def save(self, name, content, **kwargs):
+            raise FileNotFoundError('cache directory')
+
+    with get_unique_image_file() as source:
+        file = ImageCacheFile(TestSpec(source=source), storage=FailingStorage())
+        with pytest.raises(FileNotFoundError, match='cache directory'):
+            file.generate(force=True)

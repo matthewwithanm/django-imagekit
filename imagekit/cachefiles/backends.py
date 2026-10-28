@@ -6,6 +6,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 from .state import get_active_state_cache
 from ..utils import get_cache, get_singleton, sanitize_cache_key
+from ..exceptions import MissingSource
 
 
 class CacheFileState:
@@ -111,7 +112,13 @@ class CachedFileBackend:
     def generate_now(self, file, force=False):
         if force or self.get_state(file) not in (CacheFileState.GENERATING, CacheFileState.EXISTS):
             self.set_state(file, CacheFileState.GENERATING)
-            file._generate()
+            try:
+                file._generate()
+            except MissingSource:
+                # A later render must be able to retry, including after the
+                # source file is restored during the same request.
+                self.set_state(file, CacheFileState.DOES_NOT_EXIST)
+                raise
             self.set_state(file, CacheFileState.EXISTS)
             file.close()
 
