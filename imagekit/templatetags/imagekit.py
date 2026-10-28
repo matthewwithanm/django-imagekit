@@ -7,6 +7,7 @@ from django.utils.safestring import mark_safe
 from django.conf import settings
 
 from ..cachefiles import ImageCacheFile
+from ..exceptions import MissingSource
 from ..registry import generator_registry
 
 register = template.Library()
@@ -161,15 +162,20 @@ class ThumbnailImageTagNode(template.Node):
 
         attrs = {k: v.resolve(context) for k, v in self._html_attrs.items()}
 
-        # Only add width and height if neither is specified (to allow for
-        # proportional in-browser scaling).
-        if 'width' not in attrs and 'height' not in attrs:
-            attrs.update(width=file.width, height=file.height)
+        try:
+            # Only add width and height if neither is specified (to allow for
+            # proportional in-browser scaling).
+            if 'width' not in attrs and 'height' not in attrs:
+                attrs.update(width=file.width, height=file.height)
 
-        attrs['src'] = file.url
-        if len(srcset) > 0:
-            attrs['srcset'] = f'{file.url} 1x , ' + ' , '.join(
-                f'{entry[0].url} {entry[1]}x' for entry in zip(srcset, srcset_scales))
+            attrs['src'] = file.url
+            if len(srcset) > 0:
+                attrs['srcset'] = f'{file.url} 1x , ' + ' , '.join(
+                    f'{entry[0].url} {entry[1]}x' for entry in zip(srcset, srcset_scales))
+        except MissingSource:
+            # Custom tag render methods aren't covered by Django's
+            # silent_variable_failure handling for template variables.
+            return ''
         attr_str = ' '.join('%s="%s"' % (escape(k), escape(v)) for k, v in
                 attrs.items())
         return mark_safe('<img %s />' % attr_str)

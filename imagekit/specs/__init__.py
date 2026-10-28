@@ -153,7 +153,11 @@ class ImageSpec(BaseImageSpec):
         if closed:
             # Django file object should know how to reopen itself if it was closed
             # https://code.djangoproject.com/ticket/13750
-            self.source.open()
+            try:
+                self.source.open()
+            except FileNotFoundError as error:
+                raise MissingSource("The spec '%s' source file could not be found."
+                                    % self) from error
 
         try:
             img = open_image(self.source)

@@ -294,6 +294,16 @@ for the thumbnail tag, or use it as an assignment tag:
     {% thumbnail '100x50' source_file as th %}
 
 
+If thumbnail generation encounters a missing source, the thumbnail tag omits
+its ``<img>`` output. This includes a missing source file reported by storage
+as ``FileNotFoundError``.
+Missing source attributes read through an assigned template variable are
+silenced by Django's template variable handling. Outside templates, generation
+still raises ``imagekit.exceptions.MissingSource``; for a missing physical file,
+the original ``FileNotFoundError`` is retained as the exception's cause.
+Permission errors, other storage failures and processing errors still propagate.
+
+
 Using Specs in Forms
 ^^^^^^^^^^^^^^^^^^^^
 
