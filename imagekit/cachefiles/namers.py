@@ -68,7 +68,7 @@ def source_name_dot_hash(generator):
                            os.path.dirname(source_filename))
 
     ext = suggest_extension(source_filename or '', generator.format)
-    basename = os.path.basename(source_filename)
+    basename = os.path.basename(source_filename or '')
     return os.path.normpath(os.path.join(dir, '%s.%s%s' % (
             os.path.splitext(basename)[0], generator.get_hash()[:12], ext)))
 
