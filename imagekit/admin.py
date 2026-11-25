@@ -23,14 +23,19 @@ class AdminThumbnail:
     def __call__(self, obj):
         if callable(self.image_field):
             thumbnail = self.image_field(obj)
+            generator = getattr(thumbnail, 'generator', None)
+            if generator:
+                original_image = getattr(generator, 'source', thumbnail)
+            else:
+                original_image = thumbnail
         else:
             try:
                 thumbnail = getattr(obj, self.image_field)
+                original_image = getattr(thumbnail, 'source', None) or thumbnail
             except AttributeError:
                 raise Exception('The property %s is not defined on %s.' %
                         (self.image_field, obj.__class__.__name__))
 
-        original_image = getattr(thumbnail, 'source', None) or thumbnail
         template = self.template or 'imagekit/admin/thumbnail.html'
 
         return render_to_string(template, {
